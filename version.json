@@ -1,10 +1,11 @@
 {
   "product": "ЦМПОН — атлас требований и Цитадель ЦСИИ",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "released_on": "2026-10-15",
   "requirements_edition": "2.0.2 (ВСТЕ)",
   "requirements_as_of": "2026-10-14",
   "save_schema": "citadel-review-v3",
-  "distribution": "single-html",
-  "index_sha256": "2ddd265e09a6ceeef5de39fb3db05e936bb070af84ba4cd63b6e83123e50e7be"
+  "distribution": "offline-html-with-web-preview-asset",
+  "public_url": "https://andrejk-blip.github.io/cmpon-atlas/",
+  "index_sha256": "574df2d5b861fa6a7d8030e5889e8fa458cc8fe5d8710712422f35f21740c3a1"
 }
