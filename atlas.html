@@ -2,7 +2,7 @@
 <html lang="ru" prefix="og: https://ogp.me/ns#">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="application-version" content="1.1.3">
+<meta name="application-version" content="1.1.4">
 <meta name="description" content="Интерактивный атлас оснований требований ЦМПОН: 417 требований, 50 концепций, сравнение с ФТ сервиса 39 и ФТТ ГИС ЦАП 57.1.">
 <title>ЦМПОН — атлас требований | CMPON Atlas</title>
 <link rel="canonical" href="https://andrejk-blip.github.io/cmpon-atlas/atlas.html">
@@ -27,6 +27,7 @@
 <link rel="icon" href="https://andrejk-blip.github.io/cmpon-atlas/assets/atlas-icon.svg" type="image/svg+xml">
 <meta name="theme-color" content="#183e3d">
 <link rel="stylesheet" href="./assets/atlas-v1.1.3.css">
+<link rel="stylesheet" href="./assets/atlas-metrics-v0.1.0.css">
 </head>
 <body>
 <a class="skip" href="#content">Перейти к содержимому</a>
@@ -39,20 +40,22 @@
 </aside>
 <button id="mobile-nav-backdrop" class="mobile-nav-backdrop" data-action="mobile-menu-close" aria-label="Закрыть меню" tabindex="-1" hidden></button>
 <div class="workspace" id="workspace">
- <header class="topbar"><div class="breadcrumb">ГИС ЦАП <span>/</span> ЦМПОН <span>/</span> <b id="crumb">Карта оснований</b></div><div class="top-actions"><span class="offline"><i></i> Автономный файл</span><button class="button quiet" data-action="export" title="Выгрузить требования с учетом действующих фильтров"><span data-icon="download"></span><span>Экспорт CSV</span></button></div></header>
+ <header class="topbar"><div class="breadcrumb">ГИС ЦАП <span>/</span> ЦМПОН <span>/</span> <b id="crumb">Карта оснований</b></div><div class="top-actions"><span class="offline"><i></i> Веб-атлас</span><button class="button quiet" data-action="export" title="Выгрузить требования с учетом действующих фильтров"><span data-icon="download"></span><span>Экспорт CSV</span></button></div></header>
  <main id="main">
   <div class="heading"><div><p class="eyebrow">СРАВНЕНИЕ ТРЕХ ДОКУМЕНТОВ · 14 ОКТЯБРЯ 2026</p><h1>Основания требований<span>.</span></h1><p class="intro">Что зафиксировано в исходниках, что покрыто частично,<br class="desktop-break"> а что требует самостоятельного обоснования.</p></div><button class="method-link" data-action="view" data-value="methods"><span data-icon="compass"></span><span>Как читать<br>эту карту</span><span aria-hidden="true">↗</span></button></div>
   <div class="scope-bar"><label class="search"><span data-icon="search"></span><input id="search" type="search" placeholder="Найти требование, концепцию или номер ФТ…" autocomplete="off" aria-label="Поиск требований и концепций"><kbd>/</kbd></label><label class="select-label">Основание<select id="scope"><option value="best">Сильнейшее из двух</option><option value="c39">ФТ сервиса 39</option><option value="ftt">ФТТ 57.1</option></select></label></div>
   <div id="metrics" class="metrics"></div>
   <div class="summary-caption"><span id="scope-caption"></span><button class="text-button" data-action="clear">Сбросить фильтры <span aria-hidden="true">↺</span></button></div>
   <section id="content" tabindex="-1"></section>
-  <footer class="footer"><span>ЦМПОН / Приложение v1.1.3 · 15.10.2026</span><span>Покрытие текстом ≠ подтверждение реализации</span><button class="text-button" data-action="view" data-value="methods">Источники и ограничения ↗</button></footer>
+  <footer class="footer"><span>ЦМПОН / Приложение v1.1.4 · 15.10.2026</span><span>Покрытие текстом ≠ подтверждение реализации</span><button class="text-button" data-action="view" data-value="methods">Источники и ограничения ↗</button></footer>
  </main>
 </div>
 <dialog id="detail" aria-labelledby="detail-title"><div class="drawer-toolbar"><span id="drawer-type">КАРТОЧКА ОСНОВАНИЯ</span><div><button class="button quiet" data-action="copy"><span data-icon="copy"></span>Скопировать вывод</button><button class="icon-button" data-action="close" aria-label="Закрыть карточку">×</button></div></div><div id="detail-body"></div></dialog>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <noscript><div class="noscript">Для интерактивной карты необходим JavaScript. Откройте этот HTML-файл в обычном браузере с включенным JavaScript.</div></noscript>
 <script type="application/json" id="atlas-data"></script>
-<script type="application/json" id="release-data">{"product": "ЦМПОН — атлас требований", "version": "1.1.3", "released_on": "2026-10-15", "requirements_edition": "2.0.2 (ВСТЕ)", "requirements_as_of": "2026-10-14", "save_schema": "citadel-review-v3", "distribution": "offline-html-and-lightweight-web-entry", "public_url": "https://andrejk-blip.github.io/cmpon-atlas/"}</script>
+<script type="application/json" id="release-data">{"product": "ЦМПОН — атлас требований", "version": "1.1.4", "released_on": "2026-10-15", "requirements_edition": "2.0.2 (ВСТЕ)", "requirements_as_of": "2026-10-14", "save_schema": "citadel-review-v3", "distribution": "offline-html-and-lightweight-web-entry", "public_url": "https://andrejk-blip.github.io/cmpon-atlas/"}</script>
 <script defer src="./assets/atlas-v1.1.3.js"></script>
+<script defer src="./assets/atlas-metrics-v0.1.0.js"></script>
+<script defer src="./assets/atlas-integration-v1.1.4.js"></script>
 </body></html>
