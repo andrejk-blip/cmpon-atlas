@@ -1,6 +1,6 @@
 {
   "product": "ЦМПОН — атлас требований",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "released_on": "2026-10-16",
   "requirements_edition": "2.0.2 (ВСТЕ)",
   "requirements_as_of": "2026-10-14",
@@ -9,7 +9,7 @@
   "public_url": "https://andrejk-blip.github.io/cmpon-atlas/",
   "finale_save_schema": "citadel-finale-v1",
   "analytics_module_version": "0.1.0",
-  "index_sha256": "9f82c25d1acf8e6414c94b09bc1515380411f1181440cd9a271fe9578b6c924e",
-  "offline_sha256": "f465844c4dc406d481ede7cf89aae8fca89e7b6fb2fdade9734c46b453f62524",
-  "core_assets_version": "1.2.0"
+  "index_sha256": "902a192a5baf7d668aa76ceb075990f2b280543db2aabc1b6ac797cb8afaa4a6",
+  "offline_sha256": "8118e3f393ffcf313226908ebc06680d6af6980cec4a00873853cdebcedbdfdb",
+  "core_assets_version": "1.2.1"
 }
