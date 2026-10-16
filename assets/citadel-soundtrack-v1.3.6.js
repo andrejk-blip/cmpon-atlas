@@ -274,6 +274,7 @@
     document.head.appendChild(style);
     // If the user enters Arcade without reloading the page, the new controls appear on next UI update.
     if(typeof window!=='undefined')window.citadelSoundtrack={version:'1.3.6',cues:Object.keys(cues),next:rotate};
+    if(STATE.view==='arcade')spaceAudioControls();
   } catch(error) {
     console.warn('Citadel soundtrack patch disabled; original audio retained.',error);
   }
