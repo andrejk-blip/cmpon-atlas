@@ -75,3 +75,4 @@ function init(options={}){
 }
 root.AtlasMetrics=Object.freeze({init,version:'0.1.0'});
 })(globalThis);
+
