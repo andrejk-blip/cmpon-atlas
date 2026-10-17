@@ -1,0 +1,115 @@
+{
+  "version": "1.7.0",
+  "method": "Real game cores in Node VM with deterministic speech lifecycle events; no installed OS voice audition.",
+  "sha256": "bc89626c049d280827ccc68e61177ac1f8371a0fd125cfd40bbb47a3a7ad550f",
+  "results": [
+    {
+      "core": "atlas-v1.3.5.js",
+      "version": "1.7.0",
+      "tests": [
+        {
+          "name": "deferred boot mounts the voice toggle in an existing real-core panel once, and rerenders keep delegation and accessibility",
+          "ok": true
+        },
+        {
+          "name": "spoken text strips nested escapes, HTML, entities, links and markdown; source is unchanged",
+          "ok": true
+        },
+        {
+          "name": "Russian lesson rotation, male-name commander preference, actual onstart and radio ordering",
+          "ok": true
+        },
+        {
+          "name": "late voices and no Russian voice use a truthful system fallback",
+          "ok": true
+        },
+        {
+          "name": "existing voice preference persists; lab lexical storage never touches browser storage",
+          "ok": true
+        },
+        {
+          "name": "no speech queue; cancellation invalidates old speech callbacks and delayed radio",
+          "ok": true
+        },
+        {
+          "name": "a stalled radio prefix neither blocks nor restarts spoken preview",
+          "ok": true
+        },
+        {
+          "name": "pause, hidden tab, scene change and disabled voice stop immediately without muting effects",
+          "ok": true
+        },
+        {
+          "name": "onstart is required for success, missing starts time out, and unsupported devices fail cleanly",
+          "ok": true
+        },
+        {
+          "name": "pending preview radio-out is cancelled on close without a late tail or stuck job",
+          "ok": true
+        },
+        {
+          "name": "real core decision feedback sanitizes why/outcome and academy cards suppress duplicate fallback",
+          "ok": true
+        },
+        {
+          "name": "real combat step emits rare radio among natural boss warnings and freezes on pause/cards",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "core": "engine-v1.2.1.js",
+      "version": "1.7.0",
+      "tests": [
+        {
+          "name": "deferred boot mounts the voice toggle in an existing real-core panel once, and rerenders keep delegation and accessibility",
+          "ok": true
+        },
+        {
+          "name": "spoken text strips nested escapes, HTML, entities, links and markdown; source is unchanged",
+          "ok": true
+        },
+        {
+          "name": "Russian lesson rotation, male-name commander preference, actual onstart and radio ordering",
+          "ok": true
+        },
+        {
+          "name": "late voices and no Russian voice use a truthful system fallback",
+          "ok": true
+        },
+        {
+          "name": "existing voice preference persists; lab lexical storage never touches browser storage",
+          "ok": true
+        },
+        {
+          "name": "no speech queue; cancellation invalidates old speech callbacks and delayed radio",
+          "ok": true
+        },
+        {
+          "name": "a stalled radio prefix neither blocks nor restarts spoken preview",
+          "ok": true
+        },
+        {
+          "name": "pause, hidden tab, scene change and disabled voice stop immediately without muting effects",
+          "ok": true
+        },
+        {
+          "name": "onstart is required for success, missing starts time out, and unsupported devices fail cleanly",
+          "ok": true
+        },
+        {
+          "name": "pending preview radio-out is cancelled on close without a late tail or stuck job",
+          "ok": true
+        },
+        {
+          "name": "real core decision feedback sanitizes why/outcome and academy cards suppress duplicate fallback",
+          "ok": true
+        },
+        {
+          "name": "real combat step emits rare radio among natural boss warnings and freezes on pause/cards",
+          "ok": true
+        }
+      ]
+    }
+  ]
+}

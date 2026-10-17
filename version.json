@@ -1,6 +1,6 @@
 {
   "product": "ЦМПОН — атлас требований",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "released_on": "2026-10-17",
   "requirements_edition": "2.0.2 (ВСТЕ)",
   "requirements_as_of": "2026-10-14",
@@ -10,31 +10,31 @@
   "finale_save_schema": "citadel-finale-v1",
   "analytics_module_version": "0.1.0",
   "tournament_module_version": "1.1.0",
-  "index_sha256": "2bf2f309ea27dbe2a75002a4d3ea8753ef0a76f8c08cdc1456ab5ad869b7275d",
+  "index_sha256": "05b2a2303d1fda8aa0af2c9accc0472eedc4227f7f65f80c1c383feb953f35ea",
   "offline_sha256": "754ccde3777ace0150d9b062461301ea9542f893c4f158ebc0ae7e07a3e8a2c3",
   "core_assets_version": "1.3.5",
   "soundtrack_module_version": "1.4.2",
   "offline_version": "1.3.5",
   "music_module_version": "1.4.2",
   "music_delivery": "browser-procedural",
-  "academy_module_version": "1.4.1",
+  "academy_module_version": "1.7.0",
   "academy_cards": 36,
   "academy_campaign_questions": 23,
-  "effects_module_version": "1.4.2",
-  "atlas_sha256": "d6b0fb5022137d4c9116bc6641e62c7fc61ab5a4cb2cbe7f63b5ff54677317cc",
+  "effects_module_version": "1.7.0",
+  "atlas_sha256": "376fbefcfbaef264d6b24ab2c323bd5d3450a5f57150a6890bb4ef33f3fb2871",
   "music_sha256": "11ba6f8ee1d80e7313e7c7c14d1133cf55f9f124ca29eb8d3ed54aba22aafeb0",
-  "effects_sha256": "93064fb5bab7c75e14a630bab677358ad112676815c574c951479e61988e003e",
-  "mrg_module_version": "1.6.0",
+  "effects_sha256": "652bd931cd5ad21401375859a96588249d80f6cea1ae859f7a0852e1fbcace6f",
+  "mrg_module_version": "1.7.0",
   "mrg_waves": 3,
-  "mrg_sha256": "333d944e05cb6a7ef60fbf899ff62f4fe54357ee1f0d544cd0913d312d1fcc54",
-  "mrg_view_sha256": "fc294a62c36c8875fd3e9ba36baa31a7934d9fab714bb7ab74aa915a180f39c6",
+  "mrg_sha256": "1e2decb0c05426cc0989286558d109235e5f35381a153342434f9400b2d16964",
+  "mrg_view_sha256": "e82fcc77edafcda95364d3851be748c863c23e6677d43f39c75963d265c0797b",
   "records_module_version": "1.1.1",
   "records_sha256": "178c584491b2755e93f2e4469a8663db3bb93c8e970f5cc5bcbe75b0e6dc6183",
   "mrg_viewport_sha256": "60426620a6f3e82d0893fd5dbeb3c3f21b1b398f343ed5311566c4fc02a9c367",
   "mrg_soldiers_per_wave": [
     3,
-    6,
-    9
+    4,
+    6
   ],
   "mrg_soldier_hp": [
     144,
@@ -46,5 +46,29 @@
     232,
     464
   ],
-  "mrg_manual_aim": true
+  "mrg_manual_aim": true,
+  "voice_module_version": "1.7.0",
+  "field_ui_module_version": "1.7.0",
+  "mrg_batch_sizes": [
+    [
+      3
+    ],
+    [
+      3,
+      1
+    ],
+    [
+      3,
+      3
+    ]
+  ],
+  "mrg_tentacle_patterns": [
+    "sweep",
+    "crown",
+    "pincer"
+  ],
+  "mrg_viewport_module_version": "1.6.0",
+  "voice_sha256": "bc89626c049d280827ccc68e61177ac1f8371a0fd125cfd40bbb47a3a7ad550f",
+  "field_ui_sha256": "fb2b2545d45aaad74c1009bf2bd3b775ca6b897c9baf027f2c7cff5de0b02bed",
+  "academy_bridge_sha256": "cc33928c4d0b0271bc5205211ee815d56cba9243838053e4d460edee68ba2033"
 }

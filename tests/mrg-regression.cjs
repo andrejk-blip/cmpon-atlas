@@ -19,8 +19,8 @@ const near = (actual, expected, message, tolerance = 1e-7) =>
 function parseArgs(argv) {
   const root = path.resolve(__dirname, '..');
   const options = {
-    cores: [], patch: path.join(root, 'assets/citadel-mrg-v1.6.0.js'),
-    view: path.join(root, 'assets/citadel-mrg-view-v1.6.0.js'),
+    cores: [], patch: path.join(root, 'assets/citadel-mrg-v1.7.0.js'),
+    view: path.join(root, 'assets/citadel-mrg-view-v1.7.0.js'),
     render: null, smoke: false, only: null,
   };
   for (let i = 0; i < argv.length; i++) {
@@ -181,7 +181,10 @@ function createMrgController() {
     if (b.grounded && (threat || knife || beam)) jumpUntil = f.time + .4;
     const imminent = b.hostile.some(shot => Math.hypot(shot.pos[0] - b.pos[0], shot.pos[1] - b.pos[1] - .55) < (shot.kind === 'rocket' ? 6 : 3)) ||
       !!(knife && ['windup', 'strike'].includes(knife.knifePhase) && b.pos[1] - knife.pos[1] < 1.8);
-    const desired = -28 + Math.sin(f.time * .75) * 1.7;
+    const retreat = ['telegraph', 'active'].includes(f.tentacle?.phase);
+    const zone = f.tentacle?.safeZone;
+    const curvedRetreat = retreat && f.tentacle.kind !== 'sweep';
+    const desired = retreat && zone ? (zone.minX + zone.maxX) / 2 : -28 + Math.sin(f.time * .75) * 1.7;
     let aim = f.mrg.pos.slice();
     if (target) {
       const travel = Math.min(.65, Math.hypot(target.pos[0] - b.pos[0], target.pos[1] - b.pos[1]) / 65);
@@ -191,7 +194,8 @@ function createMrgController() {
     }
     return {
       moveX: Math.max(-1, Math.min(1, (desired - b.pos[0]) * .8)),
-      jump: f.time < jumpUntil, fire: true, aim,
+      moveZ: curvedRetreat && b.grounded && b.pos[1] > 1.1 ? 1 : 0,
+      jump: !curvedRetreat && f.time < jumpUntil, fire: true, aim,
       pulse: imminent && b.invulnerable <= .05,
       missile: e.player.missiles > 0 && (target ? target.grounded && target.hp >= 100 : f.open),
     };
@@ -208,7 +212,9 @@ function main(options = parseArgs(process.argv.slice(2))) {
     assert.equal(e.status, 'boarding');
     assert.equal(e.finale.phase, 'mrg');
     assert.equal(e.board.hp, 100);
-    const result = { core: path.basename(corePath), version: e.finale.arenaVersion || 'baseline', tests: [] };
+    const source = file => fs.existsSync(file) ? { file: path.basename(file), sha256: crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex') } : null;
+    const result = { core: path.basename(corePath), version: e.finale.arenaVersion || 'baseline',
+      sources: { core: source(corePath), mechanics: options.smoke ? null : source(options.patch), view: options.smoke ? null : source(options.view) }, tests: [] };
     if (!options.smoke) runTests(h, options, result);
     results.push(result);
   }
@@ -222,7 +228,7 @@ function main(options = parseArgs(process.argv.slice(2))) {
 }
 
 function runTests(h, options, result) {
-  assert.equal(h.api?.version, '1.6.0');
+  assert.equal(h.api?.version, '1.7.0');
   function test(name, fn) {
     if (options.only && !name.includes(options.only)) return;
     try { const data = fn(); result.tests.push({ name, ok: true, ...(data === undefined ? {} : { data }) }); }
@@ -239,22 +245,24 @@ function runTests(h, options, result) {
     return enemy;
   }
 
-  test('wave HP doubles exactly and each batch has three distinct roles with TV/BS/SH', () => {
-    assert.deepEqual(clone(h.api.waves.map(w => w.soldiers)), [3, 6, 9]);
+  test('wave HP still doubles, the lighter roster is 3/4/6, and role variety with TV/BS/SH remains', () => {
+    assert.deepEqual(clone(h.api.waves.map(w => w.soldiers)), [3, 4, 6]);
+    assert.deepEqual(clone(h.api.waves.map(w => w.batchSizes)), [[3], [3, 1], [3, 3]]);
     assert.deepEqual(clone(h.api.waves.map(w => w.damageMultiplier)), [1, 2, 4]);
     for (const assist of [false, true]) for (let wave = 0; wave < 3; wave++) {
       const e = fresh(wave, { assist }), f = e.finale, expectedHp = (assist ? 116 : 144) * 2 ** wave;
-      assert.equal(f.arenaVersion, '1.6.0');
-      assert.equal(f.totalBatches, wave + 1); assert.equal(f.spawnedBatches, 1);
-      assert.equal(f.waveSoldiersTotal, (wave + 1) * 3); assert.equal(f.pendingSoldiers, wave * 3);
+      const spec = h.api.waves[wave];
+      assert.equal(f.arenaVersion, '1.7.0');
+      assert.equal(f.totalBatches, spec.batches); assert.equal(f.spawnedBatches, 1);
+      assert.equal(f.waveSoldiersTotal, spec.soldiers); assert.equal(f.pendingSoldiers, spec.soldiers - 3);
       assert.equal(f.waveDamageMultiplier, 2 ** wave); assert.equal(f.batchIndex, 0);
       assert.equal(e.board.enemies.length, 3);
-      runFrames(e, wave * 7 + .1);
-      assert.equal(f.pendingSoldiers, 0); assert.equal(f.spawnedBatches, wave + 1);
-      assert.equal(e.board.enemies.length, (wave + 1) * 3);
-      for (let batch = 0; batch <= wave; batch++) {
+      runFrames(e, (spec.batches - 1) * 7 + .1);
+      assert.equal(f.pendingSoldiers, 0); assert.equal(f.spawnedBatches, spec.batches);
+      assert.equal(e.board.enemies.length, spec.soldiers);
+      for (let batch = 0; batch < spec.batches; batch++) {
         const enemies = e.board.enemies.filter(enemy => enemy.batchIndex === batch);
-        assert.deepEqual(clone(enemies.map(enemy => enemy.role)), ['jumper', 'knife', 'rocketeer']);
+        assert.deepEqual(clone(enemies.map(enemy => enemy.role)), ['jumper', 'knife', 'rocketeer'].slice(0, spec.batchSizes[batch]));
         for (const enemy of enemies) { near(enemy.maxHp, expectedHp, 'Soldier maximum HP'); near(enemy.hp, expectedHp, 'Undamaged soldier HP'); }
       }
       assert.equal(e.board.enemies.filter(enemy => enemy.name).length, 1);
@@ -265,26 +273,26 @@ function runTests(h, options, result) {
 
   test('soldiers emerge sequentially from MRG and later batches stay queued for seven seconds', () => {
     const e = fresh(2), f = e.finale;
-    assert.equal(f.pendingSoldiers, 6); assert.equal(e.board.enemies.length, 3);
+    assert.equal(f.pendingSoldiers, 3); assert.equal(e.board.enemies.length, 3);
     assert(e.board.enemies.every(enemy => enemy.state === 'emerging' && enemy.pos[0] >= 17 && enemy.pos[0] <= 20));
     const delays = e.board.enemies.map(enemy => enemy.emergeDelay);
     assert(delays[0] < delays[1] && delays[1] < delays[2]);
     runFrames(e, .25);
     assert(e.board.enemies[0].pos[0] < e.board.enemies[2].pos[0], 'The first soldier leaves before the last');
     runFrames(e, 6.5); assert.equal(e.board.enemies.length, 3);
-    runFrames(e, .35); assert.equal(e.board.enemies.length, 6); assert.equal(f.pendingSoldiers, 3);
+    runFrames(e, .35); assert.equal(e.board.enemies.length, 6); assert.equal(f.pendingSoldiers, 0);
     assert(e.board.enemies.slice(3).every(enemy => enemy.state === 'emerging'));
-    runFrames(e, 7.1); assert.equal(e.board.enemies.length, 9); assert.equal(f.pendingSoldiers, 0);
+    runFrames(e, 7.1); assert.equal(e.board.enemies.length, 6); assert.equal(f.pendingSoldiers, 0);
   });
 
   test('HP gates require current enemies and all queued batches; projectile floods cannot skip waves', () => {
     const e = fresh(1), f = e.finale, m = f.mrg;
     bossHit(e); near(m.hp, m.maxHp / 3, 'Second-wave HP boundary');
     assert.equal(f.waveIndex, 1); clearSoldiers(e); e.step(1 / 60, {});
-    assert.equal(f.waveIndex, 1, 'Unspawned batch blocks the gate'); assert.equal(f.pendingSoldiers, 3);
-    runFrames(e, 7.1); assert.equal(f.waveIndex, 1); assert.equal(live(e).length, 3);
+    assert.equal(f.waveIndex, 1, 'Unspawned batch blocks the gate'); assert.equal(f.pendingSoldiers, 1);
+    runFrames(e, 7.1); assert.equal(f.waveIndex, 1); assert.equal(live(e).length, 1);
     clearSoldiers(e); e.step(1 / 60, {}); assert.equal(f.waveIndex, 2);
-    assert.equal(f.pendingSoldiers, 6); assert.equal(live(e).length, 3);
+    assert.equal(f.pendingSoldiers, 3); assert.equal(live(e).length, 3);
     const flood = fresh(); clearSoldiers(flood); open(flood);
     for (let i = 0; i < 50; i++) flood.board.bullets.push({ pos: flood.finale.mrg.pos.slice(), vel: [0, 0, 0], life: 1, damage: 1e9 });
     flood.step(1 / 60, {});
@@ -295,9 +303,9 @@ function runTests(h, options, result) {
 
   test('final queued soldiers prevent defeat/upload; a completed battle awards only once', () => {
     const e = fresh(2); bossHit(e); clearSoldiers(e); runFrames(e, .1);
-    assert.equal(e.finale.mrg.hp, 0); assert.equal(e.finale.pendingSoldiers, 6);
+    assert.equal(e.finale.mrg.hp, 0); assert.equal(e.finale.pendingSoldiers, 3);
     assert.equal(e.finale.defeatTime, 0); assert.equal(e.finale.phase, 'mrg'); assert.equal(e.beginUpload(), false);
-    runFrames(e, 14.1); assert.equal(e.finale.pendingSoldiers, 0); assert.equal(live(e).length, 6);
+    runFrames(e, 7.1); assert.equal(e.finale.pendingSoldiers, 0); assert.equal(live(e).length, 3);
     assert.equal(e.finale.defeatTime, 0); assert.equal(e.beginUpload(), false);
     clearSoldiers(e); e.step(1 / 60, {}); assert(e.finale.defeatTime > 2.9);
     const score = e.score; runFrames(e, 3.1); assert.equal(e.finale.phase, 'upload'); assert.equal(e.score, score + 7000);
@@ -487,19 +495,20 @@ function runTests(h, options, result) {
     return { warningSeconds: 5.2, escapeSeconds: escapeTime, safeX: t.safeX };
   });
 
-  test('tentacles repeat periodically and pause freezes warning and active collisions', () => {
+  test('all three tentacle patterns rotate periodically and pause freezes warning and active collisions', () => {
     const e = fresh(); clearSoldiers(e); e.finale.waveIntro = 0;
     Object.assign(e.finale.tentacle, { phase: 'idle', time: .001, duration: 9 });
-    e.board.pos = [-28, 1, 0]; e.board.invulnerable = 0;
-    const warnings = []; let previous = 'idle';
-    runFrames(e, 30, game => {
+    e.board.pos = [-28, 1, 0];
+    const warnings = [], kinds = []; let previous = 'idle';
+    runFrames(e, 44, game => {
       const current = game.finale.tentacle.phase;
-      if (current === 'telegraph' && previous !== current) warnings.push(game.finale.time);
+      if (current === 'telegraph' && previous !== current) { warnings.push(game.finale.time); kinds.push(game.finale.tentacle.kind); }
       previous = current; return {};
     });
-    assert(warnings.length >= 2); near(warnings[1] - warnings[0], 14, 'Repeating sweep cycle', .12);
+    assert.deepEqual(kinds, ['sweep', 'crown', 'pincer', 'sweep']);
+    for (let i = 1; i < warnings.length; i++) near(warnings[i] - warnings[i - 1], 14, 'Repeating tentacle cycle', .12);
     for (const phase of ['telegraph', 'active']) {
-      Object.assign(e.finale.tentacle, { phase, time: 1.25, duration: phase === 'active' ? 2.5 : 5.2 });
+      Object.assign(e.finale.tentacle, { kind: 'sweep', phase, time: 1.25, duration: phase === 'active' ? 2.5 : 5.2 });
       e.board.pos = [0, 1, 0]; e.pause();
       const before = clone({ board: e.board, finale: e.finale, elapsed: e.elapsed });
       runFrames(e, 2, { fire: true, moveX: 1 });
@@ -507,7 +516,67 @@ function runTests(h, options, result) {
       e.resume(); e.board.invulnerable = 0; const hp = e.board.hp; e.step(1 / 60, {});
       near(hp - e.board.hp, phase === 'active' ? 18 * .8 : 0, 'Damage resumes only in active phase');
     }
-    return { warningTimes: warnings };
+    return { warningTimes: warnings, patterns: kinds };
+  });
+
+  function preparePattern(e, kind) {
+    clearSoldiers(e); e.finale.batchTimer = 1e6; e.finale.waveIntro = 0;
+    const index = h.api.tentaclePatterns.findIndex(pattern => pattern.id === kind);
+    assert(index >= 0);
+    Object.assign(e.finale.tentacle, { phase: 'idle', time: .001, cycle: (index + 2) % 3 });
+    e.step(1 / 60, {});
+    assert.equal(e.finale.tentacle.kind, kind);
+    assert.equal(e.finale.tentacle.phase, 'telegraph');
+    return e.finale.tentacle;
+  }
+
+  test('curved tentacles damage their actual bends only when active; green corridors and other gaps stay safe', () => {
+    const checks = [];
+    for (const kind of ['crown', 'pincer']) for (let wave = 0; wave < 3; wave++) {
+      const e = fresh(wave, { upgrades: plain }), t = preparePattern(e, kind), b = e.board;
+      for (const phase of ['telegraph', 'active', 'retract']) {
+        Object.assign(t, { phase, time: phase === 'retract' ? .7 : 2, duration: phase === 'telegraph' ? 5.2 : phase === 'active' ? 2.5 : .7 });
+        const geometry = h.api.tentacleGeometry(e), limb = geometry[0], point = limb.points[16];
+        assert(point[0] >= -32 && point[0] < 12 && point[1] > 2 && point[1] < 22, 'Physical test point is reachable in the arena');
+        Object.assign(b, { hp: 100, invulnerable: 0, pos: [point[0], point[1] - .55, 0], previous: [point[0], point[1] - .55, 0], vy: 0, grounded: false, knockbackX: 0 });
+        e.step(1 / 60, {});
+        near(100 - b.hp, phase === 'active' ? 18 * 2 ** wave : 0, `${kind} ${phase} sampled-curve collision`);
+      }
+      const zone = t.safeZone;
+      for (const x of [zone.minX + 1, (zone.minX + zone.maxX) / 2, zone.maxX - 1, kind === 'crown' ? -6 : 0]) {
+        Object.assign(t, { phase: 'active', time: 2.5, duration: 2.5 });
+        Object.assign(b, { hp: 100, invulnerable: 0, pos: [x, 1, 0], previous: [x, 1, 0], vy: 0, grounded: true, supportId: 'floor', knockbackX: 0 });
+        runFrames(e, 2.45);
+        near(b.hp, 100, `${kind} safe floor at ${x}; no hidden rectangular damage region`);
+      }
+      checks.push({ kind, wave: wave + 1, damage: 18 * 2 ** wave, safeZone: clone(zone) });
+    }
+    return checks;
+  });
+
+  test('each curved warning allows a ground retreat from the right edge; bending geometry is finite and JSON safe', () => {
+    for (const kind of ['crown', 'pincer']) {
+      const e = fresh(), t = preparePattern(e, kind), b = e.board;
+      b.pos = [12, 1, 0]; b.previous = b.pos.slice(); b.invulnerable = 0;
+      const goal = (t.safeZone.minX + t.safeZone.maxX) / 2;
+      const before = JSON.stringify({ board: b, finale: e.finale });
+      const preview = clone(h.api.tentacleGeometry(e));
+      assert.equal(JSON.stringify({ board: b, finale: e.finale }), before, 'Geometry query is read only');
+      for (const limb of preview) {
+        assert.equal(limb.points.length, 25); assert.equal(limb.radii.length, 25);
+        assert(limb.points.every(point => point.length === 3 && point.every(Number.isFinite)));
+        assert(limb.radii.every(radius => Number.isFinite(radius) && radius > 0));
+      }
+      while (t.phase === 'telegraph') e.step(1 / 60, { moveX: Math.max(-1, Math.min(1, (goal - b.pos[0]) * .8)), moveZ: b.grounded && b.pos[1] > 1.1 ? 1 : 0 });
+      assert(b.pos[0] > t.safeZone.minX && b.pos[0] < t.safeZone.maxX && b.pos[1] <= t.safeZone.maxY, 'Reach the visibly marked corridor before impact');
+      assert.equal(b.hp, 100);
+      for (const phase of ['active', 'retract']) for (const fraction of [0, .5, 1]) {
+        Object.assign(t, { phase, duration: phase === 'active' ? 2.5 : .7 }); t.time = t.duration * fraction;
+        for (const limb of h.api.tentacleGeometry(e)) {
+          assert(limb.points.flat().every(Number.isFinite)); assert(limb.radii.every(radius => Number.isFinite(radius) && radius > 0));
+        }
+      }
+    }
   });
 
   test('moving platforms still carry in X/Y, detach on jump/drop and reset with batches on retry', () => {
@@ -536,7 +605,7 @@ function runTests(h, options, result) {
     if (h.cupPack && h.cupUnpack) return h.cupUnpack(h.cupPack(e), { seed: e.seed, mode: e.assist ? 'calm' : 'normal' }, () => {});
     const restored = h.engine({ assist: e.assist, upgrades: e.upgrades, seed: e.seed });
     for (const key of ['board', 'finale', 'player', 'elapsed', 'score', 'totalKills', 'phase', 'status', 'resumeStatus']) if (e[key] !== undefined) restored[key] = clone(e[key]);
-    // Old lab cores do not expose PRNG snapshots. Arena 1.6 has no random AI;
+    // Old lab cores do not expose PRNG snapshots. Arena 1.7 has no random AI;
     // compare the complete arena continuation, while the public checkpoint
     // path above additionally exercises its real serialized PRNG state.
     if (typeof e.random.getState === 'function') restored.random = h.seeded(e.random.getState());
@@ -544,8 +613,9 @@ function runTests(h, options, result) {
   }
 
   test('current JSON preserves pending batches, AI timers, rockets, manual aim and deterministic continuation', () => {
-    const a = fresh(2); runFrames(a, 8.3); a.step(1 / 60, { aim: [-6, 12, 0], fire: true });
-    Object.assign(a.finale.tentacle, { phase: 'telegraph', time: 3.2, duration: 5.2 });
+    const a = fresh(2); runFrames(a, 3.3); a.step(1 / 60, { aim: [-6, 12, 0], fire: true });
+    const t = a.finale.tentacle, pattern = h.api.tentaclePatterns.find(pattern => pattern.id === 'pincer');
+    Object.assign(t, { phase: 'telegraph', kind: pattern.id, paths: clone(pattern.paths), safeZone: clone(pattern.safeZone), time: 3.2, duration: 5.2 });
     a.board.enemies[0].hp -= 37; a.board.enemies[1].knifePhase = 'windup'; a.board.enemies[1].knifeTime = .3;
     const b = roundtrip(a);
     assert.deepEqual(clone(b.finale), clone(a.finale)); assert.deepEqual(clone(b.board), clone(a.board));
@@ -557,7 +627,7 @@ function runTests(h, options, result) {
   });
 
   test('1.5 checkpoints retain health fractions, dead soldiers, position and score while adding required new batches', () => {
-    const oldPath = options.patch.replace('v1.6.0.js', 'v1.5.0.js');
+    const oldPath = options.patch.replace('v1.7.0.js', 'v1.5.0.js');
     assert(fs.existsSync(oldPath), 'Previous public gameplay module is available for genuine legacy fixtures');
     const old = createHarness(h.corePath, oldPath);
     for (let wave = 0; wave < 3; wave++) {
@@ -570,19 +640,58 @@ function runTests(h, options, result) {
       if (old.cupPack && h.cupUnpack) restored = h.cupUnpack(old.cupPack(prior), { seed: prior.seed, mode: 'normal' }, () => {});
       else { restored = h.engine(); Object.assign(restored, clone({ board: prior.board, finale: prior.finale, player: prior.player, score: prior.score })); }
       restored.objective();
-      assert.equal(restored.finale.arenaVersion, '1.6.0'); assert.equal(restored.finale.waveIndex, wave);
+      assert.equal(restored.finale.arenaVersion, '1.7.0'); assert.equal(restored.finale.waveIndex, wave);
       near(restored.finale.mrg.hp, hp, 'Legacy boss HP retained'); assert.equal(restored.board.hp, 47); assert.equal(restored.score, 31415);
       assert.deepEqual(clone(restored.board.pos), [-10, 5, 0]); assert.deepEqual(clone(restored.board.enemies[0].pos), p);
       near(restored.board.enemies[0].hp, 144 * 2 ** wave * .4, 'Live soldier retains its HP fraction');
       assert(restored.board.enemies[1].dead && restored.board.enemies[1].hp === 0);
-      const spawned = Math.ceil(count / 3);
-      assert.equal(restored.finale.spawnedBatches, spawned); assert.equal(restored.finale.pendingSoldiers, (wave + 1 - spawned) * 3);
+      const spawned = Math.ceil(count / 3), spec = h.api.waves[wave];
+      assert.equal(restored.finale.spawnedBatches, spawned); assert.equal(restored.finale.pendingSoldiers, spec.batchSizes.slice(spawned).reduce((sum, size) => sum + size, 0));
       assert.equal(restored.board.enemies[0].name, ['TV', 'BS', 'SH'][wave]); assert.equal(restored.board.enemies[0].beard, wave === 2);
       restored.step(1 / 60, {}); assert(restored.board.pos.every(Number.isFinite));
     }
   });
 
-  test('real manual-input operator wins normal and calm with all eighteen soldiers and no health/resource cheats', () => {
+  test('1.6 checkpoints reduce the roster without losing completed kills from removed tail slots or awarding again', () => {
+    const oldPath = options.patch.replace('v1.7.0.js', 'v1.6.0.js');
+    assert(fs.existsSync(oldPath), 'Previous gameplay module supplies authentic serialized fixtures');
+    const old = createHarness(h.corePath, oldPath);
+    const cases = [];
+    for (const wave of [1, 2]) {
+      const prior = inert(enterWave(inert(old.engine()), wave));
+      runFrames(prior, wave * 7 + .1);
+      const spec = h.api.waves[wave];
+      assert.equal(prior.board.enemies.length, (wave + 1) * 3);
+      prior.board.hp = 47; prior.score = 31415; prior.board.kills = 37; prior.totalKills = 51;
+      prior.player.missiles = 6; prior.board.pos = [-10, 5, 0]; prior.finale.mrg.hp -= 12;
+      prior.board.enemies[0].hp = prior.board.enemies[0].maxHp * .4;
+      const livePosition = clone(prior.board.enemies[0].pos);
+      for (const enemy of prior.board.enemies.slice(spec.soldiers)) { enemy.hp = 0; enemy.dead = true; enemy.state = 'dead'; }
+      const dead = prior.board.enemies.filter(enemy => enemy.dead).length, bossHp = prior.finale.mrg.hp;
+      assert(dead > 0 && prior.board.enemies.slice(0, spec.soldiers).every(enemy => !enemy.dead), 'All saved kills are in slots removed by the smaller roster');
+      let restored;
+      if (old.cupPack && h.cupUnpack) restored = h.cupUnpack(old.cupPack(prior), { seed: prior.seed, mode: 'normal' }, () => {});
+      else { restored = h.engine(); Object.assign(restored, clone({ board: prior.board, finale: prior.finale, player: prior.player, score: prior.score, totalKills: prior.totalKills })); }
+      restored.objective();
+      assert.equal(restored.finale.arenaVersion, '1.7.0'); assert.equal(restored.finale.waveIndex, wave);
+      assert.equal(restored.board.enemies.length, spec.soldiers); assert.equal(restored.finale.pendingSoldiers, 0);
+      assert.equal(restored.board.enemies.filter(enemy => enemy.dead).length, Math.min(dead, spec.soldiers), 'Already completed kills survive shrinking the roster');
+      const wounded = restored.board.enemies.find(enemy => !enemy.dead && Math.abs(enemy.hp / enemy.maxHp - .4) < 1e-7);
+      assert(wounded, 'Retain a surviving wounded soldier rather than resetting all live health');
+      assert.deepEqual(clone(wounded.pos), livePosition);
+      assert.deepEqual(clone(restored.board.pos), [-10, 5, 0]); near(restored.board.hp, 47, 'Player HP'); near(restored.finale.mrg.hp, bossHp, 'Boss HP');
+      assert.equal(restored.score, 31415); assert.equal(restored.board.kills, 37); assert.equal(restored.totalKills, 51); assert.equal(restored.player.missiles, 6);
+      assert.equal(restored.board.enemies.filter(enemy => enemy.name).length, 1);
+      assert.equal(restored.board.enemies[0].name, ['TV', 'BS', 'SH'][wave]); assert.equal(restored.board.enemies[0].beard, wave === 2);
+      assert.equal(restored.beginUpload(), false, 'Migration cannot bypass unfinished boss health');
+      const again = JSON.stringify({ board: restored.board, finale: restored.finale, score: restored.score }); restored.objective();
+      assert.equal(JSON.stringify({ board: restored.board, finale: restored.finale, score: restored.score }), again, 'Migration is idempotent');
+      cases.push({ wave: wave + 1, before: prior.board.enemies.length, after: spec.soldiers, savedDead: dead });
+    }
+    return cases;
+  });
+
+  test('real manual-input operator wins normal and calm with all thirteen soldiers and no health/resource cheats', () => {
     const runs = [];
     for (const assist of [false, true]) {
       const e = h.engine({ assist }), control = createMrgController(); let minHp = 100;
@@ -594,7 +703,7 @@ function runTests(h, options, result) {
       }
       const info = { assist, phase: e.finale.phase, status: e.status, seconds: e.elapsed, hp: e.board.hp, minHp,
         kills: e.board.kills, bossHp: e.finale.mrg.hp, pendingSoldiers: e.finale.pendingSoldiers, transitions };
-      assert.equal(e.finale.phase, 'upload', JSON.stringify(info)); assert.equal(e.board.kills, 18);
+      assert.equal(e.finale.phase, 'upload', JSON.stringify(info)); assert.equal(e.board.kills, 13);
       assert.equal(e.finale.pendingSoldiers, 0); assert.equal(transitions.length, 3); assert.equal(e.board.guide, false);
       runFrames(e, 8.2); assert.equal(e.status, 'won'); runs.push(info);
     }
@@ -602,13 +711,14 @@ function runTests(h, options, result) {
   });
 
   if (h.view) test('scene uses clean physical slabs, distinct roles, named soldiers and actual danger geometry even with FX off', () => {
-    assert.equal(h.view.version, '1.6.0');
+    assert.equal(h.view.version, '1.7.0');
     for (let wave = 0; wave < 3; wave++) {
       const e = fresh(wave); runFrames(e, 3.2);
       for (const fx of [false, true]) {
         const before = JSON.stringify({ board: e.board, finale: e.finale });
         const scene = h.scene(e, e.elapsed, fx), slabs = scene.filter(item => item.mrgFeature === 'platform');
         assert.equal(slabs.length, 3); assert.equal(scene.filter(item => item.mrgFeature === 'platform-edge').length, 3);
+        assert(scene.some(item => item.mrgFeature === 'boss-organic'), 'The living boss body is present');
         assert(!scene.some(item => item.mrgFeature === 'platform-detail'), 'Old platform arrows/supports are absent');
         for (const item of scene) { assert(item.pos.every(Number.isFinite)); assert(Array.from(item.model).every(Number.isFinite)); }
         for (const slab of slabs) {
@@ -651,6 +761,51 @@ function runTests(h, options, result) {
       assert(scene.some(item => item.mrgFeature === 'knife-threat' && JSON.stringify(item.mrgTo) === JSON.stringify(knife.knifeTo)));
       assert(scene.some(item => item.mrgFeature === 'rocket' && item.mrgPosition[0] === -2));
       assert(scene.some(item => item.mrgFeature === 'rocket-blast' && item.mrgRadius === 3.2));
+    }
+  });
+
+  if (h.view) test('all sampled tentacle curves exactly match rendered segments, radii and safe zones in every phase with FX on or off', () => {
+    for (const kind of ['sweep', 'crown', 'pincer']) {
+      const e = fresh(2), t = preparePattern(e, kind);
+      for (const phase of ['telegraph', 'active', 'retract']) {
+        const duration = phase === 'telegraph' ? 5.2 : phase === 'active' ? 2.5 : .7;
+        Object.assign(t, { phase, duration, time: duration * .6 });
+        const before = JSON.stringify({ board: e.board, finale: e.finale });
+        const geometry = h.api.tentacleGeometry(e);
+        for (const fx of [false, true]) {
+          const scene = h.scene(e, e.elapsed, fx);
+          const feature = phase === 'telegraph' ? 'tentacle-telegraph' : 'tentacle';
+          const pieces = scene.filter(item => item.mrgFeature === feature);
+          assert(pieces.length > 0); assert(pieces.every(item => item.mrgKind === kind));
+          assert.equal(new Set(pieces.map(item => item.mrgSegment)).size, kind === 'sweep' ? 6 : geometry.length);
+          for (const item of scene) { assert(item.pos.every(Number.isFinite)); assert(Array.from(item.model).every(Number.isFinite)); }
+          const zones = scene.filter(item => item.mrgFeature === 'safe-zone');
+          assert(zones.length > 0); for (const zone of zones) assert.deepEqual(clone(zone.mrgSafeZone), clone(t.safeZone));
+          if (kind === 'sweep') for (const piece of pieces) {
+            const physical = t.segments[piece.mrgSegment];
+            assert.deepEqual(clone(piece.mrgFrom), clone(physical.from));
+            if (phase === 'retract') {
+              // The retained straight attack no longer damages while its visual
+              // branches withdraw along the original horizontal segments.
+              assert(piece.mrgTo[0] > physical.to[0] && piece.mrgTo[0] < physical.from[0]);
+              assert.deepEqual(clone(piece.mrgTo.slice(1)), clone(physical.to.slice(1)));
+            } else assert.deepEqual(clone(piece.mrgTo), clone(physical.to));
+            near(piece.mrgRadius, physical.radius, 'Original straight segment radius');
+          }
+          else {
+            assert(!scene.some(item => item.mrgFeature === 'tentacle-warning-area'), 'Curved warning has no unrelated rectangle');
+            for (const piece of pieces) {
+              const limb = geometry.find(limb => limb.id === piece.mrgSegment), index = piece.mrgPointIndex;
+              assert(Number.isInteger(index) && index >= 0 && index + 1 < limb.points.length);
+              assert.deepEqual(clone(piece.mrgFrom), clone(limb.points[index]));
+              assert.deepEqual(clone(piece.mrgTo), clone(limb.points[index + 1]));
+              assert.deepEqual(clone(piece.mrgRadii), clone([limb.radii[index], limb.radii[index + 1]]));
+              near(piece.mrgRadius, Math.max(limb.radii[index], limb.radii[index + 1]), 'Visible radius matches collision radius');
+            }
+          }
+          assert.equal(JSON.stringify({ board: e.board, finale: e.finale }), before, 'Renderer never advances or rewrites physics');
+        }
+      }
     }
   });
 
@@ -702,6 +857,11 @@ function runTests(h, options, result) {
     render(third, 'warning', 592, 244);
     Object.assign(third.finale.tentacle, { phase: 'active', duration: 2.5, time: 2 });
     for (const [width, height] of [[1280, 720], [390, 460], [592, 244]]) render(third, 'tentacles', width, height);
+    for (const [kind, width, height] of [['crown', 390, 460], ['pincer', 592, 244]]) {
+      const pattern = h.api.tentaclePatterns.find(pattern => pattern.id === kind);
+      Object.assign(third.finale.tentacle, { kind, title: pattern.title, hint: pattern.hint, paths: clone(pattern.paths), safeZone: clone(pattern.safeZone), phase: 'active', duration: 2.5, time: 2 });
+      render(third, kind, width, height);
+    }
     return frames;
   });
 }

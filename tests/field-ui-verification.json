@@ -1,0 +1,289 @@
+{
+  "module": "citadel-field-ui-v1.7.0.js",
+  "sha256": "fb2b2545d45aaad74c1009bf2bd3b775ca6b897c9baf027f2c7cff5de0b02bed",
+  "qa": "Node VM + actual native Canvas; no browser QA",
+  "results": [
+    {
+      "core": "atlas-v1.3.5.js",
+      "passed": 10,
+      "tests": [
+        "real board kill: events, score and engine toast schema preserved",
+        "HUD and decisions remain the original functions; unrelated notices use original DOM",
+        "short lifetime, repeated interceptions do not extend it, explicit quiet interval",
+        "pause, terminal review, hidden page and restored toast never replay a notice",
+        "finale/MRG notices and engine state remain outside the field module",
+        "native Canvas: original HUD pixels retained, compact below-player bounds at four viewport/DPR modes",
+        "long labels, edge/camera positions, no overlap with the player or top/bottom HUD",
+        "pulse notice is short, FX-off keeps information and introduces no engine properties",
+        "idle field has exactly the original HUD pixels and storage remains untouched",
+        "actual deck before/after composites"
+      ],
+      "frames": [
+        {
+          "file": "atlas-v1.3.5-before-1280x720.png",
+          "width": 1280,
+          "height": 720,
+          "phase": "boarding",
+          "status": "boarding",
+          "hero": [
+            0,
+            0,
+            20
+          ],
+          "event": "ПОТОК ПЕРЕХВАЧЕН",
+          "bounds": null,
+          "baseline": "Actual native scene/HUD; original DOM toast reconstructed from frozen CSS"
+        },
+        {
+          "file": "atlas-v1.3.5-after-1280x720.png",
+          "width": 1280,
+          "height": 720,
+          "phase": "boarding",
+          "status": "boarding",
+          "hero": [
+            0,
+            0,
+            20
+          ],
+          "event": "ПОТОК ПЕРЕХВАЧЕН",
+          "bounds": {
+            "x": 497.6694180694693,
+            "y": 426.4341363926264,
+            "width": 205,
+            "height": 24,
+            "heroX": 600.1694180694693,
+            "heroY": 415.4341363926264,
+            "viewportWidth": 1280,
+            "viewportHeight": 720,
+            "text": "Поток перехвачен · Снайпер",
+            "mobile": false
+          },
+          "baseline": "Actual native scene/HUD with the production field-ui module"
+        },
+        {
+          "file": "atlas-v1.3.5-before-390x460.png",
+          "width": 390,
+          "height": 460,
+          "phase": "boarding",
+          "status": "boarding",
+          "hero": [
+            0,
+            0,
+            20
+          ],
+          "event": "ПОТОК ПЕРЕХВАЧЕН",
+          "bounds": null,
+          "baseline": "Actual native scene/HUD; original DOM toast reconstructed from frozen CSS"
+        },
+        {
+          "file": "atlas-v1.3.5-after-390x460.png",
+          "width": 390,
+          "height": 460,
+          "phase": "boarding",
+          "status": "boarding",
+          "hero": [
+            0,
+            0,
+            20
+          ],
+          "event": "ПОТОК ПЕРЕХВАЧЕН",
+          "bounds": {
+            "x": 75.05268376660538,
+            "y": 276.4162538064002,
+            "width": 189,
+            "height": 22,
+            "heroX": 169.55268376660538,
+            "heroY": 265.4162538064002,
+            "viewportWidth": 390,
+            "viewportHeight": 460,
+            "text": "Поток перехвачен · Снайпер",
+            "mobile": true
+          },
+          "baseline": "Actual native scene/HUD with the production field-ui module"
+        },
+        {
+          "file": "atlas-v1.3.5-before-592x244.png",
+          "width": 592,
+          "height": 244,
+          "phase": "boarding",
+          "status": "boarding",
+          "hero": [
+            0,
+            0,
+            20
+          ],
+          "event": "ПОТОК ПЕРЕХВАЧЕН",
+          "bounds": null,
+          "baseline": "Actual native scene/HUD; original DOM toast reconstructed from frozen CSS"
+        },
+        {
+          "file": "atlas-v1.3.5-after-592x244.png",
+          "width": 592,
+          "height": 244,
+          "phase": "boarding",
+          "status": "boarding",
+          "hero": [
+            0,
+            0,
+            20
+          ],
+          "event": "ПОТОК ПЕРЕХВАЧЕН",
+          "bounds": {
+            "x": 188.00185834576462,
+            "y": 151.78601288861228,
+            "width": 189,
+            "height": 22,
+            "heroX": 282.5018583457646,
+            "heroY": 140.78601288861228,
+            "viewportWidth": 592,
+            "viewportHeight": 244,
+            "text": "Поток перехвачен · Снайпер",
+            "mobile": true
+          },
+          "baseline": "Actual native scene/HUD with the production field-ui module"
+        }
+      ]
+    },
+    {
+      "core": "engine-v1.2.1.js",
+      "passed": 10,
+      "tests": [
+        "real board kill: events, score and engine toast schema preserved",
+        "HUD and decisions remain the original functions; unrelated notices use original DOM",
+        "short lifetime, repeated interceptions do not extend it, explicit quiet interval",
+        "pause, terminal review, hidden page and restored toast never replay a notice",
+        "finale/MRG notices and engine state remain outside the field module",
+        "native Canvas: original HUD pixels retained, compact below-player bounds at four viewport/DPR modes",
+        "long labels, edge/camera positions, no overlap with the player or top/bottom HUD",
+        "pulse notice is short, FX-off keeps information and introduces no engine properties",
+        "idle field has exactly the original HUD pixels and storage remains untouched",
+        "actual deck before/after composites"
+      ],
+      "frames": [
+        {
+          "file": "engine-v1.2.1-before-1280x720.png",
+          "width": 1280,
+          "height": 720,
+          "phase": "boarding",
+          "status": "boarding",
+          "hero": [
+            0,
+            0,
+            20
+          ],
+          "event": "ПОТОК ПЕРЕХВАЧЕН",
+          "bounds": null,
+          "baseline": "Actual native scene/HUD; original DOM toast reconstructed from frozen CSS"
+        },
+        {
+          "file": "engine-v1.2.1-after-1280x720.png",
+          "width": 1280,
+          "height": 720,
+          "phase": "boarding",
+          "status": "boarding",
+          "hero": [
+            0,
+            0,
+            20
+          ],
+          "event": "ПОТОК ПЕРЕХВАЧЕН",
+          "bounds": {
+            "x": 497.6694180694693,
+            "y": 426.4341363926264,
+            "width": 205,
+            "height": 24,
+            "heroX": 600.1694180694693,
+            "heroY": 415.4341363926264,
+            "viewportWidth": 1280,
+            "viewportHeight": 720,
+            "text": "Поток перехвачен · Снайпер",
+            "mobile": false
+          },
+          "baseline": "Actual native scene/HUD with the production field-ui module"
+        },
+        {
+          "file": "engine-v1.2.1-before-390x460.png",
+          "width": 390,
+          "height": 460,
+          "phase": "boarding",
+          "status": "boarding",
+          "hero": [
+            0,
+            0,
+            20
+          ],
+          "event": "ПОТОК ПЕРЕХВАЧЕН",
+          "bounds": null,
+          "baseline": "Actual native scene/HUD; original DOM toast reconstructed from frozen CSS"
+        },
+        {
+          "file": "engine-v1.2.1-after-390x460.png",
+          "width": 390,
+          "height": 460,
+          "phase": "boarding",
+          "status": "boarding",
+          "hero": [
+            0,
+            0,
+            20
+          ],
+          "event": "ПОТОК ПЕРЕХВАЧЕН",
+          "bounds": {
+            "x": 75.05268376660538,
+            "y": 276.4162538064002,
+            "width": 189,
+            "height": 22,
+            "heroX": 169.55268376660538,
+            "heroY": 265.4162538064002,
+            "viewportWidth": 390,
+            "viewportHeight": 460,
+            "text": "Поток перехвачен · Снайпер",
+            "mobile": true
+          },
+          "baseline": "Actual native scene/HUD with the production field-ui module"
+        },
+        {
+          "file": "engine-v1.2.1-before-592x244.png",
+          "width": 592,
+          "height": 244,
+          "phase": "boarding",
+          "status": "boarding",
+          "hero": [
+            0,
+            0,
+            20
+          ],
+          "event": "ПОТОК ПЕРЕХВАЧЕН",
+          "bounds": null,
+          "baseline": "Actual native scene/HUD; original DOM toast reconstructed from frozen CSS"
+        },
+        {
+          "file": "engine-v1.2.1-after-592x244.png",
+          "width": 592,
+          "height": 244,
+          "phase": "boarding",
+          "status": "boarding",
+          "hero": [
+            0,
+            0,
+            20
+          ],
+          "event": "ПОТОК ПЕРЕХВАЧЕН",
+          "bounds": {
+            "x": 188.00185834576462,
+            "y": 151.78601288861228,
+            "width": 189,
+            "height": 22,
+            "heroX": 282.5018583457646,
+            "heroY": 140.78601288861228,
+            "viewportWidth": 592,
+            "viewportHeight": 244,
+            "text": "Поток перехвачен · Снайпер",
+            "mobile": true
+          },
+          "baseline": "Actual native scene/HUD with the production field-ui module"
+        }
+      ]
+    }
+  ]
+}

@@ -1,1231 +1,838 @@
-{
-  "version": "1.6.0",
-  "method": "Node VM over the actual public and old admin cores; native Canvas projection; source-level CSS review. No browser/preview or human play session.",
-  "files": {
-    "assets/citadel-mrg-v1.6.0.js": "333d944e05cb6a7ef60fbf899ff62f4fe54357ee1f0d544cd0913d312d1fcc54",
-    "assets/citadel-mrg-view-v1.6.0.js": "fc294a62c36c8875fd3e9ba36baa31a7934d9fab714bb7ab74aa915a180f39c6",
-    "assets/citadel-mrg-viewport-v1.6.0.css": "60426620a6f3e82d0893fd5dbeb3c3f21b1b398f343ed5311566c4fc02a9c367"
-  },
-  "regression": [
-    {
-      "core": "atlas-v1.3.5.js",
-      "version": "1.6.0",
-      "tests": [
-        {
-          "name": "wave HP doubles exactly and each batch has three distinct roles with TV/BS/SH",
-          "ok": true
-        },
-        {
-          "name": "soldiers emerge sequentially from MRG and later batches stay queued for seven seconds",
-          "ok": true
-        },
-        {
-          "name": "HP gates require current enemies and all queued batches; projectile floods cannot skip waves",
-          "ok": true
-        },
-        {
-          "name": "final queued soldiers prevent defeat/upload; a completed battle awards only once",
-          "ok": true
-        },
-        {
-          "name": "default fire and grenades stay horizontal in the facing direction, including guide mode",
-          "ok": true
-        },
-        {
-          "name": "real pointer projection and arcadeInput produce an oblique manual shot through Z=0",
-          "ok": true
-        },
-        {
-          "name": "aimed empty space stays empty: no snap, target selection or homing after firing",
-          "ok": true
-        },
-        {
-          "name": "real straight bullets kill on the firing line and miss targets above it; FX remain wired",
-          "ok": true
-        },
-        {
-          "name": "damage remains multiplied once by wave, with independent assist/armor reductions",
-          "ok": true,
-          "data": [
-            {
-              "wave": 1,
-              "kind": "fan",
-              "damage": 10
-            },
-            {
-              "wave": 1,
-              "kind": "floor",
-              "damage": 16
-            },
-            {
-              "wave": 1,
-              "kind": "beam",
-              "damage": 22
-            },
-            {
-              "wave": 1,
-              "kind": "contact",
-              "damage": 18
-            },
-            {
-              "wave": 2,
-              "kind": "fan",
-              "damage": 20
-            },
-            {
-              "wave": 2,
-              "kind": "floor",
-              "damage": 32
-            },
-            {
-              "wave": 2,
-              "kind": "beam",
-              "damage": 44
-            },
-            {
-              "wave": 2,
-              "kind": "contact",
-              "damage": 36
-            },
-            {
-              "wave": 3,
-              "kind": "fan",
-              "damage": 40
-            },
-            {
-              "wave": 3,
-              "kind": "floor",
-              "damage": 64
-            },
-            {
-              "wave": 3,
-              "kind": "beam",
-              "damage": 88
-            },
-            {
-              "wave": 3,
-              "kind": "contact",
-              "damage": 72
-            }
-          ]
-        },
-        {
-          "name": "jumper has real airborne motion and bolts; knife chases and telegraphs a timed physical strike",
-          "ok": true,
-          "data": {
-            "jumperMaxY": 9.217777777777764,
-            "phases": [
-              "grounded",
-              "rising",
-              "falling"
-            ],
-            "knifeDamage": 14
+[
+  {
+    "core": "atlas-v1.3.5.js",
+    "version": "1.7.0",
+    "sources": {
+      "core": {
+        "file": "atlas-v1.3.5.js",
+        "sha256": "af1f9024313d1ecb798edc19b5039407049916d094c88426f85ba852ac077be8"
+      },
+      "mechanics": {
+        "file": "citadel-mrg-v1.7.0.js",
+        "sha256": "1e2decb0c05426cc0989286558d109235e5f35381a153342434f9400b2d16964"
+      },
+      "view": {
+        "file": "citadel-mrg-view-v1.7.0.js",
+        "sha256": "e82fcc77edafcda95364d3851be748c863c23e6677d43f39c75963d265c0797b"
+      }
+    },
+    "tests": [
+      {
+        "name": "wave HP still doubles, the lighter roster is 3/4/6, and role variety with TV/BS/SH remains",
+        "ok": true
+      },
+      {
+        "name": "soldiers emerge sequentially from MRG and later batches stay queued for seven seconds",
+        "ok": true
+      },
+      {
+        "name": "HP gates require current enemies and all queued batches; projectile floods cannot skip waves",
+        "ok": true
+      },
+      {
+        "name": "final queued soldiers prevent defeat/upload; a completed battle awards only once",
+        "ok": true
+      },
+      {
+        "name": "default fire and grenades stay horizontal in the facing direction, including guide mode",
+        "ok": true
+      },
+      {
+        "name": "real pointer projection and arcadeInput produce an oblique manual shot through Z=0",
+        "ok": true
+      },
+      {
+        "name": "aimed empty space stays empty: no snap, target selection or homing after firing",
+        "ok": true
+      },
+      {
+        "name": "real straight bullets kill on the firing line and miss targets above it; FX remain wired",
+        "ok": true
+      },
+      {
+        "name": "damage remains multiplied once by wave, with independent assist/armor reductions",
+        "ok": true,
+        "data": [
+          {
+            "wave": 1,
+            "kind": "fan",
+            "damage": 10
+          },
+          {
+            "wave": 1,
+            "kind": "floor",
+            "damage": 16
+          },
+          {
+            "wave": 1,
+            "kind": "beam",
+            "damage": 22
+          },
+          {
+            "wave": 1,
+            "kind": "contact",
+            "damage": 18
+          },
+          {
+            "wave": 2,
+            "kind": "fan",
+            "damage": 20
+          },
+          {
+            "wave": 2,
+            "kind": "floor",
+            "damage": 32
+          },
+          {
+            "wave": 2,
+            "kind": "beam",
+            "damage": 44
+          },
+          {
+            "wave": 2,
+            "kind": "contact",
+            "damage": 36
+          },
+          {
+            "wave": 3,
+            "kind": "fan",
+            "damage": 40
+          },
+          {
+            "wave": 3,
+            "kind": "floor",
+            "damage": 64
+          },
+          {
+            "wave": 3,
+            "kind": "beam",
+            "damage": 88
+          },
+          {
+            "wave": 3,
+            "kind": "contact",
+            "damage": 72
           }
-        },
-        {
-          "name": "rocketeer locks a visible aim, launches a straight rocket and creates a real splash blast",
-          "ok": true,
-          "data": [
-            {
-              "wave": 1,
-              "damage": 16
-            },
-            {
-              "wave": 2,
-              "damage": 32
-            },
-            {
-              "wave": 3,
-              "damage": 64
-            }
-          ]
-        },
-        {
-          "name": "tentacle warning gives enough time to retreat from the right side and only active phase damages",
-          "ok": true,
-          "data": {
-            "warningSeconds": 5.2,
-            "escapeSeconds": 3.7,
-            "safeX": -24
+        ]
+      },
+      {
+        "name": "jumper has real airborne motion and bolts; knife chases and telegraphs a timed physical strike",
+        "ok": true,
+        "data": {
+          "jumperMaxY": 9.217777777777764,
+          "phases": [
+            "grounded",
+            "rising",
+            "falling"
+          ],
+          "knifeDamage": 14
+        }
+      },
+      {
+        "name": "rocketeer locks a visible aim, launches a straight rocket and creates a real splash blast",
+        "ok": true,
+        "data": [
+          {
+            "wave": 1,
+            "damage": 16
+          },
+          {
+            "wave": 2,
+            "damage": 32
+          },
+          {
+            "wave": 3,
+            "damage": 64
           }
-        },
-        {
-          "name": "tentacles repeat periodically and pause freezes warning and active collisions",
-          "ok": true,
-          "data": {
-            "warningTimes": [
-              0.016666666666666666,
-              14.066666666666945,
-              28.11666666666635
-            ]
-          }
-        },
-        {
-          "name": "moving platforms still carry in X/Y, detach on jump/drop and reset with batches on retry",
-          "ok": true
-        },
-        {
-          "name": "current JSON preserves pending batches, AI timers, rockets, manual aim and deterministic continuation",
-          "ok": true
-        },
-        {
-          "name": "1.5 checkpoints retain health fractions, dead soldiers, position and score while adding required new batches",
-          "ok": true
-        },
-        {
-          "name": "real manual-input operator wins normal and calm with all eighteen soldiers and no health/resource cheats",
-          "ok": true,
-          "data": [
-            {
-              "assist": false,
-              "phase": "upload",
-              "status": "docking",
-              "seconds": 63.699999999997665,
-              "hp": 100,
-              "minHp": 100,
-              "kills": 18,
-              "bossHp": 0,
-              "pendingSoldiers": 0,
-              "transitions": [
-                {
-                  "wave": 1,
-                  "time": 0
-                },
-                {
-                  "wave": 2,
-                  "time": 14.116666666666948
-                },
-                {
-                  "wave": 3,
-                  "time": 31.683333333332815
-                }
-              ]
-            },
-            {
-              "assist": true,
-              "phase": "upload",
-              "status": "docking",
-              "seconds": 54.48333333333152,
-              "hp": 100,
-              "minHp": 100,
-              "kills": 18,
-              "bossHp": 0,
-              "pendingSoldiers": 0,
-              "transitions": [
-                {
-                  "wave": 1,
-                  "time": 0
-                },
-                {
-                  "wave": 2,
-                  "time": 12.5000000000002
-                },
-                {
-                  "wave": 3,
-                  "time": 26.749999999999762
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "scene uses clean physical slabs, distinct roles, named soldiers and actual danger geometry even with FX off",
-          "ok": true
-        },
-        {
-          "name": "native Canvas composites keep health, batches and named soldiers visible at desktop, portrait and short sizes",
-          "ok": true,
-          "data": [
-            {
-              "filename": "atlas-v1.3.5-emerging-592x244.png",
-              "width": 592,
-              "height": 244,
-              "health": "ЗДОРОВЬЕ 100%",
-              "healthTop": 11.5,
-              "healthBottom": 22.5,
-              "textCount": 7
-            },
-            {
-              "filename": "atlas-v1.3.5-roles-1280x720.png",
-              "width": 1280,
-              "height": 720,
-              "health": "ЗДОРОВЬЕ 100%",
-              "healthTop": 17,
-              "healthBottom": 29,
-              "textCount": 7
-            },
-            {
-              "filename": "atlas-v1.3.5-warning-592x244.png",
-              "width": 592,
-              "height": 244,
-              "health": "ЗДОРОВЬЕ 43%",
-              "healthTop": 11.5,
-              "healthBottom": 22.5,
-              "textCount": 8
-            },
-            {
-              "filename": "atlas-v1.3.5-tentacles-1280x720.png",
-              "width": 1280,
-              "height": 720,
-              "health": "ЗДОРОВЬЕ 43%",
-              "healthTop": 17,
-              "healthBottom": 29,
-              "textCount": 8
-            },
-            {
-              "filename": "atlas-v1.3.5-tentacles-390x460.png",
-              "width": 390,
-              "height": 460,
-              "health": "ЗДОРОВЬЕ 43%",
-              "healthTop": 17,
-              "healthBottom": 29,
-              "textCount": 8
-            },
-            {
-              "filename": "atlas-v1.3.5-tentacles-592x244.png",
-              "width": 592,
-              "height": 244,
-              "health": "ЗДОРОВЬЕ 43%",
-              "healthTop": 11.5,
-              "healthBottom": 22.5,
-              "textCount": 8
-            }
+        ]
+      },
+      {
+        "name": "tentacle warning gives enough time to retreat from the right side and only active phase damages",
+        "ok": true,
+        "data": {
+          "warningSeconds": 5.2,
+          "escapeSeconds": 3.7,
+          "safeX": -24
+        }
+      },
+      {
+        "name": "all three tentacle patterns rotate periodically and pause freezes warning and active collisions",
+        "ok": true,
+        "data": {
+          "warningTimes": [
+            0.016666666666666666,
+            14.066666666666945,
+            28.11666666666635,
+            42.166666666665556
+          ],
+          "patterns": [
+            "sweep",
+            "crown",
+            "pincer",
+            "sweep"
           ]
         }
-      ]
-    },
-    {
-      "core": "engine-v1.2.1.js",
-      "version": "1.6.0",
-      "tests": [
-        {
-          "name": "wave HP doubles exactly and each batch has three distinct roles with TV/BS/SH",
-          "ok": true
-        },
-        {
-          "name": "soldiers emerge sequentially from MRG and later batches stay queued for seven seconds",
-          "ok": true
-        },
-        {
-          "name": "HP gates require current enemies and all queued batches; projectile floods cannot skip waves",
-          "ok": true
-        },
-        {
-          "name": "final queued soldiers prevent defeat/upload; a completed battle awards only once",
-          "ok": true
-        },
-        {
-          "name": "default fire and grenades stay horizontal in the facing direction, including guide mode",
-          "ok": true
-        },
-        {
-          "name": "real pointer projection and arcadeInput produce an oblique manual shot through Z=0",
-          "ok": true
-        },
-        {
-          "name": "aimed empty space stays empty: no snap, target selection or homing after firing",
-          "ok": true
-        },
-        {
-          "name": "real straight bullets kill on the firing line and miss targets above it; FX remain wired",
-          "ok": true
-        },
-        {
-          "name": "damage remains multiplied once by wave, with independent assist/armor reductions",
-          "ok": true,
-          "data": [
-            {
-              "wave": 1,
-              "kind": "fan",
-              "damage": 10
-            },
-            {
-              "wave": 1,
-              "kind": "floor",
-              "damage": 16
-            },
-            {
-              "wave": 1,
-              "kind": "beam",
-              "damage": 22
-            },
-            {
-              "wave": 1,
-              "kind": "contact",
-              "damage": 18
-            },
-            {
-              "wave": 2,
-              "kind": "fan",
-              "damage": 20
-            },
-            {
-              "wave": 2,
-              "kind": "floor",
-              "damage": 32
-            },
-            {
-              "wave": 2,
-              "kind": "beam",
-              "damage": 44
-            },
-            {
-              "wave": 2,
-              "kind": "contact",
-              "damage": 36
-            },
-            {
-              "wave": 3,
-              "kind": "fan",
-              "damage": 40
-            },
-            {
-              "wave": 3,
-              "kind": "floor",
-              "damage": 64
-            },
-            {
-              "wave": 3,
-              "kind": "beam",
-              "damage": 88
-            },
-            {
-              "wave": 3,
-              "kind": "contact",
-              "damage": 72
+      },
+      {
+        "name": "curved tentacles damage their actual bends only when active; green corridors and other gaps stay safe",
+        "ok": true,
+        "data": [
+          {
+            "kind": "crown",
+            "wave": 1,
+            "damage": 18,
+            "safeZone": {
+              "minX": -18,
+              "maxX": -10,
+              "maxY": 4
             }
-          ]
-        },
-        {
-          "name": "jumper has real airborne motion and bolts; knife chases and telegraphs a timed physical strike",
-          "ok": true,
-          "data": {
-            "jumperMaxY": 9.217777777777764,
-            "phases": [
-              "grounded",
-              "rising",
-              "falling"
-            ],
-            "knifeDamage": 14
-          }
-        },
-        {
-          "name": "rocketeer locks a visible aim, launches a straight rocket and creates a real splash blast",
-          "ok": true,
-          "data": [
-            {
-              "wave": 1,
-              "damage": 16
-            },
-            {
-              "wave": 2,
-              "damage": 32
-            },
-            {
-              "wave": 3,
-              "damage": 64
+          },
+          {
+            "kind": "crown",
+            "wave": 2,
+            "damage": 36,
+            "safeZone": {
+              "minX": -18,
+              "maxX": -10,
+              "maxY": 4
             }
-          ]
-        },
-        {
-          "name": "tentacle warning gives enough time to retreat from the right side and only active phase damages",
-          "ok": true,
-          "data": {
-            "warningSeconds": 5.2,
-            "escapeSeconds": 3.7,
-            "safeX": -24
+          },
+          {
+            "kind": "crown",
+            "wave": 3,
+            "damage": 72,
+            "safeZone": {
+              "minX": -18,
+              "maxX": -10,
+              "maxY": 4
+            }
+          },
+          {
+            "kind": "pincer",
+            "wave": 1,
+            "damage": 18,
+            "safeZone": {
+              "minX": -10,
+              "maxX": -2,
+              "maxY": 4
+            }
+          },
+          {
+            "kind": "pincer",
+            "wave": 2,
+            "damage": 36,
+            "safeZone": {
+              "minX": -10,
+              "maxX": -2,
+              "maxY": 4
+            }
+          },
+          {
+            "kind": "pincer",
+            "wave": 3,
+            "damage": 72,
+            "safeZone": {
+              "minX": -10,
+              "maxX": -2,
+              "maxY": 4
+            }
           }
-        },
-        {
-          "name": "tentacles repeat periodically and pause freezes warning and active collisions",
-          "ok": true,
-          "data": {
-            "warningTimes": [
-              0.016666666666666666,
-              14.066666666666945,
-              28.11666666666635
+        ]
+      },
+      {
+        "name": "each curved warning allows a ground retreat from the right edge; bending geometry is finite and JSON safe",
+        "ok": true
+      },
+      {
+        "name": "moving platforms still carry in X/Y, detach on jump/drop and reset with batches on retry",
+        "ok": true
+      },
+      {
+        "name": "current JSON preserves pending batches, AI timers, rockets, manual aim and deterministic continuation",
+        "ok": true
+      },
+      {
+        "name": "1.5 checkpoints retain health fractions, dead soldiers, position and score while adding required new batches",
+        "ok": true
+      },
+      {
+        "name": "1.6 checkpoints reduce the roster without losing completed kills from removed tail slots or awarding again",
+        "ok": true,
+        "data": [
+          {
+            "wave": 2,
+            "before": 6,
+            "after": 4,
+            "savedDead": 2
+          },
+          {
+            "wave": 3,
+            "before": 9,
+            "after": 6,
+            "savedDead": 3
+          }
+        ]
+      },
+      {
+        "name": "real manual-input operator wins normal and calm with all thirteen soldiers and no health/resource cheats",
+        "ok": true,
+        "data": [
+          {
+            "assist": false,
+            "phase": "upload",
+            "status": "docking",
+            "seconds": 56.44999999999808,
+            "hp": 100,
+            "minHp": 100,
+            "kills": 13,
+            "bossHp": 0,
+            "pendingSoldiers": 0,
+            "transitions": [
+              {
+                "wave": 1,
+                "time": 0
+              },
+              {
+                "wave": 2,
+                "time": 14.10000000000028
+              },
+              {
+                "wave": 3,
+                "time": 29.933333333332914
+              }
+            ]
+          },
+          {
+            "assist": true,
+            "phase": "upload",
+            "status": "docking",
+            "seconds": 47.98333333333189,
+            "hp": 100,
+            "minHp": 100,
+            "kills": 13,
+            "bossHp": 0,
+            "pendingSoldiers": 0,
+            "transitions": [
+              {
+                "wave": 1,
+                "time": 0
+              },
+              {
+                "wave": 2,
+                "time": 12.5000000000002
+              },
+              {
+                "wave": 3,
+                "time": 27.133333333333074
+              }
             ]
           }
-        },
-        {
-          "name": "moving platforms still carry in X/Y, detach on jump/drop and reset with batches on retry",
-          "ok": true
-        },
-        {
-          "name": "current JSON preserves pending batches, AI timers, rockets, manual aim and deterministic continuation",
-          "ok": true
-        },
-        {
-          "name": "1.5 checkpoints retain health fractions, dead soldiers, position and score while adding required new batches",
-          "ok": true
-        },
-        {
-          "name": "real manual-input operator wins normal and calm with all eighteen soldiers and no health/resource cheats",
-          "ok": true,
-          "data": [
-            {
-              "assist": false,
-              "phase": "upload",
-              "status": "docking",
-              "seconds": 63.699999999997665,
-              "hp": 100,
-              "minHp": 100,
-              "kills": 18,
-              "bossHp": 0,
-              "pendingSoldiers": 0,
-              "transitions": [
-                {
-                  "wave": 1,
-                  "time": 0
-                },
-                {
-                  "wave": 2,
-                  "time": 14.116666666666948
-                },
-                {
-                  "wave": 3,
-                  "time": 31.683333333332815
-                }
-              ]
-            },
-            {
-              "assist": true,
-              "phase": "upload",
-              "status": "docking",
-              "seconds": 54.48333333333152,
-              "hp": 100,
-              "minHp": 100,
-              "kills": 18,
-              "bossHp": 0,
-              "pendingSoldiers": 0,
-              "transitions": [
-                {
-                  "wave": 1,
-                  "time": 0
-                },
-                {
-                  "wave": 2,
-                  "time": 12.5000000000002
-                },
-                {
-                  "wave": 3,
-                  "time": 26.749999999999762
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "scene uses clean physical slabs, distinct roles, named soldiers and actual danger geometry even with FX off",
-          "ok": true
-        },
-        {
-          "name": "native Canvas composites keep health, batches and named soldiers visible at desktop, portrait and short sizes",
-          "ok": true,
-          "data": [
-            {
-              "filename": "engine-v1.2.1-emerging-592x244.png",
-              "width": 592,
-              "height": 244,
-              "health": "ЗДОРОВЬЕ 100%",
-              "healthTop": 11.5,
-              "healthBottom": 22.5,
-              "textCount": 7
-            },
-            {
-              "filename": "engine-v1.2.1-roles-1280x720.png",
-              "width": 1280,
-              "height": 720,
-              "health": "ЗДОРОВЬЕ 100%",
-              "healthTop": 17,
-              "healthBottom": 29,
-              "textCount": 7
-            },
-            {
-              "filename": "engine-v1.2.1-warning-592x244.png",
-              "width": 592,
-              "height": 244,
-              "health": "ЗДОРОВЬЕ 43%",
-              "healthTop": 11.5,
-              "healthBottom": 22.5,
-              "textCount": 8
-            },
-            {
-              "filename": "engine-v1.2.1-tentacles-1280x720.png",
-              "width": 1280,
-              "height": 720,
-              "health": "ЗДОРОВЬЕ 43%",
-              "healthTop": 17,
-              "healthBottom": 29,
-              "textCount": 8
-            },
-            {
-              "filename": "engine-v1.2.1-tentacles-390x460.png",
-              "width": 390,
-              "height": 460,
-              "health": "ЗДОРОВЬЕ 43%",
-              "healthTop": 17,
-              "healthBottom": 29,
-              "textCount": 8
-            },
-            {
-              "filename": "engine-v1.2.1-tentacles-592x244.png",
-              "width": 592,
-              "height": 244,
-              "health": "ЗДОРОВЬЕ 43%",
-              "healthTop": 11.5,
-              "healthBottom": 22.5,
-              "textCount": 8
-            }
-          ]
-        }
-      ]
-    }
-  ],
-  "postViewFix": [
-    {
-      "core": "cmpon-atlas/assets/atlas-v1.3.5.js",
-      "pass": true,
-      "canvasLabel": "Existing game field",
-      "fireLabel": "Existing fire control"
-    },
-    {
-      "core": "cmpon-analytics-admin/game-lab/engine-v1.2.1.js",
-      "pass": true,
-      "canvasLabel": "Existing game field",
-      "fireLabel": "Existing fire control"
-    }
-  ],
-  "viewport": {
-    "verifiedSource": true,
-    "browserMeasured": false,
-    "assumptions": "CSS pixels; zero device safe-area insets. Landscape fieldColumn includes the two existing 1px field borders. Budget arithmetic, not measured DOM rectangles. Desktop row heights depend on fonts/content, so only fixed outer-height budgets are reported.",
-    "cascade": "New layout selector specificity 0,4,0 beats private lab 0,3,0; field specificity 0,5,0 beats private lab 0,4,0. Public entries load viewport CSS after the base; admin concatenates it after the lab stylesheet.",
-    "sourceMinimums": {
-      "desktop": 180,
-      "mobile": 160,
-      "coreDrawingBuffer": 160
-    },
-    "budgets": [
-      {
-        "width": 1440,
-        "height": 900,
-        "labBar": 0,
-        "layout": "desktop",
-        "top": 10,
-        "outerHeight": 880
+        ]
       },
       {
-        "width": 1440,
-        "height": 900,
-        "labBar": 46,
-        "layout": "desktop",
-        "top": 56,
-        "outerHeight": 834
+        "name": "scene uses clean physical slabs, distinct roles, named soldiers and actual danger geometry even with FX off",
+        "ok": true
       },
       {
-        "width": 1440,
-        "height": 900,
-        "labBar": 52,
-        "layout": "desktop",
-        "top": 62,
-        "outerHeight": 828
+        "name": "all sampled tentacle curves exactly match rendered segments, radii and safe zones in every phase with FX on or off",
+        "ok": true
       },
       {
-        "width": 1280,
-        "height": 600,
-        "labBar": 0,
-        "layout": "desktop",
-        "top": 10,
-        "outerHeight": 580
-      },
-      {
-        "width": 1280,
-        "height": 600,
-        "labBar": 46,
-        "layout": "desktop",
-        "top": 56,
-        "outerHeight": 534
-      },
-      {
-        "width": 1280,
-        "height": 600,
-        "labBar": 52,
-        "layout": "desktop",
-        "top": 62,
-        "outerHeight": 528
-      },
-      {
-        "width": 390,
-        "height": 844,
-        "labBar": 0,
-        "layout": "portrait",
-        "top": 0,
-        "outerHeight": 844,
-        "headerRows": 88,
-        "touchDock": 116,
-        "fieldHeight": 640,
-        "minimumScroll": 0
-      },
-      {
-        "width": 390,
-        "height": 844,
-        "labBar": 46,
-        "layout": "portrait",
-        "top": 46,
-        "outerHeight": 798,
-        "headerRows": 88,
-        "touchDock": 116,
-        "fieldHeight": 594,
-        "minimumScroll": 0
-      },
-      {
-        "width": 390,
-        "height": 844,
-        "labBar": 52,
-        "layout": "portrait",
-        "top": 52,
-        "outerHeight": 792,
-        "headerRows": 88,
-        "touchDock": 116,
-        "fieldHeight": 588,
-        "minimumScroll": 0
-      },
-      {
-        "width": 844,
-        "height": 390,
-        "labBar": 0,
-        "layout": "landscape",
-        "top": 0,
-        "outerHeight": 390,
-        "fieldColumn": 592,
-        "headerRows": 88,
-        "fieldHeight": 302,
-        "minimumScroll": 0
-      },
-      {
-        "width": 844,
-        "height": 390,
-        "labBar": 46,
-        "layout": "landscape",
-        "top": 46,
-        "outerHeight": 344,
-        "fieldColumn": 592,
-        "headerRows": 88,
-        "fieldHeight": 256,
-        "minimumScroll": 0
-      },
-      {
-        "width": 844,
-        "height": 390,
-        "labBar": 52,
-        "layout": "landscape",
-        "top": 52,
-        "outerHeight": 338,
-        "fieldColumn": 592,
-        "headerRows": 88,
-        "fieldHeight": 250,
-        "minimumScroll": 0
-      },
-      {
-        "width": 600,
-        "height": 240,
-        "labBar": 0,
-        "layout": "landscape",
-        "top": 0,
-        "outerHeight": 240,
-        "fieldColumn": 372,
-        "headerRows": 88,
-        "fieldHeight": 160,
-        "minimumScroll": 8
-      },
-      {
-        "width": 600,
-        "height": 240,
-        "labBar": 46,
-        "layout": "landscape",
-        "top": 46,
-        "outerHeight": 194,
-        "fieldColumn": 372,
-        "headerRows": 88,
-        "fieldHeight": 160,
-        "minimumScroll": 54
-      },
-      {
-        "width": 600,
-        "height": 240,
-        "labBar": 52,
-        "layout": "landscape",
-        "top": 52,
-        "outerHeight": 188,
-        "fieldColumn": 372,
-        "headerRows": 88,
-        "fieldHeight": 160,
-        "minimumScroll": 60
+        "name": "native Canvas composites keep health, batches and named soldiers visible at desktop, portrait and short sizes",
+        "ok": true,
+        "data": [
+          {
+            "filename": "atlas-v1.3.5-emerging-592x244.png",
+            "width": 592,
+            "height": 244,
+            "health": "ЗДОРОВЬЕ 100%",
+            "healthTop": 11.5,
+            "healthBottom": 22.5,
+            "textCount": 7
+          },
+          {
+            "filename": "atlas-v1.3.5-roles-1280x720.png",
+            "width": 1280,
+            "height": 720,
+            "health": "ЗДОРОВЬЕ 100%",
+            "healthTop": 17,
+            "healthBottom": 29,
+            "textCount": 7
+          },
+          {
+            "filename": "atlas-v1.3.5-warning-592x244.png",
+            "width": 592,
+            "height": 244,
+            "health": "ЗДОРОВЬЕ 43%",
+            "healthTop": 11.5,
+            "healthBottom": 22.5,
+            "textCount": 8
+          },
+          {
+            "filename": "atlas-v1.3.5-tentacles-1280x720.png",
+            "width": 1280,
+            "height": 720,
+            "health": "ЗДОРОВЬЕ 43%",
+            "healthTop": 17,
+            "healthBottom": 29,
+            "textCount": 8
+          },
+          {
+            "filename": "atlas-v1.3.5-tentacles-390x460.png",
+            "width": 390,
+            "height": 460,
+            "health": "ЗДОРОВЬЕ 43%",
+            "healthTop": 17,
+            "healthBottom": 29,
+            "textCount": 8
+          },
+          {
+            "filename": "atlas-v1.3.5-tentacles-592x244.png",
+            "width": 592,
+            "height": 244,
+            "health": "ЗДОРОВЬЕ 43%",
+            "healthTop": 11.5,
+            "healthBottom": 22.5,
+            "textCount": 8
+          },
+          {
+            "filename": "atlas-v1.3.5-crown-390x460.png",
+            "width": 390,
+            "height": 460,
+            "health": "ЗДОРОВЬЕ 43%",
+            "healthTop": 17,
+            "healthBottom": 29,
+            "textCount": 8
+          },
+          {
+            "filename": "atlas-v1.3.5-pincer-592x244.png",
+            "width": 592,
+            "height": 244,
+            "health": "ЗДОРОВЬЕ 43%",
+            "healthTop": 11.5,
+            "healthBottom": 22.5,
+            "textCount": 8
+          }
+        ]
       }
     ]
   },
-  "notes": [
-    "The main 19-group run used view fae2ff621265c749c40b78b751285fa23eae721d7a1b2525521db2ef2de3d76a. Final fc294a62 change removes only two optional aria-label assignments; both real transition paths were retested separately. Geometry and HUD drawing are unchanged.",
-    "The winnability operator only emits real moveX/jump/fire/aim/pulse/missile fields; no HP, ammo, cooldown, AI or gate manipulation. It is an automated test operator, not an in-game targeting feature.",
-    "Controlled fixtures may isolate collision geometry and phase transitions; the normal/calm full-win tests start from ordinary beginMRG with weapons2/armor1/rockets0, guide=false, HP100 and normal missiles."
-  ],
-  "canonicalCommand": "node tests/mrg-regression.cjs --core assets/atlas-v1.3.5.js --core ../cmpon-analytics-admin/game-lab/engine-v1.2.1.js",
-  "canonicalRegression": [
-    {
-      "core": "atlas-v1.3.5.js",
-      "version": "1.6.0",
-      "tests": [
-        {
-          "name": "wave HP doubles exactly and each batch has three distinct roles with TV/BS/SH",
-          "ok": true
-        },
-        {
-          "name": "soldiers emerge sequentially from MRG and later batches stay queued for seven seconds",
-          "ok": true
-        },
-        {
-          "name": "HP gates require current enemies and all queued batches; projectile floods cannot skip waves",
-          "ok": true
-        },
-        {
-          "name": "final queued soldiers prevent defeat/upload; a completed battle awards only once",
-          "ok": true
-        },
-        {
-          "name": "default fire and grenades stay horizontal in the facing direction, including guide mode",
-          "ok": true
-        },
-        {
-          "name": "real pointer projection and arcadeInput produce an oblique manual shot through Z=0",
-          "ok": true
-        },
-        {
-          "name": "aimed empty space stays empty: no snap, target selection or homing after firing",
-          "ok": true
-        },
-        {
-          "name": "real straight bullets kill on the firing line and miss targets above it; FX remain wired",
-          "ok": true
-        },
-        {
-          "name": "damage remains multiplied once by wave, with independent assist/armor reductions",
-          "ok": true,
-          "data": [
-            {
-              "wave": 1,
-              "kind": "fan",
-              "damage": 10
-            },
-            {
-              "wave": 1,
-              "kind": "floor",
-              "damage": 16
-            },
-            {
-              "wave": 1,
-              "kind": "beam",
-              "damage": 22
-            },
-            {
-              "wave": 1,
-              "kind": "contact",
-              "damage": 18
-            },
-            {
-              "wave": 2,
-              "kind": "fan",
-              "damage": 20
-            },
-            {
-              "wave": 2,
-              "kind": "floor",
-              "damage": 32
-            },
-            {
-              "wave": 2,
-              "kind": "beam",
-              "damage": 44
-            },
-            {
-              "wave": 2,
-              "kind": "contact",
-              "damage": 36
-            },
-            {
-              "wave": 3,
-              "kind": "fan",
-              "damage": 40
-            },
-            {
-              "wave": 3,
-              "kind": "floor",
-              "damage": 64
-            },
-            {
-              "wave": 3,
-              "kind": "beam",
-              "damage": 88
-            },
-            {
-              "wave": 3,
-              "kind": "contact",
-              "damage": 72
-            }
-          ]
-        },
-        {
-          "name": "jumper has real airborne motion and bolts; knife chases and telegraphs a timed physical strike",
-          "ok": true,
-          "data": {
-            "jumperMaxY": 9.217777777777764,
-            "phases": [
-              "grounded",
-              "rising",
-              "falling"
-            ],
-            "knifeDamage": 14
-          }
-        },
-        {
-          "name": "rocketeer locks a visible aim, launches a straight rocket and creates a real splash blast",
-          "ok": true,
-          "data": [
-            {
-              "wave": 1,
-              "damage": 16
-            },
-            {
-              "wave": 2,
-              "damage": 32
-            },
-            {
-              "wave": 3,
-              "damage": 64
-            }
-          ]
-        },
-        {
-          "name": "tentacle warning gives enough time to retreat from the right side and only active phase damages",
-          "ok": true,
-          "data": {
-            "warningSeconds": 5.2,
-            "escapeSeconds": 3.7,
-            "safeX": -24
-          }
-        },
-        {
-          "name": "tentacles repeat periodically and pause freezes warning and active collisions",
-          "ok": true,
-          "data": {
-            "warningTimes": [
-              0.016666666666666666,
-              14.066666666666945,
-              28.11666666666635
-            ]
-          }
-        },
-        {
-          "name": "moving platforms still carry in X/Y, detach on jump/drop and reset with batches on retry",
-          "ok": true
-        },
-        {
-          "name": "current JSON preserves pending batches, AI timers, rockets, manual aim and deterministic continuation",
-          "ok": true
-        },
-        {
-          "name": "1.5 checkpoints retain health fractions, dead soldiers, position and score while adding required new batches",
-          "ok": true
-        },
-        {
-          "name": "real manual-input operator wins normal and calm with all eighteen soldiers and no health/resource cheats",
-          "ok": true,
-          "data": [
-            {
-              "assist": false,
-              "phase": "upload",
-              "status": "docking",
-              "seconds": 63.699999999997665,
-              "hp": 100,
-              "minHp": 100,
-              "kills": 18,
-              "bossHp": 0,
-              "pendingSoldiers": 0,
-              "transitions": [
-                {
-                  "wave": 1,
-                  "time": 0
-                },
-                {
-                  "wave": 2,
-                  "time": 14.116666666666948
-                },
-                {
-                  "wave": 3,
-                  "time": 31.683333333332815
-                }
-              ]
-            },
-            {
-              "assist": true,
-              "phase": "upload",
-              "status": "docking",
-              "seconds": 54.48333333333152,
-              "hp": 100,
-              "minHp": 100,
-              "kills": 18,
-              "bossHp": 0,
-              "pendingSoldiers": 0,
-              "transitions": [
-                {
-                  "wave": 1,
-                  "time": 0
-                },
-                {
-                  "wave": 2,
-                  "time": 12.5000000000002
-                },
-                {
-                  "wave": 3,
-                  "time": 26.749999999999762
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "scene uses clean physical slabs, distinct roles, named soldiers and actual danger geometry even with FX off",
-          "ok": true
-        }
-      ]
+  {
+    "core": "engine-v1.2.1.js",
+    "version": "1.7.0",
+    "sources": {
+      "core": {
+        "file": "engine-v1.2.1.js",
+        "sha256": "29cf0a79c5887bbdf4e80ba2664b16d50172771f10069cb6f5d274eabbc4cbe8"
+      },
+      "mechanics": {
+        "file": "citadel-mrg-v1.7.0.js",
+        "sha256": "1e2decb0c05426cc0989286558d109235e5f35381a153342434f9400b2d16964"
+      },
+      "view": {
+        "file": "citadel-mrg-view-v1.7.0.js",
+        "sha256": "e82fcc77edafcda95364d3851be748c863c23e6677d43f39c75963d265c0797b"
+      }
     },
-    {
-      "core": "engine-v1.2.1.js",
-      "version": "1.6.0",
-      "tests": [
-        {
-          "name": "wave HP doubles exactly and each batch has three distinct roles with TV/BS/SH",
-          "ok": true
-        },
-        {
-          "name": "soldiers emerge sequentially from MRG and later batches stay queued for seven seconds",
-          "ok": true
-        },
-        {
-          "name": "HP gates require current enemies and all queued batches; projectile floods cannot skip waves",
-          "ok": true
-        },
-        {
-          "name": "final queued soldiers prevent defeat/upload; a completed battle awards only once",
-          "ok": true
-        },
-        {
-          "name": "default fire and grenades stay horizontal in the facing direction, including guide mode",
-          "ok": true
-        },
-        {
-          "name": "real pointer projection and arcadeInput produce an oblique manual shot through Z=0",
-          "ok": true
-        },
-        {
-          "name": "aimed empty space stays empty: no snap, target selection or homing after firing",
-          "ok": true
-        },
-        {
-          "name": "real straight bullets kill on the firing line and miss targets above it; FX remain wired",
-          "ok": true
-        },
-        {
-          "name": "damage remains multiplied once by wave, with independent assist/armor reductions",
-          "ok": true,
-          "data": [
-            {
-              "wave": 1,
-              "kind": "fan",
-              "damage": 10
-            },
-            {
-              "wave": 1,
-              "kind": "floor",
-              "damage": 16
-            },
-            {
-              "wave": 1,
-              "kind": "beam",
-              "damage": 22
-            },
-            {
-              "wave": 1,
-              "kind": "contact",
-              "damage": 18
-            },
-            {
-              "wave": 2,
-              "kind": "fan",
-              "damage": 20
-            },
-            {
-              "wave": 2,
-              "kind": "floor",
-              "damage": 32
-            },
-            {
-              "wave": 2,
-              "kind": "beam",
-              "damage": 44
-            },
-            {
-              "wave": 2,
-              "kind": "contact",
-              "damage": 36
-            },
-            {
-              "wave": 3,
-              "kind": "fan",
-              "damage": 40
-            },
-            {
-              "wave": 3,
-              "kind": "floor",
-              "damage": 64
-            },
-            {
-              "wave": 3,
-              "kind": "beam",
-              "damage": 88
-            },
-            {
-              "wave": 3,
-              "kind": "contact",
-              "damage": 72
-            }
-          ]
-        },
-        {
-          "name": "jumper has real airborne motion and bolts; knife chases and telegraphs a timed physical strike",
-          "ok": true,
-          "data": {
-            "jumperMaxY": 9.217777777777764,
-            "phases": [
-              "grounded",
-              "rising",
-              "falling"
-            ],
-            "knifeDamage": 14
+    "tests": [
+      {
+        "name": "wave HP still doubles, the lighter roster is 3/4/6, and role variety with TV/BS/SH remains",
+        "ok": true
+      },
+      {
+        "name": "soldiers emerge sequentially from MRG and later batches stay queued for seven seconds",
+        "ok": true
+      },
+      {
+        "name": "HP gates require current enemies and all queued batches; projectile floods cannot skip waves",
+        "ok": true
+      },
+      {
+        "name": "final queued soldiers prevent defeat/upload; a completed battle awards only once",
+        "ok": true
+      },
+      {
+        "name": "default fire and grenades stay horizontal in the facing direction, including guide mode",
+        "ok": true
+      },
+      {
+        "name": "real pointer projection and arcadeInput produce an oblique manual shot through Z=0",
+        "ok": true
+      },
+      {
+        "name": "aimed empty space stays empty: no snap, target selection or homing after firing",
+        "ok": true
+      },
+      {
+        "name": "real straight bullets kill on the firing line and miss targets above it; FX remain wired",
+        "ok": true
+      },
+      {
+        "name": "damage remains multiplied once by wave, with independent assist/armor reductions",
+        "ok": true,
+        "data": [
+          {
+            "wave": 1,
+            "kind": "fan",
+            "damage": 10
+          },
+          {
+            "wave": 1,
+            "kind": "floor",
+            "damage": 16
+          },
+          {
+            "wave": 1,
+            "kind": "beam",
+            "damage": 22
+          },
+          {
+            "wave": 1,
+            "kind": "contact",
+            "damage": 18
+          },
+          {
+            "wave": 2,
+            "kind": "fan",
+            "damage": 20
+          },
+          {
+            "wave": 2,
+            "kind": "floor",
+            "damage": 32
+          },
+          {
+            "wave": 2,
+            "kind": "beam",
+            "damage": 44
+          },
+          {
+            "wave": 2,
+            "kind": "contact",
+            "damage": 36
+          },
+          {
+            "wave": 3,
+            "kind": "fan",
+            "damage": 40
+          },
+          {
+            "wave": 3,
+            "kind": "floor",
+            "damage": 64
+          },
+          {
+            "wave": 3,
+            "kind": "beam",
+            "damage": 88
+          },
+          {
+            "wave": 3,
+            "kind": "contact",
+            "damage": 72
           }
-        },
-        {
-          "name": "rocketeer locks a visible aim, launches a straight rocket and creates a real splash blast",
-          "ok": true,
-          "data": [
-            {
-              "wave": 1,
-              "damage": 16
-            },
-            {
-              "wave": 2,
-              "damage": 32
-            },
-            {
-              "wave": 3,
-              "damage": 64
-            }
-          ]
-        },
-        {
-          "name": "tentacle warning gives enough time to retreat from the right side and only active phase damages",
-          "ok": true,
-          "data": {
-            "warningSeconds": 5.2,
-            "escapeSeconds": 3.7,
-            "safeX": -24
+        ]
+      },
+      {
+        "name": "jumper has real airborne motion and bolts; knife chases and telegraphs a timed physical strike",
+        "ok": true,
+        "data": {
+          "jumperMaxY": 9.217777777777764,
+          "phases": [
+            "grounded",
+            "rising",
+            "falling"
+          ],
+          "knifeDamage": 14
+        }
+      },
+      {
+        "name": "rocketeer locks a visible aim, launches a straight rocket and creates a real splash blast",
+        "ok": true,
+        "data": [
+          {
+            "wave": 1,
+            "damage": 16
+          },
+          {
+            "wave": 2,
+            "damage": 32
+          },
+          {
+            "wave": 3,
+            "damage": 64
           }
-        },
-        {
-          "name": "tentacles repeat periodically and pause freezes warning and active collisions",
-          "ok": true,
-          "data": {
-            "warningTimes": [
-              0.016666666666666666,
-              14.066666666666945,
-              28.11666666666635
+        ]
+      },
+      {
+        "name": "tentacle warning gives enough time to retreat from the right side and only active phase damages",
+        "ok": true,
+        "data": {
+          "warningSeconds": 5.2,
+          "escapeSeconds": 3.7,
+          "safeX": -24
+        }
+      },
+      {
+        "name": "all three tentacle patterns rotate periodically and pause freezes warning and active collisions",
+        "ok": true,
+        "data": {
+          "warningTimes": [
+            0.016666666666666666,
+            14.066666666666945,
+            28.11666666666635,
+            42.166666666665556
+          ],
+          "patterns": [
+            "sweep",
+            "crown",
+            "pincer",
+            "sweep"
+          ]
+        }
+      },
+      {
+        "name": "curved tentacles damage their actual bends only when active; green corridors and other gaps stay safe",
+        "ok": true,
+        "data": [
+          {
+            "kind": "crown",
+            "wave": 1,
+            "damage": 18,
+            "safeZone": {
+              "minX": -18,
+              "maxX": -10,
+              "maxY": 4
+            }
+          },
+          {
+            "kind": "crown",
+            "wave": 2,
+            "damage": 36,
+            "safeZone": {
+              "minX": -18,
+              "maxX": -10,
+              "maxY": 4
+            }
+          },
+          {
+            "kind": "crown",
+            "wave": 3,
+            "damage": 72,
+            "safeZone": {
+              "minX": -18,
+              "maxX": -10,
+              "maxY": 4
+            }
+          },
+          {
+            "kind": "pincer",
+            "wave": 1,
+            "damage": 18,
+            "safeZone": {
+              "minX": -10,
+              "maxX": -2,
+              "maxY": 4
+            }
+          },
+          {
+            "kind": "pincer",
+            "wave": 2,
+            "damage": 36,
+            "safeZone": {
+              "minX": -10,
+              "maxX": -2,
+              "maxY": 4
+            }
+          },
+          {
+            "kind": "pincer",
+            "wave": 3,
+            "damage": 72,
+            "safeZone": {
+              "minX": -10,
+              "maxX": -2,
+              "maxY": 4
+            }
+          }
+        ]
+      },
+      {
+        "name": "each curved warning allows a ground retreat from the right edge; bending geometry is finite and JSON safe",
+        "ok": true
+      },
+      {
+        "name": "moving platforms still carry in X/Y, detach on jump/drop and reset with batches on retry",
+        "ok": true
+      },
+      {
+        "name": "current JSON preserves pending batches, AI timers, rockets, manual aim and deterministic continuation",
+        "ok": true
+      },
+      {
+        "name": "1.5 checkpoints retain health fractions, dead soldiers, position and score while adding required new batches",
+        "ok": true
+      },
+      {
+        "name": "1.6 checkpoints reduce the roster without losing completed kills from removed tail slots or awarding again",
+        "ok": true,
+        "data": [
+          {
+            "wave": 2,
+            "before": 6,
+            "after": 4,
+            "savedDead": 2
+          },
+          {
+            "wave": 3,
+            "before": 9,
+            "after": 6,
+            "savedDead": 3
+          }
+        ]
+      },
+      {
+        "name": "real manual-input operator wins normal and calm with all thirteen soldiers and no health/resource cheats",
+        "ok": true,
+        "data": [
+          {
+            "assist": false,
+            "phase": "upload",
+            "status": "docking",
+            "seconds": 56.44999999999808,
+            "hp": 100,
+            "minHp": 100,
+            "kills": 13,
+            "bossHp": 0,
+            "pendingSoldiers": 0,
+            "transitions": [
+              {
+                "wave": 1,
+                "time": 0
+              },
+              {
+                "wave": 2,
+                "time": 14.10000000000028
+              },
+              {
+                "wave": 3,
+                "time": 29.933333333332914
+              }
+            ]
+          },
+          {
+            "assist": true,
+            "phase": "upload",
+            "status": "docking",
+            "seconds": 47.98333333333189,
+            "hp": 100,
+            "minHp": 100,
+            "kills": 13,
+            "bossHp": 0,
+            "pendingSoldiers": 0,
+            "transitions": [
+              {
+                "wave": 1,
+                "time": 0
+              },
+              {
+                "wave": 2,
+                "time": 12.5000000000002
+              },
+              {
+                "wave": 3,
+                "time": 27.133333333333074
+              }
             ]
           }
-        },
-        {
-          "name": "moving platforms still carry in X/Y, detach on jump/drop and reset with batches on retry",
-          "ok": true
-        },
-        {
-          "name": "current JSON preserves pending batches, AI timers, rockets, manual aim and deterministic continuation",
-          "ok": true
-        },
-        {
-          "name": "1.5 checkpoints retain health fractions, dead soldiers, position and score while adding required new batches",
-          "ok": true
-        },
-        {
-          "name": "real manual-input operator wins normal and calm with all eighteen soldiers and no health/resource cheats",
-          "ok": true,
-          "data": [
-            {
-              "assist": false,
-              "phase": "upload",
-              "status": "docking",
-              "seconds": 63.699999999997665,
-              "hp": 100,
-              "minHp": 100,
-              "kills": 18,
-              "bossHp": 0,
-              "pendingSoldiers": 0,
-              "transitions": [
-                {
-                  "wave": 1,
-                  "time": 0
-                },
-                {
-                  "wave": 2,
-                  "time": 14.116666666666948
-                },
-                {
-                  "wave": 3,
-                  "time": 31.683333333332815
-                }
-              ]
-            },
-            {
-              "assist": true,
-              "phase": "upload",
-              "status": "docking",
-              "seconds": 54.48333333333152,
-              "hp": 100,
-              "minHp": 100,
-              "kills": 18,
-              "bossHp": 0,
-              "pendingSoldiers": 0,
-              "transitions": [
-                {
-                  "wave": 1,
-                  "time": 0
-                },
-                {
-                  "wave": 2,
-                  "time": 12.5000000000002
-                },
-                {
-                  "wave": 3,
-                  "time": 26.749999999999762
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "scene uses clean physical slabs, distinct roles, named soldiers and actual danger geometry even with FX off",
-          "ok": true
-        }
-      ]
-    }
-  ],
-  "recordsRegression": "PASS: concurrent records1.1.1 still works with the updated createHarness"
-}
+        ]
+      },
+      {
+        "name": "scene uses clean physical slabs, distinct roles, named soldiers and actual danger geometry even with FX off",
+        "ok": true
+      },
+      {
+        "name": "all sampled tentacle curves exactly match rendered segments, radii and safe zones in every phase with FX on or off",
+        "ok": true
+      },
+      {
+        "name": "native Canvas composites keep health, batches and named soldiers visible at desktop, portrait and short sizes",
+        "ok": true,
+        "data": [
+          {
+            "filename": "engine-v1.2.1-emerging-592x244.png",
+            "width": 592,
+            "height": 244,
+            "health": "ЗДОРОВЬЕ 100%",
+            "healthTop": 11.5,
+            "healthBottom": 22.5,
+            "textCount": 7
+          },
+          {
+            "filename": "engine-v1.2.1-roles-1280x720.png",
+            "width": 1280,
+            "height": 720,
+            "health": "ЗДОРОВЬЕ 100%",
+            "healthTop": 17,
+            "healthBottom": 29,
+            "textCount": 7
+          },
+          {
+            "filename": "engine-v1.2.1-warning-592x244.png",
+            "width": 592,
+            "height": 244,
+            "health": "ЗДОРОВЬЕ 43%",
+            "healthTop": 11.5,
+            "healthBottom": 22.5,
+            "textCount": 8
+          },
+          {
+            "filename": "engine-v1.2.1-tentacles-1280x720.png",
+            "width": 1280,
+            "height": 720,
+            "health": "ЗДОРОВЬЕ 43%",
+            "healthTop": 17,
+            "healthBottom": 29,
+            "textCount": 8
+          },
+          {
+            "filename": "engine-v1.2.1-tentacles-390x460.png",
+            "width": 390,
+            "height": 460,
+            "health": "ЗДОРОВЬЕ 43%",
+            "healthTop": 17,
+            "healthBottom": 29,
+            "textCount": 8
+          },
+          {
+            "filename": "engine-v1.2.1-tentacles-592x244.png",
+            "width": 592,
+            "height": 244,
+            "health": "ЗДОРОВЬЕ 43%",
+            "healthTop": 11.5,
+            "healthBottom": 22.5,
+            "textCount": 8
+          },
+          {
+            "filename": "engine-v1.2.1-crown-390x460.png",
+            "width": 390,
+            "height": 460,
+            "health": "ЗДОРОВЬЕ 43%",
+            "healthTop": 17,
+            "healthBottom": 29,
+            "textCount": 8
+          },
+          {
+            "filename": "engine-v1.2.1-pincer-592x244.png",
+            "width": 592,
+            "height": 244,
+            "health": "ЗДОРОВЬЕ 43%",
+            "healthTop": 11.5,
+            "healthBottom": 22.5,
+            "textCount": 8
+          }
+        ]
+      }
+    ]
+  }
+]

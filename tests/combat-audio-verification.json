@@ -1,0 +1,338 @@
+{
+  "version": "1.7.0",
+  "method": "Actual game cores in Node VM; no browser QA",
+  "results": [
+    {
+      "core": "atlas-v1.3.5.js",
+      "tests": [
+        {
+          "name": "catalog compatibility, five distinct locations, menu/paused previews and four deck profiles",
+          "ok": true,
+          "data": {
+            "catalog": 16,
+            "locations": [
+              "ground",
+              "deck",
+              "convoy",
+              "space",
+              "mrg"
+            ],
+            "deckBodyHz": [
+              183.0996375,
+              191.5875,
+              200.1982125,
+              208.93177500000002
+            ]
+          }
+        },
+        {
+          "name": "automatic shots use actual location; gameplay pauses while explicit previews remain available",
+          "ok": true
+        },
+        {
+          "name": "real deck hits/deaths sound once, preserve callbacks and replace the soldier explosion",
+          "ok": true
+        },
+        {
+          "name": "MRG real bullets distinguish misses, nonlethal hits and deaths without per-shot hit sounds",
+          "ok": true
+        },
+        {
+          "name": "MRG grenade retains exactly one explosion while its real soldier deaths are separate",
+          "ok": true
+        },
+        {
+          "name": "player damage follows actual HP loss in space, on deck and in MRG; i-frames and quiz beeps do not repeat it",
+          "ok": true
+        },
+        {
+          "name": "a real MRG knife strike is a swing, while the jumper still has a gunshot",
+          "ok": true
+        },
+        {
+          "name": "mute, hidden view, stop and a zero FX bus recover without affecting music preferences",
+          "ok": true
+        },
+        {
+          "name": "bounded independent voices, fallback cleanup, construction failure and preview cancellation",
+          "ok": true
+        },
+        {
+          "name": "radio is short, effects-muted and separately cancellable without stopping combat or music",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "core": "engine-v1.2.1.js",
+      "tests": [
+        {
+          "name": "catalog compatibility, five distinct locations, menu/paused previews and four deck profiles",
+          "ok": true,
+          "data": {
+            "catalog": 16,
+            "locations": [
+              "ground",
+              "deck",
+              "convoy",
+              "space",
+              "mrg"
+            ],
+            "deckBodyHz": [
+              183.0996375,
+              191.5875,
+              200.1982125,
+              208.93177500000002
+            ]
+          }
+        },
+        {
+          "name": "automatic shots use actual location; gameplay pauses while explicit previews remain available",
+          "ok": true
+        },
+        {
+          "name": "real deck hits/deaths sound once, preserve callbacks and replace the soldier explosion",
+          "ok": true
+        },
+        {
+          "name": "MRG real bullets distinguish misses, nonlethal hits and deaths without per-shot hit sounds",
+          "ok": true
+        },
+        {
+          "name": "MRG grenade retains exactly one explosion while its real soldier deaths are separate",
+          "ok": true
+        },
+        {
+          "name": "player damage follows actual HP loss in space, on deck and in MRG; i-frames and quiz beeps do not repeat it",
+          "ok": true
+        },
+        {
+          "name": "a real MRG knife strike is a swing, while the jumper still has a gunshot",
+          "ok": true
+        },
+        {
+          "name": "mute, hidden view, stop and a zero FX bus recover without affecting music preferences",
+          "ok": true
+        },
+        {
+          "name": "bounded independent voices, fallback cleanup, construction failure and preview cancellation",
+          "ok": true
+        },
+        {
+          "name": "radio is short, effects-muted and separately cancellable without stopping combat or music",
+          "ok": true
+        }
+      ]
+    }
+  ],
+  "dsp": {
+    "engine": "web-audio-engine offline DSP; its DynamicsCompressor is a pass-through",
+    "effects": {
+      "shot": {
+        "rms": 0.004554783480619763,
+        "peak": 0.0838422030210495,
+        "nonfinite": 0,
+        "roughness": 0.13338715875983861,
+        "recoveredRms": 0.0036483093656121323,
+        "hash": "3822837a5d89553489481a57874bc072c969aaf2ff823ed5ef4a2480e8af9d56"
+      },
+      "shot-ground": {
+        "rms": 0.005048644762531871,
+        "peak": 0.08859047293663025,
+        "nonfinite": 0,
+        "roughness": 0.10137201231722984,
+        "recoveredRms": 0.004103431942339589,
+        "hash": "907860e9fcae70de64b0252ed8516b692df6a3f9fe71a5d18e8ee91d43e19444"
+      },
+      "shot-deck": {
+        "rms": 0.00483675716553123,
+        "peak": 0.08845195174217224,
+        "nonfinite": 0,
+        "roughness": 0.1297366254049727,
+        "recoveredRms": 0.0039931853252895945,
+        "hash": "c36b1f9e6b5d6801a38736c3ab6b3fc2eef06b6116262196c6b6ae05ff0f63d6"
+      },
+      "shot-convoy": {
+        "rms": 0.007337652454121468,
+        "peak": 0.11086627840995789,
+        "nonfinite": 0,
+        "roughness": 0.07007761185609362,
+        "recoveredRms": 0.006371489210236053,
+        "hash": "2ad98a7cf29aebf22fb9bb86e96c4c8af71d4d3e61f452f2057c55234500e643"
+      },
+      "shot-space": {
+        "rms": 0.004554783480619763,
+        "peak": 0.0838422030210495,
+        "nonfinite": 0,
+        "roughness": 0.13338715875983861,
+        "recoveredRms": 0.0036483093656121323,
+        "hash": "3822837a5d89553489481a57874bc072c969aaf2ff823ed5ef4a2480e8af9d56"
+      },
+      "shot-mrg": {
+        "rms": 0.006108520716357325,
+        "peak": 0.10378361493349075,
+        "nonfinite": 0,
+        "roughness": 0.10604884255517284,
+        "recoveredRms": 0.005193991261894456,
+        "hash": "765d26b2d752964d3777dbd458eb8e7841113ee6f50b5a6004b43a81281ed8de"
+      },
+      "missile": {
+        "rms": 0.00543507491931207,
+        "peak": 0.061740029603242874,
+        "nonfinite": 0,
+        "roughness": 0.06837432451902554,
+        "recoveredRms": 0.004936331257608404,
+        "hash": "ff417b5d14af9bf7c4870693c42d8ec217ce23eae2118ca3e56cb10c525365a5"
+      },
+      "destroy": {
+        "rms": 0.007425267551112462,
+        "peak": 0.07269911468029022,
+        "nonfinite": 0,
+        "roughness": 0.16258045301668267,
+        "recoveredRms": 0.007051859024271152,
+        "hash": "c63f29b43832a1e229e12af44dcc131aeeab49119b95048dd14737440eb1fdf2"
+      },
+      "detonate": {
+        "rms": 0.013183875137234787,
+        "peak": 0.11547727137804031,
+        "nonfinite": 0,
+        "roughness": 0.16034173062734106,
+        "recoveredRms": 0.012782517026588648,
+        "hash": "027e7bdb74b9bd60976559968205f538c8d7f579fad91847c2bedb043be7a9bd"
+      },
+      "crash": {
+        "rms": 0.005668386098270395,
+        "peak": 0.07578455656766891,
+        "nonfinite": 0,
+        "roughness": 0.40010528552227187,
+        "recoveredRms": 0.0053783344974303775,
+        "hash": "9fd506f0168f87b60edcaf597e8b9b86d1e0e5b3742dbed182ac2b39e9a85cac"
+      },
+      "soldier-hit": {
+        "rms": 0.0022207778472552986,
+        "peak": 0.04796559736132622,
+        "nonfinite": 0,
+        "roughness": 0.14478571635626455,
+        "recoveredRms": 0.0016989273823683675,
+        "hash": "f3754a7b311aa1e1ceb46c0edebbd34c90d4c575c1786988164ce4d32ac44478"
+      },
+      "soldier-death": {
+        "rms": 0.004601740212452666,
+        "peak": 0.06574887782335281,
+        "nonfinite": 0,
+        "roughness": 0.09627554818876619,
+        "recoveredRms": 0.004085213143505275,
+        "hash": "d3400f48036ac9c27cf44121d09e4e9a7cb78fe7ff34900a3d65cd0a961d6be1"
+      },
+      "player-damage": {
+        "rms": 0.005254115812595178,
+        "peak": 0.07821498066186905,
+        "nonfinite": 0,
+        "roughness": 0.0988013891335389,
+        "recoveredRms": 0.004476741240220776,
+        "hash": "bb7b98357c993e7869590ccf5db6574dd1ce497e1090c1788190203117356c39"
+      },
+      "knife-swing": {
+        "rms": 0.0009891289288057649,
+        "peak": 0.02373804897069931,
+        "nonfinite": 0,
+        "roughness": 0.22106056941689214,
+        "recoveredRms": 0.0008974189407436504,
+        "hash": "73e3e0e02e70a6d7a91da0c1a2b37f56331d7252d68454b09a058913c6531eda"
+      },
+      "radio-in": {
+        "rms": 0.00046617843780129417,
+        "peak": 0.014373738318681717,
+        "nonfinite": 0,
+        "roughness": 0.10038341264823308,
+        "recoveredRms": 0.00034188168627174667,
+        "hash": "d397b075d02186fe0162471fef83e62692785de622a3203afd175d5bdf479751"
+      },
+      "radio-out": {
+        "rms": 0.0002305403277480833,
+        "peak": 0.00841967761516571,
+        "nonfinite": 0,
+        "roughness": 0.041743053961862904,
+        "recoveredRms": 0.00014982270636110557,
+        "hash": "3ca2d45b37f29d0574f5e91d366d7534f93312d3a93f9e50cbfc8200cc7eb148"
+      }
+    },
+    "deckStages": [
+      {
+        "stage": 0,
+        "rms": 0.00483675716553123,
+        "peak": 0.08845195174217224,
+        "nonfinite": 0,
+        "roughness": 0.1297366254049727,
+        "hash": "c36b1f9e6b5d6801a38736c3ab6b3fc2eef06b6116262196c6b6ae05ff0f63d6"
+      },
+      {
+        "stage": 1,
+        "rms": 0.004932568692591891,
+        "peak": 0.0911196917295456,
+        "nonfinite": 0,
+        "roughness": 0.1298723981390352,
+        "hash": "d4a81b459e6ded8eb9ff73152b947322d16177085fee2fc53a380f3bc941ee00"
+      },
+      {
+        "stage": 2,
+        "rms": 0.005106511216471653,
+        "peak": 0.09166759997606277,
+        "nonfinite": 0,
+        "roughness": 0.12940993553123264,
+        "hash": "fb9d36a0ca2a0ff5bb7e4f1f1c9601c43d43a2f1eb610f6ce37cc37fca9c03c5"
+      },
+      {
+        "stage": 3,
+        "rms": 0.005069291033701267,
+        "peak": 0.09403197467327118,
+        "nonfinite": 0,
+        "roughness": 0.1282038304867541,
+        "hash": "d06ad0c5f31629cfdef040f93f08c1e5a82accbf345036eb64d9e7a9627c6ee2"
+      }
+    ],
+    "repeatedShotHashes": [
+      "9a8fc73d27b739dc84a08df9bcdaea7582c43820b6d06734d9cf259e894f79b2",
+      "ff9fdda7a1c43bbf21e62f11554d62a95741b9f1bf3375c8f43d0b4f8d3ae46f",
+      "1c1545fab6649e46ee8dbdfb60199586f6674062bd2a36a2a321b7d8208dd794",
+      "91f39a4e8c9feaff762a286008ebc80ba1c11f5d9902435ed6171a416f01bd18"
+    ],
+    "busyCombat": {
+      "rms": 0.02221272320737348,
+      "peak": 0.27923646569252014,
+      "nonfinite": 0,
+      "roughness": 0.146002842154072
+    },
+    "withMusic": [
+      {
+        "key": "hyper0",
+        "rms": 0.021700675821531967,
+        "peak": 0.22980748116970062,
+        "nonfinite": 0,
+        "roughness": 0.11986718544207871
+      },
+      {
+        "key": "orbit0",
+        "rms": 0.0219017736156103,
+        "peak": 0.22980748116970062,
+        "nonfinite": 0,
+        "roughness": 0.11886329715767184
+      },
+      {
+        "key": "port",
+        "rms": 0.021708143366736214,
+        "peak": 0.22980748116970062,
+        "nonfinite": 0,
+        "roughness": 0.11982356738489511
+      },
+      {
+        "key": "finaleMRG",
+        "rms": 0.02189147866059345,
+        "peak": 0.22980748116970062,
+        "nonfinite": 0,
+        "roughness": 0.11902653101213928
+      }
+    ],
+    "mutedRms": 0
+  }
+}
