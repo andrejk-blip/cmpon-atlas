@@ -1,0 +1,277 @@
+{
+  "version": "1.7.1",
+  "method": "Real core scene and HUD wrappers, native Canvas composites, scripted geometry/input checks; no browser",
+  "view_sha256": "b5e7d58a269a75fb71aba8ccb286e84714e17ef016532086dc8d098443acae91",
+  "navigation_sha256": "7ec2c389244c1490295bc434dc833d970d81ff882d86b8e0ee12577e281dadf5",
+  "results": [
+    {
+      "core": "atlas-v1.3.5.js",
+      "passed": 12,
+      "total": 12,
+      "groups": [
+        {
+          "name": "Three pickup types have document, plus and rocket silhouettes",
+          "passed": true,
+          "details": {
+            "requirement": [
+              "box",
+              "box",
+              "box",
+              "box",
+              "box",
+              "box"
+            ],
+            "repair": [
+              "box",
+              "box"
+            ],
+            "missiles": [
+              "hull",
+              "octa"
+            ]
+          }
+        },
+        {
+          "name": "Old pickup octahedra and rings are removed from the actual scene",
+          "passed": true
+        },
+        {
+          "name": "Scene and HUD rendering leave mission state and rewards unchanged",
+          "passed": true
+        },
+        {
+          "name": "Briefing explains mandatory requirements and both supplies",
+          "passed": true
+        },
+        {
+          "name": "Flight objective and collected counter name requirement packages",
+          "passed": true
+        },
+        {
+          "name": "Manual docking instructions match the navigation contract",
+          "passed": true
+        },
+        {
+          "name": "Nearby supply labels explain the visible plus and rocket",
+          "passed": true,
+          "details": [
+            {
+              "width": 390,
+              "labels": [
+                "ЩИТ +30",
+                "РАКЕТЫ +3"
+              ]
+            },
+            {
+              "width": 844,
+              "labels": [
+                "ЩИТ +30",
+                "РАКЕТЫ +3"
+              ]
+            },
+            {
+              "width": 1280,
+              "labels": [
+                "ЩИТ +30",
+                "РАКЕТЫ +3"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Mobile gate rectangle uses the actual entrance and respects DPR",
+          "passed": true,
+          "details": [
+            {
+              "width": 390,
+              "height": 460,
+              "dpr": 1,
+              "marker": [
+                195,
+                212.2762289424203
+              ]
+            },
+            {
+              "width": 390,
+              "height": 460,
+              "dpr": 2,
+              "marker": [
+                195,
+                212.2762289424203
+              ]
+            },
+            {
+              "width": 844,
+              "height": 320,
+              "dpr": 1,
+              "marker": [
+                422,
+                147.6704201338576
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Offscreen gate arrows point to the gate side and labels stay inside HUD",
+          "passed": true
+        },
+        {
+          "name": "New HUD labels fit wide, narrow, short and DPR 2 canvases",
+          "passed": true
+        },
+        {
+          "name": "Convoy, board and finale delegate scene, objectives and HUD unchanged",
+          "passed": true
+        },
+        {
+          "name": "Native composite frames render actual game meshes and HUD",
+          "passed": true,
+          "details": {
+            "images": 4
+          }
+        }
+      ],
+      "images": [
+        "public-cargo-1280x720-dpr1.png",
+        "public-cargo-390x460-dpr1.png",
+        "public-dock-844x320-dpr1.png",
+        "public-dock-390x460-dpr2.png"
+      ]
+    },
+    {
+      "core": "engine-v1.2.1.js",
+      "passed": 12,
+      "total": 12,
+      "groups": [
+        {
+          "name": "Three pickup types have document, plus and rocket silhouettes",
+          "passed": true,
+          "details": {
+            "requirement": [
+              "box",
+              "box",
+              "box",
+              "box",
+              "box",
+              "box"
+            ],
+            "repair": [
+              "box",
+              "box"
+            ],
+            "missiles": [
+              "hull",
+              "octa"
+            ]
+          }
+        },
+        {
+          "name": "Old pickup octahedra and rings are removed from the actual scene",
+          "passed": true
+        },
+        {
+          "name": "Scene and HUD rendering leave mission state and rewards unchanged",
+          "passed": true
+        },
+        {
+          "name": "Briefing explains mandatory requirements and both supplies",
+          "passed": true
+        },
+        {
+          "name": "Flight objective and collected counter name requirement packages",
+          "passed": true
+        },
+        {
+          "name": "Manual docking instructions match the navigation contract",
+          "passed": true
+        },
+        {
+          "name": "Nearby supply labels explain the visible plus and rocket",
+          "passed": true,
+          "details": [
+            {
+              "width": 390,
+              "labels": [
+                "ЩИТ +30",
+                "РАКЕТЫ +3"
+              ]
+            },
+            {
+              "width": 844,
+              "labels": [
+                "ЩИТ +30",
+                "РАКЕТЫ +3"
+              ]
+            },
+            {
+              "width": 1280,
+              "labels": [
+                "ЩИТ +30",
+                "РАКЕТЫ +3"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Mobile gate rectangle uses the actual entrance and respects DPR",
+          "passed": true,
+          "details": [
+            {
+              "width": 390,
+              "height": 460,
+              "dpr": 1,
+              "marker": [
+                195,
+                212.2762289424203
+              ]
+            },
+            {
+              "width": 390,
+              "height": 460,
+              "dpr": 2,
+              "marker": [
+                195,
+                212.2762289424203
+              ]
+            },
+            {
+              "width": 844,
+              "height": 320,
+              "dpr": 1,
+              "marker": [
+                422,
+                147.6704201338576
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Offscreen gate arrows point to the gate side and labels stay inside HUD",
+          "passed": true
+        },
+        {
+          "name": "New HUD labels fit wide, narrow, short and DPR 2 canvases",
+          "passed": true
+        },
+        {
+          "name": "Convoy, board and finale delegate scene, objectives and HUD unchanged",
+          "passed": true
+        },
+        {
+          "name": "Native composite frames render actual game meshes and HUD",
+          "passed": true,
+          "details": {
+            "images": 4
+          }
+        }
+      ],
+      "images": [
+        "admin-cargo-1280x720-dpr1.png",
+        "admin-cargo-390x460-dpr1.png",
+        "admin-dock-844x320-dpr1.png",
+        "admin-dock-390x460-dpr2.png"
+      ]
+    }
+  ],
+  "frame_artifacts": "Native Canvas frames are generated by the regression CLI --out option; not browser screenshots."
+}

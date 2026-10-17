@@ -1,0 +1,1694 @@
+{
+  "version": "1.7.1",
+  "method": "Real campaign cores in Node VM; no browser or network",
+  "results": [
+    {
+      "core": "assets/atlas-v1.3.5.js",
+      "coreSha256": "af1f9024313d1ecb798edc19b5039407049916d094c88426f85ba852ac077be8",
+      "patchSha256": "7ec2c389244c1490295bc434dc833d970d81ff882d86b8e0ee12577e281dadf5",
+      "passed": 10,
+      "groups": [
+        {
+          "name": "Gate and public navigation target are on the visible iris; approach remains outside the hull",
+          "status": "passed",
+          "detail": {
+            "gate": [
+              78,
+              12,
+              -80
+            ],
+            "approach": [
+              78,
+              13,
+              -100
+            ],
+            "oldGateOffsetMetres": 93
+          }
+        },
+        {
+          "name": "Actual autopilot reaches all four station entrances from front, back, sides, above and below",
+          "status": "passed",
+          "detail": {
+            "runs": 108,
+            "longestSeconds": 15.45,
+            "results": [
+              {
+                "stage": 1,
+                "seed": 417147,
+                "start": "spawn",
+                "seconds": 6.7
+              },
+              {
+                "stage": 1,
+                "seed": 417147,
+                "start": "last_requirement",
+                "seconds": 5.6
+              },
+              {
+                "stage": 1,
+                "seed": 417147,
+                "start": "at_visible_gate",
+                "seconds": 0.016666666666666666
+              },
+              {
+                "stage": 1,
+                "seed": 417147,
+                "start": "front",
+                "seconds": 10.5
+              },
+              {
+                "stage": 1,
+                "seed": 417147,
+                "start": "rear",
+                "seconds": 10.516666666666667
+              },
+              {
+                "stage": 1,
+                "seed": 417147,
+                "start": "above",
+                "seconds": 4.183333333333334
+              },
+              {
+                "stage": 1,
+                "seed": 417147,
+                "start": "below",
+                "seconds": 4.166666666666667
+              },
+              {
+                "stage": 1,
+                "seed": 417147,
+                "start": "left",
+                "seconds": 5.9
+              },
+              {
+                "stage": 1,
+                "seed": 417147,
+                "start": "right",
+                "seconds": 6.5
+              },
+              {
+                "stage": 1,
+                "seed": 42,
+                "start": "spawn",
+                "seconds": 6.7
+              },
+              {
+                "stage": 1,
+                "seed": 42,
+                "start": "last_requirement",
+                "seconds": 5.6
+              },
+              {
+                "stage": 1,
+                "seed": 42,
+                "start": "at_visible_gate",
+                "seconds": 0.016666666666666666
+              },
+              {
+                "stage": 1,
+                "seed": 42,
+                "start": "front",
+                "seconds": 10.416666666666666
+              },
+              {
+                "stage": 1,
+                "seed": 42,
+                "start": "rear",
+                "seconds": 9.783333333333333
+              },
+              {
+                "stage": 1,
+                "seed": 42,
+                "start": "above",
+                "seconds": 4.183333333333334
+              },
+              {
+                "stage": 1,
+                "seed": 42,
+                "start": "below",
+                "seconds": 4.166666666666667
+              },
+              {
+                "stage": 1,
+                "seed": 42,
+                "start": "left",
+                "seconds": 6.033333333333333
+              },
+              {
+                "stage": 1,
+                "seed": 42,
+                "start": "right",
+                "seconds": 6.066666666666666
+              },
+              {
+                "stage": 1,
+                "seed": 91873,
+                "start": "spawn",
+                "seconds": 6.7
+              },
+              {
+                "stage": 1,
+                "seed": 91873,
+                "start": "last_requirement",
+                "seconds": 5.6
+              },
+              {
+                "stage": 1,
+                "seed": 91873,
+                "start": "at_visible_gate",
+                "seconds": 0.016666666666666666
+              },
+              {
+                "stage": 1,
+                "seed": 91873,
+                "start": "front",
+                "seconds": 10.416666666666666
+              },
+              {
+                "stage": 1,
+                "seed": 91873,
+                "start": "rear",
+                "seconds": 9.783333333333333
+              },
+              {
+                "stage": 1,
+                "seed": 91873,
+                "start": "above",
+                "seconds": 4.183333333333334
+              },
+              {
+                "stage": 1,
+                "seed": 91873,
+                "start": "below",
+                "seconds": 4.166666666666667
+              },
+              {
+                "stage": 1,
+                "seed": 91873,
+                "start": "left",
+                "seconds": 6.033333333333333
+              },
+              {
+                "stage": 1,
+                "seed": 91873,
+                "start": "right",
+                "seconds": 6.266666666666667
+              },
+              {
+                "stage": 2,
+                "seed": 417147,
+                "start": "spawn",
+                "seconds": 6.7
+              },
+              {
+                "stage": 2,
+                "seed": 417147,
+                "start": "last_requirement",
+                "seconds": 5.6
+              },
+              {
+                "stage": 2,
+                "seed": 417147,
+                "start": "at_visible_gate",
+                "seconds": 0.016666666666666666
+              },
+              {
+                "stage": 2,
+                "seed": 417147,
+                "start": "front",
+                "seconds": 10.45
+              },
+              {
+                "stage": 2,
+                "seed": 417147,
+                "start": "rear",
+                "seconds": 9.783333333333333
+              },
+              {
+                "stage": 2,
+                "seed": 417147,
+                "start": "above",
+                "seconds": 4.183333333333334
+              },
+              {
+                "stage": 2,
+                "seed": 417147,
+                "start": "below",
+                "seconds": 4.166666666666667
+              },
+              {
+                "stage": 2,
+                "seed": 417147,
+                "start": "left",
+                "seconds": 6.033333333333333
+              },
+              {
+                "stage": 2,
+                "seed": 417147,
+                "start": "right",
+                "seconds": 6.066666666666666
+              },
+              {
+                "stage": 2,
+                "seed": 42,
+                "start": "spawn",
+                "seconds": 6.7
+              },
+              {
+                "stage": 2,
+                "seed": 42,
+                "start": "last_requirement",
+                "seconds": 5.6
+              },
+              {
+                "stage": 2,
+                "seed": 42,
+                "start": "at_visible_gate",
+                "seconds": 0.016666666666666666
+              },
+              {
+                "stage": 2,
+                "seed": 42,
+                "start": "front",
+                "seconds": 10.416666666666666
+              },
+              {
+                "stage": 2,
+                "seed": 42,
+                "start": "rear",
+                "seconds": 9.783333333333333
+              },
+              {
+                "stage": 2,
+                "seed": 42,
+                "start": "above",
+                "seconds": 4.183333333333334
+              },
+              {
+                "stage": 2,
+                "seed": 42,
+                "start": "below",
+                "seconds": 4.166666666666667
+              },
+              {
+                "stage": 2,
+                "seed": 42,
+                "start": "left",
+                "seconds": 6.033333333333333
+              },
+              {
+                "stage": 2,
+                "seed": 42,
+                "start": "right",
+                "seconds": 6.066666666666666
+              },
+              {
+                "stage": 2,
+                "seed": 91873,
+                "start": "spawn",
+                "seconds": 6.7
+              },
+              {
+                "stage": 2,
+                "seed": 91873,
+                "start": "last_requirement",
+                "seconds": 5.6
+              },
+              {
+                "stage": 2,
+                "seed": 91873,
+                "start": "at_visible_gate",
+                "seconds": 0.016666666666666666
+              },
+              {
+                "stage": 2,
+                "seed": 91873,
+                "start": "front",
+                "seconds": 10.983333333333333
+              },
+              {
+                "stage": 2,
+                "seed": 91873,
+                "start": "rear",
+                "seconds": 9.783333333333333
+              },
+              {
+                "stage": 2,
+                "seed": 91873,
+                "start": "above",
+                "seconds": 4.183333333333334
+              },
+              {
+                "stage": 2,
+                "seed": 91873,
+                "start": "below",
+                "seconds": 4.166666666666667
+              },
+              {
+                "stage": 2,
+                "seed": 91873,
+                "start": "left",
+                "seconds": 6.033333333333333
+              },
+              {
+                "stage": 2,
+                "seed": 91873,
+                "start": "right",
+                "seconds": 6.066666666666666
+              },
+              {
+                "stage": 3,
+                "seed": 417147,
+                "start": "spawn",
+                "seconds": 6.7
+              },
+              {
+                "stage": 3,
+                "seed": 417147,
+                "start": "last_requirement",
+                "seconds": 5.6
+              },
+              {
+                "stage": 3,
+                "seed": 417147,
+                "start": "at_visible_gate",
+                "seconds": 0.016666666666666666
+              },
+              {
+                "stage": 3,
+                "seed": 417147,
+                "start": "front",
+                "seconds": 10.416666666666666
+              },
+              {
+                "stage": 3,
+                "seed": 417147,
+                "start": "rear",
+                "seconds": 9.783333333333333
+              },
+              {
+                "stage": 3,
+                "seed": 417147,
+                "start": "above",
+                "seconds": 4.183333333333334
+              },
+              {
+                "stage": 3,
+                "seed": 417147,
+                "start": "below",
+                "seconds": 4.166666666666667
+              },
+              {
+                "stage": 3,
+                "seed": 417147,
+                "start": "left",
+                "seconds": 6.033333333333333
+              },
+              {
+                "stage": 3,
+                "seed": 417147,
+                "start": "right",
+                "seconds": 6.066666666666666
+              },
+              {
+                "stage": 3,
+                "seed": 42,
+                "start": "spawn",
+                "seconds": 6.7
+              },
+              {
+                "stage": 3,
+                "seed": 42,
+                "start": "last_requirement",
+                "seconds": 5.6
+              },
+              {
+                "stage": 3,
+                "seed": 42,
+                "start": "at_visible_gate",
+                "seconds": 0.016666666666666666
+              },
+              {
+                "stage": 3,
+                "seed": 42,
+                "start": "front",
+                "seconds": 10.416666666666666
+              },
+              {
+                "stage": 3,
+                "seed": 42,
+                "start": "rear",
+                "seconds": 9.783333333333333
+              },
+              {
+                "stage": 3,
+                "seed": 42,
+                "start": "above",
+                "seconds": 4.183333333333334
+              },
+              {
+                "stage": 3,
+                "seed": 42,
+                "start": "below",
+                "seconds": 4.166666666666667
+              },
+              {
+                "stage": 3,
+                "seed": 42,
+                "start": "left",
+                "seconds": 6.033333333333333
+              },
+              {
+                "stage": 3,
+                "seed": 42,
+                "start": "right",
+                "seconds": 6.066666666666666
+              },
+              {
+                "stage": 3,
+                "seed": 91873,
+                "start": "spawn",
+                "seconds": 6.7
+              },
+              {
+                "stage": 3,
+                "seed": 91873,
+                "start": "last_requirement",
+                "seconds": 5.6
+              },
+              {
+                "stage": 3,
+                "seed": 91873,
+                "start": "at_visible_gate",
+                "seconds": 0.016666666666666666
+              },
+              {
+                "stage": 3,
+                "seed": 91873,
+                "start": "front",
+                "seconds": 10.416666666666666
+              },
+              {
+                "stage": 3,
+                "seed": 91873,
+                "start": "rear",
+                "seconds": 9.183333333333334
+              },
+              {
+                "stage": 3,
+                "seed": 91873,
+                "start": "above",
+                "seconds": 4.183333333333334
+              },
+              {
+                "stage": 3,
+                "seed": 91873,
+                "start": "below",
+                "seconds": 4.166666666666667
+              },
+              {
+                "stage": 3,
+                "seed": 91873,
+                "start": "left",
+                "seconds": 6.233333333333333
+              },
+              {
+                "stage": 3,
+                "seed": 91873,
+                "start": "right",
+                "seconds": 6.333333333333333
+              },
+              {
+                "stage": 4,
+                "seed": 417147,
+                "start": "spawn",
+                "seconds": 6.7
+              },
+              {
+                "stage": 4,
+                "seed": 417147,
+                "start": "last_requirement",
+                "seconds": 5.6
+              },
+              {
+                "stage": 4,
+                "seed": 417147,
+                "start": "at_visible_gate",
+                "seconds": 0.016666666666666666
+              },
+              {
+                "stage": 4,
+                "seed": 417147,
+                "start": "front",
+                "seconds": 10.416666666666666
+              },
+              {
+                "stage": 4,
+                "seed": 417147,
+                "start": "rear",
+                "seconds": 9.783333333333333
+              },
+              {
+                "stage": 4,
+                "seed": 417147,
+                "start": "above",
+                "seconds": 4.183333333333334
+              },
+              {
+                "stage": 4,
+                "seed": 417147,
+                "start": "below",
+                "seconds": 4.166666666666667
+              },
+              {
+                "stage": 4,
+                "seed": 417147,
+                "start": "left",
+                "seconds": 6.033333333333333
+              },
+              {
+                "stage": 4,
+                "seed": 417147,
+                "start": "right",
+                "seconds": 15.116666666666667
+              },
+              {
+                "stage": 4,
+                "seed": 42,
+                "start": "spawn",
+                "seconds": 15.45
+              },
+              {
+                "stage": 4,
+                "seed": 42,
+                "start": "last_requirement",
+                "seconds": 13.25
+              },
+              {
+                "stage": 4,
+                "seed": 42,
+                "start": "at_visible_gate",
+                "seconds": 0.016666666666666666
+              },
+              {
+                "stage": 4,
+                "seed": 42,
+                "start": "front",
+                "seconds": 10.416666666666666
+              },
+              {
+                "stage": 4,
+                "seed": 42,
+                "start": "rear",
+                "seconds": 9.783333333333333
+              },
+              {
+                "stage": 4,
+                "seed": 42,
+                "start": "above",
+                "seconds": 4.183333333333334
+              },
+              {
+                "stage": 4,
+                "seed": 42,
+                "start": "below",
+                "seconds": 12.066666666666666
+              },
+              {
+                "stage": 4,
+                "seed": 42,
+                "start": "left",
+                "seconds": 6.033333333333333
+              },
+              {
+                "stage": 4,
+                "seed": 42,
+                "start": "right",
+                "seconds": 6.25
+              },
+              {
+                "stage": 4,
+                "seed": 91873,
+                "start": "spawn",
+                "seconds": 6.7
+              },
+              {
+                "stage": 4,
+                "seed": 91873,
+                "start": "last_requirement",
+                "seconds": 5.6
+              },
+              {
+                "stage": 4,
+                "seed": 91873,
+                "start": "at_visible_gate",
+                "seconds": 0.016666666666666666
+              },
+              {
+                "stage": 4,
+                "seed": 91873,
+                "start": "front",
+                "seconds": 10.416666666666666
+              },
+              {
+                "stage": 4,
+                "seed": 91873,
+                "start": "rear",
+                "seconds": 9.783333333333333
+              },
+              {
+                "stage": 4,
+                "seed": 91873,
+                "start": "above",
+                "seconds": 4.183333333333334
+              },
+              {
+                "stage": 4,
+                "seed": 91873,
+                "start": "below",
+                "seconds": 4.166666666666667
+              },
+              {
+                "stage": 4,
+                "seed": 91873,
+                "start": "left",
+                "seconds": 6.033333333333333
+              },
+              {
+                "stage": 4,
+                "seed": 91873,
+                "start": "right",
+                "seconds": 6.066666666666666
+              }
+            ]
+          }
+        },
+        {
+          "name": "A ship already at the entrance docks immediately without flying away",
+          "status": "passed",
+          "detail": {
+            "before": [
+              78,
+              13,
+              -100
+            ],
+            "afterFirstFrame": [
+              78,
+              13,
+              -100
+            ]
+          }
+        },
+        {
+          "name": "Three seeded rocks near the gate cannot occupy the chosen approach point",
+          "status": "passed",
+          "detail": {
+            "runs": 6,
+            "results": [
+              {
+                "seed": 39,
+                "stage": 3,
+                "start": "spawn",
+                "approach": [
+                  70,
+                  13,
+                  -95
+                ],
+                "seconds": 7
+              },
+              {
+                "seed": 39,
+                "stage": 3,
+                "start": "front",
+                "approach": [
+                  70,
+                  13,
+                  -95
+                ],
+                "seconds": 10.366666666666667
+              },
+              {
+                "seed": 59,
+                "stage": 3,
+                "start": "spawn",
+                "approach": [
+                  78,
+                  13,
+                  -93
+                ],
+                "seconds": 7
+              },
+              {
+                "seed": 59,
+                "stage": 3,
+                "start": "front",
+                "approach": [
+                  78,
+                  13,
+                  -93
+                ],
+                "seconds": 12.3
+              },
+              {
+                "seed": 87,
+                "stage": 4,
+                "start": "spawn",
+                "approach": [
+                  78,
+                  13,
+                  -93
+                ],
+                "seconds": 7
+              },
+              {
+                "seed": 87,
+                "stage": 4,
+                "start": "front",
+                "approach": [
+                  78,
+                  13,
+                  -93
+                ],
+                "seconds": 13.55
+              }
+            ]
+          }
+        },
+        {
+          "name": "Reproduced rock-detour standstill clears for retrieval and combat without bypassing collisions",
+          "status": "passed",
+          "detail": {
+            "reproducedSeed": 417147,
+            "originalPosition": [
+              113.11412652064415,
+              3.602830226910806,
+              -101.9222417068973
+            ],
+            "results": [
+              {
+                "phase": "retrieve",
+                "originalFailure": true,
+                "originalSpeed": 0,
+                "originalShield": 100,
+                "statusAfterFix": "lesson",
+                "movedMetres": 22.85565650469337,
+                "shield": 100
+              },
+              {
+                "phase": "battle",
+                "originalFailure": true,
+                "originalSpeed": 1.0035034631778656e-14,
+                "originalShield": 100,
+                "statusAfterFix": "playing",
+                "movedMetres": 27.391153619238782,
+                "shield": 100
+              }
+            ]
+          }
+        },
+        {
+          "name": "New cinematic aligns outside the iris then moves forward, including near-door manual capture",
+          "status": "passed",
+          "detail": {
+            "transitions": 8,
+            "cinematicSamples": 8000
+          }
+        },
+        {
+          "name": "Docking cannot start through the back or a side wall; manual input is unchanged",
+          "status": "passed"
+        },
+        {
+          "name": "Pause freezes docking and resumes the same position and phase",
+          "status": "passed"
+        },
+        {
+          "name": "JSON and tournament resume preserve both old and new in-progress dock trajectories",
+          "status": "passed",
+          "detail": {
+            "resumedCinematics": 8,
+            "publicTournamentSerializer": true
+          }
+        },
+        {
+          "name": "Combat, retrieval, escort and finale controls retain the frozen engine behavior",
+          "status": "passed",
+          "detail": {
+            "phases": [
+              "orientation",
+              "battle",
+              "retrieve",
+              "escort",
+              "boss",
+              "mrg"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "core": "../cmpon-analytics-admin/game-lab/engine-v1.2.1.js",
+      "coreSha256": "29cf0a79c5887bbdf4e80ba2664b16d50172771f10069cb6f5d274eabbc4cbe8",
+      "patchSha256": "7ec2c389244c1490295bc434dc833d970d81ff882d86b8e0ee12577e281dadf5",
+      "passed": 10,
+      "groups": [
+        {
+          "name": "Gate and public navigation target are on the visible iris; approach remains outside the hull",
+          "status": "passed",
+          "detail": {
+            "gate": [
+              78,
+              12,
+              -80
+            ],
+            "approach": [
+              78,
+              13,
+              -100
+            ],
+            "oldGateOffsetMetres": 93
+          }
+        },
+        {
+          "name": "Actual autopilot reaches all four station entrances from front, back, sides, above and below",
+          "status": "passed",
+          "detail": {
+            "runs": 108,
+            "longestSeconds": 17.733333333333334,
+            "results": [
+              {
+                "stage": 1,
+                "seed": 417147,
+                "start": "spawn",
+                "seconds": 7.033333333333333
+              },
+              {
+                "stage": 1,
+                "seed": 417147,
+                "start": "last_requirement",
+                "seconds": 5.733333333333333
+              },
+              {
+                "stage": 1,
+                "seed": 417147,
+                "start": "at_visible_gate",
+                "seconds": 0.016666666666666666
+              },
+              {
+                "stage": 1,
+                "seed": 417147,
+                "start": "front",
+                "seconds": 10.55
+              },
+              {
+                "stage": 1,
+                "seed": 417147,
+                "start": "rear",
+                "seconds": 10.95
+              },
+              {
+                "stage": 1,
+                "seed": 417147,
+                "start": "above",
+                "seconds": 4.616666666666666
+              },
+              {
+                "stage": 1,
+                "seed": 417147,
+                "start": "below",
+                "seconds": 4.483333333333333
+              },
+              {
+                "stage": 1,
+                "seed": 417147,
+                "start": "left",
+                "seconds": 6.233333333333333
+              },
+              {
+                "stage": 1,
+                "seed": 417147,
+                "start": "right",
+                "seconds": 6.9
+              },
+              {
+                "stage": 1,
+                "seed": 42,
+                "start": "spawn",
+                "seconds": 7.033333333333333
+              },
+              {
+                "stage": 1,
+                "seed": 42,
+                "start": "last_requirement",
+                "seconds": 5.733333333333333
+              },
+              {
+                "stage": 1,
+                "seed": 42,
+                "start": "at_visible_gate",
+                "seconds": 0.016666666666666666
+              },
+              {
+                "stage": 1,
+                "seed": 42,
+                "start": "front",
+                "seconds": 10.5
+              },
+              {
+                "stage": 1,
+                "seed": 42,
+                "start": "rear",
+                "seconds": 10.183333333333334
+              },
+              {
+                "stage": 1,
+                "seed": 42,
+                "start": "above",
+                "seconds": 4.616666666666666
+              },
+              {
+                "stage": 1,
+                "seed": 42,
+                "start": "below",
+                "seconds": 4.483333333333333
+              },
+              {
+                "stage": 1,
+                "seed": 42,
+                "start": "left",
+                "seconds": 6.483333333333333
+              },
+              {
+                "stage": 1,
+                "seed": 42,
+                "start": "right",
+                "seconds": 6.466666666666667
+              },
+              {
+                "stage": 1,
+                "seed": 91873,
+                "start": "spawn",
+                "seconds": 7.033333333333333
+              },
+              {
+                "stage": 1,
+                "seed": 91873,
+                "start": "last_requirement",
+                "seconds": 5.733333333333333
+              },
+              {
+                "stage": 1,
+                "seed": 91873,
+                "start": "at_visible_gate",
+                "seconds": 0.016666666666666666
+              },
+              {
+                "stage": 1,
+                "seed": 91873,
+                "start": "front",
+                "seconds": 10.5
+              },
+              {
+                "stage": 1,
+                "seed": 91873,
+                "start": "rear",
+                "seconds": 10.183333333333334
+              },
+              {
+                "stage": 1,
+                "seed": 91873,
+                "start": "above",
+                "seconds": 4.616666666666666
+              },
+              {
+                "stage": 1,
+                "seed": 91873,
+                "start": "below",
+                "seconds": 4.483333333333333
+              },
+              {
+                "stage": 1,
+                "seed": 91873,
+                "start": "left",
+                "seconds": 6.483333333333333
+              },
+              {
+                "stage": 1,
+                "seed": 91873,
+                "start": "right",
+                "seconds": 6.566666666666666
+              },
+              {
+                "stage": 2,
+                "seed": 417147,
+                "start": "spawn",
+                "seconds": 7.033333333333333
+              },
+              {
+                "stage": 2,
+                "seed": 417147,
+                "start": "last_requirement",
+                "seconds": 5.733333333333333
+              },
+              {
+                "stage": 2,
+                "seed": 417147,
+                "start": "at_visible_gate",
+                "seconds": 0.016666666666666666
+              },
+              {
+                "stage": 2,
+                "seed": 417147,
+                "start": "front",
+                "seconds": 10.533333333333333
+              },
+              {
+                "stage": 2,
+                "seed": 417147,
+                "start": "rear",
+                "seconds": 10.183333333333334
+              },
+              {
+                "stage": 2,
+                "seed": 417147,
+                "start": "above",
+                "seconds": 4.616666666666666
+              },
+              {
+                "stage": 2,
+                "seed": 417147,
+                "start": "below",
+                "seconds": 4.483333333333333
+              },
+              {
+                "stage": 2,
+                "seed": 417147,
+                "start": "left",
+                "seconds": 6.483333333333333
+              },
+              {
+                "stage": 2,
+                "seed": 417147,
+                "start": "right",
+                "seconds": 6.466666666666667
+              },
+              {
+                "stage": 2,
+                "seed": 42,
+                "start": "spawn",
+                "seconds": 7.033333333333333
+              },
+              {
+                "stage": 2,
+                "seed": 42,
+                "start": "last_requirement",
+                "seconds": 5.733333333333333
+              },
+              {
+                "stage": 2,
+                "seed": 42,
+                "start": "at_visible_gate",
+                "seconds": 0.016666666666666666
+              },
+              {
+                "stage": 2,
+                "seed": 42,
+                "start": "front",
+                "seconds": 10.5
+              },
+              {
+                "stage": 2,
+                "seed": 42,
+                "start": "rear",
+                "seconds": 10.183333333333334
+              },
+              {
+                "stage": 2,
+                "seed": 42,
+                "start": "above",
+                "seconds": 4.616666666666666
+              },
+              {
+                "stage": 2,
+                "seed": 42,
+                "start": "below",
+                "seconds": 4.483333333333333
+              },
+              {
+                "stage": 2,
+                "seed": 42,
+                "start": "left",
+                "seconds": 6.483333333333333
+              },
+              {
+                "stage": 2,
+                "seed": 42,
+                "start": "right",
+                "seconds": 6.466666666666667
+              },
+              {
+                "stage": 2,
+                "seed": 91873,
+                "start": "spawn",
+                "seconds": 7.033333333333333
+              },
+              {
+                "stage": 2,
+                "seed": 91873,
+                "start": "last_requirement",
+                "seconds": 5.733333333333333
+              },
+              {
+                "stage": 2,
+                "seed": 91873,
+                "start": "at_visible_gate",
+                "seconds": 0.016666666666666666
+              },
+              {
+                "stage": 2,
+                "seed": 91873,
+                "start": "front",
+                "seconds": 11.25
+              },
+              {
+                "stage": 2,
+                "seed": 91873,
+                "start": "rear",
+                "seconds": 10.183333333333334
+              },
+              {
+                "stage": 2,
+                "seed": 91873,
+                "start": "above",
+                "seconds": 4.616666666666666
+              },
+              {
+                "stage": 2,
+                "seed": 91873,
+                "start": "below",
+                "seconds": 4.483333333333333
+              },
+              {
+                "stage": 2,
+                "seed": 91873,
+                "start": "left",
+                "seconds": 6.483333333333333
+              },
+              {
+                "stage": 2,
+                "seed": 91873,
+                "start": "right",
+                "seconds": 6.466666666666667
+              },
+              {
+                "stage": 3,
+                "seed": 417147,
+                "start": "spawn",
+                "seconds": 7.033333333333333
+              },
+              {
+                "stage": 3,
+                "seed": 417147,
+                "start": "last_requirement",
+                "seconds": 5.733333333333333
+              },
+              {
+                "stage": 3,
+                "seed": 417147,
+                "start": "at_visible_gate",
+                "seconds": 0.016666666666666666
+              },
+              {
+                "stage": 3,
+                "seed": 417147,
+                "start": "front",
+                "seconds": 10.5
+              },
+              {
+                "stage": 3,
+                "seed": 417147,
+                "start": "rear",
+                "seconds": 10.183333333333334
+              },
+              {
+                "stage": 3,
+                "seed": 417147,
+                "start": "above",
+                "seconds": 4.616666666666666
+              },
+              {
+                "stage": 3,
+                "seed": 417147,
+                "start": "below",
+                "seconds": 4.483333333333333
+              },
+              {
+                "stage": 3,
+                "seed": 417147,
+                "start": "left",
+                "seconds": 6.483333333333333
+              },
+              {
+                "stage": 3,
+                "seed": 417147,
+                "start": "right",
+                "seconds": 6.466666666666667
+              },
+              {
+                "stage": 3,
+                "seed": 42,
+                "start": "spawn",
+                "seconds": 7.033333333333333
+              },
+              {
+                "stage": 3,
+                "seed": 42,
+                "start": "last_requirement",
+                "seconds": 5.733333333333333
+              },
+              {
+                "stage": 3,
+                "seed": 42,
+                "start": "at_visible_gate",
+                "seconds": 0.016666666666666666
+              },
+              {
+                "stage": 3,
+                "seed": 42,
+                "start": "front",
+                "seconds": 10.5
+              },
+              {
+                "stage": 3,
+                "seed": 42,
+                "start": "rear",
+                "seconds": 10.183333333333334
+              },
+              {
+                "stage": 3,
+                "seed": 42,
+                "start": "above",
+                "seconds": 4.616666666666666
+              },
+              {
+                "stage": 3,
+                "seed": 42,
+                "start": "below",
+                "seconds": 4.483333333333333
+              },
+              {
+                "stage": 3,
+                "seed": 42,
+                "start": "left",
+                "seconds": 6.483333333333333
+              },
+              {
+                "stage": 3,
+                "seed": 42,
+                "start": "right",
+                "seconds": 6.466666666666667
+              },
+              {
+                "stage": 3,
+                "seed": 91873,
+                "start": "spawn",
+                "seconds": 7.033333333333333
+              },
+              {
+                "stage": 3,
+                "seed": 91873,
+                "start": "last_requirement",
+                "seconds": 5.733333333333333
+              },
+              {
+                "stage": 3,
+                "seed": 91873,
+                "start": "at_visible_gate",
+                "seconds": 0.016666666666666666
+              },
+              {
+                "stage": 3,
+                "seed": 91873,
+                "start": "front",
+                "seconds": 10.5
+              },
+              {
+                "stage": 3,
+                "seed": 91873,
+                "start": "rear",
+                "seconds": 10.533333333333333
+              },
+              {
+                "stage": 3,
+                "seed": 91873,
+                "start": "above",
+                "seconds": 4.616666666666666
+              },
+              {
+                "stage": 3,
+                "seed": 91873,
+                "start": "below",
+                "seconds": 4.483333333333333
+              },
+              {
+                "stage": 3,
+                "seed": 91873,
+                "start": "left",
+                "seconds": 6.883333333333334
+              },
+              {
+                "stage": 3,
+                "seed": 91873,
+                "start": "right",
+                "seconds": 7.416666666666667
+              },
+              {
+                "stage": 4,
+                "seed": 417147,
+                "start": "spawn",
+                "seconds": 7.033333333333333
+              },
+              {
+                "stage": 4,
+                "seed": 417147,
+                "start": "last_requirement",
+                "seconds": 5.733333333333333
+              },
+              {
+                "stage": 4,
+                "seed": 417147,
+                "start": "at_visible_gate",
+                "seconds": 0.016666666666666666
+              },
+              {
+                "stage": 4,
+                "seed": 417147,
+                "start": "front",
+                "seconds": 10.5
+              },
+              {
+                "stage": 4,
+                "seed": 417147,
+                "start": "rear",
+                "seconds": 10.183333333333334
+              },
+              {
+                "stage": 4,
+                "seed": 417147,
+                "start": "above",
+                "seconds": 4.616666666666666
+              },
+              {
+                "stage": 4,
+                "seed": 417147,
+                "start": "below",
+                "seconds": 4.483333333333333
+              },
+              {
+                "stage": 4,
+                "seed": 417147,
+                "start": "left",
+                "seconds": 6.483333333333333
+              },
+              {
+                "stage": 4,
+                "seed": 417147,
+                "start": "right",
+                "seconds": 17.733333333333334
+              },
+              {
+                "stage": 4,
+                "seed": 42,
+                "start": "spawn",
+                "seconds": 16.7
+              },
+              {
+                "stage": 4,
+                "seed": 42,
+                "start": "last_requirement",
+                "seconds": 14.466666666666667
+              },
+              {
+                "stage": 4,
+                "seed": 42,
+                "start": "at_visible_gate",
+                "seconds": 0.016666666666666666
+              },
+              {
+                "stage": 4,
+                "seed": 42,
+                "start": "front",
+                "seconds": 10.5
+              },
+              {
+                "stage": 4,
+                "seed": 42,
+                "start": "rear",
+                "seconds": 10.183333333333334
+              },
+              {
+                "stage": 4,
+                "seed": 42,
+                "start": "above",
+                "seconds": 4.616666666666666
+              },
+              {
+                "stage": 4,
+                "seed": 42,
+                "start": "below",
+                "seconds": 10.85
+              },
+              {
+                "stage": 4,
+                "seed": 42,
+                "start": "left",
+                "seconds": 6.483333333333333
+              },
+              {
+                "stage": 4,
+                "seed": 42,
+                "start": "right",
+                "seconds": 6.95
+              },
+              {
+                "stage": 4,
+                "seed": 91873,
+                "start": "spawn",
+                "seconds": 7.033333333333333
+              },
+              {
+                "stage": 4,
+                "seed": 91873,
+                "start": "last_requirement",
+                "seconds": 5.733333333333333
+              },
+              {
+                "stage": 4,
+                "seed": 91873,
+                "start": "at_visible_gate",
+                "seconds": 0.016666666666666666
+              },
+              {
+                "stage": 4,
+                "seed": 91873,
+                "start": "front",
+                "seconds": 10.5
+              },
+              {
+                "stage": 4,
+                "seed": 91873,
+                "start": "rear",
+                "seconds": 10.183333333333334
+              },
+              {
+                "stage": 4,
+                "seed": 91873,
+                "start": "above",
+                "seconds": 4.616666666666666
+              },
+              {
+                "stage": 4,
+                "seed": 91873,
+                "start": "below",
+                "seconds": 4.483333333333333
+              },
+              {
+                "stage": 4,
+                "seed": 91873,
+                "start": "left",
+                "seconds": 6.483333333333333
+              },
+              {
+                "stage": 4,
+                "seed": 91873,
+                "start": "right",
+                "seconds": 6.466666666666667
+              }
+            ]
+          }
+        },
+        {
+          "name": "A ship already at the entrance docks immediately without flying away",
+          "status": "passed",
+          "detail": {
+            "before": [
+              78,
+              13,
+              -100
+            ],
+            "afterFirstFrame": [
+              78,
+              13,
+              -100
+            ]
+          }
+        },
+        {
+          "name": "Three seeded rocks near the gate cannot occupy the chosen approach point",
+          "status": "passed",
+          "detail": {
+            "runs": 6,
+            "results": [
+              {
+                "seed": 39,
+                "stage": 3,
+                "start": "spawn",
+                "approach": [
+                  70,
+                  13,
+                  -95
+                ],
+                "seconds": 7.316666666666666
+              },
+              {
+                "seed": 39,
+                "stage": 3,
+                "start": "front",
+                "approach": [
+                  70,
+                  13,
+                  -95
+                ],
+                "seconds": 10.45
+              },
+              {
+                "seed": 59,
+                "stage": 3,
+                "start": "spawn",
+                "approach": [
+                  78,
+                  13,
+                  -93
+                ],
+                "seconds": 7.333333333333333
+              },
+              {
+                "seed": 59,
+                "stage": 3,
+                "start": "front",
+                "approach": [
+                  78,
+                  13,
+                  -93
+                ],
+                "seconds": 12.333333333333334
+              },
+              {
+                "seed": 87,
+                "stage": 4,
+                "start": "spawn",
+                "approach": [
+                  78,
+                  13,
+                  -93
+                ],
+                "seconds": 7.333333333333333
+              },
+              {
+                "seed": 87,
+                "stage": 4,
+                "start": "front",
+                "approach": [
+                  78,
+                  13,
+                  -93
+                ],
+                "seconds": 13.983333333333333
+              }
+            ]
+          }
+        },
+        {
+          "name": "Reproduced rock-detour standstill clears for retrieval and combat without bypassing collisions",
+          "status": "passed",
+          "detail": {
+            "reproducedSeed": 417147,
+            "originalPosition": [
+              113.11412652064415,
+              3.602830226910806,
+              -101.9222417068973
+            ],
+            "results": [
+              {
+                "phase": "retrieve",
+                "originalFailure": false,
+                "originalSpeed": 21.6616945095774,
+                "originalShield": 100,
+                "statusAfterFix": "lesson",
+                "movedMetres": 17.426539803398352,
+                "shield": 100
+              },
+              {
+                "phase": "battle",
+                "originalFailure": true,
+                "originalSpeed": 1.6945806083929738e-08,
+                "originalShield": 100,
+                "statusAfterFix": "playing",
+                "movedMetres": 21.99670049127798,
+                "shield": 100
+              }
+            ]
+          }
+        },
+        {
+          "name": "New cinematic aligns outside the iris then moves forward, including near-door manual capture",
+          "status": "passed",
+          "detail": {
+            "transitions": 8,
+            "cinematicSamples": 8000
+          }
+        },
+        {
+          "name": "Docking cannot start through the back or a side wall; manual input is unchanged",
+          "status": "passed"
+        },
+        {
+          "name": "Pause freezes docking and resumes the same position and phase",
+          "status": "passed"
+        },
+        {
+          "name": "JSON and tournament resume preserve both old and new in-progress dock trajectories",
+          "status": "passed",
+          "detail": {
+            "resumedCinematics": 8,
+            "publicTournamentSerializer": false
+          }
+        },
+        {
+          "name": "Combat, retrieval, escort and finale controls retain the frozen engine behavior",
+          "status": "passed",
+          "detail": {
+            "phases": [
+              "orientation",
+              "battle",
+              "retrieve",
+              "escort",
+              "boss",
+              "mrg"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

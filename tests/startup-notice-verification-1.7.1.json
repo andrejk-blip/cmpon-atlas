@@ -1,0 +1,40 @@
+{
+  "version": "1.7.1",
+  "method": "ES5 bootstrap executed with scripted DOM/window events and no modern collection APIs",
+  "source_sha256": "4d65d9f4456488dd2ea7eeab114ecf8cf4723177b854c0598de70a43b200e7c7",
+  "passed": 8,
+  "groups": [
+    {
+      "name": "Deferred large-core loading retains the static notice until DOMContentLoaded",
+      "passed": true
+    },
+    {
+      "name": "Successful startup hides the notice and removes all bootstrap handlers",
+      "passed": true
+    },
+    {
+      "name": "Our script resource errors reveal a fixed retry message",
+      "passed": true
+    },
+    {
+      "name": "Uncaught core syntax/runtime errors are reported without exposing raw details",
+      "passed": true
+    },
+    {
+      "name": "Images, unrelated scripts and unnamed cross-origin errors are ignored",
+      "passed": true
+    },
+    {
+      "name": "Gameplay errors after readiness cannot resurrect the startup banner",
+      "passed": true
+    },
+    {
+      "name": "Missing notice elements are safe on success and failure",
+      "passed": true
+    },
+    {
+      "name": "A late bootstrap on an already-complete document cleans up immediately",
+      "passed": true
+    }
+  ]
+}

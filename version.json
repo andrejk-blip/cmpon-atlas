@@ -1,6 +1,6 @@
 {
   "product": "ЦМПОН — атлас требований",
-  "version": "1.7.0",
+  "version": "1.7.1",
   "released_on": "2026-10-17",
   "requirements_edition": "2.0.2 (ВСТЕ)",
   "requirements_as_of": "2026-10-14",
@@ -10,7 +10,7 @@
   "finale_save_schema": "citadel-finale-v1",
   "analytics_module_version": "0.1.0",
   "tournament_module_version": "1.1.0",
-  "index_sha256": "05b2a2303d1fda8aa0af2c9accc0472eedc4227f7f65f80c1c383feb953f35ea",
+  "index_sha256": "800233dd20093f8a74cbf54e38b2f14e63d5dc8d578f96992ce74ae830dc2a63",
   "offline_sha256": "754ccde3777ace0150d9b062461301ea9542f893c4f158ebc0ae7e07a3e8a2c3",
   "core_assets_version": "1.3.5",
   "soundtrack_module_version": "1.4.2",
@@ -21,7 +21,7 @@
   "academy_cards": 36,
   "academy_campaign_questions": 23,
   "effects_module_version": "1.7.0",
-  "atlas_sha256": "376fbefcfbaef264d6b24ab2c323bd5d3450a5f57150a6890bb4ef33f3fb2871",
+  "atlas_sha256": "fc4ead21143c708dc7949b67df55c0ca29dd02acb18a208027107b520f2311c1",
   "music_sha256": "11ba6f8ee1d80e7313e7c7c14d1133cf55f9f124ca29eb8d3ed54aba22aafeb0",
   "effects_sha256": "652bd931cd5ad21401375859a96588249d80f6cea1ae859f7a0852e1fbcace6f",
   "mrg_module_version": "1.7.0",
@@ -70,5 +70,15 @@
   "mrg_viewport_module_version": "1.6.0",
   "voice_sha256": "bc89626c049d280827ccc68e61177ac1f8371a0fd125cfd40bbb47a3a7ad550f",
   "field_ui_sha256": "fb2b2545d45aaad74c1009bf2bd3b775ca6b897c9baf027f2c7cff5de0b02bed",
-  "academy_bridge_sha256": "cc33928c4d0b0271bc5205211ee815d56cba9243838053e4d460edee68ba2033"
+  "academy_bridge_sha256": "cc33928c4d0b0271bc5205211ee815d56cba9243838053e4d460edee68ba2033",
+  "compat_module_version": "1.7.1",
+  "compat_sha256": "e5ea0b065568c5ebcddcd01d483375560bae36308871dd62a87e5d8e97a46599",
+  "startup_module_version": "1.7.1",
+  "startup_sha256": "4d65d9f4456488dd2ea7eeab114ecf8cf4723177b854c0598de70a43b200e7c7",
+  "flight_module_version": "1.7.1",
+  "flight_sha256": "7ec2c389244c1490295bc434dc833d970d81ff882d86b8e0ee12577e281dadf5",
+  "aim_module_version": "1.7.1",
+  "aim_sha256": "6c0251b56e8a798597cc0a3b26bec950739665f4d5fed9980db091ed04b25058",
+  "flight_ui_module_version": "1.7.1",
+  "flight_ui_sha256": "b5e7d58a269a75fb71aba8ccb286e84714e17ef016532086dc8d098443acae91"
 }

@@ -1,0 +1,179 @@
+{
+  "version": "1.7.1",
+  "method": "Actual shipped cores in Node VM, mathematical intercept and real projectile/convoy integration; no browser or production storage",
+  "addon_sha256": "6c0251b56e8a798597cc0a3b26bec950739665f4d5fed9980db091ed04b25058",
+  "results": [
+    {
+      "core": "atlas-v1.3.5.js",
+      "sha256": "af1f9024313d1ecb798edc19b5039407049916d094c88426f85ba852ac077be8",
+      "passed": 14,
+      "groups": [
+        {
+          "name": "Tab selection, HUD lock, lasers and missiles agree",
+          "passed": true
+        },
+        {
+          "name": "Solid Citadel and asteroid block lock without consuming a missile",
+          "passed": true
+        },
+        {
+          "name": "Blocked selected objective keeps navigation while weapon picks a clear ship",
+          "passed": true
+        },
+        {
+          "name": "Warp, invulnerability and destroyed targets never capture weapons",
+          "passed": true
+        },
+        {
+          "name": "One visible lock cone also controls laser correction",
+          "passed": true
+        },
+        {
+          "name": "Orbit and convoy solve actual flight time from each weapon muzzle",
+          "passed": true,
+          "details": [
+            {
+              "phase": "battle",
+              "range": 150,
+              "miss": [
+                8.881784197001252e-16,
+                2.886579864025407e-15
+              ]
+            },
+            {
+              "phase": "escort",
+              "range": 150,
+              "miss": [
+                8.881784197001252e-16,
+                2.886579864025407e-15
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Moving orbit target is hit by the actual projectile integrator",
+          "passed": true
+        },
+        {
+          "name": "Actual convoy AI receives weapon hits and refreshes lock without firing",
+          "passed": true,
+          "details": {
+            "hits": 17,
+            "shots": 45,
+            "remainingHP": -1
+          }
+        },
+        {
+          "name": "Behind, distant and unreachable ships cannot produce an impossible lock",
+          "passed": true
+        },
+        {
+          "name": "Missile lifetime, cooldown, ammunition and upgrades remain intact",
+          "passed": true
+        },
+        {
+          "name": "Parallax supports stay targetable before the central core",
+          "passed": true
+        },
+        {
+          "name": "Pause neither shoots nor spends ammunition",
+          "passed": true
+        },
+        {
+          "name": "MRG remains manual for facing, pointer aim and grenades",
+          "passed": true
+        },
+        {
+          "name": "Repeated addon loading is idempotent",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "core": "engine-v1.2.1.js",
+      "sha256": "29cf0a79c5887bbdf4e80ba2664b16d50172771f10069cb6f5d274eabbc4cbe8",
+      "passed": 14,
+      "groups": [
+        {
+          "name": "Tab selection, HUD lock, lasers and missiles agree",
+          "passed": true
+        },
+        {
+          "name": "Solid Citadel and asteroid block lock without consuming a missile",
+          "passed": true
+        },
+        {
+          "name": "Blocked selected objective keeps navigation while weapon picks a clear ship",
+          "passed": true
+        },
+        {
+          "name": "Warp, invulnerability and destroyed targets never capture weapons",
+          "passed": true
+        },
+        {
+          "name": "One visible lock cone also controls laser correction",
+          "passed": true
+        },
+        {
+          "name": "Orbit and convoy solve actual flight time from each weapon muzzle",
+          "passed": true,
+          "details": [
+            {
+              "phase": "battle",
+              "range": 150,
+              "miss": [
+                8.881784197001252e-16,
+                2.886579864025407e-15
+              ]
+            },
+            {
+              "phase": "escort",
+              "range": 150,
+              "miss": [
+                8.881784197001252e-16,
+                2.886579864025407e-15
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Moving orbit target is hit by the actual projectile integrator",
+          "passed": true
+        },
+        {
+          "name": "Actual convoy AI receives weapon hits and refreshes lock without firing",
+          "passed": true,
+          "details": {
+            "hits": 17,
+            "shots": 45,
+            "remainingHP": -1
+          }
+        },
+        {
+          "name": "Behind, distant and unreachable ships cannot produce an impossible lock",
+          "passed": true
+        },
+        {
+          "name": "Missile lifetime, cooldown, ammunition and upgrades remain intact",
+          "passed": true
+        },
+        {
+          "name": "Parallax supports stay targetable before the central core",
+          "passed": true
+        },
+        {
+          "name": "Pause neither shoots nor spends ammunition",
+          "passed": true
+        },
+        {
+          "name": "MRG remains manual for facing, pointer aim and grenades",
+          "passed": true
+        },
+        {
+          "name": "Repeated addon loading is idempotent",
+          "passed": true
+        }
+      ]
+    }
+  ]
+}
