@@ -134,7 +134,8 @@
   const {kind,index,c,feedback,e}=current,correct=!!feedback?.correct;
   const identity=[seed32(e.seed),kind,index,c.id,feedback?.index??'?',correct,!!card.querySelector('.review-result')].join(':');
   if(state.lastOverlay===identity&&card.querySelector('.citadel-academy-note'))return;
-  if(state.lastOverlay!==identity)stopVoice();state.lastOverlay=identity;
+  const newDecision=state.lastOverlay!==identity;
+  if(newDecision)stopVoice();state.lastOverlay=identity;
   card.querySelectorAll('.citadel-academy-note').forEach(x=>x.remove());
   const title=card.querySelector('.review-prompt h3');if(title&&kind==='remark')title.textContent=LABEL[c.criterion]+' · '+c.title;
   const panel=document.createElement('section');panel.className='citadel-academy-note';
@@ -159,7 +160,7 @@
   const link=document.createElement('a');link.href='./academy.html?criterion='+encodeURIComponent(c.criterion);
   link.target='_blank';link.rel='noopener noreferrer';link.textContent='Отработать ещё кейсы этого критерия ↗';panel.append(link);
   card.append(panel);
-  if(feedback&&state.voice)speak((correct?'Верное решение. ':'Это решение требует пересмотра. ')+c.lesson);
+  if(feedback&&state.voice&&newDecision)speak((correct?'Верное решение. ':'Это решение требует пересмотра. ')+c.lesson);
  }
  function attach(){
   if(typeof citadelLessonCase!=='function'||typeof citadelRemarkCase!=='function'||typeof citadelFinalCase!=='function'||
