@@ -1,0 +1,911 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#081520"><title>Академия защитников требований · ЦМПОН</title>
+<style>
+:root{--bg:#081520;--panel:#102536;--panel2:#122b3b;--line:#294454;--mint:#80e6ca;--mint2:#46bba5;--gold:#f0c779;--ice:#bddce4;--muted:#a7c1c9;--white:#f5fbfb;--red:#ffae9a;--blue:#86b5fa;--font:system-ui,-apple-system,'Segoe UI',Arial,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 90% 5%,#24425a 0,transparent 32%),radial-gradient(ellipse at 0 60%,#0b3840 0,transparent 45%),#081520;color:var(--white);font:15px/1.5 var(--font);min-height:100vh}body:before{content:'';position:fixed;pointer-events:none;inset:0;opacity:.24;background-image:radial-gradient(#86ced7 1px,transparent 1.2px);background-size:31px 31px;mask-image:linear-gradient(to bottom,black,transparent 75%)}button,input,textarea,select{font:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible,textarea:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--gold);outline-offset:2px}a{color:#b4edde}a:hover{color:white}.hidden,[hidden]{display:none!important}.wrap{max-width:1390px;margin:0 auto;padding:18px 24px 64px;position:relative}.header{display:flex;align-items:center;gap:16px;justify-content:space-between;border-bottom:1px solid #3a5462;padding:5px 0 18px}.logo{display:flex;gap:13px;align-items:center;text-decoration:none;color:var(--white)}.symbol{display:grid;place-items:center;width:46px;height:46px;border:1px solid #7adcc5;border-radius:11px;color:var(--mint);font-weight:900;font-size:24px;background:#143a42;box-shadow:0 0 25px #59fbd523}.kicker{font:700 10px/1.2 ui-monospace,Menlo,monospace;letter-spacing:2px;color:var(--mint);text-transform:uppercase}.logo .kicker{display:block;margin-bottom:4px}.logo strong{display:block;font-size:17px;letter-spacing:.1px}.logo small{display:block;color:var(--muted);font:11px/1.3 ui-monospace,monospace;letter-spacing:.6px}.header-right{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.chip{border:1px solid #365465;padding:5px 11px;border-radius:6px;color:#b9d3db;font:12px ui-monospace,monospace}.btn{color:#edf8f4;border:1px solid #547481;border-radius:9px;background:#173747;min-height:42px;padding:9px 15px;font-weight:650;transition:.15s}.btn:hover{background:#224556;border-color:#94c7be}.btn.primary{color:#0d2b2c;background:#a7ead4;border-color:#c5f7e7}.btn.primary:hover{background:#d1ffee}.btn.ghost{background:transparent}.btn.danger{border-color:#ba716e;color:#f8c6bd}.btn:disabled{opacity:.38;cursor:not-allowed}.tab{border:1px solid transparent;background:none;color:#b2c9d1;font-weight:650;padding:11px 15px;border-radius:8px}.tab[aria-selected=true]{border-color:#619f9b;color:#b0f3d8;background:#16423f}.shell{display:grid;grid-template-columns:minmax(235px,280px) minmax(0,1fr);gap:24px;margin-top:25px}.aside{position:sticky;align-self:start;top:20px;border:1px solid var(--line);border-radius:13px;background:#102637ee;padding:20px;box-shadow:0 15px 50px #0003}.eyebrow{font:11px ui-monospace,monospace;color:#a4c5ce;letter-spacing:1.3px}.aside h2{font-size:19px;line-height:1.15;margin:9px 0 6px}.aside p{margin:0;color:var(--muted);font-size:12px}.aside-score{display:flex;align-items:baseline;gap:7px;margin-top:14px}.aside-score strong{font-size:35px;font-weight:800;color:#d5f8e4}.aside-score span{font-size:12px;color:#b3cbd0}.crit-rows{margin-top:19px;display:grid;gap:9px}.crit-row{border:1px solid #315161;border-radius:8px;background:#153243;padding:10px;text-align:left;display:grid;grid-template-columns:25px 1fr;gap:9px;color:var(--white);align-items:center}.crit-row:hover,.crit-row.selected{border-color:#95e8d0;background:#16433f}.crit-icon{font-size:18px}.crit-row .name{font-size:12px;font-weight:650}.progress-track{height:5px;border-radius:15px;background:#365463;margin-top:6px;overflow:hidden}.progress-track span{display:block;height:100%;background:var(--mint2);transition:width .25s}.criterion-sub{color:var(--muted);font:11px ui-monospace,monospace}.extra-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:14px}.extra-grid span{display:flex;justify-content:center;align-items:center;border:1px solid #476375;border-radius:5px;padding:6px 1px;color:#abcbd2;font-size:10px;text-align:center}.note{font-size:11px;color:var(--muted);line-height:1.6;margin-top:17px}.content{min-width:0}.titleline{display:flex;justify-content:space-between;align-items:flex-end;gap:20px}.titleline h1{font-size:clamp(29px,3.6vw,47px);font-weight:850;line-height:1.08;letter-spacing:-1.4px;margin:6px 0 13px}.titleline p{color:#bbd4db;margin:0;max-width:750px}.scope{font-size:12px;color:#96dccb}.controlbar{display:flex;align-items:center;flex-wrap:wrap;gap:7px;margin:21px 0 15px}.controlbar .tab{border:1px solid #335362}.controlbar .tab[aria-selected=true]{border-color:#8bdac3}.settings{margin-left:auto;display:flex;align-items:center;gap:7px}.count{font:12px ui-monospace,monospace;color:#b1cbca;white-space:nowrap}.stage{border:1px solid #3f6571;border-radius:18px;background:linear-gradient(140deg,#102839 0,#0c2435 60%,#112b33);box-shadow:0 25px 75px #0005;overflow:hidden;position:relative}.stage:before{content:'';position:absolute;right:-70px;top:-80px;width:330px;height:300px;background:radial-gradient(circle,#2f71512e,transparent 68%);pointer-events:none}.stage-head{border-bottom:1px solid #395b68;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 24px;background:#102d3c}.stage-head>div{display:flex;flex-wrap:wrap;align-items:center;gap:9px}.mission-tag{font:700 11px ui-monospace,monospace;letter-spacing:1.2px;color:var(--mint)}.level{border:1px solid #648a89;border-radius:5px;font:11px ui-monospace,monospace;color:#bad2d0;padding:3px 8px}.stage-body{padding:28px 28px 30px}.card-context{color:#9cc9d1;font-size:12px;letter-spacing:.3px}.card-title{font-size:clamp(23px,2.6vw,33px);line-height:1.2;letter-spacing:-.5px;margin:5px 0 11px}.card-lede{font-size:14px;color:#c4d9df;margin:0 0 17px;max-width:850px}.quote-block{border-left:4px solid var(--gold);background:#20394b;padding:17px 20px;border-radius:0 9px 9px 0;color:#fff5db;font-size:clamp(16px,1.65vw,21px);line-height:1.55;font-weight:580;margin-bottom:21px}.question{font-size:14px;color:#cef3e6;font-weight:740;margin:12px 0}.choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.choice{width:100%;text-align:left;background:#183748;border:1px solid #486272;color:#f4f8fa;border-radius:12px;padding:17px;min-height:82px;display:flex;gap:13px;align-items:flex-start;line-height:1.45;transition:transform .12s,border-color .12s}.choice:hover{border-color:#9bd7ca;transform:translateY(-1px)}.choice>span{display:grid;place-items:center;flex:0 0 29px;height:29px;border:1px solid #608797;border-radius:7px;color:#d7e9e5;font:700 13px ui-monospace,monospace}.choice.correct{border-color:#8de2b7;background:#1c4c43}.choice.incorrect{border-color:#e9a69e;background:#5c333c}.choice:not(:disabled){cursor:pointer}.choice:disabled{cursor:default}.feedback{margin-top:17px;border:1px solid #5b847d;border-radius:12px;padding:20px;background:#173b3f}.feedback.wrong{background:#342f3a;border-color:#9c646a}.feedback h3{font-size:19px;color:#b9ffda;margin:0 0 8px}.feedback.wrong h3{color:#ffbdab}.feedback p{margin:6px 0 12px;color:#d5e7e5}.feedback-splits{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin:15px 0}.example{border:1px solid #4e756f;background:#123538;border-radius:10px;padding:14px}.example strong{color:#abead3;font-size:11px;letter-spacing:1px}.example p{font-size:13px;color:#edfbf8;margin:8px 0 0}.narrator{border:1px solid #708a6e;background:#2d3a33;padding:12px 15px;border-radius:9px;margin-top:13px;color:#f5e6bf}.narrator small{display:block;color:var(--gold);font-weight:750;letter-spacing:1px;margin-bottom:4px}.footerbar{display:flex;align-items:center;gap:9px;justify-content:space-between;flex-wrap:wrap;margin-top:16px}.smalllink{background:transparent;border:none;padding:7px;color:#b9e9de;text-decoration:underline;min-height:40px}.hint{color:#b2c8cc;font-size:12px}.intro-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:25px 0}.intro-tile{border:1px solid #3b5969;border-radius:12px;background:#102938;padding:17px}.intro-tile b{display:block;color:#a5ecd8;font-size:25px}.intro-tile span{font-size:13px;color:#b6ced3}.small-title{font-weight:780;font-size:21px;margin:25px 0 8px}.secondary-panel{border:1px solid #385365;background:#102b39;border-radius:12px;padding:19px 22px}.secondary-panel p{color:#c4d9db}.secondary-panel button{margin:4px}.ref-section{font-size:12px;color:#9bbac5;margin-top:21px}.pill{display:inline-block;padding:4px 9px;border-radius:5px;background:#214c4e;color:#b9f7df;font-size:12px}.results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.results .box{border:1px solid #456270;border-radius:9px;background:#16313f;padding:17px}.results .box b{font-size:28px;color:#c6f1d8}.results .box small{display:block;color:var(--muted)}.editor-layout{display:grid;grid-template-columns:minmax(200px,270px) minmax(0,1fr);gap:16px}.editor-side{border:1px solid #3b5969;background:#102d3c;border-radius:10px;max-height:680px;overflow:auto}.editor-list{width:100%;text-align:left;padding:10px 11px;border:0;border-bottom:1px solid #304d5d;color:#cddfe1;background:transparent;font-size:12px}.editor-list strong{display:block;color:#eafbf9}.editor-list[aria-selected=true]{background:#215344}.editor-main{border:1px solid #3b5969;background:#102b3a;border-radius:10px;padding:22px}.formgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.field{display:flex;flex-direction:column;gap:5px;margin-bottom:13px;min-width:0}.field.wide{grid-column:1/-1}.field label{font-weight:700;font-size:12px;color:#acd0d2}.field input,.field textarea,.field select,.editor-search{width:100%;background:#081d2a;border:1px solid #55707e;color:#f2f6fa;border-radius:7px;padding:11px;min-height:43px}.field textarea{resize:vertical;min-height:76px;line-height:1.5}.editor-actions{display:flex;gap:9px;flex-wrap:wrap;margin:10px 0 20px}.stack{display:flex;gap:10px;flex-wrap:wrap}.toast{position:fixed;right:25px;bottom:20px;z-index:99;background:#23514b;color:#f3fff6;border:1px solid #91d8bd;padding:12px 18px;border-radius:9px;box-shadow:0 9px 35px #0008;max-width:min(450px,calc(100vw - 30px))}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}.bottomline{margin-top:26px;border-top:1px solid #365566;padding:17px 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;color:#8db9bd;font:11px ui-monospace,monospace}
+@media(max-width:1000px){.shell{grid-template-columns:1fr}.aside{position:static}.crit-rows{grid-template-columns:repeat(3,1fr)}.editor-layout{grid-template-columns:220px 1fr}}
+@media(max-width:650px){.shell{display:flex;flex-direction:column}.content{order:0}.aside{order:1}.wrap{padding:12px 12px 32px}.header{align-items:flex-start;flex-direction:column}.logo strong{font-size:15px}.chip{font-size:10px}.shell{gap:13px;margin-top:16px}.aside{padding:13px}.crit-rows{grid-template-columns:repeat(2,1fr);gap:7px}.crit-row{padding:8px;gap:6px}.titleline h1{font-size:29px}.titleline p{font-size:13px}.controlbar{gap:5px}.tab{padding:8px 11px;font-size:12px}.settings{margin-left:0;width:100%;justify-content:space-between}.stage-head{padding:12px 14px}.stage-body{padding:17px 13px}.choices,.feedback-splits,.intro-grid,.results,.formgrid,.editor-layout{grid-template-columns:1fr}.choice{min-height:66px;padding:13px}.quote-block{padding:12px 15px;font-size:17px}.editor-main{padding:14px}.editor-side{max-height:190px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="header">
+  <a class="logo" href="https://andrejk-blip.github.io/cmpon-atlas/atlas.html#arcade" title="Вернуться в игру"><span class="symbol">Ц</span><span><span class="kicker">ЦСИИ · МЕТОДОЛОГИЧЕСКАЯ ПОДГОТОВКА</span><strong>АКАДЕМИЯ ЗАЩИТНИКОВ ТРЕБОВАНИЙ</strong><small>Обучающий модуль «Цитадели» · 1.4.0</small></span></a>
+  <div class="header-right"><span class="chip" id="bank-count">36 КЕЙСОВ</span><span class="chip">BABOK v3 · 7.2</span><a class="btn ghost" href="https://andrejk-blip.github.io/cmpon-atlas/atlas.html#arcade">← В игру</a></div>
+</header>
+<div class="shell">
+<aside class="aside" aria-label="Прогресс освоения критериев">
+ <div class="eyebrow">УЧЕБНЫЙ ПРОФИЛЬ</div><h2>Щит аналитика</h2><p>Шесть основных критериев. Чтобы заполнить сектор, правильно реши три разных кейса по нему.</p>
+ <div class="aside-score"><strong id="mastered">0 / 6</strong><span>секторов освоено</span></div>
+ <div class="crit-rows" id="crit-rows"></div>
+ <div class="small-title" style="font-size:13px;margin-bottom:0">Дополнительно по BABOK</div>
+ <div class="extra-grid" id="extra-grid"></div>
+ <div class="note">Раздел 7.2 BABOK Guide v3 · характеристики качественных требований. Тексты мини-лекций — авторские пересказы, а не цитаты из книги.</div>
+</aside>
+<main class="content">
+ <div class="titleline"><div><span class="kicker">ОРБИТАЛЬНАЯ УЧЕБНАЯ СТАНЦИЯ · ЦМПОН</span><h1 id="page-title">Требование — это решение, которое можно проверить.</h1><p id="page-sub">Проверяй настоящие по предметной области ситуации: СДР, ГАР, ЕДН, ОРС, анкеты, микроданные и права доступа. Все примеры учебные, не утверждённые ФТ.</p></div></div>
+ <div class="controlbar" role="tablist" aria-label="Разделы обучения"><button class="tab" data-tab="home" role="tab" aria-selected="true">Штаб</button><button class="tab" data-tab="practice" role="tab" aria-selected="false">Тренировка</button><button class="tab" data-tab="exam" role="tab" aria-selected="false">Экзамен</button><button class="tab" data-tab="editor" role="tab" aria-selected="false">Редактор</button><div class="settings"><label style="display:flex;gap:7px;align-items:center;font-size:12px;color:#c3e7de"><input type="checkbox" id="voice" checked> Озвучка разборов</label><span class="count" id="right-counter">0 верных</span></div></div>
+ <section id="home" aria-label="Штаб обучения">
+   <div class="intro-grid"><div class="intro-tile"><b>36</b><span>содержательных сценариев: формулировка, исправление и тест</span></div><div class="intro-tile"><b>6 + 4</b><span>шесть основных критериев и четыре дополнительных из BABOK</span></div><div class="intro-tile"><b>12</b><span>вопросов в итоговом экзамене по всем основным критериям</span></div></div>
+   <div class="stage"><div class="stage-head"><span class="mission-tag">НАЧАТЬ ОБУЧЕНИЕ</span><span class="level">УРОВЕНЬ: АНАЛИТИК</span></div><div class="stage-body"><h2 class="card-title">Не выбирай очевидное. Находи главное.</h2><p class="card-lede">Каждый терминал содержит ситуацию из статистического производства, плохое или неполное требование и четыре конкурирующих решения. После ответа наставник объясняет логику и зачитывает краткий принцип BABOK. Ошибочные кейсы возвращаются позже.</p><div class="stack"><button class="btn primary" id="start-practice">Запустить тренировку →</button><button class="btn" id="start-exam">Сдать экзамен: 12 кейсов</button><button class="btn ghost" id="go-editor">Изменить карточки самому</button></div></div></div>
+   <h2 class="small-title">Чему учится игрок</h2><div class="secondary-panel"><p>1. Отличать потребность заказчика от готового проверяемого ФТ. 2. Узнавать дефект формулировки и причину риска. 3. Предлагать точный вариант требования. 4. Проектировать испытание с входом и ожидаемым результатом. 5. Прослеживать связь «потребность → ФТ → компонент → ПМИ». 6. Проверять реализуемость в условиях контуров, ролей, ресурсов и интеграций.</p><p>В экзамене учитывается не только общий процент, но и охват всех шести основных критериев. Задания являются тренировочными моделями на основе рабочих сюжетов.</p></div>
+ </section>
+ <section id="practice" class="hidden" aria-label="Режим тренировки">
+  <div class="stage" id="practice-stage"></div><p class="ref-section">Выберите критерий на левой панели, чтобы потренировать конкретный навык. Ошибочный кейс появится повторно через несколько заданий.</p>
+ </section>
+ <section id="exam" class="hidden" aria-label="Экзаменационный режим"><div class="stage" id="exam-stage"></div><p class="ref-section">Экзамен: по два случайных вопроса на каждый основной критерий, порядок перемешан. Заучивание порядка вариантов не помогает.</p></section>
+ <section id="editor" class="hidden" aria-label="Редактор учебных карточек">
+   <div class="secondary-panel" style="margin-bottom:14px"><b style="color:var(--mint)">Редактор без программирования</b><p>Изменения сохраняются в этом браузере. Они <b>не меняют вопросы у всех игроков</b>: чтобы опубликовать общий набор, скачай JSON и добавь его в релиз игры. Импорт позволяет загрузить новый пакет.</p><div class="editor-actions"><button class="btn primary" id="editor-add">+ Новая карточка</button><button class="btn" id="editor-duplicate">Дублировать</button><button class="btn" id="editor-export">Экспорт JSON ↓</button><label class="btn">Импорт JSON ↑<input type="file" id="editor-import" accept=".json,application/json" hidden></label><button class="btn danger" id="editor-reset">Вернуть исходные</button></div><div class="hint" id="editor-status">Редакция: исходная библиотека</div></div>
+   <div class="editor-layout"><div class="editor-side"><input id="editor-search" class="editor-search" placeholder="Поиск по карточкам..." aria-label="Поиск карточек"><div id="editor-list"></div></div><div class="editor-main"><form id="editor-form"><div class="formgrid">
+     <div class="field"><label for="f-id">ID карточки</label><input id="f-id" required maxlength="50" pattern="[A-Za-z0-9_-]+"></div><div class="field"><label for="f-criterion">Критерий</label><select id="f-criterion"></select></div>
+     <div class="field wide"><label for="f-title">Заголовок</label><input id="f-title" required maxlength="160"></div><div class="field"><label for="f-component">Предметная область / компонент</label><input id="f-component" maxlength="160"></div><div class="field"><label for="f-level">Сложность</label><select id="f-level"><option value="1">1 · Базовая</option><option value="2">2 · Средняя</option><option value="3">3 · Сложная</option></select></div>
+     <div class="field wide"><label for="f-context">Контекст ситуации</label><textarea id="f-context" required rows="2"></textarea></div>
+     <div class="field wide"><label for="f-requirement">Исходная формулировка / спорный тезис</label><textarea id="f-requirement" required rows="3"></textarea></div>
+     <div class="field wide"><label for="f-task">Вопрос игроку</label><input id="f-task" required></div>
+     <div class="field wide"><label for="f-choices">Варианты (отдельные строки ниже). Укажи номер правильного ответа.</label><div class="formgrid"><input id="f-c0" required placeholder="Вариант А"><input id="f-c1" required placeholder="Вариант Б"><input id="f-c2" required placeholder="Вариант В"><input id="f-c3" required placeholder="Вариант Г"></div></div>
+     <div class="field"><label for="f-correct">Правильный ответ</label><select id="f-correct"><option value="0">А</option><option value="1">Б</option><option value="2">В</option><option value="3">Г</option></select></div><div class="field"><label for="f-source">Источник / статус</label><input id="f-source" value="Учебный сценарий" maxlength="180"></div>
+     <div class="field wide"><label for="f-why">Объяснение ошибки</label><textarea id="f-why" required></textarea></div><div class="field wide"><label for="f-better">Как переписать требование</label><textarea id="f-better" required></textarea></div><div class="field wide"><label for="f-test">Как проверить на приёмке</label><textarea id="f-test" required></textarea></div><div class="field wide"><label for="f-lesson">Мини-лекция для озвучки (авторский пересказ)</label><textarea id="f-lesson" required></textarea></div>
+   </div><div class="stack"><button class="btn primary" type="submit">Сохранить карточку</button><button type="button" class="btn" id="editor-preview">Проверить в тренировке</button><button type="button" class="btn danger" id="editor-delete">Удалить карточку</button></div></form></div></div>
+ </section>
+ <div class="bottomline"><span>ЦМПОН · Учебная сборка 1.4.0 · 17.10.2026</span><span>Тренажёр не изменяет реальные FT-ID, оценки атласа и серверные результаты Кубка.</span></div>
+</main>
+</div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+<script type="application/json" id="initial-bank">{
+  "schema": "citadel-academy-cardbank-v1",
+  "version": "1.0.0",
+  "source_note": "Все задания являются учебными моделями по мотивам документов ЦМПОН; формулировки и проверки созданы для тренажёра, не являются утверждёнными ФТ.",
+  "cards": [
+    {
+      "id": "CMP-01",
+      "criterion": "completeness",
+      "title": "Дубликаты после вечерней синхронизации",
+      "component": "Сбор / СДР",
+      "context": "Переписчик работает офлайн, а респондент за это время заполнил анкету через ЕПГУ.",
+      "requirement": "Сервис должен исключать повторное прохождение опроса.",
+      "choices": [
+        "Задать время синхронизации и считать последнее поступившее сообщение достоверным.",
+        "Определить событие, идентификатор, правило разрешения конфликта и результат синхронизации.",
+        "Сопоставлять анкеты по ФИО и дате рождения без правила разрешения конфликтов.",
+        "Сохранять оба отчёта, оставив исключение дублей на этапе формирования итогов."
+      ],
+      "correct": 1,
+      "why": "Не описаны обнаружение дубликата, приоритет источников и результат для уже заполненной анкеты.",
+      "better": "При синхронизации сервис должен выявлять анкеты одного респондента по устойчивому идентификатору, фиксировать конфликт и применять утвержденное правило сохранения версии; статус конфликта доступен контролёру.",
+      "test": "Один респондент завершил опрос на ЕПГУ и офлайн-планшете: после синхронизации есть один действующий ответ и протокол конфликта.",
+      "lesson": "Полнота зависит от уровня детализации: для продолжения разработки должны быть определены условия, исключения и ожидаемый результат.",
+      "level": 2,
+      "task": "Найдите ключевую ошибку в постановке",
+      "source": "Учебный сценарий по материалам ЦМПОН"
+    },
+    {
+      "id": "CMP-02",
+      "criterion": "completeness",
+      "title": "Загрузка из ГАР без данных",
+      "component": "НСИ / АД и БД",
+      "context": "Региональная выгрузка пришла без обязательного кода дома.",
+      "requirement": "Сервис должен загружать актуальные адреса ГАР.",
+      "choices": [
+        "Загружать запись с пустым кодом в статусе «неполная» без последующей маршрутизации.",
+        "Отклонять весь файл целиком при первой ошибке без протокола.",
+        "Установить обязательные атрибуты, отклонение некорректных записей и журнал ошибок.",
+        "Загружать корректные записи, а пользователю показывать только общий итог загрузки."
+      ],
+      "correct": 2,
+      "why": "Позитивный сценарий есть, негативный отсутствует.",
+      "better": "Сервис должен проверять наличие обязательных атрибутов при загрузке данных ГАР и отклонять некорректные записи с регистрацией причины и исходного идентификатора.",
+      "test": "Файл с одной записью без кода дома: запись отклонена, корректные записи загружены, ошибка найдена в журнале.",
+      "lesson": "Хорошее требование описывает поведение не только при штатном входе, но и при граничном либо ошибочном случае.",
+      "level": 1,
+      "task": "Найдите ключевую ошибку в постановке",
+      "source": "Учебный сценарий по материалам ЦМПОН"
+    },
+    {
+      "id": "CMP-03",
+      "criterion": "completeness",
+      "title": "Изменение правил ФЛК",
+      "component": "Конструктор анкет / ФЛК",
+      "context": "Методолог изменяет возрастной диапазон вопроса, но анкета уже опубликована.",
+      "requirement": "Сервис должен позволять изменять правила ФЛК.",
+      "choices": [
+        "Описать версии, применимость к новым и сохранённым анкетам, подтверждение публикации.",
+        "Хранить одну текущую редакцию ФЛК и пересчитывать исторические данные при открытии.",
+        "Публиковать новое правило сразу после сохранения методологом, без фиксации периода.",
+        "Разрешить менять правило только через новый формуляр анкеты, не отслеживая версию ФЛК."
+      ],
+      "correct": 0,
+      "why": "Не определены версия правила и влияние на ранее собранные данные.",
+      "better": "При утверждении новой версии правила ФЛК сервис должен сохранять предыдущую версию, применять новую к анкетам указанного периода и фиксировать автора и дату вступления.",
+      "test": "Анкета из предыдущего периода проверяется прежним правилом, новая — действующим; обе версии доступны в истории.",
+      "lesson": "Полнота — это информация, достаточная для выполнения следующей работы, а не максимальная длина текста.",
+      "level": 2,
+      "task": "Найдите ключевую ошибку в постановке",
+      "source": "Учебный сценарий по материалам ЦМПОН"
+    },
+    {
+      "id": "CMP-04",
+      "criterion": "completeness",
+      "title": "Сбой при приёме актовой записи",
+      "component": "ЕДН / АД и БД",
+      "context": "Канал получения записей ЗАГС периодически недоступен.",
+      "requirement": "Сервис должен принимать данные ЕДН из внешнего источника.",
+      "choices": [
+        "Считать пакет доставленным, если внешний отправитель выдал подтверждение.",
+        "Дать кнопку повторного приёма без контроля исходного идентификатора пакета.",
+        "Перезапускать всю обработку ЕДН после любой ошибки интеграции.",
+        "Определить статус ошибки, повтор обработки и защиту от повторной записи одного события."
+      ],
+      "correct": 3,
+      "why": "Возможность приёма без сценариев повторной передачи создаёт риск пропусков и дублей.",
+      "better": "При временной ошибке приёма сервис должен сохранить идентификатор пакета и статус, выполнить повторную обработку по настроенному правилу и исключить дублирование уже принятых событий.",
+      "test": "Два одинаковых пакета после сбоя: одна принятая запись, повтор отражён в журнале.",
+      "lesson": "Полнота покрывает существенные состояния процесса, в том числе отказ внешней зависимости.",
+      "level": 2,
+      "task": "Найдите ключевую ошибку в постановке",
+      "source": "Учебный сценарий по материалам ЦМПОН"
+    },
+    {
+      "id": "CMP-05",
+      "criterion": "completeness",
+      "title": "Неполный маршрут",
+      "component": "РОН / Сбор",
+      "context": "Для нескольких счётных участков отсутствуют координаты части адресов.",
+      "requirement": "Сервис должен автоматически формировать маршрутный лист.",
+      "choices": [
+        "Исключать объекты без координат из маршрута и сохранять их лишь в общем отчёте.",
+        "Обозначить, как включаются адреса без геокоординат и какие ограничения видит переписчик.",
+        "Строить маршрут только по геокодированным объектам, а остальное передавать вручную.",
+        "Считать маршрут готовым после отображения счётного участка на карте."
+      ],
+      "correct": 1,
+      "why": "Указана основная функция, но не определена обработка недостаточных исходных данных.",
+      "better": "Сервис должен включать в маршрутный лист все назначенные адреса; для объектов без координат указывать признак «геоположение не определено» и формировать уведомление контролёру.",
+      "test": "Из 20 адресов у двух нет координат: в маршрутном листе 20 адресов и два предупреждения.",
+      "lesson": "Когда входные данные неполны, требование должно объяснять, как система отражает это в результате.",
+      "level": 1,
+      "task": "Найдите ключевую ошибку в постановке",
+      "source": "Учебный сценарий по материалам ЦМПОН"
+    },
+    {
+      "id": "AMB-01",
+      "criterion": "unambiguity",
+      "title": "«Оперативно» — это сколько?",
+      "component": "Мониторинг",
+      "context": "Функциональный заказчик просит быстро узнавать об изменении статуса обследования.",
+      "requirement": "Сервис должен оперативно уведомлять пользователей о любых изменениях.",
+      "choices": [
+        "Описать допустимую задержку как «минимальную с учётом нагрузки».",
+        "Считать уведомление своевременным, если оно пришло до следующего рабочего дня.",
+        "Назвать конкретные события, адресатов и предел задержки, согласованный с ФЗ.",
+        "Ограничить уведомления ежедневной сводкой без уточнения критичных событий."
+      ],
+      "correct": 2,
+      "why": "«Оперативно» и «любые» допускают разные трактовки.",
+      "better": "При переходе этапа обследования в статус «Сбор завершён» сервис должен отправлять назначенному ответственному уведомление не позднее 5 минут после записи события.",
+      "test": "Изменить статус в 10:00:00; проверить запись отправки уведомления до 10:05:00.",
+      "lesson": "Однозначность позволяет двум независимым участникам одинаково определить, что именно требуется.",
+      "level": 2,
+      "task": "Найдите ключевую ошибку в постановке",
+      "source": "Учебный сценарий по материалам ЦМПОН"
+    },
+    {
+      "id": "AMB-02",
+      "criterion": "unambiguity",
+      "title": "Два значения слова «актуальный»",
+      "component": "НСИ / ТЕРСОН-МО",
+      "context": "После территориального преобразования аналитик сравнивает данные двух лет.",
+      "requirement": "Сервис должен показывать актуальную территорию для всех отчётов.",
+      "choices": [
+        "Уточнить, что именно значит актуальная: на дату наблюдения или на текущую дату.",
+        "Использовать только последнюю согласованную версию справочника во всех отчётах.",
+        "Всегда показывать текущий ОКТМО, а в архивном файле оставлять исходный.",
+        "Заменить слово «актуальный» на «действующий», не определив дату действия."
+      ],
+      "correct": 0,
+      "why": "Для ретроспективных и текущих отчётов «актуальный» может означать разные временные срезы.",
+      "better": "В отчёте за выбранный год сервис должен применять версию ТЕРСОН-МО, действовавшую на дату отчётного периода, если пользователь не выбрал режим пересчёта на текущие границы.",
+      "test": "Открыть отчёт за прошлый год после изменения границ: отображаются исторические коды.",
+      "lesson": "Неоднозначность часто живёт в привычных словах: «актуальный», «быстро», «полный», «удобный».",
+      "level": 2,
+      "task": "Найдите ключевую ошибку в постановке",
+      "source": "Учебный сценарий по материалам ЦМПОН"
+    },
+    {
+      "id": "AMB-03",
+      "criterion": "unambiguity",
+      "title": "«Все заинтересованные»",
+      "component": "ОЮЗД / Роли",
+      "context": "Документ отправляют на межведомственное согласование.",
+      "requirement": "Сервис должен информировать всех заинтересованных пользователей о согласовании.",
+      "choices": [
+        "Отправлять сообщения всем сотрудникам подразделений, упомянутых в документе.",
+        "Оповещать тех, кто когда-либо открывал документ на согласование.",
+        "Оповещать всех пользователей с правом чтения согласуемого документа.",
+        "Определить участников по ролям и маршруту конкретного согласования."
+      ],
+      "correct": 3,
+      "why": "«Заинтересованные» не определяет проверяемое множество адресатов.",
+      "better": "При переходе документа на следующий этап согласования сервис должен уведомлять пользователей с ролями участников текущего маршрута, назначенных на этот этап.",
+      "test": "На маршруте три участника: уведомление получают только двое, назначенные на активный шаг.",
+      "lesson": "Определённый термин или ссылка на утверждённый справочник устраняет спор о том, кто входит в область действия.",
+      "level": 1,
+      "task": "Найдите ключевую ошибку в постановке",
+      "source": "Учебный сценарий по материалам ЦМПОН"
+    },
+    {
+      "id": "AMB-04",
+      "criterion": "unambiguity",
+      "title": "«Достаточное количество»",
+      "component": "Сбор / ОРС",
+      "context": "Супервизор должен знать, когда выборочная совокупность выполнена.",
+      "requirement": "Сервис должен показывать, набрано ли достаточное количество интервью.",
+      "choices": [
+        "Определять достижение плана только по наличию зелёного индикатора.",
+        "Указать формулу и порог достаточности из согласованной методики по выбранному периоду.",
+        "Устанавливать один общий порог для всех обследований без ссылок на методику.",
+        "Считать обследование выполненным по факту наступления даты завершения."
+      ],
+      "correct": 1,
+      "why": "Порог не определён, поэтому один и тот же результат можно оценить по-разному.",
+      "better": "Для каждого обследования сервис должен рассчитывать долю завершённых интервью от утверждённого планового объёма и сравнивать её с порогом, установленным в методике обследования.",
+      "test": "При плане 100, факте 79 и пороге 80% система отображает недостаточное выполнение.",
+      "lesson": "Однозначное требование использует определённые правила, а не субъективные оценки.",
+      "level": 1,
+      "task": "Найдите ключевую ошибку в постановке",
+      "source": "Учебный сценарий по материалам ЦМПОН"
+    },
+    {
+      "id": "AMB-05",
+      "criterion": "unambiguity",
+      "title": "«Корректные» данные",
+      "component": "СДР / Обработка",
+      "context": "Обработка получает записи со спорным адресом проживания.",
+      "requirement": "Сервис должен пропускать только корректные данные.",
+      "choices": [
+        "Перечислить проверяемые правила качества и результат нарушения.",
+        "Считать корректными сведения из административных источников и не проверять их.",
+        "Заменить «корректные» на «валидированные» без указания валидатора.",
+        "Допускать к обработке всё, что прошло проверку формата файла."
+      ],
+      "correct": 0,
+      "why": "«Корректные» без набора контролей означает не определённое поведение.",
+      "better": "Перед передачей записи в расчёт сервис должен применять утверждённый набор ФЛК; запись с блокирующей ошибкой получает статус «Требует исправления» и не передаётся.",
+      "test": "Подать запись с нарушением блокирующего ФЛК: статус изменяется, в расчёт не попадает.",
+      "lesson": "Условия проверки должны быть перечислены или точно связаны с версией набора правил.",
+      "level": 1,
+      "task": "Найдите ключевую ошибку в постановке",
+      "source": "Учебный сценарий по материалам ЦМПОН"
+    },
+    {
+      "id": "ATM-01",
+      "criterion": "atomicity",
+      "title": "Четыре функции в одной строке",
+      "component": "СДР / НСИ",
+      "context": "Функциональный заказчик перечислил все желаемые возможности одним предложением.",
+      "requirement": "Сервис должен загружать, сопоставлять, исправлять и публиковать адреса.",
+      "choices": [
+        "Объединить все действия в одну бизнес-операцию «актуализация адресного массива».",
+        "Сформировать верхнеуровневую функцию «управление адресами» без отдельных проверок.",
+        "Разделить на четыре проверяемых действия, связав их общим сценарием.",
+        "Выделить загрузку как обязательную, остальные действия описать в комментариях к ней."
+      ],
+      "correct": 2,
+      "why": "Одно требование включает операции с разными условиями, правами и результатами.",
+      "better": "Четыре отдельных ФТ: приём адресов; сопоставление; исправление; публикация после согласования.",
+      "test": "На приёмке можно отдельно подтвердить каждую из четырёх возможностей.",
+      "lesson": "Атомарное требование является самостоятельной единицей для реализации, оценки и проверки.",
+      "level": 2,
+      "task": "Найдите ключевую ошибку в постановке",
+      "source": "Учебный сценарий по материалам ЦМПОН"
+    },
+    {
+      "id": "ATM-02",
+      "criterion": "atomicity",
+      "title": "Планшет и письмо контролёру",
+      "component": "Сбор / Мониторинг",
+      "context": "При обходе участка переписчик фиксирует отказ.",
+      "requirement": "Приложение должно фиксировать отказ и уведомлять контролёра на почту.",
+      "choices": [
+        "Вынести фиксацию отказа и отправку уведомления в два требования.",
+        "Включить отправку письма внутрь процедуры регистрации отказа.",
+        "Добавить к требованию условие времени и адресата, сохранив одну запись.",
+        "Разделить по интерфейсам: на планшете фиксировать отказ, на сервере отправлять письмо, но не разделять ФТ."
+      ],
+      "correct": 0,
+      "why": "Фиксация и уведомление могут иметь разных исполнителей, условия и результаты.",
+      "better": "ФТ-1: сервис регистрирует отказ с причиной. ФТ-2: сервис формирует уведомление контролёру при регистрации отказа с заданным признаком.",
+      "test": "При отключённой рассылке фиксация отказа работает; отдельно проверяется доставка уведомления.",
+      "lesson": "Если одно действие можно успешно принять, а другое отклонить, почти всегда нужны две записи требований.",
+      "level": 1,
+      "task": "Найдите ключевую ошибку в постановке",
+      "source": "Учебный сценарий по материалам ЦМПОН"
+    },
+    {
+      "id": "ATM-03",
+      "criterion": "atomicity",
+      "title": "Форма и показатели",
+      "component": "РП / Конструктор анкет",
+      "context": "В реестре добавлен новый вопрос.",
+      "requirement": "Сервис должен сохранять вопрос и пересчитывать все показатели, зависящие от вопроса.",
+      "choices": [
+        "Считать сохранение и пересчёт единым действием, поскольку есть общий источник изменений.",
+        "Разделить ведение вопроса, связи зависимостей и запуск пересчёта.",
+        "Указывать правило пересчёта в атрибутах вопроса, не выделяя самостоятельную операцию.",
+        "Фиксировать зависимости только в технологической карте, без связи с версией вопроса."
+      ],
+      "correct": 1,
+      "why": "Три разных поведения смешаны: запись объекта, обнаружение зависимостей и вычисление.",
+      "better": "Требование к сохранению записи Реестра вопросов формулируется отдельно от требования к анализу зависимостей и пересчёту.",
+      "test": "Изменить вопрос и проверить запись версии; отдельно проверить поиск зависимых показателей и запуск расчёта.",
+      "lesson": "Атомарность облегчает оценку трудозатрат и независимую проверку части функциональности.",
+      "level": 2,
+      "task": "Найдите ключевую ошибку в постановке",
+      "source": "Учебный сценарий по материалам ЦМПОН"
+    },
+    {
+      "id": "ATM-04",
+      "criterion": "atomicity",
+      "title": "Согласие и предзаполнение",
+      "component": "ЛК / Сбор",
+      "context": "Респондент авторизован через ЕПГУ.",
+      "requirement": "Сервис должен получать согласие, показывать административные данные и заполнять анкету.",
+      "choices": [
+        "Считать авторизацию через ЕПГУ универсальным согласием на предзаполнение.",
+        "Описать согласие и получение данных как один неделимый пользовательский шаг.",
+        "Считать отображение данных разрешённым после любого ранее полученного согласия.",
+        "Разделить получение согласия и предзаполнение; определить связь как предусловие."
+      ],
+      "correct": 3,
+      "why": "Получение согласия, получение данных и заполнение анкеты — разные результаты.",
+      "better": "ФТ-1: фиксировать согласие. ФТ-2: отображать предзаполненные сведения только при действующем согласии.",
+      "test": "Отказать в согласии: анкета открывается без предзаполнения; согласие не записывается.",
+      "lesson": "Связанные действия лучше описывать как отдельные требования и фиксировать зависимость между ними.",
+      "level": 2,
+      "task": "Найдите ключевую ошибку в постановке",
+      "source": "Учебный сценарий по материалам ЦМПОН"
+    },
+    {
+      "id": "ATM-05",
+      "criterion": "atomicity",
+      "title": "Сбор и архивирование",
+      "component": "АД и БД / ХД",
+      "context": "Поступает пакет миграционных данных.",
+      "requirement": "Сервис должен принимать пакеты, архивировать исходные файлы, строить отчёт и уведомлять администратора.",
+      "choices": [
+        "Разделить по действиям и назначить ответственные компоненты.",
+        "Оставить одну запись, добавив перечисление всех участвующих компонентов.",
+        "Поместить требования в одну «историю пользователя» без отдельных тестов.",
+        "Объединить приём и хранение, а отчёт и уведомление описать как необязательные действия без ФТ."
+      ],
+      "correct": 0,
+      "why": "Смешаны сбор, хранение, отчётность и оповещение.",
+      "better": "Отдельно: регистрировать приём; сохранять исходный пакет; формировать отчёт; уведомлять о результате.",
+      "test": "Приём файла можно проверить без наличия отчётной формы, и наоборот.",
+      "lesson": "Граница одного требования — один результат, который можно отдельно подтвердить.",
+      "level": 1,
+      "task": "Найдите ключевую ошибку в постановке",
+      "source": "Учебный сценарий по материалам ЦМПОН"
+    },
+    {
+      "id": "TST-01",
+      "criterion": "testability",
+      "title": "«Красивый и удобный интерфейс»",
+      "component": "ЛК / UI",
+      "context": "Заказчик хочет снизить число ошибок при вводе даты рождения.",
+      "requirement": "Форма должна быть современной, красивой и интуитивной.",
+      "choices": [
+        "Подтверждать требование согласованием прототипа интерфейса функциональным заказчиком.",
+        "Уточнить наблюдаемое поведение: формат ввода, контроль ошибки, текст подсказки.",
+        "Заменить оценочные слова на «соответствует утверждённому дизайн-макету» без проверки поведения.",
+        "Считать успешной приёмкой прохождение демонстрации с одним корректным значением."
+      ],
+      "correct": 1,
+      "why": "Невозможно объективно определить, что условие выполнено.",
+      "better": "Поле «Дата рождения» должно принимать дату в формате ДД.ММ.ГГГГ и показывать сообщение при вводе несуществующей даты.",
+      "test": "Ввести 31.02.2026: сохранение запрещено, отображается пояснение к ошибке.",
+      "lesson": "Проверяемое требование позволяет вынести решение о приёмке без спора вкусов.",
+      "level": 1,
+      "task": "Найдите ключевую ошибку в постановке",
+      "source": "Учебный сценарий по материалам ЦМПОН"
+    },
+    {
+      "id": "TST-02",
+      "criterion": "testability",
+      "title": "Невидимая консолидация",
+      "component": "Обработка / ПИФ",
+      "context": "После объединения данных нескольких каналов нужно подтвердить отсутствие дублей.",
+      "requirement": "Сервис должен корректно консолидировать результаты.",
+      "choices": [
+        "Ограничиться общей метрикой количества записей на выходе.",
+        "Проверить, что после расчёта интерфейс отображает статус «Завершено».",
+        "Указать объём контроля, уникальный ключ, ожидаемый итог и протокол конфликтов.",
+        "Проверить только отсутствие системных ошибок, не анализируя содержимое ПИФ."
+      ],
+      "correct": 2,
+      "why": "Нет входов, ожидаемого результата и проверяемых артефактов.",
+      "better": "При объединении записей с одинаковым ключом респондента и периода сервис должен применять установленное правило выбора действующей версии и формировать протокол разрешённых дублей.",
+      "test": "Передать два ответа одного лица: в действующем ПИФ одна версия, протокол содержит конфликт.",
+      "lesson": "Приёмочный тест начинается с определённого входа и заканчивается наблюдаемым результатом.",
+      "level": 2,
+      "task": "Найдите ключевую ошибку в постановке",
+      "source": "Учебный сценарий по материалам ЦМПОН"
+    },
+    {
+      "id": "TST-03",
+      "criterion": "testability",
+      "title": "Тест без негативного сценария",
+      "component": "ХД / Микроданные",
+      "context": "Внешний пользователь строит таблицу по одному человеку.",
+      "requirement": "Сервис должен предотвращать раскрытие конфиденциальной информации.",
+      "choices": [
+        "Проверить только обычные запросы с большими агрегатами.",
+        "Тестировать наличие авторизации и скрытие прямых идентификаторов.",
+        "Считать защищённой БД, если персональные поля зашифрованы при хранении.",
+        "Определить класс запрещённого результата и тест на раскрывающий запрос."
+      ],
+      "correct": 3,
+      "why": "Цель понятна, но не указан проверяемый результат на уровне запроса.",
+      "better": "Сервис должен подавлять ячейки, удовлетворяющие заданному правилу риска раскрытия, и предотвращать восстановление подавленного значения через суммарные итоги.",
+      "test": "Смоделировать малую ячейку и разностный запрос: защищённое значение получить нельзя.",
+      "lesson": "Тестируемость требований конфиденциальности проверяется попыткой обойти правило, а не только обычным входом.",
+      "level": 3,
+      "task": "Найдите ключевую ошибку в постановке",
+      "source": "Учебный сценарий по материалам ЦМПОН"
+    },
+    {
+      "id": "TST-04",
+      "criterion": "testability",
+      "title": "Неизмеримое качество маршрута",
+      "component": "Сбор / СДР",
+      "context": "Переписчик получает маршрут на планшете.",
+      "requirement": "Система должна максимально оптимизировать маршрут.",
+      "choices": [
+        "Определить сравниваемую метрику и допустимые ограничения.",
+        "Указать жёсткую целевую длину, не учитывая недоступные дороги.",
+        "Измерять только длину линии между адресами на карте.",
+        "Считать оптимизацию подтверждённой при успешном открытии карты."
+      ],
+      "correct": 0,
+      "why": "«Максимально» не задаёт метрику оптимизации и ограничения.",
+      "better": "Сервис должен формировать последовательность обхода адресов с минимизацией расчётной длины пути при соблюдении отмеченных ограничений достижимости.",
+      "test": "Для согласованного набора адресов система возвращает маршрут без недоступных переходов; длина сравнивается с эталоном.",
+      "lesson": "Приёмка требует измеримого эффекта и перечня ограничений, без которых «оптимально» не означает ничего определённого.",
+      "level": 2,
+      "task": "Найдите ключевую ошибку в постановке",
+      "source": "Учебный сценарий по материалам ЦМПОН"
+    },
+    {
+      "id": "TST-05",
+      "criterion": "testability",
+      "title": "«Поддерживает версии»",
+      "component": "ФПСР / Календарь",
+      "context": "Два пользователя последовательно корректируют график наблюдения.",
+      "requirement": "Сервис должен поддерживать версионность календарных планов.",
+      "choices": [
+        "Проверить, что новая версия получает инкремент номера.",
+        "Проверить возможность просмотра последней версии без старых.",
+        "Назвать события создания версии, состав истории и доступность сравнения.",
+        "Определить возможность выгрузить текущий план в PDF."
+      ],
+      "correct": 2,
+      "why": "Нужна проверка операций с версией, а не декларация свойства.",
+      "better": "При утверждении изменения календарного плана сервис должен создавать новую версию с сохранением предыдущей, автора, времени и состава изменений.",
+      "test": "Утвердить две версии и восстановить первую: обе доступны, различия видны.",
+      "lesson": "Проверяемость опирается на наблюдаемые результаты и воспроизводимые сценарии.",
+      "level": 1,
+      "task": "Найдите ключевую ошибку в постановке",
+      "source": "Учебный сценарий по материалам ЦМПОН"
+    },
+    {
+      "id": "TRC-01",
+      "criterion": "traceability",
+      "title": "После изменения вопроса пропали связи",
+      "component": "РП / Проектирование",
+      "context": "Методолог меняет вопрос ВНДН, от которого зависят R-переменная и показатель.",
+      "requirement": "Сервис должен учитывать изменения анкеты.",
+      "choices": [
+        "Связывать объекты по текстовым названиям и синхронизировать их раз в месяц.",
+        "Хранить изменённую формулировку вопроса в итоговом макете.",
+        "Сохранять только последнюю утверждённую версию без зависимостей.",
+        "Установить связь по идентификаторам: вопрос → ПИФ → расчётная переменная → показатель."
+      ],
+      "correct": 3,
+      "why": "Без цепочки зависимости невозможно оценить последствия изменения.",
+      "better": "Сервис должен хранить идентификаторы и версии связей между вопросом, переменной ПИФ, расчётной переменной и итоговым показателем.",
+      "test": "Изменить формулировку вопроса: система показывает все зависимые объекты и их версии.",
+      "lesson": "Трассировка связывает решение с происхождением, зависимостями и проверкой; иначе изменение становится неожиданностью.",
+      "level": 2,
+      "task": "Найдите ключевую ошибку в постановке",
+      "source": "Учебный сценарий по материалам ЦМПОН"
+    },
+    {
+      "id": "TRC-02",
+      "criterion": "traceability",
+      "title": "Два требования на один результат",
+      "component": "СДР / РОН",
+      "context": "Переписное районирование зависит одновременно от реестра адресов и объекта наблюдения.",
+      "requirement": "Сервис должен обеспечивать корректность формирования счётного участка.",
+      "choices": [
+        "Хранить у требования только ссылку на исходную встречу с ФЗ.",
+        "Привязать требование к двум источникам, сущности и сценарию проверки.",
+        "Отнести всё к СДР без связи с РОН и проверочными сценариями.",
+        "Считать номер ФТ достаточным для подтверждения трассировки на приёмке."
+      ],
+      "correct": 1,
+      "why": "Один номер ФТ не восстанавливает происхождение и связанные объекты.",
+      "better": "В каталоге требований для формирования счётного участка должны храниться ссылки на правила районирования, используемые объекты РОН/СДР и проверочные сценарии.",
+      "test": "Изменить правило районирования: получаем перечень затронутых ФТ и тестов.",
+      "lesson": "Нужны связи между потребностью, требованием, реализацией и проверкой, а не один длинный документ.",
+      "level": 2,
+      "task": "Найдите ключевую ошибку в постановке",
+      "source": "Учебный сценарий по материалам ЦМПОН"
+    },
+    {
+      "id": "TRC-03",
+      "criterion": "traceability",
+      "title": "История без причины",
+      "component": "НСИ / ТЕРСОН-МО",
+      "context": "В ТОГС изменили принадлежность дома другому населённому пункту.",
+      "requirement": "Сервис должен хранить историю изменения адресов.",
+      "choices": [
+        "Хранить дату, автора, исходное и новое значение, основание изменения и период действия.",
+        "Хранить только итоговую территориальную принадлежность и дату изменения.",
+        "Сохранять раз в год выгрузку справочника без причин коррекции.",
+        "Фиксировать пользователя, но не хранить прежний идентификатор территории."
+      ],
+      "correct": 0,
+      "why": "История без основания и прежнего состояния не позволяет восстановить причину решения.",
+      "better": "Для изменения территориальной принадлежности адреса сервис должен сохранять исходное и новое значение, период действия, пользователя и основание изменения.",
+      "test": "В истории есть два состояния одного адреса и можно восстановить принадлежность на выбранную дату.",
+      "lesson": "Прослеживаемость — это возможность восстановить путь решения и последствия изменения.",
+      "level": 1,
+      "task": "Найдите ключевую ошибку в постановке",
+      "source": "Учебный сценарий по материалам ЦМПОН"
+    },
+    {
+      "id": "TRC-04",
+      "criterion": "traceability",
+      "title": "Непонятно, что принимать",
+      "component": "ПМИ / ФТ",
+      "context": "Подрядчик реализовал функцию синхронизации, а ПМИ написана только для базового случая.",
+      "requirement": "У требования есть номер, следовательно, трассируемость уже обеспечена.",
+      "choices": [
+        "Использовать нумерацию ФТ как единственный идентификатор без связей.",
+        "Включить текст ФТ в протокол, не фиксируя результат конкретного испытания.",
+        "Нужно связать ФТ с сценарием ПМИ, результатом и подтверждающим протоколом.",
+        "Считать проверку завершённой по факту подписания общего протокола релиза."
+      ],
+      "correct": 2,
+      "why": "Идентификатор необходим, но не достаточен без связей с реализацией и испытаниями.",
+      "better": "Для каждого ФТ должен быть указан один или несколько сценариев ПМИ с ожидаемым результатом и ссылкой на протокол выполнения.",
+      "test": "Для выбранного FT-ID переходы к ПМИ и результатам испытания доступны по ссылкам.",
+      "lesson": "Хорошая трассировка отвечает на вопрос: кто запросил, как реализовано и где проверено.",
+      "level": 1,
+      "task": "Найдите ключевую ошибку в постановке",
+      "source": "Учебный сценарий по материалам ЦМПОН"
+    },
+    {
+      "id": "TRC-05",
+      "criterion": "traceability",
+      "title": "Теряем источник признака",
+      "component": "СДР / ЕДН и МН",
+      "context": "Атрибут места жительства поступил из переписи и затем обновился из административных данных.",
+      "requirement": "Сервис должен хранить актуальный адрес респондента.",
+      "choices": [
+        "Хранить только последний подтверждённый источник для каждого адресного признака.",
+        "Считать самый новый источник приоритетным без истории.",
+        "Сохранять предыдущие адреса, но без дат и сведений об источнике.",
+        "Сохранять значение, источник, дату действия и версию для каждого изменения."
+      ],
+      "correct": 3,
+      "why": "Без происхождения атрибута невозможно объяснить расхождение и его изменение во времени.",
+      "better": "Сервис должен сохранять для адресного признака источник значения, период действия и идентификатор записи, заменённой новым значением.",
+      "test": "В карточке ID СДР можно отследить прежний и новый адресный признак с источниками.",
+      "lesson": "Трассируемость данных помогает объяснять не только «что», но и «откуда».",
+      "level": 2,
+      "task": "Найдите ключевую ошибку в постановке",
+      "source": "Учебный сценарий по материалам ЦМПОН"
+    },
+    {
+      "id": "FEA-01",
+      "criterion": "feasibility",
+      "title": "Нулевые ограничения",
+      "component": "Мобильный сбор",
+      "context": "ФЗ просит охватить труднодоступные территории.",
+      "requirement": "Планшет должен всегда передавать ответы в реальном времени, даже без сети.",
+      "choices": [
+        "Запланировать синхронизацию по фиксированному времени без учёта фактической связи.",
+        "Предусмотреть автономное сохранение и передачу после восстановления связи.",
+        "Признать офлайн-режим исключением и вести его отдельным бумажным процессом.",
+        "Считать требование выполненным при наличии кнопки «Отправить»."
+      ],
+      "correct": 1,
+      "why": "Синхронизация в реальном времени без связи технически невозможна.",
+      "better": "Приложение должно сохранять заполненные анкеты локально в офлайн-режиме и передавать их после восстановления доступного канала связи.",
+      "test": "Отключить сеть, заполнить две анкеты, включить сеть: анкеты переданы один раз.",
+      "lesson": "Выполнимость учитывает физические, технологические и организационные ограничения.",
+      "level": 2,
+      "task": "Найдите ключевую ошибку в постановке",
+      "source": "Учебный сценарий по материалам ЦМПОН"
+    },
+    {
+      "id": "FEA-02",
+      "criterion": "feasibility",
+      "title": "Точность 100% у распознавания",
+      "component": "OCR / Обработка",
+      "context": "Сканируются бумажные переписные листы с рукописным текстом.",
+      "requirement": "OCR должен безошибочно распознавать все символы с точностью 100%.",
+      "choices": [
+        "Оставить абсолютный порог и предусмотреть санкции за каждую ошибку OCR.",
+        "Ввести обязательную ручную проверку всех записей, отказавшись от критериев выборочной верификации.",
+        "Определить согласованные пороги качества, отклонения и маршрут ручной верификации.",
+        "Допустить ручную корректировку без протокола качества распознавания."
+      ],
+      "correct": 2,
+      "why": "Для рукописного текста абсолютная точность не обоснована, нужна управляемая проверка.",
+      "better": "Сервис должен рассчитывать показатель уверенности распознавания и направлять фрагменты ниже согласованного порога на ручную верификацию.",
+      "test": "Бланк с низкой уверенностью отправляется оператору; результат проверки журналируется.",
+      "lesson": "Не обещайте абсолютного результата там, где нужны риски, пороги и альтернативный сценарий.",
+      "level": 3,
+      "task": "Найдите ключевую ошибку в постановке",
+      "source": "Учебный сценарий по материалам ЦМПОН"
+    },
+    {
+      "id": "FEA-03",
+      "criterion": "feasibility",
+      "title": "Внешняя зависимость",
+      "component": "АД и БД / МВД",
+      "context": "Миграционные сведения планируется получать из внешней ведомственной системы.",
+      "requirement": "Сервис должен получать любые данные МВД в полном объёме немедленно.",
+      "choices": [
+        "Оценить доступный состав данных, правовые основания, регламент обмена и резервные сценарии.",
+        "Выполнять интеграцию до утверждения спецификации состава данных.",
+        "Использовать регулярные выгрузки с компьютеров пользователей без протокола передачи.",
+        "Установить окончательный срок реализации, не учитывая готовность внешнего источника."
+      ],
+      "correct": 0,
+      "why": "Результат зависит от полномочий, структуры данных и готовности другой организации.",
+      "better": "Сервис должен принимать согласованный набор миграционных данных по утверждённому интерфейсу и протоколировать отказ в приёме некорректного пакета.",
+      "test": "На тестовом стенде передать согласованный пакет и пакет с ошибочной схемой: первый принят, второй отклонён.",
+      "lesson": "Выполнимость проверяется в рамках ограничений проекта, бюджета, сроков и внешних зависимостей.",
+      "level": 3,
+      "task": "Найдите ключевую ошибку в постановке",
+      "source": "Учебный сценарий по материалам ЦМПОН"
+    },
+    {
+      "id": "FEA-04",
+      "criterion": "feasibility",
+      "title": "Любой пользователь видит всё",
+      "component": "Микроданные / Роли",
+      "context": "ФЗ просит сделать работу с микроданными максимально простой.",
+      "requirement": "Любой аналитик должен видеть все персональные записи из СДР.",
+      "choices": [
+        "Обеспечить сквозной просмотр без разграничения ролей, но с журналом аудита.",
+        "Допустить полный доступ сотрудникам Росстата после обычной аутентификации.",
+        "Ограничить прямые идентификаторы, оставив доступ к детальным записям.",
+        "Уточнить допустимые роли, уровни данных, ограничения и способ обезличивания."
+      ],
+      "correct": 3,
+      "why": "Требование конфликтует с ограничениями доступа к персональным данным и архитектурой контуров.",
+      "better": "Сервис должен предоставлять внешним аналитикам только разрешённые обезличенные наборы данных в соответствии с назначенной ролью и правилами защиты конфиденциальности.",
+      "test": "Внешняя роль не может получить персональную запись, но может получить разрешённый агрегат.",
+      "lesson": "Выполнимость включает правовые и организационные рамки, а не только способность написать код.",
+      "level": 3,
+      "task": "Найдите ключевую ошибку в постановке",
+      "source": "Учебный сценарий по материалам ЦМПОН"
+    },
+    {
+      "id": "FEA-05",
+      "criterion": "feasibility",
+      "title": "Безостановочная миграция",
+      "component": "ГИС ЦАП / ИВС",
+      "context": "В период перехода действуют старая ИВС и новый цифровой контур.",
+      "requirement": "Заменить все ИВС за один день без простоев, потерь и дополнительных ресурсов.",
+      "choices": [
+        "Задекларировать нулевой риск отказов как обязательство поставщика.",
+        "Определить этапы перехода, контрольные данные, допустимый простой и порядок отката.",
+        "Закрыть текущую систему сразу после развёртывания новой, до проверки результатов.",
+        "Перенести все проверки на конец миграции без промежуточных контрольных точек."
+      ],
+      "correct": 1,
+      "why": "Гарантия не подкреплена планом, метриками, ресурсами и сценарием восстановления.",
+      "better": "Переход должен выполняться по согласованным этапам с параллельной проверкой результатов и возможностью возврата на ИВС до подтверждения успешной приёмки.",
+      "test": "При нарушении контрольного критерия новый контур отключается от формирования результата, штатный выпуск восстанавливается из согласованной схемы.",
+      "lesson": "Осуществимость должна подтверждаться выбранным сценарием, а не риторикой нулевого риска.",
+      "level": 3,
+      "task": "Найдите ключевую ошибку в постановке",
+      "source": "Учебный сценарий по материалам ЦМПОН"
+    },
+    {
+      "id": "CON-01",
+      "criterion": "consistency",
+      "title": "Два противоречащих ФТ",
+      "component": "ЛК / Сбор",
+      "context": "Два аналитика внесли разные правила для одного статуса.",
+      "requirement": "ФТ-1: после отправки анкета недоступна для изменений. ФТ-2: пользователь в любой момент правит отправленную анкету.",
+      "choices": [
+        "Оставить оба требования до этапа ПМИ, где конфликт станет очевиден.",
+        "Развести правила только по ролям без описания статусов версии.",
+        "Согласовать статусную модель и отдельно определить корректирующую версию.",
+        "Заменить возможность исправления новым начальным опросом."
+      ],
+      "correct": 2,
+      "why": "Правила одновременно требуют запрета и разрешения без условий.",
+      "better": "После отправки первоначальная версия анкеты недоступна для изменения; при разрешённом исправлении создаётся корректирующая версия.",
+      "test": "После отправки исходная версия только для чтения, корректировка появляется как новая запись.",
+      "lesson": "Согласованность — требования не противоречат друг другу и потребностям участников.",
+      "level": 3,
+      "task": "Найдите ключевую ошибку в постановке",
+      "source": "Учебный сценарий по материалам ЦМПОН"
+    },
+    {
+      "id": "CON-02",
+      "criterion": "consistency",
+      "title": "Период и публикация",
+      "component": "ФПСР / Распространение",
+      "context": "Одна таблица описывает годовой выпуск, другая — ежемесячную публикацию.",
+      "requirement": "Публикация происходит каждый месяц; результаты доступны только раз в год.",
+      "choices": [
+        "Согласовать, о каких наборах и периодах идёт речь, устранить конфликт.",
+        "Считать месячные публикации промежуточными без отдельного закрепления.",
+        "Разрешить выбор периода в интерфейсе и не менять требования.",
+        "Отдать трактовку периодичности на усмотрение оператора публикации."
+      ],
+      "correct": 0,
+      "why": "Без разграничения наборов правил нельзя понять целевую периодичность.",
+      "better": "Для ежемесячных результатов установить отдельный календарь публикации; годовые итоги выпускать по самостоятельному графику.",
+      "test": "Для двух видов итогов отображаются два непротиворечивых графика.",
+      "lesson": "Согласованность нужно проверять не в одной карточке, а между связанными требованиями.",
+      "level": 3,
+      "task": "Найдите ключевую ошибку в постановке",
+      "source": "Учебный сценарий по материалам ЦМПОН"
+    },
+    {
+      "id": "CNC-01",
+      "criterion": "conciseness",
+      "title": "Полстраницы вместо условия",
+      "component": "Мониторинг",
+      "context": "После многочисленных согласований в ФТ появился длинный вводный абзац.",
+      "requirement": "В целях достижения современных передовых подходов и дальнейшего повышения эффективности и качества взаимодействия должно быть обеспечено надлежащее выполнение своевременных действий по отправке уведомления о статусе.",
+      "choices": [
+        "Оставить вводный абзац и добавить срок в его конец.",
+        "Сократить до фразы «Сервис своевременно оповещает».",
+        "Заменить исходный абзац ссылкой на общую цель проекта без события.",
+        "Заменить на точное условие и результат без лишних вводных оборотов."
+      ],
+      "correct": 3,
+      "why": "Лишние слова скрывают событие и результат.",
+      "better": "При изменении статуса пакета с «Принят» на «Отклонён» сервис должен уведомлять пользователя, загрузившего пакет.",
+      "test": "После смены статуса адресат получает одно уведомление с причиной отклонения.",
+      "lesson": "Краткость не означает отсутствие деталей: удаляем шум, оставляем то, что определяет поведение.",
+      "level": 2,
+      "task": "Найдите ключевую ошибку в постановке",
+      "source": "Учебный сценарий по материалам ЦМПОН"
+    },
+    {
+      "id": "PRJ-01",
+      "criterion": "prioritized",
+      "title": "Всё обязательно",
+      "component": "Управление требованиями",
+      "context": "На первую волну подрядчик получил 40 функций; бюджет позволяет выполнить 25.",
+      "requirement": "Все 40 функций имеют одинаковый максимальный приоритет.",
+      "choices": [
+        "Разделить работы на технические этапы, не пересматривая ценность.",
+        "Уточнить ценность, зависимость и критичность; согласовать этапность по MoSCoW.",
+        "Установить приоритет по числу зависимых компонентов.",
+        "Реализовать функции в порядке номера ФТ для объективности очереди."
+      ],
+      "correct": 1,
+      "why": "Одинаковая максимальная приоритетность не помогает принимать решение при ограничениях.",
+      "better": "Критичные для полного цикла сценарии выделяются как Must; оставшиеся оцениваются по ценности, рискам и зависимостям до согласования очереди.",
+      "test": "По каждой работе есть основание приоритета; первая волна не блокируется второстепенными функциями.",
+      "lesson": "Приоритет — результат выбора и переговоров, а не красивый столбец «всё важно».",
+      "level": 2,
+      "task": "Найдите ключевую ошибку в постановке",
+      "source": "Учебный сценарий по материалам ЦМПОН"
+    },
+    {
+      "id": "UND-01",
+      "criterion": "understandable",
+      "title": "Зашифрованное для заказчика",
+      "component": "РП / Проектирование",
+      "context": "Функциональный заказчик не обязан знать внутренние названия полей базы данных.",
+      "requirement": "ETL должен джойнить RVAR_ID с DIM_Q через FK, далее синкать materialized view.",
+      "choices": [
+        "Сохранить терминологию разработчика, добавив расшифровки в глоссарий.",
+        "Удалить ссылку на связи между вопросами и показателями.",
+        "Описать бизнес-смысл доступными терминами, техническую реализацию вынести отдельно.",
+        "Оставить техническую формулировку и приложить схему базы данных."
+      ],
+      "correct": 2,
+      "why": "Формулировка непонятна участнику, который должен подтвердить потребность.",
+      "better": "Сервис должен связывать вопрос анкеты с расчётной переменной и показывать зависимые показатели при изменении вопроса.",
+      "test": "Методолог открывает вопрос и видит зависящие от него расчётные показатели.",
+      "lesson": "Понятность зависит от аудитории: функциональное требование должно читаться заинтересованными лицами.",
+      "level": 2,
+      "task": "Найдите ключевую ошибку в постановке",
+      "source": "Учебный сценарий по материалам ЦМПОН"
+    },
+    {
+      "id": "PRI-02",
+      "criterion": "prioritized",
+      "title": "Порог риска",
+      "component": "Микроданные / ХД",
+      "context": "На пилоте исправляют оформление карточек и устранение утечки в итоговых таблицах.",
+      "requirement": "В первую очередь необходимо сменить цвет кнопок; подавление раскрывающих ячеек можно отложить.",
+      "choices": [
+        "Считать визуальную готовность равной риску конфиденциальности.",
+        "Повысить приоритет демонстрационной анимации ради сдачи этапа.",
+        "Оставить оба пункта в одном уровне, не фиксируя блокирующие риски.",
+        "Поднять защиту конфиденциальности как критический блокирующий риск."
+      ],
+      "correct": 3,
+      "why": "Приоритизация должна учитывать риски, а не только видимость результата.",
+      "better": "До публичного доступа требуется подтвердить невозможность раскрытия защищённых значений на приёмочных наборах; оформление допускается доработать отдельно.",
+      "test": "Публикация блокируется при провале сценария защиты малых ячеек.",
+      "lesson": "Ценность и риск задают приоритет требований, а не субъективная эффектность функции.",
+      "level": 3,
+      "task": "Найдите ключевую ошибку в постановке",
+      "source": "Учебный сценарий по материалам ЦМПОН"
+    }
+  ]
+}</script>
+<script>
+'use strict';
+(()=>{
+const LABELS={completeness:['Полнота','▣'],unambiguity:['Однозначность','◇'],atomicity:['Атомарность','◈'],testability:['Проверяемость','✓'],traceability:['Трассируемость','⌁'],feasibility:['Выполнимость','⚙'],consistency:['Согласованность','≡'],conciseness:['Краткость','≋'],prioritized:['Приоритетность','↑'],understandable:['Понятность','◎']};
+const CORE=['completeness','unambiguity','atomicity','testability','traceability','feasibility'];
+const DEFAULT_BANK=JSON.parse(document.getElementById('initial-bank').textContent);const DEFAULT=DEFAULT_BANK.cards;
+const STORE_BANK='citadel-academy-edit-v1',STORE_PROGRESS='citadel-academy-progress-v1',STORE_VOICE='citadel-academy-voice-v1';
+const $=id=>document.getElementById(id);const all=s=>[...document.querySelectorAll(s)];
+const mk=(tag,cls,txt)=>{const el=document.createElement(tag);if(cls)el.className=cls;if(txt!=null)el.textContent=txt;return el};
+const escape=(s)=>String(s||'').trim();const random=arr=>arr[Math.floor(Math.random()*arr.length)];
+function safeLoad(key,fallback){try{const raw=localStorage.getItem(key);return raw?JSON.parse(raw):fallback}catch{return fallback}}
+function safeSave(key,x){try{localStorage.setItem(key,JSON.stringify(x));return true}catch{alertMsg('Хранение в браузере недоступно; выгрузи пакет JSON.');return false}}
+function validCard(c){return c&&typeof c.id==='string'&&/^[\w-]{1,50}$/.test(c.id)&&LABELS[c.criterion]&&Array.isArray(c.choices)&&c.choices.length===4&&c.choices.every(x=>typeof x==='string'&&x.trim().length>0)&&Number.isInteger(c.correct)&&c.correct>=0&&c.correct<4&&['title','context','requirement','why','better','test','lesson','task'].every(k=>typeof c[k]==='string'&&c[k].trim().length>0)&&c.title.length<=160&&c.lesson.length<=900&&c.requirement.length<=1400}
+function validBank(data){if(!data||data.schema!==DEFAULT_BANK.schema||!Array.isArray(data.cards)||data.cards.length<1||data.cards.length>500||!data.cards.every(validCard)||new Set(data.cards.map(c=>c.id)).size!==data.cards.length)throw new Error('Неверная структура JSON: проверь схему, все обязательные поля и уникальность ID.');return data.cards}
+let bank;try{const saved=safeLoad(STORE_BANK,null);bank=saved?validBank(saved):structuredClone(DEFAULT)}catch{bank=structuredClone(DEFAULT)};
+let progress=safeLoad(STORE_PROGRESS,{solved:{},attempts:{},errors:{},totalRight:0,totalWrong:0});
+if(!progress||typeof progress!=='object'||!progress.solved)progress={solved:{},attempts:{},errors:{},totalRight:0,totalWrong:0};
+let voice=safeLoad(STORE_VOICE,true)!==false;let tab='home',active=null,selected=-1,mode='practice',filter='all',seen=[],revisit=[],reviewDelay=[],exam=[],examIndex=0,examRight=0,examCoverage=new Set(),examAnswered=false,editId='';
+function alertMsg(msg){const el=$('toast');el.textContent=msg;el.hidden=false;clearTimeout(alertMsg.timer);alertMsg.timer=setTimeout(()=>el.hidden=true,3400)}
+function speak(text){stopSpeech();if(!voice||!('speechSynthesis'in window)||!text)return;try{const utter=new SpeechSynthesisUtterance(text);utter.lang='ru-RU';utter.rate=.96;utter.pitch=1;const v=speechSynthesis.getVoices().find(v=>v.lang.toLowerCase().startsWith('ru'));if(v)utter.voice=v;speechSynthesis.speak(utter)}catch{}}
+function stopSpeech(){try{speechSynthesis.cancel()}catch{}}
+function nav(tabName){stopSpeech();tab=tabName;all('[data-tab]').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.tab===tabName)));['home','practice','exam','editor'].forEach(s=>$(s).classList.toggle('hidden',s!==tabName));const titles={home:'Требование — это решение, которое можно проверить.',practice:'Разбор требований. Учебный полигон.',exam:'Аттестация защитника требований.',editor:'Своя библиотека. Свои задания.'};$('page-title').textContent=titles[tabName];const desc={home:'Шесть навыков качества. Практика на процессах ЦМПОН и контрольный экзамен.',practice:'Сформулируй дефект, выбери исправление, проверь последствие. Ошибки вернутся для повторения.',exam:'Двенадцать вопросов: по два на каждый основной критерий. Нужны минимум 10 верных и хотя бы один верный в каждом секторе.',editor:'Редактируй задания без кода, затем скачай JSON для публикации общего пакета.'};$('page-sub').textContent=desc[tabName];if(tabName==='editor')renderEditorList();renderShield()}
+function masteredIds(k){return bank.filter(c=>c.criterion===k&&progress.solved[c.id]).length}
+function renderShield(){const host=$('crit-rows');host.replaceChildren();CORE.forEach((key,i)=>{const [label,icon]=LABELS[key],solved=masteredIds(key),allNum=bank.filter(x=>x.criterion===key).length;const b=mk('button','crit-row'+(filter===key&&tab==='practice'?' selected':''));b.type='button';b.title=`Тренировка: ${label}`;const em=mk('span','crit-icon',icon),right=mk('div');right.append(mk('div','name',label),mk('div','criterion-sub',`${Math.min(solved,3)}/3 · ${allNum} кейсов`));const tr=mk('div','progress-track');const inner=mk('span');inner.style.width=Math.min(100,solved/3*100)+'%';tr.append(inner);right.append(tr);b.append(em,right);b.onclick=()=>{filter=filter===key?'all':key;if(tab!=='practice')startPractice();else{seen=[];revisit=[];loadPractice()}renderShield()};host.append(b)});$('mastered').textContent=CORE.filter(k=>masteredIds(k)>=3).length+' / 6';$('extra-grid').replaceChildren(...Object.entries(LABELS).filter(([k])=>!CORE.includes(k)).map(([k,x])=>mk('span',null,x[0]+(masteredIds(k)>0?' ✓':''))));$('bank-count').textContent=bank.length+' КЕЙСОВ';$('right-counter').textContent=(progress.totalRight||0)+' верных'}
+function startPractice(){mode='practice';selected=-1;seen=[];revisit=[];reviewDelay=[];nav('practice');loadPractice()}
+function choosePractice(){let pool=bank.filter(c=>filter==='all'||c.criterion===filter);if(!pool.length)return null;let delayed=revisit.find(x=>x.delay<=0&&pool.some(c=>c.id===x.id));if(delayed){revisit=revisit.filter(x=>x!==delayed);return pool.find(c=>c.id===delayed.id)}let fresh=pool.filter(c=>!seen.includes(c.id));if(fresh.length){let weak=fresh.filter(c=>!progress.solved[c.id]);if(weak.length)fresh=weak;const min=Math.min(...fresh.map(x=>progress.attempts[x.id]||0));fresh=fresh.filter(x=>(progress.attempts[x.id]||0)===min);return random(fresh)}let pending=revisit.sort((a,b)=>a.delay-b.delay);if(pending.length){const target=pending.shift();return pool.find(c=>c.id===target.id)}seen=[];return random(pool)}
+function loadPractice(){selected=-1;revisit.forEach(r=>r.delay--);active=choosePractice();if(!active){$('practice-stage').replaceChildren(mk('p','hint','Нет карточек по выбранному критерию.'));return}seen.push(active.id);renderCard($('practice-stage'),active,false)}
+function startExam(){filter='all';nav('exam');mode='exam';selected=-1;examRight=0;examCoverage=new Set();examIndex=0;examAnswered=false;exam=[];for(const k of CORE){const arr=bank.filter(c=>c.criterion===k).sort(()=>Math.random()-.5);exam.push(...arr.slice(0,2))}exam.sort(()=>Math.random()-.5);loadExam()}
+function loadExam(){if(examIndex>=exam.length){renderExamResult();return}active=exam[examIndex];selected=-1;renderCard($('exam-stage'),active,true)}
+function renderCard(stage,c,isExam){stage.replaceChildren();const head=mk('div','stage-head');const hl=mk('div');hl.append(mk('span','mission-tag',isExam?`ЭКЗАМЕН · ЗАДАНИЕ ${examIndex+1} / ${exam.length}`:`УЧЕБНЫЙ КЕЙС · ${c.id}`),mk('span','level','СЛОЖНОСТЬ '+c.level));head.append(hl,mk('span','level',LABELS[c.criterion][0].toUpperCase()));stage.append(head);
+const body=mk('div','stage-body');body.append(mk('div','card-context',(c.component||'Общие требования')+' · '+(c.source||'Учебная модель')),mk('h2','card-title',c.title),mk('p','card-lede',c.context),mk('div','quote-block',c.requirement),mk('div','question',c.task));
+const grid=mk('div','choices');c.choices.forEach((text,i)=>{const b=mk('button','choice');b.type='button';b.append(mk('span',null,'АБВГ'[i]),mk('div',null,text));b.addEventListener('click',()=>answer(i,grid,body,c,isExam));grid.append(b)});body.append(grid);const progressline=mk('div','footerbar');progressline.append(mk('span','hint',isExam?'Правильный ответ на каждом этапе оценивается один раз.':'После ошибки карточка вернётся через несколько заданий.'),mk('button','smalllink','Как понимается критерий?'));progressline.lastChild.onclick=()=>{alertMsg('Критерий «'+LABELS[c.criterion][0]+'»: '+(c.lesson||''));speak(c.lesson)};body.append(progressline);stage.append(body);stage.scrollIntoView({block:'nearest',behavior:'smooth'})}
+function answer(i,grid,body,c,isExam){if(selected!==-1)return;selected=i;const good=i===c.correct;grid.querySelectorAll('.choice').forEach((btn,n)=>{btn.disabled=true;if(n===c.correct)btn.classList.add('correct');else if(n===i)btn.classList.add('incorrect')});
+if(isExam){examAnswered=true;if(good){examRight++;examCoverage.add(c.criterion)}}else{progress.attempts[c.id]=(progress.attempts[c.id]||0)+1;if(good){progress.solved[c.id]=true;progress.totalRight=(progress.totalRight||0)+1}else{progress.totalWrong=(progress.totalWrong||0)+1;progress.errors[c.id]=(progress.errors[c.id]||0)+1;revisit.push({id:c.id,delay:3})}safeSave(STORE_PROGRESS,progress);renderShield()}
+const box=mk('div','feedback'+(good?'':' wrong'));box.append(mk('h3',null,good?'Верно. Решение принято.':'Не принято. Разбор ошибки открыт.'),mk('p',null,c.why));
+const split=mk('div','feedback-splits');const left=mk('div','example');left.append(mk('strong',null,'БЫЛО → СТАЛО'),mk('p',null,c.better));const right=mk('div','example');right.append(mk('strong',null,'ПРИЁМОЧНАЯ ПРОВЕРКА'),mk('p',null,c.test));split.append(left,right);box.append(split);
+const voicePane=mk('div','narrator');voicePane.append(mk('small',null,'НАСТАВНИК · BABOK GUIDE V3 / 7.2'),mk('div',null,c.lesson));box.append(voicePane);
+const bottom=mk('div','footerbar');const actions=mk('div','stack');const speakbtn=mk('button','btn ghost','🔈 Прослушать снова');speakbtn.type='button';speakbtn.onclick=()=>speak(c.lesson);const next=mk('button','btn primary',isExam?'Следующее задание →':'Продолжить тренировку →');next.type='button';next.onclick=()=>{stopSpeech();if(isExam){examIndex++;loadExam()}else loadPractice()};actions.append(speakbtn,next);bottom.append(mk('span','hint',good?'Критерий отработан · '+LABELS[c.criterion][0]:'Кейс вернётся после нескольких следующих заданий'),actions);box.append(bottom);body.append(box);speak(c.lesson);box.scrollIntoView({block:'nearest',behavior:'smooth'})}
+function renderExamResult(){stopSpeech();const ok=examRight>=10&&examCoverage.size===6;const host=$('exam-stage');host.replaceChildren();const h=mk('div','stage-head');h.append(mk('span','mission-tag',ok?'ЭКЗАМЕН ПРОЙДЕН':'ЭКЗАМЕН ЗАВЕРШЁН'));host.append(h);const body=mk('div','stage-body');body.append(mk('h2','card-title',ok?'Щит аналитика выдержал испытание.':'Требуется дополнительная подготовка.'),mk('p','card-lede','Проверка считает и точность решений, и охват всех шести критериев — недостаточно выучить только удобные типы ошибок.'));const results=mk('div','results');[['Верных ответов',examRight+' / '+exam.length],['Критериев с верным ответом',examCoverage.size+' / 6']].forEach(pair=>{const b=mk('div','box');b.append(mk('b',null,pair[1]),mk('small',null,pair[0]));results.append(b)});body.append(results);const actions=mk('div','stack');const a=mk('button','btn primary','Пройти ещё раз');a.onclick=startExam;const b=mk('button','btn','Отработать слабые места');b.onclick=startPractice;actions.append(a,b);body.append(actions);host.append(body)}
+function renderEditorList(){const q=($('editor-search').value||'').toLowerCase();const rows=bank.filter(c=>[c.id,c.title,c.component,c.criterion,c.requirement].join(' ').toLowerCase().includes(q));const host=$('editor-list');host.replaceChildren();rows.forEach(c=>{const b=mk('button','editor-list');b.type='button';b.setAttribute('aria-selected',String(editId===c.id));b.append(mk('strong',null,c.id+' · '+c.title),mk('span',null,LABELS[c.criterion][0]+' · '+c.component));b.onclick=()=>selectEdit(c.id);host.append(b)});if(!rows.length)host.append(mk('p','hint','Нет совпадений'));if(!editId&&bank.length)selectEdit(bank[0].id,false)}
+const fields={id:'f-id',criterion:'f-criterion',title:'f-title',component:'f-component',context:'f-context',requirement:'f-requirement',task:'f-task',correct:'f-correct',why:'f-why',better:'f-better',test:'f-test',lesson:'f-lesson',level:'f-level',source:'f-source'};
+function fillEdit(c){Object.entries(fields).forEach(([k,id])=>$(id).value=String(c[k]??''));c.choices.forEach((v,i)=>$('f-c'+i).value=v)}
+function selectEdit(id,relist=true){editId=id;const c=bank.find(c=>c.id===id);if(!c)return;fillEdit(c);if(relist)renderEditorList()}
+function draftCard(){const c=Object.fromEntries(Object.entries(fields).map(([k,id])=>[k,escape($(id).value)]));c.correct=Number(c.correct);c.level=Number(c.level);c.choices=[0,1,2,3].map(i=>escape($('f-c'+i).value));return c}
+function saveDraft(event){if(event)event.preventDefault();const c=draftCard();if(!validCard(c)){alertMsg('Не сохранено: заполните обязательные поля, проверьте ID, ответы и мини-лекцию.');return false}const existing=bank.findIndex(x=>x.id===editId),conflict=bank.find(x=>x.id===c.id&&x.id!==editId);if(conflict){alertMsg('ID уже существует. Укажите другой ID.');return false}if(existing<0)bank.push(c);else bank[existing]=c;editId=c.id;safeSave(STORE_BANK,{schema:DEFAULT_BANK.schema,version:'local',cards:bank});$('editor-status').textContent='Есть локальные изменения. Экспортируй JSON для публикации.';renderEditorList();renderShield();alertMsg('Карточка сохранена в этом браузере.');return true}
+function newCard(){const id='NEW-'+Math.floor(Math.random()*999999).toString().padStart(6,'0');const c={id,criterion:'atomicity',title:'Новое задание',component:'Компонент / процесс',context:'Опишите ситуацию и заинтересованные стороны.',requirement:'Сервис должен...',task:'Какое решение лучше?',choices:['Первый вариант решения','Второй вариант решения','Третий вариант решения','Четвёртый вариант решения'],correct:0,why:'Почему это решение верное?',better:'Уточнённая формулировка требования.',test:'Входные данные, действие и ожидаемый результат.',lesson:'Краткий авторский пересказ соответствующего принципа BABOK.',level:1,source:'Авторская учебная карточка'};bank.unshift(c);selectEdit(id);renderEditorList();$('editor-status').textContent='Создана новая карточка. Нажми «Сохранить карточку».'}
+function downloadBank(){const pkg={schema:DEFAULT_BANK.schema,version:'1.4.0-local',exported_at:new Date().toISOString(),cards:bank};const url=URL.createObjectURL(new Blob([JSON.stringify(pkg,null,2)],{type:'application/json;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='citadel-academy-cards-v1.4.0.json';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);alertMsg('JSON подготовлен: его можно включить в новый релиз игры.')}
+async function importBank(file){if(!file)return;try{if(file.size>1.5e6)throw Error('Файл слишком большой. Максимум 1,5 МБ.');const obj=JSON.parse(await file.text());const v=validBank(obj);if(!confirm(`Заменить локальную библиотеку (${bank.length} карточек) новым пакетом (${v.length})?`))return;bank=structuredClone(v);editId='';safeSave(STORE_BANK,{schema:DEFAULT_BANK.schema,version:obj.version||'imported',cards:bank});renderEditorList();renderShield();alertMsg('Набор импортирован. Персональный прогресс сохранён отдельно.')}catch(e){alertMsg('Импорт не выполнен: '+e.message)}finally{$('editor-import').value=''}}
+async function loadPublishedBank(){if(safeLoad(STORE_BANK,null))return;try{const res=await fetch('./assets/citadel-academy-cards-v1.4.0.json',{cache:'no-store'});if(!res.ok)return;const remote=validBank(await res.json());if(safeLoad(STORE_BANK,null))return;bank=structuredClone(remote);renderShield();renderEditorList()}catch{/* embedded bank works offline */}}
+function init(){Object.entries(LABELS).forEach(([k,x])=>{const o=document.createElement('option');o.value=k;o.textContent=x[0];$('f-criterion').append(o)});$('voice').checked=voice;all('[data-tab]').forEach(b=>b.onclick=()=>b.dataset.tab==='practice'?startPractice():b.dataset.tab==='exam'?startExam():nav(b.dataset.tab));$('voice').onchange=e=>{voice=e.target.checked;safeSave(STORE_VOICE,voice);if(!voice)stopSpeech()};$('start-practice').onclick=startPractice;$('start-exam').onclick=startExam;$('go-editor').onclick=()=>nav('editor');$('editor-search').oninput=renderEditorList;$('editor-form').onsubmit=saveDraft;$('editor-add').onclick=newCard;$('editor-export').onclick=downloadBank;$('editor-import').onchange=e=>importBank(e.target.files[0]);$('editor-duplicate').onclick=()=>{let c=bank.find(x=>x.id===editId);if(!c)return;const copy=structuredClone(c);copy.id=c.id+'-COPY-'+Math.floor(1000+Math.random()*8999);copy.title='Копия: '+c.title;bank.unshift(copy);selectEdit(copy.id);renderEditorList();alertMsg('Копия создана. Нажми «Сохранить карточку».')};$('editor-delete').onclick=()=>{if(bank.length<=1){alertMsg('Нельзя удалить последнюю карточку.');return}if(!confirm('Удалить текущую карточку из локального набора?'))return;bank=bank.filter(x=>x.id!==editId);editId='';safeSave(STORE_BANK,{schema:DEFAULT_BANK.schema,version:'local',cards:bank});renderEditorList();renderShield()};$('editor-preview').onclick=()=>{if(!saveDraft())return;filter=bank.find(x=>x.id===editId)?.criterion||'all';seen=bank.filter(x=>x.id!==editId).map(x=>x.id);revisit=[{id:editId,delay:0}];mode='practice';nav('practice');loadPractice()};$('editor-reset').onclick=()=>{if(!confirm('Вернуть исходные 36 карточек? Локальные изменения будут утрачены.'))return;bank=structuredClone(DEFAULT);try{localStorage.removeItem(STORE_BANK)}catch{}editId='';renderEditorList();renderShield();$('editor-status').textContent='Редакция: исходная библиотека';alertMsg('Восстановлены исходные карточки.')};renderShield();renderEditorList();nav('home');window.addEventListener('pagehide',stopSpeech);document.addEventListener('visibilitychange',()=>{if(document.hidden)stopSpeech()});window.addEventListener('keydown',e=>{if(e.key==='Escape')stopSpeech()});}
+init();loadPublishedBank();try{const focus=new URLSearchParams(location.search).get('criterion');if(focus&&CORE.includes(focus)){filter=focus;startPractice()}}catch{}
+})();
+</script>
+</body></html>
