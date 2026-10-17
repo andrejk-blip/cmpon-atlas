@@ -19,8 +19,8 @@ const near = (actual, expected, message, tolerance = 1e-7) =>
 function parseArgs(argv) {
   const root = path.resolve(__dirname, '..');
   const options = {
-    cores: [], patch: path.join(root, 'assets/citadel-mrg-v1.5.0.js'),
-    view: path.join(root, 'assets/citadel-mrg-view-v1.5.0.js'),
+    cores: [], patch: path.join(root, 'assets/citadel-mrg-v1.6.0.js'),
+    view: path.join(root, 'assets/citadel-mrg-view-v1.6.0.js'),
     render: null, smoke: false, only: null,
   };
   for (let i = 0; i < argv.length; i++) {
@@ -58,6 +58,7 @@ function createHarness(corePath, patchPath, viewPath, createCanvas = null) {
         toggle(k, on) { if (on === undefined) on = !classes.has(k); on ? classes.add(k) : classes.delete(k); },
       },
       setAttribute(k, v) { this.attrs[k] = v; },
+      getAttribute(k) { return this.attrs[k] ?? null; }, removeAttribute(k) { delete this.attrs[k]; },
       getBoundingClientRect() { return { left: 0, top: 0, width: 1280, height: 720 }; },
       addEventListener(k, f) { (this.handlers[k] ??= []).push(f); },
       focus() { document.activeElement = this; }, setPointerCapture() {},
@@ -100,9 +101,10 @@ function createHarness(corePath, patchPath, viewPath, createCanvas = null) {
   if (patchPath) vm.runInContext(fs.readFileSync(patchPath, 'utf8'), context, { filename: path.basename(patchPath) });
   if (viewPath) vm.runInContext(fs.readFileSync(viewPath, 'utf8'), context, { filename: path.basename(viewPath) });
   vm.runInContext(`globalThis.qa = {
-    Engine: RequirementArcade, arcade: ARCADE, state: STATE, vectors: V3,
+    Engine: RequirementArcade, arcade: ARCADE, state: STATE, vectors: V3, seeded: arcadeSeed,
     scene: spaceScene, camera: spaceCamera, draw: spaceDrawCPU, hud: drawFinaleHUD,
     project: spaceProject, point: spacePoint, meshes: SPACE_MESH,
+    input: arcadeInput, boardAim: citadelBoardAim,
     api: globalThis.CITADEL_MRG, view: globalThis.CITADEL_MRG_VIEW,
     cupPack: typeof cupPack === 'function' ? cupPack : null,
     cupUnpack: typeof cupUnpack === 'function' ? cupUnpack : null,
@@ -135,6 +137,7 @@ function inert(e) {
   e.finale.attackClock = 1e6;
   e.finale.telegraph = 0;
   e.finale.beamTime = 0;
+  if (e.finale.tentacle) Object.assign(e.finale.tentacle, { phase: 'idle', time: 1e6 });
   return e;
 }
 
@@ -146,13 +149,53 @@ function bossHit(e, damage = 1e9) {
 }
 
 function clearSoldiers(e) {
-  for (const enemy of e.board.enemies) { enemy.hp = 0; enemy.dead = true; }
+  for (const enemy of e.board.enemies) { enemy.hp = 0; enemy.dead = true; enemy.state = 'dead'; }
 }
 
 function enterWave(e, wave) {
-  for (let attempt = 0; e.finale.waveIndex < wave && attempt < 4; attempt++) { clearSoldiers(e); bossHit(e); }
+  for (let attempt = 0; e.finale.waveIndex < wave && attempt < 60 * 45; attempt++) { clearSoldiers(e); bossHit(e); }
   assert.equal(e.finale.waveIndex, wave, `Enter wave ${wave + 1}`);
   return e;
+}
+
+// A test operator issuing only the game's real input fields. It does not alter
+// health, ammo, cooldowns, AI, boss state, or wave state. Aiming is external to
+// the game: the separate pointer/input regression proves that these aim points
+// are reachable through the actual mouse projection and arcadeInput path.
+function createMrgController() {
+  let jumpUntil = 0;
+  return function control(e) {
+    const b = e.board, f = e.finale;
+    if (!b || f?.phase !== 'mrg') return {};
+    const soldiers = b.enemies.filter(enemy => !enemy.dead && enemy.hp > 0 && (!enemy.emergeDelay || enemy.emergeDelay <= 0));
+    const target = soldiers.slice().sort((a, z) => {
+      const danger = enemy => Math.hypot(enemy.pos[0] - b.pos[0], enemy.pos[1] - b.pos[1]) - (enemy.role === 'knife' ? 2 : 0);
+      return danger(a) - danger(z);
+    })[0];
+    const threat = b.hostile.some(shot => {
+      const dx = shot.pos[0] - b.pos[0], dy = shot.pos[1] - b.pos[1] - .55;
+      return Math.abs(dx) < (shot.kind === 'rocket' ? 14 : 11) && Math.abs(dy) < 3 && dx * shot.vel[0] <= 0;
+    });
+    const knife = soldiers.find(enemy => enemy.role === 'knife' && Math.abs(enemy.pos[0] - b.pos[0]) < 5 && Math.abs(enemy.pos[1] - b.pos[1]) < 3);
+    const beam = f.pattern === 2 && f.telegraph > 0 && f.telegraph < .55;
+    if (b.grounded && (threat || knife || beam)) jumpUntil = f.time + .4;
+    const imminent = b.hostile.some(shot => Math.hypot(shot.pos[0] - b.pos[0], shot.pos[1] - b.pos[1] - .55) < (shot.kind === 'rocket' ? 6 : 3)) ||
+      !!(knife && ['windup', 'strike'].includes(knife.knifePhase) && b.pos[1] - knife.pos[1] < 1.8);
+    const desired = -28 + Math.sin(f.time * .75) * 1.7;
+    let aim = f.mrg.pos.slice();
+    if (target) {
+      const travel = Math.min(.65, Math.hypot(target.pos[0] - b.pos[0], target.pos[1] - b.pos[1]) / 65);
+      const vx = Number(target.vx) || 0, vy = Number(target.vy) || 0;
+      aim = [target.pos[0] + vx * travel, target.pos[1] + .65, 0];
+      if (!target.grounded && target.state !== 'emerging') aim[1] = Math.max(1.65, aim[1] + vy * travel - 16 * travel * travel);
+    }
+    return {
+      moveX: Math.max(-1, Math.min(1, (desired - b.pos[0]) * .8)),
+      jump: f.time < jumpUntil, fire: true, aim,
+      pulse: imminent && b.invulnerable <= .05,
+      missile: e.player.missiles > 0 && (target ? target.grounded && target.hp >= 100 : f.open),
+    };
+  };
 }
 
 function main(options = parseArgs(process.argv.slice(2))) {
@@ -179,423 +222,489 @@ function main(options = parseArgs(process.argv.slice(2))) {
 }
 
 function runTests(h, options, result) {
-  assert.equal(h.api?.version, '1.5.0');
+  assert.equal(h.api?.version, '1.6.0');
   function test(name, fn) {
     if (options.only && !name.includes(options.only)) return;
     try { const data = fn(); result.tests.push({ name, ok: true, ...(data === undefined ? {} : { data }) }); }
     catch (error) { result.tests.push({ name, ok: false, error: error.message, stack: error.stack.split('\n').filter(line => /^\s+at /.test(line)).slice(0, 3) }); }
   }
   const plain = { weapons: 0, armor: 0, rockets: 0 };
-  const fresh = (wave = 0, settings = {}) => inert(enterWave(h.engine(settings), wave));
-  function rider(e, id = 'left', fraction = .5) {
-    const p = e.finale.arenaPlatforms.find(p => p.id === id);
-    Object.assign(e.board, {
-      pos: [p.lo + (p.hi - p.lo) * fraction, p.y, 0], previous: [p.lo + (p.hi - p.lo) * fraction, p.y, 0],
-      vx: 0, vy: 0, grounded: true, supportId: p.id, knockbackX: 0,
-      jumpHeld: false, dropHeld: false, dropTimer: 0, coyote: .12,
-    });
-    return p;
+  const fresh = (wave = 0, settings = {}) => inert(enterWave(inert(h.engine(settings)), wave));
+  const live = e => e.board.enemies.filter(enemy => !enemy.dead && enemy.hp > 0);
+  const open = e => { e.finale.exposedFor = 100; e.finale.open = true; return e; };
+  function targetFixture(e, position = [-17, 1, 0]) {
+    const enemy = e.board.enemies[0];
+    e.board.enemies = [enemy];
+    Object.assign(enemy, { pos: position.slice(), previous: position.slice(), state: 'emerging', spawnTime: 100, emergeDelay: 100, vx: 0, vy: 0 });
+    return enemy;
   }
 
-  test('three wave contracts and 2/3/4 live killable soldiers', () => {
-    assert.deepEqual(clone(h.api.waves.map(w => w.soldiers)), [2, 3, 4]);
+  test('wave HP doubles exactly and each batch has three distinct roles with TV/BS/SH', () => {
+    assert.deepEqual(clone(h.api.waves.map(w => w.soldiers)), [3, 6, 9]);
     assert.deepEqual(clone(h.api.waves.map(w => w.damageMultiplier)), [1, 2, 4]);
-    const e = fresh();
-    for (let wave = 0; wave < 3; wave++) {
-      enterWave(e, wave);
-      const f = e.finale, b = e.board;
-      assert.equal(f.arenaVersion, '1.5.0');
-      assert.equal(f.waveDamageMultiplier, 2 ** wave);
-      assert.equal(f.mrg.stage, wave);
-      assert.equal(b.enemies.filter(s => !s.dead && s.hp > 0).length, 2 + wave);
-      assert.equal(new Set(b.enemies.map(s => s.id)).size, 2 + wave);
-      assert.equal(b.enemies.filter(s => s.name).length, 1, 'Exactly one named soldier per wave');
-      assert.equal(b.enemies[0].name, ['TV', 'BS', 'SH'][wave]);
-      assert.equal(b.enemies[0].beard, wave === 2, 'SH is the bearded soldier');
-      assert(f.waveTitle && f.platformLabel && f.waveIntro > 0);
-      assert.equal(typeof f.waveGateReached, 'boolean');
-      for (const soldier of b.enemies) {
-        assert(soldier.hp > 0 && soldier.hp === soldier.maxHp);
-        assert(soldier.pos.every(Number.isFinite) && soldier.previous.every(Number.isFinite));
-        assert(Number.isFinite(soldier.spawnTime));
-        assert([1, -1].includes(soldier.facing));
+    for (const assist of [false, true]) for (let wave = 0; wave < 3; wave++) {
+      const e = fresh(wave, { assist }), f = e.finale, expectedHp = (assist ? 116 : 144) * 2 ** wave;
+      assert.equal(f.arenaVersion, '1.6.0');
+      assert.equal(f.totalBatches, wave + 1); assert.equal(f.spawnedBatches, 1);
+      assert.equal(f.waveSoldiersTotal, (wave + 1) * 3); assert.equal(f.pendingSoldiers, wave * 3);
+      assert.equal(f.waveDamageMultiplier, 2 ** wave); assert.equal(f.batchIndex, 0);
+      assert.equal(e.board.enemies.length, 3);
+      runFrames(e, wave * 7 + .1);
+      assert.equal(f.pendingSoldiers, 0); assert.equal(f.spawnedBatches, wave + 1);
+      assert.equal(e.board.enemies.length, (wave + 1) * 3);
+      for (let batch = 0; batch <= wave; batch++) {
+        const enemies = e.board.enemies.filter(enemy => enemy.batchIndex === batch);
+        assert.deepEqual(clone(enemies.map(enemy => enemy.role)), ['jumper', 'knife', 'rocketeer']);
+        for (const enemy of enemies) { near(enemy.maxHp, expectedHp, 'Soldier maximum HP'); near(enemy.hp, expectedHp, 'Undamaged soldier HP'); }
       }
-      assert.equal(h.api.status(e).soldiersAlive, 2 + wave);
+      assert.equal(e.board.enemies.filter(enemy => enemy.name).length, 1);
+      assert.equal(e.board.enemies[0].name, ['TV', 'BS', 'SH'][wave]);
+      assert.equal(e.board.enemies[0].beard, wave === 2);
     }
   });
 
-  test('HP and soldier gates are both required; massive projectiles cannot skip waves', () => {
-    const e = fresh(), m = e.finale.mrg;
-    bossHit(e);
-    near(m.hp, m.maxHp * 2 / 3, 'First boundary clamp');
-    assert.equal(e.finale.waveIndex, 0);
-    assert(e.finale.waveGateReached);
-    bossHit(e);
-    near(m.hp, m.maxHp * 2 / 3, 'Repeated hits cannot pass a blocked gate');
-    e.board.enemies[0].hp = 0; e.board.enemies[0].dead = true;
-    e.step(1 / 60, {}); assert.equal(e.finale.waveIndex, 0);
-    clearSoldiers(e); e.step(1 / 60, {});
-    assert.equal(e.finale.waveIndex, 1);
-    assert.equal(e.board.enemies.length, 3);
-    clearSoldiers(e); runFrames(e, .2);
-    assert.equal(e.finale.waveIndex, 1, 'Soldiers alone do not complete a wave');
-    bossHit(e);
-    assert.equal(e.finale.waveIndex, 2);
-    near(m.hp, m.maxHp / 3, 'Second boundary clamp');
+  test('soldiers emerge sequentially from MRG and later batches stay queued for seven seconds', () => {
+    const e = fresh(2), f = e.finale;
+    assert.equal(f.pendingSoldiers, 6); assert.equal(e.board.enemies.length, 3);
+    assert(e.board.enemies.every(enemy => enemy.state === 'emerging' && enemy.pos[0] >= 17 && enemy.pos[0] <= 20));
+    const delays = e.board.enemies.map(enemy => enemy.emergeDelay);
+    assert(delays[0] < delays[1] && delays[1] < delays[2]);
+    runFrames(e, .25);
+    assert(e.board.enemies[0].pos[0] < e.board.enemies[2].pos[0], 'The first soldier leaves before the last');
+    runFrames(e, 6.5); assert.equal(e.board.enemies.length, 3);
+    runFrames(e, .35); assert.equal(e.board.enemies.length, 6); assert.equal(f.pendingSoldiers, 3);
+    assert(e.board.enemies.slice(3).every(enemy => enemy.state === 'emerging'));
+    runFrames(e, 7.1); assert.equal(e.board.enemies.length, 9); assert.equal(f.pendingSoldiers, 0);
+  });
 
-    const flood = fresh();
-    clearSoldiers(flood);
+  test('HP gates require current enemies and all queued batches; projectile floods cannot skip waves', () => {
+    const e = fresh(1), f = e.finale, m = f.mrg;
+    bossHit(e); near(m.hp, m.maxHp / 3, 'Second-wave HP boundary');
+    assert.equal(f.waveIndex, 1); clearSoldiers(e); e.step(1 / 60, {});
+    assert.equal(f.waveIndex, 1, 'Unspawned batch blocks the gate'); assert.equal(f.pendingSoldiers, 3);
+    runFrames(e, 7.1); assert.equal(f.waveIndex, 1); assert.equal(live(e).length, 3);
+    clearSoldiers(e); e.step(1 / 60, {}); assert.equal(f.waveIndex, 2);
+    assert.equal(f.pendingSoldiers, 6); assert.equal(live(e).length, 3);
+    const flood = fresh(); clearSoldiers(flood); open(flood);
     for (let i = 0; i < 50; i++) flood.board.bullets.push({ pos: flood.finale.mrg.pos.slice(), vel: [0, 0, 0], life: 1, damage: 1e9 });
-    flood.finale.exposedFor = 100; flood.step(1 / 60, {});
-    assert.equal(flood.finale.waveIndex, 1, 'A same-frame projectile flood advances only one wave');
-    near(flood.finale.mrg.hp, flood.finale.mrg.maxHp * 2 / 3, 'Same-frame damage is not carried to next wave');
+    flood.step(1 / 60, {});
+    assert.equal(flood.finale.waveIndex, 1);
+    near(flood.finale.mrg.hp, flood.finale.mrg.maxHp * 2 / 3, 'Damage does not spill into a new wave');
     assert.equal(flood.board.bullets.length, 0);
   });
 
-  test('final soldiers block victory and ordinary upload; completed finale uploads once', () => {
-    const e = fresh(2);
-    bossHit(e);
-    assert.equal(e.finale.mrg.hp, 0);
-    runFrames(e, .2);
-    assert.equal(e.finale.phase, 'mrg'); assert.equal(e.finale.defeatTime, 0);
-    assert.equal(e.beginUpload(), false);
-    clearSoldiers(e); e.step(1 / 60, {});
-    assert(e.finale.defeatTime > 2.9);
-    const start = e.score;
-    runFrames(e, 3.1); assert.equal(e.finale.phase, 'upload');
-    assert.equal(e.score, start + 7000);
-    assert.equal(e.beginUpload(), false); assert.equal(e.score, start + 7000);
+  test('final queued soldiers prevent defeat/upload; a completed battle awards only once', () => {
+    const e = fresh(2); bossHit(e); clearSoldiers(e); runFrames(e, .1);
+    assert.equal(e.finale.mrg.hp, 0); assert.equal(e.finale.pendingSoldiers, 6);
+    assert.equal(e.finale.defeatTime, 0); assert.equal(e.finale.phase, 'mrg'); assert.equal(e.beginUpload(), false);
+    runFrames(e, 14.1); assert.equal(e.finale.pendingSoldiers, 0); assert.equal(live(e).length, 6);
+    assert.equal(e.finale.defeatTime, 0); assert.equal(e.beginUpload(), false);
+    clearSoldiers(e); e.step(1 / 60, {}); assert(e.finale.defeatTime > 2.9);
+    const score = e.score; runFrames(e, 3.1); assert.equal(e.finale.phase, 'upload'); assert.equal(e.score, score + 7000);
+    assert.equal(e.beginUpload(), false); assert.equal(e.score, score + 7000);
     runFrames(e, 8.1); assert.equal(e.status, 'won');
+    const checkpoint = fresh(), before = checkpoint.score;
+    assert.equal(checkpoint.beginUpload(false), true); assert.equal(checkpoint.score, before);
+    checkpoint.retryFinale(); assert.equal(checkpoint.finale.phase, 'upload'); assert.equal(checkpoint.score, before);
   });
 
-  test('explicit upload checkpoint entry stays compatible and does not award points', () => {
-    const e = fresh(), score = e.score;
-    assert.equal(e.beginUpload(false), true);
-    assert.equal(e.finale.phase, 'upload'); assert.equal(e.score, score);
-    assert.equal(e.board.enemies.length, 0);
-    e.retryFinale(); assert.equal(e.finale.phase, 'upload');
-    assert.equal(e.score, score);
+  test('default fire and grenades stay horizontal in the facing direction, including guide mode', () => {
+    for (const facing of [-1, 1]) for (const guide of [false, true]) {
+      const e = fresh(); e.board.facing = facing; e.board.guide = guide;
+      // Keep the guide at its desired position so it does not deliberately turn.
+      if (guide) e.board.pos[0] = -15 + Math.sin((e.finale.time + 1 / 60) * .62) * 9;
+      for (const enemy of e.board.enemies) enemy.pos = [facing === 1 ? -30 : 10, 12, 0];
+      e.step(1 / 60, { fire: true, missile: true });
+      assert.equal(e.board.manualAim, false);
+      assert.equal(e.board.bullets.length, 2);
+      for (const shot of e.board.bullets) {
+        assert.equal(Math.sign(shot.vel[0]), facing);
+        near(shot.vel[1], 0, 'No vertical autoaim'); near(shot.vel[2], 0, 'Side-view trajectory');
+        assert(!Object.hasOwn(shot, 'targetId'), 'Projectile has no selected target');
+      }
+    }
   });
 
-  test('soldier / fan / floor-wave / beam / body damage scales once by 1,2,4', () => {
+  test('real pointer projection and arcadeInput produce an oblique manual shot through Z=0', () => {
+    const e = fresh();
+    const rect = { left: 11, top: 19, width: 640, height: 360 };
+    h.arcade.canvas = { width: 1280, height: 720, getBoundingClientRect: () => rect };
+    const camera = h.camera(e, e.elapsed), target = [-7, 13, 0], screen = h.project(target, camera, 1280, 720);
+    const aimed = h.boardAim(rect.left + screen.x / 2, rect.top + screen.y / 2, h.arcade.canvas, camera);
+    target.forEach((v, i) => near(aimed[i], v, 'Pointer projects into the actual arena plane', 1e-5));
+    h.arcade.boardAim = aimed; h.arcade.firePointer = 77;
+    const input = h.input(); assert(input.fire); assert(input.aim);
+    e.step(1 / 60, input);
+    assert.equal(e.board.manualAim, true); assert(e.board.aimDir[1] > .3);
+    assert(e.board.bullets[0].vel[1] > 20);
+    near(h.vectors.len(e.board.aimDir), 1, 'Manual aim is a unit vector');
+    h.arcade.firePointer = null; h.arcade.boardAim = null;
+  });
+
+  test('aimed empty space stays empty: no snap, target selection or homing after firing', () => {
+    const a = fresh(), b = fresh(), aim = [-10, 17, 0];
+    const ea = targetFixture(a, [-17, 1, 0]), eb = targetFixture(b, [-3, 8, 0]);
+    const hpA = ea.hp, hpB = eb.hp;
+    a.step(1 / 60, { fire: true, missile: true, aim });
+    b.step(1 / 60, { fire: true, missile: true, aim });
+    assert.deepEqual(clone(a.board.aimDir), clone(b.board.aimDir));
+    assert.deepEqual(clone(a.board.bullets.map(shot => shot.vel)), clone(b.board.bullets.map(shot => shot.vel)));
+    const velocities = a.board.bullets.map(shot => clone(shot.vel));
+    runFrames(a, .5); runFrames(b, .5);
+    assert.equal(ea.hp, hpA); assert.equal(eb.hp, hpB);
+    a.board.bullets.forEach((shot, i) => assert.deepEqual(clone(shot.vel), velocities[i], 'Velocity is not retargeted in flight'));
+  });
+
+  test('real straight bullets kill on the firing line and miss targets above it; FX remain wired', () => {
+    const e = fresh(), enemy = targetFixture(e, [-17, 1, 0]);
+    runFrames(e, 2, { fire: true });
+    assert(enemy.dead); assert.equal(e.board.kills, 1);
+    assert(e.qaEvents.some(event => event.kind === 'shot'));
+    assert(e.qaEvents.some(event => event.kind === 'destroy' && event.data === enemy.id));
+    const missed = fresh(), high = targetFixture(missed, [-17, 8, 0]), hp = high.hp;
+    runFrames(missed, 2, { fire: true }); assert.equal(high.hp, hp, 'Horizontal fire cannot follow a high enemy');
+    runFrames(missed, 2, { fire: true, aim: [-17, 8.65, 0] }); assert(high.dead, 'Explicit manual aim can hit the high enemy');
+    const grenade = fresh(), target = targetFixture(grenade, [-17, 1, 0]);
+    grenade.step(1 / 60, { missile: true }); runFrames(grenade, .5);
+    assert(target.dead); assert(grenade.qaEvents.some(event => event.kind === 'missile'));
+    assert(grenade.qaEvents.some(event => event.kind === 'destroy' && event.data === 'grenade'));
+  });
+
+  test('damage remains multiplied once by wave, with independent assist/armor reductions', () => {
     const damage = [];
     for (let wave = 0; wave < 3; wave++) {
       const e = fresh(wave, { upgrades: plain }), b = e.board, f = e.finale;
-      for (const [kind, base] of [['soldier', 10], ['fan', 10], ['floor', 16], ['beam', 22], ['contact', 18]]) {
+      clearSoldiers(e); // Future batches cannot arrive during these single-frame samples.
+      for (const [kind, base] of [['fan', 10], ['floor', 16], ['beam', 22], ['contact', 18]]) {
         Object.assign(b, { hp: 100, invulnerable: 0, pos: [-25, 1, 0], previous: [-25, 1, 0], vy: 0, grounded: true, knockbackX: 0 });
         b.hostile = []; f.beamTime = 0; f.attackClock = 100; f.exposedFor = 100;
         if (kind === 'beam') { f.beamTime = .38; f.aimY = 1.5; }
         else if (kind === 'contact') b.pos[0] = h.api.bossBounds().minX;
-        else b.hostile.push({ pos: [-25, 1.5, 0], vel: [0, 0, 0], life: 1, damage: base, r: .4, source: kind === 'soldier' ? 'soldier' : 'boss', wave: kind === 'floor' });
-        e.step(1 / 60, {});
-        near(100 - b.hp, base * 2 ** wave, `${kind} wave ${wave + 1}`);
-        damage.push({ wave: wave + 1, kind, hp: 100 - b.hp });
+        else b.hostile.push({ pos: [-25, 1.5, 0], vel: [0, 0, 0], life: 1, damage: base, r: .4, source: 'boss', wave: kind === 'floor' });
+        e.step(1 / 60, {}); near(100 - b.hp, base * 2 ** wave, `${kind} wave ${wave + 1}`);
+        damage.push({ wave: wave + 1, kind, damage: 100 - b.hp });
       }
+    }
+    for (const assist of [false, true]) for (const armor of [0, 1, 2]) {
+      const e = fresh(2, { assist, upgrades: { ...plain, armor } });
+      e.board.invulnerable = 0; e.mrgDamage(10, 'soldier');
+      near(100 - e.board.hp, 40 * (assist ? .5 : 1) * .8 ** armor, 'Assist and armor modifiers');
     }
     return damage;
   });
 
-  test('invulnerability prevents per-frame beam and boss-body damage', () => {
-    const e = fresh(2, { upgrades: plain }), b = e.board, x = h.api.bossBounds().minX;
-    b.hp = 100; b.invulnerable = 0; b.pos = [x, 1, 0];
-    e.step(1 / 60, {});
-    near(b.hp, 28, 'One contact hit');
-    for (let i = 0; i < 30; i++) { b.pos[0] = x; e.step(1 / 60, {}); }
-    near(b.hp, 28, 'No repeated body hits during the iframe');
-    assert(b.pos[0] < x, 'Boss body remains solid while invulnerable');
-    const beam = fresh(0, { upgrades: plain });
-    beam.board.invulnerable = 0; beam.finale.beamTime = .38; beam.finale.aimY = 1.5;
-    runFrames(beam, .3);
-    near(beam.board.hp, 78, 'A beam damages once during its active duration');
+  function roleFixture(e, role, position) {
+    const enemy = e.board.enemies.find(enemy => enemy.role === role);
+    for (const other of e.board.enemies) if (other !== enemy) { other.hp = 0; other.dead = true; other.state = 'dead'; }
+    Object.assign(enemy, { pos: position.slice(), previous: position.slice(), state: 'active', spawnTime: 0, emergeDelay: 0,
+      grounded: true, supportId: 'floor', vx: 0, vy: 0, cooldown: 0, jumpCooldown: 0, knifePhase: 'idle', rocketPhase: 'idle' });
+    e.finale.waveIntro = 0; e.finale.batchTimer = 1e6;
+    return enemy;
+  }
+
+  test('jumper has real airborne motion and bolts; knife chases and telegraphs a timed physical strike', () => {
+    const jumperGame = fresh(), jumper = roleFixture(jumperGame, 'jumper', [-10, 1, 0]);
+    const states = new Set(), shots = new Set(); let top = 1, rise = 0, fall = 0;
+    runFrames(jumperGame, 5, e => {
+      states.add(jumper.jumpPhase); top = Math.max(top, jumper.pos[1]); rise = Math.max(rise, jumper.vy); fall = Math.min(fall, jumper.vy);
+      e.board.hostile.forEach(shot => shots.add(shot.kind)); return {};
+    });
+    assert(top > 5 && rise > 15 && fall < -5, 'Jumper follows an actual ballistic jump');
+    assert(states.has('rising') && states.has('falling') && states.has('grounded'));
+    assert(shots.has('bolt')); assert(!shots.has('rocket'));
+
+    const knifeGame = fresh(0, { upgrades: plain }), knife = roleFixture(knifeGame, 'knife', [-15, 1, 0]);
+    knifeGame.board.invulnerable = 0;
+    runFrames(knifeGame, 1); assert(knife.pos[0] < -19, 'Knife closes the distance on foot');
+    for (let i = 0; i < 300 && knife.knifePhase !== 'windup'; i++) knifeGame.step(1 / 60, {});
+    assert.equal(knife.knifePhase, 'windup'); assert.equal(knifeGame.board.hp, 100);
+    assert(Array.isArray(knife.knifeFrom) && Array.isArray(knife.knifeTo));
+    runFrames(knifeGame, .45); assert.equal(knifeGame.board.hp, 100, 'Windup is harmless');
+    for (let i = 0; i < 30 && knife.knifePhase !== 'strike'; i++) knifeGame.step(1 / 60, {});
+    assert.equal(knife.knifePhase, 'strike'); near(knifeGame.board.hp, 86, 'Actual knife segment hit');
+    runFrames(knifeGame, .15); near(knifeGame.board.hp, 86, 'A strike hits only once');
+    runFrames(knifeGame, .15); assert.equal(knife.knifePhase, 'recover');
+    assert(!knifeGame.board.hostile.some(shot => shot.kind === 'bolt' || shot.kind === 'rocket'), 'Knife does not reuse ranged AI');
+    return { jumperMaxY: top, phases: [...states], knifeDamage: 14 };
   });
 
-  test('assist and armor retain their independent damage reductions', () => {
-    const data = [];
-    for (const assist of [false, true]) for (const armor of [0, 1, 2]) {
-      const e = fresh(2, { assist, upgrades: { ...plain, armor } });
-      e.board.invulnerable = 0; e.mrgDamage(10, 'soldier');
-      near(100 - e.board.hp, 40 * (assist ? .5 : 1) * .8 ** armor, 'Assist/armor modifiers');
-      data.push({ assist, armor, damage: 100 - e.board.hp });
-    }
-    return data;
-  });
-
-  test('automatic aim selects nearest live soldier; real gunfire kills and emits shot/destroy', () => {
-    const e = fresh(0, { upgrades: plain });
-    const b = e.board;
-    b.enemies[0].pos = [-8, 1, 0]; b.enemies[1].pos = [-20, 1, 0];
-    for (const soldier of b.enemies) { soldier.spawnTime = 100; soldier.hp = 21; soldier.maxHp = 21; soldier.supportId = 'floor'; }
-    e.step(1 / 60, { fire: true });
-    assert.equal(b.bullets[0].targetId, b.enemies[1].id);
-    assert.equal(b.bullets[0].damage, 21);
-    runFrames(e, 1.5, { fire: true });
-    assert(b.enemies.every(s => s.dead), 'Actual bullets kill both soldiers');
-    assert.equal(b.kills, 2);
-    assert(e.qaEvents.some(event => event.kind === 'shot'));
-    assert.equal(e.qaEvents.filter(event => event.kind === 'destroy' && /^mrg-/.test(event.data)).length, 2);
-    assert(b.bullets.some(shot => shot.targetId === 'core'), 'Cleared soldiers switch targeting to the core');
-    const upgraded = fresh(0, { upgrades: { ...plain, weapons: 2 } });
-    upgraded.step(1 / 60, { fire: true });
-    near(upgraded.board.bullets[0].damage, 31.5, 'Weapon upgrade damage');
-    assert(upgraded.board.cooldown < .14, 'Weapon upgrade cadence');
-  });
-
-  test('grenades hit soldiers, splash adjacent targets and emit launch/explosion', () => {
-    const e = fresh(), b = e.board;
-    b.enemies[0].pos = [-17, 1, 0]; b.enemies[1].pos = [-15, 1, 0];
-    for (const soldier of b.enemies) { soldier.spawnTime = 100; soldier.supportId = 'floor'; }
-    const missiles = e.player.missiles;
-    assert.equal(e.mrgGrenade(), true); assert.equal(e.player.missiles, missiles - 1);
-    assert.equal(b.bullets[0].targetId, b.enemies[0].id);
-    assert.equal(e.mrgGrenade(), false, 'Grenade cooldown prevents accidental bursts');
-    runFrames(e, .5);
-    assert(b.enemies.every(s => s.dead));
+  test('rocketeer locks a visible aim, launches a straight rocket and creates a real splash blast', () => {
+    const e = fresh(0, { upgrades: plain }), rocketeer = roleFixture(e, 'rocketeer', [-9, 1, 0]);
+    e.step(1 / 60, {}); assert.equal(rocketeer.rocketPhase, 'aim');
+    const locked = clone(rocketeer.rocketTarget);
+    e.board.pos[0] = -28;
+    for (let i = 0; i < 80 && !e.board.hostile.some(shot => shot.kind === 'rocket'); i++) e.step(1 / 60, {});
+    const rocket = e.board.hostile.find(shot => shot.kind === 'rocket');
+    assert(rocket); assert.deepEqual(clone(rocket.target), locked, 'Rocket uses its telegraphed target');
+    assert.equal(rocket.blastRadius, 3.2); assert(rocket.trail.length > 0);
+    const velocity = clone(rocket.vel); e.board.pos = [-31, 1, 0]; runFrames(e, .4);
+    assert.deepEqual(clone(rocket.vel), velocity, 'Enemy rocket does not home after launch');
     assert(e.qaEvents.some(event => event.kind === 'missile'));
-    assert(e.qaEvents.some(event => event.kind === 'destroy' && event.data === 'grenade'));
-  });
 
-  test('floor is fixed; wave patterns are horizontal, vertical, then mixed', () => {
-    const output = [];
+    const damage = [];
     for (let wave = 0; wave < 3; wave++) {
-      const e = fresh(wave); runFrames(e, 2);
-      const floor = clone(e.finale.arenaPlatforms[0]);
-      const samples = [];
-      runFrames(e, 4, current => { const p = current.finale.arenaPlatforms[1]; samples.push([p.lo, p.y]); return {}; });
-      const range = column => Math.max(...samples.map(p => p[column])) - Math.min(...samples.map(p => p[column]));
-      const dx = range(0), dy = range(1);
-      near(e.finale.arenaPlatforms[0].lo, floor.lo, 'Static floor left');
-      near(e.finale.arenaPlatforms[0].hi, floor.hi, 'Static floor right');
-      near(e.finale.arenaPlatforms[0].y, floor.y, 'Static floor height');
-      assert.equal(e.finale.arenaPlatforms[0].moving, false);
-      if (wave === 0) { assert(dx > 1); near(dy, 0, 'First wave is horizontal'); }
-      if (wave === 1) { near(dx, 0, 'Second wave is vertical'); assert(dy > 1); }
-      if (wave === 2) { assert(dx > 1); assert(dy > 1); }
-      for (const p of e.finale.arenaPlatforms) for (const key of ['lo', 'hi', 'y', 'previousLo', 'previousHi', 'previousY']) assert(Number.isFinite(p[key]), key);
-      output.push({ wave: wave + 1, horizontalRange: dx, verticalRange: dy });
+      const game = fresh(wave, { upgrades: plain }); clearSoldiers(game);
+      game.board.invulnerable = 0;
+      const shot = { pos: [game.board.pos[0] + 3, 1.55, 0], vel: [0, 0, 0], life: .001, r: .42, damage: 16,
+        kind: 'rocket', source: 'rocket', blastRadius: 3.2, color: '#ffd294', travelled: 0, travelLimit: 1, trail: [] };
+      game.board.hostile = [shot]; game.step(1 / 60, {});
+      near(100 - game.board.hp, 16 * 2 ** wave, 'Splash damage scales once');
+      assert(shot.exploded); assert.equal(game.finale.rocketBlasts.length, 1);
+      assert(game.qaEvents.some(event => event.kind === 'destroy' && event.data === 'rocket'));
+      const hp = game.board.hp; runFrames(game, .3); near(game.board.hp, hp, 'Blast is not repeatedly damaging');
+      runFrames(game, .3); assert.equal(game.finale.rocketBlasts.length, 0);
+      damage.push({ wave: wave + 1, damage: 100 - hp });
     }
-    return output;
+    return damage;
   });
 
-  test('standing riders are carried with each moving platform in X and Y', () => {
+  test('tentacle warning gives enough time to retreat from the right side and only active phase damages', () => {
+    const e = fresh(0, { upgrades: plain }); clearSoldiers(e);
+    const f = e.finale, b = e.board, t = f.tentacle;
+    f.waveIntro = 0; t.phase = 'idle'; t.time = .001;
+    b.pos = [12, 1, 0]; b.invulnerable = 0; e.step(1 / 60, {});
+    assert.equal(t.phase, 'telegraph'); near(t.time, 5.2, 'Long warning duration');
+    assert(t.segments.length >= 4 && t.segments.every(segment => segment.from[0] - segment.to[0] >= 40));
+    const escapeTime = (b.pos[0] - t.safeX + 1) / 10;
+    assert(t.time > escapeTime + .5, 'Warning exceeds the full running distance with margin');
+    runFrames(e, 1); assert.equal(b.hp, 100, 'Danger region is harmless during telegraph');
+    for (let i = 0; i < 360 && t.phase === 'telegraph'; i++) e.step(1 / 60, { moveX: -1 });
+    assert.equal(t.phase, 'active'); assert(b.pos[0] <= t.safeX, 'Right-side player reaches the far-left refuge');
+    assert.equal(b.hp, 100);
+    runFrames(e, 2.3, { moveX: -1 }); assert.equal(b.hp, 100, 'Far-left refuge remains safe during active sweep');
+
     for (let wave = 0; wave < 3; wave++) {
-      const e = fresh(wave); runFrames(e, 2); const p = rider(e);
-      const offset = e.board.pos[0] - p.lo;
-      for (let i = 0; i < 120; i++) {
-        e.step(1 / 60, {});
-        assert(e.board.grounded, `Rider remains grounded in wave ${wave + 1}`);
-        near(e.board.pos[0] - p.lo, offset, 'Horizontal platform carry');
-        near(e.board.pos[1], p.y, 'Vertical platform carry');
-        assert.equal(e.board.supportId, p.id);
+      const game = fresh(wave, { upgrades: plain }); clearSoldiers(game); game.finale.waveIntro = 0;
+      for (const phase of ['telegraph', 'active', 'retract']) {
+        for (const [x, y] of [[-23.9, 1], [-10, 12], [10, 1]]) {
+          Object.assign(game.finale.tentacle, { phase, time: 2, duration: 2.5 });
+          Object.assign(game.board, { hp: 100, invulnerable: 0, pos: [x, y, 0], previous: [x, y, 0], vy: 0, grounded: y === 1, knockbackX: 0 });
+          game.step(1 / 60, {});
+          near(100 - game.board.hp, phase === 'active' ? 18 * 2 ** wave : 0, `${phase} tentacle hit at ${x},${y}`);
+        }
       }
     }
+    return { warningSeconds: 5.2, escapeSeconds: escapeTime, safeX: t.safeX };
   });
 
-  test('jump detaches from moving platform and drop-through does not catch its top again', () => {
-    const e = fresh(2); runFrames(e, 2); const p = rider(e);
-    e.step(1 / 60, { jump: true });
-    assert(!e.board.grounded && e.board.vy > 0);
-    const x = e.board.pos[0];
-    runFrames(e, .15, { jump: true });
-    near(e.board.pos[0], x, 'An airborne player is no longer carried horizontally');
-    assert(e.board.pos[1] > p.y + 1);
-    rider(e); e.step(1 / 60, { moveZ: 1 });
-    assert(!e.board.grounded && e.board.dropTimer > 0);
-    runFrames(e, .25, { moveZ: 1 });
-    assert(e.board.pos[1] < p.y - .2, 'Player drops below the moving surface');
+  test('tentacles repeat periodically and pause freezes warning and active collisions', () => {
+    const e = fresh(); clearSoldiers(e); e.finale.waveIntro = 0;
+    Object.assign(e.finale.tentacle, { phase: 'idle', time: .001, duration: 9 });
+    e.board.pos = [-28, 1, 0]; e.board.invulnerable = 0;
+    const warnings = []; let previous = 'idle';
+    runFrames(e, 30, game => {
+      const current = game.finale.tentacle.phase;
+      if (current === 'telegraph' && previous !== current) warnings.push(game.finale.time);
+      previous = current; return {};
+    });
+    assert(warnings.length >= 2); near(warnings[1] - warnings[0], 14, 'Repeating sweep cycle', .12);
+    for (const phase of ['telegraph', 'active']) {
+      Object.assign(e.finale.tentacle, { phase, time: 1.25, duration: phase === 'active' ? 2.5 : 5.2 });
+      e.board.pos = [0, 1, 0]; e.pause();
+      const before = clone({ board: e.board, finale: e.finale, elapsed: e.elapsed });
+      runFrames(e, 2, { fire: true, moveX: 1 });
+      assert.deepEqual(clone({ board: e.board, finale: e.finale, elapsed: e.elapsed }), before);
+      e.resume(); e.board.invulnerable = 0; const hp = e.board.hp; e.step(1 / 60, {});
+      near(hp - e.board.hp, phase === 'active' ? 18 * .8 : 0, 'Damage resumes only in active phase');
+    }
+    return { warningTimes: warnings };
   });
 
-  test('walking off an edge falls; coyote jump and variable jump height remain usable', () => {
-    const e = fresh(0); runFrames(e, 2); const p = rider(e, 'left', .999);
-    e.step(1 / 60, { moveX: 1 });
-    assert(!e.board.grounded, 'No invisible support beyond platform edge');
-    assert(e.board.pos[1] < p.y);
-    e.step(1 / 60, { moveX: 1, jump: true });
-    assert(e.board.vy > 10, 'Short coyote interval permits an edge jump');
-    const short = fresh(), high = fresh();
-    short.step(1 / 60, { jump: true }); high.step(1 / 60, { jump: true });
-    runFrames(short, .2, { jump: false }); runFrames(high, .2, { jump: true });
-    assert(high.board.pos[1] > short.board.pos[1] + 1, 'Holding jump gives a higher jump');
+  test('moving platforms still carry in X/Y, detach on jump/drop and reset with batches on retry', () => {
+    for (let wave = 0; wave < 3; wave++) {
+      const e = fresh(wave); clearSoldiers(e); e.finale.batchTimer = 1e6; runFrames(e, 2);
+      const p = e.finale.arenaPlatforms.find(p => p.id === 'left'), floor = clone(e.finale.arenaPlatforms[0]);
+      Object.assign(e.board, { pos: [(p.lo + p.hi) / 2, p.y, 0], vy: 0, grounded: true, supportId: p.id, knockbackX: 0 });
+      const offset = e.board.pos[0] - p.lo;
+      for (let i = 0; i < 60; i++) { e.step(1 / 60, {}); near(e.board.pos[0] - p.lo, offset, 'Horizontal carry'); near(e.board.pos[1], p.y, 'Vertical carry'); assert(e.board.grounded); }
+      near(e.finale.arenaPlatforms[0].lo, floor.lo, 'Static floor X'); near(e.finale.arenaPlatforms[0].y, floor.y, 'Static floor height');
+      e.step(1 / 60, { jump: true }); const x = e.board.pos[0]; runFrames(e, .15, { jump: true });
+      assert(!e.board.grounded); near(e.board.pos[0], x, 'Airborne player stops following the platform');
+      Object.assign(e.board, { pos: [(p.lo + p.hi) / 2, p.y, 0], vy: 0, grounded: true, supportId: p.id, jumpHeld: false });
+      e.step(1 / 60, { moveZ: 1 }); runFrames(e, .25, { moveZ: 1 }); assert(e.board.pos[1] < p.y - .2);
+      e.status = 'lost'; e.retryFinale();
+      assert.equal(e.finale.waveIndex, 0); assert.equal(e.finale.pendingSoldiers, 0); assert.equal(e.finale.spawnedBatches, 1);
+      assert.equal(e.board.enemies.length, 3); assert(e.board.enemies.every(enemy => enemy.state === 'emerging' && enemy.hp === enemy.maxHp));
+      assert.equal(e.finale.tentacle.phase, 'idle'); assert.equal(e.finale.tentacle.time, 9);
+      assert.equal(e.board.manualAim, false); assert.equal(e.board.grenadeCooldown, 0); assert.equal(e.board.dropTimer, 0);
+      assert.equal(e.board.bullets.length + e.board.hostile.length + e.finale.rocketBlasts.length, 0);
+      assert.equal(e.board.hp, 100); assert.deepEqual(clone(e.board.pos), [-25, 1, 0]);
+    }
   });
 
-  test('pause freezes arena and retry resets motion, soldiers, gates and combat transients', () => {
-    const e = fresh(2); runFrames(e, 2); rider(e); e.step(1 / 60, { fire: true, missile: true });
-    e.pause();
-    const state = clone({ board: e.board, finale: e.finale, elapsed: e.elapsed });
-    runFrames(e, 3, { moveX: 1, jump: true, fire: true });
-    assert.deepEqual(clone({ board: e.board, finale: e.finale, elapsed: e.elapsed }), state);
-    e.resume(); assert.equal(e.status, 'boarding'); e.step(1 / 60, {}); assert(e.finale.time > state.finale.time);
-    e.status = 'lost'; e.retryFinale();
-    assert.equal(e.finale.waveIndex, 0); assert.equal(e.finale.waveDamageMultiplier, 1);
-    assert.equal(e.finale.mrg.hp, e.finale.mrg.maxHp); assert.equal(e.board.hp, 100);
-    assert.equal(e.board.enemies.length, 2); assert(e.board.enemies.every(s => !s.dead && s.hp === s.maxHp));
-    assert.equal(e.finale.time, 0); assert.equal(e.finale.defeatTime, 0); assert(!e.finale.waveGateReached);
-    assert.deepEqual(clone(e.board.pos), [-25, 1, 0]);
-    assert.equal(e.board.grenadeCooldown, 0); assert.equal(e.board.dropTimer, 0); assert.equal(e.board.knockbackX, 0);
-    assert.equal(e.board.bullets.length + e.board.hostile.length, 0);
-    for (const p of e.finale.arenaPlatforms) { near(p.lo, p.previousLo, 'Reset platform X'); near(p.y, p.previousY, 'Reset platform Y'); }
-  });
+  function roundtrip(e) {
+    if (h.cupPack && h.cupUnpack) return h.cupUnpack(h.cupPack(e), { seed: e.seed, mode: e.assist ? 'calm' : 'normal' }, () => {});
+    const restored = h.engine({ assist: e.assist, upgrades: e.upgrades, seed: e.seed });
+    for (const key of ['board', 'finale', 'player', 'elapsed', 'score', 'totalKills', 'phase', 'status', 'resumeStatus']) if (e[key] !== undefined) restored[key] = clone(e[key]);
+    // Old lab cores do not expose PRNG snapshots. Arena 1.6 has no random AI;
+    // compare the complete arena continuation, while the public checkpoint
+    // path above additionally exercises its real serialized PRNG state.
+    if (typeof e.random.getState === 'function') restored.random = h.seeded(e.random.getState());
+    return restored;
+  }
 
-  test('new MRG JSON roundtrip preserves exact state and subsequent deterministic physics', () => {
-    const a = fresh(2); runFrames(a, 3); rider(a); a.step(1 / 60, { fire: true });
-    a.board.enemies[0].hp -= 17; a.score = 31415;
-    const snapshot = h.cupPack ? h.cupPack(a) : clone({ finale: a.finale, board: a.board, elapsed: a.elapsed, score: a.score, player: a.player });
-    const b = h.cupUnpack ? h.cupUnpack(snapshot, { seed: a.seed, mode: a.assist ? 'calm' : 'normal' }, () => {}) : h.engine();
-    if (!h.cupUnpack) Object.assign(b, clone(snapshot));
-    assert.deepEqual(clone(b.finale), clone(a.finale)); assert.deepEqual(clone(b.board), clone(a.board)); assert.equal(b.score, a.score);
-    runFrames(a, 1, { moveX: -.2, fire: true }); runFrames(b, 1, { moveX: -.2, fire: true });
+  test('current JSON preserves pending batches, AI timers, rockets, manual aim and deterministic continuation', () => {
+    const a = fresh(2); runFrames(a, 8.3); a.step(1 / 60, { aim: [-6, 12, 0], fire: true });
+    Object.assign(a.finale.tentacle, { phase: 'telegraph', time: 3.2, duration: 5.2 });
+    a.board.enemies[0].hp -= 37; a.board.enemies[1].knifePhase = 'windup'; a.board.enemies[1].knifeTime = .3;
+    const b = roundtrip(a);
+    assert.deepEqual(clone(b.finale), clone(a.finale)); assert.deepEqual(clone(b.board), clone(a.board));
+    assert.equal(b.finale.pendingSoldiers, 3);
+    const input = { moveX: -.3, aim: [-8, 6, 0], fire: true };
+    runFrames(a, 1, input); runFrames(b, 1, input);
     assert.deepEqual(clone(b.finale), clone(a.finale)); assert.deepEqual(clone(b.board), clone(a.board));
     assert.equal(b.score, a.score);
   });
 
-  test('legacy cloud MRG snapshot migrates in place without resetting health or score', () => {
+  test('1.5 checkpoints retain health fractions, dead soldiers, position and score while adding required new batches', () => {
+    const oldPath = options.patch.replace('v1.6.0.js', 'v1.5.0.js');
+    assert(fs.existsSync(oldPath), 'Previous public gameplay module is available for genuine legacy fixtures');
+    const old = createHarness(h.corePath, oldPath);
     for (let wave = 0; wave < 3; wave++) {
-      const e = h.engine(), savedHp = e.finale.mrg.maxHp * [.9, .48, .2][wave];
-      e.finale.mrg.hp = savedHp; e.finale.mrg.stage = wave;
-      for (const key of Object.keys(e.finale)) if (/^(arena|wave|platform|soldier)/.test(key)) delete e.finale[key];
-      e.board.enemies = []; e.board.hp = 47; e.board.pos = [-10, 5, 0]; e.score = 12345;
-      const before = clone({ pos: e.board.pos, hp: e.board.hp, score: e.score });
-      const snapshot = h.cupPack ? h.cupPack(e) : clone({ finale: e.finale, board: e.board, score: e.score });
-      const restored = h.cupUnpack ? h.cupUnpack(snapshot, { seed: e.seed, mode: 'normal' }, () => {}) : h.engine();
-      if (!h.cupUnpack) Object.assign(restored, clone(snapshot));
+      const prior = inert(enterWave(inert(old.engine()), wave));
+      prior.finale.mrg.hp -= 12; prior.board.hp = 47; prior.score = 31415; prior.board.pos = [-10, 5, 0];
+      prior.board.enemies[0].hp = prior.board.enemies[0].maxHp * .4;
+      prior.board.enemies[1].hp = 0; prior.board.enemies[1].dead = true;
+      const count = prior.board.enemies.length, hp = prior.finale.mrg.hp, p = clone(prior.board.enemies[0].pos);
+      let restored;
+      if (old.cupPack && h.cupUnpack) restored = h.cupUnpack(old.cupPack(prior), { seed: prior.seed, mode: 'normal' }, () => {});
+      else { restored = h.engine(); Object.assign(restored, clone({ board: prior.board, finale: prior.finale, player: prior.player, score: prior.score })); }
       restored.objective();
-      assert.equal(restored.finale.arenaVersion, '1.5.0'); assert.equal(restored.finale.waveIndex, wave);
-      assert.equal(restored.board.enemies.length, wave + 2);
-      assert.equal(restored.board.enemies[0].name, ['TV', 'BS', 'SH'][wave]);
-      assert.equal(restored.board.enemies[0].beard, wave === 2);
-      near(restored.finale.mrg.hp, savedHp, 'Legacy boss HP retained');
-      assert.deepEqual(clone({ pos: restored.board.pos, hp: restored.board.hp, score: restored.score }), before);
+      assert.equal(restored.finale.arenaVersion, '1.6.0'); assert.equal(restored.finale.waveIndex, wave);
+      near(restored.finale.mrg.hp, hp, 'Legacy boss HP retained'); assert.equal(restored.board.hp, 47); assert.equal(restored.score, 31415);
+      assert.deepEqual(clone(restored.board.pos), [-10, 5, 0]); assert.deepEqual(clone(restored.board.enemies[0].pos), p);
+      near(restored.board.enemies[0].hp, 144 * 2 ** wave * .4, 'Live soldier retains its HP fraction');
+      assert(restored.board.enemies[1].dead && restored.board.enemies[1].hp === 0);
+      const spawned = Math.ceil(count / 3);
+      assert.equal(restored.finale.spawnedBatches, spawned); assert.equal(restored.finale.pendingSoldiers, (wave + 1 - spawned) * 3);
+      assert.equal(restored.board.enemies[0].name, ['TV', 'BS', 'SH'][wave]); assert.equal(restored.board.enemies[0].beard, wave === 2);
       restored.step(1 / 60, {}); assert(restored.board.pos.every(Number.isFinite));
     }
-
-    const alreadyDefeated = h.engine();
-    alreadyDefeated.finale.mrg.hp = 0; alreadyDefeated.finale.defeatTime = 1.5;
-    delete alreadyDefeated.finale.arenaVersion;
-    alreadyDefeated.objective();
-    assert.equal(alreadyDefeated.board.enemies.length, 0, 'A completed legacy battle does not respawn enemies');
-    near(alreadyDefeated.finale.defeatTime, 1.5, 'Legacy victory animation time retained');
-    runFrames(alreadyDefeated, 1.6); assert.equal(alreadyDefeated.finale.phase, 'upload');
   });
 
-  test('soldiers stay physically supported throughout moving-platform cycles', () => {
+  test('real manual-input operator wins normal and calm with all eighteen soldiers and no health/resource cheats', () => {
+    const runs = [];
+    for (const assist of [false, true]) {
+      const e = h.engine({ assist }), control = createMrgController(); let minHp = 100;
+      const transitions = [{ wave: 1, time: 0 }];
+      assert.equal(e.board.guide, false); assert.deepEqual(clone(e.upgrades), { weapons: 2, armor: 1, rockets: 0 });
+      for (let i = 0; i < 60 * 180 && e.status === 'boarding' && e.finale.phase === 'mrg'; i++) {
+        e.step(1 / 60, control(e)); minHp = Math.min(minHp, e.board.hp);
+        if (transitions.at(-1).wave !== e.finale.waveIndex + 1) transitions.push({ wave: e.finale.waveIndex + 1, time: e.elapsed });
+      }
+      const info = { assist, phase: e.finale.phase, status: e.status, seconds: e.elapsed, hp: e.board.hp, minHp,
+        kills: e.board.kills, bossHp: e.finale.mrg.hp, pendingSoldiers: e.finale.pendingSoldiers, transitions };
+      assert.equal(e.finale.phase, 'upload', JSON.stringify(info)); assert.equal(e.board.kills, 18);
+      assert.equal(e.finale.pendingSoldiers, 0); assert.equal(transitions.length, 3); assert.equal(e.board.guide, false);
+      runFrames(e, 8.2); assert.equal(e.status, 'won'); runs.push(info);
+    }
+    return runs;
+  });
+
+  if (h.view) test('scene uses clean physical slabs, distinct roles, named soldiers and actual danger geometry even with FX off', () => {
+    assert.equal(h.view.version, '1.6.0');
     for (let wave = 0; wave < 3; wave++) {
-      const e = fresh(wave);
-      for (let i = 0; i < 60 * 24; i++) {
-        e.step(1 / 60, {});
-        for (const soldier of e.board.enemies) {
-          const p = e.finale.arenaPlatforms.find(p => p.id === soldier.supportId);
-          assert(soldier.pos[0] >= p.lo - .01 && soldier.pos[0] <= p.hi + .01,
-            `${soldier.id} x=${soldier.pos[0].toFixed(3)} is outside ${p.id} [${p.lo.toFixed(3)},${p.hi.toFixed(3)}] at ${e.finale.time.toFixed(2)}s`);
-          near(soldier.pos[1], p.y, 'Soldier platform height');
+      const e = fresh(wave); runFrames(e, 3.2);
+      for (const fx of [false, true]) {
+        const before = JSON.stringify({ board: e.board, finale: e.finale });
+        const scene = h.scene(e, e.elapsed, fx), slabs = scene.filter(item => item.mrgFeature === 'platform');
+        assert.equal(slabs.length, 3); assert.equal(scene.filter(item => item.mrgFeature === 'platform-edge').length, 3);
+        assert(!scene.some(item => item.mrgFeature === 'platform-detail'), 'Old platform arrows/supports are absent');
+        for (const item of scene) { assert(item.pos.every(Number.isFinite)); assert(Array.from(item.model).every(Number.isFinite)); }
+        for (const slab of slabs) {
+          const p = e.finale.arenaPlatforms.find(p => p.id === slab.mrgPlatformId);
+          near(slab.pos[0], (p.lo + p.hi) / 2, 'Rendered platform center follows physics');
+          near(slab.pos[1] + slab.model[5], p.y - 1, 'Rendered platform surface follows physics', 1e-5);
+          near(slab.mrgSurfaceY, p.y - 1, 'Surface metadata');
         }
+        const glyphs = [...new Set(scene.filter(item => item.mrgFeature === 'boss-letter').map(item => item.mrgGlyph))];
+        assert.deepEqual(glyphs, ['М', 'Р', 'Г']);
+        const bodies = scene.filter(item => item.mrgFeature === 'boss-letter' && item.mesh === 'armor');
+        assert(bodies.every(item => Math.abs(item.model[6]) >= .4), 'Boss letters have real depth');
+        assert.deepEqual([...new Set(scene.filter(item => item.mrgFeature === 'soldier').map(item => item.mrgRole))], ['jumper', 'knife', 'rocketeer']);
+        assert.equal(scene.some(item => item.mrgBeard), wave === 2);
+        const named = h.view.status(e).namedSoldiers;
+        assert.equal(named.length, 1); assert.equal(named[0].name, ['TV', 'BS', 'SH'][wave]);
+        assert.equal(JSON.stringify({ board: e.board, finale: e.finale }), before, 'Rendering preserves physical state');
       }
     }
-  });
-
-  test('existing guide completes all nine soldiers and three waves within 180 seconds', () => {
-    const e = h.engine({ assist: true }); e.board.guide = true;
-    const transitions = [{ wave: 1, time: 0 }]; let previous = 0, minHp = 100;
-    for (let i = 0; i < 60 * 180 && e.finale.phase === 'mrg' && e.status === 'boarding'; i++) {
-      e.step(1 / 60, { fire: true, pulse: true, missile: e.finale.open });
-      minHp = Math.min(minHp, e.board.hp);
-      if (e.finale.waveIndex !== previous) { previous = e.finale.waveIndex; transitions.push({ wave: previous + 1, time: e.finale.time }); }
+    const emerging = fresh();
+    assert(h.scene(emerging, emerging.elapsed, false).some(item => item.mrgFeature === 'spawn-hatch' && item.mrgOpen));
+    const e = fresh(2); runFrames(e, 3.2);
+    const knife = e.board.enemies.find(enemy => enemy.role === 'knife');
+    Object.assign(knife, { knifePhase: 'strike', knifeTime: .11, knifeDuration: .22,
+      knifeFrom: [knife.pos[0], knife.pos[1] + .65, 0], knifeTo: [knife.pos[0] - 2.7, knife.pos[1] + .65, 0] });
+    e.board.hostile.push({ kind: 'rocket', pos: [-2, 4, 0], vel: [-15, -1, 0], blastRadius: 3.2, ownerId: 'qa', life: 2 });
+    e.finale.rocketBlasts.push({ pos: [-12, 3, 0], radius: 3.2, life: .35, maxLife: .5 });
+    for (const phase of ['telegraph', 'active']) {
+      Object.assign(e.finale.tentacle, { phase, time: phase === 'telegraph' ? 4.2 : 2, duration: phase === 'telegraph' ? 5.2 : 2.5 });
+      const scene = h.scene(e, e.elapsed, false), kind = phase === 'telegraph' ? 'tentacle-telegraph' : 'tentacle';
+      const tentacles = scene.filter(item => item.mrgFeature === kind);
+      assert.equal(new Set(tentacles.map(item => item.mrgSegment)).size, e.finale.tentacle.segments.length);
+      for (const item of tentacles) {
+        const physical = e.finale.tentacle.segments[item.mrgSegment];
+        assert.deepEqual(clone(item.mrgFrom), clone(physical.from)); assert.deepEqual(clone(item.mrgTo), clone(physical.to));
+        near(item.mrgRadius, physical.radius, 'Physical tentacle radius');
+      }
+      assert(scene.some(item => item.mrgFeature === 'safe-zone' && item.mrgSafeX === -24));
+      assert(scene.some(item => item.mrgFeature === 'knife-blade'));
+      assert(scene.some(item => item.mrgFeature === 'knife-threat' && JSON.stringify(item.mrgTo) === JSON.stringify(knife.knifeTo)));
+      assert(scene.some(item => item.mrgFeature === 'rocket' && item.mrgPosition[0] === -2));
+      assert(scene.some(item => item.mrgFeature === 'rocket-blast' && item.mrgRadius === 3.2));
     }
-    const info = { phase: e.finale.phase, status: e.status, seconds: e.elapsed, hp: e.board.hp, minHp,
-      soldierKills: e.board.kills, bossHp: e.finale.mrg.hp, transitions };
-    assert.equal(e.finale.phase, 'upload', JSON.stringify(info));
-    assert.equal(e.board.kills, 9); assert.equal(transitions.length, 3);
-    runFrames(e, 8.2); assert.equal(e.status, 'won');
-    return info;
   });
 
-  test('normal mode wins with ordinary keyboard inputs and no guide or health overrides', () => {
-    const e = h.engine({ assist: false }); let jumpUntil = 0, minHp = 100;
-    for (let i = 0; i < 60 * 180 && e.finale.phase === 'mrg' && e.status === 'boarding'; i++) {
-      const b = e.board, f = e.finale;
-      const nearThreat = b.hostile.some(s => Math.abs(s.pos[0] - b.pos[0]) < 11 && Math.abs(s.pos[1] - b.pos[1] - .5) < 2.8);
-      const beam = f.pattern === 2 && f.telegraph > 0 && f.telegraph < .55;
-      if (b.grounded && (nearThreat || beam)) jumpUntil = f.time + .4;
-      e.step(1 / 60, {
-        moveX: Math.max(-1, Math.min(1, (-25 - b.pos[0]) * .7)),
-        jump: f.time < jumpUntil, fire: true, pulse: true, missile: f.open,
-      });
-      minHp = Math.min(minHp, b.hp);
-    }
-    const info = { phase: e.finale.phase, status: e.status, seconds: e.elapsed, hp: e.board.hp, minHp, soldierKills: e.board.kills, bossHp: e.finale.mrg.hp };
-    assert.equal(e.finale.phase, 'upload', JSON.stringify(info));
-    assert.equal(e.board.guide, false); assert.equal(e.assist, false); assert.equal(e.board.kills, 9);
-    return info;
-  });
-
-  if (h.view && options.render) test('actual Canvas renders physical platforms, 3D Cyrillic MRG, named soldiers and SH beard', () => {
-    assert.equal(h.view.version, '1.5.0');
+  if (options.render && h.view) test('native Canvas composites keep health, batches and named soldiers visible at desktop, portrait and short sizes', () => {
     fs.mkdirSync(options.render, { recursive: true });
-    const renders = [];
-    for (let wave = 0; wave < 3; wave++) {
-      const e = fresh(wave); runFrames(e, 2.8);
-      for (const [width, height] of [[1280, 720], [390, 460], [592, 244]]) {
-        const sceneCanvas = h.createCanvas(width, height), hudCanvas = h.createCanvas(width, height);
-        sceneCanvas.getBoundingClientRect = () => ({ left: 0, top: 0, width, height });
-        h.arcade.canvas = sceneCanvas;
-        h.context.innerWidth = width; h.context.innerHeight = height;
-        const cam = h.camera(e, e.elapsed), before = clone({ board: e.board, finale: e.finale });
-        const scene = h.scene(e, e.elapsed, true), state = h.view.status(e);
-        assert.equal(state.alive, wave + 2); assert.equal(state.damageMultiplier, 2 ** wave);
-        assert.equal(state.bossTitle, 'МРГ');
-        assert.equal(state.namedSoldiers[0].name, ['TV', 'BS', 'SH'][wave]);
-        assert.equal(state.namedSoldiers[0].beard, wave === 2);
-        for (const p of e.finale.arenaPlatforms.filter(p => p.id !== 'floor')) {
-          const pieces = scene.filter(item => item.mrgFeature === 'platform' && item.mrgPlatformId === p.id);
-          assert.equal(pieces.length, 1, `Exactly one physical surface for ${p.id}`);
-          near(pieces[0].pos[0], (p.lo + p.hi) / 2, 'Drawn platform X matches physics');
-          near(pieces[0].pos[1] + .45, p.y - 1, 'Drawn platform top matches physics');
-          near(pieces[0].mrgSurfaceY, p.y - 1, 'Platform metadata matches physical top');
-        }
-        const letters = scene.filter(item => item.mrgFeature === 'boss-letter');
-        assert.deepEqual([...new Set(letters.map(item => item.mrgGlyph))], ['М', 'Р', 'Г']);
-        assert(letters.some(item => item.mesh === 'armor'), 'Sign has extruded solid geometry');
-        assert.equal(scene.some(item => item.mrgBeard), wave === 2, 'Only SH has a visible beard mesh');
-        for (const soldier of e.board.enemies) assert(scene.some(item => item.mrgSoldierId === soldier.id));
-        for (const item of scene) {
-          assert(item.pos.every(Number.isFinite)); assert([...item.model].every(Number.isFinite));
-        }
-        h.draw(sceneCanvas.getContext('2d'), scene, cam, width, height);
-        const raw = hudCanvas.getContext('2d'), labels = [];
-        const observed = new Proxy(raw, {
-          get(target, key) {
-            if (key === 'fillText') return (text, x, y, ...rest) => {
-              const metrics = target.measureText(String(text)), transform = target.getTransform();
-              const scale = Math.abs(transform.a), fontSize = Number(target.font.match(/([\d.]+)px/)?.[1] || 12);
-              const labelWidth = metrics.width * scale, labelX = transform.a * x + transform.c * y + transform.e;
-              const labelY = transform.b * x + transform.d * y + transform.f;
-              const left = labelX - (target.textAlign === 'center' ? labelWidth / 2 : ['right', 'end'].includes(target.textAlign) ? labelWidth : 0);
-              labels.push({ text: String(text), left, right: left + labelWidth, top: labelY - fontSize * scale / 2, bottom: labelY + fontSize * scale / 2, font: target.font });
-              return target.fillText(text, x, y, ...rest);
-            };
-            const value = Reflect.get(target, key, target);
-            return typeof value === 'function' ? value.bind(target) : value;
-          },
-          set(target, key, value) { Reflect.set(target, key, value, target); return true; },
-        });
-        h.hud(observed, e, cam, width, height);
-        assert(labels.some(label => label.text === ['TV', 'BS', 'SH'][wave]), 'Named soldier caption is drawn');
-        assert(labels.some(label => label.text.includes('ВОЛНА ' + (wave + 1) + '/3')));
-        assert(labels.some(label => label.text.includes('УРОН ×' + 2 ** wave)));
-        for (const label of labels) assert(label.left >= -.5 && label.right <= width + .5 && label.top >= -.5 && label.bottom <= height + .5,
-          `HUD text clips at ${width}×${height}: ${JSON.stringify(label)}`);
-        assert.deepEqual(clone({ board: e.board, finale: e.finale }), before, 'Rendering must not advance gameplay or platforms');
-        const composite = h.createCanvas(width, height), finalContext = composite.getContext('2d');
-        finalContext.drawImage(sceneCanvas, 0, 0); finalContext.drawImage(hudCanvas, 0, 0);
-        const pixels = finalContext.getImageData(0, 0, width, height).data, colors = new Set();
-        for (let i = 0; i < pixels.length; i += 64) colors.add(`${pixels[i]},${pixels[i + 1]},${pixels[i + 2]}`);
-        assert(colors.size > 150, 'Actual rendered scene has varied visible geometry');
-        const file = `${path.basename(h.corePath, '.js')}-wave-${wave + 1}-${width}x${height}.png`;
-        fs.writeFileSync(path.join(options.render, file), composite.toBuffer('image/png'));
-        renders.push({ file, wave: wave + 1, width, height, geometry: scene.length, labels: labels.map(label => label.text) });
-      }
+    const frames = [];
+    function render(e, state, width, height) {
+      const canvas = h.createCanvas(width, height), hud = h.createCanvas(width, height), raw = hud.getContext('2d'), texts = [];
+      h.arcade.engine = e; h.arcade.canvas = canvas;
+      canvas.getBoundingClientRect = () => ({ left: 0, top: 0, width, height });
+      const wrapped = new Proxy(raw, {
+        get(target, key) {
+          if (key === 'fillText') return (text, x, y, ...args) => {
+            const metrics = target.measureText(String(text)), m = target.getTransform();
+            const size = Number(target.font.match(/([\d.]+)px/)?.[1]) || 12;
+            const cx = m.a * x + m.c * y + m.e, cy = m.b * x + m.d * y + m.f, w = metrics.width * Math.abs(m.a);
+            const left = cx - (target.textAlign === 'center' ? w / 2 : ['right', 'end'].includes(target.textAlign) ? w : 0);
+            texts.push({ text: String(text), left, right: left + w, top: cy - size * Math.abs(m.d) / 2, bottom: cy + size * Math.abs(m.d) / 2 });
+            return target.fillText(text, x, y, ...args);
+          };
+          const value = Reflect.get(target, key, target); return typeof value === 'function' ? value.bind(target) : value;
+        },
+        set(target, key, value) { return Reflect.set(target, key, value, target); },
+      });
+      const before = JSON.stringify({ board: e.board, finale: e.finale }), cam = h.camera(e, e.elapsed);
+      h.draw(canvas.getContext('2d'), h.scene(e, e.elapsed, false), cam, width, height);
+      h.hud(wrapped, e, cam, width, height);
+      assert.equal(JSON.stringify({ board: e.board, finale: e.finale }), before, 'Actual native render preserves physics');
+      const health = texts.find(text => text.text.startsWith('ЗДОРОВЬЕ '));
+      assert(health && health.top >= 0 && health.bottom < 35, 'Health is fully visible in the first row');
+      assert.equal(health.text, 'ЗДОРОВЬЕ ' + Math.ceil(e.board.hp) + '%');
+      assert(texts.some(text => text.text.includes('ПАЧКИ ') && text.text.includes('ЖИВЫ ') && text.text.includes('ЖДУТ ')));
+      for (const label of texts) assert(label.left >= -.5 && label.right <= width + .5 && label.top >= -.5 && label.bottom <= height + .5,
+        `HUD label clips at ${width}×${height}: ${JSON.stringify(label)}`);
+      assert(texts.some(text => text.text === ['TV', 'BS', 'SH'][e.finale.waveIndex]));
+      // The game has separate scene/HUD canvases; drawFinaleHUD clears its surface.
+      canvas.getContext('2d').drawImage(hud, 0, 0);
+      const pixels = canvas.getContext('2d').getImageData(0, 0, width, height).data, colors = new Set();
+      for (let i = 0; i < pixels.length; i += 52) colors.add(pixels[i] << 16 | pixels[i + 1] << 8 | pixels[i + 2]);
+      assert(colors.size > 150, 'Native projection rendered actual detailed geometry');
+      const filename = `${path.basename(h.corePath, '.js')}-${state}-${width}x${height}.png`;
+      fs.writeFileSync(path.join(options.render, filename), canvas.toBuffer('image/png'));
+      frames.push({ filename, width, height, health: health.text, healthTop: health.top, healthBottom: health.bottom, textCount: texts.length });
     }
-    return renders;
+    render(fresh(), 'emerging', 592, 244);
+    const second = fresh(1); runFrames(second, 3.2); render(second, 'roles', 1280, 720);
+    const third = fresh(2); runFrames(third, 3.2); third.board.hp = 43;
+    Object.assign(third.finale.tentacle, { phase: 'telegraph', duration: 5.2, time: 4.2 });
+    render(third, 'warning', 592, 244);
+    Object.assign(third.finale.tentacle, { phase: 'active', duration: 2.5, time: 2 });
+    for (const [width, height] of [[1280, 720], [390, 460], [592, 244]]) render(third, 'tentacles', width, height);
+    return frames;
   });
 }
 
-module.exports = { createHarness, parseArgs, nativeCanvas, clone, near, runFrames, inert, bossHit, clearSoldiers, enterWave, main };
+module.exports = { createHarness, parseArgs, nativeCanvas, clone, near, runFrames, inert, bossHit, clearSoldiers, enterWave, createMrgController, main };
 if (require.main === module) main();

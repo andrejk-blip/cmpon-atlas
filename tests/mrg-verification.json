@@ -1,794 +1,1231 @@
-[
-  {
-    "core": "atlas-v1.3.5.js",
-    "version": "1.5.0",
-    "tests": [
-      {
-        "name": "three wave contracts and 2/3/4 live killable soldiers",
-        "ok": true
-      },
-      {
-        "name": "HP and soldier gates are both required; massive projectiles cannot skip waves",
-        "ok": true
-      },
-      {
-        "name": "final soldiers block victory and ordinary upload; completed finale uploads once",
-        "ok": true
-      },
-      {
-        "name": "explicit upload checkpoint entry stays compatible and does not award points",
-        "ok": true
-      },
-      {
-        "name": "soldier / fan / floor-wave / beam / body damage scales once by 1,2,4",
-        "ok": true,
-        "data": [
-          {
-            "wave": 1,
-            "kind": "soldier",
-            "hp": 10
-          },
-          {
-            "wave": 1,
-            "kind": "fan",
-            "hp": 10
-          },
-          {
-            "wave": 1,
-            "kind": "floor",
-            "hp": 16
-          },
-          {
-            "wave": 1,
-            "kind": "beam",
-            "hp": 22
-          },
-          {
-            "wave": 1,
-            "kind": "contact",
-            "hp": 18
-          },
-          {
-            "wave": 2,
-            "kind": "soldier",
-            "hp": 20
-          },
-          {
-            "wave": 2,
-            "kind": "fan",
-            "hp": 20
-          },
-          {
-            "wave": 2,
-            "kind": "floor",
-            "hp": 32
-          },
-          {
-            "wave": 2,
-            "kind": "beam",
-            "hp": 44
-          },
-          {
-            "wave": 2,
-            "kind": "contact",
-            "hp": 36
-          },
-          {
-            "wave": 3,
-            "kind": "soldier",
-            "hp": 40
-          },
-          {
-            "wave": 3,
-            "kind": "fan",
-            "hp": 40
-          },
-          {
-            "wave": 3,
-            "kind": "floor",
-            "hp": 64
-          },
-          {
-            "wave": 3,
-            "kind": "beam",
-            "hp": 88
-          },
-          {
-            "wave": 3,
-            "kind": "contact",
-            "hp": 72
-          }
-        ]
-      },
-      {
-        "name": "invulnerability prevents per-frame beam and boss-body damage",
-        "ok": true
-      },
-      {
-        "name": "assist and armor retain their independent damage reductions",
-        "ok": true,
-        "data": [
-          {
-            "assist": false,
-            "armor": 0,
-            "damage": 40
-          },
-          {
-            "assist": false,
-            "armor": 1,
-            "damage": 32
-          },
-          {
-            "assist": false,
-            "armor": 2,
-            "damage": 25.60000000000001
-          },
-          {
-            "assist": true,
-            "armor": 0,
-            "damage": 20
-          },
-          {
-            "assist": true,
-            "armor": 1,
-            "damage": 16
-          },
-          {
-            "assist": true,
-            "armor": 2,
-            "damage": 12.799999999999997
-          }
-        ]
-      },
-      {
-        "name": "automatic aim selects nearest live soldier; real gunfire kills and emits shot/destroy",
-        "ok": true
-      },
-      {
-        "name": "grenades hit soldiers, splash adjacent targets and emit launch/explosion",
-        "ok": true
-      },
-      {
-        "name": "floor is fixed; wave patterns are horizontal, vertical, then mixed",
-        "ok": true,
-        "data": [
-          {
-            "wave": 1,
-            "horizontalRange": 4.563294658894339,
-            "verticalRange": 0
-          },
-          {
-            "wave": 2,
-            "horizontalRange": 0,
-            "verticalRange": 2.298752769214554
-          },
-          {
-            "wave": 3,
-            "horizontalRange": 3.6532759913515633,
-            "verticalRange": 2.715543310947689
-          }
-        ]
-      },
-      {
-        "name": "standing riders are carried with each moving platform in X and Y",
-        "ok": true
-      },
-      {
-        "name": "jump detaches from moving platform and drop-through does not catch its top again",
-        "ok": true
-      },
-      {
-        "name": "walking off an edge falls; coyote jump and variable jump height remain usable",
-        "ok": true
-      },
-      {
-        "name": "pause freezes arena and retry resets motion, soldiers, gates and combat transients",
-        "ok": true
-      },
-      {
-        "name": "new MRG JSON roundtrip preserves exact state and subsequent deterministic physics",
-        "ok": true
-      },
-      {
-        "name": "legacy cloud MRG snapshot migrates in place without resetting health or score",
-        "ok": true
-      },
-      {
-        "name": "soldiers stay physically supported throughout moving-platform cycles",
-        "ok": true
-      },
-      {
-        "name": "existing guide completes all nine soldiers and three waves within 180 seconds",
-        "ok": true,
-        "data": {
-          "phase": "upload",
-          "status": "docking",
-          "seconds": 41.48333333333226,
-          "hp": 100,
-          "minHp": 100,
-          "soldierKills": 9,
-          "bossHp": 0,
-          "transitions": [
+{
+  "version": "1.6.0",
+  "method": "Node VM over the actual public and old admin cores; native Canvas projection; source-level CSS review. No browser/preview or human play session.",
+  "files": {
+    "assets/citadel-mrg-v1.6.0.js": "333d944e05cb6a7ef60fbf899ff62f4fe54357ee1f0d544cd0913d312d1fcc54",
+    "assets/citadel-mrg-view-v1.6.0.js": "fc294a62c36c8875fd3e9ba36baa31a7934d9fab714bb7ab74aa915a180f39c6",
+    "assets/citadel-mrg-viewport-v1.6.0.css": "60426620a6f3e82d0893fd5dbeb3c3f21b1b398f343ed5311566c4fc02a9c367"
+  },
+  "regression": [
+    {
+      "core": "atlas-v1.3.5.js",
+      "version": "1.6.0",
+      "tests": [
+        {
+          "name": "wave HP doubles exactly and each batch has three distinct roles with TV/BS/SH",
+          "ok": true
+        },
+        {
+          "name": "soldiers emerge sequentially from MRG and later batches stay queued for seven seconds",
+          "ok": true
+        },
+        {
+          "name": "HP gates require current enemies and all queued batches; projectile floods cannot skip waves",
+          "ok": true
+        },
+        {
+          "name": "final queued soldiers prevent defeat/upload; a completed battle awards only once",
+          "ok": true
+        },
+        {
+          "name": "default fire and grenades stay horizontal in the facing direction, including guide mode",
+          "ok": true
+        },
+        {
+          "name": "real pointer projection and arcadeInput produce an oblique manual shot through Z=0",
+          "ok": true
+        },
+        {
+          "name": "aimed empty space stays empty: no snap, target selection or homing after firing",
+          "ok": true
+        },
+        {
+          "name": "real straight bullets kill on the firing line and miss targets above it; FX remain wired",
+          "ok": true
+        },
+        {
+          "name": "damage remains multiplied once by wave, with independent assist/armor reductions",
+          "ok": true,
+          "data": [
             {
               "wave": 1,
-              "time": 0
+              "kind": "fan",
+              "damage": 10
+            },
+            {
+              "wave": 1,
+              "kind": "floor",
+              "damage": 16
+            },
+            {
+              "wave": 1,
+              "kind": "beam",
+              "damage": 22
+            },
+            {
+              "wave": 1,
+              "kind": "contact",
+              "damage": 18
             },
             {
               "wave": 2,
-              "time": 12.666666666666876
+              "kind": "fan",
+              "damage": 20
+            },
+            {
+              "wave": 2,
+              "kind": "floor",
+              "damage": 32
+            },
+            {
+              "wave": 2,
+              "kind": "beam",
+              "damage": 44
+            },
+            {
+              "wave": 2,
+              "kind": "contact",
+              "damage": 36
             },
             {
               "wave": 3,
-              "time": 24.96666666666653
+              "kind": "fan",
+              "damage": 40
+            },
+            {
+              "wave": 3,
+              "kind": "floor",
+              "damage": 64
+            },
+            {
+              "wave": 3,
+              "kind": "beam",
+              "damage": 88
+            },
+            {
+              "wave": 3,
+              "kind": "contact",
+              "damage": 72
+            }
+          ]
+        },
+        {
+          "name": "jumper has real airborne motion and bolts; knife chases and telegraphs a timed physical strike",
+          "ok": true,
+          "data": {
+            "jumperMaxY": 9.217777777777764,
+            "phases": [
+              "grounded",
+              "rising",
+              "falling"
+            ],
+            "knifeDamage": 14
+          }
+        },
+        {
+          "name": "rocketeer locks a visible aim, launches a straight rocket and creates a real splash blast",
+          "ok": true,
+          "data": [
+            {
+              "wave": 1,
+              "damage": 16
+            },
+            {
+              "wave": 2,
+              "damage": 32
+            },
+            {
+              "wave": 3,
+              "damage": 64
+            }
+          ]
+        },
+        {
+          "name": "tentacle warning gives enough time to retreat from the right side and only active phase damages",
+          "ok": true,
+          "data": {
+            "warningSeconds": 5.2,
+            "escapeSeconds": 3.7,
+            "safeX": -24
+          }
+        },
+        {
+          "name": "tentacles repeat periodically and pause freezes warning and active collisions",
+          "ok": true,
+          "data": {
+            "warningTimes": [
+              0.016666666666666666,
+              14.066666666666945,
+              28.11666666666635
+            ]
+          }
+        },
+        {
+          "name": "moving platforms still carry in X/Y, detach on jump/drop and reset with batches on retry",
+          "ok": true
+        },
+        {
+          "name": "current JSON preserves pending batches, AI timers, rockets, manual aim and deterministic continuation",
+          "ok": true
+        },
+        {
+          "name": "1.5 checkpoints retain health fractions, dead soldiers, position and score while adding required new batches",
+          "ok": true
+        },
+        {
+          "name": "real manual-input operator wins normal and calm with all eighteen soldiers and no health/resource cheats",
+          "ok": true,
+          "data": [
+            {
+              "assist": false,
+              "phase": "upload",
+              "status": "docking",
+              "seconds": 63.699999999997665,
+              "hp": 100,
+              "minHp": 100,
+              "kills": 18,
+              "bossHp": 0,
+              "pendingSoldiers": 0,
+              "transitions": [
+                {
+                  "wave": 1,
+                  "time": 0
+                },
+                {
+                  "wave": 2,
+                  "time": 14.116666666666948
+                },
+                {
+                  "wave": 3,
+                  "time": 31.683333333332815
+                }
+              ]
+            },
+            {
+              "assist": true,
+              "phase": "upload",
+              "status": "docking",
+              "seconds": 54.48333333333152,
+              "hp": 100,
+              "minHp": 100,
+              "kills": 18,
+              "bossHp": 0,
+              "pendingSoldiers": 0,
+              "transitions": [
+                {
+                  "wave": 1,
+                  "time": 0
+                },
+                {
+                  "wave": 2,
+                  "time": 12.5000000000002
+                },
+                {
+                  "wave": 3,
+                  "time": 26.749999999999762
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "scene uses clean physical slabs, distinct roles, named soldiers and actual danger geometry even with FX off",
+          "ok": true
+        },
+        {
+          "name": "native Canvas composites keep health, batches and named soldiers visible at desktop, portrait and short sizes",
+          "ok": true,
+          "data": [
+            {
+              "filename": "atlas-v1.3.5-emerging-592x244.png",
+              "width": 592,
+              "height": 244,
+              "health": "ЗДОРОВЬЕ 100%",
+              "healthTop": 11.5,
+              "healthBottom": 22.5,
+              "textCount": 7
+            },
+            {
+              "filename": "atlas-v1.3.5-roles-1280x720.png",
+              "width": 1280,
+              "height": 720,
+              "health": "ЗДОРОВЬЕ 100%",
+              "healthTop": 17,
+              "healthBottom": 29,
+              "textCount": 7
+            },
+            {
+              "filename": "atlas-v1.3.5-warning-592x244.png",
+              "width": 592,
+              "height": 244,
+              "health": "ЗДОРОВЬЕ 43%",
+              "healthTop": 11.5,
+              "healthBottom": 22.5,
+              "textCount": 8
+            },
+            {
+              "filename": "atlas-v1.3.5-tentacles-1280x720.png",
+              "width": 1280,
+              "height": 720,
+              "health": "ЗДОРОВЬЕ 43%",
+              "healthTop": 17,
+              "healthBottom": 29,
+              "textCount": 8
+            },
+            {
+              "filename": "atlas-v1.3.5-tentacles-390x460.png",
+              "width": 390,
+              "height": 460,
+              "health": "ЗДОРОВЬЕ 43%",
+              "healthTop": 17,
+              "healthBottom": 29,
+              "textCount": 8
+            },
+            {
+              "filename": "atlas-v1.3.5-tentacles-592x244.png",
+              "width": 592,
+              "height": 244,
+              "health": "ЗДОРОВЬЕ 43%",
+              "healthTop": 11.5,
+              "healthBottom": 22.5,
+              "textCount": 8
             }
           ]
         }
-      },
-      {
-        "name": "normal mode wins with ordinary keyboard inputs and no guide or health overrides",
-        "ok": true,
-        "data": {
-          "phase": "upload",
-          "status": "docking",
-          "seconds": 54.09999999999821,
-          "hp": 100,
-          "minHp": 82.4,
-          "soldierKills": 9,
-          "bossHp": 0
-        }
-      },
-      {
-        "name": "actual Canvas renders physical platforms, 3D Cyrillic MRG, named soldiers and SH beard",
-        "ok": true,
-        "data": [
-          {
-            "file": "atlas-v1.3.5-wave-1-1280x720.png",
-            "wave": 1,
-            "width": 1280,
-            "height": 720,
-            "geometry": 262,
-            "labels": [
-              "ВОЛНА 1/3",
-              "СОЛДАТЫ 2/2 · УРОН ×1",
-              "Уничтожьте солдат и атакуйте МРГ",
-              "Горизонтальный ход",
-              "TV",
-              "ЩИТ 100%",
-              "ГРАНАТЫ 9",
-              "A/D — БЕГ · W — ПРЫЖОК · ПРОБЕЛ — ОГОНЬ · КОРПУС МРГ ОПАСЕН"
-            ]
-          },
-          {
-            "file": "atlas-v1.3.5-wave-1-390x460.png",
-            "wave": 1,
-            "width": 390,
-            "height": 460,
-            "geometry": 262,
-            "labels": [
-              "ВОЛНА 1/3",
-              "СОЛДАТЫ 2/2 · УРОН ×1",
-              "Уничтожьте солдат и атакуйте МРГ",
-              "Горизонтальный ход",
-              "TV",
-              "ЩИТ 100%",
-              "ГРАНАТЫ 9"
-            ]
-          },
-          {
-            "file": "atlas-v1.3.5-wave-1-592x244.png",
-            "wave": 1,
-            "width": 592,
-            "height": 244,
-            "geometry": 262,
-            "labels": [
-              "ВОЛНА 1/3",
-              "СОЛДАТЫ 2/2 · УРОН ×1",
-              "Уничтожьте солдат и атакуйте МРГ",
-              "Горизонтальный ход",
-              "TV",
-              "ЩИТ 100%",
-              "ГРАНАТЫ 9",
-              "Не касайтесь корпуса МРГ"
-            ]
-          },
-          {
-            "file": "atlas-v1.3.5-wave-2-1280x720.png",
-            "wave": 2,
-            "width": 1280,
-            "height": 720,
-            "geometry": 272,
-            "labels": [
-              "ВОЛНА 2/3",
-              "СОЛДАТЫ 3/3 · УРОН ×2",
-              "Уничтожьте солдат и атакуйте МРГ",
-              "Вертикальные лифты",
-              "BS",
-              "ЩИТ 100%",
-              "ГРАНАТЫ 11",
-              "A/D — БЕГ · W — ПРЫЖОК · ПРОБЕЛ — ОГОНЬ · КОРПУС МРГ ОПАСЕН"
-            ]
-          },
-          {
-            "file": "atlas-v1.3.5-wave-2-390x460.png",
-            "wave": 2,
-            "width": 390,
-            "height": 460,
-            "geometry": 272,
-            "labels": [
-              "ВОЛНА 2/3",
-              "СОЛДАТЫ 3/3 · УРОН ×2",
-              "Уничтожьте солдат и атакуйте МРГ",
-              "Вертикальные лифты",
-              "BS",
-              "ЩИТ 100%",
-              "ГРАНАТЫ 11"
-            ]
-          },
-          {
-            "file": "atlas-v1.3.5-wave-2-592x244.png",
-            "wave": 2,
-            "width": 592,
-            "height": 244,
-            "geometry": 272,
-            "labels": [
-              "ВОЛНА 2/3",
-              "СОЛДАТЫ 3/3 · УРОН ×2",
-              "Уничтожьте солдат и атакуйте МРГ",
-              "Вертикальные лифты",
-              "BS",
-              "ЩИТ 100%",
-              "ГРАНАТЫ 11",
-              "Не касайтесь корпуса МРГ"
-            ]
-          },
-          {
-            "file": "atlas-v1.3.5-wave-3-1280x720.png",
-            "wave": 3,
-            "width": 1280,
-            "height": 720,
-            "geometry": 297,
-            "labels": [
-              "ВОЛНА 3/3",
-              "СОЛДАТЫ 4/4 · УРОН ×4",
-              "Уничтожьте солдат и атакуйте МРГ",
-              "Смешанный ход",
-              "SH",
-              "ЩИТ 100%",
-              "ГРАНАТЫ 13",
-              "A/D — БЕГ · W — ПРЫЖОК · ПРОБЕЛ — ОГОНЬ · КОРПУС МРГ ОПАСЕН"
-            ]
-          },
-          {
-            "file": "atlas-v1.3.5-wave-3-390x460.png",
-            "wave": 3,
-            "width": 390,
-            "height": 460,
-            "geometry": 297,
-            "labels": [
-              "ВОЛНА 3/3",
-              "СОЛДАТЫ 4/4 · УРОН ×4",
-              "Уничтожьте солдат и атакуйте МРГ",
-              "Смешанный ход",
-              "SH",
-              "ЩИТ 100%",
-              "ГРАНАТЫ 13"
-            ]
-          },
-          {
-            "file": "atlas-v1.3.5-wave-3-592x244.png",
-            "wave": 3,
-            "width": 592,
-            "height": 244,
-            "geometry": 297,
-            "labels": [
-              "ВОЛНА 3/3",
-              "СОЛДАТЫ 4/4 · УРОН ×4",
-              "Уничтожьте солдат и атакуйте МРГ",
-              "Смешанный ход",
-              "SH",
-              "ЩИТ 100%",
-              "ГРАНАТЫ 13",
-              "Не касайтесь корпуса МРГ"
+      ]
+    },
+    {
+      "core": "engine-v1.2.1.js",
+      "version": "1.6.0",
+      "tests": [
+        {
+          "name": "wave HP doubles exactly and each batch has three distinct roles with TV/BS/SH",
+          "ok": true
+        },
+        {
+          "name": "soldiers emerge sequentially from MRG and later batches stay queued for seven seconds",
+          "ok": true
+        },
+        {
+          "name": "HP gates require current enemies and all queued batches; projectile floods cannot skip waves",
+          "ok": true
+        },
+        {
+          "name": "final queued soldiers prevent defeat/upload; a completed battle awards only once",
+          "ok": true
+        },
+        {
+          "name": "default fire and grenades stay horizontal in the facing direction, including guide mode",
+          "ok": true
+        },
+        {
+          "name": "real pointer projection and arcadeInput produce an oblique manual shot through Z=0",
+          "ok": true
+        },
+        {
+          "name": "aimed empty space stays empty: no snap, target selection or homing after firing",
+          "ok": true
+        },
+        {
+          "name": "real straight bullets kill on the firing line and miss targets above it; FX remain wired",
+          "ok": true
+        },
+        {
+          "name": "damage remains multiplied once by wave, with independent assist/armor reductions",
+          "ok": true,
+          "data": [
+            {
+              "wave": 1,
+              "kind": "fan",
+              "damage": 10
+            },
+            {
+              "wave": 1,
+              "kind": "floor",
+              "damage": 16
+            },
+            {
+              "wave": 1,
+              "kind": "beam",
+              "damage": 22
+            },
+            {
+              "wave": 1,
+              "kind": "contact",
+              "damage": 18
+            },
+            {
+              "wave": 2,
+              "kind": "fan",
+              "damage": 20
+            },
+            {
+              "wave": 2,
+              "kind": "floor",
+              "damage": 32
+            },
+            {
+              "wave": 2,
+              "kind": "beam",
+              "damage": 44
+            },
+            {
+              "wave": 2,
+              "kind": "contact",
+              "damage": 36
+            },
+            {
+              "wave": 3,
+              "kind": "fan",
+              "damage": 40
+            },
+            {
+              "wave": 3,
+              "kind": "floor",
+              "damage": 64
+            },
+            {
+              "wave": 3,
+              "kind": "beam",
+              "damage": 88
+            },
+            {
+              "wave": 3,
+              "kind": "contact",
+              "damage": 72
+            }
+          ]
+        },
+        {
+          "name": "jumper has real airborne motion and bolts; knife chases and telegraphs a timed physical strike",
+          "ok": true,
+          "data": {
+            "jumperMaxY": 9.217777777777764,
+            "phases": [
+              "grounded",
+              "rising",
+              "falling"
+            ],
+            "knifeDamage": 14
+          }
+        },
+        {
+          "name": "rocketeer locks a visible aim, launches a straight rocket and creates a real splash blast",
+          "ok": true,
+          "data": [
+            {
+              "wave": 1,
+              "damage": 16
+            },
+            {
+              "wave": 2,
+              "damage": 32
+            },
+            {
+              "wave": 3,
+              "damage": 64
+            }
+          ]
+        },
+        {
+          "name": "tentacle warning gives enough time to retreat from the right side and only active phase damages",
+          "ok": true,
+          "data": {
+            "warningSeconds": 5.2,
+            "escapeSeconds": 3.7,
+            "safeX": -24
+          }
+        },
+        {
+          "name": "tentacles repeat periodically and pause freezes warning and active collisions",
+          "ok": true,
+          "data": {
+            "warningTimes": [
+              0.016666666666666666,
+              14.066666666666945,
+              28.11666666666635
             ]
           }
-        ]
+        },
+        {
+          "name": "moving platforms still carry in X/Y, detach on jump/drop and reset with batches on retry",
+          "ok": true
+        },
+        {
+          "name": "current JSON preserves pending batches, AI timers, rockets, manual aim and deterministic continuation",
+          "ok": true
+        },
+        {
+          "name": "1.5 checkpoints retain health fractions, dead soldiers, position and score while adding required new batches",
+          "ok": true
+        },
+        {
+          "name": "real manual-input operator wins normal and calm with all eighteen soldiers and no health/resource cheats",
+          "ok": true,
+          "data": [
+            {
+              "assist": false,
+              "phase": "upload",
+              "status": "docking",
+              "seconds": 63.699999999997665,
+              "hp": 100,
+              "minHp": 100,
+              "kills": 18,
+              "bossHp": 0,
+              "pendingSoldiers": 0,
+              "transitions": [
+                {
+                  "wave": 1,
+                  "time": 0
+                },
+                {
+                  "wave": 2,
+                  "time": 14.116666666666948
+                },
+                {
+                  "wave": 3,
+                  "time": 31.683333333332815
+                }
+              ]
+            },
+            {
+              "assist": true,
+              "phase": "upload",
+              "status": "docking",
+              "seconds": 54.48333333333152,
+              "hp": 100,
+              "minHp": 100,
+              "kills": 18,
+              "bossHp": 0,
+              "pendingSoldiers": 0,
+              "transitions": [
+                {
+                  "wave": 1,
+                  "time": 0
+                },
+                {
+                  "wave": 2,
+                  "time": 12.5000000000002
+                },
+                {
+                  "wave": 3,
+                  "time": 26.749999999999762
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "scene uses clean physical slabs, distinct roles, named soldiers and actual danger geometry even with FX off",
+          "ok": true
+        },
+        {
+          "name": "native Canvas composites keep health, batches and named soldiers visible at desktop, portrait and short sizes",
+          "ok": true,
+          "data": [
+            {
+              "filename": "engine-v1.2.1-emerging-592x244.png",
+              "width": 592,
+              "height": 244,
+              "health": "ЗДОРОВЬЕ 100%",
+              "healthTop": 11.5,
+              "healthBottom": 22.5,
+              "textCount": 7
+            },
+            {
+              "filename": "engine-v1.2.1-roles-1280x720.png",
+              "width": 1280,
+              "height": 720,
+              "health": "ЗДОРОВЬЕ 100%",
+              "healthTop": 17,
+              "healthBottom": 29,
+              "textCount": 7
+            },
+            {
+              "filename": "engine-v1.2.1-warning-592x244.png",
+              "width": 592,
+              "height": 244,
+              "health": "ЗДОРОВЬЕ 43%",
+              "healthTop": 11.5,
+              "healthBottom": 22.5,
+              "textCount": 8
+            },
+            {
+              "filename": "engine-v1.2.1-tentacles-1280x720.png",
+              "width": 1280,
+              "height": 720,
+              "health": "ЗДОРОВЬЕ 43%",
+              "healthTop": 17,
+              "healthBottom": 29,
+              "textCount": 8
+            },
+            {
+              "filename": "engine-v1.2.1-tentacles-390x460.png",
+              "width": 390,
+              "height": 460,
+              "health": "ЗДОРОВЬЕ 43%",
+              "healthTop": 17,
+              "healthBottom": 29,
+              "textCount": 8
+            },
+            {
+              "filename": "engine-v1.2.1-tentacles-592x244.png",
+              "width": 592,
+              "height": 244,
+              "health": "ЗДОРОВЬЕ 43%",
+              "healthTop": 11.5,
+              "healthBottom": 22.5,
+              "textCount": 8
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "postViewFix": [
+    {
+      "core": "cmpon-atlas/assets/atlas-v1.3.5.js",
+      "pass": true,
+      "canvasLabel": "Existing game field",
+      "fireLabel": "Existing fire control"
+    },
+    {
+      "core": "cmpon-analytics-admin/game-lab/engine-v1.2.1.js",
+      "pass": true,
+      "canvasLabel": "Existing game field",
+      "fireLabel": "Existing fire control"
+    }
+  ],
+  "viewport": {
+    "verifiedSource": true,
+    "browserMeasured": false,
+    "assumptions": "CSS pixels; zero device safe-area insets. Landscape fieldColumn includes the two existing 1px field borders. Budget arithmetic, not measured DOM rectangles. Desktop row heights depend on fonts/content, so only fixed outer-height budgets are reported.",
+    "cascade": "New layout selector specificity 0,4,0 beats private lab 0,3,0; field specificity 0,5,0 beats private lab 0,4,0. Public entries load viewport CSS after the base; admin concatenates it after the lab stylesheet.",
+    "sourceMinimums": {
+      "desktop": 180,
+      "mobile": 160,
+      "coreDrawingBuffer": 160
+    },
+    "budgets": [
+      {
+        "width": 1440,
+        "height": 900,
+        "labBar": 0,
+        "layout": "desktop",
+        "top": 10,
+        "outerHeight": 880
+      },
+      {
+        "width": 1440,
+        "height": 900,
+        "labBar": 46,
+        "layout": "desktop",
+        "top": 56,
+        "outerHeight": 834
+      },
+      {
+        "width": 1440,
+        "height": 900,
+        "labBar": 52,
+        "layout": "desktop",
+        "top": 62,
+        "outerHeight": 828
+      },
+      {
+        "width": 1280,
+        "height": 600,
+        "labBar": 0,
+        "layout": "desktop",
+        "top": 10,
+        "outerHeight": 580
+      },
+      {
+        "width": 1280,
+        "height": 600,
+        "labBar": 46,
+        "layout": "desktop",
+        "top": 56,
+        "outerHeight": 534
+      },
+      {
+        "width": 1280,
+        "height": 600,
+        "labBar": 52,
+        "layout": "desktop",
+        "top": 62,
+        "outerHeight": 528
+      },
+      {
+        "width": 390,
+        "height": 844,
+        "labBar": 0,
+        "layout": "portrait",
+        "top": 0,
+        "outerHeight": 844,
+        "headerRows": 88,
+        "touchDock": 116,
+        "fieldHeight": 640,
+        "minimumScroll": 0
+      },
+      {
+        "width": 390,
+        "height": 844,
+        "labBar": 46,
+        "layout": "portrait",
+        "top": 46,
+        "outerHeight": 798,
+        "headerRows": 88,
+        "touchDock": 116,
+        "fieldHeight": 594,
+        "minimumScroll": 0
+      },
+      {
+        "width": 390,
+        "height": 844,
+        "labBar": 52,
+        "layout": "portrait",
+        "top": 52,
+        "outerHeight": 792,
+        "headerRows": 88,
+        "touchDock": 116,
+        "fieldHeight": 588,
+        "minimumScroll": 0
+      },
+      {
+        "width": 844,
+        "height": 390,
+        "labBar": 0,
+        "layout": "landscape",
+        "top": 0,
+        "outerHeight": 390,
+        "fieldColumn": 592,
+        "headerRows": 88,
+        "fieldHeight": 302,
+        "minimumScroll": 0
+      },
+      {
+        "width": 844,
+        "height": 390,
+        "labBar": 46,
+        "layout": "landscape",
+        "top": 46,
+        "outerHeight": 344,
+        "fieldColumn": 592,
+        "headerRows": 88,
+        "fieldHeight": 256,
+        "minimumScroll": 0
+      },
+      {
+        "width": 844,
+        "height": 390,
+        "labBar": 52,
+        "layout": "landscape",
+        "top": 52,
+        "outerHeight": 338,
+        "fieldColumn": 592,
+        "headerRows": 88,
+        "fieldHeight": 250,
+        "minimumScroll": 0
+      },
+      {
+        "width": 600,
+        "height": 240,
+        "labBar": 0,
+        "layout": "landscape",
+        "top": 0,
+        "outerHeight": 240,
+        "fieldColumn": 372,
+        "headerRows": 88,
+        "fieldHeight": 160,
+        "minimumScroll": 8
+      },
+      {
+        "width": 600,
+        "height": 240,
+        "labBar": 46,
+        "layout": "landscape",
+        "top": 46,
+        "outerHeight": 194,
+        "fieldColumn": 372,
+        "headerRows": 88,
+        "fieldHeight": 160,
+        "minimumScroll": 54
+      },
+      {
+        "width": 600,
+        "height": 240,
+        "labBar": 52,
+        "layout": "landscape",
+        "top": 52,
+        "outerHeight": 188,
+        "fieldColumn": 372,
+        "headerRows": 88,
+        "fieldHeight": 160,
+        "minimumScroll": 60
       }
     ]
   },
-  {
-    "core": "engine-v1.2.1.js",
-    "version": "1.5.0",
-    "tests": [
-      {
-        "name": "three wave contracts and 2/3/4 live killable soldiers",
-        "ok": true
-      },
-      {
-        "name": "HP and soldier gates are both required; massive projectiles cannot skip waves",
-        "ok": true
-      },
-      {
-        "name": "final soldiers block victory and ordinary upload; completed finale uploads once",
-        "ok": true
-      },
-      {
-        "name": "explicit upload checkpoint entry stays compatible and does not award points",
-        "ok": true
-      },
-      {
-        "name": "soldier / fan / floor-wave / beam / body damage scales once by 1,2,4",
-        "ok": true,
-        "data": [
-          {
-            "wave": 1,
-            "kind": "soldier",
-            "hp": 10
-          },
-          {
-            "wave": 1,
-            "kind": "fan",
-            "hp": 10
-          },
-          {
-            "wave": 1,
-            "kind": "floor",
-            "hp": 16
-          },
-          {
-            "wave": 1,
-            "kind": "beam",
-            "hp": 22
-          },
-          {
-            "wave": 1,
-            "kind": "contact",
-            "hp": 18
-          },
-          {
-            "wave": 2,
-            "kind": "soldier",
-            "hp": 20
-          },
-          {
-            "wave": 2,
-            "kind": "fan",
-            "hp": 20
-          },
-          {
-            "wave": 2,
-            "kind": "floor",
-            "hp": 32
-          },
-          {
-            "wave": 2,
-            "kind": "beam",
-            "hp": 44
-          },
-          {
-            "wave": 2,
-            "kind": "contact",
-            "hp": 36
-          },
-          {
-            "wave": 3,
-            "kind": "soldier",
-            "hp": 40
-          },
-          {
-            "wave": 3,
-            "kind": "fan",
-            "hp": 40
-          },
-          {
-            "wave": 3,
-            "kind": "floor",
-            "hp": 64
-          },
-          {
-            "wave": 3,
-            "kind": "beam",
-            "hp": 88
-          },
-          {
-            "wave": 3,
-            "kind": "contact",
-            "hp": 72
-          }
-        ]
-      },
-      {
-        "name": "invulnerability prevents per-frame beam and boss-body damage",
-        "ok": true
-      },
-      {
-        "name": "assist and armor retain their independent damage reductions",
-        "ok": true,
-        "data": [
-          {
-            "assist": false,
-            "armor": 0,
-            "damage": 40
-          },
-          {
-            "assist": false,
-            "armor": 1,
-            "damage": 32
-          },
-          {
-            "assist": false,
-            "armor": 2,
-            "damage": 25.60000000000001
-          },
-          {
-            "assist": true,
-            "armor": 0,
-            "damage": 20
-          },
-          {
-            "assist": true,
-            "armor": 1,
-            "damage": 16
-          },
-          {
-            "assist": true,
-            "armor": 2,
-            "damage": 12.799999999999997
-          }
-        ]
-      },
-      {
-        "name": "automatic aim selects nearest live soldier; real gunfire kills and emits shot/destroy",
-        "ok": true
-      },
-      {
-        "name": "grenades hit soldiers, splash adjacent targets and emit launch/explosion",
-        "ok": true
-      },
-      {
-        "name": "floor is fixed; wave patterns are horizontal, vertical, then mixed",
-        "ok": true,
-        "data": [
-          {
-            "wave": 1,
-            "horizontalRange": 4.563294658894339,
-            "verticalRange": 0
-          },
-          {
-            "wave": 2,
-            "horizontalRange": 0,
-            "verticalRange": 2.298752769214554
-          },
-          {
-            "wave": 3,
-            "horizontalRange": 3.6532759913515633,
-            "verticalRange": 2.715543310947689
-          }
-        ]
-      },
-      {
-        "name": "standing riders are carried with each moving platform in X and Y",
-        "ok": true
-      },
-      {
-        "name": "jump detaches from moving platform and drop-through does not catch its top again",
-        "ok": true
-      },
-      {
-        "name": "walking off an edge falls; coyote jump and variable jump height remain usable",
-        "ok": true
-      },
-      {
-        "name": "pause freezes arena and retry resets motion, soldiers, gates and combat transients",
-        "ok": true
-      },
-      {
-        "name": "new MRG JSON roundtrip preserves exact state and subsequent deterministic physics",
-        "ok": true
-      },
-      {
-        "name": "legacy cloud MRG snapshot migrates in place without resetting health or score",
-        "ok": true
-      },
-      {
-        "name": "soldiers stay physically supported throughout moving-platform cycles",
-        "ok": true
-      },
-      {
-        "name": "existing guide completes all nine soldiers and three waves within 180 seconds",
-        "ok": true,
-        "data": {
-          "phase": "upload",
-          "status": "docking",
-          "seconds": 41.48333333333226,
-          "hp": 100,
-          "minHp": 100,
-          "soldierKills": 9,
-          "bossHp": 0,
-          "transitions": [
+  "notes": [
+    "The main 19-group run used view fae2ff621265c749c40b78b751285fa23eae721d7a1b2525521db2ef2de3d76a. Final fc294a62 change removes only two optional aria-label assignments; both real transition paths were retested separately. Geometry and HUD drawing are unchanged.",
+    "The winnability operator only emits real moveX/jump/fire/aim/pulse/missile fields; no HP, ammo, cooldown, AI or gate manipulation. It is an automated test operator, not an in-game targeting feature.",
+    "Controlled fixtures may isolate collision geometry and phase transitions; the normal/calm full-win tests start from ordinary beginMRG with weapons2/armor1/rockets0, guide=false, HP100 and normal missiles."
+  ],
+  "canonicalCommand": "node tests/mrg-regression.cjs --core assets/atlas-v1.3.5.js --core ../cmpon-analytics-admin/game-lab/engine-v1.2.1.js",
+  "canonicalRegression": [
+    {
+      "core": "atlas-v1.3.5.js",
+      "version": "1.6.0",
+      "tests": [
+        {
+          "name": "wave HP doubles exactly and each batch has three distinct roles with TV/BS/SH",
+          "ok": true
+        },
+        {
+          "name": "soldiers emerge sequentially from MRG and later batches stay queued for seven seconds",
+          "ok": true
+        },
+        {
+          "name": "HP gates require current enemies and all queued batches; projectile floods cannot skip waves",
+          "ok": true
+        },
+        {
+          "name": "final queued soldiers prevent defeat/upload; a completed battle awards only once",
+          "ok": true
+        },
+        {
+          "name": "default fire and grenades stay horizontal in the facing direction, including guide mode",
+          "ok": true
+        },
+        {
+          "name": "real pointer projection and arcadeInput produce an oblique manual shot through Z=0",
+          "ok": true
+        },
+        {
+          "name": "aimed empty space stays empty: no snap, target selection or homing after firing",
+          "ok": true
+        },
+        {
+          "name": "real straight bullets kill on the firing line and miss targets above it; FX remain wired",
+          "ok": true
+        },
+        {
+          "name": "damage remains multiplied once by wave, with independent assist/armor reductions",
+          "ok": true,
+          "data": [
             {
               "wave": 1,
-              "time": 0
+              "kind": "fan",
+              "damage": 10
+            },
+            {
+              "wave": 1,
+              "kind": "floor",
+              "damage": 16
+            },
+            {
+              "wave": 1,
+              "kind": "beam",
+              "damage": 22
+            },
+            {
+              "wave": 1,
+              "kind": "contact",
+              "damage": 18
             },
             {
               "wave": 2,
-              "time": 12.666666666666876
+              "kind": "fan",
+              "damage": 20
+            },
+            {
+              "wave": 2,
+              "kind": "floor",
+              "damage": 32
+            },
+            {
+              "wave": 2,
+              "kind": "beam",
+              "damage": 44
+            },
+            {
+              "wave": 2,
+              "kind": "contact",
+              "damage": 36
             },
             {
               "wave": 3,
-              "time": 24.96666666666653
+              "kind": "fan",
+              "damage": 40
+            },
+            {
+              "wave": 3,
+              "kind": "floor",
+              "damage": 64
+            },
+            {
+              "wave": 3,
+              "kind": "beam",
+              "damage": 88
+            },
+            {
+              "wave": 3,
+              "kind": "contact",
+              "damage": 72
             }
           ]
-        }
-      },
-      {
-        "name": "normal mode wins with ordinary keyboard inputs and no guide or health overrides",
-        "ok": true,
-        "data": {
-          "phase": "upload",
-          "status": "docking",
-          "seconds": 54.09999999999821,
-          "hp": 100,
-          "minHp": 82.4,
-          "soldierKills": 9,
-          "bossHp": 0
-        }
-      },
-      {
-        "name": "actual Canvas renders physical platforms, 3D Cyrillic MRG, named soldiers and SH beard",
-        "ok": true,
-        "data": [
-          {
-            "file": "engine-v1.2.1-wave-1-1280x720.png",
-            "wave": 1,
-            "width": 1280,
-            "height": 720,
-            "geometry": 262,
-            "labels": [
-              "ВОЛНА 1/3",
-              "СОЛДАТЫ 2/2 · УРОН ×1",
-              "Уничтожьте солдат и атакуйте МРГ",
-              "Горизонтальный ход",
-              "TV",
-              "ЩИТ 100%",
-              "ГРАНАТЫ 9",
-              "A/D — БЕГ · W — ПРЫЖОК · ПРОБЕЛ — ОГОНЬ · КОРПУС МРГ ОПАСЕН"
-            ]
-          },
-          {
-            "file": "engine-v1.2.1-wave-1-390x460.png",
-            "wave": 1,
-            "width": 390,
-            "height": 460,
-            "geometry": 262,
-            "labels": [
-              "ВОЛНА 1/3",
-              "СОЛДАТЫ 2/2 · УРОН ×1",
-              "Уничтожьте солдат и атакуйте МРГ",
-              "Горизонтальный ход",
-              "TV",
-              "ЩИТ 100%",
-              "ГРАНАТЫ 9"
-            ]
-          },
-          {
-            "file": "engine-v1.2.1-wave-1-592x244.png",
-            "wave": 1,
-            "width": 592,
-            "height": 244,
-            "geometry": 262,
-            "labels": [
-              "ВОЛНА 1/3",
-              "СОЛДАТЫ 2/2 · УРОН ×1",
-              "Уничтожьте солдат и атакуйте МРГ",
-              "Горизонтальный ход",
-              "TV",
-              "ЩИТ 100%",
-              "ГРАНАТЫ 9",
-              "Не касайтесь корпуса МРГ"
-            ]
-          },
-          {
-            "file": "engine-v1.2.1-wave-2-1280x720.png",
-            "wave": 2,
-            "width": 1280,
-            "height": 720,
-            "geometry": 272,
-            "labels": [
-              "ВОЛНА 2/3",
-              "СОЛДАТЫ 3/3 · УРОН ×2",
-              "Уничтожьте солдат и атакуйте МРГ",
-              "Вертикальные лифты",
-              "BS",
-              "ЩИТ 100%",
-              "ГРАНАТЫ 11",
-              "A/D — БЕГ · W — ПРЫЖОК · ПРОБЕЛ — ОГОНЬ · КОРПУС МРГ ОПАСЕН"
-            ]
-          },
-          {
-            "file": "engine-v1.2.1-wave-2-390x460.png",
-            "wave": 2,
-            "width": 390,
-            "height": 460,
-            "geometry": 272,
-            "labels": [
-              "ВОЛНА 2/3",
-              "СОЛДАТЫ 3/3 · УРОН ×2",
-              "Уничтожьте солдат и атакуйте МРГ",
-              "Вертикальные лифты",
-              "BS",
-              "ЩИТ 100%",
-              "ГРАНАТЫ 11"
-            ]
-          },
-          {
-            "file": "engine-v1.2.1-wave-2-592x244.png",
-            "wave": 2,
-            "width": 592,
-            "height": 244,
-            "geometry": 272,
-            "labels": [
-              "ВОЛНА 2/3",
-              "СОЛДАТЫ 3/3 · УРОН ×2",
-              "Уничтожьте солдат и атакуйте МРГ",
-              "Вертикальные лифты",
-              "BS",
-              "ЩИТ 100%",
-              "ГРАНАТЫ 11",
-              "Не касайтесь корпуса МРГ"
-            ]
-          },
-          {
-            "file": "engine-v1.2.1-wave-3-1280x720.png",
-            "wave": 3,
-            "width": 1280,
-            "height": 720,
-            "geometry": 297,
-            "labels": [
-              "ВОЛНА 3/3",
-              "СОЛДАТЫ 4/4 · УРОН ×4",
-              "Уничтожьте солдат и атакуйте МРГ",
-              "Смешанный ход",
-              "SH",
-              "ЩИТ 100%",
-              "ГРАНАТЫ 13",
-              "A/D — БЕГ · W — ПРЫЖОК · ПРОБЕЛ — ОГОНЬ · КОРПУС МРГ ОПАСЕН"
-            ]
-          },
-          {
-            "file": "engine-v1.2.1-wave-3-390x460.png",
-            "wave": 3,
-            "width": 390,
-            "height": 460,
-            "geometry": 297,
-            "labels": [
-              "ВОЛНА 3/3",
-              "СОЛДАТЫ 4/4 · УРОН ×4",
-              "Уничтожьте солдат и атакуйте МРГ",
-              "Смешанный ход",
-              "SH",
-              "ЩИТ 100%",
-              "ГРАНАТЫ 13"
-            ]
-          },
-          {
-            "file": "engine-v1.2.1-wave-3-592x244.png",
-            "wave": 3,
-            "width": 592,
-            "height": 244,
-            "geometry": 297,
-            "labels": [
-              "ВОЛНА 3/3",
-              "СОЛДАТЫ 4/4 · УРОН ×4",
-              "Уничтожьте солдат и атакуйте МРГ",
-              "Смешанный ход",
-              "SH",
-              "ЩИТ 100%",
-              "ГРАНАТЫ 13",
-              "Не касайтесь корпуса МРГ"
+        },
+        {
+          "name": "jumper has real airborne motion and bolts; knife chases and telegraphs a timed physical strike",
+          "ok": true,
+          "data": {
+            "jumperMaxY": 9.217777777777764,
+            "phases": [
+              "grounded",
+              "rising",
+              "falling"
+            ],
+            "knifeDamage": 14
+          }
+        },
+        {
+          "name": "rocketeer locks a visible aim, launches a straight rocket and creates a real splash blast",
+          "ok": true,
+          "data": [
+            {
+              "wave": 1,
+              "damage": 16
+            },
+            {
+              "wave": 2,
+              "damage": 32
+            },
+            {
+              "wave": 3,
+              "damage": 64
+            }
+          ]
+        },
+        {
+          "name": "tentacle warning gives enough time to retreat from the right side and only active phase damages",
+          "ok": true,
+          "data": {
+            "warningSeconds": 5.2,
+            "escapeSeconds": 3.7,
+            "safeX": -24
+          }
+        },
+        {
+          "name": "tentacles repeat periodically and pause freezes warning and active collisions",
+          "ok": true,
+          "data": {
+            "warningTimes": [
+              0.016666666666666666,
+              14.066666666666945,
+              28.11666666666635
             ]
           }
-        ]
-      }
-    ]
-  }
-]
+        },
+        {
+          "name": "moving platforms still carry in X/Y, detach on jump/drop and reset with batches on retry",
+          "ok": true
+        },
+        {
+          "name": "current JSON preserves pending batches, AI timers, rockets, manual aim and deterministic continuation",
+          "ok": true
+        },
+        {
+          "name": "1.5 checkpoints retain health fractions, dead soldiers, position and score while adding required new batches",
+          "ok": true
+        },
+        {
+          "name": "real manual-input operator wins normal and calm with all eighteen soldiers and no health/resource cheats",
+          "ok": true,
+          "data": [
+            {
+              "assist": false,
+              "phase": "upload",
+              "status": "docking",
+              "seconds": 63.699999999997665,
+              "hp": 100,
+              "minHp": 100,
+              "kills": 18,
+              "bossHp": 0,
+              "pendingSoldiers": 0,
+              "transitions": [
+                {
+                  "wave": 1,
+                  "time": 0
+                },
+                {
+                  "wave": 2,
+                  "time": 14.116666666666948
+                },
+                {
+                  "wave": 3,
+                  "time": 31.683333333332815
+                }
+              ]
+            },
+            {
+              "assist": true,
+              "phase": "upload",
+              "status": "docking",
+              "seconds": 54.48333333333152,
+              "hp": 100,
+              "minHp": 100,
+              "kills": 18,
+              "bossHp": 0,
+              "pendingSoldiers": 0,
+              "transitions": [
+                {
+                  "wave": 1,
+                  "time": 0
+                },
+                {
+                  "wave": 2,
+                  "time": 12.5000000000002
+                },
+                {
+                  "wave": 3,
+                  "time": 26.749999999999762
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "scene uses clean physical slabs, distinct roles, named soldiers and actual danger geometry even with FX off",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "core": "engine-v1.2.1.js",
+      "version": "1.6.0",
+      "tests": [
+        {
+          "name": "wave HP doubles exactly and each batch has three distinct roles with TV/BS/SH",
+          "ok": true
+        },
+        {
+          "name": "soldiers emerge sequentially from MRG and later batches stay queued for seven seconds",
+          "ok": true
+        },
+        {
+          "name": "HP gates require current enemies and all queued batches; projectile floods cannot skip waves",
+          "ok": true
+        },
+        {
+          "name": "final queued soldiers prevent defeat/upload; a completed battle awards only once",
+          "ok": true
+        },
+        {
+          "name": "default fire and grenades stay horizontal in the facing direction, including guide mode",
+          "ok": true
+        },
+        {
+          "name": "real pointer projection and arcadeInput produce an oblique manual shot through Z=0",
+          "ok": true
+        },
+        {
+          "name": "aimed empty space stays empty: no snap, target selection or homing after firing",
+          "ok": true
+        },
+        {
+          "name": "real straight bullets kill on the firing line and miss targets above it; FX remain wired",
+          "ok": true
+        },
+        {
+          "name": "damage remains multiplied once by wave, with independent assist/armor reductions",
+          "ok": true,
+          "data": [
+            {
+              "wave": 1,
+              "kind": "fan",
+              "damage": 10
+            },
+            {
+              "wave": 1,
+              "kind": "floor",
+              "damage": 16
+            },
+            {
+              "wave": 1,
+              "kind": "beam",
+              "damage": 22
+            },
+            {
+              "wave": 1,
+              "kind": "contact",
+              "damage": 18
+            },
+            {
+              "wave": 2,
+              "kind": "fan",
+              "damage": 20
+            },
+            {
+              "wave": 2,
+              "kind": "floor",
+              "damage": 32
+            },
+            {
+              "wave": 2,
+              "kind": "beam",
+              "damage": 44
+            },
+            {
+              "wave": 2,
+              "kind": "contact",
+              "damage": 36
+            },
+            {
+              "wave": 3,
+              "kind": "fan",
+              "damage": 40
+            },
+            {
+              "wave": 3,
+              "kind": "floor",
+              "damage": 64
+            },
+            {
+              "wave": 3,
+              "kind": "beam",
+              "damage": 88
+            },
+            {
+              "wave": 3,
+              "kind": "contact",
+              "damage": 72
+            }
+          ]
+        },
+        {
+          "name": "jumper has real airborne motion and bolts; knife chases and telegraphs a timed physical strike",
+          "ok": true,
+          "data": {
+            "jumperMaxY": 9.217777777777764,
+            "phases": [
+              "grounded",
+              "rising",
+              "falling"
+            ],
+            "knifeDamage": 14
+          }
+        },
+        {
+          "name": "rocketeer locks a visible aim, launches a straight rocket and creates a real splash blast",
+          "ok": true,
+          "data": [
+            {
+              "wave": 1,
+              "damage": 16
+            },
+            {
+              "wave": 2,
+              "damage": 32
+            },
+            {
+              "wave": 3,
+              "damage": 64
+            }
+          ]
+        },
+        {
+          "name": "tentacle warning gives enough time to retreat from the right side and only active phase damages",
+          "ok": true,
+          "data": {
+            "warningSeconds": 5.2,
+            "escapeSeconds": 3.7,
+            "safeX": -24
+          }
+        },
+        {
+          "name": "tentacles repeat periodically and pause freezes warning and active collisions",
+          "ok": true,
+          "data": {
+            "warningTimes": [
+              0.016666666666666666,
+              14.066666666666945,
+              28.11666666666635
+            ]
+          }
+        },
+        {
+          "name": "moving platforms still carry in X/Y, detach on jump/drop and reset with batches on retry",
+          "ok": true
+        },
+        {
+          "name": "current JSON preserves pending batches, AI timers, rockets, manual aim and deterministic continuation",
+          "ok": true
+        },
+        {
+          "name": "1.5 checkpoints retain health fractions, dead soldiers, position and score while adding required new batches",
+          "ok": true
+        },
+        {
+          "name": "real manual-input operator wins normal and calm with all eighteen soldiers and no health/resource cheats",
+          "ok": true,
+          "data": [
+            {
+              "assist": false,
+              "phase": "upload",
+              "status": "docking",
+              "seconds": 63.699999999997665,
+              "hp": 100,
+              "minHp": 100,
+              "kills": 18,
+              "bossHp": 0,
+              "pendingSoldiers": 0,
+              "transitions": [
+                {
+                  "wave": 1,
+                  "time": 0
+                },
+                {
+                  "wave": 2,
+                  "time": 14.116666666666948
+                },
+                {
+                  "wave": 3,
+                  "time": 31.683333333332815
+                }
+              ]
+            },
+            {
+              "assist": true,
+              "phase": "upload",
+              "status": "docking",
+              "seconds": 54.48333333333152,
+              "hp": 100,
+              "minHp": 100,
+              "kills": 18,
+              "bossHp": 0,
+              "pendingSoldiers": 0,
+              "transitions": [
+                {
+                  "wave": 1,
+                  "time": 0
+                },
+                {
+                  "wave": 2,
+                  "time": 12.5000000000002
+                },
+                {
+                  "wave": 3,
+                  "time": 26.749999999999762
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "scene uses clean physical slabs, distinct roles, named soldiers and actual danger geometry even with FX off",
+          "ok": true
+        }
+      ]
+    }
+  ],
+  "recordsRegression": "PASS: concurrent records1.1.1 still works with the updated createHarness"
+}

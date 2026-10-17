@@ -1,0 +1,131 @@
+/* MRG uses the actual remaining viewport height, including the private lab bar.
+   The field can shrink; very short windows can scroll instead of clipping it. */
+.arcade-layout.is-expanded:has(.arcade-screen.mrg-mode) {
+  --mrg-frame-gap: 10px;
+  box-sizing: border-box;
+  top: calc(var(--test-bar, 0px) + var(--mrg-frame-gap));
+  right: var(--mrg-frame-gap);
+  bottom: auto;
+  left: var(--mrg-frame-gap);
+  height: calc(var(--mobile-vh, 100dvh) - var(--test-bar, 0px) - var(--mrg-frame-gap) - var(--mrg-frame-gap));
+  min-height: 0;
+  grid-template-rows: minmax(0, 1fr);
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.arcade-layout.is-expanded .arcade-screen.mrg-mode {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-color: #597787 #0b1d2b;
+}
+
+.arcade-layout.is-expanded .arcade-screen.mrg-mode .arcade-field {
+  position: relative;
+  flex: 1 1 0;
+  align-self: stretch;
+  width: 100%;
+  height: auto;
+  min-height: 180px;
+  max-height: none;
+  aspect-ratio: auto;
+}
+
+.arcade-layout.is-expanded .arcade-screen.mrg-mode .arcade-field > canvas {
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  object-fit: fill;
+}
+
+.arcade-layout.is-expanded .arcade-screen.mrg-mode .arcade-topline,
+.arcade-layout.is-expanded .arcade-screen.mrg-mode .citadel-objective,
+.arcade-layout.is-expanded .arcade-screen.mrg-mode .arcade-flightbar {
+  flex: none;
+}
+
+.arcade-layout.is-expanded .arcade-screen.mrg-mode .citadel-route,
+.arcade-layout.is-expanded .arcade-screen.mrg-mode .citadel-objective small,
+.arcade-layout.is-expanded .arcade-screen.mrg-mode .citadel-objective p {
+  display: none;
+}
+
+.arcade-layout.is-expanded .arcade-screen.mrg-mode .citadel-objective {
+  min-height: 54px;
+  padding: 8px 12px;
+}
+
+.arcade-layout.is-expanded .arcade-screen.mrg-mode .citadel-objective h3 {
+  margin: 0;
+  font-size: clamp(13px, 1.4vw, 20px);
+  line-height: 1.2;
+}
+
+@media (min-width: 961px) {
+  .arcade-layout.is-expanded:has(.arcade-screen.mrg-mode) .arcade-command {
+    height: 100%;
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+}
+
+@media (max-width: 960px) {
+  .arcade-layout.is-expanded:has(.arcade-screen.mrg-mode) {
+    --mrg-frame-gap: 0px;
+  }
+
+  .arcade-layout.is-expanded .arcade-screen.mrg-mode .arcade-field {
+    min-height: 160px;
+  }
+
+  .arcade-layout.is-expanded .arcade-screen.mrg-mode .citadel-objective {
+    height: 44px;
+    min-height: 44px;
+    max-height: 44px;
+    padding: 3px 8px;
+  }
+
+  .arcade-layout.is-expanded .arcade-screen.mrg-mode .citadel-objective h3 {
+    font-size: 11px;
+    margin-bottom: 7px;
+  }
+}
+
+/* Keep the existing touch controls beside the arena in landscape. */
+@media (max-width: 960px) and (orientation: landscape) {
+  .arcade-layout.is-expanded .arcade-screen.mrg-mode[data-game-status="boarding"] {
+    display: grid;
+    grid-template-columns: 108px minmax(0, 1fr) 144px;
+    grid-template-rows: 44px 44px minmax(160px, 1fr);
+    column-gap: 0;
+  }
+
+  .arcade-layout.is-expanded .arcade-screen.mrg-mode[data-game-status="boarding"] .arcade-field {
+    grid-column: 2;
+    grid-row: 3;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media (max-width: 650px) and (orientation: landscape) {
+  .arcade-layout.is-expanded .arcade-screen.mrg-mode[data-game-status="boarding"] {
+    grid-template-columns: 96px minmax(0, 1fr) 132px;
+  }
+}
