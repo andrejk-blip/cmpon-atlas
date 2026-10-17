@@ -1,6 +1,6 @@
 {
   "product": "ЦМПОН — атлас требований",
-  "version": "1.4.2",
+  "version": "1.5.0",
   "released_on": "2026-10-17",
   "requirements_edition": "2.0.2 (ВСТЕ)",
   "requirements_as_of": "2026-10-14",
@@ -10,7 +10,7 @@
   "finale_save_schema": "citadel-finale-v1",
   "analytics_module_version": "0.1.0",
   "tournament_module_version": "1.1.0",
-  "index_sha256": "6664633019ad86893d413e7c7180349a570677302c1adc69931820f045fdafab",
+  "index_sha256": "58c5bcebc85231102e2438e75deae1075710ffca3172cd3a0c5a9828960ec2ce",
   "offline_sha256": "754ccde3777ace0150d9b062461301ea9542f893c4f158ebc0ae7e07a3e8a2c3",
   "core_assets_version": "1.3.5",
   "soundtrack_module_version": "1.4.2",
@@ -21,7 +21,11 @@
   "academy_cards": 36,
   "academy_campaign_questions": 23,
   "effects_module_version": "1.4.2",
-  "atlas_sha256": "0d21147d84324b32cfcdf426a6554f038d6981b50a3de462ebcc4f689e3c01de",
+  "atlas_sha256": "dbc82d2f5f375c59f410725ca231f1a2b3e17f6bc7500cd00f8709d6a432df8a",
   "music_sha256": "11ba6f8ee1d80e7313e7c7c14d1133cf55f9f124ca29eb8d3ed54aba22aafeb0",
-  "effects_sha256": "93064fb5bab7c75e14a630bab677358ad112676815c574c951479e61988e003e"
+  "effects_sha256": "93064fb5bab7c75e14a630bab677358ad112676815c574c951479e61988e003e",
+  "mrg_module_version": "1.5.0",
+  "mrg_waves": 3,
+  "mrg_sha256": "f531da6556452cfbb8bef001124d7c12fcfca009df296a69483130e306f180af",
+  "mrg_view_sha256": "1e564341ad8ce78fd4ad440fa4db7b5536a132974642da7872c02b34959cf3a0"
 }
