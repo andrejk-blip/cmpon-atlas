@@ -1,0 +1,655 @@
+{
+  "version": "1.8.0",
+  "patchSha256": "abbfdb4d46c331cb3c752f27932b2d33349fe6ec761b2e680af5120e0ab34ea8",
+  "environment": "Node VM with frozen production cores; native Canvas projection; no browser or physical-device claim",
+  "cores": [
+    {
+      "core": "assets/atlas-v1.3.5.js",
+      "coreSha256": "af1f9024313d1ecb798edc19b5039407049916d094c88426f85ba852ac077be8",
+      "groups": 14,
+      "pass": true,
+      "results": [
+        {
+          "name": "Three telegraphed attacks actually hit a stationary ship once in both modes",
+          "pass": true,
+          "data": [
+            {
+              "mode": "normal",
+              "kind": "lunge",
+              "shield": 80.8,
+              "hits": 1
+            },
+            {
+              "mode": "normal",
+              "kind": "sweep",
+              "shield": 80.8,
+              "hits": 1
+            },
+            {
+              "mode": "normal",
+              "kind": "pincer",
+              "shield": 80.8,
+              "hits": 1
+            },
+            {
+              "mode": "calm",
+              "kind": "lunge",
+              "shield": 89.44,
+              "hits": 1
+            },
+            {
+              "mode": "calm",
+              "kind": "sweep",
+              "shield": 89.44,
+              "hits": 1
+            },
+            {
+              "mode": "calm",
+              "kind": "pincer",
+              "shield": 89.44,
+              "hits": 1
+            }
+          ]
+        },
+        {
+          "name": "The same locked attacks can be evaded through the touch input mapping",
+          "pass": true,
+          "data": [
+            {
+              "mode": "normal",
+              "kind": "lunge",
+              "shield": 100,
+              "position": [
+                0,
+                75,
+                -104
+              ]
+            },
+            {
+              "mode": "normal",
+              "kind": "sweep",
+              "shield": 100,
+              "position": [
+                0,
+                75,
+                -104
+              ]
+            },
+            {
+              "mode": "normal",
+              "kind": "pincer",
+              "shield": 100,
+              "position": [
+                21.74,
+                0,
+                -39.75
+              ]
+            },
+            {
+              "mode": "calm",
+              "kind": "lunge",
+              "shield": 100,
+              "position": [
+                0,
+                75,
+                -104
+              ]
+            },
+            {
+              "mode": "calm",
+              "kind": "sweep",
+              "shield": 100,
+              "position": [
+                0,
+                75,
+                -104
+              ]
+            },
+            {
+              "mode": "calm",
+              "kind": "pincer",
+              "shield": 100,
+              "position": [
+                21.74,
+                0,
+                -39.75
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Late pulse actively knocks back every attack; an early pulse keeps its timing cost",
+          "pass": true,
+          "data": [
+            "lunge",
+            "sweep",
+            "pincer"
+          ]
+        },
+        {
+          "name": "A shielded contact consumes the strike and does not hit after immunity expires",
+          "pass": true
+        },
+        {
+          "name": "Support destruction interrupts its connected arm, preserves awards and never duplicates them",
+          "pass": true,
+          "data": {
+            "rewardPerSupport": 600,
+            "repairPerSupport": 12,
+            "missilesPerSupport": 2,
+            "protectedDamage": 55,
+            "counterattackDamage": 135
+          }
+        },
+        {
+          "name": "All four supports still shield the core; rage keeps tells and a surviving attack",
+          "pass": true,
+          "data": {
+            "remainingCoreHp": 6000,
+            "tell": 1.6800000000000002,
+            "damageBeforeArmor": 26
+          }
+        },
+        {
+          "name": "Old boss saves migrate without resetting health, ammo, score or support progress",
+          "pass": true
+        },
+        {
+          "name": "Pause and CUP restore preserve mid-warning and mid-strike simulation exactly",
+          "pass": true,
+          "data": [
+            {
+              "mode": "normal",
+              "phase": "windup",
+              "persistence": "Actual public CUP pack/unpack",
+              "exact": true
+            },
+            {
+              "mode": "normal",
+              "phase": "strike",
+              "persistence": "Actual public CUP pack/unpack",
+              "exact": true
+            },
+            {
+              "mode": "calm",
+              "phase": "windup",
+              "persistence": "Actual public CUP pack/unpack",
+              "exact": true
+            },
+            {
+              "mode": "calm",
+              "phase": "strike",
+              "persistence": "Actual public CUP pack/unpack",
+              "exact": true
+            }
+          ]
+        },
+        {
+          "name": "Rendering uses the exact collision segments and continues essential motion with effects off",
+          "pass": true,
+          "data": {
+            "activeSegments": 36,
+            "sceneItems": 226
+          }
+        },
+        {
+          "name": "The comic events are discrete, world-anchored and pause-safe",
+          "pass": true
+        },
+        {
+          "name": "Ground MRG, breach, landing and maze continue to delegate to their existing engines",
+          "pass": true
+        },
+        {
+          "name": "Camping on autopilot takes repeated real hits; its controller never auto-dodges",
+          "pass": true,
+          "data": {
+            "duration": 43.8,
+            "shield": 0,
+            "tentacleHits": 6,
+            "remainingCoreHp": 1887.45
+          }
+        },
+        {
+          "name": "A reacting operator wins and enters the breach in both modes, with and without pulse",
+          "pass": true,
+          "data": [
+            {
+              "mode": "normal",
+              "pulse": false,
+              "bossSeconds": 106.65,
+              "landingSeconds": 110.93,
+              "shieldAtBreach": 100,
+              "shieldAtLanding": 85.6,
+              "missilesLeft": 2,
+              "tentacleHits": 0,
+              "avoided": 16,
+              "reflected": 0,
+              "scoreAwarded": 5900
+            },
+            {
+              "mode": "normal",
+              "pulse": true,
+              "bossSeconds": 63.53,
+              "landingSeconds": 65.75,
+              "shieldAtBreach": 100,
+              "shieldAtLanding": 71.2,
+              "missilesLeft": 2,
+              "tentacleHits": 0,
+              "avoided": 6,
+              "reflected": 6,
+              "scoreAwarded": 5900
+            },
+            {
+              "mode": "calm",
+              "pulse": false,
+              "bossSeconds": 61.02,
+              "landingSeconds": 63.97,
+              "shieldAtBreach": 100,
+              "shieldAtLanding": 100,
+              "missilesLeft": 2,
+              "tentacleHits": 0,
+              "avoided": 8,
+              "reflected": 0,
+              "scoreAwarded": 5900
+            },
+            {
+              "mode": "calm",
+              "pulse": true,
+              "bossSeconds": 49.4,
+              "landingSeconds": 51.35,
+              "shieldAtBreach": 100,
+              "shieldAtLanding": 92.08,
+              "missilesLeft": 2,
+              "tentacleHits": 0,
+              "avoided": 3,
+              "reflected": 4,
+              "scoreAwarded": 5900
+            }
+          ]
+        },
+        {
+          "name": "Briefing and objectives explain attack directions, pulse timing and the counterattack window",
+          "pass": true
+        }
+      ],
+      "frames": [
+        {
+          "filename": "atlas-v1.3.5-warning.png",
+          "width": 1280,
+          "height": 720,
+          "dpr": 1,
+          "effects": true,
+          "items": 224,
+          "distinctSampledColors": 3843,
+          "shieldY": 693
+        },
+        {
+          "filename": "atlas-v1.3.5-hook.png",
+          "width": 1280,
+          "height": 720,
+          "dpr": 1,
+          "effects": true,
+          "items": 213,
+          "distinctSampledColors": 3421,
+          "shieldY": 693
+        },
+        {
+          "filename": "atlas-v1.3.5-pincer-mobile.png",
+          "width": 390,
+          "height": 460,
+          "dpr": 2,
+          "effects": true,
+          "items": 226,
+          "distinctSampledColors": 2129,
+          "shieldY": 433
+        },
+        {
+          "filename": "atlas-v1.3.5-sweep-landscape.png",
+          "width": 844,
+          "height": 320,
+          "dpr": 1,
+          "effects": false,
+          "items": 213,
+          "distinctSampledColors": 1992,
+          "shieldY": 293
+        },
+        {
+          "filename": "atlas-v1.3.5-short-screen.png",
+          "width": 592,
+          "height": 244,
+          "dpr": 1,
+          "effects": false,
+          "items": 234,
+          "distinctSampledColors": 1546,
+          "shieldY": 217
+        }
+      ]
+    },
+    {
+      "core": "../cmpon-analytics-admin/game-lab/engine-v1.2.1.js",
+      "coreSha256": "29cf0a79c5887bbdf4e80ba2664b16d50172771f10069cb6f5d274eabbc4cbe8",
+      "groups": 14,
+      "pass": true,
+      "results": [
+        {
+          "name": "Three telegraphed attacks actually hit a stationary ship once in both modes",
+          "pass": true,
+          "data": [
+            {
+              "mode": "normal",
+              "kind": "lunge",
+              "shield": 80.8,
+              "hits": 1
+            },
+            {
+              "mode": "normal",
+              "kind": "sweep",
+              "shield": 80.8,
+              "hits": 1
+            },
+            {
+              "mode": "normal",
+              "kind": "pincer",
+              "shield": 80.8,
+              "hits": 1
+            },
+            {
+              "mode": "calm",
+              "kind": "lunge",
+              "shield": 89.44,
+              "hits": 1
+            },
+            {
+              "mode": "calm",
+              "kind": "sweep",
+              "shield": 89.44,
+              "hits": 1
+            },
+            {
+              "mode": "calm",
+              "kind": "pincer",
+              "shield": 89.44,
+              "hits": 1
+            }
+          ]
+        },
+        {
+          "name": "The same locked attacks can be evaded through the touch input mapping",
+          "pass": true,
+          "data": [
+            {
+              "mode": "normal",
+              "kind": "lunge",
+              "shield": 100,
+              "position": [
+                0,
+                75,
+                -104
+              ]
+            },
+            {
+              "mode": "normal",
+              "kind": "sweep",
+              "shield": 100,
+              "position": [
+                0,
+                75,
+                -104
+              ]
+            },
+            {
+              "mode": "normal",
+              "kind": "pincer",
+              "shield": 100,
+              "position": [
+                21.74,
+                0,
+                -39.75
+              ]
+            },
+            {
+              "mode": "calm",
+              "kind": "lunge",
+              "shield": 100,
+              "position": [
+                0,
+                75,
+                -104
+              ]
+            },
+            {
+              "mode": "calm",
+              "kind": "sweep",
+              "shield": 100,
+              "position": [
+                0,
+                75,
+                -104
+              ]
+            },
+            {
+              "mode": "calm",
+              "kind": "pincer",
+              "shield": 100,
+              "position": [
+                21.74,
+                0,
+                -39.75
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Late pulse actively knocks back every attack; an early pulse keeps its timing cost",
+          "pass": true,
+          "data": [
+            "lunge",
+            "sweep",
+            "pincer"
+          ]
+        },
+        {
+          "name": "A shielded contact consumes the strike and does not hit after immunity expires",
+          "pass": true
+        },
+        {
+          "name": "Support destruction interrupts its connected arm, preserves awards and never duplicates them",
+          "pass": true,
+          "data": {
+            "rewardPerSupport": 600,
+            "repairPerSupport": 12,
+            "missilesPerSupport": 2,
+            "protectedDamage": 55,
+            "counterattackDamage": 135
+          }
+        },
+        {
+          "name": "All four supports still shield the core; rage keeps tells and a surviving attack",
+          "pass": true,
+          "data": {
+            "remainingCoreHp": 6000,
+            "tell": 1.6800000000000002,
+            "damageBeforeArmor": 26
+          }
+        },
+        {
+          "name": "Old boss saves migrate without resetting health, ammo, score or support progress",
+          "pass": true
+        },
+        {
+          "name": "Pause and CUP restore preserve mid-warning and mid-strike simulation exactly",
+          "pass": true,
+          "data": [
+            {
+              "mode": "normal",
+              "phase": "windup",
+              "persistence": "Isolated lab JSON round-trip (no CUP in this core)",
+              "exact": true
+            },
+            {
+              "mode": "normal",
+              "phase": "strike",
+              "persistence": "Isolated lab JSON round-trip (no CUP in this core)",
+              "exact": true
+            },
+            {
+              "mode": "calm",
+              "phase": "windup",
+              "persistence": "Isolated lab JSON round-trip (no CUP in this core)",
+              "exact": true
+            },
+            {
+              "mode": "calm",
+              "phase": "strike",
+              "persistence": "Isolated lab JSON round-trip (no CUP in this core)",
+              "exact": true
+            }
+          ]
+        },
+        {
+          "name": "Rendering uses the exact collision segments and continues essential motion with effects off",
+          "pass": true,
+          "data": {
+            "activeSegments": 36,
+            "sceneItems": 226
+          }
+        },
+        {
+          "name": "The comic events are discrete, world-anchored and pause-safe",
+          "pass": true
+        },
+        {
+          "name": "Ground MRG, breach, landing and maze continue to delegate to their existing engines",
+          "pass": true
+        },
+        {
+          "name": "Camping on autopilot takes repeated real hits; its controller never auto-dodges",
+          "pass": true,
+          "data": {
+            "duration": 43.8,
+            "shield": 0,
+            "tentacleHits": 6,
+            "remainingCoreHp": 1887.45
+          }
+        },
+        {
+          "name": "A reacting operator wins and enters the breach in both modes, with and without pulse",
+          "pass": true,
+          "data": [
+            {
+              "mode": "normal",
+              "pulse": false,
+              "bossSeconds": 127.1,
+              "landingSeconds": 132.9,
+              "shieldAtBreach": 100,
+              "shieldAtLanding": 100,
+              "missilesLeft": 2,
+              "tentacleHits": 1,
+              "avoided": 19,
+              "reflected": 0,
+              "scoreAwarded": 5900
+            },
+            {
+              "mode": "normal",
+              "pulse": true,
+              "bossSeconds": 63.55,
+              "landingSeconds": 66.13,
+              "shieldAtBreach": 100,
+              "shieldAtLanding": 71.2,
+              "missilesLeft": 2,
+              "tentacleHits": 0,
+              "avoided": 6,
+              "reflected": 6,
+              "scoreAwarded": 5900
+            },
+            {
+              "mode": "calm",
+              "pulse": false,
+              "bossSeconds": 61.28,
+              "landingSeconds": 64.85,
+              "shieldAtBreach": 100,
+              "shieldAtLanding": 92.08,
+              "missilesLeft": 2,
+              "tentacleHits": 0,
+              "avoided": 8,
+              "reflected": 0,
+              "scoreAwarded": 5900
+            },
+            {
+              "mode": "calm",
+              "pulse": true,
+              "bossSeconds": 49.75,
+              "landingSeconds": 51.72,
+              "shieldAtBreach": 100,
+              "shieldAtLanding": 92.08,
+              "missilesLeft": 2,
+              "tentacleHits": 0,
+              "avoided": 3,
+              "reflected": 4,
+              "scoreAwarded": 5900
+            }
+          ]
+        },
+        {
+          "name": "Briefing and objectives explain attack directions, pulse timing and the counterattack window",
+          "pass": true
+        }
+      ],
+      "frames": [
+        {
+          "filename": "engine-v1.2.1-warning.png",
+          "width": 1280,
+          "height": 720,
+          "dpr": 1,
+          "effects": true,
+          "items": 224,
+          "distinctSampledColors": 3843,
+          "shieldY": 693
+        },
+        {
+          "filename": "engine-v1.2.1-hook.png",
+          "width": 1280,
+          "height": 720,
+          "dpr": 1,
+          "effects": true,
+          "items": 213,
+          "distinctSampledColors": 3421,
+          "shieldY": 693
+        },
+        {
+          "filename": "engine-v1.2.1-pincer-mobile.png",
+          "width": 390,
+          "height": 460,
+          "dpr": 2,
+          "effects": true,
+          "items": 226,
+          "distinctSampledColors": 2129,
+          "shieldY": 433
+        },
+        {
+          "filename": "engine-v1.2.1-sweep-landscape.png",
+          "width": 844,
+          "height": 320,
+          "dpr": 1,
+          "effects": false,
+          "items": 213,
+          "distinctSampledColors": 1992,
+          "shieldY": 293
+        },
+        {
+          "filename": "engine-v1.2.1-short-screen.png",
+          "width": 592,
+          "height": 244,
+          "dpr": 1,
+          "effects": false,
+          "items": 234,
+          "distinctSampledColors": 1546,
+          "shieldY": 217
+        }
+      ]
+    }
+  ],
+  "pass": true,
+  "groups": 28
+}

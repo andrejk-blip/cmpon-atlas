@@ -1,0 +1,574 @@
+{
+  "version": "1.8.0",
+  "feature": "Level 7 / Рой уточнений",
+  "method": "Actual shipped cores in Node VM; deterministic keyboard/touch-equivalent input playthrough and native Canvas projection. No browser, network, physical Android, or production storage.",
+  "addon_sha256": "eeeabd8916a6d6d36b3a64d1286c94910448d8d1aaad3b16a130f1c573a53493",
+  "results": [
+    {
+      "core": "atlas-v1.3.5.js",
+      "sha256": "af1f9024313d1ecb798edc19b5039407049916d094c88426f85ba852ac077be8",
+      "passed": 18,
+      "checks": [
+        {
+          "name": "Real input completes three formations and exactly two safe decisions in both modes",
+          "passed": true,
+          "details": [
+            {
+              "mode": "normal",
+              "seed": 417147,
+              "seconds": 52.32,
+              "minHP": 100,
+              "shots": 393,
+              "destroyed": 30,
+              "lessons": 2,
+              "packets": 3,
+              "score": 3015,
+              "maxDrones": 13,
+              "maxBullets": 26
+            },
+            {
+              "mode": "normal",
+              "seed": 819337,
+              "seconds": 52.45,
+              "minHP": 100,
+              "shots": 394,
+              "destroyed": 31,
+              "lessons": 2,
+              "packets": 3,
+              "score": 3060,
+              "maxDrones": 13,
+              "maxBullets": 26
+            },
+            {
+              "mode": "calm",
+              "seed": 417147,
+              "seconds": 42.98,
+              "minHP": 100,
+              "shots": 323,
+              "destroyed": 20,
+              "lessons": 2,
+              "packets": 3,
+              "score": 2835,
+              "maxDrones": 10,
+              "maxBullets": 26
+            },
+            {
+              "mode": "calm",
+              "seed": 819337,
+              "seconds": 43.68,
+              "minHP": 100,
+              "shots": 328,
+              "destroyed": 22,
+              "lessons": 2,
+              "packets": 3,
+              "score": 2925,
+              "maxDrones": 10,
+              "maxBullets": 26
+            }
+          ]
+        },
+        {
+          "name": "Level zero, other orbit, convoy, and MRG still delegate; stage restart resets only swarm state",
+          "passed": true
+        },
+        {
+          "name": "Autopilot alone cannot collect or defeat a stationary swarm",
+          "passed": true,
+          "details": [
+            {
+              "mode": "normal",
+              "secondsToLoss": 24.1
+            },
+            {
+              "mode": "calm",
+              "secondsToLoss": 64.35
+            }
+          ]
+        },
+        {
+          "name": "A marked volley damages occupied corridors and leaves its visible gap safe",
+          "passed": true
+        },
+        {
+          "name": "Real manoeuvre can evade after the visible warning starts",
+          "passed": true
+        },
+        {
+          "name": "Destroying an attack owner removes only its corridors; pulse scatters the whole charged volley",
+          "passed": true
+        },
+        {
+          "name": "Transfer pauses outside the window, keeps partial progress, and resists physical pickup bypass",
+          "passed": true
+        },
+        {
+          "name": "Full save roundtrip preserves in-flight volley, RNG, partial transfer and future play",
+          "passed": true
+        },
+        {
+          "name": "Pause freezes window, warning, progress, HP, ammo, and projectiles; resume continues",
+          "passed": true
+        },
+        {
+          "name": "Old stage-two save migrates without lost score, HP, rescued requirements, or duplicate decisions",
+          "passed": true
+        },
+        {
+          "name": "Already collected old save advances to safe cards and dock without rewarding cargo twice",
+          "passed": true
+        },
+        {
+          "name": "Death and existing retry return to the swarm briefing with the stage checkpoint",
+          "passed": true
+        },
+        {
+          "name": "No replay farming: a slot pays once per formation and entity counts remain bounded",
+          "passed": true
+        },
+        {
+          "name": "Keyboard/touch input fields, controls, wording and repeated module loading are consistent",
+          "passed": true
+        },
+        {
+          "name": "Completed mission reaches actual visible gate and enters existing docking",
+          "passed": true,
+          "details": {
+            "seconds": 12.88,
+            "gate": [
+              0,
+              0,
+              -210
+            ]
+          }
+        },
+        {
+          "name": "Admin direct dock fixture delegates even while the swarm checkpoint is unfinished",
+          "passed": true
+        },
+        {
+          "name": "Private engine boots and plays with no tournament client or snapshot API installed",
+          "passed": true,
+          "details": {
+            "applicable": false,
+            "reason": "Public core includes its snapshot API"
+          }
+        },
+        {
+          "name": "Actual updateArcadeHUD draws the native tactical radar before and after a swarm step",
+          "passed": true,
+          "details": [
+            {
+              "action": "briefing",
+              "status": "briefing",
+              "liveJammer": true
+            },
+            {
+              "action": "launch",
+              "status": "playing",
+              "liveJammer": true
+            },
+            {
+              "action": "step",
+              "status": "playing",
+              "liveJammer": true
+            }
+          ]
+        }
+      ],
+      "renders": [
+        {
+          "file": "qa/atlas-v1.3.5-formation-1-1280x720-dpr1.png",
+          "meshes": 194,
+          "size": [
+            1280,
+            720
+          ],
+          "dpr": 1
+        },
+        {
+          "file": "qa/atlas-v1.3.5-formation-1-390x460-dpr1.png",
+          "meshes": 194,
+          "size": [
+            390,
+            460
+          ],
+          "dpr": 1
+        },
+        {
+          "file": "qa/atlas-v1.3.5-formation-1-844x320-dpr1.png",
+          "meshes": 194,
+          "size": [
+            844,
+            320
+          ],
+          "dpr": 1
+        },
+        {
+          "file": "qa/atlas-v1.3.5-formation-1-390x460-dpr2.png",
+          "meshes": 194,
+          "size": [
+            390,
+            460
+          ],
+          "dpr": 2
+        },
+        {
+          "file": "qa/atlas-v1.3.5-formation-2-1280x720-dpr1.png",
+          "meshes": 192,
+          "size": [
+            1280,
+            720
+          ],
+          "dpr": 1
+        },
+        {
+          "file": "qa/atlas-v1.3.5-formation-2-390x460-dpr1.png",
+          "meshes": 192,
+          "size": [
+            390,
+            460
+          ],
+          "dpr": 1
+        },
+        {
+          "file": "qa/atlas-v1.3.5-formation-2-844x320-dpr1.png",
+          "meshes": 192,
+          "size": [
+            844,
+            320
+          ],
+          "dpr": 1
+        },
+        {
+          "file": "qa/atlas-v1.3.5-formation-2-390x460-dpr2.png",
+          "meshes": 192,
+          "size": [
+            390,
+            460
+          ],
+          "dpr": 2
+        },
+        {
+          "file": "qa/atlas-v1.3.5-formation-3-1280x720-dpr1.png",
+          "meshes": 196,
+          "size": [
+            1280,
+            720
+          ],
+          "dpr": 1
+        },
+        {
+          "file": "qa/atlas-v1.3.5-formation-3-390x460-dpr1.png",
+          "meshes": 196,
+          "size": [
+            390,
+            460
+          ],
+          "dpr": 1
+        },
+        {
+          "file": "qa/atlas-v1.3.5-formation-3-844x320-dpr1.png",
+          "meshes": 196,
+          "size": [
+            844,
+            320
+          ],
+          "dpr": 1
+        },
+        {
+          "file": "qa/atlas-v1.3.5-formation-3-390x460-dpr2.png",
+          "meshes": 196,
+          "size": [
+            390,
+            460
+          ],
+          "dpr": 2
+        }
+      ]
+    },
+    {
+      "core": "engine-v1.2.1.js",
+      "snapshot_adapter": "Exact public CUP snapshot functions and identical seeded RNG with getState over the admin engine, isolated in memory",
+      "sha256": "29cf0a79c5887bbdf4e80ba2664b16d50172771f10069cb6f5d274eabbc4cbe8",
+      "passed": 18,
+      "checks": [
+        {
+          "name": "Real input completes three formations and exactly two safe decisions in both modes",
+          "passed": true,
+          "details": [
+            {
+              "mode": "normal",
+              "seed": 417147,
+              "seconds": 52.32,
+              "minHP": 100,
+              "shots": 393,
+              "destroyed": 30,
+              "lessons": 2,
+              "packets": 3,
+              "score": 3015,
+              "maxDrones": 13,
+              "maxBullets": 26
+            },
+            {
+              "mode": "normal",
+              "seed": 819337,
+              "seconds": 52.45,
+              "minHP": 100,
+              "shots": 394,
+              "destroyed": 31,
+              "lessons": 2,
+              "packets": 3,
+              "score": 3060,
+              "maxDrones": 13,
+              "maxBullets": 26
+            },
+            {
+              "mode": "calm",
+              "seed": 417147,
+              "seconds": 42.98,
+              "minHP": 100,
+              "shots": 323,
+              "destroyed": 20,
+              "lessons": 2,
+              "packets": 3,
+              "score": 2835,
+              "maxDrones": 10,
+              "maxBullets": 26
+            },
+            {
+              "mode": "calm",
+              "seed": 819337,
+              "seconds": 43.68,
+              "minHP": 100,
+              "shots": 328,
+              "destroyed": 22,
+              "lessons": 2,
+              "packets": 3,
+              "score": 2925,
+              "maxDrones": 10,
+              "maxBullets": 26
+            }
+          ]
+        },
+        {
+          "name": "Level zero, other orbit, convoy, and MRG still delegate; stage restart resets only swarm state",
+          "passed": true
+        },
+        {
+          "name": "Autopilot alone cannot collect or defeat a stationary swarm",
+          "passed": true,
+          "details": [
+            {
+              "mode": "normal",
+              "secondsToLoss": 24.1
+            },
+            {
+              "mode": "calm",
+              "secondsToLoss": 64.35
+            }
+          ]
+        },
+        {
+          "name": "A marked volley damages occupied corridors and leaves its visible gap safe",
+          "passed": true
+        },
+        {
+          "name": "Real manoeuvre can evade after the visible warning starts",
+          "passed": true
+        },
+        {
+          "name": "Destroying an attack owner removes only its corridors; pulse scatters the whole charged volley",
+          "passed": true
+        },
+        {
+          "name": "Transfer pauses outside the window, keeps partial progress, and resists physical pickup bypass",
+          "passed": true
+        },
+        {
+          "name": "Full save roundtrip preserves in-flight volley, RNG, partial transfer and future play",
+          "passed": true
+        },
+        {
+          "name": "Pause freezes window, warning, progress, HP, ammo, and projectiles; resume continues",
+          "passed": true
+        },
+        {
+          "name": "Old stage-two save migrates without lost score, HP, rescued requirements, or duplicate decisions",
+          "passed": true
+        },
+        {
+          "name": "Already collected old save advances to safe cards and dock without rewarding cargo twice",
+          "passed": true
+        },
+        {
+          "name": "Death and existing retry return to the swarm briefing with the stage checkpoint",
+          "passed": true
+        },
+        {
+          "name": "No replay farming: a slot pays once per formation and entity counts remain bounded",
+          "passed": true
+        },
+        {
+          "name": "Keyboard/touch input fields, controls, wording and repeated module loading are consistent",
+          "passed": true
+        },
+        {
+          "name": "Completed mission reaches actual visible gate and enters existing docking",
+          "passed": true,
+          "details": {
+            "seconds": 13.15,
+            "gate": [
+              0,
+              0,
+              -210
+            ]
+          }
+        },
+        {
+          "name": "Admin direct dock fixture delegates even while the swarm checkpoint is unfinished",
+          "passed": true
+        },
+        {
+          "name": "Private engine boots and plays with no tournament client or snapshot API installed",
+          "passed": true,
+          "details": {
+            "applicable": true,
+            "remoteStorage": false,
+            "transfer": 2.799999999999995
+          }
+        },
+        {
+          "name": "Actual updateArcadeHUD draws the native tactical radar before and after a swarm step",
+          "passed": true,
+          "details": [
+            {
+              "action": "briefing",
+              "status": "briefing",
+              "liveJammer": true
+            },
+            {
+              "action": "launch",
+              "status": "playing",
+              "liveJammer": true
+            },
+            {
+              "action": "step",
+              "status": "playing",
+              "liveJammer": true
+            }
+          ]
+        }
+      ],
+      "renders": [
+        {
+          "file": "qa/engine-v1.2.1-formation-1-1280x720-dpr1.png",
+          "meshes": 194,
+          "size": [
+            1280,
+            720
+          ],
+          "dpr": 1
+        },
+        {
+          "file": "qa/engine-v1.2.1-formation-1-390x460-dpr1.png",
+          "meshes": 194,
+          "size": [
+            390,
+            460
+          ],
+          "dpr": 1
+        },
+        {
+          "file": "qa/engine-v1.2.1-formation-1-844x320-dpr1.png",
+          "meshes": 194,
+          "size": [
+            844,
+            320
+          ],
+          "dpr": 1
+        },
+        {
+          "file": "qa/engine-v1.2.1-formation-1-390x460-dpr2.png",
+          "meshes": 194,
+          "size": [
+            390,
+            460
+          ],
+          "dpr": 2
+        },
+        {
+          "file": "qa/engine-v1.2.1-formation-2-1280x720-dpr1.png",
+          "meshes": 192,
+          "size": [
+            1280,
+            720
+          ],
+          "dpr": 1
+        },
+        {
+          "file": "qa/engine-v1.2.1-formation-2-390x460-dpr1.png",
+          "meshes": 192,
+          "size": [
+            390,
+            460
+          ],
+          "dpr": 1
+        },
+        {
+          "file": "qa/engine-v1.2.1-formation-2-844x320-dpr1.png",
+          "meshes": 192,
+          "size": [
+            844,
+            320
+          ],
+          "dpr": 1
+        },
+        {
+          "file": "qa/engine-v1.2.1-formation-2-390x460-dpr2.png",
+          "meshes": 192,
+          "size": [
+            390,
+            460
+          ],
+          "dpr": 2
+        },
+        {
+          "file": "qa/engine-v1.2.1-formation-3-1280x720-dpr1.png",
+          "meshes": 196,
+          "size": [
+            1280,
+            720
+          ],
+          "dpr": 1
+        },
+        {
+          "file": "qa/engine-v1.2.1-formation-3-390x460-dpr1.png",
+          "meshes": 196,
+          "size": [
+            390,
+            460
+          ],
+          "dpr": 1
+        },
+        {
+          "file": "qa/engine-v1.2.1-formation-3-844x320-dpr1.png",
+          "meshes": 196,
+          "size": [
+            844,
+            320
+          ],
+          "dpr": 1
+        },
+        {
+          "file": "qa/engine-v1.2.1-formation-3-390x460-dpr2.png",
+          "meshes": 196,
+          "size": [
+            390,
+            460
+          ],
+          "dpr": 2
+        }
+      ]
+    }
+  ]
+}

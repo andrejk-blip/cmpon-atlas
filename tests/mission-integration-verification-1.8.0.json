@@ -1,0 +1,3461 @@
+{
+  "checks": [
+    {
+      "check": "admin emit reassignment",
+      "passed": true,
+      "callbackCalls": 1
+    },
+    {
+      "check": "G and keyboard after swarm -> boarding",
+      "passed": true,
+      "flightInput": {
+        "turn": 1,
+        "pitch": 0,
+        "fire": false,
+        "boost": false,
+        "brake": false,
+        "missile": false,
+        "pulse": false,
+        "flip": false,
+        "interact": false
+      },
+      "boardInput": {
+        "turn": 1,
+        "pitch": 0,
+        "fire": false,
+        "boost": false,
+        "brake": false,
+        "missile": false,
+        "pulse": false,
+        "flip": false,
+        "moveX": 1,
+        "moveZ": 0,
+        "aim": null,
+        "interact": false
+      }
+    },
+    {
+      "check": "delegate dock-2",
+      "passed": true,
+      "before": "docking",
+      "status": "docking",
+      "phase": "dock"
+    },
+    {
+      "check": "delegate deck-2",
+      "passed": true,
+      "before": "boarding",
+      "status": "boarding",
+      "phase": "boarding"
+    },
+    {
+      "check": "delegate convoy-2",
+      "passed": true,
+      "before": "playing",
+      "status": "playing",
+      "phase": "escort"
+    },
+    {
+      "check": "delegate dock-3",
+      "passed": true,
+      "before": "docking",
+      "status": "docking",
+      "phase": "dock"
+    },
+    {
+      "check": "delegate deck-3",
+      "passed": true,
+      "before": "boarding",
+      "status": "boarding",
+      "phase": "boarding"
+    },
+    {
+      "check": "delegate convoy-3",
+      "passed": true,
+      "before": "playing",
+      "status": "playing",
+      "phase": "escort"
+    },
+    {
+      "check": "delegate orbit-4",
+      "passed": true,
+      "before": "playing",
+      "status": "playing",
+      "phase": "battle"
+    },
+    {
+      "check": "delegate parallax",
+      "passed": true,
+      "before": "playing",
+      "status": "playing",
+      "phase": "finale"
+    },
+    {
+      "check": "delegate breach",
+      "passed": true,
+      "before": "playing",
+      "status": "playing",
+      "phase": "finale"
+    }
+  ],
+  "overlays": [
+    {
+      "time": 0.016666666666666666,
+      "viewport": [
+        1280,
+        720
+      ],
+      "comic": {
+        "x": 924.0024885691475,
+        "y": 282.6466336731262,
+        "width": 264,
+        "height": 98,
+        "viewportWidth": 1280,
+        "viewportHeight": 720,
+        "text": "ЗАМЕЧАНИЯ ПО ВСЕМ ФРОНТАМ!",
+        "lines": [
+          "ЗАМЕЧАНИЯ ПО",
+          "ВСЕМ ФРОНТАМ!"
+        ],
+        "kind": "warning",
+        "protected": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 1280,
+            "height": 129.6
+          },
+          {
+            "x": 0,
+            "y": 604.8,
+            "width": 1280,
+            "height": 115.2
+          },
+          {
+            "x": 584,
+            "y": 293.4,
+            "width": 112,
+            "height": 90
+          },
+          {
+            "x": 584.3434762322755,
+            "y": 347.27009421292104,
+            "width": 116,
+            "height": 76
+          }
+        ]
+      },
+      "labelBox": {
+        "x": 808.3324904002022,
+        "y": 361.4096639401462,
+        "width": 175.33999633789062,
+        "height": 20
+      },
+      "labelCollision": true,
+      "file": "qa/swarm-comic-0.02-1280x720.png"
+    },
+    {
+      "time": 0.016666666666666666,
+      "viewport": [
+        390,
+        460
+      ],
+      "comic": {
+        "x": 95,
+        "y": 325,
+        "width": 200,
+        "height": 88,
+        "viewportWidth": 390,
+        "viewportHeight": 460,
+        "text": "ЗАМЕЧАНИЯ ПО ВСЕМ ФРОНТАМ!",
+        "lines": [
+          "ЗАМЕЧАНИЯ ПО",
+          "ВСЕМ ФРОНТАМ!"
+        ],
+        "kind": "warning",
+        "protected": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 94
+          },
+          {
+            "x": 0,
+            "y": 415,
+            "width": 390,
+            "height": 45
+          },
+          {
+            "x": 139,
+            "y": 171.2,
+            "width": 112,
+            "height": 90
+          },
+          {
+            "x": 138.0562038060173,
+            "y": 201.86165470784843,
+            "width": 116,
+            "height": 76
+          }
+        ]
+      },
+      "labelBox": {
+        "x": 239.89664662680553,
+        "y": 233.52565858641435,
+        "width": 138.11000061035156,
+        "height": 20
+      },
+      "labelCollision": false,
+      "file": "qa/swarm-comic-0.02-390x460.png"
+    },
+    {
+      "time": 0.016666666666666666,
+      "viewport": [
+        844,
+        320
+      ],
+      "comic": {
+        "x": 563.7788838085099,
+        "y": 137.8429482991672,
+        "width": 200,
+        "height": 88,
+        "viewportWidth": 844,
+        "viewportHeight": 320,
+        "text": "ЗАМЕЧАНИЯ ПО ВСЕМ ФРОНТАМ!",
+        "lines": [
+          "ЗАМЕЧАНИЯ ПО",
+          "ВСЕМ ФРОНТАМ!"
+        ],
+        "kind": "warning",
+        "protected": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 844,
+            "height": 94
+          },
+          {
+            "x": 0,
+            "y": 275,
+            "width": 844,
+            "height": 45
+          },
+          {
+            "x": 366,
+            "y": 105.39999999999998,
+            "width": 112,
+            "height": 90
+          },
+          {
+            "x": 365.04154499212245,
+            "y": 134.34226409463156,
+            "width": 116,
+            "height": 76
+          }
+        ]
+      },
+      "labelBox": {
+        "x": 466.72388350333415,
+        "y": 166.1820728622873,
+        "width": 138.11000061035156,
+        "height": 20
+      },
+      "labelCollision": true,
+      "file": "qa/swarm-comic-0.02-844x320.png"
+    },
+    {
+      "time": 1.4999999999999996,
+      "viewport": [
+        1280,
+        720
+      ],
+      "comic": {
+        "x": 6,
+        "y": 138.6,
+        "width": 264,
+        "height": 98,
+        "viewportWidth": 1280,
+        "viewportHeight": 720,
+        "text": "ЗАМЕЧАНИЯ ПО ВСЕМ ФРОНТАМ!",
+        "lines": [
+          "ЗАМЕЧАНИЯ ПО",
+          "ВСЕМ ФРОНТАМ!"
+        ],
+        "kind": "warning",
+        "protected": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 1280,
+            "height": 129.6
+          },
+          {
+            "x": 0,
+            "y": 604.8,
+            "width": 1280,
+            "height": 115.2
+          },
+          {
+            "x": 584,
+            "y": 293.4,
+            "width": 112,
+            "height": 90
+          },
+          {
+            "x": 815.5878341464859,
+            "y": 226.1700911944144,
+            "width": 116,
+            "height": 76
+          }
+        ]
+      },
+      "labelBox": {
+        "x": 787.1351928620385,
+        "y": 364.65608440201004,
+        "width": 175.33999633789062,
+        "height": 20
+      },
+      "labelCollision": false,
+      "file": "qa/swarm-comic-1.50-1280x720.png"
+    },
+    {
+      "time": 1.4999999999999996,
+      "viewport": [
+        390,
+        460
+      ],
+      "comic": {
+        "x": 95,
+        "y": 325,
+        "width": 200,
+        "height": 88,
+        "viewportWidth": 390,
+        "viewportHeight": 460,
+        "text": "ЗАМЕЧАНИЯ ПО ВСЕМ ФРОНТАМ!",
+        "lines": [
+          "ЗАМЕЧАНИЯ ПО",
+          "ВСЕМ ФРОНТАМ!"
+        ],
+        "kind": "warning",
+        "protected": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 94
+          },
+          {
+            "x": 0,
+            "y": 415,
+            "width": 390,
+            "height": 45
+          },
+          {
+            "x": 139,
+            "y": 171.2,
+            "width": 112,
+            "height": 90
+          },
+          {
+            "x": 241.29689181487674,
+            "y": 147.52019016778917,
+            "width": 116,
+            "height": 76
+          }
+        ]
+      },
+      "labelBox": {
+        "x": 230.78252179801086,
+        "y": 234.397728216675,
+        "width": 138.11000061035156,
+        "height": 20
+      },
+      "labelCollision": false,
+      "file": "qa/swarm-comic-1.50-390x460.png"
+    },
+    {
+      "time": 1.4999999999999996,
+      "viewport": [
+        844,
+        320
+      ],
+      "comic": {
+        "x": 6,
+        "y": 103,
+        "width": 200,
+        "height": 88,
+        "viewportWidth": 844,
+        "viewportHeight": 320,
+        "text": "ЗАМЕЧАНИЯ ПО ВСЕМ ФРОНТАМ!",
+        "lines": [
+          "ЗАМЕЧАНИЯ ПО",
+          "ВСЕМ ФРОНТАМ!"
+        ],
+        "kind": "warning",
+        "protected": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 844,
+            "height": 94
+          },
+          {
+            "x": 0,
+            "y": 275,
+            "width": 844,
+            "height": 45
+          },
+          {
+            "x": 366,
+            "y": 105.39999999999998,
+            "width": 112,
+            "height": 90
+          },
+          {
+            "x": 467.816815176216,
+            "y": 80.52004053085085,
+            "width": 116,
+            "height": 76
+          }
+        ]
+      },
+      "labelBox": {
+        "x": 457.3028623752615,
+        "y": 167.6249264008933,
+        "width": 138.11000061035156,
+        "height": 20
+      },
+      "labelCollision": false,
+      "file": "qa/swarm-comic-1.50-844x320.png"
+    },
+    {
+      "time": 3.4999999999999925,
+      "viewport": [
+        1280,
+        720
+      ],
+      "comic": {
+        "x": 6,
+        "y": 138.6,
+        "width": 264,
+        "height": 98,
+        "viewportWidth": 1280,
+        "viewportHeight": 720,
+        "text": "ЗАМЕЧАНИЯ ПО ВСЕМ ФРОНТАМ!",
+        "lines": [
+          "ЗАМЕЧАНИЯ ПО",
+          "ВСЕМ ФРОНТАМ!"
+        ],
+        "kind": "warning",
+        "protected": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 1280,
+            "height": 129.6
+          },
+          {
+            "x": 0,
+            "y": 604.8,
+            "width": 1280,
+            "height": 115.2
+          },
+          {
+            "x": 584,
+            "y": 293.4,
+            "width": 112,
+            "height": 90
+          },
+          {
+            "x": 805.3133714761398,
+            "y": 243.41128215704265,
+            "width": 116,
+            "height": 76
+          }
+        ]
+      },
+      "labelBox": {
+        "x": 771.6836236686228,
+        "y": 382.41994668192064,
+        "width": 152.4199981689453,
+        "height": 20
+      },
+      "labelCollision": false,
+      "file": "qa/swarm-comic-3.50-1280x720.png"
+    },
+    {
+      "time": 3.4999999999999925,
+      "viewport": [
+        390,
+        460
+      ],
+      "comic": {
+        "x": 95,
+        "y": 325,
+        "width": 200,
+        "height": 88,
+        "viewportWidth": 390,
+        "viewportHeight": 460,
+        "text": "ЗАМЕЧАНИЯ ПО ВСЕМ ФРОНТАМ!",
+        "lines": [
+          "ЗАМЕЧАНИЯ ПО",
+          "ВСЕМ ФРОНТАМ!"
+        ],
+        "kind": "warning",
+        "protected": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 94
+          },
+          {
+            "x": 0,
+            "y": 415,
+            "width": 390,
+            "height": 45
+          },
+          {
+            "x": 139,
+            "y": 171.2,
+            "width": 112,
+            "height": 90
+          },
+          {
+            "x": 236.83471348801493,
+            "y": 155.1961006232607,
+            "width": 116,
+            "height": 76
+          }
+        ]
+      },
+      "labelBox": {
+        "x": 227.76642504664244,
+        "y": 242.38589771777757,
+        "width": 120.4800033569336,
+        "height": 20
+      },
+      "labelCollision": false,
+      "file": "qa/swarm-comic-3.50-390x460.png"
+    },
+    {
+      "time": 3.4999999999999925,
+      "viewport": [
+        844,
+        320
+      ],
+      "comic": {
+        "x": 6,
+        "y": 103,
+        "width": 200,
+        "height": 88,
+        "viewportWidth": 844,
+        "viewportHeight": 320,
+        "text": "ЗАМЕЧАНИЯ ПО ВСЕМ ФРОНТАМ!",
+        "lines": [
+          "ЗАМЕЧАНИЯ ПО",
+          "ВСЕМ ФРОНТАМ!"
+        ],
+        "kind": "warning",
+        "protected": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 844,
+            "height": 94
+          },
+          {
+            "x": 0,
+            "y": 275,
+            "width": 844,
+            "height": 45
+          },
+          {
+            "x": 366,
+            "y": 105.39999999999998,
+            "width": 112,
+            "height": 90
+          },
+          {
+            "x": 463.2503873227288,
+            "y": 88.18279206979673,
+            "width": 116,
+            "height": 76
+          }
+        ]
+      },
+      "labelBox": {
+        "x": 454.15716398957557,
+        "y": 175.51997630307594,
+        "width": 120.4800033569336,
+        "height": 20
+      },
+      "labelCollision": false,
+      "file": "qa/swarm-comic-3.50-844x320.png"
+    },
+    {
+      "time": 5.499999999999986,
+      "viewport": [
+        1280,
+        720
+      ],
+      "comic": {
+        "x": 6,
+        "y": 138.6,
+        "width": 264,
+        "height": 98,
+        "viewportWidth": 1280,
+        "viewportHeight": 720,
+        "text": "ЗАМЕЧАНИЯ ПО ВСЕМ ФРОНТАМ!",
+        "lines": [
+          "ЗАМЕЧАНИЯ ПО",
+          "ВСЕМ ФРОНТАМ!"
+        ],
+        "kind": "warning",
+        "protected": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 1280,
+            "height": 129.6
+          },
+          {
+            "x": 0,
+            "y": 604.8,
+            "width": 1280,
+            "height": 115.2
+          },
+          {
+            "x": 584,
+            "y": 293.4,
+            "width": 112,
+            "height": 90
+          },
+          {
+            "x": 812.6756265558424,
+            "y": 269.56991554792035,
+            "width": 116,
+            "height": 76
+          }
+        ]
+      },
+      "labelBox": {
+        "x": 746.7148589951777,
+        "y": 408.09185648661014,
+        "width": 159.88999938964844,
+        "height": 20
+      },
+      "labelCollision": false,
+      "file": "qa/swarm-comic-5.50-1280x720.png"
+    },
+    {
+      "time": 5.499999999999986,
+      "viewport": [
+        390,
+        460
+      ],
+      "comic": {
+        "x": 95,
+        "y": 325,
+        "width": 200,
+        "height": 88,
+        "viewportWidth": 390,
+        "viewportHeight": 460,
+        "text": "ЗАМЕЧАНИЯ ПО ВСЕМ ФРОНТАМ!",
+        "lines": [
+          "ЗАМЕЧАНИЯ ПО",
+          "ВСЕМ ФРОНТАМ!"
+        ],
+        "kind": "warning",
+        "protected": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 94
+          },
+          {
+            "x": 0,
+            "y": 415,
+            "width": 390,
+            "height": 45
+          },
+          {
+            "x": 139,
+            "y": 171.2,
+            "width": 112,
+            "height": 90
+          },
+          {
+            "x": 240.26214958179162,
+            "y": 166.8778509555918,
+            "width": 116,
+            "height": 76
+          }
+        ]
+      },
+      "labelBox": {
+        "x": 215.61799786005992,
+        "y": 253.92992552890246,
+        "width": 126.22000122070312,
+        "height": 20
+      },
+      "labelCollision": false,
+      "file": "qa/swarm-comic-5.50-390x460.png"
+    },
+    {
+      "time": 5.499999999999986,
+      "viewport": [
+        844,
+        320
+      ],
+      "comic": {
+        "x": 6,
+        "y": 103,
+        "width": 200,
+        "height": 88,
+        "viewportWidth": 844,
+        "viewportHeight": 320,
+        "text": "ЗАМЕЧАНИЯ ПО ВСЕМ ФРОНТАМ!",
+        "lines": [
+          "ЗАМЕЧАНИЯ ПО",
+          "ВСЕМ ФРОНТАМ!"
+        ],
+        "kind": "warning",
+        "protected": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 844,
+            "height": 94
+          },
+          {
+            "x": 0,
+            "y": 275,
+            "width": 844,
+            "height": 45
+          },
+          {
+            "x": 366,
+            "y": 105.39999999999998,
+            "width": 112,
+            "height": 90
+          },
+          {
+            "x": 466.52250069148545,
+            "y": 99.80885135463126,
+            "width": 116,
+            "height": 76
+          }
+        ]
+      },
+      "labelBox": {
+        "x": 441.84993658520483,
+        "y": 186.92971399404902,
+        "width": 126.22000122070312,
+        "height": 20
+      },
+      "labelCollision": false,
+      "file": "qa/swarm-comic-5.50-844x320.png"
+    }
+  ],
+  "actualOverlaps": [
+    {
+      "delay": 0,
+      "time": 20.350000000000126,
+      "packet": 1,
+      "viewport": [
+        390,
+        460
+      ],
+      "text": "ПОМЕХИ СНЯТЫ!",
+      "bounds": {
+        "x": 95,
+        "y": 325,
+        "width": 200,
+        "height": 88,
+        "viewportWidth": 390,
+        "viewportHeight": 460,
+        "text": "ПОМЕХИ СНЯТЫ!",
+        "lines": [
+          "ПОМЕХИ",
+          "СНЯТЫ!"
+        ],
+        "kind": "action",
+        "protected": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 94
+          },
+          {
+            "x": 0,
+            "y": 415,
+            "width": 390,
+            "height": 45
+          },
+          {
+            "x": 139,
+            "y": 171.2,
+            "width": 112,
+            "height": 90
+          },
+          {
+            "x": 35.530053388705426,
+            "y": 234.6040070535222,
+            "width": 116,
+            "height": 76
+          },
+          {
+            "x": 60.09284049801927,
+            "y": 201.3353102484564,
+            "width": 120,
+            "height": 75
+          }
+        ]
+      },
+      "labelBox": {
+        "x": 32.728100316045584,
+        "y": 321.2365442662216,
+        "width": 120.4800033569336,
+        "height": 20
+      },
+      "file": "qa/actual-overlap-1.png"
+    },
+    {
+      "delay": 0,
+      "time": 20.68333333333344,
+      "packet": 1,
+      "viewport": [
+        390,
+        460
+      ],
+      "text": "ПОМЕХИ СНЯТЫ!",
+      "bounds": {
+        "x": 95,
+        "y": 325,
+        "width": 200,
+        "height": 88,
+        "viewportWidth": 390,
+        "viewportHeight": 460,
+        "text": "ПОМЕХИ СНЯТЫ!",
+        "lines": [
+          "ПОМЕХИ",
+          "СНЯТЫ!"
+        ],
+        "kind": "action",
+        "protected": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 94
+          },
+          {
+            "x": 0,
+            "y": 415,
+            "width": 390,
+            "height": 45
+          },
+          {
+            "x": 139,
+            "y": 171.2,
+            "width": 112,
+            "height": 90
+          },
+          {
+            "x": 33.717065838307434,
+            "y": 241.9368363215733,
+            "width": 116,
+            "height": 76
+          },
+          {
+            "x": 60.06382520258302,
+            "y": 201.37918528507203,
+            "width": 120,
+            "height": 75
+          }
+        ]
+      },
+      "labelBox": {
+        "x": 30.87093358415639,
+        "y": 322.94995451830204,
+        "width": 120.4800033569336,
+        "height": 20
+      },
+      "file": "qa/actual-overlap-2.png"
+    },
+    {
+      "delay": 0,
+      "time": 21.016666666666755,
+      "packet": 1,
+      "viewport": [
+        390,
+        460
+      ],
+      "text": "ПОМЕХИ СНЯТЫ!",
+      "bounds": {
+        "x": 120,
+        "y": 331,
+        "width": 150,
+        "height": 82,
+        "viewportWidth": 390,
+        "viewportHeight": 460,
+        "text": "ПОМЕХИ СНЯТЫ!",
+        "lines": [
+          "ПОМЕХИ",
+          "СНЯТЫ!"
+        ],
+        "kind": "action",
+        "protected": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 94
+          },
+          {
+            "x": 0,
+            "y": 415,
+            "width": 390,
+            "height": 45
+          },
+          {
+            "x": 139,
+            "y": 171.2,
+            "width": 112,
+            "height": 90
+          },
+          {
+            "x": 32.02899336817447,
+            "y": 253.71229235206062,
+            "width": 116,
+            "height": 76
+          },
+          {
+            "x": 48.54011654306106,
+            "y": 226.68796243524605,
+            "width": 120,
+            "height": 75
+          }
+        ]
+      },
+      "labelBox": {
+        "x": 29.077012901408082,
+        "y": 324.68913765804007,
+        "width": 120.4800033569336,
+        "height": 20
+      },
+      "file": "qa/actual-overlap-3.png"
+    },
+    {
+      "delay": 0,
+      "time": 35.01666666666596,
+      "packet": 2,
+      "viewport": [
+        390,
+        460
+      ],
+      "text": "ФТ ПРИНЯТО! 2/3",
+      "bounds": {
+        "x": 95,
+        "y": 339,
+        "width": 200,
+        "height": 74,
+        "viewportWidth": 390,
+        "viewportHeight": 460,
+        "text": "ФТ ПРИНЯТО! 2/3",
+        "lines": [
+          "ФТ ПРИНЯТО! 2/3"
+        ],
+        "kind": "success",
+        "protected": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 94
+          },
+          {
+            "x": 0,
+            "y": 415,
+            "width": 390,
+            "height": 45
+          },
+          {
+            "x": 139,
+            "y": 171.2,
+            "width": 112,
+            "height": 90
+          },
+          {
+            "x": 83.20508968721708,
+            "y": 241.68735253220558,
+            "width": 116,
+            "height": 76
+          },
+          {
+            "x": 187.72420093292837,
+            "y": 217.40930423563492,
+            "width": 120,
+            "height": 75
+          }
+        ]
+      },
+      "labelBox": {
+        "x": 212.23467716398062,
+        "y": 327.14985708805403,
+        "width": 138.11000061035156,
+        "height": 20
+      }
+    },
+    {
+      "delay": 0,
+      "time": 35.34999999999928,
+      "packet": 2,
+      "viewport": [
+        390,
+        460
+      ],
+      "text": "ФТ ПРИНЯТО! 2/3",
+      "bounds": {
+        "x": 95,
+        "y": 339,
+        "width": 200,
+        "height": 74,
+        "viewportWidth": 390,
+        "viewportHeight": 460,
+        "text": "ФТ ПРИНЯТО! 2/3",
+        "lines": [
+          "ФТ ПРИНЯТО! 2/3"
+        ],
+        "kind": "success",
+        "protected": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 94
+          },
+          {
+            "x": 0,
+            "y": 415,
+            "width": 390,
+            "height": 45
+          },
+          {
+            "x": 139,
+            "y": 171.2,
+            "width": 112,
+            "height": 90
+          },
+          {
+            "x": 112.9806447092169,
+            "y": 241.23476200903264,
+            "width": 116,
+            "height": 76
+          },
+          {
+            "x": 187.0794774737469,
+            "y": 217.1609155781285,
+            "width": 120,
+            "height": 75
+          }
+        ]
+      },
+      "labelBox": {
+        "x": 210.15974951599713,
+        "y": 326.92203044304273,
+        "width": 138.11000061035156,
+        "height": 20
+      }
+    },
+    {
+      "delay": 0,
+      "time": 35.68333333333259,
+      "packet": 2,
+      "viewport": [
+        390,
+        460
+      ],
+      "text": "ФТ ПРИНЯТО! 2/3",
+      "bounds": {
+        "x": 95,
+        "y": 339,
+        "width": 200,
+        "height": 74,
+        "viewportWidth": 390,
+        "viewportHeight": 460,
+        "text": "ФТ ПРИНЯТО! 2/3",
+        "lines": [
+          "ФТ ПРИНЯТО! 2/3"
+        ],
+        "kind": "success",
+        "protected": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 94
+          },
+          {
+            "x": 0,
+            "y": 415,
+            "width": 390,
+            "height": 45
+          },
+          {
+            "x": 139,
+            "y": 171.2,
+            "width": 112,
+            "height": 90
+          },
+          {
+            "x": 142.72136450833423,
+            "y": 241.06551881876192,
+            "width": 116,
+            "height": 76
+          },
+          {
+            "x": 187.13494317262123,
+            "y": 217.00572323716455,
+            "width": 120,
+            "height": 75
+          }
+        ]
+      },
+      "labelBox": {
+        "x": 207.94285536567037,
+        "y": 326.9936430322638,
+        "width": 138.11000061035156,
+        "height": 20
+      }
+    },
+    {
+      "delay": 0,
+      "time": 36.016666666665905,
+      "packet": 2,
+      "viewport": [
+        390,
+        460
+      ],
+      "text": "ФТ ПРИНЯТО! 2/3",
+      "bounds": {
+        "x": 95,
+        "y": 339,
+        "width": 200,
+        "height": 74,
+        "viewportWidth": 390,
+        "viewportHeight": 460,
+        "text": "ФТ ПРИНЯТО! 2/3",
+        "lines": [
+          "ФТ ПРИНЯТО! 2/3"
+        ],
+        "kind": "success",
+        "protected": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 94
+          },
+          {
+            "x": 0,
+            "y": 415,
+            "width": 390,
+            "height": 45
+          },
+          {
+            "x": 139,
+            "y": 171.2,
+            "width": 112,
+            "height": 90
+          },
+          {
+            "x": 172.4713115581322,
+            "y": 241.2453345398697,
+            "width": 116,
+            "height": 76
+          },
+          {
+            "x": 187.43960013455083,
+            "y": 217.01701739500788,
+            "width": 120,
+            "height": 75
+          }
+        ]
+      },
+      "labelBox": {
+        "x": 205.60563074257232,
+        "y": 327.3653180916085,
+        "width": 138.11000061035156,
+        "height": 20
+      }
+    },
+    {
+      "delay": 0,
+      "time": 36.34999999999922,
+      "packet": 2,
+      "viewport": [
+        390,
+        460
+      ],
+      "text": "ФТ ПРИНЯТО! 2/3",
+      "bounds": {
+        "x": 95,
+        "y": 339,
+        "width": 200,
+        "height": 74,
+        "viewportWidth": 390,
+        "viewportHeight": 460,
+        "text": "ФТ ПРИНЯТО! 2/3",
+        "lines": [
+          "ФТ ПРИНЯТО! 2/3"
+        ],
+        "kind": "success",
+        "protected": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 94
+          },
+          {
+            "x": 0,
+            "y": 415,
+            "width": 390,
+            "height": 45
+          },
+          {
+            "x": 139,
+            "y": 171.2,
+            "width": 112,
+            "height": 90
+          },
+          {
+            "x": 202.27321091703834,
+            "y": 241.77242237526718,
+            "width": 116,
+            "height": 76
+          },
+          {
+            "x": 187.79585263581998,
+            "y": 217.21968035419934,
+            "width": 120,
+            "height": 75
+          }
+        ]
+      },
+      "labelBox": {
+        "x": 203.17130212276578,
+        "y": 328.0312030399361,
+        "width": 138.11000061035156,
+        "height": 20
+      }
+    },
+    {
+      "delay": 0,
+      "time": 38.349999999999106,
+      "packet": 2,
+      "viewport": [
+        390,
+        460
+      ],
+      "text": "ПРАВКИ ПО СПИРАЛИ!",
+      "bounds": {
+        "x": 95,
+        "y": 325,
+        "width": 200,
+        "height": 88,
+        "viewportWidth": 390,
+        "viewportHeight": 460,
+        "text": "ПРАВКИ ПО СПИРАЛИ!",
+        "lines": [
+          "ПРАВКИ ПО",
+          "СПИРАЛИ!"
+        ],
+        "kind": "warning",
+        "protected": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 94
+          },
+          {
+            "x": 0,
+            "y": 415,
+            "width": 390,
+            "height": 45
+          },
+          {
+            "x": 139,
+            "y": 171.2,
+            "width": 112,
+            "height": 90
+          },
+          {
+            "x": 219.86589702778218,
+            "y": 237.4028848901172,
+            "width": 116,
+            "height": 76
+          },
+          {
+            "x": 207.83788072104988,
+            "y": 187.88311371830608,
+            "width": 120,
+            "height": 75
+          }
+        ]
+      },
+      "labelBox": {
+        "x": 199.97918629054783,
+        "y": 336.69719637790485,
+        "width": 120.4800033569336,
+        "height": 20
+      }
+    },
+    {
+      "delay": 0,
+      "time": 38.68333333333242,
+      "packet": 2,
+      "viewport": [
+        390,
+        460
+      ],
+      "text": "ПРАВКИ ПО СПИРАЛИ!",
+      "bounds": {
+        "x": 95,
+        "y": 325,
+        "width": 200,
+        "height": 88,
+        "viewportWidth": 390,
+        "viewportHeight": 460,
+        "text": "ПРАВКИ ПО СПИРАЛИ!",
+        "lines": [
+          "ПРАВКИ ПО",
+          "СПИРАЛИ!"
+        ],
+        "kind": "warning",
+        "protected": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 94
+          },
+          {
+            "x": 0,
+            "y": 415,
+            "width": 390,
+            "height": 45
+          },
+          {
+            "x": 139,
+            "y": 171.2,
+            "width": 112,
+            "height": 90
+          },
+          {
+            "x": 223.51011935384815,
+            "y": 236.2421042285792,
+            "width": 116,
+            "height": 76
+          },
+          {
+            "x": 207.6200544821985,
+            "y": 185.97496402108507,
+            "width": 120,
+            "height": 75
+          }
+        ]
+      },
+      "labelBox": {
+        "x": 195.25425505435146,
+        "y": 338.6928483490012,
+        "width": 126.22000122070312,
+        "height": 20
+      }
+    },
+    {
+      "delay": 0,
+      "time": 39.016666666665735,
+      "packet": 2,
+      "viewport": [
+        390,
+        460
+      ],
+      "text": "ПРАВКИ ПО СПИРАЛИ!",
+      "bounds": {
+        "x": 95,
+        "y": 325,
+        "width": 200,
+        "height": 88,
+        "viewportWidth": 390,
+        "viewportHeight": 460,
+        "text": "ПРАВКИ ПО СПИРАЛИ!",
+        "lines": [
+          "ПРАВКИ ПО",
+          "СПИРАЛИ!"
+        ],
+        "kind": "warning",
+        "protected": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 94
+          },
+          {
+            "x": 0,
+            "y": 415,
+            "width": 390,
+            "height": 45
+          },
+          {
+            "x": 139,
+            "y": 171.2,
+            "width": 112,
+            "height": 90
+          },
+          {
+            "x": 223.96109100856438,
+            "y": 236.74281340325695,
+            "width": 116,
+            "height": 76
+          },
+          {
+            "x": 242.3883501823874,
+            "y": 170.35386239417147,
+            "width": 120,
+            "height": 75
+          }
+        ]
+      },
+      "labelBox": {
+        "x": 193.57575277642758,
+        "y": 340.6834737049851,
+        "width": 126.22000122070312,
+        "height": 20
+      }
+    },
+    {
+      "delay": 0,
+      "time": 39.34999999999905,
+      "packet": 2,
+      "viewport": [
+        390,
+        460
+      ],
+      "text": "ПРАВКИ ПО СПИРАЛИ!",
+      "bounds": {
+        "x": 120,
+        "y": 331,
+        "width": 150,
+        "height": 82,
+        "viewportWidth": 390,
+        "viewportHeight": 460,
+        "text": "ПРАВКИ ПО СПИРАЛИ!",
+        "lines": [
+          "ПРАВКИ ПО",
+          "СПИРАЛИ!"
+        ],
+        "kind": "warning",
+        "protected": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 94
+          },
+          {
+            "x": 0,
+            "y": 415,
+            "width": 390,
+            "height": 45
+          },
+          {
+            "x": 139,
+            "y": 171.2,
+            "width": 112,
+            "height": 90
+          },
+          {
+            "x": 224.38465299492856,
+            "y": 237.33633007872896,
+            "width": 116,
+            "height": 76
+          },
+          {
+            "x": 141.08548747480305,
+            "y": 254.97329069340265,
+            "width": 120,
+            "height": 75
+          }
+        ]
+      },
+      "labelBox": {
+        "x": 192.03023670027096,
+        "y": 342.6596508774534,
+        "width": 126.22000122070312,
+        "height": 20
+      }
+    },
+    {
+      "delay": 0,
+      "time": 39.683333333332364,
+      "packet": 2,
+      "viewport": [
+        390,
+        460
+      ],
+      "text": "ПРАВКИ ПО СПИРАЛИ!",
+      "bounds": {
+        "x": 120,
+        "y": 331,
+        "width": 150,
+        "height": 82,
+        "viewportWidth": 390,
+        "viewportHeight": 460,
+        "text": "ПРАВКИ ПО СПИРАЛИ!",
+        "lines": [
+          "ПРАВКИ ПО",
+          "СПИРАЛИ!"
+        ],
+        "kind": "warning",
+        "protected": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 94
+          },
+          {
+            "x": 0,
+            "y": 415,
+            "width": 390,
+            "height": 45
+          },
+          {
+            "x": 139,
+            "y": 171.2,
+            "width": 112,
+            "height": 90
+          },
+          {
+            "x": 224.83239791831716,
+            "y": 237.96667899147104,
+            "width": 116,
+            "height": 76
+          },
+          {
+            "x": 145.03115820995623,
+            "y": 254.81067551963451,
+            "width": 120,
+            "height": 75
+          }
+        ]
+      },
+      "labelBox": {
+        "x": 190.636351083612,
+        "y": 344.5739508640832,
+        "width": 126.22000122070312,
+        "height": 20
+      }
+    },
+    {
+      "delay": 0,
+      "time": 47.68333333333191,
+      "packet": 2,
+      "viewport": [
+        390,
+        460
+      ],
+      "text": "ПРАВКИ ПО СПИРАЛИ!",
+      "bounds": {
+        "x": 95,
+        "y": 325,
+        "width": 200,
+        "height": 88,
+        "viewportWidth": 390,
+        "viewportHeight": 460,
+        "text": "ПРАВКИ ПО СПИРАЛИ!",
+        "lines": [
+          "ПРАВКИ ПО",
+          "СПИРАЛИ!"
+        ],
+        "kind": "warning",
+        "protected": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 94
+          },
+          {
+            "x": 0,
+            "y": 415,
+            "width": 390,
+            "height": 45
+          },
+          {
+            "x": 139,
+            "y": 171.2,
+            "width": 112,
+            "height": 90
+          },
+          {
+            "x": 218.26238220225014,
+            "y": 242.1516723705294,
+            "width": 116,
+            "height": 76
+          },
+          {
+            "x": 199.38870199579827,
+            "y": 179.60415430996463,
+            "width": 120,
+            "height": 75
+          }
+        ]
+      },
+      "labelBox": {
+        "x": 211.3654637791982,
+        "y": 329.5402060279548,
+        "width": 126.22000122070312,
+        "height": 20
+      }
+    },
+    {
+      "delay": 0,
+      "time": 48.01666666666522,
+      "packet": 2,
+      "viewport": [
+        390,
+        460
+      ],
+      "text": "ПРАВКИ ПО СПИРАЛИ!",
+      "bounds": {
+        "x": 95,
+        "y": 325,
+        "width": 200,
+        "height": 88,
+        "viewportWidth": 390,
+        "viewportHeight": 460,
+        "text": "ПРАВКИ ПО СПИРАЛИ!",
+        "lines": [
+          "ПРАВКИ ПО",
+          "СПИРАЛИ!"
+        ],
+        "kind": "warning",
+        "protected": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 94
+          },
+          {
+            "x": 0,
+            "y": 415,
+            "width": 390,
+            "height": 45
+          },
+          {
+            "x": 139,
+            "y": 171.2,
+            "width": 112,
+            "height": 90
+          },
+          {
+            "x": 224.59004395815901,
+            "y": 237.91232976620535,
+            "width": 116,
+            "height": 76
+          },
+          {
+            "x": 198.68140872181533,
+            "y": 177.93268753962573,
+            "width": 120,
+            "height": 75
+          }
+        ]
+      },
+      "labelBox": {
+        "x": 212.98667879662736,
+        "y": 328.6488751145071,
+        "width": 126.22000122070312,
+        "height": 20
+      }
+    },
+    {
+      "delay": 0,
+      "time": 48.34999999999854,
+      "packet": 2,
+      "viewport": [
+        390,
+        460
+      ],
+      "text": "ПРАВКИ ПО СПИРАЛИ!",
+      "bounds": {
+        "x": 95,
+        "y": 325,
+        "width": 200,
+        "height": 88,
+        "viewportWidth": 390,
+        "viewportHeight": 460,
+        "text": "ПРАВКИ ПО СПИРАЛИ!",
+        "lines": [
+          "ПРАВКИ ПО",
+          "СПИРАЛИ!"
+        ],
+        "kind": "warning",
+        "protected": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 94
+          },
+          {
+            "x": 0,
+            "y": 415,
+            "width": 390,
+            "height": 45
+          },
+          {
+            "x": 139,
+            "y": 171.2,
+            "width": 112,
+            "height": 90
+          },
+          {
+            "x": 224.89315240057812,
+            "y": 238.058336505981,
+            "width": 116,
+            "height": 76
+          },
+          {
+            "x": 229.824573797171,
+            "y": 157.99374453804546,
+            "width": 120,
+            "height": 75
+          }
+        ]
+      },
+      "labelBox": {
+        "x": 214.6125992480745,
+        "y": 327.9354676895964,
+        "width": 126.22000122070312,
+        "height": 20
+      }
+    },
+    {
+      "delay": 0,
+      "time": 48.68333333333185,
+      "packet": 2,
+      "viewport": [
+        390,
+        460
+      ],
+      "text": "ПРАВКИ ПО СПИРАЛИ!",
+      "bounds": {
+        "x": 95,
+        "y": 325,
+        "width": 200,
+        "height": 88,
+        "viewportWidth": 390,
+        "viewportHeight": 460,
+        "text": "ПРАВКИ ПО СПИРАЛИ!",
+        "lines": [
+          "ПРАВКИ ПО",
+          "СПИРАЛИ!"
+        ],
+        "kind": "warning",
+        "protected": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 94
+          },
+          {
+            "x": 0,
+            "y": 415,
+            "width": 390,
+            "height": 45
+          },
+          {
+            "x": 139,
+            "y": 171.2,
+            "width": 112,
+            "height": 90
+          },
+          {
+            "x": 225.16124431500566,
+            "y": 238.42979907183837,
+            "width": 116,
+            "height": 76
+          },
+          {
+            "x": 227.9042937184915,
+            "y": 155.62448016719154,
+            "width": 120,
+            "height": 75
+          }
+        ]
+      },
+      "labelBox": {
+        "x": 216.09949652161896,
+        "y": 327.5194580533623,
+        "width": 126.22000122070312,
+        "height": 20
+      }
+    },
+    {
+      "delay": 0,
+      "time": 49.01666666666517,
+      "packet": 2,
+      "viewport": [
+        390,
+        460
+      ],
+      "text": "ПРАВКИ ПО СПИРАЛИ!",
+      "bounds": {
+        "x": 95,
+        "y": 325,
+        "width": 200,
+        "height": 88,
+        "viewportWidth": 390,
+        "viewportHeight": 460,
+        "text": "ПРАВКИ ПО СПИРАЛИ!",
+        "lines": [
+          "ПРАВКИ ПО",
+          "СПИРАЛИ!"
+        ],
+        "kind": "warning",
+        "protected": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 94
+          },
+          {
+            "x": 0,
+            "y": 415,
+            "width": 390,
+            "height": 45
+          },
+          {
+            "x": 139,
+            "y": 171.2,
+            "width": 112,
+            "height": 90
+          },
+          {
+            "x": 225.52152947901288,
+            "y": 238.93691192908966,
+            "width": 116,
+            "height": 76
+          }
+        ]
+      },
+      "labelBox": {
+        "x": 217.42538097692545,
+        "y": 327.4133410593261,
+        "width": 126.22000122070312,
+        "height": 20
+      }
+    },
+    {
+      "delay": 0,
+      "time": 49.34999999999848,
+      "packet": 2,
+      "viewport": [
+        390,
+        460
+      ],
+      "text": "ПРАВКИ ПО СПИРАЛИ!",
+      "bounds": {
+        "x": 95,
+        "y": 325,
+        "width": 200,
+        "height": 88,
+        "viewportWidth": 390,
+        "viewportHeight": 460,
+        "text": "ПРАВКИ ПО СПИРАЛИ!",
+        "lines": [
+          "ПРАВКИ ПО",
+          "СПИРАЛИ!"
+        ],
+        "kind": "warning",
+        "protected": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 94
+          },
+          {
+            "x": 0,
+            "y": 415,
+            "width": 390,
+            "height": 45
+          },
+          {
+            "x": 139,
+            "y": 171.2,
+            "width": 112,
+            "height": 90
+          },
+          {
+            "x": 225.9731651862558,
+            "y": 239.57274091929003,
+            "width": 116,
+            "height": 76
+          }
+        ]
+      },
+      "labelBox": {
+        "x": 218.57297769535683,
+        "y": 327.6198224722494,
+        "width": 126.22000122070312,
+        "height": 20
+      }
+    },
+    {
+      "delay": 5,
+      "time": 24.3499999999999,
+      "packet": 1,
+      "viewport": [
+        390,
+        460
+      ],
+      "text": "ОСТОРОЖНО, СОГЛАСОВАТЕЛЬ!",
+      "bounds": {
+        "x": 95,
+        "y": 325,
+        "width": 200,
+        "height": 88,
+        "viewportWidth": 390,
+        "viewportHeight": 460,
+        "text": "ОСТОРОЖНО, СОГЛАСОВАТЕЛЬ!",
+        "lines": [
+          "ОСТОРОЖНО,",
+          "СОГЛАСОВАТЕ…"
+        ],
+        "kind": "warning",
+        "protected": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 94
+          },
+          {
+            "x": 0,
+            "y": 415,
+            "width": 390,
+            "height": 45
+          },
+          {
+            "x": 139,
+            "y": 171.2,
+            "width": 112,
+            "height": 90
+          },
+          {
+            "x": 34.02274200430951,
+            "y": 236.01398216197538,
+            "width": 116,
+            "height": 76
+          },
+          {
+            "x": 48.61980254484757,
+            "y": 228.5003543308111,
+            "width": 120,
+            "height": 75
+          }
+        ]
+      },
+      "labelBox": {
+        "x": 31.248454173640383,
+        "y": 322.6811819898591,
+        "width": 120.4800033569336,
+        "height": 20
+      }
+    },
+    {
+      "delay": 5,
+      "time": 24.683333333333213,
+      "packet": 1,
+      "viewport": [
+        390,
+        460
+      ],
+      "text": "ОСТОРОЖНО, СОГЛАСОВАТЕЛЬ!",
+      "bounds": {
+        "x": 120,
+        "y": 331,
+        "width": 150,
+        "height": 82,
+        "viewportWidth": 390,
+        "viewportHeight": 460,
+        "text": "ОСТОРОЖНО, СОГЛАСОВАТЕЛЬ!",
+        "lines": [
+          "ОСТОРОЖНО,",
+          "СОГЛАСОВА…"
+        ],
+        "kind": "warning",
+        "protected": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 94
+          },
+          {
+            "x": 0,
+            "y": 415,
+            "width": 390,
+            "height": 45
+          },
+          {
+            "x": 139,
+            "y": 171.2,
+            "width": 112,
+            "height": 90
+          },
+          {
+            "x": 32.38094668761258,
+            "y": 253.37512645917053,
+            "width": 116,
+            "height": 76
+          },
+          {
+            "x": 48.56479903708231,
+            "y": 228.46576980570876,
+            "width": 120,
+            "height": 75
+          }
+        ]
+      },
+      "labelBox": {
+        "x": 29.423502031305446,
+        "y": 324.2966689282638,
+        "width": 120.4800033569336,
+        "height": 20
+      }
+    },
+    {
+      "delay": 5,
+      "time": 25.016666666666527,
+      "packet": 1,
+      "viewport": [
+        390,
+        460
+      ],
+      "text": "ОСТОРОЖНО, СОГЛАСОВАТЕЛЬ!",
+      "bounds": {
+        "x": 120,
+        "y": 331,
+        "width": 150,
+        "height": 82,
+        "viewportWidth": 390,
+        "viewportHeight": 460,
+        "text": "ОСТОРОЖНО, СОГЛАСОВАТЕЛЬ!",
+        "lines": [
+          "ОСТОРОЖНО,",
+          "СОГЛАСОВА…"
+        ],
+        "kind": "warning",
+        "protected": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 94
+          },
+          {
+            "x": 0,
+            "y": 415,
+            "width": 390,
+            "height": 45
+          },
+          {
+            "x": 139,
+            "y": 171.2,
+            "width": 112,
+            "height": 90
+          },
+          {
+            "x": 30.64856385170215,
+            "y": 253.99598709040788,
+            "width": 116,
+            "height": 76
+          },
+          {
+            "x": 48.535085395379625,
+            "y": 228.13057374176702,
+            "width": 120,
+            "height": 75
+          }
+        ]
+      },
+      "labelBox": {
+        "x": 24.86514190674336,
+        "y": 326.2994513411385,
+        "width": 126.22000122070312,
+        "height": 20
+      }
+    },
+    {
+      "delay": 5,
+      "time": 34.01666666666602,
+      "packet": 1,
+      "viewport": [
+        390,
+        460
+      ],
+      "text": "ОСТОРОЖНО, СОГЛАСОВАТЕЛЬ!",
+      "bounds": {
+        "x": 95,
+        "y": 325,
+        "width": 200,
+        "height": 88,
+        "viewportWidth": 390,
+        "viewportHeight": 460,
+        "text": "ОСТОРОЖНО, СОГЛАСОВАТЕЛЬ!",
+        "lines": [
+          "ОСТОРОЖНО,",
+          "СОГЛАСОВАТЕ…"
+        ],
+        "kind": "warning",
+        "protected": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 94
+          },
+          {
+            "x": 0,
+            "y": 415,
+            "width": 390,
+            "height": 45
+          },
+          {
+            "x": 139,
+            "y": 171.2,
+            "width": 112,
+            "height": 90
+          },
+          {
+            "x": 46.25597130562265,
+            "y": 243.05254008084745,
+            "width": 116,
+            "height": 76
+          },
+          {
+            "x": 60.24220631224338,
+            "y": 203.50765876974268,
+            "width": 120,
+            "height": 75
+          }
+        ]
+      },
+      "labelBox": {
+        "x": 41.509381090168745,
+        "y": 316.2912163357811,
+        "width": 126.22000122070312,
+        "height": 20
+      }
+    },
+    {
+      "delay": 5,
+      "time": 34.34999999999933,
+      "packet": 1,
+      "viewport": [
+        390,
+        460
+      ],
+      "text": "ОСТОРОЖНО, СОГЛАСОВАТЕЛЬ!",
+      "bounds": {
+        "x": 120,
+        "y": 331,
+        "width": 150,
+        "height": 82,
+        "viewportWidth": 390,
+        "viewportHeight": 460,
+        "text": "ОСТОРОЖНО, СОГЛАСОВАТЕЛЬ!",
+        "lines": [
+          "ОСТОРОЖНО,",
+          "СОГЛАСОВА…"
+        ],
+        "kind": "warning",
+        "protected": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 94
+          },
+          {
+            "x": 0,
+            "y": 415,
+            "width": 390,
+            "height": 45
+          },
+          {
+            "x": 139,
+            "y": 171.2,
+            "width": 112,
+            "height": 90
+          },
+          {
+            "x": 48.05844679055764,
+            "y": 253.67138137689415,
+            "width": 116,
+            "height": 76
+          },
+          {
+            "x": 60.25193541674716,
+            "y": 203.10751893573772,
+            "width": 120,
+            "height": 75
+          }
+        ]
+      },
+      "labelBox": {
+        "x": 43.15780557963903,
+        "y": 315.1489764026587,
+        "width": 126.22000122070312,
+        "height": 20
+      }
+    },
+    {
+      "delay": 5,
+      "time": 34.68333333333265,
+      "packet": 1,
+      "viewport": [
+        390,
+        460
+      ],
+      "text": "ОСТОРОЖНО, СОГЛАСОВАТЕЛЬ!",
+      "bounds": {
+        "x": 120,
+        "y": 331,
+        "width": 150,
+        "height": 82,
+        "viewportWidth": 390,
+        "viewportHeight": 460,
+        "text": "ОСТОРОЖНО, СОГЛАСОВАТЕЛЬ!",
+        "lines": [
+          "ОСТОРОЖНО,",
+          "СОГЛАСОВА…"
+        ],
+        "kind": "warning",
+        "protected": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 94
+          },
+          {
+            "x": 0,
+            "y": 415,
+            "width": 390,
+            "height": 45
+          },
+          {
+            "x": 139,
+            "y": 171.2,
+            "width": 112,
+            "height": 90
+          },
+          {
+            "x": 49.65098444663465,
+            "y": 253.90672041332283,
+            "width": 116,
+            "height": 76
+          }
+        ]
+      },
+      "labelBox": {
+        "x": 44.70913076491988,
+        "y": 314.50016344242607,
+        "width": 126.22000122070312,
+        "height": 20
+      }
+    },
+    {
+      "delay": 5,
+      "time": 35.01666666666596,
+      "packet": 1,
+      "viewport": [
+        390,
+        460
+      ],
+      "text": "ОСТОРОЖНО, СОГЛАСОВАТЕЛЬ!",
+      "bounds": {
+        "x": 120,
+        "y": 331,
+        "width": 150,
+        "height": 82,
+        "viewportWidth": 390,
+        "viewportHeight": 460,
+        "text": "ОСТОРОЖНО, СОГЛАСОВАТЕЛЬ!",
+        "lines": [
+          "ОСТОРОЖНО,",
+          "СОГЛАСОВА…"
+        ],
+        "kind": "warning",
+        "protected": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 94
+          },
+          {
+            "x": 0,
+            "y": 415,
+            "width": 390,
+            "height": 45
+          },
+          {
+            "x": 139,
+            "y": 171.2,
+            "width": 112,
+            "height": 90
+          },
+          {
+            "x": 51.106181238467514,
+            "y": 253.90522686309407,
+            "width": 116,
+            "height": 76
+          },
+          {
+            "x": 48.78120907491359,
+            "y": 223.37201515377194,
+            "width": 120,
+            "height": 75
+          }
+        ]
+      },
+      "labelBox": {
+        "x": 46.12303275790053,
+        "y": 314.16479224604427,
+        "width": 126.22000122070312,
+        "height": 20
+      }
+    },
+    {
+      "delay": 5,
+      "time": 35.34999999999928,
+      "packet": 1,
+      "viewport": [
+        390,
+        460
+      ],
+      "text": "ОСТОРОЖНО, СОГЛАСОВАТЕЛЬ!",
+      "bounds": {
+        "x": 120,
+        "y": 331,
+        "width": 150,
+        "height": 82,
+        "viewportWidth": 390,
+        "viewportHeight": 460,
+        "text": "ОСТОРОЖНО, СОГЛАСОВАТЕЛЬ!",
+        "lines": [
+          "ОСТОРОЖНО,",
+          "СОГЛАСОВА…"
+        ],
+        "kind": "warning",
+        "protected": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 94
+          },
+          {
+            "x": 0,
+            "y": 415,
+            "width": 390,
+            "height": 45
+          },
+          {
+            "x": 139,
+            "y": 171.2,
+            "width": 112,
+            "height": 90
+          },
+          {
+            "x": 52.40749217230035,
+            "y": 253.8994646874081,
+            "width": 116,
+            "height": 76
+          },
+          {
+            "x": 48.807160438344226,
+            "y": 224.02947148896885,
+            "width": 120,
+            "height": 75
+          }
+        ]
+      },
+      "labelBox": {
+        "x": 47.3808861226717,
+        "y": 314.14639182012337,
+        "width": 126.22000122070312,
+        "height": 20
+      }
+    },
+    {
+      "delay": 5,
+      "time": 35.68333333333259,
+      "packet": 1,
+      "viewport": [
+        390,
+        460
+      ],
+      "text": "ОСТОРОЖНО, СОГЛАСОВАТЕЛЬ!",
+      "bounds": {
+        "x": 120,
+        "y": 331,
+        "width": 150,
+        "height": 82,
+        "viewportWidth": 390,
+        "viewportHeight": 460,
+        "text": "ОСТОРОЖНО, СОГЛАСОВАТЕЛЬ!",
+        "lines": [
+          "ОСТОРОЖНО,",
+          "СОГЛАСОВА…"
+        ],
+        "kind": "warning",
+        "protected": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 94
+          },
+          {
+            "x": 0,
+            "y": 415,
+            "width": 390,
+            "height": 45
+          },
+          {
+            "x": 139,
+            "y": 171.2,
+            "width": 112,
+            "height": 90
+          },
+          {
+            "x": 53.538365614070216,
+            "y": 253.8944357205462,
+            "width": 116,
+            "height": 76
+          }
+        ]
+      },
+      "labelBox": {
+        "x": 48.46649739759668,
+        "y": 314.4450961591434,
+        "width": 126.22000122070312,
+        "height": 20
+      }
+    },
+    {
+      "delay": 5,
+      "time": 38.349999999999106,
+      "packet": 2,
+      "viewport": [
+        390,
+        460
+      ],
+      "text": "ФТ ПРИНЯТО! 2/3",
+      "bounds": {
+        "x": 95,
+        "y": 339,
+        "width": 200,
+        "height": 74,
+        "viewportWidth": 390,
+        "viewportHeight": 460,
+        "text": "ФТ ПРИНЯТО! 2/3",
+        "lines": [
+          "ФТ ПРИНЯТО! 2/3"
+        ],
+        "kind": "success",
+        "protected": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 94
+          },
+          {
+            "x": 0,
+            "y": 415,
+            "width": 390,
+            "height": 45
+          },
+          {
+            "x": 139,
+            "y": 171.2,
+            "width": 112,
+            "height": 90
+          },
+          {
+            "x": 68.48509968825857,
+            "y": 241.41473070913156,
+            "width": 116,
+            "height": 76
+          },
+          {
+            "x": 192.1196974684238,
+            "y": 217.50705070401568,
+            "width": 120,
+            "height": 75
+          }
+        ]
+      },
+      "labelBox": {
+        "x": 213.20776450015705,
+        "y": 327.3853913788834,
+        "width": 138.11000061035156,
+        "height": 20
+      }
+    },
+    {
+      "delay": 5,
+      "time": 38.68333333333242,
+      "packet": 2,
+      "viewport": [
+        390,
+        460
+      ],
+      "text": "ФТ ПРИНЯТО! 2/3",
+      "bounds": {
+        "x": 95,
+        "y": 339,
+        "width": 200,
+        "height": 74,
+        "viewportWidth": 390,
+        "viewportHeight": 460,
+        "text": "ФТ ПРИНЯТО! 2/3",
+        "lines": [
+          "ФТ ПРИНЯТО! 2/3"
+        ],
+        "kind": "success",
+        "protected": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 94
+          },
+          {
+            "x": 0,
+            "y": 415,
+            "width": 390,
+            "height": 45
+          },
+          {
+            "x": 139,
+            "y": 171.2,
+            "width": 112,
+            "height": 90
+          },
+          {
+            "x": 98.29620923796242,
+            "y": 241.43626575201898,
+            "width": 116,
+            "height": 76
+          },
+          {
+            "x": 193.95766669155503,
+            "y": 217.27772022558798,
+            "width": 120,
+            "height": 75
+          }
+        ]
+      },
+      "labelBox": {
+        "x": 211.21265447498507,
+        "y": 326.99968334548544,
+        "width": 138.11000061035156,
+        "height": 20
+      }
+    },
+    {
+      "delay": 5,
+      "time": 39.016666666665735,
+      "packet": 2,
+      "viewport": [
+        390,
+        460
+      ],
+      "text": "ФТ ПРИНЯТО! 2/3",
+      "bounds": {
+        "x": 95,
+        "y": 339,
+        "width": 200,
+        "height": 74,
+        "viewportWidth": 390,
+        "viewportHeight": 460,
+        "text": "ФТ ПРИНЯТО! 2/3",
+        "lines": [
+          "ФТ ПРИНЯТО! 2/3"
+        ],
+        "kind": "success",
+        "protected": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 94
+          },
+          {
+            "x": 0,
+            "y": 415,
+            "width": 390,
+            "height": 45
+          },
+          {
+            "x": 139,
+            "y": 171.2,
+            "width": 112,
+            "height": 90
+          },
+          {
+            "x": 128.04827459756456,
+            "y": 241.10671332803236,
+            "width": 116,
+            "height": 76
+          },
+          {
+            "x": 193.83531440048517,
+            "y": 217.06464368867316,
+            "width": 120,
+            "height": 75
+          }
+        ]
+      },
+      "labelBox": {
+        "x": 209.06408815656448,
+        "y": 326.9211697210001,
+        "width": 138.11000061035156,
+        "height": 20
+      }
+    },
+    {
+      "delay": 5,
+      "time": 39.34999999999905,
+      "packet": 2,
+      "viewport": [
+        390,
+        460
+      ],
+      "text": "ФТ ПРИНЯТО! 2/3",
+      "bounds": {
+        "x": 95,
+        "y": 339,
+        "width": 200,
+        "height": 74,
+        "viewportWidth": 390,
+        "viewportHeight": 460,
+        "text": "ФТ ПРИНЯТО! 2/3",
+        "lines": [
+          "ФТ ПРИНЯТО! 2/3"
+        ],
+        "kind": "success",
+        "protected": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 94
+          },
+          {
+            "x": 0,
+            "y": 415,
+            "width": 390,
+            "height": 45
+          },
+          {
+            "x": 139,
+            "y": 171.2,
+            "width": 112,
+            "height": 90
+          },
+          {
+            "x": 157.78834406891923,
+            "y": 241.11185870430882,
+            "width": 116,
+            "height": 76
+          },
+          {
+            "x": 192.78455209087224,
+            "y": 216.990203353042,
+            "width": 120,
+            "height": 75
+          }
+        ]
+      },
+      "labelBox": {
+        "x": 206.7841748245807,
+        "y": 327.14303512467114,
+        "width": 138.11000061035156,
+        "height": 20
+      }
+    },
+    {
+      "delay": 5,
+      "time": 39.683333333332364,
+      "packet": 2,
+      "viewport": [
+        390,
+        460
+      ],
+      "text": "ФТ ПРИНЯТО! 2/3",
+      "bounds": {
+        "x": 95,
+        "y": 339,
+        "width": 200,
+        "height": 74,
+        "viewportWidth": 390,
+        "viewportHeight": 460,
+        "text": "ФТ ПРИНЯТО! 2/3",
+        "lines": [
+          "ФТ ПРИНЯТО! 2/3"
+        ],
+        "kind": "success",
+        "protected": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 94
+          },
+          {
+            "x": 0,
+            "y": 415,
+            "width": 390,
+            "height": 45
+          },
+          {
+            "x": 139,
+            "y": 171.2,
+            "width": 112,
+            "height": 90
+          },
+          {
+            "x": 187.55927786445,
+            "y": 241.46636837359853,
+            "width": 116,
+            "height": 76
+          },
+          {
+            "x": 191.21073498825263,
+            "y": 217.09670931820406,
+            "width": 120,
+            "height": 75
+          }
+        ]
+      },
+      "labelBox": {
+        "x": 204.39535301394534,
+        "y": 327.66297396068677,
+        "width": 138.11000061035156,
+        "height": 20
+      }
+    },
+    {
+      "delay": 5,
+      "time": 40.01666666666568,
+      "packet": 2,
+      "viewport": [
+        390,
+        460
+      ],
+      "text": "ФТ ПРИНЯТО! 2/3",
+      "bounds": {
+        "x": 95,
+        "y": 339,
+        "width": 200,
+        "height": 74,
+        "viewportWidth": 390,
+        "viewportHeight": 460,
+        "text": "ФТ ПРИНЯТО! 2/3",
+        "lines": [
+          "ФТ ПРИНЯТО! 2/3"
+        ],
+        "kind": "success",
+        "protected": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 94
+          },
+          {
+            "x": 0,
+            "y": 415,
+            "width": 390,
+            "height": 45
+          },
+          {
+            "x": 139,
+            "y": 171.2,
+            "width": 112,
+            "height": 90
+          },
+          {
+            "x": 211.68940306234674,
+            "y": 242.1438579595843,
+            "width": 116,
+            "height": 76
+          },
+          {
+            "x": 189.25113688839363,
+            "y": 217.39188826791096,
+            "width": 120,
+            "height": 75
+          }
+        ]
+      },
+      "labelBox": {
+        "x": 202.0315061098447,
+        "y": 328.44838025011353,
+        "width": 138.11000061035156,
+        "height": 20
+      }
+    },
+    {
+      "delay": 5,
+      "time": 41.68333333333225,
+      "packet": 2,
+      "viewport": [
+        390,
+        460
+      ],
+      "text": "ПРАВКИ ПО СПИРАЛИ!",
+      "bounds": {
+        "x": 120,
+        "y": 331,
+        "width": 150,
+        "height": 82,
+        "viewportWidth": 390,
+        "viewportHeight": 460,
+        "text": "ПРАВКИ ПО СПИРАЛИ!",
+        "lines": [
+          "ПРАВКИ ПО",
+          "СПИРАЛИ!"
+        ],
+        "kind": "warning",
+        "protected": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 94
+          },
+          {
+            "x": 0,
+            "y": 415,
+            "width": 390,
+            "height": 45
+          },
+          {
+            "x": 139,
+            "y": 171.2,
+            "width": 112,
+            "height": 90
+          },
+          {
+            "x": 208.5775588919887,
+            "y": 252.7641118060891,
+            "width": 116,
+            "height": 76
+          },
+          {
+            "x": 212.39719449291044,
+            "y": 236.5964233395527,
+            "width": 120,
+            "height": 75
+          }
+        ]
+      },
+      "labelBox": {
+        "x": 201.1526691293176,
+        "y": 335.42740959773425,
+        "width": 120.4800033569336,
+        "height": 20
+      }
+    },
+    {
+      "delay": 5,
+      "time": 51.34999999999837,
+      "packet": 2,
+      "viewport": [
+        390,
+        460
+      ],
+      "text": "ПРАВКИ ПО СПИРАЛИ!",
+      "bounds": {
+        "x": 120,
+        "y": 331,
+        "width": 150,
+        "height": 82,
+        "viewportWidth": 390,
+        "viewportHeight": 460,
+        "text": "ПРАВКИ ПО СПИРАЛИ!",
+        "lines": [
+          "ПРАВКИ ПО",
+          "СПИРАЛИ!"
+        ],
+        "kind": "warning",
+        "protected": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 94
+          },
+          {
+            "x": 0,
+            "y": 415,
+            "width": 390,
+            "height": 45
+          },
+          {
+            "x": 139,
+            "y": 171.2,
+            "width": 112,
+            "height": 90
+          },
+          {
+            "x": 226.52771871988688,
+            "y": 250.19665221919888,
+            "width": 116,
+            "height": 76
+          },
+          {
+            "x": 199.09499021657007,
+            "y": 178.84039543378717,
+            "width": 120,
+            "height": 75
+          }
+        ]
+      },
+      "labelBox": {
+        "x": 212.11202731879592,
+        "y": 328.8950861765456,
+        "width": 126.22000122070312,
+        "height": 20
+      }
+    },
+    {
+      "delay": 5,
+      "time": 51.68333333333168,
+      "packet": 2,
+      "viewport": [
+        390,
+        460
+      ],
+      "text": "ПРАВКИ ПО СПИРАЛИ!",
+      "bounds": {
+        "x": 120,
+        "y": 331,
+        "width": 150,
+        "height": 82,
+        "viewportWidth": 390,
+        "viewportHeight": 460,
+        "text": "ПРАВКИ ПО СПИРАЛИ!",
+        "lines": [
+          "ПРАВКИ ПО",
+          "СПИРАЛИ!"
+        ],
+        "kind": "warning",
+        "protected": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 94
+          },
+          {
+            "x": 0,
+            "y": 415,
+            "width": 390,
+            "height": 45
+          },
+          {
+            "x": 139,
+            "y": 171.2,
+            "width": 112,
+            "height": 90
+          },
+          {
+            "x": 229.01175085845767,
+            "y": 249.72709999651096,
+            "width": 116,
+            "height": 76
+          },
+          {
+            "x": 198.2998328212073,
+            "y": 177.20421431681345,
+            "width": 120,
+            "height": 75
+          }
+        ]
+      },
+      "labelBox": {
+        "x": 213.75791349424583,
+        "y": 328.05723123001815,
+        "width": 126.22000122070312,
+        "height": 20
+      }
+    },
+    {
+      "delay": 5,
+      "time": 52.016666666664996,
+      "packet": 2,
+      "viewport": [
+        1280,
+        720
+      ],
+      "text": "ПРАВКИ ПО СПИРАЛИ!",
+      "bounds": {
+        "x": 521.7620534463206,
+        "y": 498.0283963586503,
+        "width": 264,
+        "height": 98,
+        "viewportWidth": 1280,
+        "viewportHeight": 720,
+        "text": "ПРАВКИ ПО СПИРАЛИ!",
+        "lines": [
+          "ПРАВКИ ПО",
+          "СПИРАЛИ!"
+        ],
+        "kind": "warning",
+        "protected": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 1280,
+            "height": 129.6
+          },
+          {
+            "x": 0,
+            "y": 604.8,
+            "width": 1280,
+            "height": 115.2
+          },
+          {
+            "x": 584,
+            "y": 293.4,
+            "width": 112,
+            "height": 90
+          },
+          {
+            "x": 787.6595839652382,
+            "y": 450.6751208777576,
+            "width": 116,
+            "height": 76
+          },
+          {
+            "x": 759.3095654653056,
+            "y": 249.90250143396548,
+            "width": 120,
+            "height": 75
+          }
+        ]
+      },
+      "labelBox": {
+        "x": 744.6969387119259,
+        "y": 570.406497492337,
+        "width": 159.88999938964844,
+        "height": 20
+      }
+    },
+    {
+      "delay": 5,
+      "time": 52.016666666664996,
+      "packet": 2,
+      "viewport": [
+        390,
+        460
+      ],
+      "text": "ПРАВКИ ПО СПИРАЛИ!",
+      "bounds": {
+        "x": 120,
+        "y": 331,
+        "width": 150,
+        "height": 82,
+        "viewportWidth": 390,
+        "viewportHeight": 460,
+        "text": "ПРАВКИ ПО СПИРАЛИ!",
+        "lines": [
+          "ПРАВКИ ПО",
+          "СПИРАЛИ!"
+        ],
+        "kind": "warning",
+        "protected": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 94
+          },
+          {
+            "x": 0,
+            "y": 415,
+            "width": 390,
+            "height": 45
+          },
+          {
+            "x": 139,
+            "y": 171.2,
+            "width": 112,
+            "height": 90
+          },
+          {
+            "x": 229.89138011258427,
+            "y": 248.59099505550432,
+            "width": 116,
+            "height": 76
+          },
+          {
+            "x": 228.94245489800852,
+            "y": 156.91839221773495,
+            "width": 120,
+            "height": 75
+          }
+        ]
+      },
+      "labelBox": {
+        "x": 215.30347108755313,
+        "y": 327.51900196344263,
+        "width": 126.22000122070312,
+        "height": 20
+      }
+    },
+    {
+      "delay": 5,
+      "time": 52.34999999999831,
+      "packet": 2,
+      "viewport": [
+        1280,
+        720
+      ],
+      "text": "ПРАВКИ ПО СПИРАЛИ!",
+      "bounds": {
+        "x": 521.7199180642053,
+        "y": 498.0808993188025,
+        "width": 264,
+        "height": 98,
+        "viewportWidth": 1280,
+        "viewportHeight": 720,
+        "text": "ПРАВКИ ПО СПИРАЛИ!",
+        "lines": [
+          "ПРАВКИ ПО",
+          "СПИРАЛИ!"
+        ],
+        "kind": "warning",
+        "protected": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 1280,
+            "height": 129.6
+          },
+          {
+            "x": 0,
+            "y": 604.8,
+            "width": 1280,
+            "height": 115.2
+          },
+          {
+            "x": 584,
+            "y": 293.4,
+            "width": 112,
+            "height": 90
+          },
+          {
+            "x": 789.1341984655483,
+            "y": 448.71557134492866,
+            "width": 116,
+            "height": 76
+          },
+          {
+            "x": 755.5481566151274,
+            "y": 245.3766753019919,
+            "width": 120,
+            "height": 75
+          }
+        ]
+      },
+      "labelBox": {
+        "x": 747.8189647125802,
+        "y": 569.9124550686797,
+        "width": 159.88999938964844,
+        "height": 20
+      }
+    },
+    {
+      "delay": 5,
+      "time": 52.34999999999831,
+      "packet": 2,
+      "viewport": [
+        390,
+        460
+      ],
+      "text": "ПРАВКИ ПО СПИРАЛИ!",
+      "bounds": {
+        "x": 95,
+        "y": 325,
+        "width": 200,
+        "height": 88,
+        "viewportWidth": 390,
+        "viewportHeight": 460,
+        "text": "ПРАВКИ ПО СПИРАЛИ!",
+        "lines": [
+          "ПРАВКИ ПО",
+          "СПИРАЛИ!"
+        ],
+        "kind": "warning",
+        "protected": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 94
+          },
+          {
+            "x": 0,
+            "y": 415,
+            "width": 390,
+            "height": 45
+          },
+          {
+            "x": 139,
+            "y": 171.2,
+            "width": 112,
+            "height": 90
+          },
+          {
+            "x": 230.54768587576564,
+            "y": 247.6984304778087,
+            "width": 116,
+            "height": 76
+          },
+          {
+            "x": 226.94815439197612,
+            "y": 154.54623079010898,
+            "width": 120,
+            "height": 75
+          }
+        ]
+      },
+      "labelBox": {
+        "x": 216.70365936206218,
+        "y": 327.28342245304293,
+        "width": 126.22000122070312,
+        "height": 20
+      }
+    },
+    {
+      "delay": 5,
+      "time": 52.683333333331625,
+      "packet": 2,
+      "viewport": [
+        1280,
+        720
+      ],
+      "text": "ПРАВКИ ПО СПИРАЛИ!",
+      "bounds": {
+        "x": 521.6908800137863,
+        "y": 498.11710444037504,
+        "width": 264,
+        "height": 98,
+        "viewportWidth": 1280,
+        "viewportHeight": 720,
+        "text": "ПРАВКИ ПО СПИРАЛИ!",
+        "lines": [
+          "ПРАВКИ ПО",
+          "СПИРАЛИ!"
+        ],
+        "kind": "warning",
+        "protected": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 1280,
+            "height": 129.6
+          },
+          {
+            "x": 0,
+            "y": 604.8,
+            "width": 1280,
+            "height": 115.2
+          },
+          {
+            "x": 584,
+            "y": 293.4,
+            "width": 112,
+            "height": 90
+          },
+          {
+            "x": 790.1504747085252,
+            "y": 447.36352751136644,
+            "width": 116,
+            "height": 76
+          }
+        ]
+      },
+      "labelBox": {
+        "x": 750.571729924318,
+        "y": 570.0930733702572,
+        "width": 159.88999938964844,
+        "height": 20
+      }
+    },
+    {
+      "delay": 5,
+      "time": 52.683333333331625,
+      "packet": 2,
+      "viewport": [
+        390,
+        460
+      ],
+      "text": "ПРАВКИ ПО СПИРАЛИ!",
+      "bounds": {
+        "x": 95,
+        "y": 325,
+        "width": 200,
+        "height": 88,
+        "viewportWidth": 390,
+        "viewportHeight": 460,
+        "text": "ПРАВКИ ПО СПИРАЛИ!",
+        "lines": [
+          "ПРАВКИ ПО",
+          "СПИРАЛИ!"
+        ],
+        "kind": "warning",
+        "protected": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 94
+          },
+          {
+            "x": 0,
+            "y": 415,
+            "width": 390,
+            "height": 45
+          },
+          {
+            "x": 139,
+            "y": 171.2,
+            "width": 112,
+            "height": 90
+          },
+          {
+            "x": 230.99987937699166,
+            "y": 247.0826622945126,
+            "width": 116,
+            "height": 76
+          }
+        ]
+      },
+      "labelBox": {
+        "x": 217.93973432292802,
+        "y": 327.35628262214544,
+        "width": 126.22000122070312,
+        "height": 20
+      }
+    }
+  ],
+  "verification_note": "Wrapper handoffs passed during the combined-module audit. The visual overlaps recorded below are initial findings, resolved by the attached targeted replay and the final comic regression.",
+  "targeted_replay": {
+    "time": 20.350000000000126,
+    "packet": 1,
+    "text": "ПОМЕХИ СНЯТЫ!",
+    "comicBounds": {
+      "x": 6,
+      "y": 103,
+      "width": 119,
+      "height": 82,
+      "viewportWidth": 390,
+      "viewportHeight": 460,
+      "text": "ПОМЕХИ СНЯТЫ!",
+      "lines": [
+        "ПОМЕХИ",
+        "СНЯТЫ!"
+      ],
+      "kind": "action",
+      "protected": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 94
+        },
+        {
+          "x": 0,
+          "y": 415,
+          "width": 390,
+          "height": 45
+        },
+        {
+          "x": 139,
+          "y": 171.2,
+          "width": 112,
+          "height": 90
+        },
+        {
+          "x": 35.530053388705426,
+          "y": 234.6040070535222,
+          "width": 116,
+          "height": 76
+        },
+        {
+          "x": 60.09284049801927,
+          "y": 201.3353102484564,
+          "width": 120,
+          "height": 75
+        },
+        {
+          "x": 43.83140872322875,
+          "y": 221.9631577236543,
+          "width": 98.27338654256727,
+          "height": 98.27338654256727
+        },
+        {
+          "x": 10.96810199451238,
+          "y": 318.2365442662216,
+          "width": 164,
+          "height": 26
+        }
+      ]
+    },
+    "label": {
+      "x": 32.728100316045584,
+      "y": 321.2365442662216,
+      "width": 120.4800033569336,
+      "height": 20
+    },
+    "overlap": false,
+    "file": "qa/actual-overlap-fixed.png"
+  },
+  "visual_issue_resolved": true,
+  "radar_issue_resolved_by": "swarm-verification-1.8.0.json: actual updateArcadeHUD and native radar in both cores"
+}

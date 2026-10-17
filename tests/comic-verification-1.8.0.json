@@ -1,0 +1,1149 @@
+{
+  "module": "citadel-comic-v1.8.0.js",
+  "sha256": "42d23e80d0fb1707bca6deac9fe4411bb031dde37b86f3a0e251e54d14cf27b3",
+  "verification": "Actual engine in Node VM and native Canvas; no browser or physical-device QA",
+  "results": [
+    {
+      "core": "atlas-v1.3.5.js",
+      "passed": 6,
+      "tests": [
+        {
+          "name": "Collecting a real requirement emits one caption and preserves its rewards and save schema",
+          "passed": true
+        },
+        {
+          "name": "Event bursts stay bounded; lifetime expires by simulation or wall clock",
+          "passed": true
+        },
+        {
+          "name": "Pause, cards, visibility and retry discard old captions without replaying them",
+          "passed": true
+        },
+        {
+          "name": "Ground pulse and admin-style emit reassignment retain original event delegation",
+          "passed": true
+        },
+        {
+          "name": "Real composed HUD retains all underlying pixels outside the caption at phone, landscape and DPR2 sizes",
+          "passed": true
+        },
+        {
+          "name": "Every new mission receives custom events; captions are cosmetic and the addon is idempotent",
+          "passed": true
+        }
+      ],
+      "frames": [
+        {
+          "file": "atlas-v1.3.5-flight-390x460.png",
+          "kind": "flight",
+          "bounds": {
+            "x": 6,
+            "y": 103,
+            "width": 119,
+            "height": 82,
+            "viewportWidth": 390,
+            "viewportHeight": 460,
+            "text": "ТЗ НА БОРТУ!",
+            "lines": [
+              "ТЗ НА",
+              "БОРТУ!"
+            ],
+            "kind": "success",
+            "protected": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 390,
+                "height": 94
+              },
+              {
+                "x": 0,
+                "y": 415,
+                "width": 390,
+                "height": 45
+              },
+              {
+                "x": 139,
+                "y": 171.2,
+                "width": 112,
+                "height": 90
+              },
+              {
+                "x": 137,
+                "y": 279.541690468572,
+                "width": 116,
+                "height": 76
+              }
+            ]
+          }
+        },
+        {
+          "file": "atlas-v1.3.5-deck-390x460.png",
+          "kind": "deck",
+          "bounds": {
+            "x": 95,
+            "y": 339,
+            "width": 200,
+            "height": 74,
+            "viewportWidth": 390,
+            "viewportHeight": 460,
+            "text": "ТЗ НА БОРТУ!",
+            "lines": [
+              "ТЗ НА БОРТУ!"
+            ],
+            "kind": "success",
+            "protected": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 390,
+                "height": 94
+              },
+              {
+                "x": 0,
+                "y": 415,
+                "width": 390,
+                "height": 45
+              },
+              {
+                "x": 139,
+                "y": 171.2,
+                "width": 112,
+                "height": 90
+              },
+              {
+                "x": 141.55268376660538,
+                "y": 203.41625380640022,
+                "width": 56,
+                "height": 78
+              }
+            ]
+          }
+        },
+        {
+          "file": "atlas-v1.3.5-mrg-390x460.png",
+          "kind": "mrg",
+          "bounds": {
+            "x": 95,
+            "y": 325,
+            "width": 200,
+            "height": 88,
+            "viewportWidth": 390,
+            "viewportHeight": 460,
+            "text": "СРОЧНЫЕ ПРАВКИ!",
+            "lines": [
+              "СРОЧНЫЕ",
+              "ПРАВКИ!"
+            ],
+            "kind": "warning",
+            "protected": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 390,
+                "height": 94
+              },
+              {
+                "x": 0,
+                "y": 415,
+                "width": 390,
+                "height": 45
+              },
+              {
+                "x": 139,
+                "y": 171.2,
+                "width": 112,
+                "height": 90
+              },
+              {
+                "x": 35.76354642710362,
+                "y": 209.962381579399,
+                "width": 56,
+                "height": 78
+              }
+            ]
+          }
+        },
+        {
+          "file": "atlas-v1.3.5-parallax-390x460.png",
+          "kind": "parallax",
+          "bounds": {
+            "x": 265,
+            "y": 125,
+            "width": 119,
+            "height": 82,
+            "viewportWidth": 390,
+            "viewportHeight": 460,
+            "text": "ТЗ НА БОРТУ!",
+            "lines": [
+              "ТЗ НА",
+              "БОРТУ!"
+            ],
+            "kind": "success",
+            "protected": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 390,
+                "height": 116
+              },
+              {
+                "x": 0,
+                "y": 415,
+                "width": 390,
+                "height": 45
+              },
+              {
+                "x": 139,
+                "y": 171.2,
+                "width": 112,
+                "height": 90
+              },
+              {
+                "x": 137,
+                "y": 292.6545698629608,
+                "width": 116,
+                "height": 76
+              },
+              {
+                "x": 69.21699000372962,
+                "y": 147.23259360771405,
+                "width": 120,
+                "height": 75
+              }
+            ]
+          }
+        },
+        {
+          "file": "atlas-v1.3.5-flight-844x320.png",
+          "kind": "flight",
+          "bounds": {
+            "x": 6,
+            "y": 103,
+            "width": 200,
+            "height": 74,
+            "viewportWidth": 844,
+            "viewportHeight": 320,
+            "text": "ТЗ НА БОРТУ!",
+            "lines": [
+              "ТЗ НА БОРТУ!"
+            ],
+            "kind": "success",
+            "protected": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 844,
+                "height": 94
+              },
+              {
+                "x": 0,
+                "y": 275,
+                "width": 844,
+                "height": 45
+              },
+              {
+                "x": 366,
+                "y": 105.39999999999998,
+                "width": 112,
+                "height": 90
+              },
+              {
+                "x": 364,
+                "y": 183.5072629346588,
+                "width": 116,
+                "height": 76
+              }
+            ]
+          }
+        },
+        {
+          "file": "atlas-v1.3.5-deck-844x320.png",
+          "kind": "deck",
+          "bounds": {
+            "x": 6,
+            "y": 103,
+            "width": 200,
+            "height": 74,
+            "viewportWidth": 844,
+            "viewportHeight": 320,
+            "text": "ТЗ НА БОРТУ!",
+            "lines": [
+              "ТЗ НА БОРТУ!"
+            ],
+            "kind": "success",
+            "protected": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 844,
+                "height": 94
+              },
+              {
+                "x": 0,
+                "y": 275,
+                "width": 844,
+                "height": 45
+              },
+              {
+                "x": 366,
+                "y": 105.39999999999998,
+                "width": 112,
+                "height": 90
+              },
+              {
+                "x": 376.29751914198636,
+                "y": 122.63739395227839,
+                "width": 56,
+                "height": 78
+              }
+            ]
+          }
+        },
+        {
+          "file": "atlas-v1.3.5-mrg-844x320.png",
+          "kind": "mrg",
+          "bounds": {
+            "x": 6,
+            "y": 103,
+            "width": 200,
+            "height": 88,
+            "viewportWidth": 844,
+            "viewportHeight": 320,
+            "text": "СРОЧНЫЕ ПРАВКИ!",
+            "lines": [
+              "СРОЧНЫЕ",
+              "ПРАВКИ!"
+            ],
+            "kind": "warning",
+            "protected": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 844,
+                "height": 94
+              },
+              {
+                "x": 0,
+                "y": 275,
+                "width": 844,
+                "height": 45
+              },
+              {
+                "x": 366,
+                "y": 105.39999999999998,
+                "width": 112,
+                "height": 90
+              },
+              {
+                "x": 228.84765766511293,
+                "y": 150.70953626735778,
+                "width": 56,
+                "height": 78
+              }
+            ]
+          }
+        },
+        {
+          "file": "atlas-v1.3.5-parallax-844x320.png",
+          "kind": "parallax",
+          "bounds": {
+            "x": 6,
+            "y": 125,
+            "width": 200,
+            "height": 74,
+            "viewportWidth": 844,
+            "viewportHeight": 320,
+            "text": "ТЗ НА БОРТУ!",
+            "lines": [
+              "ТЗ НА БОРТУ!"
+            ],
+            "kind": "success",
+            "protected": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 844,
+                "height": 116
+              },
+              {
+                "x": 0,
+                "y": 275,
+                "width": 844,
+                "height": 45
+              },
+              {
+                "x": 366,
+                "y": 105.39999999999998,
+                "width": 112,
+                "height": 90
+              },
+              {
+                "x": 364,
+                "y": 192.6292659916249,
+                "width": 116,
+                "height": 76
+              },
+              {
+                "x": 316.2379060895511,
+                "y": 91.77049990101847,
+                "width": 120,
+                "height": 75
+              }
+            ]
+          }
+        },
+        {
+          "file": "atlas-v1.3.5-flight-1280x720.png",
+          "kind": "flight",
+          "bounds": {
+            "x": 6,
+            "y": 138.6,
+            "width": 264,
+            "height": 79,
+            "viewportWidth": 1280,
+            "viewportHeight": 720,
+            "text": "ТЗ НА БОРТУ!",
+            "lines": [
+              "ТЗ НА БОРТУ!"
+            ],
+            "kind": "success",
+            "protected": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 1280,
+                "height": 129.6
+              },
+              {
+                "x": 0,
+                "y": 604.8,
+                "width": 1280,
+                "height": 115.2
+              },
+              {
+                "x": 584,
+                "y": 293.4,
+                "width": 112,
+                "height": 90
+              },
+              {
+                "x": 582,
+                "y": 457.89134160298227,
+                "width": 116,
+                "height": 76
+              }
+            ]
+          }
+        },
+        {
+          "file": "atlas-v1.3.5-deck-1280x720.png",
+          "kind": "deck",
+          "bounds": {
+            "x": 6,
+            "y": 138.6,
+            "width": 264,
+            "height": 79,
+            "viewportWidth": 1280,
+            "viewportHeight": 720,
+            "text": "ТЗ НА БОРТУ!",
+            "lines": [
+              "ТЗ НА БОРТУ!"
+            ],
+            "kind": "success",
+            "protected": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 1280,
+                "height": 129.6
+              },
+              {
+                "x": 0,
+                "y": 604.8,
+                "width": 1280,
+                "height": 115.2
+              },
+              {
+                "x": 584,
+                "y": 293.4,
+                "width": 112,
+                "height": 90
+              },
+              {
+                "x": 572.1694180694693,
+                "y": 353.4341363926264,
+                "width": 56,
+                "height": 78
+              }
+            ]
+          }
+        },
+        {
+          "file": "atlas-v1.3.5-mrg-1280x720.png",
+          "kind": "mrg",
+          "bounds": {
+            "x": 6,
+            "y": 138.6,
+            "width": 264,
+            "height": 98,
+            "viewportWidth": 1280,
+            "viewportHeight": 720,
+            "text": "СРОЧНЫЕ ПРАВКИ!",
+            "lines": [
+              "СРОЧНЫЕ",
+              "ПРАВКИ!"
+            ],
+            "kind": "warning",
+            "protected": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 1280,
+                "height": 129.6
+              },
+              {
+                "x": 0,
+                "y": 604.8,
+                "width": 1280,
+                "height": 115.2
+              },
+              {
+                "x": 584,
+                "y": 293.4,
+                "width": 112,
+                "height": 90
+              },
+              {
+                "x": 240.40722974650402,
+                "y": 416.596456601555,
+                "width": 56,
+                "height": 78
+              }
+            ]
+          }
+        },
+        {
+          "file": "atlas-v1.3.5-parallax-1280x720.png",
+          "kind": "parallax",
+          "bounds": {
+            "x": 6,
+            "y": 138.6,
+            "width": 264,
+            "height": 79,
+            "viewportWidth": 1280,
+            "viewportHeight": 720,
+            "text": "ТЗ НА БОРТУ!",
+            "lines": [
+              "ТЗ НА БОРТУ!"
+            ],
+            "kind": "success",
+            "protected": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 1280,
+                "height": 129.6
+              },
+              {
+                "x": 0,
+                "y": 604.8,
+                "width": 1280,
+                "height": 115.2
+              },
+              {
+                "x": 584,
+                "y": 293.4,
+                "width": 112,
+                "height": 90
+              },
+              {
+                "x": 582,
+                "y": 478.415848481156,
+                "width": 116,
+                "height": 76
+              },
+              {
+                "x": 477.0352887014899,
+                "y": 250.23362477729154,
+                "width": 120,
+                "height": 75
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "core": "engine-v1.2.1.js",
+      "passed": 6,
+      "tests": [
+        {
+          "name": "Collecting a real requirement emits one caption and preserves its rewards and save schema",
+          "passed": true
+        },
+        {
+          "name": "Event bursts stay bounded; lifetime expires by simulation or wall clock",
+          "passed": true
+        },
+        {
+          "name": "Pause, cards, visibility and retry discard old captions without replaying them",
+          "passed": true
+        },
+        {
+          "name": "Ground pulse and admin-style emit reassignment retain original event delegation",
+          "passed": true
+        },
+        {
+          "name": "Real composed HUD retains all underlying pixels outside the caption at phone, landscape and DPR2 sizes",
+          "passed": true
+        },
+        {
+          "name": "Every new mission receives custom events; captions are cosmetic and the addon is idempotent",
+          "passed": true
+        }
+      ],
+      "frames": [
+        {
+          "file": "engine-v1.2.1-flight-390x460.png",
+          "kind": "flight",
+          "bounds": {
+            "x": 6,
+            "y": 103,
+            "width": 119,
+            "height": 82,
+            "viewportWidth": 390,
+            "viewportHeight": 460,
+            "text": "ТЗ НА БОРТУ!",
+            "lines": [
+              "ТЗ НА",
+              "БОРТУ!"
+            ],
+            "kind": "success",
+            "protected": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 390,
+                "height": 94
+              },
+              {
+                "x": 0,
+                "y": 415,
+                "width": 390,
+                "height": 45
+              },
+              {
+                "x": 139,
+                "y": 171.2,
+                "width": 112,
+                "height": 90
+              },
+              {
+                "x": 137,
+                "y": 279.541690468572,
+                "width": 116,
+                "height": 76
+              }
+            ]
+          }
+        },
+        {
+          "file": "engine-v1.2.1-deck-390x460.png",
+          "kind": "deck",
+          "bounds": {
+            "x": 95,
+            "y": 339,
+            "width": 200,
+            "height": 74,
+            "viewportWidth": 390,
+            "viewportHeight": 460,
+            "text": "ТЗ НА БОРТУ!",
+            "lines": [
+              "ТЗ НА БОРТУ!"
+            ],
+            "kind": "success",
+            "protected": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 390,
+                "height": 94
+              },
+              {
+                "x": 0,
+                "y": 415,
+                "width": 390,
+                "height": 45
+              },
+              {
+                "x": 139,
+                "y": 171.2,
+                "width": 112,
+                "height": 90
+              },
+              {
+                "x": 141.55268376660538,
+                "y": 203.41625380640022,
+                "width": 56,
+                "height": 78
+              }
+            ]
+          }
+        },
+        {
+          "file": "engine-v1.2.1-mrg-390x460.png",
+          "kind": "mrg",
+          "bounds": {
+            "x": 95,
+            "y": 325,
+            "width": 200,
+            "height": 88,
+            "viewportWidth": 390,
+            "viewportHeight": 460,
+            "text": "СРОЧНЫЕ ПРАВКИ!",
+            "lines": [
+              "СРОЧНЫЕ",
+              "ПРАВКИ!"
+            ],
+            "kind": "warning",
+            "protected": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 390,
+                "height": 94
+              },
+              {
+                "x": 0,
+                "y": 415,
+                "width": 390,
+                "height": 45
+              },
+              {
+                "x": 139,
+                "y": 171.2,
+                "width": 112,
+                "height": 90
+              },
+              {
+                "x": 35.76354642710362,
+                "y": 209.962381579399,
+                "width": 56,
+                "height": 78
+              }
+            ]
+          }
+        },
+        {
+          "file": "engine-v1.2.1-parallax-390x460.png",
+          "kind": "parallax",
+          "bounds": {
+            "x": 265,
+            "y": 125,
+            "width": 119,
+            "height": 82,
+            "viewportWidth": 390,
+            "viewportHeight": 460,
+            "text": "ТЗ НА БОРТУ!",
+            "lines": [
+              "ТЗ НА",
+              "БОРТУ!"
+            ],
+            "kind": "success",
+            "protected": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 390,
+                "height": 116
+              },
+              {
+                "x": 0,
+                "y": 415,
+                "width": 390,
+                "height": 45
+              },
+              {
+                "x": 139,
+                "y": 171.2,
+                "width": 112,
+                "height": 90
+              },
+              {
+                "x": 137,
+                "y": 292.6545698629608,
+                "width": 116,
+                "height": 76
+              },
+              {
+                "x": 69.21699000372962,
+                "y": 147.23259360771405,
+                "width": 120,
+                "height": 75
+              }
+            ]
+          }
+        },
+        {
+          "file": "engine-v1.2.1-flight-844x320.png",
+          "kind": "flight",
+          "bounds": {
+            "x": 6,
+            "y": 103,
+            "width": 200,
+            "height": 74,
+            "viewportWidth": 844,
+            "viewportHeight": 320,
+            "text": "ТЗ НА БОРТУ!",
+            "lines": [
+              "ТЗ НА БОРТУ!"
+            ],
+            "kind": "success",
+            "protected": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 844,
+                "height": 94
+              },
+              {
+                "x": 0,
+                "y": 275,
+                "width": 844,
+                "height": 45
+              },
+              {
+                "x": 366,
+                "y": 105.39999999999998,
+                "width": 112,
+                "height": 90
+              },
+              {
+                "x": 364,
+                "y": 183.5072629346588,
+                "width": 116,
+                "height": 76
+              }
+            ]
+          }
+        },
+        {
+          "file": "engine-v1.2.1-deck-844x320.png",
+          "kind": "deck",
+          "bounds": {
+            "x": 6,
+            "y": 103,
+            "width": 200,
+            "height": 74,
+            "viewportWidth": 844,
+            "viewportHeight": 320,
+            "text": "ТЗ НА БОРТУ!",
+            "lines": [
+              "ТЗ НА БОРТУ!"
+            ],
+            "kind": "success",
+            "protected": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 844,
+                "height": 94
+              },
+              {
+                "x": 0,
+                "y": 275,
+                "width": 844,
+                "height": 45
+              },
+              {
+                "x": 366,
+                "y": 105.39999999999998,
+                "width": 112,
+                "height": 90
+              },
+              {
+                "x": 376.29751914198636,
+                "y": 122.63739395227839,
+                "width": 56,
+                "height": 78
+              }
+            ]
+          }
+        },
+        {
+          "file": "engine-v1.2.1-mrg-844x320.png",
+          "kind": "mrg",
+          "bounds": {
+            "x": 6,
+            "y": 103,
+            "width": 200,
+            "height": 88,
+            "viewportWidth": 844,
+            "viewportHeight": 320,
+            "text": "СРОЧНЫЕ ПРАВКИ!",
+            "lines": [
+              "СРОЧНЫЕ",
+              "ПРАВКИ!"
+            ],
+            "kind": "warning",
+            "protected": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 844,
+                "height": 94
+              },
+              {
+                "x": 0,
+                "y": 275,
+                "width": 844,
+                "height": 45
+              },
+              {
+                "x": 366,
+                "y": 105.39999999999998,
+                "width": 112,
+                "height": 90
+              },
+              {
+                "x": 228.84765766511293,
+                "y": 150.70953626735778,
+                "width": 56,
+                "height": 78
+              }
+            ]
+          }
+        },
+        {
+          "file": "engine-v1.2.1-parallax-844x320.png",
+          "kind": "parallax",
+          "bounds": {
+            "x": 6,
+            "y": 125,
+            "width": 200,
+            "height": 74,
+            "viewportWidth": 844,
+            "viewportHeight": 320,
+            "text": "ТЗ НА БОРТУ!",
+            "lines": [
+              "ТЗ НА БОРТУ!"
+            ],
+            "kind": "success",
+            "protected": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 844,
+                "height": 116
+              },
+              {
+                "x": 0,
+                "y": 275,
+                "width": 844,
+                "height": 45
+              },
+              {
+                "x": 366,
+                "y": 105.39999999999998,
+                "width": 112,
+                "height": 90
+              },
+              {
+                "x": 364,
+                "y": 192.6292659916249,
+                "width": 116,
+                "height": 76
+              },
+              {
+                "x": 316.2379060895511,
+                "y": 91.77049990101847,
+                "width": 120,
+                "height": 75
+              }
+            ]
+          }
+        },
+        {
+          "file": "engine-v1.2.1-flight-1280x720.png",
+          "kind": "flight",
+          "bounds": {
+            "x": 6,
+            "y": 138.6,
+            "width": 264,
+            "height": 79,
+            "viewportWidth": 1280,
+            "viewportHeight": 720,
+            "text": "ТЗ НА БОРТУ!",
+            "lines": [
+              "ТЗ НА БОРТУ!"
+            ],
+            "kind": "success",
+            "protected": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 1280,
+                "height": 129.6
+              },
+              {
+                "x": 0,
+                "y": 604.8,
+                "width": 1280,
+                "height": 115.2
+              },
+              {
+                "x": 584,
+                "y": 293.4,
+                "width": 112,
+                "height": 90
+              },
+              {
+                "x": 582,
+                "y": 457.89134160298227,
+                "width": 116,
+                "height": 76
+              }
+            ]
+          }
+        },
+        {
+          "file": "engine-v1.2.1-deck-1280x720.png",
+          "kind": "deck",
+          "bounds": {
+            "x": 6,
+            "y": 138.6,
+            "width": 264,
+            "height": 79,
+            "viewportWidth": 1280,
+            "viewportHeight": 720,
+            "text": "ТЗ НА БОРТУ!",
+            "lines": [
+              "ТЗ НА БОРТУ!"
+            ],
+            "kind": "success",
+            "protected": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 1280,
+                "height": 129.6
+              },
+              {
+                "x": 0,
+                "y": 604.8,
+                "width": 1280,
+                "height": 115.2
+              },
+              {
+                "x": 584,
+                "y": 293.4,
+                "width": 112,
+                "height": 90
+              },
+              {
+                "x": 572.1694180694693,
+                "y": 353.4341363926264,
+                "width": 56,
+                "height": 78
+              }
+            ]
+          }
+        },
+        {
+          "file": "engine-v1.2.1-mrg-1280x720.png",
+          "kind": "mrg",
+          "bounds": {
+            "x": 6,
+            "y": 138.6,
+            "width": 264,
+            "height": 98,
+            "viewportWidth": 1280,
+            "viewportHeight": 720,
+            "text": "СРОЧНЫЕ ПРАВКИ!",
+            "lines": [
+              "СРОЧНЫЕ",
+              "ПРАВКИ!"
+            ],
+            "kind": "warning",
+            "protected": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 1280,
+                "height": 129.6
+              },
+              {
+                "x": 0,
+                "y": 604.8,
+                "width": 1280,
+                "height": 115.2
+              },
+              {
+                "x": 584,
+                "y": 293.4,
+                "width": 112,
+                "height": 90
+              },
+              {
+                "x": 240.40722974650402,
+                "y": 416.596456601555,
+                "width": 56,
+                "height": 78
+              }
+            ]
+          }
+        },
+        {
+          "file": "engine-v1.2.1-parallax-1280x720.png",
+          "kind": "parallax",
+          "bounds": {
+            "x": 6,
+            "y": 138.6,
+            "width": 264,
+            "height": 79,
+            "viewportWidth": 1280,
+            "viewportHeight": 720,
+            "text": "ТЗ НА БОРТУ!",
+            "lines": [
+              "ТЗ НА БОРТУ!"
+            ],
+            "kind": "success",
+            "protected": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 1280,
+                "height": 129.6
+              },
+              {
+                "x": 0,
+                "y": 604.8,
+                "width": 1280,
+                "height": 115.2
+              },
+              {
+                "x": 584,
+                "y": 293.4,
+                "width": 112,
+                "height": 90
+              },
+              {
+                "x": 582,
+                "y": 478.415848481156,
+                "width": 116,
+                "height": 76
+              },
+              {
+                "x": 477.0352887014899,
+                "y": 250.23362477729154,
+                "width": 120,
+                "height": 75
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
