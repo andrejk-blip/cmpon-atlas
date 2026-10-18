@@ -1,0 +1,39 @@
+name: Prepare Academy UI 1.9.2
+on:
+  push:
+    branches: [release/prepare-academy-ui192]
+    paths: [.github/workflows/prepare-academy-ui192.yml]
+permissions:
+  contents: write
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: release/prepare-academy-ui192
+      - name: Apply the two reviewed includes and verify exact source bytes
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib
+          p = Path('academy.html')
+          old = p.read_bytes()
+          assert hashlib.sha256(old).hexdigest() == 'c86a2b8b681080749ae873ca350fe1441921c7ee2b2e65ae5fd9885eada02564', 'Unexpected Academy source; do not overwrite'
+          s = old.decode('utf-8')
+          assert s.count('</head>') == 1 and s.count('</body></html>') == 1
+          s = s.replace('</head>', '<link rel="stylesheet" href="./assets/citadel-ui-fixes-v1.9.2.css">\n</head>')
+          s = s.replace('</body></html>', '<script src="./assets/citadel-ui-fixes-v1.9.2.js"></script>\n</body></html>')
+          new = s.encode('utf-8')
+          assert hashlib.sha256(new).hexdigest() == 'c3c9ecd8fc9bc297de94e38ced09d9e48e94334ab7f125c03c96d8810dc7dafd', 'Output differs from tested upload package'
+          p.write_bytes(new)
+          print('Verified Academy 1.9.2: exact match with prepared package')
+          PY
+      - name: Store prepared source on the isolated branch only
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- academy.html
+          git commit -m 'Prepare tested Academy SVG includes for 1.9.2'
+          git push origin HEAD:release/prepare-academy-ui192
