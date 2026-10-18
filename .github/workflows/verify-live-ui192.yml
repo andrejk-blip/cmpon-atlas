@@ -1,0 +1,47 @@
+name: Verify live Citadel 1.9.2
+on:
+  push:
+    branches: [release/prepare-academy-ui192]
+    paths: [.github/workflows/verify-live-ui192.yml]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Verify all six public release files by HTTP and SHA-256
+        run: |
+          python3 - <<'PY'
+          import hashlib, json, time, urllib.request
+          expected = {
+            'index.html':'7c2f516b01ebbb1a05ace8e7e530b269960f1713a965f5aac5b27c91efbcd7e9',
+            'atlas.html':'b046712ba427c8543f18478a3bc83f70db19563d3be90a618e41d53e88a2ac22',
+            'academy.html':'c3c9ecd8fc9bc297de94e38ced09d9e48e94334ab7f125c03c96d8810dc7dafd',
+            'version.json':'bc951d5d2201de64649b3eca68a34ba6dfd914a0683b7f83ae7bfa806feb912f',
+            'assets/citadel-ui-fixes-v1.9.2.js':'364fc8c1e412eb9b73f826845e23646f8906d37c7027aa1f2ae93ba0548cbf16',
+            'assets/citadel-ui-fixes-v1.9.2.css':'70f57cd512d57dcc378b4a44159ce690ae4fa064c9ccb9ba163cd1469f230bbe'
+          }
+          rows=[]
+          for path, sha in expected.items():
+            error=None
+            for attempt in range(12):
+              url='https://andrejk-blip.github.io/cmpon-atlas/'+path+'?release=b95eb1bdbab6a7e003e2136ca02ba174b2caf3e0&check='+str(attempt)
+              try:
+                req=urllib.request.Request(url,headers={'Cache-Control':'no-cache','User-Agent':'Citadel-release-verification/1.9.2'})
+                with urllib.request.urlopen(req,timeout=20) as r:
+                  status=r.status;data=r.read()
+                actual=hashlib.sha256(data).hexdigest()
+                assert status==200 and actual==sha, (path,status,actual,sha)
+                if path=='version.json':assert json.loads(data)['version']=='1.9.2'
+                rows.append({'file':path,'http':status,'bytes':len(data),'sha256':actual,'pass':True})
+                print(json.dumps(rows[-1],ensure_ascii=False))
+                error=None
+                break
+              except Exception as exc:
+                error=exc
+                if attempt<11:time.sleep(3)
+            if error is not None:raise error
+          assert len(rows)==6
+          print('VERIFIED: all six deployed public files exactly match Citadel 1.9.2')
+          PY
