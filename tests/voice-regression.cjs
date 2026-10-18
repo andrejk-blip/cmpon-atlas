@@ -4,7 +4,7 @@
 // text and lifecycle contracts; it cannot verify an installed OS voice's timbre.
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
 const {createHarness}=require('./mrg-regression.cjs');
-const root=path.resolve(__dirname,'..'),modulePath=path.join(root,'assets/citadel-voice-v1.7.0.js');
+const root=path.resolve(__dirname,'..'),modulePath=path.join(root,'assets/citadel-voice-v1.8.2.js');
 const source=fs.readFileSync(modulePath,'utf8'),bridge=fs.readFileSync(path.join(root,'assets/citadel-academy-bridge-v1.7.0.js'),'utf8');
 const localVoices=[
   {name:'Milena',lang:'ru-RU',localService:true},
@@ -129,15 +129,17 @@ async function main(argv=process.argv.slice(2)) {
       assert(!bridge.includes('new SpeechSynthesisUtterance'),'No competing bridge speech queue');
       api.dispose();
     });
-    await test('Russian lesson rotation, male-name commander preference, actual onstart and radio ordering',async()=>{
+    await test('one stable Russian voice for lessons and commander, actual onstart and fallback radio ordering',async()=>{
       const h=setup(core);h.e.status='paused';
       const first=await h.api.previewLesson('Первый разбор.');assert.equal(first.ok,true);assert.equal(h.spoken[0].lang,'ru-RU');
       h.end();const second=await h.api.previewLesson('Второй разбор.');assert.equal(second.ok,true);
-      assert.notEqual(h.spoken[0].voice.name,h.spoken[1].voice.name);h.end();
+      assert.equal(h.spoken[0].voice.name,'Microsoft Pavel Desktop');assert.equal(h.spoken[0].voice.name,h.spoken[1].voice.name);
+      assert.equal(h.spoken[0].rate,1);assert.equal(h.spoken[0].pitch,1);assert.equal(h.spoken[1].pitch,1);h.end();
       const p=h.api.previewCommander('Проверка связи.');await flush();assert.equal(h.radio.at(-1),'radio-in');
       h.advance(109);assert.equal(h.spoken.length,2);h.advance(1);
       assert.equal((await p).started,true);assert.equal(h.spoken.at(-1).voice.name,'Microsoft Pavel Desktop');
-      assert.equal(h.api.status().phase,'speaking');assert(h.spoken.at(-1).rate>1);
+      assert.equal(h.api.status().phase,'speaking');assert.equal(h.spoken.at(-1).rate,1);assert.equal(h.spoken.at(-1).pitch,1);
+      assert.equal(h.api.status().source,'system');
       h.end();assert.equal(h.radio.at(-1),'radio-out');await flush();h.advance(80);assert.equal(h.api.status().busy,false);
       assert.equal(h.counts().effectStops,0);h.api.dispose();
     });
@@ -225,7 +227,7 @@ async function main(argv=process.argv.slice(2)) {
       for(let i=0;i<80*60;i++)e.step(1/60,{});h.advance(10000);assert.equal(h.spoken.length,count);
       h.api.dispose();
     });
-    report.push({core:path.basename(core),version:'1.7.0',tests});
+    report.push({core:path.basename(core),version:'1.8.2',tests});
   }
   console.log(JSON.stringify(report,null,2));
   if(report.some(x=>x.tests.some(t=>!t.ok)))process.exitCode=1;
