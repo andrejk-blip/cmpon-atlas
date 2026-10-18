@@ -6,7 +6,8 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),crypto=require('node:crypto');
 const {createHarness}=require('./mrg-regression.cjs');
 const root=path.resolve(__dirname,'..');
-const voicePath=path.join(root,'assets/citadel-voice-v1.8.2.js');
+const runtimeVersion=JSON.parse(fs.readFileSync(path.join(root,'version.json'),'utf8')).voice_module_version;
+const voicePath=path.join(root,`assets/citadel-voice-v${runtimeVersion}.js`);
 const voiceSource=fs.readFileSync(voicePath,'utf8');
 const defaultPackPath=path.join(root,'assets/citadel-voice-pack-v1.8.2.js');
 
@@ -558,9 +559,9 @@ async function main(argv=process.argv.slice(2)) {
       h.api.dispose();assert.equal(h.api.status().disposed,true);assert.equal(h.api.status().busy,false);assert.equal(h.audio.bus.gain.value,1);
       assert.equal(h.arcade.audio.closeCalls,0);assert.equal((await h.api.previewLesson()).reason,'disposed');
     });
-    reports.push({core:path.basename(core),version:'1.8.2',tests});
+    reports.push({core:path.basename(core),version:runtimeVersion,tests});
   }
-  const report={kind:'prepared-voice-lifecycle',version:'1.8.2',runtimeSha256:crypto.createHash('sha256').update(voiceSource).digest('hex'),packSha256:crypto.createHash('sha256').update(fs.readFileSync(options.packPath)).digest('hex'),elapsedMs:Date.now()-startedAt,reports};
+  const report={kind:'prepared-voice-lifecycle',version:runtimeVersion,runtimeSha256:crypto.createHash('sha256').update(voiceSource).digest('hex'),packSha256:crypto.createHash('sha256').update(fs.readFileSync(options.packPath)).digest('hex'),elapsedMs:Date.now()-startedAt,reports};
   if(options.report)fs.writeFileSync(options.report,JSON.stringify(report,null,2)+'\n');
   console.log(JSON.stringify(report,null,2));if(reports.some(x=>x.tests.some(t=>!t.ok)))process.exitCode=1;return report;
 }

@@ -1,6 +1,6 @@
 {
   "product": "ЦМПОН — атлас требований",
-  "version": "1.8.2",
+  "version": "1.9.0",
   "released_on": "2026-10-18",
   "requirements_edition": "2.0.2 (ВСТЕ)",
   "requirements_as_of": "2026-10-14",
@@ -10,7 +10,7 @@
   "finale_save_schema": "citadel-finale-v1",
   "analytics_module_version": "0.1.0",
   "tournament_module_version": "1.1.0",
-  "index_sha256": "0f487a0c0887a0d68ea62ef7ea68fd27e463891c183a8d3fbc08f9150a765750",
+  "index_sha256": "659d59e3ea80ee724757a7c6242aa93336a70b43149274f388b96b79d14ec71d",
   "offline_sha256": "754ccde3777ace0150d9b062461301ea9542f893c4f158ebc0ae7e07a3e8a2c3",
   "core_assets_version": "1.3.5",
   "soundtrack_module_version": "1.4.2",
@@ -21,7 +21,7 @@
   "academy_cards": 36,
   "academy_campaign_questions": 23,
   "effects_module_version": "1.7.0",
-  "atlas_sha256": "8bb4854748217d397a4e08a93822dae511b49955809e0b913305d86c88cdfd34",
+  "atlas_sha256": "5f3834b17fd01c4bddee673207d204b7ca8cd511fe8feb2bcdf0bbe410eb6ef5",
   "music_sha256": "11ba6f8ee1d80e7313e7c7c14d1133cf55f9f124ca29eb8d3ed54aba22aafeb0",
   "effects_sha256": "652bd931cd5ad21401375859a96588249d80f6cea1ae859f7a0852e1fbcace6f",
   "mrg_module_version": "1.7.0",
@@ -47,7 +47,7 @@
     464
   ],
   "mrg_manual_aim": true,
-  "voice_module_version": "1.8.2",
+  "voice_module_version": "1.9.0",
   "field_ui_module_version": "1.7.0",
   "mrg_batch_sizes": [
     [
@@ -68,7 +68,7 @@
     "pincer"
   ],
   "mrg_viewport_module_version": "1.6.0",
-  "voice_sha256": "0092baa5a60687ba2a9e72b42e42bd258961e6ef82b6c2ba03a2d256af6ed963",
+  "voice_sha256": "8cad3194303c1be0f77ad177b8c328e72940a9db23a3e32e5c2912920386d286",
   "field_ui_sha256": "fb2b2545d45aaad74c1009bf2bd3b775ca6b897c9baf027f2c7cff5de0b02bed",
   "academy_bridge_sha256": "cc33928c4d0b0271bc5205211ee815d56cba9243838053e4d460edee68ba2033",
   "compat_module_version": "1.7.1",
@@ -81,10 +81,10 @@
   "aim_sha256": "6c0251b56e8a798597cc0a3b26bec950739665f4d5fed9980db091ed04b25058",
   "flight_ui_module_version": "1.7.1",
   "flight_ui_sha256": "b5e7d58a269a75fb71aba8ccb286e84714e17ef016532086dc8d098443acae91",
-  "pursuit_module_version": "1.8.0",
-  "swarm_module_version": "1.8.0",
+  "pursuit_module_version": "1.9.0",
+  "swarm_module_version": "1.9.0",
   "parallax_module_version": "1.8.0",
-  "comic_module_version": "1.8.0",
+  "comic_module_version": "1.9.0",
   "pursuit_level": 4,
   "swarm_level": 7,
   "parallax_tentacle_patterns": [
@@ -93,15 +93,40 @@
     "pincer"
   ],
   "comic_duration_seconds": 1.85,
-  "pursuit_sha256": "424e1795c595d49a99246f083d7508d10b3b02fa71d709333221799b7937f445",
-  "swarm_sha256": "eeeabd8916a6d6d36b3a64d1286c94910448d8d1aaad3b16a130f1c573a53493",
+  "pursuit_sha256": "7e592675d274bc1569cec4585d7f9cd5f89c0499f28bfea05d97ed856e00eb1f",
+  "swarm_sha256": "f7d4f101894d7d606d839f6d97de309ebbcdd1156129be78f0468732eb629581",
   "parallax_sha256": "abbfdb4d46c331cb3c752f27932b2d33349fe6ec761b2e680af5120e0ab34ea8",
-  "comic_sha256": "42d23e80d0fb1707bca6deac9fe4411bb031dde37b86f3a0e251e54d14cf27b3",
+  "comic_sha256": "a1f4b9e9b30759b9594f23ec24c7a935eaa774637185a2f51c43f96da2aa77d1",
   "voice_pack_module_version": "1.8.2",
   "voice_delivery": "prepared-mp3-with-stable-system-fallback",
   "voice_clips": 110,
   "voice_commander_clips": 8,
   "voice_lesson_clips": 99,
   "voice_pack_sha256": "e0a0ac89a7ad348a7b107fef9c067b12227d33b7c1427d3eb7cec5472949fbfe",
-  "voice_manifest_sha256": "0a35e4d9f335b25ce24228a1b7a1015ae6284448881fe7d33838b815438f8a94"
+  "voice_manifest_sha256": "0a35e4d9f335b25ce24228a1b7a1015ae6284448881fe7d33838b815438f8a94",
+  "decks_module_version": "1.9.0",
+  "interface_module_version": "1.9.0",
+  "story_module_version": "1.9.0",
+  "art_module_version": "1.9.0",
+  "pursuit_mechanic": "continuous-asteroid-chase-auto-link",
+  "pursuit_target_percent": 100,
+  "swarm_mechanic": "formation-shooter",
+  "swarm_waves": 3,
+  "deck_combat_levels": [
+    2,
+    5,
+    8,
+    11,
+    13
+  ],
+  "prologue_pages": 4,
+  "captain_moods": [
+    "calm",
+    "worried",
+    "crisis"
+  ],
+  "interface_sha256": "1c86ce29791480920e08b5dddc42dadcc1e4bab0916e8da51c16aedb0b1b1291",
+  "story_sha256": "85f5c018a42f09b20eb7a62a87f4251a02f219027f1f4799e07c774ff43d2c13",
+  "interface_css_sha256": "4762f841eb50967fe36b1520eb48896319b49903751c1262a95525552027af9a",
+  "decks_sha256": "eba0a5586db0c019240e10859a9a0b8222d371f1449819c8bf9a256186c58296"
 }

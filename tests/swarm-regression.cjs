@@ -1,319 +1,353 @@
 #!/usr/bin/env node
 'use strict';
-// Real shipping cores and addon wrappers. The full mission controller issues
-// only the same flight input fields as keyboard and touch; it never changes HP,
-// cooldowns, targets, progress, enemies, or rewards during its playthrough.
+// Galaga-inspired level 7. Actual frozen game cores, ordinary arcadeInput,
+// deterministic saves and native Canvas. No browser, network or audio tests.
 const fs = require('node:fs'), path = require('node:path'), vm = require('node:vm');
 const assert = require('node:assert/strict'), crypto = require('node:crypto');
 const { createHarness } = require('./mrg-regression.cjs');
-const root = path.resolve(__dirname, '..');
-const patch = path.join(root, 'assets/citadel-swarm-v1.8.0.js');
-const args = process.argv.slice(2), cores = [];
-let renderDir = null;
-for (let i = 0; i < args.length; i++) {
-  if (args[i] === '--render') renderDir = path.resolve(args[++i]);
-  else if (args[i] === '--core') cores.push(path.resolve(args[++i]));
-  else throw Error('Unknown option: ' + args[i]);
-}
-if (!cores.length) cores.push(path.join(root, 'assets/atlas-v1.3.5.js'));
-const clone = v => JSON.parse(JSON.stringify(v));
-const near = (a, b, message, tolerance = 1e-7) => assert(Math.abs(a - b) < tolerance, `${message}: ${a} / ${b}`);
-const limit = n => Math.max(-1, Math.min(1, n));
+const root = path.resolve(__dirname, '..'), asset = file => path.join(root, 'assets', file);
+const patch = asset('citadel-swarm-v1.9.0.js');
+const clone = value => JSON.parse(JSON.stringify(value));
+const limit = value => Math.max(-1, Math.min(1, value));
+const sha = file => crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex');
 function canvasFactory() {
-  return require(require.resolve('@napi-rs/canvas', {
-    paths: [process.env.CODEX_PRIMARY_RUNTIME_NODE_MODULES, process.cwd()].filter(Boolean),
-  })).createCanvas;
+  return require(require.resolve('@napi-rs/canvas', { paths: [process.env.CODEX_PRIMARY_RUNTIME_NODE_MODULES, process.cwd()].filter(Boolean) })).createCanvas;
 }
-function harness(core, render = false) {
-  const h = createHarness(core, path.join(root, 'assets/citadel-mrg-v1.7.0.js'), null, render ? canvasFactory() : null);
+function harness(core, render = false, snapshot = true) {
+  const h = createHarness(core, asset('citadel-mrg-v1.7.0.js'), asset('citadel-mrg-view-v1.7.0.js'), render ? canvasFactory() : null);
   h.context.location = { protocol: 'file:', href: 'file:///test/citadel.html' };
-  // The private admin engine deliberately has no tournament client or remote
-  // saves. Exercise its data with the exact public snapshot functions in an
-  // isolated adapter; no tournament API, credentials, or storage is introduced.
-  if (!h.cupPack) {
-    const publicLines = fs.readFileSync(path.join(root, 'assets/atlas-v1.3.5.js'), 'utf8').split('\n');
-    const declarations = publicLines.filter(line => /^(const CUP_(LEVELS|ENGINE_KEYS|OMIT)=|function cup(Pack|Unpack)\(|function arcadeSeed\()/.test(line));
+  if (!h.cupPack && snapshot) {
+    const declarations = fs.readFileSync(asset('atlas-v1.3.5.js'), 'utf8').split('\n').filter(line => /^(const CUP_(LEVELS|ENGINE_KEYS|OMIT)=|function cup(Pack|Unpack)\(|function arcadeSeed\()/.test(line));
     assert.equal(declarations.length, 6);
     vm.runInContext('const CUP={clock:0,startClock:0,startScore:0,progress:0};\n' + declarations.join('\n'), h.context);
-    h.snapshotAdapter = 'Exact public CUP snapshot functions and identical seeded RNG with getState over the admin engine, isolated in memory';
+    h.snapshotAdapter = 'Exact public CUP snapshot functions and seeded RNG over the frozen private engine, isolated in memory.';
   }
-  for (const file of ['citadel-flight-v1.7.1.js', 'citadel-aim-v1.7.1.js', 'citadel-flight-view-v1.7.1.js',
-    'citadel-pursuit-v1.8.0.js', 'citadel-swarm-v1.8.0.js']) {
-    const filename = path.join(root, 'assets', file);
-    if (fs.existsSync(filename)) vm.runInContext(fs.readFileSync(filename, 'utf8'), h.context, { filename: file });
+  for (const file of ['citadel-flight-v1.8.1.js', 'citadel-aim-v1.7.1.js', 'citadel-flight-view-v1.7.1.js',
+    'citadel-pursuit-v1.8.0.js', 'citadel-swarm-v1.9.0.js', 'citadel-parallax-v1.8.0.js', 'citadel-comic-v1.8.0.js']) {
+    vm.runInContext(fs.readFileSync(asset(file), 'utf8'), h.context, { filename: file });
   }
   vm.runInContext(`globalThis.swarmQA = {
-    api: CITADEL_SWARM, pack: cupPack, unpack: cupUnpack, keys: CUP_ENGINE_KEYS, levels: CUP_LEVELS,
-    lessonCase: citadelLessonCase, scene: spaceScene, camera: spaceCamera,
-    flightHUD: drawFlightHUD, mobileHUD: drawMobileGameHUD, campaignHUD: drawCampaignFlightHUD,
-    clarityHUD: drawClarityHUD, overlay: arcadeOverlayHTML, update: updateArcadeHUD,
-    action: arcadeAction, mobileAction, input: arcadeInput, retry: citadelRetry,
-  };`, h.context);
-  h.s = h.context.swarmQA;
+    api:CITADEL_SWARM,pack:typeof cupPack==='function'?cupPack:null,unpack:typeof cupUnpack==='function'?cupUnpack:null,
+    keys:typeof CUP_ENGINE_KEYS!=='undefined'?CUP_ENGINE_KEYS:[],levels:typeof CUP_LEVELS!=='undefined'?CUP_LEVELS:[],
+    lessonCase:citadelLessonCase,scene:spaceScene,camera:spaceCamera,flightHUD:drawFlightHUD,mobileHUD:drawMobileGameHUD,
+    campaignHUD:drawCampaignFlightHUD,clarityHUD:drawClarityHUD,overlay:arcadeOverlayHTML,update:updateArcadeHUD,
+    action:arcadeAction,mobileAction,input:arcadeInput,retry:citadelRetry,project:spaceProject};`, h.context);
+  h.s = h.context.swarmQA; h.arcade.fx = false;
   h.run = e => ({ seed: e.seed, mode: e.assist ? 'calm' : 'normal' });
   h.make = (assist = false, seed = 417147, upgrades = { weapons: 0, armor: 0, rockets: 0 }) => {
-    const events = [], e = new h.Engine(seed, (kind, value) => events.push({ kind, value: clone(value ?? null), time: e.elapsed }));
+    const events = [], e = new h.Engine(seed, (kind, value) => events.push({ kind, value: clone(value ?? null) }));
     e.assist = assist; e.upgrades = { ...upgrades }; e.beginStage(2); h.arcade.engine = e; e.launch(); e.qaEvents = events; return e;
   };
   return h;
 }
-function frames(e, seconds, input = {}) {
-  for (let i = 0; i < Math.ceil(seconds * 60); i++) e.step(1 / 60, typeof input === 'function' ? input(e, i) : input);
-}
 function controller(api) {
   return e => {
     if (!api.active(e)) return {};
-    let goal = e.swarm.window.slice();
-    const a = e.swarm.attack;
-    if (a && !a.cancelled) {
-      // The visible blank strip is the announced gap. Move into its centre
-      // while keeping the communication window within download radius.
-      const alongV = goal[0] * a.v[0] + goal[1] * a.v[1];
-      goal = api.regionPoint(a, a.gap, alongV);
+    const p = e.player, live = e.enemies.filter(x => !x.dead && x.pos[1] > p.pos[1] + 8);
+    const lead = x => Math.max(-47, Math.min(47, x.pos[0] + Math.max(-10, Math.min(10, x.vel[0])) * Math.min(.8, (x.pos[1] - p.pos[1]) / 132)));
+    live.sort((a, b) => Math.abs(lead(a) - p.pos[0]) + a.rank * 2 - (Math.abs(lead(b) - p.pos[0]) + b.rank * 2));
+    const target = live[0], desired = target ? lead(target) : 0;
+    const candidates = [desired, p.pos[0], desired - 10, desired + 10, p.pos[0] - 15, p.pos[0] + 15, -46, 46].map(x => Math.max(-49, Math.min(49, x)));
+    const threats = [...e.hostile, ...e.enemies.filter(x => x.mode === 'dive' && x.pos[1] < 5)];
+    let best = desired, cost = Infinity;
+    for (const candidate of candidates) {
+      let value = Math.abs(candidate - desired) * 1.2 + Math.abs(candidate - p.pos[0]) * .12;
+      for (const x of threats) for (const t of [.12, .25, .45, .7]) {
+        const ownX = p.pos[0] + Math.sign(candidate - p.pos[0]) * Math.min(Math.abs(candidate - p.pos[0]), 32 * t);
+        const dx = x.pos[0] + x.vel[0] * t - ownX, dy = x.pos[1] + x.vel[1] * t - p.pos[1];
+        const radius = x.swarmDrone ? 8 : 5, d = Math.hypot(dx, dy);
+        if (d < radius) value += (radius - d) * (1.1 - t) * 130;
+      }
+      if (value < cost) { cost = value; best = candidate; }
     }
-    const jammer = e.enemies.find(x => x.jammer && !x.dead);
-    return { turn: limit((goal[0] - e.player.pos[0]) * .5), pitch: limit((goal[1] - e.player.pos[1]) * .5),
-      fire: true, missile: !!jammer && jammer.hp > 100 };
+    const danger = threats.some(x => Math.hypot(x.pos[0] - p.pos[0], x.pos[1] - p.pos[1]) < (x.swarmDrone ? 17 : 12));
+    return { turn: limit((best - p.pos[0]) * .55), pitch: limit((-50 - p.pos[1]) * .35), fire: true,
+      missile: !!target && target.hp > 35 && Math.abs(lead(target) - p.pos[0]) < 3,
+      pulse: danger && p.invulnerable < .12 };
   };
 }
-function play(h, assist, seed = 417147, upgrades) {
-  const e = h.make(assist, seed, upgrades), operate = controller(h.s.api), snapshots = [];
-  let lastFormation = -1, maxDrones = 0, maxBullets = 0, minHP = 100, lessons = 0;
-  for (let i = 0; i < 60 * 160; i++) {
+function realInput(h, e, command, touch = false) {
+  h.arcade.engine = e; h.arcade.keys.clear(); h.arcade.firePointer = null;
+  h.arcade.mouse = touch ? null : { x: command.turn || 0, y: -(command.pitch || 0) };
+  h.arcade.joystick = touch ? { x: command.turn || 0, y: -(command.pitch || 0) } : null;
+  if (command.fire) h.arcade.keys.add('Space'); if (command.boost) h.arcade.keys.add('ShiftLeft');
+  h.arcade.missileQueued = !!command.missile; h.arcade.pulseQueued = !!command.pulse; h.arcade.flipQueued = !!command.flip;
+  return h.s.input();
+}
+function frames(e, seconds, input = {}, dt = 1 / 60) {
+  for (let i = 0; i < Math.ceil(seconds / dt); i++) e.step(dt, typeof input === 'function' ? input(e, i) : input);
+}
+function play(h, { assist = false, seed = 417147, touch = false, dt = 1 / 60 } = {}) {
+  const e = h.make(assist, seed), operate = controller(h.s.api), snapshots = [], waves = new Set();
+  let maxEnemies = 0, maxBullets = 0, maxHostile = 0, maxDivers = 0, minHP = 100, lessons = 0;
+  for (let i = 0; i < 200 / dt; i++) {
     if (e.status === 'lesson') {
-      assert.equal(e.swarm.complete, true, 'Lesson must open after all packets, in safety');
-      assert.equal(e.phase, 'dock'); assert.equal(e.enemies.length, 0);
+      assert.equal(e.swarm.complete, true); assert.equal(e.enemies.length + e.hostile.length, 0);
       assert(e.answerLesson(h.s.lessonCase(e, e.lesson.caseIndex).correct)); e.continueLesson(); lessons++;
     }
     if (e.phase === 'dock' && e.status === 'playing') break;
-    assert(!['crashing', 'lost'].includes(e.status), 'Real-input mission controller must survive');
-    e.step(1 / 60, operate(e));
-    maxDrones = Math.max(maxDrones, e.enemies.length); maxBullets = Math.max(maxBullets, e.bullets.length);
+    assert(!['crashing', 'lost'].includes(e.status), 'Ordinary input controller must survive: ' + JSON.stringify({ assist, seed, time: e.elapsed, kills: e.stageKills, hp: e.player.hp }));
+    e.step(dt, realInput(h, e, operate(e), touch));
+    maxEnemies = Math.max(maxEnemies, e.enemies.length); maxBullets = Math.max(maxBullets, e.bullets.length);
+    maxHostile = Math.max(maxHostile, e.hostile.length); maxDivers = Math.max(maxDivers, e.enemies.filter(x => x.mode === 'dive').length);
     minHP = Math.min(minHP, e.player.hp);
-    if (h.s.api.active(e) && e.swarm.packet !== lastFormation && e.swarm.time - e.swarm.formationStart > 3.6) {
-      snapshots.push(h.s.pack(e)); lastFormation = e.swarm.packet;
-    }
+    if (h.s.api.active(e) && !waves.has(e.swarm.packet) && e.swarm.waveAge > 3) { waves.add(e.swarm.packet); snapshots.push(h.s.pack(e)); }
   }
-  assert.equal(e.phase, 'dock'); assert.equal(e.status, 'playing'); assert.equal(e.swarm.complete, true);
-  assert.equal(h.s.api.completed(e), 3); assert.equal(new Set(e.rescued).size, e.rescued.length);
+  assert.equal(e.phase, 'dock', 'Controller reaches the three-packet exit: ' + JSON.stringify({ assist, elapsed: e.elapsed, remaining: e.enemies.length, wave: e.swarm.packet }));
+  assert.equal(e.status, 'playing'); assert.equal(h.s.api.completed(e), 3); assert(e.swarm.complete);
   assert.equal(lessons, 2); assert.deepEqual(clone(e.decisions.map(x => x.caseIndex)), [4, 5]);
-  assert.equal(e.lessonQueue.length, 0); assert.equal(e.player.hp, 100);
-  assert(maxDrones <= (assist ? 10 : 13)); assert(maxBullets <= 56);
-  assert.equal(snapshots.length, 3, 'All three authored formations must be playable');
-  return { e, snapshots, metrics: { mode: assist ? 'calm' : 'normal', seed,
-    seconds: Number(e.elapsed.toFixed(2)), minHP, shots: e.shots, destroyed: e.stageKills,
-    lessons, packets: h.s.api.completed(e), score: e.score, maxDrones, maxBullets } };
+  assert.equal(new Set(e.rescued).size, e.rescued.length); assert.equal(e.lessonQueue.length, 0);
+  assert(maxEnemies <= 18 && maxBullets <= 36 && maxHostile <= 22 && maxDivers <= 3);
+  assert.equal(waves.size, 3); assert(e.hits > 0 && e.stageKills === (assist ? 37 : 45));
+  return { e, snapshots, metrics: { assist, seed, touch, fps: Math.round(1 / dt), seconds: +e.elapsed.toFixed(2), minHP: +minHP.toFixed(1),
+    hp: e.player.hp, hitsTaken: e.swarm.hitsTaken, hits: e.hits, shots: e.shots, kills: e.stageKills, score: e.score, lessons,
+    maxEnemies, maxBullets, maxHostile, maxDivers } };
 }
-function nextAttack(e) {
-  for (let i = 0; i < 60 * 10 && !e.swarm.attack; i++) e.step(1 / 60, {});
-  assert(e.swarm.attack && e.swarm.attack.stage === 'telegraph');
-  return e.swarm.attack;
-}
-function verify(core) {
-  const h = harness(core), checks = [], plays = [];
-  function check(name, test) { const details = test(); checks.push({ name, passed: true, ...(details === undefined ? {} : { details }) }); }
-  check('Real input completes three formations and exactly two safe decisions in both modes', () => {
-    for (const assist of [false, true]) for (const seed of [417147, 819337]) plays.push(play(h, assist, seed));
-    return plays.map(x => x.metrics);
+async function verify(core, options = {}) {
+  const h = harness(core), checks = [], plays = [], renders = [];
+  const check = (name, fn) => { const details = fn(); checks.push({ name, passed: true, ...(details === undefined ? {} : { details }) }); };
+  check('Ordinary desktop and touch input clear three waves and exactly two safe decisions in both modes', () => {
+    for (const assist of [false, true]) for (const touch of [false, true]) plays.push(play(h, { assist, seed: touch ? 819337 : 417147, touch, dt: touch ? 1 / 30 : 1 / 60 }));
+    return plays.map(p => p.metrics);
   });
-  check('Level zero, other orbit, convoy, and MRG still delegate; stage restart resets only swarm state', () => {
-    const e = h.make(); e.beginStage(0); assert.equal(e.swarm, null); e.launch(); assert.equal(e.phase, 'orientation');
-    e.beginStage(3); assert.equal(e.swarm, null); e.launch(); assert.equal(e.phase, 'battle');
-    e.beginFinale(); e.launchFinale(); assert.equal(h.s.api.active(e), false); assert(e.enemies.every(x => x.core));
-    e.beginStage(1); assert.equal(e.swarm, null);
-    e.status = 'stageclear'; e.upgradeChoice = 'weapons'; e.beginEscort(); e.launch();
-    assert.equal(e.phase, 'escort'); frames(e, .3); assert(e.escort.time > 0);
-    e.beginStage(2); assert(h.s.api.active(e)); assert.equal(e.status, 'briefing'); assert.equal(e.swarm.time, 0);
-  });
-  check('Autopilot alone cannot collect or defeat a stationary swarm', () => {
-    const passive = [];
-    for (const assist of [false, true]) {
-      const e = h.make(assist); e.autopilot = true; frames(e, 80);
-      assert.equal(e.status, 'lost'); assert.equal(h.s.api.completed(e), 0); assert.equal(e.autopilot, false);
-      assert(e.swarm.damageTaken >= 4); passive.push({ mode: assist ? 'calm' : 'normal', secondsToLoss: Number(e.elapsed.toFixed(2)) });
+  check('Visible rows move as a formation; a warned group dives and returns without invisible damage regions', () => {
+    const e = h.make(); frames(e, 2.5);
+    const rows = new Map();
+    for (const x of e.enemies) { if (!rows.has(x.row)) rows.set(x.row, []); rows.get(x.row).push(x); }
+    assert.equal(rows.size, 2); assert.equal(e.enemies.length, 12);
+    for (const row of rows.values()) {
+      assert.equal(new Set(row.map(x => x.pos[1].toFixed(5))).size, 1);
+      assert(row.every(x => x.mode === 'formation' && x.channel === false));
     }
-    assert(passive[1].secondsToLoss > passive[0].secondsToLoss * 2); return passive;
+    const startX = e.enemies[0].pos[0]; frames(e, .5); assert(Math.abs(e.enemies[0].pos[0] - startX) > .2);
+    let id = null, seen = [], warning = null, dive = null;
+    for (let i = 0; i < 60 * 15; i++) {
+      e.step(1 / 60, {});
+      if (!id) id = e.enemies.find(x => x.mode === 'tell')?.id;
+      const x = e.enemies.find(x => x.id === id);
+      if (x && seen.at(-1) !== x.mode) {
+        seen.push(x.mode);
+        if (x.mode === 'tell') warning = e.elapsed;
+        if (x.mode === 'dive') dive = e.elapsed;
+      }
+      if (seen.includes('return') && x.mode === 'formation') break;
+    }
+    assert.deepEqual(seen, ['tell', 'dive', 'return', 'formation']); assert(dive - warning >= 1);
+    assert.equal(e.swarm.window, null); assert.equal(e.swarm.attack, null); assert.equal(h.s.api.liveRegions(e).length, 0);
+    return { rows: rows.size, stages: seen, warningSeconds: +(dive - warning).toFixed(2) };
   });
-  check('A marked volley damages occupied corridors and leaves its visible gap safe', () => {
-    const e = h.make(), attack = nextAttack(e), r = h.s.api.liveRegions(e)[2];
-    // Isolated collision fixture: place identical saved attempts at the centre
-    // of a marked rectangle and at its announced gap before the same volley.
-    e.player.pos = h.s.api.regionPoint(attack, r.u, r.v); e.player.invulnerable = 0;
-    const snapshot = h.s.pack(e), hit = h.s.unpack(snapshot, h.run(e), () => {}), safe = h.s.unpack(snapshot, h.run(e), () => {});
-    safe.player.pos = h.s.api.regionPoint(safe.swarm.attack, safe.swarm.attack.gap, safe.swarm.attack.targetV);
-    const hp = hit.player.hp; frames(hit, attack.remaining + .2); frames(safe, attack.remaining + .2);
-    assert.equal(hit.player.hp, hp - 25); assert.equal(safe.player.hp, hp);
-    assert.equal(hit.swarm.damageTaken, 1); assert.equal(safe.swarm.damageTaken, 0);
+  check('Real straight lasers miss the wrong column; moving into alignment destroys the visible ship', () => {
+    const e = h.make(); frames(e, 2.5); e.swarm.diveClock = e.swarm.fireClock = 100;
+    e.player.pos[0] = 51;
+    const target = e.enemies[0], hp = target.hp;
+    frames(e, 1, () => realInput(h, e, { fire: true }, true));
+    assert.equal(target.hp, hp); assert.equal(e.hits, 0);
+    assert(e.bullets.length > 0 && e.bullets.every(b => b.vel[0] === 0 && b.vel[1] > 0 && b.vel[2] === 0));
+    for (let i = 0; i < 60 * 7 && !target.dead; i++) e.step(1 / 60, realInput(h, e, { fire: true, turn: limit((target.pos[0] - e.player.pos[0]) * .6) }, true));
+    assert(target.dead); assert(e.hits > 0 && e.stageKills > 0);
+    const ammo = e.player.missiles; assert(e.missile()); const rocket = e.bullets.at(-1);
+    assert.equal(rocket.type, 'missile'); assert.equal(rocket.vel[0], 0); assert.equal(rocket.target, undefined); assert.equal(e.player.missiles, ammo - 1);
+    return { shots: e.shots, hits: e.hits, targetDestroyed: target.id };
   });
-  check('Real manoeuvre can evade after the visible warning starts', () => {
-    const e = h.make(), a = nextAttack(e); e.player.invulnerable = 0;
-    const startHP = e.player.hp;
-    frames(e, a.remaining + .4, { pitch: 1 });
-    assert.equal(e.player.hp, startHP); assert(e.player.pos[1] > 20);
+  check('An actual emitted amber projectile damages its path; ordinary movement escapes it in both modes', () => {
+    const results = [];
+    for (const assist of [false, true]) {
+      const e = h.make(assist);
+      for (let i = 0; i < 60 * 10 && !e.hostile.length; i++) e.step(1 / 60, {});
+      assert(e.hostile.length); const bolt = e.hostile[0], owner = e.enemies.find(x => x.id === bolt.owner);
+      // Isolate one naturally emitted projectile to distinguish its visible
+      // collision from unrelated later volleys. No damage method is invoked.
+      e.enemies = [owner]; owner.fireCue = 0; e.hostile = [bolt]; e.swarm.diveClock = e.swarm.fireClock = 100;
+      const flight = (e.player.pos[1] - bolt.pos[1]) / bolt.vel[1];
+      e.player.pos[0] = bolt.pos[0] + bolt.vel[0] * flight; e.player.invulnerable = 0;
+      assert(Math.abs(e.player.pos[0]) < 51);
+      const saved = h.s.pack(e), hit = h.s.unpack(saved, h.run(e), () => {}), escape = h.s.unpack(saved, h.run(e), () => {});
+      const hp = hit.player.hp, side = escape.player.pos[0] < 0 ? 1 : -1;
+      frames(hit, flight + .15); frames(escape, flight + .15, { turn: side });
+      assert(hit.player.hp < hp); assert.equal(escape.player.hp, hp); assert.equal(hit.swarm.hitsTaken, 1);
+      results.push({ assist, visibleFlightSeconds: +flight.toFixed(2), damage: +(hp - hit.player.hp).toFixed(2) });
+    }
+    assert(results[1].damage < results[0].damage); assert(results[1].visibleFlightSeconds > results[0].visibleFlightSeconds);
+    return results;
   });
-  check('Destroying an attack owner removes only its corridors; pulse scatters the whole charged volley', () => {
-    const e = h.make(), a = nextAttack(e), before = h.s.api.liveRegions(e);
-    const owner = e.enemies.find(x => x.id === before[0].owner); e.hit(owner, owner.hp);
-    const after = h.s.api.liveRegions(e); assert(after.length < before.length); assert(after.length > 0);
-    assert(after.every(r => r.owner !== owner.id));
-    const hp = e.player.hp; e.player.invulnerable = 0; e.step(1 / 60, { pulse: true });
-    assert.equal(a.cancelled, true); assert.equal(h.s.api.liveRegions(e).length, 0);
-    frames(e, a.remaining + 1); assert.equal(e.player.hp, hp); assert(e.player.pulseCooldown > 0);
+  check('The diving ship body causes damage; a last moment manual dodge leaves the ship unharmed', () => {
+    const e = h.make(); frames(e, 8);
+    const diver = e.enemies.find(x => x.mode === 'dive'); assert(diver);
+    e.enemies = [diver]; e.swarm.diveClock = e.swarm.fireClock = 100;
+    while (diver.pos[1] > -41 && e.status === 'playing') e.step(1 / 60, {});
+    assert.equal(diver.mode, 'dive'); e.hostile = []; e.player.pos[0] = diver.pos[0]; e.player.invulnerable = 0;
+    const saved = h.s.pack(e), hit = h.s.unpack(saved, h.run(e), () => {}), escape = h.s.unpack(saved, h.run(e), () => {});
+    const hp = e.player.hp; frames(hit, .65); frames(escape, .65, { turn: diver.vel[0] < 0 ? 1 : -1 });
+    assert.equal(hit.player.hp, hp - 24); assert.equal(escape.player.hp, hp);
+    return { contactDamage: hp - hit.player.hp, dodgeTravel: Math.abs(escape.player.pos[0] - e.player.pos[0]) };
   });
-  check('Transfer pauses outside the window, keeps partial progress, and resists physical pickup bypass', () => {
-    const e = h.make(), operate = controller(h.s.api);
-    for (let i = 0; i < 60 * 25 && e.swarm.transfer[0] < 4; i++) e.step(1 / 60, operate(e));
-    assert(e.swarm.transfer[0] >= 4 && e.swarm.transfer[0] < 5);
-    for (let i = 0; i < 60 * 4; i++) e.step(1 / 60, { turn: -1, pitch: -1 });
-    assert.equal(h.s.api.insideWindow(e), false);
-    const retained = e.swarm.transfer[0]; frames(e, .8, { turn: -1, pitch: -1 });
-    near(e.swarm.transfer[0], retained, 'Partial transfer outside window');
-    e.collect(e.pickups.find(x => !x.dead && x.type === 'requirement'));
-    assert.equal(h.s.api.completed(e), 0, 'Touching hidden cargo cannot skip the download');
+  check('Pulse clears visible bullets and nearby divers while leaving the distant formation intact', () => {
+    const e = h.make(); frames(e, 9.2); assert(e.hostile.length > 0);
+    const formation = e.enemies.filter(x => x.mode === 'formation').map(x => ({ id: x.id, hp: x.hp }));
+    assert(e.enemies.some(x => x.mode === 'dive' && x.pos[1] < -10));
+    assert(e.pulse()); assert.equal(e.hostile.length, 0); assert(!e.pulse());
+    for (const before of formation) assert.equal(e.enemies.find(x => x.id === before.id).hp, before.hp);
+    assert(e.enemies.some(x => x.mode === 'dive' && x.dead)); assert.equal(e.player.pulseCooldown, 12);
   });
-  check('Full save roundtrip preserves in-flight volley, RNG, partial transfer and future play', () => {
-    const source = plays.find(x => !x.e.assist).snapshots[1];
-    const saved = clone(source), a = h.s.unpack(saved, { seed: saved.engine.seed, mode: 'normal' }, () => {});
-    assert.deepEqual(clone(h.s.pack(a)), saved, 'Whole serialized state must roundtrip unchanged');
-    const b = h.s.unpack(saved, { seed: saved.engine.seed, mode: 'normal' }, () => {}), operate = controller(h.s.api);
+  check('Full save roundtrip preserves live dives, bullets, RNG and deterministic continuation', () => {
+    const e = h.make(); frames(e, 9.2); assert(e.enemies.some(x => x.mode === 'dive')); assert(e.hostile.length);
+    const saved = h.s.pack(e), a = h.s.unpack(saved, h.run(e), () => {}), b = h.s.unpack(saved, h.run(e), () => {});
+    assert.deepEqual(clone(h.s.pack(a)), clone(saved));
+    const operate = controller(h.s.api);
     for (let i = 0; i < 900; i++) { const input = operate(a); a.step(1 / 60, input); b.step(1 / 60, input); }
-    assert.deepEqual(clone(h.s.pack(a)), clone(h.s.pack(b)), 'Continuation after a save must stay deterministic');
+    assert.deepEqual(clone(h.s.pack(a)), clone(h.s.pack(b)));
     assert.equal(h.s.keys.filter(x => x === 'swarm').length, 1);
   });
-  check('Pause freezes window, warning, progress, HP, ammo, and projectiles; resume continues', () => {
-    const e = h.make(), operate = controller(h.s.api); frames(e, 5, operate);
-    e.pause(); const frozen = clone(e.swarm), hp = e.player.hp, ammo = e.player.missiles, bullets = clone(e.bullets), time = e.elapsed;
-    frames(e, 4, { fire: true, missile: true, turn: 1, pulse: true });
-    assert.deepEqual(clone(e.swarm), frozen); assert.deepEqual(clone(e.bullets), bullets);
-    assert.equal(e.player.hp, hp); assert.equal(e.player.missiles, ammo); assert.equal(e.elapsed, time);
-    e.resume(); e.step(1 / 60, operate(e)); assert(e.swarm.time > frozen.time);
+  check('Pause freezes formation, dive warning, bullets, health, ammo and reward state', () => {
+    const e = h.make(); frames(e, 6.8); assert(e.enemies.some(x => x.mode === 'tell'));
+    e.pause(); const saved = clone(h.s.pack(e));
+    frames(e, 3, { fire: true, missile: true, turn: 1, pulse: true });
+    assert.deepEqual(clone(h.s.pack(e)), saved);
+    const resumed = h.s.unpack(saved, h.run(e), () => {}); assert.equal(resumed.status, 'paused');
+    resumed.resume(); resumed.step(1 / 60, {}); assert(resumed.swarm.time > e.swarm.time);
   });
-  check('Old stage-two save migrates without lost score, HP, rescued requirements, or duplicate decisions', () => {
+  check('The old communication-window save keeps collected requirements, score, health, decisions and partial progress', () => {
     const e = h.make(), snap = h.s.pack(e), first = e.plan[2][0];
-    delete snap.engine.swarm; snap.engine.phase = 'battle'; snap.engine.rescued = [first];
-    snap.engine.score = 4321; snap.engine.player.hp = 47; snap.engine.elapsed = 82.3;
+    snap.engine.swarm = { version: '1.8.0', packet: 1, transfer: [15, 7.5, 0], window: [20, 5, 0], radius: 9.2 };
+    snap.engine.rescued = [first]; snap.engine.score = 4321; snap.engine.player.hp = 47; snap.engine.elapsed = 82.3;
     snap.engine.decisions = [{ caseIndex: 4, stage: 2, reqId: first, firstTry: true, decision: 0 }];
-    snap.engine.lessonQueue = [];
+    snap.engine.lessonQueue = []; snap.engine.status = 'paused'; snap.engine.resumeStatus = 'playing';
     const restored = h.s.unpack(snap, h.run(e), () => {});
-    assert(h.s.api.active(restored)); assert.equal(restored.swarm.packet, 1); assert.equal(restored.score, 4321);
-    assert.equal(restored.player.hp, 47); assert.equal(restored.elapsed, 82.3);
-    assert.deepEqual(clone(restored.rescued), [first]); assert.equal(restored.decisions.length, 1);
+    assert.equal(restored.swarm.version, '1.9.0'); assert.equal(restored.swarm.packet, 1);
+    assert.equal(restored.swarm.migration.credited, 7); assert.equal(restored.enemies.length, 8);
+    assert.equal(restored.score, 4321); assert.equal(restored.player.hp, 47); assert.equal(restored.elapsed, 82.3);
+    assert.deepEqual(clone(restored.rescued), [first]); assert.equal(restored.status, 'paused'); restored.resume();
     const operate = controller(h.s.api);
-    for (let i = 0; i < 60 * 90; i++) {
+    for (let i = 0; i < 60 * 110; i++) {
       if (restored.status === 'lesson') { restored.answerLesson(h.s.lessonCase(restored, restored.lesson.caseIndex).correct); restored.continueLesson(); }
       if (restored.phase === 'dock' && restored.status === 'playing') break;
       restored.step(1 / 60, operate(restored));
     }
-    assert.equal(restored.phase, 'dock'); assert.equal(restored.decisions.filter(x => x.caseIndex === 4).length, 1);
-    assert.equal(restored.decisions.filter(x => x.caseIndex === 5).length, 1); assert.equal(new Set(restored.rescued).size, 3);
+    assert.equal(restored.phase, 'dock'); assert.equal(h.s.api.completed(restored), 3);
+    assert.equal(restored.decisions.filter(x => x.caseIndex === 4).length, 1); assert.equal(restored.decisions.filter(x => x.caseIndex === 5).length, 1);
+    return { creditedEnemies: 7, newKills: restored.stageKills, finalScore: restored.score };
   });
-  check('Already collected old save advances to safe cards and dock without rewarding cargo twice', () => {
+  check('Completed legacy saves enter safe lessons without rewarding cargo twice; dock saves stay untouched', () => {
     const e = h.make(), snap = h.s.pack(e); delete snap.engine.swarm;
-    snap.engine.phase = 'retrieve'; snap.engine.rescued = clone(e.plan[2]); snap.engine.score = 9999;
-    snap.engine.pickups.forEach(x => { x.dead = true; }); snap.engine.lessonQueue = [];
-    const resumed = h.s.unpack(snap, h.run(e), () => {});
-    assert.equal(resumed.phase, 'dock'); assert.equal(resumed.status, 'lesson'); assert.equal(resumed.score, 9999);
-    assert.equal(resumed.lesson.caseIndex, 4); assert.deepEqual(clone(resumed.lessonQueue.map(x => x.caseIndex)), [5]);
-    const again = h.s.unpack(h.s.pack(resumed), h.run(resumed), () => {});
-    assert.equal(again.score, 9999); assert.equal(again.lessonQueue.length, 1);
+    snap.engine.phase = 'retrieve'; snap.engine.rescued = clone(e.plan[2]); snap.engine.score = 9999; snap.engine.lessonQueue = [];
+    const restored = h.s.unpack(snap, h.run(e), () => {});
+    assert.equal(restored.phase, 'dock'); assert.equal(restored.status, 'lesson'); assert.equal(restored.score, 9999);
+    assert.equal(restored.lesson.caseIndex, 4); assert.deepEqual(clone(restored.lessonQueue.map(x => x.caseIndex)), [5]);
+    const again = h.s.unpack(h.s.pack(restored), h.run(restored), () => {}); assert.equal(again.score, 9999); assert.equal(again.lessonQueue.length, 1);
+    const dockSave = h.s.pack(plays[0].e); dockSave.engine.swarm.version = '1.8.0';
+    const dock = h.s.unpack(dockSave, h.run(plays[0].e), () => {});
+    assert.equal(dock.phase, 'dock'); assert.equal(dock.swarm.version, '1.8.0'); assert.deepEqual(clone(h.s.pack(dock)), clone(dockSave));
   });
-  check('Death and existing retry return to the swarm briefing with the stage checkpoint', () => {
-    const e = h.make(); frames(e, 30); assert.equal(e.status, 'lost');
-    h.arcade.engine = e; h.s.retry(false); const retry = h.arcade.engine;
-    assert.equal(retry.stage, 2); assert.equal(retry.status, 'briefing'); assert.equal(retry.phase, 'swarm');
-    assert.equal(retry.player.hp, 100); assert.equal(retry.swarm.time, 0); assert.equal(retry.score, e.stageStart.score);
+  check('Ignoring the visible attackers loses; calm mode gives more time; normal retry restores the stage checkpoint', () => {
+    const results = [];
+    for (const assist of [false, true]) {
+      const e = h.make(assist); e.autopilot = true;
+      for (let i = 0; i < 60 * 70 && e.status !== 'lost'; i++) e.step(1 / 60, {});
+      assert.equal(e.status, 'lost'); assert.equal(h.s.api.completed(e), 0); assert.equal(e.autopilot, false);
+      assert(e.swarm.hitsTaken >= 5); results.push({ assist, seconds: +e.elapsed.toFixed(2), hitsTaken: e.swarm.hitsTaken });
+      if (!assist) {
+        h.arcade.engine = e; h.s.retry(false); const retry = h.arcade.engine;
+        assert.equal(retry.stage, 2); assert.equal(retry.status, 'briefing'); assert.equal(retry.phase, 'swarm');
+        assert.equal(retry.player.hp, 100); assert.equal(retry.swarm.time, 0); assert.equal(retry.score, e.stageStart.score);
+        assert.deepEqual(clone(retry.rescued), clone(e.stageStart.rescued));
+        retry.launch(); retry.step(1 / 60, realInput(h, retry, { fire: true })); assert(retry.bullets.length > 0);
+      }
+    }
+    assert(results[1].seconds > results[0].seconds * 1.5); return results;
   });
-  check('No replay farming: a slot pays once per formation and entity counts remain bounded', () => {
-    const e = h.make(); frames(e, 1); const drone = e.enemies.find(x => !x.jammer), slot = drone.slot;
-    e.hit(drone, drone.hp); const score = e.score; frames(e, 9.8, controller(h.s.api));
-    const respawned = e.enemies.find(x => x.slot === slot && x.id !== drone.id);
-    assert(respawned); assert.equal(respawned.warp, 0); const before = e.score;
-    e.hit(respawned, respawned.hp); assert.equal(e.score, before); assert(score >= 45);
-    assert(e.enemies.length <= 13); assert(e.bullets.length <= 56); assert.equal(e.hostile.length, 0);
+  check('Simple left-right movement and fire can win without aim prediction, rockets or upgrades', () => {
+    const e = h.make();
+    for (let i = 0; i < 60 * 100 && !e.swarm.complete; i++) e.step(1 / 60, realInput(h, e, { fire: true, turn: Math.sin(e.elapsed * .8) > 0 ? .8 : -.8 }, true));
+    assert(e.swarm.complete); assert.equal(h.s.api.completed(e), 3); assert(e.player.hp > 0); assert.equal(e.shots > 0, true);
+    return { seconds: +e.elapsed.toFixed(2), hp: e.player.hp, hitsTaken: e.swarm.hitsTaken };
   });
-  check('Keyboard/touch input fields, controls, wording and repeated module loading are consistent', () => {
-    const e = h.make(); h.arcade.keys.add('KeyD'); h.arcade.keys.add('KeyW');
-    const keyboard = h.s.input(); assert.equal(keyboard.turn, 1); assert.equal(keyboard.pitch, 1);
-    h.arcade.keys.clear(); h.arcade.joystick = { x: -.5, y: .25 }; const touch = h.s.input();
-    assert.equal(touch.turn, -.5); assert.equal(touch.pitch, -.25); h.arcade.joystick = null;
-    h.s.action('citadel-guidance'); assert.equal(e.autopilot, false); h.s.mobileAction('mobile-guide'); assert.equal(e.autopilot, false);
-    h.s.update(); assert.equal(h.nodes.get('citadel-primary').disabled, true);
-    assert.match(h.nodes.get('citadel-route').innerHTML, /СВЯЗЬ/); assert.doesNotMatch(h.nodes.get('citadel-route').innerHTML, /ПЕРЕХВАЧЕНО/);
-    assert.equal(h.s.levels[6], 'Рой уточнений'); e.status = 'briefing'; assert.match(h.s.overlay(), /Рой уточнений/);
-    assert.match(h.s.overlay(), /Загрузка сохраняется/); assert.doesNotMatch(h.s.overlay(), /К ПЕРВОМУ КРИСТАЛЛУ/);
-    const step = e.step; vm.runInContext(fs.readFileSync(patch, 'utf8'), h.context); assert.equal(e.step, step);
-    assert.equal(h.s.keys.filter(x => x === 'swarm').length, 1);
+  check('Other stages, boarding, convoy, finale and restored G controls still delegate', () => {
+    const e = h.make(); h.s.update(); assert.equal(h.nodes.get('citadel-primary').disabled, true);
+    assert.equal(h.nodes.get('mobile-crystal').textContent, 'Цель: три волны'); h.s.action('citadel-guidance'); assert.equal(e.autopilot, false);
+    e.beginStage(0); e.launch(); h.s.update(); assert.equal(e.swarm, null); assert.equal(e.phase, 'orientation');
+    assert.equal(h.nodes.get('citadel-primary').disabled, false); assert.doesNotMatch(h.nodes.get('mobile-crystal').textContent, /волны/);
+    const auto = e.autopilot; h.s.action('citadel-guidance'); assert.equal(e.autopilot, !auto);
+    e.beginStage(1); e.launch(); h.s.update(); assert.equal(e.phase, 'pursuit'); assert.equal(e.swarm, null);
+    assert.equal(h.nodes.get('mobile-crystal').textContent, 'К носителю');
+    e.status = 'stageclear'; e.upgradeChoice = 'weapons'; e.beginEscort(); e.launch(); frames(e, .3); assert(e.escort.time > 0); assert.equal(e.phase, 'escort');
+    e.beginStage(3); e.launch(); assert.equal(e.phase, 'battle'); e.beginFinale(); e.launchFinale(); assert(!h.s.api.active(e)); assert(e.enemies.every(x => x.core));
+    e.beginStage(2); assert.equal(e.status, 'briefing'); assert.equal(e.swarm.time, 0);
   });
-  check('Completed mission reaches actual visible gate and enters existing docking', () => {
-    const final = plays[0].e, restored = h.s.unpack(h.s.pack(final), h.run(final), () => {});
-    h.arcade.engine = restored;
-    for (let i = 0; i < 60 * 40 && restored.status === 'playing'; i++) restored.step(1 / 60, {});
-    assert.equal(restored.status, 'docking'); assert.equal(restored.dock.flightVersion, '1.7.1');
-    return { seconds: Number((restored.elapsed - final.elapsed).toFixed(2)), gate: clone(h.context.CITADEL_FLIGHT.gate(restored)) };
+  check('Victory and the admin direct-dock fixture both enter the preserved real 1.8.1 gate', () => {
+    const final = plays[0].e, restored = h.s.unpack(h.s.pack(final), h.run(final), () => {}); h.arcade.engine = restored;
+    for (let i = 0; i < 60 * 35 && restored.status === 'playing'; i++) restored.step(1 / 60, {});
+    assert.equal(restored.status, 'docking'); assert.equal(restored.dock.flightVersion, '1.8.1');
+    const direct = h.make(); direct.rescued = clone(direct.plan[2]); direct.decisions = [4, 5].map(caseIndex => ({ stage: 2, caseIndex }));
+    direct.phase = 'dock'; direct.enemies = []; direct.bullets = []; direct.hostile = []; direct.lessonQueue = [];
+    direct.player.pos = clone(h.context.CITADEL_FLIGHT.approach(direct)); assert(!h.s.api.active(direct));
+    assert(direct.interact()); assert.equal(direct.status, 'docking'); assert.equal(direct.dock.flightVersion, '1.8.1');
+    return { completedDockSeconds: +(restored.elapsed - final.elapsed).toFixed(2) };
   });
-  check('Admin direct dock fixture delegates even while the swarm checkpoint is unfinished', () => {
-    const e = h.make(); e.rescued = clone(e.plan[2]);
-    e.decisions = [4, 5].map((caseIndex, i) => ({ caseIndex, reqId: e.plan[2][i ? 2 : 0], stage: 2 }));
-    e.phase = 'dock'; e.enemies = []; e.bullets = []; e.hostile = []; e.lessonQueue = [];
-    e.player.pos = clone(h.context.CITADEL_FLIGHT.approach(e));
-    assert.equal(e.swarm.complete, false); assert.equal(h.s.api.active(e), false);
-    assert(e.interact()); assert.equal(e.status, 'docking'); assert.equal(e.dock.flightVersion, '1.7.1');
+  check('Actual keyboard and touch inputs, wording and duplicate loading preserve the public API', () => {
+    const e = h.make(); h.arcade.joystick = h.arcade.mouse = null; h.arcade.keys.clear(); h.arcade.keys.add('KeyD'); h.arcade.keys.add('KeyW');
+    const input = h.s.input(); assert.equal(input.turn, 1); assert.equal(input.pitch, 1); const before = e.player.pos.slice(); e.step(.03, input);
+    assert(e.player.pos[0] > before[0] && e.player.pos[1] > before[1]);
+    const touch = realInput(h, e, { turn: -.5, pitch: -.25, fire: true }, true); assert.equal(touch.turn, -.5); assert.equal(touch.pitch, -.25); assert(touch.fire);
+    h.s.mobileAction('mobile-guide'); assert.equal(e.autopilot, false); h.s.update();
+    assert.match(h.nodes.get('citadel-route').innerHTML, /ПРОТИВНИКОВ/); assert.doesNotMatch(h.nodes.get('citadel-route').innerHTML, /СВЯЗЬ|ПЕРЕХВАЧЕНО/);
+    e.status = 'briefing'; assert.match(h.s.overlay(), /пикируют/); assert.doesNotMatch(h.s.overlay(), /Красный коридор|окне связи|глушитель/);
+    assert.equal(h.s.levels[6], 'Рой уточнений'); const step = e.step; vm.runInContext(fs.readFileSync(patch, 'utf8'), h.context); assert.equal(e.step, step);
+    assert.equal(h.s.api.insideWindow(e), false); assert.equal(h.s.api.windowAt(e), null); assert.equal(h.s.keys.filter(x => x === 'swarm').length, 1);
   });
-  check('Private engine boots and plays with no tournament client or snapshot API installed', () => {
-    if (!h.snapshotAdapter) return { applicable: false, reason: 'Public core includes its snapshot API' };
-    const raw = createHarness(core, path.join(root, 'assets/citadel-mrg-v1.7.0.js'), null);
-    for (const file of ['citadel-flight-v1.7.1.js', 'citadel-aim-v1.7.1.js', 'citadel-flight-view-v1.7.1.js', 'citadel-swarm-v1.8.0.js'])
-      vm.runInContext(fs.readFileSync(path.join(root, 'assets', file), 'utf8'), raw.context);
-    assert.equal(vm.runInContext('typeof cupPack', raw.context), 'undefined');
-    const e = new raw.Engine(417147, () => {}); e.beginStage(2); raw.arcade.engine = e; e.launch();
-    frames(e, 5, controller(raw.context.CITADEL_SWARM)); assert.equal(e.phase, 'swarm'); assert.equal(e.status, 'playing');
-    assert(e.swarm.transfer[0] > 0); assert.equal(raw.storage.size, 0);
-    return { applicable: true, remoteStorage: false, transfer: e.swarm.transfer[0] };
+  check('Private core starts with no tournament or storage APIs and uses the same bounded loop', () => {
+    if (!h.snapshotAdapter) return { applicable: false };
+    const raw = harness(core, false, false); assert.equal(raw.s.pack, null);
+    const e = raw.make(), operate = controller(raw.s.api); frames(e, 6, operate);
+    assert.equal(e.status, 'playing'); assert(e.stageKills > 0); assert.equal(raw.storage.size, 0);
+    return { applicable: true, kills: e.stageKills };
   });
-  check('Actual updateArcadeHUD draws the native tactical radar before and after a swarm step', () => {
+  check('Native Canvas draws the actual HUD and radar; portrait/landscape/DPR bounds keep the player and rows visible', () => {
     const native = harness(core, true), radar = native.createCanvas(300, 220);
-    radar.setAttribute = function (key, value) { this[key] = value; };
-    native.arcade.radar = radar.getContext('2d');
-    const e = native.make(); e.beginStage(2); native.arcade.engine = e;
-    const checkpoints = [];
-    for (const action of ['briefing', 'launch', 'step']) {
-      if (action === 'launch') e.launch();
-      if (action === 'step') frames(e, 1);
-      const before = { score: e.score, hp: e.player.hp, rescued: clone(e.rescued) };
-      native.s.update();
-      assert.deepEqual({ score: e.score, hp: e.player.hp, rescued: clone(e.rescued) }, before);
-      assert(radar.getContext('2d').getImageData(150, 110, 1, 1).data[3] > 0, 'Actual tactical radar pixels');
-      checkpoints.push({ action, status: e.status, liveJammer: e.enemies.some(x => x.jammer && !x.dead) });
+    radar.setAttribute = function (key, value) { this[key] = value; }; native.arcade.radar = radar.getContext('2d');
+    const base = native.make(); frames(base, 9.2); const saved = native.s.pack(base), layouts = [];
+    for (const [W, H, dpr] of [[1280, 720, 1], [390, 460, 1], [320, 420, 1], [844, 320, 1], [390, 460, 2]]) {
+      const e = native.s.unpack(saved, native.run(base), () => {}); native.arcade.engine = e; native.context.innerWidth = W;
+      native.context.matchMedia = () => ({ matches: W < 900 }); native.arcade.canvas = native.createCanvas(W * dpr, H * dpr);
+      native.arcade.canvas.getBoundingClientRect = () => ({ width: W, height: H }); native.arcade.canvas.setAttribute = function () {};
+      const canvas = native.createCanvas(W * dpr, H * dpr), ctx = canvas.getContext('2d'), before = clone(native.s.pack(e));
+      native.s.update(); const cam = native.s.camera(e, e.elapsed); assert.equal(native.s.scene(e, e.elapsed).length, 0);
+      (W < 900 ? native.s.mobileHUD : native.s.flightHUD)(ctx, e, cam, W * dpr, H * dpr);
+      native.s.campaignHUD(ctx, e, cam, W * dpr, H * dpr); native.s.clarityHUD(ctx, e, cam, W * dpr, H * dpr);
+      const l = native.s.api.layout(W, H), boxes = native.s.api.hudBounds(e, W, H);
+      for (const box of boxes) assert(Object.values(box).filter(v => typeof v === 'number').every(Number.isFinite));
+      assert(boxes.some(b => b.kind === 'formation')); assert(boxes.some(b => b.kind === 'diver')); assert(boxes.some(b => b.kind === 'projectile'));
+      for (const pos of [e.player.pos, [-51, -58, 0], [51, -58, 0], [-51, -27, 0], [51, -27, 0]]) {
+        const q = native.s.project(pos, cam, W, H); assert(q.x >= 7 && q.x <= W - 7 && q.y > l.top && q.y < H - l.bottom);
+      }
+      for (const x of e.enemies.filter(x => x.mode === 'formation')) {
+        const q = native.s.project(x.pos, cam, W, H); assert(q.y > l.top + 15 && q.x > l.x && q.x < l.x + l.width);
+      }
+      assert.equal(ctx.getImageData(2, 2, 1, 1).data[3], 255); assert(radar.getContext('2d').getImageData(150, 110, 1, 1).data[3] > 0);
+      assert.deepEqual(clone(native.s.pack(e)), before, 'HUD, comic bounds and native render are read-only');
+      if (options.render) {
+        fs.mkdirSync(options.render, { recursive: true }); const file = path.join(options.render, `${path.basename(core).replace('.js', '')}-dive-${W}x${H}-dpr${dpr}.png`);
+        fs.writeFileSync(file, canvas.toBuffer('image/png')); renders.push({ file, size: [W, H], dpr, boxes: boxes.length });
+      }
+      layouts.push({ W, H, dpr, bounds: boxes.length, width: +l.width.toFixed(1), height: +l.height.toFixed(1) });
     }
-    assert(checkpoints.every(x => x.liveJammer));
-    return checkpoints;
+    return layouts;
   });
-  let renders = [];
-  if (renderDir) {
-    const native = harness(core, true); fs.mkdirSync(renderDir, { recursive: true });
-    for (const [index, snapshot] of plays[0].snapshots.entries()) for (const [w, height, dpr] of [[1280, 720, 1], [390, 460, 1], [844, 320, 1], [390, 460, 2]]) {
-      const e = native.s.unpack(snapshot, { seed: snapshot.engine.seed, mode: 'normal' }, () => {});
-      native.arcade.engine = e; native.context.innerWidth = w; native.context.matchMedia = () => ({ matches: w < 900 });
-      native.arcade.canvas = native.createCanvas(w * dpr, height * dpr);
-      native.arcade.canvas.getBoundingClientRect = () => ({ width: w, height });
-      const full = native.createCanvas(w * dpr, height * dpr), overlay = native.createCanvas(w * dpr, height * dpr);
-      const before = clone(native.s.pack(e));
-      const scene = native.s.scene(e, e.elapsed, false), cam = native.s.camera(e, e.elapsed);
-      assert(scene.length < 600, 'Swarm render geometry must remain bounded');
-      native.draw(full.getContext('2d'), scene, cam, w * dpr, height * dpr);
-      (w < 900 ? native.s.mobileHUD : native.s.flightHUD)(overlay.getContext('2d'), e, cam, w * dpr, height * dpr);
-      native.s.campaignHUD(overlay.getContext('2d'), e, cam, w * dpr, height * dpr);
-      native.s.clarityHUD(overlay.getContext('2d'), e, cam, w * dpr, height * dpr);
-      assert.deepEqual(clone(native.s.pack(e)), before, 'Scene/HUD rendering must not advance or mutate gameplay');
-      full.getContext('2d').drawImage(overlay, 0, 0);
-      const file = path.join(renderDir, `${path.basename(core).replace('.js', '')}-formation-${index + 1}-${w}x${height}-dpr${dpr}.png`);
-      fs.writeFileSync(file, full.toBuffer('image/png')); renders.push({ file, meshes: scene.length, size: [w, height], dpr });
-    }
-  }
-  return { core: path.basename(core), ...(h.snapshotAdapter ? { snapshot_adapter: h.snapshotAdapter } : {}), sha256: crypto.createHash('sha256').update(fs.readFileSync(core)).digest('hex'),
-    passed: checks.length, checks, renders };
+  return { core: path.basename(core), coreSha256: sha(core), passed: checks.length, checks, renders };
 }
-const report = { version: '1.8.0', feature: 'Level 7 / Рой уточнений',
-  method: 'Actual shipped cores in Node VM; deterministic keyboard/touch-equivalent input playthrough and native Canvas projection. No browser, network, physical Android, or production storage.',
-  addon_sha256: crypto.createHash('sha256').update(fs.readFileSync(patch)).digest('hex'), results: cores.map(verify) };
-console.log(JSON.stringify(report, null, 2));
+async function main(argv = process.argv.slice(2)) {
+  const options = { cores: [], render: null, report: null };
+  for (let i = 0; i < argv.length; i++) {
+    if (argv[i] === '--core') options.cores.push(path.resolve(argv[++i]));
+    else if (argv[i] === '--render') options.render = path.resolve(argv[++i]);
+    else if (argv[i] === '--report') options.report = path.resolve(argv[++i]);
+    else throw Error('Unknown option: ' + argv[i]);
+  }
+  if (!options.cores.length) options.cores.push(asset('atlas-v1.3.5.js'), path.resolve(root, '../cmpon-analytics-admin/game-lab/engine-v1.2.1.js'));
+  const results = []; for (const core of options.cores) results.push(await verify(core, options));
+  const report = { version: '1.9.0', feature: 'Level 7 / Рой уточнений / formation shooter',
+    method: 'Actual frozen cores, real arcadeInput/actions, synthetic DOM/storage and native Canvas. No browser, physical Android or audio QA.', addon_sha256: sha(patch), results };
+  if (options.report) fs.writeFileSync(options.report, JSON.stringify(report, null, 2) + '\n');
+  console.log(JSON.stringify(report, null, 2)); return report;
+}
+module.exports = { harness, controller, realInput, frames, play, verify, main };
+if (require.main === module) main().catch(error => { console.error(error); process.exitCode = 1; });

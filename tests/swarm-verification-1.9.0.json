@@ -1,0 +1,611 @@
+{
+  "version": "1.9.0",
+  "feature": "Level 7 / Рой уточнений / formation shooter",
+  "method": "Actual frozen cores, real arcadeInput/actions, synthetic DOM/storage and native Canvas. No browser, physical Android or audio QA.",
+  "addon_sha256": "f7d4f101894d7d606d839f6d97de309ebbcdd1156129be78f0468732eb629581",
+  "results": [
+    {
+      "core": "atlas-v1.3.5.js",
+      "coreSha256": "af1f9024313d1ecb798edc19b5039407049916d094c88426f85ba852ac077be8",
+      "passed": 17,
+      "checks": [
+        {
+          "name": "Ordinary desktop and touch input clear three waves and exactly two safe decisions in both modes",
+          "passed": true,
+          "details": [
+            {
+              "assist": false,
+              "seed": 417147,
+              "touch": false,
+              "fps": 60,
+              "seconds": 42.3,
+              "minHP": 100,
+              "hp": 100,
+              "hitsTaken": 0,
+              "hits": 117,
+              "shots": 141,
+              "kills": 45,
+              "score": 4695,
+              "lessons": 2,
+              "maxEnemies": 18,
+              "maxBullets": 10,
+              "maxHostile": 3,
+              "maxDivers": 3
+            },
+            {
+              "assist": false,
+              "seed": 819337,
+              "touch": true,
+              "fps": 30,
+              "seconds": 44.33,
+              "minHP": 100,
+              "hp": 100,
+              "hitsTaken": 0,
+              "hits": 112,
+              "shots": 140,
+              "kills": 45,
+              "score": 4695,
+              "lessons": 2,
+              "maxEnemies": 18,
+              "maxBullets": 9,
+              "maxHostile": 5,
+              "maxDivers": 3
+            },
+            {
+              "assist": true,
+              "seed": 417147,
+              "touch": false,
+              "fps": 60,
+              "seconds": 36.33,
+              "minHP": 100,
+              "hp": 100,
+              "hitsTaken": 0,
+              "hits": 100,
+              "shots": 118,
+              "kills": 37,
+              "score": 4215,
+              "lessons": 2,
+              "maxEnemies": 15,
+              "maxBullets": 10,
+              "maxHostile": 1,
+              "maxDivers": 2
+            },
+            {
+              "assist": true,
+              "seed": 819337,
+              "touch": true,
+              "fps": 30,
+              "seconds": 37.37,
+              "minHP": 100,
+              "hp": 100,
+              "hitsTaken": 0,
+              "hits": 99,
+              "shots": 114,
+              "kills": 37,
+              "score": 4215,
+              "lessons": 2,
+              "maxEnemies": 15,
+              "maxBullets": 9,
+              "maxHostile": 3,
+              "maxDivers": 2
+            }
+          ]
+        },
+        {
+          "name": "Visible rows move as a formation; a warned group dives and returns without invisible damage regions",
+          "passed": true,
+          "details": {
+            "rows": 2,
+            "stages": [
+              "tell",
+              "dive",
+              "return",
+              "formation"
+            ],
+            "warningSeconds": 1.03
+          }
+        },
+        {
+          "name": "Real straight lasers miss the wrong column; moving into alignment destroys the visible ship",
+          "passed": true,
+          "details": {
+            "shots": 19,
+            "hits": 13,
+            "targetDestroyed": 1
+          }
+        },
+        {
+          "name": "An actual emitted amber projectile damages its path; ordinary movement escapes it in both modes",
+          "passed": true,
+          "details": [
+            {
+              "assist": false,
+              "visibleFlightSeconds": 2.55,
+              "damage": 14
+            },
+            {
+              "assist": true,
+              "visibleFlightSeconds": 3.26,
+              "damage": 7.7
+            }
+          ]
+        },
+        {
+          "name": "The diving ship body causes damage; a last moment manual dodge leaves the ship unharmed",
+          "passed": true,
+          "details": {
+            "contactDamage": 24,
+            "dodgeTravel": 20.80000000000002
+          }
+        },
+        {
+          "name": "Pulse clears visible bullets and nearby divers while leaving the distant formation intact",
+          "passed": true
+        },
+        {
+          "name": "Full save roundtrip preserves live dives, bullets, RNG and deterministic continuation",
+          "passed": true
+        },
+        {
+          "name": "Pause freezes formation, dive warning, bullets, health, ammo and reward state",
+          "passed": true
+        },
+        {
+          "name": "The old communication-window save keeps collected requirements, score, health, decisions and partial progress",
+          "passed": true,
+          "details": {
+            "creditedEnemies": 7,
+            "newKills": 26,
+            "finalScore": 7171
+          }
+        },
+        {
+          "name": "Completed legacy saves enter safe lessons without rewarding cargo twice; dock saves stay untouched",
+          "passed": true
+        },
+        {
+          "name": "Ignoring the visible attackers loses; calm mode gives more time; normal retry restores the stage checkpoint",
+          "passed": true,
+          "details": [
+            {
+              "assist": false,
+              "seconds": 19.2,
+              "hitsTaken": 7
+            },
+            {
+              "assist": true,
+              "seconds": 37.65,
+              "hitsTaken": 11
+            }
+          ]
+        },
+        {
+          "name": "Simple left-right movement and fire can win without aim prediction, rockets or upgrades",
+          "passed": true,
+          "details": {
+            "seconds": 50.83,
+            "hp": 100,
+            "hitsTaken": 0
+          }
+        },
+        {
+          "name": "Other stages, boarding, convoy, finale and restored G controls still delegate",
+          "passed": true
+        },
+        {
+          "name": "Victory and the admin direct-dock fixture both enter the preserved real 1.8.1 gate",
+          "passed": true,
+          "details": {
+            "completedDockSeconds": 3.3
+          }
+        },
+        {
+          "name": "Actual keyboard and touch inputs, wording and duplicate loading preserve the public API",
+          "passed": true
+        },
+        {
+          "name": "Private core starts with no tournament or storage APIs and uses the same bounded loop",
+          "passed": true,
+          "details": {
+            "applicable": false
+          }
+        },
+        {
+          "name": "Native Canvas draws the actual HUD and radar; portrait/landscape/DPR bounds keep the player and rows visible",
+          "passed": true,
+          "details": [
+            {
+              "W": 1280,
+              "H": 720,
+              "dpr": 1,
+              "bounds": 10,
+              "width": 726.8,
+              "height": 574
+            },
+            {
+              "W": 390,
+              "H": 460,
+              "dpr": 1,
+              "bounds": 10,
+              "width": 366,
+              "height": 342
+            },
+            {
+              "W": 320,
+              "H": 420,
+              "dpr": 1,
+              "bounds": 10,
+              "width": 296,
+              "height": 302
+            },
+            {
+              "W": 844,
+              "H": 320,
+              "dpr": 1,
+              "bounds": 10,
+              "width": 307.7,
+              "height": 243
+            },
+            {
+              "W": 390,
+              "H": 460,
+              "dpr": 2,
+              "bounds": 10,
+              "width": 366,
+              "height": 342
+            }
+          ]
+        }
+      ],
+      "renders": [
+        {
+          "file": "/tmp/citadel-190-swarm-qa/atlas-v1.3.5-dive-1280x720-dpr1.png",
+          "size": [
+            1280,
+            720
+          ],
+          "dpr": 1,
+          "boxes": 10
+        },
+        {
+          "file": "/tmp/citadel-190-swarm-qa/atlas-v1.3.5-dive-390x460-dpr1.png",
+          "size": [
+            390,
+            460
+          ],
+          "dpr": 1,
+          "boxes": 10
+        },
+        {
+          "file": "/tmp/citadel-190-swarm-qa/atlas-v1.3.5-dive-320x420-dpr1.png",
+          "size": [
+            320,
+            420
+          ],
+          "dpr": 1,
+          "boxes": 10
+        },
+        {
+          "file": "/tmp/citadel-190-swarm-qa/atlas-v1.3.5-dive-844x320-dpr1.png",
+          "size": [
+            844,
+            320
+          ],
+          "dpr": 1,
+          "boxes": 10
+        },
+        {
+          "file": "/tmp/citadel-190-swarm-qa/atlas-v1.3.5-dive-390x460-dpr2.png",
+          "size": [
+            390,
+            460
+          ],
+          "dpr": 2,
+          "boxes": 10
+        }
+      ]
+    },
+    {
+      "core": "engine-v1.2.1.js",
+      "coreSha256": "29cf0a79c5887bbdf4e80ba2664b16d50172771f10069cb6f5d274eabbc4cbe8",
+      "passed": 17,
+      "checks": [
+        {
+          "name": "Ordinary desktop and touch input clear three waves and exactly two safe decisions in both modes",
+          "passed": true,
+          "details": [
+            {
+              "assist": false,
+              "seed": 417147,
+              "touch": false,
+              "fps": 60,
+              "seconds": 42.3,
+              "minHP": 100,
+              "hp": 100,
+              "hitsTaken": 0,
+              "hits": 117,
+              "shots": 141,
+              "kills": 45,
+              "score": 4695,
+              "lessons": 2,
+              "maxEnemies": 18,
+              "maxBullets": 10,
+              "maxHostile": 3,
+              "maxDivers": 3
+            },
+            {
+              "assist": false,
+              "seed": 819337,
+              "touch": true,
+              "fps": 30,
+              "seconds": 44.33,
+              "minHP": 100,
+              "hp": 100,
+              "hitsTaken": 0,
+              "hits": 112,
+              "shots": 140,
+              "kills": 45,
+              "score": 4695,
+              "lessons": 2,
+              "maxEnemies": 18,
+              "maxBullets": 9,
+              "maxHostile": 5,
+              "maxDivers": 3
+            },
+            {
+              "assist": true,
+              "seed": 417147,
+              "touch": false,
+              "fps": 60,
+              "seconds": 36.33,
+              "minHP": 100,
+              "hp": 100,
+              "hitsTaken": 0,
+              "hits": 100,
+              "shots": 118,
+              "kills": 37,
+              "score": 4215,
+              "lessons": 2,
+              "maxEnemies": 15,
+              "maxBullets": 10,
+              "maxHostile": 1,
+              "maxDivers": 2
+            },
+            {
+              "assist": true,
+              "seed": 819337,
+              "touch": true,
+              "fps": 30,
+              "seconds": 37.37,
+              "minHP": 100,
+              "hp": 100,
+              "hitsTaken": 0,
+              "hits": 99,
+              "shots": 114,
+              "kills": 37,
+              "score": 4215,
+              "lessons": 2,
+              "maxEnemies": 15,
+              "maxBullets": 9,
+              "maxHostile": 3,
+              "maxDivers": 2
+            }
+          ]
+        },
+        {
+          "name": "Visible rows move as a formation; a warned group dives and returns without invisible damage regions",
+          "passed": true,
+          "details": {
+            "rows": 2,
+            "stages": [
+              "tell",
+              "dive",
+              "return",
+              "formation"
+            ],
+            "warningSeconds": 1.03
+          }
+        },
+        {
+          "name": "Real straight lasers miss the wrong column; moving into alignment destroys the visible ship",
+          "passed": true,
+          "details": {
+            "shots": 19,
+            "hits": 13,
+            "targetDestroyed": 1
+          }
+        },
+        {
+          "name": "An actual emitted amber projectile damages its path; ordinary movement escapes it in both modes",
+          "passed": true,
+          "details": [
+            {
+              "assist": false,
+              "visibleFlightSeconds": 2.55,
+              "damage": 14
+            },
+            {
+              "assist": true,
+              "visibleFlightSeconds": 3.26,
+              "damage": 7.7
+            }
+          ]
+        },
+        {
+          "name": "The diving ship body causes damage; a last moment manual dodge leaves the ship unharmed",
+          "passed": true,
+          "details": {
+            "contactDamage": 24,
+            "dodgeTravel": 20.80000000000002
+          }
+        },
+        {
+          "name": "Pulse clears visible bullets and nearby divers while leaving the distant formation intact",
+          "passed": true
+        },
+        {
+          "name": "Full save roundtrip preserves live dives, bullets, RNG and deterministic continuation",
+          "passed": true
+        },
+        {
+          "name": "Pause freezes formation, dive warning, bullets, health, ammo and reward state",
+          "passed": true
+        },
+        {
+          "name": "The old communication-window save keeps collected requirements, score, health, decisions and partial progress",
+          "passed": true,
+          "details": {
+            "creditedEnemies": 7,
+            "newKills": 26,
+            "finalScore": 7171
+          }
+        },
+        {
+          "name": "Completed legacy saves enter safe lessons without rewarding cargo twice; dock saves stay untouched",
+          "passed": true
+        },
+        {
+          "name": "Ignoring the visible attackers loses; calm mode gives more time; normal retry restores the stage checkpoint",
+          "passed": true,
+          "details": [
+            {
+              "assist": false,
+              "seconds": 19.2,
+              "hitsTaken": 7
+            },
+            {
+              "assist": true,
+              "seconds": 37.65,
+              "hitsTaken": 11
+            }
+          ]
+        },
+        {
+          "name": "Simple left-right movement and fire can win without aim prediction, rockets or upgrades",
+          "passed": true,
+          "details": {
+            "seconds": 50.83,
+            "hp": 100,
+            "hitsTaken": 0
+          }
+        },
+        {
+          "name": "Other stages, boarding, convoy, finale and restored G controls still delegate",
+          "passed": true
+        },
+        {
+          "name": "Victory and the admin direct-dock fixture both enter the preserved real 1.8.1 gate",
+          "passed": true,
+          "details": {
+            "completedDockSeconds": 3.42
+          }
+        },
+        {
+          "name": "Actual keyboard and touch inputs, wording and duplicate loading preserve the public API",
+          "passed": true
+        },
+        {
+          "name": "Private core starts with no tournament or storage APIs and uses the same bounded loop",
+          "passed": true,
+          "details": {
+            "applicable": true,
+            "kills": 7
+          }
+        },
+        {
+          "name": "Native Canvas draws the actual HUD and radar; portrait/landscape/DPR bounds keep the player and rows visible",
+          "passed": true,
+          "details": [
+            {
+              "W": 1280,
+              "H": 720,
+              "dpr": 1,
+              "bounds": 10,
+              "width": 726.8,
+              "height": 574
+            },
+            {
+              "W": 390,
+              "H": 460,
+              "dpr": 1,
+              "bounds": 10,
+              "width": 366,
+              "height": 342
+            },
+            {
+              "W": 320,
+              "H": 420,
+              "dpr": 1,
+              "bounds": 10,
+              "width": 296,
+              "height": 302
+            },
+            {
+              "W": 844,
+              "H": 320,
+              "dpr": 1,
+              "bounds": 10,
+              "width": 307.7,
+              "height": 243
+            },
+            {
+              "W": 390,
+              "H": 460,
+              "dpr": 2,
+              "bounds": 10,
+              "width": 366,
+              "height": 342
+            }
+          ]
+        }
+      ],
+      "renders": [
+        {
+          "file": "/tmp/citadel-190-swarm-qa/engine-v1.2.1-dive-1280x720-dpr1.png",
+          "size": [
+            1280,
+            720
+          ],
+          "dpr": 1,
+          "boxes": 10
+        },
+        {
+          "file": "/tmp/citadel-190-swarm-qa/engine-v1.2.1-dive-390x460-dpr1.png",
+          "size": [
+            390,
+            460
+          ],
+          "dpr": 1,
+          "boxes": 10
+        },
+        {
+          "file": "/tmp/citadel-190-swarm-qa/engine-v1.2.1-dive-320x420-dpr1.png",
+          "size": [
+            320,
+            420
+          ],
+          "dpr": 1,
+          "boxes": 10
+        },
+        {
+          "file": "/tmp/citadel-190-swarm-qa/engine-v1.2.1-dive-844x320-dpr1.png",
+          "size": [
+            844,
+            320
+          ],
+          "dpr": 1,
+          "boxes": 10
+        },
+        {
+          "file": "/tmp/citadel-190-swarm-qa/engine-v1.2.1-dive-390x460-dpr2.png",
+          "size": [
+            390,
+            460
+          ],
+          "dpr": 2,
+          "boxes": 10
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+/* Shared readable cards and narrative art. Loaded after the frozen game styles. */
+#arcade-overlay.citadel-readable{box-sizing:border-box;min-height:0;overflow:auto;overscroll-behavior:contain;align-items:center;padding:clamp(10px,2vw,24px);scroll-padding:16px}
+#arcade-overlay.citadel-readable .review-card{box-sizing:border-box;width:100%;max-width:960px;min-width:0;min-height:0;max-height:100%;overflow:auto;margin:auto;scrollbar-color:#6e929d #102533;scrollbar-width:thin}
+#arcade-overlay.citadel-readable .review-card .review-choices{display:grid;grid-template-columns:minmax(0,1fr);gap:10px;min-width:0;margin:0}
+#arcade-overlay.citadel-readable .review-card .review-choices>button{box-sizing:border-box;display:grid;grid-template-columns:30px minmax(0,1fr);align-items:center;gap:12px;width:100%;min-width:0;min-height:52px;height:auto;margin:0;padding:12px 14px;border:1px solid #537789;border-radius:8px;background:#19384a;color:#e6f2f0;text-align:left;font:500 15px/1.45 Arial,sans-serif;cursor:pointer;white-space:normal;overflow-wrap:anywhere}
+#arcade-overlay.citadel-readable .review-card .review-choices>button>b{display:flex;align-items:center;justify-content:center;width:30px;height:30px;min-width:30px;margin:0;padding:0;border:1px solid #739ca9;border-radius:6px;background:#274d5e;color:#f6dea9;font:700 13px/1 Arial,sans-serif;flex:none}
+#arcade-overlay.citadel-readable .review-card .review-choices>button>span{display:block;min-width:0;white-space:normal;text-align:left;line-height:1.45}
+#arcade-overlay.citadel-readable .review-card .review-choices>button:hover{background:#244b5e;border-color:#a5cfc9}
+#arcade-overlay.citadel-readable .review-card .review-choices>button:focus-visible,#arcade-overlay.citadel-readable button:focus-visible{outline:3px solid #f4d089;outline-offset:3px}
+#arcade-overlay.citadel-readable .review-card .review-card-heading{display:flex;justify-content:space-between;align-items:center;gap:8px 20px;flex-wrap:wrap;line-height:1.4}
+#arcade-overlay.citadel-readable .review-card .review-continue{min-height:48px;height:auto;white-space:normal;line-height:1.4}
+#arcade-overlay .mission-check{display:flex;flex-direction:column;gap:20px;padding:clamp(18px,3vw,30px);border:1px solid #69858f;border-radius:12px;background:linear-gradient(135deg,#163244,#0e2231);color:#e8f2ef;box-shadow:0 18px 65px #0007;text-align:left}
+#arcade-overlay .mission-check-heading{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px 18px;padding-bottom:14px;border-bottom:1px solid #3c5b69;font:700 11px/1.4 Arial,sans-serif;letter-spacing:.05em;color:#9cc8cb}
+#arcade-overlay .mission-check-heading>b{display:flex;gap:9px;white-space:nowrap;color:#f1d8a5;font-size:12px}
+#arcade-overlay .mission-check-heading i{font-style:normal;font-weight:400;color:#b3c9cd}
+#arcade-overlay .mission-check-layout{display:grid;grid-template-columns:minmax(0,1fr);gap:22px;min-width:0}
+#arcade-overlay .mission-check-prompt,#arcade-overlay .mission-check-options{min-width:0}
+#arcade-overlay .mission-check-kicker{display:block;margin-bottom:10px;font:700 10px/1.4 Arial,sans-serif;letter-spacing:.08em;color:#99c3c9}
+#arcade-overlay .mission-check h3{margin:0 0 12px;color:#f3d9a4;font:700 clamp(22px,3vw,30px)/1.16 Arial,sans-serif;letter-spacing:-.025em;overflow-wrap:anywhere}
+#arcade-overlay .mission-check p{margin:0;max-width:none;color:#d5e5e5;font:15px/1.55 Arial,sans-serif;white-space:pre-line;overflow-wrap:anywhere}
+#arcade-overlay .mission-check-feedback{padding:17px 18px;border:1px solid #587886;border-left:4px solid #e2b779;border-radius:7px;background:#0a1d2b}
+#arcade-overlay .mission-check.is-correct .mission-check-feedback{border-left-color:#84dbb8}
+#arcade-overlay .mission-check-feedback>strong{display:block;margin:0 0 9px;color:#f2d09c;font:700 16px/1.4 Arial,sans-serif}
+#arcade-overlay .mission-check.is-correct .mission-check-feedback>strong{color:#a9ebcb}
+#arcade-overlay .mission-check .mission-check-outcome{margin-top:12px;color:#c6ecd9}
+#arcade-overlay .mission-check-continue{box-sizing:border-box;display:flex;justify-content:space-between;align-items:center;gap:20px;width:100%;min-height:50px;margin:0;padding:13px 16px;border:1px solid #b8dcd0;border-radius:7px;background:#bdebd6;color:#122e37;text-align:left;font:700 14px/1.4 Arial,sans-serif;cursor:pointer}
+#arcade-overlay .mission-check-footer{display:block;margin-top:0;padding-top:12px;border-top:1px solid #345361;color:#92afb9;font:11px/1.45 Arial,sans-serif}
+@media(min-width:1050px){#arcade-overlay .mission-check-layout{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:28px}}
+@media(max-width:600px){#arcade-overlay.citadel-readable .review-card .review-choices>button{font-size:14px;gap:10px;padding:11px;min-height:52px}#arcade-overlay .mission-check{gap:15px;padding:17px}#arcade-overlay .mission-check h3{font-size:23px}#arcade-overlay .mission-check p{font-size:14px}}
+@media(max-height:440px) and (orientation:landscape){#arcade-overlay.citadel-readable{align-items:flex-start;padding:8px 12px}#arcade-overlay .mission-check{gap:12px;padding:16px}#arcade-overlay .mission-check-layout{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:18px}#arcade-overlay .mission-check h3{font-size:21px}#arcade-overlay .mission-check p{font-size:13px;line-height:1.45}#arcade-overlay.citadel-readable .review-card .review-choices>button{min-height:46px;padding:9px 10px;font-size:13px;gap:9px}#arcade-overlay .mission-check-heading{padding-bottom:10px}#arcade-overlay .mission-check-footer{font-size:10px;padding-top:9px}}
+
+/* Portrait overlays are local to the radio photograph. They never cover play. */
+.captain-photo .captain-interference{position:absolute;inset:0;z-index:2;pointer-events:none;opacity:var(--captain-static,.05);background:repeating-linear-gradient(0deg,transparent 0 3px,#d4f3f266 3px 4px,transparent 4px 8px),repeating-linear-gradient(112deg,#06182400 0 8px,#071b2538 8px 10px);mix-blend-mode:screen}
+.captain-photo .captain-interference:after{content:'';position:absolute;inset:-15% 0;background:linear-gradient(0deg,transparent 40%,#b2f4f04d 43%,transparent 46%,transparent 62%,#ddf3f33d 64%,transparent 66%);transform:translateY(var(--captain-scan,0%));opacity:.6}
+.citadel-captain[data-campaign-mood=worried]{--captain-static:.13}.citadel-captain[data-campaign-mood=crisis]{--captain-static:.23}
+.citadel-captain[data-campaign-mood=crisis] .captain-photo:after{box-shadow:inset 0 0 30px #ed633c40}
+.captain-condition{position:absolute;bottom:0;left:0;right:0;z-index:3;display:flex;justify-content:space-between;align-items:center;gap:8px;margin:0;padding:6px 10px;border-top:1px solid #345462;color:#a5d5d1;background:#0b202edf;font:700 9px/1.4 Arial,sans-serif;letter-spacing:.05em}
+.citadel-captain[data-campaign-mood] .captain-signal{bottom:32px}
+.citadel-captain[data-campaign-mood=worried] .captain-condition{color:#e9c18c}.citadel-captain[data-campaign-mood=crisis] .captain-condition{color:#ffc298;background:#311f26}
+.captain-condition b{font-weight:400;white-space:nowrap}
+@media(max-width:500px){.captain-condition{grid-column:1/-1}.captain-photo .captain-interference{opacity:calc(var(--captain-static,.05)*.8)}}
+
+/* A four-page, skippable prologue. Text is HTML, never baked into the art. */
+#arcade-overlay.citadel-prologue-open{display:flex;align-items:center;justify-content:center;overflow:auto;box-sizing:border-box;padding:clamp(8px,2vw,22px);background:#030b13ef;z-index:40}
+#arcade-overlay .citadel-prologue{box-sizing:border-box;display:grid;grid-template-columns:minmax(0,1.04fr) minmax(0,1fr);width:100%;max-width:1050px;max-height:100%;min-height:0;overflow:auto;margin:auto;border:2px solid #f2d9a0;border-radius:9px;background:#efe4c6;color:#17252c;box-shadow:6px 7px 0 #03101c,0 20px 70px #0009;text-align:left}
+.prologue-art{position:relative;min-height:240px;aspect-ratio:1;background:#122938;border-right:2px solid #132632;overflow:hidden}
+.prologue-art>svg{position:absolute;inset:0;display:block;width:100%;height:100%}
+.prologue-art>span{position:absolute;left:15px;top:15px;padding:6px 10px;border:2px solid #162932;background:#f9dda0;color:#142835;box-shadow:3px 3px 0 #162932;transform:rotate(-3deg);font:900 11px/1.3 Arial,sans-serif;letter-spacing:.08em}
+#arcade-overlay .prologue-copy{box-sizing:border-box;display:flex;flex-direction:column;min-width:0;min-height:0;gap:16px;padding:clamp(18px,3vw,34px);background:radial-gradient(#35556b13 .8px,transparent .8px) 0 0/7px 7px,#efe4c6}
+#arcade-overlay .prologue-topline{display:flex;justify-content:space-between;gap:12px;align-items:center;color:#40575d;font:700 10px/1.5 Arial,sans-serif;letter-spacing:.07em}
+#arcade-overlay .prologue-topline>button{width:auto;margin:0;padding:5px 0;min-height:34px;flex:none;color:#40575d;background:none;border:0;border-bottom:1px solid #617275;font:700 11px/1.4 Arial,sans-serif;cursor:pointer}
+#arcade-overlay .citadel-prologue h3{margin:0;color:#132936;font:900 clamp(25px,3.5vw,41px)/1.04 Arial,sans-serif;letter-spacing:-.035em;text-transform:uppercase}
+#arcade-overlay .citadel-prologue p{margin:0;color:#2f424a;font:16px/1.6 Arial,sans-serif;max-width:none;white-space:pre-line}
+#arcade-overlay .prologue-copy>strong{padding-left:12px;border-left:4px solid #b64d36;color:#993d2c;font:800 15px/1.5 Arial,sans-serif}
+#arcade-overlay .prologue-nav{display:flex;align-items:center;gap:10px;margin-top:auto;padding-top:12px}
+#arcade-overlay .prologue-nav>button{box-sizing:border-box;display:block;width:auto;min-height:46px;padding:12px 14px;margin:0;border:2px solid #16313c;border-radius:5px;background:#16313c;color:#fff0ca;font:700 13px/1.3 Arial,sans-serif;cursor:pointer;text-align:center}
+#arcade-overlay .prologue-nav>button:last-child{flex:1}.prologue-nav>button:disabled{opacity:.45;cursor:default}
+#arcade-overlay .prologue-nav>button[data-action=story-back]{background:transparent;color:#203b47}
+#arcade-overlay .prologue-copy button:focus-visible{outline:3px solid #b3422d;outline-offset:3px}
+.prologue-dots{display:flex;gap:5px;align-items:center}.prologue-dots i{display:block;width:7px;height:7px;border:1px solid #46616b;border-radius:50%;background:transparent}.prologue-dots i.active{background:#b54e35;border-color:#b54e35}
+@media(max-width:650px) and (orientation:portrait){#arcade-overlay .citadel-prologue{grid-template-columns:minmax(0,1fr)}.prologue-art{min-height:130px;aspect-ratio:1.75;border-right:0;border-bottom:2px solid #132632}#arcade-overlay .prologue-copy{padding:17px;gap:12px}#arcade-overlay .citadel-prologue h3{font-size:27px}#arcade-overlay .citadel-prologue p{font-size:14px;line-height:1.5}#arcade-overlay .prologue-copy>strong{font-size:13px}#arcade-overlay .prologue-nav{padding-top:5px}}
+@media(max-height:440px) and (orientation:landscape){#arcade-overlay.citadel-prologue-open{padding:7px}#arcade-overlay .citadel-prologue{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}.prologue-art{min-height:0;aspect-ratio:auto}#arcade-overlay .prologue-copy{padding:14px 18px;gap:10px}#arcade-overlay .citadel-prologue h3{font-size:25px}#arcade-overlay .citadel-prologue p{font-size:13px;line-height:1.45}#arcade-overlay .prologue-copy>strong{font-size:12px}#arcade-overlay .prologue-nav{padding-top:0}#arcade-overlay .prologue-nav>button{min-height:43px;padding:9px 12px}}
+@media(prefers-reduced-motion:reduce){.captain-photo .captain-interference:after{transform:none!important}}

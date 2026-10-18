@@ -1,0 +1,38 @@
+{
+  "version": "1.9.0",
+  "verification": "Node VM with real cores and controlled DOM/image seams; no browser rendering",
+  "reports": [
+    {
+      "core": "atlas-v1.3.5.js",
+      "passed": 10,
+      "checks": [
+        "New campaign: all four comic pages lead to the real first flight",
+        "Back and skip preserve the normal briefing and launch",
+        "Entering or restoring a level does not replay the new-game comic",
+        "Preview freezes play, restores the exact state, and stays paused in a hidden tab",
+        "Pause toggle cannot dismiss and resurrect the comic; closing a preview under the mobile menu keeps play paused",
+        "Overlay visibility and prologue styles follow the real UI lifecycle",
+        "Captain keeps identity, follows actual level, and ignores stale image loads",
+        "Unavailable portrait keeps the old image without a retry flood",
+        "Three actual final checks: all buttons, wrong answer retry, right answer and room progression",
+        "Shared layout has separate numeric cells, touch-sized controls, overflow and keyboard focus; no new save writes"
+      ]
+    },
+    {
+      "core": "engine-v1.2.1.js",
+      "passed": 10,
+      "checks": [
+        "New campaign: all four comic pages lead to the real first flight",
+        "Back and skip preserve the normal briefing and launch",
+        "Entering or restoring a level does not replay the new-game comic",
+        "Preview freezes play, restores the exact state, and stays paused in a hidden tab",
+        "Pause toggle cannot dismiss and resurrect the comic; closing a preview under the mobile menu keeps play paused",
+        "Overlay visibility and prologue styles follow the real UI lifecycle",
+        "Captain keeps identity, follows actual level, and ignores stale image loads",
+        "Unavailable portrait keeps the old image without a retry flood",
+        "Three actual final checks: all buttons, wrong answer retry, right answer and room progression",
+        "Shared layout has separate numeric cells, touch-sized controls, overflow and keyboard focus; no new save writes"
+      ]
+    }
+  ]
+}

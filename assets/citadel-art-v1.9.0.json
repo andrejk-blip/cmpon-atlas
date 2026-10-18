@@ -1,0 +1,41 @@
+{
+  "version": "1.9.0",
+  "created_on": "2026-10-18",
+  "generator": "image_gen",
+  "production_format": "WebP",
+  "format_conversion": "ffmpeg libwebp, quality 86, compression level 6; no additional bitmap edits",
+  "captain_reference": "Existing fictional captain sprite sheet embedded in the frozen game core",
+  "captain_frame_layout": "2 by 2; closed mouth, blink, speaking, wider speech",
+  "comic_panels_svg_viewbox": [
+    "0 0 627 573",
+    "627 0 627 573",
+    "0 574 627 680",
+    "627 574 627 680"
+  ],
+  "assets": [
+    {
+      "file": "citadel-captain-worried-v1.9.0.webp",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "8259e00bbfd989491e98222ec0f048daa467d7978255bb1513b895ad2f164607",
+      "bytes": 262836,
+      "generation_brief": "Edit the supplied fictional captain's 2x2 portrait sprite sheet, preserving his identity, navy uniform with gold trim, gray beard, headset, framing and the four matching mouth/blink states. Middle campaign: worried expression, amber alarms and a tense bridge. Keep the background intact, no text."
+    },
+    {
+      "file": "citadel-captain-crisis-v1.9.0.webp",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "68cc3c120e244ca22d2d8b297976ab77bfdcea58b30e3209c9f57bdc2844f9f1",
+      "bytes": 308352,
+      "generation_brief": "Edit the same fictional captain's 2x2 portrait sprite sheet, keeping identity, framing and the four matching mouth/blink states. Late campaign: the bridge burns behind his shoulders with sparks, smoke and some soot; the unharmed captain is visibly concerned. No text."
+    },
+    {
+      "file": "citadel-prologue-v1.9.0.webp",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "bc061c30b797ed46efb76c8aedc82fbee347fd03f880d71991de3d5b9e7a1c7a",
+      "bytes": 561850,
+      "generation_brief": "Four sequential panels of a retro 1980s science-fiction comic, ink outlines and halftone, navy/teal/cream/amber palette, without rendered lettering: the analyst team prepares functional requirements at an orbital Citadel; a gold courier escapes through asteroids; a living tentacled computer sends soldiers, rocket troopers, ninjas and robot dogs; a determined analyst pilot prepares to get the requirements into operation. Text is provided separately as live HTML."
+    }
+  ]
+}
