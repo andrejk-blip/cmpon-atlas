@@ -1,0 +1,57 @@
+name: Prepare Citadel entry files 1.9.2
+on:
+  push:
+    branches: [release/prepare-academy-ui192]
+    paths: [.github/workflows/prepare-entry-ui192.yml]
+permissions:
+  contents: write
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: release/prepare-academy-ui192
+      - name: Reproduce prepared entry files and verify exact hashes
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib, json, re
+          ROOT=Path('.')
+          expected_old={
+           'index.html':'8e08821d485df53bed1afa2a679aac0ce642f2c8b84c8fa726d567e278714cf3',
+           'atlas.html':'b4d73c19f9dd9951cd13d6b757bc9a5ca4155047200fe5e3c896812016427710',
+           'version.json':'f16d97801d813825b2c5c5b5b546ac042381f4d4e975a33813d4385eb8736c6e'}
+          expected_new={
+           'index.html':'7c2f516b01ebbb1a05ace8e7e530b269960f1713a965f5aac5b27c91efbcd7e9',
+           'atlas.html':'b046712ba427c8543f18478a3bc83f70db19563d3be90a618e41d53e88a2ac22'}
+          for name in ['index.html','atlas.html']:
+           p=ROOT/name;b=p.read_bytes();assert hashlib.sha256(b).hexdigest()==expected_old[name]
+           s=b.decode('utf-8').replace('content="1.9.1"','content="1.9.2"').replace('Приложение v1.9.1','Приложение v1.9.2')
+           def release(m):
+            data=json.loads(m.group(1));data['version']='1.9.2';data['ui_fixes_module_version']='1.9.2'
+            return '<script type="application/json" id="release-data">'+json.dumps(data,ensure_ascii=False,separators=(',',':'))+'</script>'
+           s,count=re.subn(r'<script type="application/json" id="release-data">(.*?)</script>',release,s)
+           assert count==1 and s.count('</head>')==1 and s.count('</body></html>')==1
+           s=s.replace('</head>','<link rel="stylesheet" href="./assets/citadel-ui-fixes-v1.9.2.css">\n</head>')
+           s=s.replace('</body></html>','<script defer src="./assets/citadel-ui-fixes-v1.9.2.js"></script>\n</body></html>')
+           b=s.encode('utf-8');assert hashlib.sha256(b).hexdigest()==expected_new[name]
+           p.write_bytes(b)
+          p=ROOT/'version.json';b=p.read_bytes();assert hashlib.sha256(b).hexdigest()==expected_old['version.json']
+          v=json.loads(b);v['version']='1.9.2';v['index_sha256']=expected_new['index.html'];v['atlas_sha256']=expected_new['atlas.html']
+          v['ui_fixes_module_version']='1.9.2';v['ui_fixes_sha256']='364fc8c1e412eb9b73f826845e23646f8906d37c7027aa1f2ae93ba0548cbf16'
+          v['ui_fixes_css_sha256']='70f57cd512d57dcc378b4a44159ce690ae4fa064c9ccb9ba163cd1469f230bbe';v['web_atlas_sha256']=expected_new['atlas.html']
+          b=(json.dumps(v,ensure_ascii=False,indent=2)+'\n').encode('utf-8')
+          assert hashlib.sha256(b).hexdigest()=='bc951d5d2201de64649b3eca68a34ba6dfd914a0683b7f83ae7bfa806feb912f'
+          p.write_bytes(b)
+          for name in ['index.html','atlas.html','version.json']:
+           b=(ROOT/name).read_bytes();print(name,len(b),hashlib.sha256(b).hexdigest(),hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest())
+          PY
+      - name: Store source on isolated branch without changing the live site
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- index.html atlas.html version.json
+          git commit -m 'Prepare exact 1.9.2 entry files and correct UI integrity checksum'
+          git push origin HEAD:release/prepare-academy-ui192
