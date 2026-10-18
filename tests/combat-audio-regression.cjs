@@ -41,7 +41,7 @@ class AudioNode {
   constructor(ctx,kind){
     this.ctx=ctx;this.kind=kind;this.connections=[];this.disconnected=false;
     for(const key of ['frequency','Q','pan','detune','delayTime','threshold','knee','ratio','attack','release'])this[key]=new Param();
-    this.gain=new Param(1);ctx.nodes.push(this);
+    this.gain=new Param(1);this.playbackRate=new Param(1);ctx.nodes.push(this);
   }
   connect(node){this.connections.push(node);return node;}
   disconnect(){this.disconnected=true;this.connections=[];}
@@ -59,7 +59,8 @@ class MockAudioContext {
   createBufferSource(){return new AudioNode(this,'buffer-source');}
   createBuffer(channels,length){
     if(this.failBuffer)throw new Error('Simulated allocation failure');
-    const data=Array.from({length:channels},()=>new Float32Array(length));return{getChannelData:i=>data[i]};
+    const data=Array.from({length:channels},()=>new Float32Array(length));
+    return{length,numberOfChannels:channels,sampleRate:this.sampleRate,duration:length/this.sampleRate,getChannelData:i=>data[i]};
   }
   resume(){this.state='running';return Promise.resolve();}
   advance(time){

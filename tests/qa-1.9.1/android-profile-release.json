@@ -1,0 +1,111 @@
+{
+  "method": "Actual public JavaScript in Node VM, native Canvas 2D, isolated DOM/network/storage/Web Audio mocks. No Android device/browser execution.",
+  "compatSha256": "e5ea0b065568c5ebcddcd01d483375560bae36308871dd62a87e5d8e97a46599",
+  "results": [
+    {
+      "name": "compatibility bootstrap parses as ES5",
+      "ok": true
+    },
+    {
+      "name": "modern native APIs are preserved",
+      "ok": true
+    },
+    {
+      "name": "missing method fallbacks preserve collection and replacement semantics",
+      "ok": true
+    },
+    {
+      "name": "controller timeout aborts, validates values, and bounds timer chunks",
+      "ok": true
+    },
+    {
+      "name": "controllerless timeout bounds waits and preserves unrelated requests",
+      "ok": true
+    },
+    {
+      "name": "modern mobile / no WebGL: first render, name entry, launch, first shot, save",
+      "ok": true,
+      "detail": {
+        "status": "playing",
+        "renderer": "3D · совместимый режим",
+        "saveRequests": 2,
+        "timeoutMode": "native",
+        "installed": [],
+        "audio": "mock Web Audio nodes emitted"
+      }
+    },
+    {
+      "name": "missing APIs / no WebGL: first render, name entry, launch, first shot, save",
+      "ok": true,
+      "detail": {
+        "status": "playing",
+        "renderer": "3D · совместимый режим",
+        "saveRequests": 2,
+        "timeoutMode": "controller",
+        "installed": [
+          "Object.hasOwn",
+          "Array.at",
+          "String.replaceAll",
+          "crypto.randomUUID",
+          "AbortSignal.timeout"
+        ],
+        "audio": "mock Web Audio nodes emitted"
+      }
+    },
+    {
+      "name": "missing APIs and AbortController: first render, name entry, launch, first shot, save",
+      "ok": true,
+      "detail": {
+        "status": "playing",
+        "renderer": "3D · совместимый режим",
+        "saveRequests": 2,
+        "timeoutMode": "fetch-race",
+        "installed": [
+          "Object.hasOwn",
+          "Array.at",
+          "String.replaceAll",
+          "crypto.randomUUID",
+          "AbortSignal.timeout",
+          "fetch timeout fallback"
+        ],
+        "audio": "mock Web Audio nodes emitted"
+      }
+    },
+    {
+      "name": "failed GPU shader / compatible renderer: first render, name entry, launch, first shot, save",
+      "ok": true,
+      "detail": {
+        "status": "playing",
+        "renderer": "3D · совместимый режим",
+        "saveRequests": 2,
+        "timeoutMode": "controller",
+        "installed": [
+          "Object.hasOwn",
+          "Array.at",
+          "String.replaceAll",
+          "crypto.randomUUID",
+          "AbortSignal.timeout"
+        ],
+        "audio": "mock Web Audio nodes emitted"
+      }
+    },
+    {
+      "name": "missing APIs / denied storage / no audio or speech: first render, name entry, launch, first shot, save",
+      "ok": true,
+      "detail": {
+        "status": "playing",
+        "renderer": "3D · совместимый режим",
+        "saveRequests": 2,
+        "timeoutMode": "controller",
+        "installed": [
+          "Object.hasOwn",
+          "Array.at",
+          "String.replaceAll",
+          "crypto.randomUUID",
+          "AbortSignal.timeout"
+        ],
+        "audio": "unavailable, continued"
+      }
+    }
+  ]
+}

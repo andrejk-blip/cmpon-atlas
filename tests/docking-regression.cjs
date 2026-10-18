@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 'use strict';
-// Flight 1.8.1 regression: actual frozen cores and the shipped 1.8.0 addon
+// Flight 1.9.1 regression: actual frozen cores and the shipped 1.8.0 addon
 // sequence, including the Academy wrapper after Comic. No browser or network.
 const fs = require('node:fs'), path = require('node:path'), vm = require('node:vm');
 const assert = require('node:assert/strict'), crypto = require('node:crypto');
@@ -11,7 +11,7 @@ const distance = (a, b) => Math.hypot(...a.map((v, i) => v - b[i]));
 const near = (a, b, label) => assert(distance(a, b) < 1e-6, `${label}: ${a} / ${b}`);
 const sha = file => crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex');
 
-async function harness(core, flight = '1.8.1') {
+async function harness(core, flight = '1.9.1') {
   const h = createHarness(core, null, null);
   const bank = JSON.parse(fs.readFileSync(asset('citadel-academy-cards-v1.4.0.json'), 'utf8'));
   h.context.location = { protocol: 'https:', href: 'https://test.invalid/atlas.html', origin: 'https://test.invalid', hostname: 'test.invalid', hash: '', search: '' };
@@ -82,7 +82,7 @@ function restore(h, source, emitter = () => {}) {
 const campaignProgress = e => plain({ hp: e.player.hp, score: e.score, rescued: e.rescued, decisions: e.decisions });
 
 async function verify(core) {
-  const h = await harness(core), old = await harness(core, '1.7.1'), legacy = await harness(core, null);
+  const h = await harness(core), old = await harness(core, '1.7.1'), prior = await harness(core, '1.8.1'), legacy = await harness(core, null);
   const groups = [], check = (name, fn) => { const detail = fn(); groups.push({ name, passed: true, ...(detail ? { detail } : {}) }); };
   let contact;
   check('Fail before / pass after: manual entry reaches the physical wall and late F is rejected in 1.7.1', () => {
@@ -94,7 +94,7 @@ async function verify(core) {
     old.action('citadel-interact'); assert.equal(before.status, 'playing', 'Late F really fails at the wall');
     const { e: after, events } = dock(h); const seconds = fly(h, after, 8);
     assert.equal(after.status, 'docking'); assert.equal(after.player.hp, 100); assert.equal(after.collisionCount || 0, 0);
-    assert.equal(after.dock.flightVersion, '1.8.1'); assert.equal(events.filter(x => x.kind === 'dock').length, 1);
+    assert.equal(after.dock.flightVersion, '1.9.1'); assert.equal(events.filter(x => x.kind === 'dock').length, 1);
     return { oldContact: contact.player.pos, oldLocalZ: contact.player.pos[2] - contact.station.pos[2],
       oldHP: contact.player.hp, manualCaptureSeconds: seconds, capturePosition: plain(after.player.pos) };
   });
@@ -135,9 +135,9 @@ async function verify(core) {
       h.action('citadel-interact'); assert.equal(e.status, 'playing'); assert.equal(e.dock, null);
     }
   });
-  check('Old core, 1.7.1 and 1.8.1 cinematic saves retain their exact trajectory and finish boarding', () => {
+  check('Old core, 1.7.1, 1.8.1 and 1.9.1 cinematic saves retain their exact trajectory and finish boarding', () => {
     let saves = 0;
-    for (const owner of [legacy, old, h]) for (const progress of [.06, .31, .62, .9]) {
+    for (const owner of [legacy, old, prior, h]) for (const progress of [.06, .31, .62, .9]) {
       const { e } = dock(owner, { pos: owner === legacy ? [78, 13, -173] : [78, 13, -100] });
       owner.action('citadel-interact'); assert.equal(e.status, 'docking');
       e.phaseClock = e.dock.duration * progress; e.player.pos = e.dockShip(progress);
@@ -173,7 +173,7 @@ async function main(argv = process.argv.slice(2)) {
   if (!cores.length) cores.push(asset('atlas-v1.3.5.js'), path.resolve(root, '../cmpon-analytics-admin/game-lab/engine-v1.2.1.js'));
   const results = [];
   for (const core of cores) results.push(await verify(core));
-  const report = { version: '1.8.1', patchSha256: sha(asset('citadel-flight-v1.8.1.js')),
+  const report = { version: '1.9.1', patchSha256: sha(asset('citadel-flight-v1.9.1.js')),
     method: 'Actual cores, shipped post-core addon order, Academy local bank, real arcadeInput/actions. No browser or network.', results };
   if (reportPath) { fs.mkdirSync(path.dirname(reportPath), { recursive: true }); fs.writeFileSync(reportPath, JSON.stringify(report, null, 2) + '\n'); }
   process.stdout.write(JSON.stringify({ version: report.version, patchSha256: report.patchSha256,

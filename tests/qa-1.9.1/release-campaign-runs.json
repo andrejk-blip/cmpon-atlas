@@ -1,0 +1,48 @@
+{
+  "parallel": true,
+  "runs": [
+    {
+      "mode": "calm",
+      "cwd": "/workspace/scratch/a3f66c86cf59/cmpon-atlas",
+      "command": [
+        "node",
+        "tests/campaign-playthrough-1.9.1.cjs",
+        "--calm",
+        "--report",
+        "/workspace/scratch/a3f66c86cf59/citadel-general-qa/campaign-calm-release.json"
+      ],
+      "startedUtc": "2026-10-18T03:09:37.589129+00:00",
+      "wallSeconds": 71.871,
+      "exitCode": 0,
+      "report": "/workspace/scratch/a3f66c86cf59/citadel-general-qa/campaign-calm-release.json",
+      "log": "/workspace/scratch/a3f66c86cf59/citadel-general-qa/components/campaign-calm-release.log",
+      "pass": true,
+      "status": "won",
+      "simulatedSeconds": 792.25,
+      "cards": 23,
+      "levels": 14,
+      "entrySha256": "8e08821d485df53bed1afa2a679aac0ce642f2c8b84c8fa726d567e278714cf3"
+    },
+    {
+      "mode": "normal",
+      "cwd": "/workspace/scratch/a3f66c86cf59/cmpon-atlas",
+      "command": [
+        "node",
+        "tests/campaign-playthrough-1.9.1.cjs",
+        "--report",
+        "/workspace/scratch/a3f66c86cf59/citadel-general-qa/campaign-normal-release.json"
+      ],
+      "startedUtc": "2026-10-18T03:09:37.587592+00:00",
+      "wallSeconds": 80.232,
+      "exitCode": 0,
+      "report": "/workspace/scratch/a3f66c86cf59/citadel-general-qa/campaign-normal-release.json",
+      "log": "/workspace/scratch/a3f66c86cf59/citadel-general-qa/components/campaign-normal-release.log",
+      "pass": true,
+      "status": "won",
+      "simulatedSeconds": 848.15,
+      "cards": 23,
+      "levels": 14,
+      "entrySha256": "8e08821d485df53bed1afa2a679aac0ce642f2c8b84c8fa726d567e278714cf3"
+    }
+  ]
+}

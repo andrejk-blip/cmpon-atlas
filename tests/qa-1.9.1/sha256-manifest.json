@@ -1,0 +1,398 @@
+{
+  "schema": "citadel-public-qa-sha256-v1",
+  "gameVersion": "1.9.1",
+  "algorithm": "SHA-256",
+  "pathBase": "tests/qa-1.9.1",
+  "note": "Reports are byte-for-byte copies. Historical failures and earlier-candidate audits are retained as historical evidence, not final-build passes. This manifest excludes itself. Private dependencies are metadata only, not included files.",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 15201,
+      "sha256": "86c7646b57d2e8c5c04e9d49e798308f075ced9e541ce72ca4f37ca8b052b6c5",
+      "role": "documentation"
+    },
+    {
+      "path": "campaign-normal-release.json",
+      "bytes": 104428,
+      "sha256": "ce4c8a89f5dc8f67eb7f9bbe5683a6e95c5bd6f24a68f07ff0e79b2dd53fc0c7",
+      "evidence": "Т01",
+      "role": "final"
+    },
+    {
+      "path": "campaign-calm-release.json",
+      "bytes": 101921,
+      "sha256": "d27f81940a8ed392e7f613e5ab6f4fcd73fb802aa31c2f08bb3bbd8b19eb2768",
+      "evidence": "Т01",
+      "role": "final"
+    },
+    {
+      "path": "campaign-calm-final.json",
+      "bytes": 16778,
+      "sha256": "dcfda97a818ecb37e578aef69fe1ec5ccc7d0c8266bca9d3bf8e4e4593cbc636",
+      "evidence": "Т01",
+      "role": "historical_expected_failure"
+    },
+    {
+      "path": "decks191-verification.json",
+      "bytes": 57570,
+      "sha256": "5e35e557ed1f2de09927b0378f0cf5cded66730f3ee9ad454cc191de6df996df",
+      "evidence": "Т02",
+      "role": "final"
+    },
+    {
+      "path": "decks-gate191-independent.json",
+      "bytes": 13508,
+      "sha256": "0916d4ae0cab47a7105f8e346c94eb97826d301a568639b76bb18090f7c29de3",
+      "evidence": "Т02",
+      "role": "historical_candidate_audit"
+    },
+    {
+      "path": "full-entry-release.json",
+      "bytes": 13518,
+      "sha256": "df01180289a89dcabd063fe4dcae25fa7946244d1e30e32e709ba088d06d3a5b",
+      "evidence": "Т05",
+      "role": "final"
+    },
+    {
+      "path": "android-profile-release.json",
+      "bytes": 3358,
+      "sha256": "ef0c166bb5b3345e99b03382005393a1abc2d44ca021c6c378643eb241d0631e",
+      "evidence": "Т06",
+      "role": "final"
+    },
+    {
+      "path": "docking191.json",
+      "bytes": 5392,
+      "sha256": "454347c6d361f10621d89a5b70ba0bacfd87357e0f61a3031aaaa08707f9cf3d",
+      "evidence": "Т08",
+      "role": "final"
+    },
+    {
+      "path": "flight-navigation191.json",
+      "bytes": 7401,
+      "sha256": "75d9cf48ab1adb8bcf7b365f84547cc7f3bdfccb361cd18da494c590cc18d967",
+      "evidence": "Т13",
+      "role": "final"
+    },
+    {
+      "path": "release-campaign-runs.json",
+      "bytes": 1677,
+      "sha256": "9e1aeba350fd65741203294a3549ae58cc6d597093705e9a44fc91d7f4449844",
+      "evidence": "Т01",
+      "role": "execution_metadata"
+    },
+    {
+      "path": "release-entry-runs.json",
+      "bytes": 784,
+      "sha256": "f7c1a407bf8f8c5c8c5e8a185a90741b2110921c2ec2b8fda0e54c10764484ba",
+      "evidence": "Т05, Т06",
+      "role": "execution_metadata"
+    }
+  ],
+  "entries": [
+    {
+      "path": "../../index.html",
+      "bytes": 11641,
+      "sha256": "8e08821d485df53bed1afa2a679aac0ce642f2c8b84c8fa726d567e278714cf3"
+    },
+    {
+      "path": "../../atlas.html",
+      "bytes": 11661,
+      "sha256": "b4d73c19f9dd9951cd13d6b757bc9a5ca4155047200fe5e3c896812016427710"
+    },
+    {
+      "path": "../../version.json",
+      "bytes": 5518,
+      "sha256": "f16d97801d813825b2c5c5b5b546ac042381f4d4e975a33813d4385eb8736c6e"
+    }
+  ],
+  "activeModules": [
+    {
+      "path": "../../assets/citadel-startup-v1.7.1.js",
+      "bytes": 2219,
+      "sha256": "4d65d9f4456488dd2ea7eeab114ecf8cf4723177b854c0598de70a43b200e7c7",
+      "order": 1
+    },
+    {
+      "path": "../../assets/citadel-compat-v1.7.1.js",
+      "bytes": 8723,
+      "sha256": "e5ea0b065568c5ebcddcd01d483375560bae36308871dd62a87e5d8e97a46599",
+      "order": 2
+    },
+    {
+      "path": "../../assets/atlas-v1.3.5.js",
+      "bytes": 6843440,
+      "sha256": "af1f9024313d1ecb798edc19b5039407049916d094c88426f85ba852ac077be8",
+      "order": 3
+    },
+    {
+      "path": "../../assets/citadel-records-v1.1.1.js",
+      "bytes": 6397,
+      "sha256": "178c584491b2755e93f2e4469a8663db3bb93c8e970f5cc5bcbe75b0e6dc6183",
+      "order": 4
+    },
+    {
+      "path": "../../assets/citadel-mrg-v1.7.0.js",
+      "bytes": 37126,
+      "sha256": "1e2decb0c05426cc0989286558d109235e5f35381a153342434f9400b2d16964",
+      "order": 5
+    },
+    {
+      "path": "../../assets/citadel-mrg-view-v1.7.0.js",
+      "bytes": 43709,
+      "sha256": "e82fcc77edafcda95364d3851be748c863c23e6677d43f39c75963d265c0797b",
+      "order": 6
+    },
+    {
+      "path": "../../assets/citadel-music-v1.4.2.js",
+      "bytes": 28487,
+      "sha256": "11ba6f8ee1d80e7313e7c7c14d1133cf55f9f124ca29eb8d3ed54aba22aafeb0",
+      "order": 7
+    },
+    {
+      "path": "../../assets/citadel-sfx-pack-v1.9.1.js",
+      "bytes": 20094,
+      "sha256": "8dc8128a72045c4136a3460de8900720813861e1979926bfc0c0c872cdac590e",
+      "order": 8
+    },
+    {
+      "path": "../../assets/citadel-sfx-v1.9.1.js",
+      "bytes": 34332,
+      "sha256": "5835ae456baf68013dd67c1181ba7de3ecc92225a7a99db422cfd3bfc239b848",
+      "order": 9
+    },
+    {
+      "path": "../../assets/citadel-voice-pack-v1.8.2.js",
+      "bytes": 61373,
+      "sha256": "e0a0ac89a7ad348a7b107fef9c067b12227d33b7c1427d3eb7cec5472949fbfe",
+      "order": 10
+    },
+    {
+      "path": "../../assets/citadel-field-ui-v1.7.0.js",
+      "bytes": 9092,
+      "sha256": "fb2b2545d45aaad74c1009bf2bd3b775ca6b897c9baf027f2c7cff5de0b02bed",
+      "order": 11
+    },
+    {
+      "path": "../../assets/citadel-flight-v1.9.1.js",
+      "bytes": 16524,
+      "sha256": "d8e345e6a7ef05ea3aebcb986042c1c36a809bb6608ccce242d00507178199b7",
+      "order": 12
+    },
+    {
+      "path": "../../assets/citadel-aim-v1.7.1.js",
+      "bytes": 5627,
+      "sha256": "6c0251b56e8a798597cc0a3b26bec950739665f4d5fed9980db091ed04b25058",
+      "order": 13
+    },
+    {
+      "path": "../../assets/citadel-flight-view-v1.7.1.js",
+      "bytes": 12070,
+      "sha256": "b5e7d58a269a75fb71aba8ccb286e84714e17ef016532086dc8d098443acae91",
+      "order": 14
+    },
+    {
+      "path": "../../assets/citadel-pursuit-v1.9.0.js",
+      "bytes": 34961,
+      "sha256": "7e592675d274bc1569cec4585d7f9cd5f89c0499f28bfea05d97ed856e00eb1f",
+      "order": 15
+    },
+    {
+      "path": "../../assets/citadel-swarm-v1.9.0.js",
+      "bytes": 40462,
+      "sha256": "f7d4f101894d7d606d839f6d97de309ebbcdd1156129be78f0468732eb629581",
+      "order": 16
+    },
+    {
+      "path": "../../assets/citadel-parallax-v1.8.0.js",
+      "bytes": 20910,
+      "sha256": "abbfdb4d46c331cb3c752f27932b2d33349fe6ec761b2e680af5120e0ab34ea8",
+      "order": 17
+    },
+    {
+      "path": "../../assets/citadel-decks-v1.9.1.js",
+      "bytes": 51845,
+      "sha256": "c71aea261ff4ca22f6748be7bf3a167021cd3702dbe953192e6609eb1622c444",
+      "order": 18
+    },
+    {
+      "path": "../../assets/citadel-input-v1.9.1.js",
+      "bytes": 5511,
+      "sha256": "77b4995131a94d0f6091e69b6abe16e18e3b2a1496112ab1ddf11f7eda6bd3af",
+      "order": 19
+    },
+    {
+      "path": "../../assets/citadel-voice-v1.9.0.js",
+      "bytes": 33476,
+      "sha256": "8cad3194303c1be0f77ad177b8c328e72940a9db23a3e32e5c2912920386d286",
+      "order": 20
+    },
+    {
+      "path": "../../assets/citadel-comic-v1.9.1.js",
+      "bytes": 17221,
+      "sha256": "b20d5f7b10e585f114520d47fef58ac6fbb66fc80f6d92861c7dbe0050ce3d56",
+      "order": 21
+    },
+    {
+      "path": "../../assets/citadel-interface-v1.9.0.js",
+      "bytes": 3716,
+      "sha256": "1c86ce29791480920e08b5dddc42dadcc1e4bab0916e8da51c16aedb0b1b1291",
+      "order": 22
+    },
+    {
+      "path": "../../assets/citadel-story-v1.9.0.js",
+      "bytes": 12573,
+      "sha256": "85f5c018a42f09b20eb7a62a87f4251a02f219027f1f4799e07c774ff43d2c13",
+      "order": 23
+    },
+    {
+      "path": "../../assets/atlas-metrics-v0.1.0.js",
+      "bytes": 8435,
+      "sha256": "79700bbff01f5744e1a2eb44a935ed006857eae4e75ce3602aee6cc69d8101e7",
+      "order": 24
+    },
+    {
+      "path": "../../assets/atlas-integration-v1.1.4.js",
+      "bytes": 2577,
+      "sha256": "96eaf8cd36e4c9257f0e531d861230f8ca1610973905027ad6f58dc819937220",
+      "order": 25
+    },
+    {
+      "path": "../../assets/citadel-academy-bridge-v1.7.0.js",
+      "bytes": 18557,
+      "sha256": "cc33928c4d0b0271bc5205211ee815d56cba9243838053e4d460edee68ba2033",
+      "order": 26
+    }
+  ],
+  "references": [
+    {
+      "path": "../campaign-playthrough-1.9.1.cjs",
+      "bytes": 9038,
+      "sha256": "aa9aa92b0fcfb19832ea43be061c0863d06320186ad73e6109ce7007992012d9"
+    },
+    {
+      "path": "../mission-integration-regression-1.9.1.cjs",
+      "bytes": 24425,
+      "sha256": "5c77f17c6f06092e113fb928344238a890c03b6e8aba46dc336960f565711c0d"
+    },
+    {
+      "path": "../android-startup-regression.cjs",
+      "bytes": 17629,
+      "sha256": "55293a52ca58fc6eab4269499f0bad33c38de3b0ec9763b79453e969ea780492"
+    },
+    {
+      "path": "../decks-regression.cjs",
+      "bytes": 44072,
+      "sha256": "650429e810207d9b0d34e721827237b4eb212f756f6c11e8899247e79984104b"
+    },
+    {
+      "path": "../docking-regression.cjs",
+      "bytes": 12957,
+      "sha256": "127947706ba67f1b773405dc3ba0c88cbac7aeb9b5fa93c660b56791ba3b6320"
+    },
+    {
+      "path": "../flight-navigation191-regression.cjs",
+      "bytes": 9230,
+      "sha256": "ff93106a8c2cfdb8e7cc35d332b65e0413a58bbbd2b2c611ca77980e737a04f9"
+    },
+    {
+      "path": "../recorded-combat-audio-regression.cjs",
+      "bytes": 26448,
+      "sha256": "014ef28c5615fd04690bd0ca8ad7ba4601744682947f690be68442e04c7faaaf"
+    },
+    {
+      "path": "../touch-input-regression.cjs",
+      "bytes": 15310,
+      "sha256": "41e581dc114a7fc202517fffc57cb4f56c21dffef6880e072e74af9d6604817a"
+    },
+    {
+      "path": "../recorded-combat-audio-verification-1.9.1.json",
+      "bytes": 11431,
+      "sha256": "01e01b2273c5ac09aa71e2b6417c5a954db2535296cce17f8441e7ef37b26728"
+    },
+    {
+      "path": "../touch-input-verification-1.9.1.json",
+      "bytes": 5688,
+      "sha256": "bc43b70d2c01c6182ae49e61ad0d10e50cf8c6b520850c2df1478e85061ebb0c"
+    },
+    {
+      "path": "../fixtures/flight-calm-level10-start.json",
+      "bytes": 29148,
+      "sha256": "4d5738ffc4def5518bf6e55e1902d0c3470a8615d4234caf94e2372994dd9771"
+    },
+    {
+      "path": "../fixtures/flight-calm-level10-stalled.json",
+      "bytes": 52066,
+      "sha256": "c7feef4ade0b968128e937a9430038448b1380be61f0e5ea90b5b92b030dd30a"
+    },
+    {
+      "path": "../mrg-regression.cjs",
+      "bytes": 57400,
+      "sha256": "5ba3b808a1dc76c7faad2bb6878115e1292ef1d771f09c882a3f5cb190af1537"
+    },
+    {
+      "path": "../prepared-voice-regression.cjs",
+      "bytes": 47116,
+      "sha256": "241976f7f49af52ad95cabb0cc6651ea37537c7bf318b6c51a4254b02f191dab"
+    },
+    {
+      "path": "../pursuit-regression.cjs",
+      "bytes": 23820,
+      "sha256": "5d6eb513cad4dad7b5a0ec616c3213b0aae49a6367b90297223b3ab3c89a0566"
+    },
+    {
+      "path": "../swarm-regression.cjs",
+      "bytes": 28485,
+      "sha256": "94269e2fa54c6df238df542b2d631ad642bf33ac950a19563e7d547fdc2d2aa4"
+    },
+    {
+      "path": "../../assets/citadel-academy-cards-v1.4.0.json",
+      "bytes": 76697,
+      "sha256": "283b8ca2e4ceff8c2465392477cace407bdbb52a077670831ad726903c32a01e"
+    },
+    {
+      "path": "../../assets/citadel-flight-v1.8.1.js",
+      "bytes": 11488,
+      "sha256": "aa9fe41d2693961d28b81ff15cac5bc1e45b0d3393b2cb4f1edf8329d434aa6a"
+    }
+  ],
+  "privateDependencies": [
+    {
+      "repository": "cmpon-analytics-admin",
+      "path": "scripts/mission-controllers.cjs",
+      "bytes": 4417,
+      "sha256": "41ca6c1278508a6ee5f6d09a51cfac92f2b9912bdd8c9b128960770914e46d57",
+      "role": "Campaign pursuit, swarm, and Parallax ordinary-input controllers"
+    },
+    {
+      "repository": "cmpon-analytics-admin",
+      "path": "scripts/mrg-controller.cjs",
+      "bytes": 2524,
+      "sha256": "28fa69f8ab8d4b13d615a4e1a4e325a5685c300119096232d343baed7d7809f1",
+      "role": "Campaign MRG ordinary-input controller"
+    },
+    {
+      "repository": "cmpon-analytics-admin",
+      "path": "game-lab/engine-v1.2.1.js",
+      "bytes": 6785336,
+      "sha256": "29cf0a79c5887bbdf4e80ba2664b16d50172771f10069cb6f5d274eabbc4cbe8",
+      "role": "Frozen second core for dual-core profiles"
+    }
+  ],
+  "historicalEvidence": {
+    "independentDeckGate": {
+      "report": "decks-gate191-independent.json",
+      "auditedModuleSha256": "ada6bff0676dc2fef349dcbfbc8e9be4a3eae0d5724fa2846fbd069e6fc9b05a",
+      "finalModuleSha256": "c71aea261ff4ca22f6748be7bf3a167021cd3702dbe953192e6609eb1622c444",
+      "status": "earlier candidate; not rerun against final module"
+    },
+    "calmFailure": {
+      "report": "campaign-calm-final.json",
+      "status": "actual failure before finite-route navigation fix",
+      "reproducer": "../flight-navigation191-regression.cjs",
+      "oldFlightSha256": "aa9fe41d2693961d28b81ff15cac5bc1e45b0d3393b2cb4f1edf8329d434aa6a",
+      "fixedFlightSha256": "d8e345e6a7ef05ea3aebcb986042c1c36a809bb6608ccce242d00507178199b7"
+    }
+  },
+  "verificationScope": "JSON parsing, byte-for-byte source-copy equality, relative path resolution, checksums, and exact final-entry report/module matching; no additional gameplay run was performed to prepare this archive."
+}

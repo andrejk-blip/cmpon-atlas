@@ -1,0 +1,525 @@
+{
+  "scope": "Independent gate/save/contact/recovery adversarial fixtures; not a balance or ordinary-input completion run",
+  "module": "/workspace/scratch/a3f66c86cf59/cmpon-atlas/assets/citadel-decks-v1.9.1.js",
+  "module_sha256": "ada6bff0676dc2fef349dcbfbc8e9be4a3eae0d5724fa2846fbd069e6fc9b05a",
+  "results": [
+    {
+      "core": "atlas-v1.3.5.js",
+      "module": "citadel-decks-v1.9.1.js",
+      "groups": [
+        {
+          "name": "all fifteen cards gate current enemies and finite waiting queues",
+          "pass": true,
+          "ms": 2382,
+          "detail": [
+            {
+              "tier": 0,
+              "room": 0,
+              "spawned": 0,
+              "time": 0
+            },
+            {
+              "tier": 0,
+              "room": 1,
+              "spawned": 0,
+              "time": 0
+            },
+            {
+              "tier": 0,
+              "room": 2,
+              "spawned": 0,
+              "time": 0
+            },
+            {
+              "tier": 1,
+              "room": 0,
+              "spawned": 8,
+              "time": 2.3499999999999965
+            },
+            {
+              "tier": 1,
+              "room": 1,
+              "spawned": 17,
+              "time": 4.699999999999989
+            },
+            {
+              "tier": 1,
+              "room": 2,
+              "spawned": 28,
+              "time": 7.04999999999998
+            },
+            {
+              "tier": 2,
+              "room": 0,
+              "spawned": 10,
+              "time": 2.3499999999999965
+            },
+            {
+              "tier": 2,
+              "room": 1,
+              "spawned": 23,
+              "time": 11.300000000000141
+            },
+            {
+              "tier": 2,
+              "room": 2,
+              "spawned": 38,
+              "time": 20.25000000000013
+            },
+            {
+              "tier": 3,
+              "room": 0,
+              "spawned": 13,
+              "time": 8.966666666666692
+            },
+            {
+              "tier": 3,
+              "room": 1,
+              "spawned": 28,
+              "time": 17.91666666666693
+            },
+            {
+              "tier": 3,
+              "room": 2,
+              "spawned": 45,
+              "time": 26.883333333333088
+            },
+            {
+              "tier": 4,
+              "room": 0,
+              "spawned": 13,
+              "time": 8.966666666666692
+            },
+            {
+              "tier": 4,
+              "room": 1,
+              "spawned": 29,
+              "time": 17.91666666666693
+            },
+            {
+              "tier": 4,
+              "room": 2,
+              "spawned": 48,
+              "time": 33.483333333332716
+            }
+          ]
+        },
+        {
+          "name": "five wrong answers and repeated interact preserve open question",
+          "pass": true,
+          "ms": 1233
+        },
+        {
+          "name": "future enemies do not gate or starve finite current queue at cap",
+          "pass": true,
+          "ms": 2562,
+          "detail": [
+            {
+              "tier": 0,
+              "time": 0.016666666666666666,
+              "aliveFuture": 1,
+              "pending": 0
+            },
+            {
+              "tier": 3,
+              "time": 8.966666666666692,
+              "aliveFuture": 12,
+              "pending": 0
+            },
+            {
+              "tier": 4,
+              "time": 8.966666666666692,
+              "aliveFuture": 12,
+              "pending": 0
+            }
+          ]
+        },
+        {
+          "name": "paused direct interaction leaves encounter frozen",
+          "pass": true,
+          "ms": 795
+        },
+        {
+          "name": "old 1.9.0 queues preserve done and partial work through upgrade",
+          "pass": true,
+          "ms": 2477
+        },
+        {
+          "name": "legacy open and already-answered cards complete once without respawn",
+          "pass": true,
+          "ms": 6550,
+          "detail": [
+            {
+              "tier": 0,
+              "accepted": false,
+              "scoreBefore": 0,
+              "scoreAfter": 500,
+              "spawned": 5,
+              "expected": 500
+            },
+            {
+              "tier": 0,
+              "accepted": true,
+              "scoreBefore": 500,
+              "scoreAfter": 500,
+              "spawned": 5,
+              "expected": 0
+            },
+            {
+              "tier": 3,
+              "accepted": false,
+              "scoreBefore": 0,
+              "scoreAfter": 500,
+              "spawned": 9,
+              "expected": 500
+            },
+            {
+              "tier": 3,
+              "accepted": true,
+              "scoreBefore": 500,
+              "scoreAfter": 500,
+              "spawned": 9,
+              "expected": 0
+            },
+            {
+              "tier": 4,
+              "accepted": false,
+              "scoreBefore": 0,
+              "scoreAfter": 700,
+              "spawned": 9,
+              "expected": 700
+            },
+            {
+              "tier": 4,
+              "accepted": true,
+              "scoreBefore": 0,
+              "scoreAfter": 700,
+              "spawned": 9,
+              "expected": 700
+            }
+          ]
+        },
+        {
+          "name": "contact three HP shares cooldown between all overlapping enemies",
+          "pass": true,
+          "ms": 652,
+          "detail": {
+            "hp": 94,
+            "time": 1.1166666666666676,
+            "decks": {
+              "contactCooldown": 0.6999999999999994,
+              "contactHits": 2
+            }
+          }
+        },
+        {
+          "name": "outside-map survivor is recovered without free kill or score",
+          "pass": true,
+          "ms": 879,
+          "detail": {
+            "recovered": [
+              -4,
+              0,
+              -24
+            ],
+            "distance": 8,
+            "time": 9.866666666666736,
+            "events": [
+              {
+                "clock": 0,
+                "room": 0,
+                "kind": "room",
+                "initial": 5
+              },
+              {
+                "clock": 7.749999999999978,
+                "room": 0,
+                "kind": "recovery-warning",
+                "enemy": 1,
+                "duration": 2.1,
+                "hp": 17,
+                "pos": [
+                  -4,
+                  0,
+                  -24
+                ]
+              },
+              {
+                "clock": 9.866666666666736,
+                "room": 0,
+                "kind": "enemy-repositioned",
+                "enemy": 1,
+                "hp": 17,
+                "pos": [
+                  -4,
+                  0,
+                  -24
+                ],
+                "distance": 8
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "core": "engine-v1.2.1.js",
+      "module": "citadel-decks-v1.9.1.js",
+      "groups": [
+        {
+          "name": "all fifteen cards gate current enemies and finite waiting queues",
+          "pass": true,
+          "ms": 2120,
+          "detail": [
+            {
+              "tier": 0,
+              "room": 0,
+              "spawned": 0,
+              "time": 0
+            },
+            {
+              "tier": 0,
+              "room": 1,
+              "spawned": 0,
+              "time": 0
+            },
+            {
+              "tier": 0,
+              "room": 2,
+              "spawned": 0,
+              "time": 0
+            },
+            {
+              "tier": 1,
+              "room": 0,
+              "spawned": 8,
+              "time": 2.3499999999999965
+            },
+            {
+              "tier": 1,
+              "room": 1,
+              "spawned": 17,
+              "time": 4.699999999999989
+            },
+            {
+              "tier": 1,
+              "room": 2,
+              "spawned": 28,
+              "time": 7.04999999999998
+            },
+            {
+              "tier": 2,
+              "room": 0,
+              "spawned": 10,
+              "time": 2.3499999999999965
+            },
+            {
+              "tier": 2,
+              "room": 1,
+              "spawned": 23,
+              "time": 11.300000000000141
+            },
+            {
+              "tier": 2,
+              "room": 2,
+              "spawned": 38,
+              "time": 20.25000000000013
+            },
+            {
+              "tier": 3,
+              "room": 0,
+              "spawned": 13,
+              "time": 8.966666666666692
+            },
+            {
+              "tier": 3,
+              "room": 1,
+              "spawned": 28,
+              "time": 17.91666666666693
+            },
+            {
+              "tier": 3,
+              "room": 2,
+              "spawned": 45,
+              "time": 26.883333333333088
+            },
+            {
+              "tier": 4,
+              "room": 0,
+              "spawned": 13,
+              "time": 8.966666666666692
+            },
+            {
+              "tier": 4,
+              "room": 1,
+              "spawned": 29,
+              "time": 17.91666666666693
+            },
+            {
+              "tier": 4,
+              "room": 2,
+              "spawned": 48,
+              "time": 33.483333333332716
+            }
+          ]
+        },
+        {
+          "name": "five wrong answers and repeated interact preserve open question",
+          "pass": true,
+          "ms": 998
+        },
+        {
+          "name": "future enemies do not gate or starve finite current queue at cap",
+          "pass": true,
+          "ms": 2039,
+          "detail": [
+            {
+              "tier": 0,
+              "time": 0.016666666666666666,
+              "aliveFuture": 1,
+              "pending": 0
+            },
+            {
+              "tier": 3,
+              "time": 8.966666666666692,
+              "aliveFuture": 12,
+              "pending": 0
+            },
+            {
+              "tier": 4,
+              "time": 8.966666666666692,
+              "aliveFuture": 12,
+              "pending": 0
+            }
+          ]
+        },
+        {
+          "name": "paused direct interaction leaves encounter frozen",
+          "pass": true,
+          "ms": 773
+        },
+        {
+          "name": "old 1.9.0 queues preserve done and partial work through upgrade",
+          "pass": true,
+          "ms": 1698
+        },
+        {
+          "name": "legacy open and already-answered cards complete once without respawn",
+          "pass": true,
+          "ms": 4487,
+          "detail": [
+            {
+              "tier": 0,
+              "accepted": false,
+              "scoreBefore": 0,
+              "scoreAfter": 500,
+              "spawned": 5,
+              "expected": 500
+            },
+            {
+              "tier": 0,
+              "accepted": true,
+              "scoreBefore": 500,
+              "scoreAfter": 500,
+              "spawned": 5,
+              "expected": 0
+            },
+            {
+              "tier": 3,
+              "accepted": false,
+              "scoreBefore": 0,
+              "scoreAfter": 500,
+              "spawned": 9,
+              "expected": 500
+            },
+            {
+              "tier": 3,
+              "accepted": true,
+              "scoreBefore": 500,
+              "scoreAfter": 500,
+              "spawned": 9,
+              "expected": 0
+            },
+            {
+              "tier": 4,
+              "accepted": false,
+              "scoreBefore": 0,
+              "scoreAfter": 700,
+              "spawned": 9,
+              "expected": 700
+            },
+            {
+              "tier": 4,
+              "accepted": true,
+              "scoreBefore": 0,
+              "scoreAfter": 700,
+              "spawned": 9,
+              "expected": 700
+            }
+          ]
+        },
+        {
+          "name": "contact three HP shares cooldown between all overlapping enemies",
+          "pass": true,
+          "ms": 236,
+          "detail": {
+            "hp": 94,
+            "time": 1.1166666666666676,
+            "decks": {
+              "contactCooldown": 0.6999999999999994,
+              "contactHits": 2
+            }
+          }
+        },
+        {
+          "name": "outside-map survivor is recovered without free kill or score",
+          "pass": true,
+          "ms": 358,
+          "detail": {
+            "recovered": [
+              -4,
+              0,
+              -24
+            ],
+            "distance": 8,
+            "time": 9.866666666666736,
+            "events": [
+              {
+                "clock": 0,
+                "room": 0,
+                "kind": "room",
+                "initial": 5
+              },
+              {
+                "clock": 7.749999999999978,
+                "room": 0,
+                "kind": "recovery-warning",
+                "enemy": 1,
+                "duration": 2.1,
+                "hp": 17,
+                "pos": [
+                  -4,
+                  0,
+                  -24
+                ]
+              },
+              {
+                "clock": 9.866666666666736,
+                "room": 0,
+                "kind": "enemy-repositioned",
+                "enemy": 1,
+                "hp": 17,
+                "pos": [
+                  -4,
+                  0,
+                  -24
+                ],
+                "distance": 8
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -134,6 +134,13 @@ async function fullStartup(profile) {
   assert.equal(run(c, 'ARCADE.engine.status'), 'briefing');
   assert.equal(run(c, 'CUP.attached'), true);
   const button = c.document.getElementById('mock-launch-button');
+  // Since 1.9.0 a newly started campaign owns a four-page prologue before
+  // launching. Dispatch the actual touch clicks, not an internal state grant.
+  for (let page = 0; page < 4 && c.CITADEL_STORY?.status().active; page++) {
+    button.dataset = { action: 'story-next' }; button.closest = () => button;
+    for (const callback of handlers.get('click') || []) await callback({ target: button, pointerType: 'touch', preventDefault() {} });
+  }
+  assert(!c.CITADEL_STORY?.status().active, 'The intro yields to the actual mission launch');
   button.dataset = { action: 'citadel-launch' }; button.closest = () => button;
   for (const callback of handlers.get('click') || []) await callback({ target: button, pointerType: 'touch', preventDefault() {} });
   run(c, 'ARCADE.keys.add("Space"); arcadeFrame(16.666); ARCADE.keys.clear();');

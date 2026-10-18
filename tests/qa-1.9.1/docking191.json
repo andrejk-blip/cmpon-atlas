@@ -1,0 +1,169 @@
+{
+  "version": "1.9.1",
+  "patchSha256": "d8e345e6a7ef05ea3aebcb986042c1c36a809bb6608ccce242d00507178199b7",
+  "method": "Actual cores, shipped post-core addon order, Academy local bank, real arcadeInput/actions. No browser or network.",
+  "results": [
+    {
+      "core": "atlas-v1.3.5.js",
+      "coreSha256": "af1f9024313d1ecb798edc19b5039407049916d094c88426f85ba852ac077be8",
+      "passed": 6,
+      "groups": [
+        {
+          "name": "Fail before / pass after: manual entry reaches the physical wall and late F is rejected in 1.7.1",
+          "passed": true,
+          "detail": {
+            "oldContact": [
+              78,
+              13,
+              -84.22
+            ],
+            "oldLocalZ": -29.22,
+            "oldHP": 80.1,
+            "manualCaptureSeconds": 2.25,
+            "capturePosition": [
+              78,
+              13,
+              -105.86666666666652
+            ]
+          }
+        },
+        {
+          "name": "Already blocked old saves recover through F, G or continued manual approach without further damage",
+          "passed": true,
+          "detail": {
+            "resumedBy": [
+              "F",
+              "G",
+              "manual"
+            ],
+            "tournamentSerializer": true
+          }
+        },
+        {
+          "name": "Normal and boosted manual approaches enter at 60, 30 and 25 FPS; manual retreat remains possible",
+          "passed": true,
+          "detail": {
+            "manualApproaches": 12
+          }
+        },
+        {
+          "name": "Side, rear, above and premature approach cannot initiate docking; F and auto never bypass a wall",
+          "passed": true
+        },
+        {
+          "name": "Old core, 1.7.1, 1.8.1 and 1.9.1 cinematic saves retain their exact trajectory and finish boarding",
+          "passed": true,
+          "detail": {
+            "resumedCinematics": 16,
+            "nearWallMonotonicSamples": 200
+          }
+        },
+        {
+          "name": "Pause freezes the captured ship and resumes one dock, gate and landing event",
+          "passed": true
+        }
+      ],
+      "loadedAddons": [
+        "citadel-records-v1.1.1.js",
+        "citadel-mrg-v1.7.0.js",
+        "citadel-mrg-view-v1.7.0.js",
+        "citadel-music-v1.4.2.js",
+        "citadel-sfx-v1.7.0.js",
+        "citadel-voice-v1.7.0.js",
+        "citadel-field-ui-v1.7.0.js",
+        "citadel-flight-v1.9.1.js",
+        "citadel-aim-v1.7.1.js",
+        "citadel-flight-view-v1.7.1.js",
+        "citadel-pursuit-v1.8.0.js",
+        "citadel-swarm-v1.8.0.js",
+        "citadel-parallax-v1.8.0.js",
+        "citadel-comic-v1.8.0.js",
+        "atlas-metrics-v0.1.0.js",
+        "atlas-integration-v1.1.4.js",
+        "citadel-academy-bridge-v1.7.0.js"
+      ],
+      "academy": "active local bank"
+    },
+    {
+      "core": "engine-v1.2.1.js",
+      "coreSha256": "29cf0a79c5887bbdf4e80ba2664b16d50172771f10069cb6f5d274eabbc4cbe8",
+      "passed": 6,
+      "groups": [
+        {
+          "name": "Fail before / pass after: manual entry reaches the physical wall and late F is rejected in 1.7.1",
+          "passed": true,
+          "detail": {
+            "oldContact": [
+              78,
+              13,
+              -84.22
+            ],
+            "oldLocalZ": -29.22,
+            "oldHP": 80.1,
+            "manualCaptureSeconds": 2.25,
+            "capturePosition": [
+              78,
+              13,
+              -105.86666666666652
+            ]
+          }
+        },
+        {
+          "name": "Already blocked old saves recover through F, G or continued manual approach without further damage",
+          "passed": true,
+          "detail": {
+            "resumedBy": [
+              "F",
+              "G",
+              "manual"
+            ],
+            "tournamentSerializer": false
+          }
+        },
+        {
+          "name": "Normal and boosted manual approaches enter at 60, 30 and 25 FPS; manual retreat remains possible",
+          "passed": true,
+          "detail": {
+            "manualApproaches": 12
+          }
+        },
+        {
+          "name": "Side, rear, above and premature approach cannot initiate docking; F and auto never bypass a wall",
+          "passed": true
+        },
+        {
+          "name": "Old core, 1.7.1, 1.8.1 and 1.9.1 cinematic saves retain their exact trajectory and finish boarding",
+          "passed": true,
+          "detail": {
+            "resumedCinematics": 16,
+            "nearWallMonotonicSamples": 200
+          }
+        },
+        {
+          "name": "Pause freezes the captured ship and resumes one dock, gate and landing event",
+          "passed": true
+        }
+      ],
+      "loadedAddons": [
+        "citadel-records-v1.1.1.js",
+        "citadel-mrg-v1.7.0.js",
+        "citadel-mrg-view-v1.7.0.js",
+        "citadel-music-v1.4.2.js",
+        "citadel-sfx-v1.7.0.js",
+        "citadel-voice-v1.7.0.js",
+        "citadel-field-ui-v1.7.0.js",
+        "citadel-flight-v1.9.1.js",
+        "citadel-aim-v1.7.1.js",
+        "citadel-flight-view-v1.7.1.js",
+        "citadel-pursuit-v1.8.0.js",
+        "citadel-swarm-v1.8.0.js",
+        "citadel-parallax-v1.8.0.js",
+        "citadel-comic-v1.8.0.js",
+        "atlas-metrics-v0.1.0.js",
+        "atlas-integration-v1.1.4.js",
+        "citadel-academy-bridge-v1.7.0.js"
+      ],
+      "academy": "private core uses separate lab bank"
+    }
+  ]
+}

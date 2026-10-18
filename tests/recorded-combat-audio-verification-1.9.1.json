@@ -1,0 +1,380 @@
+{
+  "version": "1.9.1",
+  "method": "Actual frozen game cores, current later mission wrappers, real published SFX manifest and independently controlled Web Audio/fetch/decode lifecycle mocks. No browser, real network, speech engine, MP3 codec or audio-quality claim.",
+  "runtimeSha256": "5835ae456baf68013dd67c1181ba7de3ecc92225a7a99db422cfd3bfc239b848",
+  "packSha256": "8dc8128a72045c4136a3460de8900720813861e1979926bfc0c0c872cdac590e",
+  "results": [
+    {
+      "core": "atlas-v1.3.5.js",
+      "coreSha256": "af1f9024313d1ecb798edc19b5039407049916d094c88426f85ba852ac077be8",
+      "passed": 17,
+      "total": 17,
+      "results": [
+        {
+          "name": "Published recorded catalog, bounded asynchronous preload and shared context",
+          "ok": true,
+          "detail": {
+            "clips": 42,
+            "contexts": 1,
+            "cacheBytes": 7009908,
+            "maxConcurrentLoads": 4
+          }
+        },
+        {
+          "name": "All five actual scene shot paths use distinct recorded pools and rotate variants",
+          "ok": true,
+          "detail": [
+            {
+              "place": "ground",
+              "clips": [
+                "shot-ground-01",
+                "shot-ground-02",
+                "shot-ground-03"
+              ]
+            },
+            {
+              "place": "deck",
+              "clips": [
+                "shot-deck-01",
+                "shot-deck-02",
+                "shot-deck-03"
+              ]
+            },
+            {
+              "place": "convoy",
+              "clips": [
+                "shot-convoy-01",
+                "shot-convoy-02",
+                "shot-convoy-03"
+              ]
+            },
+            {
+              "place": "space",
+              "clips": [
+                "shot-space-01",
+                "shot-space-02",
+                "shot-space-03"
+              ]
+            },
+            {
+              "place": "mrg",
+              "clips": [
+                "shot-mrg-01",
+                "shot-mrg-02",
+                "shot-mrg-03"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Real deck HP hits and deaths deduplicate; callbacks and player state remain intact",
+          "ok": true
+        },
+        {
+          "name": "Actual MRG bullets distinguish misses, nonlethal hits, and death; no vocal reaction on a miss",
+          "ok": true
+        },
+        {
+          "name": "Real grenade keeps one explosion and distinct coalesced soldier deaths",
+          "ok": true
+        },
+        {
+          "name": "Actual player HP damage in normal/calm space, deck and MRG; invulnerability prevents duplicates",
+          "ok": true,
+          "detail": [
+            {
+              "place": "space",
+              "assist": false,
+              "hp": 90
+            },
+            {
+              "place": "deck",
+              "assist": false,
+              "hp": 90
+            },
+            {
+              "place": "mrg",
+              "assist": false,
+              "hp": 90
+            },
+            {
+              "place": "space",
+              "assist": true,
+              "hp": 94.5
+            },
+            {
+              "place": "deck",
+              "assist": true,
+              "hp": 90
+            },
+            {
+              "place": "mrg",
+              "assist": true,
+              "hp": 95
+            }
+          ]
+        },
+        {
+          "name": "MRG knife and late-loaded deck ninja use knife recordings; gunner uses gun recordings",
+          "ok": true
+        },
+        {
+          "name": "Robodog deaths and actual Galaga drone kills never produce human voices",
+          "ok": true,
+          "detail": {
+            "realDroneKills": 1,
+            "robotHits": 1,
+            "humanVoices": 0
+          }
+        },
+        {
+          "name": "Actual space and convoy projectile kills coalesce legacy type-labelled destroy events into one mechanical death",
+          "ok": true,
+          "detail": [
+            {
+              "place": "space",
+              "shotCount": 3,
+              "mechanicalDeaths": 1,
+              "humanVoices": 0
+            },
+            {
+              "place": "convoy",
+              "shotCount": 2,
+              "mechanicalDeaths": 1,
+              "humanVoices": 0
+            }
+          ]
+        },
+        {
+          "name": "Rare death lines are recorded, approximately 30%, spaced ≥6.5 s, one at a time and never queued",
+          "ok": true,
+          "detail": {
+            "eligibleDeaths": 120,
+            "rareLines": 36,
+            "probability": 0.3,
+            "cooldown": 6.5,
+            "captionEvents": 36
+          }
+        },
+        {
+          "name": "The real prepared captain immediately interrupts soldier speech and gets priority while loading/playing",
+          "ok": true
+        },
+        {
+          "name": "Cold game events remain synchronous and never replay after asynchronous fetch/decode",
+          "ok": true
+        },
+        {
+          "name": "Cancelled late fetch/body/decode, suspended resume and scene changes cannot start obsolete previews",
+          "ok": true
+        },
+        {
+          "name": "Pause, mute, hidden page, exit and cleanup stop only effects while preserving music and the shared context",
+          "ok": true
+        },
+        {
+          "name": "Voice and sample polyphony are bounded, completed nodes disconnect, radio cancels independently",
+          "ok": true,
+          "detail": {
+            "peak": 14,
+            "limit": 14
+          }
+        },
+        {
+          "name": "HTTP/decode failures and absent Audio/fetch do not break actual gameplay or cause retry storms",
+          "ok": true
+        },
+        {
+          "name": "Audio observation and previews preserve real gameplay state, seed and late replacement emit callback",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "core": "engine-v1.2.1.js",
+      "coreSha256": "29cf0a79c5887bbdf4e80ba2664b16d50172771f10069cb6f5d274eabbc4cbe8",
+      "passed": 17,
+      "total": 17,
+      "results": [
+        {
+          "name": "Published recorded catalog, bounded asynchronous preload and shared context",
+          "ok": true,
+          "detail": {
+            "clips": 42,
+            "contexts": 1,
+            "cacheBytes": 7009908,
+            "maxConcurrentLoads": 4
+          }
+        },
+        {
+          "name": "All five actual scene shot paths use distinct recorded pools and rotate variants",
+          "ok": true,
+          "detail": [
+            {
+              "place": "ground",
+              "clips": [
+                "shot-ground-01",
+                "shot-ground-02",
+                "shot-ground-03"
+              ]
+            },
+            {
+              "place": "deck",
+              "clips": [
+                "shot-deck-01",
+                "shot-deck-02",
+                "shot-deck-03"
+              ]
+            },
+            {
+              "place": "convoy",
+              "clips": [
+                "shot-convoy-01",
+                "shot-convoy-02",
+                "shot-convoy-03"
+              ]
+            },
+            {
+              "place": "space",
+              "clips": [
+                "shot-space-01",
+                "shot-space-02",
+                "shot-space-03"
+              ]
+            },
+            {
+              "place": "mrg",
+              "clips": [
+                "shot-mrg-01",
+                "shot-mrg-02",
+                "shot-mrg-03"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Real deck HP hits and deaths deduplicate; callbacks and player state remain intact",
+          "ok": true
+        },
+        {
+          "name": "Actual MRG bullets distinguish misses, nonlethal hits, and death; no vocal reaction on a miss",
+          "ok": true
+        },
+        {
+          "name": "Real grenade keeps one explosion and distinct coalesced soldier deaths",
+          "ok": true
+        },
+        {
+          "name": "Actual player HP damage in normal/calm space, deck and MRG; invulnerability prevents duplicates",
+          "ok": true,
+          "detail": [
+            {
+              "place": "space",
+              "assist": false,
+              "hp": 90
+            },
+            {
+              "place": "deck",
+              "assist": false,
+              "hp": 90
+            },
+            {
+              "place": "mrg",
+              "assist": false,
+              "hp": 90
+            },
+            {
+              "place": "space",
+              "assist": true,
+              "hp": 94.5
+            },
+            {
+              "place": "deck",
+              "assist": true,
+              "hp": 90
+            },
+            {
+              "place": "mrg",
+              "assist": true,
+              "hp": 95
+            }
+          ]
+        },
+        {
+          "name": "MRG knife and late-loaded deck ninja use knife recordings; gunner uses gun recordings",
+          "ok": true
+        },
+        {
+          "name": "Robodog deaths and actual Galaga drone kills never produce human voices",
+          "ok": true,
+          "detail": {
+            "realDroneKills": 1,
+            "robotHits": 1,
+            "humanVoices": 0
+          }
+        },
+        {
+          "name": "Actual space and convoy projectile kills coalesce legacy type-labelled destroy events into one mechanical death",
+          "ok": true,
+          "detail": [
+            {
+              "place": "space",
+              "shotCount": 3,
+              "mechanicalDeaths": 1,
+              "humanVoices": 0
+            },
+            {
+              "place": "convoy",
+              "shotCount": 2,
+              "mechanicalDeaths": 1,
+              "humanVoices": 0
+            }
+          ]
+        },
+        {
+          "name": "Rare death lines are recorded, approximately 30%, spaced ≥6.5 s, one at a time and never queued",
+          "ok": true,
+          "detail": {
+            "eligibleDeaths": 120,
+            "rareLines": 36,
+            "probability": 0.3,
+            "cooldown": 6.5,
+            "captionEvents": 36
+          }
+        },
+        {
+          "name": "The real prepared captain immediately interrupts soldier speech and gets priority while loading/playing",
+          "ok": true
+        },
+        {
+          "name": "Cold game events remain synchronous and never replay after asynchronous fetch/decode",
+          "ok": true
+        },
+        {
+          "name": "Cancelled late fetch/body/decode, suspended resume and scene changes cannot start obsolete previews",
+          "ok": true
+        },
+        {
+          "name": "Pause, mute, hidden page, exit and cleanup stop only effects while preserving music and the shared context",
+          "ok": true
+        },
+        {
+          "name": "Voice and sample polyphony are bounded, completed nodes disconnect, radio cancels independently",
+          "ok": true,
+          "detail": {
+            "peak": 14,
+            "limit": 14
+          }
+        },
+        {
+          "name": "HTTP/decode failures and absent Audio/fetch do not break actual gameplay or cause retry storms",
+          "ok": true
+        },
+        {
+          "name": "Audio observation and previews preserve real gameplay state, seed and late replacement emit callback",
+          "ok": true
+        }
+      ]
+    }
+  ]
+}

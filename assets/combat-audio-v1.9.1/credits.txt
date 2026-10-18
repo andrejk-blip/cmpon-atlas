@@ -1,0 +1,37 @@
+Citadel CSII — combat recordings 1.9.1
+
+Prepared effects:
+
+The Free Firearm Sound Library
+Ben Jaszczak; Brian Nelson; Kevin Heras; Matthew Nanney
+License: CC0-1.0
+https://opengameart.org/content/the-free-firearm-sound-library
+
+Sci-Fi Sounds 1.0
+Kenney
+License: CC0-1.0
+https://kenney.nl/assets/sci-fi-sounds
+
+Impact Sounds 1.0
+Kenney
+License: CC0-1.0
+https://kenney.nl/assets/impact-sounds
+
+RPG Audio 1.0
+Kenney
+License: CC0-1.0
+https://kenney.nl/assets/rpg-audio
+
+Hurt / Death sound effect for character
+Badre-Eddine
+License: CC0-1.0
+https://opengameart.org/content/hurt-death-sound-effect-for-character
+
+Original Russian soldier lines for Citadel CSII
+Citadel CSII project; prepared with Runway / Eleven v3 preset voices
+License: Generated project asset; service terms apply
+
+Edits: isolated event cuts, silence trims, mono conversion, gentle EQ, fades and level matching.
+The per-file manifest retains source filenames, SHA-256 hashes and crop positions.
+Original generated dialogue is a separate project asset; it is not claimed as CC0.
+CC0 legal text: https://creativecommons.org/publicdomain/zero/1.0/

@@ -12,7 +12,7 @@ const assert = require('node:assert/strict');
 const crypto = require('node:crypto');
 const { createHarness, nativeCanvas, clone } = require('./mrg-regression.cjs');
 const root = path.resolve(__dirname, '..');
-const patchPath = path.join(root, 'assets/citadel-decks-v1.9.0.js');
+const patchPath = path.join(root, 'assets/citadel-decks-v1.9.1.js');
 const distance = (a, b) => Math.hypot(a[0] - b[0], a[2] - b[2]);
 const near = (a, b, message, tolerance = 1e-7) => assert(Math.abs(a - b) < tolerance, `${message}: ${a} / ${b}`);
 
@@ -100,38 +100,82 @@ function restored(h, snapshot) {
 // A path-following test operator. It sees the same route geometry and danger
 // tells available to a player, then issues only ordinary input fields. Unlike
 // the game's guide it can optionally choose an explicit evasive sidestep.
-function createController(h, { fire = true, pulse = true, boost = false, dodge = false, mobile = false } = {}) {
+function createController(h, { fire = true, pulse = true, boost = false, dodge = true, mobile = false } = {}) {
   const q = helpers(h);
-  let route = [], room = -1, board = null, previous = null, stalled = 0;
+  let route = [], room = -1, board = null, previous = null, stalled = 0, goal = null, clock = 0;
+  let progressPos = null, progressTime = 0, commitRoute = 0;
+  const seen = new Map();
   return e => {
     const b = e.board;
     if (!b?.cells || e.status !== 'boarding' || e.finale && e.finale.phase !== 'maze') return {};
     if (board !== b || room !== b.completed.length) {
-      board = b; room = b.completed.length; route = []; previous = b.pos.slice(); stalled = 0;
+      board = b; room = b.completed.length; route = []; previous = b.pos.slice(); stalled = 0; goal = null; seen.clear();
+      progressPos = b.pos.slice(); progressTime = clock; commitRoute = 0;
     }
-    const target = room < 3 ? b.terminals[room] : b.exit;
+    clock += 1 / 60;
+    commitRoute = Math.max(0, commitRoute - 1 / 60);
+    if (clock - progressTime > 1.2) {
+      // At a shelf corner one-frame LOS changes can alternate a sidestep and
+      // its exact reverse. Commit briefly to the real navigation waypoint.
+      if (distance(progressPos, b.pos) < .8) { commitRoute = 1.2; route = []; }
+      progressPos = b.pos.slice(); progressTime = clock;
+    }
+    const enemies = b.enemies.filter(x => !x.dead && x.hp > 0 && (x.decksRoom ?? x.zone ?? room) === room);
+    const visible = enemies.filter(x => distance(x.pos, b.pos) < 25 && q.line(b, b.pos, x.pos, .08));
+    visible.sort((x, y) => (distance(x.pos, b.pos) - (x.archetype === 'relay' ? 7 : 0)) -
+      (distance(y.pos, b.pos) - (y.archetype === 'relay' ? 7 : 0)));
+    const focus = visible[0] || enemies.slice().sort((x, y) => distance(x.pos, b.pos) - distance(y.pos, b.pos))[0];
+    const target = room >= 3 ? b.exit : focus ? focus.pos : b.terminals[room];
     stalled = previous && distance(previous, b.pos) < .002 ? stalled + 1 / 60 : 0;
     previous = b.pos.slice();
-    if (!route.length || stalled > .8) { route = q.path(b, b.pos, target); stalled = 0; }
+    if (!route.length || stalled > .8 || !goal || distance(goal, target) > 2) {
+      route = q.path(b, b.pos, target); stalled = 0; goal = target.slice();
+    }
     while (route.length && (distance(route[0], b.pos) < .08 || distance(route[0], b.pos) < .55 &&
       route.length > 1 && q.line(b, b.pos, route[1], .68, true))) route.shift();
     const speed = boost && b.energy > 4 ? 10.5 : 6.5, next = route[0] || b.pos;
     const length = Math.max(distance(next, b.pos), speed / 60, .001);
     let dx = (next[0] - b.pos[0]) / length, dz = (next[2] - b.pos[2]) / length;
-    const close = b.enemies.filter(x => !x.dead && distance(x.pos, b.pos) < 9);
+    const close = enemies.filter(x => distance(x.pos, b.pos) < 9);
     const dangerous = close.find(x => x.decksAttack && ['windup', 'strike'].includes(x.decksAttack.phase));
-    if (dodge && dangerous && dangerous.decksAttack.phase === 'windup') {
-      const a = dangerous.decksAttack;
-      for (const side of [1, -1]) {
-        const x = -a.direction[2] * side, z = a.direction[0] * side;
-        if (q.line(b, b.pos, [b.pos[0] + x * 3.5, 0, b.pos[2] + z * 3.5], .7, true)) { dx = x; dz = z; break; }
+    if (dodge && !commitRoute && visible.length && distance(focus.pos, b.pos) < 22) {
+      const d = Math.max(.001, distance(focus.pos, b.pos)), ux = (focus.pos[0] - b.pos[0]) / d, uz = (focus.pos[2] - b.pos[2]) / d;
+      const radial = Math.max(-1.2, Math.min(1, (d - 13) / 4));
+      const wanted = [ux * radial - uz * .85, uz * radial + ux * .85];
+      let best = -Infinity;
+      for (let i = 0; i < 16; i++) {
+        const angle = i / 16 * Math.PI * 2, x = Math.cos(angle), z = Math.sin(angle);
+        const to = [b.pos[0] + x * 3, b.pos[1], b.pos[2] + z * 3];
+        if (!q.line(b, b.pos, to, .7, true)) continue;
+        let value = x * wanted[0] + z * wanted[1];
+        if (!q.line(b, to, focus.pos, .15)) value -= 1.5;
+        for (const enemy of close) value -= Math.max(0, 5 - distance(to, enemy.pos)) * .7;
+        for (const enemy of enemies) {
+          const a = enemy.decksAttack;
+          if (!a || a.phase === 'recover') continue;
+          if (a.kind === 'rocket') value -= Math.max(0, a.radius + 1 - distance(to, a.aim)) * 2;
+          else {
+            const rx = to[0] - a.origin[0], rz = to[2] - a.origin[2], along = rx * a.direction[0] + rz * a.direction[2];
+            const across = Math.abs(rx * a.direction[2] - rz * a.direction[0]);
+            if (along > -1 && along < 11) value -= Math.max(0, a.radius + 1 - across) * 2;
+          }
+        }
+        if (value > best) { best = value; dx = x; dz = z; }
       }
     }
+    let aim;
+    if (visible.length) {
+      const old = seen.get(focus.id), lead = Math.min(.35, distance(focus.pos, b.pos) / 54);
+      const vx = old && clock - old.time < .1 ? (focus.pos[0] - old.pos[0]) / (clock - old.time) : 0;
+      const vz = old && clock - old.time < .1 ? (focus.pos[2] - old.pos[2]) / (clock - old.time) : 0;
+      aim = [focus.pos[0] + vx * lead, 0, focus.pos[2] + vz * lead];
+    }
+    for (const x of enemies) seen.set(x.id, { pos: x.pos.slice(), time: clock });
     const control = { moveX: dx, moveZ: dz, fire, boost,
-      pulse: pulse && b.pulseCooldown <= 0 && (close.length >= 2 || !!dangerous) };
+      aim, pulse: pulse && b.pulseCooldown <= 0 && (close.length >= 2 || !!dangerous || close.some(x => x.archetype === 'shield')) };
     if (!mobile) return control;
     h.arcade.engine = e; h.arcade.joystick = { x: dx, y: dz };
-    h.arcade.firePointer = fire ? 1 : null; h.arcade.boardAim = null;
+    h.arcade.firePointer = fire ? 1 : null; h.arcade.boardAim = aim;
     h.arcade.pulseQueued = control.pulse;
     boost ? h.arcade.keys.add('TouchBoost') : h.arcade.keys.delete('TouchBoost');
     return q.input();
@@ -172,14 +216,16 @@ function followToFinish(h, tier, assist, mobile = false, upgrades) {
   const e = engine(h, tier, { assist, ...(upgrades ? { upgrades } : {}) });
   const b = e.board, control = createController(h, { mobile }), startedAt = e.elapsed;
   const rooms = []; let minimumHp = 100, maximumAlive = 0, priorKills = 0, priorTime = 0, finalBoard = null;
-  for (let frame = 0; frame < 60 * 150; frame++) {
+  for (let frame = 0; frame < 60 * 240; frame++) {
     if (['remark', 'finalcheck'].includes(e.status)) {
       const s = b.decks;
       rooms.push({ room: b.completed.length + 1, time: +(b.time - priorTime).toFixed(2), hp: +b.hp.toFixed(2),
-        kills: b.kills - priorKills, survivors: b.enemies.length, initial: h.deckQA.api.profile(e).initial,
+        kills: b.kills - priorKills, survivors: h.deckQA.api.clearance(e).alive, pending: h.deckQA.api.clearance(e).pending,
+        initial: h.deckQA.api.profile(e).initial,
         spawned: s.spawned, wavesLanded: s.wavesLanded,
         reinforcementAttacks: s.attacksByRoom[b.completed.length], reinforcementHits: s.engagementByRoom[b.completed.length] });
       priorTime = b.time; priorKills = b.kills;
+      assert.equal(h.deckQA.api.clearance(e).remaining, 0, 'Every actual terminal follows full current-room clearance');
       const correctReward = e.status === 'remark' ? 500 : 700, score = e.score;
       answerCard(h, e); assert.equal(e.score - score, correctReward, 'Only the actual correct card reward');
       if (b.completed.length === 3) finalBoard = { cardsTime: b.time, kills: b.kills, spawned: s.spawned,
@@ -191,13 +237,14 @@ function followToFinish(h, tier, assist, mobile = false, upgrades) {
     assert(Math.abs(input.moveX) <= 1.00001 && Math.abs(input.moveZ) <= 1.00001, 'Reachable movement input');
     e.step(1 / 60, input); minimumHp = Math.min(minimumHp, b.hp); maximumAlive = Math.max(maximumAlive, b.enemies.length);
   }
-  assert.equal(rooms.length, 3, 'All three cards reached by movement at level ' + (tier * 3 + 2));
+  assert.equal(rooms.length, 3, 'All three cards reached by movement at level ' + (tier === 4 ? 13 : tier * 3 + 2) +
+    ', status=' + e.status + ', hp=' + b.hp + ', pos=' + b.pos + ', gate=' + JSON.stringify(h.deckQA.api.clearance(e)));
   assert(e.status === 'stageclear' || tier === 3 && e.status === 'finalebrief' || tier === 4 && e.finale.phase === 'mrg',
     'Actual exit transition: ' + e.status + ' / ' + e.finale?.phase);
   assert(minimumHp > 0, 'No health replacement during completion');
   if (tier > 0) {
-    for (const room of rooms) assert(room.reinforcementAttacks > 0,
-      `Reinforcement actually attacked before card, level ${tier * 3 + 2} room ${room.room}: ${JSON.stringify(room)}`);
+    for (const room of rooms) assert(room.reinforcementHits > 0,
+      `Player actually fought the reinforcement before card, level ${tier === 4 ? 13 : tier * 3 + 2} room ${room.room}: ${JSON.stringify(room)}`);
   }
   assert(maximumAlive <= h.deckQA.api.profile({ ...e, finale: tier === 4 ? { phase: 'maze' } : null, stage: tier }).cap);
   return { level: tier === 4 ? 13 : tier * 3 + 2, assist, mobile, minimumHp: +minimumHp.toFixed(2),
@@ -323,7 +370,7 @@ function runCore(core, canvas = null, only = null) {
     callEngine.boardHit(relay, relay.hp + 1, cb.pos, true);
     assert.equal(call.phase, 'cancelled'); assert.equal(callEngine.score - score, 110);
     callEngine.boardHit(relay, 1, cb.pos, true); assert.equal(callEngine.score - score, 110, 'No duplicate kill reward');
-    return { warning: +(b.time - start).toFixed(2), rearMinimumDistance: Math.min(...spawns.map(x => x.distance)),
+    return { warning: q.api.profile(e).warning, rearMinimumDistance: Math.min(...spawns.map(x => x.distance)),
       cap: q.api.profile(e).cap, cancelledCall: call.id };
   });
   test('pause and save restore midwarning midstrike and in flight preserve encounter', () => {
@@ -380,20 +427,134 @@ function runCore(core, canvas = null, only = null) {
     b.decks.rockets = [1, 2].map(id => ({ id, pos: [0, 0, -19.9], aim: b.pos.slice(), vel: [0, 0, -12], life: 1, radius: 3.2, damage: 20, color: '#ffaa66' }));
     cover.step(1 / 60, {}); near(b.hp, 80, 'Overlapping blasts respect shared invulnerability');
   });
-  test('terminal accessible under fire cancels old waves and preserves correct and wrong cards', () => {
-    for (const tier of [3, 4]) {
+  test('terminal requires current enemies and its complete queue without resetting wrong answers', () => {
+    for (const tier of [0, 1, 2, 3, 4]) {
       const e = engine(h, tier), b = e.board;
       b.pos = b.terminals[0].slice(); b.previous = b.pos.slice();
-      assert(b.enemies.length > 0); const before = e.score;
-      e.boardInteract(); assert(['remark', 'finalcheck'].includes(e.status)); assert(b.decks.closed);
-      assert(b.decks.waves.every(w => ['cancelled', 'done'].includes(w.phase)));
+      assert(b.enemies.length > 0);
+      const initial = combatSnapshot(e); e.boardInteract(); assert.equal(e.status, 'boarding');
+      assert.deepEqual(clone(b.enemies), initial.enemies, 'A locked terminal never deletes living guards');
+      assert(q.api.clearance(e).text.includes('Зачистите комнату · осталось '));
+      // Focused gate fixture: kill through the actual hit/reward method. Full
+      // playthroughs below use movement and projectiles, never direct damage.
+      b.invulnerable = 1000;
+      for (let frame = 0; frame < 60 * 45 && e.status === 'boarding'; frame++) {
+        for (const x of b.enemies) if ((x.decksRoom ?? x.zone) === 0 && !x.dead) e.boardHit(x, x.hp + 1, b.pos, true);
+        if (q.api.clearance(e).pending) { e.boardInteract(); assert.equal(e.status, 'boarding', 'Even an empty room waits for its finite queue'); }
+        e.step(1 / 60, {});
+      }
+      assert(['remark', 'finalcheck'].includes(e.status)); assert(b.decks.closed);
+      assert.equal(q.api.clearance(e).remaining, 0);
+      const before = e.score;
       const paused = combatSnapshot(e); frames(e, 10); assert.deepEqual(combatSnapshot(e), paused);
+      e.boardInteract(); assert.deepEqual(combatSnapshot(e), paused, 'Direct interaction cannot reopen a card');
       answerCard(h, e, true); assert(['remark', 'finalcheck'].includes(e.status)); assert.equal(b.completed.length, 0);
+      assert.equal(b.enemies.length, 0, 'Wrong answer cannot respawn killed enemies');
       assert(e.score <= before, 'Wrong answer never gets a reward');
       answerCard(h, e); assert.equal(b.completed.length, 1); assert.equal(e.status, 'boarding');
       assert.equal(b.enemies.length, q.api.profile(e).initial); assert(!b.decks.closed);
       const next = combatSnapshot(e); e.continueRemark(); if (tier === 4) e.continueFinaleCheck();
       assert.deepEqual(combatSnapshot(e), next, 'Repeated continue cannot spawn or reward twice');
+    }
+  });
+  test('future-room guards neither lock the terminal nor occupy current reinforcement slots', () => {
+    for (const tier of [0, 3, 4]) {
+      const e = engine(h, tier), b = e.board, source = clone(b.enemies[0]);
+      const future = Array.from({ length: q.api.profile(e).cap }, (_, i) => ({ ...clone(source),
+        id: ++e.entityId, zone: 1, decksRoom: 1, hp: 17 + i, pos: b.definition.centers[1].slice() }));
+      for (const x of b.enemies) e.boardHit(x, x.hp + 1, b.pos, true);
+      b.enemies.push(...future); b.pos = b.terminals[0].slice(); b.previous = b.pos.slice(); b.invulnerable = 1000;
+      for (let frame = 0; frame < 60 * 40 && e.status === 'boarding'; frame++) {
+        for (const x of b.enemies) if ((x.decksRoom ?? x.zone) === 0 && !x.dead) e.boardHit(x, x.hp + 1, b.pos, true);
+        e.step(1 / 60, {});
+      }
+      assert(['remark', 'finalcheck'].includes(e.status));
+      assert.equal(q.api.clearance(e).remaining, 0, 'Future population is excluded');
+      const score = e.score, hp = future.map(x => x.hp); answerCard(h, e);
+      for (const x of future) assert(b.enemies.includes(x), 'Exactly the same living future-room object survives core continuation');
+      assert.deepEqual(future.map(x => x.hp), hp); assert.equal(e.score - score, tier === 4 ? 700 : 500);
+      assert.equal(q.api.clearance(e).alive, future.length, 'Those enemies become relevant only in their own room');
+      assert.equal(b.enemies.length, Math.max(q.api.profile(e).initial, future.length), 'Existing cohort is not duplicated');
+    }
+  });
+  test('shared contact damage cooldown respects armor assist pause cards and saved time', () => {
+    const detail = [];
+    for (const tier of [0, 1, 4]) for (const assist of [false, true]) {
+      const e = engine(h, tier, { assist, upgrades: { weapons: 0, armor: 0, rockets: 0 } }), b = e.board;
+      b.pos = [0, 0, -20]; b.previous = b.pos.slice(); b.invulnerable = 0; b.decks.waves = [];
+      b.enemies = b.enemies.slice(0, 3);
+      for (const x of b.enemies) { x.pos = b.pos.slice(); x.stun = 100; x.decksArrival = 0; }
+      e.step(1 / 60, {}); const amount = 3 * (assist ? .65 : 1);
+      near(100 - b.hp, amount, 'Several overlapping bodies deal one small contact hit');
+      assert.equal(b.decks.contactHits, 1);
+      frames(e, .3); e.pause(); const stopped = combatSnapshot(e);
+      frames(e, 3, { moveX: 1, fire: true }); e.stepBoard(.04, {}); e.boardInteract();
+      assert.deepEqual(combatSnapshot(e), stopped, 'Direct and scheduled paused calls are harmless');
+      const copy = restored(h, saved(h, e)); e.resume(); copy.resume();
+      frames(e, .3); frames(copy, .3); near(100 - b.hp, amount, 'Pause and reload cannot shorten the cooldown');
+      frames(e, .32); frames(copy, .32);
+      assert.deepEqual(combatSnapshot(copy), combatSnapshot(e));
+      near(100 - b.hp, amount * 2, 'Second contact occurs only after 0.9 seconds');
+      assert.equal(b.decks.contactHits, 2);
+      for (const x of b.enemies) e.boardHit(x, x.hp + 1, b.pos, true);
+      b.pos = b.terminals[0].slice(); e.boardInteract(); assert(['remark', 'finalcheck'].includes(e.status));
+      const card = combatSnapshot(e); frames(e, 5, { pulse: true }); assert.deepEqual(combatSnapshot(e), card);
+      detail.push({ level: tier === 4 ? 13 : tier * 3 + 2, assist, damage: amount, cooldown: .9 });
+    }
+    const armored = engine(h, 0, { upgrades: { weapons: 0, armor: 2, rockets: 0 } }), ab = armored.board;
+    ab.pos = [0, 0, -20]; ab.previous = ab.pos.slice(); ab.invulnerable = 0; ab.enemies = ab.enemies.slice(0, 1);
+    ab.enemies[0].pos = ab.pos.slice(); ab.enemies[0].stun = 100; armored.step(1 / 60, {});
+    near(100 - ab.hp, 3 * .8 ** 2, 'Existing armor remains effective for contact damage');
+    return detail;
+  });
+  test('unreachable guard returns after a saved warning with its identity health and rewards intact', () => {
+    const e = engine(h, 0), b = e.board, x = b.enemies[0];
+    b.enemies = [x]; b.pos = [0, 0, -20]; b.previous = b.pos.slice(); b.invulnerable = 100;
+    x.pos = [1000, 0, 1000]; x.hp = 17; const score = e.score, kills = b.kills;
+    stepUntil(e, () => b.decks.recoveries.length > 0, 14);
+    assert.equal(b.decks.recoveries[0].timer, 2.1, 'A visible recovery warning precedes relocation');
+    assert.equal(b.decks.recovered, 0); assert.equal(x.hp, 17);
+    const copy = restored(h, saved(h, e));
+    frames(e, 1); frames(copy, 1); assert.equal(b.decks.recovered, 0);
+    frames(e, 1.2); frames(copy, 1.2);
+    assert.deepEqual(combatSnapshot(copy), combatSnapshot(e), 'Recovery survives an exact save continuation');
+    assert.equal(b.decks.recovered, 1); assert.equal(b.enemies[0], x); assert.equal(x.hp, 17);
+    assert(distance(x.pos, b.pos) >= 8); assert(q.path(b, b.pos, x.pos).length || q.line(b, b.pos, x.pos, .68, true));
+    assert.equal(e.score, score); assert.equal(b.kills, kills);
+    const useful = engine(h, 0), ub = useful.board, sniper = ub.enemies.find(x => x.archetype === 'sniper');
+    ub.enemies = [sniper]; ub.pos = [0, 0, -20]; ub.previous = ub.pos.slice(); ub.invulnerable = 100;
+    sniper.pos = [0, 0, -5]; sniper.alert = true;
+    frames(useful, 16); assert.equal(ub.decks.recovered, 0, 'A stationary sniper with line of fire is not treated as stranded');
+    return { warning: 2.1, recoveredId: x.id, preservedHp: x.hp, distance: distance(x.pos, b.pos) };
+  });
+  test('1.9.0 completed partial and open-card checkpoints migrate without refilling waves', () => {
+    const oldHarness = createHarness(core, path.join(root, 'assets/citadel-decks-v1.9.0.js')); helpers(oldHarness);
+    for (const phase of ['done', 'partial', 'open', 'answered']) {
+      const old = engine(oldHarness, 4), ob = old.board;
+      ob.decks.waves[0].phase = phase === 'done' ? 'done' : 'signal';
+      ob.decks.waves[0].remaining = phase === 'done' ? [] : ['ninja']; ob.decks.waves[0].timer = 1.4;
+      ob.enemies[0].hp = 17; for (const x of ob.enemies) x.stun = 100;
+      if (phase === 'open' || phase === 'answered') {
+        ob.pos = ob.terminals[0].slice(); old.boardInteract();
+        if (phase === 'answered') old.answerFinale(oldHarness.deckQA.final(0).correct);
+      }
+      const e = restored(h, saved(oldHarness, old)), b = e.board, remaining = clone(ob.decks.waves.map(x => x.remaining));
+      const ids = b.enemies.map(x => x.id), hp = b.enemies.map(x => x.hp);
+      if (e.status === 'boarding') {
+        e.step(1 / 60, {}); assert.equal(b.decks.version, '1.9.1');
+        assert.deepEqual(clone(b.decks.waves.map(x => x.remaining)), remaining);
+        assert.deepEqual(b.enemies.map(x => x.id), ids); assert.equal(b.enemies[0].hp, 17);
+      } else {
+        const preserved = b.enemies.slice(), score = e.score;
+        if (phase === 'open') e.answerFinale(q.final(0).correct);
+        e.continueFinaleCheck(); assert.equal(b.completed.length, 1); assert.equal(e.score - score, 700);
+        for (const x of preserved) assert(b.enemies.includes(x));
+        assert.deepEqual(preserved.map(x => x.hp), hp);
+        assert.equal(q.api.clearance(e).alive, q.api.profile(e).initial);
+        const stable = combatSnapshot(e); e.continueFinaleCheck(); assert.deepEqual(combatSnapshot(e), stable);
+      }
+      assert.equal(b.definition.addedLength, 56); assert.equal(q.api.status(e).extendedMaze, true);
+      assert.equal(b.exit[2], -224, 'Saved stretched maze keeps the architecture marker independent of combat version');
     }
   });
   test('legacy in-progress save retains player map enemy health and finite grace', () => {
@@ -416,6 +577,8 @@ function runCore(core, canvas = null, only = null) {
     for (const assist of [false, true]) for (const tier of [0, 1, 2, 3, 4]) {
       h.context.innerWidth = assist ? 390 : 1280; h.context.matchMedia = () => ({ matches: assist });
       const result = followToFinish(h, tier, assist, assist); results.completions.push(result);
+      console.log(path.basename(core) + ': cleared level ' + result.level + ' ' + (assist ? 'calm/touch' : 'normal/desktop') +
+        ', kills=' + result.kills + ', minimumHP=' + result.minimumHp + ', seconds=' + result.time.toFixed(2));
     }
     h.context.matchMedia = () => ({ matches: false }); h.arcade.joystick = null; h.arcade.firePointer = null;
     return results.completions.map(x => ({ level: x.level, assist: x.assist, minimumHp: x.minimumHp,
@@ -453,19 +616,25 @@ function renderFrames(h, dir) {
     for (const item of items) assert(item.model.every(Number.isFinite), 'Finite model matrix');
     h.draw(canvas.getContext('2d'), items, cam, canvas.width, canvas.height);
     const c = hud.getContext('2d'), texts = [], oldText = c.fillText.bind(c);
-    c.fillText = (text, x, y, ...rest) => { texts.push({ text: String(text), x, y }); return oldText(text, x, y, ...rest); };
+    c.fillText = (text, x, y, ...rest) => { texts.push({ text: String(text), x, y, width: c.measureText(String(text)).width }); return oldText(text, x, y, ...rest); };
     (width < 900 ? q.mobileHud : q.hud)(c, e, cam, hud.width, hud.height);
+    assert.deepEqual(combatSnapshot(e), before, 'HUD and clearance queries do not mutate saved combat');
     const hp = texts.find(x => x.text.startsWith('ЩИТ ')); assert(hp && hp.y >= 0 && hp.y < (width < 900 ? height : 720));
+    const gate = texts.find(x => x.text.startsWith('Зачистите комнату · осталось '));
+    assert(gate, 'The locked terminal status is visible on every tested viewport');
+    assert(gate.width < (width < 900 ? Math.min(360, width - 12) - 14 : 670), 'Clearance label fits its existing HUD region');
+    assert(!texts.some(x => x.text === 'ПОДОЙДИТЕ — ОТКРОЕТСЯ САМ'), 'No misleading terminal invitation during combat');
     canvas.getContext('2d').drawImage(hud, 0, 0);
     const filename = path.basename(h.corePath, '.js') + '-' + name + '.png';
     fs.writeFileSync(path.join(dir, filename), canvas.toBuffer('image/png'));
-    outputs.push({ filename, width, height, dpr, effects: fx, items: items.length, healthY: hp.y });
+    outputs.push({ filename, width, height, dpr, effects: fx, items: items.length, healthY: hp.y,
+      clearance: gate.text, clearanceY: gate.y, clearanceWidth: gate.width });
   }
   return outputs;
 }
 function main(options = args(process.argv.slice(2))) {
   const start = performance.now(), canvas = options.render ? nativeCanvas() : null;
-  const report = { version: '1.9.0', patchSha256: crypto.createHash('sha256').update(fs.readFileSync(patchPath)).digest('hex'),
+  const report = { version: '1.9.1', patchSha256: crypto.createHash('sha256').update(fs.readFileSync(patchPath)).digest('hex'),
     environment: 'Real frozen core code in Node VM; optional native Canvas. No browser or physical-device claim.', cores: [] };
   for (const core of options.cores) {
     const result = runCore(core, canvas, options.only);

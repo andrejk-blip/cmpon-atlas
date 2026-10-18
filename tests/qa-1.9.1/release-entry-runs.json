@@ -1,0 +1,26 @@
+[
+  {
+    "name": "full-entry-release",
+    "exit_code": 0,
+    "seconds": 7.31,
+    "command": [
+      "node",
+      "tests/mission-integration-regression-1.9.1.cjs",
+      "--report",
+      "/workspace/scratch/a3f66c86cf59/citadel-general-qa/components/full-entry-release.json"
+    ],
+    "log": "/workspace/scratch/a3f66c86cf59/citadel-general-qa/components/full-entry-release.log"
+  },
+  {
+    "name": "android-profile-release",
+    "exit_code": 0,
+    "seconds": 6.94,
+    "command": [
+      "node",
+      "tests/android-startup-regression.cjs",
+      "--report",
+      "/workspace/scratch/a3f66c86cf59/citadel-general-qa/components/android-profile-release.json"
+    ],
+    "log": "/workspace/scratch/a3f66c86cf59/citadel-general-qa/components/android-profile-release.log"
+  }
+]
