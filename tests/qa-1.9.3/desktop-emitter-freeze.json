@@ -1,0 +1,41 @@
+{
+  "version": "1.9.3",
+  "date": "2026-10-19",
+  "scope": "desktop emitter-wrapper freeze",
+  "baseline": {
+    "frames": 3800,
+    "error": "RangeError: Maximum call stack size exceeded",
+    "alternatingModules": [
+      "citadel-sfx-v1.9.1.js",
+      "citadel-comic-v1.9.1.js"
+    ]
+  },
+  "fixed": {
+    "stressFrames": 20000,
+    "emitChanges": 0,
+    "probeEvents": 200,
+    "errors": 0
+  },
+  "integrated": [
+    {
+      "viewport": "desktop",
+      "frames": 12000,
+      "emitChanges": 0,
+      "exceptions": 0,
+      "pageErrors": 0,
+      "status": "playing"
+    },
+    {
+      "viewport": "mobile smoke",
+      "frames": 12000,
+      "emitChanges": 0,
+      "exceptions": 0,
+      "pageErrors": 0,
+      "status": "playing"
+    }
+  ],
+  "limitations": [
+    "Automated Chromium test; not a human session on user's desktop",
+    "Mobile authentication behavior unchanged"
+  ]
+}
