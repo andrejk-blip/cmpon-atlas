@@ -1,0 +1,71 @@
+name: Prepare Citadel 1.9.3
+on:
+  push:
+    branches: [release/citadel-1.9.3]
+    paths: [.github/workflows/prepare193.yml]
+permissions:
+  contents: write
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply exact tested source transformations
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib,json,re
+          def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+          def once(s,a,b):
+              assert s.count(a)==1,(a,s.count(a))
+              return s.replace(a,b,1)
+          assert sha('assets/citadel-sfx-v1.9.1.js')=='5835ae456baf68013dd67c1181ba7de3ecc92225a7a99db422cfd3bfc239b848'
+          assert sha('assets/citadel-comic-v1.9.1.js')=='b20d5f7b10e585f114520d47fef58ac6fbb66fc80f6d92861c7dbe0050ce3d56'
+          assert sha('assets/citadel-runtime-v1.9.3.js')=='7771e0085b3fff224e30764ec6988ffc171c8580167e2f6996b58e9e3d550ea5'
+          s=Path('assets/citadel-sfx-v1.9.1.js').read_text()
+          s=once(s,"const VERSION = '1.9.1';","const VERSION = '1.9.3';")
+          s=once(s,'    const previousFrame=frame, previousEmit=engine.emit, board=engine.board;',
+              '    // Install persistent event consumers before entering a temporary audio scope.\n    // Otherwise comic.wire() retains the scoped emitter every frame and grows\n    // an unbounded comic -> audio -> comic -> audio chain until stack overflow.\n    globalThis.CITADEL_COMIC?.wire?.(engine);\n    const previousFrame=frame, previousEmit=engine.emit, board=engine.board;')
+          s=once(s,'    engine.emit=scoped;',"    Object.defineProperty(scoped,'citadelSfxScope',{value:true});\n    engine.emit=scoped;")
+          Path('assets/citadel-sfx-v1.9.3.js').write_text(s)
+          c=Path('assets/citadel-comic-v1.9.1.js').read_text()
+          c=c.replace("version === '1.9.1'","version === '1.9.3'").replace("VERSION = '1.9.1'","VERSION = '1.9.3'")
+          c=once(c,"    if (!e || typeof e.emit !== 'function') return;","    if (!e || typeof e.emit !== 'function' || e.emit.citadelSfxScope === true) return;")
+          Path('assets/citadel-comic-v1.9.3.js').write_text(c)
+          assert sha('assets/citadel-sfx-v1.9.3.js')=='6cabac06fb8d99684ca2a8252510f90a964ca1d427aa4ac7b214115ee1b9af7b'
+          assert sha('assets/citadel-comic-v1.9.3.js')=='fca0b9603ff434f060cd9b16680584d062e907bb4f9b32998a438804f7064964'
+          for file in ['index.html','atlas.html']:
+              p=Path(file);h=p.read_text()
+              h=once(h,'name="application-version" content="1.9.2"','name="application-version" content="1.9.3"')
+              h=once(h,'src="./assets/citadel-sfx-v1.9.1.js"','src="./assets/citadel-sfx-v1.9.3.js"')
+              h=once(h,'src="./assets/citadel-comic-v1.9.1.js"','src="./assets/citadel-comic-v1.9.3.js"')
+              h=h.replace('Приложение v1.9.2 · 18.10.2026','Приложение v1.9.3 · 19.10.2026')
+              pat=r'(<script type="application/json" id="release-data">)(.*?)(</script>)'
+              m=re.search(pat,h,re.S);assert m
+              d=json.loads(m[2]);d.update(version='1.9.3',released_on='2026-10-19',effects_module_version='1.9.3',comic_module_version='1.9.3',runtime_module_version='1.9.3')
+              h=h[:m.start()]+m[1]+json.dumps(d,ensure_ascii=False,separators=(',',':'))+m[3]+h[m.end():]
+              h=once(h,'</body>','<script defer src="./assets/citadel-runtime-v1.9.3.js"></script>\n</body>')
+              p.write_text(h)
+          p=Path('version.json');v=json.loads(p.read_text());v.update(version='1.9.3',released_on='2026-10-19',effects_module_version='1.9.3',comic_module_version='1.9.3',runtime_module_version='1.9.3',bounded_event_scopes=True,concurrent_name_entry=True)
+          for k,path in {'index_sha256':'index.html','atlas_sha256':'atlas.html','web_atlas_sha256':'atlas.html','effects_sha256':'assets/citadel-sfx-v1.9.3.js','comic_sha256':'assets/citadel-comic-v1.9.3.js','runtime_sha256':'assets/citadel-runtime-v1.9.3.js'}.items():v[k]=sha(path)
+          p.write_text(json.dumps(v,ensure_ascii=False,indent=2)+'\n')
+          PY
+          node --check assets/citadel-sfx-v1.9.3.js
+          node --check assets/citadel-comic-v1.9.3.js
+          node --check assets/citadel-runtime-v1.9.3.js
+      - name: Save candidate only on release branch
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/citadel-sfx-v1.9.3.js assets/citadel-comic-v1.9.3.js index.html atlas.html version.json
+          git commit -m 'Prepare Citadel 1.9.3 tested candidate: bounded audio/comic scopes'
+          git push origin HEAD:release/citadel-1.9.3
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib,json,subprocess
+          files=['assets/citadel-sfx-v1.9.3.js','assets/citadel-comic-v1.9.3.js','assets/citadel-runtime-v1.9.3.js','index.html','atlas.html','version.json']
+          print(json.dumps({'commit':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),'files':[{'path':p,'sha':subprocess.check_output(['git','hash-object',p],text=True).strip(),'sha256':hashlib.sha256(Path(p).read_bytes()).hexdigest()} for p in files]},ensure_ascii=False))
+          PY
