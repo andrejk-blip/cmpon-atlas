@@ -10,6 +10,7 @@
 @media(max-width:650px){.shell{display:flex;flex-direction:column}.content{order:0}.aside{order:1}.wrap{padding:12px 12px 32px}.header{align-items:flex-start;flex-direction:column}.logo strong{font-size:15px}.chip{font-size:10px}.shell{gap:13px;margin-top:16px}.aside{padding:13px}.crit-rows{grid-template-columns:repeat(2,1fr);gap:7px}.crit-row{padding:8px;gap:6px}.titleline h1{font-size:29px}.titleline p{font-size:13px}.controlbar{gap:5px}.tab{padding:8px 11px;font-size:12px}.settings{margin-left:0;width:100%;justify-content:space-between}.stage-head{padding:12px 14px}.stage-body{padding:17px 13px}.choices,.feedback-splits,.intro-grid,.results,.formgrid,.editor-layout{grid-template-columns:1fr}.choice{min-height:66px;padding:13px}.quote-block{padding:12px 15px;font-size:17px}.editor-main{padding:14px}.editor-side{max-height:190px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
 </style>
+<link rel="stylesheet" href="./assets/citadel-ui-fixes-v1.9.2.css">
 </head>
 <body>
 <div class="wrap">
@@ -908,4 +909,5 @@ function init(){Object.entries(LABELS).forEach(([k,x])=>{const o=document.create
 init();loadPublishedBank();try{const focus=new URLSearchParams(location.search).get('criterion');if(focus&&CORE.includes(focus)){filter=focus;startPractice()}}catch{}
 })();
 </script>
+<script src="./assets/citadel-ui-fixes-v1.9.2.js"></script>
 </body></html>

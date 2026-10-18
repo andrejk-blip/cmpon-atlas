@@ -1,0 +1,65 @@
+/* Prologue is a viewport dialog, not a tall page clipped by the playfield. */
+#arcade-overlay.citadel-prologue-open {
+  position:fixed;inset:12px;top:calc(var(--citadel-visual-top,0px) + 12px);
+  height:calc(var(--citadel-visual-height,100vh) - 24px);max-height:none;
+  z-index:10010;display:flex;align-items:center;justify-content:center;
+  padding:12px;box-sizing:border-box;overflow:hidden;touch-action:pan-y;
+  background:#030b13f5;border-radius:10px;
+}
+#arcade-overlay.citadel-prologue-open .citadel-prologue {
+  height:100%;max-height:760px;max-width:1120px;min-height:0;
+  grid-template-rows:minmax(0,1fr);overflow:hidden;margin:0;
+}
+#arcade-overlay.citadel-prologue-open .prologue-art {
+  aspect-ratio:auto;min-height:0;height:100%;
+}
+#arcade-overlay.citadel-prologue-open .prologue-copy {
+  display:grid;grid-template-rows:auto minmax(0,1fr) auto;
+  min-height:0;gap:0;padding:0;overflow:hidden;
+}
+#arcade-overlay.citadel-prologue-open .prologue-topline {
+  padding:16px 22px;flex-wrap:wrap;gap:6px 12px;border-bottom:1px solid #13293626;
+}
+#arcade-overlay.citadel-prologue-open .prologue-topline button {min-height:44px;padding:8px 0;}
+#arcade-overlay.citadel-prologue-open .prologue-reading {
+  min-height:0;overflow-y:auto;overflow-x:hidden;padding:20px 24px;
+  overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#60746f #efe4c6;
+  -webkit-overflow-scrolling:touch;
+}
+#arcade-overlay.citadel-prologue-open .prologue-reading h3 {
+  font-size:clamp(24px,3.1vw,40px);line-height:1.08;overflow-wrap:anywhere;
+}
+#arcade-overlay.citadel-prologue-open .prologue-reading p {margin:20px 0;font-size:16px;line-height:1.55;}
+#arcade-overlay.citadel-prologue-open .prologue-reading strong {
+  display:block;padding-left:12px;border-left:4px solid #b64d36;color:#993d2c;font:800 15px/1.5 Arial,sans-serif;
+}
+#arcade-overlay.citadel-prologue-open .prologue-nav {
+  margin:0;padding:12px 22px;border-top:1px solid #13293626;background:#efe4c6;flex-wrap:nowrap;
+}
+#arcade-overlay.citadel-prologue-open .prologue-nav>button {min-height:46px;white-space:normal;}
+#arcade-overlay.citadel-prologue-open .prologue-nav>button:last-child {min-width:0;}
+#arcade-overlay.citadel-prologue-open .prologue-dots {flex:none;}
+svg.citadel-ui-icon {
+  display:inline-block;width:1em;height:1em;min-width:1em;vertical-align:-.12em;
+  fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;
+  flex-shrink:0;pointer-events:none;
+}
+@media(max-width:650px) and (orientation:portrait) {
+  #arcade-overlay.citadel-prologue-open {inset:8px;top:calc(var(--citadel-visual-top,0px) + 8px);height:calc(var(--citadel-visual-height,100vh) - 16px);padding:4px;}
+  #arcade-overlay.citadel-prologue-open .citadel-prologue {grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(100px,27%) minmax(0,1fr);}
+  #arcade-overlay.citadel-prologue-open .prologue-art {height:100%;border-right:0;border-bottom:2px solid #132632;}
+  #arcade-overlay.citadel-prologue-open .prologue-topline {padding:6px 14px;font-size:9px;}
+  #arcade-overlay.citadel-prologue-open .prologue-reading {padding:14px 16px;}
+  #arcade-overlay.citadel-prologue-open .prologue-reading h3 {font-size:26px;}
+  #arcade-overlay.citadel-prologue-open .prologue-reading p {font-size:14px;margin:14px 0;}
+  #arcade-overlay.citadel-prologue-open .prologue-nav {padding:8px 12px;}
+}
+@media(max-height:500px) {
+  #arcade-overlay.citadel-prologue-open {padding:4px;}
+  #arcade-overlay.citadel-prologue-open .citadel-prologue {grid-template-columns:minmax(0,.65fr) minmax(0,1.35fr);grid-template-rows:minmax(0,1fr);}
+  #arcade-overlay.citadel-prologue-open .prologue-topline {padding:2px 12px;font-size:9px;}
+  #arcade-overlay.citadel-prologue-open .prologue-reading {padding:10px 14px;}
+  #arcade-overlay.citadel-prologue-open .prologue-reading h3 {font-size:23px;}
+  #arcade-overlay.citadel-prologue-open .prologue-reading p {font-size:13px;margin:12px 0;}
+  #arcade-overlay.citadel-prologue-open .prologue-nav {padding:6px 12px;}
+}
