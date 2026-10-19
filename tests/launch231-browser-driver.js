@@ -7,5 +7,5 @@
     seed:ARCADE.engine?.seed,score:ARCADE.engine?.score,attached:CUP.attached,
     localSaved:!!localStorage.getItem('cmpon.citadel.local.v1'),launch:CITADEL_LAUNCH.status(),
     runtime:globalThis.CITADEL_RUNTIME?.diagnostic?.(),errors:LAUNCH_QA_ERRORS.slice(-8)
-  }},location.origin),1000);
+  }},new URL(document.baseURI).origin),1000);
 })();
