@@ -81,3 +81,7 @@ node tests/runtime193-regression.cjs --report tests/qa-2.2.0/runtime.json
 ```
 
 Native Canvas требует `@napi-rs/canvas`; EGL-проверка — libEGL/Mesa и Pillow. Полные хеши протестированных скриптов находятся в `integration.json` и отчётах кампаний. Результат проверки публичных файлов после выкладки — `publication.json`.
+
+## Публикация
+
+Код включён коммитом [b1be1e7fd94901d05fd60b65a3d40e2c278b1e18](https://github.com/andrejk-blip/cmpon-atlas/commit/b1be1e7fd94901d05fd60b65a3d40e2c278b1e18). GitHub Pages run [39256106553](https://github.com/andrejk-blip/cmpon-atlas/actions/runs/39256106553) завершён успешно. HTTP-проверка 44 файлов дала полное совпадение SHA-256 с протестированной сборкой. Основная страница в Chrome показывает 2.2.0 и подключает новый графический модуль `220r1`.
