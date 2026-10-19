@@ -12,7 +12,10 @@ async function fixture(){
   c.setInterval=(fn,ms)=>{const id=++serial;intervals.set(id,{fn,ms});return id;};c.clearInterval=id=>intervals.delete(id);
   c.console={...console,error(){}};
  }});
- await new Promise(setImmediate);h.cup.panel=null;h.arcade.fx=false;h.arcade.sound=true;
+ await new Promise(setImmediate);
+ // Scheduler/fault tests isolate rendering; native Canvas is covered by the entry suite.
+ h.run('spaceScene=()=>[]; drawFlightHUD=drawCampaignFlightHUD=drawClarityHUD=()=>{};');
+ h.arcade.renderer.render=()=>{};h.cup.panel=null;h.arcade.fx=false;h.arcade.sound=true;
  const e=new h.Engine(417147,()=>{});h.arcade.engine=e;e.start(false);
  while(h.c.CITADEL_STORY.status(e).active)h.action('story-next');h.action('citadel-launch');
  const tick=(ms=1000/60)=>{time+=ms;const jobs=[...raf.values()];raf.clear();for(const fn of jobs)fn(time);};
@@ -53,13 +56,30 @@ async function check(name,fn){console.log("START "+name);try{const data=await fn
   const s=JSON.parse(f.h.storage.get('cmpon.citadel.recovery.v1'));assert.equal(s.schema,1);assert(s.engine.elapsed<=f.e.elapsed);assert.equal(s.engine.seed,f.e.seed);
   f.h.action('arcade-resume');assert.equal(f.e.status,'paused');assert.equal(f.raf.size,0);return f.diag();
  });
+ await check('An asynchronous restore may start a new engine after a fatal update; the broken instance never restarts',async()=>{
+  const f=await fixture();f.tick();f.e.step=()=>{throw new Error('probe');};f.tick();assert.equal(f.diag().stopped,true);
+  const fresh=new f.h.Engine(417147,()=>{});fresh.start(false);f.h.arcade.engine=fresh;
+  f.advance(1000);assert.equal(f.diag().stopped,false);assert.equal(f.raf.size,1);f.tick();assert.equal(f.raf.size,1);assert.equal(f.diag().failures,1);
+  return {failures:f.diag().failures,pending:f.diag().pending,status:fresh.status};
+ });
+ await check('Denied localStorage retains an in-memory backup and does not throw from the failure handler',async()=>{
+  const f=await fixture();f.tick();f.h.c.localStorage.setItem=()=>{throw new Error('storage denied');};f.e.step=()=>{throw new Error('probe');};
+  f.tick();assert.equal(f.diag().recoverySave,'memory');assert.equal(f.diag().stopped,true);assert.equal(f.raf.size,0);return {recoverySave:f.diag().recoverySave};
+ });
  await check('Repeated render fault stops instead of an exception/recovery loop',async()=>{
   const f=await fixture();f.tick();f.h.arcade.renderer.render=()=>{throw new Error('probe');};f.tick();f.tick();assert.equal(f.diag().failures,2);assert.equal(f.diag().stopped,true);assert.equal(f.raf.size,0);return f.diag();
+ });
+ await check('Context-loss lifecycle pauses updates; restoration schedules only one frame',async()=>{
+  const f=await fixture();f.tick();const canvas=f.h.arcade.canvas;
+  for(const fn of canvas.handlers.webglcontextlost||[])fn({preventDefault(){}});
+  const before=f.diag().updates;f.tick();f.advance(7000);assert.equal(f.diag().updates,before);assert.equal(f.diag().contextLost,true);assert.equal(f.diag().recoveries,0);
+  for(const fn of canvas.handlers.webglcontextrestored||[])fn({});
+  assert.equal(f.diag().contextLost,false);assert.equal(f.raf.size,1);f.tick();assert.equal(f.raf.size,1);return f.diag();
  });
  await check('Journal bounded; diagnostics omit save, name, message and action payload',async()=>{
   const f=await fixture();for(let i=0;i<160;i++){f.h.action('arcade-pause','private-value');f.tick();}
   const d=plain(f.diag());assert(d.events.length<=64);assert(!JSON.stringify(d).includes('private-value'));assert.equal(d.failures,0);return{events:d.events.length,frames:d.frames};
  });
- const report={suite:'runtime193',environment:'Node VM + native Canvas, mocked RAF/timers/storage',checks,pass:checks.every(x=>x.pass)};
+ const report={suite:'runtime193',environment:'Node VM, mocked renderer/RAF/timers/storage; native Canvas integration tested separately',checks,pass:checks.every(x=>x.pass)};
  fs.writeFileSync('tests/qa-1.9.3/runtime.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({pass:report.pass,checks:checks.map(({name,pass,error})=>({name,pass,error}))},null,2));if(!report.pass)process.exitCode=1;
 })();

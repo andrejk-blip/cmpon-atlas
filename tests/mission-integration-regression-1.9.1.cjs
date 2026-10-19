@@ -23,7 +23,7 @@ const immediate = () => new Promise(resolve => setImmediate(resolve));
 
 function entrySnapshot() {
   const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
-  const scripts = [...html.matchAll(/<script\s+defer\s+src="\.\/(.*?)"[^>]*>/g)].map(match => match[1]);
+  const scripts = [...html.matchAll(/<script\s+defer\s+src="\.\/(.*?)"[^>]*>/g)].map(match => match[1].split('?')[0]);
   return { html, scripts, sources: new Map(scripts.map(name => [name, fs.readFileSync(path.join(root, name), 'utf8')])) };
 }
 

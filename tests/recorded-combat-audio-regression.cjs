@@ -8,7 +8,7 @@ const {createHarness}=require('./mrg-regression.cjs');
 const {createWebAudioLab}=require('./prepared-voice-regression.cjs');
 const {controller:swarmController,realInput}=require('./swarm-regression.cjs');
 const root=path.resolve(__dirname,'..'),asset=name=>path.join(root,'assets',name);
-const runtime=asset('citadel-sfx-v1.9.1.js'),packPath=asset('citadel-sfx-pack-v1.9.1.js');
+const runtime=asset('citadel-sfx-v1.9.3.js'),packPath=asset('citadel-sfx-pack-v1.9.1.js');
 const clone=value=>JSON.parse(JSON.stringify(value));
 const sha=file=>crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex');
 const slots=()=>[asset('atlas-v1.3.5.js'),path.resolve(root,'../cmpon-analytics-admin/game-lab/engine-v1.2.1.js')].filter(fs.existsSync);
@@ -97,7 +97,7 @@ async function suite(core){
   async function test(name,fn){try{const detail=await fn();results.push({name,ok:true,...(detail===undefined?{}:{detail})});}
     catch(error){results.push({name,ok:false,error:error.message,stack:error.stack?.split('\n').slice(1,5)});}}
   await test('Published recorded catalog, bounded asynchronous preload and shared context',async()=>{
-    const f=fixture(core);f.game();assert.equal(f.api.version,'1.9.1');assert.equal(f.api.play,f.api.preview);
+    const f=fixture(core);f.game();assert.equal(f.api.version,'1.9.3');assert.equal(f.api.play,f.api.preview);
     assert.equal(f.lab.requests.length,0,'Merely loading the module and muted scene fixture does not request audio');
     for(const kind of ['armor-hit','soldier-death-voice','robot-death'])assert(f.api.catalog().some(item=>item.kind===kind));
     const promise=f.api.preload({all:true});assert.equal(f.api.ready,promise);assert(f.lab.requests.length<=4);

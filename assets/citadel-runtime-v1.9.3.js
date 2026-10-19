@@ -5,15 +5,16 @@
 (function () {
   'use strict';
   if (globalThis.CITADEL_RUNTIME || typeof ARCADE === 'undefined') return;
-  const VERSION = '1.9.3', LOG_KEY = 'cmpon.citadel.diagnostics.v1';
+  const VERSION = '1.9.3', BUILD = '193r2', LOG_KEY = 'cmpon.citadel.diagnostics.v1';
   const RECOVERY_KEY = 'cmpon.citadel.recovery.v1', LIMIT = 64, GAP = 4000;
   const active = new Set(['playing', 'boarding', 'docking', 'lesson', 'crashing']);
   const statuses = new Set(['menu','briefing','playing','boarding','docking','lesson','crashing','paused','remark','finalcheck','stageclear','escortbrief','escortclear','finalebrief','won','lost']);
-  const phases = new Set(['battle','collect','dock','escort','pursuit','swarm','boss','breach','landing','maze','mrg','upload','victory']);
+  const phases = new Set(['battle','collect','orientation','retrieve','brief','debrief','boarding','finale','dock','escort','pursuit','swarm','boss','breach','landing','maze','mrg','upload','victory']);
   const events = [], faults = [], canvases = new WeakSet();
   let pending = null, epoch = 0, busy = false, stopped = false, contextLost = false;
   let lastFrame = performance.now(), lastUpdate = lastFrame, lastRender = lastFrame;
   let frameCount = 0, updateCount = 0, renderCount = 0, recoveries = 0, failures = 0;
+  let renderRetries = 0;
   let stage = 'idle', checkpoint = null, checkpointEngine = null, checkpointAt = -Infinity;
   let observedEngine = null, transition = '', notice = '', saveResult = 'none';
   const now = () => performance.now();
@@ -34,7 +35,7 @@
   function details(error, location) {
     // Keep only known asset basenames and coordinates, never arbitrary message/URL.
     const stack = String(error?.stack || '').split('\n').flatMap(line => {
-      const m = line.match(/((?:citadel-|atlas-)[\w.-]+\.js):(\d+):(\d+)/);
+      const m = line.match(/((?:citadel-|atlas-)[\w.-]+\.js)(?:\?[^\s():]*)?:(\d+):(\d+)/);
       return m ? [{file:m[1], line:Number(m[2]), column:Number(m[3])}] : [];
     }).slice(0, 6);
     return {at: Math.round(now()), stage:location, module:stack[0]?.file || 'game-loop',
@@ -42,7 +43,7 @@
       stack, state:state()};
   }
   function diagnostic() {
-    return {version:VERSION, frames:frameCount, updates:updateCount, renders:renderCount,
+    return {version:VERSION, build:BUILD, frames:frameCount, updates:updateCount, renders:renderCount,
       recoveries, failures, stopped, contextLost, pending:pending !== null, stage,
       lastFrameAge:Math.round(now()-lastFrame), lastUpdateAge:Math.round(now()-lastUpdate),
       lastRenderAge:Math.round(now()-lastRender), recoverySave:saveResult,
@@ -96,6 +97,14 @@
       host.appendChild(box);
     }
     box.textContent = notice;
+    const diagnosticButton=document.createElement('button');
+    diagnosticButton.textContent='Скачать диагностику';
+    diagnosticButton.onclick=()=>downloadFile(JSON.stringify(diagnostic(),null,2),'citadel-diagnostics-1.9.3.json','application/json');
+    box.appendChild(diagnosticButton);
+    if(checkpoint && checkpointEngine===ARCADE.engine) {
+      const backupButton=document.createElement('button');backupButton.textContent='Сохранить резервную копию';
+      backupButton.onclick=()=>downloadFile(checkpoint,'citadel-recovery.json','application/json');box.appendChild(backupButton);
+    }
   }
   function pause() {
     clearArcadeInput();
@@ -110,11 +119,11 @@
     record('fault'); cancel(); saveRecovery(); pause();
     // Only rendering is retryable; an interrupted update might have emitted or
     // credited an event. Never replay it or reload/recreate the engine silently.
-    const retry = ['camera','scene','renderer','hud','ui'].includes(location) && failures === 1;
+    const retry = ['camera','scene','renderer','hud','ui'].includes(location) && renderRetries === 0;
     stopped = !retry;
     notice = retry ? 'Отрисовка прервалась. Игра на паузе; можно продолжить после восстановления кадра.' :
-      'Игра остановлена из-за ошибки. Последний исправный кадр сохранён '+(saveResult==='local'?'в этом браузере.':saveResult==='memory'?'в памяти вкладки.':'не был доступен.');
-    if (retry) recoveries++;
+      'Игра остановлена из-за ошибки. '+(saveResult==='local'?'Резервная копия сохранена в этом браузере.':saveResult==='memory'?'Резервная копия доступна в памяти вкладки.':'Резервная копия пока недоступна.');
+    if (retry) { recoveries++; renderRetries++; }
     persistLog();
     console.error('[Citadel runtime]', faults[faults.length-1]);
     try { updateArcadeOverlay(); showNotice(); } catch (_) { /* Keep diagnostic available even if UI failed. */ }
@@ -144,7 +153,7 @@
       const e = ARCADE.engine;
       if (e !== observedEngine) {
         observedEngine=e; checkpoint=null; checkpointEngine=null; checkpointAt=-Infinity;
-        transition=''; record('engine');
+        transition=''; renderRetries=0; record('engine');
       }
       stage='checkpoint'; capture();
       const dt=Math.min(.04,Math.max(0,(time-ARCADE.lastTime)/1000)); ARCADE.lastTime=time;
@@ -172,6 +181,11 @@
     cancel(); ARCADE.lastTime=now(); lastFrame=lastUpdate=lastRender=now(); schedule();
   }
   function watchdog() {
+    // Tournament restore is asynchronous and can replace the engine after the
+    // action handler returns. A new instance may start; a failed one may not.
+    if (mounted() && ARCADE.engine && ARCADE.engine!==observedEngine && stopped) {
+      stopped=false;renderRetries=0;notice='';restart();
+    }
     if (!ready() || busy || contextLost) return;
     if (now()-lastFrame<GAP && (!active.has(ARCADE.engine?.status)||now()-lastUpdate<GAP)) return;
     record('frame-gap'); saveRecovery(); pause(); recoveries++;
@@ -181,9 +195,9 @@
   function bindCanvas() {
     const canvas=ARCADE.canvas;
     if (!canvas || canvases.has(canvas)) return;
-    canvases.add(canvas);
-    canvas.addEventListener('webglcontextlost',()=>{contextLost=true;record('context-lost');saveRecovery();persistLog();});
-    canvas.addEventListener('webglcontextrestored',()=>{contextLost=false;record('context-restored');restart();});
+    canvases.add(canvas); contextLost=false;
+    canvas.addEventListener('webglcontextlost',()=>{if(canvas!==ARCADE.canvas)return;contextLost=true;record('context-lost');saveRecovery();persistLog();});
+    canvas.addEventListener('webglcontextrestored',()=>{if(canvas!==ARCADE.canvas)return;contextLost=false;record('context-restored');restart();});
   }
   const previousMount=mountArcade, previousDetach=detachArcade;
   mountArcade=function(...args) {
@@ -200,7 +214,7 @@
     if (stopped && ['arcade-resume','arcade-pause'].includes(action)) { showNotice(); return true; }
     const before=ARCADE.engine;
     const result=previousAction.call(this,action,...args);
-    if (before!==ARCADE.engine) { stopped=false; failures=0; notice=''; restart(); }
+    if (before!==ARCADE.engine) { stopped=false; renderRetries=0; notice=''; restart(); }
     if (ARCADE.engine?.status!=='paused' && ['arcade-pause','arcade-resume'].includes(action)) lastUpdate=now();
     if (notice && !stopped && ARCADE.engine?.status!=='paused') {
       notice=''; const el=document.getElementById('citadel-runtime-notice'); if(el)el.textContent='';

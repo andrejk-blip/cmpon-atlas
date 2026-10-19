@@ -39,6 +39,7 @@ async function play(assist=false,seed=417147,options={}){
  let parallax=null,current=null,phaseKey='',progressKey='',nextHeartbeat=0,phaseFrames=0,frame=0,error=null;
  try{
   for(;frame<framesPerSecond*3600;frame++){
+   if(options.pace)await options.pace(frame);
    const id=level(e),key=[id,e.status,e.phase,e.finale?.phase].join('/');
    const detailKey=[key,e.board?.completed?.length??'',e.wave??''].join('/');
    if(detailKey!==progressKey||e.elapsed>=nextHeartbeat){
