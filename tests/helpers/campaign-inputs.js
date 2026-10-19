@@ -17,7 +17,7 @@ function pursuitInput(h, e) {
     pilot = { clock: e.pursuit.clock, turn: clamp((target[0] - pos[0]) * .085), pitch: clamp((target[1] - pos[1]) * .105) };
     pilots.set(e, pilot);
   }
-  return { turn: pilot.turn, pitch: pilot.pitch };
+  return { turn: pilot.turn, pitch: pilot.pitch, fire: e.pursuit.version === '2.1.0' };
 }
 
 function createSwarmController(api) {
