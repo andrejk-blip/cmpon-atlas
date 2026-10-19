@@ -6,7 +6,7 @@ document.getElementById('start').onclick=async()=>{
  const mode=document.getElementById('mode').value;
  let html=await(await fetch('../index.html',{cache:'no-store'})).text();
  if(mode==='baseline')html=html.replaceAll('citadel-sfx-v1.9.3','citadel-sfx-v1.9.1').replaceAll('citadel-comic-v1.9.3','citadel-comic-v1.9.1').replace(/<script defer src="\.\/assets\/citadel-runtime[^<]+<\/script>/,'');
- const prelude='<base href="'+new URL('../',location.href).href+'"><script>window.CITADEL_QA_MODE='+JSON.stringify(mode)+';<\/script><script src="./tests/browser-qa-isolation.js"><\/script>';
+ const prelude='<base href="'+new URL('../',location.href).href+'"><script>window.CITADEL_QA_MODE='+JSON.stringify(mode)+';window.CITADEL_QA_ACCELERATED='+document.getElementById('accelerated').checked+';<\/script><script src="./tests/browser-qa-isolation.js"><\/script>';
  html=html.replace('<head>','<head>'+prelude).replace('</body>','<script defer src="./tests/helpers/campaign-inputs.js"><\/script><script defer src="./tests/browser-qa-driver.js"><\/script></body>');
  frame.srcdoc=html;report.textContent='Загрузка реальной цепочки скриптов…';
 };
