@@ -1,0 +1,262 @@
+{
+  "experimentalMinimumWeaponLevel": 1,
+  "method": "Node VM; floor>0 means only in-memory source candidate, no production file changes; entry build weapons0 armor3 rockets0; different ordinary control policies observe only existing objects and attack warnings.",
+  "runs": [
+    {
+      "operator": "base",
+      "period": 0.4,
+      "status": "lost",
+      "time": 100.08333333332894,
+      "hp": 95.904,
+      "allies": [
+        0,
+        0,
+        68
+      ],
+      "stats": {
+        "spawned": 29,
+        "volleys": 56,
+        "torpedoes": 10,
+        "intercepts": 10,
+        "shieldHits": 58,
+        "disruptions": 3,
+        "fieldsPassed": 8,
+        "fieldsHit": 0,
+        "peakEnemies": 8,
+        "peakHostile": 11
+      },
+      "controls": {
+        "decisions": 251,
+        "tabs": 65,
+        "pulses": 3,
+        "missiles": 10,
+        "decisionPeriod": 0.4,
+        "style": "joystick"
+      }
+    },
+    {
+      "operator": "base",
+      "period": 0.45,
+      "status": "lost",
+      "time": 101.3166666666622,
+      "hp": 100,
+      "allies": [
+        0,
+        0,
+        76
+      ],
+      "stats": {
+        "spawned": 29,
+        "volleys": 54,
+        "torpedoes": 12,
+        "intercepts": 12,
+        "shieldHits": 48,
+        "disruptions": 3,
+        "fieldsPassed": 8,
+        "fieldsHit": 0,
+        "peakEnemies": 8,
+        "peakHostile": 11
+      },
+      "controls": {
+        "decisions": 226,
+        "tabs": 68,
+        "pulses": 4,
+        "missiles": 10,
+        "decisionPeriod": 0.45,
+        "style": "joystick"
+      }
+    },
+    {
+      "operator": "cover-visible-attack",
+      "period": 0.4,
+      "status": "lost",
+      "time": 101.68333333332885,
+      "hp": 95.904,
+      "allies": [
+        0,
+        0,
+        86
+      ],
+      "stats": {
+        "spawned": 29,
+        "volleys": 56,
+        "torpedoes": 10,
+        "intercepts": 8,
+        "shieldHits": 59,
+        "disruptions": 3,
+        "fieldsPassed": 8,
+        "fieldsHit": 0,
+        "peakEnemies": 8,
+        "peakHostile": 11
+      },
+      "controls": {
+        "decisions": 255,
+        "tabs": 60,
+        "pulses": 5,
+        "missiles": 10,
+        "decisionPeriod": 0.4,
+        "style": "joystick"
+      }
+    },
+    {
+      "operator": "cover-visible-attack",
+      "period": 0.45,
+      "status": "escortclear",
+      "time": 108.59999999999512,
+      "hp": 100,
+      "allies": [
+        0,
+        10,
+        76
+      ],
+      "stats": {
+        "spawned": 29,
+        "volleys": 54,
+        "torpedoes": 12,
+        "intercepts": 10,
+        "shieldHits": 47,
+        "disruptions": 3,
+        "fieldsPassed": 8,
+        "fieldsHit": 0,
+        "peakEnemies": 8,
+        "peakHostile": 11
+      },
+      "controls": {
+        "decisions": 242,
+        "tabs": 64,
+        "pulses": 5,
+        "missiles": 10,
+        "decisionPeriod": 0.45,
+        "style": "joystick"
+      }
+    },
+    {
+      "operator": "cover-any-projectiles",
+      "period": 0.4,
+      "status": "lost",
+      "time": 100.48333333332891,
+      "hp": 100,
+      "allies": [
+        0,
+        0,
+        94
+      ],
+      "stats": {
+        "spawned": 29,
+        "volleys": 56,
+        "torpedoes": 10,
+        "intercepts": 10,
+        "shieldHits": 58,
+        "disruptions": 3,
+        "fieldsPassed": 8,
+        "fieldsHit": 0,
+        "peakEnemies": 8,
+        "peakHostile": 11
+      },
+      "controls": {
+        "decisions": 252,
+        "tabs": 65,
+        "pulses": 6,
+        "missiles": 10,
+        "decisionPeriod": 0.4,
+        "style": "joystick"
+      }
+    },
+    {
+      "operator": "cover-any-projectiles",
+      "period": 0.45,
+      "status": "lost",
+      "time": 102.11666666666216,
+      "hp": 100,
+      "allies": [
+        0,
+        0,
+        94
+      ],
+      "stats": {
+        "spawned": 29,
+        "volleys": 54,
+        "torpedoes": 12,
+        "intercepts": 12,
+        "shieldHits": 47,
+        "disruptions": 3,
+        "fieldsPassed": 8,
+        "fieldsHit": 0,
+        "peakEnemies": 8,
+        "peakHostile": 11
+      },
+      "controls": {
+        "decisions": 227,
+        "tabs": 71,
+        "pulses": 6,
+        "missiles": 10,
+        "decisionPeriod": 0.45,
+        "style": "joystick"
+      }
+    },
+    {
+      "operator": "cover-and-bombers-first",
+      "period": 0.4,
+      "status": "lost",
+      "time": 96.21666666666249,
+      "hp": 91.80799999999999,
+      "allies": [
+        0,
+        0,
+        86
+      ],
+      "stats": {
+        "spawned": 29,
+        "volleys": 62,
+        "torpedoes": 15,
+        "intercepts": 12,
+        "shieldHits": 232,
+        "disruptions": 2,
+        "fieldsPassed": 7,
+        "fieldsHit": 0,
+        "peakEnemies": 8,
+        "peakHostile": 11
+      },
+      "controls": {
+        "decisions": 241,
+        "tabs": 76,
+        "pulses": 5,
+        "missiles": 10,
+        "decisionPeriod": 0.4,
+        "style": "joystick"
+      }
+    },
+    {
+      "operator": "cover-and-bombers-first",
+      "period": 0.45,
+      "status": "lost",
+      "time": 99.41666666666231,
+      "hp": 95.904,
+      "allies": [
+        0,
+        0,
+        68
+      ],
+      "stats": {
+        "spawned": 29,
+        "volleys": 66,
+        "torpedoes": 16,
+        "intercepts": 13,
+        "shieldHits": 170,
+        "disruptions": 2,
+        "fieldsPassed": 8,
+        "fieldsHit": 0,
+        "peakEnemies": 8,
+        "peakHostile": 11
+      },
+      "controls": {
+        "decisions": 221,
+        "tabs": 82,
+        "pulses": 5,
+        "missiles": 10,
+        "decisionPeriod": 0.45,
+        "style": "joystick"
+      }
+    }
+  ]
+}

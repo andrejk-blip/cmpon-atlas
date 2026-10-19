@@ -1,0 +1,2241 @@
+{
+  "method": "Node VM; initial build changed before beginEscort, then only ordinary controls. Existing independent pilot, no production changes.",
+  "runs": [
+    {
+      "mode": "normal",
+      "style": "joystick",
+      "period": 0.35,
+      "upgrades": {
+        "weapons": 0,
+        "armor": 3,
+        "rockets": 0
+      },
+      "status": "lost",
+      "time": 62.36666666666441,
+      "hp": 95.904,
+      "allies": [
+        0,
+        0,
+        68
+      ],
+      "stats": {
+        "spawned": 20,
+        "volleys": 45,
+        "torpedoes": 14,
+        "intercepts": 13,
+        "shieldHits": 37,
+        "disruptions": 1,
+        "fieldsPassed": 5,
+        "fieldsHit": 0,
+        "peakEnemies": 10,
+        "peakHostile": 11
+      },
+      "controls": {
+        "decisions": 179,
+        "tabs": 52,
+        "pulses": 1,
+        "missiles": 10,
+        "decisionPeriod": 0.35,
+        "style": "joystick"
+      },
+      "events": [
+        {
+          "at": 3.02,
+          "kind": "command",
+          "id": 1,
+          "count": 4
+        },
+        {
+          "at": 3.8,
+          "kind": "mark",
+          "squad": 1,
+          "target": 0,
+          "coordinated": true
+        },
+        {
+          "at": 5.72,
+          "kind": "attack",
+          "squad": 1,
+          "target": 0,
+          "cycle": 1
+        },
+        {
+          "at": 6.8,
+          "kind": "leader-down",
+          "squad": 1
+        },
+        {
+          "at": 8.02,
+          "kind": "field-warning",
+          "id": 1
+        },
+        {
+          "at": 9.82,
+          "kind": "mark",
+          "squad": 1,
+          "target": 0,
+          "coordinated": false
+        },
+        {
+          "at": 13.42,
+          "kind": "field-pass",
+          "id": 1
+        },
+        {
+          "at": 16,
+          "kind": "shield",
+          "id": 2,
+          "count": 4
+        },
+        {
+          "at": 16.78,
+          "kind": "mark",
+          "squad": 2,
+          "target": 2,
+          "coordinated": false
+        },
+        {
+          "at": 18,
+          "kind": "formation",
+          "pattern": 1
+        },
+        {
+          "at": 18.7,
+          "kind": "attack",
+          "squad": 2,
+          "target": 2,
+          "cycle": 1
+        },
+        {
+          "at": 19,
+          "kind": "torpedo",
+          "squad": 2,
+          "target": 2
+        },
+        {
+          "at": 20,
+          "kind": "field-warning",
+          "id": 2
+        },
+        {
+          "at": 20.1,
+          "kind": "torpedo",
+          "squad": 2,
+          "target": 2
+        },
+        {
+          "at": 24.03,
+          "kind": "mark",
+          "squad": 2,
+          "target": 2,
+          "coordinated": false
+        },
+        {
+          "at": 25.4,
+          "kind": "field-pass",
+          "id": 2
+        },
+        {
+          "at": 25.95,
+          "kind": "attack",
+          "squad": 2,
+          "target": 2,
+          "cycle": 2
+        },
+        {
+          "at": 29.02,
+          "kind": "crossfire",
+          "id": 3,
+          "count": 4
+        },
+        {
+          "at": 29.8,
+          "kind": "mark",
+          "squad": 3,
+          "target": 0,
+          "coordinated": false
+        },
+        {
+          "at": 31.72,
+          "kind": "attack",
+          "squad": 3,
+          "target": 0,
+          "cycle": 1
+        },
+        {
+          "at": 32.02,
+          "kind": "field-warning",
+          "id": 3
+        },
+        {
+          "at": 35.2,
+          "kind": "transport-lost",
+          "target": 0
+        },
+        {
+          "at": 36.02,
+          "kind": "formation",
+          "pattern": 2
+        },
+        {
+          "at": 37.05,
+          "kind": "mark",
+          "squad": 3,
+          "target": 1,
+          "coordinated": false
+        },
+        {
+          "at": 37.42,
+          "kind": "field-pass",
+          "id": 3
+        },
+        {
+          "at": 38.97,
+          "kind": "attack",
+          "squad": 3,
+          "target": 1,
+          "cycle": 2
+        },
+        {
+          "at": 42.02,
+          "kind": "torpedo",
+          "id": 4,
+          "count": 4
+        },
+        {
+          "at": 42.8,
+          "kind": "mark",
+          "squad": 4,
+          "target": 1,
+          "coordinated": false
+        },
+        {
+          "at": 44.02,
+          "kind": "field-warning",
+          "id": 4
+        },
+        {
+          "at": 44.72,
+          "kind": "attack",
+          "squad": 4,
+          "target": 1,
+          "cycle": 1
+        },
+        {
+          "at": 44.72,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 45.02,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 45.82,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 46.12,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 48.32,
+          "kind": "cover"
+        },
+        {
+          "at": 49.42,
+          "kind": "field-pass",
+          "id": 4
+        },
+        {
+          "at": 50.05,
+          "kind": "mark",
+          "squad": 4,
+          "target": 1,
+          "coordinated": false
+        },
+        {
+          "at": 51.97,
+          "kind": "attack",
+          "squad": 4,
+          "target": 1,
+          "cycle": 2
+        },
+        {
+          "at": 51.97,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 52.27,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 53.07,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 53.37,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 54.02,
+          "kind": "formation",
+          "pattern": 0
+        },
+        {
+          "at": 56.02,
+          "kind": "field-warning",
+          "id": 5
+        },
+        {
+          "at": 56.02,
+          "kind": "command",
+          "id": 5,
+          "count": 4
+        },
+        {
+          "at": 56.8,
+          "kind": "mark",
+          "squad": 5,
+          "target": 1,
+          "coordinated": true
+        },
+        {
+          "at": 57.3,
+          "kind": "mark",
+          "squad": 4,
+          "target": 1,
+          "coordinated": false
+        },
+        {
+          "at": 58.72,
+          "kind": "attack",
+          "squad": 5,
+          "target": 1,
+          "cycle": 1
+        },
+        {
+          "at": 59.22,
+          "kind": "attack",
+          "squad": 4,
+          "target": 1,
+          "cycle": 3
+        },
+        {
+          "at": 59.22,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 59.52,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 60.32,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 60.62,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 61.42,
+          "kind": "field-pass",
+          "id": 5
+        },
+        {
+          "at": 62.37,
+          "kind": "transport-lost",
+          "target": 1
+        }
+      ]
+    },
+    {
+      "mode": "normal",
+      "style": "joystick",
+      "period": 0.4,
+      "upgrades": {
+        "weapons": 0,
+        "armor": 3,
+        "rockets": 0
+      },
+      "status": "lost",
+      "time": 67.21666666666414,
+      "hp": 91.80799999999999,
+      "allies": [
+        0,
+        0,
+        76
+      ],
+      "stats": {
+        "spawned": 20,
+        "volleys": 46,
+        "torpedoes": 13,
+        "intercepts": 12,
+        "shieldHits": 67,
+        "disruptions": 1,
+        "fieldsPassed": 5,
+        "fieldsHit": 0,
+        "peakEnemies": 8,
+        "peakHostile": 11
+      },
+      "controls": {
+        "decisions": 169,
+        "tabs": 62,
+        "pulses": 3,
+        "missiles": 10,
+        "decisionPeriod": 0.4,
+        "style": "joystick"
+      },
+      "events": [
+        {
+          "at": 3.02,
+          "kind": "command",
+          "id": 1,
+          "count": 4
+        },
+        {
+          "at": 3.8,
+          "kind": "mark",
+          "squad": 1,
+          "target": 0,
+          "coordinated": true
+        },
+        {
+          "at": 5.72,
+          "kind": "attack",
+          "squad": 1,
+          "target": 0,
+          "cycle": 1
+        },
+        {
+          "at": 6.9,
+          "kind": "leader-down",
+          "squad": 1
+        },
+        {
+          "at": 8.02,
+          "kind": "field-warning",
+          "id": 1
+        },
+        {
+          "at": 9.92,
+          "kind": "mark",
+          "squad": 1,
+          "target": 0,
+          "coordinated": false
+        },
+        {
+          "at": 13.42,
+          "kind": "field-pass",
+          "id": 1
+        },
+        {
+          "at": 16,
+          "kind": "shield",
+          "id": 2,
+          "count": 4
+        },
+        {
+          "at": 16.78,
+          "kind": "mark",
+          "squad": 2,
+          "target": 2,
+          "coordinated": false
+        },
+        {
+          "at": 18,
+          "kind": "formation",
+          "pattern": 1
+        },
+        {
+          "at": 18.7,
+          "kind": "attack",
+          "squad": 2,
+          "target": 2,
+          "cycle": 1
+        },
+        {
+          "at": 19,
+          "kind": "torpedo",
+          "squad": 2,
+          "target": 2
+        },
+        {
+          "at": 20,
+          "kind": "field-warning",
+          "id": 2
+        },
+        {
+          "at": 20.1,
+          "kind": "torpedo",
+          "squad": 2,
+          "target": 2
+        },
+        {
+          "at": 21.62,
+          "kind": "cover"
+        },
+        {
+          "at": 24.03,
+          "kind": "mark",
+          "squad": 2,
+          "target": 2,
+          "coordinated": false
+        },
+        {
+          "at": 25.4,
+          "kind": "field-pass",
+          "id": 2
+        },
+        {
+          "at": 25.95,
+          "kind": "attack",
+          "squad": 2,
+          "target": 2,
+          "cycle": 2
+        },
+        {
+          "at": 29.02,
+          "kind": "crossfire",
+          "id": 3,
+          "count": 4
+        },
+        {
+          "at": 29.8,
+          "kind": "mark",
+          "squad": 3,
+          "target": 0,
+          "coordinated": false
+        },
+        {
+          "at": 31.72,
+          "kind": "attack",
+          "squad": 3,
+          "target": 0,
+          "cycle": 1
+        },
+        {
+          "at": 32.02,
+          "kind": "field-warning",
+          "id": 3
+        },
+        {
+          "at": 35.2,
+          "kind": "transport-lost",
+          "target": 0
+        },
+        {
+          "at": 36.02,
+          "kind": "formation",
+          "pattern": 2
+        },
+        {
+          "at": 37.05,
+          "kind": "mark",
+          "squad": 3,
+          "target": 1,
+          "coordinated": false
+        },
+        {
+          "at": 37.42,
+          "kind": "field-pass",
+          "id": 3
+        },
+        {
+          "at": 38.97,
+          "kind": "attack",
+          "squad": 3,
+          "target": 1,
+          "cycle": 2
+        },
+        {
+          "at": 42.02,
+          "kind": "torpedo",
+          "id": 4,
+          "count": 4
+        },
+        {
+          "at": 42.8,
+          "kind": "mark",
+          "squad": 4,
+          "target": 1,
+          "coordinated": false
+        },
+        {
+          "at": 44.02,
+          "kind": "field-warning",
+          "id": 4
+        },
+        {
+          "at": 44.72,
+          "kind": "attack",
+          "squad": 4,
+          "target": 1,
+          "cycle": 1
+        },
+        {
+          "at": 44.72,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 45.02,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 45.82,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 46.12,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 48.42,
+          "kind": "cover"
+        },
+        {
+          "at": 49.42,
+          "kind": "field-pass",
+          "id": 4
+        },
+        {
+          "at": 50.05,
+          "kind": "mark",
+          "squad": 4,
+          "target": 1,
+          "coordinated": false
+        },
+        {
+          "at": 51.97,
+          "kind": "attack",
+          "squad": 4,
+          "target": 1,
+          "cycle": 2
+        },
+        {
+          "at": 51.97,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 52.27,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 53.07,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 53.37,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 54.02,
+          "kind": "formation",
+          "pattern": 0
+        },
+        {
+          "at": 56.02,
+          "kind": "field-warning",
+          "id": 5
+        },
+        {
+          "at": 56.02,
+          "kind": "command",
+          "id": 5,
+          "count": 4
+        },
+        {
+          "at": 56.8,
+          "kind": "mark",
+          "squad": 5,
+          "target": 1,
+          "coordinated": true
+        },
+        {
+          "at": 57.3,
+          "kind": "mark",
+          "squad": 4,
+          "target": 1,
+          "coordinated": false
+        },
+        {
+          "at": 58.72,
+          "kind": "attack",
+          "squad": 5,
+          "target": 1,
+          "cycle": 1
+        },
+        {
+          "at": 59.22,
+          "kind": "attack",
+          "squad": 4,
+          "target": 1,
+          "cycle": 3
+        },
+        {
+          "at": 59.52,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 60.62,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 61.42,
+          "kind": "field-pass",
+          "id": 5
+        },
+        {
+          "at": 63.22,
+          "kind": "cover"
+        },
+        {
+          "at": 64.05,
+          "kind": "mark",
+          "squad": 5,
+          "target": 1,
+          "coordinated": true
+        },
+        {
+          "at": 64.55,
+          "kind": "mark",
+          "squad": 4,
+          "target": 1,
+          "coordinated": false
+        },
+        {
+          "at": 65.97,
+          "kind": "attack",
+          "squad": 5,
+          "target": 1,
+          "cycle": 2
+        },
+        {
+          "at": 66.47,
+          "kind": "attack",
+          "squad": 4,
+          "target": 1,
+          "cycle": 4
+        },
+        {
+          "at": 66.77,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 67.22,
+          "kind": "transport-lost",
+          "target": 1
+        }
+      ]
+    },
+    {
+      "mode": "normal",
+      "style": "joystick",
+      "period": 0.45,
+      "upgrades": {
+        "weapons": 0,
+        "armor": 3,
+        "rockets": 0
+      },
+      "status": "lost",
+      "time": 62.38333333333107,
+      "hp": 100,
+      "allies": [
+        0,
+        76,
+        0
+      ],
+      "stats": {
+        "spawned": 20,
+        "volleys": 45,
+        "torpedoes": 12,
+        "intercepts": 12,
+        "shieldHits": 34,
+        "disruptions": 1,
+        "fieldsPassed": 5,
+        "fieldsHit": 0,
+        "peakEnemies": 8,
+        "peakHostile": 12
+      },
+      "controls": {
+        "decisions": 139,
+        "tabs": 51,
+        "pulses": 2,
+        "missiles": 10,
+        "decisionPeriod": 0.45,
+        "style": "joystick"
+      },
+      "events": [
+        {
+          "at": 3.02,
+          "kind": "command",
+          "id": 1,
+          "count": 4
+        },
+        {
+          "at": 3.8,
+          "kind": "mark",
+          "squad": 1,
+          "target": 0,
+          "coordinated": true
+        },
+        {
+          "at": 5.72,
+          "kind": "attack",
+          "squad": 1,
+          "target": 0,
+          "cycle": 1
+        },
+        {
+          "at": 6.9,
+          "kind": "leader-down",
+          "squad": 1
+        },
+        {
+          "at": 8.02,
+          "kind": "field-warning",
+          "id": 1
+        },
+        {
+          "at": 9.92,
+          "kind": "mark",
+          "squad": 1,
+          "target": 0,
+          "coordinated": false
+        },
+        {
+          "at": 13.42,
+          "kind": "field-pass",
+          "id": 1
+        },
+        {
+          "at": 16,
+          "kind": "shield",
+          "id": 2,
+          "count": 4
+        },
+        {
+          "at": 16.78,
+          "kind": "mark",
+          "squad": 2,
+          "target": 2,
+          "coordinated": false
+        },
+        {
+          "at": 18,
+          "kind": "formation",
+          "pattern": 1
+        },
+        {
+          "at": 18.7,
+          "kind": "attack",
+          "squad": 2,
+          "target": 2,
+          "cycle": 1
+        },
+        {
+          "at": 19,
+          "kind": "torpedo",
+          "squad": 2,
+          "target": 2
+        },
+        {
+          "at": 20,
+          "kind": "field-warning",
+          "id": 2
+        },
+        {
+          "at": 20.1,
+          "kind": "torpedo",
+          "squad": 2,
+          "target": 2
+        },
+        {
+          "at": 21.62,
+          "kind": "cover"
+        },
+        {
+          "at": 24.03,
+          "kind": "mark",
+          "squad": 2,
+          "target": 2,
+          "coordinated": false
+        },
+        {
+          "at": 25.4,
+          "kind": "field-pass",
+          "id": 2
+        },
+        {
+          "at": 25.95,
+          "kind": "attack",
+          "squad": 2,
+          "target": 2,
+          "cycle": 2
+        },
+        {
+          "at": 29.02,
+          "kind": "crossfire",
+          "id": 3,
+          "count": 4
+        },
+        {
+          "at": 29.8,
+          "kind": "mark",
+          "squad": 3,
+          "target": 0,
+          "coordinated": false
+        },
+        {
+          "at": 31.72,
+          "kind": "attack",
+          "squad": 3,
+          "target": 0,
+          "cycle": 1
+        },
+        {
+          "at": 32.02,
+          "kind": "field-warning",
+          "id": 3
+        },
+        {
+          "at": 35.2,
+          "kind": "transport-lost",
+          "target": 0
+        },
+        {
+          "at": 36.02,
+          "kind": "formation",
+          "pattern": 2
+        },
+        {
+          "at": 37.05,
+          "kind": "mark",
+          "squad": 3,
+          "target": 1,
+          "coordinated": false
+        },
+        {
+          "at": 37.42,
+          "kind": "field-pass",
+          "id": 3
+        },
+        {
+          "at": 38.97,
+          "kind": "attack",
+          "squad": 3,
+          "target": 1,
+          "cycle": 2
+        },
+        {
+          "at": 42.02,
+          "kind": "torpedo",
+          "id": 4,
+          "count": 4
+        },
+        {
+          "at": 42.8,
+          "kind": "mark",
+          "squad": 4,
+          "target": 1,
+          "coordinated": false
+        },
+        {
+          "at": 44.02,
+          "kind": "field-warning",
+          "id": 4
+        },
+        {
+          "at": 44.72,
+          "kind": "attack",
+          "squad": 4,
+          "target": 1,
+          "cycle": 1
+        },
+        {
+          "at": 44.72,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 45.02,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 45.82,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 46.12,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 48.17,
+          "kind": "cover"
+        },
+        {
+          "at": 49.42,
+          "kind": "field-pass",
+          "id": 4
+        },
+        {
+          "at": 50.05,
+          "kind": "mark",
+          "squad": 4,
+          "target": 1,
+          "coordinated": false
+        },
+        {
+          "at": 51.97,
+          "kind": "attack",
+          "squad": 4,
+          "target": 1,
+          "cycle": 2
+        },
+        {
+          "at": 51.97,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 52.27,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 53.07,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 53.37,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 54.02,
+          "kind": "formation",
+          "pattern": 0
+        },
+        {
+          "at": 56.02,
+          "kind": "field-warning",
+          "id": 5
+        },
+        {
+          "at": 56.02,
+          "kind": "command",
+          "id": 5,
+          "count": 4
+        },
+        {
+          "at": 56.8,
+          "kind": "mark",
+          "squad": 5,
+          "target": 2,
+          "coordinated": true
+        },
+        {
+          "at": 57.3,
+          "kind": "mark",
+          "squad": 4,
+          "target": 1,
+          "coordinated": false
+        },
+        {
+          "at": 58.72,
+          "kind": "attack",
+          "squad": 5,
+          "target": 2,
+          "cycle": 1
+        },
+        {
+          "at": 59.22,
+          "kind": "attack",
+          "squad": 4,
+          "target": 1,
+          "cycle": 3
+        },
+        {
+          "at": 59.52,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 60.62,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 61.42,
+          "kind": "field-pass",
+          "id": 5
+        },
+        {
+          "at": 62.38,
+          "kind": "transport-lost",
+          "target": 2
+        }
+      ]
+    },
+    {
+      "mode": "normal",
+      "style": "keyboard",
+      "period": 0.35,
+      "upgrades": {
+        "weapons": 0,
+        "armor": 3,
+        "rockets": 0
+      },
+      "status": "lost",
+      "time": 62.36666666666441,
+      "hp": 100,
+      "allies": [
+        0,
+        0,
+        68
+      ],
+      "stats": {
+        "spawned": 20,
+        "volleys": 45,
+        "torpedoes": 14,
+        "intercepts": 12,
+        "shieldHits": 41,
+        "disruptions": 1,
+        "fieldsPassed": 5,
+        "fieldsHit": 0,
+        "peakEnemies": 10,
+        "peakHostile": 11
+      },
+      "controls": {
+        "decisions": 179,
+        "tabs": 54,
+        "pulses": 2,
+        "missiles": 10,
+        "decisionPeriod": 0.35,
+        "style": "keyboard"
+      },
+      "events": [
+        {
+          "at": 3.02,
+          "kind": "command",
+          "id": 1,
+          "count": 4
+        },
+        {
+          "at": 3.8,
+          "kind": "mark",
+          "squad": 1,
+          "target": 0,
+          "coordinated": true
+        },
+        {
+          "at": 5.72,
+          "kind": "attack",
+          "squad": 1,
+          "target": 0,
+          "cycle": 1
+        },
+        {
+          "at": 6.82,
+          "kind": "leader-down",
+          "squad": 1
+        },
+        {
+          "at": 8.02,
+          "kind": "field-warning",
+          "id": 1
+        },
+        {
+          "at": 9.83,
+          "kind": "mark",
+          "squad": 1,
+          "target": 0,
+          "coordinated": false
+        },
+        {
+          "at": 13.42,
+          "kind": "field-pass",
+          "id": 1
+        },
+        {
+          "at": 16,
+          "kind": "shield",
+          "id": 2,
+          "count": 4
+        },
+        {
+          "at": 16.78,
+          "kind": "mark",
+          "squad": 2,
+          "target": 2,
+          "coordinated": false
+        },
+        {
+          "at": 18,
+          "kind": "formation",
+          "pattern": 1
+        },
+        {
+          "at": 18.7,
+          "kind": "attack",
+          "squad": 2,
+          "target": 2,
+          "cycle": 1
+        },
+        {
+          "at": 19,
+          "kind": "torpedo",
+          "squad": 2,
+          "target": 2
+        },
+        {
+          "at": 20,
+          "kind": "field-warning",
+          "id": 2
+        },
+        {
+          "at": 20.1,
+          "kind": "torpedo",
+          "squad": 2,
+          "target": 2
+        },
+        {
+          "at": 22.77,
+          "kind": "cover"
+        },
+        {
+          "at": 24.03,
+          "kind": "mark",
+          "squad": 2,
+          "target": 2,
+          "coordinated": false
+        },
+        {
+          "at": 25.4,
+          "kind": "field-pass",
+          "id": 2
+        },
+        {
+          "at": 25.95,
+          "kind": "attack",
+          "squad": 2,
+          "target": 2,
+          "cycle": 2
+        },
+        {
+          "at": 29.02,
+          "kind": "crossfire",
+          "id": 3,
+          "count": 4
+        },
+        {
+          "at": 29.8,
+          "kind": "mark",
+          "squad": 3,
+          "target": 0,
+          "coordinated": false
+        },
+        {
+          "at": 31.72,
+          "kind": "attack",
+          "squad": 3,
+          "target": 0,
+          "cycle": 1
+        },
+        {
+          "at": 32.02,
+          "kind": "field-warning",
+          "id": 3
+        },
+        {
+          "at": 35.2,
+          "kind": "transport-lost",
+          "target": 0
+        },
+        {
+          "at": 36.02,
+          "kind": "formation",
+          "pattern": 2
+        },
+        {
+          "at": 37.05,
+          "kind": "mark",
+          "squad": 3,
+          "target": 1,
+          "coordinated": false
+        },
+        {
+          "at": 37.42,
+          "kind": "field-pass",
+          "id": 3
+        },
+        {
+          "at": 38.97,
+          "kind": "attack",
+          "squad": 3,
+          "target": 1,
+          "cycle": 2
+        },
+        {
+          "at": 42.02,
+          "kind": "torpedo",
+          "id": 4,
+          "count": 4
+        },
+        {
+          "at": 42.8,
+          "kind": "mark",
+          "squad": 4,
+          "target": 1,
+          "coordinated": false
+        },
+        {
+          "at": 44.02,
+          "kind": "field-warning",
+          "id": 4
+        },
+        {
+          "at": 44.72,
+          "kind": "attack",
+          "squad": 4,
+          "target": 1,
+          "cycle": 1
+        },
+        {
+          "at": 44.72,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 45.02,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 45.82,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 46.12,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 48.32,
+          "kind": "cover"
+        },
+        {
+          "at": 49.42,
+          "kind": "field-pass",
+          "id": 4
+        },
+        {
+          "at": 50.05,
+          "kind": "mark",
+          "squad": 4,
+          "target": 1,
+          "coordinated": false
+        },
+        {
+          "at": 51.97,
+          "kind": "attack",
+          "squad": 4,
+          "target": 1,
+          "cycle": 2
+        },
+        {
+          "at": 51.97,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 52.27,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 53.07,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 53.37,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 54.02,
+          "kind": "formation",
+          "pattern": 0
+        },
+        {
+          "at": 56.02,
+          "kind": "field-warning",
+          "id": 5
+        },
+        {
+          "at": 56.02,
+          "kind": "command",
+          "id": 5,
+          "count": 4
+        },
+        {
+          "at": 56.8,
+          "kind": "mark",
+          "squad": 5,
+          "target": 1,
+          "coordinated": true
+        },
+        {
+          "at": 57.3,
+          "kind": "mark",
+          "squad": 4,
+          "target": 1,
+          "coordinated": false
+        },
+        {
+          "at": 58.72,
+          "kind": "attack",
+          "squad": 5,
+          "target": 1,
+          "cycle": 1
+        },
+        {
+          "at": 59.22,
+          "kind": "attack",
+          "squad": 4,
+          "target": 1,
+          "cycle": 3
+        },
+        {
+          "at": 59.22,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 59.52,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 60.32,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 60.62,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 61.42,
+          "kind": "field-pass",
+          "id": 5
+        },
+        {
+          "at": 62.37,
+          "kind": "transport-lost",
+          "target": 1
+        }
+      ]
+    },
+    {
+      "mode": "normal",
+      "style": "keyboard",
+      "period": 0.4,
+      "upgrades": {
+        "weapons": 0,
+        "armor": 3,
+        "rockets": 0
+      },
+      "status": "lost",
+      "time": 62.36666666666441,
+      "hp": 56.99199999999999,
+      "allies": [
+        0,
+        0,
+        76
+      ],
+      "stats": {
+        "spawned": 20,
+        "volleys": 45,
+        "torpedoes": 12,
+        "intercepts": 11,
+        "shieldHits": 56,
+        "disruptions": 1,
+        "fieldsPassed": 3,
+        "fieldsHit": 2,
+        "peakEnemies": 8,
+        "peakHostile": 11
+      },
+      "controls": {
+        "decisions": 156,
+        "tabs": 54,
+        "pulses": 2,
+        "missiles": 10,
+        "decisionPeriod": 0.4,
+        "style": "keyboard"
+      },
+      "events": [
+        {
+          "at": 3.02,
+          "kind": "command",
+          "id": 1,
+          "count": 4
+        },
+        {
+          "at": 3.8,
+          "kind": "mark",
+          "squad": 1,
+          "target": 0,
+          "coordinated": true
+        },
+        {
+          "at": 5.72,
+          "kind": "attack",
+          "squad": 1,
+          "target": 0,
+          "cycle": 1
+        },
+        {
+          "at": 6.9,
+          "kind": "leader-down",
+          "squad": 1
+        },
+        {
+          "at": 8.02,
+          "kind": "field-warning",
+          "id": 1
+        },
+        {
+          "at": 9.92,
+          "kind": "mark",
+          "squad": 1,
+          "target": 0,
+          "coordinated": false
+        },
+        {
+          "at": 13.42,
+          "kind": "field-pass",
+          "id": 1
+        },
+        {
+          "at": 16,
+          "kind": "shield",
+          "id": 2,
+          "count": 4
+        },
+        {
+          "at": 16.78,
+          "kind": "mark",
+          "squad": 2,
+          "target": 2,
+          "coordinated": false
+        },
+        {
+          "at": 18,
+          "kind": "formation",
+          "pattern": 1
+        },
+        {
+          "at": 18.7,
+          "kind": "attack",
+          "squad": 2,
+          "target": 2,
+          "cycle": 1
+        },
+        {
+          "at": 19,
+          "kind": "torpedo",
+          "squad": 2,
+          "target": 2
+        },
+        {
+          "at": 20,
+          "kind": "field-warning",
+          "id": 2
+        },
+        {
+          "at": 20.1,
+          "kind": "torpedo",
+          "squad": 2,
+          "target": 2
+        },
+        {
+          "at": 21.62,
+          "kind": "cover"
+        },
+        {
+          "at": 24.03,
+          "kind": "mark",
+          "squad": 2,
+          "target": 2,
+          "coordinated": false
+        },
+        {
+          "at": 25.4,
+          "kind": "field-hit",
+          "id": 2
+        },
+        {
+          "at": 25.95,
+          "kind": "attack",
+          "squad": 2,
+          "target": 2,
+          "cycle": 2
+        },
+        {
+          "at": 29.02,
+          "kind": "crossfire",
+          "id": 3,
+          "count": 4
+        },
+        {
+          "at": 29.8,
+          "kind": "mark",
+          "squad": 3,
+          "target": 0,
+          "coordinated": false
+        },
+        {
+          "at": 31.72,
+          "kind": "attack",
+          "squad": 3,
+          "target": 0,
+          "cycle": 1
+        },
+        {
+          "at": 32.02,
+          "kind": "field-warning",
+          "id": 3
+        },
+        {
+          "at": 35.2,
+          "kind": "transport-lost",
+          "target": 0
+        },
+        {
+          "at": 36.02,
+          "kind": "formation",
+          "pattern": 2
+        },
+        {
+          "at": 37.05,
+          "kind": "mark",
+          "squad": 3,
+          "target": 1,
+          "coordinated": false
+        },
+        {
+          "at": 37.42,
+          "kind": "field-pass",
+          "id": 3
+        },
+        {
+          "at": 38.97,
+          "kind": "attack",
+          "squad": 3,
+          "target": 1,
+          "cycle": 2
+        },
+        {
+          "at": 42.02,
+          "kind": "torpedo",
+          "id": 4,
+          "count": 4
+        },
+        {
+          "at": 42.8,
+          "kind": "mark",
+          "squad": 4,
+          "target": 1,
+          "coordinated": false
+        },
+        {
+          "at": 44.02,
+          "kind": "field-warning",
+          "id": 4
+        },
+        {
+          "at": 44.72,
+          "kind": "attack",
+          "squad": 4,
+          "target": 1,
+          "cycle": 1
+        },
+        {
+          "at": 44.72,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 45.02,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 45.82,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 46.12,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 48.42,
+          "kind": "cover"
+        },
+        {
+          "at": 49.42,
+          "kind": "field-hit",
+          "id": 4
+        },
+        {
+          "at": 50.05,
+          "kind": "mark",
+          "squad": 4,
+          "target": 1,
+          "coordinated": false
+        },
+        {
+          "at": 51.97,
+          "kind": "attack",
+          "squad": 4,
+          "target": 1,
+          "cycle": 2
+        },
+        {
+          "at": 51.97,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 52.27,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 53.07,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 53.37,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 54.02,
+          "kind": "formation",
+          "pattern": 0
+        },
+        {
+          "at": 56.02,
+          "kind": "field-warning",
+          "id": 5
+        },
+        {
+          "at": 56.02,
+          "kind": "command",
+          "id": 5,
+          "count": 4
+        },
+        {
+          "at": 56.8,
+          "kind": "mark",
+          "squad": 5,
+          "target": 1,
+          "coordinated": true
+        },
+        {
+          "at": 57.3,
+          "kind": "mark",
+          "squad": 4,
+          "target": 1,
+          "coordinated": false
+        },
+        {
+          "at": 58.72,
+          "kind": "attack",
+          "squad": 5,
+          "target": 1,
+          "cycle": 1
+        },
+        {
+          "at": 59.22,
+          "kind": "attack",
+          "squad": 4,
+          "target": 1,
+          "cycle": 3
+        },
+        {
+          "at": 59.52,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 60.62,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 61.42,
+          "kind": "field-pass",
+          "id": 5
+        },
+        {
+          "at": 62.37,
+          "kind": "transport-lost",
+          "target": 1
+        }
+      ]
+    },
+    {
+      "mode": "normal",
+      "style": "keyboard",
+      "period": 0.45,
+      "upgrades": {
+        "weapons": 0,
+        "armor": 3,
+        "rockets": 0
+      },
+      "status": "lost",
+      "time": 62.36666666666441,
+      "hp": 100,
+      "allies": [
+        0,
+        0,
+        60
+      ],
+      "stats": {
+        "spawned": 20,
+        "volleys": 49,
+        "torpedoes": 12,
+        "intercepts": 11,
+        "shieldHits": 46,
+        "disruptions": 1,
+        "fieldsPassed": 5,
+        "fieldsHit": 0,
+        "peakEnemies": 8,
+        "peakHostile": 12
+      },
+      "controls": {
+        "decisions": 139,
+        "tabs": 51,
+        "pulses": 2,
+        "missiles": 10,
+        "decisionPeriod": 0.45,
+        "style": "keyboard"
+      },
+      "events": [
+        {
+          "at": 3.02,
+          "kind": "command",
+          "id": 1,
+          "count": 4
+        },
+        {
+          "at": 3.8,
+          "kind": "mark",
+          "squad": 1,
+          "target": 0,
+          "coordinated": true
+        },
+        {
+          "at": 5.72,
+          "kind": "attack",
+          "squad": 1,
+          "target": 0,
+          "cycle": 1
+        },
+        {
+          "at": 6.9,
+          "kind": "leader-down",
+          "squad": 1
+        },
+        {
+          "at": 8.02,
+          "kind": "field-warning",
+          "id": 1
+        },
+        {
+          "at": 9.92,
+          "kind": "mark",
+          "squad": 1,
+          "target": 0,
+          "coordinated": false
+        },
+        {
+          "at": 13.42,
+          "kind": "field-pass",
+          "id": 1
+        },
+        {
+          "at": 16,
+          "kind": "shield",
+          "id": 2,
+          "count": 4
+        },
+        {
+          "at": 16.78,
+          "kind": "mark",
+          "squad": 2,
+          "target": 2,
+          "coordinated": false
+        },
+        {
+          "at": 18,
+          "kind": "formation",
+          "pattern": 1
+        },
+        {
+          "at": 18.7,
+          "kind": "attack",
+          "squad": 2,
+          "target": 2,
+          "cycle": 1
+        },
+        {
+          "at": 19,
+          "kind": "torpedo",
+          "squad": 2,
+          "target": 2
+        },
+        {
+          "at": 20,
+          "kind": "field-warning",
+          "id": 2
+        },
+        {
+          "at": 20.1,
+          "kind": "torpedo",
+          "squad": 2,
+          "target": 2
+        },
+        {
+          "at": 21.62,
+          "kind": "cover"
+        },
+        {
+          "at": 24.03,
+          "kind": "mark",
+          "squad": 2,
+          "target": 2,
+          "coordinated": false
+        },
+        {
+          "at": 25.4,
+          "kind": "field-pass",
+          "id": 2
+        },
+        {
+          "at": 25.95,
+          "kind": "attack",
+          "squad": 2,
+          "target": 2,
+          "cycle": 2
+        },
+        {
+          "at": 29.02,
+          "kind": "crossfire",
+          "id": 3,
+          "count": 4
+        },
+        {
+          "at": 29.8,
+          "kind": "mark",
+          "squad": 3,
+          "target": 0,
+          "coordinated": false
+        },
+        {
+          "at": 31.72,
+          "kind": "attack",
+          "squad": 3,
+          "target": 0,
+          "cycle": 1
+        },
+        {
+          "at": 32.02,
+          "kind": "field-warning",
+          "id": 3
+        },
+        {
+          "at": 35.2,
+          "kind": "transport-lost",
+          "target": 0
+        },
+        {
+          "at": 36.02,
+          "kind": "formation",
+          "pattern": 2
+        },
+        {
+          "at": 37.05,
+          "kind": "mark",
+          "squad": 3,
+          "target": 1,
+          "coordinated": false
+        },
+        {
+          "at": 37.42,
+          "kind": "field-pass",
+          "id": 3
+        },
+        {
+          "at": 38.97,
+          "kind": "attack",
+          "squad": 3,
+          "target": 1,
+          "cycle": 2
+        },
+        {
+          "at": 42.02,
+          "kind": "torpedo",
+          "id": 4,
+          "count": 4
+        },
+        {
+          "at": 42.8,
+          "kind": "mark",
+          "squad": 4,
+          "target": 1,
+          "coordinated": false
+        },
+        {
+          "at": 44.02,
+          "kind": "field-warning",
+          "id": 4
+        },
+        {
+          "at": 44.72,
+          "kind": "attack",
+          "squad": 4,
+          "target": 1,
+          "cycle": 1
+        },
+        {
+          "at": 44.72,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 45.02,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 45.82,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 46.12,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 48.17,
+          "kind": "cover"
+        },
+        {
+          "at": 49.42,
+          "kind": "field-pass",
+          "id": 4
+        },
+        {
+          "at": 50.05,
+          "kind": "mark",
+          "squad": 4,
+          "target": 1,
+          "coordinated": false
+        },
+        {
+          "at": 51.97,
+          "kind": "attack",
+          "squad": 4,
+          "target": 1,
+          "cycle": 2
+        },
+        {
+          "at": 51.97,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 52.27,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 53.07,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 53.37,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 54.02,
+          "kind": "formation",
+          "pattern": 0
+        },
+        {
+          "at": 56.02,
+          "kind": "field-warning",
+          "id": 5
+        },
+        {
+          "at": 56.02,
+          "kind": "command",
+          "id": 5,
+          "count": 4
+        },
+        {
+          "at": 56.8,
+          "kind": "mark",
+          "squad": 5,
+          "target": 1,
+          "coordinated": true
+        },
+        {
+          "at": 57.3,
+          "kind": "mark",
+          "squad": 4,
+          "target": 1,
+          "coordinated": false
+        },
+        {
+          "at": 58.72,
+          "kind": "attack",
+          "squad": 5,
+          "target": 1,
+          "cycle": 1
+        },
+        {
+          "at": 59.22,
+          "kind": "attack",
+          "squad": 4,
+          "target": 1,
+          "cycle": 3
+        },
+        {
+          "at": 59.52,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 60.62,
+          "kind": "torpedo",
+          "squad": 4,
+          "target": 1
+        },
+        {
+          "at": 61.42,
+          "kind": "field-pass",
+          "id": 5
+        },
+        {
+          "at": 62.37,
+          "kind": "transport-lost",
+          "target": 1
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "passed": 8,
+  "method": "Node VM + native Canvas. Synthetic entry fixtures; ordinary input/target actions. No enemy HP or victory overrides.",
+  "results": [
+    {
+      "name": "No-input control loses real transports",
+      "pass": true,
+      "seconds": 23.1,
+      "stats": {
+        "spawned": 8,
+        "volleys": 47,
+        "torpedoes": 2,
+        "intercepts": 0,
+        "shieldHits": 0,
+        "disruptions": 0,
+        "fieldsPassed": 0,
+        "fieldsHit": 1,
+        "peakEnemies": 10,
+        "peakHostile": 16
+      }
+    },
+    {
+      "name": "Coordinated groups telegraph before attacking; bounded states",
+      "pass": true,
+      "attacks": 4,
+      "stats": {
+        "spawned": 8,
+        "volleys": 47,
+        "torpedoes": 2,
+        "intercepts": 0,
+        "shieldHits": 0,
+        "disruptions": 0,
+        "fieldsPassed": 0,
+        "fieldsHit": 1,
+        "peakEnemies": 10,
+        "peakHostile": 16
+      }
+    },
+    {
+      "name": "Pause freezes fields, telegraphs, torpedoes and progression",
+      "pass": true
+    },
+    {
+      "name": "In-flight new save roundtrip preserves groups and next attacks",
+      "pass": true,
+      "seconds": 29.666666666666263
+    },
+    {
+      "name": "Legacy convoy save continues byte-equivalent mission state",
+      "pass": true,
+      "legacySeconds": 31.999999999999464
+    },
+    {
+      "name": "Desktop and joystick inputs move the player; shared weapon commands",
+      "pass": true
+    },
+    {
+      "name": "Idempotent modules do not add frame owners/listeners/emitter wrappers",
+      "pass": true,
+      "listeners": 68
+    },
+    {
+      "name": "Render is read-only; finite meshes and depth fallback at both aspect ratios",
+      "pass": true,
+      "cpuMilliseconds": [
+        176.6,
+        92.2,
+        60.7,
+        80.9,
+        99.6,
+        190.8
+      ],
+      "templates": {
+        "templates": 1,
+        "tunnelSegments": 28
+      }
+    }
+  ]
+}

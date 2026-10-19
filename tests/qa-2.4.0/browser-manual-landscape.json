@@ -1,0 +1,401 @@
+{
+  "version": "2.4.0",
+  "config": {
+    "checkpoint": "normal-3",
+    "accelerated": true,
+    "manual": true
+  },
+  "finished": null,
+  "key": "normal-3",
+  "status": "playing",
+  "wallSeconds": 131,
+  "steps": 0,
+  "rafCalls": 147,
+  "emitChanges": 0,
+  "player": {
+    "pos": [
+      2.8306873139616173,
+      2.0671233974027037,
+      0
+    ],
+    "shots": 1,
+    "missiles": 9,
+    "pulseCooldown": 10.360000000000078
+  },
+  "renderer": "3D · совместимый режим",
+  "convoy": {
+    "version": "2.4.0",
+    "stage": 0,
+    "time": 5.83,
+    "wave": 1,
+    "total": 4,
+    "distance": 0.08578529411764715,
+    "formation": 0,
+    "allies": [
+      {
+        "hp": 100,
+        "dead": false
+      },
+      {
+        "hp": 100,
+        "dead": false
+      },
+      {
+        "hp": 100,
+        "dead": false
+      }
+    ],
+    "groups": [
+      {
+        "id": 1,
+        "kind": "flank",
+        "state": "telegraph",
+        "time": 1.0400000000000003,
+        "target": 1,
+        "members": 2
+      }
+    ],
+    "fields": [],
+    "aim": {
+      "locked": true,
+      "targetId": null,
+      "cone": 0.19
+    },
+    "stats": {
+      "spawned": 2,
+      "volleys": 0,
+      "torpedoes": 0,
+      "intercepts": 0,
+      "shieldHits": 0,
+      "disruptions": 0,
+      "fieldsPassed": 0,
+      "fieldsHit": 0,
+      "peakEnemies": 2,
+      "peakHostile": 0
+    },
+    "events": [
+      {
+        "at": 2.19,
+        "kind": "cover"
+      },
+      {
+        "at": 4.03,
+        "kind": "flank",
+        "id": 1,
+        "count": 2
+      },
+      {
+        "at": 4.79,
+        "kind": "mark",
+        "squad": 1,
+        "target": 1,
+        "coordinated": false
+      }
+    ]
+  },
+  "runs": [],
+  "samples": [
+    {
+      "wallSeconds": 9,
+      "key": "normal-3",
+      "seconds": 0,
+      "listeners": 60,
+      "heap": 64542195,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 20,
+      "key": "normal-3",
+      "seconds": 0.43999999999999995,
+      "listeners": 73,
+      "heap": 54844505,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 30,
+      "key": "normal-3",
+      "seconds": 0.8400000000000002,
+      "listeners": 73,
+      "heap": 34831576,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 41,
+      "key": "normal-3",
+      "seconds": 1.2800000000000005,
+      "listeners": 73,
+      "heap": 43178203,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 51,
+      "key": "normal-3",
+      "seconds": 1.833399999999995,
+      "listeners": 73,
+      "heap": 57976261,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 62,
+      "key": "normal-3",
+      "seconds": 2.3933999999999953,
+      "listeners": 73,
+      "heap": 44539711,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 72,
+      "key": "normal-3",
+      "seconds": 2.993399999999996,
+      "listeners": 73,
+      "heap": 29795826,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 83,
+      "key": "normal-3",
+      "seconds": 3.393399999999996,
+      "listeners": 73,
+      "heap": 42360848,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 93,
+      "key": "normal-3",
+      "seconds": 3.9933999999999967,
+      "listeners": 73,
+      "heap": 39021744,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 104,
+      "key": "normal-3",
+      "seconds": 4.633399999999997,
+      "listeners": 73,
+      "heap": 19668740,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 114,
+      "key": "normal-3",
+      "seconds": 5.033399999999998,
+      "listeners": 73,
+      "heap": 34923472,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 125,
+      "key": "normal-3",
+      "seconds": 5.593399999999998,
+      "listeners": 73,
+      "heap": 37279462,
+      "rafPending": 1
+    }
+  ],
+  "pauseChecks": [],
+  "metrics": {
+    "listeners": 73,
+    "peakListeners": 73,
+    "rafCalls": 171,
+    "rafDone": 162,
+    "rafPending": 1,
+    "rafPeak": 2,
+    "errors": [],
+    "heap": 40842582
+  },
+  "runtime": {
+    "version": "1.9.3",
+    "build": "193r2",
+    "frames": 159,
+    "updates": 147,
+    "renders": 159,
+    "recoveries": 0,
+    "failures": 0,
+    "stopped": false,
+    "contextLost": false,
+    "pending": true,
+    "stage": "idle",
+    "lastFrameAge": 694,
+    "lastUpdateAge": 693,
+    "lastRenderAge": 632,
+    "recoverySave": "none",
+    "faults": [],
+    "events": [
+      {
+        "at": 897,
+        "kind": "detach",
+        "status": "unknown",
+        "stage": null,
+        "phase": "other",
+        "finale": null,
+        "wave": null,
+        "seconds": null,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "webgl"
+      },
+      {
+        "at": 1067,
+        "kind": "citadel-launch",
+        "status": "escortbrief",
+        "stage": 0,
+        "phase": "escort",
+        "finale": null,
+        "wave": 0,
+        "seconds": 0,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 1221,
+        "kind": "engine",
+        "status": "playing",
+        "stage": 0,
+        "phase": "escort",
+        "finale": null,
+        "wave": 0,
+        "seconds": 0,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 1229,
+        "kind": "transition",
+        "status": "playing",
+        "stage": 0,
+        "phase": "escort",
+        "finale": null,
+        "wave": 0,
+        "seconds": 0,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 1965,
+        "kind": "transition",
+        "status": "paused",
+        "stage": 0,
+        "phase": "escort",
+        "finale": null,
+        "wave": 0,
+        "seconds": 0,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 12641,
+        "kind": "arcade-resume",
+        "status": "paused",
+        "stage": 0,
+        "phase": "escort",
+        "finale": null,
+        "wave": 0,
+        "seconds": 0,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 13526,
+        "kind": "transition",
+        "status": "playing",
+        "stage": 0,
+        "phase": "escort",
+        "finale": null,
+        "wave": 0,
+        "seconds": 0.04,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      }
+    ]
+  },
+  "geometry": {
+    "templates": 2,
+    "tunnelSegments": 28
+  },
+  "renderStats": {
+    "items": 260,
+    "triangles": 6988,
+    "visibleTriangles": 3856,
+    "milliseconds": 55.70000000298023,
+    "templates": 0,
+    "meshes": 63,
+    "pixels": 171684
+  },
+  "sound": {
+    "version": "1.9.3",
+    "enabled": true,
+    "ready": true,
+    "preparedAvailable": true,
+    "preparedClips": 42,
+    "loadedClips": 15,
+    "loadingClips": 0,
+    "decodingOrFetching": 0,
+    "cachedBytes": 1964168,
+    "maxCachedBytes": 16777216,
+    "maxBuffers": 48,
+    "maxLoads": 4,
+    "contextState": "running",
+    "gameStatus": "playing",
+    "view": "arcade",
+    "blockedReason": "",
+    "gameBlockedReason": "",
+    "location": "convoy",
+    "activeVoices": 0,
+    "radioVoices": 0,
+    "humanVoices": 0,
+    "maxVoices": 14,
+    "deathVoiceChance": 0.3,
+    "deathVoiceCooldown": 6.5,
+    "captainPriority": false,
+    "backend": "recorded",
+    "lastPlayed": {
+      "kind": "robot-hit",
+      "at": 113.21179138321996,
+      "location": "convoy",
+      "stage": 0,
+      "variant": 2,
+      "source": "game",
+      "backend": "fallback",
+      "clipId": null
+    },
+    "lastError": "",
+    "played": {
+      "shot": 1,
+      "missile": 1,
+      "robot-hit": 1
+    },
+    "clipsPlayed": {
+      "shot-convoy-01": 1,
+      "missile-01": 1
+    },
+    "blocked": {}
+  },
+  "voice": {
+    "version": "1.9.0",
+    "supported": true,
+    "enabled": true,
+    "busy": false,
+    "phase": "idle",
+    "kind": null,
+    "preview": false,
+    "started": false,
+    "voice": null,
+    "ruVoices": 0,
+    "maleCommanderAvailable": false,
+    "preparedAvailable": true,
+    "preparedClips": 110,
+    "backend": "recorded",
+    "source": null,
+    "clipId": null,
+    "lastSpoken": null,
+    "lastError": "",
+    "lastReason": "blur",
+    "disposed": false
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "method": "Production scripts in Node VM with native Canvas and isolated HTTP/DOM/storage/audio. No physical Android device.",
+  "passed": 14,
+  "total": 14,
+  "results": [
+    {
+      "name": "Reproduce the old name-entry failure: rejected fetch leaves the engine in menu",
+      "passed": true
+    },
+    {
+      "name": "Rejected fetch: same name form starts a playable local campaign with no raw error",
+      "passed": true
+    },
+    {
+      "name": "Hanging fetch and missing AbortController: whole start expires at 7 seconds",
+      "passed": true
+    },
+    {
+      "name": "Manual local entry cancels registration; a late response cannot replace the engine",
+      "passed": true
+    },
+    {
+      "name": "Late start response and repeated taps never launch a second campaign",
+      "passed": true
+    },
+    {
+      "name": "HTTP 503 and a non-JSON server response both allow local play",
+      "passed": true
+    },
+    {
+      "name": "Validation errors stay visible and are not silently converted to guest games",
+      "passed": true
+    },
+    {
+      "name": "Local resume after reload retains actual progress and resumes paused",
+      "passed": true
+    },
+    {
+      "name": "Changing to local play preserves unsent ranked outbox and identity byte for byte",
+      "passed": true
+    },
+    {
+      "name": "Storage denied: local play still starts and reports memory-only progress",
+      "passed": true
+    },
+    {
+      "name": "Unreadable local save is retained separately before creating a fresh game",
+      "passed": true
+    },
+    {
+      "name": "Repeated module installation does not add timers, handlers or wrappers",
+      "passed": true
+    },
+    {
+      "name": "Diagnostics are bounded and contain neither server messages nor identity",
+      "passed": true
+    },
+    {
+      "name": "Captain extraction preserves PNG bytes and all other core logic",
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "method": "Node VM only. Pausing 0.24s before the first visible field, full save roundtrip, ordinary independent commands after load; no HP or outcome changes.",
+  "passed": 4,
+  "results": [
+    {
+      "mode": "normal",
+      "hz": 30,
+      "pass": true,
+      "warningSecondsBeforePause": 0.2333333333333152,
+      "pauseSimulatedSeconds": 15,
+      "postLoadComparisonSeconds": 8,
+      "fieldsPassed": 1,
+      "fieldsHit": 0,
+      "stateSHA256": "aabcc4413e8766adc2fea19edd60963f907d44d10f383de51126810c70362403"
+    },
+    {
+      "mode": "normal",
+      "hz": 60,
+      "pass": true,
+      "warningSecondsBeforePause": 0.2333333333333414,
+      "pauseSimulatedSeconds": 15,
+      "postLoadComparisonSeconds": 8,
+      "fieldsPassed": 1,
+      "fieldsHit": 0,
+      "stateSHA256": "75df08e3e194727cf091bef9fecebcae949dab49d5b0bd1097e13f526643dcf7"
+    },
+    {
+      "mode": "calm",
+      "hz": 30,
+      "pass": true,
+      "warningSecondsBeforePause": 0.23333333333330622,
+      "pauseSimulatedSeconds": 15,
+      "postLoadComparisonSeconds": 8,
+      "fieldsPassed": 1,
+      "fieldsHit": 0,
+      "stateSHA256": "c2307d2ac6f0278774e78aa3eb739e5d7e1fba1413a19b942e58b577cab4ebd8"
+    },
+    {
+      "mode": "calm",
+      "hz": 60,
+      "pass": true,
+      "warningSecondsBeforePause": 0.23333333333335035,
+      "pauseSimulatedSeconds": 15,
+      "postLoadComparisonSeconds": 8,
+      "fieldsPassed": 1,
+      "fieldsHit": 0,
+      "stateSHA256": "6c7ba8bf5a1ef72302d5f99669677875a74101d252321504819a8a001fb330df"
+    }
+  ]
+}

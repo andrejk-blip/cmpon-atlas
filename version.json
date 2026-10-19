@@ -1,6 +1,6 @@
 {
   "product": "ЦМПОН — атлас требований",
-  "version": "2.3.1",
+  "version": "2.4.0",
   "released_on": "2026-10-19",
   "requirements_edition": "2.0.2 (ВСТЕ)",
   "requirements_as_of": "2026-10-14",
@@ -10,7 +10,7 @@
   "finale_save_schema": "citadel-finale-v1",
   "analytics_module_version": "0.1.0",
   "tournament_module_version": "1.1.0",
-  "index_sha256": "9ddc9a07e613acda3d5172ee5606ba3fc4edcfee8d6a103910048a1f61420f9e",
+  "index_sha256": "e82acf3bcf0f37b3c77258292bb5abe655f52a250640a9ca11cc9419e275097f",
   "offline_sha256": "754ccde3777ace0150d9b062461301ea9542f893c4f158ebc0ae7e07a3e8a2c3",
   "core_assets_version": "1.3.6",
   "soundtrack_module_version": "1.4.2",
@@ -188,21 +188,21 @@
   ],
   "pursuit_view_sha256": "4f934ba804c00e6cd9889e0cf0b101aba595be794c3308719956ef0ac3223ec0",
   "pursuit_view_style_sha256": "135b1a8116fbeb0c7c0f775a26f3b8ed26f1996e79013c4dcbfe315859118d6c",
-  "convoy_module_version": "2.3.0",
-  "convoy_view_version": "2.3.0",
+  "convoy_module_version": "2.4.0",
+  "convoy_view_version": "2.4.0",
   "convoy_levels": [
     3,
     6,
     9
   ],
   "convoy_groups": [
-    3,
     4,
-    5
+    5,
+    7
   ],
   "convoy_roles": [
     "scout",
-    "dog",
+    "interceptor",
     "raider",
     "jammer",
     "bomber",
@@ -210,13 +210,24 @@
     "commander"
   ],
   "convoy_save_policy": "legacy-flight-rules-retained-until-next-departure",
-  "convoy_sha256": "115fb8dd424e76d7ddfea2199395101364b258c22cd243e4c137e9980f006ca6",
-  "convoy_view_sha256": "7d7d85f90d9082a14bbbb1dff7defd00f5f31bce23f270ae764aed2e98e77783",
-  "convoy_view_build": "230r2",
+  "convoy_sha256": "8120f00bb2b9903cedd733b1c6162af1aeaf0b615d420f591d2ac3d589853512",
+  "convoy_view_sha256": "9a42c7dcde1e21644f10aaa0f848b8bab2c60794e4f5564898a17f48fd5d2965",
+  "convoy_view_build": "240r2",
   "launch_module_version": "2.3.1",
   "launch_sha256": "ad27ac6974bdff22f3a92d26d94117cddd2e945ea8a5553b657d21c70ce243aa",
   "local_save_schema": "cmpon.citadel.local.v1",
   "ranking_start_deadline_ms": 7000,
   "captain_sheet_sha256": "de696d9d5f305b73f93bfe6d3b3ee55d4b53b8f3e49962d4c976da509493b2c9",
-  "launch_build": "231r2"
+  "launch_build": "231r2",
+  "convoy_fields": [
+    3,
+    5,
+    8
+  ],
+  "convoy_build": "240r2",
+  "convoy_visual_style": "hyperspace-energy-fields-and-fighter-squadrons",
+  "convoy_field_warning_seconds": 5.4,
+  "convoy_field_collision_radius": 2.8,
+  "convoy_style_build": "240r2",
+  "convoy_style_sha256": "c6ca30d3da2304bba7de04df4c63bc2bb223d22b06b62daac21e927479d77495"
 }

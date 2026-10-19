@@ -1,0 +1,212 @@
+{
+  "version": "2.4.0",
+  "method": "Native Canvas scene fixtures using the real entry modules and normal simulation ticks; no browser/device/FPS or campaign-completion claim.",
+  "checks": {
+    "allThreeFields": true,
+    "physicalWindowAgreement": true,
+    "tunnelNormals": true,
+    "readOnlyRender": true,
+    "boundedTemplates": true
+  },
+  "templates": 8,
+  "meshes": 112,
+  "contracts": [
+    {
+      "id": 1,
+      "gapX": 22,
+      "gapY": 7,
+      "halfW": 12,
+      "halfH": 10,
+      "collisionRadius": 2.8,
+      "dangerRectangles": 4
+    },
+    {
+      "id": 1,
+      "gapX": -22,
+      "gapY": 8,
+      "halfW": 10,
+      "halfH": 8.5,
+      "collisionRadius": 2.8,
+      "dangerRectangles": 4
+    },
+    {
+      "id": 1,
+      "gapX": 24,
+      "gapY": 9,
+      "halfW": 8.5,
+      "halfH": 7,
+      "collisionRadius": 2.8,
+      "dangerRectangles": 4
+    }
+  ],
+  "images": [
+    {
+      "name": "convoy-1-desktop",
+      "width": 1280,
+      "height": 720,
+      "items": 283,
+      "renderMs": 240.67,
+      "field": {
+        "id": 1,
+        "z": -120.96666666666752,
+        "gapX": 22,
+        "gapY": 7,
+        "halfW": 12,
+        "halfH": 10,
+        "speed": 38,
+        "warning": 3.1833333333333558,
+        "passed": false,
+        "hit": false
+      },
+      "renderer": "Native @napi-rs/canvas + production software 3D raster",
+      "state": "playing"
+    },
+    {
+      "name": "convoy-1-phone",
+      "width": 390,
+      "height": 720,
+      "items": 283,
+      "renderMs": 157.18,
+      "field": {
+        "id": 1,
+        "z": -120.96666666666752,
+        "gapX": 22,
+        "gapY": 7,
+        "halfW": 12,
+        "halfH": 10,
+        "speed": 38,
+        "warning": 3.1833333333333558,
+        "passed": false,
+        "hit": false
+      },
+      "renderer": "Native @napi-rs/canvas + production software 3D raster",
+      "state": "playing"
+    },
+    {
+      "name": "convoy-2-desktop",
+      "width": 1280,
+      "height": 720,
+      "items": 305,
+      "renderMs": 188.7,
+      "field": {
+        "id": 1,
+        "z": -120.96666666666752,
+        "gapX": -22,
+        "gapY": 8,
+        "halfW": 10,
+        "halfH": 8.5,
+        "speed": 38,
+        "warning": 3.1833333333333558,
+        "passed": false,
+        "hit": false
+      },
+      "renderer": "Native @napi-rs/canvas + production software 3D raster",
+      "state": "playing"
+    },
+    {
+      "name": "convoy-2-phone",
+      "width": 390,
+      "height": 720,
+      "items": 305,
+      "renderMs": 84.88,
+      "field": {
+        "id": 1,
+        "z": -120.96666666666752,
+        "gapX": -22,
+        "gapY": 8,
+        "halfW": 10,
+        "halfH": 8.5,
+        "speed": 38,
+        "warning": 3.1833333333333558,
+        "passed": false,
+        "hit": false
+      },
+      "renderer": "Native @napi-rs/canvas + production software 3D raster",
+      "state": "playing"
+    },
+    {
+      "name": "convoy-3-desktop",
+      "width": 1280,
+      "height": 720,
+      "items": 276,
+      "renderMs": 158.17,
+      "field": {
+        "id": 1,
+        "z": -120.96666666666752,
+        "gapX": 24,
+        "gapY": 9,
+        "halfW": 8.5,
+        "halfH": 7,
+        "speed": 38,
+        "warning": 3.1833333333333558,
+        "passed": false,
+        "hit": false
+      },
+      "renderer": "Native @napi-rs/canvas + production software 3D raster",
+      "state": "playing"
+    },
+    {
+      "name": "convoy-3-phone",
+      "width": 390,
+      "height": 720,
+      "items": 276,
+      "renderMs": 63.15,
+      "field": {
+        "id": 1,
+        "z": -120.96666666666752,
+        "gapX": 24,
+        "gapY": 9,
+        "halfW": 8.5,
+        "halfH": 7,
+        "speed": 38,
+        "warning": 3.1833333333333558,
+        "passed": false,
+        "hit": false
+      },
+      "renderer": "Native @napi-rs/canvas + production software 3D raster",
+      "state": "playing"
+    },
+    {
+      "name": "convoy-3-landscape",
+      "width": 780,
+      "height": 390,
+      "items": 276,
+      "renderMs": 69.64,
+      "field": {
+        "id": 1,
+        "z": -120.96666666666752,
+        "gapX": 24,
+        "gapY": 9,
+        "halfW": 8.5,
+        "halfH": 7,
+        "speed": 38,
+        "warning": 3.1833333333333558,
+        "passed": false,
+        "hit": false
+      },
+      "renderer": "Native @napi-rs/canvas + production software 3D raster",
+      "state": "playing"
+    },
+    {
+      "name": "convoy-3-mobile-field",
+      "width": 528,
+      "height": 302,
+      "items": 276,
+      "renderMs": 55.62,
+      "field": {
+        "id": 1,
+        "z": -120.96666666666752,
+        "gapX": 24,
+        "gapY": 9,
+        "halfW": 8.5,
+        "halfH": 7,
+        "speed": 38,
+        "warning": 3.1833333333333558,
+        "passed": false,
+        "hit": false
+      },
+      "renderer": "Native @napi-rs/canvas + production software 3D raster",
+      "state": "playing"
+    }
+  ]
+}

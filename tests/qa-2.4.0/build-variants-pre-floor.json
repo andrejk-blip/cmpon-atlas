@@ -1,0 +1,47 @@
+[
+  {
+    "upgrades": {
+      "weapons": 2,
+      "armor": 1,
+      "rockets": 0
+    },
+    "status": "escortclear",
+    "hp": 100,
+    "allies": [
+      38,
+      84,
+      94
+    ],
+    "time": 108.49999999999513
+  },
+  {
+    "upgrades": {
+      "weapons": 0,
+      "armor": 3,
+      "rockets": 0
+    },
+    "status": "lost",
+    "hp": 91.80799999999999,
+    "allies": [
+      0,
+      0,
+      94
+    ],
+    "time": 67.21666666666414
+  },
+  {
+    "upgrades": {
+      "weapons": 0,
+      "armor": 0,
+      "rockets": 3
+    },
+    "status": "escortclear",
+    "hp": 100,
+    "allies": [
+      0,
+      40,
+      96
+    ],
+    "time": 108.63333333332845
+  }
+]

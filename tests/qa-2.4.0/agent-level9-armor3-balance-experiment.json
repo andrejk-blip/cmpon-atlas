@@ -1,0 +1,293 @@
+{
+  "method": "Isolated Node VM balance experiment only. Changes laser cooldown/damage formula in an in-memory source copy; production files untouched. Initial weapons0 armor3; ordinary controls throughout. Not released-build QA.",
+  "runs": [
+    {
+      "experimentalMinimumWeaponLevel": 1,
+      "period": 0.35,
+      "status": "lost",
+      "time": 100.52,
+      "hp": 95.904,
+      "allies": [
+        0,
+        0,
+        68
+      ],
+      "stats": {
+        "spawned": 29,
+        "volleys": 56,
+        "torpedoes": 11,
+        "intercepts": 11,
+        "shieldHits": 55,
+        "disruptions": 3,
+        "fieldsPassed": 8,
+        "fieldsHit": 0,
+        "peakEnemies": 8,
+        "peakHostile": 11
+      },
+      "controls": {
+        "decisions": 288,
+        "tabs": 67,
+        "pulses": 3,
+        "missiles": 10,
+        "decisionPeriod": 0.35,
+        "style": "joystick"
+      }
+    },
+    {
+      "experimentalMinimumWeaponLevel": 1,
+      "period": 0.4,
+      "status": "lost",
+      "time": 100.08,
+      "hp": 95.904,
+      "allies": [
+        0,
+        0,
+        68
+      ],
+      "stats": {
+        "spawned": 29,
+        "volleys": 56,
+        "torpedoes": 10,
+        "intercepts": 10,
+        "shieldHits": 58,
+        "disruptions": 3,
+        "fieldsPassed": 8,
+        "fieldsHit": 0,
+        "peakEnemies": 8,
+        "peakHostile": 11
+      },
+      "controls": {
+        "decisions": 251,
+        "tabs": 65,
+        "pulses": 3,
+        "missiles": 10,
+        "decisionPeriod": 0.4,
+        "style": "joystick"
+      }
+    },
+    {
+      "experimentalMinimumWeaponLevel": 1,
+      "period": 0.45,
+      "status": "lost",
+      "time": 101.32,
+      "hp": 100,
+      "allies": [
+        0,
+        0,
+        76
+      ],
+      "stats": {
+        "spawned": 29,
+        "volleys": 54,
+        "torpedoes": 12,
+        "intercepts": 12,
+        "shieldHits": 48,
+        "disruptions": 3,
+        "fieldsPassed": 8,
+        "fieldsHit": 0,
+        "peakEnemies": 8,
+        "peakHostile": 11
+      },
+      "controls": {
+        "decisions": 226,
+        "tabs": 68,
+        "pulses": 4,
+        "missiles": 10,
+        "decisionPeriod": 0.45,
+        "style": "joystick"
+      }
+    },
+    {
+      "experimentalMinimumWeaponLevel": 1.25,
+      "period": 0.35,
+      "status": "lost",
+      "time": 100.52,
+      "hp": 95.904,
+      "allies": [
+        0,
+        0,
+        68
+      ],
+      "stats": {
+        "spawned": 29,
+        "volleys": 56,
+        "torpedoes": 11,
+        "intercepts": 11,
+        "shieldHits": 55,
+        "disruptions": 3,
+        "fieldsPassed": 8,
+        "fieldsHit": 0,
+        "peakEnemies": 8,
+        "peakHostile": 11
+      },
+      "controls": {
+        "decisions": 288,
+        "tabs": 66,
+        "pulses": 3,
+        "missiles": 10,
+        "decisionPeriod": 0.35,
+        "style": "joystick"
+      }
+    },
+    {
+      "experimentalMinimumWeaponLevel": 1.25,
+      "period": 0.4,
+      "status": "lost",
+      "time": 100.08,
+      "hp": 95.904,
+      "allies": [
+        0,
+        0,
+        68
+      ],
+      "stats": {
+        "spawned": 29,
+        "volleys": 56,
+        "torpedoes": 10,
+        "intercepts": 10,
+        "shieldHits": 56,
+        "disruptions": 3,
+        "fieldsPassed": 8,
+        "fieldsHit": 0,
+        "peakEnemies": 8,
+        "peakHostile": 11
+      },
+      "controls": {
+        "decisions": 251,
+        "tabs": 64,
+        "pulses": 3,
+        "missiles": 10,
+        "decisionPeriod": 0.4,
+        "style": "joystick"
+      }
+    },
+    {
+      "experimentalMinimumWeaponLevel": 1.25,
+      "period": 0.45,
+      "status": "lost",
+      "time": 101.32,
+      "hp": 100,
+      "allies": [
+        0,
+        0,
+        76
+      ],
+      "stats": {
+        "spawned": 29,
+        "volleys": 54,
+        "torpedoes": 12,
+        "intercepts": 12,
+        "shieldHits": 50,
+        "disruptions": 3,
+        "fieldsPassed": 8,
+        "fieldsHit": 0,
+        "peakEnemies": 8,
+        "peakHostile": 11
+      },
+      "controls": {
+        "decisions": 226,
+        "tabs": 69,
+        "pulses": 4,
+        "missiles": 10,
+        "decisionPeriod": 0.45,
+        "style": "joystick"
+      }
+    },
+    {
+      "experimentalMinimumWeaponLevel": 1.5,
+      "period": 0.35,
+      "status": "lost",
+      "time": 100.67,
+      "hp": 95.904,
+      "allies": [
+        0,
+        0,
+        68
+      ],
+      "stats": {
+        "spawned": 29,
+        "volleys": 52,
+        "torpedoes": 11,
+        "intercepts": 11,
+        "shieldHits": 50,
+        "disruptions": 3,
+        "fieldsPassed": 8,
+        "fieldsHit": 0,
+        "peakEnemies": 8,
+        "peakHostile": 11
+      },
+      "controls": {
+        "decisions": 288,
+        "tabs": 61,
+        "pulses": 3,
+        "missiles": 10,
+        "decisionPeriod": 0.35,
+        "style": "joystick"
+      }
+    },
+    {
+      "experimentalMinimumWeaponLevel": 1.5,
+      "period": 0.4,
+      "status": "lost",
+      "time": 100.67,
+      "hp": 95.904,
+      "allies": [
+        0,
+        0,
+        68
+      ],
+      "stats": {
+        "spawned": 29,
+        "volleys": 52,
+        "torpedoes": 14,
+        "intercepts": 14,
+        "shieldHits": 63,
+        "disruptions": 3,
+        "fieldsPassed": 8,
+        "fieldsHit": 0,
+        "peakEnemies": 8,
+        "peakHostile": 11
+      },
+      "controls": {
+        "decisions": 252,
+        "tabs": 71,
+        "pulses": 3,
+        "missiles": 10,
+        "decisionPeriod": 0.4,
+        "style": "joystick"
+      }
+    },
+    {
+      "experimentalMinimumWeaponLevel": 1.5,
+      "period": 0.45,
+      "status": "lost",
+      "time": 101.1,
+      "hp": 100,
+      "allies": [
+        0,
+        0,
+        76
+      ],
+      "stats": {
+        "spawned": 29,
+        "volleys": 53,
+        "torpedoes": 10,
+        "intercepts": 10,
+        "shieldHits": 42,
+        "disruptions": 3,
+        "fieldsPassed": 8,
+        "fieldsHit": 0,
+        "peakEnemies": 8,
+        "peakHostile": 11
+      },
+      "controls": {
+        "decisions": 225,
+        "tabs": 64,
+        "pulses": 4,
+        "missiles": 10,
+        "decisionPeriod": 0.45,
+        "style": "joystick"
+      }
+    }
+  ]
+}

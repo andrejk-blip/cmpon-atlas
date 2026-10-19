@@ -1,0 +1,648 @@
+{
+  "agent": "convoy_two_qa",
+  "level": 6,
+  "convoy": 2,
+  "release": "2.4.0",
+  "method": "Node VM plus production arcadeInput. Frozen 2.3.0 campaign entry fixtures; ordinary retry/launch, keyboard/joystick, fire, one Tab per 0.45 s decision, Q/E. No HP/status/kill/victory writes after launch. No browser or physical phone test by this agent.",
+  "limitations": [
+    "Seed variants are synthetic entry fixtures, not three full campaign completions.",
+    "The conservative pilot uses 0.4 s old observations and decisions every 0.45 s; response to a newly appearing threat can therefore be as late as 0.85 s.",
+    "Entity and visible gap positions are read from the simulation as a programmatic scene model, not recognized from pixels.",
+    "Identical convoy scripts may produce identical seed outcomes; this is not stochastic coverage."
+  ],
+  "sourceSha256": {
+    "assets/citadel-convoy-v2.4.0.js": "6b612088461ecde09a9fd44ba6b57cbb8a34dce0bc68ef5f90f6dff630c83840",
+    "assets/citadel-convoy-view-v2.4.0.js": "282337969d6583dadba6beea62a71af18a1a78f05fac9e63ff19bc6c70bdd9c2"
+  },
+  "passed": 5,
+  "total": 5,
+  "results": [
+    {
+      "name": "Independent conservative pilot matrix",
+      "pass": true,
+      "matrix": [
+        {
+          "status": "escortclear",
+          "seconds": 86.267,
+          "playerHP": 16,
+          "transports": [
+            32,
+            36,
+            36
+          ],
+          "kills": 18,
+          "missilesLeft": 3,
+          "stats": {
+            "spawned": 18,
+            "volleys": 43,
+            "torpedoes": 3,
+            "intercepts": 3,
+            "shieldHits": 12,
+            "disruptions": 0,
+            "fieldsPassed": 3,
+            "fieldsHit": 2,
+            "peakEnemies": 5,
+            "peakHostile": 11
+          },
+          "seed": 417147,
+          "mode": "normal",
+          "hz": 30,
+          "policy": "careful",
+          "controls": "keyboard",
+          "lag": 0.4,
+          "decisionSeconds": 0.45,
+          "shots": 432,
+          "counts": {
+            "decisions": 184,
+            "targetTaps": 29,
+            "missileTaps": 7,
+            "coverTaps": 0
+          },
+          "frames": 2588,
+          "peakEnemies": 5,
+          "finite": true
+        },
+        {
+          "status": "escortclear",
+          "seconds": 86.233,
+          "playerHP": 62,
+          "transports": [
+            52,
+            36,
+            12
+          ],
+          "kills": 18,
+          "missilesLeft": 3,
+          "stats": {
+            "spawned": 18,
+            "volleys": 42,
+            "torpedoes": 3,
+            "intercepts": 3,
+            "shieldHits": 6,
+            "disruptions": 0,
+            "fieldsPassed": 4,
+            "fieldsHit": 1,
+            "peakEnemies": 5,
+            "peakHostile": 10
+          },
+          "seed": 417147,
+          "mode": "normal",
+          "hz": 60,
+          "policy": "careful",
+          "controls": "keyboard",
+          "lag": 0.4,
+          "decisionSeconds": 0.45,
+          "shots": 432,
+          "counts": {
+            "decisions": 185,
+            "targetTaps": 24,
+            "missileTaps": 7,
+            "coverTaps": 0
+          },
+          "frames": 5174,
+          "peakEnemies": 5,
+          "finite": true
+        },
+        {
+          "status": "escortclear",
+          "seconds": 86.233,
+          "playerHP": 95.6,
+          "transports": [
+            83.2,
+            66.4,
+            66.4
+          ],
+          "kills": 18,
+          "missilesLeft": 4,
+          "stats": {
+            "spawned": 18,
+            "volleys": 33,
+            "torpedoes": 3,
+            "intercepts": 3,
+            "shieldHits": 15,
+            "disruptions": 0,
+            "fieldsPassed": 5,
+            "fieldsHit": 0,
+            "peakEnemies": 4,
+            "peakHostile": 8
+          },
+          "seed": 417147,
+          "mode": "calm",
+          "hz": 30,
+          "policy": "careful",
+          "controls": "keyboard",
+          "lag": 0.4,
+          "decisionSeconds": 0.45,
+          "shots": 432,
+          "counts": {
+            "decisions": 184,
+            "targetTaps": 22,
+            "missileTaps": 6,
+            "coverTaps": 0
+          },
+          "frames": 2587,
+          "peakEnemies": 4,
+          "finite": true
+        },
+        {
+          "status": "escortclear",
+          "seconds": 86.233,
+          "playerHP": 100,
+          "transports": [
+            83.2,
+            84.4,
+            52
+          ],
+          "kills": 18,
+          "missilesLeft": 5,
+          "stats": {
+            "spawned": 18,
+            "volleys": 33,
+            "torpedoes": 2,
+            "intercepts": 2,
+            "shieldHits": 10,
+            "disruptions": 0,
+            "fieldsPassed": 5,
+            "fieldsHit": 0,
+            "peakEnemies": 5,
+            "peakHostile": 10
+          },
+          "seed": 417147,
+          "mode": "calm",
+          "hz": 60,
+          "policy": "careful",
+          "controls": "keyboard",
+          "lag": 0.4,
+          "decisionSeconds": 0.45,
+          "shots": 432,
+          "counts": {
+            "decisions": 185,
+            "targetTaps": 24,
+            "missileTaps": 5,
+            "coverTaps": 1
+          },
+          "frames": 5174,
+          "peakEnemies": 5,
+          "finite": true
+        },
+        {
+          "status": "escortclear",
+          "seconds": 86.267,
+          "playerHP": 16,
+          "transports": [
+            32,
+            36,
+            36
+          ],
+          "kills": 18,
+          "missilesLeft": 3,
+          "stats": {
+            "spawned": 18,
+            "volleys": 43,
+            "torpedoes": 3,
+            "intercepts": 3,
+            "shieldHits": 12,
+            "disruptions": 0,
+            "fieldsPassed": 3,
+            "fieldsHit": 2,
+            "peakEnemies": 5,
+            "peakHostile": 11
+          },
+          "seed": 731,
+          "mode": "normal",
+          "hz": 30,
+          "policy": "careful",
+          "controls": "keyboard",
+          "lag": 0.4,
+          "decisionSeconds": 0.45,
+          "shots": 432,
+          "counts": {
+            "decisions": 184,
+            "targetTaps": 29,
+            "missileTaps": 7,
+            "coverTaps": 0
+          },
+          "frames": 2588,
+          "peakEnemies": 5,
+          "finite": true
+        },
+        {
+          "status": "escortclear",
+          "seconds": 86.233,
+          "playerHP": 62,
+          "transports": [
+            52,
+            36,
+            12
+          ],
+          "kills": 18,
+          "missilesLeft": 3,
+          "stats": {
+            "spawned": 18,
+            "volleys": 42,
+            "torpedoes": 3,
+            "intercepts": 3,
+            "shieldHits": 6,
+            "disruptions": 0,
+            "fieldsPassed": 4,
+            "fieldsHit": 1,
+            "peakEnemies": 5,
+            "peakHostile": 10
+          },
+          "seed": 731,
+          "mode": "normal",
+          "hz": 60,
+          "policy": "careful",
+          "controls": "keyboard",
+          "lag": 0.4,
+          "decisionSeconds": 0.45,
+          "shots": 432,
+          "counts": {
+            "decisions": 185,
+            "targetTaps": 24,
+            "missileTaps": 7,
+            "coverTaps": 0
+          },
+          "frames": 5174,
+          "peakEnemies": 5,
+          "finite": true
+        },
+        {
+          "status": "escortclear",
+          "seconds": 86.233,
+          "playerHP": 95.6,
+          "transports": [
+            83.2,
+            66.4,
+            66.4
+          ],
+          "kills": 18,
+          "missilesLeft": 4,
+          "stats": {
+            "spawned": 18,
+            "volleys": 33,
+            "torpedoes": 3,
+            "intercepts": 3,
+            "shieldHits": 15,
+            "disruptions": 0,
+            "fieldsPassed": 5,
+            "fieldsHit": 0,
+            "peakEnemies": 4,
+            "peakHostile": 8
+          },
+          "seed": 731,
+          "mode": "calm",
+          "hz": 30,
+          "policy": "careful",
+          "controls": "keyboard",
+          "lag": 0.4,
+          "decisionSeconds": 0.45,
+          "shots": 432,
+          "counts": {
+            "decisions": 184,
+            "targetTaps": 22,
+            "missileTaps": 6,
+            "coverTaps": 0
+          },
+          "frames": 2587,
+          "peakEnemies": 4,
+          "finite": true
+        },
+        {
+          "status": "escortclear",
+          "seconds": 86.233,
+          "playerHP": 100,
+          "transports": [
+            83.2,
+            84.4,
+            52
+          ],
+          "kills": 18,
+          "missilesLeft": 5,
+          "stats": {
+            "spawned": 18,
+            "volleys": 33,
+            "torpedoes": 2,
+            "intercepts": 2,
+            "shieldHits": 10,
+            "disruptions": 0,
+            "fieldsPassed": 5,
+            "fieldsHit": 0,
+            "peakEnemies": 5,
+            "peakHostile": 10
+          },
+          "seed": 731,
+          "mode": "calm",
+          "hz": 60,
+          "policy": "careful",
+          "controls": "keyboard",
+          "lag": 0.4,
+          "decisionSeconds": 0.45,
+          "shots": 432,
+          "counts": {
+            "decisions": 185,
+            "targetTaps": 24,
+            "missileTaps": 5,
+            "coverTaps": 1
+          },
+          "frames": 5174,
+          "peakEnemies": 5,
+          "finite": true
+        },
+        {
+          "status": "escortclear",
+          "seconds": 86.267,
+          "playerHP": 16,
+          "transports": [
+            32,
+            36,
+            36
+          ],
+          "kills": 18,
+          "missilesLeft": 3,
+          "stats": {
+            "spawned": 18,
+            "volleys": 43,
+            "torpedoes": 3,
+            "intercepts": 3,
+            "shieldHits": 12,
+            "disruptions": 0,
+            "fieldsPassed": 3,
+            "fieldsHit": 2,
+            "peakEnemies": 5,
+            "peakHostile": 11
+          },
+          "seed": 98211,
+          "mode": "normal",
+          "hz": 30,
+          "policy": "careful",
+          "controls": "keyboard",
+          "lag": 0.4,
+          "decisionSeconds": 0.45,
+          "shots": 432,
+          "counts": {
+            "decisions": 184,
+            "targetTaps": 29,
+            "missileTaps": 7,
+            "coverTaps": 0
+          },
+          "frames": 2588,
+          "peakEnemies": 5,
+          "finite": true
+        },
+        {
+          "status": "escortclear",
+          "seconds": 86.233,
+          "playerHP": 62,
+          "transports": [
+            52,
+            36,
+            12
+          ],
+          "kills": 18,
+          "missilesLeft": 3,
+          "stats": {
+            "spawned": 18,
+            "volleys": 42,
+            "torpedoes": 3,
+            "intercepts": 3,
+            "shieldHits": 6,
+            "disruptions": 0,
+            "fieldsPassed": 4,
+            "fieldsHit": 1,
+            "peakEnemies": 5,
+            "peakHostile": 10
+          },
+          "seed": 98211,
+          "mode": "normal",
+          "hz": 60,
+          "policy": "careful",
+          "controls": "keyboard",
+          "lag": 0.4,
+          "decisionSeconds": 0.45,
+          "shots": 432,
+          "counts": {
+            "decisions": 185,
+            "targetTaps": 24,
+            "missileTaps": 7,
+            "coverTaps": 0
+          },
+          "frames": 5174,
+          "peakEnemies": 5,
+          "finite": true
+        },
+        {
+          "status": "escortclear",
+          "seconds": 86.233,
+          "playerHP": 95.6,
+          "transports": [
+            83.2,
+            66.4,
+            66.4
+          ],
+          "kills": 18,
+          "missilesLeft": 4,
+          "stats": {
+            "spawned": 18,
+            "volleys": 33,
+            "torpedoes": 3,
+            "intercepts": 3,
+            "shieldHits": 15,
+            "disruptions": 0,
+            "fieldsPassed": 5,
+            "fieldsHit": 0,
+            "peakEnemies": 4,
+            "peakHostile": 8
+          },
+          "seed": 98211,
+          "mode": "calm",
+          "hz": 30,
+          "policy": "careful",
+          "controls": "keyboard",
+          "lag": 0.4,
+          "decisionSeconds": 0.45,
+          "shots": 432,
+          "counts": {
+            "decisions": 184,
+            "targetTaps": 22,
+            "missileTaps": 6,
+            "coverTaps": 0
+          },
+          "frames": 2587,
+          "peakEnemies": 4,
+          "finite": true
+        },
+        {
+          "status": "escortclear",
+          "seconds": 86.233,
+          "playerHP": 100,
+          "transports": [
+            83.2,
+            84.4,
+            52
+          ],
+          "kills": 18,
+          "missilesLeft": 5,
+          "stats": {
+            "spawned": 18,
+            "volleys": 33,
+            "torpedoes": 2,
+            "intercepts": 2,
+            "shieldHits": 10,
+            "disruptions": 0,
+            "fieldsPassed": 5,
+            "fieldsHit": 0,
+            "peakEnemies": 5,
+            "peakHostile": 10
+          },
+          "seed": 98211,
+          "mode": "calm",
+          "hz": 60,
+          "policy": "careful",
+          "controls": "keyboard",
+          "lag": 0.4,
+          "decisionSeconds": 0.45,
+          "shots": 432,
+          "counts": {
+            "decisions": 185,
+            "targetTaps": 24,
+            "missileTaps": 5,
+            "coverTaps": 1
+          },
+          "frames": 5174,
+          "peakEnemies": 5,
+          "finite": true
+        }
+      ]
+    },
+    {
+      "name": "No-input and fire-only controls require active play",
+      "pass": true,
+      "runs": [
+        {
+          "status": "crashing",
+          "seconds": 30.417,
+          "playerHP": 0,
+          "transports": [
+            100,
+            28,
+            28
+          ],
+          "kills": 0,
+          "missilesLeft": 10,
+          "stats": {
+            "spawned": 6,
+            "volleys": 48,
+            "torpedoes": 2,
+            "intercepts": 0,
+            "shieldHits": 0,
+            "disruptions": 0,
+            "fieldsPassed": 0,
+            "fieldsHit": 2,
+            "peakEnemies": 7,
+            "peakHostile": 15
+          },
+          "seed": 417147,
+          "mode": "normal",
+          "hz": 60,
+          "policy": "idle",
+          "controls": "keyboard",
+          "lag": 0.4,
+          "decisionSeconds": 0.45,
+          "shots": 0,
+          "counts": {
+            "decisions": 0,
+            "targetTaps": 0,
+            "missileTaps": 0,
+            "coverTaps": 0
+          },
+          "frames": 1825,
+          "peakEnemies": 7,
+          "finite": true
+        },
+        {
+          "status": "crashing",
+          "seconds": 30.417,
+          "playerHP": 0,
+          "transports": [
+            100,
+            36,
+            68
+          ],
+          "kills": 6,
+          "missilesLeft": 10,
+          "stats": {
+            "spawned": 6,
+            "volleys": 28,
+            "torpedoes": 1,
+            "intercepts": 1,
+            "shieldHits": 9,
+            "disruptions": 0,
+            "fieldsPassed": 0,
+            "fieldsHit": 2,
+            "peakEnemies": 5,
+            "peakHostile": 11
+          },
+          "seed": 417147,
+          "mode": "normal",
+          "hz": 60,
+          "policy": "fire-only",
+          "controls": "keyboard",
+          "lag": 0.4,
+          "decisionSeconds": 0.45,
+          "shots": 152,
+          "counts": {
+            "decisions": 0,
+            "targetTaps": 0,
+            "missileTaps": 0,
+            "coverTaps": 0
+          },
+          "frames": 1825,
+          "peakEnemies": 5,
+          "finite": true
+        }
+      ]
+    },
+    {
+      "name": "Pause and save during field",
+      "pass": true,
+      "at": 9,
+      "replayFrames": 480
+    },
+    {
+      "name": "Pause and save during torpedo",
+      "pass": true,
+      "at": 20.7,
+      "replayFrames": 480
+    },
+    {
+      "name": "Keyboard and joystick use equivalent production input",
+      "pass": true,
+      "frames": 5174,
+      "result": {
+        "status": "escortclear",
+        "seconds": 86.233,
+        "playerHP": 62,
+        "transports": [
+          52,
+          36,
+          12
+        ],
+        "kills": 18,
+        "missilesLeft": 3,
+        "stats": {
+          "spawned": 18,
+          "volleys": 42,
+          "torpedoes": 3,
+          "intercepts": 3,
+          "shieldHits": 6,
+          "disruptions": 0,
+          "fieldsPassed": 4,
+          "fieldsHit": 1,
+          "peakEnemies": 5,
+          "peakHostile": 10
+        }
+      }
+    }
+  ]
+}

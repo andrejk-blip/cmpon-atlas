@@ -1,0 +1,224 @@
+{
+  "pass": true,
+  "method": "Node VM, 30 ordinary-input convoy completions, real damage and interceptions; explicit GC samples. Simulation duration is not browser wall time.",
+  "missions": 30,
+  "simulatedSeconds": 2626.833333333223,
+  "wallSeconds": 11.527952057,
+  "updates": 157580,
+  "emitterChanges": 0,
+  "maxEnemies": 6,
+  "maxEvents": 62,
+  "heapGrowthAfterWarmup": 779248,
+  "samples": [
+    {
+      "run": 1,
+      "seconds": 68,
+      "heapBytes": 29356592,
+      "listeners": 68,
+      "templates": 1
+    },
+    {
+      "run": 2,
+      "seconds": 154,
+      "heapBytes": 29691264,
+      "listeners": 68,
+      "templates": 1
+    },
+    {
+      "run": 3,
+      "seconds": 263,
+      "heapBytes": 29890824,
+      "listeners": 68,
+      "templates": 1
+    },
+    {
+      "run": 4,
+      "seconds": 331,
+      "heapBytes": 29889352,
+      "listeners": 68,
+      "templates": 1
+    },
+    {
+      "run": 5,
+      "seconds": 417,
+      "heapBytes": 29988160,
+      "listeners": 68,
+      "templates": 1
+    },
+    {
+      "run": 6,
+      "seconds": 525,
+      "heapBytes": 30109352,
+      "listeners": 68,
+      "templates": 1
+    },
+    {
+      "run": 7,
+      "seconds": 593,
+      "heapBytes": 30085656,
+      "listeners": 68,
+      "templates": 1
+    },
+    {
+      "run": 8,
+      "seconds": 680,
+      "heapBytes": 30142864,
+      "listeners": 68,
+      "templates": 1
+    },
+    {
+      "run": 9,
+      "seconds": 788,
+      "heapBytes": 30276968,
+      "listeners": 68,
+      "templates": 1
+    },
+    {
+      "run": 10,
+      "seconds": 856,
+      "heapBytes": 30243840,
+      "listeners": 68,
+      "templates": 1
+    },
+    {
+      "run": 11,
+      "seconds": 942,
+      "heapBytes": 30303288,
+      "listeners": 68,
+      "templates": 1
+    },
+    {
+      "run": 12,
+      "seconds": 1051,
+      "heapBytes": 30459152,
+      "listeners": 68,
+      "templates": 1
+    },
+    {
+      "run": 13,
+      "seconds": 1119,
+      "heapBytes": 30293528,
+      "listeners": 68,
+      "templates": 1
+    },
+    {
+      "run": 14,
+      "seconds": 1205,
+      "heapBytes": 30379248,
+      "listeners": 68,
+      "templates": 1
+    },
+    {
+      "run": 15,
+      "seconds": 1313,
+      "heapBytes": 30437992,
+      "listeners": 68,
+      "templates": 1
+    },
+    {
+      "run": 16,
+      "seconds": 1381,
+      "heapBytes": 30449248,
+      "listeners": 68,
+      "templates": 1
+    },
+    {
+      "run": 17,
+      "seconds": 1468,
+      "heapBytes": 30620192,
+      "listeners": 68,
+      "templates": 1
+    },
+    {
+      "run": 18,
+      "seconds": 1576,
+      "heapBytes": 30689984,
+      "listeners": 68,
+      "templates": 1
+    },
+    {
+      "run": 19,
+      "seconds": 1644,
+      "heapBytes": 30651512,
+      "listeners": 68,
+      "templates": 1
+    },
+    {
+      "run": 20,
+      "seconds": 1730,
+      "heapBytes": 30688552,
+      "listeners": 68,
+      "templates": 1
+    },
+    {
+      "run": 21,
+      "seconds": 1839,
+      "heapBytes": 30747008,
+      "listeners": 68,
+      "templates": 1
+    },
+    {
+      "run": 22,
+      "seconds": 1907,
+      "heapBytes": 30699440,
+      "listeners": 68,
+      "templates": 1
+    },
+    {
+      "run": 23,
+      "seconds": 1993,
+      "heapBytes": 30723008,
+      "listeners": 68,
+      "templates": 1
+    },
+    {
+      "run": 24,
+      "seconds": 2101,
+      "heapBytes": 30779288,
+      "listeners": 68,
+      "templates": 1
+    },
+    {
+      "run": 25,
+      "seconds": 2169,
+      "heapBytes": 30728336,
+      "listeners": 68,
+      "templates": 1
+    },
+    {
+      "run": 26,
+      "seconds": 2256,
+      "heapBytes": 30783288,
+      "listeners": 68,
+      "templates": 1
+    },
+    {
+      "run": 27,
+      "seconds": 2364,
+      "heapBytes": 30859104,
+      "listeners": 68,
+      "templates": 1
+    },
+    {
+      "run": 28,
+      "seconds": 2432,
+      "heapBytes": 30811280,
+      "listeners": 68,
+      "templates": 1
+    },
+    {
+      "run": 29,
+      "seconds": 2518,
+      "heapBytes": 30866072,
+      "listeners": 68,
+      "templates": 1
+    },
+    {
+      "run": 30,
+      "seconds": 2627,
+      "heapBytes": 30888600,
+      "listeners": 68,
+      "templates": 1
+    }
+  ]
+}
