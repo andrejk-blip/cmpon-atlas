@@ -1,0 +1,90 @@
+{
+  "pass": true,
+  "method": "Node VM exact entries, ordinary pursuit commands, native Canvas at 1280x720. Same reached states for before/after. Timings include VM overhead; not browser or hardware FPS.",
+  "parityFrames": 10154,
+  "fractures": 8,
+  "maxFragments": 12,
+  "fragmentLimit": 48,
+  "saveWithLiveFragments": true,
+  "pause": true,
+  "expiration": true,
+  "reloads": 40,
+  "listeners": 65,
+  "cachePlateau": true,
+  "benchmarks": [
+    {
+      "label": "2.2.0",
+      "frames": 91,
+      "width": 1280,
+      "height": 720,
+      "firstFrameMs": 1063.0711710000032,
+      "medianMs": 78.6416889999964,
+      "p95Ms": 108.05649300000005,
+      "heapsAfterGc": [
+        82713560,
+        82755440,
+        82766224,
+        82848208
+      ],
+      "stats": [
+        {
+          "items": 127,
+          "triangles": 17304,
+          "visibleTriangles": 7853,
+          "milliseconds": 974.4098220000014,
+          "templates": 5,
+          "meshes": 110,
+          "pixels": 921600
+        },
+        {
+          "items": 127,
+          "triangles": 17304,
+          "visibleTriangles": 7853,
+          "milliseconds": 68.46462500000052,
+          "templates": 9,
+          "meshes": 159,
+          "pixels": 921600
+        },
+        {
+          "items": 127,
+          "triangles": 17304,
+          "visibleTriangles": 7853,
+          "milliseconds": 62.959782999998424,
+          "templates": 9,
+          "meshes": 159,
+          "pixels": 921600
+        },
+        {
+          "items": 127,
+          "triangles": 17304,
+          "visibleTriangles": 7853,
+          "milliseconds": 89.26473899999837,
+          "templates": 9,
+          "meshes": 159,
+          "pixels": 921600
+        }
+      ]
+    },
+    {
+      "label": "2.1.0",
+      "frames": 91,
+      "width": 1280,
+      "height": 720,
+      "firstFrameMs": 90.31604900000093,
+      "medianMs": 83.61953799999901,
+      "p95Ms": 110.38313299999572,
+      "heapsAfterGc": [
+        83006360,
+        83042800,
+        83044712,
+        83150424
+      ],
+      "stats": [
+        null,
+        null,
+        null,
+        null
+      ]
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "method": "Native Canvas, ordinary pursuit commands, real collisions/damage; no health or victory edits. Before/after use identical reached state.",
+  "results": [
+    {
+      "file": "stage-1.png",
+      "milliseconds": 844.2899970000001,
+      "items": 127,
+      "triangles": 17304,
+      "visibleTriangles": 7853,
+      "templates": 5,
+      "meshes": 110,
+      "pixels": 921600
+    },
+    {
+      "file": "before-2.1.0.png",
+      "milliseconds": 195.39210700000012,
+      "items": 129
+    },
+    {
+      "file": "stage-2.png",
+      "milliseconds": 866.9242219999996,
+      "items": 151,
+      "triangles": 18748,
+      "visibleTriangles": 8122,
+      "templates": 6,
+      "meshes": 121,
+      "pixels": 921600
+    },
+    {
+      "file": "stage-3.png",
+      "milliseconds": 795.2045949999992,
+      "items": 190,
+      "triangles": 19780,
+      "visibleTriangles": 8857,
+      "templates": 9,
+      "meshes": 159,
+      "pixels": 921600
+    },
+    {
+      "file": "fracture.png",
+      "milliseconds": 813.3527140000006,
+      "items": 231,
+      "triangles": 21654,
+      "visibleTriangles": 10370,
+      "templates": 10,
+      "meshes": 177,
+      "pixels": 921600
+    }
+  ],
+  "mission": {
+    "version": "2.1.0",
+    "active": false,
+    "state": "return",
+    "clock": 159.85000000001935,
+    "chapter": 3,
+    "stageHistory": [
+      {
+        "stage": 1,
+        "at": 0
+      },
+      {
+        "stage": 2,
+        "at": 38.53333333333243
+      },
+      {
+        "stage": 3,
+        "at": 99.18333333332899
+      }
+    ],
+    "packets": [
+      38,
+      46,
+      58
+    ],
+    "stageGates": [
+      4,
+      11,
+      18
+    ],
+    "kills": 19,
+    "jammersDestroyed": 7,
+    "gatesPassed": 33,
+    "gatesMissed": 0,
+    "gateCollisions": 0,
+    "enemiesSpawned": 24,
+    "progress": 100,
+    "uploaded": 142,
+    "requiredSeconds": 142,
+    "leader": [
+      21.441073927169654,
+      -3.5796916295959185,
+      -18031.820230464262
+    ],
+    "player": [
+      78,
+      10,
+      -35
+    ],
+    "speed": 0,
+    "link": {
+      "connected": true,
+      "reason": "connected",
+      "distance": 100.49037851836574,
+      "offset": 3.3516758446777475,
+      "blockedId": null
+    },
+    "requirements": 3,
+    "decisions": 2,
+    "collisions": 0,
+    "rocksDestroyed": 8,
+    "asteroids": []
+  }
+}

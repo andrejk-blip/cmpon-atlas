@@ -1,0 +1,54 @@
+{
+  "passed": 9,
+  "groups": [
+    "connected channel attaches to both ships; real steering severs it and pauses upload",
+    "flying into a physical wall causes real damage (isolated collision fixture)",
+    "keyboard and touch at 30 Hz finish using real weapon and gate rules",
+    "without fire jammer delays transfer and enemy shots cause damage",
+    "new save restores live encounters, shutters, stage and deterministic future",
+    "pause freezes mission and resume keeps one ordinary step",
+    "1.9.0 partial save migration preserves data, health, decisions and score without duplicate requirements",
+    "read-only desktop/portrait/landscape render and bounded HUD",
+    "module reload is idempotent and does not add listeners or wrappers"
+  ],
+  "details": [
+    {
+      "name": "keyboard and touch at 30 Hz finish using real weapon and gate rules",
+      "runs": [
+        {
+          "type": "keyboard",
+          "seconds": 159.85000000001935,
+          "kills": 18
+        },
+        {
+          "type": "touch",
+          "seconds": 159.8999999999935,
+          "kills": 18
+        }
+      ]
+    },
+    {
+      "name": "without fire jammer delays transfer and enemy shots cause damage",
+      "status": "crashing",
+      "seconds": 436.06666666659873,
+      "progress": 80.5172413793103,
+      "hp": 0
+    },
+    {
+      "name": "new save restores live encounters, shutters, stage and deterministic future",
+      "stage": 3,
+      "resumedSeconds": 5
+    },
+    {
+      "name": "1.9.0 partial save migration preserves data, health, decisions and score without duplicate requirements",
+      "oldProgress": 48.00387596899102,
+      "newProgress": 100,
+      "requirements": 3
+    },
+    {
+      "name": "module reload is idempotent and does not add listeners or wrappers",
+      "reloads": 40,
+      "listeners": 65
+    }
+  ]
+}

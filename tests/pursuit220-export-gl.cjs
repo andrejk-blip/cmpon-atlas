@@ -1,0 +1,4 @@
+#!/usr/bin/env node
+'use strict';
+const fs=require('node:fs'),{entrySnapshot,entryHarness}=require('./mission-integration-regression-1.9.1.cjs');
+(async()=>{const h=entryHarness(entrySnapshot());await new Promise(setImmediate);const e=h.unpack(JSON.parse(fs.readFileSync('tests/qa-2.2.0/checkpoint-stage-1.json')),{seed:417147,mode:'normal'},()=>{});h.arcade.engine=e;h.c.innerWidth=1280;h.c.innerHeight=720;h.arcade.canvas.getBoundingClientRect=()=>({width:1280,height:720});const items=h.scene(e,e.elapsed,true),camera=h.camera(e,e.elapsed),meshes={};for(const it of items)meshes[it.mesh]=h.run('SPACE_MESH['+JSON.stringify(it.mesh)+']');fs.writeFileSync(process.argv[2]||'/tmp/pursuit220-gl-scene.json',JSON.stringify({vertex:h.run('SPACE_VERTEX'),fragment:h.c.CITADEL_PURSUIT_VIEW.shader,camera,items,meshes},(_key,value)=>ArrayBuffer.isView(value)?Array.from(value):value));})().catch(e=>{console.error(e);process.exitCode=1;});

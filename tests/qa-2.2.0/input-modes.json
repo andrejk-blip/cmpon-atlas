@@ -1,0 +1,277 @@
+[
+  {
+    "pass": true,
+    "mode": "normal",
+    "seed": 417147,
+    "type": "keyboard",
+    "fire": true,
+    "frames": 10154,
+    "wallSeconds": 4.977,
+    "status": "boarding",
+    "hp": 100,
+    "score": 6270,
+    "inspection": {
+      "version": "2.1.0",
+      "active": false,
+      "state": "return",
+      "clock": 159.85000000001935,
+      "chapter": 3,
+      "stageHistory": [
+        {
+          "stage": 1,
+          "at": 0
+        },
+        {
+          "stage": 2,
+          "at": 38.53333333333243
+        },
+        {
+          "stage": 3,
+          "at": 99.18333333332899
+        }
+      ],
+      "packets": [
+        38,
+        46,
+        58
+      ],
+      "stageGates": [
+        4,
+        11,
+        18
+      ],
+      "kills": 18,
+      "jammersDestroyed": 7,
+      "gatesPassed": 33,
+      "gatesMissed": 0,
+      "gateCollisions": 0,
+      "enemiesSpawned": 24,
+      "progress": 100,
+      "uploaded": 142,
+      "requiredSeconds": 142,
+      "leader": [
+        21.441073927169654,
+        -3.5796916295959185,
+        -18031.820230464262
+      ],
+      "player": [
+        78,
+        10,
+        -35
+      ],
+      "speed": 0,
+      "link": {
+        "connected": true,
+        "reason": "connected",
+        "distance": 100.88657780920795,
+        "offset": 9.540395078650649,
+        "blockedId": null
+      },
+      "requirements": 3,
+      "decisions": 2,
+      "collisions": 0,
+      "rocksDestroyed": 4,
+      "asteroids": []
+    },
+    "history": [
+      {
+        "stage": 1,
+        "time": 0.016666666666666666,
+        "hp": 100
+      },
+      {
+        "stage": 2,
+        "time": 38.53333333333243,
+        "hp": 100
+      },
+      {
+        "stage": 3,
+        "time": 99.18333333332899,
+        "hp": 100
+      }
+    ],
+    "peaks": {
+      "enemies": 4,
+      "rocks": 21,
+      "gates": 3,
+      "bullets": 26,
+      "hostile": 1
+    },
+    "minSpeed": 0,
+    "maxSpeed": 160.54311550709605,
+    "emitChanges": 0,
+    "samples": [
+      {
+        "wallSeconds": 0.004,
+        "seconds": 0.016666666666666666,
+        "heap": 214217144,
+        "listeners": 65,
+        "emitChanges": 0
+      },
+      {
+        "wallSeconds": 0.796,
+        "seconds": 30.016666666666243,
+        "heap": 197089296,
+        "listeners": 65,
+        "emitChanges": 0
+      },
+      {
+        "wallSeconds": 1.593,
+        "seconds": 60.01666666666454,
+        "heap": 193283184,
+        "listeners": 65,
+        "emitChanges": 0
+      },
+      {
+        "wallSeconds": 2.372,
+        "seconds": 90.01666666666284,
+        "heap": 274391256,
+        "listeners": 65,
+        "emitChanges": 0
+      },
+      {
+        "wallSeconds": 3.224,
+        "seconds": 120.01666666666114,
+        "heap": 275877880,
+        "listeners": 65,
+        "emitChanges": 0
+      },
+      {
+        "wallSeconds": 4.119,
+        "seconds": 150.0166666666782,
+        "heap": 348853592,
+        "listeners": 65,
+        "emitChanges": 0
+      }
+    ],
+    "rendered": [],
+    "shots": 1199
+  },
+  {
+    "pass": true,
+    "mode": "normal",
+    "seed": 417147,
+    "type": "touch",
+    "fire": true,
+    "frames": 5080,
+    "wallSeconds": 3.142,
+    "status": "boarding",
+    "hp": 100,
+    "score": 6258,
+    "inspection": {
+      "version": "2.1.0",
+      "active": false,
+      "state": "return",
+      "clock": 159.8999999999935,
+      "chapter": 3,
+      "stageHistory": [
+        {
+          "stage": 1,
+          "at": 0
+        },
+        {
+          "stage": 2,
+          "at": 38.53333333333371
+        },
+        {
+          "stage": 3,
+          "at": 99.23333333333026
+        }
+      ],
+      "packets": [
+        38,
+        46,
+        58
+      ],
+      "stageGates": [
+        4,
+        11,
+        18
+      ],
+      "kills": 18,
+      "jammersDestroyed": 7,
+      "gatesPassed": 33,
+      "gatesMissed": 0,
+      "gateCollisions": 0,
+      "enemiesSpawned": 24,
+      "progress": 100,
+      "uploaded": 142,
+      "requiredSeconds": 142,
+      "leader": [
+        21.64156413722033,
+        -3.6224371222353096,
+        -18038.76880321296
+      ],
+      "player": [
+        78,
+        10,
+        -35
+      ],
+      "speed": 0,
+      "link": {
+        "connected": true,
+        "reason": "connected",
+        "distance": 98.35259573739287,
+        "offset": 4.051074336944539,
+        "blockedId": null
+      },
+      "requirements": 3,
+      "decisions": 2,
+      "collisions": 0,
+      "rocksDestroyed": 8,
+      "asteroids": []
+    },
+    "history": [
+      {
+        "stage": 1,
+        "time": 0.03333333333333333,
+        "hp": 100
+      },
+      {
+        "stage": 2,
+        "time": 38.53333333333371,
+        "hp": 100
+      },
+      {
+        "stage": 3,
+        "time": 99.23333333333026,
+        "hp": 100
+      }
+    ],
+    "peaks": {
+      "enemies": 4,
+      "rocks": 21,
+      "gates": 3,
+      "bullets": 26,
+      "hostile": 1
+    },
+    "minSpeed": 0,
+    "maxSpeed": 160.5446232475754,
+    "emitChanges": 0,
+    "samples": [
+      {
+        "wallSeconds": 0.001,
+        "seconds": 0.03333333333333333,
+        "heap": 422250496,
+        "listeners": 65,
+        "emitChanges": 0
+      },
+      {
+        "wallSeconds": 0.88,
+        "seconds": 60.033333333332486,
+        "heap": 399011640,
+        "listeners": 65,
+        "emitChanges": 0
+      },
+      {
+        "wallSeconds": 1.797,
+        "seconds": 120.03333333332908,
+        "heap": 403917192,
+        "listeners": 65,
+        "emitChanges": 0
+      }
+    ],
+    "rendered": [],
+    "shots": 1200
+  }
+]

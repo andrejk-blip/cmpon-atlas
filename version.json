@@ -1,6 +1,6 @@
 {
   "product": "ЦМПОН — атлас требований",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "released_on": "2026-10-19",
   "requirements_edition": "2.0.2 (ВСТЕ)",
   "requirements_as_of": "2026-10-14",
@@ -10,7 +10,7 @@
   "finale_save_schema": "citadel-finale-v1",
   "analytics_module_version": "0.1.0",
   "tournament_module_version": "1.1.0",
-  "index_sha256": "5bbf4ae9c6bb19d70af67d7dc8098b0f90b4ff947a099aea46af8a8b4244eecd",
+  "index_sha256": "ad085276e45f9a70677d88471e2c6d0f8059d9c3b29e82acfdf2a62dfd18a959",
   "offline_sha256": "754ccde3777ace0150d9b062461301ea9542f893c4f158ebc0ae7e07a3e8a2c3",
   "core_assets_version": "1.3.5",
   "soundtrack_module_version": "1.4.2",
@@ -21,7 +21,7 @@
   "academy_cards": 36,
   "academy_campaign_questions": 23,
   "effects_module_version": "1.9.3",
-  "atlas_sha256": "b0167ffb3c34910a25d2f306180f2282eac64afbffec5a654c00bdbc50015afc",
+  "atlas_sha256": "356d746cafcffb9f87f28ff9076a369424b4aeb0651def62398139a7f47da592",
   "music_sha256": "11ba6f8ee1d80e7313e7c7c14d1133cf55f9f124ca29eb8d3ed54aba22aafeb0",
   "effects_sha256": "6cabac06fb8d99684ca2a8252510f90a964ca1d427aa4ac7b214115ee1b9af7b",
   "mrg_module_version": "1.7.0",
@@ -93,7 +93,7 @@
     "pincer"
   ],
   "comic_duration_seconds": 1.85,
-  "pursuit_sha256": "e52cef3f5e53bd747fe39f76e9feb2e7ce0a77cee132fcf6aee280dba116759f",
+  "pursuit_sha256": "5dbdaf1618b355a1dc883a2b2000fd3549cc1f3bd45c8f7bd49200a1daf13645",
   "swarm_sha256": "f7d4f101894d7d606d839f6d97de309ebbcdd1156129be78f0468732eb629581",
   "parallax_sha256": "abbfdb4d46c331cb3c752f27932b2d33349fe6ec761b2e680af5120e0ab34ea8",
   "comic_sha256": "fca0b9603ff434f060cd9b16680584d062e907bb4f9b32998a438804f7064964",
@@ -170,5 +170,22 @@
   ],
   "pursuit_style_build": "210r2",
   "bases_style_build": "200r4",
-  "pursuit_style_sha256": "dd04f466851b586e1bd160816ceb9a84a9d6d68f6b0b06a93866ef1bb50f6b74"
+  "pursuit_style_sha256": "dd04f466851b586e1bd160816ceb9a84a9d6d68f6b0b06a93866ef1bb50f6b74",
+  "pursuit_view_version": "2.2.0",
+  "pursuit_view_build": "220r1",
+  "pursuit_build": "220r1",
+  "pursuit_visual_style": "gothic-cathedral-armoured-fleet",
+  "pursuit_fragments_per_asteroid": 6,
+  "pursuit_fragment_limit": 48,
+  "pursuit_fragment_lifetime_seconds": 3.6,
+  "pursuit_canvas_renderer": "reciprocal-depth-rasterizer",
+  "pursuit_gpu_materials": [
+    "metal",
+    "stone",
+    "cloth",
+    "glass",
+    "emissive"
+  ],
+  "pursuit_view_sha256": "f2c87806da6bd5e9ec9e92c7cc16e81a656ee2d0937d41e9c99cd840da18ef15",
+  "pursuit_view_style_sha256": "135b1a8116fbeb0c7c0f775a26f3b8ed26f1996e79013c4dcbfe315859118d6c"
 }

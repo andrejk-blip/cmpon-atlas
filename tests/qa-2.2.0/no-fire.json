@@ -1,0 +1,436 @@
+{
+  "pass": false,
+  "mode": "normal",
+  "seed": 417147,
+  "type": "analog",
+  "fire": false,
+  "frames": 26164,
+  "wallSeconds": 2.265,
+  "status": "crashing",
+  "hp": 0,
+  "score": 700,
+  "inspection": {
+    "version": "2.1.0",
+    "active": false,
+    "state": "chase",
+    "clock": 436.06666666659873,
+    "chapter": 3,
+    "stageHistory": [
+      {
+        "stage": 1,
+        "at": 0
+      },
+      {
+        "stage": 2,
+        "at": 38.53333333333243
+      },
+      {
+        "stage": 3,
+        "at": 197.71666666671615
+      }
+    ],
+    "packets": [
+      38,
+      46,
+      24.099999999999913
+    ],
+    "stageGates": [
+      4,
+      30,
+      72
+    ],
+    "kills": 0,
+    "jammersDestroyed": 0,
+    "gatesPassed": 106,
+    "gatesMissed": 0,
+    "gateCollisions": 0,
+    "enemiesSpawned": 58,
+    "progress": 80.5172413793103,
+    "uploaded": 108.09999999999991,
+    "requiredSeconds": 142,
+    "leader": [
+      -12.281485285156688,
+      -12.675527551399648,
+      -52711.01927318404
+    ],
+    "player": [
+      -16.38763040294024,
+      -12.966256127483678,
+      -52627.73409670448
+    ],
+    "speed": 124.2912308336062,
+    "link": {
+      "connected": false,
+      "reason": "jammed",
+      "distance": 83.38917900162708,
+      "offset": 4.065221116741168,
+      "blockedId": 1080
+    },
+    "requirements": 2,
+    "decisions": 0,
+    "collisions": 0,
+    "rocksDestroyed": 0,
+    "asteroids": [
+      {
+        "id": 1089,
+        "pos": [
+          -97.43933488801122,
+          -33.6136806034483,
+          -52710
+        ],
+        "r": 12.302644184790552,
+        "wall": true,
+        "eta": 0.6618801885199446,
+        "spawnedAt": 429.933333333271,
+        "contact": false,
+        "dead": false
+      },
+      {
+        "id": 1090,
+        "pos": [
+          97.10037024877965,
+          10.341267145704478,
+          -52710
+        ],
+        "r": 15.596121420152485,
+        "wall": true,
+        "eta": 0.6618801885199446,
+        "spawnedAt": 429.933333333271,
+        "contact": false,
+        "dead": false
+      },
+      {
+        "id": 1091,
+        "pos": [
+          17.276591217491962,
+          -12.017784741847427,
+          -52710
+        ],
+        "r": 7.232193116098642,
+        "wall": false,
+        "eta": 0.6618801885199446,
+        "spawnedAt": 429.933333333271,
+        "contact": false,
+        "dead": false
+      },
+      {
+        "id": 1092,
+        "pos": [
+          -88.12961159227416,
+          -8.13321114052087,
+          -52860
+        ],
+        "r": 13.531496136914939,
+        "wall": true,
+        "eta": 1.8687231732901637,
+        "spawnedAt": 430.8833333332701,
+        "contact": false,
+        "dead": false
+      },
+      {
+        "id": 1093,
+        "pos": [
+          94.56332287704572,
+          21.353348311968148,
+          -52860
+        ],
+        "r": 17.88967308914289,
+        "wall": true,
+        "eta": 1.8687231732901637,
+        "spawnedAt": 430.8833333332701,
+        "contact": false,
+        "dead": false
+      },
+      {
+        "id": 1094,
+        "pos": [
+          20.710615600528563,
+          -16.551569322776835,
+          -52860
+        ],
+        "r": 5.777617668965831,
+        "wall": false,
+        "eta": 1.8687231732901637,
+        "spawnedAt": 430.8833333332701,
+        "contact": false,
+        "dead": false
+      },
+      {
+        "id": 1096,
+        "pos": [
+          -88.8198882965371,
+          17.34725832240656,
+          -53010
+        ],
+        "r": 14.760348089039326,
+        "wall": true,
+        "eta": 3.0755661580604396,
+        "spawnedAt": 431.9166666666025,
+        "contact": false,
+        "dead": false
+      },
+      {
+        "id": 1097,
+        "pos": [
+          92.02627550531179,
+          32.36542947823182,
+          -53010
+        ],
+        "r": 14.183224758133292,
+        "wall": true,
+        "eta": 3.0755661580604396,
+        "spawnedAt": 431.9166666666025,
+        "contact": false,
+        "dead": false
+      },
+      {
+        "id": 1098,
+        "pos": [
+          -89.51016500080004,
+          42.82772778533399,
+          -53160
+        ],
+        "r": 15.989200041163713,
+        "wall": true,
+        "eta": 4.282409142830716,
+        "spawnedAt": 433.09999999993477,
+        "contact": false,
+        "dead": false
+      },
+      {
+        "id": 1099,
+        "pos": [
+          89.48922813357785,
+          43.37751064449549,
+          -53160
+        ],
+        "r": 16.476776427123696,
+        "wall": true,
+        "eta": 4.282409142830716,
+        "spawnedAt": 433.09999999993477,
+        "contact": false,
+        "dead": false
+      },
+      {
+        "id": 1100,
+        "pos": [
+          10.923352152233504,
+          -13.824454163970735,
+          -53160
+        ],
+        "r": 5.8684667747002095,
+        "wall": false,
+        "eta": 4.282409142830716,
+        "spawnedAt": 433.09999999993477,
+        "contact": false,
+        "dead": false
+      },
+      {
+        "id": 1102,
+        "pos": [
+          -90.20044170506299,
+          -21.691802751738578,
+          -53310
+        ],
+        "r": 17.2180519932881,
+        "wall": true,
+        "eta": 5.489252127600992,
+        "spawnedAt": 434.333333333267,
+        "contact": false,
+        "dead": false
+      },
+      {
+        "id": 1103,
+        "pos": [
+          96.95218076184392,
+          -35.61040818924084,
+          -53310
+        ],
+        "r": 12.770328096114099,
+        "wall": true,
+        "eta": 5.489252127600992,
+        "spawnedAt": 434.333333333267,
+        "contact": false,
+        "dead": false
+      },
+      {
+        "id": 1104,
+        "pos": [
+          -90.89071840932593,
+          3.788666711188853,
+          -53460
+        ],
+        "r": 12.446903945412487,
+        "wall": true,
+        "eta": 6.6960951123712675,
+        "spawnedAt": 435.54999999993254,
+        "contact": false,
+        "dead": false
+      },
+      {
+        "id": 1105,
+        "pos": [
+          94.41513339010999,
+          -24.598327022977173,
+          -53460
+        ],
+        "r": 15.063879765104502,
+        "wall": true,
+        "eta": 6.6960951123712675,
+        "spawnedAt": 435.54999999993254,
+        "contact": false,
+        "dead": false
+      },
+      {
+        "id": 1106,
+        "pos": [
+          0.8061184732987385,
+          1.53797997291921,
+          -53460
+        ],
+        "r": 5.959315880434588,
+        "wall": false,
+        "eta": 6.6960951123712675,
+        "spawnedAt": 435.54999999993254,
+        "contact": false,
+        "dead": false
+      }
+    ]
+  },
+  "history": [
+    {
+      "stage": 1,
+      "time": 0.016666666666666666,
+      "hp": 100
+    },
+    {
+      "stage": 2,
+      "time": 38.53333333333243,
+      "hp": 100
+    },
+    {
+      "stage": 3,
+      "time": 197.71666666671615,
+      "hp": 83
+    }
+  ],
+  "peaks": {
+    "enemies": 4,
+    "rocks": 21,
+    "gates": 3,
+    "bullets": 0,
+    "hostile": 4
+  },
+  "minSpeed": 80.63727560788217,
+  "maxSpeed": 160.54311547631244,
+  "emitChanges": 0,
+  "samples": [
+    {
+      "wallSeconds": 0.001,
+      "seconds": 0.016666666666666666,
+      "heap": 473453512,
+      "listeners": 65,
+      "emitChanges": 0
+    },
+    {
+      "wallSeconds": 0.187,
+      "seconds": 30.016666666666243,
+      "heap": 185838984,
+      "listeners": 65,
+      "emitChanges": 0
+    },
+    {
+      "wallSeconds": 0.347,
+      "seconds": 60.01666666666454,
+      "heap": 186372248,
+      "listeners": 65,
+      "emitChanges": 0
+    },
+    {
+      "wallSeconds": 0.483,
+      "seconds": 90.01666666666284,
+      "heap": 176788256,
+      "listeners": 65,
+      "emitChanges": 0
+    },
+    {
+      "wallSeconds": 0.627,
+      "seconds": 120.01666666666114,
+      "heap": 236625088,
+      "listeners": 65,
+      "emitChanges": 0
+    },
+    {
+      "wallSeconds": 0.761,
+      "seconds": 150.0166666666782,
+      "heap": 220962176,
+      "listeners": 65,
+      "emitChanges": 0
+    },
+    {
+      "wallSeconds": 0.888,
+      "seconds": 180.01666666670206,
+      "heap": 204300136,
+      "listeners": 65,
+      "emitChanges": 0
+    },
+    {
+      "wallSeconds": 1.052,
+      "seconds": 210.01666666672594,
+      "heap": 212036672,
+      "listeners": 65,
+      "emitChanges": 0
+    },
+    {
+      "wallSeconds": 1.217,
+      "seconds": 240.0166666667498,
+      "heap": 209692520,
+      "listeners": 65,
+      "emitChanges": 0
+    },
+    {
+      "wallSeconds": 1.369,
+      "seconds": 270.01666666674976,
+      "heap": 201334688,
+      "listeners": 65,
+      "emitChanges": 0
+    },
+    {
+      "wallSeconds": 1.525,
+      "seconds": 300.0166666667225,
+      "heap": 193062808,
+      "listeners": 65,
+      "emitChanges": 0
+    },
+    {
+      "wallSeconds": 1.683,
+      "seconds": 330.0166666666952,
+      "heap": 186631504,
+      "listeners": 65,
+      "emitChanges": 0
+    },
+    {
+      "wallSeconds": 1.853,
+      "seconds": 360.0166666666679,
+      "heap": 178731032,
+      "listeners": 65,
+      "emitChanges": 0
+    },
+    {
+      "wallSeconds": 2,
+      "seconds": 390.0166666666406,
+      "heap": 233885480,
+      "listeners": 65,
+      "emitChanges": 0
+    },
+    {
+      "wallSeconds": 2.151,
+      "seconds": 420.01666666661333,
+      "heap": 219335896,
+      "listeners": 65,
+      "emitChanges": 0
+    }
+  ],
+  "rendered": [],
+  "shots": 0
+}

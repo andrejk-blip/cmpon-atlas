@@ -1,0 +1,81 @@
+{
+  "version": "2.2.0",
+  "method": "Real browser UI: pause button, read-only DOM reports, continue button",
+  "pausedClockA": 10.980000000000034,
+  "pausedClockB": 10.980000000000034,
+  "resumedClock": 13.339999999999984,
+  "resumedStatus": "paused",
+  "frozen": true,
+  "resumed": true,
+  "errors": [],
+  "failures": 0,
+  "rafPending": 1,
+  "events": [
+    {
+      "at": 23622,
+      "kind": "transition",
+      "status": "paused",
+      "stage": 1,
+      "phase": "pursuit",
+      "finale": null,
+      "wave": 0,
+      "seconds": 10.98,
+      "mode": "normal",
+      "enemies": 0,
+      "renderer": "canvas"
+    },
+    {
+      "at": 98799,
+      "kind": "arcade-resume",
+      "status": "paused",
+      "stage": 1,
+      "phase": "pursuit",
+      "finale": null,
+      "wave": 0,
+      "seconds": 10.98,
+      "mode": "normal",
+      "enemies": 0,
+      "renderer": "canvas"
+    },
+    {
+      "at": 98930,
+      "kind": "transition",
+      "status": "playing",
+      "stage": 1,
+      "phase": "pursuit",
+      "finale": null,
+      "wave": 0,
+      "seconds": 11.02,
+      "mode": "normal",
+      "enemies": 0,
+      "renderer": "canvas"
+    },
+    {
+      "at": 164425,
+      "kind": "frame-gap",
+      "status": "playing",
+      "stage": 1,
+      "phase": "pursuit",
+      "finale": null,
+      "wave": 0,
+      "seconds": 13.34,
+      "mode": "normal",
+      "enemies": 2,
+      "renderer": "canvas"
+    },
+    {
+      "at": 165305,
+      "kind": "transition",
+      "status": "paused",
+      "stage": 1,
+      "phase": "pursuit",
+      "finale": null,
+      "wave": 0,
+      "seconds": 13.34,
+      "mode": "normal",
+      "enemies": 2,
+      "renderer": "canvas"
+    }
+  ],
+  "note": "After resume the simulation advanced from 10.98 to 13.34 s, then the runtime paused on a recorded frame-gap in the throttled cloud browser. No exception or recovery failure."
+}
