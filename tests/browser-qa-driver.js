@@ -5,7 +5,12 @@
  const operators=CITADEL_QA_INPUTS;
  setView('arcade'); CUP.panel=null;CUP.attached=false;ARCADE.mode=mode==='calm'?'calm':'normal';
  const e=new RequirementArcade(417147,arcadeEvent);ARCADE.engine=e;e.start(mode==='calm');
- const h={action:(...args)=>arcadeAction(...args),lessonCase:citadelLessonCase,deckQA:{path:stationPath,line:stationLine,input:arcadeInput}};
+ const answered=new Set();
+ const h={action:(action,...args)=>{
+  const kind=action==='citadel-lesson-answer'?'flight':action==='citadel-answer'?'terminal':action==='finale-answer'?'final':null;
+  if(kind){const index=kind==='flight'?e.lesson?.caseIndex:kind==='terminal'?e.board?.question:e.board?.completed?.length;const stamp=kind+'/'+index;if(!answered.has(stamp)){answered.add(stamp);cards.push({level:level(),kind,index});}}
+  return arcadeAction(action,...args);
+ },lessonCase:citadelLessonCase,deckQA:{path:stationPath,line:stationLine,input:arcadeInput}};
  const deck=operators.createDeckController(h),swarm=operators.createSwarmController(CITADEL_SWARM),mrg=operators.createMrgController();
  let parallax=null,key='',frameCalls=0,emitChanges=0,lastEmit=e.emit,finished=null,manualPause=false;
  let lastElapsed=e.elapsed,lastMovement=performance.now(),lastSample=0,maxGap=0,lastInputTime=performance.now();
@@ -37,9 +42,9 @@
   if(nextKey!==key){transitions.push({level:id,status:e.status,phase:e.phase,finale:e.finale?.phase||null,seconds:+e.elapsed.toFixed(2)});key=nextKey;}
   if(CITADEL_STORY.status(e).active){h.action('story-next');return;}
   if(['briefing','escortbrief'].includes(e.status)){h.action('citadel-launch');return;}
-  if(e.status==='lesson'){const q=citadelLessonCase(e,e.lesson.caseIndex);if(!e.lesson.solved){cards.push({level:id,kind:'flight'});h.action('citadel-lesson-answer',q.correct);}h.action('citadel-lesson-next');}
-  else if(e.status==='remark'){if(CITADEL_DECK_COMBAT.clearance(e).remaining)throw Error('Terminal before clearance');cards.push({level:id,kind:'terminal'});h.action('citadel-answer',citadelRemarkCase(e,e.board.question).correct);h.action('citadel-remark-next');}
-  else if(e.status==='finalcheck'){if(CITADEL_DECK_COMBAT.clearance(e).remaining)throw Error('Final card before clearance');cards.push({level:id,kind:'final'});h.action('finale-answer',FINALE_TRIALS[e.board.completed.length].correct);h.action('finale-check-next');}
+  if(e.status==='lesson'){const q=citadelLessonCase(e,e.lesson.caseIndex);if(!e.lesson.solved){h.action('citadel-lesson-answer',q.correct);}h.action('citadel-lesson-next');}
+  else if(e.status==='remark'){if(CITADEL_DECK_COMBAT.clearance(e).remaining)throw Error('Terminal before clearance');h.action('citadel-answer',citadelRemarkCase(e,e.board.question).correct);h.action('citadel-remark-next');}
+  else if(e.status==='finalcheck'){if(CITADEL_DECK_COMBAT.clearance(e).remaining)throw Error('Final card before clearance');h.action('finale-answer',FINALE_TRIALS[e.board.completed.length].correct);h.action('finale-check-next');}
   else if(e.status==='stageclear'){h.action('citadel-upgrade',['weapons','weapons','armor'][e.stage]);e.next();}
   else if(e.status==='escortclear')h.action('citadel-escort-continue');
   else if(e.status==='finalebrief')h.action('finale-launch');
