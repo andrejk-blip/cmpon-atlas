@@ -1,0 +1,26 @@
+/* Only the new convoy's existing mobile touch dock changes. The dock remains
+   outside the canvas, so steering, firing and choosing a threat can coexist. */
+.arcade-layout .arcade-touch .convoy240-touch-control{display:none}
+.arcade-layout .arcade-touch .convoy240-touch-control[hidden]{display:none!important}
+@media(max-width:960px){
+ .arcade-layout .convoy240-controls .arcade-touch-actions{
+  flex:1;min-width:0;max-width:232px;width:auto;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:48px 48px;gap:6px
+ }
+ .arcade-layout .convoy240-controls #arcade-boost-touch{display:none}
+ .arcade-layout .convoy240-controls .arcade-touch #arcade-fire-touch{
+  grid-column:1;grid-row:1;min-width:0;min-height:48px;height:48px;gap:5px
+ }
+ .arcade-layout .convoy240-controls #arcade-fire-touch svg{width:23px;height:23px}
+ .arcade-layout .convoy240-controls #arcade-fire-touch small{font-size:10px;letter-spacing:0}
+ .arcade-layout .convoy240-controls .arcade-touch [data-action=arcade-missile]{grid-column:2;grid-row:1;min-height:48px;height:48px}
+ .arcade-layout .convoy240-controls .arcade-touch .convoy240-touch-control{
+  display:flex;align-items:center;justify-content:center;min-width:0;min-height:48px;height:48px;padding:3px;white-space:pre-line;line-height:1.3;font-size:10px;letter-spacing:0;touch-action:manipulation
+ }
+ .arcade-layout .convoy240-controls #convoy240-target-touch{grid-column:1;grid-row:2;background:#183b50;border-color:#8abfd0;color:#dcf6ff}
+ .arcade-layout .convoy240-controls #convoy240-cover-touch{grid-column:2;grid-row:2;background:#1b493f;border-color:#81c7ac;color:#e0fff1}
+ .arcade-layout .convoy240-controls .convoy240-touch-control:disabled{opacity:.58}
+}
+@media(max-width:960px) and (orientation:landscape){
+ .arcade-layout .convoy240-controls[data-game-status=playing]{grid-template-columns:108px minmax(0,1fr) 168px}
+ .arcade-layout .convoy240-controls .arcade-touch-actions{width:152px;max-width:152px;flex:none}
+}

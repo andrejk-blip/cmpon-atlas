@@ -213,7 +213,23 @@
   if(!active(e)||e.status!=='escortbrief')return old.brief(e);const m=api.mission(e),modern=api.active(e);
   return '<div class="arcade-state-card briefing escort-brief"><span class="arcade-serial">ГИПЕРПРОСТРАНСТВО · КОНВОЙ '+(e.stage+1)+' / 3</span><h3>'+esc(m.subtitle)+'.</h3><p>'+esc(modern?m.brief:'Продолжение сохранённого перехода. Сохраните два транспорта и перехватывайте ударные звенья.')+'</p><div class="brief-command"><span class="hostile-symbol">⌖</span><div><b>Сохраните минимум два транспорта</b><small>Маневрируйте к цели и удерживайте огонь. Зелёный прицел означает захват. Ракеты разбивают тяжёлые цели; '+(modern?'прикрытие рассеивает снаряды и защищает конвой на 2,8 секунды.':'прикрытие рассеивает снаряды и восстанавливает щиты.')+'</small></div></div>'+(modern?'<div class="brief-command"><span class="crystal-symbol">↗</span><div><b>Красное поле — опасность. Светлый просвет — путь.</b><small>Заранее сместите корабль в свободное окно. Схема показывает ваше положение; столкновение наносит большой урон.</small></div></div>':'')+'<button class="arcade-play" data-action="citadel-launch">ПРИКРЫТЬ КОНВОЙ ↗</button></div>';
  };
- updateExpeditionHUD=function(){const result=old.ui();const e=ARCADE.engine;if(!active(e))return result;const m=api.mission(e),o=ops(e),route=document.getElementById('citadel-route');
+ function touchControls(e){
+  const on=!!e&&api.active(e),screen=document.getElementById('arcade-screen');screen?.classList.toggle('convoy240-controls',on);
+  const actions=screen?.querySelector?.('.arcade-touch-actions');
+  // Only a real mounted DOM can receive controls. Minimal simulation DOMs do
+  // not pretend that markup has been inserted; gameplay never depends on it.
+  if(actions?.nodeType!==1||typeof actions.querySelector!=='function')return;
+  const make=(id,action,label)=>{let b=actions.querySelector('#'+id);if(!b&&on){b=document.createElement('button');b.type='button';b.id=id;b.className='convoy240-touch-control';b.dataset.action=action;b.textContent=label;actions.appendChild(b);}return b;};
+  const target=make('convoy240-target-touch','citadel-target','ЦЕЛЬ'),cover=make('convoy240-cover-touch','arcade-pulse','ПРИКРЫТИЕ');
+  const playing=on&&e.status==='playing';
+  if(target){target.hidden=!on;target.disabled=!playing;target.setAttribute('aria-label','Сменить цель конвоя');}
+  if(cover){const wait=on?Math.ceil(e.player.pulseCooldown||0):0,protectedNow=on&&e.escort.ops240.cover>0;
+   cover.hidden=!on;cover.disabled=!playing||wait>0;
+   const label='ПРИКРЫТИЕ\n'+(protectedNow?'АКТИВНО':wait>0?wait+' с':'ГОТОВО');if(cover.textContent!==label)cover.textContent=label;
+   cover.setAttribute('aria-label',protectedNow?'Прикрытие активно':wait>0?'Прикрытие: готово через '+wait+' секунд':'Прикрыть конвой');
+  }
+ }
+ updateExpeditionHUD=function(){const result=old.ui();const e=ARCADE.engine;touchControls(e);if(!active(e))return result;const m=api.mission(e),o=ops(e),route=document.getElementById('citadel-route');
   if(route){const html='<div class="route-missions"><b>'+esc(m.subtitle.toUpperCase())+'</b></div><div class="route-count"><small>ГИПЕРПЕРЕХОД</small><b>'+Math.round(e.escort.distance*100)+'<em>%</em></b></div><div class="route-count"><small>ЗВЕНЬЯ ПРОТИВНИКА</small><b>'+o.next+'<em>/'+m.groups.length+'</em></b></div><p>Манёвр · перехват · прикрытие<br>Сохраните 2 / 3 транспорта</p>';if(route.innerHTML!==html)route.innerHTML=html;}
   const brief=document.getElementById('arcade-mission-brief');if(brief)brief.textContent=api.active(e)?m.brief:'Гиперпереход · сохраните два транспорта';return result;
  };

@@ -81,8 +81,9 @@
  function aimState(e){const t=e.target(),p=e.player,cone=e.assist?.24:.19,d=t?V3.sub(t.pos,p.pos):[0,0,-1];return {locked:!!t&&t.warp<=0&&d[2]<-4&&Math.hypot(d[0],d[1])<=-d[2]*cone+t.r,targetId:t?.id||null,cone};}
  proto.fire=function(){if(!active(this))return old.fire.call(this);const p=this.player;if(this.status!=='playing'||p.shotCooldown>0)return false;
   const state=aimState(this),t=this.target(),direction=state.locked?V3.norm(V3.sub(V3.add(t.pos,V3.scale(t.vel||[0,0,0],dist(p.pos,t.pos)/210)),p.pos)):[0,0,-1];
-  p.shotCooldown=.24*Math.pow(.9,this.upgrades.weapons);this.shots++;
-  for(const side of [-1,1])this.bullets.push({pos:V3.add(p.pos,[side*1.2,0,-3]),vel:V3.scale(direction,210),life:1.7,damage:12*(1+.25*this.upgrades.weapons),r:.7,type:'laser',color:'#82f8ff'});this.emit('shot');return true;
+  // Escort guns retain a viable baseline even when all campaign upgrades went to armour.
+  const guns=Math.max(1,this.upgrades.weapons);p.shotCooldown=.24*Math.pow(.9,guns);this.shots++;
+  for(const side of [-1,1])this.bullets.push({pos:V3.add(p.pos,[side*1.2,0,-3]),vel:V3.scale(direction,210),life:1.7,damage:12*(1+.25*guns),r:.7,type:'laser',color:'#82f8ff'});this.emit('shot');return true;
  };
  proto.hit=function(x,amount){if(!active(this)||!x.convoy240)return old.hit.call(this,x,amount);if(x.dead||x.warp>0)return;
   if(x.torpedo){x.hp-=amount;x.hit=.15;if(x.hp<=0){x.dead=true;this.escort.ops240.stats.intercepts++;this.explosions.push({pos:x.pos.slice(),life:.5,max:.5,color:x.color});this.emit('destroy','escort');}return;}
@@ -130,6 +131,6 @@
   const jammers=this.enemies.filter(x=>x.channel&&!x.dead).length;c.distance=clamp(c.distance+dt/m.duration*(1-Math.min(.22,jammers*.11)),0,1);if(c.distance>=1&&o.next===m.groups.length)this.finishEscort();this.target();
  };
  proto.objective=function(...args){if(!active(this))return old.objective.apply(this,args);const m=missions[this.stage],o=this.escort.ops240,f=o.fields.find(f=>!f.passed),g=o.groups.find(g=>g.state==='telegraph');return{title:m.subtitle,detail:f?'Поле через '+f.warning.toFixed(1)+' с · корабль целиком в светлый проход':g?'Готовится '+g.name.toLowerCase()+' → '+this.escort.allies[g.target].name:'Сохраните 2/3 транспорта · группа '+o.next+'/'+m.groups.length+' · совместите прицел с целью'};};
- globalThis.CITADEL_CONVOY=Object.freeze({version:VERSION,active,legacyActive:legacy.active,mission:e=>active(e)?missions[e.stage]:legacy.mission(e),roles,formation,
+ globalThis.CITADEL_CONVOY=Object.freeze({version:VERSION,active,legacyActive:legacy.active,mission:e=>legacy.active(e)?legacy.mission(e):missions[e.stage],roles,formation,
   inspection:e=>active(e)?{version:VERSION,stage:e.stage,time:+e.escort.time.toFixed(2),wave:e.escort.wave,total:missions[e.stage].groups.length,distance:e.escort.distance,formation:formation(e),allies:e.escort.allies.map(a=>({hp:a.hp,dead:a.dead})),groups:e.escort.ops240.groups.map(g=>({id:g.id,kind:g.kind,state:g.state,time:g.time,target:g.target,members:members(e,g).length})),fields:e.escort.ops240.fields.map(f=>({...f})),aim:{...e.escort.ops240.aim},stats:{...e.escort.ops240.stats},events:e.escort.ops240.events.map(x=>({...x}))}:legacy.inspection(e)});
 })();
