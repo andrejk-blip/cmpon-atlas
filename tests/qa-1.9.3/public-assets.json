@@ -1,0 +1,42 @@
+{
+  "codeCommit": "2ac210486fd9ec15e33a6a460c33399c5e44f675",
+  "pagesRun": 39183849886,
+  "checks": [
+    {
+      "file": "index.html",
+      "sha256": "c265091c650cb436aa03d0a3f8f667b23e5180f0306b8cec79be4b48b0f02a03",
+      "matches": true,
+      "bytes": 11886
+    },
+    {
+      "file": "atlas.html",
+      "sha256": "d936cb922d93a6a6682de1265f41ff2c8686f4d38683170061335d1f6f904d40",
+      "matches": true,
+      "bytes": 11906
+    },
+    {
+      "file": "version.json",
+      "sha256": "f504c45bce1bf99fc35e49a4181207de2c3f790831ad9cbfda3ce1d8168fcef7",
+      "matches": true,
+      "bytes": 6028
+    },
+    {
+      "file": "assets/citadel-runtime-v1.9.3.js?build=193r2",
+      "sha256": "a026d1eb50252a37f01b7ad097e610252bccacc01f078d6ee75a3bf86e029a6e",
+      "matches": true,
+      "bytes": 13989
+    },
+    {
+      "file": "assets/citadel-sfx-v1.9.3.js",
+      "sha256": "6cabac06fb8d99684ca2a8252510f90a964ca1d427aa4ac7b214115ee1b9af7b",
+      "matches": true,
+      "bytes": 34687
+    },
+    {
+      "file": "assets/citadel-comic-v1.9.3.js",
+      "sha256": "fca0b9603ff434f060cd9b16680584d062e907bb4f9b32998a438804f7064964",
+      "matches": true,
+      "bytes": 17256
+    }
+  ]
+}

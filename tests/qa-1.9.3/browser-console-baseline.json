@@ -1,0 +1,14 @@
+[
+  {
+    "level": "error",
+    "message": "RangeError: Maximum call stack size exceeded\n    at RequirementArcade.scoped (https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-sfx-v1.9.1.js:388:26)\n    at s.emitWrapper (https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-comic-v1.9.1.js:107:27)\n    at RequirementArcade.scoped (https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-sfx-v1.9.1.js:408:68)\n    at s.emitWrapper (https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-comic-v1.9.1.js:107:27)\n    at RequirementArcade.scoped (https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-sfx-v1.9.1.js:408:68)\n    at s.emitWrapper (https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-comic-v1.9.1.js:107:27)\n    at RequirementArcade.scoped (https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-sfx-v1.9.1.js:408:68)\n    at s.emitWrapper (https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-comic-v1.9.1.js:107:27)\n    at RequirementArcade.scoped (https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-sfx-v1.9.1.js:408:68)\n    at s.emitWrapper (https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-comic-v1.9.1.js:107:27)",
+    "timestamp": "2026-10-19T01:01:27.111Z",
+    "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-sfx-v1.9.1.js"
+  },
+  {
+    "level": "error",
+    "message": "RangeError: Maximum call stack size exceeded\n    at RequirementArcade.scoped (https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-sfx-v1.9.1.js:388:26)\n    at s.emitWrapper (https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-comic-v1.9.1.js:107:27)\n    at RequirementArcade.scoped (https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-sfx-v1.9.1.js:408:68)\n    at s.emitWrapper (https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-comic-v1.9.1.js:107:27)\n    at RequirementArcade.scoped (https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-sfx-v1.9.1.js:408:68)\n    at s.emitWrapper (https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-comic-v1.9.1.js:107:27)\n    at RequirementArcade.scoped (https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-sfx-v1.9.1.js:408:68)\n    at s.emitWrapper (https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-comic-v1.9.1.js:107:27)\n    at RequirementArcade.scoped (https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-sfx-v1.9.1.js:408:68)\n    at s.emitWrapper (https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-comic-v1.9.1.js:107:27)",
+    "timestamp": "2026-10-19T01:01:54.567Z",
+    "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-sfx-v1.9.1.js"
+  }
+]

@@ -1,0 +1,55 @@
+{
+  "environment": "Real cloud Chrome, final runtime 193r2, no accelerated steps; QA operator disabled for manual card/audio/pause interactions",
+  "observations": [
+    {
+      "wallSeconds": 70,
+      "status": "lesson",
+      "gameSeconds": 1.76,
+      "frames": 76,
+      "updates": 71,
+      "errors": 0
+    },
+    {
+      "action": "Click correct answer through the rendered card UI",
+      "visibleOutcome": "Разобрано учебных ситуаций 1 / 23; corrected requirement displayed"
+    },
+    {
+      "wallSeconds": 112,
+      "action": "Click Зачитать",
+      "voiceSource": "recorded",
+      "audioContext": "running",
+      "errors": 0
+    },
+    {
+      "action": "Вернуться в полёт, then actual #arcade-pause",
+      "visibleOutcome": "Пауза; ПРОДОЛЖИТЬ"
+    },
+    {
+      "wallSeconds": 202,
+      "status": "paused",
+      "gameSeconds": 1.8,
+      "frames": 216,
+      "updates": 165,
+      "listeners": 70,
+      "errors": 0
+    },
+    {
+      "action": "Click ПРОДОЛЖИТЬ"
+    },
+    {
+      "wallSeconds": 310,
+      "status": "playing",
+      "gameSeconds": 5.96,
+      "frames": 324,
+      "updates": 269,
+      "listeners": 70,
+      "errors": 0
+    }
+  ],
+  "limitations": [
+    "No subjective listening/audio-quality claim",
+    "Global listener count rose once from 57 to 70 at the first actual DOM interaction and then stayed at 70 during subsequent audio/pause/resume clicks; this one-time addition was not source-attributed. Full automatic campaigns stayed at 57 and controlled module reload stress stayed at 60.",
+    "emitChanges in the QA driver is not sampled while its automatic operator is disabled; runtime frame/update/failure counters remain active.",
+    "cards/frameCalls count only QA-operator actions, so they are not used as measures of the manual session; real UI showed 1/23 answered, and runtime updates/renders continued."
+  ]
+}

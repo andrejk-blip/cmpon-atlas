@@ -1,0 +1,364 @@
+{
+  "mode": "normal",
+  "finished": null,
+  "status": "playing",
+  "level": 1,
+  "levels": [
+    1
+  ],
+  "cards": 1,
+  "wallSeconds": 196,
+  "simulatedSeconds": 7.88,
+  "frameCalls": 197,
+  "emitChanges": 0,
+  "maxInputGapMs": 7216,
+  "metrics": {
+    "listeners": 57,
+    "peakListeners": 59,
+    "rafCalls": 214,
+    "rafDone": 211,
+    "rafPending": 1,
+    "rafPeak": 1,
+    "errors": [],
+    "heap": 63093631
+  },
+  "runtime": {
+    "version": "1.9.3",
+    "frames": 210,
+    "updates": 197,
+    "renders": 210,
+    "recoveries": 0,
+    "failures": 0,
+    "stopped": false,
+    "contextLost": false,
+    "pending": true,
+    "stage": "idle",
+    "lastFrameAge": 754,
+    "lastUpdateAge": 753,
+    "lastRenderAge": 684,
+    "recoverySave": "none",
+    "faults": [],
+    "events": [
+      {
+        "at": 830,
+        "kind": "detach",
+        "status": "unknown",
+        "stage": null,
+        "phase": "other",
+        "finale": null,
+        "wave": null,
+        "seconds": null,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "webgl"
+      },
+      {
+        "at": 1018,
+        "kind": "engine",
+        "status": "briefing",
+        "stage": 0,
+        "phase": "other",
+        "finale": null,
+        "wave": 0,
+        "seconds": 0,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 1018,
+        "kind": "transition",
+        "status": "briefing",
+        "stage": 0,
+        "phase": "other",
+        "finale": null,
+        "wave": 0,
+        "seconds": 0,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 2422,
+        "kind": "transition",
+        "status": "playing",
+        "stage": 0,
+        "phase": "other",
+        "finale": null,
+        "wave": 0,
+        "seconds": 0.04,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 29244,
+        "kind": "transition",
+        "status": "paused",
+        "stage": 0,
+        "phase": "other",
+        "finale": null,
+        "wave": 0,
+        "seconds": 1.24,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 35548,
+        "kind": "arcade-resume",
+        "status": "paused",
+        "stage": 0,
+        "phase": "other",
+        "finale": null,
+        "wave": 0,
+        "seconds": 1.24,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 36127,
+        "kind": "transition",
+        "status": "playing",
+        "stage": 0,
+        "phase": "other",
+        "finale": null,
+        "wave": 0,
+        "seconds": 1.28,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 44876,
+        "kind": "transition",
+        "status": "lesson",
+        "stage": 0,
+        "phase": "other",
+        "finale": null,
+        "wave": 0,
+        "seconds": 1.76,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 45034,
+        "kind": "citadel-lesson-next",
+        "status": "lesson",
+        "stage": 0,
+        "phase": "other",
+        "finale": null,
+        "wave": 0,
+        "seconds": 1.76,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 45879,
+        "kind": "transition",
+        "status": "playing",
+        "stage": 0,
+        "phase": "battle",
+        "finale": null,
+        "wave": 1,
+        "seconds": 1.8,
+        "mode": "normal",
+        "enemies": 5,
+        "renderer": "canvas"
+      }
+    ]
+  },
+  "sound": {
+    "context": "running",
+    "loaded": 16,
+    "active": 0,
+    "cacheBytes": 2046804,
+    "played": {
+      "shot": 42,
+      "robot-hit": 6,
+      "missile": 4,
+      "robot-death": 4
+    }
+  },
+  "voice": {
+    "busy": false,
+    "source": null
+  },
+  "samples": [
+    {
+      "wallSeconds": 10,
+      "gameSeconds": 0,
+      "level": 1,
+      "listeners": 57,
+      "heap": 141020503,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 22,
+      "gameSeconds": 1,
+      "level": 1,
+      "listeners": 57,
+      "heap": 34505352,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 34,
+      "gameSeconds": 1,
+      "level": 1,
+      "listeners": 57,
+      "heap": 56070998,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 44,
+      "gameSeconds": 2,
+      "level": 1,
+      "listeners": 57,
+      "heap": 35281970,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 56,
+      "gameSeconds": 2,
+      "level": 1,
+      "listeners": 57,
+      "heap": 54952729,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 68,
+      "gameSeconds": 3,
+      "level": 1,
+      "listeners": 57,
+      "heap": 22604508,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 80,
+      "gameSeconds": 3,
+      "level": 1,
+      "listeners": 57,
+      "heap": 81474554,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 92,
+      "gameSeconds": 4,
+      "level": 1,
+      "listeners": 57,
+      "heap": 31601721,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 104,
+      "gameSeconds": 4,
+      "level": 1,
+      "listeners": 57,
+      "heap": 22780742,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 114,
+      "gameSeconds": 5,
+      "level": 1,
+      "listeners": 57,
+      "heap": 88859820,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 126,
+      "gameSeconds": 5,
+      "level": 1,
+      "listeners": 57,
+      "heap": 37940288,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 138,
+      "gameSeconds": 5,
+      "level": 1,
+      "listeners": 57,
+      "heap": 40630486,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 150,
+      "gameSeconds": 6,
+      "level": 1,
+      "listeners": 57,
+      "heap": 86278133,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 162,
+      "gameSeconds": 7,
+      "level": 1,
+      "listeners": 57,
+      "heap": 37659478,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 174,
+      "gameSeconds": 7,
+      "level": 1,
+      "listeners": 57,
+      "heap": 53670835,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 186,
+      "gameSeconds": 7,
+      "level": 1,
+      "listeners": 57,
+      "heap": 61624528,
+      "rafPending": 1
+    }
+  ],
+  "transitions": [
+    {
+      "level": 1,
+      "status": "briefing",
+      "phase": "orientation",
+      "finale": null,
+      "seconds": 0
+    },
+    {
+      "level": 1,
+      "status": "playing",
+      "phase": "orientation",
+      "finale": null,
+      "seconds": 0
+    },
+    {
+      "level": 1,
+      "status": "paused",
+      "phase": "orientation",
+      "finale": null,
+      "seconds": 1.24
+    },
+    {
+      "level": 1,
+      "status": "playing",
+      "phase": "orientation",
+      "finale": null,
+      "seconds": 1.24
+    },
+    {
+      "level": 1,
+      "status": "lesson",
+      "phase": "orientation",
+      "finale": null,
+      "seconds": 1.76
+    },
+    {
+      "level": 1,
+      "status": "playing",
+      "phase": "battle",
+      "finale": null,
+      "seconds": 1.76
+    }
+  ]
+}

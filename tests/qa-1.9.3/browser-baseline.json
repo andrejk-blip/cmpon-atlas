@@ -1,0 +1,158 @@
+{
+  "mode": "baseline",
+  "accelerated": true,
+  "rafInputCalls": 22,
+  "finished": "frame-failed",
+  "status": "docking",
+  "level": 1,
+  "levels": [
+    1
+  ],
+  "cards": 2,
+  "wallSeconds": 50,
+  "simulatedSeconds": 42.77,
+  "frameCalls": 2537,
+  "emitChanges": 2536,
+  "maxInputGapMs": 1262,
+  "metrics": {
+    "listeners": 52,
+    "peakListeners": 54,
+    "rafCalls": 25,
+    "rafDone": 25,
+    "rafPending": 0,
+    "rafPeak": 1,
+    "errors": [
+      {
+        "type": "RangeError",
+        "message": "Uncaught RangeError: Maximum call stack size exceeded",
+        "file": "citadel-sfx-v1.9.1.js",
+        "line": 388
+      }
+    ],
+    "heap": 24630870
+  },
+  "runtime": null,
+  "sound": {
+    "context": "running",
+    "loaded": 16,
+    "active": 0,
+    "cacheBytes": 2046804,
+    "played": {
+      "shot": 23,
+      "missile": 13,
+      "robot-hit": 12,
+      "destroy": 14,
+      "robot-death": 14
+    }
+  },
+  "voice": {
+    "busy": false,
+    "source": null
+  },
+  "samples": [
+    {
+      "wallSeconds": 10,
+      "gameSeconds": 18,
+      "level": 1,
+      "listeners": 52,
+      "heap": 66573837,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 22,
+      "gameSeconds": 42,
+      "level": 1,
+      "listeners": 52,
+      "heap": 24818179,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 32,
+      "gameSeconds": 43,
+      "level": 1,
+      "listeners": 52,
+      "heap": 30179827,
+      "rafPending": 0
+    },
+    {
+      "wallSeconds": 44,
+      "gameSeconds": 43,
+      "level": 1,
+      "listeners": 52,
+      "heap": 24506861,
+      "rafPending": 0
+    }
+  ],
+  "transitions": [
+    {
+      "level": 1,
+      "status": "briefing",
+      "phase": "orientation",
+      "finale": null,
+      "seconds": 0
+    },
+    {
+      "level": 1,
+      "status": "playing",
+      "phase": "orientation",
+      "finale": null,
+      "seconds": 0
+    },
+    {
+      "level": 1,
+      "status": "lesson",
+      "phase": "orientation",
+      "finale": null,
+      "seconds": 1.77
+    },
+    {
+      "level": 1,
+      "status": "playing",
+      "phase": "battle",
+      "finale": null,
+      "seconds": 1.78
+    },
+    {
+      "level": 1,
+      "status": "playing",
+      "phase": "battle",
+      "finale": null,
+      "seconds": 10.73
+    },
+    {
+      "level": 1,
+      "status": "playing",
+      "phase": "battle",
+      "finale": null,
+      "seconds": 25.48
+    },
+    {
+      "level": 1,
+      "status": "playing",
+      "phase": "retrieve",
+      "finale": null,
+      "seconds": 36.28
+    },
+    {
+      "level": 1,
+      "status": "lesson",
+      "phase": "retrieve",
+      "finale": null,
+      "seconds": 38.81
+    },
+    {
+      "level": 1,
+      "status": "playing",
+      "phase": "dock",
+      "finale": null,
+      "seconds": 38.83
+    },
+    {
+      "level": 1,
+      "status": "docking",
+      "phase": "dock",
+      "finale": null,
+      "seconds": 42.77
+    }
+  ]
+}

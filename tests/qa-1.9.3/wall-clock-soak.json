@@ -1,0 +1,624 @@
+{
+  "environment": "Node VM, ordinary inputs, 16 ms wall-clock pacing; no browser/render/audio-device claim",
+  "complete": true,
+  "wallSeconds": 1742,
+  "runs": [
+    {
+      "mode": "normal",
+      "pass": true,
+      "frames": 50929,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "cards": 23,
+      "wallSeconds": 901,
+      "simulatedSeconds": 848.15,
+      "emitChanges": 0,
+      "samples": [
+        {
+          "wallSeconds": 1,
+          "frame": 0,
+          "level": 1,
+          "heap": 45788384,
+          "listeners": 65,
+          "emitChanges": 0
+        },
+        {
+          "wallSeconds": 33,
+          "frame": 1800,
+          "level": 1,
+          "heap": 47398672,
+          "listeners": 65,
+          "emitChanges": 0
+        },
+        {
+          "wallSeconds": 68,
+          "frame": 3600,
+          "level": 2,
+          "heap": 48587760,
+          "listeners": 65,
+          "emitChanges": 0
+        },
+        {
+          "wallSeconds": 100,
+          "frame": 5400,
+          "level": 2,
+          "heap": 48714184,
+          "listeners": 65,
+          "emitChanges": 0
+        },
+        {
+          "wallSeconds": 130,
+          "frame": 7200,
+          "level": 3,
+          "heap": 49028296,
+          "listeners": 65,
+          "emitChanges": 0
+        },
+        {
+          "wallSeconds": 159,
+          "frame": 9000,
+          "level": 4,
+          "heap": 48999456,
+          "listeners": 65,
+          "emitChanges": 0
+        },
+        {
+          "wallSeconds": 189,
+          "frame": 10800,
+          "level": 4,
+          "heap": 49103472,
+          "listeners": 65,
+          "emitChanges": 0
+        },
+        {
+          "wallSeconds": 218,
+          "frame": 12600,
+          "level": 4,
+          "heap": 49169288,
+          "listeners": 65,
+          "emitChanges": 0
+        },
+        {
+          "wallSeconds": 248,
+          "frame": 14400,
+          "level": 4,
+          "heap": 49289784,
+          "listeners": 65,
+          "emitChanges": 0
+        },
+        {
+          "wallSeconds": 283,
+          "frame": 16200,
+          "level": 5,
+          "heap": 49646416,
+          "listeners": 65,
+          "emitChanges": 0
+        },
+        {
+          "wallSeconds": 313,
+          "frame": 18000,
+          "level": 6,
+          "heap": 49578288,
+          "listeners": 65,
+          "emitChanges": 0
+        },
+        {
+          "wallSeconds": 343,
+          "frame": 19800,
+          "level": 6,
+          "heap": 49485944,
+          "listeners": 65,
+          "emitChanges": 0
+        },
+        {
+          "wallSeconds": 372,
+          "frame": 21600,
+          "level": 7,
+          "heap": 49801456,
+          "listeners": 65,
+          "emitChanges": 0
+        },
+        {
+          "wallSeconds": 403,
+          "frame": 23400,
+          "level": 8,
+          "heap": 49758504,
+          "listeners": 65,
+          "emitChanges": 0
+        },
+        {
+          "wallSeconds": 440,
+          "frame": 25200,
+          "level": 8,
+          "heap": 50024256,
+          "listeners": 65,
+          "emitChanges": 0
+        },
+        {
+          "wallSeconds": 470,
+          "frame": 27000,
+          "level": 9,
+          "heap": 50051056,
+          "listeners": 65,
+          "emitChanges": 0
+        },
+        {
+          "wallSeconds": 499,
+          "frame": 28800,
+          "level": 9,
+          "heap": 50093984,
+          "listeners": 65,
+          "emitChanges": 0
+        },
+        {
+          "wallSeconds": 532,
+          "frame": 30600,
+          "level": 10,
+          "heap": 50472624,
+          "listeners": 65,
+          "emitChanges": 0
+        },
+        {
+          "wallSeconds": 567,
+          "frame": 32400,
+          "level": 10,
+          "heap": 50516920,
+          "listeners": 65,
+          "emitChanges": 0
+        },
+        {
+          "wallSeconds": 602,
+          "frame": 34200,
+          "level": 10,
+          "heap": 50153608,
+          "listeners": 65,
+          "emitChanges": 0
+        },
+        {
+          "wallSeconds": 638,
+          "frame": 36000,
+          "level": 11,
+          "heap": 50247240,
+          "listeners": 65,
+          "emitChanges": 0
+        },
+        {
+          "wallSeconds": 673,
+          "frame": 37800,
+          "level": 12,
+          "heap": 50209496,
+          "listeners": 65,
+          "emitChanges": 0
+        },
+        {
+          "wallSeconds": 702,
+          "frame": 39600,
+          "level": 12,
+          "heap": 50440288,
+          "listeners": 65,
+          "emitChanges": 0
+        },
+        {
+          "wallSeconds": 732,
+          "frame": 41400,
+          "level": 12,
+          "heap": 50408840,
+          "listeners": 65,
+          "emitChanges": 0
+        },
+        {
+          "wallSeconds": 765,
+          "frame": 43200,
+          "level": 13,
+          "heap": 50657168,
+          "listeners": 65,
+          "emitChanges": 0
+        },
+        {
+          "wallSeconds": 799,
+          "frame": 45000,
+          "level": 13,
+          "heap": 50787704,
+          "listeners": 65,
+          "emitChanges": 0
+        },
+        {
+          "wallSeconds": 833,
+          "frame": 46800,
+          "level": 13,
+          "heap": 50803520,
+          "listeners": 65,
+          "emitChanges": 0
+        },
+        {
+          "wallSeconds": 863,
+          "frame": 48600,
+          "level": 14,
+          "heap": 51001280,
+          "listeners": 65,
+          "emitChanges": 0
+        },
+        {
+          "wallSeconds": 892,
+          "frame": 50400,
+          "level": 14,
+          "heap": 50906832,
+          "listeners": 65,
+          "emitChanges": 0
+        }
+      ]
+    },
+    {
+      "mode": "calm",
+      "pass": true,
+      "frames": 47575,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "cards": 23,
+      "wallSeconds": 841,
+      "simulatedSeconds": 792.25,
+      "emitChanges": 0,
+      "samples": [
+        {
+          "wallSeconds": 1,
+          "frame": 0,
+          "level": 1,
+          "heap": 45796416,
+          "listeners": 65,
+          "emitChanges": 0
+        },
+        {
+          "wallSeconds": 34,
+          "frame": 1800,
+          "level": 1,
+          "heap": 47468648,
+          "listeners": 65,
+          "emitChanges": 0
+        },
+        {
+          "wallSeconds": 68,
+          "frame": 3600,
+          "level": 2,
+          "heap": 48565472,
+          "listeners": 65,
+          "emitChanges": 0
+        },
+        {
+          "wallSeconds": 101,
+          "frame": 5400,
+          "level": 3,
+          "heap": 48707704,
+          "listeners": 65,
+          "emitChanges": 0
+        },
+        {
+          "wallSeconds": 131,
+          "frame": 7200,
+          "level": 3,
+          "heap": 48968688,
+          "listeners": 65,
+          "emitChanges": 0
+        },
+        {
+          "wallSeconds": 160,
+          "frame": 9000,
+          "level": 4,
+          "heap": 49023944,
+          "listeners": 65,
+          "emitChanges": 0
+        },
+        {
+          "wallSeconds": 190,
+          "frame": 10800,
+          "level": 4,
+          "heap": 49146584,
+          "listeners": 65,
+          "emitChanges": 0
+        },
+        {
+          "wallSeconds": 219,
+          "frame": 12600,
+          "level": 4,
+          "heap": 49150336,
+          "listeners": 65,
+          "emitChanges": 0
+        },
+        {
+          "wallSeconds": 250,
+          "frame": 14400,
+          "level": 5,
+          "heap": 49347824,
+          "listeners": 65,
+          "emitChanges": 0
+        },
+        {
+          "wallSeconds": 282,
+          "frame": 16200,
+          "level": 6,
+          "heap": 49420408,
+          "listeners": 65,
+          "emitChanges": 0
+        },
+        {
+          "wallSeconds": 312,
+          "frame": 18000,
+          "level": 6,
+          "heap": 49489232,
+          "listeners": 65,
+          "emitChanges": 0
+        },
+        {
+          "wallSeconds": 341,
+          "frame": 19800,
+          "level": 7,
+          "heap": 49561768,
+          "listeners": 65,
+          "emitChanges": 0
+        },
+        {
+          "wallSeconds": 371,
+          "frame": 21600,
+          "level": 7,
+          "heap": 49498472,
+          "listeners": 65,
+          "emitChanges": 0
+        },
+        {
+          "wallSeconds": 407,
+          "frame": 23400,
+          "level": 8,
+          "heap": 50056760,
+          "listeners": 65,
+          "emitChanges": 0
+        },
+        {
+          "wallSeconds": 439,
+          "frame": 25200,
+          "level": 9,
+          "heap": 50095912,
+          "listeners": 65,
+          "emitChanges": 0
+        },
+        {
+          "wallSeconds": 468,
+          "frame": 27000,
+          "level": 9,
+          "heap": 50004296,
+          "listeners": 65,
+          "emitChanges": 0
+        },
+        {
+          "wallSeconds": 500,
+          "frame": 28800,
+          "level": 10,
+          "heap": 50420192,
+          "listeners": 65,
+          "emitChanges": 0
+        },
+        {
+          "wallSeconds": 536,
+          "frame": 30600,
+          "level": 10,
+          "heap": 50453552,
+          "listeners": 65,
+          "emitChanges": 0
+        },
+        {
+          "wallSeconds": 572,
+          "frame": 32400,
+          "level": 10,
+          "heap": 50016216,
+          "listeners": 65,
+          "emitChanges": 0
+        },
+        {
+          "wallSeconds": 606,
+          "frame": 34200,
+          "level": 11,
+          "heap": 50160704,
+          "listeners": 65,
+          "emitChanges": 0
+        },
+        {
+          "wallSeconds": 640,
+          "frame": 36000,
+          "level": 11,
+          "heap": 50210032,
+          "listeners": 65,
+          "emitChanges": 0
+        },
+        {
+          "wallSeconds": 670,
+          "frame": 37800,
+          "level": 12,
+          "heap": 50273808,
+          "listeners": 65,
+          "emitChanges": 0
+        },
+        {
+          "wallSeconds": 700,
+          "frame": 39600,
+          "level": 12,
+          "heap": 50130528,
+          "listeners": 65,
+          "emitChanges": 0
+        },
+        {
+          "wallSeconds": 735,
+          "frame": 41400,
+          "level": 13,
+          "heap": 50716984,
+          "listeners": 65,
+          "emitChanges": 0
+        },
+        {
+          "wallSeconds": 768,
+          "frame": 43200,
+          "level": 13,
+          "heap": 50641016,
+          "listeners": 65,
+          "emitChanges": 0
+        },
+        {
+          "wallSeconds": 799,
+          "frame": 45000,
+          "level": 14,
+          "heap": 50732576,
+          "listeners": 65,
+          "emitChanges": 0
+        },
+        {
+          "wallSeconds": 828,
+          "frame": 46800,
+          "level": 14,
+          "heap": 50758936,
+          "listeners": 65,
+          "emitChanges": 0
+        }
+      ],
+      "entrySha256": "c265091c650cb436aa03d0a3f8f667b23e5180f0306b8cec79be4b48b0f02a03",
+      "sources": [
+        {
+          "file": "assets/citadel-startup-v1.7.1.js",
+          "sha256": "4d65d9f4456488dd2ea7eeab114ecf8cf4723177b854c0598de70a43b200e7c7"
+        },
+        {
+          "file": "assets/citadel-compat-v1.7.1.js",
+          "sha256": "e5ea0b065568c5ebcddcd01d483375560bae36308871dd62a87e5d8e97a46599"
+        },
+        {
+          "file": "assets/atlas-v1.3.5.js",
+          "sha256": "af1f9024313d1ecb798edc19b5039407049916d094c88426f85ba852ac077be8"
+        },
+        {
+          "file": "assets/citadel-records-v1.1.1.js",
+          "sha256": "178c584491b2755e93f2e4469a8663db3bb93c8e970f5cc5bcbe75b0e6dc6183"
+        },
+        {
+          "file": "assets/citadel-mrg-v1.7.0.js",
+          "sha256": "1e2decb0c05426cc0989286558d109235e5f35381a153342434f9400b2d16964"
+        },
+        {
+          "file": "assets/citadel-mrg-view-v1.7.0.js",
+          "sha256": "e82fcc77edafcda95364d3851be748c863c23e6677d43f39c75963d265c0797b"
+        },
+        {
+          "file": "assets/citadel-music-v1.4.2.js",
+          "sha256": "11ba6f8ee1d80e7313e7c7c14d1133cf55f9f124ca29eb8d3ed54aba22aafeb0"
+        },
+        {
+          "file": "assets/citadel-sfx-pack-v1.9.1.js",
+          "sha256": "8dc8128a72045c4136a3460de8900720813861e1979926bfc0c0c872cdac590e"
+        },
+        {
+          "file": "assets/citadel-sfx-v1.9.3.js",
+          "sha256": "6cabac06fb8d99684ca2a8252510f90a964ca1d427aa4ac7b214115ee1b9af7b"
+        },
+        {
+          "file": "assets/citadel-voice-pack-v1.8.2.js",
+          "sha256": "e0a0ac89a7ad348a7b107fef9c067b12227d33b7c1427d3eb7cec5472949fbfe"
+        },
+        {
+          "file": "assets/citadel-field-ui-v1.7.0.js",
+          "sha256": "fb2b2545d45aaad74c1009bf2bd3b775ca6b897c9baf027f2c7cff5de0b02bed"
+        },
+        {
+          "file": "assets/citadel-flight-v1.9.1.js",
+          "sha256": "d8e345e6a7ef05ea3aebcb986042c1c36a809bb6608ccce242d00507178199b7"
+        },
+        {
+          "file": "assets/citadel-aim-v1.7.1.js",
+          "sha256": "6c0251b56e8a798597cc0a3b26bec950739665f4d5fed9980db091ed04b25058"
+        },
+        {
+          "file": "assets/citadel-flight-view-v1.7.1.js",
+          "sha256": "b5e7d58a269a75fb71aba8ccb286e84714e17ef016532086dc8d098443acae91"
+        },
+        {
+          "file": "assets/citadel-pursuit-v1.9.0.js",
+          "sha256": "7e592675d274bc1569cec4585d7f9cd5f89c0499f28bfea05d97ed856e00eb1f"
+        },
+        {
+          "file": "assets/citadel-swarm-v1.9.0.js",
+          "sha256": "f7d4f101894d7d606d839f6d97de309ebbcdd1156129be78f0468732eb629581"
+        },
+        {
+          "file": "assets/citadel-parallax-v1.8.0.js",
+          "sha256": "abbfdb4d46c331cb3c752f27932b2d33349fe6ec761b2e680af5120e0ab34ea8"
+        },
+        {
+          "file": "assets/citadel-decks-v1.9.1.js",
+          "sha256": "c71aea261ff4ca22f6748be7bf3a167021cd3702dbe953192e6609eb1622c444"
+        },
+        {
+          "file": "assets/citadel-input-v1.9.1.js",
+          "sha256": "77b4995131a94d0f6091e69b6abe16e18e3b2a1496112ab1ddf11f7eda6bd3af"
+        },
+        {
+          "file": "assets/citadel-voice-v1.9.0.js",
+          "sha256": "8cad3194303c1be0f77ad177b8c328e72940a9db23a3e32e5c2912920386d286"
+        },
+        {
+          "file": "assets/citadel-comic-v1.9.3.js",
+          "sha256": "fca0b9603ff434f060cd9b16680584d062e907bb4f9b32998a438804f7064964"
+        },
+        {
+          "file": "assets/citadel-interface-v1.9.0.js",
+          "sha256": "1c86ce29791480920e08b5dddc42dadcc1e4bab0916e8da51c16aedb0b1b1291"
+        },
+        {
+          "file": "assets/citadel-story-v1.9.0.js",
+          "sha256": "85f5c018a42f09b20eb7a62a87f4251a02f219027f1f4799e07c774ff43d2c13"
+        },
+        {
+          "file": "assets/atlas-metrics-v0.1.0.js",
+          "sha256": "79700bbff01f5744e1a2eb44a935ed006857eae4e75ce3602aee6cc69d8101e7"
+        },
+        {
+          "file": "assets/atlas-integration-v1.1.4.js",
+          "sha256": "96eaf8cd36e4c9257f0e531d861230f8ca1610973905027ad6f58dc819937220"
+        },
+        {
+          "file": "assets/citadel-academy-bridge-v1.7.0.js",
+          "sha256": "cc33928c4d0b0271bc5205211ee815d56cba9243838053e4d460edee68ba2033"
+        },
+        {
+          "file": "assets/citadel-ui-fixes-v1.9.2.js",
+          "sha256": "364fc8c1e412eb9b73f826845e23646f8906d37c7027aa1f2ae93ba0548cbf16"
+        },
+        {
+          "file": "assets/citadel-runtime-v1.9.3.js",
+          "sha256": "a026d1eb50252a37f01b7ad097e610252bccacc01f078d6ee75a3bf86e029a6e"
+        }
+      ]
+    }
+  ]
+}

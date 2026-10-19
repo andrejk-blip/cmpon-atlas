@@ -1,0 +1,90 @@
+{
+  "kind": "prepared-voice-lifecycle",
+  "version": "1.9.0",
+  "runtimeSha256": "8cad3194303c1be0f77ad177b8c328e72940a9db23a3e32e5c2912920386d286",
+  "packSha256": "e0a0ac89a7ad348a7b107fef9c067b12227d33b7c1427d3eb7cec5472949fbfe",
+  "elapsedMs": 21118,
+  "reports": [
+    {
+      "core": "atlas-v1.3.5.js",
+      "version": "1.9.0",
+      "tests": [
+        {
+          "name": "actual pack covers every unique published/legacy reason and both outcome prefixes with one body per text",
+          "ok": true,
+          "ms": 833
+        },
+        {
+          "name": "all real answer handlers preserve rewards and narrate correct/incorrect explanations, including three lab finals without helper",
+          "ok": true,
+          "ms": 755
+        },
+        {
+          "name": "fetch headers, body, decode and resume must all finish before actual start succeeds",
+          "ok": true,
+          "ms": 710
+        },
+        {
+          "name": "outcome plus body play in order; cached bare replay never repeats a result prefix",
+          "ok": true,
+          "ms": 705
+        },
+        {
+          "name": "cancelling each pending boundary ignores late success, including fetch implementations that ignore AbortSignal",
+          "ok": true,
+          "ms": 3027
+        },
+        {
+          "name": "stop during prefix, stale ended and replacement cannot start the old body or stop the new clip",
+          "ok": true,
+          "ms": 694
+        },
+        {
+          "name": "pause, next card, hidden tab, blur, scene change, mute and engine removal cancel prepared audio promptly",
+          "ok": true,
+          "ms": 5658
+        },
+        {
+          "name": "a card stamp change during decode cancels the pending explanation without waiting for a game tick",
+          "ok": true,
+          "ms": 717
+        },
+        {
+          "name": "voice-only playback reuses an existing context or creates exactly one, independent of muted SFX/music and lexical lab storage",
+          "ok": true,
+          "ms": 1390
+        },
+        {
+          "name": "recorded radio has no duplicate SFX and stopping voice releases music duck without stopping active effects",
+          "ok": true,
+          "ms": 734
+        },
+        {
+          "name": "HTTP, body, decode and resume failures before playback use one truthful stable system fallback",
+          "ok": true,
+          "ms": 3008
+        },
+        {
+          "name": "load watchdog can fallback once; late download or resume cannot restart a recording over system speech",
+          "ok": true,
+          "ms": 701
+        },
+        {
+          "name": "missing recordings/unsupported platforms fail cleanly; late pack availability works without a reload",
+          "ok": true,
+          "ms": 720
+        },
+        {
+          "name": "edited unknown text never plays the old answer; OS voice identity remains stable when available voices reorder",
+          "ok": true,
+          "ms": 720
+        },
+        {
+          "name": "suspended context and disposal stop sources, restore bus gain and leave the shared context open",
+          "ok": true,
+          "ms": 745
+        }
+      ]
+    }
+  ]
+}

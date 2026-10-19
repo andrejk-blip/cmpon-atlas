@@ -1,0 +1,256 @@
+{
+  "version": "1.9.1",
+  "patchSha256": "d8e345e6a7ef05ea3aebcb986042c1c36a809bb6608ccce242d00507178199b7",
+  "wallSeconds": 123.329,
+  "fixtures": {
+    "start": "4d5738ffc4def5518bf6e55e1902d0c3470a8615d4234caf94e2372994dd9771",
+    "stalled": "c7feef4ade0b968128e937a9430038448b1380be61f0e5ea90b5b92b030dd30a"
+  },
+  "method": "Real frozen cores, saved calm campaign/RNG, ordinary actions and keyboard inputs, no resource grants or enemy/objective bypass.",
+  "results": [
+    {
+      "core": "atlas-v1.3.5.js",
+      "coreSha256": "af1f9024313d1ecb798edc19b5039407049916d094c88426f85ba852ac077be8",
+      "passed": 6,
+      "groups": [
+        {
+          "name": "Actual saved level10 reproduces the old moving upward waypoint with the same pilot",
+          "passed": true,
+          "detail": {
+            "seconds": 40.017,
+            "status": "playing",
+            "phase": "battle",
+            "wave": 1,
+            "kills": 8,
+            "hp": 100,
+            "stationHp": 88,
+            "cards": 0,
+            "recoveries": 0,
+            "maxAltitude": 422.269,
+            "maxDistance": 429.534,
+            "initialAltitude": 12
+          }
+        },
+        {
+          "name": "Same start CUP state reaches the next deck using real inputs, all waves, boss and cards",
+          "passed": true,
+          "detail": {
+            "seconds": 105.65,
+            "status": "boarding",
+            "phase": "boarding",
+            "wave": 3,
+            "kills": 36,
+            "hp": 100,
+            "stationHp": 97.6,
+            "cards": 2,
+            "recoveries": 6,
+            "maxAltitude": 50.018,
+            "maxDistance": 135.206,
+            "initialAltitude": 12
+          }
+        },
+        {
+          "name": "Same stalled CUP state reaches the next deck using real inputs, all waves, boss and cards",
+          "passed": true,
+          "detail": {
+            "seconds": 97.733,
+            "status": "boarding",
+            "phase": "boarding",
+            "wave": 3,
+            "kills": 36,
+            "hp": 100,
+            "stationHp": 83.6,
+            "cards": 2,
+            "recoveries": 1,
+            "maxAltitude": 869.289,
+            "maxDistance": 880.289,
+            "initialAltitude": 869.289
+          }
+        },
+        {
+          "name": "Finite world waypoint, real weapon target, pause and checkpoint preserve the recovery",
+          "passed": true,
+          "detail": {
+            "point": [
+              183.48384109724907,
+              -23.951667622351625,
+              -15.033557531390187
+            ],
+            "target": 331,
+            "serializer": "CUP"
+          }
+        },
+        {
+          "name": "Actual G/manual flight/G invalidates the earlier recovery route",
+          "passed": true,
+          "detail": {
+            "manualTravel": 141.99,
+            "newRecovery": true
+          }
+        },
+        {
+          "name": "Normal autopilot still reaches front, rear, side and raised entrances on both campaign ends",
+          "passed": true,
+          "detail": {
+            "runs": 8,
+            "results": [
+              {
+                "stage": 0,
+                "start": "front",
+                "seconds": 8.267
+              },
+              {
+                "stage": 0,
+                "start": "rear",
+                "seconds": 10.45
+              },
+              {
+                "stage": 0,
+                "start": "right",
+                "seconds": 6.433
+              },
+              {
+                "stage": 0,
+                "start": "above",
+                "seconds": 4.15
+              },
+              {
+                "stage": 3,
+                "start": "front",
+                "seconds": 8.267
+              },
+              {
+                "stage": 3,
+                "start": "rear",
+                "seconds": 9.717
+              },
+              {
+                "stage": 3,
+                "start": "right",
+                "seconds": 15.017
+              },
+              {
+                "stage": 3,
+                "start": "above",
+                "seconds": 4.15
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "core": "engine-v1.2.1.js",
+      "coreSha256": "29cf0a79c5887bbdf4e80ba2664b16d50172771f10069cb6f5d274eabbc4cbe8",
+      "passed": 5,
+      "groups": [
+        {
+          "name": "Same start CUP state reaches the next deck using real inputs, all waves, boss and cards",
+          "passed": true,
+          "detail": {
+            "seconds": 101.85,
+            "status": "boarding",
+            "phase": "boarding",
+            "wave": 3,
+            "kills": 36,
+            "hp": 100,
+            "stationHp": 92.8,
+            "cards": 2,
+            "recoveries": 4,
+            "maxAltitude": 48.772,
+            "maxDistance": 136.912,
+            "initialAltitude": 12
+          }
+        },
+        {
+          "name": "Same stalled CUP state reaches the next deck using real inputs, all waves, boss and cards",
+          "passed": true,
+          "detail": {
+            "seconds": 129.4,
+            "status": "boarding",
+            "phase": "boarding",
+            "wave": 3,
+            "kills": 36,
+            "hp": 100,
+            "stationHp": 76.4,
+            "cards": 2,
+            "recoveries": 6,
+            "maxAltitude": 869.289,
+            "maxDistance": 880.289,
+            "initialAltitude": 869.289
+          }
+        },
+        {
+          "name": "Finite world waypoint, real weapon target, pause and checkpoint preserve the recovery",
+          "passed": true,
+          "detail": {
+            "point": [
+              183.48384109724907,
+              -23.951667622351625,
+              -15.033557531390187
+            ],
+            "target": 331,
+            "serializer": "private fixture adapter"
+          }
+        },
+        {
+          "name": "Actual G/manual flight/G invalidates the earlier recovery route",
+          "passed": true,
+          "detail": {
+            "manualTravel": 142.57,
+            "newRecovery": true
+          }
+        },
+        {
+          "name": "Normal autopilot still reaches front, rear, side and raised entrances on both campaign ends",
+          "passed": true,
+          "detail": {
+            "runs": 8,
+            "results": [
+              {
+                "stage": 0,
+                "start": "front",
+                "seconds": 8.417
+              },
+              {
+                "stage": 0,
+                "start": "rear",
+                "seconds": 10.95
+              },
+              {
+                "stage": 0,
+                "start": "right",
+                "seconds": 6.9
+              },
+              {
+                "stage": 0,
+                "start": "above",
+                "seconds": 4.617
+              },
+              {
+                "stage": 3,
+                "start": "front",
+                "seconds": 8.417
+              },
+              {
+                "stage": 3,
+                "start": "rear",
+                "seconds": 10.183
+              },
+              {
+                "stage": 3,
+                "start": "right",
+                "seconds": 17.733
+              },
+              {
+                "stage": 3,
+                "start": "above",
+                "seconds": 4.617
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

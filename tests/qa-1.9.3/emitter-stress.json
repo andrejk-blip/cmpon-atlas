@@ -1,0 +1,220 @@
+{
+  "kind": "structural-zero-delta-stress",
+  "runs": [
+    {
+      "baseline": true,
+      "steps": 3700,
+      "emitChanges": 3701,
+      "error": {
+        "type": "RangeError",
+        "message": "Maximum call stack size exceeded",
+        "stack": [
+          "RangeError: Maximum call stack size exceeded",
+          "    at RequirementArcade.scoped (assets/citadel-sfx-v1.9.1.js:388:26)",
+          "    at s.emitWrapper (assets/citadel-comic-v1.9.1.js:107:27)",
+          "    at RequirementArcade.scoped (assets/citadel-sfx-v1.9.1.js:408:68)",
+          "    at s.emitWrapper (assets/citadel-comic-v1.9.1.js:107:27)",
+          "    at RequirementArcade.scoped (assets/citadel-sfx-v1.9.1.js:408:68)",
+          "    at s.emitWrapper (assets/citadel-comic-v1.9.1.js:107:27)",
+          "    at RequirementArcade.scoped (assets/citadel-sfx-v1.9.1.js:408:68)"
+        ]
+      },
+      "wallSeconds": 0.89,
+      "globalListeners": 60,
+      "initialListeners": 60,
+      "samples": []
+    },
+    {
+      "baseline": false,
+      "steps": 360000,
+      "emitChanges": 0,
+      "error": null,
+      "wallSeconds": 84.4,
+      "globalListeners": 60,
+      "initialListeners": 60,
+      "samples": [
+        {
+          "steps": 0,
+          "listeners": 60,
+          "heap": 60084768
+        },
+        {
+          "steps": 10000,
+          "listeners": 60,
+          "heap": 60326688
+        },
+        {
+          "steps": 20000,
+          "listeners": 60,
+          "heap": 60344792
+        },
+        {
+          "steps": 30000,
+          "listeners": 60,
+          "heap": 60391224
+        },
+        {
+          "steps": 40000,
+          "listeners": 60,
+          "heap": 60374024
+        },
+        {
+          "steps": 50000,
+          "listeners": 60,
+          "heap": 60398304
+        },
+        {
+          "steps": 60000,
+          "listeners": 60,
+          "heap": 60375592
+        },
+        {
+          "steps": 70000,
+          "listeners": 60,
+          "heap": 60415304
+        },
+        {
+          "steps": 80000,
+          "listeners": 60,
+          "heap": 60398480
+        },
+        {
+          "steps": 90000,
+          "listeners": 60,
+          "heap": 60421800
+        },
+        {
+          "steps": 100000,
+          "listeners": 60,
+          "heap": 60402752
+        },
+        {
+          "steps": 110000,
+          "listeners": 60,
+          "heap": 60417872
+        },
+        {
+          "steps": 120000,
+          "listeners": 60,
+          "heap": 60409080
+        },
+        {
+          "steps": 130000,
+          "listeners": 60,
+          "heap": 60427136
+        },
+        {
+          "steps": 140000,
+          "listeners": 60,
+          "heap": 60409208
+        },
+        {
+          "steps": 150000,
+          "listeners": 60,
+          "heap": 60429448
+        },
+        {
+          "steps": 160000,
+          "listeners": 60,
+          "heap": 60411496
+        },
+        {
+          "steps": 170000,
+          "listeners": 60,
+          "heap": 60424128
+        },
+        {
+          "steps": 180000,
+          "listeners": 60,
+          "heap": 60411832
+        },
+        {
+          "steps": 190000,
+          "listeners": 60,
+          "heap": 60430568
+        },
+        {
+          "steps": 200000,
+          "listeners": 60,
+          "heap": 60414360
+        },
+        {
+          "steps": 210000,
+          "listeners": 60,
+          "heap": 60432440
+        },
+        {
+          "steps": 220000,
+          "listeners": 60,
+          "heap": 60411848
+        },
+        {
+          "steps": 230000,
+          "listeners": 60,
+          "heap": 60435376
+        },
+        {
+          "steps": 240000,
+          "listeners": 60,
+          "heap": 60417536
+        },
+        {
+          "steps": 250000,
+          "listeners": 60,
+          "heap": 60435504
+        },
+        {
+          "steps": 260000,
+          "listeners": 60,
+          "heap": 60417552
+        },
+        {
+          "steps": 270000,
+          "listeners": 60,
+          "heap": 60435632
+        },
+        {
+          "steps": 280000,
+          "listeners": 60,
+          "heap": 60415472
+        },
+        {
+          "steps": 290000,
+          "listeners": 60,
+          "heap": 60420984
+        },
+        {
+          "steps": 300000,
+          "listeners": 60,
+          "heap": 60439064
+        },
+        {
+          "steps": 310000,
+          "listeners": 60,
+          "heap": 60421112
+        },
+        {
+          "steps": 320000,
+          "listeners": 60,
+          "heap": 60442312
+        },
+        {
+          "steps": 330000,
+          "listeners": 60,
+          "heap": 60418800
+        },
+        {
+          "steps": 340000,
+          "listeners": 60,
+          "heap": 60442264
+        },
+        {
+          "steps": 350000,
+          "listeners": 60,
+          "heap": 60424376
+        }
+      ]
+    }
+  ],
+  "pass": true
+}

@@ -1,0 +1,1007 @@
+{
+  "version": "1.9.1",
+  "patchSha256": "c71aea261ff4ca22f6748be7bf3a167021cd3702dbe953192e6609eb1622c444",
+  "environment": "Real frozen core code in Node VM; optional native Canvas. No browser or physical-device claim.",
+  "cores": [
+    {
+      "core": "atlas-v1.3.5.js",
+      "coreSha256": "af1f9024313d1ecb798edc19b5039407049916d094c88426f85ba852ac077be8",
+      "groups": [
+        {
+          "name": "teaching-deck unchanged and boss scope isolated",
+          "pass": true,
+          "seconds": 3.87
+        },
+        {
+          "name": "room and campaign progression plus extended navigable maze",
+          "pass": true,
+          "seconds": 1.969
+        },
+        {
+          "name": "visible rocket dash and pounce strike stationary targets and permit touch evasion",
+          "pass": true,
+          "seconds": 6.3,
+          "detail": [
+            {
+              "kind": "rocketeer",
+              "assist": false,
+              "windup": 1.3,
+              "damage": 17.36,
+              "evadeHp": 100
+            },
+            {
+              "kind": "ninja",
+              "assist": false,
+              "windup": 1,
+              "damage": 12.4,
+              "evadeHp": 100
+            },
+            {
+              "kind": "robodog",
+              "assist": false,
+              "windup": 0.65,
+              "damage": 9.92,
+              "evadeHp": 100
+            },
+            {
+              "kind": "rocketeer",
+              "assist": true,
+              "windup": 1.65,
+              "damage": 11.284,
+              "evadeHp": 100
+            },
+            {
+              "kind": "ninja",
+              "assist": true,
+              "windup": 1.25,
+              "damage": 8.06,
+              "evadeHp": 100
+            },
+            {
+              "kind": "robodog",
+              "assist": true,
+              "windup": 0.9,
+              "damage": 6.448,
+              "evadeHp": 100
+            }
+          ]
+        },
+        {
+          "name": "damage growth covers ordinary sniper and shield shots without duplicate scaling",
+          "pass": true,
+          "seconds": 5.906,
+          "detail": [
+            {
+              "kind": "sniper",
+              "assist": false,
+              "room": 1,
+              "damage": 18.46
+            },
+            {
+              "kind": "sniper",
+              "assist": false,
+              "room": 2,
+              "damage": 20.28
+            },
+            {
+              "kind": "sniper",
+              "assist": false,
+              "room": 3,
+              "damage": 22.099999999999998
+            },
+            {
+              "kind": "sniper",
+              "assist": true,
+              "room": 1,
+              "damage": 9.94
+            },
+            {
+              "kind": "sniper",
+              "assist": true,
+              "room": 2,
+              "damage": 10.92
+            },
+            {
+              "kind": "sniper",
+              "assist": true,
+              "room": 3,
+              "damage": 11.9
+            },
+            {
+              "kind": "shield",
+              "assist": false,
+              "room": 1,
+              "damage": 8.52
+            },
+            {
+              "kind": "shield",
+              "assist": false,
+              "room": 2,
+              "damage": 9.36
+            },
+            {
+              "kind": "shield",
+              "assist": false,
+              "room": 3,
+              "damage": 10.2
+            },
+            {
+              "kind": "shield",
+              "assist": true,
+              "room": 1,
+              "damage": 5.538
+            },
+            {
+              "kind": "shield",
+              "assist": true,
+              "room": 2,
+              "damage": 6.0840000000000005
+            },
+            {
+              "kind": "shield",
+              "assist": true,
+              "room": 3,
+              "damage": 6.630000000000001
+            }
+          ]
+        },
+        {
+          "name": "reinforcement delay rear placement cap and interruptible call",
+          "pass": true,
+          "seconds": 4.099,
+          "detail": {
+            "warning": 2.1,
+            "rearMinimumDistance": 29.068883707497264,
+            "cap": 12,
+            "cancelledCall": "0:1"
+          }
+        },
+        {
+          "name": "pause and save restore midwarning midstrike and in flight preserve encounter",
+          "pass": true,
+          "seconds": 8.461,
+          "detail": [
+            {
+              "name": "warning",
+              "hp": 88.63999999999999,
+              "score": 0,
+              "spawned": 11
+            },
+            {
+              "name": "extended-maze-warning",
+              "hp": 91.84,
+              "score": 0,
+              "spawned": 20
+            },
+            {
+              "name": "ninja-windup",
+              "hp": 100,
+              "score": 0,
+              "spawned": 7
+            },
+            {
+              "name": "dash-strike",
+              "hp": 87.6,
+              "score": 0,
+              "spawned": 7
+            },
+            {
+              "name": "rocketeer-windup",
+              "hp": 82.64,
+              "score": 0,
+              "spawned": 7
+            },
+            {
+              "name": "rocket-flight",
+              "hp": 82.64,
+              "score": 0,
+              "spawned": 7
+            }
+          ]
+        },
+        {
+          "name": "pulse cancels preparations and nearby rockets and respects shields and walls",
+          "pass": true,
+          "seconds": 2.986
+        },
+        {
+          "name": "terminal requires current enemies and its complete queue without resetting wrong answers",
+          "pass": true,
+          "seconds": 2.46
+        },
+        {
+          "name": "future-room guards neither lock the terminal nor occupy current reinforcement slots",
+          "pass": true,
+          "seconds": 1.213
+        },
+        {
+          "name": "shared contact damage cooldown respects armor assist pause cards and saved time",
+          "pass": true,
+          "seconds": 6.451,
+          "detail": [
+            {
+              "level": 2,
+              "assist": false,
+              "damage": 3,
+              "cooldown": 0.9
+            },
+            {
+              "level": 2,
+              "assist": true,
+              "damage": 1.9500000000000002,
+              "cooldown": 0.9
+            },
+            {
+              "level": 5,
+              "assist": false,
+              "damage": 3,
+              "cooldown": 0.9
+            },
+            {
+              "level": 5,
+              "assist": true,
+              "damage": 1.9500000000000002,
+              "cooldown": 0.9
+            },
+            {
+              "level": 13,
+              "assist": false,
+              "damage": 3,
+              "cooldown": 0.9
+            },
+            {
+              "level": 13,
+              "assist": true,
+              "damage": 1.9500000000000002,
+              "cooldown": 0.9
+            }
+          ]
+        },
+        {
+          "name": "unreachable guard returns after a saved warning with its identity health and rewards intact",
+          "pass": true,
+          "seconds": 2.742,
+          "detail": {
+            "warning": 2.1,
+            "recoveredId": 1,
+            "preservedHp": 17,
+            "distance": 8
+          }
+        },
+        {
+          "name": "1.9.0 completed partial and open-card checkpoints migrate without refilling waves",
+          "pass": true,
+          "seconds": 4.68
+        },
+        {
+          "name": "legacy in-progress save retains player map enemy health and finite grace",
+          "pass": true,
+          "seconds": 2.249
+        },
+        {
+          "name": "real complete rooms ordinary input both modes desktop and mobile",
+          "pass": true,
+          "seconds": 90.946,
+          "detail": [
+            {
+              "level": 2,
+              "assist": false,
+              "minimumHp": 81.6,
+              "reinforcementAttacks": 0,
+              "time": 28.65,
+              "status": "stageclear",
+              "finale": null
+            },
+            {
+              "level": 5,
+              "assist": false,
+              "minimumHp": 87.04,
+              "reinforcementAttacks": 3,
+              "time": 32.53,
+              "status": "stageclear",
+              "finale": null
+            },
+            {
+              "level": 8,
+              "assist": false,
+              "minimumHp": 77.15,
+              "reinforcementAttacks": 6,
+              "time": 49.02,
+              "status": "stageclear",
+              "finale": null
+            },
+            {
+              "level": 11,
+              "assist": false,
+              "minimumHp": 71.2,
+              "reinforcementAttacks": 10,
+              "time": 61.87,
+              "status": "finalebrief",
+              "finale": "boss"
+            },
+            {
+              "level": 13,
+              "assist": false,
+              "minimumHp": 70.08,
+              "reinforcementAttacks": 8,
+              "time": 89.12,
+              "status": "boarding",
+              "finale": "mrg"
+            },
+            {
+              "level": 2,
+              "assist": true,
+              "minimumHp": 95,
+              "reinforcementAttacks": 0,
+              "time": 29.62,
+              "status": "stageclear",
+              "finale": null
+            },
+            {
+              "level": 5,
+              "assist": true,
+              "minimumHp": 93.86,
+              "reinforcementAttacks": 2,
+              "time": 26.63,
+              "status": "stageclear",
+              "finale": null
+            },
+            {
+              "level": 8,
+              "assist": true,
+              "minimumHp": 96.13,
+              "reinforcementAttacks": 3,
+              "time": 44.3,
+              "status": "stageclear",
+              "finale": null
+            },
+            {
+              "level": 11,
+              "assist": true,
+              "minimumHp": 91.89,
+              "reinforcementAttacks": 6,
+              "time": 48.97,
+              "status": "finalebrief",
+              "finale": "boss"
+            },
+            {
+              "level": 13,
+              "assist": true,
+              "minimumHp": 83.54,
+              "reinforcementAttacks": 7,
+              "time": 80.97,
+              "status": "boarding",
+              "finale": "mrg"
+            }
+          ]
+        }
+      ],
+      "completions": [
+        {
+          "level": 2,
+          "assist": false,
+          "mobile": false,
+          "minimumHp": 81.6,
+          "maximumAlive": 5,
+          "score": 5000,
+          "status": "stageclear",
+          "finale": null,
+          "rooms": [
+            {
+              "room": 1,
+              "time": 8.85,
+              "hp": 81.6,
+              "kills": 5,
+              "survivors": 0,
+              "pending": 0,
+              "initial": 5,
+              "spawned": 0,
+              "wavesLanded": 0,
+              "reinforcementAttacks": 0,
+              "reinforcementHits": 0
+            },
+            {
+              "room": 2,
+              "time": 9.95,
+              "hp": 96,
+              "kills": 5,
+              "survivors": 0,
+              "pending": 0,
+              "initial": 5,
+              "spawned": 0,
+              "wavesLanded": 0,
+              "reinforcementAttacks": 0,
+              "reinforcementHits": 0
+            },
+            {
+              "room": 3,
+              "time": 8.97,
+              "hp": 96,
+              "kills": 5,
+              "survivors": 0,
+              "pending": 0,
+              "initial": 5,
+              "spawned": 0,
+              "wavesLanded": 0,
+              "reinforcementAttacks": 0,
+              "reinforcementHits": 0
+            }
+          ],
+          "cardsTime": 27.76666666666637,
+          "kills": 15,
+          "spawned": 0,
+          "wavesLanded": 0,
+          "reinforcementAttacks": 0,
+          "attacksByRoom": [
+            0,
+            0,
+            0
+          ],
+          "time": 28.649999999999654
+        },
+        {
+          "level": 5,
+          "assist": false,
+          "mobile": false,
+          "minimumHp": 87.04,
+          "maximumAlive": 9,
+          "score": 6430,
+          "status": "stageclear",
+          "finale": null,
+          "rooms": [
+            {
+              "room": 1,
+              "time": 8.23,
+              "hp": 87.04,
+              "kills": 8,
+              "survivors": 0,
+              "pending": 0,
+              "initial": 6,
+              "spawned": 8,
+              "wavesLanded": 1,
+              "reinforcementAttacks": 2,
+              "reinforcementHits": 6
+            },
+            {
+              "room": 2,
+              "time": 10.83,
+              "hp": 87.73,
+              "kills": 9,
+              "survivors": 0,
+              "pending": 0,
+              "initial": 7,
+              "spawned": 17,
+              "wavesLanded": 2,
+              "reinforcementAttacks": 1,
+              "reinforcementHits": 6
+            },
+            {
+              "room": 3,
+              "time": 12.45,
+              "hp": 88.74,
+              "kills": 11,
+              "survivors": 0,
+              "pending": 0,
+              "initial": 8,
+              "spawned": 28,
+              "wavesLanded": 4,
+              "reinforcementAttacks": 0,
+              "reinforcementHits": 9
+            }
+          ],
+          "cardsTime": 31.516666666666158,
+          "kills": 28,
+          "spawned": 28,
+          "wavesLanded": 4,
+          "reinforcementAttacks": 3,
+          "attacksByRoom": [
+            2,
+            1,
+            0
+          ],
+          "time": 32.53333333333277
+        },
+        {
+          "level": 8,
+          "assist": false,
+          "mobile": false,
+          "minimumHp": 77.15,
+          "maximumAlive": 11,
+          "score": 7630,
+          "status": "stageclear",
+          "finale": null,
+          "rooms": [
+            {
+              "room": 1,
+              "time": 11.32,
+              "hp": 80.16,
+              "kills": 10,
+              "survivors": 0,
+              "pending": 0,
+              "initial": 7,
+              "spawned": 10,
+              "wavesLanded": 1,
+              "reinforcementAttacks": 1,
+              "reinforcementHits": 9
+            },
+            {
+              "room": 2,
+              "time": 19.78,
+              "hp": 77.15,
+              "kills": 13,
+              "survivors": 0,
+              "pending": 0,
+              "initial": 8,
+              "spawned": 23,
+              "wavesLanded": 3,
+              "reinforcementAttacks": 3,
+              "reinforcementHits": 31
+            },
+            {
+              "room": 3,
+              "time": 16.47,
+              "hp": 81.39,
+              "kills": 15,
+              "survivors": 0,
+              "pending": 0,
+              "initial": 9,
+              "spawned": 38,
+              "wavesLanded": 6,
+              "reinforcementAttacks": 2,
+              "reinforcementHits": 31
+            }
+          ],
+          "cardsTime": 47.56666666666525,
+          "kills": 38,
+          "spawned": 38,
+          "wavesLanded": 6,
+          "reinforcementAttacks": 6,
+          "attacksByRoom": [
+            1,
+            3,
+            2
+          ],
+          "time": 49.01666666666517
+        },
+        {
+          "level": 11,
+          "assist": false,
+          "mobile": false,
+          "minimumHp": 71.2,
+          "maximumAlive": 10,
+          "score": 8450,
+          "status": "finalebrief",
+          "finale": "boss",
+          "rooms": [
+            {
+              "room": 1,
+              "time": 13.27,
+              "hp": 88.64,
+              "kills": 13,
+              "survivors": 0,
+              "pending": 0,
+              "initial": 8,
+              "spawned": 13,
+              "wavesLanded": 2,
+              "reinforcementAttacks": 4,
+              "reinforcementHits": 30
+            },
+            {
+              "room": 2,
+              "time": 29.15,
+              "hp": 75.04,
+              "kills": 15,
+              "survivors": 0,
+              "pending": 0,
+              "initial": 9,
+              "spawned": 28,
+              "wavesLanded": 5,
+              "reinforcementAttacks": 3,
+              "reinforcementHits": 38
+            },
+            {
+              "room": 3,
+              "time": 18.33,
+              "hp": 71.2,
+              "kills": 17,
+              "survivors": 0,
+              "pending": 0,
+              "initial": 10,
+              "spawned": 45,
+              "wavesLanded": 8,
+              "reinforcementAttacks": 3,
+              "reinforcementHits": 38
+            }
+          ],
+          "cardsTime": 60.74999999999783,
+          "kills": 45,
+          "spawned": 45,
+          "wavesLanded": 8,
+          "reinforcementAttacks": 10,
+          "attacksByRoom": [
+            4,
+            3,
+            3
+          ],
+          "time": 61.866666666664436
+        },
+        {
+          "level": 13,
+          "assist": false,
+          "mobile": false,
+          "minimumHp": 70.08,
+          "maximumAlive": 10,
+          "score": 7680,
+          "status": "boarding",
+          "finale": "mrg",
+          "rooms": [
+            {
+              "room": 1,
+              "time": 22.43,
+              "hp": 88,
+              "kills": 13,
+              "survivors": 0,
+              "pending": 0,
+              "initial": 8,
+              "spawned": 13,
+              "wavesLanded": 2,
+              "reinforcementAttacks": 1,
+              "reinforcementHits": 20
+            },
+            {
+              "room": 2,
+              "time": 20.82,
+              "hp": 70.08,
+              "kills": 16,
+              "survivors": 0,
+              "pending": 0,
+              "initial": 9,
+              "spawned": 29,
+              "wavesLanded": 5,
+              "reinforcementAttacks": 2,
+              "reinforcementHits": 40
+            },
+            {
+              "room": 3,
+              "time": 40.47,
+              "hp": 77.2,
+              "kills": 19,
+              "survivors": 0,
+              "pending": 0,
+              "initial": 10,
+              "spawned": 48,
+              "wavesLanded": 8,
+              "reinforcementAttacks": 5,
+              "reinforcementHits": 36
+            }
+          ],
+          "cardsTime": 83.7166666666632,
+          "kills": 48,
+          "spawned": 48,
+          "wavesLanded": 8,
+          "reinforcementAttacks": 8,
+          "attacksByRoom": [
+            1,
+            2,
+            5
+          ],
+          "time": 89.1166666666629
+        },
+        {
+          "level": 2,
+          "assist": true,
+          "mobile": true,
+          "minimumHp": 95,
+          "maximumAlive": 5,
+          "score": 5000,
+          "status": "stageclear",
+          "finale": null,
+          "rooms": [
+            {
+              "room": 1,
+              "time": 8.75,
+              "hp": 95,
+              "kills": 5,
+              "survivors": 0,
+              "pending": 0,
+              "initial": 5,
+              "spawned": 0,
+              "wavesLanded": 0,
+              "reinforcementAttacks": 0,
+              "reinforcementHits": 0
+            },
+            {
+              "room": 2,
+              "time": 11.12,
+              "hp": 97.4,
+              "kills": 5,
+              "survivors": 0,
+              "pending": 0,
+              "initial": 5,
+              "spawned": 0,
+              "wavesLanded": 0,
+              "reinforcementAttacks": 0,
+              "reinforcementHits": 0
+            },
+            {
+              "room": 3,
+              "time": 8.87,
+              "hp": 97.6,
+              "kills": 5,
+              "survivors": 0,
+              "pending": 0,
+              "initial": 5,
+              "spawned": 0,
+              "wavesLanded": 0,
+              "reinforcementAttacks": 0,
+              "reinforcementHits": 0
+            }
+          ],
+          "cardsTime": 28.733333333332983,
+          "kills": 15,
+          "spawned": 0,
+          "wavesLanded": 0,
+          "reinforcementAttacks": 0,
+          "attacksByRoom": [
+            0,
+            0,
+            0
+          ],
+          "time": 29.616666666666266
+        },
+        {
+          "level": 5,
+          "assist": true,
+          "mobile": true,
+          "minimumHp": 93.86,
+          "maximumAlive": 7,
+          "score": 5770,
+          "status": "stageclear",
+          "finale": null,
+          "rooms": [
+            {
+              "room": 1,
+              "time": 8.75,
+              "hp": 97.41,
+              "kills": 6,
+              "survivors": 0,
+              "pending": 0,
+              "initial": 4,
+              "spawned": 6,
+              "wavesLanded": 1,
+              "reinforcementAttacks": 0,
+              "reinforcementHits": 5
+            },
+            {
+              "room": 2,
+              "time": 5.88,
+              "hp": 93.86,
+              "kills": 7,
+              "survivors": 0,
+              "pending": 0,
+              "initial": 5,
+              "spawned": 13,
+              "wavesLanded": 2,
+              "reinforcementAttacks": 1,
+              "reinforcementHits": 5
+            },
+            {
+              "room": 3,
+              "time": 10.93,
+              "hp": 96.93,
+              "kills": 9,
+              "survivors": 0,
+              "pending": 0,
+              "initial": 6,
+              "spawned": 22,
+              "wavesLanded": 3,
+              "reinforcementAttacks": 1,
+              "reinforcementHits": 8
+            }
+          ],
+          "cardsTime": 25.566666666666496,
+          "kills": 22,
+          "spawned": 22,
+          "wavesLanded": 3,
+          "reinforcementAttacks": 2,
+          "attacksByRoom": [
+            0,
+            1,
+            1
+          ],
+          "time": 26.633333333333102
+        },
+        {
+          "level": 8,
+          "assist": true,
+          "mobile": true,
+          "minimumHp": 96.13,
+          "maximumAlive": 9,
+          "score": 6970,
+          "status": "stageclear",
+          "finale": null,
+          "rooms": [
+            {
+              "room": 1,
+              "time": 9.32,
+              "hp": 96.13,
+              "kills": 8,
+              "survivors": 0,
+              "pending": 0,
+              "initial": 5,
+              "spawned": 8,
+              "wavesLanded": 1,
+              "reinforcementAttacks": 1,
+              "reinforcementHits": 8
+            },
+            {
+              "room": 2,
+              "time": 18.58,
+              "hp": 97.17,
+              "kills": 11,
+              "survivors": 0,
+              "pending": 0,
+              "initial": 6,
+              "spawned": 19,
+              "wavesLanded": 3,
+              "reinforcementAttacks": 1,
+              "reinforcementHits": 27
+            },
+            {
+              "room": 3,
+              "time": 15.2,
+              "hp": 96.15,
+              "kills": 13,
+              "survivors": 0,
+              "pending": 0,
+              "initial": 7,
+              "spawned": 32,
+              "wavesLanded": 7,
+              "reinforcementAttacks": 1,
+              "reinforcementHits": 19
+            }
+          ],
+          "cardsTime": 43.099999999998836,
+          "kills": 32,
+          "spawned": 32,
+          "wavesLanded": 7,
+          "reinforcementAttacks": 3,
+          "attacksByRoom": [
+            1,
+            1,
+            1
+          ],
+          "time": 44.29999999999877
+        },
+        {
+          "level": 11,
+          "assist": true,
+          "mobile": true,
+          "minimumHp": 91.89,
+          "maximumAlive": 9,
+          "score": 7680,
+          "status": "finalebrief",
+          "finale": "boss",
+          "rooms": [
+            {
+              "room": 1,
+              "time": 12.32,
+              "hp": 93.64,
+              "kills": 11,
+              "survivors": 0,
+              "pending": 0,
+              "initial": 6,
+              "spawned": 11,
+              "wavesLanded": 2,
+              "reinforcementAttacks": 3,
+              "reinforcementHits": 20
+            },
+            {
+              "room": 2,
+              "time": 18.93,
+              "hp": 91.89,
+              "kills": 13,
+              "survivors": 0,
+              "pending": 0,
+              "initial": 7,
+              "spawned": 24,
+              "wavesLanded": 4,
+              "reinforcementAttacks": 1,
+              "reinforcementHits": 20
+            },
+            {
+              "room": 3,
+              "time": 16.88,
+              "hp": 94.7,
+              "kills": 14,
+              "survivors": 0,
+              "pending": 0,
+              "initial": 8,
+              "spawned": 38,
+              "wavesLanded": 6,
+              "reinforcementAttacks": 2,
+              "reinforcementHits": 31
+            }
+          ],
+          "cardsTime": 48.13333333333188,
+          "kills": 38,
+          "spawned": 38,
+          "wavesLanded": 6,
+          "reinforcementAttacks": 6,
+          "attacksByRoom": [
+            3,
+            1,
+            2
+          ],
+          "time": 48.96666666666517
+        },
+        {
+          "level": 13,
+          "assist": true,
+          "mobile": true,
+          "minimumHp": 83.54,
+          "maximumAlive": 8,
+          "score": 6800,
+          "status": "boarding",
+          "finale": "mrg",
+          "rooms": [
+            {
+              "room": 1,
+              "time": 20.33,
+              "hp": 92.5,
+              "kills": 11,
+              "survivors": 0,
+              "pending": 0,
+              "initial": 6,
+              "spawned": 11,
+              "wavesLanded": 2,
+              "reinforcementAttacks": 3,
+              "reinforcementHits": 29
+            },
+            {
+              "room": 2,
+              "time": 18.6,
+              "hp": 83.54,
+              "kills": 13,
+              "survivors": 0,
+              "pending": 0,
+              "initial": 7,
+              "spawned": 24,
+              "wavesLanded": 5,
+              "reinforcementAttacks": 2,
+              "reinforcementHits": 25
+            },
+            {
+              "room": 3,
+              "time": 36.75,
+              "hp": 90.12,
+              "kills": 16,
+              "survivors": 0,
+              "pending": 0,
+              "initial": 8,
+              "spawned": 40,
+              "wavesLanded": 8,
+              "reinforcementAttacks": 2,
+              "reinforcementHits": 39
+            }
+          ],
+          "cardsTime": 75.68333333333032,
+          "kills": 40,
+          "spawned": 40,
+          "wavesLanded": 8,
+          "reinforcementAttacks": 7,
+          "attacksByRoom": [
+            3,
+            2,
+            2
+          ],
+          "time": 80.96666666666336
+        }
+      ],
+      "serializer": "actual CUP pack/unpack"
+    }
+  ],
+  "pass": true,
+  "seconds": 145.252,
+  "groups": 14
+}

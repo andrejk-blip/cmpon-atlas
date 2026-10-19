@@ -1,0 +1,11 @@
+{
+  "url": "https://andrejk-blip.github.io/cmpon-atlas/",
+  "observedVersion": "1.9.3",
+  "observedReleaseDate": "19.10.2026",
+  "view": "Цитадель ЦСИИ",
+  "rendererLabel": "3D · совместимый режим",
+  "registrationSubmitted": false,
+  "screenshot": "public-1.9.3.jpg",
+  "screenshotSha256": "36ca27ffe78dc156916ecb6cf73fae7edb524024757cd06debc998df41def633",
+  "tabVisibilityObservation": "Opening and closing a second cloud tab did not dispatch visibilitychange; real hidden-tab behavior remains simulated in runtime tests."
+}

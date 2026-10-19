@@ -1,0 +1,181 @@
+{
+  "version": "1.9.1",
+  "runtimeSha256": "77b4995131a94d0f6091e69b6abe16e18e3b2a1496112ab1ddf11f7eda6bd3af",
+  "method": "Actual frozen cores, latest gameplay wrappers, native canvas, real installed pointer and keyboard listeners with capture/bubble event dispatch, actual arcadeInput and projectile collision. No physical Android/browser test.",
+  "results": [
+    {
+      "core": "atlas-v1.3.5.js",
+      "coreSha256": "af1f9024313d1ecb798edc19b5039407049916d094c88426f85ba852ac077be8",
+      "passed": 8,
+      "total": 8,
+      "results": [
+        {
+          "name": "Original mounted touch listeners reproduce firing with no aim point",
+          "ok": true,
+          "detail": {
+            "baseline": "Touch fires but pointerdown/move never update aim"
+          }
+        },
+        {
+          "name": "Real pointerdown/move hits an elevated MRG soldier manually in portrait/landscape/desktop and normal/calm modes",
+          "ok": true,
+          "detail": [
+            {
+              "width": 390,
+              "height": 480,
+              "dpr": 1,
+              "assist": false,
+              "hpAfterManualHit": 79
+            },
+            {
+              "width": 390,
+              "height": 480,
+              "dpr": 1,
+              "assist": true,
+              "hpAfterManualHit": 79
+            },
+            {
+              "width": 844,
+              "height": 330,
+              "dpr": 2,
+              "assist": false,
+              "hpAfterManualHit": 79
+            },
+            {
+              "width": 844,
+              "height": 330,
+              "dpr": 2,
+              "assist": true,
+              "hpAfterManualHit": 79
+            },
+            {
+              "width": 1280,
+              "height": 720,
+              "dpr": 1.5,
+              "assist": false,
+              "hpAfterManualHit": 79
+            },
+            {
+              "width": 1280,
+              "height": 720,
+              "dpr": 1.5,
+              "assist": true,
+              "hpAfterManualHit": 79
+            }
+          ]
+        },
+        {
+          "name": "Deck touch uses the existing ground-plane ray without selecting or following an enemy",
+          "ok": true
+        },
+        {
+          "name": "Joystick, canvas aim and fire button use independent non-primary touch pointers",
+          "ok": true
+        },
+        {
+          "name": "Up, cancel, lost capture, outside release and capture-less browsers do not leave touch fire stuck",
+          "ok": true
+        },
+        {
+          "name": "Pause, hidden page, actual terminal card and new board clear aim; old move cannot reactivate it",
+          "ok": true
+        },
+        {
+          "name": "Existing canvas and remount/replacement bind once; stale canvas pointers cannot claim the new game",
+          "ok": true
+        },
+        {
+          "name": "Mouse and keyboard behavior match the original; flight touches and invalid projections remain inactive",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "core": "engine-v1.2.1.js",
+      "coreSha256": "29cf0a79c5887bbdf4e80ba2664b16d50172771f10069cb6f5d274eabbc4cbe8",
+      "passed": 8,
+      "total": 8,
+      "results": [
+        {
+          "name": "Original mounted touch listeners reproduce firing with no aim point",
+          "ok": true,
+          "detail": {
+            "baseline": "Touch fires but pointerdown/move never update aim"
+          }
+        },
+        {
+          "name": "Real pointerdown/move hits an elevated MRG soldier manually in portrait/landscape/desktop and normal/calm modes",
+          "ok": true,
+          "detail": [
+            {
+              "width": 390,
+              "height": 480,
+              "dpr": 1,
+              "assist": false,
+              "hpAfterManualHit": 79
+            },
+            {
+              "width": 390,
+              "height": 480,
+              "dpr": 1,
+              "assist": true,
+              "hpAfterManualHit": 79
+            },
+            {
+              "width": 844,
+              "height": 330,
+              "dpr": 2,
+              "assist": false,
+              "hpAfterManualHit": 79
+            },
+            {
+              "width": 844,
+              "height": 330,
+              "dpr": 2,
+              "assist": true,
+              "hpAfterManualHit": 79
+            },
+            {
+              "width": 1280,
+              "height": 720,
+              "dpr": 1.5,
+              "assist": false,
+              "hpAfterManualHit": 79
+            },
+            {
+              "width": 1280,
+              "height": 720,
+              "dpr": 1.5,
+              "assist": true,
+              "hpAfterManualHit": 79
+            }
+          ]
+        },
+        {
+          "name": "Deck touch uses the existing ground-plane ray without selecting or following an enemy",
+          "ok": true
+        },
+        {
+          "name": "Joystick, canvas aim and fire button use independent non-primary touch pointers",
+          "ok": true
+        },
+        {
+          "name": "Up, cancel, lost capture, outside release and capture-less browsers do not leave touch fire stuck",
+          "ok": true
+        },
+        {
+          "name": "Pause, hidden page, actual terminal card and new board clear aim; old move cannot reactivate it",
+          "ok": true
+        },
+        {
+          "name": "Existing canvas and remount/replacement bind once; stale canvas pointers cannot claim the new game",
+          "ok": true
+        },
+        {
+          "name": "Mouse and keyboard behavior match the original; flight touches and invalid projections remain inactive",
+          "ok": true
+        }
+      ]
+    }
+  ]
+}
