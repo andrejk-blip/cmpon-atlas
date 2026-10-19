@@ -1,0 +1,7886 @@
+{
+  "version": "2.0.0",
+  "entrySha256": "d1a0de519fec31bf486cf16e510648301eb67a7af7cc464155648dc676d1a591",
+  "scripts": [
+    {
+      "file": "assets/citadel-startup-v1.7.1.js",
+      "sha256": "4d65d9f4456488dd2ea7eeab114ecf8cf4723177b854c0598de70a43b200e7c7"
+    },
+    {
+      "file": "assets/citadel-compat-v1.7.1.js",
+      "sha256": "e5ea0b065568c5ebcddcd01d483375560bae36308871dd62a87e5d8e97a46599"
+    },
+    {
+      "file": "assets/atlas-v1.3.5.js",
+      "sha256": "af1f9024313d1ecb798edc19b5039407049916d094c88426f85ba852ac077be8"
+    },
+    {
+      "file": "assets/citadel-records-v1.1.1.js",
+      "sha256": "178c584491b2755e93f2e4469a8663db3bb93c8e970f5cc5bcbe75b0e6dc6183"
+    },
+    {
+      "file": "assets/citadel-mrg-v1.7.0.js",
+      "sha256": "1e2decb0c05426cc0989286558d109235e5f35381a153342434f9400b2d16964"
+    },
+    {
+      "file": "assets/citadel-mrg-view-v1.7.0.js",
+      "sha256": "e82fcc77edafcda95364d3851be748c863c23e6677d43f39c75963d265c0797b"
+    },
+    {
+      "file": "assets/citadel-music-v1.4.2.js",
+      "sha256": "11ba6f8ee1d80e7313e7c7c14d1133cf55f9f124ca29eb8d3ed54aba22aafeb0"
+    },
+    {
+      "file": "assets/citadel-sfx-pack-v1.9.1.js",
+      "sha256": "8dc8128a72045c4136a3460de8900720813861e1979926bfc0c0c872cdac590e"
+    },
+    {
+      "file": "assets/citadel-sfx-v1.9.3.js",
+      "sha256": "6cabac06fb8d99684ca2a8252510f90a964ca1d427aa4ac7b214115ee1b9af7b"
+    },
+    {
+      "file": "assets/citadel-voice-pack-v1.8.2.js",
+      "sha256": "e0a0ac89a7ad348a7b107fef9c067b12227d33b7c1427d3eb7cec5472949fbfe"
+    },
+    {
+      "file": "assets/citadel-field-ui-v1.7.0.js",
+      "sha256": "fb2b2545d45aaad74c1009bf2bd3b775ca6b897c9baf027f2c7cff5de0b02bed"
+    },
+    {
+      "file": "assets/citadel-flight-v1.9.1.js",
+      "sha256": "d8e345e6a7ef05ea3aebcb986042c1c36a809bb6608ccce242d00507178199b7"
+    },
+    {
+      "file": "assets/citadel-aim-v1.7.1.js",
+      "sha256": "6c0251b56e8a798597cc0a3b26bec950739665f4d5fed9980db091ed04b25058"
+    },
+    {
+      "file": "assets/citadel-flight-view-v1.7.1.js",
+      "sha256": "b5e7d58a269a75fb71aba8ccb286e84714e17ef016532086dc8d098443acae91"
+    },
+    {
+      "file": "assets/citadel-pursuit-v1.9.0.js",
+      "sha256": "7e592675d274bc1569cec4585d7f9cd5f89c0499f28bfea05d97ed856e00eb1f"
+    },
+    {
+      "file": "assets/citadel-swarm-v1.9.0.js",
+      "sha256": "f7d4f101894d7d606d839f6d97de309ebbcdd1156129be78f0468732eb629581"
+    },
+    {
+      "file": "assets/citadel-parallax-v1.8.0.js",
+      "sha256": "abbfdb4d46c331cb3c752f27932b2d33349fe6ec761b2e680af5120e0ab34ea8"
+    },
+    {
+      "file": "assets/citadel-bases-v2.0.0.js",
+      "sha256": "9f7cd4346e947f13a3e4185d3e7080b69cd489c7dce959e03627b8adb89cba5a"
+    },
+    {
+      "file": "assets/citadel-decks-v2.0.0.js",
+      "sha256": "4b5f02f17b26c8962768132fd1328e7bbd483e2c8b2d7499610e68c6478213f2"
+    },
+    {
+      "file": "assets/citadel-input-v1.9.1.js",
+      "sha256": "77b4995131a94d0f6091e69b6abe16e18e3b2a1496112ab1ddf11f7eda6bd3af"
+    },
+    {
+      "file": "assets/citadel-voice-v1.9.0.js",
+      "sha256": "8cad3194303c1be0f77ad177b8c328e72940a9db23a3e32e5c2912920386d286"
+    },
+    {
+      "file": "assets/citadel-comic-v1.9.3.js",
+      "sha256": "fca0b9603ff434f060cd9b16680584d062e907bb4f9b32998a438804f7064964"
+    },
+    {
+      "file": "assets/citadel-interface-v1.9.0.js",
+      "sha256": "1c86ce29791480920e08b5dddc42dadcc1e4bab0916e8da51c16aedb0b1b1291"
+    },
+    {
+      "file": "assets/citadel-story-v1.9.0.js",
+      "sha256": "85f5c018a42f09b20eb7a62a87f4251a02f219027f1f4799e07c774ff43d2c13"
+    },
+    {
+      "file": "assets/atlas-metrics-v0.1.0.js",
+      "sha256": "79700bbff01f5744e1a2eb44a935ed006857eae4e75ce3602aee6cc69d8101e7"
+    },
+    {
+      "file": "assets/atlas-integration-v1.1.4.js",
+      "sha256": "96eaf8cd36e4c9257f0e531d861230f8ca1610973905027ad6f58dc819937220"
+    },
+    {
+      "file": "assets/citadel-academy-bridge-v1.7.0.js",
+      "sha256": "cc33928c4d0b0271bc5205211ee815d56cba9243838053e4d460edee68ba2033"
+    },
+    {
+      "file": "assets/citadel-ui-fixes-v1.9.2.js",
+      "sha256": "364fc8c1e412eb9b73f826845e23646f8906d37c7027aa1f2ae93ba0548cbf16"
+    },
+    {
+      "file": "assets/citadel-bases-view-v2.0.0.js",
+      "sha256": "f7842ac05ea42812593dab4ad05742095569f2e4f17be27fb711b03f43055e8f"
+    },
+    {
+      "file": "assets/citadel-runtime-v1.9.3.js",
+      "sha256": "a026d1eb50252a37f01b7ad097e610252bccacc01f078d6ee75a3bf86e029a6e"
+    }
+  ],
+  "mode": "normal",
+  "seed": 417147,
+  "pass": true,
+  "error": null,
+  "resumedDiagnostic": false,
+  "frames": 57251,
+  "simulatedSeconds": 953.52,
+  "status": "won",
+  "phase": "debrief",
+  "finale": "victory",
+  "levels": [
+    {
+      "level": 1,
+      "started": 0,
+      "minHp": 100,
+      "minStationHp": 95,
+      "frames": 3046,
+      "peakEnemies": 7,
+      "duration": 50.67
+    },
+    {
+      "level": 2,
+      "started": 50.67,
+      "minHp": 94,
+      "minStationHp": 95,
+      "frames": 3903,
+      "peakEnemies": 15,
+      "duration": 64.98
+    },
+    {
+      "level": 3,
+      "started": 115.65,
+      "minHp": 100,
+      "minStationHp": 95,
+      "frames": 3365,
+      "peakEnemies": 4,
+      "duration": 56.05
+    },
+    {
+      "level": 4,
+      "started": 171.7,
+      "minHp": 100,
+      "minStationHp": 100,
+      "frames": 5699,
+      "peakEnemies": 0,
+      "duration": 94.93
+    },
+    {
+      "level": 5,
+      "started": 266.63,
+      "minHp": 89.1,
+      "minStationHp": 100,
+      "frames": 4454,
+      "peakEnemies": 19,
+      "duration": 74.17
+    },
+    {
+      "level": 6,
+      "started": 340.8,
+      "minHp": 100,
+      "minStationHp": 100,
+      "frames": 3723,
+      "peakEnemies": 4,
+      "duration": 62.02
+    },
+    {
+      "level": 7,
+      "started": 402.82,
+      "minHp": 100,
+      "minStationHp": 100,
+      "frames": 2839,
+      "peakEnemies": 18,
+      "duration": 47.26
+    },
+    {
+      "level": 8,
+      "started": 450.08,
+      "minHp": 94.1,
+      "minStationHp": 100,
+      "frames": 4512,
+      "peakEnemies": 22,
+      "duration": 75.14
+    },
+    {
+      "level": 9,
+      "started": 525.22,
+      "minHp": 100,
+      "minStationHp": 100,
+      "frames": 4083,
+      "peakEnemies": 4,
+      "duration": 68.01
+    },
+    {
+      "level": 10,
+      "started": 593.23,
+      "minHp": 71.2,
+      "minStationHp": 90,
+      "frames": 4534,
+      "peakEnemies": 9,
+      "duration": 75.52
+    },
+    {
+      "level": 11,
+      "started": 668.75,
+      "minHp": 94.92,
+      "minStationHp": 93,
+      "frames": 4290,
+      "peakEnemies": 22,
+      "duration": 71.45
+    },
+    {
+      "level": 12,
+      "started": 740.2,
+      "minHp": 71.2,
+      "minStationHp": 93,
+      "frames": 4187,
+      "peakEnemies": 4,
+      "duration": 69.77
+    },
+    {
+      "level": 13,
+      "started": 809.97,
+      "minHp": 94.56,
+      "minStationHp": 93,
+      "frames": 4748,
+      "peakEnemies": 24,
+      "duration": 79.08
+    },
+    {
+      "level": 14,
+      "started": 889.05,
+      "minHp": 100,
+      "minStationHp": 93,
+      "frames": 3869,
+      "peakEnemies": 3,
+      "duration": 64.47
+    }
+  ],
+  "cards": [
+    {
+      "level": 1,
+      "kind": "flight",
+      "index": 0,
+      "title": "Полнота · Неполный маршрут"
+    },
+    {
+      "level": 1,
+      "kind": "flight",
+      "index": 1,
+      "title": "Однозначность · «Оперативно» — это сколько?"
+    },
+    {
+      "level": 2,
+      "kind": "terminal",
+      "index": 0,
+      "title": "Однозначность · Два значения слова «актуальный»"
+    },
+    {
+      "level": 2,
+      "kind": "terminal",
+      "index": 1,
+      "title": "Краткость · Полстраницы вместо условия"
+    },
+    {
+      "level": 2,
+      "kind": "terminal",
+      "index": 2,
+      "title": "Атомарность · Согласие и предзаполнение"
+    },
+    {
+      "level": 4,
+      "kind": "flight",
+      "index": 2,
+      "title": "Атомарность · Форма и показатели"
+    },
+    {
+      "level": 4,
+      "kind": "flight",
+      "index": 3,
+      "title": "Проверяемость · «Красивый и удобный интерфейс»"
+    },
+    {
+      "level": 5,
+      "kind": "terminal",
+      "index": 3,
+      "title": "Проверяемость · Невидимая консолидация"
+    },
+    {
+      "level": 5,
+      "kind": "terminal",
+      "index": 4,
+      "title": "Трассируемость · Непонятно, что принимать"
+    },
+    {
+      "level": 5,
+      "kind": "terminal",
+      "index": 5,
+      "title": "Выполнимость · Безостановочная миграция"
+    },
+    {
+      "level": 7,
+      "kind": "flight",
+      "index": 4,
+      "title": "Согласованность · Период и публикация"
+    },
+    {
+      "level": 7,
+      "kind": "flight",
+      "index": 5,
+      "title": "Трассируемость · История без причины"
+    },
+    {
+      "level": 8,
+      "kind": "terminal",
+      "index": 6,
+      "title": "Приоритетность · Всё обязательно"
+    },
+    {
+      "level": 8,
+      "kind": "terminal",
+      "index": 7,
+      "title": "Полнота · Загрузка из ГАР без данных"
+    },
+    {
+      "level": 8,
+      "kind": "terminal",
+      "index": 8,
+      "title": "Однозначность · «Все заинтересованные»"
+    },
+    {
+      "level": 10,
+      "kind": "flight",
+      "index": 6,
+      "title": "Выполнимость · Любой пользователь видит всё"
+    },
+    {
+      "level": 10,
+      "kind": "flight",
+      "index": 7,
+      "title": "Полнота · Дубликаты после вечерней синхронизации"
+    },
+    {
+      "level": 11,
+      "kind": "terminal",
+      "index": 9,
+      "title": "Атомарность · Сбор и архивирование"
+    },
+    {
+      "level": 11,
+      "kind": "terminal",
+      "index": 10,
+      "title": "Проверяемость · Тест без негативного сценария"
+    },
+    {
+      "level": 11,
+      "kind": "terminal",
+      "index": 11,
+      "title": "Понятность · Зашифрованное для заказчика"
+    },
+    {
+      "level": 13,
+      "kind": "final",
+      "index": 0,
+      "title": "Шлюз доказательств"
+    },
+    {
+      "level": 13,
+      "kind": "final",
+      "index": 1,
+      "title": "Выполнимость · Нулевые ограничения"
+    },
+    {
+      "level": 13,
+      "kind": "final",
+      "index": 2,
+      "title": "Приоритетность · Порог риска"
+    }
+  ],
+  "transitions": [
+    {
+      "level": 1,
+      "status": "briefing",
+      "phase": "orientation",
+      "finale": null,
+      "seconds": 0,
+      "hp": 100
+    },
+    {
+      "level": 1,
+      "status": "playing",
+      "phase": "orientation",
+      "finale": null,
+      "seconds": 0,
+      "hp": 100
+    },
+    {
+      "level": 1,
+      "status": "lesson",
+      "phase": "orientation",
+      "finale": null,
+      "seconds": 1.77,
+      "hp": 100
+    },
+    {
+      "level": 1,
+      "status": "playing",
+      "phase": "battle",
+      "finale": null,
+      "seconds": 1.77,
+      "hp": 100
+    },
+    {
+      "level": 1,
+      "status": "playing",
+      "phase": "retrieve",
+      "finale": null,
+      "seconds": 35.3,
+      "hp": 100
+    },
+    {
+      "level": 1,
+      "status": "lesson",
+      "phase": "retrieve",
+      "finale": null,
+      "seconds": 42.98,
+      "hp": 100
+    },
+    {
+      "level": 1,
+      "status": "playing",
+      "phase": "dock",
+      "finale": null,
+      "seconds": 42.98,
+      "hp": 100
+    },
+    {
+      "level": 1,
+      "status": "docking",
+      "phase": "dock",
+      "finale": null,
+      "seconds": 46.85,
+      "hp": 100
+    },
+    {
+      "level": 2,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 50.67,
+      "hp": 100
+    },
+    {
+      "level": 2,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 68.02,
+      "hp": 94
+    },
+    {
+      "level": 2,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 68.02,
+      "hp": 100
+    },
+    {
+      "level": 2,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 93.57,
+      "hp": 95
+    },
+    {
+      "level": 2,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 93.57,
+      "hp": 100
+    },
+    {
+      "level": 2,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 113.2,
+      "hp": 100
+    },
+    {
+      "level": 2,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 113.2,
+      "hp": 100
+    },
+    {
+      "level": 2,
+      "status": "stageclear",
+      "phase": "debrief",
+      "finale": null,
+      "seconds": 115.65,
+      "hp": 100
+    },
+    {
+      "level": 3,
+      "status": "escortbrief",
+      "phase": "escort",
+      "finale": null,
+      "seconds": 115.65,
+      "hp": 100
+    },
+    {
+      "level": 3,
+      "status": "playing",
+      "phase": "escort",
+      "finale": null,
+      "seconds": 115.65,
+      "hp": 100
+    },
+    {
+      "level": 3,
+      "status": "escortclear",
+      "phase": "escort",
+      "finale": null,
+      "seconds": 171.7,
+      "hp": 100
+    },
+    {
+      "level": 4,
+      "status": "briefing",
+      "phase": "pursuit",
+      "finale": null,
+      "seconds": 171.7,
+      "hp": 100
+    },
+    {
+      "level": 4,
+      "status": "playing",
+      "phase": "pursuit",
+      "finale": null,
+      "seconds": 171.7,
+      "hp": 100
+    },
+    {
+      "level": 4,
+      "status": "lesson",
+      "phase": "pursuit",
+      "finale": null,
+      "seconds": 257.7,
+      "hp": 100
+    },
+    {
+      "level": 4,
+      "status": "playing",
+      "phase": "dock",
+      "finale": null,
+      "seconds": 257.7,
+      "hp": 100
+    },
+    {
+      "level": 4,
+      "status": "docking",
+      "phase": "dock",
+      "finale": null,
+      "seconds": 262.82,
+      "hp": 100
+    },
+    {
+      "level": 5,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 266.63,
+      "hp": 100
+    },
+    {
+      "level": 5,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 282.52,
+      "hp": 89.1
+    },
+    {
+      "level": 5,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 282.52,
+      "hp": 100
+    },
+    {
+      "level": 5,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 307.72,
+      "hp": 100
+    },
+    {
+      "level": 5,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 307.72,
+      "hp": 100
+    },
+    {
+      "level": 5,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 338.35,
+      "hp": 100
+    },
+    {
+      "level": 5,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 338.35,
+      "hp": 100
+    },
+    {
+      "level": 5,
+      "status": "stageclear",
+      "phase": "debrief",
+      "finale": null,
+      "seconds": 340.8,
+      "hp": 100
+    },
+    {
+      "level": 6,
+      "status": "escortbrief",
+      "phase": "escort",
+      "finale": null,
+      "seconds": 340.8,
+      "hp": 100
+    },
+    {
+      "level": 6,
+      "status": "playing",
+      "phase": "escort",
+      "finale": null,
+      "seconds": 340.8,
+      "hp": 100
+    },
+    {
+      "level": 6,
+      "status": "escortclear",
+      "phase": "escort",
+      "finale": null,
+      "seconds": 402.82,
+      "hp": 100
+    },
+    {
+      "level": 7,
+      "status": "briefing",
+      "phase": "swarm",
+      "finale": null,
+      "seconds": 402.82,
+      "hp": 100
+    },
+    {
+      "level": 7,
+      "status": "playing",
+      "phase": "swarm",
+      "finale": null,
+      "seconds": 402.82,
+      "hp": 100
+    },
+    {
+      "level": 7,
+      "status": "lesson",
+      "phase": "dock",
+      "finale": null,
+      "seconds": 443.4,
+      "hp": 100
+    },
+    {
+      "level": 7,
+      "status": "playing",
+      "phase": "dock",
+      "finale": null,
+      "seconds": 443.4,
+      "hp": 100
+    },
+    {
+      "level": 7,
+      "status": "docking",
+      "phase": "dock",
+      "finale": null,
+      "seconds": 446.27,
+      "hp": 100
+    },
+    {
+      "level": 8,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 450.08,
+      "hp": 100
+    },
+    {
+      "level": 8,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 467.13,
+      "hp": 100
+    },
+    {
+      "level": 8,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 467.13,
+      "hp": 100
+    },
+    {
+      "level": 8,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 497.65,
+      "hp": 94.1
+    },
+    {
+      "level": 8,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 497.65,
+      "hp": 100
+    },
+    {
+      "level": 8,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 523.25,
+      "hp": 100
+    },
+    {
+      "level": 8,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 523.25,
+      "hp": 100
+    },
+    {
+      "level": 8,
+      "status": "stageclear",
+      "phase": "debrief",
+      "finale": null,
+      "seconds": 525.22,
+      "hp": 100
+    },
+    {
+      "level": 9,
+      "status": "escortbrief",
+      "phase": "escort",
+      "finale": null,
+      "seconds": 525.22,
+      "hp": 100
+    },
+    {
+      "level": 9,
+      "status": "playing",
+      "phase": "escort",
+      "finale": null,
+      "seconds": 525.22,
+      "hp": 100
+    },
+    {
+      "level": 9,
+      "status": "escortclear",
+      "phase": "escort",
+      "finale": null,
+      "seconds": 593.23,
+      "hp": 100
+    },
+    {
+      "level": 10,
+      "status": "briefing",
+      "phase": "orientation",
+      "finale": null,
+      "seconds": 593.23,
+      "hp": 100
+    },
+    {
+      "level": 10,
+      "status": "playing",
+      "phase": "battle",
+      "finale": null,
+      "seconds": 593.23,
+      "hp": 100
+    },
+    {
+      "level": 10,
+      "status": "lesson",
+      "phase": "battle",
+      "finale": null,
+      "seconds": 641.95,
+      "hp": 100
+    },
+    {
+      "level": 10,
+      "status": "playing",
+      "phase": "battle",
+      "finale": null,
+      "seconds": 641.95,
+      "hp": 100
+    },
+    {
+      "level": 10,
+      "status": "playing",
+      "phase": "retrieve",
+      "finale": null,
+      "seconds": 655.32,
+      "hp": 100
+    },
+    {
+      "level": 10,
+      "status": "lesson",
+      "phase": "retrieve",
+      "finale": null,
+      "seconds": 661.08,
+      "hp": 100
+    },
+    {
+      "level": 10,
+      "status": "playing",
+      "phase": "dock",
+      "finale": null,
+      "seconds": 661.08,
+      "hp": 100
+    },
+    {
+      "level": 10,
+      "status": "docking",
+      "phase": "dock",
+      "finale": null,
+      "seconds": 664.93,
+      "hp": 100
+    },
+    {
+      "level": 11,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 668.75,
+      "hp": 100
+    },
+    {
+      "level": 11,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 686.28,
+      "hp": 100
+    },
+    {
+      "level": 11,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 686.28,
+      "hp": 100
+    },
+    {
+      "level": 11,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 710.68,
+      "hp": 100
+    },
+    {
+      "level": 11,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 710.68,
+      "hp": 100
+    },
+    {
+      "level": 11,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 737.75,
+      "hp": 94.92
+    },
+    {
+      "level": 11,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 737.75,
+      "hp": 100
+    },
+    {
+      "level": 12,
+      "status": "finalebrief",
+      "phase": "finale",
+      "finale": "boss",
+      "seconds": 740.2,
+      "hp": 100
+    },
+    {
+      "level": 12,
+      "status": "playing",
+      "phase": "finale",
+      "finale": "boss",
+      "seconds": 740.2,
+      "hp": 100
+    },
+    {
+      "level": 12,
+      "status": "playing",
+      "phase": "finale",
+      "finale": "breach",
+      "seconds": 803.73,
+      "hp": 100
+    },
+    {
+      "level": 12,
+      "status": "docking",
+      "phase": "finale",
+      "finale": "landing",
+      "seconds": 805.95,
+      "hp": 71.2
+    },
+    {
+      "level": 13,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": "maze",
+      "seconds": 809.97,
+      "hp": 100
+    },
+    {
+      "level": 13,
+      "status": "finalcheck",
+      "phase": "boarding",
+      "finale": "maze",
+      "seconds": 830.53,
+      "hp": 94.56
+    },
+    {
+      "level": 13,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": "maze",
+      "seconds": 830.53,
+      "hp": 100
+    },
+    {
+      "level": 13,
+      "status": "finalcheck",
+      "phase": "boarding",
+      "finale": "maze",
+      "seconds": 859.8,
+      "hp": 100
+    },
+    {
+      "level": 13,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": "maze",
+      "seconds": 859.8,
+      "hp": 100
+    },
+    {
+      "level": 13,
+      "status": "finalcheck",
+      "phase": "boarding",
+      "finale": "maze",
+      "seconds": 886.6,
+      "hp": 94.56
+    },
+    {
+      "level": 13,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": "maze",
+      "seconds": 886.6,
+      "hp": 100
+    },
+    {
+      "level": 14,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": "mrg",
+      "seconds": 889.05,
+      "hp": 100
+    },
+    {
+      "level": 14,
+      "status": "docking",
+      "phase": "boarding",
+      "finale": "upload",
+      "seconds": 945.5,
+      "hp": 100
+    },
+    {
+      "level": 14,
+      "status": "won",
+      "phase": "debrief",
+      "finale": "victory",
+      "seconds": 953.52,
+      "hp": 100
+    }
+  ],
+  "progress": [
+    {
+      "kind": "transition",
+      "level": 1,
+      "status": "briefing",
+      "phase": "orientation",
+      "finale": null,
+      "room": null,
+      "seconds": 0,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 5,
+      "kills": 0,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "speed": 15,
+      "yaw": 0,
+      "pitch": 0,
+      "missiles": 8,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 1,
+      "status": "playing",
+      "phase": "orientation",
+      "finale": null,
+      "room": null,
+      "seconds": 0,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 5,
+      "kills": 0,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "speed": 15,
+      "yaw": 0,
+      "pitch": 0,
+      "missiles": 8,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 1,
+      "status": "lesson",
+      "phase": "orientation",
+      "finale": null,
+      "room": null,
+      "seconds": 1.77,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 5,
+      "kills": 0,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        0,
+        0,
+        -38.2
+      ],
+      "speed": 14.95,
+      "yaw": 0,
+      "pitch": 0,
+      "missiles": 10,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 1,
+      "status": "playing",
+      "phase": "battle",
+      "finale": null,
+      "room": null,
+      "seconds": 1.77,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 1,
+      "waveSpawned": 4,
+      "waveTotal": 5,
+      "kills": 0,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        0,
+        0,
+        -38.2
+      ],
+      "speed": 14.95,
+      "yaw": 0,
+      "pitch": 0,
+      "missiles": 10,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": [
+        {
+          "id": 1,
+          "role": "hacker",
+          "hp": 60,
+          "distance": 33.24,
+          "position": [
+            -33.04,
+            1.06,
+            -41.64
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 2,
+          "role": "bomber",
+          "hp": 85,
+          "distance": 229,
+          "position": [
+            219.56,
+            37.77,
+            -91.18
+          ],
+          "hullBlocked": true,
+          "rockBlocked": false
+        },
+        {
+          "id": 3,
+          "role": "fighter",
+          "hp": 40,
+          "distance": 227.99,
+          "position": [
+            147.91,
+            -10.56,
+            -211.37
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 4,
+          "role": "fighter",
+          "hp": 68.75,
+          "distance": 150.62,
+          "position": [
+            -35.69,
+            19.05,
+            -183.28
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        }
+      ]
+    },
+    {
+      "kind": "transition",
+      "level": 1,
+      "status": "playing",
+      "phase": "battle",
+      "finale": null,
+      "room": null,
+      "seconds": 10.73,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 2,
+      "waveSpawned": 4,
+      "waveTotal": 7,
+      "kills": 5,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        29.97,
+        -15.74,
+        -100.16
+      ],
+      "speed": 0,
+      "yaw": 1.18,
+      "pitch": -0.37,
+      "missiles": 8,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": [
+        {
+          "id": 6,
+          "role": "hacker",
+          "hp": 60,
+          "distance": 98.19,
+          "position": [
+            -38.98,
+            21.41,
+            -40.95
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 7,
+          "role": "bomber",
+          "hp": 85,
+          "distance": 182.96,
+          "position": [
+            210.04,
+            -5.12,
+            -69.54
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 8,
+          "role": "fighter",
+          "hp": 40,
+          "distance": 194.51,
+          "position": [
+            216.54,
+            12.35,
+            -147.47
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 9,
+          "role": "fighter",
+          "hp": 68.75,
+          "distance": 154.54,
+          "position": [
+            121.23,
+            18.82,
+            -220
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        }
+      ]
+    },
+    {
+      "kind": "transition",
+      "level": 1,
+      "status": "playing",
+      "phase": "battle",
+      "finale": null,
+      "room": null,
+      "seconds": 22.6,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 3,
+      "waveSpawned": 4,
+      "waveTotal": 8,
+      "kills": 12,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        32.82,
+        -7.18,
+        -118.68
+      ],
+      "speed": 0,
+      "yaw": 1.53,
+      "pitch": -0.54,
+      "missiles": 6,
+      "pulseCooldown": 10.68,
+      "navRecoveries": 0,
+      "enemies": [
+        {
+          "id": 13,
+          "role": "hacker",
+          "hp": 60,
+          "distance": 106.92,
+          "position": [
+            -39.14,
+            7.27,
+            -40.93
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 14,
+          "role": "bomber",
+          "hp": 85,
+          "distance": 173.27,
+          "position": [
+            186.42,
+            16.1,
+            -41.96
+          ],
+          "hullBlocked": true,
+          "rockBlocked": true
+        },
+        {
+          "id": 15,
+          "role": "fighter",
+          "hp": 40,
+          "distance": 192.78,
+          "position": [
+            221.49,
+            30.48,
+            -130.86
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 16,
+          "role": "fighter",
+          "hp": 68.75,
+          "distance": 156.83,
+          "position": [
+            156.32,
+            30.75,
+            -207.57
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        }
+      ]
+    },
+    {
+      "kind": "transition",
+      "level": 1,
+      "status": "playing",
+      "phase": "retrieve",
+      "finale": null,
+      "room": null,
+      "seconds": 35.3,
+      "hp": 100,
+      "stationHp": 95,
+      "wave": 3,
+      "waveSpawned": 8,
+      "waveTotal": 8,
+      "kills": 20,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        20.68,
+        54.81,
+        -113.92
+      ],
+      "speed": 14.79,
+      "yaw": 1.67,
+      "pitch": -0.43,
+      "missiles": 0,
+      "pulseCooldown": 12.53,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 1,
+      "status": "lesson",
+      "phase": "retrieve",
+      "finale": null,
+      "room": null,
+      "seconds": 42.98,
+      "hp": 100,
+      "stationHp": 95,
+      "wave": 3,
+      "waveSpawned": 8,
+      "waveTotal": 8,
+      "kills": 20,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        14.26,
+        2.03,
+        -162.1
+      ],
+      "speed": 24,
+      "yaw": 0.88,
+      "pitch": -0.34,
+      "missiles": 4,
+      "pulseCooldown": 4.85,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 1,
+      "status": "playing",
+      "phase": "dock",
+      "finale": null,
+      "room": null,
+      "seconds": 42.98,
+      "hp": 100,
+      "stationHp": 95,
+      "wave": 3,
+      "waveSpawned": 8,
+      "waveTotal": 8,
+      "kills": 20,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        14.26,
+        2.03,
+        -162.1
+      ],
+      "speed": 24,
+      "yaw": 0.88,
+      "pitch": -0.34,
+      "missiles": 4,
+      "pulseCooldown": 4.85,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 1,
+      "status": "docking",
+      "phase": "dock",
+      "finale": null,
+      "room": null,
+      "seconds": 46.85,
+      "hp": 100,
+      "stationHp": 95,
+      "wave": 3,
+      "waveSpawned": 8,
+      "waveTotal": 8,
+      "kills": 20,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        69.02,
+        10.94,
+        -111.46
+      ],
+      "speed": 22.37,
+      "yaw": 2.48,
+      "pitch": 0.14,
+      "missiles": 4,
+      "pulseCooldown": 0.98,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 2,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "room": 1,
+      "seconds": 50.67,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 0,
+        "ready": false,
+        "remaining": 5,
+        "alive": 5,
+        "pending": 0,
+        "text": "Зачистите комнату · осталось 5",
+        "detail": "В комнате: 5"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 2,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "room": 1,
+      "seconds": 68.02,
+      "hp": 94,
+      "clearance": {
+        "active": true,
+        "room": 0,
+        "ready": true,
+        "remaining": 0,
+        "alive": 0,
+        "pending": 0,
+        "text": "Комната зачищена · терминал открыт",
+        "detail": "В комнате: 0"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 2,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "room": 2,
+      "seconds": 68.02,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 1,
+        "ready": false,
+        "remaining": 5,
+        "alive": 5,
+        "pending": 0,
+        "text": "Зачистите комнату · осталось 5",
+        "detail": "В комнате: 5"
+      }
+    },
+    {
+      "kind": "heartbeat",
+      "level": 2,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "room": 2,
+      "seconds": 88.03,
+      "hp": 95,
+      "clearance": {
+        "active": true,
+        "room": 1,
+        "ready": false,
+        "remaining": 2,
+        "alive": 2,
+        "pending": 0,
+        "text": "Зачистите комнату · осталось 2",
+        "detail": "В комнате: 2"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 2,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "room": 2,
+      "seconds": 93.57,
+      "hp": 95,
+      "clearance": {
+        "active": true,
+        "room": 1,
+        "ready": true,
+        "remaining": 0,
+        "alive": 0,
+        "pending": 0,
+        "text": "Комната зачищена · терминал открыт",
+        "detail": "В комнате: 0"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 2,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "room": 3,
+      "seconds": 93.57,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 2,
+        "ready": false,
+        "remaining": 5,
+        "alive": 5,
+        "pending": 0,
+        "text": "Зачистите комнату · осталось 5",
+        "detail": "В комнате: 5"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 2,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "room": 3,
+      "seconds": 113.2,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 2,
+        "ready": true,
+        "remaining": 0,
+        "alive": 0,
+        "pending": 0,
+        "text": "Комната зачищена · терминал открыт",
+        "detail": "В комнате: 0"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 2,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "room": 4,
+      "seconds": 113.2,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 3,
+        "ready": true,
+        "remaining": 0,
+        "alive": 0,
+        "pending": 0,
+        "text": "Комнаты зачищены · к выходу"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 2,
+      "status": "stageclear",
+      "phase": "debrief",
+      "finale": null,
+      "room": 4,
+      "seconds": 115.65,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 3,
+        "ready": true,
+        "remaining": 0,
+        "alive": 0,
+        "pending": 0,
+        "text": "Комнаты зачищены · к выходу"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 3,
+      "status": "escortbrief",
+      "phase": "escort",
+      "finale": null,
+      "room": null,
+      "seconds": 115.65,
+      "hp": 100,
+      "stationHp": 95,
+      "wave": 3,
+      "waveSpawned": 8,
+      "waveTotal": 8,
+      "kills": 20,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "speed": 24,
+      "yaw": 0,
+      "pitch": 0,
+      "missiles": 10,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 3,
+      "status": "playing",
+      "phase": "escort",
+      "finale": null,
+      "room": null,
+      "seconds": 115.65,
+      "hp": 100,
+      "stationHp": 95,
+      "wave": 3,
+      "waveSpawned": 8,
+      "waveTotal": 8,
+      "kills": 20,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "speed": 24,
+      "yaw": 0,
+      "pitch": 0,
+      "missiles": 10,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "heartbeat",
+      "level": 3,
+      "status": "playing",
+      "phase": "escort",
+      "finale": null,
+      "room": null,
+      "seconds": 135.65,
+      "hp": 100,
+      "stationHp": 95,
+      "wave": 3,
+      "waveSpawned": 8,
+      "waveTotal": 8,
+      "kills": 20,
+      "selected": 41,
+      "lock": 41,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        -11.64,
+        2.55,
+        0
+      ],
+      "speed": 24,
+      "yaw": -0.1,
+      "pitch": -0.01,
+      "missiles": 1,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": [
+        {
+          "id": 41,
+          "role": "jammer",
+          "hp": 47.5,
+          "distance": 136.12,
+          "position": [
+            26.26,
+            3.44,
+            -130.73
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 43,
+          "role": "interceptor",
+          "hp": 140,
+          "distance": 157.47,
+          "position": [
+            38.93,
+            -4.72,
+            -148.95
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 44,
+          "role": "jammer",
+          "hp": 220,
+          "distance": 153.28,
+          "position": [
+            -47.47,
+            0.74,
+            -149.02
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        }
+      ]
+    },
+    {
+      "kind": "heartbeat",
+      "level": 3,
+      "status": "playing",
+      "phase": "escort",
+      "finale": null,
+      "room": null,
+      "seconds": 155.65,
+      "hp": 100,
+      "stationHp": 95,
+      "wave": 3,
+      "waveSpawned": 8,
+      "waveTotal": 8,
+      "kills": 20,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "speed": 24,
+      "yaw": 0,
+      "pitch": 0,
+      "missiles": 0,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 3,
+      "status": "escortclear",
+      "phase": "escort",
+      "finale": null,
+      "room": null,
+      "seconds": 171.7,
+      "hp": 100,
+      "stationHp": 95,
+      "wave": 3,
+      "waveSpawned": 8,
+      "waveTotal": 8,
+      "kills": 20,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "speed": 24,
+      "yaw": 0,
+      "pitch": 0,
+      "missiles": 0,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 4,
+      "status": "briefing",
+      "phase": "pursuit",
+      "finale": null,
+      "room": null,
+      "seconds": 171.7,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 7,
+      "kills": 0,
+      "selected": 54,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "speed": 82,
+      "yaw": 0,
+      "pitch": 0,
+      "missiles": 8,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 4,
+      "status": "playing",
+      "phase": "pursuit",
+      "finale": null,
+      "room": null,
+      "seconds": 171.7,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 7,
+      "kills": 0,
+      "selected": 54,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "speed": 82,
+      "yaw": 0,
+      "pitch": 0,
+      "missiles": 8,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "heartbeat",
+      "level": 4,
+      "status": "playing",
+      "phase": "pursuit",
+      "finale": null,
+      "room": null,
+      "seconds": 191.7,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 7,
+      "kills": 0,
+      "selected": 54,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        -26.87,
+        -9.85,
+        -1640
+      ],
+      "speed": 82,
+      "yaw": -0.01,
+      "pitch": -0.02,
+      "missiles": 8,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "heartbeat",
+      "level": 4,
+      "status": "playing",
+      "phase": "pursuit",
+      "finale": null,
+      "room": null,
+      "seconds": 211.7,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 7,
+      "kills": 0,
+      "selected": 54,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        9.76,
+        11.66,
+        -3280
+      ],
+      "speed": 82,
+      "yaw": -0.02,
+      "pitch": -0.01,
+      "missiles": 10,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "heartbeat",
+      "level": 4,
+      "status": "playing",
+      "phase": "pursuit",
+      "finale": null,
+      "room": null,
+      "seconds": 231.7,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 7,
+      "kills": 0,
+      "selected": 54,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        10.87,
+        -18,
+        -4920
+      ],
+      "speed": 82,
+      "yaw": 0.04,
+      "pitch": 0,
+      "missiles": 12,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "heartbeat",
+      "level": 4,
+      "status": "playing",
+      "phase": "pursuit",
+      "finale": null,
+      "room": null,
+      "seconds": 251.7,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 7,
+      "kills": 0,
+      "selected": 54,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        -24.89,
+        11.87,
+        -6560
+      ],
+      "speed": 82,
+      "yaw": -0.05,
+      "pitch": 0.01,
+      "missiles": 12,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 4,
+      "status": "lesson",
+      "phase": "pursuit",
+      "finale": null,
+      "room": null,
+      "seconds": 257.7,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 7,
+      "kills": 0,
+      "selected": 54,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        -22.34,
+        7.55,
+        -7052
+      ],
+      "speed": 0,
+      "yaw": 0.04,
+      "pitch": -0.02,
+      "missiles": 14,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 4,
+      "status": "playing",
+      "phase": "dock",
+      "finale": null,
+      "room": null,
+      "seconds": 257.7,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 7,
+      "kills": 0,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        78,
+        13,
+        -235
+      ],
+      "speed": 22,
+      "yaw": 3.14,
+      "pitch": 0,
+      "missiles": 14,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 4,
+      "status": "docking",
+      "phase": "dock",
+      "finale": null,
+      "room": null,
+      "seconds": 262.82,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 7,
+      "kills": 0,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        78,
+        13,
+        -112.98
+      ],
+      "speed": 20.99,
+      "yaw": 3.14,
+      "pitch": 0,
+      "missiles": 14,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 5,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "room": 1,
+      "seconds": 266.63,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 0,
+        "ready": false,
+        "remaining": 6,
+        "alive": 6,
+        "pending": 0,
+        "text": "Зачистите комнату · осталось 6",
+        "detail": "В комнате: 6"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 5,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "room": 1,
+      "seconds": 282.52,
+      "hp": 89.1,
+      "clearance": {
+        "active": true,
+        "room": 0,
+        "ready": true,
+        "remaining": 0,
+        "alive": 0,
+        "pending": 0,
+        "text": "Комната зачищена · терминал открыт",
+        "detail": "В комнате: 0"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 5,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "room": 2,
+      "seconds": 282.52,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 1,
+        "ready": false,
+        "remaining": 6,
+        "alive": 6,
+        "pending": 0,
+        "text": "Зачистите комнату · осталось 6",
+        "detail": "В комнате: 6"
+      }
+    },
+    {
+      "kind": "heartbeat",
+      "level": 5,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "room": 2,
+      "seconds": 302.53,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 1,
+        "ready": false,
+        "remaining": 2,
+        "alive": 2,
+        "pending": 0,
+        "text": "Зачистите комнату · осталось 2",
+        "detail": "В комнате: 2"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 5,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "room": 2,
+      "seconds": 307.72,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 1,
+        "ready": true,
+        "remaining": 0,
+        "alive": 0,
+        "pending": 0,
+        "text": "Комната зачищена · терминал открыт",
+        "detail": "В комнате: 0"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 5,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "room": 3,
+      "seconds": 307.72,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 2,
+        "ready": false,
+        "remaining": 7,
+        "alive": 7,
+        "pending": 0,
+        "text": "Зачистите комнату · осталось 7",
+        "detail": "В комнате: 7"
+      }
+    },
+    {
+      "kind": "heartbeat",
+      "level": 5,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "room": 3,
+      "seconds": 327.73,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 2,
+        "ready": false,
+        "remaining": 5,
+        "alive": 5,
+        "pending": 0,
+        "text": "Зачистите комнату · осталось 5",
+        "detail": "В комнате: 5"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 5,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "room": 3,
+      "seconds": 338.35,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 2,
+        "ready": true,
+        "remaining": 0,
+        "alive": 0,
+        "pending": 0,
+        "text": "Комната зачищена · терминал открыт",
+        "detail": "В комнате: 0"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 5,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "room": 4,
+      "seconds": 338.35,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 3,
+        "ready": true,
+        "remaining": 0,
+        "alive": 0,
+        "pending": 0,
+        "text": "Комнаты зачищены · к выходу"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 5,
+      "status": "stageclear",
+      "phase": "debrief",
+      "finale": null,
+      "room": 4,
+      "seconds": 340.8,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 3,
+        "ready": true,
+        "remaining": 0,
+        "alive": 0,
+        "pending": 0,
+        "text": "Комнаты зачищены · к выходу"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 6,
+      "status": "escortbrief",
+      "phase": "escort",
+      "finale": null,
+      "room": null,
+      "seconds": 340.8,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 7,
+      "kills": 0,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "speed": 24,
+      "yaw": 0,
+      "pitch": 0,
+      "missiles": 10,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 6,
+      "status": "playing",
+      "phase": "escort",
+      "finale": null,
+      "room": null,
+      "seconds": 340.8,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 7,
+      "kills": 0,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "speed": 24,
+      "yaw": 0,
+      "pitch": 0,
+      "missiles": 10,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "heartbeat",
+      "level": 6,
+      "status": "playing",
+      "phase": "escort",
+      "finale": null,
+      "room": null,
+      "seconds": 360.82,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 7,
+      "kills": 0,
+      "selected": 231,
+      "lock": 231,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        -15.1,
+        2.54,
+        0
+      ],
+      "speed": 24,
+      "yaw": -0.11,
+      "pitch": 0.02,
+      "missiles": 1,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": [
+        {
+          "id": 231,
+          "role": "jammer",
+          "hp": 41.4,
+          "distance": 134.73,
+          "position": [
+            18.97,
+            7.25,
+            -130.26
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 233,
+          "role": "interceptor",
+          "hp": 156.8,
+          "distance": 155.45,
+          "position": [
+            47.15,
+            0.19,
+            -142.42
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 234,
+          "role": "jammer",
+          "hp": 246.4,
+          "distance": 160.47,
+          "position": [
+            -51.47,
+            9.5,
+            -156.14
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        }
+      ]
+    },
+    {
+      "kind": "heartbeat",
+      "level": 6,
+      "status": "playing",
+      "phase": "escort",
+      "finale": null,
+      "room": null,
+      "seconds": 380.83,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 7,
+      "kills": 0,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "speed": 24,
+      "yaw": 0,
+      "pitch": 0,
+      "missiles": 0,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "heartbeat",
+      "level": 6,
+      "status": "playing",
+      "phase": "escort",
+      "finale": null,
+      "room": null,
+      "seconds": 400.85,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 7,
+      "kills": 0,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "speed": 24,
+      "yaw": 0,
+      "pitch": 0,
+      "missiles": 0,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 6,
+      "status": "escortclear",
+      "phase": "escort",
+      "finale": null,
+      "room": null,
+      "seconds": 402.82,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 7,
+      "kills": 0,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "speed": 24,
+      "yaw": 0,
+      "pitch": 0,
+      "missiles": 0,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 7,
+      "status": "briefing",
+      "phase": "swarm",
+      "finale": null,
+      "room": null,
+      "seconds": 402.82,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 8,
+      "kills": 0,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        0,
+        -50,
+        0
+      ],
+      "speed": 0,
+      "yaw": 0,
+      "pitch": 0,
+      "missiles": 8,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": [
+        {
+          "id": 247,
+          "role": "fighter",
+          "hp": 26,
+          "distance": 140.43,
+          "position": [
+            -62,
+            76,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 248,
+          "role": "fighter",
+          "hp": 26,
+          "distance": 143.13,
+          "position": [
+            62,
+            79,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 249,
+          "role": "fighter",
+          "hp": 26,
+          "distance": 145.84,
+          "position": [
+            -62,
+            82,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 250,
+          "role": "fighter",
+          "hp": 26,
+          "distance": 148.56,
+          "position": [
+            62,
+            85,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 251,
+          "role": "fighter",
+          "hp": 26,
+          "distance": 151.29,
+          "position": [
+            -62,
+            88,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 252,
+          "role": "fighter",
+          "hp": 26,
+          "distance": 154.03,
+          "position": [
+            62,
+            91,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 253,
+          "role": "fighter",
+          "hp": 26,
+          "distance": 142.24,
+          "position": [
+            -66,
+            76,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 254,
+          "role": "fighter",
+          "hp": 26,
+          "distance": 144.9,
+          "position": [
+            66,
+            79,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 255,
+          "role": "fighter",
+          "hp": 26,
+          "distance": 147.58,
+          "position": [
+            -66,
+            82,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 256,
+          "role": "fighter",
+          "hp": 26,
+          "distance": 150.27,
+          "position": [
+            66,
+            85,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 257,
+          "role": "fighter",
+          "hp": 26,
+          "distance": 152.97,
+          "position": [
+            -66,
+            88,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 258,
+          "role": "fighter",
+          "hp": 26,
+          "distance": 155.68,
+          "position": [
+            66,
+            91,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        }
+      ]
+    },
+    {
+      "kind": "transition",
+      "level": 7,
+      "status": "playing",
+      "phase": "swarm",
+      "finale": null,
+      "room": null,
+      "seconds": 402.82,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 8,
+      "kills": 0,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        0,
+        -50,
+        0
+      ],
+      "speed": 0,
+      "yaw": 0,
+      "pitch": 0,
+      "missiles": 8,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": [
+        {
+          "id": 247,
+          "role": "fighter",
+          "hp": 26,
+          "distance": 140.43,
+          "position": [
+            -62,
+            76,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 248,
+          "role": "fighter",
+          "hp": 26,
+          "distance": 143.13,
+          "position": [
+            62,
+            79,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 249,
+          "role": "fighter",
+          "hp": 26,
+          "distance": 145.84,
+          "position": [
+            -62,
+            82,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 250,
+          "role": "fighter",
+          "hp": 26,
+          "distance": 148.56,
+          "position": [
+            62,
+            85,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 251,
+          "role": "fighter",
+          "hp": 26,
+          "distance": 151.29,
+          "position": [
+            -62,
+            88,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 252,
+          "role": "fighter",
+          "hp": 26,
+          "distance": 154.03,
+          "position": [
+            62,
+            91,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 253,
+          "role": "fighter",
+          "hp": 26,
+          "distance": 142.24,
+          "position": [
+            -66,
+            76,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 254,
+          "role": "fighter",
+          "hp": 26,
+          "distance": 144.9,
+          "position": [
+            66,
+            79,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 255,
+          "role": "fighter",
+          "hp": 26,
+          "distance": 147.58,
+          "position": [
+            -66,
+            82,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 256,
+          "role": "fighter",
+          "hp": 26,
+          "distance": 150.27,
+          "position": [
+            66,
+            85,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 257,
+          "role": "fighter",
+          "hp": 26,
+          "distance": 152.97,
+          "position": [
+            -66,
+            88,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 258,
+          "role": "fighter",
+          "hp": 26,
+          "distance": 155.68,
+          "position": [
+            66,
+            91,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        }
+      ]
+    },
+    {
+      "kind": "heartbeat",
+      "level": 7,
+      "status": "playing",
+      "phase": "swarm",
+      "finale": null,
+      "room": null,
+      "seconds": 422.83,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 8,
+      "kills": 21,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        1.85,
+        -50,
+        0
+      ],
+      "speed": 32,
+      "yaw": 0,
+      "pitch": 0,
+      "missiles": 7,
+      "pulseCooldown": 1.97,
+      "navRecoveries": 0,
+      "enemies": [
+        {
+          "id": 262,
+          "role": "fighter",
+          "hp": 48,
+          "distance": 97.39,
+          "position": [
+            7.91,
+            47.2,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 263,
+          "role": "fighter",
+          "hp": 6,
+          "distance": 99.25,
+          "position": [
+            21.91,
+            47.2,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 267,
+          "role": "fighter",
+          "hp": 26,
+          "distance": 83.42,
+          "position": [
+            7.91,
+            33.2,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 268,
+          "role": "fighter",
+          "hp": 26,
+          "distance": 85.59,
+          "position": [
+            21.91,
+            33.2,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 272,
+          "role": "fighter",
+          "hp": 26,
+          "distance": 69.47,
+          "position": [
+            7.91,
+            19.2,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 273,
+          "role": "fighter",
+          "hp": 26,
+          "distance": 72.05,
+          "position": [
+            21.91,
+            19.2,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        }
+      ]
+    },
+    {
+      "kind": "heartbeat",
+      "level": 7,
+      "status": "playing",
+      "phase": "swarm",
+      "finale": null,
+      "room": null,
+      "seconds": 442.85,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 8,
+      "kills": 45,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        0,
+        -50,
+        0
+      ],
+      "speed": 0,
+      "yaw": 0,
+      "pitch": 0,
+      "missiles": 5,
+      "pulseCooldown": 6.78,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 7,
+      "status": "lesson",
+      "phase": "dock",
+      "finale": null,
+      "room": null,
+      "seconds": 443.4,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 8,
+      "kills": 45,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        0,
+        1,
+        -310
+      ],
+      "speed": 18,
+      "yaw": 3.14,
+      "pitch": 0,
+      "missiles": 5,
+      "pulseCooldown": 6.23,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 7,
+      "status": "playing",
+      "phase": "dock",
+      "finale": null,
+      "room": null,
+      "seconds": 443.4,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 8,
+      "kills": 45,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        0,
+        1,
+        -310
+      ],
+      "speed": 18,
+      "yaw": 3.14,
+      "pitch": 0,
+      "missiles": 5,
+      "pulseCooldown": 6.23,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 7,
+      "status": "docking",
+      "phase": "dock",
+      "finale": null,
+      "room": null,
+      "seconds": 446.27,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 8,
+      "kills": 45,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        0,
+        1,
+        -242.92
+      ],
+      "speed": 20.93,
+      "yaw": 3.14,
+      "pitch": 0,
+      "missiles": 5,
+      "pulseCooldown": 3.37,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 8,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "room": 1,
+      "seconds": 450.08,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 0,
+        "ready": false,
+        "remaining": 7,
+        "alive": 7,
+        "pending": 0,
+        "text": "Зачистите комнату · осталось 7",
+        "detail": "В комнате: 7"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 8,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "room": 1,
+      "seconds": 467.13,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 0,
+        "ready": true,
+        "remaining": 0,
+        "alive": 0,
+        "pending": 0,
+        "text": "Комната зачищена · терминал открыт",
+        "detail": "В комнате: 0"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 8,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "room": 2,
+      "seconds": 467.13,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 1,
+        "ready": false,
+        "remaining": 7,
+        "alive": 7,
+        "pending": 0,
+        "text": "Зачистите комнату · осталось 7",
+        "detail": "В комнате: 7"
+      }
+    },
+    {
+      "kind": "heartbeat",
+      "level": 8,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "room": 2,
+      "seconds": 487.15,
+      "hp": 94.1,
+      "clearance": {
+        "active": true,
+        "room": 1,
+        "ready": false,
+        "remaining": 5,
+        "alive": 5,
+        "pending": 0,
+        "text": "Зачистите комнату · осталось 5",
+        "detail": "В комнате: 5"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 8,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "room": 2,
+      "seconds": 497.65,
+      "hp": 94.1,
+      "clearance": {
+        "active": true,
+        "room": 1,
+        "ready": true,
+        "remaining": 0,
+        "alive": 0,
+        "pending": 0,
+        "text": "Комната зачищена · терминал открыт",
+        "detail": "В комнате: 0"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 8,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "room": 3,
+      "seconds": 497.65,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 2,
+        "ready": false,
+        "remaining": 8,
+        "alive": 8,
+        "pending": 0,
+        "text": "Зачистите комнату · осталось 8",
+        "detail": "В комнате: 8"
+      }
+    },
+    {
+      "kind": "heartbeat",
+      "level": 8,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "room": 3,
+      "seconds": 517.67,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 2,
+        "ready": false,
+        "remaining": 1,
+        "alive": 1,
+        "pending": 0,
+        "text": "Зачистите комнату · осталось 1",
+        "detail": "В комнате: 1"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 8,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "room": 3,
+      "seconds": 523.25,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 2,
+        "ready": true,
+        "remaining": 0,
+        "alive": 0,
+        "pending": 0,
+        "text": "Комната зачищена · терминал открыт",
+        "detail": "В комнате: 0"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 8,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "room": 4,
+      "seconds": 523.25,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 3,
+        "ready": true,
+        "remaining": 0,
+        "alive": 0,
+        "pending": 0,
+        "text": "Комнаты зачищены · к выходу"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 8,
+      "status": "stageclear",
+      "phase": "debrief",
+      "finale": null,
+      "room": 4,
+      "seconds": 525.22,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 3,
+        "ready": true,
+        "remaining": 0,
+        "alive": 0,
+        "pending": 0,
+        "text": "Комнаты зачищены · к выходу"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 9,
+      "status": "escortbrief",
+      "phase": "escort",
+      "finale": null,
+      "room": null,
+      "seconds": 525.22,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 8,
+      "kills": 45,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "speed": 24,
+      "yaw": 0,
+      "pitch": 0,
+      "missiles": 10,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 9,
+      "status": "playing",
+      "phase": "escort",
+      "finale": null,
+      "room": null,
+      "seconds": 525.22,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 8,
+      "kills": 45,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "speed": 24,
+      "yaw": 0,
+      "pitch": 0,
+      "missiles": 10,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "heartbeat",
+      "level": 9,
+      "status": "playing",
+      "phase": "escort",
+      "finale": null,
+      "room": null,
+      "seconds": 545.23,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 8,
+      "kills": 45,
+      "selected": 321,
+      "lock": 321,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        -12.82,
+        -1.23,
+        0
+      ],
+      "speed": 24,
+      "yaw": -0.09,
+      "pitch": -0.02,
+      "missiles": 0,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": [
+        {
+          "id": 321,
+          "role": "jammer",
+          "hp": 106.8,
+          "distance": 126.82,
+          "position": [
+            19.55,
+            -5.14,
+            -122.56
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 323,
+          "role": "interceptor",
+          "hp": 173.6,
+          "distance": 156.63,
+          "position": [
+            45.77,
+            -10.15,
+            -144.98
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 324,
+          "role": "jammer",
+          "hp": 272.8,
+          "distance": 152.97,
+          "position": [
+            -53.2,
+            1.52,
+            -147.52
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        }
+      ]
+    },
+    {
+      "kind": "heartbeat",
+      "level": 9,
+      "status": "playing",
+      "phase": "escort",
+      "finale": null,
+      "room": null,
+      "seconds": 565.25,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 8,
+      "kills": 45,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "speed": 24,
+      "yaw": 0,
+      "pitch": 0,
+      "missiles": 0,
+      "pulseCooldown": 1.37,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "heartbeat",
+      "level": 9,
+      "status": "playing",
+      "phase": "escort",
+      "finale": null,
+      "room": null,
+      "seconds": 585.27,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 8,
+      "kills": 45,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "speed": 24,
+      "yaw": 0,
+      "pitch": 0,
+      "missiles": 0,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 9,
+      "status": "escortclear",
+      "phase": "escort",
+      "finale": null,
+      "room": null,
+      "seconds": 593.23,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 8,
+      "kills": 45,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "speed": 24,
+      "yaw": 0,
+      "pitch": 0,
+      "missiles": 0,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 10,
+      "status": "briefing",
+      "phase": "orientation",
+      "finale": null,
+      "room": null,
+      "seconds": 593.23,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 10,
+      "kills": 0,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "speed": 15,
+      "yaw": 0,
+      "pitch": 0,
+      "missiles": 8,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 10,
+      "status": "playing",
+      "phase": "battle",
+      "finale": null,
+      "room": null,
+      "seconds": 593.23,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 1,
+      "waveSpawned": 4,
+      "waveTotal": 10,
+      "kills": 0,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "speed": 15,
+      "yaw": 0,
+      "pitch": 0,
+      "missiles": 8,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": [
+        {
+          "id": 340,
+          "role": "hacker",
+          "hp": 60,
+          "distance": 64.04,
+          "position": [
+            -49.56,
+            5.45,
+            -40.19
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 341,
+          "role": "bomber",
+          "hp": 85,
+          "distance": 183.82,
+          "position": [
+            180.08,
+            0.48,
+            -36.88
+          ],
+          "hullBlocked": true,
+          "rockBlocked": false
+        },
+        {
+          "id": 342,
+          "role": "fighter",
+          "hp": 40,
+          "distance": 234.35,
+          "position": [
+            217.89,
+            -5.98,
+            -86.06
+          ],
+          "hullBlocked": true,
+          "rockBlocked": true
+        },
+        {
+          "id": 343,
+          "role": "fighter",
+          "hp": 68.75,
+          "distance": 265.77,
+          "position": [
+            202.42,
+            15.82,
+            -171.49
+          ],
+          "hullBlocked": true,
+          "rockBlocked": false
+        }
+      ]
+    },
+    {
+      "kind": "transition",
+      "level": 10,
+      "status": "playing",
+      "phase": "battle",
+      "finale": null,
+      "room": null,
+      "seconds": 609.68,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 2,
+      "waveSpawned": 4,
+      "waveTotal": 12,
+      "kills": 10,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        80.6,
+        -26.3,
+        -8.3
+      ],
+      "speed": 0,
+      "yaw": -2.5,
+      "pitch": -0.42,
+      "missiles": 4,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": [
+        {
+          "id": 350,
+          "role": "hacker",
+          "hp": 60,
+          "distance": 112.59,
+          "position": [
+            -19.54,
+            10.81,
+            -43.94
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 351,
+          "role": "bomber",
+          "hp": 85,
+          "distance": 106.68,
+          "position": [
+            174.9,
+            16.94,
+            -33.17
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 352,
+          "role": "fighter",
+          "hp": 40,
+          "distance": 138.99,
+          "position": [
+            205.2,
+            3.54,
+            -62.19
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 353,
+          "role": "fighter",
+          "hp": 68.75,
+          "distance": 186.69,
+          "position": [
+            221.9,
+            -5.48,
+            -128.54
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        }
+      ]
+    },
+    {
+      "kind": "heartbeat",
+      "level": 10,
+      "status": "playing",
+      "phase": "battle",
+      "finale": null,
+      "room": null,
+      "seconds": 629.7,
+      "hp": 71.2,
+      "stationHp": 92.5,
+      "wave": 2,
+      "waveSpawned": 12,
+      "waveTotal": 12,
+      "kills": 20,
+      "selected": 359,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        54.62,
+        -22.36,
+        -70.39
+      ],
+      "speed": 21.54,
+      "yaw": -5.88,
+      "pitch": -0.15,
+      "missiles": 0,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": [
+        {
+          "id": 356,
+          "role": "fighter",
+          "hp": 68.75,
+          "distance": 41.39,
+          "position": [
+            95.88,
+            -19.48,
+            -68.72
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 359,
+          "role": "bomber",
+          "hp": 46,
+          "distance": 47.78,
+          "position": [
+            17.96,
+            6.82,
+            -61
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        }
+      ]
+    },
+    {
+      "kind": "transition",
+      "level": 10,
+      "status": "playing",
+      "phase": "battle",
+      "finale": null,
+      "room": null,
+      "seconds": 632.57,
+      "hp": 89.2,
+      "stationHp": 98,
+      "wave": 3,
+      "waveSpawned": 4,
+      "waveTotal": 14,
+      "kills": 22,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        60.19,
+        -25.16,
+        -82.69
+      ],
+      "speed": 0,
+      "yaw": -5.85,
+      "pitch": -0.22,
+      "missiles": 2,
+      "pulseCooldown": 11.5,
+      "navRecoveries": 0,
+      "enemies": [
+        {
+          "id": 362,
+          "role": "hacker",
+          "hp": 60,
+          "distance": 100.97,
+          "position": [
+            -24.19,
+            13.61,
+            -43.03
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 363,
+          "role": "bomber",
+          "hp": 85,
+          "distance": 123.3,
+          "position": [
+            144.29,
+            36.79,
+            -17.17
+          ],
+          "hullBlocked": true,
+          "rockBlocked": false
+        },
+        {
+          "id": 364,
+          "role": "fighter",
+          "hp": 40,
+          "distance": 146.16,
+          "position": [
+            195.88,
+            18.9,
+            -50.94
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 365,
+          "role": "fighter",
+          "hp": 68.75,
+          "distance": 171.18,
+          "position": [
+            222.23,
+            25.87,
+            -103.66
+          ],
+          "hullBlocked": false,
+          "rockBlocked": true
+        }
+      ]
+    },
+    {
+      "kind": "transition",
+      "level": 10,
+      "status": "lesson",
+      "phase": "battle",
+      "finale": null,
+      "room": null,
+      "seconds": 641.95,
+      "hp": 100,
+      "stationHp": 95.5,
+      "wave": 3,
+      "waveSpawned": 13,
+      "waveTotal": 14,
+      "kills": 31,
+      "selected": 373,
+      "lock": 373,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        7.85,
+        -12.61,
+        -94.05
+      ],
+      "speed": 23.42,
+      "yaw": -14.46,
+      "pitch": 0.44,
+      "missiles": 2,
+      "pulseCooldown": 2.12,
+      "navRecoveries": 0,
+      "enemies": [
+        {
+          "id": 366,
+          "role": "hacker",
+          "hp": 60,
+          "distance": 119.09,
+          "position": [
+            90.71,
+            27.95,
+            -169.35
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 370,
+          "role": "hacker",
+          "hp": 60,
+          "distance": 235.44,
+          "position": [
+            -54.67,
+            -18.29,
+            -320.96
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 373,
+          "role": "fighter",
+          "hp": 40,
+          "distance": 73.98,
+          "position": [
+            -54.52,
+            19.49,
+            -70.53
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 374,
+          "role": "hacker",
+          "hp": 60,
+          "distance": 170.45,
+          "position": [
+            -156.68,
+            24.47,
+            -69.4
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        }
+      ]
+    },
+    {
+      "kind": "transition",
+      "level": 10,
+      "status": "playing",
+      "phase": "battle",
+      "finale": null,
+      "room": null,
+      "seconds": 641.95,
+      "hp": 100,
+      "stationHp": 95.5,
+      "wave": 3,
+      "waveSpawned": 13,
+      "waveTotal": 14,
+      "kills": 31,
+      "selected": 373,
+      "lock": 373,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        7.85,
+        -12.61,
+        -94.05
+      ],
+      "speed": 23.42,
+      "yaw": -14.46,
+      "pitch": 0.44,
+      "missiles": 2,
+      "pulseCooldown": 2.12,
+      "navRecoveries": 0,
+      "enemies": [
+        {
+          "id": 366,
+          "role": "hacker",
+          "hp": 60,
+          "distance": 119.09,
+          "position": [
+            90.71,
+            27.95,
+            -169.35
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 370,
+          "role": "hacker",
+          "hp": 60,
+          "distance": 235.44,
+          "position": [
+            -54.67,
+            -18.29,
+            -320.96
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 373,
+          "role": "fighter",
+          "hp": 40,
+          "distance": 73.98,
+          "position": [
+            -54.52,
+            19.49,
+            -70.53
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 374,
+          "role": "hacker",
+          "hp": 60,
+          "distance": 170.45,
+          "position": [
+            -156.68,
+            24.47,
+            -69.4
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        }
+      ]
+    },
+    {
+      "kind": "transition",
+      "level": 10,
+      "status": "playing",
+      "phase": "retrieve",
+      "finale": null,
+      "room": null,
+      "seconds": 655.32,
+      "hp": 100,
+      "stationHp": 93,
+      "wave": 3,
+      "waveSpawned": 14,
+      "waveTotal": 14,
+      "kills": 36,
+      "selected": null,
+      "lock": 376,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        27.89,
+        4.71,
+        -98.87
+      ],
+      "speed": 23.98,
+      "yaw": -12.4,
+      "pitch": 0.27,
+      "missiles": 0,
+      "pulseCooldown": 13.88,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 10,
+      "status": "lesson",
+      "phase": "retrieve",
+      "finale": null,
+      "room": null,
+      "seconds": 661.08,
+      "hp": 100,
+      "stationHp": 93,
+      "wave": 3,
+      "waveSpawned": 14,
+      "waveTotal": 14,
+      "kills": 36,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        15.24,
+        -2.53,
+        -159.4
+      ],
+      "speed": 24,
+      "yaw": -11.78,
+      "pitch": -0.18,
+      "missiles": 4,
+      "pulseCooldown": 8.12,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 10,
+      "status": "playing",
+      "phase": "dock",
+      "finale": null,
+      "room": null,
+      "seconds": 661.08,
+      "hp": 100,
+      "stationHp": 93,
+      "wave": 3,
+      "waveSpawned": 14,
+      "waveTotal": 14,
+      "kills": 36,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        15.24,
+        -2.53,
+        -159.4
+      ],
+      "speed": 24,
+      "yaw": -11.78,
+      "pitch": -0.18,
+      "missiles": 4,
+      "pulseCooldown": 8.12,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 10,
+      "status": "docking",
+      "phase": "dock",
+      "finale": null,
+      "room": null,
+      "seconds": 664.93,
+      "hp": 100,
+      "stationHp": 93,
+      "wave": 3,
+      "waveSpawned": 14,
+      "waveTotal": 14,
+      "kills": 36,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        68.9,
+        10.28,
+        -111.52
+      ],
+      "speed": 22.52,
+      "yaw": -10.09,
+      "pitch": 0.18,
+      "missiles": 4,
+      "pulseCooldown": 4.27,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 11,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "room": 1,
+      "seconds": 668.75,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 0,
+        "ready": false,
+        "remaining": 7,
+        "alive": 7,
+        "pending": 0,
+        "text": "Зачистите комнату · осталось 7",
+        "detail": "В комнате: 7"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 11,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "room": 1,
+      "seconds": 686.28,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 0,
+        "ready": true,
+        "remaining": 0,
+        "alive": 0,
+        "pending": 0,
+        "text": "Комната зачищена · терминал открыт",
+        "detail": "В комнате: 0"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 11,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "room": 2,
+      "seconds": 686.28,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 1,
+        "ready": false,
+        "remaining": 7,
+        "alive": 7,
+        "pending": 0,
+        "text": "Зачистите комнату · осталось 7",
+        "detail": "В комнате: 7"
+      }
+    },
+    {
+      "kind": "heartbeat",
+      "level": 11,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "room": 2,
+      "seconds": 706.3,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 1,
+        "ready": false,
+        "remaining": 1,
+        "alive": 1,
+        "pending": 0,
+        "text": "Зачистите комнату · осталось 1",
+        "detail": "В комнате: 1"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 11,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "room": 2,
+      "seconds": 710.68,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 1,
+        "ready": true,
+        "remaining": 0,
+        "alive": 0,
+        "pending": 0,
+        "text": "Комната зачищена · терминал открыт",
+        "detail": "В комнате: 0"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 11,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "room": 3,
+      "seconds": 710.68,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 2,
+        "ready": false,
+        "remaining": 8,
+        "alive": 8,
+        "pending": 0,
+        "text": "Зачистите комнату · осталось 8",
+        "detail": "В комнате: 8"
+      }
+    },
+    {
+      "kind": "heartbeat",
+      "level": 11,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "room": 3,
+      "seconds": 730.7,
+      "hp": 94.92,
+      "clearance": {
+        "active": true,
+        "room": 2,
+        "ready": false,
+        "remaining": 1,
+        "alive": 1,
+        "pending": 0,
+        "text": "Зачистите комнату · осталось 1",
+        "detail": "В комнате: 1"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 11,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "room": 3,
+      "seconds": 737.75,
+      "hp": 94.92,
+      "clearance": {
+        "active": true,
+        "room": 2,
+        "ready": true,
+        "remaining": 0,
+        "alive": 0,
+        "pending": 0,
+        "text": "Комната зачищена · терминал открыт",
+        "detail": "В комнате: 0"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 11,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "room": 4,
+      "seconds": 737.75,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 3,
+        "ready": true,
+        "remaining": 0,
+        "alive": 0,
+        "pending": 0,
+        "text": "Комнаты зачищены · к выходу"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 12,
+      "status": "finalebrief",
+      "phase": "finale",
+      "finale": "boss",
+      "room": null,
+      "seconds": 740.2,
+      "hp": 100,
+      "stationHp": 93,
+      "wave": 3,
+      "waveSpawned": 14,
+      "waveTotal": 14,
+      "kills": 36,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        78,
+        10,
+        -35
+      ],
+      "speed": 0,
+      "yaw": 3.14,
+      "pitch": 0,
+      "missiles": 4,
+      "pulseCooldown": 4.27,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 12,
+      "status": "playing",
+      "phase": "finale",
+      "finale": "boss",
+      "room": null,
+      "seconds": 740.2,
+      "hp": 100,
+      "stationHp": 93,
+      "wave": 3,
+      "waveSpawned": 14,
+      "waveTotal": 14,
+      "kills": 36,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        0,
+        0,
+        10
+      ],
+      "speed": 0,
+      "yaw": 0,
+      "pitch": 0,
+      "missiles": 12,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": [
+        {
+          "id": 399,
+          "hp": 1800,
+          "distance": 137.76,
+          "position": [
+            -23,
+            15,
+            -125
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 400,
+          "hp": 1800,
+          "distance": 137.76,
+          "position": [
+            23,
+            15,
+            -125
+          ],
+          "hullBlocked": true,
+          "rockBlocked": false
+        },
+        {
+          "id": 401,
+          "hp": 1800,
+          "distance": 137.76,
+          "position": [
+            -23,
+            -15,
+            -125
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 402,
+          "hp": 1800,
+          "distance": 137.76,
+          "position": [
+            23,
+            -15,
+            -125
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 403,
+          "hp": 6000,
+          "distance": 149,
+          "position": [
+            0,
+            0,
+            -139
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        }
+      ]
+    },
+    {
+      "kind": "heartbeat",
+      "level": 12,
+      "status": "playing",
+      "phase": "finale",
+      "finale": "boss",
+      "room": null,
+      "seconds": 760.22,
+      "hp": 90.4,
+      "stationHp": 93,
+      "wave": 3,
+      "waveSpawned": 14,
+      "waveTotal": 14,
+      "kills": 36,
+      "selected": 401,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        10.83,
+        -40.68,
+        -104
+      ],
+      "speed": 42,
+      "yaw": 6,
+      "pitch": 0.11,
+      "missiles": 0,
+      "pulseCooldown": 2.68,
+      "navRecoveries": 0,
+      "enemies": [
+        {
+          "id": 400,
+          "hp": 1556.25,
+          "distance": 60.74,
+          "position": [
+            23,
+            15,
+            -125
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 401,
+          "hp": 223.85,
+          "distance": 47.38,
+          "position": [
+            -23,
+            -15,
+            -125
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 402,
+          "hp": 1220,
+          "distance": 35.34,
+          "position": [
+            23,
+            -15,
+            -125
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 403,
+          "hp": 6000,
+          "distance": 54.75,
+          "position": [
+            0,
+            0,
+            -139
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        }
+      ]
+    },
+    {
+      "kind": "heartbeat",
+      "level": 12,
+      "status": "playing",
+      "phase": "finale",
+      "finale": "boss",
+      "room": null,
+      "seconds": 780.23,
+      "hp": 100,
+      "stationHp": 93,
+      "wave": 3,
+      "waveSpawned": 14,
+      "waveTotal": 14,
+      "kills": 36,
+      "selected": 403,
+      "lock": 403,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        -21.24,
+        -14.29,
+        -104
+      ],
+      "speed": 32.93,
+      "yaw": 6.51,
+      "pitch": 0.7,
+      "missiles": 0,
+      "pulseCooldown": 4.5,
+      "navRecoveries": 0,
+      "enemies": [
+        {
+          "id": 403,
+          "hp": 4462.55,
+          "distance": 43.36,
+          "position": [
+            0,
+            0,
+            -139
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        }
+      ]
+    },
+    {
+      "kind": "heartbeat",
+      "level": 12,
+      "status": "playing",
+      "phase": "finale",
+      "finale": "boss",
+      "room": null,
+      "seconds": 800.25,
+      "hp": 95.2,
+      "stationHp": 93,
+      "wave": 3,
+      "waveSpawned": 14,
+      "waveTotal": 14,
+      "kills": 36,
+      "selected": 403,
+      "lock": 403,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        11.31,
+        8.9,
+        -104
+      ],
+      "speed": 0,
+      "yaw": 5.97,
+      "pitch": -0.24,
+      "missiles": 0,
+      "pulseCooldown": 5.15,
+      "navRecoveries": 0,
+      "enemies": [
+        {
+          "id": 403,
+          "hp": 285.65,
+          "distance": 37.84,
+          "position": [
+            0,
+            0,
+            -139
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        }
+      ]
+    },
+    {
+      "kind": "transition",
+      "level": 12,
+      "status": "playing",
+      "phase": "finale",
+      "finale": "breach",
+      "room": null,
+      "seconds": 803.73,
+      "hp": 100,
+      "stationHp": 93,
+      "wave": 3,
+      "waveSpawned": 14,
+      "waveTotal": 14,
+      "kills": 36,
+      "selected": null,
+      "lock": 403,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        -34.54,
+        8.73,
+        -104
+      ],
+      "speed": 25.24,
+      "yaw": 7.15,
+      "pitch": -0.06,
+      "missiles": 2,
+      "pulseCooldown": 1.67,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 12,
+      "status": "docking",
+      "phase": "finale",
+      "finale": "landing",
+      "room": null,
+      "seconds": 805.95,
+      "hp": 71.2,
+      "stationHp": 93,
+      "wave": 3,
+      "waveSpawned": 14,
+      "waveTotal": 14,
+      "kills": 36,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        -9.85,
+        2.84,
+        -126.08
+      ],
+      "speed": 12.76,
+      "yaw": 6.87,
+      "pitch": -0.16,
+      "missiles": 2,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 13,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": "maze",
+      "room": 1,
+      "seconds": 809.97,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 0,
+        "ready": false,
+        "remaining": 8,
+        "alive": 8,
+        "pending": 0,
+        "text": "Зачистите комнату · осталось 8",
+        "detail": "В комнате: 8"
+      }
+    },
+    {
+      "kind": "heartbeat",
+      "level": 13,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": "maze",
+      "room": 1,
+      "seconds": 829.98,
+      "hp": 94.56,
+      "clearance": {
+        "active": true,
+        "room": 0,
+        "ready": true,
+        "remaining": 0,
+        "alive": 0,
+        "pending": 0,
+        "text": "Комната зачищена · терминал открыт",
+        "detail": "В комнате: 0"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 13,
+      "status": "finalcheck",
+      "phase": "boarding",
+      "finale": "maze",
+      "room": 1,
+      "seconds": 830.53,
+      "hp": 94.56,
+      "clearance": {
+        "active": true,
+        "room": 0,
+        "ready": true,
+        "remaining": 0,
+        "alive": 0,
+        "pending": 0,
+        "text": "Комната зачищена · терминал открыт",
+        "detail": "В комнате: 0"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 13,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": "maze",
+      "room": 2,
+      "seconds": 830.53,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 1,
+        "ready": false,
+        "remaining": 8,
+        "alive": 8,
+        "pending": 0,
+        "text": "Зачистите комнату · осталось 8",
+        "detail": "В комнате: 8"
+      }
+    },
+    {
+      "kind": "heartbeat",
+      "level": 13,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": "maze",
+      "room": 2,
+      "seconds": 850.55,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 1,
+        "ready": false,
+        "remaining": 3,
+        "alive": 3,
+        "pending": 0,
+        "text": "Зачистите комнату · осталось 3",
+        "detail": "В комнате: 3"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 13,
+      "status": "finalcheck",
+      "phase": "boarding",
+      "finale": "maze",
+      "room": 2,
+      "seconds": 859.8,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 1,
+        "ready": true,
+        "remaining": 0,
+        "alive": 0,
+        "pending": 0,
+        "text": "Комната зачищена · терминал открыт",
+        "detail": "В комнате: 0"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 13,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": "maze",
+      "room": 3,
+      "seconds": 859.8,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 2,
+        "ready": false,
+        "remaining": 8,
+        "alive": 8,
+        "pending": 0,
+        "text": "Зачистите комнату · осталось 8",
+        "detail": "В комнате: 8"
+      }
+    },
+    {
+      "kind": "heartbeat",
+      "level": 13,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": "maze",
+      "room": 3,
+      "seconds": 879.82,
+      "hp": 94.56,
+      "clearance": {
+        "active": true,
+        "room": 2,
+        "ready": false,
+        "remaining": 1,
+        "alive": 1,
+        "pending": 0,
+        "text": "Зачистите комнату · осталось 1",
+        "detail": "В комнате: 1"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 13,
+      "status": "finalcheck",
+      "phase": "boarding",
+      "finale": "maze",
+      "room": 3,
+      "seconds": 886.6,
+      "hp": 94.56,
+      "clearance": {
+        "active": true,
+        "room": 2,
+        "ready": true,
+        "remaining": 0,
+        "alive": 0,
+        "pending": 0,
+        "text": "Комната зачищена · терминал открыт",
+        "detail": "В комнате: 0"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 13,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": "maze",
+      "room": 4,
+      "seconds": 886.6,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 3,
+        "ready": true,
+        "remaining": 0,
+        "alive": 0,
+        "pending": 0,
+        "text": "Комнаты зачищены · к выходу"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 14,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": "mrg",
+      "room": 4,
+      "seconds": 889.05,
+      "hp": 100,
+      "clearance": {
+        "active": false,
+        "ready": true,
+        "remaining": 0,
+        "alive": 0,
+        "pending": 0,
+        "text": ""
+      }
+    },
+    {
+      "kind": "heartbeat",
+      "level": 14,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": "mrg",
+      "room": 4,
+      "seconds": 909.07,
+      "hp": 100,
+      "clearance": {
+        "active": false,
+        "ready": true,
+        "remaining": 0,
+        "alive": 0,
+        "pending": 0,
+        "text": ""
+      }
+    },
+    {
+      "kind": "heartbeat",
+      "level": 14,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": "mrg",
+      "room": 4,
+      "seconds": 929.08,
+      "hp": 100,
+      "clearance": {
+        "active": false,
+        "ready": true,
+        "remaining": 0,
+        "alive": 0,
+        "pending": 0,
+        "text": ""
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 14,
+      "status": "docking",
+      "phase": "boarding",
+      "finale": "upload",
+      "room": 4,
+      "seconds": 945.5,
+      "hp": 100,
+      "clearance": {
+        "active": false,
+        "ready": true,
+        "remaining": 0,
+        "alive": 0,
+        "pending": 0,
+        "text": ""
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 14,
+      "status": "won",
+      "phase": "debrief",
+      "finale": "victory",
+      "room": 4,
+      "seconds": 953.52,
+      "hp": 100,
+      "clearance": {
+        "active": false,
+        "ready": true,
+        "remaining": 0,
+        "alive": 0,
+        "pending": 0,
+        "text": ""
+      }
+    }
+  ],
+  "score": 90204,
+  "rescued": 12,
+  "completedRemarks": 12,
+  "decisions": 8,
+  "upgrades": {
+    "weapons": 2,
+    "armor": 1,
+    "rockets": 0
+  },
+  "limits": [
+    "Deterministic QA operator has precise positions and answer keys. This verifies a reachable path, not human difficulty or learning.",
+    "Rendering, hardware timing, browser gestures, hearing and network latency are not simulated by this run."
+  ],
+  "wallSeconds": 64,
+  "paced": false,
+  "pacingMs": 0,
+  "emitChanges": 0,
+  "samples": [
+    {
+      "wallSeconds": 1,
+      "frame": 0,
+      "level": 1,
+      "heap": 45948640,
+      "listeners": 65,
+      "emitChanges": 0
+    },
+    {
+      "wallSeconds": 4,
+      "frame": 1800,
+      "level": 1,
+      "heap": 47470312,
+      "listeners": 65,
+      "emitChanges": 0
+    },
+    {
+      "wallSeconds": 8,
+      "frame": 3600,
+      "level": 2,
+      "heap": 49962464,
+      "listeners": 65,
+      "emitChanges": 0
+    },
+    {
+      "wallSeconds": 12,
+      "frame": 5400,
+      "level": 2,
+      "heap": 49768144,
+      "listeners": 65,
+      "emitChanges": 0
+    },
+    {
+      "wallSeconds": 13,
+      "frame": 7200,
+      "level": 3,
+      "heap": 49626328,
+      "listeners": 65,
+      "emitChanges": 0
+    },
+    {
+      "wallSeconds": 13,
+      "frame": 9000,
+      "level": 3,
+      "heap": 49847704,
+      "listeners": 65,
+      "emitChanges": 0
+    },
+    {
+      "wallSeconds": 14,
+      "frame": 10800,
+      "level": 4,
+      "heap": 49891384,
+      "listeners": 65,
+      "emitChanges": 0
+    },
+    {
+      "wallSeconds": 14,
+      "frame": 12600,
+      "level": 4,
+      "heap": 50039440,
+      "listeners": 65,
+      "emitChanges": 0
+    },
+    {
+      "wallSeconds": 14,
+      "frame": 14400,
+      "level": 4,
+      "heap": 50049232,
+      "listeners": 65,
+      "emitChanges": 0
+    },
+    {
+      "wallSeconds": 15,
+      "frame": 16200,
+      "level": 5,
+      "heap": 51782568,
+      "listeners": 65,
+      "emitChanges": 0
+    },
+    {
+      "wallSeconds": 19,
+      "frame": 18000,
+      "level": 5,
+      "heap": 52247840,
+      "listeners": 65,
+      "emitChanges": 0
+    },
+    {
+      "wallSeconds": 21,
+      "frame": 19800,
+      "level": 5,
+      "heap": 52157000,
+      "listeners": 65,
+      "emitChanges": 0
+    },
+    {
+      "wallSeconds": 22,
+      "frame": 21600,
+      "level": 6,
+      "heap": 52310360,
+      "listeners": 65,
+      "emitChanges": 0
+    },
+    {
+      "wallSeconds": 22,
+      "frame": 23400,
+      "level": 6,
+      "heap": 52252208,
+      "listeners": 65,
+      "emitChanges": 0
+    },
+    {
+      "wallSeconds": 22,
+      "frame": 25200,
+      "level": 7,
+      "heap": 52307008,
+      "listeners": 65,
+      "emitChanges": 0
+    },
+    {
+      "wallSeconds": 23,
+      "frame": 27000,
+      "level": 7,
+      "heap": 52118784,
+      "listeners": 65,
+      "emitChanges": 0
+    },
+    {
+      "wallSeconds": 27,
+      "frame": 28800,
+      "level": 8,
+      "heap": 54174472,
+      "listeners": 65,
+      "emitChanges": 0
+    },
+    {
+      "wallSeconds": 31,
+      "frame": 30600,
+      "level": 8,
+      "heap": 53943792,
+      "listeners": 65,
+      "emitChanges": 0
+    },
+    {
+      "wallSeconds": 32,
+      "frame": 32400,
+      "level": 9,
+      "heap": 54103168,
+      "listeners": 65,
+      "emitChanges": 0
+    },
+    {
+      "wallSeconds": 32,
+      "frame": 34200,
+      "level": 9,
+      "heap": 54177168,
+      "listeners": 65,
+      "emitChanges": 0
+    },
+    {
+      "wallSeconds": 34,
+      "frame": 36000,
+      "level": 10,
+      "heap": 54334232,
+      "listeners": 65,
+      "emitChanges": 0
+    },
+    {
+      "wallSeconds": 39,
+      "frame": 37800,
+      "level": 10,
+      "heap": 54001120,
+      "listeners": 65,
+      "emitChanges": 0
+    },
+    {
+      "wallSeconds": 44,
+      "frame": 39600,
+      "level": 10,
+      "heap": 54046936,
+      "listeners": 65,
+      "emitChanges": 0
+    },
+    {
+      "wallSeconds": 48,
+      "frame": 41400,
+      "level": 11,
+      "heap": 55905744,
+      "listeners": 65,
+      "emitChanges": 0
+    },
+    {
+      "wallSeconds": 51,
+      "frame": 43200,
+      "level": 11,
+      "heap": 55727496,
+      "listeners": 65,
+      "emitChanges": 0
+    },
+    {
+      "wallSeconds": 54,
+      "frame": 45000,
+      "level": 12,
+      "heap": 55976016,
+      "listeners": 65,
+      "emitChanges": 0
+    },
+    {
+      "wallSeconds": 54,
+      "frame": 46800,
+      "level": 12,
+      "heap": 56055448,
+      "listeners": 65,
+      "emitChanges": 0
+    },
+    {
+      "wallSeconds": 54,
+      "frame": 48600,
+      "level": 12,
+      "heap": 55865320,
+      "listeners": 65,
+      "emitChanges": 0
+    },
+    {
+      "wallSeconds": 59,
+      "frame": 50400,
+      "level": 13,
+      "heap": 57873008,
+      "listeners": 65,
+      "emitChanges": 0
+    },
+    {
+      "wallSeconds": 62,
+      "frame": 52200,
+      "level": 13,
+      "heap": 57853056,
+      "listeners": 65,
+      "emitChanges": 0
+    },
+    {
+      "wallSeconds": 64,
+      "frame": 54000,
+      "level": 14,
+      "heap": 57812208,
+      "listeners": 65,
+      "emitChanges": 0
+    },
+    {
+      "wallSeconds": 64,
+      "frame": 55800,
+      "level": 14,
+      "heap": 57887360,
+      "listeners": 65,
+      "emitChanges": 0
+    }
+  ],
+  "crews": [
+    {
+      "level": 2,
+      "initialCrew": 15,
+      "health": [
+        {
+          "id": 21,
+          "room": 0,
+          "role": "scout",
+          "hp": 91
+        },
+        {
+          "id": 22,
+          "room": 0,
+          "role": "scout",
+          "hp": 91
+        },
+        {
+          "id": 23,
+          "room": 0,
+          "role": "shield",
+          "hp": 195
+        },
+        {
+          "id": 24,
+          "room": 0,
+          "role": "sniper",
+          "hp": 78
+        },
+        {
+          "id": 25,
+          "room": 0,
+          "role": "hunter",
+          "hp": 111
+        },
+        {
+          "id": 26,
+          "room": 1,
+          "role": "scout",
+          "hp": 95
+        },
+        {
+          "id": 27,
+          "room": 1,
+          "role": "shield",
+          "hp": 203
+        },
+        {
+          "id": 28,
+          "room": 1,
+          "role": "sniper",
+          "hp": 81
+        },
+        {
+          "id": 29,
+          "room": 1,
+          "role": "hunter",
+          "hp": 115
+        },
+        {
+          "id": 30,
+          "room": 1,
+          "role": "relay",
+          "hp": 81
+        },
+        {
+          "id": 31,
+          "room": 2,
+          "role": "scout",
+          "hp": 99
+        },
+        {
+          "id": 32,
+          "room": 2,
+          "role": "shield",
+          "hp": 212
+        },
+        {
+          "id": 33,
+          "room": 2,
+          "role": "sniper",
+          "hp": 85
+        },
+        {
+          "id": 34,
+          "room": 2,
+          "role": "hunter",
+          "hp": 120
+        },
+        {
+          "id": 35,
+          "room": 2,
+          "role": "relay",
+          "hp": 85
+        }
+      ],
+      "stats": {
+        "version": "2.0.0",
+        "initialized": true,
+        "alarms": [
+          2.8999999999999946,
+          28.049999999999688,
+          48.96666666666517
+        ],
+        "events": [
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 21,
+            "room": 0,
+            "role": "scout",
+            "reserve": false,
+            "pos": [
+              -16,
+              0,
+              -8
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 22,
+            "room": 0,
+            "role": "scout",
+            "reserve": false,
+            "pos": [
+              8,
+              0,
+              -4
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 23,
+            "room": 0,
+            "role": "shield",
+            "reserve": false,
+            "pos": [
+              -12,
+              0,
+              -28
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 24,
+            "room": 0,
+            "role": "sniper",
+            "reserve": false,
+            "pos": [
+              16,
+              0,
+              -20
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 25,
+            "room": 0,
+            "role": "hunter",
+            "reserve": false,
+            "pos": [
+              -16,
+              0,
+              -20
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 26,
+            "room": 1,
+            "role": "scout",
+            "reserve": false,
+            "pos": [
+              0,
+              0,
+              -68
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 27,
+            "room": 1,
+            "role": "shield",
+            "reserve": false,
+            "pos": [
+              24,
+              0,
+              -64
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 28,
+            "room": 1,
+            "role": "sniper",
+            "reserve": false,
+            "pos": [
+              4,
+              0,
+              -88
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 29,
+            "room": 1,
+            "role": "hunter",
+            "reserve": false,
+            "pos": [
+              32,
+              0,
+              -80
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 30,
+            "room": 1,
+            "role": "relay",
+            "reserve": false,
+            "pos": [
+              0,
+              0,
+              -80
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 31,
+            "room": 2,
+            "role": "scout",
+            "reserve": false,
+            "pos": [
+              -20,
+              0,
+              -128
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 32,
+            "room": 2,
+            "role": "shield",
+            "reserve": false,
+            "pos": [
+              4,
+              0,
+              -124
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 33,
+            "room": 2,
+            "role": "sniper",
+            "reserve": false,
+            "pos": [
+              -16,
+              0,
+              -148
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 34,
+            "room": 2,
+            "role": "hunter",
+            "reserve": false,
+            "pos": [
+              12,
+              0,
+              -140
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 35,
+            "room": 2,
+            "role": "relay",
+            "reserve": false,
+            "pos": [
+              -20,
+              0,
+              -140
+            ]
+          },
+          {
+            "time": 2.9,
+            "kind": "alarm",
+            "room": 0,
+            "caller": 22
+          },
+          {
+            "time": 28.05,
+            "kind": "alarm",
+            "room": 1,
+            "caller": 27
+          },
+          {
+            "time": 48.967,
+            "kind": "alarm",
+            "room": 2,
+            "caller": 32
+          }
+        ],
+        "reserveDepartures": 0,
+        "shots": 6,
+        "patrolDistance": 484.3647177113064,
+        "stuckRepaths": 0
+      },
+      "recoveries": 0,
+      "remaining": 0
+    },
+    {
+      "level": 5,
+      "initialCrew": 19,
+      "health": [
+        {
+          "id": 206,
+          "room": 0,
+          "role": "scout",
+          "hp": 100
+        },
+        {
+          "id": 207,
+          "room": 0,
+          "role": "shield",
+          "hp": 215
+        },
+        {
+          "id": 208,
+          "room": 0,
+          "role": "sniper",
+          "hp": 86
+        },
+        {
+          "id": 209,
+          "room": 0,
+          "role": "hunter",
+          "hp": 122
+        },
+        {
+          "id": 210,
+          "room": 0,
+          "role": "relay",
+          "hp": 86
+        },
+        {
+          "id": 211,
+          "room": 0,
+          "role": "rocketeer",
+          "hp": 134
+        },
+        {
+          "id": 212,
+          "room": 1,
+          "role": "scout",
+          "hp": 104
+        },
+        {
+          "id": 213,
+          "room": 1,
+          "role": "shield",
+          "hp": 223
+        },
+        {
+          "id": 214,
+          "room": 1,
+          "role": "sniper",
+          "hp": 89
+        },
+        {
+          "id": 215,
+          "room": 1,
+          "role": "hunter",
+          "hp": 126
+        },
+        {
+          "id": 216,
+          "room": 1,
+          "role": "relay",
+          "hp": 89
+        },
+        {
+          "id": 217,
+          "room": 1,
+          "role": "rocketeer",
+          "hp": 140
+        },
+        {
+          "id": 218,
+          "room": 2,
+          "role": "scout",
+          "hp": 108
+        },
+        {
+          "id": 219,
+          "room": 2,
+          "role": "shield",
+          "hp": 231
+        },
+        {
+          "id": 220,
+          "room": 2,
+          "role": "sniper",
+          "hp": 92
+        },
+        {
+          "id": 221,
+          "room": 2,
+          "role": "hunter",
+          "hp": 131
+        },
+        {
+          "id": 222,
+          "room": 2,
+          "role": "relay",
+          "hp": 92
+        },
+        {
+          "id": 223,
+          "room": 2,
+          "role": "rocketeer",
+          "hp": 145
+        },
+        {
+          "id": 224,
+          "room": 2,
+          "role": "scout",
+          "hp": 108
+        }
+      ],
+      "stats": {
+        "version": "2.0.0",
+        "initialized": true,
+        "alarms": [
+          2.8999999999999946,
+          23.233333333333295,
+          56.066666666664766
+        ],
+        "events": [
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 206,
+            "room": 0,
+            "role": "scout",
+            "reserve": false,
+            "pos": [
+              -16,
+              0,
+              -8
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 207,
+            "room": 0,
+            "role": "shield",
+            "reserve": false,
+            "pos": [
+              8,
+              0,
+              -4
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 208,
+            "room": 0,
+            "role": "sniper",
+            "reserve": false,
+            "pos": [
+              -12,
+              0,
+              -28
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 209,
+            "room": 0,
+            "role": "hunter",
+            "reserve": false,
+            "pos": [
+              16,
+              0,
+              -20
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 210,
+            "room": 0,
+            "role": "relay",
+            "reserve": true,
+            "pos": [
+              32,
+              0,
+              -18
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 211,
+            "room": 0,
+            "role": "rocketeer",
+            "reserve": true,
+            "pos": [
+              32,
+              0,
+              -14
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 212,
+            "room": 1,
+            "role": "scout",
+            "reserve": false,
+            "pos": [
+              -36,
+              0,
+              -76
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 213,
+            "room": 1,
+            "role": "shield",
+            "reserve": false,
+            "pos": [
+              -12,
+              0,
+              -72
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 214,
+            "room": 1,
+            "role": "sniper",
+            "reserve": false,
+            "pos": [
+              -32,
+              0,
+              -96
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 215,
+            "room": 1,
+            "role": "hunter",
+            "reserve": false,
+            "pos": [
+              -4,
+              0,
+              -88
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 216,
+            "room": 1,
+            "role": "relay",
+            "reserve": true,
+            "pos": [
+              12,
+              0,
+              -86
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 217,
+            "room": 1,
+            "role": "rocketeer",
+            "reserve": true,
+            "pos": [
+              12,
+              0,
+              -82
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 218,
+            "room": 2,
+            "role": "scout",
+            "reserve": false,
+            "pos": [
+              -4,
+              0,
+              -144
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 219,
+            "room": 2,
+            "role": "shield",
+            "reserve": false,
+            "pos": [
+              20,
+              0,
+              -140
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 220,
+            "room": 2,
+            "role": "sniper",
+            "reserve": false,
+            "pos": [
+              0,
+              0,
+              -164
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 221,
+            "room": 2,
+            "role": "hunter",
+            "reserve": false,
+            "pos": [
+              28,
+              0,
+              -156
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 222,
+            "room": 2,
+            "role": "relay",
+            "reserve": false,
+            "pos": [
+              -4,
+              0,
+              -156
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 223,
+            "room": 2,
+            "role": "rocketeer",
+            "reserve": true,
+            "pos": [
+              44,
+              0,
+              -154
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 224,
+            "room": 2,
+            "role": "scout",
+            "reserve": true,
+            "pos": [
+              44,
+              0,
+              -150
+            ]
+          },
+          {
+            "time": 2.9,
+            "kind": "alarm",
+            "room": 0,
+            "caller": 207
+          },
+          {
+            "time": 5.517,
+            "kind": "reserve-departed",
+            "id": 210,
+            "room": 0,
+            "pos": [
+              32,
+              0,
+              -18
+            ],
+            "door": [
+              22,
+              0,
+              -16
+            ]
+          },
+          {
+            "time": 5.517,
+            "kind": "reserve-departed",
+            "id": 211,
+            "room": 0,
+            "pos": [
+              32,
+              0,
+              -14
+            ],
+            "door": [
+              22,
+              0,
+              -16
+            ]
+          },
+          {
+            "time": 23.233,
+            "kind": "alarm",
+            "room": 1,
+            "caller": 213
+          },
+          {
+            "time": 25.85,
+            "kind": "reserve-departed",
+            "id": 216,
+            "room": 1,
+            "pos": [
+              12,
+              0,
+              -86
+            ],
+            "door": [
+              2,
+              0,
+              -84
+            ]
+          },
+          {
+            "time": 25.85,
+            "kind": "reserve-departed",
+            "id": 217,
+            "room": 1,
+            "pos": [
+              12,
+              0,
+              -82
+            ],
+            "door": [
+              2,
+              0,
+              -84
+            ]
+          },
+          {
+            "time": 56.067,
+            "kind": "alarm",
+            "room": 2,
+            "caller": 219
+          },
+          {
+            "time": 58.683,
+            "kind": "reserve-departed",
+            "id": 223,
+            "room": 2,
+            "pos": [
+              44,
+              0,
+              -154
+            ],
+            "door": [
+              34,
+              0,
+              -152
+            ]
+          },
+          {
+            "time": 58.683,
+            "kind": "reserve-departed",
+            "id": 224,
+            "room": 2,
+            "pos": [
+              44,
+              0,
+              -150
+            ],
+            "door": [
+              34,
+              0,
+              -152
+            ]
+          }
+        ],
+        "reserveDepartures": 6,
+        "shots": 7,
+        "patrolDistance": 463.5355572653139,
+        "stuckRepaths": 0
+      },
+      "recoveries": 0,
+      "remaining": 0
+    },
+    {
+      "level": 8,
+      "initialCrew": 22,
+      "health": [
+        {
+          "id": 292,
+          "room": 0,
+          "role": "scout",
+          "hp": 109
+        },
+        {
+          "id": 293,
+          "room": 0,
+          "role": "shield",
+          "hp": 234
+        },
+        {
+          "id": 294,
+          "room": 0,
+          "role": "sniper",
+          "hp": 94
+        },
+        {
+          "id": 295,
+          "room": 0,
+          "role": "hunter",
+          "hp": 133
+        },
+        {
+          "id": 296,
+          "room": 0,
+          "role": "relay",
+          "hp": 94
+        },
+        {
+          "id": 297,
+          "room": 0,
+          "role": "rocketeer",
+          "hp": 147
+        },
+        {
+          "id": 298,
+          "room": 0,
+          "role": "scout",
+          "hp": 109
+        },
+        {
+          "id": 299,
+          "room": 1,
+          "role": "scout",
+          "hp": 113
+        },
+        {
+          "id": 300,
+          "room": 1,
+          "role": "shield",
+          "hp": 242
+        },
+        {
+          "id": 301,
+          "room": 1,
+          "role": "sniper",
+          "hp": 97
+        },
+        {
+          "id": 302,
+          "room": 1,
+          "role": "hunter",
+          "hp": 137
+        },
+        {
+          "id": 303,
+          "room": 1,
+          "role": "relay",
+          "hp": 97
+        },
+        {
+          "id": 304,
+          "room": 1,
+          "role": "rocketeer",
+          "hp": 152
+        },
+        {
+          "id": 305,
+          "room": 1,
+          "role": "scout",
+          "hp": 113
+        },
+        {
+          "id": 306,
+          "room": 2,
+          "role": "scout",
+          "hp": 117
+        },
+        {
+          "id": 307,
+          "room": 2,
+          "role": "shield",
+          "hp": 251
+        },
+        {
+          "id": 308,
+          "room": 2,
+          "role": "sniper",
+          "hp": 100
+        },
+        {
+          "id": 309,
+          "room": 2,
+          "role": "hunter",
+          "hp": 142
+        },
+        {
+          "id": 310,
+          "room": 2,
+          "role": "relay",
+          "hp": 100
+        },
+        {
+          "id": 311,
+          "room": 2,
+          "role": "rocketeer",
+          "hp": 157
+        },
+        {
+          "id": 312,
+          "room": 2,
+          "role": "scout",
+          "hp": 117
+        },
+        {
+          "id": 313,
+          "room": 2,
+          "role": "ninja",
+          "hp": 140
+        }
+      ],
+      "stats": {
+        "version": "2.0.0",
+        "initialized": true,
+        "alarms": [
+          4.166666666666657,
+          30.783333333332866,
+          56.43333333333141
+        ],
+        "events": [
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 292,
+            "room": 0,
+            "role": "scout",
+            "reserve": false,
+            "pos": [
+              -16,
+              0,
+              -8
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 293,
+            "room": 0,
+            "role": "shield",
+            "reserve": false,
+            "pos": [
+              8,
+              0,
+              -4
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 294,
+            "room": 0,
+            "role": "sniper",
+            "reserve": false,
+            "pos": [
+              -12,
+              0,
+              -28
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 295,
+            "room": 0,
+            "role": "hunter",
+            "reserve": false,
+            "pos": [
+              16,
+              0,
+              -20
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 296,
+            "room": 0,
+            "role": "relay",
+            "reserve": false,
+            "pos": [
+              -16,
+              0,
+              -20
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 297,
+            "room": 0,
+            "role": "rocketeer",
+            "reserve": true,
+            "pos": [
+              32,
+              0,
+              -18
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 298,
+            "room": 0,
+            "role": "scout",
+            "reserve": true,
+            "pos": [
+              32,
+              0,
+              -14
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 299,
+            "room": 1,
+            "role": "scout",
+            "reserve": false,
+            "pos": [
+              8,
+              0,
+              -80
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 300,
+            "room": 1,
+            "role": "shield",
+            "reserve": false,
+            "pos": [
+              32,
+              0,
+              -76
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 301,
+            "room": 1,
+            "role": "sniper",
+            "reserve": false,
+            "pos": [
+              12,
+              0,
+              -100
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 302,
+            "room": 1,
+            "role": "hunter",
+            "reserve": false,
+            "pos": [
+              40,
+              0,
+              -92
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 303,
+            "room": 1,
+            "role": "relay",
+            "reserve": false,
+            "pos": [
+              8,
+              0,
+              -92
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 304,
+            "room": 1,
+            "role": "rocketeer",
+            "reserve": true,
+            "pos": [
+              56,
+              0,
+              -90
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 305,
+            "room": 1,
+            "role": "scout",
+            "reserve": true,
+            "pos": [
+              56,
+              0,
+              -86
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 306,
+            "room": 2,
+            "role": "scout",
+            "reserve": false,
+            "pos": [
+              -28,
+              0,
+              -152
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 307,
+            "room": 2,
+            "role": "shield",
+            "reserve": false,
+            "pos": [
+              -4,
+              0,
+              -148
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 308,
+            "room": 2,
+            "role": "sniper",
+            "reserve": false,
+            "pos": [
+              -24,
+              0,
+              -172
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 309,
+            "room": 2,
+            "role": "hunter",
+            "reserve": false,
+            "pos": [
+              4,
+              0,
+              -164
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 310,
+            "room": 2,
+            "role": "relay",
+            "reserve": false,
+            "pos": [
+              -28,
+              0,
+              -164
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 311,
+            "room": 2,
+            "role": "rocketeer",
+            "reserve": false,
+            "pos": [
+              -8,
+              0,
+              -172
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 312,
+            "room": 2,
+            "role": "scout",
+            "reserve": true,
+            "pos": [
+              20,
+              0,
+              -162
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 313,
+            "room": 2,
+            "role": "ninja",
+            "reserve": true,
+            "pos": [
+              20,
+              0,
+              -158
+            ]
+          },
+          {
+            "time": 4.167,
+            "kind": "alarm",
+            "room": 0,
+            "caller": 293
+          },
+          {
+            "time": 6.783,
+            "kind": "reserve-departed",
+            "id": 297,
+            "room": 0,
+            "pos": [
+              32,
+              0,
+              -18
+            ],
+            "door": [
+              22,
+              0,
+              -16
+            ]
+          },
+          {
+            "time": 6.783,
+            "kind": "reserve-departed",
+            "id": 298,
+            "room": 0,
+            "pos": [
+              32,
+              0,
+              -14
+            ],
+            "door": [
+              22,
+              0,
+              -16
+            ]
+          },
+          {
+            "time": 30.783,
+            "kind": "alarm",
+            "room": 1,
+            "caller": 300
+          },
+          {
+            "time": 33.4,
+            "kind": "reserve-departed",
+            "id": 304,
+            "room": 1,
+            "pos": [
+              56,
+              0,
+              -90
+            ],
+            "door": [
+              46,
+              0,
+              -88
+            ]
+          },
+          {
+            "time": 33.4,
+            "kind": "reserve-departed",
+            "id": 305,
+            "room": 1,
+            "pos": [
+              56,
+              0,
+              -86
+            ],
+            "door": [
+              46,
+              0,
+              -88
+            ]
+          },
+          {
+            "time": 56.433,
+            "kind": "alarm",
+            "room": 2,
+            "caller": 307
+          },
+          {
+            "time": 59.05,
+            "kind": "reserve-departed",
+            "id": 312,
+            "room": 2,
+            "pos": [
+              20,
+              0,
+              -162
+            ],
+            "door": [
+              10,
+              0,
+              -160
+            ]
+          },
+          {
+            "time": 59.05,
+            "kind": "reserve-departed",
+            "id": 313,
+            "room": 2,
+            "pos": [
+              20,
+              0,
+              -158
+            ],
+            "door": [
+              10,
+              0,
+              -160
+            ]
+          }
+        ],
+        "reserveDepartures": 6,
+        "shots": 10,
+        "patrolDistance": 565.5707798731565,
+        "stuckRepaths": 0
+      },
+      "recoveries": 0,
+      "remaining": 0
+    },
+    {
+      "level": 11,
+      "initialCrew": 22,
+      "health": [
+        {
+          "id": 377,
+          "room": 0,
+          "role": "scout",
+          "hp": 118
+        },
+        {
+          "id": 378,
+          "room": 0,
+          "role": "shield",
+          "hp": 254
+        },
+        {
+          "id": 379,
+          "room": 0,
+          "role": "sniper",
+          "hp": 101
+        },
+        {
+          "id": 380,
+          "room": 0,
+          "role": "hunter",
+          "hp": 144
+        },
+        {
+          "id": 381,
+          "room": 0,
+          "role": "relay",
+          "hp": 101
+        },
+        {
+          "id": 382,
+          "room": 0,
+          "role": "rocketeer",
+          "hp": 159
+        },
+        {
+          "id": 383,
+          "room": 0,
+          "role": "scout",
+          "hp": 118
+        },
+        {
+          "id": 384,
+          "room": 1,
+          "role": "scout",
+          "hp": 122
+        },
+        {
+          "id": 385,
+          "room": 1,
+          "role": "shield",
+          "hp": 262
+        },
+        {
+          "id": 386,
+          "room": 1,
+          "role": "sniper",
+          "hp": 105
+        },
+        {
+          "id": 387,
+          "room": 1,
+          "role": "hunter",
+          "hp": 148
+        },
+        {
+          "id": 388,
+          "room": 1,
+          "role": "relay",
+          "hp": 105
+        },
+        {
+          "id": 389,
+          "room": 1,
+          "role": "rocketeer",
+          "hp": 164
+        },
+        {
+          "id": 390,
+          "room": 1,
+          "role": "scout",
+          "hp": 122
+        },
+        {
+          "id": 391,
+          "room": 2,
+          "role": "scout",
+          "hp": 126
+        },
+        {
+          "id": 392,
+          "room": 2,
+          "role": "shield",
+          "hp": 270
+        },
+        {
+          "id": 393,
+          "room": 2,
+          "role": "sniper",
+          "hp": 108
+        },
+        {
+          "id": 394,
+          "room": 2,
+          "role": "hunter",
+          "hp": 153
+        },
+        {
+          "id": 395,
+          "room": 2,
+          "role": "relay",
+          "hp": 108
+        },
+        {
+          "id": 396,
+          "room": 2,
+          "role": "rocketeer",
+          "hp": 169
+        },
+        {
+          "id": 397,
+          "room": 2,
+          "role": "scout",
+          "hp": 126
+        },
+        {
+          "id": 398,
+          "room": 2,
+          "role": "ninja",
+          "hp": 151
+        }
+      ],
+      "stats": {
+        "version": "2.0.0",
+        "initialized": true,
+        "alarms": [
+          4.166666666666657,
+          25.533333333333164,
+          50.933333333331724
+        ],
+        "events": [
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 377,
+            "room": 0,
+            "role": "scout",
+            "reserve": false,
+            "pos": [
+              -16,
+              0,
+              -8
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 378,
+            "room": 0,
+            "role": "shield",
+            "reserve": false,
+            "pos": [
+              8,
+              0,
+              -4
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 379,
+            "room": 0,
+            "role": "sniper",
+            "reserve": false,
+            "pos": [
+              -12,
+              0,
+              -28
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 380,
+            "room": 0,
+            "role": "hunter",
+            "reserve": false,
+            "pos": [
+              16,
+              0,
+              -20
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 381,
+            "room": 0,
+            "role": "relay",
+            "reserve": false,
+            "pos": [
+              -16,
+              0,
+              -20
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 382,
+            "room": 0,
+            "role": "rocketeer",
+            "reserve": true,
+            "pos": [
+              32,
+              0,
+              -18
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 383,
+            "room": 0,
+            "role": "scout",
+            "reserve": true,
+            "pos": [
+              32,
+              0,
+              -14
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 384,
+            "room": 1,
+            "role": "scout",
+            "reserve": false,
+            "pos": [
+              -40,
+              0,
+              -80
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 385,
+            "room": 1,
+            "role": "shield",
+            "reserve": false,
+            "pos": [
+              -16,
+              0,
+              -76
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 386,
+            "room": 1,
+            "role": "sniper",
+            "reserve": false,
+            "pos": [
+              -36,
+              0,
+              -100
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 387,
+            "room": 1,
+            "role": "hunter",
+            "reserve": false,
+            "pos": [
+              -8,
+              0,
+              -92
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 388,
+            "room": 1,
+            "role": "relay",
+            "reserve": false,
+            "pos": [
+              -40,
+              0,
+              -92
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 389,
+            "room": 1,
+            "role": "rocketeer",
+            "reserve": true,
+            "pos": [
+              8,
+              0,
+              -90
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 390,
+            "room": 1,
+            "role": "scout",
+            "reserve": true,
+            "pos": [
+              8,
+              0,
+              -86
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 391,
+            "room": 2,
+            "role": "scout",
+            "reserve": false,
+            "pos": [
+              -40,
+              0,
+              -152
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 392,
+            "room": 2,
+            "role": "shield",
+            "reserve": false,
+            "pos": [
+              -16,
+              0,
+              -148
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 393,
+            "room": 2,
+            "role": "sniper",
+            "reserve": false,
+            "pos": [
+              -36,
+              0,
+              -172
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 394,
+            "room": 2,
+            "role": "hunter",
+            "reserve": false,
+            "pos": [
+              -8,
+              0,
+              -164
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 395,
+            "room": 2,
+            "role": "relay",
+            "reserve": false,
+            "pos": [
+              -40,
+              0,
+              -164
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 396,
+            "room": 2,
+            "role": "rocketeer",
+            "reserve": false,
+            "pos": [
+              -20,
+              0,
+              -172
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 397,
+            "room": 2,
+            "role": "scout",
+            "reserve": true,
+            "pos": [
+              8,
+              0,
+              -162
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 398,
+            "room": 2,
+            "role": "ninja",
+            "reserve": true,
+            "pos": [
+              8,
+              0,
+              -158
+            ]
+          },
+          {
+            "time": 4.167,
+            "kind": "alarm",
+            "room": 0,
+            "caller": 378
+          },
+          {
+            "time": 6.783,
+            "kind": "reserve-departed",
+            "id": 382,
+            "room": 0,
+            "pos": [
+              32,
+              0,
+              -18
+            ],
+            "door": [
+              22,
+              0,
+              -16
+            ]
+          },
+          {
+            "time": 6.783,
+            "kind": "reserve-departed",
+            "id": 383,
+            "room": 0,
+            "pos": [
+              32,
+              0,
+              -14
+            ],
+            "door": [
+              22,
+              0,
+              -16
+            ]
+          },
+          {
+            "time": 25.533,
+            "kind": "alarm",
+            "room": 1,
+            "caller": 385
+          },
+          {
+            "time": 28.15,
+            "kind": "reserve-departed",
+            "id": 389,
+            "room": 1,
+            "pos": [
+              8,
+              0,
+              -90
+            ],
+            "door": [
+              -2,
+              0,
+              -88
+            ]
+          },
+          {
+            "time": 28.15,
+            "kind": "reserve-departed",
+            "id": 390,
+            "room": 1,
+            "pos": [
+              8,
+              0,
+              -86
+            ],
+            "door": [
+              -2,
+              0,
+              -88
+            ]
+          },
+          {
+            "time": 50.933,
+            "kind": "alarm",
+            "room": 2,
+            "caller": 392
+          },
+          {
+            "time": 53.55,
+            "kind": "reserve-departed",
+            "id": 397,
+            "room": 2,
+            "pos": [
+              8,
+              0,
+              -162
+            ],
+            "door": [
+              -2,
+              0,
+              -160
+            ]
+          },
+          {
+            "time": 53.55,
+            "kind": "reserve-departed",
+            "id": 398,
+            "room": 2,
+            "pos": [
+              8,
+              0,
+              -158
+            ],
+            "door": [
+              -2,
+              0,
+              -160
+            ]
+          }
+        ],
+        "reserveDepartures": 6,
+        "shots": 7,
+        "patrolDistance": 491.43364829710333,
+        "stuckRepaths": 0
+      },
+      "recoveries": 0,
+      "remaining": 0
+    },
+    {
+      "level": 13,
+      "initialCrew": 24,
+      "health": [
+        {
+          "id": 404,
+          "room": 0,
+          "role": "scout",
+          "hp": 127
+        },
+        {
+          "id": 405,
+          "room": 0,
+          "role": "shield",
+          "hp": 273
+        },
+        {
+          "id": 406,
+          "room": 0,
+          "role": "sniper",
+          "hp": 109
+        },
+        {
+          "id": 407,
+          "room": 0,
+          "role": "hunter",
+          "hp": 155
+        },
+        {
+          "id": 408,
+          "room": 0,
+          "role": "relay",
+          "hp": 109
+        },
+        {
+          "id": 409,
+          "room": 0,
+          "role": "rocketeer",
+          "hp": 171
+        },
+        {
+          "id": 410,
+          "room": 0,
+          "role": "scout",
+          "hp": 127
+        },
+        {
+          "id": 411,
+          "room": 0,
+          "role": "ninja",
+          "hp": 153
+        },
+        {
+          "id": 412,
+          "room": 1,
+          "role": "scout",
+          "hp": 131
+        },
+        {
+          "id": 413,
+          "room": 1,
+          "role": "shield",
+          "hp": 281
+        },
+        {
+          "id": 414,
+          "room": 1,
+          "role": "sniper",
+          "hp": 113
+        },
+        {
+          "id": 415,
+          "room": 1,
+          "role": "hunter",
+          "hp": 159
+        },
+        {
+          "id": 416,
+          "room": 1,
+          "role": "relay",
+          "hp": 113
+        },
+        {
+          "id": 417,
+          "room": 1,
+          "role": "rocketeer",
+          "hp": 176
+        },
+        {
+          "id": 418,
+          "room": 1,
+          "role": "scout",
+          "hp": 131
+        },
+        {
+          "id": 419,
+          "room": 1,
+          "role": "ninja",
+          "hp": 158
+        },
+        {
+          "id": 420,
+          "room": 2,
+          "role": "scout",
+          "hp": 135
+        },
+        {
+          "id": 421,
+          "room": 2,
+          "role": "shield",
+          "hp": 290
+        },
+        {
+          "id": 422,
+          "room": 2,
+          "role": "sniper",
+          "hp": 116
+        },
+        {
+          "id": 423,
+          "room": 2,
+          "role": "hunter",
+          "hp": 164
+        },
+        {
+          "id": 424,
+          "room": 2,
+          "role": "relay",
+          "hp": 116
+        },
+        {
+          "id": 425,
+          "room": 2,
+          "role": "rocketeer",
+          "hp": 181
+        },
+        {
+          "id": 426,
+          "room": 2,
+          "role": "scout",
+          "hp": 135
+        },
+        {
+          "id": 427,
+          "room": 2,
+          "role": "ninja",
+          "hp": 162
+        }
+      ],
+      "stats": {
+        "version": "2.0.0",
+        "initialized": true,
+        "alarms": [
+          2.883333333333328,
+          34.24999999999934,
+          59.383333333331244
+        ],
+        "events": [
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 404,
+            "room": 0,
+            "role": "scout",
+            "reserve": false,
+            "pos": [
+              -16,
+              0,
+              -8
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 405,
+            "room": 0,
+            "role": "shield",
+            "reserve": false,
+            "pos": [
+              8,
+              0,
+              -4
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 406,
+            "room": 0,
+            "role": "sniper",
+            "reserve": false,
+            "pos": [
+              -12,
+              0,
+              -28
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 407,
+            "room": 0,
+            "role": "hunter",
+            "reserve": false,
+            "pos": [
+              16,
+              0,
+              -20
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 408,
+            "room": 0,
+            "role": "relay",
+            "reserve": false,
+            "pos": [
+              -16,
+              0,
+              -20
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 409,
+            "room": 0,
+            "role": "rocketeer",
+            "reserve": false,
+            "pos": [
+              4,
+              0,
+              -28
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 410,
+            "room": 0,
+            "role": "scout",
+            "reserve": true,
+            "pos": [
+              32,
+              0,
+              -18
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 411,
+            "room": 0,
+            "role": "ninja",
+            "reserve": true,
+            "pos": [
+              32,
+              0,
+              -14
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 412,
+            "room": 1,
+            "role": "scout",
+            "reserve": false,
+            "pos": [
+              4,
+              0,
+              -88
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 413,
+            "room": 1,
+            "role": "shield",
+            "reserve": false,
+            "pos": [
+              28,
+              0,
+              -84
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 414,
+            "room": 1,
+            "role": "sniper",
+            "reserve": false,
+            "pos": [
+              8,
+              0,
+              -108
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 415,
+            "room": 1,
+            "role": "hunter",
+            "reserve": false,
+            "pos": [
+              36,
+              0,
+              -100
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 416,
+            "room": 1,
+            "role": "relay",
+            "reserve": false,
+            "pos": [
+              4,
+              0,
+              -100
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 417,
+            "room": 1,
+            "role": "rocketeer",
+            "reserve": false,
+            "pos": [
+              24,
+              0,
+              -108
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 418,
+            "room": 1,
+            "role": "scout",
+            "reserve": true,
+            "pos": [
+              52,
+              0,
+              -98
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 419,
+            "room": 1,
+            "role": "ninja",
+            "reserve": true,
+            "pos": [
+              52,
+              0,
+              -94
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 420,
+            "room": 2,
+            "role": "scout",
+            "reserve": false,
+            "pos": [
+              -32,
+              0,
+              -168
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 421,
+            "room": 2,
+            "role": "shield",
+            "reserve": false,
+            "pos": [
+              -8,
+              0,
+              -164
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 422,
+            "room": 2,
+            "role": "sniper",
+            "reserve": false,
+            "pos": [
+              -28,
+              0,
+              -188
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 423,
+            "room": 2,
+            "role": "hunter",
+            "reserve": false,
+            "pos": [
+              0,
+              0,
+              -180
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 424,
+            "room": 2,
+            "role": "relay",
+            "reserve": false,
+            "pos": [
+              -32,
+              0,
+              -180
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 425,
+            "room": 2,
+            "role": "rocketeer",
+            "reserve": false,
+            "pos": [
+              -12,
+              0,
+              -188
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 426,
+            "room": 2,
+            "role": "scout",
+            "reserve": true,
+            "pos": [
+              16,
+              0,
+              -178
+            ]
+          },
+          {
+            "time": 0,
+            "kind": "crew-posted",
+            "id": 427,
+            "room": 2,
+            "role": "ninja",
+            "reserve": true,
+            "pos": [
+              16,
+              0,
+              -174
+            ]
+          },
+          {
+            "time": 2.883,
+            "kind": "alarm",
+            "room": 0,
+            "caller": 405
+          },
+          {
+            "time": 5.5,
+            "kind": "reserve-departed",
+            "id": 410,
+            "room": 0,
+            "pos": [
+              32,
+              0,
+              -18
+            ],
+            "door": [
+              22,
+              0,
+              -16
+            ]
+          },
+          {
+            "time": 5.5,
+            "kind": "reserve-departed",
+            "id": 411,
+            "room": 0,
+            "pos": [
+              32,
+              0,
+              -14
+            ],
+            "door": [
+              22,
+              0,
+              -16
+            ]
+          },
+          {
+            "time": 34.25,
+            "kind": "alarm",
+            "room": 1,
+            "caller": 413
+          },
+          {
+            "time": 36.867,
+            "kind": "reserve-departed",
+            "id": 418,
+            "room": 1,
+            "pos": [
+              52,
+              0,
+              -98
+            ],
+            "door": [
+              42,
+              0,
+              -96
+            ]
+          },
+          {
+            "time": 36.867,
+            "kind": "reserve-departed",
+            "id": 419,
+            "room": 1,
+            "pos": [
+              52,
+              0,
+              -94
+            ],
+            "door": [
+              42,
+              0,
+              -96
+            ]
+          },
+          {
+            "time": 59.383,
+            "kind": "alarm",
+            "room": 2,
+            "caller": 421
+          },
+          {
+            "time": 62,
+            "kind": "reserve-departed",
+            "id": 426,
+            "room": 2,
+            "pos": [
+              16,
+              0,
+              -178
+            ],
+            "door": [
+              6,
+              0,
+              -176
+            ]
+          },
+          {
+            "time": 62,
+            "kind": "reserve-departed",
+            "id": 427,
+            "room": 2,
+            "pos": [
+              16,
+              0,
+              -174
+            ],
+            "door": [
+              6,
+              0,
+              -176
+            ]
+          }
+        ],
+        "reserveDepartures": 6,
+        "shots": 11,
+        "patrolDistance": 603.5348803815596,
+        "stuckRepaths": 1
+      },
+      "recoveries": 0,
+      "remaining": 0
+    }
+  ],
+  "environment": "Node VM, all 14 levels with ordinary input. No browser/render/audio-device claim."
+}

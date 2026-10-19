@@ -1,0 +1,285 @@
+{
+  "version": "2.0.0",
+  "environment": "Node VM + native Canvas; fixtures are explicitly marked",
+  "passed": 8,
+  "total": 8,
+  "rows": [
+    {
+      "name": "Five layouts: reachable terminals, exits and persistent crew posts",
+      "pass": true,
+      "seconds": 2.616,
+      "data": [
+        {
+          "tier": 0,
+          "cells": 428,
+          "nodes": 1468,
+          "crew": 15,
+          "initialHealth": [
+            {
+              "role": "scout",
+              "hp": 91
+            },
+            {
+              "role": "scout",
+              "hp": 91
+            },
+            {
+              "role": "shield",
+              "hp": 195
+            },
+            {
+              "role": "sniper",
+              "hp": 78
+            },
+            {
+              "role": "hunter",
+              "hp": 111
+            },
+            {
+              "role": "scout",
+              "hp": 95
+            },
+            {
+              "role": "shield",
+              "hp": 203
+            },
+            {
+              "role": "sniper",
+              "hp": 81
+            }
+          ]
+        },
+        {
+          "tier": 1,
+          "cells": 493,
+          "nodes": 1632,
+          "crew": 19,
+          "initialHealth": [
+            {
+              "role": "scout",
+              "hp": 100
+            },
+            {
+              "role": "shield",
+              "hp": 215
+            },
+            {
+              "role": "sniper",
+              "hp": 86
+            },
+            {
+              "role": "hunter",
+              "hp": 122
+            },
+            {
+              "role": "relay",
+              "hp": 86
+            },
+            {
+              "role": "rocketeer",
+              "hp": 134
+            },
+            {
+              "role": "scout",
+              "hp": 104
+            },
+            {
+              "role": "shield",
+              "hp": 223
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "cells": 525,
+          "nodes": 1740,
+          "crew": 22,
+          "initialHealth": [
+            {
+              "role": "scout",
+              "hp": 109
+            },
+            {
+              "role": "shield",
+              "hp": 234
+            },
+            {
+              "role": "sniper",
+              "hp": 94
+            },
+            {
+              "role": "hunter",
+              "hp": 133
+            },
+            {
+              "role": "relay",
+              "hp": 94
+            },
+            {
+              "role": "rocketeer",
+              "hp": 147
+            },
+            {
+              "role": "scout",
+              "hp": 109
+            },
+            {
+              "role": "scout",
+              "hp": 113
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "cells": 490,
+          "nodes": 1634,
+          "crew": 22,
+          "initialHealth": [
+            {
+              "role": "scout",
+              "hp": 118
+            },
+            {
+              "role": "shield",
+              "hp": 254
+            },
+            {
+              "role": "sniper",
+              "hp": 101
+            },
+            {
+              "role": "hunter",
+              "hp": 144
+            },
+            {
+              "role": "relay",
+              "hp": 101
+            },
+            {
+              "role": "rocketeer",
+              "hp": 159
+            },
+            {
+              "role": "scout",
+              "hp": 118
+            },
+            {
+              "role": "scout",
+              "hp": 122
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "cells": 544,
+          "nodes": 1790,
+          "crew": 24,
+          "initialHealth": [
+            {
+              "role": "scout",
+              "hp": 127
+            },
+            {
+              "role": "shield",
+              "hp": 273
+            },
+            {
+              "role": "sniper",
+              "hp": 109
+            },
+            {
+              "role": "hunter",
+              "hp": 155
+            },
+            {
+              "role": "relay",
+              "hp": 109
+            },
+            {
+              "role": "rocketeer",
+              "hp": 171
+            },
+            {
+              "role": "scout",
+              "hp": 127
+            },
+            {
+              "role": "ninja",
+              "hp": 153
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Access gates block future sectors including maintenance bypasses",
+      "pass": true,
+      "seconds": 5.744
+    },
+    {
+      "name": "Patrols walk before detection; reserves are present and stay at their posts",
+      "pass": true,
+      "seconds": 0.604,
+      "data": {
+        "patrolMeters": 73.07999999999198,
+        "crew": 22
+      }
+    },
+    {
+      "name": "First sector: ordinary input, no surprise entities or teleport recovery",
+      "pass": true,
+      "seconds": 4.832,
+      "data": {
+        "maxStep": 0.08250000000000064,
+        "health": 100,
+        "reserveDepartures": 2,
+        "remainingCrew": 13
+      }
+    },
+    {
+      "name": "Pause, new save and restored animation/AI state are deterministic",
+      "pass": true,
+      "seconds": 1.488
+    },
+    {
+      "name": "Published 1.9.3 saves retain geometry, health, crew and legacy rules",
+      "pass": true,
+      "seconds": 4.939
+    },
+    {
+      "name": "Renders preserve simulation and show shared human rigs with Canvas depth",
+      "pass": true,
+      "seconds": 2.014,
+      "data": {
+        "nativeCanvasFrameMs": [
+          330.76,
+          204.07,
+          95.04,
+          130.37,
+          137.93,
+          113.37,
+          117.38,
+          127.92
+        ],
+        "last": {
+          "items": 86,
+          "testedTriangles": 11688,
+          "visibleTriangles": 4876,
+          "milliseconds": 90.48739899999782,
+          "rigVariants": 5,
+          "architectureLayouts": 1
+        },
+        "note": "Staged native Canvas fixtures, not browser screenshots or FPS guarantees"
+      }
+    },
+    {
+      "name": "Repeated module evaluation adds no handlers and no wrappers",
+      "pass": true,
+      "seconds": 0.008,
+      "data": {
+        "evaluations": 75,
+        "listeners": 65
+      }
+    }
+  ]
+}

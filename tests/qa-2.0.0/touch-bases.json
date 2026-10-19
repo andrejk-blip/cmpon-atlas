@@ -1,0 +1,97 @@
+{
+  "version": "2.0.0",
+  "pass": true,
+  "environment": "Node VM, simulated mobile input mapping; synthetic checkpoints reached by full campaign inputs",
+  "rows": [
+    {
+      "mode": "normal",
+      "level": 2,
+      "pass": true,
+      "cards": 3,
+      "seconds": 64.98,
+      "minHp": 94,
+      "frames": 3903
+    },
+    {
+      "mode": "normal",
+      "level": 5,
+      "pass": true,
+      "cards": 3,
+      "seconds": 74.17,
+      "minHp": 89.1,
+      "frames": 4454
+    },
+    {
+      "mode": "normal",
+      "level": 8,
+      "pass": true,
+      "cards": 3,
+      "seconds": 74.68,
+      "minHp": 94.1,
+      "frames": 4485
+    },
+    {
+      "mode": "normal",
+      "level": 11,
+      "pass": true,
+      "cards": 3,
+      "seconds": 71.45,
+      "minHp": 94.92,
+      "frames": 4291
+    },
+    {
+      "mode": "normal",
+      "level": 13,
+      "pass": true,
+      "cards": 3,
+      "seconds": 78.88,
+      "minHp": 94.56,
+      "frames": 4737
+    },
+    {
+      "mode": "calm",
+      "level": 2,
+      "pass": true,
+      "cards": 3,
+      "seconds": 64.33,
+      "minHp": 96.4,
+      "frames": 3864
+    },
+    {
+      "mode": "calm",
+      "level": 5,
+      "pass": true,
+      "cards": 3,
+      "seconds": 67.27,
+      "minHp": 96.73,
+      "frames": 4040
+    },
+    {
+      "mode": "calm",
+      "level": 8,
+      "pass": true,
+      "cards": 3,
+      "seconds": 68.13,
+      "minHp": 95.75,
+      "frames": 4092
+    },
+    {
+      "mode": "calm",
+      "level": 11,
+      "pass": true,
+      "cards": 3,
+      "seconds": 66.68,
+      "minHp": 100,
+      "frames": 4005
+    },
+    {
+      "mode": "calm",
+      "level": 13,
+      "pass": true,
+      "cards": 3,
+      "seconds": 75.42,
+      "minHp": 100,
+      "frames": 4529
+    }
+  ]
+}

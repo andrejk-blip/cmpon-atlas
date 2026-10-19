@@ -81,5 +81,6 @@ async function check(name,fn){console.log("START "+name);try{const data=await fn
   const d=plain(f.diag());assert(d.events.length<=64);assert(!JSON.stringify(d).includes('private-value'));assert.equal(d.failures,0);return{events:d.events.length,frames:d.frames};
  });
  const report={suite:'runtime193',environment:'Node VM, mocked renderer/RAF/timers/storage; native Canvas integration tested separately',checks,pass:checks.every(x=>x.pass)};
- fs.writeFileSync('tests/qa-1.9.3/runtime.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({pass:report.pass,checks:checks.map(({name,pass,error})=>({name,pass,error}))},null,2));if(!report.pass)process.exitCode=1;
+ const reportArg=process.argv.indexOf('--report');
+ fs.writeFileSync(reportArg>=0?process.argv[reportArg+1]:'tests/qa-1.9.3/runtime.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({pass:report.pass,checks:checks.map(({name,pass,error})=>({name,pass,error}))},null,2));if(!report.pass)process.exitCode=1;
 })();

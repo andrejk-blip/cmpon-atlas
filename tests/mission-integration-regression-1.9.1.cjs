@@ -275,6 +275,7 @@ async function main(argv = process.argv.slice(2)) {
   for (let i = 0; i < argv.length; i++) if (argv[i] === '--report') reportPath = path.resolve(argv[++i]);
   else throw Error('Usage: mission-integration-regression-1.9.1.cjs [--report path]');
   const entry = entrySnapshot(), results = [], missions = [];
+  const release = JSON.parse(entry.html.match(/id="release-data">([^<]+)/)[1]);
   async function check(name, fn) {
     try { const detail = await fn(); results.push({ name, ok: true, ...(detail === undefined ? {} : { detail }) }); }
     catch (error) { results.push({ name, ok: false, error: error.message, stack: error.stack?.split('\n').slice(1, 5) }); }
@@ -282,7 +283,7 @@ async function main(argv = process.argv.slice(2)) {
   await check('Actual index orders voice after every gameplay wrapper and before comic/interface/story/academy', () => {
     const voice = entry.scripts.findIndex(name => /citadel-voice-v/.test(name));
     assert(voice > 0); assert(entry.scripts[0].includes('citadel-startup-')); assert(entry.scripts[1].includes('citadel-compat-'));
-    for (const token of ['citadel-flight-v1.9.1', 'citadel-pursuit-v1.9.0', 'citadel-swarm-v1.9.0', 'citadel-parallax-', 'citadel-decks-v1.9.1', 'citadel-input-v1.9.1']) {
+    for (const token of ['citadel-flight-v1.9.1', 'citadel-pursuit-v1.9.0', 'citadel-swarm-v1.9.0', 'citadel-parallax-', 'citadel-decks-v' + release.decks_module_version, 'citadel-input-v1.9.1']) {
       const at = entry.scripts.findIndex(name => name.includes(token)); assert(at > 1 && at < voice, token);
     }
     for (const token of ['citadel-comic-v1.9.3', 'citadel-interface-v1.9.0', 'citadel-story-v1.9.0', 'citadel-academy-bridge-'])
@@ -308,7 +309,7 @@ async function main(argv = process.argv.slice(2)) {
     () => boot(entry, { noAudio: true }, 'pages'));
   await check('Actual public boot: legacy Android APIs, denied storage and no Audio/Speech; skip prologue, launch and save',
     () => boot(entry, { legacy: true, deniedStorage: true, noAudio: true }, 'skip'));
-  const report = { version: '1.9.1', method: 'Exact current index.html deferred scripts, native public-core automatic initialize, existing Android feature mocks, native Canvas, ordinary mission controllers, real published academy bank and prepared voice manifest. Network and Web Audio decoding are isolated mocks; no browser/device/audio-quality claim.',
+  const report = { version: release.version, method: 'Exact current index.html deferred scripts, native public-core automatic initialize, existing Android feature mocks, native Canvas, ordinary mission controllers, real published academy bank and prepared voice manifest. Network and Web Audio decoding are isolated mocks; no browser/device/audio-quality claim.',
     limits: ['DOM mocks do not measure CSS card layout or browser text rendering.', 'Prepared clip buffers simulate asynchronous decode/playback; the actual MP3 corpus is not decoded by this narrow test.'],
     entrySha256: sha(entry.html), scripts: entry.scripts.map(file => ({ file,
       sha256: sha(entry.sources.get(file)) })),

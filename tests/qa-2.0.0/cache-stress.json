@@ -1,0 +1,68 @@
+{
+  "pass": true,
+  "version": "2.0.0",
+  "environment": "Node VM + native Canvas; 50 saved-base loads, 200 renders; not a full playthrough",
+  "wallSeconds": 49,
+  "samples": [
+    {
+      "pass": 0,
+      "heapAfterGC": 79912648,
+      "listeners": 65,
+      "meshes": 3628,
+      "items": 311,
+      "testedTriangles": 28168,
+      "visibleTriangles": 11537,
+      "milliseconds": 0,
+      "rigVariants": 10,
+      "architectureLayouts": 5
+    },
+    {
+      "pass": 1,
+      "heapAfterGC": 78277320,
+      "listeners": 65,
+      "meshes": 3628,
+      "items": 311,
+      "testedTriangles": 28168,
+      "visibleTriangles": 11537,
+      "milliseconds": 0,
+      "rigVariants": 10,
+      "architectureLayouts": 5
+    },
+    {
+      "pass": 2,
+      "heapAfterGC": 78282832,
+      "listeners": 65,
+      "meshes": 3628,
+      "items": 311,
+      "testedTriangles": 28168,
+      "visibleTriangles": 11537,
+      "milliseconds": 0,
+      "rigVariants": 10,
+      "architectureLayouts": 5
+    },
+    {
+      "pass": 3,
+      "heapAfterGC": 78312152,
+      "listeners": 65,
+      "meshes": 3628,
+      "items": 311,
+      "testedTriangles": 28168,
+      "visibleTriangles": 11537,
+      "milliseconds": 0,
+      "rigVariants": 10,
+      "architectureLayouts": 5
+    },
+    {
+      "pass": 4,
+      "heapAfterGC": 78333664,
+      "listeners": 65,
+      "meshes": 3628,
+      "items": 311,
+      "testedTriangles": 28168,
+      "visibleTriangles": 11537,
+      "milliseconds": 0,
+      "rigVariants": 10,
+      "architectureLayouts": 5
+    }
+  ]
+}

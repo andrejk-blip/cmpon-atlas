@@ -241,7 +241,9 @@
       // Hazard chevrons mark the edge of a solid, impassable installation.
       for(const side of [-1,1])for(let i=-2;i<=2;i++)add('box',[x+i*1.5,.026,z+side*6.4],[.35,.012,.12],'#c4ad70','hazard-stripe');
     }
-    for(const p of b.terminals){
+    for(const target of b.terminals){
+      // The interaction coordinate is the standing pad, in front of the desk.
+      const p=V3.add(target,[0,0,-1.8]);
       add('armor',V3.add(p,[0,.7,0]),[1.3,.7,.9],'#8b9d97','terminal-base');
       add('armor',V3.add(p,[0,1.7,-.4]),[1.15,.7,.12],'#344f5b','terminal-screen-frame');
       add('box',V3.add(p,[0,1.43,.55]),[1,.035,.28],'#263f4b','terminal-keyboard');
@@ -282,8 +284,9 @@
     b.terminals.forEach((p,i)=>{
       if(Math.hypot(p[0]-center[0],p[2]-center[2])>38)return;
       const current=i===b.completed.length,done=i<b.completed.length,col=done?'#81d3a4':current?'#83cbd6':'#455c67';
-      part(items,'box',V3.add(p,[0,1.76,-.262]),[.99,.51,.016],col,'terminal-screen',.35);
-      for(let j=0;j<4;j++)part(items,'box',V3.add(p,[-.2,1.99-j*.16,-.24]),[j===3?.5:.69,.018,.012],done?'#cff5cb':'#173b48','terminal-text');
+      const display=V3.add(p,[0,0,-1.8]);
+      part(items,'box',V3.add(display,[0,1.76,-.262]),[.99,.51,.016],col,'terminal-screen',.35);
+      for(let j=0;j<4;j++)part(items,'box',V3.add(display,[-.2,1.99-j*.16,-.24]),[j===3?.5:.69,.018,.012],done?'#cff5cb':'#173b48','terminal-text');
       if(current)ring(items,p,2.2,gate?.ready?'#9bdeb7':'#d9bd82',.8);
     });
     if(b.completed.length===3)ring(items,b.exit,2.5,'#8fdfb8');

@@ -1,0 +1,2012 @@
+{
+  "version": "2.0.0",
+  "checkpoint": "campaign",
+  "manual": false,
+  "renderer": "3D · совместимый режим",
+  "baseView": {
+    "items": 286,
+    "testedTriangles": 17228,
+    "visibleTriangles": 4595,
+    "milliseconds": 22.399999998509884,
+    "rigVariants": 41,
+    "architectureLayouts": 5
+  },
+  "baseOps": {
+    "reserveDepartures": 6,
+    "patrolDistance": 612.2950189000119,
+    "shots": 7
+  },
+  "board": {
+    "pos": [
+      -26.765539884917395,
+      1,
+      0
+    ],
+    "hp": 100,
+    "time": 56.503333333331426,
+    "room": 3,
+    "crew": 0
+  },
+  "mode": "normal",
+  "accelerated": true,
+  "rafInputCalls": 481,
+  "finished": "won",
+  "status": "won",
+  "level": 14,
+  "levels": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
+  ],
+  "cards": 23,
+  "wallSeconds": 669,
+  "simulatedSeconds": 971.8,
+  "frameCalls": 57637,
+  "emitChanges": 0,
+  "maxInputGapMs": 102635,
+  "metrics": {
+    "listeners": 70,
+    "peakListeners": 70,
+    "rafCalls": 751,
+    "rafDone": 746,
+    "rafPending": 1,
+    "rafPeak": 2,
+    "errors": [],
+    "heap": 259189139
+  },
+  "runtime": {
+    "version": "1.9.3",
+    "build": "193r2",
+    "frames": 744,
+    "updates": 481,
+    "renders": 744,
+    "recoveries": 0,
+    "failures": 0,
+    "stopped": false,
+    "contextLost": false,
+    "pending": true,
+    "stage": "idle",
+    "lastFrameAge": 519,
+    "lastUpdateAge": 99326,
+    "lastRenderAge": 20,
+    "recoverySave": "none",
+    "faults": [],
+    "events": [
+      {
+        "at": 185413,
+        "kind": "citadel-launch",
+        "status": "briefing",
+        "stage": 1,
+        "phase": "pursuit",
+        "finale": null,
+        "wave": 0,
+        "seconds": 174.86,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 185434,
+        "kind": "transition",
+        "status": "playing",
+        "stage": 1,
+        "phase": "pursuit",
+        "finale": null,
+        "wave": 0,
+        "seconds": 176,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 223482,
+        "kind": "citadel-lesson-next",
+        "status": "lesson",
+        "stage": 1,
+        "phase": "pursuit",
+        "finale": null,
+        "wave": 0,
+        "seconds": 260.87,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 223506,
+        "kind": "citadel-lesson-next",
+        "status": "lesson",
+        "stage": 1,
+        "phase": "pursuit",
+        "finale": null,
+        "wave": 0,
+        "seconds": 260.87,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 223521,
+        "kind": "transition",
+        "status": "playing",
+        "stage": 1,
+        "phase": "dock",
+        "finale": null,
+        "wave": 0,
+        "seconds": 260.98,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 226522,
+        "kind": "transition",
+        "status": "docking",
+        "stage": 1,
+        "phase": "dock",
+        "finale": null,
+        "wave": 0,
+        "seconds": 267.05,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 232796,
+        "kind": "transition",
+        "status": "boarding",
+        "stage": 1,
+        "phase": "boarding",
+        "finale": null,
+        "wave": 0,
+        "seconds": 279.19,
+        "mode": "normal",
+        "enemies": 19,
+        "renderer": "canvas"
+      },
+      {
+        "at": 240763,
+        "kind": "citadel-remark-next",
+        "status": "remark",
+        "stage": 1,
+        "phase": "boarding",
+        "finale": null,
+        "wave": 0,
+        "seconds": 294.82,
+        "mode": "normal",
+        "enemies": 13,
+        "renderer": "canvas"
+      },
+      {
+        "at": 240778,
+        "kind": "transition",
+        "status": "boarding",
+        "stage": 1,
+        "phase": "boarding",
+        "finale": null,
+        "wave": 0,
+        "seconds": 295.37,
+        "mode": "normal",
+        "enemies": 13,
+        "renderer": "canvas"
+      },
+      {
+        "at": 251944,
+        "kind": "citadel-remark-next",
+        "status": "remark",
+        "stage": 1,
+        "phase": "boarding",
+        "finale": null,
+        "wave": 0,
+        "seconds": 316.66,
+        "mode": "normal",
+        "enemies": 7,
+        "renderer": "canvas"
+      },
+      {
+        "at": 251960,
+        "kind": "transition",
+        "status": "boarding",
+        "stage": 1,
+        "phase": "boarding",
+        "finale": null,
+        "wave": 0,
+        "seconds": 317.63,
+        "mode": "normal",
+        "enemies": 7,
+        "renderer": "canvas"
+      },
+      {
+        "at": 265697,
+        "kind": "transition",
+        "status": "remark",
+        "stage": 1,
+        "phase": "boarding",
+        "finale": null,
+        "wave": 0,
+        "seconds": 345.96,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 265750,
+        "kind": "citadel-remark-next",
+        "status": "remark",
+        "stage": 1,
+        "phase": "boarding",
+        "finale": null,
+        "wave": 0,
+        "seconds": 345.96,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 266698,
+        "kind": "transition",
+        "status": "boarding",
+        "stage": 1,
+        "phase": "boarding",
+        "finale": null,
+        "wave": 0,
+        "seconds": 347.98,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 267799,
+        "kind": "citadel-launch",
+        "status": "escortbrief",
+        "stage": 1,
+        "phase": "escort",
+        "finale": null,
+        "wave": 0,
+        "seconds": 348.41,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 267811,
+        "kind": "transition",
+        "status": "playing",
+        "stage": 1,
+        "phase": "escort",
+        "finale": null,
+        "wave": 0,
+        "seconds": 349.99,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 297844,
+        "kind": "citadel-escort-continue",
+        "status": "escortclear",
+        "stage": 1,
+        "phase": "escort",
+        "finale": null,
+        "wave": 0,
+        "seconds": 410.43,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 297867,
+        "kind": "citadel-launch",
+        "status": "briefing",
+        "stage": 2,
+        "phase": "swarm",
+        "finale": null,
+        "wave": 0,
+        "seconds": 410.43,
+        "mode": "normal",
+        "enemies": 12,
+        "renderer": "canvas"
+      },
+      {
+        "at": 297879,
+        "kind": "transition",
+        "status": "playing",
+        "stage": 2,
+        "phase": "swarm",
+        "finale": null,
+        "wave": 0,
+        "seconds": 410.67,
+        "mode": "normal",
+        "enemies": 12,
+        "renderer": "canvas"
+      },
+      {
+        "at": 315629,
+        "kind": "citadel-lesson-next",
+        "status": "lesson",
+        "stage": 2,
+        "phase": "dock",
+        "finale": null,
+        "wave": 0,
+        "seconds": 446.83,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 315653,
+        "kind": "citadel-lesson-next",
+        "status": "lesson",
+        "stage": 2,
+        "phase": "dock",
+        "finale": null,
+        "wave": 0,
+        "seconds": 446.83,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 315661,
+        "kind": "transition",
+        "status": "playing",
+        "stage": 2,
+        "phase": "dock",
+        "finale": null,
+        "wave": 0,
+        "seconds": 447.07,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 317626,
+        "kind": "transition",
+        "status": "docking",
+        "stage": 2,
+        "phase": "dock",
+        "finale": null,
+        "wave": 0,
+        "seconds": 451.12,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 323911,
+        "kind": "transition",
+        "status": "boarding",
+        "stage": 2,
+        "phase": "boarding",
+        "finale": null,
+        "wave": 0,
+        "seconds": 463.26,
+        "mode": "normal",
+        "enemies": 22,
+        "renderer": "canvas"
+      },
+      {
+        "at": 331871,
+        "kind": "citadel-remark-next",
+        "status": "remark",
+        "stage": 2,
+        "phase": "boarding",
+        "finale": null,
+        "wave": 0,
+        "seconds": 477.84,
+        "mode": "normal",
+        "enemies": 15,
+        "renderer": "canvas"
+      },
+      {
+        "at": 331892,
+        "kind": "transition",
+        "status": "boarding",
+        "stage": 2,
+        "phase": "boarding",
+        "finale": null,
+        "wave": 0,
+        "seconds": 479.45,
+        "mode": "normal",
+        "enemies": 15,
+        "renderer": "canvas"
+      },
+      {
+        "at": 347109,
+        "kind": "citadel-remark-next",
+        "status": "remark",
+        "stage": 2,
+        "phase": "boarding",
+        "finale": null,
+        "wave": 0,
+        "seconds": 508.96,
+        "mode": "normal",
+        "enemies": 8,
+        "renderer": "canvas"
+      },
+      {
+        "at": 347125,
+        "kind": "transition",
+        "status": "boarding",
+        "stage": 2,
+        "phase": "boarding",
+        "finale": null,
+        "wave": 0,
+        "seconds": 509.8,
+        "mode": "normal",
+        "enemies": 8,
+        "renderer": "canvas"
+      },
+      {
+        "at": 360318,
+        "kind": "citadel-remark-next",
+        "status": "remark",
+        "stage": 2,
+        "phase": "boarding",
+        "finale": null,
+        "wave": 0,
+        "seconds": 534.94,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 360337,
+        "kind": "transition",
+        "status": "boarding",
+        "stage": 2,
+        "phase": "boarding",
+        "finale": null,
+        "wave": 0,
+        "seconds": 536.1,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 361366,
+        "kind": "citadel-launch",
+        "status": "escortbrief",
+        "stage": 2,
+        "phase": "escort",
+        "finale": null,
+        "wave": 0,
+        "seconds": 536.98,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 361385,
+        "kind": "transition",
+        "status": "playing",
+        "stage": 2,
+        "phase": "escort",
+        "finale": null,
+        "wave": 0,
+        "seconds": 538.11,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 395883,
+        "kind": "citadel-escort-continue",
+        "status": "escortclear",
+        "stage": 2,
+        "phase": "escort",
+        "finale": null,
+        "wave": 0,
+        "seconds": 604.99,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 395907,
+        "kind": "citadel-launch",
+        "status": "briefing",
+        "stage": 3,
+        "phase": "orientation",
+        "finale": null,
+        "wave": 0,
+        "seconds": 604.99,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 395994,
+        "kind": "transition",
+        "status": "playing",
+        "stage": 3,
+        "phase": "battle",
+        "finale": null,
+        "wave": 1,
+        "seconds": 606.88,
+        "mode": "normal",
+        "enemies": 6,
+        "renderer": "canvas"
+      },
+      {
+        "at": 397933,
+        "kind": "citadel-lesson-next",
+        "status": "lesson",
+        "stage": 3,
+        "phase": "battle",
+        "finale": null,
+        "wave": 1,
+        "seconds": 609.09,
+        "mode": "normal",
+        "enemies": 7,
+        "renderer": "canvas"
+      },
+      {
+        "at": 402094,
+        "kind": "transition",
+        "status": "playing",
+        "stage": 3,
+        "phase": "battle",
+        "finale": null,
+        "wave": 2,
+        "seconds": 619.02,
+        "mode": "normal",
+        "enemies": 6,
+        "renderer": "canvas"
+      },
+      {
+        "at": 409176,
+        "kind": "transition",
+        "status": "playing",
+        "stage": 3,
+        "phase": "battle",
+        "finale": null,
+        "wave": 3,
+        "seconds": 633.19,
+        "mode": "normal",
+        "enemies": 6,
+        "renderer": "canvas"
+      },
+      {
+        "at": 423410,
+        "kind": "citadel-lesson-next",
+        "status": "lesson",
+        "stage": 3,
+        "phase": "retrieve",
+        "finale": null,
+        "wave": 3,
+        "seconds": 661.41,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 423419,
+        "kind": "transition",
+        "status": "playing",
+        "stage": 3,
+        "phase": "dock",
+        "finale": null,
+        "wave": 3,
+        "seconds": 661.51,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 424061,
+        "kind": "transition",
+        "status": "docking",
+        "stage": 3,
+        "phase": "dock",
+        "finale": null,
+        "wave": 3,
+        "seconds": 665.56,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 427817,
+        "kind": "transition",
+        "status": "boarding",
+        "stage": 3,
+        "phase": "boarding",
+        "finale": null,
+        "wave": 3,
+        "seconds": 677.7,
+        "mode": "normal",
+        "enemies": 22,
+        "renderer": "canvas"
+      },
+      {
+        "at": 435823,
+        "kind": "transition",
+        "status": "remark",
+        "stage": 3,
+        "phase": "boarding",
+        "finale": null,
+        "wave": 3,
+        "seconds": 693.89,
+        "mode": "normal",
+        "enemies": 15,
+        "renderer": "canvas"
+      },
+      {
+        "at": 435866,
+        "kind": "citadel-remark-next",
+        "status": "remark",
+        "stage": 3,
+        "phase": "boarding",
+        "finale": null,
+        "wave": 3,
+        "seconds": 693.89,
+        "mode": "normal",
+        "enemies": 15,
+        "renderer": "canvas"
+      },
+      {
+        "at": 436822,
+        "kind": "transition",
+        "status": "boarding",
+        "stage": 3,
+        "phase": "boarding",
+        "finale": null,
+        "wave": 3,
+        "seconds": 695.91,
+        "mode": "normal",
+        "enemies": 15,
+        "renderer": "canvas"
+      },
+      {
+        "at": 446409,
+        "kind": "transition",
+        "status": "remark",
+        "stage": 3,
+        "phase": "boarding",
+        "finale": null,
+        "wave": 3,
+        "seconds": 716.14,
+        "mode": "normal",
+        "enemies": 8,
+        "renderer": "canvas"
+      },
+      {
+        "at": 446468,
+        "kind": "citadel-remark-next",
+        "status": "remark",
+        "stage": 3,
+        "phase": "boarding",
+        "finale": null,
+        "wave": 3,
+        "seconds": 716.14,
+        "mode": "normal",
+        "enemies": 8,
+        "renderer": "canvas"
+      },
+      {
+        "at": 447425,
+        "kind": "transition",
+        "status": "boarding",
+        "stage": 3,
+        "phase": "boarding",
+        "finale": null,
+        "wave": 3,
+        "seconds": 718.17,
+        "mode": "normal",
+        "enemies": 8,
+        "renderer": "canvas"
+      },
+      {
+        "at": 460636,
+        "kind": "citadel-remark-next",
+        "status": "remark",
+        "stage": 3,
+        "phase": "boarding",
+        "finale": null,
+        "wave": 3,
+        "seconds": 743.35,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 460646,
+        "kind": "transition",
+        "status": "boarding",
+        "stage": 3,
+        "phase": "boarding",
+        "finale": null,
+        "wave": 3,
+        "seconds": 744.47,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 461665,
+        "kind": "finale-launch",
+        "status": "finalebrief",
+        "stage": 3,
+        "phase": "finale",
+        "finale": "boss",
+        "wave": 3,
+        "seconds": 745.8,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 461685,
+        "kind": "transition",
+        "status": "playing",
+        "stage": 3,
+        "phase": "finale",
+        "finale": "boss",
+        "wave": 3,
+        "seconds": 746.49,
+        "mode": "normal",
+        "enemies": 4,
+        "renderer": "canvas"
+      },
+      {
+        "at": 494182,
+        "kind": "transition",
+        "status": "playing",
+        "stage": 3,
+        "phase": "finale",
+        "finale": "breach",
+        "wave": 3,
+        "seconds": 811.24,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 495206,
+        "kind": "transition",
+        "status": "docking",
+        "stage": 3,
+        "phase": "finale",
+        "finale": "landing",
+        "wave": 3,
+        "seconds": 813.26,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 500830,
+        "kind": "transition",
+        "status": "boarding",
+        "stage": 3,
+        "phase": "boarding",
+        "finale": "maze",
+        "wave": 3,
+        "seconds": 825.4,
+        "mode": "normal",
+        "enemies": 24,
+        "renderer": "canvas"
+      },
+      {
+        "at": 507712,
+        "kind": "finale-check-next",
+        "status": "finalcheck",
+        "stage": 3,
+        "phase": "boarding",
+        "finale": "maze",
+        "wave": 3,
+        "seconds": 845.3,
+        "mode": "normal",
+        "enemies": 16,
+        "renderer": "canvas"
+      },
+      {
+        "at": 507725,
+        "kind": "transition",
+        "status": "boarding",
+        "stage": 3,
+        "phase": "boarding",
+        "finale": "maze",
+        "wave": 3,
+        "seconds": 845.64,
+        "mode": "normal",
+        "enemies": 16,
+        "renderer": "canvas"
+      },
+      {
+        "at": 522337,
+        "kind": "finale-check-next",
+        "status": "finalcheck",
+        "stage": 3,
+        "phase": "boarding",
+        "finale": "maze",
+        "wave": 3,
+        "seconds": 876.39,
+        "mode": "normal",
+        "enemies": 8,
+        "renderer": "canvas"
+      },
+      {
+        "at": 522360,
+        "kind": "transition",
+        "status": "boarding",
+        "stage": 3,
+        "phase": "boarding",
+        "finale": "maze",
+        "wave": 3,
+        "seconds": 878.01,
+        "mode": "normal",
+        "enemies": 8,
+        "renderer": "canvas"
+      },
+      {
+        "at": 536483,
+        "kind": "finale-check-next",
+        "status": "finalcheck",
+        "stage": 3,
+        "phase": "boarding",
+        "finale": "maze",
+        "wave": 3,
+        "seconds": 904.83,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 536498,
+        "kind": "transition",
+        "status": "boarding",
+        "stage": 3,
+        "phase": "boarding",
+        "finale": "maze",
+        "wave": 3,
+        "seconds": 906.34,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 537529,
+        "kind": "transition",
+        "status": "boarding",
+        "stage": 3,
+        "phase": "boarding",
+        "finale": "mrg",
+        "wave": 3,
+        "seconds": 908.36,
+        "mode": "normal",
+        "enemies": 3,
+        "renderer": "canvas"
+      },
+      {
+        "at": 565965,
+        "kind": "transition",
+        "status": "docking",
+        "stage": 3,
+        "phase": "boarding",
+        "finale": "upload",
+        "wave": 3,
+        "seconds": 965.01,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 570032,
+        "kind": "transition",
+        "status": "won",
+        "stage": 3,
+        "phase": "debrief",
+        "finale": "victory",
+        "wave": 3,
+        "seconds": 971.8,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      }
+    ]
+  },
+  "sound": {
+    "context": "running",
+    "loaded": 41,
+    "active": 0,
+    "cacheBytes": 6340940,
+    "played": {
+      "shot": 476,
+      "missile": 77,
+      "robot-hit": 126,
+      "robot-death": 97,
+      "armor-hit": 196,
+      "soldier-hit": 77,
+      "soldier-death": 8,
+      "player-damage": 14,
+      "soldier-death-voice": 2,
+      "destroy": 23
+    }
+  },
+  "voice": {
+    "busy": false,
+    "source": "recorded"
+  },
+  "samples": [
+    {
+      "wallSeconds": 10,
+      "gameSeconds": 24,
+      "level": 1,
+      "listeners": 57,
+      "heap": 155176478,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 20,
+      "gameSeconds": 24,
+      "level": 1,
+      "listeners": 57,
+      "heap": 195767766,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 32,
+      "gameSeconds": 24,
+      "level": 1,
+      "listeners": 57,
+      "heap": 52084054,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 44,
+      "gameSeconds": 24,
+      "level": 1,
+      "listeners": 57,
+      "heap": 77012210,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 56,
+      "gameSeconds": 24,
+      "level": 1,
+      "listeners": 57,
+      "heap": 64052134,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 68,
+      "gameSeconds": 24,
+      "level": 1,
+      "listeners": 57,
+      "heap": 33862131,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 78,
+      "gameSeconds": 24,
+      "level": 1,
+      "listeners": 57,
+      "heap": 64021098,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 90,
+      "gameSeconds": 24,
+      "level": 1,
+      "listeners": 57,
+      "heap": 96892437,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 102,
+      "gameSeconds": 24,
+      "level": 1,
+      "listeners": 70,
+      "heap": 56343877,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 114,
+      "gameSeconds": 32,
+      "level": 1,
+      "listeners": 70,
+      "heap": 37799109,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 126,
+      "gameSeconds": 57,
+      "level": 2,
+      "listeners": 70,
+      "heap": 47527581,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 138,
+      "gameSeconds": 81,
+      "level": 2,
+      "listeners": 70,
+      "heap": 66103127,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 150,
+      "gameSeconds": 105,
+      "level": 2,
+      "listeners": 70,
+      "heap": 45952752,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 162,
+      "gameSeconds": 131,
+      "level": 3,
+      "listeners": 70,
+      "heap": 78441005,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 174,
+      "gameSeconds": 154,
+      "level": 3,
+      "listeners": 70,
+      "heap": 92313383,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 186,
+      "gameSeconds": 178,
+      "level": 4,
+      "listeners": 70,
+      "heap": 68305996,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 198,
+      "gameSeconds": 202,
+      "level": 4,
+      "listeners": 70,
+      "heap": 71856294,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 210,
+      "gameSeconds": 235,
+      "level": 4,
+      "listeners": 70,
+      "heap": 82579327,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 220,
+      "gameSeconds": 255,
+      "level": 4,
+      "listeners": 70,
+      "heap": 80549413,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 230,
+      "gameSeconds": 275,
+      "level": 4,
+      "listeners": 70,
+      "heap": 114860401,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 242,
+      "gameSeconds": 299,
+      "level": 5,
+      "listeners": 70,
+      "heap": 120966155,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 254,
+      "gameSeconds": 324,
+      "level": 5,
+      "listeners": 70,
+      "heap": 67506745,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 266,
+      "gameSeconds": 348,
+      "level": 5,
+      "listeners": 70,
+      "heap": 131529758,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 278,
+      "gameSeconds": 372,
+      "level": 6,
+      "listeners": 70,
+      "heap": 148702968,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 290,
+      "gameSeconds": 397,
+      "level": 6,
+      "listeners": 70,
+      "heap": 72686461,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 302,
+      "gameSeconds": 421,
+      "level": 7,
+      "listeners": 70,
+      "heap": 94390779,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 314,
+      "gameSeconds": 445,
+      "level": 7,
+      "listeners": 70,
+      "heap": 97304902,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 326,
+      "gameSeconds": 469,
+      "level": 8,
+      "listeners": 70,
+      "heap": 124018655,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 338,
+      "gameSeconds": 494,
+      "level": 8,
+      "listeners": 70,
+      "heap": 182828789,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 350,
+      "gameSeconds": 516,
+      "level": 8,
+      "listeners": 70,
+      "heap": 108281186,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 360,
+      "gameSeconds": 536,
+      "level": 8,
+      "listeners": 70,
+      "heap": 142764440,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 372,
+      "gameSeconds": 560,
+      "level": 9,
+      "listeners": 70,
+      "heap": 162683197,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 384,
+      "gameSeconds": 585,
+      "level": 9,
+      "listeners": 70,
+      "heap": 195053618,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 397,
+      "gameSeconds": 609,
+      "level": 10,
+      "listeners": 70,
+      "heap": 125492931,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 407,
+      "gameSeconds": 629,
+      "level": 10,
+      "listeners": 70,
+      "heap": 145113962,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 418,
+      "gameSeconds": 651,
+      "level": 10,
+      "listeners": 70,
+      "heap": 186086693,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 428,
+      "gameSeconds": 680,
+      "level": 11,
+      "listeners": 70,
+      "heap": 204134226,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 440,
+      "gameSeconds": 704,
+      "level": 11,
+      "listeners": 70,
+      "heap": 158674763,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 452,
+      "gameSeconds": 728,
+      "level": 11,
+      "listeners": 70,
+      "heap": 208922952,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 464,
+      "gameSeconds": 753,
+      "level": 12,
+      "listeners": 70,
+      "heap": 266370378,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 476,
+      "gameSeconds": 777,
+      "level": 12,
+      "listeners": 70,
+      "heap": 137904123,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 486,
+      "gameSeconds": 797,
+      "level": 12,
+      "listeners": 70,
+      "heap": 164600119,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 498,
+      "gameSeconds": 819,
+      "level": 12,
+      "listeners": 70,
+      "heap": 148641667,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 508,
+      "gameSeconds": 848,
+      "level": 13,
+      "listeners": 70,
+      "heap": 158041538,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 518,
+      "gameSeconds": 870,
+      "level": 13,
+      "listeners": 70,
+      "heap": 218336586,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 530,
+      "gameSeconds": 894,
+      "level": 13,
+      "listeners": 70,
+      "heap": 271265616,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 542,
+      "gameSeconds": 918,
+      "level": 14,
+      "listeners": 70,
+      "heap": 159963035,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 552,
+      "gameSeconds": 939,
+      "level": 14,
+      "listeners": 70,
+      "heap": 296450656,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 563,
+      "gameSeconds": 959,
+      "level": 14,
+      "listeners": 70,
+      "heap": 175581620,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 574,
+      "gameSeconds": 972,
+      "level": 14,
+      "listeners": 70,
+      "heap": 248736129,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 586,
+      "gameSeconds": 972,
+      "level": 14,
+      "listeners": 70,
+      "heap": 156716830,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 598,
+      "gameSeconds": 972,
+      "level": 14,
+      "listeners": 70,
+      "heap": 273866234,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 608,
+      "gameSeconds": 972,
+      "level": 14,
+      "listeners": 70,
+      "heap": 141753219,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 619,
+      "gameSeconds": 972,
+      "level": 14,
+      "listeners": 70,
+      "heap": 260891698,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 629,
+      "gameSeconds": 972,
+      "level": 14,
+      "listeners": 70,
+      "heap": 344711402,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 640,
+      "gameSeconds": 972,
+      "level": 14,
+      "listeners": 70,
+      "heap": 232271514,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 652,
+      "gameSeconds": 972,
+      "level": 14,
+      "listeners": 70,
+      "heap": 349417482,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 662,
+      "gameSeconds": 972,
+      "level": 14,
+      "listeners": 70,
+      "heap": 202920007,
+      "rafPending": 1
+    }
+  ],
+  "transitions": [
+    {
+      "level": 1,
+      "status": "briefing",
+      "phase": "orientation",
+      "finale": null,
+      "seconds": 0
+    },
+    {
+      "level": 1,
+      "status": "playing",
+      "phase": "orientation",
+      "finale": null,
+      "seconds": 0
+    },
+    {
+      "level": 1,
+      "status": "lesson",
+      "phase": "orientation",
+      "finale": null,
+      "seconds": 1.77
+    },
+    {
+      "level": 1,
+      "status": "playing",
+      "phase": "battle",
+      "finale": null,
+      "seconds": 1.78
+    },
+    {
+      "level": 1,
+      "status": "playing",
+      "phase": "battle",
+      "finale": null,
+      "seconds": 10.73
+    },
+    {
+      "level": 1,
+      "status": "paused",
+      "phase": "battle",
+      "finale": null,
+      "seconds": 24.28
+    },
+    {
+      "level": 1,
+      "status": "playing",
+      "phase": "battle",
+      "finale": null,
+      "seconds": 24.28
+    },
+    {
+      "level": 1,
+      "status": "playing",
+      "phase": "battle",
+      "finale": null,
+      "seconds": 25.48
+    },
+    {
+      "level": 1,
+      "status": "playing",
+      "phase": "retrieve",
+      "finale": null,
+      "seconds": 36.28
+    },
+    {
+      "level": 1,
+      "status": "lesson",
+      "phase": "retrieve",
+      "finale": null,
+      "seconds": 38.81
+    },
+    {
+      "level": 1,
+      "status": "playing",
+      "phase": "dock",
+      "finale": null,
+      "seconds": 38.83
+    },
+    {
+      "level": 1,
+      "status": "docking",
+      "phase": "dock",
+      "finale": null,
+      "seconds": 42.77
+    },
+    {
+      "level": 2,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 54.57
+    },
+    {
+      "level": 2,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 72.2
+    },
+    {
+      "level": 2,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 72.22
+    },
+    {
+      "level": 2,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 97.19
+    },
+    {
+      "level": 2,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 97.2
+    },
+    {
+      "level": 2,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 116.4
+    },
+    {
+      "level": 2,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 116.41
+    },
+    {
+      "level": 2,
+      "status": "stageclear",
+      "phase": "debrief",
+      "finale": null,
+      "seconds": 118.85
+    },
+    {
+      "level": 3,
+      "status": "escortbrief",
+      "phase": "escort",
+      "finale": null,
+      "seconds": 118.85
+    },
+    {
+      "level": 3,
+      "status": "playing",
+      "phase": "escort",
+      "finale": null,
+      "seconds": 118.87
+    },
+    {
+      "level": 3,
+      "status": "escortclear",
+      "phase": "escort",
+      "finale": null,
+      "seconds": 174.86
+    },
+    {
+      "level": 4,
+      "status": "briefing",
+      "phase": "pursuit",
+      "finale": null,
+      "seconds": 174.86
+    },
+    {
+      "level": 4,
+      "status": "playing",
+      "phase": "pursuit",
+      "finale": null,
+      "seconds": 174.87
+    },
+    {
+      "level": 4,
+      "status": "lesson",
+      "phase": "pursuit",
+      "finale": null,
+      "seconds": 260.87
+    },
+    {
+      "level": 4,
+      "status": "playing",
+      "phase": "dock",
+      "finale": null,
+      "seconds": 260.89
+    },
+    {
+      "level": 4,
+      "status": "docking",
+      "phase": "dock",
+      "finale": null,
+      "seconds": 265.99
+    },
+    {
+      "level": 5,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 277.8
+    },
+    {
+      "level": 5,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 294.82
+    },
+    {
+      "level": 5,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 294.83
+    },
+    {
+      "level": 5,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 316.66
+    },
+    {
+      "level": 5,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 316.67
+    },
+    {
+      "level": 5,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 345.96
+    },
+    {
+      "level": 5,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 345.96
+    },
+    {
+      "level": 5,
+      "status": "stageclear",
+      "phase": "debrief",
+      "finale": null,
+      "seconds": 348.41
+    },
+    {
+      "level": 6,
+      "status": "escortbrief",
+      "phase": "escort",
+      "finale": null,
+      "seconds": 348.41
+    },
+    {
+      "level": 6,
+      "status": "playing",
+      "phase": "escort",
+      "finale": null,
+      "seconds": 348.43
+    },
+    {
+      "level": 6,
+      "status": "escortclear",
+      "phase": "escort",
+      "finale": null,
+      "seconds": 410.43
+    },
+    {
+      "level": 7,
+      "status": "briefing",
+      "phase": "swarm",
+      "finale": null,
+      "seconds": 410.43
+    },
+    {
+      "level": 7,
+      "status": "playing",
+      "phase": "swarm",
+      "finale": null,
+      "seconds": 410.45
+    },
+    {
+      "level": 7,
+      "status": "lesson",
+      "phase": "dock",
+      "finale": null,
+      "seconds": 446.83
+    },
+    {
+      "level": 7,
+      "status": "playing",
+      "phase": "dock",
+      "finale": null,
+      "seconds": 446.85
+    },
+    {
+      "level": 7,
+      "status": "docking",
+      "phase": "dock",
+      "finale": null,
+      "seconds": 449.71
+    },
+    {
+      "level": 8,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 461.52
+    },
+    {
+      "level": 8,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 477.84
+    },
+    {
+      "level": 8,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 477.86
+    },
+    {
+      "level": 8,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 508.96
+    },
+    {
+      "level": 8,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 508.97
+    },
+    {
+      "level": 8,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 534.94
+    },
+    {
+      "level": 8,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 534.96
+    },
+    {
+      "level": 8,
+      "status": "stageclear",
+      "phase": "debrief",
+      "finale": null,
+      "seconds": 536.98
+    },
+    {
+      "level": 9,
+      "status": "escortbrief",
+      "phase": "escort",
+      "finale": null,
+      "seconds": 536.98
+    },
+    {
+      "level": 9,
+      "status": "playing",
+      "phase": "escort",
+      "finale": null,
+      "seconds": 537
+    },
+    {
+      "level": 9,
+      "status": "escortclear",
+      "phase": "escort",
+      "finale": null,
+      "seconds": 604.99
+    },
+    {
+      "level": 10,
+      "status": "briefing",
+      "phase": "orientation",
+      "finale": null,
+      "seconds": 604.99
+    },
+    {
+      "level": 10,
+      "status": "playing",
+      "phase": "battle",
+      "finale": null,
+      "seconds": 605.01
+    },
+    {
+      "level": 10,
+      "status": "lesson",
+      "phase": "battle",
+      "finale": null,
+      "seconds": 609.09
+    },
+    {
+      "level": 10,
+      "status": "playing",
+      "phase": "battle",
+      "finale": null,
+      "seconds": 609.11
+    },
+    {
+      "level": 10,
+      "status": "playing",
+      "phase": "battle",
+      "finale": null,
+      "seconds": 617.85
+    },
+    {
+      "level": 10,
+      "status": "playing",
+      "phase": "battle",
+      "finale": null,
+      "seconds": 631.58
+    },
+    {
+      "level": 10,
+      "status": "playing",
+      "phase": "retrieve",
+      "finale": null,
+      "seconds": 659.62
+    },
+    {
+      "level": 10,
+      "status": "lesson",
+      "phase": "retrieve",
+      "finale": null,
+      "seconds": 661.41
+    },
+    {
+      "level": 10,
+      "status": "playing",
+      "phase": "dock",
+      "finale": null,
+      "seconds": 661.42
+    },
+    {
+      "level": 10,
+      "status": "docking",
+      "phase": "dock",
+      "finale": null,
+      "seconds": 665.56
+    },
+    {
+      "level": 11,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 677.36
+    },
+    {
+      "level": 11,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 693.89
+    },
+    {
+      "level": 11,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 693.89
+    },
+    {
+      "level": 11,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 716.14
+    },
+    {
+      "level": 11,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 716.14
+    },
+    {
+      "level": 11,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 743.35
+    },
+    {
+      "level": 11,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 743.36
+    },
+    {
+      "level": 12,
+      "status": "finalebrief",
+      "phase": "finale",
+      "finale": "boss",
+      "seconds": 745.8
+    },
+    {
+      "level": 12,
+      "status": "playing",
+      "phase": "finale",
+      "finale": "boss",
+      "seconds": 745.82
+    },
+    {
+      "level": 12,
+      "status": "playing",
+      "phase": "finale",
+      "finale": "breach",
+      "seconds": 809.6
+    },
+    {
+      "level": 12,
+      "status": "docking",
+      "phase": "finale",
+      "finale": "landing",
+      "seconds": 811.87
+    },
+    {
+      "level": 13,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": "maze",
+      "seconds": 824.88
+    },
+    {
+      "level": 13,
+      "status": "finalcheck",
+      "phase": "boarding",
+      "finale": "maze",
+      "seconds": 845.3
+    },
+    {
+      "level": 13,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": "maze",
+      "seconds": 845.31
+    },
+    {
+      "level": 13,
+      "status": "finalcheck",
+      "phase": "boarding",
+      "finale": "maze",
+      "seconds": 876.39
+    },
+    {
+      "level": 13,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": "maze",
+      "seconds": 876.4
+    },
+    {
+      "level": 13,
+      "status": "finalcheck",
+      "phase": "boarding",
+      "finale": "maze",
+      "seconds": 904.83
+    },
+    {
+      "level": 13,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": "maze",
+      "seconds": 904.85
+    },
+    {
+      "level": 14,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": "mrg",
+      "seconds": 907.29
+    },
+    {
+      "level": 14,
+      "status": "docking",
+      "phase": "boarding",
+      "finale": "upload",
+      "seconds": 963.79
+    },
+    {
+      "level": 14,
+      "status": "won",
+      "phase": "debrief",
+      "finale": "victory",
+      "seconds": 971.8
+    }
+  ]
+}
