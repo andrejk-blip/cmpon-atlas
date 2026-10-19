@@ -1,0 +1,15 @@
+{
+  "lab_version": "2.3.0",
+  "entries": 22,
+  "mode_runs": 44,
+  "convoy_exits": 3,
+  "manual_ground_start": true,
+  "repeat_same_seed": true,
+  "dialog_pauses_and_blocks_game_input": true,
+  "browser_storage_reads": 0,
+  "browser_storage_writes": 0,
+  "verification": "Real production game in Node VM; native canvas rendering, DOM event harness, shared Web Audio context, deferred recorded fetch/decode/start and fallback speech events. No browser or physical-device listening was performed.",
+  "game_release_version": "2.3.0",
+  "public_game_commit": "2693a44ae0a36c279582f1635c530ac3361f65bc",
+  "convoy_exit_method": "ordinary fire/missile/cover/target inputs; no direct finishEscort call"
+}

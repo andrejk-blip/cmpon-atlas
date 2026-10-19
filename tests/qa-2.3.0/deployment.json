@@ -1,0 +1,21 @@
+{
+  "release": "2.3.0",
+  "codeCommit": "2693a44ae0a36c279582f1635c530ac3361f65bc",
+  "githubPages": [
+    {
+      "id": 39265305768,
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/andrejk-blip/cmpon-atlas/actions/runs/39265305768"
+    }
+  ],
+  "admin": {
+    "url": "https://cmpon-analytics-admin.carlafloriano1958.chatgpt.site/game-test",
+    "sitesVersion": 19,
+    "status": "succeeded",
+    "sourceCommit": "4b128865d7b4c318569c0b4de706168a5a1b4ddc",
+    "publicGameSourceCommit": "2693a44ae0a36c279582f1635c530ac3361f65bc",
+    "access": "custom (unchanged)",
+    "updatedAt": "2026-10-19T14:04:39.174261+00:00"
+  }
+}
