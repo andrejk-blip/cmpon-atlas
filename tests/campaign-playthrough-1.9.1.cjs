@@ -7,8 +7,8 @@
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),crypto=require('node:crypto');
 const {entrySnapshot,entryHarness}=require('./mission-integration-regression-1.9.1.cjs');
 const {createController}=require('./decks-regression.cjs');
-const {pursuitInput,createSwarmController,createParallaxController}=require('../../cmpon-analytics-admin/scripts/mission-controllers.cjs');
-const {createMrgController}=require('../../cmpon-analytics-admin/scripts/mrg-controller.cjs');
+const {pursuitInput,createSwarmController,createParallaxController}=require('./helpers/campaign-inputs.js');
+const {createMrgController}=require('./helpers/campaign-inputs.js');
 const immediate=()=>new Promise(resolve=>setImmediate(resolve));
 const level=e=>e.finale?(['mrg','upload','victory'].includes(e.finale.phase)?14:e.finale.phase==='maze'?13:12):e.phase==='escort'?e.stage*3+3:e.board?e.stage*3+2:e.stage*3+1;
 const rounded=n=>Number.isFinite(n)?+n.toFixed(2):null;
@@ -28,7 +28,7 @@ function flightTrace(h,e){
 async function play(assist=false,seed=417147,options={}){
  const entry=options.entry||entrySnapshot(),h=entryHarness(entry),framesPerSecond=60;
  await immediate();assert(h.c.citadelAcademyBridge.ready);
- h.cup.panel=null;h.arcade.sound=false;h.arcade.fx=false;h.run('SPACE_AUDIO.music=false;');
+ h.cup.panel=null;h.arcade.sound=options.sound ?? true;h.arcade.fx=false;h.run('SPACE_AUDIO.music=false;');
  h.deckQA={path:h.run('stationPath'),line:h.run('stationLine'),input:h.input};
  const transitions=[],cards=[],levels=[],events=[],progress=[];
  let e;
@@ -97,7 +97,7 @@ async function play(assist=false,seed=417147,options={}){
   assert.equal(e.status,'won','The operator must reach the real victory state');
  }catch(err){error={message:err.message,stack:err.stack?.split('\n').slice(1,4)};}
  for(let i=0;i<levels.length;i++){const row=levels[i];row.duration=+(((levels[i+1]?.started??e.elapsed)-row.started).toFixed(2));row.minHp=rounded(row.minHp);row.minStationHp=rounded(row.minStationHp);}
- return{version:'1.9.1',entrySha256:crypto.createHash('sha256').update(entry.html).digest('hex'),scripts:entry.scripts.map(file=>({file,sha256:crypto.createHash('sha256').update(entry.sources.get(file)).digest('hex')})),mode:assist?'calm':'normal',seed,pass:!error,error,resumedDiagnostic:!!options.snapshot,frames:frame,simulatedSeconds:+e.elapsed.toFixed(2),status:e.status,phase:e.phase,finale:e.finale?.phase||null,levels,cards,transitions,progress,score:e.score,rescued:e.rescued.length,completedRemarks:e.completedRemarks.length,decisions:e.decisions.length,upgrades:e.upgrades,limits:['Deterministic QA operator has precise positions and answer keys. This verifies a reachable path, not human difficulty or learning.','Rendering, hardware timing, browser gestures, hearing and network latency are not simulated by this run.']};
+ return{version:JSON.parse(entry.html.match(/id="release-data">([^<]+)/)[1]).version,entrySha256:crypto.createHash('sha256').update(entry.html).digest('hex'),scripts:entry.scripts.map(file=>({file,sha256:crypto.createHash('sha256').update(entry.sources.get(file)).digest('hex')})),mode:assist?'calm':'normal',seed,pass:!error,error,resumedDiagnostic:!!options.snapshot,frames:frame,simulatedSeconds:+e.elapsed.toFixed(2),status:e.status,phase:e.phase,finale:e.finale?.phase||null,levels,cards,transitions,progress,score:e.score,rescued:e.rescued.length,completedRemarks:e.completedRemarks.length,decisions:e.decisions.length,upgrades:e.upgrades,limits:['Deterministic QA operator has precise positions and answer keys. This verifies a reachable path, not human difficulty or learning.','Rendering, hardware timing, browser gestures, hearing and network latency are not simulated by this run.']};
 }
 async function main(){
  const args=process.argv.slice(2),mode=args.includes('--calm'),at=args.indexOf('--report');

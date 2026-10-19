@@ -10,7 +10,7 @@
   "finale_save_schema": "citadel-finale-v1",
   "analytics_module_version": "0.1.0",
   "tournament_module_version": "1.1.0",
-  "index_sha256": "b9a4d40aa025d33c126bdf66854a197d0b665d8d57c0aedfe1141d1e0358030c",
+  "index_sha256": "4fdc95f76a9e9998ea5d3cac444c84ca9210fac80b9f034674dfa54b8c608aab",
   "offline_sha256": "754ccde3777ace0150d9b062461301ea9542f893c4f158ebc0ae7e07a3e8a2c3",
   "core_assets_version": "1.3.5",
   "soundtrack_module_version": "1.4.2",
@@ -21,7 +21,7 @@
   "academy_cards": 36,
   "academy_campaign_questions": 23,
   "effects_module_version": "1.9.3",
-  "atlas_sha256": "9ecc84158b26b77e2279f7ffed7887b0cfe09774ae54053e3829de8c8fc7ad1c",
+  "atlas_sha256": "2524265768077a4884753f89c6312815b7f3ba0bc2ad2f7ef3f0c7c950807880",
   "music_sha256": "11ba6f8ee1d80e7313e7c7c14d1133cf55f9f124ca29eb8d3ed54aba22aafeb0",
   "effects_sha256": "6cabac06fb8d99684ca2a8252510f90a964ca1d427aa4ac7b214115ee1b9af7b",
   "mrg_module_version": "1.7.0",
@@ -145,5 +145,8 @@
   "ui_fixes_module_version": "1.9.2",
   "ui_fixes_sha256": "364fc8c1e412eb9b73f826845e23646f8906d37c7027aa1f2ae93ba0548cbf16",
   "ui_fixes_css_sha256": "70f57cd512d57dcc378b4a44159ce690ae4fa064c9ccb9ba163cd1469f230bbe",
-  "web_atlas_sha256": "b046712ba427c8543f18478a3bc83f70db19563d3be90a618e41d53e88a2ac22"
+  "web_atlas_sha256": "b046712ba427c8543f18478a3bc83f70db19563d3be90a618e41d53e88a2ac22",
+  "runtime_module_version": "1.9.3",
+  "runtime_sha256": "9e3e8dd41600cbb8b7119f4fca39cd97176ea9082c94a91a29c9252679bcc093",
+  "runtime_diagnostics": "bounded-local-only"
 }

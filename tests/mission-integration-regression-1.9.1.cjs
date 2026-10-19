@@ -40,7 +40,7 @@ function entryHarness(entry, profile = {}) {
   function node(id) {
     if (nodes.has(id)) return nodes.get(id);
     const classes = new Set();
-    let item = { id, tagName: 'DIV', innerHTML: '', textContent: id === 'release-data' ? '{"version":"1.9.1"}' : '',
+    let item = { id, tagName: 'DIV', innerHTML: '', textContent: id === 'release-data' ? (entry.html.match(/id="release-data">([^<]+)/)?.[1] || '{}') : '',
       value: '', hidden: false, open: false, style: { setProperty(k, v) { this[k] = v; } }, dataset: {}, attrs: {}, handlers: {},
       classList: { add(...keys) { keys.forEach(k => classes.add(k)); }, remove(...keys) { keys.forEach(k => classes.delete(k)); },
         contains(k) { return classes.has(k); }, toggle(k, on) { if (on === undefined) on = !classes.has(k); on ? classes.add(k) : classes.delete(k); return on; } },
@@ -79,6 +79,12 @@ function entryHarness(entry, profile = {}) {
   };
   if (profile.deniedStorage) Object.defineProperty(c, 'localStorage', { get() { throw Error('SecurityError: storage denied'); } });
   if (lab) lab.install(c, { speech: 'absent', lifecycle: false });
+  // Engine-only tests advance mocked audio time without a browser RAF. The
+  // loop watchdog is tested with a real scheduled frame clock in runtime193.
+  if (!profile.frameClock) {
+    const interval = c.setInterval;
+    c.setInterval = (fn, ms) => fn.name === 'watchdog' ? 0 : interval(fn, ms);
+  }
   c.fetch = async (url, options = {}) => {
     const endpoint = String(url).split('/').pop().split('?')[0];
     if (/\.mp3$/.test(endpoint)) {
@@ -96,10 +102,11 @@ function entryHarness(entry, profile = {}) {
   // Fix only the cosmetic/radio random source. The actual mission seeded RNG is
   // unmodified; a first automatic radio deadline of 35 s is reproducible.
   run('Math.random = () => 0;');
+  profile.beforeScripts?.({c, nodes, storage, handlers, windowHandlers});
   for (const file of entry.scripts) vm.runInContext(entry.sources.get(file), c, { filename: file });
   c.document.readyState = 'complete';
   for (const fn of [...(handlers.get('DOMContentLoaded') || [])]) fn({ type: 'DOMContentLoaded' });
-  const h = { c, context: c, nodes, storage, handlers, fetchCalls, lab, run };
+  const h = { c, context: c, nodes, storage, handlers, windowHandlers, fetchCalls, lab, run };
   Object.assign(h, run(`({Engine:RequirementArcade,arcade:ARCADE,state:STATE,mobile:MOBILE,cup:CUP,
     action:arcadeAction,input:arcadeInput,lessonCase:citadelLessonCase,overlay:arcadeOverlayHTML,
     update:updateArcadeHUD,updateOverlay:updateArcadeOverlay,event:arcadeEvent,pack:cupPack,unpack:cupUnpack,
@@ -278,7 +285,7 @@ async function main(argv = process.argv.slice(2)) {
     for (const token of ['citadel-flight-v1.9.1', 'citadel-pursuit-v1.9.0', 'citadel-swarm-v1.9.0', 'citadel-parallax-', 'citadel-decks-v1.9.1', 'citadel-input-v1.9.1']) {
       const at = entry.scripts.findIndex(name => name.includes(token)); assert(at > 1 && at < voice, token);
     }
-    for (const token of ['citadel-comic-v1.9.1', 'citadel-interface-v1.9.0', 'citadel-story-v1.9.0', 'citadel-academy-bridge-'])
+    for (const token of ['citadel-comic-v1.9.3', 'citadel-interface-v1.9.0', 'citadel-story-v1.9.0', 'citadel-academy-bridge-'])
       assert(entry.scripts.findIndex(name => name.includes(token)) > voice, token);
     assert(entry.scripts.some(name => name.includes('citadel-voice-pack-v1.8.2')));
     return { scripts: entry.scripts.length, voice: entry.scripts[voice], savedDockingRuntime: '1.9.1' };

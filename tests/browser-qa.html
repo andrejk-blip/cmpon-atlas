@@ -1,0 +1,7 @@
+<!doctype html><html lang="ru"><meta charset="utf-8"><meta name="robots" content="noindex"><title>Цитадель · воспроизводимый QA 1.9.3</title>
+<style>body{background:#0b1625;color:#e1edf6;font:15px system-ui;margin:18px}button,select{font:inherit;padding:9px;margin:4px}iframe{width:1280px;height:820px;border:1px solid #506176;max-width:100%}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:12px monospace;max-height:420px;overflow:auto}p{max-width:1000px}</style>
+<h1>Цитадель · QA 1.9.3</h1><p>Изолированная тестовая копия публичной страницы. Автооператор использует игровые команды, знает позиции и ответы. Здоровье, урон, враги, боезапас и условия победы не меняются. Сохранения — только в памяти тестового окна; регистрация и отправка результатов отключены. Это автоматизированный браузерный прогон, а не ручное прохождение.</p>
+<label>Режим <select id="mode"><option value="normal">Обычный</option><option value="calm">Спокойный</option><option value="baseline">1.9.2 · воспроизведение сбоя</option></select></label>
+<button id="start">Запустить</button><button id="audio">Включить звук теста</button><button id="pause">Пауза / продолжить</button><button id="download">Скачать отчёт</button>
+<pre id="report" role="status">Ожидание запуска.</pre><iframe id="game" title="Изолированная тестовая игра" allow="autoplay"></iframe>
+<script src="./browser-qa-host.js"></script></html>
