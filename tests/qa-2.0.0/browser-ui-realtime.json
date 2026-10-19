@@ -1,0 +1,433 @@
+{
+  "version": "2.0.0",
+  "checkpoint": "8",
+  "manual": false,
+  "renderer": "3D · совместимый режим",
+  "baseView": {
+    "items": 319,
+    "testedTriangles": 19836,
+    "visibleTriangles": 6529,
+    "milliseconds": 29.300000000745058,
+    "rigVariants": 7,
+    "architectureLayouts": 1
+  },
+  "baseOps": {
+    "reserveDepartures": 2,
+    "patrolDistance": 264.34237418173916,
+    "shots": 5
+  },
+  "board": {
+    "pos": [
+      11.805293106750737,
+      0,
+      -25.050483778196163
+    ],
+    "hp": 88.2,
+    "time": 19.672699999999757,
+    "room": 0,
+    "crew": 15
+  },
+  "mode": "normal",
+  "accelerated": false,
+  "rafInputCalls": 505,
+  "finished": null,
+  "status": "boarding",
+  "level": 8,
+  "levels": [
+    8
+  ],
+  "cards": 0,
+  "wallSeconds": 379,
+  "simulatedSeconds": 469.76,
+  "frameCalls": 505,
+  "emitChanges": 1,
+  "maxInputGapMs": 1040,
+  "metrics": {
+    "listeners": 70,
+    "peakListeners": 70,
+    "rafCalls": 510,
+    "rafDone": 507,
+    "rafPending": 1,
+    "rafPeak": 2,
+    "errors": [],
+    "heap": 57723411
+  },
+  "runtime": {
+    "version": "1.9.3",
+    "build": "193r2",
+    "frames": 506,
+    "updates": 505,
+    "renders": 506,
+    "recoveries": 0,
+    "failures": 0,
+    "stopped": false,
+    "contextLost": false,
+    "pending": true,
+    "stage": "idle",
+    "lastFrameAge": 243,
+    "lastUpdateAge": 240,
+    "lastRenderAge": 209,
+    "recoverySave": "none",
+    "faults": [],
+    "events": [
+      {
+        "at": 884,
+        "kind": "detach",
+        "status": "unknown",
+        "stage": null,
+        "phase": "other",
+        "finale": null,
+        "wave": null,
+        "seconds": null,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "webgl"
+      },
+      {
+        "at": 1042,
+        "kind": "engine",
+        "status": "menu",
+        "stage": 0,
+        "phase": "brief",
+        "finale": null,
+        "wave": 0,
+        "seconds": 0,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 1042,
+        "kind": "transition",
+        "status": "menu",
+        "stage": 0,
+        "phase": "brief",
+        "finale": null,
+        "wave": 0,
+        "seconds": 0,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 1963,
+        "kind": "engine",
+        "status": "boarding",
+        "stage": 2,
+        "phase": "boarding",
+        "finale": null,
+        "wave": 0,
+        "seconds": 450.08,
+        "mode": "normal",
+        "enemies": 22,
+        "renderer": "canvas"
+      },
+      {
+        "at": 1977,
+        "kind": "transition",
+        "status": "boarding",
+        "stage": 2,
+        "phase": "boarding",
+        "finale": null,
+        "wave": 0,
+        "seconds": 450.12,
+        "mode": "normal",
+        "enemies": 22,
+        "renderer": "canvas"
+      }
+    ]
+  },
+  "sound": {
+    "context": "running",
+    "loaded": 28,
+    "active": 0,
+    "cacheBytes": 5378676,
+    "played": {
+      "armor-hit": 26,
+      "shot": 84,
+      "soldier-hit": 19,
+      "soldier-death": 5,
+      "soldier-death-voice": 1,
+      "player-damage": 1
+    }
+  },
+  "voice": {
+    "busy": false,
+    "source": null
+  },
+  "samples": [
+    {
+      "wallSeconds": 11,
+      "gameSeconds": 454,
+      "level": 8,
+      "listeners": 57,
+      "heap": 63994178,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 23,
+      "gameSeconds": 456,
+      "level": 8,
+      "listeners": 70,
+      "heap": 68700685,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 33,
+      "gameSeconds": 456,
+      "level": 8,
+      "listeners": 70,
+      "heap": 57607145,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 45,
+      "gameSeconds": 457,
+      "level": 8,
+      "listeners": 70,
+      "heap": 66230817,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 57,
+      "gameSeconds": 457,
+      "level": 8,
+      "listeners": 70,
+      "heap": 94189520,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 69,
+      "gameSeconds": 458,
+      "level": 8,
+      "listeners": 70,
+      "heap": 81577496,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 79,
+      "gameSeconds": 458,
+      "level": 8,
+      "listeners": 70,
+      "heap": 54308160,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 89,
+      "gameSeconds": 458,
+      "level": 8,
+      "listeners": 70,
+      "heap": 34548822,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 101,
+      "gameSeconds": 459,
+      "level": 8,
+      "listeners": 70,
+      "heap": 85663533,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 113,
+      "gameSeconds": 459,
+      "level": 8,
+      "listeners": 70,
+      "heap": 34653835,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 125,
+      "gameSeconds": 460,
+      "level": 8,
+      "listeners": 70,
+      "heap": 34655327,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 137,
+      "gameSeconds": 460,
+      "level": 8,
+      "listeners": 70,
+      "heap": 54121081,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 149,
+      "gameSeconds": 461,
+      "level": 8,
+      "listeners": 70,
+      "heap": 54245371,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 159,
+      "gameSeconds": 461,
+      "level": 8,
+      "listeners": 70,
+      "heap": 91294915,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 169,
+      "gameSeconds": 461,
+      "level": 8,
+      "listeners": 70,
+      "heap": 69196408,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 181,
+      "gameSeconds": 462,
+      "level": 8,
+      "listeners": 70,
+      "heap": 74605042,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 193,
+      "gameSeconds": 462,
+      "level": 8,
+      "listeners": 70,
+      "heap": 50803253,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 203,
+      "gameSeconds": 463,
+      "level": 8,
+      "listeners": 70,
+      "heap": 65970893,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 213,
+      "gameSeconds": 463,
+      "level": 8,
+      "listeners": 70,
+      "heap": 56322829,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 223,
+      "gameSeconds": 464,
+      "level": 8,
+      "listeners": 70,
+      "heap": 45648509,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 235,
+      "gameSeconds": 464,
+      "level": 8,
+      "listeners": 70,
+      "heap": 94830834,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 247,
+      "gameSeconds": 465,
+      "level": 8,
+      "listeners": 70,
+      "heap": 82174852,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 257,
+      "gameSeconds": 465,
+      "level": 8,
+      "listeners": 70,
+      "heap": 68770562,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 269,
+      "gameSeconds": 465,
+      "level": 8,
+      "listeners": 70,
+      "heap": 68594613,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 281,
+      "gameSeconds": 466,
+      "level": 8,
+      "listeners": 70,
+      "heap": 93920403,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 293,
+      "gameSeconds": 466,
+      "level": 8,
+      "listeners": 70,
+      "heap": 48284992,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 305,
+      "gameSeconds": 467,
+      "level": 8,
+      "listeners": 70,
+      "heap": 48011643,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 315,
+      "gameSeconds": 467,
+      "level": 8,
+      "listeners": 70,
+      "heap": 44354885,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 327,
+      "gameSeconds": 468,
+      "level": 8,
+      "listeners": 70,
+      "heap": 44790470,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 339,
+      "gameSeconds": 468,
+      "level": 8,
+      "listeners": 70,
+      "heap": 60910153,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 351,
+      "gameSeconds": 469,
+      "level": 8,
+      "listeners": 70,
+      "heap": 61132052,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 363,
+      "gameSeconds": 469,
+      "level": 8,
+      "listeners": 70,
+      "heap": 45449032,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 373,
+      "gameSeconds": 470,
+      "level": 8,
+      "listeners": 70,
+      "heap": 57868983,
+      "rafPending": 1
+    }
+  ],
+  "transitions": [
+    {
+      "level": 8,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 450.08
+    }
+  ]
+}

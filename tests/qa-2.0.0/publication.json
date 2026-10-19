@@ -1,0 +1,372 @@
+{
+  "version": "2.0.0",
+  "codeCommit": "c4398eec9bc6cb70de51fdd65642952d83ef354b",
+  "pagesRun": 39188780010,
+  "pagesConclusion": "success",
+  "verifiedAt": "2026-10-19T02:15:56.612775+00:00",
+  "publicURL": "https://andrejk-blip.github.io/cmpon-atlas/",
+  "files": [
+    {
+      "file": "index.html",
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/index.html",
+      "status": 200,
+      "bytes": 12166,
+      "sha256": "732b3722dbc4d4cef0228ed4e90cbbb6575d57f3bc51533d7f2402580d396c8d",
+      "expected": "732b3722dbc4d4cef0228ed4e90cbbb6575d57f3bc51533d7f2402580d396c8d",
+      "match": true
+    },
+    {
+      "file": "atlas.html",
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/atlas.html",
+      "status": 200,
+      "bytes": 12186,
+      "sha256": "7c571768b76ac12fe0c180166b79146bc938c72763846bb136f7a76acc614ef8",
+      "expected": "7c571768b76ac12fe0c180166b79146bc938c72763846bb136f7a76acc614ef8",
+      "match": true
+    },
+    {
+      "file": "version.json",
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/version.json",
+      "status": 200,
+      "bytes": 6466,
+      "sha256": "2b9f5040af90b6ec2db99c24cee590f547970869b5b49aa613d977dad32a36d8",
+      "expected": "2b9f5040af90b6ec2db99c24cee590f547970869b5b49aa613d977dad32a36d8",
+      "match": true
+    },
+    {
+      "file": "assets/atlas-v1.3.5.css",
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/atlas-v1.3.5.css",
+      "status": 200,
+      "bytes": 156450,
+      "sha256": "e4e378988c9198e6c53828abbcd11614a24ce399dc1a306e3c18f00b7d8233dd",
+      "expected": "e4e378988c9198e6c53828abbcd11614a24ce399dc1a306e3c18f00b7d8233dd",
+      "match": true
+    },
+    {
+      "file": "assets/atlas-metrics-v0.1.0.css",
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/atlas-metrics-v0.1.0.css",
+      "status": 200,
+      "bytes": 2031,
+      "sha256": "4a15f12b8836f8f25a1a0b99ac1256fecf3ebca63962183cbf557de64bd553b3",
+      "expected": "4a15f12b8836f8f25a1a0b99ac1256fecf3ebca63962183cbf557de64bd553b3",
+      "match": true
+    },
+    {
+      "file": "assets/citadel-mrg-viewport-v1.6.0.css",
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-mrg-viewport-v1.6.0.css",
+      "status": 200,
+      "bytes": 3633,
+      "sha256": "60426620a6f3e82d0893fd5dbeb3c3f21b1b398f343ed5311566c4fc02a9c367",
+      "expected": "60426620a6f3e82d0893fd5dbeb3c3f21b1b398f343ed5311566c4fc02a9c367",
+      "match": true
+    },
+    {
+      "file": "assets/citadel-interface-v1.9.0.css",
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-interface-v1.9.0.css",
+      "status": 200,
+      "bytes": 11446,
+      "sha256": "4762f841eb50967fe36b1520eb48896319b49903751c1262a95525552027af9a",
+      "expected": "4762f841eb50967fe36b1520eb48896319b49903751c1262a95525552027af9a",
+      "match": true
+    },
+    {
+      "file": "assets/citadel-ui-fixes-v1.9.2.css",
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-ui-fixes-v1.9.2.css",
+      "status": 200,
+      "bytes": 4008,
+      "sha256": "70f57cd512d57dcc378b4a44159ce690ae4fa064c9ccb9ba163cd1469f230bbe",
+      "expected": "70f57cd512d57dcc378b4a44159ce690ae4fa064c9ccb9ba163cd1469f230bbe",
+      "match": true
+    },
+    {
+      "file": "assets/citadel-bases-v2.0.0.css",
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-bases-v2.0.0.css?build=200r3",
+      "status": 200,
+      "bytes": 474,
+      "sha256": "a9309ac66da1573a31d7a44410333d2b69056c11112d9ae36dac3b797e743636",
+      "expected": "a9309ac66da1573a31d7a44410333d2b69056c11112d9ae36dac3b797e743636",
+      "match": true
+    },
+    {
+      "file": "assets/citadel-startup-v1.7.1.js",
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-startup-v1.7.1.js",
+      "status": 200,
+      "bytes": 2219,
+      "sha256": "4d65d9f4456488dd2ea7eeab114ecf8cf4723177b854c0598de70a43b200e7c7",
+      "expected": "4d65d9f4456488dd2ea7eeab114ecf8cf4723177b854c0598de70a43b200e7c7",
+      "match": true
+    },
+    {
+      "file": "assets/citadel-compat-v1.7.1.js",
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-compat-v1.7.1.js",
+      "status": 200,
+      "bytes": 8723,
+      "sha256": "e5ea0b065568c5ebcddcd01d483375560bae36308871dd62a87e5d8e97a46599",
+      "expected": "e5ea0b065568c5ebcddcd01d483375560bae36308871dd62a87e5d8e97a46599",
+      "match": true
+    },
+    {
+      "file": "assets/atlas-v1.3.5.js",
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/atlas-v1.3.5.js",
+      "status": 200,
+      "bytes": 6843440,
+      "sha256": "af1f9024313d1ecb798edc19b5039407049916d094c88426f85ba852ac077be8",
+      "expected": "af1f9024313d1ecb798edc19b5039407049916d094c88426f85ba852ac077be8",
+      "match": true
+    },
+    {
+      "file": "assets/citadel-records-v1.1.1.js",
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-records-v1.1.1.js",
+      "status": 200,
+      "bytes": 6397,
+      "sha256": "178c584491b2755e93f2e4469a8663db3bb93c8e970f5cc5bcbe75b0e6dc6183",
+      "expected": "178c584491b2755e93f2e4469a8663db3bb93c8e970f5cc5bcbe75b0e6dc6183",
+      "match": true
+    },
+    {
+      "file": "assets/citadel-mrg-v1.7.0.js",
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-mrg-v1.7.0.js",
+      "status": 200,
+      "bytes": 37126,
+      "sha256": "1e2decb0c05426cc0989286558d109235e5f35381a153342434f9400b2d16964",
+      "expected": "1e2decb0c05426cc0989286558d109235e5f35381a153342434f9400b2d16964",
+      "match": true
+    },
+    {
+      "file": "assets/citadel-mrg-view-v1.7.0.js",
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-mrg-view-v1.7.0.js",
+      "status": 200,
+      "bytes": 43709,
+      "sha256": "e82fcc77edafcda95364d3851be748c863c23e6677d43f39c75963d265c0797b",
+      "expected": "e82fcc77edafcda95364d3851be748c863c23e6677d43f39c75963d265c0797b",
+      "match": true
+    },
+    {
+      "file": "assets/citadel-music-v1.4.2.js",
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-music-v1.4.2.js",
+      "status": 200,
+      "bytes": 28487,
+      "sha256": "11ba6f8ee1d80e7313e7c7c14d1133cf55f9f124ca29eb8d3ed54aba22aafeb0",
+      "expected": "11ba6f8ee1d80e7313e7c7c14d1133cf55f9f124ca29eb8d3ed54aba22aafeb0",
+      "match": true
+    },
+    {
+      "file": "assets/citadel-sfx-pack-v1.9.1.js",
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-sfx-pack-v1.9.1.js",
+      "status": 200,
+      "bytes": 20094,
+      "sha256": "8dc8128a72045c4136a3460de8900720813861e1979926bfc0c0c872cdac590e",
+      "expected": "8dc8128a72045c4136a3460de8900720813861e1979926bfc0c0c872cdac590e",
+      "match": true
+    },
+    {
+      "file": "assets/citadel-sfx-v1.9.3.js",
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-sfx-v1.9.3.js",
+      "status": 200,
+      "bytes": 34687,
+      "sha256": "6cabac06fb8d99684ca2a8252510f90a964ca1d427aa4ac7b214115ee1b9af7b",
+      "expected": "6cabac06fb8d99684ca2a8252510f90a964ca1d427aa4ac7b214115ee1b9af7b",
+      "match": true
+    },
+    {
+      "file": "assets/citadel-voice-pack-v1.8.2.js",
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-voice-pack-v1.8.2.js",
+      "status": 200,
+      "bytes": 61373,
+      "sha256": "e0a0ac89a7ad348a7b107fef9c067b12227d33b7c1427d3eb7cec5472949fbfe",
+      "expected": "e0a0ac89a7ad348a7b107fef9c067b12227d33b7c1427d3eb7cec5472949fbfe",
+      "match": true
+    },
+    {
+      "file": "assets/citadel-field-ui-v1.7.0.js",
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-field-ui-v1.7.0.js",
+      "status": 200,
+      "bytes": 9092,
+      "sha256": "fb2b2545d45aaad74c1009bf2bd3b775ca6b897c9baf027f2c7cff5de0b02bed",
+      "expected": "fb2b2545d45aaad74c1009bf2bd3b775ca6b897c9baf027f2c7cff5de0b02bed",
+      "match": true
+    },
+    {
+      "file": "assets/citadel-flight-v1.9.1.js",
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-flight-v1.9.1.js",
+      "status": 200,
+      "bytes": 16524,
+      "sha256": "d8e345e6a7ef05ea3aebcb986042c1c36a809bb6608ccce242d00507178199b7",
+      "expected": "d8e345e6a7ef05ea3aebcb986042c1c36a809bb6608ccce242d00507178199b7",
+      "match": true
+    },
+    {
+      "file": "assets/citadel-aim-v1.7.1.js",
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-aim-v1.7.1.js",
+      "status": 200,
+      "bytes": 5627,
+      "sha256": "6c0251b56e8a798597cc0a3b26bec950739665f4d5fed9980db091ed04b25058",
+      "expected": "6c0251b56e8a798597cc0a3b26bec950739665f4d5fed9980db091ed04b25058",
+      "match": true
+    },
+    {
+      "file": "assets/citadel-flight-view-v1.7.1.js",
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-flight-view-v1.7.1.js",
+      "status": 200,
+      "bytes": 12070,
+      "sha256": "b5e7d58a269a75fb71aba8ccb286e84714e17ef016532086dc8d098443acae91",
+      "expected": "b5e7d58a269a75fb71aba8ccb286e84714e17ef016532086dc8d098443acae91",
+      "match": true
+    },
+    {
+      "file": "assets/citadel-pursuit-v1.9.0.js",
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-pursuit-v1.9.0.js",
+      "status": 200,
+      "bytes": 34961,
+      "sha256": "7e592675d274bc1569cec4585d7f9cd5f89c0499f28bfea05d97ed856e00eb1f",
+      "expected": "7e592675d274bc1569cec4585d7f9cd5f89c0499f28bfea05d97ed856e00eb1f",
+      "match": true
+    },
+    {
+      "file": "assets/citadel-swarm-v1.9.0.js",
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-swarm-v1.9.0.js",
+      "status": 200,
+      "bytes": 40462,
+      "sha256": "f7d4f101894d7d606d839f6d97de309ebbcdd1156129be78f0468732eb629581",
+      "expected": "f7d4f101894d7d606d839f6d97de309ebbcdd1156129be78f0468732eb629581",
+      "match": true
+    },
+    {
+      "file": "assets/citadel-parallax-v1.8.0.js",
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-parallax-v1.8.0.js",
+      "status": 200,
+      "bytes": 20910,
+      "sha256": "abbfdb4d46c331cb3c752f27932b2d33349fe6ec761b2e680af5120e0ab34ea8",
+      "expected": "abbfdb4d46c331cb3c752f27932b2d33349fe6ec761b2e680af5120e0ab34ea8",
+      "match": true
+    },
+    {
+      "file": "assets/citadel-bases-v2.0.0.js",
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-bases-v2.0.0.js",
+      "status": 200,
+      "bytes": 16440,
+      "sha256": "9f7cd4346e947f13a3e4185d3e7080b69cd489c7dce959e03627b8adb89cba5a",
+      "expected": "9f7cd4346e947f13a3e4185d3e7080b69cd489c7dce959e03627b8adb89cba5a",
+      "match": true
+    },
+    {
+      "file": "assets/citadel-decks-v2.0.0.js",
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-decks-v2.0.0.js",
+      "status": 200,
+      "bytes": 53911,
+      "sha256": "4b5f02f17b26c8962768132fd1328e7bbd483e2c8b2d7499610e68c6478213f2",
+      "expected": "4b5f02f17b26c8962768132fd1328e7bbd483e2c8b2d7499610e68c6478213f2",
+      "match": true
+    },
+    {
+      "file": "assets/citadel-input-v1.9.1.js",
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-input-v1.9.1.js",
+      "status": 200,
+      "bytes": 5511,
+      "sha256": "77b4995131a94d0f6091e69b6abe16e18e3b2a1496112ab1ddf11f7eda6bd3af",
+      "expected": "77b4995131a94d0f6091e69b6abe16e18e3b2a1496112ab1ddf11f7eda6bd3af",
+      "match": true
+    },
+    {
+      "file": "assets/citadel-voice-v1.9.0.js",
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-voice-v1.9.0.js",
+      "status": 200,
+      "bytes": 33476,
+      "sha256": "8cad3194303c1be0f77ad177b8c328e72940a9db23a3e32e5c2912920386d286",
+      "expected": "8cad3194303c1be0f77ad177b8c328e72940a9db23a3e32e5c2912920386d286",
+      "match": true
+    },
+    {
+      "file": "assets/citadel-comic-v1.9.3.js",
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-comic-v1.9.3.js",
+      "status": 200,
+      "bytes": 17256,
+      "sha256": "fca0b9603ff434f060cd9b16680584d062e907bb4f9b32998a438804f7064964",
+      "expected": "fca0b9603ff434f060cd9b16680584d062e907bb4f9b32998a438804f7064964",
+      "match": true
+    },
+    {
+      "file": "assets/citadel-interface-v1.9.0.js",
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-interface-v1.9.0.js",
+      "status": 200,
+      "bytes": 3716,
+      "sha256": "1c86ce29791480920e08b5dddc42dadcc1e4bab0916e8da51c16aedb0b1b1291",
+      "expected": "1c86ce29791480920e08b5dddc42dadcc1e4bab0916e8da51c16aedb0b1b1291",
+      "match": true
+    },
+    {
+      "file": "assets/citadel-story-v1.9.0.js",
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-story-v1.9.0.js",
+      "status": 200,
+      "bytes": 12573,
+      "sha256": "85f5c018a42f09b20eb7a62a87f4251a02f219027f1f4799e07c774ff43d2c13",
+      "expected": "85f5c018a42f09b20eb7a62a87f4251a02f219027f1f4799e07c774ff43d2c13",
+      "match": true
+    },
+    {
+      "file": "assets/atlas-metrics-v0.1.0.js",
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/atlas-metrics-v0.1.0.js",
+      "status": 200,
+      "bytes": 8435,
+      "sha256": "79700bbff01f5744e1a2eb44a935ed006857eae4e75ce3602aee6cc69d8101e7",
+      "expected": "79700bbff01f5744e1a2eb44a935ed006857eae4e75ce3602aee6cc69d8101e7",
+      "match": true
+    },
+    {
+      "file": "assets/atlas-integration-v1.1.4.js",
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/atlas-integration-v1.1.4.js",
+      "status": 200,
+      "bytes": 2577,
+      "sha256": "96eaf8cd36e4c9257f0e531d861230f8ca1610973905027ad6f58dc819937220",
+      "expected": "96eaf8cd36e4c9257f0e531d861230f8ca1610973905027ad6f58dc819937220",
+      "match": true
+    },
+    {
+      "file": "assets/citadel-academy-bridge-v1.7.0.js",
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-academy-bridge-v1.7.0.js",
+      "status": 200,
+      "bytes": 18557,
+      "sha256": "cc33928c4d0b0271bc5205211ee815d56cba9243838053e4d460edee68ba2033",
+      "expected": "cc33928c4d0b0271bc5205211ee815d56cba9243838053e4d460edee68ba2033",
+      "match": true
+    },
+    {
+      "file": "assets/citadel-ui-fixes-v1.9.2.js",
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-ui-fixes-v1.9.2.js",
+      "status": 200,
+      "bytes": 7352,
+      "sha256": "364fc8c1e412eb9b73f826845e23646f8906d37c7027aa1f2ae93ba0548cbf16",
+      "expected": "364fc8c1e412eb9b73f826845e23646f8906d37c7027aa1f2ae93ba0548cbf16",
+      "match": true
+    },
+    {
+      "file": "assets/citadel-bases-view-v2.0.0.js",
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-bases-view-v2.0.0.js?build=200r3",
+      "status": 200,
+      "bytes": 28950,
+      "sha256": "506e1ebbfa86a42b0f4dc6918ab1917edb3b8018012e15d98a267060c2cdf8c3",
+      "expected": "506e1ebbfa86a42b0f4dc6918ab1917edb3b8018012e15d98a267060c2cdf8c3",
+      "match": true
+    },
+    {
+      "file": "assets/citadel-runtime-v1.9.3.js",
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-runtime-v1.9.3.js?build=193r2",
+      "status": 200,
+      "bytes": 13989,
+      "sha256": "a026d1eb50252a37f01b7ad097e610252bccacc01f078d6ee75a3bf86e029a6e",
+      "expected": "a026d1eb50252a37f01b7ad097e610252bccacc01f078d6ee75a3bf86e029a6e",
+      "match": true
+    }
+  ],
+  "allMatch": true,
+  "browserVerification": {
+    "publicURL": "https://andrejk-blip.github.io/cmpon-atlas/",
+    "applicationVersion": "2.0.0",
+    "footer": "Приложение v2.0.0 · ФТ 2.0.2",
+    "basesViewScript": "./assets/citadel-bases-view-v2.0.0.js?build=200r3",
+    "checkpointSmoke": "browser-final-smoke.json",
+    "checkpointSmokeDetails": "Level 5 completed using ordinary inputs and three terminal answers; level 6 escort completed; reached level 7. Runtime failures 0, application errors 0. One emit change already present at initial startup and unchanged at final snapshot.",
+    "screenshot": "browser-final-base.jpg",
+    "screenshotContext": "Actual Chrome isolated QA entry with same published production scripts, manual checkpoint 5 view; no registration or real save loaded."
+  }
+}
