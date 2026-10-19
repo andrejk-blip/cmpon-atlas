@@ -192,7 +192,7 @@ async function missionPlay(entry, stage) {
       if (clip?.kind === 'commander') radio.push({ clipId: clip.id, status: e.status, phase: e.phase, seconds: +e.elapsed.toFixed(3), source: h.c.CITADEL_VOICE.status().source });
     }
   }
-  for (; frames < 150 / dt && e.status !== 'boarding'; frames++) {
+  for (; frames < (stage === 1 ? 420 : 150) / dt && e.status !== 'boarding'; frames++) {
     assert(!['lost', 'crashing'].includes(e.status), `Mission ${stage * 3 + 1} failed at ${e.elapsed}s`);
     if (e.status === 'lesson') {
       const q = h.lessonCase(e, e.lesson.caseIndex), required = e.plan[stage].filter(id => e.rescued.includes(id));
@@ -209,7 +209,7 @@ async function missionPlay(entry, stage) {
       h.action('citadel-lesson-next');
       continue;
     }
-    const command = stage === 1 ? pursuit.controller(h, e) : controlSwarm(e);
+    const command = stage === 1 ? require('./helpers/campaign-inputs.js').pursuitInput(h, e) : controlSwarm(e);
     const input = stage === 1 ? pursuit.controls(h, command) : swarm.realInput(h, e, command);
     e.step(dt, input); await audioFrame();
     peakEnemies = Math.max(peakEnemies, e.enemies.length); peakHostile = Math.max(peakHostile, e.hostile.length);
@@ -283,7 +283,7 @@ async function main(argv = process.argv.slice(2)) {
   await check('Actual index orders voice after every gameplay wrapper and before comic/interface/story/academy', () => {
     const voice = entry.scripts.findIndex(name => /citadel-voice-v/.test(name));
     assert(voice > 0); assert(entry.scripts[0].includes('citadel-startup-')); assert(entry.scripts[1].includes('citadel-compat-'));
-    for (const token of ['citadel-flight-v1.9.1', 'citadel-pursuit-v1.9.0', 'citadel-swarm-v1.9.0', 'citadel-parallax-', 'citadel-decks-v' + release.decks_module_version, 'citadel-input-v1.9.1']) {
+    for (const token of ['citadel-flight-v1.9.1', 'citadel-pursuit-v' + release.pursuit_module_version, 'citadel-swarm-v1.9.0', 'citadel-parallax-', 'citadel-decks-v' + release.decks_module_version, 'citadel-input-v1.9.1']) {
       const at = entry.scripts.findIndex(name => name.includes(token)); assert(at > 1 && at < voice, token);
     }
     for (const token of ['citadel-comic-v1.9.3', 'citadel-interface-v1.9.0', 'citadel-story-v1.9.0', 'citadel-academy-bridge-'])

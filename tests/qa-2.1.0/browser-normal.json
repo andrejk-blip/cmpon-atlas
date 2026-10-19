@@ -1,0 +1,607 @@
+{
+  "version": "2.1.0",
+  "checkpoint": "4",
+  "manual": false,
+  "renderer": "3D · совместимый режим",
+  "pursuit": {
+    "version": "2.1.0",
+    "active": false,
+    "state": "return",
+    "clock": 159.8933333333524,
+    "chapter": 3,
+    "stageHistory": [
+      {
+        "stage": 1,
+        "at": 0
+      },
+      {
+        "stage": 2,
+        "at": 38.543333333332434
+      },
+      {
+        "stage": 3,
+        "at": 99.2266666666625
+      }
+    ],
+    "packets": [
+      38,
+      46,
+      58
+    ],
+    "stageGates": [
+      4,
+      11,
+      18
+    ],
+    "kills": 17,
+    "jammersDestroyed": 7,
+    "gatesPassed": 33,
+    "gatesMissed": 0,
+    "gateCollisions": 0,
+    "enemiesSpawned": 24,
+    "progress": 100,
+    "uploaded": 142,
+    "requiredSeconds": 142,
+    "leader": [
+      21.58947468978355,
+      -3.611748281918299,
+      -18037.093103609914
+    ],
+    "player": [
+      78,
+      10,
+      -35
+    ],
+    "speed": 0,
+    "link": {
+      "connected": true,
+      "reason": "connected",
+      "distance": 100.41709706570335,
+      "offset": 2.178434518545277,
+      "blockedId": null
+    },
+    "requirements": 3,
+    "decisions": 2,
+    "collisions": 0,
+    "rocksDestroyed": 11,
+    "asteroids": []
+  },
+  "channel": false,
+  "baseOps": {
+    "reserveDepartures": 0,
+    "patrolDistance": 0,
+    "shots": 0
+  },
+  "board": {
+    "pos": [
+      0,
+      0,
+      30
+    ],
+    "hp": 100,
+    "time": 0,
+    "room": 0,
+    "crew": 19
+  },
+  "mode": "normal",
+  "accelerated": true,
+  "rafInputCalls": 88,
+  "finished": "pursuit-complete",
+  "status": "paused",
+  "level": 5,
+  "levels": [
+    4
+  ],
+  "cards": 2,
+  "wallSeconds": 381,
+  "simulatedSeconds": 348.53,
+  "frameCalls": 10488,
+  "emitChanges": 1,
+  "maxInputGapMs": 1127,
+  "metrics": {
+    "listeners": 70,
+    "peakListeners": 70,
+    "rafCalls": 386,
+    "rafDone": 383,
+    "rafPending": 1,
+    "rafPeak": 2,
+    "errors": [],
+    "heap": 66350588
+  },
+  "runtime": {
+    "version": "1.9.3",
+    "build": "193r2",
+    "frames": 381,
+    "updates": 88,
+    "renders": 381,
+    "recoveries": 0,
+    "failures": 0,
+    "stopped": false,
+    "contextLost": false,
+    "pending": true,
+    "stage": "idle",
+    "lastFrameAge": 910,
+    "lastUpdateAge": 294168,
+    "lastRenderAge": 803,
+    "recoverySave": "none",
+    "faults": [],
+    "events": [
+      {
+        "at": 828,
+        "kind": "detach",
+        "status": "unknown",
+        "stage": null,
+        "phase": "other",
+        "finale": null,
+        "wave": null,
+        "seconds": null,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "webgl"
+      },
+      {
+        "at": 1156,
+        "kind": "engine",
+        "status": "menu",
+        "stage": 0,
+        "phase": "brief",
+        "finale": null,
+        "wave": 0,
+        "seconds": 0,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 1156,
+        "kind": "transition",
+        "status": "menu",
+        "stage": 0,
+        "phase": "brief",
+        "finale": null,
+        "wave": 0,
+        "seconds": 0,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 2232,
+        "kind": "citadel-launch",
+        "status": "briefing",
+        "stage": 1,
+        "phase": "pursuit",
+        "finale": null,
+        "wave": 0,
+        "seconds": 171.7,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 2487,
+        "kind": "engine",
+        "status": "playing",
+        "stage": 1,
+        "phase": "pursuit",
+        "finale": null,
+        "wave": 0,
+        "seconds": 171.7,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 2524,
+        "kind": "transition",
+        "status": "playing",
+        "stage": 1,
+        "phase": "pursuit",
+        "finale": null,
+        "wave": 0,
+        "seconds": 173.72,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 79858,
+        "kind": "citadel-lesson-next",
+        "status": "lesson",
+        "stage": 1,
+        "phase": "pursuit",
+        "finale": null,
+        "wave": 0,
+        "seconds": 331.59,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 79905,
+        "kind": "citadel-lesson-next",
+        "status": "lesson",
+        "stage": 1,
+        "phase": "pursuit",
+        "finale": null,
+        "wave": 0,
+        "seconds": 331.59,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 79932,
+        "kind": "transition",
+        "status": "playing",
+        "stage": 1,
+        "phase": "dock",
+        "finale": null,
+        "wave": 0,
+        "seconds": 333.57,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 81860,
+        "kind": "transition",
+        "status": "docking",
+        "stage": 1,
+        "phase": "dock",
+        "finale": null,
+        "wave": 0,
+        "seconds": 337.61,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 88113,
+        "kind": "arcade-pause",
+        "status": "boarding",
+        "stage": 1,
+        "phase": "boarding",
+        "finale": null,
+        "wave": 0,
+        "seconds": 348.53,
+        "mode": "normal",
+        "enemies": 19,
+        "renderer": "canvas"
+      },
+      {
+        "at": 88122,
+        "kind": "transition",
+        "status": "paused",
+        "stage": 1,
+        "phase": "boarding",
+        "finale": null,
+        "wave": 0,
+        "seconds": 348.53,
+        "mode": "normal",
+        "enemies": 19,
+        "renderer": "canvas"
+      }
+    ]
+  },
+  "sound": {
+    "context": "running",
+    "loaded": 16,
+    "active": 0,
+    "cacheBytes": 2046804,
+    "played": {
+      "shot": 83,
+      "robot-hit": 10,
+      "robot-death": 10,
+      "destroy": 10,
+      "player-damage": 1
+    }
+  },
+  "voice": {
+    "busy": false,
+    "source": "recorded"
+  },
+  "samples": [
+    {
+      "wallSeconds": 9,
+      "gameSeconds": 190,
+      "level": 4,
+      "listeners": 70,
+      "heap": 102496075,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 21,
+      "gameSeconds": 212,
+      "level": 4,
+      "listeners": 70,
+      "heap": 121556161,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 33,
+      "gameSeconds": 238,
+      "level": 4,
+      "listeners": 70,
+      "heap": 140854922,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 43,
+      "gameSeconds": 259,
+      "level": 4,
+      "listeners": 70,
+      "heap": 183423253,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 55,
+      "gameSeconds": 283,
+      "level": 4,
+      "listeners": 70,
+      "heap": 49237359,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 67,
+      "gameSeconds": 307,
+      "level": 4,
+      "listeners": 70,
+      "heap": 35459695,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 79,
+      "gameSeconds": 334,
+      "level": 4,
+      "listeners": 70,
+      "heap": 74111180,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 89,
+      "gameSeconds": 349,
+      "level": 5,
+      "listeners": 70,
+      "heap": 70654483,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 101,
+      "gameSeconds": 349,
+      "level": 5,
+      "listeners": 70,
+      "heap": 65906799,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 113,
+      "gameSeconds": 349,
+      "level": 5,
+      "listeners": 70,
+      "heap": 84520366,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 125,
+      "gameSeconds": 349,
+      "level": 5,
+      "listeners": 70,
+      "heap": 75907250,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 137,
+      "gameSeconds": 349,
+      "level": 5,
+      "listeners": 70,
+      "heap": 56765902,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 149,
+      "gameSeconds": 349,
+      "level": 5,
+      "listeners": 70,
+      "heap": 108835878,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 159,
+      "gameSeconds": 349,
+      "level": 5,
+      "listeners": 70,
+      "heap": 70317026,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 171,
+      "gameSeconds": 349,
+      "level": 5,
+      "listeners": 70,
+      "heap": 66774290,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 183,
+      "gameSeconds": 349,
+      "level": 5,
+      "listeners": 70,
+      "heap": 118838450,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 193,
+      "gameSeconds": 349,
+      "level": 5,
+      "listeners": 70,
+      "heap": 90224062,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 205,
+      "gameSeconds": 349,
+      "level": 5,
+      "listeners": 70,
+      "heap": 66021882,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 217,
+      "gameSeconds": 349,
+      "level": 5,
+      "listeners": 70,
+      "heap": 36888298,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 229,
+      "gameSeconds": 349,
+      "level": 5,
+      "listeners": 70,
+      "heap": 104589955,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 239,
+      "gameSeconds": 349,
+      "level": 5,
+      "listeners": 70,
+      "heap": 75736127,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 251,
+      "gameSeconds": 349,
+      "level": 5,
+      "listeners": 70,
+      "heap": 56413388,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 263,
+      "gameSeconds": 349,
+      "level": 5,
+      "listeners": 70,
+      "heap": 108442756,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 273,
+      "gameSeconds": 349,
+      "level": 5,
+      "listeners": 70,
+      "heap": 69914412,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 283,
+      "gameSeconds": 349,
+      "level": 5,
+      "listeners": 70,
+      "heap": 46352866,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 295,
+      "gameSeconds": 349,
+      "level": 5,
+      "listeners": 70,
+      "heap": 98522309,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 305,
+      "gameSeconds": 349,
+      "level": 5,
+      "listeners": 70,
+      "heap": 69867157,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 317,
+      "gameSeconds": 349,
+      "level": 5,
+      "listeners": 70,
+      "heap": 56323094,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 329,
+      "gameSeconds": 349,
+      "level": 5,
+      "listeners": 70,
+      "heap": 108373570,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 341,
+      "gameSeconds": 349,
+      "level": 5,
+      "listeners": 70,
+      "heap": 84170001,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 351,
+      "gameSeconds": 349,
+      "level": 5,
+      "listeners": 70,
+      "heap": 55604033,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 361,
+      "gameSeconds": 349,
+      "level": 5,
+      "listeners": 70,
+      "heap": 36450345,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 373,
+      "gameSeconds": 349,
+      "level": 5,
+      "listeners": 70,
+      "heap": 94144512,
+      "rafPending": 1
+    }
+  ],
+  "transitions": [
+    {
+      "level": 4,
+      "status": "briefing",
+      "phase": "pursuit",
+      "finale": null,
+      "seconds": 171.7
+    },
+    {
+      "level": 4,
+      "status": "playing",
+      "phase": "pursuit",
+      "finale": null,
+      "seconds": 171.7
+    },
+    {
+      "level": 4,
+      "status": "lesson",
+      "phase": "pursuit",
+      "finale": null,
+      "seconds": 331.59
+    },
+    {
+      "level": 4,
+      "status": "playing",
+      "phase": "dock",
+      "finale": null,
+      "seconds": 331.61
+    },
+    {
+      "level": 4,
+      "status": "docking",
+      "phase": "dock",
+      "finale": null,
+      "seconds": 336.72
+    }
+  ]
+}

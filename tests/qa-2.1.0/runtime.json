@@ -1,0 +1,869 @@
+{
+  "suite": "runtime193",
+  "environment": "Node VM, mocked renderer/RAF/timers/storage; native Canvas integration tested separately",
+  "checks": [
+    {
+      "name": "One owner, idempotent script installation and ordinary pause/resume",
+      "pass": true,
+      "data": {
+        "version": "1.9.3",
+        "build": "193r2",
+        "frames": 62,
+        "updates": 2,
+        "renders": 62,
+        "recoveries": 0,
+        "failures": 0,
+        "stopped": false,
+        "contextLost": false,
+        "pending": true,
+        "stage": "idle",
+        "lastFrameAge": 0,
+        "lastUpdateAge": 0,
+        "lastRenderAge": 0,
+        "recoverySave": "none",
+        "faults": [],
+        "events": [
+          {
+            "at": 0,
+            "kind": "citadel-launch",
+            "status": "playing",
+            "stage": 0,
+            "phase": "orientation",
+            "finale": null,
+            "wave": 0,
+            "seconds": 0,
+            "mode": "normal",
+            "enemies": 0,
+            "renderer": "canvas"
+          },
+          {
+            "at": 17,
+            "kind": "engine",
+            "status": "playing",
+            "stage": 0,
+            "phase": "orientation",
+            "finale": null,
+            "wave": 0,
+            "seconds": 0,
+            "mode": "normal",
+            "enemies": 0,
+            "renderer": "canvas"
+          },
+          {
+            "at": 17,
+            "kind": "transition",
+            "status": "playing",
+            "stage": 0,
+            "phase": "orientation",
+            "finale": null,
+            "wave": 0,
+            "seconds": 0.02,
+            "mode": "normal",
+            "enemies": 0,
+            "renderer": "canvas"
+          },
+          {
+            "at": 17,
+            "kind": "arcade-pause",
+            "status": "playing",
+            "stage": 0,
+            "phase": "orientation",
+            "finale": null,
+            "wave": 0,
+            "seconds": 0.02,
+            "mode": "normal",
+            "enemies": 0,
+            "renderer": "canvas"
+          },
+          {
+            "at": 33,
+            "kind": "transition",
+            "status": "paused",
+            "stage": 0,
+            "phase": "orientation",
+            "finale": null,
+            "wave": 0,
+            "seconds": 0.02,
+            "mode": "normal",
+            "enemies": 0,
+            "renderer": "canvas"
+          },
+          {
+            "at": 1017,
+            "kind": "arcade-resume",
+            "status": "paused",
+            "stage": 0,
+            "phase": "orientation",
+            "finale": null,
+            "wave": 0,
+            "seconds": 0.02,
+            "mode": "normal",
+            "enemies": 0,
+            "renderer": "canvas"
+          },
+          {
+            "at": 1033,
+            "kind": "transition",
+            "status": "playing",
+            "stage": 0,
+            "phase": "orientation",
+            "finale": null,
+            "wave": 0,
+            "seconds": 0.03,
+            "mode": "normal",
+            "enemies": 0,
+            "renderer": "canvas"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Lost RAF repaired once, stale callback cannot duplicate updates",
+      "pass": true,
+      "data": {
+        "version": "1.9.3",
+        "build": "193r2",
+        "frames": 3,
+        "updates": 2,
+        "renders": 3,
+        "recoveries": 1,
+        "failures": 0,
+        "stopped": false,
+        "contextLost": false,
+        "pending": true,
+        "stage": "idle",
+        "lastFrameAge": 0,
+        "lastUpdateAge": 0,
+        "lastRenderAge": 0,
+        "recoverySave": "local",
+        "faults": [],
+        "events": [
+          {
+            "at": 0,
+            "kind": "citadel-launch",
+            "status": "playing",
+            "stage": 0,
+            "phase": "orientation",
+            "finale": null,
+            "wave": 0,
+            "seconds": 0,
+            "mode": "normal",
+            "enemies": 0,
+            "renderer": "canvas"
+          },
+          {
+            "at": 17,
+            "kind": "engine",
+            "status": "playing",
+            "stage": 0,
+            "phase": "orientation",
+            "finale": null,
+            "wave": 0,
+            "seconds": 0,
+            "mode": "normal",
+            "enemies": 0,
+            "renderer": "canvas"
+          },
+          {
+            "at": 17,
+            "kind": "transition",
+            "status": "playing",
+            "stage": 0,
+            "phase": "orientation",
+            "finale": null,
+            "wave": 0,
+            "seconds": 0.02,
+            "mode": "normal",
+            "enemies": 0,
+            "renderer": "canvas"
+          },
+          {
+            "at": 5017,
+            "kind": "frame-gap",
+            "status": "playing",
+            "stage": 0,
+            "phase": "orientation",
+            "finale": null,
+            "wave": 0,
+            "seconds": 0.02,
+            "mode": "normal",
+            "enemies": 0,
+            "renderer": "canvas"
+          },
+          {
+            "at": 5033,
+            "kind": "transition",
+            "status": "paused",
+            "stage": 0,
+            "phase": "orientation",
+            "finale": null,
+            "wave": 0,
+            "seconds": 0.02,
+            "mode": "normal",
+            "enemies": 0,
+            "renderer": "canvas"
+          },
+          {
+            "at": 5033,
+            "kind": "arcade-resume",
+            "status": "paused",
+            "stage": 0,
+            "phase": "orientation",
+            "finale": null,
+            "wave": 0,
+            "seconds": 0.02,
+            "mode": "normal",
+            "enemies": 0,
+            "renderer": "canvas"
+          },
+          {
+            "at": 5050,
+            "kind": "transition",
+            "status": "playing",
+            "stage": 0,
+            "phase": "orientation",
+            "finale": null,
+            "wave": 0,
+            "seconds": 0.03,
+            "mode": "normal",
+            "enemies": 0,
+            "renderer": "canvas"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Hidden tab is exempt; visibility return owns exactly one frame",
+      "pass": true,
+      "data": {
+        "version": "1.9.3",
+        "build": "193r2",
+        "frames": 2,
+        "updates": 1,
+        "renders": 2,
+        "recoveries": 0,
+        "failures": 0,
+        "stopped": false,
+        "contextLost": false,
+        "pending": true,
+        "stage": "idle",
+        "lastFrameAge": 0,
+        "lastUpdateAge": 17,
+        "lastRenderAge": 0,
+        "recoverySave": "none",
+        "faults": [],
+        "events": [
+          {
+            "at": 0,
+            "kind": "citadel-launch",
+            "status": "playing",
+            "stage": 0,
+            "phase": "orientation",
+            "finale": null,
+            "wave": 0,
+            "seconds": 0,
+            "mode": "normal",
+            "enemies": 0,
+            "renderer": "canvas"
+          },
+          {
+            "at": 17,
+            "kind": "engine",
+            "status": "playing",
+            "stage": 0,
+            "phase": "orientation",
+            "finale": null,
+            "wave": 0,
+            "seconds": 0,
+            "mode": "normal",
+            "enemies": 0,
+            "renderer": "canvas"
+          },
+          {
+            "at": 17,
+            "kind": "transition",
+            "status": "playing",
+            "stage": 0,
+            "phase": "orientation",
+            "finale": null,
+            "wave": 0,
+            "seconds": 0.02,
+            "mode": "normal",
+            "enemies": 0,
+            "renderer": "canvas"
+          },
+          {
+            "at": 17,
+            "kind": "hidden",
+            "status": "paused",
+            "stage": 0,
+            "phase": "orientation",
+            "finale": null,
+            "wave": 0,
+            "seconds": 0.02,
+            "mode": "normal",
+            "enemies": 0,
+            "renderer": "canvas"
+          },
+          {
+            "at": 60017,
+            "kind": "visible",
+            "status": "paused",
+            "stage": 0,
+            "phase": "orientation",
+            "finale": null,
+            "wave": 0,
+            "seconds": 0.02,
+            "mode": "normal",
+            "enemies": 0,
+            "renderer": "canvas"
+          },
+          {
+            "at": 60033,
+            "kind": "transition",
+            "status": "paused",
+            "stage": 0,
+            "phase": "orientation",
+            "finale": null,
+            "wave": 0,
+            "seconds": 0.02,
+            "mode": "normal",
+            "enemies": 0,
+            "renderer": "canvas"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Transient render failure pauses, preserves completed state and never replays a step",
+      "pass": true,
+      "data": {
+        "version": "1.9.3",
+        "build": "193r2",
+        "frames": 2,
+        "updates": 2,
+        "renders": 2,
+        "recoveries": 1,
+        "failures": 1,
+        "stopped": false,
+        "contextLost": false,
+        "pending": true,
+        "stage": "idle",
+        "lastFrameAge": 0,
+        "lastUpdateAge": 17,
+        "lastRenderAge": 0,
+        "recoverySave": "local",
+        "faults": [
+          {
+            "at": 33,
+            "stage": "renderer",
+            "module": "citadel-comic-v1.9.3.js",
+            "type": "TypeError",
+            "stack": [
+              {
+                "file": "citadel-comic-v1.9.3.js",
+                "line": 200,
+                "column": 9
+              }
+            ],
+            "state": {
+              "status": "playing",
+              "stage": 0,
+              "phase": "orientation",
+              "finale": null,
+              "wave": 0,
+              "seconds": 0.03,
+              "mode": "normal",
+              "enemies": 0,
+              "renderer": "canvas"
+            }
+          }
+        ],
+        "events": [
+          {
+            "at": 0,
+            "kind": "citadel-launch",
+            "status": "playing",
+            "stage": 0,
+            "phase": "orientation",
+            "finale": null,
+            "wave": 0,
+            "seconds": 0,
+            "mode": "normal",
+            "enemies": 0,
+            "renderer": "canvas"
+          },
+          {
+            "at": 17,
+            "kind": "engine",
+            "status": "playing",
+            "stage": 0,
+            "phase": "orientation",
+            "finale": null,
+            "wave": 0,
+            "seconds": 0,
+            "mode": "normal",
+            "enemies": 0,
+            "renderer": "canvas"
+          },
+          {
+            "at": 17,
+            "kind": "transition",
+            "status": "playing",
+            "stage": 0,
+            "phase": "orientation",
+            "finale": null,
+            "wave": 0,
+            "seconds": 0.02,
+            "mode": "normal",
+            "enemies": 0,
+            "renderer": "canvas"
+          },
+          {
+            "at": 33,
+            "kind": "fault",
+            "status": "playing",
+            "stage": 0,
+            "phase": "orientation",
+            "finale": null,
+            "wave": 0,
+            "seconds": 0.03,
+            "mode": "normal",
+            "enemies": 0,
+            "renderer": "canvas"
+          },
+          {
+            "at": 50,
+            "kind": "transition",
+            "status": "paused",
+            "stage": 0,
+            "phase": "orientation",
+            "finale": null,
+            "wave": 0,
+            "seconds": 0.03,
+            "mode": "normal",
+            "enemies": 0,
+            "renderer": "canvas"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Interrupted update saves last good state and stops without replay or automatic reload",
+      "pass": true,
+      "data": {
+        "version": "1.9.3",
+        "build": "193r2",
+        "frames": 1,
+        "updates": 1,
+        "renders": 1,
+        "recoveries": 0,
+        "failures": 1,
+        "stopped": true,
+        "contextLost": false,
+        "pending": false,
+        "stage": "update",
+        "lastFrameAge": 9000,
+        "lastUpdateAge": 9017,
+        "lastRenderAge": 9017,
+        "recoverySave": "local",
+        "faults": [
+          {
+            "at": 33,
+            "stage": "update",
+            "module": "citadel-runtime-v1.9.3.js",
+            "type": "RangeError",
+            "stack": [
+              {
+                "file": "citadel-runtime-v1.9.3.js",
+                "line": 162,
+                "column": 53
+              },
+              {
+                "file": "citadel-runtime-v1.9.3.js",
+                "line": 84,
+                "column": 39
+              }
+            ],
+            "state": {
+              "status": "playing",
+              "stage": 0,
+              "phase": "orientation",
+              "finale": null,
+              "wave": 0,
+              "seconds": 0.02,
+              "mode": "normal",
+              "enemies": 0,
+              "renderer": "canvas"
+            }
+          }
+        ],
+        "events": [
+          {
+            "at": 0,
+            "kind": "citadel-launch",
+            "status": "playing",
+            "stage": 0,
+            "phase": "orientation",
+            "finale": null,
+            "wave": 0,
+            "seconds": 0,
+            "mode": "normal",
+            "enemies": 0,
+            "renderer": "canvas"
+          },
+          {
+            "at": 17,
+            "kind": "engine",
+            "status": "playing",
+            "stage": 0,
+            "phase": "orientation",
+            "finale": null,
+            "wave": 0,
+            "seconds": 0,
+            "mode": "normal",
+            "enemies": 0,
+            "renderer": "canvas"
+          },
+          {
+            "at": 17,
+            "kind": "transition",
+            "status": "playing",
+            "stage": 0,
+            "phase": "orientation",
+            "finale": null,
+            "wave": 0,
+            "seconds": 0.02,
+            "mode": "normal",
+            "enemies": 0,
+            "renderer": "canvas"
+          },
+          {
+            "at": 33,
+            "kind": "fault",
+            "status": "playing",
+            "stage": 0,
+            "phase": "orientation",
+            "finale": null,
+            "wave": 0,
+            "seconds": 0.02,
+            "mode": "normal",
+            "enemies": 0,
+            "renderer": "canvas"
+          },
+          {
+            "at": 9033,
+            "kind": "arcade-resume",
+            "status": "paused",
+            "stage": 0,
+            "phase": "orientation",
+            "finale": null,
+            "wave": 0,
+            "seconds": 0.02,
+            "mode": "normal",
+            "enemies": 0,
+            "renderer": "canvas"
+          }
+        ]
+      }
+    },
+    {
+      "name": "An asynchronous restore may start a new engine after a fatal update; the broken instance never restarts",
+      "pass": true,
+      "data": {
+        "failures": 1,
+        "pending": true,
+        "status": "briefing"
+      }
+    },
+    {
+      "name": "Denied localStorage retains an in-memory backup and does not throw from the failure handler",
+      "pass": true,
+      "data": {
+        "recoverySave": "memory"
+      }
+    },
+    {
+      "name": "Repeated render fault stops instead of an exception/recovery loop",
+      "pass": true,
+      "data": {
+        "version": "1.9.3",
+        "build": "193r2",
+        "frames": 1,
+        "updates": 2,
+        "renders": 1,
+        "recoveries": 1,
+        "failures": 2,
+        "stopped": true,
+        "contextLost": false,
+        "pending": false,
+        "stage": "renderer",
+        "lastFrameAge": 0,
+        "lastUpdateAge": 17,
+        "lastRenderAge": 33,
+        "recoverySave": "local",
+        "faults": [
+          {
+            "at": 33,
+            "stage": "renderer",
+            "module": "citadel-runtime-v1.9.3.js",
+            "type": "Error",
+            "stack": [
+              {
+                "file": "citadel-runtime-v1.9.3.js",
+                "line": 134,
+                "column": 41
+              },
+              {
+                "file": "citadel-runtime-v1.9.3.js",
+                "line": 168,
+                "column": 27
+              },
+              {
+                "file": "citadel-runtime-v1.9.3.js",
+                "line": 84,
+                "column": 39
+              }
+            ],
+            "state": {
+              "status": "playing",
+              "stage": 0,
+              "phase": "orientation",
+              "finale": null,
+              "wave": 0,
+              "seconds": 0.03,
+              "mode": "normal",
+              "enemies": 0,
+              "renderer": "canvas"
+            }
+          },
+          {
+            "at": 50,
+            "stage": "renderer",
+            "module": "citadel-runtime-v1.9.3.js",
+            "type": "Error",
+            "stack": [
+              {
+                "file": "citadel-runtime-v1.9.3.js",
+                "line": 134,
+                "column": 41
+              },
+              {
+                "file": "citadel-runtime-v1.9.3.js",
+                "line": 168,
+                "column": 27
+              },
+              {
+                "file": "citadel-runtime-v1.9.3.js",
+                "line": 84,
+                "column": 39
+              }
+            ],
+            "state": {
+              "status": "paused",
+              "stage": 0,
+              "phase": "orientation",
+              "finale": null,
+              "wave": 0,
+              "seconds": 0.03,
+              "mode": "normal",
+              "enemies": 0,
+              "renderer": "canvas"
+            }
+          }
+        ],
+        "events": [
+          {
+            "at": 0,
+            "kind": "citadel-launch",
+            "status": "playing",
+            "stage": 0,
+            "phase": "orientation",
+            "finale": null,
+            "wave": 0,
+            "seconds": 0,
+            "mode": "normal",
+            "enemies": 0,
+            "renderer": "canvas"
+          },
+          {
+            "at": 17,
+            "kind": "engine",
+            "status": "playing",
+            "stage": 0,
+            "phase": "orientation",
+            "finale": null,
+            "wave": 0,
+            "seconds": 0,
+            "mode": "normal",
+            "enemies": 0,
+            "renderer": "canvas"
+          },
+          {
+            "at": 17,
+            "kind": "transition",
+            "status": "playing",
+            "stage": 0,
+            "phase": "orientation",
+            "finale": null,
+            "wave": 0,
+            "seconds": 0.02,
+            "mode": "normal",
+            "enemies": 0,
+            "renderer": "canvas"
+          },
+          {
+            "at": 33,
+            "kind": "fault",
+            "status": "playing",
+            "stage": 0,
+            "phase": "orientation",
+            "finale": null,
+            "wave": 0,
+            "seconds": 0.03,
+            "mode": "normal",
+            "enemies": 0,
+            "renderer": "canvas"
+          },
+          {
+            "at": 50,
+            "kind": "transition",
+            "status": "paused",
+            "stage": 0,
+            "phase": "orientation",
+            "finale": null,
+            "wave": 0,
+            "seconds": 0.03,
+            "mode": "normal",
+            "enemies": 0,
+            "renderer": "canvas"
+          },
+          {
+            "at": 50,
+            "kind": "fault",
+            "status": "paused",
+            "stage": 0,
+            "phase": "orientation",
+            "finale": null,
+            "wave": 0,
+            "seconds": 0.03,
+            "mode": "normal",
+            "enemies": 0,
+            "renderer": "canvas"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Context-loss lifecycle pauses updates; restoration schedules only one frame",
+      "pass": true,
+      "data": {
+        "version": "1.9.3",
+        "build": "193r2",
+        "frames": 3,
+        "updates": 1,
+        "renders": 2,
+        "recoveries": 0,
+        "failures": 0,
+        "stopped": false,
+        "contextLost": false,
+        "pending": true,
+        "stage": "idle",
+        "lastFrameAge": 0,
+        "lastUpdateAge": 17,
+        "lastRenderAge": 0,
+        "recoverySave": "local",
+        "faults": [],
+        "events": [
+          {
+            "at": 0,
+            "kind": "citadel-launch",
+            "status": "playing",
+            "stage": 0,
+            "phase": "orientation",
+            "finale": null,
+            "wave": 0,
+            "seconds": 0,
+            "mode": "normal",
+            "enemies": 0,
+            "renderer": "canvas"
+          },
+          {
+            "at": 17,
+            "kind": "engine",
+            "status": "playing",
+            "stage": 0,
+            "phase": "orientation",
+            "finale": null,
+            "wave": 0,
+            "seconds": 0,
+            "mode": "normal",
+            "enemies": 0,
+            "renderer": "canvas"
+          },
+          {
+            "at": 17,
+            "kind": "transition",
+            "status": "playing",
+            "stage": 0,
+            "phase": "orientation",
+            "finale": null,
+            "wave": 0,
+            "seconds": 0.02,
+            "mode": "normal",
+            "enemies": 0,
+            "renderer": "canvas"
+          },
+          {
+            "at": 17,
+            "kind": "context-lost",
+            "status": "paused",
+            "stage": 0,
+            "phase": "orientation",
+            "finale": null,
+            "wave": 0,
+            "seconds": 0.02,
+            "mode": "normal",
+            "enemies": 0,
+            "renderer": "canvas"
+          },
+          {
+            "at": 33,
+            "kind": "transition",
+            "status": "paused",
+            "stage": 0,
+            "phase": "orientation",
+            "finale": null,
+            "wave": 0,
+            "seconds": 0.02,
+            "mode": "normal",
+            "enemies": 0,
+            "renderer": "canvas"
+          },
+          {
+            "at": 7033,
+            "kind": "context-restored",
+            "status": "paused",
+            "stage": 0,
+            "phase": "orientation",
+            "finale": null,
+            "wave": 0,
+            "seconds": 0.02,
+            "mode": "normal",
+            "enemies": 0,
+            "renderer": "canvas"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Journal bounded; diagnostics omit save, name, message and action payload",
+      "pass": true,
+      "data": {
+        "events": 64,
+        "frames": 160
+      }
+    }
+  ],
+  "pass": true
+}

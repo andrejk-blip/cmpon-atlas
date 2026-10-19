@@ -1,0 +1,2952 @@
+{
+  "method": "Real Chrome, unaccelerated ordinary steering through QA controls; read-only DOM reports. Canvas fallback.",
+  "connected": {
+    "version": "2.1.0",
+    "checkpoint": "3-connected",
+    "manual": false,
+    "renderer": "3D · совместимый режим",
+    "pursuit": {
+      "version": "2.1.0",
+      "active": true,
+      "state": "chase",
+      "clock": 114.8366666666621,
+      "chapter": 3,
+      "stageHistory": [
+        {
+          "stage": 1,
+          "at": 0
+        },
+        {
+          "stage": 2,
+          "at": 38.53333333333243
+        },
+        {
+          "stage": 3,
+          "at": 111.16666666666164
+        }
+      ],
+      "packets": [
+        38,
+        46,
+        2.6166666666666685
+      ],
+      "stageGates": [
+        4,
+        14,
+        1
+      ],
+      "kills": 11,
+      "jammersDestroyed": 3,
+      "gatesPassed": 19,
+      "gatesMissed": 0,
+      "gateCollisions": 0,
+      "enemiesSpawned": 15,
+      "progress": 68.1704980842912,
+      "uploaded": 86.61666666666667,
+      "requiredSeconds": 142,
+      "leader": [
+        19.285237314971347,
+        -17.131008598435333,
+        -11698.150595279641
+      ],
+      "player": [
+        13.28621425052899,
+        -16.109499474132225,
+        -11619.261781840536
+      ],
+      "speed": 123.56576946088097,
+      "link": {
+        "connected": true,
+        "reason": "connected",
+        "distance": 79.12317387749766,
+        "offset": 6.085372512734604,
+        "blockedId": null
+      },
+      "requirements": 2,
+      "decisions": 0,
+      "collisions": 0,
+      "rocksDestroyed": 3,
+      "asteroids": [
+        {
+          "id": 206,
+          "pos": [
+            -97.96739177964628,
+            1.4642590354196727,
+            -11590
+          ],
+          "r": 16.801136632449925,
+          "wall": true,
+          "eta": -0.23681139176493105,
+          "spawnedAt": 106.63333333332857,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 207,
+          "pos": [
+            96.73268689960241,
+            27.20016391715035,
+            -11590
+          ],
+          "r": 13.272687482647598,
+          "wall": true,
+          "eta": -0.23681139176493105,
+          "spawnedAt": 106.63333333332857,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 208,
+          "pos": [
+            35.48561129141303,
+            -18.18621569184967,
+            -11590
+          ],
+          "r": 7.421809370629489,
+          "wall": false,
+          "eta": -0.23681139176493105,
+          "spawnedAt": 106.63333333332857,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 210,
+          "pos": [
+            -88.65766848390922,
+            26.944728498347104,
+            -11780
+          ],
+          "r": 12.029988584574312,
+          "wall": true,
+          "eta": 1.3008312808698292,
+          "spawnedAt": 108.48333333332846,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 211,
+          "pos": [
+            94.19563952786848,
+            38.21224508341402,
+            -11780
+          ],
+          "r": 15.566239151638001,
+          "wall": true,
+          "eta": 1.3008312808698292,
+          "spawnedAt": 108.48333333332846,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 212,
+          "pos": [
+            50.97699506412332,
+            -28.95327865728133,
+            -11780
+          ],
+          "r": 5.9672339234966785,
+          "wall": false,
+          "eta": 1.3008312808698292,
+          "spawnedAt": 108.48333333332846,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 213,
+          "pos": [
+            -89.34794518817216,
+            -37.574802038725466,
+            -11970
+          ],
+          "r": 13.258840536698699,
+          "wall": true,
+          "eta": 2.8384739535045895,
+          "spawnedAt": 110.31666666666169,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 214,
+          "pos": [
+            91.65859215613455,
+            -40.77567375032231,
+            -11970
+          ],
+          "r": 17.859790820628405,
+          "wall": true,
+          "eta": 2.8384739535045895,
+          "spawnedAt": 110.31666666666169,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 215,
+          "pos": [
+            56.71124343762262,
+            -35.318929857161635,
+            -11970
+          ],
+          "r": 7.5126584763638675,
+          "wall": false,
+          "eta": 2.8384739535045895,
+          "spawnedAt": 110.31666666666169,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 216,
+          "pos": [
+            -90.0382218924351,
+            -12.094332575798035,
+            -12160
+          ],
+          "r": 14.487692488823086,
+          "wall": true,
+          "eta": 4.37611662613935,
+          "spawnedAt": 112.07666666666167,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 217,
+          "pos": [
+            89.12154478440061,
+            -29.763592584058642,
+            -12160
+          ],
+          "r": 14.153342489618808,
+          "wall": true,
+          "eta": 4.37611662613935,
+          "spawnedAt": 112.07666666666167,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 218,
+          "pos": [
+            44.36050454939959,
+            -34.58611214107189,
+            -12160
+          ],
+          "r": 6.058083029231057,
+          "wall": false,
+          "eta": 4.37611662613935,
+          "spawnedAt": 112.07666666666167,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 223,
+          "pos": [
+            -90.72849859669805,
+            13.386136887129396,
+            -12310
+          ],
+          "r": 15.716544440947473,
+          "wall": true,
+          "eta": 5.590045051903644,
+          "spawnedAt": 113.23666666666185,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 224,
+          "pos": [
+            96.58449741266668,
+            -18.751511417794973,
+            -12310
+          ],
+          "r": 16.44689415860921,
+          "wall": true,
+          "eta": 5.590045051903644,
+          "spawnedAt": 113.23666666666185,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 225,
+          "pos": [
+            24.013745365109266,
+            -33.9006522025535,
+            -12310
+          ],
+          "r": 7.603507582098246,
+          "wall": false,
+          "eta": 5.590045051903644,
+          "spawnedAt": 113.23666666666185,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 226,
+          "pos": [
+            -91.41877530096099,
+            38.86660635005683,
+            -12460
+          ],
+          "r": 16.94539639307186,
+          "wall": true,
+          "eta": 6.803973477667924,
+          "spawnedAt": 114.43666666666203,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 227,
+          "pos": [
+            94.04745004093274,
+            -7.739430251531303,
+            -12460
+          ],
+          "r": 12.740445827599615,
+          "wall": true,
+          "eta": 6.803973477667924,
+          "spawnedAt": 114.43666666666203,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 228,
+          "pos": [
+            1.7774168088779039,
+            -27.427947401616958,
+            -12460
+          ],
+          "r": 6.148932134965435,
+          "wall": false,
+          "eta": 6.803973477667924,
+          "spawnedAt": 114.43666666666203,
+          "contact": false,
+          "dead": false
+        }
+      ]
+    },
+    "channel": true,
+    "baseOps": null,
+    "board": null,
+    "mode": "normal",
+    "accelerated": false,
+    "rafInputCalls": 78,
+    "finished": null,
+    "status": "playing",
+    "level": 4,
+    "levels": [
+      4
+    ],
+    "cards": 0,
+    "wallSeconds": 72,
+    "simulatedSeconds": 114.84,
+    "frameCalls": 78,
+    "emitChanges": 1,
+    "maxInputGapMs": 1177,
+    "metrics": {
+      "listeners": 70,
+      "peakListeners": 71,
+      "rafCalls": 90,
+      "rafDone": 83,
+      "rafPending": 1,
+      "rafPeak": 2,
+      "errors": [],
+      "heap": 49570951
+    },
+    "runtime": {
+      "version": "1.9.3",
+      "build": "193r2",
+      "frames": 81,
+      "updates": 78,
+      "renders": 81,
+      "recoveries": 0,
+      "failures": 0,
+      "stopped": false,
+      "contextLost": false,
+      "pending": true,
+      "stage": "idle",
+      "lastFrameAge": 480,
+      "lastUpdateAge": 480,
+      "lastRenderAge": 338,
+      "recoverySave": "none",
+      "faults": [],
+      "events": [
+        {
+          "at": 1059,
+          "kind": "detach",
+          "status": "unknown",
+          "stage": null,
+          "phase": "other",
+          "finale": null,
+          "wave": null,
+          "seconds": null,
+          "mode": "normal",
+          "enemies": 0,
+          "renderer": "webgl"
+        },
+        {
+          "at": 1533,
+          "kind": "engine",
+          "status": "menu",
+          "stage": 0,
+          "phase": "brief",
+          "finale": null,
+          "wave": 0,
+          "seconds": 0,
+          "mode": "normal",
+          "enemies": 0,
+          "renderer": "canvas"
+        },
+        {
+          "at": 1533,
+          "kind": "transition",
+          "status": "menu",
+          "stage": 0,
+          "phase": "brief",
+          "finale": null,
+          "wave": 0,
+          "seconds": 0,
+          "mode": "normal",
+          "enemies": 0,
+          "renderer": "canvas"
+        },
+        {
+          "at": 3071,
+          "kind": "engine",
+          "status": "playing",
+          "stage": 1,
+          "phase": "pursuit",
+          "finale": null,
+          "wave": 0,
+          "seconds": 111.72,
+          "mode": "normal",
+          "enemies": 1,
+          "renderer": "canvas"
+        },
+        {
+          "at": 3089,
+          "kind": "transition",
+          "status": "playing",
+          "stage": 1,
+          "phase": "pursuit",
+          "finale": null,
+          "wave": 0,
+          "seconds": 111.76,
+          "mode": "normal",
+          "enemies": 1,
+          "renderer": "canvas"
+        }
+      ]
+    },
+    "sound": {
+      "context": "uninitialized",
+      "loaded": 0,
+      "active": 0,
+      "cacheBytes": 0,
+      "played": {}
+    },
+    "voice": {
+      "busy": false,
+      "source": null
+    },
+    "samples": [
+      {
+        "wallSeconds": 10,
+        "gameSeconds": 112,
+        "level": 4,
+        "listeners": 70,
+        "heap": 100381473,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 20,
+        "gameSeconds": 113,
+        "level": 4,
+        "listeners": 70,
+        "heap": 137872195,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 32,
+        "gameSeconds": 113,
+        "level": 4,
+        "listeners": 70,
+        "heap": 165693002,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 44,
+        "gameSeconds": 114,
+        "level": 4,
+        "listeners": 70,
+        "heap": 197537916,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 56,
+        "gameSeconds": 114,
+        "level": 4,
+        "listeners": 70,
+        "heap": 49345066,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 66,
+        "gameSeconds": 115,
+        "level": 4,
+        "listeners": 70,
+        "heap": 24246912,
+        "rafPending": 1
+      }
+    ],
+    "transitions": [
+      {
+        "level": 4,
+        "status": "playing",
+        "phase": "pursuit",
+        "finale": null,
+        "seconds": 111.76
+      }
+    ]
+  },
+  "paused": {
+    "version": "2.1.0",
+    "checkpoint": "3-connected",
+    "manual": false,
+    "renderer": "3D · совместимый режим",
+    "pursuit": {
+      "version": "2.1.0",
+      "active": true,
+      "state": "chase",
+      "clock": 115.27666666666217,
+      "chapter": 3,
+      "stageHistory": [
+        {
+          "stage": 1,
+          "at": 0
+        },
+        {
+          "stage": 2,
+          "at": 38.53333333333243
+        },
+        {
+          "stage": 3,
+          "at": 111.16666666666164
+        }
+      ],
+      "packets": [
+        38,
+        46,
+        3.056666666666669
+      ],
+      "stageGates": [
+        4,
+        14,
+        1
+      ],
+      "kills": 11,
+      "jammersDestroyed": 3,
+      "gatesPassed": 19,
+      "gatesMissed": 0,
+      "gateCollisions": 0,
+      "enemiesSpawned": 15,
+      "progress": 68.42337164750958,
+      "uploaded": 87.05666666666667,
+      "requiredSeconds": 142,
+      "leader": [
+        27.909575143780103,
+        -17.914312337346686,
+        -11752.710595279632
+      ],
+      "player": [
+        21.43045586127305,
+        -17.20935641765465,
+        -11673.510493192156
+      ],
+      "speed": 123.14975682755036,
+      "link": {
+        "connected": true,
+        "reason": "connected",
+        "distance": 79.46780555792557,
+        "offset": 6.5173575569906825,
+        "blockedId": null
+      },
+      "requirements": 2,
+      "decisions": 0,
+      "collisions": 0,
+      "rocksDestroyed": 3,
+      "asteroids": [
+        {
+          "id": 210,
+          "pos": [
+            -88.65766848390922,
+            26.944728498347104,
+            -11780
+          ],
+          "r": 12.029988584574312,
+          "wall": true,
+          "eta": 0.8647155264542192,
+          "spawnedAt": 108.48333333332846,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 211,
+          "pos": [
+            94.19563952786848,
+            38.21224508341402,
+            -11780
+          ],
+          "r": 15.566239151638001,
+          "wall": true,
+          "eta": 0.8647155264542192,
+          "spawnedAt": 108.48333333332846,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 212,
+          "pos": [
+            50.97699506412332,
+            -28.95327865728133,
+            -11780
+          ],
+          "r": 5.9672339234966785,
+          "wall": false,
+          "eta": 0.8647155264542192,
+          "spawnedAt": 108.48333333332846,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 213,
+          "pos": [
+            -89.34794518817216,
+            -37.574802038725466,
+            -11970
+          ],
+          "r": 13.258840536698699,
+          "wall": true,
+          "eta": 2.407552515292622,
+          "spawnedAt": 110.31666666666169,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 214,
+          "pos": [
+            91.65859215613455,
+            -40.77567375032231,
+            -11970
+          ],
+          "r": 17.859790820628405,
+          "wall": true,
+          "eta": 2.407552515292622,
+          "spawnedAt": 110.31666666666169,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 215,
+          "pos": [
+            56.71124343762262,
+            -35.318929857161635,
+            -11970
+          ],
+          "r": 7.5126584763638675,
+          "wall": false,
+          "eta": 2.407552515292622,
+          "spawnedAt": 110.31666666666169,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 216,
+          "pos": [
+            -90.0382218924351,
+            -12.094332575798035,
+            -12160
+          ],
+          "r": 14.487692488823086,
+          "wall": true,
+          "eta": 3.9503895041310386,
+          "spawnedAt": 112.07666666666167,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 217,
+          "pos": [
+            89.12154478440061,
+            -29.763592584058642,
+            -12160
+          ],
+          "r": 14.153342489618808,
+          "wall": true,
+          "eta": 3.9503895041310386,
+          "spawnedAt": 112.07666666666167,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 218,
+          "pos": [
+            44.36050454939959,
+            -34.58611214107189,
+            -12160
+          ],
+          "r": 6.058083029231057,
+          "wall": false,
+          "eta": 3.9503895041310386,
+          "spawnedAt": 112.07666666666167,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 223,
+          "pos": [
+            -90.72849859669805,
+            13.386136887129396,
+            -12310
+          ],
+          "r": 15.716544440947473,
+          "wall": true,
+          "eta": 5.168418705845568,
+          "spawnedAt": 113.23666666666185,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 224,
+          "pos": [
+            96.58449741266668,
+            -18.751511417794973,
+            -12310
+          ],
+          "r": 16.44689415860921,
+          "wall": true,
+          "eta": 5.168418705845568,
+          "spawnedAt": 113.23666666666185,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 225,
+          "pos": [
+            24.013745365109266,
+            -33.9006522025535,
+            -12310
+          ],
+          "r": 7.603507582098246,
+          "wall": false,
+          "eta": 5.168418705845568,
+          "spawnedAt": 113.23666666666185,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 226,
+          "pos": [
+            -91.41877530096099,
+            38.86660635005683,
+            -12460
+          ],
+          "r": 16.94539639307186,
+          "wall": true,
+          "eta": 6.386447907560097,
+          "spawnedAt": 114.43666666666203,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 227,
+          "pos": [
+            94.04745004093274,
+            -7.739430251531303,
+            -12460
+          ],
+          "r": 12.740445827599615,
+          "wall": true,
+          "eta": 6.386447907560097,
+          "spawnedAt": 114.43666666666203,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 228,
+          "pos": [
+            1.7774168088779039,
+            -27.427947401616958,
+            -12460
+          ],
+          "r": 6.148932134965435,
+          "wall": false,
+          "eta": 6.386447907560097,
+          "spawnedAt": 114.43666666666203,
+          "contact": false,
+          "dead": false
+        }
+      ]
+    },
+    "channel": true,
+    "baseOps": null,
+    "board": null,
+    "mode": "normal",
+    "accelerated": false,
+    "rafInputCalls": 89,
+    "finished": null,
+    "status": "paused",
+    "level": 4,
+    "levels": [
+      4
+    ],
+    "cards": 0,
+    "wallSeconds": 92,
+    "simulatedSeconds": 115.28,
+    "frameCalls": 89,
+    "emitChanges": 1,
+    "maxInputGapMs": 1177,
+    "metrics": {
+      "listeners": 70,
+      "peakListeners": 71,
+      "rafCalls": 118,
+      "rafDone": 111,
+      "rafPending": 1,
+      "rafPeak": 2,
+      "errors": [],
+      "heap": 38318126
+    },
+    "runtime": {
+      "version": "1.9.3",
+      "build": "193r2",
+      "frames": 109,
+      "updates": 89,
+      "renders": 109,
+      "recoveries": 0,
+      "failures": 0,
+      "stopped": false,
+      "contextLost": false,
+      "pending": true,
+      "stage": "idle",
+      "lastFrameAge": 89,
+      "lastUpdateAge": 13045,
+      "lastRenderAge": 26,
+      "recoverySave": "none",
+      "faults": [],
+      "events": [
+        {
+          "at": 1059,
+          "kind": "detach",
+          "status": "unknown",
+          "stage": null,
+          "phase": "other",
+          "finale": null,
+          "wave": null,
+          "seconds": null,
+          "mode": "normal",
+          "enemies": 0,
+          "renderer": "webgl"
+        },
+        {
+          "at": 1533,
+          "kind": "engine",
+          "status": "menu",
+          "stage": 0,
+          "phase": "brief",
+          "finale": null,
+          "wave": 0,
+          "seconds": 0,
+          "mode": "normal",
+          "enemies": 0,
+          "renderer": "canvas"
+        },
+        {
+          "at": 1533,
+          "kind": "transition",
+          "status": "menu",
+          "stage": 0,
+          "phase": "brief",
+          "finale": null,
+          "wave": 0,
+          "seconds": 0,
+          "mode": "normal",
+          "enemies": 0,
+          "renderer": "canvas"
+        },
+        {
+          "at": 3071,
+          "kind": "engine",
+          "status": "playing",
+          "stage": 1,
+          "phase": "pursuit",
+          "finale": null,
+          "wave": 0,
+          "seconds": 111.72,
+          "mode": "normal",
+          "enemies": 1,
+          "renderer": "canvas"
+        },
+        {
+          "at": 3089,
+          "kind": "transition",
+          "status": "playing",
+          "stage": 1,
+          "phase": "pursuit",
+          "finale": null,
+          "wave": 0,
+          "seconds": 111.76,
+          "mode": "normal",
+          "enemies": 1,
+          "renderer": "canvas"
+        },
+        {
+          "at": 80372,
+          "kind": "transition",
+          "status": "paused",
+          "stage": 1,
+          "phase": "pursuit",
+          "finale": null,
+          "wave": 0,
+          "seconds": 115.28,
+          "mode": "normal",
+          "enemies": 1,
+          "renderer": "canvas"
+        }
+      ]
+    },
+    "sound": {
+      "context": "uninitialized",
+      "loaded": 0,
+      "active": 0,
+      "cacheBytes": 0,
+      "played": {}
+    },
+    "voice": {
+      "busy": false,
+      "source": null
+    },
+    "samples": [
+      {
+        "wallSeconds": 10,
+        "gameSeconds": 112,
+        "level": 4,
+        "listeners": 70,
+        "heap": 100381473,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 20,
+        "gameSeconds": 113,
+        "level": 4,
+        "listeners": 70,
+        "heap": 137872195,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 32,
+        "gameSeconds": 113,
+        "level": 4,
+        "listeners": 70,
+        "heap": 165693002,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 44,
+        "gameSeconds": 114,
+        "level": 4,
+        "listeners": 70,
+        "heap": 197537916,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 56,
+        "gameSeconds": 114,
+        "level": 4,
+        "listeners": 70,
+        "heap": 49345066,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 66,
+        "gameSeconds": 115,
+        "level": 4,
+        "listeners": 70,
+        "heap": 24246912,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 76,
+        "gameSeconds": 115,
+        "level": 4,
+        "listeners": 70,
+        "heap": 38936924,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 88,
+        "gameSeconds": 115,
+        "level": 4,
+        "listeners": 70,
+        "heap": 38325294,
+        "rafPending": 1
+      }
+    ],
+    "transitions": [
+      {
+        "level": 4,
+        "status": "playing",
+        "phase": "pursuit",
+        "finale": null,
+        "seconds": 111.76
+      },
+      {
+        "level": 4,
+        "status": "paused",
+        "phase": "pursuit",
+        "finale": null,
+        "seconds": 115.28
+      }
+    ]
+  },
+  "disconnectedFirst": {
+    "version": "2.1.0",
+    "checkpoint": "3-connected",
+    "manual": false,
+    "renderer": "3D · совместимый режим",
+    "pursuit": {
+      "version": "2.1.0",
+      "active": true,
+      "state": "chase",
+      "clock": 115.91666666666227,
+      "chapter": 3,
+      "stageHistory": [
+        {
+          "stage": 1,
+          "at": 0
+        },
+        {
+          "stage": 2,
+          "at": 38.53333333333243
+        },
+        {
+          "stage": 3,
+          "at": 111.16666666666164
+        }
+      ],
+      "packets": [
+        38,
+        46,
+        3.6166666666666694
+      ],
+      "stageGates": [
+        4,
+        14,
+        1
+      ],
+      "kills": 11,
+      "jammersDestroyed": 3,
+      "gatesPassed": 19,
+      "gatesMissed": 0,
+      "gateCollisions": 0,
+      "enemiesSpawned": 15,
+      "progress": 68.74521072796935,
+      "uploaded": 87.61666666666667,
+      "requiredSeconds": 142,
+      "leader": [
+        34.04660727091706,
+        -20.690024450262012,
+        -11832.070595279618
+      ],
+      "player": [
+        49.283746204423444,
+        -17.626343368573064,
+        -11752.335501663061
+      ],
+      "speed": 123.26513487112595,
+      "link": {
+        "connected": false,
+        "reason": "off-course",
+        "distance": 81.23571689035762,
+        "offset": 15.542089455709451,
+        "blockedId": null
+      },
+      "requirements": 2,
+      "decisions": 0,
+      "collisions": 0,
+      "rocksDestroyed": 3,
+      "asteroids": [
+        {
+          "id": 210,
+          "pos": [
+            -88.65766848390922,
+            26.944728498347104,
+            -11780
+          ],
+          "r": 12.029988584574312,
+          "wall": true,
+          "eta": 0.22443084466554808,
+          "spawnedAt": 108.48333333332846,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 211,
+          "pos": [
+            94.19563952786848,
+            38.21224508341402,
+            -11780
+          ],
+          "r": 15.566239151638001,
+          "wall": true,
+          "eta": 0.22443084466554808,
+          "spawnedAt": 108.48333333332846,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 212,
+          "pos": [
+            50.97699506412332,
+            -28.95327865728133,
+            -11780
+          ],
+          "r": 5.9672339234966785,
+          "wall": false,
+          "eta": 0.22443084466554808,
+          "spawnedAt": 108.48333333332846,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 213,
+          "pos": [
+            -89.34794518817216,
+            -37.574802038725466,
+            -11970
+          ],
+          "r": 13.258840536698699,
+          "wall": true,
+          "eta": 1.765823714584883,
+          "spawnedAt": 110.31666666666169,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 214,
+          "pos": [
+            91.65859215613455,
+            -40.77567375032231,
+            -11970
+          ],
+          "r": 17.859790820628405,
+          "wall": true,
+          "eta": 1.765823714584883,
+          "spawnedAt": 110.31666666666169,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 215,
+          "pos": [
+            56.71124343762262,
+            -35.318929857161635,
+            -11970
+          ],
+          "r": 7.5126584763638675,
+          "wall": false,
+          "eta": 1.765823714584883,
+          "spawnedAt": 110.31666666666169,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 216,
+          "pos": [
+            -90.0382218924351,
+            -12.094332575798035,
+            -12160
+          ],
+          "r": 14.487692488823086,
+          "wall": true,
+          "eta": 3.307216584504232,
+          "spawnedAt": 112.07666666666167,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 217,
+          "pos": [
+            89.12154478440061,
+            -29.763592584058642,
+            -12160
+          ],
+          "r": 14.153342489618808,
+          "wall": true,
+          "eta": 3.307216584504232,
+          "spawnedAt": 112.07666666666167,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 218,
+          "pos": [
+            44.36050454939959,
+            -34.58611214107189,
+            -12160
+          ],
+          "r": 6.058083029231057,
+          "wall": false,
+          "eta": 3.307216584504232,
+          "spawnedAt": 112.07666666666167,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 223,
+          "pos": [
+            -90.72849859669805,
+            13.386136887129396,
+            -12310
+          ],
+          "r": 15.716544440947473,
+          "wall": true,
+          "eta": 4.524105692335297,
+          "spawnedAt": 113.23666666666185,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 224,
+          "pos": [
+            96.58449741266668,
+            -18.751511417794973,
+            -12310
+          ],
+          "r": 16.44689415860921,
+          "wall": true,
+          "eta": 4.524105692335297,
+          "spawnedAt": 113.23666666666185,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 225,
+          "pos": [
+            24.013745365109266,
+            -33.9006522025535,
+            -12310
+          ],
+          "r": 7.603507582098246,
+          "wall": false,
+          "eta": 4.524105692335297,
+          "spawnedAt": 113.23666666666185,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 226,
+          "pos": [
+            -91.41877530096099,
+            38.86660635005683,
+            -12460
+          ],
+          "r": 16.94539639307186,
+          "wall": true,
+          "eta": 5.740994800166362,
+          "spawnedAt": 114.43666666666203,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 227,
+          "pos": [
+            94.04745004093274,
+            -7.739430251531303,
+            -12460
+          ],
+          "r": 12.740445827599615,
+          "wall": true,
+          "eta": 5.740994800166362,
+          "spawnedAt": 114.43666666666203,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 228,
+          "pos": [
+            1.7774168088779039,
+            -27.427947401616958,
+            -12460
+          ],
+          "r": 6.148932134965435,
+          "wall": false,
+          "eta": 5.740994800166362,
+          "spawnedAt": 114.43666666666203,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 230,
+          "pos": [
+            -92.10905200522393,
+            -25.652924187015742,
+            -12610
+          ],
+          "r": 12.174248345196247,
+          "wall": true,
+          "eta": 6.957883907997413,
+          "spawnedAt": 115.63666666666222,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 231,
+          "pos": [
+            91.51040266919881,
+            3.272650914732367,
+            -12610
+          ],
+          "r": 15.033997496590018,
+          "wall": true,
+          "eta": 6.957883907997413,
+          "spawnedAt": 115.63666666666222,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 232,
+          "pos": [
+            -18.41499275347303,
+            -20.827585738165645,
+            -12610
+          ],
+          "r": 7.694356687832624,
+          "wall": false,
+          "eta": 6.957883907997413,
+          "spawnedAt": 115.63666666666222,
+          "contact": false,
+          "dead": false
+        }
+      ]
+    },
+    "channel": false,
+    "baseOps": null,
+    "board": null,
+    "mode": "normal",
+    "accelerated": false,
+    "rafInputCalls": 105,
+    "finished": null,
+    "status": "playing",
+    "level": 4,
+    "levels": [
+      4
+    ],
+    "cards": 0,
+    "wallSeconds": 108,
+    "simulatedSeconds": 115.92,
+    "frameCalls": 89,
+    "emitChanges": 1,
+    "maxInputGapMs": 1177,
+    "metrics": {
+      "listeners": 70,
+      "peakListeners": 71,
+      "rafCalls": 137,
+      "rafDone": 128,
+      "rafPending": 1,
+      "rafPeak": 2,
+      "errors": [],
+      "heap": 42392689
+    },
+    "runtime": {
+      "version": "1.9.3",
+      "build": "193r2",
+      "frames": 126,
+      "updates": 105,
+      "renders": 126,
+      "recoveries": 0,
+      "failures": 0,
+      "stopped": false,
+      "contextLost": false,
+      "pending": true,
+      "stage": "idle",
+      "lastFrameAge": 355,
+      "lastUpdateAge": 354,
+      "lastRenderAge": 228,
+      "recoverySave": "none",
+      "faults": [],
+      "events": [
+        {
+          "at": 1059,
+          "kind": "detach",
+          "status": "unknown",
+          "stage": null,
+          "phase": "other",
+          "finale": null,
+          "wave": null,
+          "seconds": null,
+          "mode": "normal",
+          "enemies": 0,
+          "renderer": "webgl"
+        },
+        {
+          "at": 1533,
+          "kind": "engine",
+          "status": "menu",
+          "stage": 0,
+          "phase": "brief",
+          "finale": null,
+          "wave": 0,
+          "seconds": 0,
+          "mode": "normal",
+          "enemies": 0,
+          "renderer": "canvas"
+        },
+        {
+          "at": 1533,
+          "kind": "transition",
+          "status": "menu",
+          "stage": 0,
+          "phase": "brief",
+          "finale": null,
+          "wave": 0,
+          "seconds": 0,
+          "mode": "normal",
+          "enemies": 0,
+          "renderer": "canvas"
+        },
+        {
+          "at": 3071,
+          "kind": "engine",
+          "status": "playing",
+          "stage": 1,
+          "phase": "pursuit",
+          "finale": null,
+          "wave": 0,
+          "seconds": 111.72,
+          "mode": "normal",
+          "enemies": 1,
+          "renderer": "canvas"
+        },
+        {
+          "at": 3089,
+          "kind": "transition",
+          "status": "playing",
+          "stage": 1,
+          "phase": "pursuit",
+          "finale": null,
+          "wave": 0,
+          "seconds": 111.76,
+          "mode": "normal",
+          "enemies": 1,
+          "renderer": "canvas"
+        },
+        {
+          "at": 80372,
+          "kind": "transition",
+          "status": "paused",
+          "stage": 1,
+          "phase": "pursuit",
+          "finale": null,
+          "wave": 0,
+          "seconds": 115.28,
+          "mode": "normal",
+          "enemies": 1,
+          "renderer": "canvas"
+        },
+        {
+          "at": 94161,
+          "kind": "arcade-resume",
+          "status": "paused",
+          "stage": 1,
+          "phase": "pursuit",
+          "finale": null,
+          "wave": 0,
+          "seconds": 115.28,
+          "mode": "normal",
+          "enemies": 1,
+          "renderer": "canvas"
+        },
+        {
+          "at": 94259,
+          "kind": "transition",
+          "status": "playing",
+          "stage": 1,
+          "phase": "pursuit",
+          "finale": null,
+          "wave": 0,
+          "seconds": 115.32,
+          "mode": "normal",
+          "enemies": 1,
+          "renderer": "canvas"
+        }
+      ]
+    },
+    "sound": {
+      "context": "running",
+      "loaded": 14,
+      "active": 0,
+      "cacheBytes": 1766452,
+      "played": {
+        "shot": 4
+      }
+    },
+    "voice": {
+      "busy": false,
+      "source": null
+    },
+    "samples": [
+      {
+        "wallSeconds": 10,
+        "gameSeconds": 112,
+        "level": 4,
+        "listeners": 70,
+        "heap": 100381473,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 20,
+        "gameSeconds": 113,
+        "level": 4,
+        "listeners": 70,
+        "heap": 137872195,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 32,
+        "gameSeconds": 113,
+        "level": 4,
+        "listeners": 70,
+        "heap": 165693002,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 44,
+        "gameSeconds": 114,
+        "level": 4,
+        "listeners": 70,
+        "heap": 197537916,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 56,
+        "gameSeconds": 114,
+        "level": 4,
+        "listeners": 70,
+        "heap": 49345066,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 66,
+        "gameSeconds": 115,
+        "level": 4,
+        "listeners": 70,
+        "heap": 24246912,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 76,
+        "gameSeconds": 115,
+        "level": 4,
+        "listeners": 70,
+        "heap": 38936924,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 88,
+        "gameSeconds": 115,
+        "level": 4,
+        "listeners": 70,
+        "heap": 38325294,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 100,
+        "gameSeconds": 116,
+        "level": 4,
+        "listeners": 70,
+        "heap": 28330698,
+        "rafPending": 1
+      }
+    ],
+    "transitions": [
+      {
+        "level": 4,
+        "status": "playing",
+        "phase": "pursuit",
+        "finale": null,
+        "seconds": 111.76
+      },
+      {
+        "level": 4,
+        "status": "paused",
+        "phase": "pursuit",
+        "finale": null,
+        "seconds": 115.28
+      },
+      {
+        "level": 4,
+        "status": "playing",
+        "phase": "pursuit",
+        "finale": null,
+        "seconds": 115.28
+      }
+    ]
+  },
+  "disconnectedLater": {
+    "version": "2.1.0",
+    "checkpoint": "3-connected",
+    "manual": false,
+    "renderer": "3D · совместимый режим",
+    "pursuit": {
+      "version": "2.1.0",
+      "active": true,
+      "state": "chase",
+      "clock": 117.55666666666252,
+      "chapter": 3,
+      "stageHistory": [
+        {
+          "stage": 1,
+          "at": 0
+        },
+        {
+          "stage": 2,
+          "at": 38.53333333333243
+        },
+        {
+          "stage": 3,
+          "at": 111.16666666666164
+        }
+      ],
+      "packets": [
+        38,
+        46,
+        3.6166666666666694
+      ],
+      "stageGates": [
+        4,
+        14,
+        1
+      ],
+      "kills": 11,
+      "jammersDestroyed": 3,
+      "gatesPassed": 19,
+      "gatesMissed": 0,
+      "gateCollisions": 0,
+      "enemiesSpawned": 15,
+      "progress": 68.74521072796935,
+      "uploaded": 87.61666666666667,
+      "requiredSeconds": 142,
+      "leader": [
+        43.32722233238507,
+        -15.099897193661821,
+        -12035.430595279582
+      ],
+      "player": [
+        82,
+        -17.628850268433993,
+        -11955.258630690807
+      ],
+      "speed": 124.0552235094782,
+      "link": {
+        "connected": false,
+        "reason": "off-course",
+        "distance": 89.04787050910872,
+        "offset": 38.75537815817536,
+        "blockedId": null
+      },
+      "requirements": 2,
+      "decisions": 0,
+      "collisions": 0,
+      "rocksDestroyed": 3,
+      "asteroids": [
+        {
+          "id": 213,
+          "pos": [
+            -89.34794518817216,
+            -37.574802038725466,
+            -11970
+          ],
+          "r": 13.258840536698699,
+          "wall": true,
+          "eta": 0.1188290899178952,
+          "spawnedAt": 110.31666666666169,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 214,
+          "pos": [
+            91.65859215613455,
+            -40.77567375032231,
+            -11970
+          ],
+          "r": 17.859790820628405,
+          "wall": true,
+          "eta": 0.1188290899178952,
+          "spawnedAt": 110.31666666666169,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 215,
+          "pos": [
+            56.71124343762262,
+            -35.318929857161635,
+            -11970
+          ],
+          "r": 7.5126584763638675,
+          "wall": false,
+          "eta": 0.1188290899178952,
+          "spawnedAt": 110.31666666666169,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 216,
+          "pos": [
+            -90.0382218924351,
+            -12.094332575798035,
+            -12160
+          ],
+          "r": 14.487692488823086,
+          "wall": true,
+          "eta": 1.6504050657209888,
+          "spawnedAt": 112.07666666666167,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 217,
+          "pos": [
+            89.12154478440061,
+            -29.763592584058642,
+            -12160
+          ],
+          "r": 14.153342489618808,
+          "wall": true,
+          "eta": 1.6504050657209888,
+          "spawnedAt": 112.07666666666167,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 218,
+          "pos": [
+            44.36050454939959,
+            -34.58611214107189,
+            -12160
+          ],
+          "r": 6.058083029231057,
+          "wall": false,
+          "eta": 1.6504050657209888,
+          "spawnedAt": 112.07666666666167,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 223,
+          "pos": [
+            -90.72849859669805,
+            13.386136887129396,
+            -12310
+          ],
+          "r": 15.716544440947473,
+          "wall": true,
+          "eta": 2.859543993986591,
+          "spawnedAt": 113.23666666666185,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 224,
+          "pos": [
+            96.58449741266668,
+            -18.751511417794973,
+            -12310
+          ],
+          "r": 16.44689415860921,
+          "wall": true,
+          "eta": 2.859543993986591,
+          "spawnedAt": 113.23666666666185,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 225,
+          "pos": [
+            24.013745365109266,
+            -33.9006522025535,
+            -12310
+          ],
+          "r": 7.603507582098246,
+          "wall": false,
+          "eta": 2.859543993986591,
+          "spawnedAt": 113.23666666666185,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 226,
+          "pos": [
+            -91.41877530096099,
+            38.86660635005683,
+            -12460
+          ],
+          "r": 16.94539639307186,
+          "wall": true,
+          "eta": 4.068682922252194,
+          "spawnedAt": 114.43666666666203,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 227,
+          "pos": [
+            94.04745004093274,
+            -7.739430251531303,
+            -12460
+          ],
+          "r": 12.740445827599615,
+          "wall": true,
+          "eta": 4.068682922252194,
+          "spawnedAt": 114.43666666666203,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 228,
+          "pos": [
+            1.7774168088779039,
+            -27.427947401616958,
+            -12460
+          ],
+          "r": 6.148932134965435,
+          "wall": false,
+          "eta": 4.068682922252194,
+          "spawnedAt": 114.43666666666203,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 230,
+          "pos": [
+            -92.10905200522393,
+            -25.652924187015742,
+            -12610
+          ],
+          "r": 12.174248345196247,
+          "wall": true,
+          "eta": 5.277821850517796,
+          "spawnedAt": 115.63666666666222,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 231,
+          "pos": [
+            91.51040266919881,
+            3.272650914732367,
+            -12610
+          ],
+          "r": 15.033997496590018,
+          "wall": true,
+          "eta": 5.277821850517796,
+          "spawnedAt": 115.63666666666222,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 232,
+          "pos": [
+            -18.41499275347303,
+            -20.827585738165645,
+            -12610
+          ],
+          "r": 7.694356687832624,
+          "wall": false,
+          "eta": 5.277821850517796,
+          "spawnedAt": 115.63666666666222,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 233,
+          "pos": [
+            -92.79932870948687,
+            -0.1724547240883112,
+            -12760
+          ],
+          "r": 13.403100297320634,
+          "wall": true,
+          "eta": 6.4869607787833985,
+          "spawnedAt": 116.83666666666241,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 234,
+          "pos": [
+            88.97335529746488,
+            14.284732080996037,
+            -12760
+          ],
+          "r": 17.32754916558042,
+          "wall": true,
+          "eta": 6.4869607787833985,
+          "spawnedAt": 116.83666666666241,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 235,
+          "pos": [
+            -28.469080677298376,
+            -10.532105235437829,
+            -12760
+          ],
+          "r": 6.239781240699813,
+          "wall": false,
+          "eta": 6.4869607787833985,
+          "spawnedAt": 116.83666666666241,
+          "contact": false,
+          "dead": false
+        }
+      ]
+    },
+    "channel": false,
+    "baseOps": null,
+    "board": null,
+    "mode": "normal",
+    "accelerated": false,
+    "rafInputCalls": 146,
+    "finished": null,
+    "status": "playing",
+    "level": 4,
+    "levels": [
+      4
+    ],
+    "cards": 0,
+    "wallSeconds": 146,
+    "simulatedSeconds": 117.56,
+    "frameCalls": 89,
+    "emitChanges": 1,
+    "maxInputGapMs": 1177,
+    "metrics": {
+      "listeners": 70,
+      "peakListeners": 71,
+      "rafCalls": 178,
+      "rafDone": 169,
+      "rafPending": 1,
+      "rafPeak": 2,
+      "errors": [],
+      "heap": 20591170
+    },
+    "runtime": {
+      "version": "1.9.3",
+      "build": "193r2",
+      "frames": 167,
+      "updates": 146,
+      "renders": 167,
+      "recoveries": 0,
+      "failures": 0,
+      "stopped": false,
+      "contextLost": false,
+      "pending": true,
+      "stage": "idle",
+      "lastFrameAge": 862,
+      "lastUpdateAge": 861,
+      "lastRenderAge": 744,
+      "recoverySave": "none",
+      "faults": [],
+      "events": [
+        {
+          "at": 1059,
+          "kind": "detach",
+          "status": "unknown",
+          "stage": null,
+          "phase": "other",
+          "finale": null,
+          "wave": null,
+          "seconds": null,
+          "mode": "normal",
+          "enemies": 0,
+          "renderer": "webgl"
+        },
+        {
+          "at": 1533,
+          "kind": "engine",
+          "status": "menu",
+          "stage": 0,
+          "phase": "brief",
+          "finale": null,
+          "wave": 0,
+          "seconds": 0,
+          "mode": "normal",
+          "enemies": 0,
+          "renderer": "canvas"
+        },
+        {
+          "at": 1533,
+          "kind": "transition",
+          "status": "menu",
+          "stage": 0,
+          "phase": "brief",
+          "finale": null,
+          "wave": 0,
+          "seconds": 0,
+          "mode": "normal",
+          "enemies": 0,
+          "renderer": "canvas"
+        },
+        {
+          "at": 3071,
+          "kind": "engine",
+          "status": "playing",
+          "stage": 1,
+          "phase": "pursuit",
+          "finale": null,
+          "wave": 0,
+          "seconds": 111.72,
+          "mode": "normal",
+          "enemies": 1,
+          "renderer": "canvas"
+        },
+        {
+          "at": 3089,
+          "kind": "transition",
+          "status": "playing",
+          "stage": 1,
+          "phase": "pursuit",
+          "finale": null,
+          "wave": 0,
+          "seconds": 111.76,
+          "mode": "normal",
+          "enemies": 1,
+          "renderer": "canvas"
+        },
+        {
+          "at": 80372,
+          "kind": "transition",
+          "status": "paused",
+          "stage": 1,
+          "phase": "pursuit",
+          "finale": null,
+          "wave": 0,
+          "seconds": 115.28,
+          "mode": "normal",
+          "enemies": 1,
+          "renderer": "canvas"
+        },
+        {
+          "at": 94161,
+          "kind": "arcade-resume",
+          "status": "paused",
+          "stage": 1,
+          "phase": "pursuit",
+          "finale": null,
+          "wave": 0,
+          "seconds": 115.28,
+          "mode": "normal",
+          "enemies": 1,
+          "renderer": "canvas"
+        },
+        {
+          "at": 94259,
+          "kind": "transition",
+          "status": "playing",
+          "stage": 1,
+          "phase": "pursuit",
+          "finale": null,
+          "wave": 0,
+          "seconds": 115.32,
+          "mode": "normal",
+          "enemies": 1,
+          "renderer": "canvas"
+        }
+      ]
+    },
+    "sound": {
+      "context": "running",
+      "loaded": 14,
+      "active": 0,
+      "cacheBytes": 1766452,
+      "played": {
+        "shot": 14
+      }
+    },
+    "voice": {
+      "busy": false,
+      "source": null
+    },
+    "samples": [
+      {
+        "wallSeconds": 10,
+        "gameSeconds": 112,
+        "level": 4,
+        "listeners": 70,
+        "heap": 100381473,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 20,
+        "gameSeconds": 113,
+        "level": 4,
+        "listeners": 70,
+        "heap": 137872195,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 32,
+        "gameSeconds": 113,
+        "level": 4,
+        "listeners": 70,
+        "heap": 165693002,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 44,
+        "gameSeconds": 114,
+        "level": 4,
+        "listeners": 70,
+        "heap": 197537916,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 56,
+        "gameSeconds": 114,
+        "level": 4,
+        "listeners": 70,
+        "heap": 49345066,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 66,
+        "gameSeconds": 115,
+        "level": 4,
+        "listeners": 70,
+        "heap": 24246912,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 76,
+        "gameSeconds": 115,
+        "level": 4,
+        "listeners": 70,
+        "heap": 38936924,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 88,
+        "gameSeconds": 115,
+        "level": 4,
+        "listeners": 70,
+        "heap": 38325294,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 100,
+        "gameSeconds": 116,
+        "level": 4,
+        "listeners": 70,
+        "heap": 28330698,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 112,
+        "gameSeconds": 116,
+        "level": 4,
+        "listeners": 70,
+        "heap": 50372306,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 124,
+        "gameSeconds": 117,
+        "level": 4,
+        "listeners": 70,
+        "heap": 25441345,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 134,
+        "gameSeconds": 117,
+        "level": 4,
+        "listeners": 70,
+        "heap": 32811217,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 146,
+        "gameSeconds": 118,
+        "level": 4,
+        "listeners": 70,
+        "heap": 20591170,
+        "rafPending": 1
+      }
+    ],
+    "transitions": [
+      {
+        "level": 4,
+        "status": "playing",
+        "phase": "pursuit",
+        "finale": null,
+        "seconds": 111.76
+      },
+      {
+        "level": 4,
+        "status": "paused",
+        "phase": "pursuit",
+        "finale": null,
+        "seconds": 115.28
+      },
+      {
+        "level": 4,
+        "status": "playing",
+        "phase": "pursuit",
+        "finale": null,
+        "seconds": 115.28
+      }
+    ]
+  },
+  "reconnected": {
+    "version": "2.1.0",
+    "checkpoint": "3-connected",
+    "manual": false,
+    "renderer": "3D · совместимый режим",
+    "pursuit": {
+      "version": "2.1.0",
+      "active": true,
+      "state": "chase",
+      "clock": 121.9166666666632,
+      "chapter": 3,
+      "stageHistory": [
+        {
+          "stage": 1,
+          "at": 0
+        },
+        {
+          "stage": 2,
+          "at": 38.53333333333243
+        },
+        {
+          "stage": 3,
+          "at": 111.16666666666164
+        }
+      ],
+      "packets": [
+        38,
+        46,
+        6.616666666666672
+      ],
+      "stageGates": [
+        4,
+        14,
+        3
+      ],
+      "kills": 11,
+      "jammersDestroyed": 3,
+      "gatesPassed": 21,
+      "gatesMissed": 0,
+      "gateCollisions": 0,
+      "enemiesSpawned": 15,
+      "progress": 70.46934865900383,
+      "uploaded": 90.61666666666667,
+      "requiredSeconds": 142,
+      "leader": [
+        -2.0330986199443295,
+        -6.848874423408493,
+        -12669.142260563776
+      ],
+      "player": [
+        7.478822223976678,
+        -7.652220704685893,
+        -12560.496451964695
+      ],
+      "speed": 160.41363605204202,
+      "link": {
+        "connected": true,
+        "reason": "connected",
+        "distance": 109.06435590758763,
+        "offset": 9.545784587379979,
+        "blockedId": null
+      },
+      "requirements": 2,
+      "decisions": 0,
+      "collisions": 0,
+      "rocksDestroyed": 3,
+      "asteroids": [
+        {
+          "id": 230,
+          "pos": [
+            -92.10905200522393,
+            -25.652924187015742,
+            -12610
+          ],
+          "r": 12.174248345196247,
+          "wall": true,
+          "eta": 0.30859937629769263,
+          "spawnedAt": 115.63666666666222,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 231,
+          "pos": [
+            91.51040266919881,
+            3.272650914732367,
+            -12610
+          ],
+          "r": 15.033997496590018,
+          "wall": true,
+          "eta": 0.30859937629769263,
+          "spawnedAt": 115.63666666666222,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 232,
+          "pos": [
+            -18.41499275347303,
+            -20.827585738165645,
+            -12610
+          ],
+          "r": 7.694356687832624,
+          "wall": false,
+          "eta": 0.30859937629769263,
+          "spawnedAt": 115.63666666666222,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 233,
+          "pos": [
+            -92.79932870948687,
+            -0.1724547240883112,
+            -12760
+          ],
+          "r": 13.403100297320634,
+          "wall": true,
+          "eta": 1.243681977076946,
+          "spawnedAt": 116.83666666666241,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 234,
+          "pos": [
+            88.97335529746488,
+            14.284732080996037,
+            -12760
+          ],
+          "r": 17.32754916558042,
+          "wall": true,
+          "eta": 1.243681977076946,
+          "spawnedAt": 116.83666666666241,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 235,
+          "pos": [
+            -28.469080677298376,
+            -10.532105235437829,
+            -12760
+          ],
+          "r": 6.239781240699813,
+          "wall": false,
+          "eta": 1.243681977076946,
+          "spawnedAt": 116.83666666666241,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 236,
+          "pos": [
+            -93.48960541374981,
+            25.30801473883912,
+            -12910
+          ],
+          "r": 14.631952249445021,
+          "wall": true,
+          "eta": 2.1787645778561995,
+          "spawnedAt": 118.0766666666626,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 237,
+          "pos": [
+            96.43630792573094,
+            25.296813247259706,
+            -12910
+          ],
+          "r": 13.621100834570825,
+          "wall": true,
+          "eta": 2.1787645778561995,
+          "spawnedAt": 118.0766666666626,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 238,
+          "pos": [
+            -32.81171690090995,
+            0.9162719901707206,
+            -12910
+          ],
+          "r": 7.785205793567002,
+          "wall": false,
+          "eta": 2.1787645778561995,
+          "spawnedAt": 118.0766666666626,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 240,
+          "pos": [
+            -94.17988211801276,
+            -39.21151579823345,
+            -13060
+          ],
+          "r": 15.860804201569408,
+          "wall": true,
+          "eta": 3.113847178635453,
+          "spawnedAt": 119.23666666666279,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 241,
+          "pos": [
+            93.89926055399701,
+            36.308894413523376,
+            -13060
+          ],
+          "r": 15.914652503561229,
+          "wall": true,
+          "eta": 3.113847178635453,
+          "spawnedAt": 119.23666666666279,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 242,
+          "pos": [
+            -94.8701588222757,
+            -13.731046335306019,
+            -13210
+          ],
+          "r": 17.089656153693795,
+          "wall": true,
+          "eta": 4.048929779414706,
+          "spawnedAt": 120.35666666666296,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 243,
+          "pos": [
+            91.36221318226308,
+            -42.679024420212954,
+            -13210
+          ],
+          "r": 12.208204172551632,
+          "wall": true,
+          "eta": 4.048929779414706,
+          "spawnedAt": 120.35666666666296,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 244,
+          "pos": [
+            -23.32415413824073,
+            25.138999551532354,
+            -13210
+          ],
+          "r": 7.87605489930138,
+          "wall": false,
+          "eta": 4.048929779414706,
+          "spawnedAt": 120.35666666666296,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 245,
+          "pos": [
+            -95.56043552653864,
+            11.749423127621412,
+            -13360
+          ],
+          "r": 12.318508105818182,
+          "wall": true,
+          "eta": 4.98401238019396,
+          "spawnedAt": 121.35666666666312,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 246,
+          "pos": [
+            88.82516581052914,
+            -31.666943253949285,
+            -13360
+          ],
+          "r": 14.501755841542035,
+          "wall": true,
+          "eta": 4.98401238019396,
+          "spawnedAt": 121.35666666666312,
+          "contact": false,
+          "dead": false
+        },
+        {
+          "id": 247,
+          "pos": [
+            -18.28524434603934,
+            33.07551905780426,
+            -13360
+          ],
+          "r": 6.421479452168569,
+          "wall": false,
+          "eta": 4.98401238019396,
+          "spawnedAt": 121.35666666666312,
+          "contact": false,
+          "dead": false
+        }
+      ]
+    },
+    "channel": true,
+    "baseOps": null,
+    "board": null,
+    "mode": "normal",
+    "accelerated": false,
+    "rafInputCalls": 255,
+    "finished": null,
+    "status": "playing",
+    "level": 4,
+    "levels": [
+      4
+    ],
+    "cards": 0,
+    "wallSeconds": 266,
+    "simulatedSeconds": 121.92,
+    "frameCalls": 196,
+    "emitChanges": 1,
+    "maxInputGapMs": 78144,
+    "metrics": {
+      "listeners": 70,
+      "peakListeners": 71,
+      "rafCalls": 303,
+      "rafDone": 292,
+      "rafPending": 1,
+      "rafPeak": 2,
+      "errors": [],
+      "heap": 37031738
+    },
+    "runtime": {
+      "version": "1.9.3",
+      "build": "193r2",
+      "frames": 290,
+      "updates": 255,
+      "renders": 290,
+      "recoveries": 0,
+      "failures": 0,
+      "stopped": false,
+      "contextLost": false,
+      "pending": true,
+      "stage": "idle",
+      "lastFrameAge": 790,
+      "lastUpdateAge": 789,
+      "lastRenderAge": 662,
+      "recoverySave": "none",
+      "faults": [],
+      "events": [
+        {
+          "at": 1059,
+          "kind": "detach",
+          "status": "unknown",
+          "stage": null,
+          "phase": "other",
+          "finale": null,
+          "wave": null,
+          "seconds": null,
+          "mode": "normal",
+          "enemies": 0,
+          "renderer": "webgl"
+        },
+        {
+          "at": 1533,
+          "kind": "engine",
+          "status": "menu",
+          "stage": 0,
+          "phase": "brief",
+          "finale": null,
+          "wave": 0,
+          "seconds": 0,
+          "mode": "normal",
+          "enemies": 0,
+          "renderer": "canvas"
+        },
+        {
+          "at": 1533,
+          "kind": "transition",
+          "status": "menu",
+          "stage": 0,
+          "phase": "brief",
+          "finale": null,
+          "wave": 0,
+          "seconds": 0,
+          "mode": "normal",
+          "enemies": 0,
+          "renderer": "canvas"
+        },
+        {
+          "at": 3071,
+          "kind": "engine",
+          "status": "playing",
+          "stage": 1,
+          "phase": "pursuit",
+          "finale": null,
+          "wave": 0,
+          "seconds": 111.72,
+          "mode": "normal",
+          "enemies": 1,
+          "renderer": "canvas"
+        },
+        {
+          "at": 3089,
+          "kind": "transition",
+          "status": "playing",
+          "stage": 1,
+          "phase": "pursuit",
+          "finale": null,
+          "wave": 0,
+          "seconds": 111.76,
+          "mode": "normal",
+          "enemies": 1,
+          "renderer": "canvas"
+        },
+        {
+          "at": 80372,
+          "kind": "transition",
+          "status": "paused",
+          "stage": 1,
+          "phase": "pursuit",
+          "finale": null,
+          "wave": 0,
+          "seconds": 115.28,
+          "mode": "normal",
+          "enemies": 1,
+          "renderer": "canvas"
+        },
+        {
+          "at": 94161,
+          "kind": "arcade-resume",
+          "status": "paused",
+          "stage": 1,
+          "phase": "pursuit",
+          "finale": null,
+          "wave": 0,
+          "seconds": 115.28,
+          "mode": "normal",
+          "enemies": 1,
+          "renderer": "canvas"
+        },
+        {
+          "at": 94259,
+          "kind": "transition",
+          "status": "playing",
+          "stage": 1,
+          "phase": "pursuit",
+          "finale": null,
+          "wave": 0,
+          "seconds": 115.32,
+          "mode": "normal",
+          "enemies": 1,
+          "renderer": "canvas"
+        },
+        {
+          "at": 148439,
+          "kind": "transition",
+          "status": "paused",
+          "stage": 1,
+          "phase": "pursuit",
+          "finale": null,
+          "wave": 0,
+          "seconds": 117.64,
+          "mode": "normal",
+          "enemies": 1,
+          "renderer": "canvas"
+        },
+        {
+          "at": 158157,
+          "kind": "arcade-resume",
+          "status": "paused",
+          "stage": 1,
+          "phase": "pursuit",
+          "finale": null,
+          "wave": 0,
+          "seconds": 117.64,
+          "mode": "normal",
+          "enemies": 1,
+          "renderer": "canvas"
+        },
+        {
+          "at": 158233,
+          "kind": "transition",
+          "status": "playing",
+          "stage": 1,
+          "phase": "pursuit",
+          "finale": null,
+          "wave": 0,
+          "seconds": 117.68,
+          "mode": "normal",
+          "enemies": 1,
+          "renderer": "canvas"
+        }
+      ]
+    },
+    "sound": {
+      "context": "running",
+      "loaded": 14,
+      "active": 0,
+      "cacheBytes": 1766452,
+      "played": {
+        "shot": 41
+      }
+    },
+    "voice": {
+      "busy": false,
+      "source": null
+    },
+    "samples": [
+      {
+        "wallSeconds": 10,
+        "gameSeconds": 112,
+        "level": 4,
+        "listeners": 70,
+        "heap": 100381473,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 20,
+        "gameSeconds": 113,
+        "level": 4,
+        "listeners": 70,
+        "heap": 137872195,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 32,
+        "gameSeconds": 113,
+        "level": 4,
+        "listeners": 70,
+        "heap": 165693002,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 44,
+        "gameSeconds": 114,
+        "level": 4,
+        "listeners": 70,
+        "heap": 197537916,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 56,
+        "gameSeconds": 114,
+        "level": 4,
+        "listeners": 70,
+        "heap": 49345066,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 66,
+        "gameSeconds": 115,
+        "level": 4,
+        "listeners": 70,
+        "heap": 24246912,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 76,
+        "gameSeconds": 115,
+        "level": 4,
+        "listeners": 70,
+        "heap": 38936924,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 88,
+        "gameSeconds": 115,
+        "level": 4,
+        "listeners": 70,
+        "heap": 38325294,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 100,
+        "gameSeconds": 116,
+        "level": 4,
+        "listeners": 70,
+        "heap": 28330698,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 112,
+        "gameSeconds": 116,
+        "level": 4,
+        "listeners": 70,
+        "heap": 50372306,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 124,
+        "gameSeconds": 117,
+        "level": 4,
+        "listeners": 70,
+        "heap": 25441345,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 134,
+        "gameSeconds": 117,
+        "level": 4,
+        "listeners": 70,
+        "heap": 32811217,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 146,
+        "gameSeconds": 118,
+        "level": 4,
+        "listeners": 70,
+        "heap": 20591170,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 156,
+        "gameSeconds": 118,
+        "level": 4,
+        "listeners": 70,
+        "heap": 37459209,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 168,
+        "gameSeconds": 118,
+        "level": 4,
+        "listeners": 70,
+        "heap": 39842279,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 178,
+        "gameSeconds": 118,
+        "level": 4,
+        "listeners": 70,
+        "heap": 39020801,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 188,
+        "gameSeconds": 119,
+        "level": 4,
+        "listeners": 70,
+        "heap": 25725532,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 200,
+        "gameSeconds": 119,
+        "level": 4,
+        "listeners": 70,
+        "heap": 21088301,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 210,
+        "gameSeconds": 120,
+        "level": 4,
+        "listeners": 70,
+        "heap": 32096616,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 222,
+        "gameSeconds": 120,
+        "level": 4,
+        "listeners": 70,
+        "heap": 45688108,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 232,
+        "gameSeconds": 121,
+        "level": 4,
+        "listeners": 70,
+        "heap": 35353549,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 244,
+        "gameSeconds": 121,
+        "level": 4,
+        "listeners": 70,
+        "heap": 45143024,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 256,
+        "gameSeconds": 122,
+        "level": 4,
+        "listeners": 70,
+        "heap": 40556823,
+        "rafPending": 1
+      }
+    ],
+    "transitions": [
+      {
+        "level": 4,
+        "status": "playing",
+        "phase": "pursuit",
+        "finale": null,
+        "seconds": 111.76
+      },
+      {
+        "level": 4,
+        "status": "paused",
+        "phase": "pursuit",
+        "finale": null,
+        "seconds": 115.28
+      },
+      {
+        "level": 4,
+        "status": "playing",
+        "phase": "pursuit",
+        "finale": null,
+        "seconds": 115.28
+      },
+      {
+        "level": 4,
+        "status": "paused",
+        "phase": "pursuit",
+        "finale": null,
+        "seconds": 117.64
+      },
+      {
+        "level": 4,
+        "status": "playing",
+        "phase": "pursuit",
+        "finale": null,
+        "seconds": 117.64
+      }
+    ]
+  },
+  "fullscreen": {
+    "columns": [
+      963,
+      285
+    ],
+    "screenHeight": 800,
+    "canvasWidth": 961,
+    "canvasHeight": 540.5625
+  },
+  "consoleNote": "Only Chrome extension metadata messages observed; application error log empty."
+}

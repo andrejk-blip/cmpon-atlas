@@ -1,6 +1,6 @@
 {
   "product": "ЦМПОН — атлас требований",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "released_on": "2026-10-19",
   "requirements_edition": "2.0.2 (ВСТЕ)",
   "requirements_as_of": "2026-10-14",
@@ -10,7 +10,7 @@
   "finale_save_schema": "citadel-finale-v1",
   "analytics_module_version": "0.1.0",
   "tournament_module_version": "1.1.0",
-  "index_sha256": "732b3722dbc4d4cef0228ed4e90cbbb6575d57f3bc51533d7f2402580d396c8d",
+  "index_sha256": "5bbf4ae9c6bb19d70af67d7dc8098b0f90b4ff947a099aea46af8a8b4244eecd",
   "offline_sha256": "754ccde3777ace0150d9b062461301ea9542f893c4f158ebc0ae7e07a3e8a2c3",
   "core_assets_version": "1.3.5",
   "soundtrack_module_version": "1.4.2",
@@ -21,7 +21,7 @@
   "academy_cards": 36,
   "academy_campaign_questions": 23,
   "effects_module_version": "1.9.3",
-  "atlas_sha256": "7c571768b76ac12fe0c180166b79146bc938c72763846bb136f7a76acc614ef8",
+  "atlas_sha256": "b0167ffb3c34910a25d2f306180f2282eac64afbffec5a654c00bdbc50015afc",
   "music_sha256": "11ba6f8ee1d80e7313e7c7c14d1133cf55f9f124ca29eb8d3ed54aba22aafeb0",
   "effects_sha256": "6cabac06fb8d99684ca2a8252510f90a964ca1d427aa4ac7b214115ee1b9af7b",
   "mrg_module_version": "1.7.0",
@@ -81,7 +81,7 @@
   "aim_sha256": "6c0251b56e8a798597cc0a3b26bec950739665f4d5fed9980db091ed04b25058",
   "flight_ui_module_version": "1.7.1",
   "flight_ui_sha256": "b5e7d58a269a75fb71aba8ccb286e84714e17ef016532086dc8d098443acae91",
-  "pursuit_module_version": "1.9.0",
+  "pursuit_module_version": "2.1.0",
   "swarm_module_version": "1.9.0",
   "parallax_module_version": "1.8.0",
   "comic_module_version": "1.9.3",
@@ -93,7 +93,7 @@
     "pincer"
   ],
   "comic_duration_seconds": 1.85,
-  "pursuit_sha256": "7e592675d274bc1569cec4585d7f9cd5f89c0499f28bfea05d97ed856e00eb1f",
+  "pursuit_sha256": "e52cef3f5e53bd747fe39f76e9feb2e7ce0a77cee132fcf6aee280dba116759f",
   "swarm_sha256": "f7d4f101894d7d606d839f6d97de309ebbcdd1156129be78f0468732eb629581",
   "parallax_sha256": "abbfdb4d46c331cb3c752f27932b2d33349fe6ec761b2e680af5120e0ab34ea8",
   "comic_sha256": "fca0b9603ff434f060cd9b16680584d062e907bb4f9b32998a438804f7064964",
@@ -108,7 +108,7 @@
   "interface_module_version": "1.9.0",
   "story_module_version": "1.9.0",
   "art_module_version": "1.9.0",
-  "pursuit_mechanic": "continuous-asteroid-chase-auto-link",
+  "pursuit_mechanic": "three-stage-channel-obstacle-combat-chase",
   "pursuit_target_percent": 100,
   "swarm_mechanic": "formation-shooter",
   "swarm_waves": 3,
@@ -155,6 +155,20 @@
   "bases_save_policy": "existing-layout-retained-until-next-landing",
   "bases_sha256": "9f7cd4346e947f13a3e4185d3e7080b69cd489c7dce959e03627b8adb89cba5a",
   "bases_view_sha256": "506e1ebbfa86a42b0f4dc6918ab1917edb3b8018012e15d98a267060c2cdf8c3",
-  "bases_style_sha256": "a9309ac66da1573a31d7a44410333d2b69056c11112d9ae36dac3b797e743636",
-  "bases_view_build": "200r3"
+  "bases_style_sha256": "66eb30d9d14aedd3426559107d21a97fffced94e35e1637d2775b9cc0c33f416",
+  "bases_view_build": "200r3",
+  "pursuit_stages": 3,
+  "pursuit_link_seconds_normal": [
+    38,
+    46,
+    58
+  ],
+  "pursuit_link_seconds_calm": [
+    30,
+    38,
+    46
+  ],
+  "pursuit_style_build": "210r2",
+  "bases_style_build": "200r4",
+  "pursuit_style_sha256": "dd04f466851b586e1bd160816ceb9a84a9d6d68f6b0b06a93866ef1bb50f6b74"
 }
