@@ -1,0 +1,11 @@
+/* Cathedral Run: put the flight first, with a restrained brass frame. */
+.pursuit-layout .arcade-screen { border-color: #847253; }
+.pursuit-layout .arcade-topbar { border-bottom-color: #84725366; }
+.pursuit-layout .citadel-objective { background: linear-gradient(100deg,#142231,#252a30); border-bottom: 1px solid #ad8c5055; }
+.pursuit-layout .citadel-objective h3 { color: #e6d3ad; }
+.pursuit-layout .arcade-field { background: #080e19; }
+@media (min-width: 900px) {
+ .pursuit-layout .citadel-objective { padding: 9px 16px; gap: 8px; }
+ .pursuit-layout .citadel-objective h3 { font-size: 17px; margin: 3px 0; }
+ .pursuit-layout .citadel-objective p { font-size: 11px; margin: 3px 0; }
+}

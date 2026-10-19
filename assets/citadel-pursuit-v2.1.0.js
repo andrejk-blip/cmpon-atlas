@@ -582,7 +582,7 @@
   }
   function channel(e) {
     if(!active(e)||!e.pursuit.link.connected||!['playing','paused'].includes(e.status))return null;
-    return {from:V3.add(e.player.pos,[0,1.6,-3]),to:V3.add(e.pursuit.leader.pos,[0,1.1,5]),phase:e.pursuit.clock};
+    return globalThis.CITADEL_PURSUIT_VIEW?.channelEndpoints?.(e)||{from:V3.add(e.player.pos,[0,1.6,-3]),to:V3.add(e.pursuit.leader.pos,[0,1.1,5]),phase:e.pursuit.clock};
   }
   function drawChannel(ctx,e,cam,W,H) {
     const c=channel(e);if(!c)return;
