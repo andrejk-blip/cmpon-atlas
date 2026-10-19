@@ -1,6 +1,7 @@
 'use strict';
 const frame=document.getElementById('game'),report=document.getElementById('report');
 let latest=null;
+document.getElementById('mode').onchange=()=>{const checkpoint=document.getElementById('checkpoint'),calm=document.getElementById('mode').value==='calm';for(const option of checkpoint.options)option.disabled=calm&&option.value!=='4';if(calm)checkpoint.value='4';};
 window.addEventListener('message',event=>{if(event.source!==frame.contentWindow||event.data?.kind!=='citadel-qa')return;latest=event.data.report;report.textContent=JSON.stringify(latest,null,2);});
 document.getElementById('start').onclick=async()=>{
  const mode=document.getElementById('mode').value;
