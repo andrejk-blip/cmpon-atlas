@@ -51,37 +51,45 @@
   if(x.role==='dog')dog(a,x,t,fx);else {const b=spaceBasisDir(V3.sub(e.escort.allies[x.ally]?.pos||e.player.pos,x.pos));instance(a,vessel(x.role),x.pos,b,Array(3).fill(x.role==='scout'?.75:1),x.hit>0);
    for(const s of [-1,1])part(a,'octa',spacePoint(spaceModel(x.pos,[1,1,1],b),[s*2.8,0,-4.4]),[.5,.5,1.7],x.color,1,b);
   }
-  if(x.warp>0)part(a,'lightRing',x.pos,Array(3).fill(6+x.warp*6),x.color,1,SPACE_IDENTITY,x.warp*.4);
+  if(x.warp>0)part(a,'ring',x.pos,Array(3).fill(6+x.warp*6),x.color,1,SPACE_IDENTITY,x.warp*.4);
   if(x.role==='shield'){
-   part(a,'lightRing',x.pos,[10,7,1],x.color,.9,SPACE_IDENTITY,.65);
+   part(a,'ring',x.pos,[10,7,1],x.color,.9,SPACE_IDENTITY,.65);
    for(const n of e.enemies)if(n.shielded&&n.squad===x.squad)citadelBeam(a,x.pos,n.pos,x.color,.035,.4);
   }
-  if(x.channel){const ally=e.escort.allies[x.ally];if(ally&&!ally.dead){citadelBeam(a,x.pos,ally.pos,x.color,.05,.6);part(a,'lightRing',ally.pos,[7,5,1],x.color,1,SPACE_IDENTITY,.4);}}
+  if(x.channel){const ally=e.escort.allies[x.ally];if(ally&&!ally.dead){citadelBeam(a,x.pos,ally.pos,x.color,.05,.6);part(a,'ring',ally.pos,[7,5,1],x.color,1,SPACE_IDENTITY,.4);}}
+ }
+ function transport(a,ally,time,fx){const model=compile('transport',p=>{
+  part(p,'p220_armour',[0,0,0],[2,1.3,5.7],'#5d858d');part(p,'p220_armour',[0,.3,5],[1.7,1.4,2.3],'#a8b9b2');
+  part(p,'box',[0,1.8,4],[1.35,.1,1.1],C.cyan,.8);
+  for(const side of [-1,1]){part(p,'p220_armour',[side*3.5,-.3,-1],[1.1,1,4.5],'#365871');part(p,'box',[side*3.5,.8,-1],[.7,.07,3.9],C.edge);part(p,'box',[side*3.5,.92,-2],[.12,.04,2.5],C.cyan,1);
+   for(let k=0;k<3;k++)part(p,'box',[side*2,.2,-3+k*2],[.8,.9,.7],'#839799');}
+ });const b=flightBasis(0,0,Math.sin(time*.7+ally.id)*.015);instance(a,model,ally.pos,b,[1,1,1],ally.hit>0);
+ for(const side of [-1,1])part(a,'octa',spacePoint(spaceModel(ally.pos,[1,1,1],b),[side*3.5,-.3,-7]),[.65,.5,2+(fx?Math.sin(time*22)*.2:0)],C.cyan,1,b);
  }
  function scenery(a,e,time,fx){const stage=e.stage,col=e.escort.definition.color,motion=fx?time:0;
   for(let i=0;i<28;i++){const angle=i*2.39996,r=65+i%4*8,z=50-(motion*(100+i%3*12)+i*37)%850;part(a,'box',[Math.cos(angle)*r,Math.sin(angle)*r*.7,z],[.04,.04,5+i%7],i%4?col:'#cedcd3',1,SPACE_IDENTITY,.6);}
   for(let i=0;i<5;i++){
    const z=60-(motion*38+i*150)%780;
    for(const side of [-1,1]){
-    const x=side*(stage===2?83:76);part(a,'p220_armour',[x,0,z],[5,stage===1?27:38,9],C.dark);
-    part(a,'box',[x-side*5,0,z],[.25,25,5],col,.7);part(a,'p220_armour',[x,33,z],[8,3,12],C.steel);
+    const x=side*(stage===2?83:76);part(a,'box',[x,0,z],[5,stage===1?27:38,9],C.dark);
+    part(a,'box',[x-side*5,0,z],[.25,25,5],col,.7);part(a,'box',[x,33,z],[8,3,12],C.steel);
     if(stage===1){part(a,'ring',[x,10,z+2],[13,13,2],col,.6);beam(a,[x,0,z],[x-side*10,20,z],.7,C.gold);}
     if(stage===2){part(a,'p220_pylon',[x,45,z],[6,15,6],C.steel);for(let k=0;k<4;k++)part(a,'box',[x-side*5.2,3+k*6,z+3],[.3,2,.5],C.gold,.4);}
-    if(stage===0)for(let k=0;k<3;k++)part(a,'p220_armour',[x+side*9,10+k*8,z],[5,3,9],k%2?C.steel:C.gold);
+    if(stage===0)for(let k=0;k<3;k++)part(a,'box',[x+side*9,10+k*8,z],[5,3,9],k%2?C.steel:C.gold);
    }
    if(stage===2){beam(a,[-83,37,z],[0,63,z],2,C.steel);beam(a,[0,63,z],[83,37,z],2,C.steel);}
   }
  }
  expeditionHyperScene=function(e,time,fx,hidePlayer=false){if(!api.active(e))return old.scene(e,time,fx,hidePlayer);const a=[];scenery(a,e,time,fx);
-  for(const ally of e.escort.allies)if(!ally.dead)expeditionTransport(a,ally,time,fx);
+  for(const ally of e.escort.allies)if(!ally.dead)transport(a,ally,time,fx);
   for(const x of e.enemies)if(!x.dead)enemy(a,e,x,time,fx);
   if(!hidePlayer)instance(a,CITADEL_PURSUIT_VIEW.model('player'),e.player.pos,flightBasis(e.player.yaw,e.player.pitch,e.player.bank),[.7,.7,.7]);
   for(const b of e.bullets)part(a,'box',b.pos,[b.type==='missile'?.18:.06,.08,1.8],b.color||C.cyan,1,spaceBasisDir(b.vel));
   for(const b of e.hostile)part(a,'octa',b.pos,[.35,.3,1.25],b.color,1,spaceBasisDir(b.vel));
-  for(const x of e.explosions){const age=1-x.life/x.max;part(a,'octa',x.pos,Array(3).fill(1+age*7),x.color,1,SPACE_IDENTITY,1-age);if(fx)part(a,'lightRing',x.pos,Array(3).fill(2+age*13),x.color,1,SPACE_IDENTITY,1-age);}
-  if(e.pulseWave>0)part(a,'lightRing',e.player.pos,Array(3).fill(4+(1-e.pulseWave)*95),C.cyan,1,SPACE_IDENTITY,e.pulseWave);
+  for(const x of e.explosions){const age=1-x.life/x.max;part(a,'octa',x.pos,Array(3).fill(1+age*7),x.color,1,SPACE_IDENTITY,1-age);if(fx)part(a,'ring',x.pos,Array(3).fill(2+age*13),x.color,1,SPACE_IDENTITY,1-age);}
+  if(e.pulseWave>0)part(a,'ring',e.player.pos,Array(3).fill(4+(1-e.pulseWave)*95),C.cyan,1,SPACE_IDENTITY,e.pulseWave);
   for(const g of e.escort.ops230.groups)if(g.state==='telegraph'){
-   const ally=e.escort.allies[g.target];if(ally&&!ally.dead)part(a,'lightRing',ally.pos,[8+Math.sin(time*6)*.3,6,1],'#ffa884',1,SPACE_IDENTITY,.8);
+   const ally=e.escort.allies[g.target];if(ally&&!ally.dead)part(a,'ring',ally.pos,[8+Math.sin(time*6)*.3,6,1],'#ffa884',1,SPACE_IDENTITY,.8);
   }
   return a;
  };

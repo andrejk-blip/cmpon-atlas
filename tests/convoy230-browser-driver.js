@@ -18,6 +18,6 @@
  }
  window.addEventListener('message',event=>{if(event.source!==parent||event.data?.kind!=='citadel-qa-control')return;
   if(event.data.action==='audio'){spaceAudioUnlock();arcadeAudio();CITADEL_VOICE.setEnabled?.(true);}
-  if(event.data.action==='pause'){if(!paused){h.action('arcade-pause');pausedState=snapshot();paused=true;}else{pauseChecks.push({unchanged:pausedState===snapshot()});paused=false;h.action('arcade-resume');}}
+  if(event.data.action==='pause'){if(!paused){if(e.status!=='paused')h.action('arcade-pause');pausedState=snapshot();paused=true;}else{pauseChecks.push({unchanged:pausedState===snapshot()});paused=false;if(e.status==='paused')h.action('arcade-resume');}}
  });setInterval(()=>{try{report();}catch(error){finished='qa-error';console.error(error);}},1500);report();
 })().catch(error=>{console.error(error);parent.postMessage({kind:'citadel-qa',report:{finished:'load-error',error:String(error)}},new URL(document.baseURI).origin);});
