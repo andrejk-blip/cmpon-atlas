@@ -1,7 +1,7 @@
 /* Give the human characters enough screen space on a desktop. The command
    channel remains available below the base; flight and mobile keep their UI. */
 @media (min-width: 1000px) {
-  .arcade-layout.bases-layout { grid-template-columns: minmax(0, 1fr); }
+  .arcade-layout.bases-layout:not(.is-expanded) { grid-template-columns: minmax(0, 1fr); }
   .arcade-layout.bases-layout > .arcade-command { max-width: 100%; }
   .bases-layout .citadel-objective { padding: 12px 18px; }
   .bases-layout .arcade-screen:not(.expanded) .arcade-field { aspect-ratio: 16 / 9; }

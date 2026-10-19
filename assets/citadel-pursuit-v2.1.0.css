@@ -1,6 +1,6 @@
 /* More room for gates and channel readability during the chase. */
 @media (min-width: 1000px) {
-  .arcade-layout.pursuit-layout { grid-template-columns: minmax(0, 1fr); }
+  .arcade-layout.pursuit-layout:not(.is-expanded) { grid-template-columns: minmax(0, 1fr); }
   .arcade-layout.pursuit-layout > .arcade-command { max-width: 100%; }
   .pursuit-layout .citadel-objective { padding: 12px 18px; }
   .pursuit-layout .arcade-screen:not(.expanded) .arcade-field { aspect-ratio: 16 / 9; }
