@@ -3,7 +3,7 @@
 <head>
 <base href="../">
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="application-version" content="1.9.3">
+<meta name="application-version" content="2.0.0">
 <meta name="description" content="Интерактивный атлас оснований требований ЦМПОН: 417 требований, 50 концепций, сравнение с ФТ сервиса 39 и ФТТ ГИС ЦАП 57.1.">
 <title>ЦМПОН — атлас требований | CMPON Atlas</title>
 <link rel="canonical" href="https://andrejk-blip.github.io/cmpon-atlas/">
@@ -33,6 +33,7 @@
 <link rel="stylesheet" href="./assets/citadel-interface-v1.9.0.css">
 <style>#citadel-startup{position:fixed;z-index:10000;left:50%;bottom:16px;transform:translateX(-50%);box-sizing:border-box;width:max-content;max-width:calc(100% - 24px);padding:12px 16px;background:#0a2231;color:#e1f6f4;border:1px solid #73c4c0;border-radius:8px;font:14px/1.4 system-ui,sans-serif;box-shadow:0 6px 24px #0005}#citadel-startup-retry{display:block;margin-top:8px;padding:7px 12px;color:#0a2231;background:#b5ffe0;border:0;border-radius:4px;font:inherit;cursor:pointer}#citadel-startup[hidden],#citadel-startup-retry[hidden]{display:none!important}</style>
 <link rel="stylesheet" href="./assets/citadel-ui-fixes-v1.9.2.css">
+<link rel="stylesheet" href="./assets/citadel-bases-v2.0.0.css?build=200r2">
 </head>
 <body>
 <div id="citadel-startup" role="status" aria-live="polite"><span id="citadel-startup-message">Загружаем Цитадель…</span><button id="citadel-startup-retry" type="button" hidden>Повторить</button></div>
@@ -53,7 +54,7 @@
   <div id="metrics" class="metrics"></div>
   <div class="summary-caption"><span id="scope-caption"></span><button class="text-button" data-action="clear">Сбросить фильтры <span aria-hidden="true">↺</span></button></div>
   <section id="content" tabindex="-1"></section>
-  <footer class="footer"><span>ЦМПОН / Приложение v1.9.3 · 19.10.2026</span><span>Покрытие текстом ≠ подтверждение реализации</span><button class="text-button" data-action="view" data-value="methods">Источники и ограничения ↗</button></footer>
+  <footer class="footer"><span>ЦМПОН / Приложение v2.0.0 · 19.10.2026</span><span>Покрытие текстом ≠ подтверждение реализации</span><button class="text-button" data-action="view" data-value="methods">Источники и ограничения ↗</button></footer>
  </main>
 </div>
 <dialog id="detail" aria-labelledby="detail-title"><div class="drawer-toolbar"><span id="drawer-type">КАРТОЧКА ОСНОВАНИЯ</span><div><button class="button quiet" data-action="copy"><span data-icon="copy"></span>Скопировать вывод</button><button class="icon-button" data-action="close" aria-label="Закрыть карточку">×</button></div></div><div id="detail-body"></div></dialog>
@@ -89,6 +90,6 @@
 <script defer src="./assets/atlas-integration-v1.1.4.js"></script>
 <script defer src="./assets/citadel-academy-bridge-v1.7.0.js"></script>
 <script defer src="./assets/citadel-ui-fixes-v1.9.2.js"></script>
-<script defer src="./assets/citadel-bases-view-v2.0.0.js"></script>
+<script defer src="./assets/citadel-bases-view-v2.0.0.js?build=200r2"></script>
 <script defer src="./assets/citadel-runtime-v1.9.3.js?build=193r2"></script>
 </body></html>

@@ -8,7 +8,7 @@
   'use strict';
   if (globalThis.CITADEL_BASE_VIEW?.version === '2.0.0') return;
   const VERSION='2.0.0', TAU=Math.PI*2;
-  const previous={interior:citadelInterior,camera:spaceCamera,draw:spaceDrawCPU,hud:drawBoardHUD,finalHUD:drawFinaleHUD};
+  const previous={interior:citadelInterior,camera:spaceCamera,draw:spaceDrawCPU,hud:drawBoardHUD,finalHUD:drawFinaleHUD,update:updateArcadeHUD};
   const palettes={
     player:{cloth:'#d2d9cc',pants:'#263e4a',vest:'#47666b',trim:'#7cd6ce'},
     scout:{cloth:'#8b5651',pants:'#303940',vest:'#513f41',trim:'#db9a7f'},
@@ -416,5 +416,17 @@
   spaceCamera=camera;spaceDrawCPU=drawCPU;
   drawBoardHUD=function(c,e,cam,w,h){const result=previous.hud.apply(this,arguments);labels(c,e,cam,w,h);return result;};
   drawFinaleHUD=function(c,e,cam,w,h){const result=previous.finalHUD.apply(this,arguments);if(e.finale?.phase==='maze')labels(c,e,cam,w,h);return result;};
+  const canvasLabels=new WeakMap(),baseLabel='3D-база: WASD — движение, мышь — прицел, пробел — огонь, Shift — бег, E — импульс, G — проводник, P — пауза.';
+  updateArcadeHUD=function(){
+    const result=previous.update.apply(this,arguments),base=inside(ARCADE.engine),screen=document.getElementById('arcade-screen');
+    screen?.closest?.('.arcade-layout')?.classList.toggle('bases-layout',base);
+    const canvas=ARCADE.canvas;
+    if(canvas?.getAttribute&&canvas?.setAttribute){
+      if(base){if(!canvasLabels.has(canvas))canvasLabels.set(canvas,canvas.getAttribute('aria-label')||'');
+        if(canvas.getAttribute('aria-label')!==baseLabel)canvas.setAttribute('aria-label',baseLabel);}
+      else if(canvasLabels.has(canvas)){if(canvas.getAttribute('aria-label')===baseLabel)canvas.setAttribute('aria-label',canvasLabels.get(canvas));canvasLabels.delete(canvas);}
+    }
+    return result;
+  };
   globalThis.CITADEL_BASE_VIEW=Object.freeze({version:VERSION,actor,scene,camera,draw:drawCPU,status:()=>({...lastStats}),palettes});
 })();
