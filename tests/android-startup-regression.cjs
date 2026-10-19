@@ -11,12 +11,12 @@ const { MockAudioContext } = require('./combat-audio-regression.cjs');
 const root = path.resolve(__dirname, '..');
 const compatPath = path.join(root, 'assets/citadel-compat-v1.7.1.js');
 const source = fs.readFileSync(compatPath, 'utf8');
-const corePath = path.join(root, 'assets/atlas-v1.3.5.js');
+const corePath = path.join(root, 'assets/atlas-v1.3.6.js');
 const createCanvas = require(require.resolve('@napi-rs/canvas', {
   paths: [process.env.CODEX_PRIMARY_RUNTIME_NODE_MODULES, root].filter(Boolean),
 })).createCanvas;
 const scripts = [...fs.readFileSync(path.join(root, 'index.html'), 'utf8').matchAll(/<script defer src="\.\/(.*?)"/g)]
-  .map(m => m[1]).filter(name => !/atlas-v1\.3\.5|citadel-compat-|citadel-startup-/.test(name));
+  .map(m => m[1].split('?')[0]).filter(name => !/atlas-v1\.|citadel-compat-|citadel-startup-|citadel-launch-/.test(name));
 const results = [];
 const plain = value => JSON.parse(JSON.stringify(value));
 const tick = () => new Promise(resolve => setImmediate(resolve));
@@ -47,11 +47,12 @@ function contextFor({ legacy = false, controllerless = false, fetchImpl } = {}) 
   return context;
 }
 
-function mobileHarness(profile) {
-  const nodes = new Map(), storage = new Map(), handlers = new Map(), fetchCalls = [];
+function mobileHarness(profile = {}) {
+  const nodes = new Map(), storage = new Map(profile.storage || []), handlers = new Map(), fetchCalls = [], intervals = [];
   const c = contextFor({ ...profile, fetchImpl: async (url, options = {}) => {
     const endpoint = String(url).split('/').pop().split('?')[0];
     fetchCalls.push({ endpoint, options });
+    if (profile.fetchImpl) { const custom = profile.fetchImpl(String(url), options); if (custom !== undefined) return custom; }
     const player = { id: 'mock-player', name: 'Android test' };
     const attempt = { id: 'mock-run', seed: 417147, mode: 'calm', status: 'active',
       gameVersion: '1.3.0', progress: 0, clock: 0, revision: 0 };
@@ -84,7 +85,7 @@ function mobileHarness(profile) {
     cancelAnimationFrame() {}, matchMedia: () => ({ matches: false }), devicePixelRatio: 1,
     innerWidth: 390, innerHeight: 844, visualViewport: { height: 844, addEventListener() {} },
     addEventListener() {}, dispatchEvent() { return true; }, navigator: { userAgent: 'Android-like regression (Node VM)', onLine: true },
-    setInterval: () => 0, clearInterval() {}, queueMicrotask,
+    setInterval: (fn, delay) => { intervals.push({ fn, delay }); return intervals.length; }, clearInterval() {}, queueMicrotask,
     location: { protocol: 'https:', hash: '#arcade', search: '', pathname: '/cmpon-atlas/',
       href: 'https://test.invalid/cmpon-atlas/#arcade', origin: 'https://test.invalid' },
     FormData: class { constructor(form) { this.form = form; } get(key) { return key === 'name' ? this.form.nameValue : null; } },
@@ -98,7 +99,7 @@ function mobileHarness(profile) {
     activeElement: { tagName: 'BODY' }, getElementById: node,
     createElement(tag) { const item = node(`created-${tag}-${nodes.size}`); item.tagName = tag.toUpperCase(); return item; },
     querySelector() { return null; }, querySelectorAll() { return []; },
-    addEventListener(k, f) { (handlers.get(k) || handlers.set(k, []).get(k)).push(f); }, removeEventListener() {},
+    addEventListener(k, f, capture) { const list = handlers.get(k) || handlers.set(k, []).get(k); capture ? list.unshift(f) : list.push(f); }, removeEventListener() {},
   };
   if (profile.deniedStorage) Object.defineProperty(c, 'localStorage', { get() { throw Error('SecurityError: denied'); } });
   if (profile.shaderFailure) {
@@ -111,10 +112,18 @@ function mobileHarness(profile) {
   }
   // The compatibility file really executes before the unchanged public core.
   vm.runInContext(source, c, { filename: path.basename(compatPath) });
+  if (!profile.withoutLaunch) vm.runInContext(fs.readFileSync(path.join(root, 'assets/citadel-launch-v2.3.1.js'), 'utf8'), c);
   vm.runInContext(fs.readFileSync(corePath, 'utf8'), c, { filename: path.basename(corePath) });
   run(c, 'initialize()');
   for (const script of scripts) vm.runInContext(fs.readFileSync(path.join(root, script), 'utf8'), c, { filename: script });
-  return { c, nodes, storage, handlers, fetchCalls };
+  async function dispatch(type, event) {
+    let stopped = false;
+    event.preventDefault ??= () => {};
+    event.stopImmediatePropagation = () => { stopped = true; };
+    for (const fn of handlers.get(type) || []) { await fn(event); if (stopped) break; }
+    await tick();
+  }
+  return { c, nodes, storage, handlers, fetchCalls, intervals, dispatch };
 }
 
 async function fullStartup(profile) {
@@ -127,7 +136,7 @@ async function fullStartup(profile) {
   if (profile.shaderFailure) assert(run(c, 'ARCADE.renderer.cpu && !ARCADE.renderer.gl'), 'Failed shader uses the existing Canvas 2D renderer');
   const form = nodes.get('cup-entry-form') || c.document.getElementById('cup-entry-form');
   form.nameValue = 'Android test'; form.tagName = 'FORM';
-  for (const callback of handlers.get('submit') || []) await callback({ target: form, preventDefault() {} });
+  await h.dispatch('submit', { target: form });
   await tick();
   assert.equal(run(c, 'CUP.error'), '');
   assert.equal(run(c, 'CUP.player.id'), 'mock-player');
@@ -178,7 +187,7 @@ async function test(name, callback) {
 
 async function main() {
   await test('compatibility bootstrap parses as ES5', () => {
-    const acorn = require(require.resolve('next/dist/compiled/acorn', { paths: [root, path.join(root, '..', 'cmpon-analytics-admin')] }));
+    const acorn = require(require.resolve('next/dist/compiled/acorn', { paths: [root, path.join(root, '..', 'cmpon-admin')] }));
     acorn.parse(source, { ecmaVersion: 5 });
     assert(!/Math\.random/.test(source), 'UUID fallback uses secure random bytes');
   });
