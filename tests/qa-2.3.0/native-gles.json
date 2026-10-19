@@ -1,0 +1,13 @@
+{
+  "pass": true,
+  "vendor": "Mesa",
+  "renderer": "llvmpipe (LLVM 20.1.2, 256 bits)",
+  "version": "OpenGL ES 3.2 Mesa 25.2.8-0ubuntu0.24.04.2",
+  "egl": "1.5",
+  "shaderCompile": true,
+  "programLink": true,
+  "glError": 0,
+  "items": 291,
+  "millisecondsIncludingReadback": 207.84143399941968,
+  "method": "Native surfaceless EGL/GLES, exact exported scene and production shader. Software GPU integration; not browser, hardware GPU or FPS benchmark."
+}

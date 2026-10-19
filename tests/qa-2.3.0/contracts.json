@@ -1,0 +1,78 @@
+{
+  "passed": 8,
+  "method": "Node VM + native Canvas. Synthetic entry fixtures; ordinary input/target actions. No enemy HP or victory overrides.",
+  "results": [
+    {
+      "name": "No-input control loses real transports",
+      "pass": true,
+      "seconds": 40.53,
+      "stats": {
+        "spawned": 9,
+        "volleys": 14,
+        "dogRuns": 12,
+        "dogHits": 12,
+        "torpedoes": 2,
+        "intercepts": 0,
+        "shieldHits": 2,
+        "disruptions": 0,
+        "peakEnemies": 10,
+        "peakHostile": 3
+      }
+    },
+    {
+      "name": "Coordinated groups telegraph before attacking; bounded states",
+      "pass": true,
+      "attacks": 6,
+      "stats": {
+        "spawned": 9,
+        "volleys": 14,
+        "dogRuns": 12,
+        "dogHits": 12,
+        "torpedoes": 2,
+        "intercepts": 0,
+        "shieldHits": 2,
+        "disruptions": 0,
+        "peakEnemies": 10,
+        "peakHostile": 3
+      }
+    },
+    {
+      "name": "Pause freezes formation, dog attacks, torpedoes and progression",
+      "pass": true
+    },
+    {
+      "name": "In-flight new save roundtrip preserves groups and next attacks",
+      "pass": true,
+      "seconds": 43.66666666666547
+    },
+    {
+      "name": "Legacy convoy save continues byte-equivalent mission state",
+      "pass": true,
+      "legacySeconds": 31.999999999999464
+    },
+    {
+      "name": "Desktop and joystick inputs move the player; shared weapon commands",
+      "pass": true
+    },
+    {
+      "name": "Idempotent modules do not add frame owners/listeners/emitter wrappers",
+      "pass": true,
+      "listeners": 65
+    },
+    {
+      "name": "Render is read-only; finite meshes and depth fallback at both aspect ratios",
+      "pass": true,
+      "cpuMilliseconds": [
+        127.8,
+        65.2,
+        71,
+        59.6,
+        62.4,
+        52
+      ],
+      "templates": {
+        "templates": 7
+      }
+    }
+  ]
+}

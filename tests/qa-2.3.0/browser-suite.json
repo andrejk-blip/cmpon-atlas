@@ -1,0 +1,1903 @@
+{
+  "version": "2.3.0",
+  "config": {
+    "checkpoint": "suite",
+    "accelerated": true,
+    "manual": false
+  },
+  "finished": "all-convoys-delivered",
+  "key": "calm-9",
+  "status": "escortclear",
+  "wallSeconds": 314,
+  "steps": 32300,
+  "rafCalls": 313,
+  "emitChanges": 0,
+  "renderer": "3D · совместимый режим",
+  "convoy": {
+    "version": "2.3.0",
+    "stage": 2,
+    "time": 114.44,
+    "wave": 5,
+    "total": 5,
+    "distance": 1,
+    "formation": 0,
+    "allies": [
+      {
+        "hp": 100,
+        "dead": false
+      },
+      {
+        "hp": 90.24,
+        "dead": false
+      },
+      {
+        "hp": 100,
+        "dead": false
+      }
+    ],
+    "groups": [],
+    "stats": {
+      "spawned": 25,
+      "volleys": 3,
+      "dogRuns": 5,
+      "dogHits": 2,
+      "torpedoes": 2,
+      "intercepts": 2,
+      "shieldHits": 59,
+      "disruptions": 2,
+      "peakEnemies": 7,
+      "peakHostile": 1
+    },
+    "events": [
+      {
+        "at": 4.01,
+        "kind": "command",
+        "id": 1,
+        "count": 4
+      },
+      {
+        "at": 4.9,
+        "kind": "mark",
+        "squad": 1,
+        "target": 0,
+        "coordinated": true
+      },
+      {
+        "at": 6.6,
+        "kind": "leader-down",
+        "squad": 1
+      },
+      {
+        "at": 18,
+        "kind": "formation",
+        "pattern": 1
+      },
+      {
+        "at": 25.01,
+        "kind": "shield",
+        "id": 2,
+        "count": 5
+      },
+      {
+        "at": 25.9,
+        "kind": "mark",
+        "squad": 2,
+        "target": 2,
+        "coordinated": false
+      },
+      {
+        "at": 28.4,
+        "kind": "attack",
+        "squad": 2,
+        "target": 2,
+        "cycle": 1
+      },
+      {
+        "at": 28.42,
+        "kind": "cover"
+      },
+      {
+        "at": 36.01,
+        "kind": "formation",
+        "pattern": 2
+      },
+      {
+        "at": 47.01,
+        "kind": "jam",
+        "id": 3,
+        "count": 5
+      },
+      {
+        "at": 47.9,
+        "kind": "mark",
+        "squad": 3,
+        "target": 0,
+        "coordinated": false
+      },
+      {
+        "at": 50.41,
+        "kind": "attack",
+        "squad": 3,
+        "target": 0,
+        "cycle": 1
+      },
+      {
+        "at": 50.43,
+        "kind": "cover"
+      },
+      {
+        "at": 54.01,
+        "kind": "formation",
+        "pattern": 0
+      },
+      {
+        "at": 71.01,
+        "kind": "torpedo",
+        "id": 4,
+        "count": 5
+      },
+      {
+        "at": 71.9,
+        "kind": "mark",
+        "squad": 4,
+        "target": 1,
+        "coordinated": false
+      },
+      {
+        "at": 72.02,
+        "kind": "formation",
+        "pattern": 1
+      },
+      {
+        "at": 74.41,
+        "kind": "attack",
+        "squad": 4,
+        "target": 1,
+        "cycle": 1
+      },
+      {
+        "at": 74.41,
+        "kind": "torpedo",
+        "squad": 4,
+        "target": 1
+      },
+      {
+        "at": 74.42,
+        "kind": "cover"
+      },
+      {
+        "at": 74.84,
+        "kind": "torpedo",
+        "squad": 4,
+        "target": 1
+      },
+      {
+        "at": 90.01,
+        "kind": "formation",
+        "pattern": 2
+      },
+      {
+        "at": 94.01,
+        "kind": "command",
+        "id": 5,
+        "count": 6
+      },
+      {
+        "at": 94.89,
+        "kind": "mark",
+        "squad": 5,
+        "target": 1,
+        "coordinated": true
+      },
+      {
+        "at": 97.4,
+        "kind": "attack",
+        "squad": 5,
+        "target": 1,
+        "cycle": 1
+      },
+      {
+        "at": 97.41,
+        "kind": "cover"
+      },
+      {
+        "at": 98.59,
+        "kind": "leader-down",
+        "squad": 5
+      },
+      {
+        "at": 108.04,
+        "kind": "formation",
+        "pattern": 0
+      }
+    ]
+  },
+  "runs": [
+    {
+      "key": "normal-3",
+      "status": "escortclear",
+      "hp": 100,
+      "convoy": {
+        "version": "2.3.0",
+        "stage": 0,
+        "time": 68,
+        "wave": 3,
+        "total": 3,
+        "distance": 1,
+        "formation": 0,
+        "allies": [
+          {
+            "hp": 100,
+            "dead": false
+          },
+          {
+            "hp": 100,
+            "dead": false
+          },
+          {
+            "hp": 100,
+            "dead": false
+          }
+        ],
+        "groups": [],
+        "stats": {
+          "spawned": 9,
+          "volleys": 1,
+          "dogRuns": 4,
+          "dogHits": 1,
+          "torpedoes": 0,
+          "intercepts": 0,
+          "shieldHits": 0,
+          "disruptions": 0,
+          "peakEnemies": 4,
+          "peakHostile": 1
+        },
+        "events": [
+          {
+            "at": 4.01,
+            "kind": "flank",
+            "id": 1,
+            "count": 2
+          },
+          {
+            "at": 4.9,
+            "kind": "mark",
+            "squad": 1,
+            "target": 1,
+            "coordinated": false
+          },
+          {
+            "at": 22,
+            "kind": "pack",
+            "id": 2,
+            "count": 3
+          },
+          {
+            "at": 22.89,
+            "kind": "mark",
+            "squad": 2,
+            "target": 2,
+            "coordinated": false
+          },
+          {
+            "at": 24.6,
+            "kind": "attack",
+            "squad": 2,
+            "target": 2,
+            "cycle": 1
+          },
+          {
+            "at": 24.61,
+            "kind": "cover"
+          },
+          {
+            "at": 43.01,
+            "kind": "crossfire",
+            "id": 3,
+            "count": 4
+          },
+          {
+            "at": 43.89,
+            "kind": "mark",
+            "squad": 3,
+            "target": 0,
+            "coordinated": false
+          },
+          {
+            "at": 45.6,
+            "kind": "attack",
+            "squad": 3,
+            "target": 0,
+            "cycle": 1
+          },
+          {
+            "at": 45.61,
+            "kind": "cover"
+          }
+        ]
+      }
+    },
+    {
+      "key": "normal-6",
+      "status": "escortclear",
+      "hp": 100,
+      "convoy": {
+        "version": "2.3.0",
+        "stage": 1,
+        "time": 90.65,
+        "wave": 4,
+        "total": 4,
+        "distance": 1,
+        "formation": 0,
+        "allies": [
+          {
+            "hp": 100,
+            "dead": false
+          },
+          {
+            "hp": 89,
+            "dead": false
+          },
+          {
+            "hp": 100,
+            "dead": false
+          }
+        ],
+        "groups": [],
+        "stats": {
+          "spawned": 15,
+          "volleys": 1,
+          "dogRuns": 4,
+          "dogHits": 1,
+          "torpedoes": 1,
+          "intercepts": 1,
+          "shieldHits": 0,
+          "disruptions": 0,
+          "peakEnemies": 4,
+          "peakHostile": 1
+        },
+        "events": [
+          {
+            "at": 4.01,
+            "kind": "jam",
+            "id": 1,
+            "count": 3
+          },
+          {
+            "at": 4.9,
+            "kind": "mark",
+            "squad": 1,
+            "target": 1,
+            "coordinated": false
+          },
+          {
+            "at": 6.61,
+            "kind": "attack",
+            "squad": 1,
+            "target": 1,
+            "cycle": 1
+          },
+          {
+            "at": 6.63,
+            "kind": "cover"
+          },
+          {
+            "at": 22,
+            "kind": "formation",
+            "pattern": 1
+          },
+          {
+            "at": 24.01,
+            "kind": "torpedo",
+            "id": 2,
+            "count": 4
+          },
+          {
+            "at": 24.89,
+            "kind": "mark",
+            "squad": 2,
+            "target": 2,
+            "coordinated": false
+          },
+          {
+            "at": 26.6,
+            "kind": "attack",
+            "squad": 2,
+            "target": 2,
+            "cycle": 1
+          },
+          {
+            "at": 26.61,
+            "kind": "cover"
+          },
+          {
+            "at": 44.01,
+            "kind": "formation",
+            "pattern": 0
+          },
+          {
+            "at": 46,
+            "kind": "crossfire",
+            "id": 3,
+            "count": 4
+          },
+          {
+            "at": 46.89,
+            "kind": "mark",
+            "squad": 3,
+            "target": 0,
+            "coordinated": false
+          },
+          {
+            "at": 48.59,
+            "kind": "attack",
+            "squad": 3,
+            "target": 0,
+            "cycle": 1
+          },
+          {
+            "at": 48.61,
+            "kind": "cover"
+          },
+          {
+            "at": 66,
+            "kind": "formation",
+            "pattern": 1
+          },
+          {
+            "at": 68.01,
+            "kind": "shield",
+            "id": 4,
+            "count": 4
+          },
+          {
+            "at": 68.89,
+            "kind": "mark",
+            "squad": 4,
+            "target": 1,
+            "coordinated": false
+          },
+          {
+            "at": 70.6,
+            "kind": "attack",
+            "squad": 4,
+            "target": 1,
+            "cycle": 1
+          },
+          {
+            "at": 70.62,
+            "kind": "cover"
+          },
+          {
+            "at": 71.03,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 88.01,
+            "kind": "formation",
+            "pattern": 0
+          }
+        ]
+      }
+    },
+    {
+      "key": "normal-9",
+      "status": "escortclear",
+      "hp": 100,
+      "convoy": {
+        "version": "2.3.0",
+        "stage": 2,
+        "time": 114.44,
+        "wave": 5,
+        "total": 5,
+        "distance": 1,
+        "formation": 0,
+        "allies": [
+          {
+            "hp": 100,
+            "dead": false
+          },
+          {
+            "hp": 53,
+            "dead": false
+          },
+          {
+            "hp": 100,
+            "dead": false
+          }
+        ],
+        "groups": [],
+        "stats": {
+          "spawned": 25,
+          "volleys": 3,
+          "dogRuns": 9,
+          "dogHits": 6,
+          "torpedoes": 2,
+          "intercepts": 2,
+          "shieldHits": 59,
+          "disruptions": 2,
+          "peakEnemies": 7,
+          "peakHostile": 2
+        },
+        "events": [
+          {
+            "at": 4.01,
+            "kind": "command",
+            "id": 1,
+            "count": 4
+          },
+          {
+            "at": 4.9,
+            "kind": "mark",
+            "squad": 1,
+            "target": 0,
+            "coordinated": true
+          },
+          {
+            "at": 6.6,
+            "kind": "leader-down",
+            "squad": 1
+          },
+          {
+            "at": 18,
+            "kind": "formation",
+            "pattern": 1
+          },
+          {
+            "at": 25.01,
+            "kind": "shield",
+            "id": 2,
+            "count": 5
+          },
+          {
+            "at": 25.9,
+            "kind": "mark",
+            "squad": 2,
+            "target": 2,
+            "coordinated": false
+          },
+          {
+            "at": 27.6,
+            "kind": "attack",
+            "squad": 2,
+            "target": 2,
+            "cycle": 1
+          },
+          {
+            "at": 27.62,
+            "kind": "cover"
+          },
+          {
+            "at": 36.01,
+            "kind": "formation",
+            "pattern": 2
+          },
+          {
+            "at": 47.01,
+            "kind": "jam",
+            "id": 3,
+            "count": 5
+          },
+          {
+            "at": 47.9,
+            "kind": "mark",
+            "squad": 3,
+            "target": 0,
+            "coordinated": false
+          },
+          {
+            "at": 49.61,
+            "kind": "attack",
+            "squad": 3,
+            "target": 0,
+            "cycle": 1
+          },
+          {
+            "at": 49.63,
+            "kind": "cover"
+          },
+          {
+            "at": 54.01,
+            "kind": "formation",
+            "pattern": 0
+          },
+          {
+            "at": 71.01,
+            "kind": "torpedo",
+            "id": 4,
+            "count": 5
+          },
+          {
+            "at": 71.9,
+            "kind": "mark",
+            "squad": 4,
+            "target": 1,
+            "coordinated": false
+          },
+          {
+            "at": 72.02,
+            "kind": "formation",
+            "pattern": 1
+          },
+          {
+            "at": 73.64,
+            "kind": "attack",
+            "squad": 4,
+            "target": 1,
+            "cycle": 1
+          },
+          {
+            "at": 73.64,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 73.66,
+            "kind": "cover"
+          },
+          {
+            "at": 74.07,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 87.68,
+            "kind": "cover"
+          },
+          {
+            "at": 90.01,
+            "kind": "formation",
+            "pattern": 2
+          },
+          {
+            "at": 94.01,
+            "kind": "command",
+            "id": 5,
+            "count": 6
+          },
+          {
+            "at": 94.89,
+            "kind": "mark",
+            "squad": 5,
+            "target": 1,
+            "coordinated": true
+          },
+          {
+            "at": 96.6,
+            "kind": "attack",
+            "squad": 5,
+            "target": 1,
+            "cycle": 1
+          },
+          {
+            "at": 98.59,
+            "kind": "leader-down",
+            "squad": 5
+          },
+          {
+            "at": 101.71,
+            "kind": "cover"
+          },
+          {
+            "at": 102.2,
+            "kind": "mark",
+            "squad": 5,
+            "target": 1,
+            "coordinated": false
+          },
+          {
+            "at": 108.04,
+            "kind": "formation",
+            "pattern": 0
+          }
+        ]
+      }
+    },
+    {
+      "key": "calm-3",
+      "status": "escortclear",
+      "hp": 100,
+      "convoy": {
+        "version": "2.3.0",
+        "stage": 0,
+        "time": 68.01,
+        "wave": 3,
+        "total": 3,
+        "distance": 1,
+        "formation": 0,
+        "allies": [
+          {
+            "hp": 100,
+            "dead": false
+          },
+          {
+            "hp": 100,
+            "dead": false
+          },
+          {
+            "hp": 100,
+            "dead": false
+          }
+        ],
+        "groups": [],
+        "stats": {
+          "spawned": 9,
+          "volleys": 0,
+          "dogRuns": 1,
+          "dogHits": 0,
+          "torpedoes": 0,
+          "intercepts": 0,
+          "shieldHits": 0,
+          "disruptions": 1,
+          "peakEnemies": 4,
+          "peakHostile": 0
+        },
+        "events": [
+          {
+            "at": 4.01,
+            "kind": "flank",
+            "id": 1,
+            "count": 2
+          },
+          {
+            "at": 4.89,
+            "kind": "mark",
+            "squad": 1,
+            "target": 1,
+            "coordinated": false
+          },
+          {
+            "at": 22,
+            "kind": "pack",
+            "id": 2,
+            "count": 3
+          },
+          {
+            "at": 22.88,
+            "kind": "mark",
+            "squad": 2,
+            "target": 2,
+            "coordinated": false
+          },
+          {
+            "at": 25.39,
+            "kind": "attack",
+            "squad": 2,
+            "target": 2,
+            "cycle": 1
+          },
+          {
+            "at": 25.41,
+            "kind": "cover"
+          },
+          {
+            "at": 43.02,
+            "kind": "crossfire",
+            "id": 3,
+            "count": 4
+          },
+          {
+            "at": 43.9,
+            "kind": "mark",
+            "squad": 3,
+            "target": 0,
+            "coordinated": false
+          },
+          {
+            "at": 46.41,
+            "kind": "attack",
+            "squad": 3,
+            "target": 0,
+            "cycle": 1
+          },
+          {
+            "at": 46.43,
+            "kind": "cover"
+          }
+        ]
+      }
+    },
+    {
+      "key": "calm-6",
+      "status": "escortclear",
+      "hp": 100,
+      "convoy": {
+        "version": "2.3.0",
+        "stage": 1,
+        "time": 90.58,
+        "wave": 4,
+        "total": 4,
+        "distance": 1,
+        "formation": 0,
+        "allies": [
+          {
+            "hp": 100,
+            "dead": false
+          },
+          {
+            "hp": 92.52,
+            "dead": false
+          },
+          {
+            "hp": 100,
+            "dead": false
+          }
+        ],
+        "groups": [],
+        "stats": {
+          "spawned": 15,
+          "volleys": 1,
+          "dogRuns": 1,
+          "dogHits": 1,
+          "torpedoes": 1,
+          "intercepts": 1,
+          "shieldHits": 0,
+          "disruptions": 0,
+          "peakEnemies": 4,
+          "peakHostile": 1
+        },
+        "events": [
+          {
+            "at": 4.01,
+            "kind": "jam",
+            "id": 1,
+            "count": 3
+          },
+          {
+            "at": 4.9,
+            "kind": "mark",
+            "squad": 1,
+            "target": 1,
+            "coordinated": false
+          },
+          {
+            "at": 7.4,
+            "kind": "attack",
+            "squad": 1,
+            "target": 1,
+            "cycle": 1
+          },
+          {
+            "at": 7.42,
+            "kind": "cover"
+          },
+          {
+            "at": 22,
+            "kind": "formation",
+            "pattern": 1
+          },
+          {
+            "at": 24.01,
+            "kind": "torpedo",
+            "id": 2,
+            "count": 4
+          },
+          {
+            "at": 24.9,
+            "kind": "mark",
+            "squad": 2,
+            "target": 2,
+            "coordinated": false
+          },
+          {
+            "at": 27.4,
+            "kind": "attack",
+            "squad": 2,
+            "target": 2,
+            "cycle": 1
+          },
+          {
+            "at": 27.42,
+            "kind": "cover"
+          },
+          {
+            "at": 44.01,
+            "kind": "formation",
+            "pattern": 0
+          },
+          {
+            "at": 46.01,
+            "kind": "crossfire",
+            "id": 3,
+            "count": 4
+          },
+          {
+            "at": 46.9,
+            "kind": "mark",
+            "squad": 3,
+            "target": 0,
+            "coordinated": false
+          },
+          {
+            "at": 49.41,
+            "kind": "attack",
+            "squad": 3,
+            "target": 0,
+            "cycle": 1
+          },
+          {
+            "at": 49.43,
+            "kind": "cover"
+          },
+          {
+            "at": 66.01,
+            "kind": "formation",
+            "pattern": 1
+          },
+          {
+            "at": 68,
+            "kind": "shield",
+            "id": 4,
+            "count": 4
+          },
+          {
+            "at": 68.89,
+            "kind": "mark",
+            "squad": 4,
+            "target": 1,
+            "coordinated": false
+          },
+          {
+            "at": 71.4,
+            "kind": "attack",
+            "squad": 4,
+            "target": 1,
+            "cycle": 1
+          },
+          {
+            "at": 71.42,
+            "kind": "cover"
+          },
+          {
+            "at": 71.83,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 88,
+            "kind": "formation",
+            "pattern": 0
+          }
+        ]
+      }
+    },
+    {
+      "key": "calm-9",
+      "status": "escortclear",
+      "hp": 100,
+      "convoy": {
+        "version": "2.3.0",
+        "stage": 2,
+        "time": 114.44,
+        "wave": 5,
+        "total": 5,
+        "distance": 1,
+        "formation": 0,
+        "allies": [
+          {
+            "hp": 100,
+            "dead": false
+          },
+          {
+            "hp": 90.24,
+            "dead": false
+          },
+          {
+            "hp": 100,
+            "dead": false
+          }
+        ],
+        "groups": [],
+        "stats": {
+          "spawned": 25,
+          "volleys": 3,
+          "dogRuns": 5,
+          "dogHits": 2,
+          "torpedoes": 2,
+          "intercepts": 2,
+          "shieldHits": 59,
+          "disruptions": 2,
+          "peakEnemies": 7,
+          "peakHostile": 1
+        },
+        "events": [
+          {
+            "at": 4.01,
+            "kind": "command",
+            "id": 1,
+            "count": 4
+          },
+          {
+            "at": 4.9,
+            "kind": "mark",
+            "squad": 1,
+            "target": 0,
+            "coordinated": true
+          },
+          {
+            "at": 6.6,
+            "kind": "leader-down",
+            "squad": 1
+          },
+          {
+            "at": 18,
+            "kind": "formation",
+            "pattern": 1
+          },
+          {
+            "at": 25.01,
+            "kind": "shield",
+            "id": 2,
+            "count": 5
+          },
+          {
+            "at": 25.9,
+            "kind": "mark",
+            "squad": 2,
+            "target": 2,
+            "coordinated": false
+          },
+          {
+            "at": 28.4,
+            "kind": "attack",
+            "squad": 2,
+            "target": 2,
+            "cycle": 1
+          },
+          {
+            "at": 28.42,
+            "kind": "cover"
+          },
+          {
+            "at": 36.01,
+            "kind": "formation",
+            "pattern": 2
+          },
+          {
+            "at": 47.01,
+            "kind": "jam",
+            "id": 3,
+            "count": 5
+          },
+          {
+            "at": 47.9,
+            "kind": "mark",
+            "squad": 3,
+            "target": 0,
+            "coordinated": false
+          },
+          {
+            "at": 50.41,
+            "kind": "attack",
+            "squad": 3,
+            "target": 0,
+            "cycle": 1
+          },
+          {
+            "at": 50.43,
+            "kind": "cover"
+          },
+          {
+            "at": 54.01,
+            "kind": "formation",
+            "pattern": 0
+          },
+          {
+            "at": 71.01,
+            "kind": "torpedo",
+            "id": 4,
+            "count": 5
+          },
+          {
+            "at": 71.9,
+            "kind": "mark",
+            "squad": 4,
+            "target": 1,
+            "coordinated": false
+          },
+          {
+            "at": 72.02,
+            "kind": "formation",
+            "pattern": 1
+          },
+          {
+            "at": 74.41,
+            "kind": "attack",
+            "squad": 4,
+            "target": 1,
+            "cycle": 1
+          },
+          {
+            "at": 74.41,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 74.42,
+            "kind": "cover"
+          },
+          {
+            "at": 74.84,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 90.01,
+            "kind": "formation",
+            "pattern": 2
+          },
+          {
+            "at": 94.01,
+            "kind": "command",
+            "id": 5,
+            "count": 6
+          },
+          {
+            "at": 94.89,
+            "kind": "mark",
+            "squad": 5,
+            "target": 1,
+            "coordinated": true
+          },
+          {
+            "at": 97.4,
+            "kind": "attack",
+            "squad": 5,
+            "target": 1,
+            "cycle": 1
+          },
+          {
+            "at": 97.41,
+            "kind": "cover"
+          },
+          {
+            "at": 98.59,
+            "kind": "leader-down",
+            "squad": 5
+          },
+          {
+            "at": 108.04,
+            "kind": "formation",
+            "pattern": 0
+          }
+        ]
+      }
+    }
+  ],
+  "samples": [
+    {
+      "wallSeconds": 10,
+      "key": "normal-3",
+      "seconds": 18.210000000000242,
+      "listeners": 57,
+      "heap": 77669467,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 20,
+      "key": "normal-3",
+      "seconds": 40.46666666666566,
+      "listeners": 57,
+      "heap": 103318984,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 31,
+      "key": "normal-6",
+      "seconds": 0.7500000000000007,
+      "listeners": 57,
+      "heap": 121868616,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 41,
+      "key": "normal-6",
+      "seconds": 23.00666666666664,
+      "listeners": 57,
+      "heap": 144313111,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 52,
+      "key": "normal-6",
+      "seconds": 29.51006666666629,
+      "listeners": 57,
+      "heap": 145461617,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 62,
+      "key": "normal-6",
+      "seconds": 29.91006666666628,
+      "listeners": 57,
+      "heap": 168648233,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 73,
+      "key": "normal-6",
+      "seconds": 30.350066666666272,
+      "listeners": 57,
+      "heap": 167229781,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 83,
+      "key": "normal-6",
+      "seconds": 30.750066666666264,
+      "listeners": 57,
+      "heap": 40741189,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 94,
+      "key": "normal-6",
+      "seconds": 59.11673333333134,
+      "listeners": 57,
+      "heap": 51913310,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 104,
+      "key": "normal-6",
+      "seconds": 87.4433999999965,
+      "listeners": 57,
+      "heap": 79203694,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 115,
+      "key": "normal-9",
+      "seconds": 16.986666666666977,
+      "listeners": 57,
+      "heap": 67567219,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 125,
+      "key": "normal-9",
+      "seconds": 37.219999999999175,
+      "listeners": 57,
+      "heap": 52143729,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 136,
+      "key": "normal-9",
+      "seconds": 57.45333333333137,
+      "listeners": 57,
+      "heap": 85508104,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 146,
+      "key": "normal-9",
+      "seconds": 79.70999999999685,
+      "listeners": 57,
+      "heap": 53495009,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 157,
+      "key": "normal-9",
+      "seconds": 99.94333333332912,
+      "listeners": 57,
+      "heap": 64185980,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 167,
+      "key": "calm-3",
+      "seconds": 3.6733333333333253,
+      "listeners": 57,
+      "heap": 61400854,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 178,
+      "key": "calm-3",
+      "seconds": 25.929999999999808,
+      "listeners": 57,
+      "heap": 87289406,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 188,
+      "key": "calm-3",
+      "seconds": 46.163333333332005,
+      "listeners": 57,
+      "heap": 40361800,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 199,
+      "key": "calm-6",
+      "seconds": 6.43666666666665,
+      "listeners": 57,
+      "heap": 64415835,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 209,
+      "key": "calm-6",
+      "seconds": 26.669999999999767,
+      "listeners": 57,
+      "heap": 76612351,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 220,
+      "key": "calm-6",
+      "seconds": 48.926666666665184,
+      "listeners": 57,
+      "heap": 50484698,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 230,
+      "key": "calm-6",
+      "seconds": 69.15999999999741,
+      "listeners": 57,
+      "heap": 55578480,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 241,
+      "key": "calm-6",
+      "seconds": 89.39333333332968,
+      "listeners": 57,
+      "heap": 85030035,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 251,
+      "key": "calm-9",
+      "seconds": 21.033333333333417,
+      "listeners": 57,
+      "heap": 55425798,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 262,
+      "key": "calm-9",
+      "seconds": 41.266666666665614,
+      "listeners": 57,
+      "heap": 71197978,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 272,
+      "key": "calm-9",
+      "seconds": 61.49999999999781,
+      "listeners": 57,
+      "heap": 72397679,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 283,
+      "key": "calm-9",
+      "seconds": 89.82666666666299,
+      "listeners": 57,
+      "heap": 84558475,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 293,
+      "key": "calm-9",
+      "seconds": 110.05999999999526,
+      "listeners": 57,
+      "heap": 41557069,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 304,
+      "key": "calm-9",
+      "seconds": 114.43999999999502,
+      "listeners": 57,
+      "heap": 67207530,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 314,
+      "key": "calm-9",
+      "seconds": 114.43999999999502,
+      "listeners": 57,
+      "heap": 76628832,
+      "rafPending": 1
+    }
+  ],
+  "pauseChecks": [
+    {
+      "unchanged": false
+    }
+  ],
+  "metrics": {
+    "listeners": 57,
+    "peakListeners": 58,
+    "rafCalls": 335,
+    "rafDone": 333,
+    "rafPending": 1,
+    "rafPeak": 2,
+    "errors": [],
+    "heap": 76628832
+  },
+  "runtime": {
+    "version": "1.9.3",
+    "build": "193r2",
+    "frames": 331,
+    "updates": 313,
+    "renders": 331,
+    "recoveries": 0,
+    "failures": 0,
+    "stopped": false,
+    "contextLost": false,
+    "pending": true,
+    "stage": "idle",
+    "lastFrameAge": 407,
+    "lastUpdateAge": 18702,
+    "lastRenderAge": 358,
+    "recoverySave": "none",
+    "faults": [],
+    "events": [
+      {
+        "at": 1791,
+        "kind": "detach",
+        "status": "unknown",
+        "stage": null,
+        "phase": "other",
+        "finale": null,
+        "wave": null,
+        "seconds": null,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "webgl"
+      },
+      {
+        "at": 2075,
+        "kind": "citadel-launch",
+        "status": "escortbrief",
+        "stage": 0,
+        "phase": "escort",
+        "finale": null,
+        "wave": 3,
+        "seconds": 115.65,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 2203,
+        "kind": "engine",
+        "status": "playing",
+        "stage": 0,
+        "phase": "escort",
+        "finale": null,
+        "wave": 3,
+        "seconds": 115.65,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 2234,
+        "kind": "transition",
+        "status": "playing",
+        "stage": 0,
+        "phase": "escort",
+        "finale": null,
+        "wave": 3,
+        "seconds": 117.67,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 31352,
+        "kind": "citadel-launch",
+        "status": "escortbrief",
+        "stage": 1,
+        "phase": "escort",
+        "finale": null,
+        "wave": 0,
+        "seconds": 424.88,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 31376,
+        "kind": "transition",
+        "status": "playing",
+        "stage": 1,
+        "phase": "escort",
+        "finale": null,
+        "wave": 0,
+        "seconds": 425.63,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 32331,
+        "kind": "engine",
+        "status": "playing",
+        "stage": 1,
+        "phase": "escort",
+        "finale": null,
+        "wave": 0,
+        "seconds": 425.63,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 32343,
+        "kind": "transition",
+        "status": "playing",
+        "stage": 1,
+        "phase": "escort",
+        "finale": null,
+        "wave": 0,
+        "seconds": 427.66,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 45683,
+        "kind": "arcade-pause",
+        "status": "paused",
+        "stage": 1,
+        "phase": "escort",
+        "finale": null,
+        "wave": 0,
+        "seconds": 453.96,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 85213,
+        "kind": "arcade-resume",
+        "status": "playing",
+        "stage": 1,
+        "phase": "escort",
+        "finale": null,
+        "wave": 0,
+        "seconds": 455.67,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 107391,
+        "kind": "citadel-launch",
+        "status": "escortbrief",
+        "stage": 2,
+        "phase": "escort",
+        "finale": null,
+        "wave": 0,
+        "seconds": 635.88,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 107420,
+        "kind": "transition",
+        "status": "playing",
+        "stage": 2,
+        "phase": "escort",
+        "finale": null,
+        "wave": 0,
+        "seconds": 636.68,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 108364,
+        "kind": "engine",
+        "status": "playing",
+        "stage": 2,
+        "phase": "escort",
+        "finale": null,
+        "wave": 0,
+        "seconds": 636.68,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 108383,
+        "kind": "transition",
+        "status": "playing",
+        "stage": 2,
+        "phase": "escort",
+        "finale": null,
+        "wave": 0,
+        "seconds": 638.71,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 166014,
+        "kind": "citadel-launch",
+        "status": "escortbrief",
+        "stage": 0,
+        "phase": "escort",
+        "finale": null,
+        "wave": 3,
+        "seconds": 115.32,
+        "mode": "calm",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 166589,
+        "kind": "transition",
+        "status": "playing",
+        "stage": 0,
+        "phase": "escort",
+        "finale": null,
+        "wave": 3,
+        "seconds": 116.97,
+        "mode": "calm",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 167968,
+        "kind": "engine",
+        "status": "playing",
+        "stage": 0,
+        "phase": "escort",
+        "finale": null,
+        "wave": 3,
+        "seconds": 116.97,
+        "mode": "calm",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 168022,
+        "kind": "transition",
+        "status": "playing",
+        "stage": 0,
+        "phase": "escort",
+        "finale": null,
+        "wave": 3,
+        "seconds": 118.99,
+        "mode": "calm",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 196583,
+        "kind": "citadel-launch",
+        "status": "escortbrief",
+        "stage": 1,
+        "phase": "escort",
+        "finale": null,
+        "wave": 0,
+        "seconds": 380.3,
+        "mode": "calm",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 196608,
+        "kind": "transition",
+        "status": "playing",
+        "stage": 1,
+        "phase": "escort",
+        "finale": null,
+        "wave": 0,
+        "seconds": 380.67,
+        "mode": "calm",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 197577,
+        "kind": "engine",
+        "status": "playing",
+        "stage": 1,
+        "phase": "escort",
+        "finale": null,
+        "wave": 0,
+        "seconds": 380.67,
+        "mode": "calm",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 197583,
+        "kind": "transition",
+        "status": "playing",
+        "stage": 1,
+        "phase": "escort",
+        "finale": null,
+        "wave": 0,
+        "seconds": 382.69,
+        "mode": "calm",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 242344,
+        "kind": "citadel-launch",
+        "status": "escortbrief",
+        "stage": 2,
+        "phase": "escort",
+        "finale": null,
+        "wave": 0,
+        "seconds": 577.83,
+        "mode": "calm",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 242376,
+        "kind": "transition",
+        "status": "playing",
+        "stage": 2,
+        "phase": "escort",
+        "finale": null,
+        "wave": 0,
+        "seconds": 578.63,
+        "mode": "calm",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 243334,
+        "kind": "engine",
+        "status": "playing",
+        "stage": 2,
+        "phase": "escort",
+        "finale": null,
+        "wave": 0,
+        "seconds": 578.63,
+        "mode": "calm",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 243347,
+        "kind": "transition",
+        "status": "playing",
+        "stage": 2,
+        "phase": "escort",
+        "finale": null,
+        "wave": 0,
+        "seconds": 580.66,
+        "mode": "calm",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 296971,
+        "kind": "transition",
+        "status": "escortclear",
+        "stage": 2,
+        "phase": "escort",
+        "finale": null,
+        "wave": 0,
+        "seconds": 692.27,
+        "mode": "calm",
+        "enemies": 0,
+        "renderer": "canvas"
+      }
+    ]
+  },
+  "geometry": {
+    "templates": 7
+  },
+  "renderStats": {
+    "items": 180,
+    "triangles": 10492,
+    "visibleTriangles": 5185,
+    "milliseconds": 47.80000000074506,
+    "templates": 1,
+    "meshes": 98,
+    "pixels": 519901
+  },
+  "sound": {
+    "version": "1.9.3",
+    "enabled": true,
+    "ready": true,
+    "preparedAvailable": true,
+    "preparedClips": 42,
+    "loadedClips": 16,
+    "loadingClips": 0,
+    "decodingOrFetching": 0,
+    "cachedBytes": 2184668,
+    "maxCachedBytes": 16777216,
+    "maxBuffers": 48,
+    "maxLoads": 4,
+    "contextState": "running",
+    "gameStatus": "escortclear",
+    "view": "arcade",
+    "blockedReason": "",
+    "gameBlockedReason": "",
+    "location": "convoy",
+    "activeVoices": 0,
+    "radioVoices": 0,
+    "humanVoices": 0,
+    "maxVoices": 14,
+    "deathVoiceChance": 0.3,
+    "deathVoiceCooldown": 6.5,
+    "captainPriority": false,
+    "backend": "recorded",
+    "lastPlayed": {
+      "kind": "shot",
+      "at": 281.2604081632653,
+      "location": "convoy",
+      "stage": 2,
+      "variant": 446,
+      "source": "game",
+      "backend": "recorded",
+      "clipId": "shot-convoy-01"
+    },
+    "lastError": "",
+    "played": {
+      "shot": 278,
+      "missile": 39,
+      "robot-hit": 74,
+      "robot-death": 56
+    },
+    "clipsPlayed": {
+      "shot-convoy-01": 93,
+      "shot-convoy-02": 92,
+      "missile-01": 20,
+      "missile-02": 19,
+      "robot-hit-01": 73,
+      "shot-convoy-03": 92,
+      "robot-death-01": 55
+    },
+    "blocked": {
+      "rate-limit": 4770
+    }
+  },
+  "voice": {
+    "version": "1.9.0",
+    "supported": true,
+    "enabled": true,
+    "busy": false,
+    "phase": "idle",
+    "kind": null,
+    "preview": false,
+    "started": false,
+    "voice": null,
+    "ruVoices": 0,
+    "maleCommanderAvailable": false,
+    "preparedAvailable": true,
+    "preparedClips": 110,
+    "backend": "recorded",
+    "source": "recorded",
+    "clipId": null,
+    "lastSpoken": {
+      "kind": "commander",
+      "text": "Команда, без паники. Откат предусмотрен планом.",
+      "spokenText": "Капитан на связи. Команда, без паники. Откат предусмотрен планом.",
+      "voice": "Капитан",
+      "source": "recorded",
+      "clipIds": [
+        "commander-12"
+      ],
+      "maleNameHint": false
+    },
+    "lastError": "",
+    "lastReason": "inactive",
+    "disposed": false
+  }
+}
