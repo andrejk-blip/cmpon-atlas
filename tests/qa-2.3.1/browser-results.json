@@ -1,0 +1,1149 @@
+{
+  "method": "Real cloud Chrome, 390px iframe; production assets, isolated mock tournament HTTP and storage; manual UI input",
+  "entries": [
+    {
+      "check": "network rejection: local game updates and shoots",
+      "report": {
+        "version": "2.3.1",
+        "scenario": "down",
+        "width": 390,
+        "state": "playing",
+        "elapsed": 0.8800000000000002,
+        "shots": 1,
+        "seed": 1442673226,
+        "score": 0,
+        "attached": false,
+        "localSaved": true,
+        "launch": {
+          "version": "2.3.1",
+          "local": true,
+          "connection": "unavailable",
+          "storage": "available",
+          "pending": 0,
+          "timeoutMs": 7000,
+          "events": [
+            {
+              "event": "network",
+              "endpoint": "config",
+              "status": 0
+            },
+            {
+              "event": "network",
+              "endpoint": "enter",
+              "status": 0
+            },
+            {
+              "event": "local-started",
+              "endpoint": "other",
+              "status": 0
+            }
+          ]
+        },
+        "runtime": {
+          "version": "1.9.3",
+          "build": "193r2",
+          "frames": 78,
+          "updates": 22,
+          "renders": 78,
+          "recoveries": 2,
+          "failures": 0,
+          "stopped": false,
+          "contextLost": false,
+          "pending": true,
+          "stage": "idle",
+          "lastFrameAge": 683,
+          "lastUpdateAge": 683,
+          "lastRenderAge": 511,
+          "recoverySave": "unavailable",
+          "faults": [],
+          "events": [
+            {
+              "at": 8475,
+              "kind": "detach",
+              "status": "unknown",
+              "stage": null,
+              "phase": "other",
+              "finale": null,
+              "wave": null,
+              "seconds": null,
+              "mode": "normal",
+              "enemies": 0,
+              "renderer": "webgl"
+            },
+            {
+              "at": 8926,
+              "kind": "engine",
+              "status": "menu",
+              "stage": 0,
+              "phase": "brief",
+              "finale": null,
+              "wave": 0,
+              "seconds": 0,
+              "mode": "normal",
+              "enemies": 0,
+              "renderer": "canvas"
+            },
+            {
+              "at": 8926,
+              "kind": "transition",
+              "status": "menu",
+              "stage": 0,
+              "phase": "brief",
+              "finale": null,
+              "wave": 0,
+              "seconds": 0,
+              "mode": "normal",
+              "enemies": 0,
+              "renderer": "canvas"
+            },
+            {
+              "at": 29614,
+              "kind": "frame-gap",
+              "status": "menu",
+              "stage": 0,
+              "phase": "brief",
+              "finale": null,
+              "wave": 0,
+              "seconds": 0,
+              "mode": "normal",
+              "enemies": 0,
+              "renderer": "canvas"
+            },
+            {
+              "at": 41363,
+              "kind": "frame-gap",
+              "status": "menu",
+              "stage": 0,
+              "phase": "brief",
+              "finale": null,
+              "wave": 0,
+              "seconds": 0,
+              "mode": "normal",
+              "enemies": 0,
+              "renderer": "canvas"
+            },
+            {
+              "at": 55427,
+              "kind": "engine",
+              "status": "briefing",
+              "stage": 0,
+              "phase": "orientation",
+              "finale": null,
+              "wave": 0,
+              "seconds": 0,
+              "mode": "calm",
+              "enemies": 0,
+              "renderer": "canvas"
+            },
+            {
+              "at": 55427,
+              "kind": "transition",
+              "status": "briefing",
+              "stage": 0,
+              "phase": "orientation",
+              "finale": null,
+              "wave": 0,
+              "seconds": 0,
+              "mode": "calm",
+              "enemies": 0,
+              "renderer": "canvas"
+            },
+            {
+              "at": 68824,
+              "kind": "citadel-launch",
+              "status": "briefing",
+              "stage": 0,
+              "phase": "orientation",
+              "finale": null,
+              "wave": 0,
+              "seconds": 0,
+              "mode": "calm",
+              "enemies": 0,
+              "renderer": "canvas"
+            },
+            {
+              "at": 69236,
+              "kind": "transition",
+              "status": "playing",
+              "stage": 0,
+              "phase": "orientation",
+              "finale": null,
+              "wave": 0,
+              "seconds": 0.04,
+              "mode": "calm",
+              "enemies": 0,
+              "renderer": "canvas"
+            }
+          ]
+        },
+        "errors": []
+      }
+    },
+    {
+      "check": "paused before reload",
+      "report": {
+        "version": "2.3.1",
+        "scenario": "down",
+        "width": 390,
+        "state": "paused",
+        "elapsed": 0.9200000000000003,
+        "shots": 1,
+        "seed": 1442673226,
+        "score": 0,
+        "attached": false,
+        "localSaved": true,
+        "launch": {
+          "version": "2.3.1",
+          "local": true,
+          "connection": "unavailable",
+          "storage": "available",
+          "pending": 0,
+          "timeoutMs": 7000,
+          "events": [
+            {
+              "event": "network",
+              "endpoint": "config",
+              "status": 0
+            },
+            {
+              "event": "network",
+              "endpoint": "enter",
+              "status": 0
+            },
+            {
+              "event": "local-started",
+              "endpoint": "other",
+              "status": 0
+            }
+          ]
+        },
+        "runtime": {
+          "version": "1.9.3",
+          "build": "193r2",
+          "frames": 85,
+          "updates": 23,
+          "renders": 85,
+          "recoveries": 2,
+          "failures": 0,
+          "stopped": false,
+          "contextLost": false,
+          "pending": true,
+          "stage": "idle",
+          "lastFrameAge": 385,
+          "lastUpdateAge": 5850,
+          "lastRenderAge": 53,
+          "recoverySave": "unavailable",
+          "faults": [],
+          "events": [
+            {
+              "at": 8475,
+              "kind": "detach",
+              "status": "unknown",
+              "stage": null,
+              "phase": "other",
+              "finale": null,
+              "wave": null,
+              "seconds": null,
+              "mode": "normal",
+              "enemies": 0,
+              "renderer": "webgl"
+            },
+            {
+              "at": 8926,
+              "kind": "engine",
+              "status": "menu",
+              "stage": 0,
+              "phase": "brief",
+              "finale": null,
+              "wave": 0,
+              "seconds": 0,
+              "mode": "normal",
+              "enemies": 0,
+              "renderer": "canvas"
+            },
+            {
+              "at": 8926,
+              "kind": "transition",
+              "status": "menu",
+              "stage": 0,
+              "phase": "brief",
+              "finale": null,
+              "wave": 0,
+              "seconds": 0,
+              "mode": "normal",
+              "enemies": 0,
+              "renderer": "canvas"
+            },
+            {
+              "at": 29614,
+              "kind": "frame-gap",
+              "status": "menu",
+              "stage": 0,
+              "phase": "brief",
+              "finale": null,
+              "wave": 0,
+              "seconds": 0,
+              "mode": "normal",
+              "enemies": 0,
+              "renderer": "canvas"
+            },
+            {
+              "at": 41363,
+              "kind": "frame-gap",
+              "status": "menu",
+              "stage": 0,
+              "phase": "brief",
+              "finale": null,
+              "wave": 0,
+              "seconds": 0,
+              "mode": "normal",
+              "enemies": 0,
+              "renderer": "canvas"
+            },
+            {
+              "at": 55427,
+              "kind": "engine",
+              "status": "briefing",
+              "stage": 0,
+              "phase": "orientation",
+              "finale": null,
+              "wave": 0,
+              "seconds": 0,
+              "mode": "calm",
+              "enemies": 0,
+              "renderer": "canvas"
+            },
+            {
+              "at": 55427,
+              "kind": "transition",
+              "status": "briefing",
+              "stage": 0,
+              "phase": "orientation",
+              "finale": null,
+              "wave": 0,
+              "seconds": 0,
+              "mode": "calm",
+              "enemies": 0,
+              "renderer": "canvas"
+            },
+            {
+              "at": 68824,
+              "kind": "citadel-launch",
+              "status": "briefing",
+              "stage": 0,
+              "phase": "orientation",
+              "finale": null,
+              "wave": 0,
+              "seconds": 0,
+              "mode": "calm",
+              "enemies": 0,
+              "renderer": "canvas"
+            },
+            {
+              "at": 69236,
+              "kind": "transition",
+              "status": "playing",
+              "stage": 0,
+              "phase": "orientation",
+              "finale": null,
+              "wave": 0,
+              "seconds": 0.04,
+              "mode": "calm",
+              "enemies": 0,
+              "renderer": "canvas"
+            },
+            {
+              "at": 89967,
+              "kind": "arcade-pause",
+              "status": "playing",
+              "stage": 0,
+              "phase": "orientation",
+              "finale": null,
+              "wave": 0,
+              "seconds": 0.92,
+              "mode": "calm",
+              "enemies": 0,
+              "renderer": "canvas"
+            },
+            {
+              "at": 90019,
+              "kind": "transition",
+              "status": "paused",
+              "stage": 0,
+              "phase": "orientation",
+              "finale": null,
+              "wave": 0,
+              "seconds": 0.92,
+              "mode": "calm",
+              "enemies": 0,
+              "renderer": "canvas"
+            }
+          ]
+        },
+        "errors": []
+      }
+    },
+    {
+      "check": "restored after reload, paused",
+      "report": {
+        "version": "2.3.1",
+        "scenario": "down",
+        "width": 390,
+        "state": "paused",
+        "elapsed": 0.9200000000000003,
+        "shots": 1,
+        "seed": 1442673226,
+        "score": 0,
+        "attached": false,
+        "localSaved": true,
+        "launch": {
+          "version": "2.3.1",
+          "local": true,
+          "connection": "unavailable",
+          "storage": "available",
+          "pending": 0,
+          "timeoutMs": 7000,
+          "events": [
+            {
+              "event": "network",
+              "endpoint": "config",
+              "status": 0
+            },
+            {
+              "event": "local-resumed",
+              "endpoint": "other",
+              "status": 0
+            }
+          ]
+        },
+        "runtime": {
+          "version": "1.9.3",
+          "build": "193r2",
+          "frames": 14,
+          "updates": 0,
+          "renders": 14,
+          "recoveries": 0,
+          "failures": 0,
+          "stopped": false,
+          "contextLost": false,
+          "pending": true,
+          "stage": "idle",
+          "lastFrameAge": 869,
+          "lastUpdateAge": 13243,
+          "lastRenderAge": 505,
+          "recoverySave": "none",
+          "faults": [],
+          "events": [
+            {
+              "at": 5363,
+              "kind": "detach",
+              "status": "unknown",
+              "stage": null,
+              "phase": "other",
+              "finale": null,
+              "wave": null,
+              "seconds": null,
+              "mode": "normal",
+              "enemies": 0,
+              "renderer": "webgl"
+            },
+            {
+              "at": 5594,
+              "kind": "engine",
+              "status": "menu",
+              "stage": 0,
+              "phase": "brief",
+              "finale": null,
+              "wave": 0,
+              "seconds": 0,
+              "mode": "normal",
+              "enemies": 0,
+              "renderer": "canvas"
+            },
+            {
+              "at": 5594,
+              "kind": "transition",
+              "status": "menu",
+              "stage": 0,
+              "phase": "brief",
+              "finale": null,
+              "wave": 0,
+              "seconds": 0,
+              "mode": "normal",
+              "enemies": 0,
+              "renderer": "canvas"
+            },
+            {
+              "at": 12257,
+              "kind": "engine",
+              "status": "paused",
+              "stage": 0,
+              "phase": "orientation",
+              "finale": null,
+              "wave": 0,
+              "seconds": 0.92,
+              "mode": "calm",
+              "enemies": 0,
+              "renderer": "canvas"
+            },
+            {
+              "at": 12257,
+              "kind": "transition",
+              "status": "paused",
+              "stage": 0,
+              "phase": "orientation",
+              "finale": null,
+              "wave": 0,
+              "seconds": 0.92,
+              "mode": "calm",
+              "enemies": 0,
+              "renderer": "canvas"
+            }
+          ]
+        },
+        "errors": []
+      }
+    },
+    {
+      "check": "resumed restored game",
+      "report": {
+        "version": "2.3.1",
+        "scenario": "down",
+        "width": 390,
+        "state": "playing",
+        "elapsed": 1.4800000000000006,
+        "shots": 1,
+        "seed": 1442673226,
+        "score": 0,
+        "attached": false,
+        "localSaved": true,
+        "launch": {
+          "version": "2.3.1",
+          "local": true,
+          "connection": "unavailable",
+          "storage": "available",
+          "pending": 0,
+          "timeoutMs": 7000,
+          "events": [
+            {
+              "event": "network",
+              "endpoint": "config",
+              "status": 0
+            },
+            {
+              "event": "local-resumed",
+              "endpoint": "other",
+              "status": 0
+            }
+          ]
+        },
+        "runtime": {
+          "version": "1.9.3",
+          "build": "193r2",
+          "frames": 30,
+          "updates": 14,
+          "renders": 30,
+          "recoveries": 0,
+          "failures": 0,
+          "stopped": false,
+          "contextLost": false,
+          "pending": true,
+          "stage": "idle",
+          "lastFrameAge": 449,
+          "lastUpdateAge": 448,
+          "lastRenderAge": 44,
+          "recoverySave": "none",
+          "faults": [],
+          "events": [
+            {
+              "at": 5363,
+              "kind": "detach",
+              "status": "unknown",
+              "stage": null,
+              "phase": "other",
+              "finale": null,
+              "wave": null,
+              "seconds": null,
+              "mode": "normal",
+              "enemies": 0,
+              "renderer": "webgl"
+            },
+            {
+              "at": 5594,
+              "kind": "engine",
+              "status": "menu",
+              "stage": 0,
+              "phase": "brief",
+              "finale": null,
+              "wave": 0,
+              "seconds": 0,
+              "mode": "normal",
+              "enemies": 0,
+              "renderer": "canvas"
+            },
+            {
+              "at": 5594,
+              "kind": "transition",
+              "status": "menu",
+              "stage": 0,
+              "phase": "brief",
+              "finale": null,
+              "wave": 0,
+              "seconds": 0,
+              "mode": "normal",
+              "enemies": 0,
+              "renderer": "canvas"
+            },
+            {
+              "at": 12257,
+              "kind": "engine",
+              "status": "paused",
+              "stage": 0,
+              "phase": "orientation",
+              "finale": null,
+              "wave": 0,
+              "seconds": 0.92,
+              "mode": "calm",
+              "enemies": 0,
+              "renderer": "canvas"
+            },
+            {
+              "at": 12257,
+              "kind": "transition",
+              "status": "paused",
+              "stage": 0,
+              "phase": "orientation",
+              "finale": null,
+              "wave": 0,
+              "seconds": 0.92,
+              "mode": "calm",
+              "enemies": 0,
+              "renderer": "canvas"
+            },
+            {
+              "at": 20161,
+              "kind": "arcade-resume",
+              "status": "paused",
+              "stage": 0,
+              "phase": "orientation",
+              "finale": null,
+              "wave": 0,
+              "seconds": 0.92,
+              "mode": "calm",
+              "enemies": 0,
+              "renderer": "canvas"
+            },
+            {
+              "at": 20298,
+              "kind": "transition",
+              "status": "playing",
+              "stage": 0,
+              "phase": "orientation",
+              "finale": null,
+              "wave": 0,
+              "seconds": 0.96,
+              "mode": "calm",
+              "enemies": 0,
+              "renderer": "canvas"
+            }
+          ]
+        },
+        "errors": []
+      }
+    },
+    {
+      "check": "hanging request automatically falls back",
+      "report": {
+        "version": "2.3.1",
+        "scenario": "hang",
+        "width": 390,
+        "state": "briefing",
+        "elapsed": 0,
+        "shots": 0,
+        "seed": 1442761196,
+        "score": 0,
+        "attached": false,
+        "localSaved": true,
+        "launch": {
+          "version": "2.3.1",
+          "local": true,
+          "connection": "unavailable",
+          "storage": "available",
+          "pending": 0,
+          "timeoutMs": 7000,
+          "events": [
+            {
+              "event": "timeout",
+              "endpoint": "config",
+              "status": 0
+            },
+            {
+              "event": "local-started",
+              "endpoint": "other",
+              "status": 0
+            }
+          ]
+        },
+        "runtime": {
+          "version": "1.9.3",
+          "build": "193r2",
+          "frames": 10,
+          "updates": 0,
+          "renders": 10,
+          "recoveries": 0,
+          "failures": 0,
+          "stopped": false,
+          "contextLost": false,
+          "pending": true,
+          "stage": "idle",
+          "lastFrameAge": 969,
+          "lastUpdateAge": 9214,
+          "lastRenderAge": 657,
+          "recoverySave": "none",
+          "faults": [],
+          "events": [
+            {
+              "at": 5354,
+              "kind": "detach",
+              "status": "unknown",
+              "stage": null,
+              "phase": "other",
+              "finale": null,
+              "wave": null,
+              "seconds": null,
+              "mode": "normal",
+              "enemies": 0,
+              "renderer": "webgl"
+            },
+            {
+              "at": 5623,
+              "kind": "engine",
+              "status": "menu",
+              "stage": 0,
+              "phase": "brief",
+              "finale": null,
+              "wave": 0,
+              "seconds": 0,
+              "mode": "normal",
+              "enemies": 0,
+              "renderer": "canvas"
+            },
+            {
+              "at": 5623,
+              "kind": "transition",
+              "status": "menu",
+              "stage": 0,
+              "phase": "brief",
+              "finale": null,
+              "wave": 0,
+              "seconds": 0,
+              "mode": "normal",
+              "enemies": 0,
+              "renderer": "canvas"
+            },
+            {
+              "at": 13346,
+              "kind": "engine",
+              "status": "briefing",
+              "stage": 0,
+              "phase": "orientation",
+              "finale": null,
+              "wave": 0,
+              "seconds": 0,
+              "mode": "calm",
+              "enemies": 0,
+              "renderer": "canvas"
+            },
+            {
+              "at": 13346,
+              "kind": "transition",
+              "status": "briefing",
+              "stage": 0,
+              "phase": "orientation",
+              "finale": null,
+              "wave": 0,
+              "seconds": 0,
+              "mode": "calm",
+              "enemies": 0,
+              "renderer": "canvas"
+            }
+          ]
+        },
+        "errors": []
+      }
+    },
+    {
+      "check": "hanging request: game updates and shoots after resume from frame-gap pause",
+      "report": {
+        "version": "2.3.1",
+        "scenario": "hang",
+        "width": 390,
+        "state": "playing",
+        "elapsed": 0.4799999999999999,
+        "shots": 1,
+        "seed": 1442761196,
+        "score": 0,
+        "attached": false,
+        "localSaved": true,
+        "launch": {
+          "version": "2.3.1",
+          "local": true,
+          "connection": "unavailable",
+          "storage": "available",
+          "pending": 0,
+          "timeoutMs": 7000,
+          "events": [
+            {
+              "event": "timeout",
+              "endpoint": "config",
+              "status": 0
+            },
+            {
+              "event": "local-started",
+              "endpoint": "other",
+              "status": 0
+            }
+          ]
+        },
+        "runtime": {
+          "version": "1.9.3",
+          "build": "193r2",
+          "frames": 51,
+          "updates": 12,
+          "renders": 51,
+          "recoveries": 1,
+          "failures": 0,
+          "stopped": false,
+          "contextLost": false,
+          "pending": true,
+          "stage": "idle",
+          "lastFrameAge": 609,
+          "lastUpdateAge": 608,
+          "lastRenderAge": 17,
+          "recoverySave": "unavailable",
+          "faults": [],
+          "events": [
+            {
+              "at": 5354,
+              "kind": "detach",
+              "status": "unknown",
+              "stage": null,
+              "phase": "other",
+              "finale": null,
+              "wave": null,
+              "seconds": null,
+              "mode": "normal",
+              "enemies": 0,
+              "renderer": "webgl"
+            },
+            {
+              "at": 5623,
+              "kind": "engine",
+              "status": "menu",
+              "stage": 0,
+              "phase": "brief",
+              "finale": null,
+              "wave": 0,
+              "seconds": 0,
+              "mode": "normal",
+              "enemies": 0,
+              "renderer": "canvas"
+            },
+            {
+              "at": 5623,
+              "kind": "transition",
+              "status": "menu",
+              "stage": 0,
+              "phase": "brief",
+              "finale": null,
+              "wave": 0,
+              "seconds": 0,
+              "mode": "normal",
+              "enemies": 0,
+              "renderer": "canvas"
+            },
+            {
+              "at": 13346,
+              "kind": "engine",
+              "status": "briefing",
+              "stage": 0,
+              "phase": "orientation",
+              "finale": null,
+              "wave": 0,
+              "seconds": 0,
+              "mode": "calm",
+              "enemies": 0,
+              "renderer": "canvas"
+            },
+            {
+              "at": 13346,
+              "kind": "transition",
+              "status": "briefing",
+              "stage": 0,
+              "phase": "orientation",
+              "finale": null,
+              "wave": 0,
+              "seconds": 0,
+              "mode": "calm",
+              "enemies": 0,
+              "renderer": "canvas"
+            },
+            {
+              "at": 22893,
+              "kind": "citadel-launch",
+              "status": "briefing",
+              "stage": 0,
+              "phase": "orientation",
+              "finale": null,
+              "wave": 0,
+              "seconds": 0,
+              "mode": "calm",
+              "enemies": 0,
+              "renderer": "canvas"
+            },
+            {
+              "at": 22973,
+              "kind": "frame-gap",
+              "status": "playing",
+              "stage": 0,
+              "phase": "orientation",
+              "finale": null,
+              "wave": 0,
+              "seconds": 0,
+              "mode": "calm",
+              "enemies": 0,
+              "renderer": "canvas"
+            },
+            {
+              "at": 23543,
+              "kind": "transition",
+              "status": "paused",
+              "stage": 0,
+              "phase": "orientation",
+              "finale": null,
+              "wave": 0,
+              "seconds": 0,
+              "mode": "calm",
+              "enemies": 0,
+              "renderer": "canvas"
+            },
+            {
+              "at": 39264,
+              "kind": "arcade-resume",
+              "status": "paused",
+              "stage": 0,
+              "phase": "orientation",
+              "finale": null,
+              "wave": 0,
+              "seconds": 0,
+              "mode": "calm",
+              "enemies": 0,
+              "renderer": "canvas"
+            },
+            {
+              "at": 39544,
+              "kind": "transition",
+              "status": "playing",
+              "stage": 0,
+              "phase": "orientation",
+              "finale": null,
+              "wave": 0,
+              "seconds": 0.04,
+              "mode": "calm",
+              "enemies": 0,
+              "renderer": "canvas"
+            }
+          ]
+        },
+        "errors": []
+      }
+    },
+    {
+      "check": "ranking available: game updates, shoots and saves",
+      "report": {
+        "version": "2.3.1",
+        "scenario": "ok",
+        "width": 390,
+        "state": "playing",
+        "elapsed": 0.5199999999999999,
+        "shots": 1,
+        "seed": 417147,
+        "score": 0,
+        "attached": true,
+        "localSaved": true,
+        "launch": {
+          "version": "2.3.1",
+          "local": false,
+          "connection": "connected",
+          "storage": "available",
+          "pending": 0,
+          "timeoutMs": 7000,
+          "events": [
+            {
+              "event": "response",
+              "endpoint": "config",
+              "status": 200
+            },
+            {
+              "event": "response",
+              "endpoint": "enter",
+              "status": 200
+            },
+            {
+              "event": "response",
+              "endpoint": "me",
+              "status": 200
+            },
+            {
+              "event": "response",
+              "endpoint": "config",
+              "status": 200
+            },
+            {
+              "event": "response",
+              "endpoint": "me",
+              "status": 200
+            },
+            {
+              "event": "response",
+              "endpoint": "start",
+              "status": 200
+            },
+            {
+              "event": "ranked-started",
+              "endpoint": "other",
+              "status": 0
+            },
+            {
+              "event": "response",
+              "endpoint": "save",
+              "status": 200
+            },
+            {
+              "event": "response",
+              "endpoint": "save",
+              "status": 200
+            },
+            {
+              "event": "response",
+              "endpoint": "save",
+              "status": 200
+            }
+          ]
+        },
+        "runtime": {
+          "version": "1.9.3",
+          "build": "193r2",
+          "frames": 89,
+          "updates": 13,
+          "renders": 89,
+          "recoveries": 0,
+          "failures": 0,
+          "stopped": false,
+          "contextLost": false,
+          "pending": true,
+          "stage": "idle",
+          "lastFrameAge": 889,
+          "lastUpdateAge": 888,
+          "lastRenderAge": 618,
+          "recoverySave": "none",
+          "faults": [],
+          "events": [
+            {
+              "at": 6335,
+              "kind": "detach",
+              "status": "unknown",
+              "stage": null,
+              "phase": "other",
+              "finale": null,
+              "wave": null,
+              "seconds": null,
+              "mode": "normal",
+              "enemies": 0,
+              "renderer": "webgl"
+            },
+            {
+              "at": 7339,
+              "kind": "engine",
+              "status": "menu",
+              "stage": 0,
+              "phase": "brief",
+              "finale": null,
+              "wave": 0,
+              "seconds": 0,
+              "mode": "normal",
+              "enemies": 0,
+              "renderer": "canvas"
+            },
+            {
+              "at": 7339,
+              "kind": "transition",
+              "status": "menu",
+              "stage": 0,
+              "phase": "brief",
+              "finale": null,
+              "wave": 0,
+              "seconds": 0,
+              "mode": "normal",
+              "enemies": 0,
+              "renderer": "canvas"
+            },
+            {
+              "at": 39370,
+              "kind": "engine",
+              "status": "briefing",
+              "stage": 0,
+              "phase": "orientation",
+              "finale": null,
+              "wave": 0,
+              "seconds": 0,
+              "mode": "calm",
+              "enemies": 0,
+              "renderer": "canvas"
+            },
+            {
+              "at": 39370,
+              "kind": "transition",
+              "status": "briefing",
+              "stage": 0,
+              "phase": "orientation",
+              "finale": null,
+              "wave": 0,
+              "seconds": 0,
+              "mode": "calm",
+              "enemies": 0,
+              "renderer": "canvas"
+            },
+            {
+              "at": 66927,
+              "kind": "citadel-launch",
+              "status": "briefing",
+              "stage": 0,
+              "phase": "orientation",
+              "finale": null,
+              "wave": 0,
+              "seconds": 0,
+              "mode": "calm",
+              "enemies": 0,
+              "renderer": "canvas"
+            },
+            {
+              "at": 67061,
+              "kind": "transition",
+              "status": "playing",
+              "stage": 0,
+              "phase": "orientation",
+              "finale": null,
+              "wave": 0,
+              "seconds": 0.04,
+              "mode": "calm",
+              "enemies": 0,
+              "renderer": "canvas"
+            }
+          ]
+        },
+        "errors": []
+      }
+    }
+  ]
+}
