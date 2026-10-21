@@ -1,0 +1,632 @@
+{
+  "pass": true,
+  "method": "Node VM. 14 direct mission-entry fixtures per mode; pause/save and old-save contracts, not campaign completion.",
+  "passed": 57,
+  "failed": 0,
+  "rows": [
+    {
+      "name": "pause-save-1-normal",
+      "pass": true,
+      "level": 1,
+      "mode": "normal",
+      "continuedSeconds": 2
+    },
+    {
+      "name": "pause-save-2-normal",
+      "pass": true,
+      "level": 2,
+      "mode": "normal",
+      "continuedSeconds": 2
+    },
+    {
+      "name": "pause-save-3-normal",
+      "pass": true,
+      "level": 3,
+      "mode": "normal",
+      "continuedSeconds": 2
+    },
+    {
+      "name": "pause-save-4-normal",
+      "pass": true,
+      "level": 4,
+      "mode": "normal",
+      "continuedSeconds": 2
+    },
+    {
+      "name": "pause-save-5-normal",
+      "pass": true,
+      "level": 5,
+      "mode": "normal",
+      "continuedSeconds": 2
+    },
+    {
+      "name": "pause-save-6-normal",
+      "pass": true,
+      "level": 6,
+      "mode": "normal",
+      "continuedSeconds": 2
+    },
+    {
+      "name": "pause-save-7-normal",
+      "pass": true,
+      "level": 7,
+      "mode": "normal",
+      "continuedSeconds": 2
+    },
+    {
+      "name": "pause-save-8-normal",
+      "pass": true,
+      "level": 8,
+      "mode": "normal",
+      "continuedSeconds": 2
+    },
+    {
+      "name": "pause-save-9-normal",
+      "pass": true,
+      "level": 9,
+      "mode": "normal",
+      "continuedSeconds": 2
+    },
+    {
+      "name": "pause-save-10-normal",
+      "pass": true,
+      "level": 10,
+      "mode": "normal",
+      "continuedSeconds": 2
+    },
+    {
+      "name": "pause-save-11-normal",
+      "pass": true,
+      "level": 11,
+      "mode": "normal",
+      "continuedSeconds": 2
+    },
+    {
+      "name": "pause-save-12-normal",
+      "pass": true,
+      "level": 12,
+      "mode": "normal",
+      "continuedSeconds": 2
+    },
+    {
+      "name": "pause-save-13-normal",
+      "pass": true,
+      "level": 13,
+      "mode": "normal",
+      "continuedSeconds": 2
+    },
+    {
+      "name": "pause-save-14-normal",
+      "pass": true,
+      "level": 14,
+      "mode": "normal",
+      "continuedSeconds": 2
+    },
+    {
+      "name": "pause-save-1-calm",
+      "pass": true,
+      "level": 1,
+      "mode": "calm",
+      "continuedSeconds": 2
+    },
+    {
+      "name": "pause-save-2-calm",
+      "pass": true,
+      "level": 2,
+      "mode": "calm",
+      "continuedSeconds": 2
+    },
+    {
+      "name": "pause-save-3-calm",
+      "pass": true,
+      "level": 3,
+      "mode": "calm",
+      "continuedSeconds": 2
+    },
+    {
+      "name": "pause-save-4-calm",
+      "pass": true,
+      "level": 4,
+      "mode": "calm",
+      "continuedSeconds": 2
+    },
+    {
+      "name": "pause-save-5-calm",
+      "pass": true,
+      "level": 5,
+      "mode": "calm",
+      "continuedSeconds": 2
+    },
+    {
+      "name": "pause-save-6-calm",
+      "pass": true,
+      "level": 6,
+      "mode": "calm",
+      "continuedSeconds": 2
+    },
+    {
+      "name": "pause-save-7-calm",
+      "pass": true,
+      "level": 7,
+      "mode": "calm",
+      "continuedSeconds": 2
+    },
+    {
+      "name": "pause-save-8-calm",
+      "pass": true,
+      "level": 8,
+      "mode": "calm",
+      "continuedSeconds": 2
+    },
+    {
+      "name": "pause-save-9-calm",
+      "pass": true,
+      "level": 9,
+      "mode": "calm",
+      "continuedSeconds": 2
+    },
+    {
+      "name": "pause-save-10-calm",
+      "pass": true,
+      "level": 10,
+      "mode": "calm",
+      "continuedSeconds": 2
+    },
+    {
+      "name": "pause-save-11-calm",
+      "pass": true,
+      "level": 11,
+      "mode": "calm",
+      "continuedSeconds": 2
+    },
+    {
+      "name": "pause-save-12-calm",
+      "pass": true,
+      "level": 12,
+      "mode": "calm",
+      "continuedSeconds": 2
+    },
+    {
+      "name": "pause-save-13-calm",
+      "pass": true,
+      "level": 13,
+      "mode": "calm",
+      "continuedSeconds": 2
+    },
+    {
+      "name": "pause-save-14-calm",
+      "pass": true,
+      "level": 14,
+      "mode": "calm",
+      "continuedSeconds": 2
+    },
+    {
+      "name": "legacy-250-1-normal",
+      "pass": true,
+      "level": 1,
+      "mode": "normal",
+      "from": "2.5.0",
+      "continuedSeconds": 2
+    },
+    {
+      "name": "legacy-250-2-normal",
+      "pass": true,
+      "level": 2,
+      "mode": "normal",
+      "from": "2.5.0",
+      "continuedSeconds": 2
+    },
+    {
+      "name": "legacy-250-3-normal",
+      "pass": true,
+      "level": 3,
+      "mode": "normal",
+      "from": "2.5.0",
+      "continuedSeconds": 2
+    },
+    {
+      "name": "legacy-250-4-normal",
+      "pass": true,
+      "level": 4,
+      "mode": "normal",
+      "from": "2.5.0",
+      "continuedSeconds": 2
+    },
+    {
+      "name": "legacy-250-5-normal",
+      "pass": true,
+      "level": 5,
+      "mode": "normal",
+      "from": "2.5.0",
+      "continuedSeconds": 2
+    },
+    {
+      "name": "legacy-250-6-normal",
+      "pass": true,
+      "level": 6,
+      "mode": "normal",
+      "from": "2.5.0",
+      "continuedSeconds": 2
+    },
+    {
+      "name": "legacy-250-7-normal",
+      "pass": true,
+      "level": 7,
+      "mode": "normal",
+      "from": "2.5.0",
+      "continuedSeconds": 2
+    },
+    {
+      "name": "legacy-250-8-normal",
+      "pass": true,
+      "level": 8,
+      "mode": "normal",
+      "from": "2.5.0",
+      "continuedSeconds": 2
+    },
+    {
+      "name": "legacy-250-9-normal",
+      "pass": true,
+      "level": 9,
+      "mode": "normal",
+      "from": "2.5.0",
+      "continuedSeconds": 2
+    },
+    {
+      "name": "legacy-250-10-normal",
+      "pass": true,
+      "level": 10,
+      "mode": "normal",
+      "from": "2.5.0",
+      "continuedSeconds": 2
+    },
+    {
+      "name": "legacy-250-11-normal",
+      "pass": true,
+      "level": 11,
+      "mode": "normal",
+      "from": "2.5.0",
+      "continuedSeconds": 2
+    },
+    {
+      "name": "legacy-250-12-normal",
+      "pass": true,
+      "level": 12,
+      "mode": "normal",
+      "from": "2.5.0",
+      "continuedSeconds": 2
+    },
+    {
+      "name": "legacy-250-13-normal",
+      "pass": true,
+      "level": 13,
+      "mode": "normal",
+      "from": "2.5.0",
+      "continuedSeconds": 2
+    },
+    {
+      "name": "legacy-250-14-normal",
+      "pass": true,
+      "level": 14,
+      "mode": "normal",
+      "from": "2.5.0",
+      "continuedSeconds": 2
+    },
+    {
+      "name": "legacy-250-1-calm",
+      "pass": true,
+      "level": 1,
+      "mode": "calm",
+      "from": "2.5.0",
+      "continuedSeconds": 2
+    },
+    {
+      "name": "legacy-250-2-calm",
+      "pass": true,
+      "level": 2,
+      "mode": "calm",
+      "from": "2.5.0",
+      "continuedSeconds": 2
+    },
+    {
+      "name": "legacy-250-3-calm",
+      "pass": true,
+      "level": 3,
+      "mode": "calm",
+      "from": "2.5.0",
+      "continuedSeconds": 2
+    },
+    {
+      "name": "legacy-250-4-calm",
+      "pass": true,
+      "level": 4,
+      "mode": "calm",
+      "from": "2.5.0",
+      "continuedSeconds": 2
+    },
+    {
+      "name": "legacy-250-5-calm",
+      "pass": true,
+      "level": 5,
+      "mode": "calm",
+      "from": "2.5.0",
+      "continuedSeconds": 2
+    },
+    {
+      "name": "legacy-250-6-calm",
+      "pass": true,
+      "level": 6,
+      "mode": "calm",
+      "from": "2.5.0",
+      "continuedSeconds": 2
+    },
+    {
+      "name": "legacy-250-7-calm",
+      "pass": true,
+      "level": 7,
+      "mode": "calm",
+      "from": "2.5.0",
+      "continuedSeconds": 2
+    },
+    {
+      "name": "legacy-250-8-calm",
+      "pass": true,
+      "level": 8,
+      "mode": "calm",
+      "from": "2.5.0",
+      "continuedSeconds": 2
+    },
+    {
+      "name": "legacy-250-9-calm",
+      "pass": true,
+      "level": 9,
+      "mode": "calm",
+      "from": "2.5.0",
+      "continuedSeconds": 2
+    },
+    {
+      "name": "legacy-250-10-calm",
+      "pass": true,
+      "level": 10,
+      "mode": "calm",
+      "from": "2.5.0",
+      "continuedSeconds": 2
+    },
+    {
+      "name": "legacy-250-11-calm",
+      "pass": true,
+      "level": 11,
+      "mode": "calm",
+      "from": "2.5.0",
+      "continuedSeconds": 2
+    },
+    {
+      "name": "legacy-250-12-calm",
+      "pass": true,
+      "level": 12,
+      "mode": "calm",
+      "from": "2.5.0",
+      "continuedSeconds": 2
+    },
+    {
+      "name": "legacy-250-13-calm",
+      "pass": true,
+      "level": 13,
+      "mode": "calm",
+      "from": "2.5.0",
+      "continuedSeconds": 2
+    },
+    {
+      "name": "legacy-250-14-calm",
+      "pass": true,
+      "level": 14,
+      "mode": "calm",
+      "from": "2.5.0",
+      "continuedSeconds": 2
+    },
+    {
+      "name": "idempotent-install",
+      "pass": true,
+      "modules": [
+        "assets/citadel-mrg-v2.6.0.js",
+        "assets/citadel-mrg-view-v2.6.0.js",
+        "assets/citadel-pursuit-v2.6.0.js",
+        "assets/citadel-swarm-v2.6.0.js",
+        "assets/citadel-parallax-v2.6.0.js",
+        "assets/citadel-input-v2.6.0.js",
+        "assets/citadel-base-rewards-v2.6.0.js",
+        "assets/citadel-pursuit-view-v2.6.0.js",
+        "assets/citadel-convoy-v2.6.0.js",
+        "assets/citadel-convoy-view-v2.6.0.js",
+        "assets/citadel-swarm-view-v2.6.0.js",
+        "assets/citadel-combat-v2.6.0.js"
+      ],
+      "listeners": {
+        "window": 31,
+        "document": 37,
+        "elements": 43
+      }
+    }
+  ],
+  "failures": [],
+  "entryFile": "tests/entry-2.6.0.html",
+  "entrySHA256": "8246ac6429c2de7fc566cd1446f0b523d6d43dd1afa53552c9664c443e5bf6c9",
+  "scripts": [
+    {
+      "file": "assets/citadel-startup-v2.3.1.js",
+      "sha256": "99e07b3b93f874b4fc7a830ebf0df228532f62ef4dda96c05e78717182af711a"
+    },
+    {
+      "file": "assets/citadel-compat-v1.7.1.js",
+      "sha256": "e5ea0b065568c5ebcddcd01d483375560bae36308871dd62a87e5d8e97a46599"
+    },
+    {
+      "file": "assets/citadel-launch-v2.3.1.js",
+      "sha256": "ad27ac6974bdff22f3a92d26d94117cddd2e945ea8a5553b657d21c70ce243aa"
+    },
+    {
+      "file": "assets/atlas-v1.3.6.js",
+      "sha256": "9a08d42e08f3bd220a2ace22ae6e9dfff34887268b275aa36a2be4a33965569d"
+    },
+    {
+      "file": "assets/citadel-records-v1.1.1.js",
+      "sha256": "178c584491b2755e93f2e4469a8663db3bb93c8e970f5cc5bcbe75b0e6dc6183"
+    },
+    {
+      "file": "assets/citadel-mrg-v2.6.0.js",
+      "sha256": "79b4bb403207c95752f95d95c308d5be57b4360c5178ce2dab8b676f2fbf2955"
+    },
+    {
+      "file": "assets/citadel-mrg-view-v2.6.0.js",
+      "sha256": "1285c2461e618c466e556c6f51589a3c06dbf5a46ac3ca628d0f81a68588fc7c"
+    },
+    {
+      "file": "assets/citadel-music-v1.4.2.js",
+      "sha256": "11ba6f8ee1d80e7313e7c7c14d1133cf55f9f124ca29eb8d3ed54aba22aafeb0"
+    },
+    {
+      "file": "assets/citadel-sfx-pack-v1.9.1.js",
+      "sha256": "8dc8128a72045c4136a3460de8900720813861e1979926bfc0c0c872cdac590e"
+    },
+    {
+      "file": "assets/citadel-sfx-v1.9.3.js",
+      "sha256": "6cabac06fb8d99684ca2a8252510f90a964ca1d427aa4ac7b214115ee1b9af7b"
+    },
+    {
+      "file": "assets/citadel-voice-pack-v1.8.2.js",
+      "sha256": "e0a0ac89a7ad348a7b107fef9c067b12227d33b7c1427d3eb7cec5472949fbfe"
+    },
+    {
+      "file": "assets/citadel-field-ui-v1.7.0.js",
+      "sha256": "fb2b2545d45aaad74c1009bf2bd3b775ca6b897c9baf027f2c7cff5de0b02bed"
+    },
+    {
+      "file": "assets/citadel-flight-v1.9.1.js",
+      "sha256": "d8e345e6a7ef05ea3aebcb986042c1c36a809bb6608ccce242d00507178199b7"
+    },
+    {
+      "file": "assets/citadel-aim-v1.7.1.js",
+      "sha256": "6c0251b56e8a798597cc0a3b26bec950739665f4d5fed9980db091ed04b25058"
+    },
+    {
+      "file": "assets/citadel-flight-view-v1.7.1.js",
+      "sha256": "b5e7d58a269a75fb71aba8ccb286e84714e17ef016532086dc8d098443acae91"
+    },
+    {
+      "file": "assets/citadel-pursuit-v2.6.0.js",
+      "sha256": "5c60be2944b300610d07dce9438fe0581ac83ee1532d4796b7f6d3c54c90dea7"
+    },
+    {
+      "file": "assets/citadel-swarm-v2.6.0.js",
+      "sha256": "eefda7b81c696d79d361364b1e8a7623d1399d8eef3c9f679eb7327a9ae1e388"
+    },
+    {
+      "file": "assets/citadel-parallax-v2.6.0.js",
+      "sha256": "ab29a1603851ad97a437f9dd3d93dcbc4978c6aeb4d5130bed666eb643fe5315"
+    },
+    {
+      "file": "assets/citadel-bases-v2.0.0.js",
+      "sha256": "9f7cd4346e947f13a3e4185d3e7080b69cd489c7dce959e03627b8adb89cba5a"
+    },
+    {
+      "file": "assets/citadel-decks-v2.0.0.js",
+      "sha256": "4b5f02f17b26c8962768132fd1328e7bbd483e2c8b2d7499610e68c6478213f2"
+    },
+    {
+      "file": "assets/citadel-input-v2.6.0.js",
+      "sha256": "a28a8a68b7bdc3e3eacd2d93d17f75f8311724830026fa86fe2ffb435c94413d"
+    },
+    {
+      "file": "assets/citadel-convoy-v2.3.0.js",
+      "sha256": "115fb8dd424e76d7ddfea2199395101364b258c22cd243e4c137e9980f006ca6"
+    },
+    {
+      "file": "assets/citadel-voice-v2.5.0.js",
+      "sha256": "2868128550afc2ac73eb46bbb5aaaf3d017b6026c596671c76e20340c63ebeb1"
+    },
+    {
+      "file": "assets/citadel-comic-v1.9.3.js",
+      "sha256": "ee26d0c120f8b7d912b90d4dcc0bccf4ca8515e816c836e6427a4676ea2f6a44"
+    },
+    {
+      "file": "assets/citadel-interface-v1.9.0.js",
+      "sha256": "1c86ce29791480920e08b5dddc42dadcc1e4bab0916e8da51c16aedb0b1b1291"
+    },
+    {
+      "file": "assets/citadel-story-v1.9.0.js",
+      "sha256": "85f5c018a42f09b20eb7a62a87f4251a02f219027f1f4799e07c774ff43d2c13"
+    },
+    {
+      "file": "assets/atlas-metrics-v0.1.0.js",
+      "sha256": "79700bbff01f5744e1a2eb44a935ed006857eae4e75ce3602aee6cc69d8101e7"
+    },
+    {
+      "file": "assets/atlas-integration-v1.1.4.js",
+      "sha256": "96eaf8cd36e4c9257f0e531d861230f8ca1610973905027ad6f58dc819937220"
+    },
+    {
+      "file": "assets/citadel-academy-bridge-v1.7.0.js",
+      "sha256": "cc33928c4d0b0271bc5205211ee815d56cba9243838053e4d460edee68ba2033"
+    },
+    {
+      "file": "assets/citadel-ui-fixes-v1.9.2.js",
+      "sha256": "364fc8c1e412eb9b73f826845e23646f8906d37c7027aa1f2ae93ba0548cbf16"
+    },
+    {
+      "file": "assets/citadel-bases-view-v2.0.0.js",
+      "sha256": "506e1ebbfa86a42b0f4dc6918ab1917edb3b8018012e15d98a267060c2cdf8c3"
+    },
+    {
+      "file": "assets/citadel-base-rewards-v2.6.0.js",
+      "sha256": "7504ee78281c31dae812fbfdf15bc3b2030da1b56826a46330519ccc746049b2"
+    },
+    {
+      "file": "assets/citadel-pursuit-view-v2.3.0.js",
+      "sha256": "957ed9dc2f26e104a66a4bf26aad5c8bca4c6234aa0b6f8e56a688c93efd46ec"
+    },
+    {
+      "file": "assets/citadel-pursuit-view-v2.6.0.js",
+      "sha256": "eb4fd3d9099479ada284ea31f1c47453a4fc35f24f8862184b0be1932edbd7f8"
+    },
+    {
+      "file": "assets/citadel-convoy-view-v2.3.0.js",
+      "sha256": "7d7d85f90d9082a14bbbb1dff7defd00f5f31bce23f270ae764aed2e98e77783"
+    },
+    {
+      "file": "assets/citadel-convoy-v2.6.0.js",
+      "sha256": "fb80b02ae850f69df1295bac3bbe64f61a18d05cf93d768e6e66dc1c595d44c7"
+    },
+    {
+      "file": "assets/citadel-convoy-view-v2.4.0.js",
+      "sha256": "9a42c7dcde1e21644f10aaa0f848b8bab2c60794e4f5564898a17f48fd5d2965"
+    },
+    {
+      "file": "assets/citadel-convoy-view-v2.6.0.js",
+      "sha256": "a3e9a4cc44b213c72bfe78f70dff5c4ccda64260ea45e03c83b510c7c11faa54"
+    },
+    {
+      "file": "assets/citadel-swarm-view-v2.6.0.js",
+      "sha256": "a6d4f840839da504332929e7fa19fefc5a318532db4bac76e1a6417f00da6965"
+    },
+    {
+      "file": "assets/citadel-mrg-actors-v2.5.0.js",
+      "sha256": "d0bcec56d741510c8f6e620451ba1681082bfafdec1a1d28a1463dea23442248"
+    },
+    {
+      "file": "assets/citadel-narrative-v2.5.0.js",
+      "sha256": "34232c3f6c16b7f686595ebb8c162f7368e4f12d2e6be1b923cdf2459e85c1fe"
+    },
+    {
+      "file": "assets/citadel-presentation-v2.5.0.js",
+      "sha256": "6e1bef9638c3fefe113ae8cdc1a54883068e38fdc2cf3e1eb9ab7f8cad82327e"
+    },
+    {
+      "file": "assets/citadel-combat-v2.6.0.js",
+      "sha256": "5b55bb15578db6ffac01427245672f46352165790ea617b9d6a42ed075e9edad"
+    },
+    {
+      "file": "assets/citadel-runtime-v1.9.3.js",
+      "sha256": "a026d1eb50252a37f01b7ad097e610252bccacc01f078d6ee75a3bf86e029a6e"
+    }
+  ]
+}

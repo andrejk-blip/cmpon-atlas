@@ -1,0 +1,72 @@
+{
+  "method": "Node VM on actual 1.3.6 engine and current module chain, real installed input handlers under capture/bubble event emulation. Not a physical mouse/Android test.",
+  "passed": 14,
+  "total": 14,
+  "rows": [
+    {
+      "name": "RMB routes one missile request: level 1",
+      "pass": true,
+      "level": 1
+    },
+    {
+      "name": "RMB routes one missile request: level 3",
+      "pass": true,
+      "level": 3
+    },
+    {
+      "name": "RMB routes one missile request: level 4",
+      "pass": true,
+      "level": 4
+    },
+    {
+      "name": "RMB routes one missile request: level 6",
+      "pass": true,
+      "level": 6
+    },
+    {
+      "name": "RMB routes one missile request: level 7",
+      "pass": true,
+      "level": 7
+    },
+    {
+      "name": "RMB routes one missile request: level 9",
+      "pass": true,
+      "level": 9
+    },
+    {
+      "name": "RMB routes one missile request: level 10",
+      "pass": true,
+      "level": 10
+    },
+    {
+      "name": "RMB routes one missile request: level 12",
+      "pass": true,
+      "level": 12
+    },
+    {
+      "name": "RMB routes one missile request: level 14",
+      "pass": true,
+      "level": 14
+    },
+    {
+      "name": "Held LMB survives RMB and fires together",
+      "pass": true
+    },
+    {
+      "name": "Pause, modal, navigation and blur cannot queue a future missile",
+      "pass": true
+    },
+    {
+      "name": "RMB aims MRG grenade without taking left pointer",
+      "pass": true
+    },
+    {
+      "name": "Touch held fire and independent joystick remain owned",
+      "pass": true
+    },
+    {
+      "name": "Repeated installation and mount do not accumulate canvas bindings",
+      "pass": true
+    }
+  ]
+}

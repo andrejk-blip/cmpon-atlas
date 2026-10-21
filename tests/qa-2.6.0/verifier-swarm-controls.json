@@ -1,0 +1,49 @@
+{
+  "method": "Exact candidate entry Node VM. Isolated level7 initialization and then empty input or fire only. No state/HP/ammo changes. Negative controls, not full playthroughs.",
+  "rows": [
+    {
+      "mode": "normal",
+      "strategy": "idle",
+      "status": "crashing",
+      "seconds": 13.533333333333585,
+      "firstDamage": 4.233333333333324,
+      "hp": 0,
+      "kills": 0,
+      "wave": 1,
+      "shots": 0
+    },
+    {
+      "mode": "normal",
+      "strategy": "stationary-fire",
+      "status": "crashing",
+      "seconds": 15.50000000000035,
+      "firstDamage": 4.483333333333323,
+      "hp": 0,
+      "kills": 7,
+      "wave": 1,
+      "shots": 62
+    },
+    {
+      "mode": "calm",
+      "strategy": "idle",
+      "status": "crashing",
+      "seconds": 50.583333333331744,
+      "firstDamage": 11.600000000000156,
+      "hp": 0,
+      "kills": 0,
+      "wave": 1,
+      "shots": 0
+    },
+    {
+      "mode": "calm",
+      "strategy": "stationary-fire",
+      "status": "crashing",
+      "seconds": 73.28333333333046,
+      "firstDamage": 11.600000000000156,
+      "hp": 0,
+      "kills": 15,
+      "wave": 2,
+      "shots": 284
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "pass": true,
+  "vendor": "Mesa",
+  "renderer": "llvmpipe (LLVM 20.1.2, 256 bits)",
+  "version": "OpenGL ES 3.2 Mesa 25.2.8-0ubuntu0.24.04.2",
+  "egl": "1.5",
+  "shaderCompile": true,
+  "skyShaderCompile": true,
+  "skyProgramLink": true,
+  "programLink": true,
+  "glError": 0,
+  "items": 261,
+  "millisecondsIncludingReadback": 279.63388500211295,
+  "method": "Native surfaceless EGL/GLES, exact exported scene and production sky/material shaders. Software GPU integration; not browser, hardware GPU or FPS benchmark."
+}

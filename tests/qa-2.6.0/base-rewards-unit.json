@@ -1,0 +1,212 @@
+{
+  "version": "2.6.0",
+  "environment": "Node VM + native Canvas. Mission entries restored from input-recorded 2.0.0 campaign checkpoints; no browser claim.",
+  "passed": 5,
+  "total": 5,
+  "rows": [
+    {
+      "name": "Old mission entries gain only reachable side-room contents, not a new map",
+      "pass": true,
+      "seconds": 3.119,
+      "data": [
+        {
+          "level": 2,
+          "pickups": [
+            {
+              "type": "capacitor",
+              "pos": [
+                32,
+                0,
+                -16
+              ]
+            },
+            {
+              "type": "triad",
+              "pos": [
+                48,
+                0,
+                -76
+              ]
+            },
+            {
+              "type": "armor",
+              "pos": [
+                28,
+                0,
+                -136
+              ]
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "pickups": [
+            {
+              "type": "capacitor",
+              "pos": [
+                32,
+                0,
+                -16
+              ]
+            },
+            {
+              "type": "triad",
+              "pos": [
+                12,
+                0,
+                -84
+              ]
+            },
+            {
+              "type": "armor",
+              "pos": [
+                44,
+                0,
+                -152
+              ]
+            }
+          ]
+        },
+        {
+          "level": 8,
+          "pickups": [
+            {
+              "type": "capacitor",
+              "pos": [
+                32,
+                0,
+                -16
+              ]
+            },
+            {
+              "type": "triad",
+              "pos": [
+                -4,
+                0,
+                -80
+              ]
+            },
+            {
+              "type": "armor",
+              "pos": [
+                20,
+                0,
+                -160
+              ]
+            }
+          ]
+        },
+        {
+          "level": 11,
+          "pickups": [
+            {
+              "type": "capacitor",
+              "pos": [
+                32,
+                0,
+                -16
+              ]
+            },
+            {
+              "type": "triad",
+              "pos": [
+                -52,
+                0,
+                -80
+              ]
+            },
+            {
+              "type": "armor",
+              "pos": [
+                8,
+                0,
+                -160
+              ]
+            }
+          ]
+        },
+        {
+          "level": 13,
+          "pickups": [
+            {
+              "type": "capacitor",
+              "pos": [
+                32,
+                0,
+                -16
+              ]
+            },
+            {
+              "type": "triad",
+              "pos": [
+                -8,
+                0,
+                -88
+              ]
+            },
+            {
+              "type": "armor",
+              "pos": [
+                16,
+                0,
+                -176
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "A 1.9.3 deck without side rooms retains its saved map and crew",
+      "pass": true,
+      "seconds": 2.378,
+      "data": {
+        "authoredSideRooms": false,
+        "pickups": 0,
+        "geometryUnchanged": true
+      }
+    },
+    {
+      "name": "Pause / save / restore keeps exact pickups, equipment and active AI",
+      "pass": true,
+      "seconds": 5.678,
+      "data": {
+        "secondsPaused": 5,
+        "deterministicFrames": 120
+      }
+    },
+    {
+      "name": "Combat shoots on sight, calm preserves warnings, render does not mutate saves",
+      "pass": true,
+      "seconds": 2.796,
+      "data": [
+        {
+          "mode": "normal",
+          "firstShotFrame": 0,
+          "warningGeometry": 0,
+          "warningText": false,
+          "items": 428
+        },
+        {
+          "mode": "calm",
+          "firstShotFrame": 115,
+          "warningGeometry": 16,
+          "warningText": true,
+          "items": 377
+        }
+      ]
+    },
+    {
+      "name": "Repeated loads do not add wrappers, listeners, pickups or meshes",
+      "pass": true,
+      "seconds": 0.832,
+      "data": {
+        "loads": 50,
+        "listeners": 68,
+        "wrappersUnchanged": true,
+        "emitterRestoredAfterException": true
+      }
+    }
+  ],
+  "runs": []
+}

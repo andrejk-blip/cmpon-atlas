@@ -1,0 +1,777 @@
+{
+  "entrySHA256": "233ba8c4c629c4c91284a01d4d32e36048034f1b63407e7938d512163a2d4482",
+  "method": "Exact integrated candidate and frozen 2.5 entry in Node VM; no real browser. Gameplay controls use current positions/velocities and own ship gauges, never enemy warning clocks.",
+  "swarm": [
+    {
+      "mode": "combat",
+      "profile": "stationary-fire",
+      "status": "crashing",
+      "complete": false,
+      "waves": [
+        1
+      ],
+      "seconds": 15.50000000000035,
+      "hp": 0,
+      "minHP": 0,
+      "kills": 7,
+      "score": 385,
+      "shots": 21,
+      "firstShot": 0.016666666666666666,
+      "cueFrames": 0,
+      "maxHostile": 6
+    },
+    {
+      "mode": "combat",
+      "profile": "movement-no-fire",
+      "status": "playing",
+      "complete": false,
+      "waves": [
+        1
+      ],
+      "seconds": 360.00000000000125,
+      "hp": 64,
+      "minHP": 64,
+      "kills": 0,
+      "score": 0,
+      "shots": 546,
+      "firstShot": 0.016666666666666666,
+      "cueFrames": 0,
+      "maxHostile": 6
+    },
+    {
+      "mode": "combat",
+      "profile": "helper",
+      "status": "playing",
+      "complete": true,
+      "waves": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "seconds": 84.36666666666316,
+      "hp": 100,
+      "minHP": 100,
+      "kills": 90,
+      "score": 7070,
+      "shots": 238,
+      "firstShot": 0.016666666666666666,
+      "cueFrames": 0,
+      "maxHostile": 32
+    },
+    {
+      "mode": "calm",
+      "profile": "stationary-fire",
+      "status": "crashing",
+      "complete": false,
+      "waves": [
+        1,
+        2
+      ],
+      "seconds": 73.28333333333046,
+      "hp": 0,
+      "minHP": 0,
+      "kills": 15,
+      "score": 825,
+      "shots": 18,
+      "firstShot": 8.04999999999998,
+      "cueFrames": 1367,
+      "maxHostile": 3
+    },
+    {
+      "mode": "calm",
+      "profile": "movement-no-fire",
+      "status": "playing",
+      "complete": false,
+      "waves": [
+        1
+      ],
+      "seconds": 360.00000000000125,
+      "hp": 86.80000000000001,
+      "minHP": 86.80000000000001,
+      "kills": 0,
+      "score": 0,
+      "shots": 158,
+      "firstShot": 8.04999999999998,
+      "cueFrames": 10952,
+      "maxHostile": 3
+    },
+    {
+      "mode": "calm",
+      "profile": "helper",
+      "status": "playing",
+      "complete": true,
+      "waves": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "seconds": 75.23333333333035,
+      "hp": 100,
+      "minHP": 100,
+      "kills": 78,
+      "score": 6380,
+      "shots": 5,
+      "firstShot": 39.73333333333236,
+      "cueFrames": 382,
+      "maxHostile": 2
+    }
+  ],
+  "cadence": [
+    {
+      "level": 1,
+      "old": {
+        "ships": [
+          {
+            "id": 1,
+            "role": "hacker",
+            "hp": 60,
+            "points": 230,
+            "pos": [
+              -33.042076355587106,
+              1.062866929685697,
+              -41.64171053735666
+            ],
+            "shot": 2.710179519839585,
+            "warp": 1.6,
+            "shots": 0,
+            "first": null,
+            "firstEligible": 1.6333333333333333,
+            "medianInterval": null
+          },
+          {
+            "id": 2,
+            "role": "bomber",
+            "hp": 85,
+            "points": 220,
+            "pos": [
+              219.55857542123994,
+              37.77405152725987,
+              -91.1767770161061
+            ],
+            "shot": 2.974584558978677,
+            "warp": 1.6,
+            "shots": 5,
+            "first": 5.3,
+            "firstEligible": 5.3,
+            "medianInterval": 4.0166666666666675
+          },
+          {
+            "id": 3,
+            "role": "fighter",
+            "hp": 40,
+            "points": 100,
+            "pos": [
+              147.90893526813707,
+              -10.559263525763527,
+              -211.37093006884396
+            ],
+            "shot": 2.1338821267709136,
+            "warp": 1.6,
+            "shots": 7,
+            "first": 5.95,
+            "firstEligible": 5.95,
+            "medianInterval": 2.916666666666667
+          },
+          {
+            "id": 4,
+            "role": "fighter",
+            "hp": 68.75,
+            "points": 160,
+            "pos": [
+              -35.687224732497285,
+              19.05234528402798,
+              -183.27676790925887
+            ],
+            "shot": 2.5548660941421986,
+            "warp": 1.6,
+            "shots": 7,
+            "first": 4.166666666666667,
+            "firstEligible": 1.6333333333333333,
+            "medianInterval": 2.916666666666667
+          }
+        ],
+        "bullets": 19,
+        "score": 650,
+        "playerHP": 100,
+        "method": "Isolated enemyStep weapon-clock bench; bullets are observed but not integrated. Not a gameplay victory."
+      },
+      "current": {
+        "ships": [
+          {
+            "id": 1,
+            "role": "hacker",
+            "hp": 60,
+            "points": 230,
+            "pos": [
+              -33.042076355587106,
+              1.062866929685697,
+              -41.64171053735666
+            ],
+            "shot": 0,
+            "warp": 0,
+            "shots": 24,
+            "first": 0.016666666666666666,
+            "firstEligible": 0.016666666666666666,
+            "medianInterval": 1.0166666666666666
+          },
+          {
+            "id": 2,
+            "role": "bomber",
+            "hp": 85,
+            "points": 220,
+            "pos": [
+              219.55857542123994,
+              37.77405152725987,
+              -91.1767770161061
+            ],
+            "shot": 0,
+            "warp": 0,
+            "shots": 16,
+            "first": 3.7,
+            "firstEligible": 3.7,
+            "medianInterval": 1.3499999999999996
+          },
+          {
+            "id": 3,
+            "role": "fighter",
+            "hp": 40,
+            "points": 100,
+            "pos": [
+              147.90893526813707,
+              -10.559263525763527,
+              -211.37093006884396
+            ],
+            "shot": 0,
+            "warp": 0,
+            "shots": 20,
+            "first": 4.35,
+            "firstEligible": 4.35,
+            "medianInterval": 0.9833333333333334
+          },
+          {
+            "id": 4,
+            "role": "fighter",
+            "hp": 68.75,
+            "points": 160,
+            "pos": [
+              -35.687224732497285,
+              19.05234528402798,
+              -183.27676790925887
+            ],
+            "shot": 0,
+            "warp": 0,
+            "shots": 25,
+            "first": 0.016666666666666666,
+            "firstEligible": 0.016666666666666666,
+            "medianInterval": 0.9833333333333334
+          }
+        ],
+        "bullets": 85,
+        "score": 650,
+        "playerHP": 100,
+        "method": "Isolated enemyStep weapon-clock bench; bullets are observed but not integrated. Not a gameplay victory."
+      },
+      "ratios": [
+        {
+          "id": 1,
+          "role": "hacker",
+          "ratio": 0,
+          "oldInterval": null,
+          "newInterval": 1.0166666666666666
+        },
+        {
+          "id": 2,
+          "role": "bomber",
+          "ratio": 2.97530864197531,
+          "oldInterval": 4.0166666666666675,
+          "newInterval": 1.3499999999999996
+        },
+        {
+          "id": 3,
+          "role": "fighter",
+          "ratio": 2.9661016949152543,
+          "oldInterval": 2.916666666666667,
+          "newInterval": 0.9833333333333334
+        },
+        {
+          "id": 4,
+          "role": "fighter",
+          "ratio": 2.9661016949152543,
+          "oldInterval": 2.916666666666667,
+          "newInterval": 0.9833333333333334
+        }
+      ]
+    },
+    {
+      "level": 10,
+      "old": {
+        "ships": [
+          {
+            "id": 1,
+            "role": "hacker",
+            "hp": 60,
+            "points": 230,
+            "pos": [
+              -19.223321793089582,
+              -14.984860736178234,
+              -44.00635658357369
+            ],
+            "shot": 2.821215480566025,
+            "warp": 1.6,
+            "shots": 0,
+            "first": null,
+            "firstEligible": 1.6333333333333333,
+            "medianInterval": null
+          },
+          {
+            "id": 2,
+            "role": "bomber",
+            "hp": 85,
+            "points": 220,
+            "pos": [
+              188.22236356917318,
+              37.678399357711896,
+              -43.52830569929992
+            ],
+            "shot": 2.1486297072842717,
+            "warp": 1.6,
+            "shots": 6,
+            "first": 3.75,
+            "firstEligible": 2.3,
+            "medianInterval": 4.016666666666667
+          },
+          {
+            "id": 3,
+            "role": "fighter",
+            "hp": 40,
+            "points": 100,
+            "pos": [
+              221.04734155064975,
+              -12.830504526617005,
+              -97.00840107395045
+            ],
+            "shot": 2.089755842462182,
+            "warp": 1.6,
+            "shots": 6,
+            "first": 7.633333333333334,
+            "firstEligible": 7.633333333333334,
+            "medianInterval": 2.916666666666666
+          },
+          {
+            "id": 4,
+            "role": "fighter",
+            "hp": 68.75,
+            "points": 160,
+            "pos": [
+              210.4725863411309,
+              25.80213472410105,
+              -159.72655341570038
+            ],
+            "shot": 2.796097687445581,
+            "warp": 1.6,
+            "shots": 1,
+            "first": 22.916666666666668,
+            "firstEligible": 22.916666666666668,
+            "medianInterval": null
+          }
+        ],
+        "bullets": 13,
+        "score": 0,
+        "playerHP": 100,
+        "method": "Isolated enemyStep weapon-clock bench; bullets are observed but not integrated. Not a gameplay victory."
+      },
+      "current": {
+        "ships": [
+          {
+            "id": 1,
+            "role": "hacker",
+            "hp": 60,
+            "points": 230,
+            "pos": [
+              -19.223321793089582,
+              -14.984860736178234,
+              -44.00635658357369
+            ],
+            "shot": 0,
+            "warp": 0,
+            "shots": 24,
+            "first": 0.016666666666666666,
+            "firstEligible": 0.016666666666666666,
+            "medianInterval": 1.0166666666666666
+          },
+          {
+            "id": 2,
+            "role": "bomber",
+            "hp": 85,
+            "points": 220,
+            "pos": [
+              188.22236356917318,
+              37.678399357711896,
+              -43.52830569929992
+            ],
+            "shot": 0,
+            "warp": 0,
+            "shots": 18,
+            "first": 0.7,
+            "firstEligible": 0.7,
+            "medianInterval": 1.3499999999999999
+          },
+          {
+            "id": 3,
+            "role": "fighter",
+            "hp": 40,
+            "points": 100,
+            "pos": [
+              221.04734155064975,
+              -12.830504526617005,
+              -97.00840107395045
+            ],
+            "shot": 0,
+            "warp": 0,
+            "shots": 19,
+            "first": 6.033333333333333,
+            "firstEligible": 6.033333333333333,
+            "medianInterval": 0.9833333333333343
+          },
+          {
+            "id": 4,
+            "role": "fighter",
+            "hp": 68.75,
+            "points": 160,
+            "pos": [
+              210.4725863411309,
+              25.80213472410105,
+              -159.72655341570038
+            ],
+            "shot": 0,
+            "warp": 0,
+            "shots": 3,
+            "first": 21.316666666666666,
+            "firstEligible": 21.316666666666666,
+            "medianInterval": 0.9833333333333343
+          }
+        ],
+        "bullets": 64,
+        "score": 0,
+        "playerHP": 100,
+        "method": "Isolated enemyStep weapon-clock bench; bullets are observed but not integrated. Not a gameplay victory."
+      },
+      "ratios": [
+        {
+          "id": 1,
+          "role": "hacker",
+          "ratio": 0,
+          "oldInterval": null,
+          "newInterval": 1.0166666666666666
+        },
+        {
+          "id": 2,
+          "role": "bomber",
+          "ratio": 2.975308641975309,
+          "oldInterval": 4.016666666666667,
+          "newInterval": 1.3499999999999999
+        },
+        {
+          "id": 3,
+          "role": "fighter",
+          "ratio": 2.9661016949152508,
+          "oldInterval": 2.916666666666666,
+          "newInterval": 0.9833333333333343
+        },
+        {
+          "id": 4,
+          "role": "fighter",
+          "ratio": 0,
+          "oldInterval": null,
+          "newInterval": 0.9833333333333343
+        }
+      ]
+    }
+  ],
+  "resume": [
+    {
+      "level": 1,
+      "shots": 20,
+      "snapshotBullets": 4,
+      "duplicateShots": 0,
+      "exactEnemyContinuation": true,
+      "scope": "enemyStep only; player overdriveUntil is missing from the legacy CUP save schema and is a separately reported issue"
+    },
+    {
+      "level": 10,
+      "shots": 19,
+      "snapshotBullets": 1,
+      "duplicateShots": 0,
+      "exactEnemyContinuation": true,
+      "scope": "enemyStep only; player overdriveUntil is missing from the legacy CUP save schema and is a separately reported issue"
+    }
+  ],
+  "orbit": [
+    {
+      "level": 10,
+      "assist": false,
+      "profile": "old",
+      "pass": true,
+      "status": "boarding",
+      "phase": "boarding",
+      "seconds": 70.54999999999728,
+      "hp": 100,
+      "minHP": 61.1600000000004,
+      "station": 58.5,
+      "bossHP": null,
+      "bossDefeated": true,
+      "missiles": 18,
+      "pulses": 4,
+      "history": [
+        {
+          "phase": "battle",
+          "wave": 1,
+          "boss": false,
+          "time": 0,
+          "hp": 100,
+          "station": 100,
+          "missiles": 8
+        },
+        {
+          "phase": "battle",
+          "wave": 2,
+          "boss": false,
+          "time": 16.16666666666703,
+          "hp": 100,
+          "station": 83,
+          "missiles": 2
+        },
+        {
+          "phase": "battle",
+          "wave": 3,
+          "boss": false,
+          "time": 38.549999999999095,
+          "hp": 89.60000000000002,
+          "station": 81,
+          "missiles": 4
+        },
+        {
+          "phase": "battle",
+          "wave": 3,
+          "boss": true,
+          "time": 52.833333333331616,
+          "hp": 86.18000000000026,
+          "station": 58.5,
+          "missiles": 1
+        },
+        {
+          "phase": "retrieve",
+          "wave": 3,
+          "boss": false,
+          "time": 57.549999999998015,
+          "hp": 96.1600000000004,
+          "station": 58.5,
+          "missiles": 1
+        },
+        {
+          "phase": "dock",
+          "wave": 3,
+          "boss": false,
+          "time": 63.18333333333103,
+          "hp": 100,
+          "station": 58.5,
+          "missiles": 3
+        }
+      ]
+    },
+    {
+      "level": 10,
+      "assist": false,
+      "profile": "helper",
+      "pass": false,
+      "status": "crashing",
+      "phase": "battle",
+      "seconds": 58.483333333331295,
+      "hp": 0,
+      "minHP": 0,
+      "station": 63.5,
+      "bossHP": 1021,
+      "bossDefeated": false,
+      "missiles": 12,
+      "pulses": 4,
+      "history": [
+        {
+          "phase": "battle",
+          "wave": 1,
+          "boss": false,
+          "time": 0,
+          "hp": 100,
+          "station": 100,
+          "missiles": 8
+        },
+        {
+          "phase": "battle",
+          "wave": 2,
+          "boss": false,
+          "time": 19.48333333333351,
+          "hp": 79.60000000000002,
+          "station": 93,
+          "missiles": 4
+        },
+        {
+          "phase": "battle",
+          "wave": 3,
+          "boss": false,
+          "time": 36.7499999999992,
+          "hp": 42.220000000000105,
+          "station": 81,
+          "missiles": 2
+        },
+        {
+          "phase": "battle",
+          "wave": 3,
+          "boss": true,
+          "time": 56.0499999999981,
+          "hp": 8.260000000000268,
+          "station": 63.5,
+          "missiles": 0
+        }
+      ]
+    }
+  ],
+  "campaignCheckpoint": {
+    "source": "tests/qa-2.6.0/verifier-checkpoint-normal-10.json",
+    "old": {
+      "level": 10,
+      "assist": false,
+      "profile": "old",
+      "pass": false,
+      "status": "crashing",
+      "phase": "battle",
+      "seconds": 807.749999999594,
+      "hp": 0,
+      "minHP": 0,
+      "station": 10.5,
+      "bossHP": null,
+      "bossDefeated": false,
+      "missiles": 10,
+      "pulses": 3,
+      "history": [
+        {
+          "phase": "battle",
+          "wave": 1,
+          "boss": false,
+          "time": 763.9333333329672,
+          "hp": 100,
+          "station": 100,
+          "missiles": 8
+        },
+        {
+          "phase": "battle",
+          "wave": 2,
+          "boss": false,
+          "time": 787.1833333329461,
+          "hp": 96.7600000000003,
+          "station": 55.5,
+          "missiles": 2
+        }
+      ]
+    },
+    "helper": {
+      "level": 10,
+      "assist": false,
+      "profile": "helper",
+      "pass": true,
+      "status": "boarding",
+      "phase": "boarding",
+      "seconds": 836.3666666662347,
+      "hp": 83.80000000000065,
+      "minHP": 36.10000000000055,
+      "station": 60.5,
+      "bossHP": null,
+      "bossDefeated": true,
+      "missiles": 14,
+      "pulses": 4,
+      "history": [
+        {
+          "phase": "battle",
+          "wave": 1,
+          "boss": false,
+          "time": 763.9333333329672,
+          "hp": 100,
+          "station": 100,
+          "missiles": 8
+        },
+        {
+          "phase": "battle",
+          "wave": 2,
+          "boss": false,
+          "time": 779.966666666286,
+          "hp": 98.80000000000001,
+          "station": 100,
+          "missiles": 5
+        },
+        {
+          "phase": "battle",
+          "wave": 3,
+          "boss": false,
+          "time": 799.5666666662681,
+          "hp": 89.20000000000002,
+          "station": 80.5,
+          "missiles": 2
+        },
+        {
+          "phase": "battle",
+          "wave": 3,
+          "boss": true,
+          "time": 818.6333333329175,
+          "hp": 89.80000000000041,
+          "station": 60.5,
+          "missiles": 0
+        },
+        {
+          "phase": "retrieve",
+          "wave": 3,
+          "boss": false,
+          "time": 823.1833333329133,
+          "hp": 36.10000000000055,
+          "station": 60.5,
+          "missiles": 0
+        },
+        {
+          "phase": "dock",
+          "wave": 3,
+          "boss": false,
+          "time": 827.4999999995761,
+          "hp": 81.10000000000055,
+          "station": 60.5,
+          "missiles": 4
+        }
+      ]
+    }
+  },
+  "bossCadence": [
+    {
+      "phase": "upper",
+      "hp": 1450,
+      "points": 4000,
+      "oldHP": 1450,
+      "oldPoints": 4000,
+      "oldInterval": 0,
+      "newInterval": 0,
+      "ratio": null
+    },
+    {
+      "phase": "lower",
+      "hp": 709,
+      "points": 4000,
+      "oldHP": 709,
+      "oldPoints": 4000,
+      "oldInterval": 0,
+      "newInterval": 0,
+      "ratio": null
+    }
+  ],
+  "pass": false
+}

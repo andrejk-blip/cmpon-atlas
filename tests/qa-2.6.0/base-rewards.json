@@ -1,0 +1,2201 @@
+{
+  "version": "2.6.0",
+  "environment": "Node VM + native Canvas. Mission entries restored from input-recorded 2.0.0 campaign checkpoints; no browser claim.",
+  "passed": 7,
+  "total": 7,
+  "rows": [
+    {
+      "name": "Old mission entries gain only reachable side-room contents, not a new map",
+      "pass": true,
+      "seconds": 2.573,
+      "data": [
+        {
+          "level": 2,
+          "pickups": [
+            {
+              "type": "capacitor",
+              "pos": [
+                32,
+                0,
+                -16
+              ]
+            },
+            {
+              "type": "triad",
+              "pos": [
+                48,
+                0,
+                -76
+              ]
+            },
+            {
+              "type": "armor",
+              "pos": [
+                28,
+                0,
+                -136
+              ]
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "pickups": [
+            {
+              "type": "capacitor",
+              "pos": [
+                32,
+                0,
+                -16
+              ]
+            },
+            {
+              "type": "triad",
+              "pos": [
+                12,
+                0,
+                -84
+              ]
+            },
+            {
+              "type": "armor",
+              "pos": [
+                44,
+                0,
+                -152
+              ]
+            }
+          ]
+        },
+        {
+          "level": 8,
+          "pickups": [
+            {
+              "type": "capacitor",
+              "pos": [
+                32,
+                0,
+                -16
+              ]
+            },
+            {
+              "type": "triad",
+              "pos": [
+                -4,
+                0,
+                -80
+              ]
+            },
+            {
+              "type": "armor",
+              "pos": [
+                20,
+                0,
+                -160
+              ]
+            }
+          ]
+        },
+        {
+          "level": 11,
+          "pickups": [
+            {
+              "type": "capacitor",
+              "pos": [
+                32,
+                0,
+                -16
+              ]
+            },
+            {
+              "type": "triad",
+              "pos": [
+                -52,
+                0,
+                -80
+              ]
+            },
+            {
+              "type": "armor",
+              "pos": [
+                8,
+                0,
+                -160
+              ]
+            }
+          ]
+        },
+        {
+          "level": 13,
+          "pickups": [
+            {
+              "type": "capacitor",
+              "pos": [
+                32,
+                0,
+                -16
+              ]
+            },
+            {
+              "type": "triad",
+              "pos": [
+                -8,
+                0,
+                -88
+              ]
+            },
+            {
+              "type": "armor",
+              "pos": [
+                16,
+                0,
+                -176
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "A 1.9.3 deck without side rooms retains its saved map and crew",
+      "pass": true,
+      "seconds": 1.73,
+      "data": {
+        "authoredSideRooms": false,
+        "pickups": 0,
+        "geometryUnchanged": true
+      }
+    },
+    {
+      "name": "Five bases × two modes: normal input, optional rooms, every card and exit",
+      "pass": true,
+      "seconds": 126.051,
+      "data": [
+        {
+          "mode": "normal",
+          "level": 2,
+          "status": "stageclear",
+          "phase": "debrief",
+          "seconds": 69.12,
+          "minHp": 87,
+          "hp": 100,
+          "cards": 3,
+          "completed": 3,
+          "pickups": 3,
+          "enemyShots": 33,
+          "peakProjectiles": 6,
+          "usedPulse": 2,
+          "startingCrew": 15,
+          "remaining": 0,
+          "scoreGain": 4957,
+          "events": [
+            {
+              "at": 1.767,
+              "kind": "contact",
+              "enemy": 21,
+              "room": 0
+            },
+            {
+              "at": 1.767,
+              "kind": "contact",
+              "enemy": 22,
+              "room": 0
+            },
+            {
+              "at": 2.283,
+              "kind": "contact",
+              "enemy": 25,
+              "room": 0
+            },
+            {
+              "at": 2.767,
+              "kind": "contact",
+              "enemy": 24,
+              "room": 0
+            },
+            {
+              "at": 7.5,
+              "kind": "contact",
+              "enemy": 23,
+              "room": 0
+            },
+            {
+              "at": 17.667,
+              "kind": "equipment",
+              "id": "base-0-0",
+              "type": "capacitor"
+            },
+            {
+              "at": 26.967,
+              "kind": "contact",
+              "enemy": 27,
+              "room": 1
+            },
+            {
+              "at": 26.983,
+              "kind": "contact",
+              "enemy": 26,
+              "room": 1
+            },
+            {
+              "at": 33.517,
+              "kind": "contact",
+              "enemy": 30,
+              "room": 1
+            },
+            {
+              "at": 36.433,
+              "kind": "contact",
+              "enemy": 28,
+              "room": 1
+            },
+            {
+              "at": 36.483,
+              "kind": "contact",
+              "enemy": 29,
+              "room": 1
+            },
+            {
+              "at": 45.417,
+              "kind": "equipment",
+              "id": "base-0-1",
+              "type": "triad"
+            },
+            {
+              "at": 51.45,
+              "kind": "contact",
+              "enemy": 32,
+              "room": 2
+            },
+            {
+              "at": 51.45,
+              "kind": "contact",
+              "enemy": 35,
+              "room": 2
+            },
+            {
+              "at": 55.15,
+              "kind": "contact",
+              "enemy": 34,
+              "room": 2
+            },
+            {
+              "at": 55.717,
+              "kind": "contact",
+              "enemy": 31,
+              "room": 2
+            },
+            {
+              "at": 58.733,
+              "kind": "contact",
+              "enemy": 33,
+              "room": 2
+            },
+            {
+              "at": 65.417,
+              "kind": "equipment",
+              "id": "base-0-2",
+              "type": "armor"
+            }
+          ]
+        },
+        {
+          "mode": "normal",
+          "level": 5,
+          "status": "stageclear",
+          "phase": "debrief",
+          "seconds": 70.47,
+          "minHp": 37.18,
+          "hp": 84.18,
+          "cards": 3,
+          "completed": 3,
+          "pickups": 3,
+          "enemyShots": 40,
+          "peakProjectiles": 6,
+          "usedPulse": 2,
+          "startingCrew": 19,
+          "remaining": 0,
+          "scoreGain": 5440,
+          "events": [
+            {
+              "at": 2.283,
+              "kind": "contact",
+              "enemy": 207,
+              "room": 0
+            },
+            {
+              "at": 5.417,
+              "kind": "contact",
+              "enemy": 209,
+              "room": 0
+            },
+            {
+              "at": 9.217,
+              "kind": "contact",
+              "enemy": 208,
+              "room": 0
+            },
+            {
+              "at": 10.433,
+              "kind": "contact",
+              "enemy": 210,
+              "room": 0
+            },
+            {
+              "at": 10.7,
+              "kind": "contact",
+              "enemy": 206,
+              "room": 0
+            },
+            {
+              "at": 10.9,
+              "kind": "contact",
+              "enemy": 211,
+              "room": 0
+            },
+            {
+              "at": 17.883,
+              "kind": "equipment",
+              "id": "base-1-0",
+              "type": "capacitor"
+            },
+            {
+              "at": 24.9,
+              "kind": "contact",
+              "enemy": 213,
+              "room": 1
+            },
+            {
+              "at": 25.533,
+              "kind": "contact",
+              "enemy": 212,
+              "room": 1
+            },
+            {
+              "at": 29.883,
+              "kind": "contact",
+              "enemy": 216,
+              "room": 1
+            },
+            {
+              "at": 30.35,
+              "kind": "contact",
+              "enemy": 215,
+              "room": 1
+            },
+            {
+              "at": 30.967,
+              "kind": "contact",
+              "enemy": 217,
+              "room": 1
+            },
+            {
+              "at": 33.4,
+              "kind": "contact",
+              "enemy": 214,
+              "room": 1
+            },
+            {
+              "at": 38.917,
+              "kind": "equipment",
+              "id": "base-1-1",
+              "type": "triad"
+            },
+            {
+              "at": 51.933,
+              "kind": "contact",
+              "enemy": 219,
+              "room": 2
+            },
+            {
+              "at": 55.867,
+              "kind": "contact",
+              "enemy": 223,
+              "room": 2
+            },
+            {
+              "at": 55.967,
+              "kind": "contact",
+              "enemy": 224,
+              "room": 2
+            },
+            {
+              "at": 58.85,
+              "kind": "contact",
+              "enemy": 218,
+              "room": 2
+            },
+            {
+              "at": 58.883,
+              "kind": "contact",
+              "enemy": 222,
+              "room": 2
+            },
+            {
+              "at": 58.9,
+              "kind": "contact",
+              "enemy": 221,
+              "room": 2
+            },
+            {
+              "at": 61.5,
+              "kind": "contact",
+              "enemy": 220,
+              "room": 2
+            },
+            {
+              "at": 66.767,
+              "kind": "equipment",
+              "id": "base-1-2",
+              "type": "armor"
+            }
+          ]
+        },
+        {
+          "mode": "normal",
+          "level": 8,
+          "status": "stageclear",
+          "phase": "debrief",
+          "seconds": 72.35,
+          "minHp": 66.96,
+          "hp": 100,
+          "cards": 3,
+          "completed": 3,
+          "pickups": 3,
+          "enemyShots": 37,
+          "peakProjectiles": 6,
+          "usedPulse": 2,
+          "startingCrew": 22,
+          "remaining": 0,
+          "scoreGain": 5770,
+          "events": [
+            {
+              "at": 2.35,
+              "kind": "contact",
+              "enemy": 293,
+              "room": 0
+            },
+            {
+              "at": 5.4,
+              "kind": "contact",
+              "enemy": 295,
+              "room": 0
+            },
+            {
+              "at": 8.383,
+              "kind": "contact",
+              "enemy": 294,
+              "room": 0
+            },
+            {
+              "at": 8.733,
+              "kind": "contact",
+              "enemy": 298,
+              "room": 0
+            },
+            {
+              "at": 9.317,
+              "kind": "contact",
+              "enemy": 297,
+              "room": 0
+            },
+            {
+              "at": 10.017,
+              "kind": "contact",
+              "enemy": 296,
+              "room": 0
+            },
+            {
+              "at": 10.083,
+              "kind": "contact",
+              "enemy": 292,
+              "room": 0
+            },
+            {
+              "at": 16.067,
+              "kind": "equipment",
+              "id": "base-2-0",
+              "type": "capacitor"
+            },
+            {
+              "at": 27.85,
+              "kind": "contact",
+              "enemy": 299,
+              "room": 1
+            },
+            {
+              "at": 27.85,
+              "kind": "contact",
+              "enemy": 300,
+              "room": 1
+            },
+            {
+              "at": 30.483,
+              "kind": "contact",
+              "enemy": 303,
+              "room": 1
+            },
+            {
+              "at": 33.267,
+              "kind": "contact",
+              "enemy": 305,
+              "room": 1
+            },
+            {
+              "at": 34.35,
+              "kind": "contact",
+              "enemy": 304,
+              "room": 1
+            },
+            {
+              "at": 34.933,
+              "kind": "contact",
+              "enemy": 302,
+              "room": 1
+            },
+            {
+              "at": 36.467,
+              "kind": "contact",
+              "enemy": 301,
+              "room": 1
+            },
+            {
+              "at": 41.567,
+              "kind": "equipment",
+              "id": "base-2-1",
+              "type": "triad"
+            },
+            {
+              "at": 52.583,
+              "kind": "contact",
+              "enemy": 307,
+              "room": 2
+            },
+            {
+              "at": 56.8,
+              "kind": "contact",
+              "enemy": 313,
+              "room": 2
+            },
+            {
+              "at": 56.833,
+              "kind": "contact",
+              "enemy": 312,
+              "room": 2
+            },
+            {
+              "at": 57.483,
+              "kind": "contact",
+              "enemy": 309,
+              "room": 2
+            },
+            {
+              "at": 57.567,
+              "kind": "contact",
+              "enemy": 310,
+              "room": 2
+            },
+            {
+              "at": 60.433,
+              "kind": "contact",
+              "enemy": 306,
+              "room": 2
+            },
+            {
+              "at": 61.483,
+              "kind": "contact",
+              "enemy": 308,
+              "room": 2
+            },
+            {
+              "at": 64.233,
+              "kind": "contact",
+              "enemy": 311,
+              "room": 2
+            },
+            {
+              "at": 68.65,
+              "kind": "equipment",
+              "id": "base-2-2",
+              "type": "armor"
+            }
+          ]
+        },
+        {
+          "mode": "normal",
+          "level": 11,
+          "status": "finalebrief",
+          "phase": "boss",
+          "seconds": 73.8,
+          "minHp": 77.65,
+          "hp": 100,
+          "cards": 3,
+          "completed": 3,
+          "pickups": 3,
+          "enemyShots": 45,
+          "peakProjectiles": 5,
+          "usedPulse": 1,
+          "startingCrew": 22,
+          "remaining": 0,
+          "scoreGain": 5711,
+          "events": [
+            {
+              "at": 2.35,
+              "kind": "contact",
+              "enemy": 378,
+              "room": 0
+            },
+            {
+              "at": 4.833,
+              "kind": "contact",
+              "enemy": 380,
+              "room": 0
+            },
+            {
+              "at": 8.467,
+              "kind": "contact",
+              "enemy": 379,
+              "room": 0
+            },
+            {
+              "at": 8.883,
+              "kind": "contact",
+              "enemy": 383,
+              "room": 0
+            },
+            {
+              "at": 9.433,
+              "kind": "contact",
+              "enemy": 382,
+              "room": 0
+            },
+            {
+              "at": 10.2,
+              "kind": "contact",
+              "enemy": 381,
+              "room": 0
+            },
+            {
+              "at": 10.733,
+              "kind": "contact",
+              "enemy": 377,
+              "room": 0
+            },
+            {
+              "at": 16.95,
+              "kind": "equipment",
+              "id": "base-3-0",
+              "type": "capacitor"
+            },
+            {
+              "at": 24.6,
+              "kind": "contact",
+              "enemy": 384,
+              "room": 1
+            },
+            {
+              "at": 24.6,
+              "kind": "contact",
+              "enemy": 385,
+              "room": 1
+            },
+            {
+              "at": 28.033,
+              "kind": "contact",
+              "enemy": 389,
+              "room": 1
+            },
+            {
+              "at": 28.25,
+              "kind": "contact",
+              "enemy": 390,
+              "room": 1
+            },
+            {
+              "at": 32.333,
+              "kind": "contact",
+              "enemy": 388,
+              "room": 1
+            },
+            {
+              "at": 32.383,
+              "kind": "contact",
+              "enemy": 387,
+              "room": 1
+            },
+            {
+              "at": 36.317,
+              "kind": "contact",
+              "enemy": 386,
+              "room": 1
+            },
+            {
+              "at": 41.417,
+              "kind": "equipment",
+              "id": "base-3-1",
+              "type": "triad"
+            },
+            {
+              "at": 52.767,
+              "kind": "contact",
+              "enemy": 392,
+              "room": 2
+            },
+            {
+              "at": 57.467,
+              "kind": "contact",
+              "enemy": 398,
+              "room": 2
+            },
+            {
+              "at": 57.833,
+              "kind": "contact",
+              "enemy": 397,
+              "room": 2
+            },
+            {
+              "at": 58.1,
+              "kind": "contact",
+              "enemy": 395,
+              "room": 2
+            },
+            {
+              "at": 59.1,
+              "kind": "contact",
+              "enemy": 391,
+              "room": 2
+            },
+            {
+              "at": 59.183,
+              "kind": "contact",
+              "enemy": 394,
+              "room": 2
+            },
+            {
+              "at": 61.467,
+              "kind": "contact",
+              "enemy": 393,
+              "room": 2
+            },
+            {
+              "at": 63.583,
+              "kind": "contact",
+              "enemy": 396,
+              "room": 2
+            },
+            {
+              "at": 70.1,
+              "kind": "equipment",
+              "id": "base-3-2",
+              "type": "armor"
+            }
+          ]
+        },
+        {
+          "mode": "normal",
+          "level": 13,
+          "status": "boarding",
+          "phase": "mrg",
+          "seconds": 79.72,
+          "minHp": 65.18,
+          "hp": 100,
+          "cards": 3,
+          "completed": 3,
+          "pickups": 3,
+          "enemyShots": 44,
+          "peakProjectiles": 5,
+          "usedPulse": 3,
+          "startingCrew": 24,
+          "remaining": 0,
+          "scoreGain": 4890,
+          "events": [
+            {
+              "at": 2.35,
+              "kind": "contact",
+              "enemy": 405,
+              "room": 0
+            },
+            {
+              "at": 4.767,
+              "kind": "contact",
+              "enemy": 407,
+              "room": 0
+            },
+            {
+              "at": 8.567,
+              "kind": "contact",
+              "enemy": 406,
+              "room": 0
+            },
+            {
+              "at": 8.833,
+              "kind": "contact",
+              "enemy": 411,
+              "room": 0
+            },
+            {
+              "at": 9.1,
+              "kind": "contact",
+              "enemy": 410,
+              "room": 0
+            },
+            {
+              "at": 10.8,
+              "kind": "contact",
+              "enemy": 404,
+              "room": 0
+            },
+            {
+              "at": 11.25,
+              "kind": "contact",
+              "enemy": 408,
+              "room": 0
+            },
+            {
+              "at": 19.967,
+              "kind": "equipment",
+              "id": "base-4-0",
+              "type": "capacitor"
+            },
+            {
+              "at": 32.233,
+              "kind": "contact",
+              "enemy": 412,
+              "room": 1
+            },
+            {
+              "at": 32.233,
+              "kind": "contact",
+              "enemy": 413,
+              "room": 1
+            },
+            {
+              "at": 33.017,
+              "kind": "contact",
+              "enemy": 416,
+              "room": 1
+            },
+            {
+              "at": 33.3,
+              "kind": "contact",
+              "enemy": 415,
+              "room": 1
+            },
+            {
+              "at": 36.85,
+              "kind": "contact",
+              "enemy": 419,
+              "room": 1
+            },
+            {
+              "at": 37.25,
+              "kind": "contact",
+              "enemy": 418,
+              "room": 1
+            },
+            {
+              "at": 42.35,
+              "kind": "contact",
+              "enemy": 417,
+              "room": 1
+            },
+            {
+              "at": 44.35,
+              "kind": "contact",
+              "enemy": 414,
+              "room": 1
+            },
+            {
+              "at": 48.883,
+              "kind": "equipment",
+              "id": "base-4-1",
+              "type": "triad"
+            },
+            {
+              "at": 60.6,
+              "kind": "contact",
+              "enemy": 420,
+              "room": 2
+            },
+            {
+              "at": 60.6,
+              "kind": "contact",
+              "enemy": 421,
+              "room": 2
+            },
+            {
+              "at": 62.55,
+              "kind": "contact",
+              "enemy": 423,
+              "room": 2
+            },
+            {
+              "at": 64.067,
+              "kind": "contact",
+              "enemy": 426,
+              "room": 2
+            },
+            {
+              "at": 64.267,
+              "kind": "contact",
+              "enemy": 427,
+              "room": 2
+            },
+            {
+              "at": 66.95,
+              "kind": "contact",
+              "enemy": 424,
+              "room": 2
+            },
+            {
+              "at": 68.9,
+              "kind": "contact",
+              "enemy": 422,
+              "room": 2
+            },
+            {
+              "at": 71.15,
+              "kind": "contact",
+              "enemy": 425,
+              "room": 2
+            },
+            {
+              "at": 76.017,
+              "kind": "equipment",
+              "id": "base-4-2",
+              "type": "armor"
+            }
+          ]
+        },
+        {
+          "mode": "calm",
+          "level": 2,
+          "status": "stageclear",
+          "phase": "debrief",
+          "seconds": 63.8,
+          "minHp": 93.4,
+          "hp": 100,
+          "cards": 3,
+          "completed": 3,
+          "pickups": 3,
+          "enemyShots": 4,
+          "peakProjectiles": 2,
+          "usedPulse": 2,
+          "startingCrew": 15,
+          "remaining": 0,
+          "scoreGain": 4997,
+          "events": [
+            {
+              "at": 17.083,
+              "kind": "equipment",
+              "id": "base-0-0",
+              "type": "capacitor"
+            },
+            {
+              "at": 39.983,
+              "kind": "equipment",
+              "id": "base-0-1",
+              "type": "triad"
+            },
+            {
+              "at": 60.117,
+              "kind": "equipment",
+              "id": "base-0-2",
+              "type": "armor"
+            }
+          ]
+        },
+        {
+          "mode": "calm",
+          "level": 5,
+          "status": "stageclear",
+          "phase": "debrief",
+          "seconds": 75.2,
+          "minHp": 96.08,
+          "hp": 100,
+          "cards": 3,
+          "completed": 3,
+          "pickups": 3,
+          "enemyShots": 4,
+          "peakProjectiles": 1,
+          "usedPulse": 1,
+          "startingCrew": 16,
+          "remaining": 0,
+          "scoreGain": 5110,
+          "events": [
+            {
+              "at": 15.1,
+              "kind": "equipment",
+              "id": "base-1-0",
+              "type": "capacitor"
+            },
+            {
+              "at": 39.55,
+              "kind": "equipment",
+              "id": "base-1-1",
+              "type": "triad"
+            },
+            {
+              "at": 71.5,
+              "kind": "equipment",
+              "id": "base-1-2",
+              "type": "armor"
+            }
+          ]
+        },
+        {
+          "mode": "calm",
+          "level": 8,
+          "status": "stageclear",
+          "phase": "debrief",
+          "seconds": 68.8,
+          "minHp": 95.75,
+          "hp": 100,
+          "cards": 3,
+          "completed": 3,
+          "pickups": 3,
+          "enemyShots": 3,
+          "peakProjectiles": 1,
+          "usedPulse": 1,
+          "startingCrew": 19,
+          "remaining": 0,
+          "scoreGain": 5440,
+          "events": [
+            {
+              "at": 13.95,
+              "kind": "equipment",
+              "id": "base-2-0",
+              "type": "capacitor"
+            },
+            {
+              "at": 39.283,
+              "kind": "equipment",
+              "id": "base-2-1",
+              "type": "triad"
+            },
+            {
+              "at": 65.1,
+              "kind": "equipment",
+              "id": "base-2-2",
+              "type": "armor"
+            }
+          ]
+        },
+        {
+          "mode": "calm",
+          "level": 11,
+          "status": "finalebrief",
+          "phase": "boss",
+          "seconds": 66.25,
+          "minHp": 100,
+          "hp": 100,
+          "cards": 3,
+          "completed": 3,
+          "pickups": 3,
+          "enemyShots": 4,
+          "peakProjectiles": 2,
+          "usedPulse": 1,
+          "startingCrew": 19,
+          "remaining": 0,
+          "scoreGain": 5413,
+          "events": [
+            {
+              "at": 13.15,
+              "kind": "equipment",
+              "id": "base-3-0",
+              "type": "capacitor"
+            },
+            {
+              "at": 35.25,
+              "kind": "equipment",
+              "id": "base-3-1",
+              "type": "triad"
+            },
+            {
+              "at": 62.55,
+              "kind": "equipment",
+              "id": "base-3-2",
+              "type": "armor"
+            }
+          ]
+        },
+        {
+          "mode": "calm",
+          "level": 13,
+          "status": "boarding",
+          "phase": "mrg",
+          "seconds": 73.07,
+          "minHp": 96.74,
+          "hp": 100,
+          "cards": 3,
+          "completed": 3,
+          "pickups": 3,
+          "enemyShots": 5,
+          "peakProjectiles": 2,
+          "usedPulse": 2,
+          "startingCrew": 21,
+          "remaining": 0,
+          "scoreGain": 4560,
+          "events": [
+            {
+              "at": 14.983,
+              "kind": "equipment",
+              "id": "base-4-0",
+              "type": "capacitor"
+            },
+            {
+              "at": 41.95,
+              "kind": "equipment",
+              "id": "base-4-1",
+              "type": "triad"
+            },
+            {
+              "at": 69.367,
+              "kind": "equipment",
+              "id": "base-4-2",
+              "type": "armor"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pause / save / restore keeps exact pickups, equipment and active AI",
+      "pass": true,
+      "seconds": 6.614,
+      "data": {
+        "secondsPaused": 5,
+        "deterministicFrames": 120
+      }
+    },
+    {
+      "name": "Equipment keeps score formulas and becomes useful without a new key",
+      "pass": true,
+      "seconds": 1.562,
+      "data": {
+        "parts": 3,
+        "armorReduction": 0.18,
+        "pulseCooldown": 6.84,
+        "volleys": 2,
+        "note": "Equipment composition fixture; all constituent parts earned by the ordinary input runs above."
+      }
+    },
+    {
+      "name": "Combat shoots on sight, calm preserves warnings, render does not mutate saves",
+      "pass": true,
+      "seconds": 2.989,
+      "data": [
+        {
+          "mode": "normal",
+          "firstShotFrame": 0,
+          "warningGeometry": 0,
+          "items": 428
+        },
+        {
+          "mode": "calm",
+          "firstShotFrame": 115,
+          "warningGeometry": 16,
+          "items": 377
+        }
+      ]
+    },
+    {
+      "name": "Repeated loads do not add wrappers, listeners, pickups or meshes",
+      "pass": true,
+      "seconds": 0.006,
+      "data": {
+        "loads": 50,
+        "listeners": 68,
+        "wrappersUnchanged": true
+      }
+    }
+  ],
+  "runs": [
+    {
+      "mode": "normal",
+      "level": 2,
+      "status": "stageclear",
+      "phase": "debrief",
+      "seconds": 69.12,
+      "minHp": 87,
+      "hp": 100,
+      "cards": 3,
+      "completed": 3,
+      "pickups": 3,
+      "enemyShots": 33,
+      "peakProjectiles": 6,
+      "usedPulse": 2,
+      "startingCrew": 15,
+      "remaining": 0,
+      "scoreGain": 4957,
+      "events": [
+        {
+          "at": 1.767,
+          "kind": "contact",
+          "enemy": 21,
+          "room": 0
+        },
+        {
+          "at": 1.767,
+          "kind": "contact",
+          "enemy": 22,
+          "room": 0
+        },
+        {
+          "at": 2.283,
+          "kind": "contact",
+          "enemy": 25,
+          "room": 0
+        },
+        {
+          "at": 2.767,
+          "kind": "contact",
+          "enemy": 24,
+          "room": 0
+        },
+        {
+          "at": 7.5,
+          "kind": "contact",
+          "enemy": 23,
+          "room": 0
+        },
+        {
+          "at": 17.667,
+          "kind": "equipment",
+          "id": "base-0-0",
+          "type": "capacitor"
+        },
+        {
+          "at": 26.967,
+          "kind": "contact",
+          "enemy": 27,
+          "room": 1
+        },
+        {
+          "at": 26.983,
+          "kind": "contact",
+          "enemy": 26,
+          "room": 1
+        },
+        {
+          "at": 33.517,
+          "kind": "contact",
+          "enemy": 30,
+          "room": 1
+        },
+        {
+          "at": 36.433,
+          "kind": "contact",
+          "enemy": 28,
+          "room": 1
+        },
+        {
+          "at": 36.483,
+          "kind": "contact",
+          "enemy": 29,
+          "room": 1
+        },
+        {
+          "at": 45.417,
+          "kind": "equipment",
+          "id": "base-0-1",
+          "type": "triad"
+        },
+        {
+          "at": 51.45,
+          "kind": "contact",
+          "enemy": 32,
+          "room": 2
+        },
+        {
+          "at": 51.45,
+          "kind": "contact",
+          "enemy": 35,
+          "room": 2
+        },
+        {
+          "at": 55.15,
+          "kind": "contact",
+          "enemy": 34,
+          "room": 2
+        },
+        {
+          "at": 55.717,
+          "kind": "contact",
+          "enemy": 31,
+          "room": 2
+        },
+        {
+          "at": 58.733,
+          "kind": "contact",
+          "enemy": 33,
+          "room": 2
+        },
+        {
+          "at": 65.417,
+          "kind": "equipment",
+          "id": "base-0-2",
+          "type": "armor"
+        }
+      ]
+    },
+    {
+      "mode": "normal",
+      "level": 5,
+      "status": "stageclear",
+      "phase": "debrief",
+      "seconds": 70.47,
+      "minHp": 37.18,
+      "hp": 84.18,
+      "cards": 3,
+      "completed": 3,
+      "pickups": 3,
+      "enemyShots": 40,
+      "peakProjectiles": 6,
+      "usedPulse": 2,
+      "startingCrew": 19,
+      "remaining": 0,
+      "scoreGain": 5440,
+      "events": [
+        {
+          "at": 2.283,
+          "kind": "contact",
+          "enemy": 207,
+          "room": 0
+        },
+        {
+          "at": 5.417,
+          "kind": "contact",
+          "enemy": 209,
+          "room": 0
+        },
+        {
+          "at": 9.217,
+          "kind": "contact",
+          "enemy": 208,
+          "room": 0
+        },
+        {
+          "at": 10.433,
+          "kind": "contact",
+          "enemy": 210,
+          "room": 0
+        },
+        {
+          "at": 10.7,
+          "kind": "contact",
+          "enemy": 206,
+          "room": 0
+        },
+        {
+          "at": 10.9,
+          "kind": "contact",
+          "enemy": 211,
+          "room": 0
+        },
+        {
+          "at": 17.883,
+          "kind": "equipment",
+          "id": "base-1-0",
+          "type": "capacitor"
+        },
+        {
+          "at": 24.9,
+          "kind": "contact",
+          "enemy": 213,
+          "room": 1
+        },
+        {
+          "at": 25.533,
+          "kind": "contact",
+          "enemy": 212,
+          "room": 1
+        },
+        {
+          "at": 29.883,
+          "kind": "contact",
+          "enemy": 216,
+          "room": 1
+        },
+        {
+          "at": 30.35,
+          "kind": "contact",
+          "enemy": 215,
+          "room": 1
+        },
+        {
+          "at": 30.967,
+          "kind": "contact",
+          "enemy": 217,
+          "room": 1
+        },
+        {
+          "at": 33.4,
+          "kind": "contact",
+          "enemy": 214,
+          "room": 1
+        },
+        {
+          "at": 38.917,
+          "kind": "equipment",
+          "id": "base-1-1",
+          "type": "triad"
+        },
+        {
+          "at": 51.933,
+          "kind": "contact",
+          "enemy": 219,
+          "room": 2
+        },
+        {
+          "at": 55.867,
+          "kind": "contact",
+          "enemy": 223,
+          "room": 2
+        },
+        {
+          "at": 55.967,
+          "kind": "contact",
+          "enemy": 224,
+          "room": 2
+        },
+        {
+          "at": 58.85,
+          "kind": "contact",
+          "enemy": 218,
+          "room": 2
+        },
+        {
+          "at": 58.883,
+          "kind": "contact",
+          "enemy": 222,
+          "room": 2
+        },
+        {
+          "at": 58.9,
+          "kind": "contact",
+          "enemy": 221,
+          "room": 2
+        },
+        {
+          "at": 61.5,
+          "kind": "contact",
+          "enemy": 220,
+          "room": 2
+        },
+        {
+          "at": 66.767,
+          "kind": "equipment",
+          "id": "base-1-2",
+          "type": "armor"
+        }
+      ]
+    },
+    {
+      "mode": "normal",
+      "level": 8,
+      "status": "stageclear",
+      "phase": "debrief",
+      "seconds": 72.35,
+      "minHp": 66.96,
+      "hp": 100,
+      "cards": 3,
+      "completed": 3,
+      "pickups": 3,
+      "enemyShots": 37,
+      "peakProjectiles": 6,
+      "usedPulse": 2,
+      "startingCrew": 22,
+      "remaining": 0,
+      "scoreGain": 5770,
+      "events": [
+        {
+          "at": 2.35,
+          "kind": "contact",
+          "enemy": 293,
+          "room": 0
+        },
+        {
+          "at": 5.4,
+          "kind": "contact",
+          "enemy": 295,
+          "room": 0
+        },
+        {
+          "at": 8.383,
+          "kind": "contact",
+          "enemy": 294,
+          "room": 0
+        },
+        {
+          "at": 8.733,
+          "kind": "contact",
+          "enemy": 298,
+          "room": 0
+        },
+        {
+          "at": 9.317,
+          "kind": "contact",
+          "enemy": 297,
+          "room": 0
+        },
+        {
+          "at": 10.017,
+          "kind": "contact",
+          "enemy": 296,
+          "room": 0
+        },
+        {
+          "at": 10.083,
+          "kind": "contact",
+          "enemy": 292,
+          "room": 0
+        },
+        {
+          "at": 16.067,
+          "kind": "equipment",
+          "id": "base-2-0",
+          "type": "capacitor"
+        },
+        {
+          "at": 27.85,
+          "kind": "contact",
+          "enemy": 299,
+          "room": 1
+        },
+        {
+          "at": 27.85,
+          "kind": "contact",
+          "enemy": 300,
+          "room": 1
+        },
+        {
+          "at": 30.483,
+          "kind": "contact",
+          "enemy": 303,
+          "room": 1
+        },
+        {
+          "at": 33.267,
+          "kind": "contact",
+          "enemy": 305,
+          "room": 1
+        },
+        {
+          "at": 34.35,
+          "kind": "contact",
+          "enemy": 304,
+          "room": 1
+        },
+        {
+          "at": 34.933,
+          "kind": "contact",
+          "enemy": 302,
+          "room": 1
+        },
+        {
+          "at": 36.467,
+          "kind": "contact",
+          "enemy": 301,
+          "room": 1
+        },
+        {
+          "at": 41.567,
+          "kind": "equipment",
+          "id": "base-2-1",
+          "type": "triad"
+        },
+        {
+          "at": 52.583,
+          "kind": "contact",
+          "enemy": 307,
+          "room": 2
+        },
+        {
+          "at": 56.8,
+          "kind": "contact",
+          "enemy": 313,
+          "room": 2
+        },
+        {
+          "at": 56.833,
+          "kind": "contact",
+          "enemy": 312,
+          "room": 2
+        },
+        {
+          "at": 57.483,
+          "kind": "contact",
+          "enemy": 309,
+          "room": 2
+        },
+        {
+          "at": 57.567,
+          "kind": "contact",
+          "enemy": 310,
+          "room": 2
+        },
+        {
+          "at": 60.433,
+          "kind": "contact",
+          "enemy": 306,
+          "room": 2
+        },
+        {
+          "at": 61.483,
+          "kind": "contact",
+          "enemy": 308,
+          "room": 2
+        },
+        {
+          "at": 64.233,
+          "kind": "contact",
+          "enemy": 311,
+          "room": 2
+        },
+        {
+          "at": 68.65,
+          "kind": "equipment",
+          "id": "base-2-2",
+          "type": "armor"
+        }
+      ]
+    },
+    {
+      "mode": "normal",
+      "level": 11,
+      "status": "finalebrief",
+      "phase": "boss",
+      "seconds": 73.8,
+      "minHp": 77.65,
+      "hp": 100,
+      "cards": 3,
+      "completed": 3,
+      "pickups": 3,
+      "enemyShots": 45,
+      "peakProjectiles": 5,
+      "usedPulse": 1,
+      "startingCrew": 22,
+      "remaining": 0,
+      "scoreGain": 5711,
+      "events": [
+        {
+          "at": 2.35,
+          "kind": "contact",
+          "enemy": 378,
+          "room": 0
+        },
+        {
+          "at": 4.833,
+          "kind": "contact",
+          "enemy": 380,
+          "room": 0
+        },
+        {
+          "at": 8.467,
+          "kind": "contact",
+          "enemy": 379,
+          "room": 0
+        },
+        {
+          "at": 8.883,
+          "kind": "contact",
+          "enemy": 383,
+          "room": 0
+        },
+        {
+          "at": 9.433,
+          "kind": "contact",
+          "enemy": 382,
+          "room": 0
+        },
+        {
+          "at": 10.2,
+          "kind": "contact",
+          "enemy": 381,
+          "room": 0
+        },
+        {
+          "at": 10.733,
+          "kind": "contact",
+          "enemy": 377,
+          "room": 0
+        },
+        {
+          "at": 16.95,
+          "kind": "equipment",
+          "id": "base-3-0",
+          "type": "capacitor"
+        },
+        {
+          "at": 24.6,
+          "kind": "contact",
+          "enemy": 384,
+          "room": 1
+        },
+        {
+          "at": 24.6,
+          "kind": "contact",
+          "enemy": 385,
+          "room": 1
+        },
+        {
+          "at": 28.033,
+          "kind": "contact",
+          "enemy": 389,
+          "room": 1
+        },
+        {
+          "at": 28.25,
+          "kind": "contact",
+          "enemy": 390,
+          "room": 1
+        },
+        {
+          "at": 32.333,
+          "kind": "contact",
+          "enemy": 388,
+          "room": 1
+        },
+        {
+          "at": 32.383,
+          "kind": "contact",
+          "enemy": 387,
+          "room": 1
+        },
+        {
+          "at": 36.317,
+          "kind": "contact",
+          "enemy": 386,
+          "room": 1
+        },
+        {
+          "at": 41.417,
+          "kind": "equipment",
+          "id": "base-3-1",
+          "type": "triad"
+        },
+        {
+          "at": 52.767,
+          "kind": "contact",
+          "enemy": 392,
+          "room": 2
+        },
+        {
+          "at": 57.467,
+          "kind": "contact",
+          "enemy": 398,
+          "room": 2
+        },
+        {
+          "at": 57.833,
+          "kind": "contact",
+          "enemy": 397,
+          "room": 2
+        },
+        {
+          "at": 58.1,
+          "kind": "contact",
+          "enemy": 395,
+          "room": 2
+        },
+        {
+          "at": 59.1,
+          "kind": "contact",
+          "enemy": 391,
+          "room": 2
+        },
+        {
+          "at": 59.183,
+          "kind": "contact",
+          "enemy": 394,
+          "room": 2
+        },
+        {
+          "at": 61.467,
+          "kind": "contact",
+          "enemy": 393,
+          "room": 2
+        },
+        {
+          "at": 63.583,
+          "kind": "contact",
+          "enemy": 396,
+          "room": 2
+        },
+        {
+          "at": 70.1,
+          "kind": "equipment",
+          "id": "base-3-2",
+          "type": "armor"
+        }
+      ]
+    },
+    {
+      "mode": "normal",
+      "level": 13,
+      "status": "boarding",
+      "phase": "mrg",
+      "seconds": 79.72,
+      "minHp": 65.18,
+      "hp": 100,
+      "cards": 3,
+      "completed": 3,
+      "pickups": 3,
+      "enemyShots": 44,
+      "peakProjectiles": 5,
+      "usedPulse": 3,
+      "startingCrew": 24,
+      "remaining": 0,
+      "scoreGain": 4890,
+      "events": [
+        {
+          "at": 2.35,
+          "kind": "contact",
+          "enemy": 405,
+          "room": 0
+        },
+        {
+          "at": 4.767,
+          "kind": "contact",
+          "enemy": 407,
+          "room": 0
+        },
+        {
+          "at": 8.567,
+          "kind": "contact",
+          "enemy": 406,
+          "room": 0
+        },
+        {
+          "at": 8.833,
+          "kind": "contact",
+          "enemy": 411,
+          "room": 0
+        },
+        {
+          "at": 9.1,
+          "kind": "contact",
+          "enemy": 410,
+          "room": 0
+        },
+        {
+          "at": 10.8,
+          "kind": "contact",
+          "enemy": 404,
+          "room": 0
+        },
+        {
+          "at": 11.25,
+          "kind": "contact",
+          "enemy": 408,
+          "room": 0
+        },
+        {
+          "at": 19.967,
+          "kind": "equipment",
+          "id": "base-4-0",
+          "type": "capacitor"
+        },
+        {
+          "at": 32.233,
+          "kind": "contact",
+          "enemy": 412,
+          "room": 1
+        },
+        {
+          "at": 32.233,
+          "kind": "contact",
+          "enemy": 413,
+          "room": 1
+        },
+        {
+          "at": 33.017,
+          "kind": "contact",
+          "enemy": 416,
+          "room": 1
+        },
+        {
+          "at": 33.3,
+          "kind": "contact",
+          "enemy": 415,
+          "room": 1
+        },
+        {
+          "at": 36.85,
+          "kind": "contact",
+          "enemy": 419,
+          "room": 1
+        },
+        {
+          "at": 37.25,
+          "kind": "contact",
+          "enemy": 418,
+          "room": 1
+        },
+        {
+          "at": 42.35,
+          "kind": "contact",
+          "enemy": 417,
+          "room": 1
+        },
+        {
+          "at": 44.35,
+          "kind": "contact",
+          "enemy": 414,
+          "room": 1
+        },
+        {
+          "at": 48.883,
+          "kind": "equipment",
+          "id": "base-4-1",
+          "type": "triad"
+        },
+        {
+          "at": 60.6,
+          "kind": "contact",
+          "enemy": 420,
+          "room": 2
+        },
+        {
+          "at": 60.6,
+          "kind": "contact",
+          "enemy": 421,
+          "room": 2
+        },
+        {
+          "at": 62.55,
+          "kind": "contact",
+          "enemy": 423,
+          "room": 2
+        },
+        {
+          "at": 64.067,
+          "kind": "contact",
+          "enemy": 426,
+          "room": 2
+        },
+        {
+          "at": 64.267,
+          "kind": "contact",
+          "enemy": 427,
+          "room": 2
+        },
+        {
+          "at": 66.95,
+          "kind": "contact",
+          "enemy": 424,
+          "room": 2
+        },
+        {
+          "at": 68.9,
+          "kind": "contact",
+          "enemy": 422,
+          "room": 2
+        },
+        {
+          "at": 71.15,
+          "kind": "contact",
+          "enemy": 425,
+          "room": 2
+        },
+        {
+          "at": 76.017,
+          "kind": "equipment",
+          "id": "base-4-2",
+          "type": "armor"
+        }
+      ]
+    },
+    {
+      "mode": "calm",
+      "level": 2,
+      "status": "stageclear",
+      "phase": "debrief",
+      "seconds": 63.8,
+      "minHp": 93.4,
+      "hp": 100,
+      "cards": 3,
+      "completed": 3,
+      "pickups": 3,
+      "enemyShots": 4,
+      "peakProjectiles": 2,
+      "usedPulse": 2,
+      "startingCrew": 15,
+      "remaining": 0,
+      "scoreGain": 4997,
+      "events": [
+        {
+          "at": 17.083,
+          "kind": "equipment",
+          "id": "base-0-0",
+          "type": "capacitor"
+        },
+        {
+          "at": 39.983,
+          "kind": "equipment",
+          "id": "base-0-1",
+          "type": "triad"
+        },
+        {
+          "at": 60.117,
+          "kind": "equipment",
+          "id": "base-0-2",
+          "type": "armor"
+        }
+      ]
+    },
+    {
+      "mode": "calm",
+      "level": 5,
+      "status": "stageclear",
+      "phase": "debrief",
+      "seconds": 75.2,
+      "minHp": 96.08,
+      "hp": 100,
+      "cards": 3,
+      "completed": 3,
+      "pickups": 3,
+      "enemyShots": 4,
+      "peakProjectiles": 1,
+      "usedPulse": 1,
+      "startingCrew": 16,
+      "remaining": 0,
+      "scoreGain": 5110,
+      "events": [
+        {
+          "at": 15.1,
+          "kind": "equipment",
+          "id": "base-1-0",
+          "type": "capacitor"
+        },
+        {
+          "at": 39.55,
+          "kind": "equipment",
+          "id": "base-1-1",
+          "type": "triad"
+        },
+        {
+          "at": 71.5,
+          "kind": "equipment",
+          "id": "base-1-2",
+          "type": "armor"
+        }
+      ]
+    },
+    {
+      "mode": "calm",
+      "level": 8,
+      "status": "stageclear",
+      "phase": "debrief",
+      "seconds": 68.8,
+      "minHp": 95.75,
+      "hp": 100,
+      "cards": 3,
+      "completed": 3,
+      "pickups": 3,
+      "enemyShots": 3,
+      "peakProjectiles": 1,
+      "usedPulse": 1,
+      "startingCrew": 19,
+      "remaining": 0,
+      "scoreGain": 5440,
+      "events": [
+        {
+          "at": 13.95,
+          "kind": "equipment",
+          "id": "base-2-0",
+          "type": "capacitor"
+        },
+        {
+          "at": 39.283,
+          "kind": "equipment",
+          "id": "base-2-1",
+          "type": "triad"
+        },
+        {
+          "at": 65.1,
+          "kind": "equipment",
+          "id": "base-2-2",
+          "type": "armor"
+        }
+      ]
+    },
+    {
+      "mode": "calm",
+      "level": 11,
+      "status": "finalebrief",
+      "phase": "boss",
+      "seconds": 66.25,
+      "minHp": 100,
+      "hp": 100,
+      "cards": 3,
+      "completed": 3,
+      "pickups": 3,
+      "enemyShots": 4,
+      "peakProjectiles": 2,
+      "usedPulse": 1,
+      "startingCrew": 19,
+      "remaining": 0,
+      "scoreGain": 5413,
+      "events": [
+        {
+          "at": 13.15,
+          "kind": "equipment",
+          "id": "base-3-0",
+          "type": "capacitor"
+        },
+        {
+          "at": 35.25,
+          "kind": "equipment",
+          "id": "base-3-1",
+          "type": "triad"
+        },
+        {
+          "at": 62.55,
+          "kind": "equipment",
+          "id": "base-3-2",
+          "type": "armor"
+        }
+      ]
+    },
+    {
+      "mode": "calm",
+      "level": 13,
+      "status": "boarding",
+      "phase": "mrg",
+      "seconds": 73.07,
+      "minHp": 96.74,
+      "hp": 100,
+      "cards": 3,
+      "completed": 3,
+      "pickups": 3,
+      "enemyShots": 5,
+      "peakProjectiles": 2,
+      "usedPulse": 2,
+      "startingCrew": 21,
+      "remaining": 0,
+      "scoreGain": 4560,
+      "events": [
+        {
+          "at": 14.983,
+          "kind": "equipment",
+          "id": "base-4-0",
+          "type": "capacitor"
+        },
+        {
+          "at": 41.95,
+          "kind": "equipment",
+          "id": "base-4-1",
+          "type": "triad"
+        },
+        {
+          "at": 69.367,
+          "kind": "equipment",
+          "id": "base-4-2",
+          "type": "armor"
+        }
+      ]
+    }
+  ]
+}

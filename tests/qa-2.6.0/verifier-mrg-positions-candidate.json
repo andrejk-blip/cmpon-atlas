@@ -1,0 +1,149 @@
+{
+  "method": "Initial isolated MRG fixture weapons2/armor1; input-only alternative neutral positions, same hidden-state operator from prior release, instrumented mrgDamage only observes and forwards unchanged. Not campaign/browser/human evidence.",
+  "rows": [
+    {
+      "home": -28,
+      "status": "lost",
+      "phase": "mrg",
+      "seconds": 41.16666666666561,
+      "minHp": 0,
+      "hp": 0,
+      "wave": 2,
+      "boss": 1819.8333333333335,
+      "damage": [
+        {
+          "time": 21.70000000000005,
+          "hp": 84,
+          "kind": "soldier",
+          "x": -14.037618114817253,
+          "y": 1,
+          "wave": 1
+        },
+        {
+          "time": 36.88333333333252,
+          "hp": 68,
+          "kind": "soldier",
+          "x": -13.499999999999915,
+          "y": 1,
+          "wave": 2
+        },
+        {
+          "time": 38.433333333332435,
+          "hp": 16.799999999999997,
+          "kind": "rocket",
+          "x": -6.000445463288144,
+          "y": 1,
+          "wave": 2
+        },
+        {
+          "time": 41.16666666666561,
+          "hp": 0,
+          "kind": "rocket",
+          "x": -6.0000000000000275,
+          "y": 1,
+          "wave": 2
+        }
+      ]
+    },
+    {
+      "home": -22,
+      "status": "lost",
+      "phase": "mrg",
+      "seconds": 41.63333333333225,
+      "minHp": 0,
+      "hp": 0,
+      "wave": 2,
+      "boss": 1756.8333333333335,
+      "damage": [
+        {
+          "time": 36.98333333333252,
+          "hp": 68,
+          "kind": "soldier",
+          "x": -9.99999999999997,
+          "y": 1,
+          "wave": 2
+        },
+        {
+          "time": 38.899999999999075,
+          "hp": 16.799999999999997,
+          "kind": "rocket",
+          "x": -6.00000094722233,
+          "y": 1,
+          "wave": 2
+        },
+        {
+          "time": 41.63333333333225,
+          "hp": 0,
+          "kind": "rocket",
+          "x": -6.000000000000003,
+          "y": 1,
+          "wave": 2
+        }
+      ]
+    },
+    {
+      "home": -16,
+      "status": "lost",
+      "phase": "mrg",
+      "seconds": 36.49999999999921,
+      "minHp": 0,
+      "hp": 0,
+      "wave": 2,
+      "boss": 1977.3333333333335,
+      "damage": [
+        {
+          "time": 32.44999999999944,
+          "hp": 48.8,
+          "kind": "rocket",
+          "x": -15.985248745856419,
+          "y": 6.785545379625048,
+          "wave": 2
+        },
+        {
+          "time": 33.43333333333272,
+          "hp": 16.799999999999997,
+          "kind": "boss",
+          "x": -15.999996822376437,
+          "y": 3.8022120462917055,
+          "wave": 2
+        },
+        {
+          "time": 36.49999999999921,
+          "hp": 0,
+          "kind": "soldier",
+          "x": -6.6581958847736535,
+          "y": 1,
+          "wave": 2
+        }
+      ]
+    },
+    {
+      "home": "patrol",
+      "status": "docking",
+      "phase": "upload",
+      "seconds": 51.81666666666501,
+      "minHp": 16.799999999999997,
+      "hp": 16.799999999999997,
+      "wave": 2,
+      "boss": 0,
+      "damage": [
+        {
+          "time": 35.93333333333258,
+          "hp": 68,
+          "kind": "soldier",
+          "x": -6.8795114364212235,
+          "y": 1,
+          "wave": 2
+        },
+        {
+          "time": 40.91666666666563,
+          "hp": 16.799999999999997,
+          "kind": "rocket",
+          "x": -6.000000000000003,
+          "y": 1,
+          "wave": 2
+        }
+      ]
+    }
+  ]
+}

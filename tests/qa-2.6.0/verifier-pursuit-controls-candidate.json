@@ -1,0 +1,1826 @@
+{
+  "method": "Node VM on baseline2.5 plus pursuit2.6 candidate ONLY. Isolated level4 initial fixture; ordinary inputs throughout. No rocket inputs; default ammunition unchanged. Navigation operator uses exact navTarget positions and is not human performance. Not final integrated release, not browser.",
+  "rows": [
+    {
+      "seed": 1,
+      "strategy": "stationary-fire",
+      "status": "crashing",
+      "seconds": 34.58,
+      "minHp": 0,
+      "hp": 0,
+      "firstShotHitSeconds": 12.56666666666687,
+      "minForward": 110.6962754713129,
+      "inspection": {
+        "version": "2.6.0",
+        "active": false,
+        "state": "chase",
+        "clock": 34.583333333332654,
+        "chapter": 1,
+        "stageHistory": [
+          {
+            "stage": 1,
+            "at": 0
+          }
+        ],
+        "packets": [
+          5.499999999999986,
+          0,
+          0
+        ],
+        "stageGates": [
+          0,
+          0,
+          0
+        ],
+        "warpSpawned": 2,
+        "warpContacts": 0,
+        "maneuvers": 2,
+        "shotsOpened": 13,
+        "kills": 9,
+        "jammersDestroyed": 0,
+        "gatesPassed": 0,
+        "gatesMissed": 4,
+        "gateCollisions": 3,
+        "enemiesSpawned": 12,
+        "progress": 4.824561403508759,
+        "uploaded": 5.499999999999986,
+        "requiredSeconds": 142,
+        "leader": [
+          -10.838190361834517,
+          17.761655998131047,
+          -2986.3134283927784
+        ],
+        "player": [
+          0,
+          0,
+          -2901.217045976284
+        ],
+        "speed": 82.49273079906898,
+        "link": {
+          "connected": false,
+          "reason": "off-course",
+          "distance": 87.50582705098338,
+          "offset": 20.7116466350075,
+          "blockedId": null
+        },
+        "requirements": 0,
+        "decisions": 0,
+        "collisions": 0,
+        "rocksDestroyed": 0,
+        "asteroids": [
+          {
+            "id": 53,
+            "pos": [
+              -90.24549242062494,
+              -39.310915865935385,
+              -3040
+            ],
+            "r": 13.600958097260445,
+            "wall": true,
+            "eta": 1.682365860353869,
+            "spawnedAt": 25.333333333333176,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 54,
+            "pos": [
+              93.56419076165184,
+              17.893964373506606,
+              -3040
+            ],
+            "r": 15.81966190924868,
+            "wall": true,
+            "eta": 1.682365860353869,
+            "spawnedAt": 25.333333333333176,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 55,
+            "pos": [
+              -41.4110213851435,
+              14.100403926461926,
+              -3040
+            ],
+            "r": 5.428573221201077,
+            "wall": false,
+            "eta": 1.682365860353869,
+            "spawnedAt": 25.333333333333176,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 57,
+            "pos": [
+              -90.93576912488788,
+              -13.830446403007954,
+              -3230
+            ],
+            "r": 14.829810049384832,
+            "wall": true,
+            "eta": 3.9855991047810804,
+            "spawnedAt": 27.64999999999971,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 58,
+            "pos": [
+              91.02714338991791,
+              28.906045539770275,
+              -3230
+            ],
+            "r": 12.113213578239083,
+            "wall": true,
+            "eta": 3.9855991047810804,
+            "spawnedAt": 27.64999999999971,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 59,
+            "pos": [
+              -52.99524748857756,
+              19.361034245490455,
+              -3230
+            ],
+            "r": 6.973997774068266,
+            "wall": false,
+            "eta": 3.9855991047810804,
+            "spawnedAt": 27.64999999999971,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 60,
+            "pos": [
+              -91.62604582915083,
+              11.650023059919477,
+              -3420
+            ],
+            "r": 16.05866200150922,
+            "wall": true,
+            "eta": 6.288832349208285,
+            "spawnedAt": 29.966666666666246,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 61,
+            "pos": [
+              88.49009601818398,
+              39.918126706033945,
+              -3420
+            ],
+            "r": 14.406765247229487,
+            "wall": true,
+            "eta": 6.288832349208285,
+            "spawnedAt": 29.966666666666246,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 62,
+            "pos": [
+              -46.76286494186656,
+              23.11279289065851,
+              -3420
+            ],
+            "r": 5.519422326935455,
+            "wall": false,
+            "eta": 6.288832349208285,
+            "spawnedAt": 29.966666666666246,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 70,
+            "pos": [
+              -92.31632253341377,
+              37.13049252284691,
+              -3610
+            ],
+            "r": 17.287513953633606,
+            "wall": true,
+            "eta": 8.592065593635496,
+            "spawnedAt": 32.283333333332784,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 71,
+            "pos": [
+              95.95304864645004,
+              -39.069792127702385,
+              -3610
+            ],
+            "r": 16.70031691621989,
+            "wall": true,
+            "eta": 8.592065593635496,
+            "spawnedAt": 32.283333333332784,
+            "contact": false,
+            "dead": false
+          }
+        ]
+      }
+    },
+    {
+      "seed": 1,
+      "strategy": "navigation-no-fire",
+      "status": "crashing",
+      "seconds": 42.5,
+      "minHp": 0,
+      "hp": 0,
+      "firstShotHitSeconds": null,
+      "minForward": 82.00000358837133,
+      "inspection": {
+        "version": "2.6.0",
+        "active": false,
+        "state": "chase",
+        "clock": 42.49999999999887,
+        "chapter": 2,
+        "stageHistory": [
+          {
+            "stage": 1,
+            "at": 0
+          },
+          {
+            "stage": 2,
+            "at": 38.53333333333243
+          }
+        ],
+        "packets": [
+          38,
+          3.4166666666666594,
+          0
+        ],
+        "stageGates": [
+          4,
+          1,
+          0
+        ],
+        "warpSpawned": 3,
+        "warpContacts": 0,
+        "maneuvers": 2,
+        "shotsOpened": 58,
+        "kills": 0,
+        "jammersDestroyed": 0,
+        "gatesPassed": 5,
+        "gatesMissed": 0,
+        "gateCollisions": 0,
+        "enemiesSpawned": 12,
+        "progress": 35.80917874396135,
+        "uploaded": 41.41666666666666,
+        "requiredSeconds": 142,
+        "leader": [
+          -15.468246001776869,
+          3.2157456393484254,
+          -3773.1557116900035
+        ],
+        "player": [
+          -16.459384977883815,
+          3.4891677693384766,
+          -3690.3988107700093
+        ],
+        "speed": 102.04524207458583,
+        "link": {
+          "connected": true,
+          "reason": "connected",
+          "distance": 82.74777631216541,
+          "offset": 1.0598781765557235,
+          "blockedId": null
+        },
+        "requirements": 1,
+        "decisions": 0,
+        "collisions": 0,
+        "rocksDestroyed": 0,
+        "asteroids": [
+          {
+            "id": 72,
+            "pos": [
+              -93.00659923767671,
+              -27.38903801422566,
+              -3800
+            ],
+            "r": 12.516365905757993,
+            "wall": true,
+            "eta": 1.0740450706156608,
+            "spawnedAt": 34.59999999999932,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 73,
+            "pos": [
+              93.41600127471611,
+              -28.057710961438715,
+              -3800
+            ],
+            "r": 12.993868585210294,
+            "wall": true,
+            "eta": 1.0740450706156608,
+            "spawnedAt": 34.59999999999932,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 74,
+            "pos": [
+              -18.259199711083145,
+              27.599243543785406,
+              -3800
+            ],
+            "r": 5.610271432669833,
+            "wall": false,
+            "eta": 1.0740450706156608,
+            "spawnedAt": 34.59999999999932,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 75,
+            "pos": [
+              -93.69687594193965,
+              -1.9085685512982309,
+              -3990
+            ],
+            "r": 13.74521785788238,
+            "wall": true,
+            "eta": 2.9359643148380172,
+            "spawnedAt": 36.7499999999992,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 76,
+            "pos": [
+              90.87895390298218,
+              -17.045629795175046,
+              -3990
+            ],
+            "r": 15.287420254200697,
+            "wall": true,
+            "eta": 2.9359643148380172,
+            "spawnedAt": 36.7499999999992,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 77,
+            "pos": [
+              -7.512998680816805,
+              25.52144904614109,
+              -3990
+            ],
+            "r": 7.155695985537022,
+            "wall": false,
+            "eta": 2.9359643148380172,
+            "spawnedAt": 36.7499999999992,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 78,
+            "pos": [
+              -94.3871526462026,
+              23.5719009116292,
+              -4180
+            ],
+            "r": 14.974069810006768,
+            "wall": true,
+            "eta": 4.797883559060367,
+            "spawnedAt": 38.666666666665755,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 79,
+            "pos": [
+              88.34190653124824,
+              -6.033548628911376,
+              -4180
+            ],
+            "r": 17.5809719231911,
+            "wall": true,
+            "eta": 4.797883559060367,
+            "spawnedAt": 38.666666666665755,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 80,
+            "pos": [
+              -0.9566968206199356,
+              14.741357805118888,
+              -4180
+            ],
+            "r": 5.701120538404211,
+            "wall": false,
+            "eta": 4.797883559060367,
+            "spawnedAt": 38.666666666665755,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 83,
+            "pos": [
+              -95.07742935046554,
+              -40.94762962544337,
+              -4370
+            ],
+            "r": 16.202921762131155,
+            "wall": true,
+            "eta": 6.659802803282723,
+            "spawnedAt": 40.39999999999899,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 84,
+            "pos": [
+              95.80485915951431,
+              4.978532537352294,
+              -4370
+            ],
+            "r": 13.874523592181504,
+            "wall": true,
+            "eta": 6.659802803282723,
+            "spawnedAt": 40.39999999999899,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 85,
+            "pos": [
+              9.601677658601929,
+              0.6578884994933336,
+              -4370
+            ],
+            "r": 7.2465450912714005,
+            "wall": false,
+            "eta": 6.659802803282723,
+            "spawnedAt": 40.39999999999899,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 86,
+            "pos": [
+              -95.76770605472848,
+              -15.467160162515938,
+              -4560
+            ],
+            "r": 17.43177371425554,
+            "wall": true,
+            "eta": 8.521722047505072,
+            "spawnedAt": 42.23333333333222,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 87,
+            "pos": [
+              93.26781178778037,
+              15.990613703615963,
+              -4560
+            ],
+            "r": 16.168075261171907,
+            "wall": true,
+            "eta": 8.521722047505072,
+            "spawnedAt": 42.23333333333222,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 88,
+            "pos": [
+              22.691202768436654,
+              -16.71873140083989,
+              -4560
+            ],
+            "r": 5.7919696441385895,
+            "wall": false,
+            "eta": 8.521722047505072,
+            "spawnedAt": 42.23333333333222,
+            "contact": false,
+            "dead": false
+          }
+        ]
+      }
+    },
+    {
+      "seed": 1,
+      "strategy": "navigation-fire",
+      "status": "boarding",
+      "seconds": 159.8,
+      "minHp": 34,
+      "hp": 100,
+      "firstShotHitSeconds": 12.56666666666687,
+      "minForward": 97.0558605832125,
+      "inspection": {
+        "version": "2.6.0",
+        "active": false,
+        "state": "return",
+        "clock": 159.8000000000193,
+        "chapter": 3,
+        "stageHistory": [
+          {
+            "stage": 1,
+            "at": 0
+          },
+          {
+            "stage": 2,
+            "at": 38.53333333333243
+          },
+          {
+            "stage": 3,
+            "at": 89.58333333332953
+          }
+        ],
+        "packets": [
+          38,
+          46,
+          58
+        ],
+        "stageGates": [
+          4,
+          10,
+          20
+        ],
+        "warpSpawned": 18,
+        "warpContacts": 1,
+        "maneuvers": 11,
+        "shotsOpened": 111,
+        "kills": 75,
+        "jammersDestroyed": 21,
+        "gatesPassed": 34,
+        "gatesMissed": 0,
+        "gateCollisions": 0,
+        "enemiesSpawned": 75,
+        "progress": 100,
+        "uploaded": 142,
+        "requiredSeconds": 142,
+        "leader": [
+          -15.42654762368228,
+          -15.2156015628285,
+          -18295.98839324388
+        ],
+        "player": [
+          78,
+          10,
+          -35
+        ],
+        "speed": 0,
+        "link": {
+          "connected": true,
+          "reason": "connected",
+          "distance": 83.02945161712941,
+          "offset": 1.074141300255641,
+          "blockedId": null
+        },
+        "requirements": 3,
+        "decisions": 2,
+        "collisions": 0,
+        "rocksDestroyed": 3,
+        "asteroids": []
+      }
+    },
+    {
+      "seed": 417147,
+      "strategy": "stationary-fire",
+      "status": "crashing",
+      "seconds": 41.7,
+      "minHp": 0,
+      "hp": 0,
+      "firstShotHitSeconds": 12.56666666666687,
+      "minForward": 110.6962754713129,
+      "inspection": {
+        "version": "2.6.0",
+        "active": false,
+        "state": "chase",
+        "clock": 41.699999999998916,
+        "chapter": 1,
+        "stageHistory": [
+          {
+            "stage": 1,
+            "at": 0
+          }
+        ],
+        "packets": [
+          10.666666666666776,
+          0,
+          0
+        ],
+        "stageGates": [
+          1,
+          0,
+          0
+        ],
+        "warpSpawned": 3,
+        "warpContacts": 0,
+        "maneuvers": 2,
+        "shotsOpened": 14,
+        "kills": 12,
+        "jammersDestroyed": 0,
+        "gatesPassed": 1,
+        "gatesMissed": 4,
+        "gateCollisions": 2,
+        "enemiesSpawned": 12,
+        "progress": 9.356725146198926,
+        "uploaded": 10.666666666666776,
+        "requiredSeconds": 142,
+        "leader": [
+          9.870962849766645,
+          14.311104822119491,
+          -3633.2696093787445
+        ],
+        "player": [
+          0,
+          0,
+          -3551.0561265328547
+        ],
+        "speed": 80.73878743931319,
+        "link": {
+          "connected": false,
+          "reason": "obstructed",
+          "distance": 84.0184996217329,
+          "offset": 17.42146275222917,
+          "blockedId": 63
+        },
+        "requirements": 0,
+        "decisions": 0,
+        "collisions": 0,
+        "rocksDestroyed": 0,
+        "asteroids": [
+          {
+            "id": 70,
+            "pos": [
+              -88.97577020060271,
+              11.284541592467576,
+              -3610
+            ],
+            "r": 13.18935464322567,
+            "wall": true,
+            "eta": 0.7300564615421052,
+            "spawnedAt": 32.283333333332784,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 71,
+            "pos": [
+              93.28867651242763,
+              14.69275493407622,
+              -3610
+            ],
+            "r": 12.943517385050654,
+            "wall": true,
+            "eta": 0.7300564615421052,
+            "spawnedAt": 32.283333333332784,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 72,
+            "pos": [
+              -89.66604690486565,
+              36.76501105539501,
+              -3800
+            ],
+            "r": 14.418206595350057,
+            "wall": true,
+            "eta": 3.0833244015989507,
+            "spawnedAt": 34.59999999999932,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 73,
+            "pos": [
+              90.7516291406937,
+              25.70483610033989,
+              -3800
+            ],
+            "r": 15.237069054041058,
+            "wall": true,
+            "eta": 3.0833244015989507,
+            "spawnedAt": 34.59999999999932,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 74,
+            "pos": [
+              -3.9434447338579925,
+              -8.987282856476208,
+              -3800
+            ],
+            "r": 7.059402703074738,
+            "wall": false,
+            "eta": 3.0833244015989507,
+            "spawnedAt": 34.59999999999932,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 75,
+            "pos": [
+              -90.3563236091286,
+              -27.754519481677562,
+              -3990
+            ],
+            "r": 15.647058547474444,
+            "wall": true,
+            "eta": 5.436592341655796,
+            "spawnedAt": 36.7499999999992,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 76,
+            "pos": [
+              88.21458176895976,
+              36.71691726660356,
+              -3990
+            ],
+            "r": 17.53062072303146,
+            "wall": true,
+            "eta": 5.436592341655796,
+            "spawnedAt": 36.7499999999992,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 77,
+            "pos": [
+              -13.559422627865551,
+              -3.154464613568237,
+              -3990
+            ],
+            "r": 5.604827255941927,
+            "wall": false,
+            "eta": 5.436592341655796,
+            "spawnedAt": 36.7499999999992,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 78,
+            "pos": [
+              -91.04660031339154,
+              -2.274050018750131,
+              -4180
+            ],
+            "r": 16.87591049959883,
+            "wall": true,
+            "eta": 7.789860281712642,
+            "spawnedAt": 38.666666666665755,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 79,
+            "pos": [
+              95.67753439722583,
+              -42.27100156713277,
+              -4180
+            ],
+            "r": 13.824172392021865,
+            "wall": true,
+            "eta": 7.789860281712642,
+            "spawnedAt": 38.666666666665755,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 80,
+            "pos": [
+              -29.45669142937956,
+              4.610868617196639,
+              -4180
+            ],
+            "r": 7.1502518088091165,
+            "wall": false,
+            "eta": 7.789860281712642,
+            "spawnedAt": 38.666666666665755,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 83,
+            "pos": [
+              -91.73687701765448,
+              23.2064194441773,
+              -4370
+            ],
+            "r": 12.104762451723218,
+            "wall": true,
+            "eta": 10.143128221769487,
+            "spawnedAt": 40.733333333332304,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 84,
+            "pos": [
+              93.1404870254919,
+              -31.2589204008691,
+              -4370
+            ],
+            "r": 16.117724061012268,
+            "wall": true,
+            "eta": 10.143128221769487,
+            "spawnedAt": 40.733333333332304,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 85,
+            "pos": [
+              -44.62332665225793,
+              13.857861712920872,
+              -4370
+            ],
+            "r": 5.6956763616763055,
+            "wall": false,
+            "eta": 10.143128221769487,
+            "spawnedAt": 40.733333333332304,
+            "contact": false,
+            "dead": false
+          }
+        ]
+      }
+    },
+    {
+      "seed": 417147,
+      "strategy": "navigation-no-fire",
+      "status": "crashing",
+      "seconds": 36.08,
+      "minHp": 0,
+      "hp": 0,
+      "firstShotHitSeconds": null,
+      "minForward": 82.00000358837133,
+      "inspection": {
+        "version": "2.6.0",
+        "active": false,
+        "state": "chase",
+        "clock": 36.08333333333257,
+        "chapter": 1,
+        "stageHistory": [
+          {
+            "stage": 1,
+            "at": 0
+          }
+        ],
+        "packets": [
+          35.5333333333326,
+          0,
+          0
+        ],
+        "stageGates": [
+          4,
+          0,
+          0
+        ],
+        "warpSpawned": 2,
+        "warpContacts": 0,
+        "maneuvers": 2,
+        "shotsOpened": 48,
+        "kills": 0,
+        "jammersDestroyed": 0,
+        "gatesPassed": 4,
+        "gatesMissed": 0,
+        "gateCollisions": 0,
+        "enemiesSpawned": 12,
+        "progress": 31.16959064327421,
+        "uploaded": 35.5333333333326,
+        "requiredSeconds": 142,
+        "leader": [
+          30.30336779452721,
+          11.451383941050924,
+          -3125.3694222274216
+        ],
+        "player": [
+          31.59453303644364,
+          10.519758573785309,
+          -3030.6004030491763
+        ],
+        "speed": 91.36216685801317,
+        "link": {
+          "connected": true,
+          "reason": "connected",
+          "distance": 94.68696176238237,
+          "offset": 1.582568662927495,
+          "blockedId": null
+        },
+        "requirements": 0,
+        "decisions": 0,
+        "collisions": 0,
+        "rocksDestroyed": 0,
+        "asteroids": [
+          {
+            "id": 53,
+            "pos": [
+              -96.90494008781388,
+              24.843133203685284,
+              -3040
+            ],
+            "r": 15.502798786852509,
+            "wall": true,
+            "eta": 0.10288281543751054,
+            "spawnedAt": 25.333333333333176,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 54,
+            "pos": [
+              90.89981862762943,
+              -18.34348856471479,
+              -3040
+            ],
+            "r": 12.062862378079444,
+            "wall": true,
+            "eta": 0.10288281543751054,
+            "spawnedAt": 25.333333333333176,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 55,
+            "pos": [
+              55.51006345696375,
+              -2.535787577852968,
+              -3040
+            ],
+            "r": 6.877704491605982,
+            "wall": false,
+            "eta": 0.10288281543751054,
+            "spawnedAt": 25.333333333333176,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 57,
+            "pos": [
+              -97.59521679207683,
+              -39.676397333387285,
+              -3230
+            ],
+            "r": 16.731650738976896,
+            "wall": true,
+            "eta": 2.182518254637202,
+            "spawnedAt": 27.64999999999971,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 58,
+            "pos": [
+              88.3627712558955,
+              -7.33140739845112,
+              -3230
+            ],
+            "r": 14.356414047069848,
+            "wall": true,
+            "eta": 2.182518254637202,
+            "spawnedAt": 27.64999999999971,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 59,
+            "pos": [
+              38.721700550013296,
+              -3.018663306743658,
+              -3230
+            ],
+            "r": 5.423129044473171,
+            "wall": false,
+            "eta": 2.182518254637202,
+            "spawnedAt": 27.64999999999971,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 60,
+            "pos": [
+              -88.28549349633977,
+              -14.195927870459855,
+              -3420
+            ],
+            "r": 17.960502691101283,
+            "wall": true,
+            "eta": 4.2621536938369005,
+            "spawnedAt": 29.966666666666246,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 61,
+            "pos": [
+              95.82572388416156,
+              3.68067376781255,
+              -3420
+            ],
+            "r": 16.64996571606025,
+            "wall": true,
+            "eta": 4.2621536938369005,
+            "spawnedAt": 29.966666666666246,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 62,
+            "pos": [
+              21.238036883556042,
+              -7.157859439769647,
+              -3420
+            ],
+            "r": 6.96855359734036,
+            "wall": false,
+            "eta": 4.2621536938369005,
+            "spawnedAt": 29.966666666666246,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 70,
+            "pos": [
+              -88.97577020060271,
+              11.284541592467576,
+              -3610
+            ],
+            "r": 13.18935464322567,
+            "wall": true,
+            "eta": 6.341789133036592,
+            "spawnedAt": 32.283333333332784,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 71,
+            "pos": [
+              93.28867651242763,
+              14.69275493407622,
+              -3610
+            ],
+            "r": 12.943517385050654,
+            "wall": true,
+            "eta": 6.341789133036592,
+            "spawnedAt": 32.283333333332784,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 72,
+            "pos": [
+              -89.66604690486565,
+              36.76501105539501,
+              -3800
+            ],
+            "r": 14.418206595350057,
+            "wall": true,
+            "eta": 8.421424572236283,
+            "spawnedAt": 34.59999999999932,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 73,
+            "pos": [
+              90.7516291406937,
+              25.70483610033989,
+              -3800
+            ],
+            "r": 15.237069054041058,
+            "wall": true,
+            "eta": 8.421424572236283,
+            "spawnedAt": 34.59999999999932,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 74,
+            "pos": [
+              -3.9434447338579925,
+              -8.987282856476208,
+              -3800
+            ],
+            "r": 7.059402703074738,
+            "wall": false,
+            "eta": 8.421424572236283,
+            "spawnedAt": 34.59999999999932,
+            "contact": false,
+            "dead": false
+          }
+        ]
+      }
+    },
+    {
+      "seed": 417147,
+      "strategy": "navigation-fire",
+      "status": "boarding",
+      "seconds": 160.57,
+      "minHp": 39,
+      "hp": 100,
+      "firstShotHitSeconds": 12.56666666666687,
+      "minForward": 93.21218373349984,
+      "inspection": {
+        "version": "2.6.0",
+        "active": false,
+        "state": "return",
+        "clock": 160.5666666666866,
+        "chapter": 3,
+        "stageHistory": [
+          {
+            "stage": 1,
+            "at": 0
+          },
+          {
+            "stage": 2,
+            "at": 38.53333333333243
+          },
+          {
+            "stage": 3,
+            "at": 91.13333333332945
+          }
+        ],
+        "packets": [
+          38,
+          46,
+          58
+        ],
+        "stageGates": [
+          4,
+          10,
+          20
+        ],
+        "warpSpawned": 18,
+        "warpContacts": 0,
+        "maneuvers": 11,
+        "shotsOpened": 115,
+        "kills": 75,
+        "jammersDestroyed": 21,
+        "gatesPassed": 34,
+        "gatesMissed": 0,
+        "gateCollisions": 0,
+        "enemiesSpawned": 75,
+        "progress": 100,
+        "uploaded": 142,
+        "requiredSeconds": 142,
+        "leader": [
+          33.010029632783755,
+          -5.8071262182359265,
+          -18358.505059910494
+        ],
+        "player": [
+          78,
+          10,
+          -35
+        ],
+        "speed": 0,
+        "link": {
+          "connected": true,
+          "reason": "connected",
+          "distance": 83.27142651251825,
+          "offset": 1.3784306407975129,
+          "blockedId": null
+        },
+        "requirements": 3,
+        "decisions": 2,
+        "collisions": 1,
+        "rocksDestroyed": 5,
+        "asteroids": []
+      }
+    },
+    {
+      "seed": 620180,
+      "strategy": "stationary-fire",
+      "status": "crashing",
+      "seconds": 76.97,
+      "minHp": 0,
+      "hp": 0,
+      "firstShotHitSeconds": 12.56666666666687,
+      "minForward": 108.62278216446975,
+      "inspection": {
+        "version": "2.6.0",
+        "active": false,
+        "state": "chase",
+        "clock": 76.96666666666358,
+        "chapter": 1,
+        "stageHistory": [
+          {
+            "stage": 1,
+            "at": 0
+          }
+        ],
+        "packets": [
+          25.066666666666524,
+          0,
+          0
+        ],
+        "stageGates": [
+          3,
+          0,
+          0
+        ],
+        "warpSpawned": 5,
+        "warpContacts": 0,
+        "maneuvers": 5,
+        "shotsOpened": 29,
+        "kills": 24,
+        "jammersDestroyed": 0,
+        "gatesPassed": 3,
+        "gatesMissed": 6,
+        "gateCollisions": 0,
+        "enemiesSpawned": 24,
+        "progress": 21.988304093567127,
+        "uploaded": 25.066666666666524,
+        "requiredSeconds": 142,
+        "leader": [
+          6.019098937438525,
+          9.62212642919047,
+          -6622.113493868034
+        ],
+        "player": [
+          0,
+          0,
+          -6524.001079318912
+        ],
+        "speed": 97.26067922548157,
+        "link": {
+          "connected": true,
+          "reason": "connected",
+          "distance": 98.75665760499574,
+          "offset": 11.511321635930692,
+          "blockedId": null
+        },
+        "requirements": 0,
+        "decisions": 0,
+        "collisions": 0,
+        "rocksDestroyed": 2,
+        "asteroids": [
+          {
+            "id": 128,
+            "pos": [
+              -96.87951683951542,
+              -43.84823283646256,
+              -6650
+            ],
+            "r": 17.09893364785239,
+            "wall": true,
+            "eta": 1.2954764626821316,
+            "spawnedAt": 67.76666666666411,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 129,
+            "pos": [
+              89.13305216422305,
+              9.12899783346802,
+              -6650
+            ],
+            "r": 12.09099139412865,
+            "wall": true,
+            "eta": 1.2954764626821316,
+            "spawnedAt": 67.76666666666411,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 130,
+            "pos": [
+              -7.474925419070203,
+              -12.7613645534774,
+              -6650
+            ],
+            "r": 6.119819265091792,
+            "wall": false,
+            "eta": 1.2954764626821316,
+            "spawnedAt": 67.76666666666411,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 132,
+            "pos": [
+              -97.56979354377836,
+              -18.367763373535126,
+              -6840
+            ],
+            "r": 12.327785599976778,
+            "wall": true,
+            "eta": 3.248989449770349,
+            "spawnedAt": 70.08333333333064,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 133,
+            "pos": [
+              96.59600479248911,
+              20.14107899973169,
+              -6840
+            ],
+            "r": 14.384543063119054,
+            "wall": true,
+            "eta": 3.248989449770349,
+            "spawnedAt": 70.08333333333064,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 141,
+            "pos": [
+              -88.2600702480413,
+              7.112706089392304,
+              -7030
+            ],
+            "r": 13.556637552101165,
+            "wall": true,
+            "eta": 5.20250243685858,
+            "spawnedAt": 72.39999999999718,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 142,
+            "pos": [
+              94.05895742075518,
+              31.15316016599536,
+              -7030
+            ],
+            "r": 16.678094732109457,
+            "wall": true,
+            "eta": 5.20250243685858,
+            "spawnedAt": 72.39999999999718,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 143,
+            "pos": [
+              4.512675538867207,
+              -10.886828945254415,
+              -7030
+            ],
+            "r": 6.21066837082617,
+            "wall": false,
+            "eta": 5.20250243685858,
+            "spawnedAt": 72.39999999999718,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 144,
+            "pos": [
+              -88.95034695230424,
+              32.593175552319735,
+              -7220
+            ],
+            "r": 14.785489504225552,
+            "wall": true,
+            "eta": 7.156015423946798,
+            "spawnedAt": 74.71666666666371,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 145,
+            "pos": [
+              91.52191004902124,
+              42.16524133225903,
+              -7220
+            ],
+            "r": 12.97164640109986,
+            "wall": true,
+            "eta": 7.156015423946798,
+            "spawnedAt": 74.71666666666371,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 146,
+            "pos": [
+              14.444022127131358,
+              -8.536402094287334,
+              -7220
+            ],
+            "r": 7.756092923693359,
+            "wall": false,
+            "eta": 7.156015423946798,
+            "spawnedAt": 74.71666666666371,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 147,
+            "pos": [
+              -89.64062365656719,
+              -31.926354984752834,
+              -7410
+            ],
+            "r": 16.01434145634994,
+            "wall": true,
+            "eta": 9.109528411035015,
+            "spawnedAt": 76.84999999999692,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 148,
+            "pos": [
+              88.98486267728731,
+              -36.8226775014773,
+              -7410
+            ],
+            "r": 15.265198070090264,
+            "wall": true,
+            "eta": 9.109528411035015,
+            "spawnedAt": 76.84999999999692,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 149,
+            "pos": [
+              20.365528169512892,
+              -5.137518176561997,
+              -7410
+            ],
+            "r": 6.301517476560548,
+            "wall": false,
+            "eta": 9.109528411035015,
+            "spawnedAt": 76.84999999999692,
+            "contact": false,
+            "dead": false
+          }
+        ]
+      }
+    },
+    {
+      "seed": 620180,
+      "strategy": "navigation-no-fire",
+      "status": "crashing",
+      "seconds": 52.75,
+      "minHp": 0,
+      "hp": 0,
+      "firstShotHitSeconds": null,
+      "minForward": 82.00000358837133,
+      "inspection": {
+        "version": "2.6.0",
+        "active": false,
+        "state": "chase",
+        "clock": 52.74999999999829,
+        "chapter": 2,
+        "stageHistory": [
+          {
+            "stage": 1,
+            "at": 0
+          },
+          {
+            "stage": 2,
+            "at": 38.53333333333243
+          }
+        ],
+        "packets": [
+          38,
+          6.21666666666665,
+          0
+        ],
+        "stageGates": [
+          4,
+          3,
+          0
+        ],
+        "warpSpawned": 4,
+        "warpContacts": 0,
+        "maneuvers": 3,
+        "shotsOpened": 90,
+        "kills": 0,
+        "jammersDestroyed": 0,
+        "gatesPassed": 7,
+        "gatesMissed": 0,
+        "gateCollisions": 0,
+        "enemiesSpawned": 18,
+        "progress": 37.838164251207715,
+        "uploaded": 44.21666666666665,
+        "requiredSeconds": 142,
+        "leader": [
+          5.794284409086325,
+          3.0371445036759095,
+          -4908.272444219549
+        ],
+        "player": [
+          14.593238778707004,
+          -3.3295106628839806,
+          -4805.1865394836495
+        ],
+        "speed": 129.780291246086,
+        "link": {
+          "connected": false,
+          "reason": "jammed",
+          "distance": 103.77482367319331,
+          "offset": 11.058742586264106,
+          "blockedId": 93
+        },
+        "requirements": 1,
+        "decisions": 0,
+        "collisions": 0,
+        "rocksDestroyed": 0,
+        "asteroids": [
+          {
+            "id": 99,
+            "pos": [
+              -90.66702650114894,
+              -3.172458002809435,
+              -4940
+            ],
+            "r": 12.039266078732908,
+            "wall": true,
+            "eta": 1.0387822312767128,
+            "spawnedAt": 45.91666666666534,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 100,
+            "pos": [
+              91.96647850982845,
+              0.0202673370949924,
+              -4940
+            ],
+            "r": 15.44902637321502,
+            "wall": true,
+            "eta": 1.0387822312767128,
+            "spawnedAt": 45.91666666666534,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 101,
+            "pos": [
+              8.086341966218663,
+              28.23148650978668,
+              -4940
+            ],
+            "r": 7.21099828928709,
+            "wall": false,
+            "eta": 1.0387822312767128,
+            "spawnedAt": 45.91666666666534,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 102,
+            "pos": [
+              -91.35730320541188,
+              22.308011460117996,
+              -5130
+            ],
+            "r": 13.268118030857295,
+            "wall": true,
+            "eta": 2.502794972931966,
+            "spawnedAt": 47.76666666666524,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 103,
+            "pos": [
+              89.42943113809451,
+              11.032348503358662,
+              -5130
+            ],
+            "r": 17.742578042205423,
+            "wall": true,
+            "eta": 2.502794972931966,
+            "spawnedAt": 47.76666666666524,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 104,
+            "pos": [
+              -4.989860261248355,
+              30.965944308005145,
+              -5130
+            ],
+            "r": 5.756422842154279,
+            "wall": false,
+            "eta": 2.502794972931966,
+            "spawnedAt": 47.76666666666524,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 105,
+            "pos": [
+              -92.04757990967482,
+              -42.21151907695457,
+              -5320
+            ],
+            "r": 14.496969982981682,
+            "wall": true,
+            "eta": 3.966807714587219,
+            "spawnedAt": 49.59999999999847,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 106,
+            "pos": [
+              96.89238376636058,
+              22.044429669622332,
+              -5320
+            ],
+            "r": 14.036129711195827,
+            "wall": true,
+            "eta": 3.966807714587219,
+            "spawnedAt": 49.59999999999847,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 107,
+            "pos": [
+              -15.108067467053964,
+              28.522709380655513,
+              -5320
+            ],
+            "r": 7.301847395021468,
+            "wall": false,
+            "eta": 3.966807714587219,
+            "spawnedAt": 49.59999999999847,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 110,
+            "pos": [
+              -92.73785661393777,
+              -16.731049614027143,
+              -5510
+            ],
+            "r": 15.725821935106069,
+            "wall": true,
+            "eta": 5.430820456242479,
+            "spawnedAt": 51.24999999999837,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 111,
+            "pos": [
+              94.35533639462665,
+              33.056510835886,
+              -5510
+            ],
+            "r": 16.32968138018623,
+            "wall": true,
+            "eta": 5.430820456242479,
+            "spawnedAt": 51.24999999999837,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 112,
+            "pos": [
+              -19.264142683692008,
+              18.461687564038293,
+              -5510
+            ],
+            "r": 5.8472719478886575,
+            "wall": false,
+            "eta": 5.430820456242479,
+            "spawnedAt": 51.24999999999837,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 113,
+            "pos": [
+              -93.42813331820071,
+              8.749419848900288,
+              -5700
+            ],
+            "r": 16.954673887230456,
+            "wall": true,
+            "eta": 6.894833197897732,
+            "spawnedAt": 52.73333333333162,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 114,
+            "pos": [
+              91.81828902289271,
+              44.06859200214967,
+              -5700
+            ],
+            "r": 12.623233049176633,
+            "wall": true,
+            "eta": 6.894833197897732,
+            "spawnedAt": 52.73333333333162,
+            "contact": false,
+            "dead": false
+          },
+          {
+            "id": 115,
+            "pos": [
+              -10.852612191761452,
+              5.839400579991619,
+              -5700
+            ],
+            "r": 7.3926965007558465,
+            "wall": false,
+            "eta": 6.894833197897732,
+            "spawnedAt": 52.73333333333162,
+            "contact": false,
+            "dead": false
+          }
+        ]
+      }
+    },
+    {
+      "seed": 620180,
+      "strategy": "navigation-fire",
+      "status": "boarding",
+      "seconds": 156.23,
+      "minHp": 89,
+      "hp": 100,
+      "firstShotHitSeconds": 12.56666666666687,
+      "minForward": 87.8749579726682,
+      "inspection": {
+        "version": "2.6.0",
+        "active": false,
+        "state": "return",
+        "clock": 156.2333333333498,
+        "chapter": 3,
+        "stageHistory": [
+          {
+            "stage": 1,
+            "at": 0
+          },
+          {
+            "stage": 2,
+            "at": 38.53333333333243
+          },
+          {
+            "stage": 3,
+            "at": 89.0166666666629
+          }
+        ],
+        "packets": [
+          38,
+          46,
+          58
+        ],
+        "stageGates": [
+          4,
+          10,
+          19
+        ],
+        "warpSpawned": 17,
+        "warpContacts": 0,
+        "maneuvers": 11,
+        "shotsOpened": 110,
+        "kills": 74,
+        "jammersDestroyed": 21,
+        "gatesPassed": 33,
+        "gatesMissed": 0,
+        "gateCollisions": 0,
+        "enemiesSpawned": 75,
+        "progress": 100,
+        "uploaded": 142,
+        "requiredSeconds": 142,
+        "leader": [
+          -11.869490651210842,
+          -13.692048517911656,
+          -17865.62172657742
+        ],
+        "player": [
+          78,
+          10,
+          -35
+        ],
+        "speed": 0,
+        "link": {
+          "connected": true,
+          "reason": "connected",
+          "distance": 81.43029378234418,
+          "offset": 0.6249543423989289,
+          "blockedId": null
+        },
+        "requirements": 3,
+        "decisions": 2,
+        "collisions": 0,
+        "rocksDestroyed": 6,
+        "asteroids": []
+      }
+    }
+  ]
+}

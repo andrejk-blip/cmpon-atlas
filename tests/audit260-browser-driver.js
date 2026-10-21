@@ -21,7 +21,9 @@
   if(kind){const index=kind==='flight'?e.lesson?.caseIndex:kind==='terminal'?e.board?.question:e.board?.completed?.length;const stamp=level()+'/'+kind+'/'+index;if(!answered.has(stamp)){answered.add(stamp);cards.push({level:level(),kind,index});}}
   return arcadeAction(action,...args);
  },lessonCase:citadelLessonCase,deckQA:{path:stationPath,line:stationLine,input:arcadeInput}};
- const orbital=CITADEL_QA_ORBITAL260.createOrbitalController(h),deck=operators.createDeckController(h),swarm=operators.createSwarmController(CITADEL_SWARM),mrg=operators.createMrgController();
+ const convoyPilots=new WeakMap();
+ const convoyCommand=()=>{let p=convoyPilots.get(e.escort);if(!p){p=CITADEL_CONVOY_PILOT(h,e,{reaction:.35,device:'joystick'});convoyPilots.set(e.escort,p);}return p.input();};
+ const orbital=CITADEL_QA_ORBITAL260.createOrbitalController(h,{resupply:false}),deck=operators.createDeckController(h),swarm=operators.createSwarmController(CITADEL_SWARM),mrg=operators.createMrgController();
  let parallax=null,key='',frameCalls=0,emitChanges=0,lastEmit=e.emit,finished=null,manualPause=false;
  let lastElapsed=e.elapsed,lastMovement=performance.now(),lastSample=0,maxGap=0,lastInputTime=performance.now();
  const level=()=>e.finale?(['mrg','upload','victory'].includes(e.finale.phase)?14:e.finale.phase==='maze'?13:12):e.phase==='escort'?e.stage*3+3:e.board?e.stage*3+2:e.stage*3+1;
@@ -35,7 +37,7 @@
   if(e.status==='boarding')return deck(e);
   if(e.phase==='pursuit')return operators.pursuitInput(h,e);
   if(e.phase==='swarm')return swarm(e);
-  if(CITADEL_CONVOY.active(e))return CITADEL_CONVOY_INPUT(h,e);
+  if(CITADEL_CONVOY.active(e))return convoyCommand();
   if(e.status==='playing')return orbital(e);
   return{};
  };

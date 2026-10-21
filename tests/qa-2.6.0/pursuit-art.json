@@ -1,0 +1,213 @@
+{
+  "version": "2.6.0",
+  "method": "Production entry in Node VM and native @napi-rs/canvas software 3D. Mission entry fixture; ordinary controller input reaches gates and both Warp creatures. Asset plates are explicitly staged physical poses. No browser, GPU, phone, complete campaign or human-enjoyment claim.",
+  "source": {
+    "file": "assets/citadel-pursuit-view-v2.6.0.js",
+    "sha": "eb4fd3d9099479ada284ea31f1c47453a4fc35f24f8862184b0be1932edbd7f8",
+    "rules": "assets/citadel-pursuit-v2.6.0.js",
+    "shaRules": "5c60be2944b300610d07dce9438fe0581ac83ee1532d4796b7f6d3c54c90dea7"
+  },
+  "reached": {
+    "mode": "calm",
+    "frames": 2293,
+    "seconds": 38.21666666666667,
+    "status": "playing",
+    "hp": 100,
+    "warps": [
+      "hammer",
+      "tentacle"
+    ],
+    "ring": true
+  },
+  "images": [
+    {
+      "name": "pursuit-before",
+      "width": 1280,
+      "height": 720,
+      "fx": true,
+      "sha": "7c698ac8dc24840b36b4bb17e060fc46b3baaa68a5ea90bc84fe55dc06b1a778",
+      "items": 125,
+      "triangles": 15560,
+      "drawMs": 1221.02
+    },
+    {
+      "name": "pursuit-after",
+      "width": 1280,
+      "height": 720,
+      "fx": true,
+      "sha": "4d5d04837158b5073b8a636ce6c16d45e130c3a086ec54b336a105aee9fa30e1",
+      "items": 112,
+      "triangles": 16498,
+      "drawMs": 1239.73
+    },
+    {
+      "name": "pursuit-phone",
+      "width": 390,
+      "height": 640,
+      "fx": true,
+      "sha": "f71bc5d283a498b2e8115a68ca856da66ca5fcdff5e59cc1745671ee202d9f79",
+      "items": 112,
+      "triangles": 16498,
+      "drawMs": 975.78
+    },
+    {
+      "name": "pursuit-landscape",
+      "width": 780,
+      "height": 390,
+      "fx": true,
+      "sha": "0e3499ce73fd2e1bcf507594ba660975c2de46019d2cfed16641431221fac0f7",
+      "items": 112,
+      "triangles": 16498,
+      "drawMs": 1060.22
+    },
+    {
+      "name": "pursuit-fx-off",
+      "width": 390,
+      "height": 640,
+      "fx": false,
+      "sha": "dd2abe2fb14be2b67dffefc82852ae0e728a93d222558aebe48449a072887010",
+      "items": 94,
+      "triangles": 15706,
+      "drawMs": 1187.41
+    },
+    {
+      "name": "pursuit-warp-hammer",
+      "width": 1280,
+      "height": 720,
+      "fx": true,
+      "sha": "eff35249366b979e1bf671c8703c5b383b9b1b41360312fc64efa14d3822697f",
+      "items": 21,
+      "triangles": 5562,
+      "drawMs": 1203.18
+    },
+    {
+      "name": "pursuit-live-hammer",
+      "width": 1280,
+      "height": 720,
+      "fx": true,
+      "sha": "4d5d04837158b5073b8a636ce6c16d45e130c3a086ec54b336a105aee9fa30e1",
+      "items": 112,
+      "triangles": 16498,
+      "drawMs": 1276.15
+    },
+    {
+      "name": "pursuit-warp-tentacle",
+      "width": 1280,
+      "height": 720,
+      "fx": true,
+      "sha": "1b590ff44081d32732e1ff849dd60d564f3745c6d8b143d162f305fab8553c98",
+      "items": 23,
+      "triangles": 5408,
+      "drawMs": 1087.73
+    },
+    {
+      "name": "pursuit-live-tentacle",
+      "width": 1280,
+      "height": 720,
+      "fx": true,
+      "sha": "261ab016f85357ba53300341498da4cffbfb5d45e434f157a4b156546c5514de",
+      "items": 162,
+      "triangles": 18260,
+      "drawMs": 1117.84
+    },
+    {
+      "name": "pursuit-ring",
+      "width": 1280,
+      "height": 720,
+      "fx": true,
+      "sha": "4efbcc8748de665f3c5e488860f7334bbc93a40ead9019f6611122d1405e0e00",
+      "items": 98,
+      "triangles": 14444,
+      "drawMs": 1175.17
+    },
+    {
+      "name": "pursuit-detail-geometry",
+      "width": 1280,
+      "height": 720,
+      "fx": true,
+      "sha": "731292d4ed25ce63333782d9eaf3e8dd6ed2465d085c5ab23df552508d028d9e",
+      "items": 118,
+      "triangles": 26688,
+      "drawMs": 1129.22
+    }
+  ],
+  "assertions": {
+    "readOnly": true,
+    "finiteModels": true,
+    "idempotent": true,
+    "addedListeners": 0,
+    "combatHasNoWarningGeometry": true,
+    "physicalGeometryVisible": true,
+    "apertureRadius": 20,
+    "ringMinRadius": 19.999999294430733,
+    "ringMaxRadius": 24.50000064133224,
+    "bodyRadius": 10.785116373522698,
+    "hammerRadius": 6.402173519308884,
+    "enemyTriangles": {
+      "interceptor-0": 976,
+      "heavy-0": 1120,
+      "jammer-0": 1200,
+      "interceptor-1": 812,
+      "heavy-1": 956,
+      "jammer-1": 936,
+      "interceptor-2": 812,
+      "heavy-2": 956,
+      "jammer-2": 936
+    },
+    "maxWarpEntities": 2,
+    "meshesBefore": 464,
+    "meshesAfter": 464,
+    "templates": 28
+  },
+  "nativeBenchmark": {
+    "width": 1280,
+    "height": 720,
+    "pairs": 6,
+    "beforeMedianMs": 67.64,
+    "afterMedianMs": 83.89,
+    "beforeSamples": [
+      60.5,
+      62.92,
+      66.18,
+      69.09,
+      70.26,
+      78.45
+    ],
+    "afterSamples": [
+      79.98,
+      81.86,
+      83.42,
+      84.37,
+      90.33,
+      123.99
+    ],
+    "note": "Alternating draws, one discarded warm-up pair. Host CPU timings are not browser or Android FPS."
+  },
+  "stress": {
+    "sceneBuilds": 120,
+    "canvasDraws": 18,
+    "medianMs": 80.56,
+    "p95Ms": 99.27,
+    "heapBefore": 29976408,
+    "heapAfter": 102337872,
+    "retainedHeap": [
+      {
+        "sceneBuilds": 30,
+        "bytes": 30036736
+      },
+      {
+        "sceneBuilds": 60,
+        "bytes": 30040408
+      },
+      {
+        "sceneBuilds": 90,
+        "bytes": 30034888
+      },
+      {
+        "sceneBuilds": 120,
+        "bytes": 30115000
+      }
+    ],
+    "note": "Retained Node heap samples after explicit GC; this is not a browser heap/Android memory measurement."
+  }
+}

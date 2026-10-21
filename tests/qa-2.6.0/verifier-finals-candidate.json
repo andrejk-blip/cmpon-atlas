@@ -1,0 +1,39 @@
+{
+  "method": "Node VM exact candidate entry. Isolated initial fixtures with legal earned mixed weapons2/armor1 loadout; default mission ammo and HP. Inputs only after launch. Precise-state operator reads boss attack state (including invisible normal-mode preparation), so this proves a mechanically reachable path only, not human fairness. Not full campaign and not browser.",
+  "rows": [
+    {
+      "level": 12,
+      "mode": "normal",
+      "status": "playing",
+      "phase": "breach",
+      "seconds": 61.866666666664436,
+      "frames": 3712,
+      "minHp": 85.60000000000001,
+      "hp": 97.60000000000001,
+      "missiles": 2,
+      "upgrades": {
+        "weapons": 2,
+        "armor": 1,
+        "rockets": 0
+      }
+    },
+    {
+      "level": 14,
+      "mode": "normal",
+      "status": "lost",
+      "phase": "mrg",
+      "seconds": 41.783333333332244,
+      "frames": 2507,
+      "minHp": 0,
+      "hp": 0,
+      "missiles": 0,
+      "upgrades": {
+        "weapons": 2,
+        "armor": 1,
+        "rockets": 0
+      },
+      "wave": 2,
+      "bossHp": 1819.8333333333335
+    }
+  ]
+}

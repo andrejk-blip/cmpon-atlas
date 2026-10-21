@@ -1,0 +1,408 @@
+{
+  "version": "2.6.0",
+  "method": "Node VM production entry and native @napi-rs/canvas; direct mission entry fixtures, ordinary simulation inputs thereafter. Not browser, WebGL, physical phone, audio or campaign-completion evidence.",
+  "files": [
+    {
+      "file": "assets/citadel-convoy-view-v2.6.0.js",
+      "sha": "a3e9a4cc44b213c72bfe78f70dff5c4ccda64260ea45e03c83b510c7c11faa54"
+    },
+    {
+      "file": "assets/citadel-convoy-v2.6.0.js",
+      "sha": "fb80b02ae850f69df1295bac3bbe64f61a18d05cf93d768e6e66dc1c595d44c7"
+    }
+  ],
+  "rootCause": "Opaque fully-emissive #0b203a c240_tunnel covered the entire cached sky. Uniform colour, fog and sparse thin streaks flattened depth. It was removed, not hidden by extra bloom.",
+  "checks": {
+    "idempotent": true,
+    "addedListeners": 0,
+    "readOnly": true,
+    "finiteModels": true,
+    "noOpaqueTunnel": true,
+    "exactCircularBoundary": true,
+    "legacyRectanglesSupported": true,
+    "battleWarningsRemoved": true,
+    "calmGuidanceRetained": true,
+    "boundedMeshes": true,
+    "glProgramsPerRenderer": 2,
+    "glProgramsDisposed": true,
+    "rendererFieldsRestored": true,
+    "templates": 9,
+    "meshes": 314
+  },
+  "frames": [
+    {
+      "name": "convoy-before-260",
+      "width": 1280,
+      "height": 720,
+      "fx": true,
+      "withHud": false,
+      "items": 234,
+      "triangles": 5628,
+      "renderMs": 118.14,
+      "sha": "d68ded6389c0f03e4718e9742b04dfc70f8e187de9501d5fb89588b08db1ede5"
+    },
+    {
+      "name": "convoy-after-260",
+      "width": 1280,
+      "height": 720,
+      "fx": true,
+      "withHud": false,
+      "items": 168,
+      "triangles": 7088,
+      "renderMs": 209.34,
+      "sha": "f53226c883509edcf221ced58f1d0014211a77f69002963b2ed1dde60144feac"
+    },
+    {
+      "name": "convoy-after-phone-260",
+      "width": 390,
+      "height": 720,
+      "fx": true,
+      "withHud": true,
+      "items": 168,
+      "triangles": 7088,
+      "renderMs": 131.56,
+      "sha": "35ceccfa5a0a84917d26fd8fbd8c11c311560e3497be2ff98442020e5661f2d3"
+    },
+    {
+      "name": "convoy-after-landscape-260",
+      "width": 780,
+      "height": 390,
+      "fx": true,
+      "withHud": true,
+      "items": 168,
+      "triangles": 7088,
+      "renderMs": 133.43,
+      "sha": "112cc7d390c8235691c3d5ce25646e9aafa9804b53d5b7fb459edf61a38d4c30"
+    },
+    {
+      "name": "convoy-after-fxoff-260",
+      "width": 390,
+      "height": 720,
+      "fx": false,
+      "withHud": true,
+      "items": 126,
+      "triangles": 6584,
+      "renderMs": 93,
+      "sha": "ec5904f40ed063a4208cd98b9063c5ac484f75952b7da868727980685253679a"
+    },
+    {
+      "name": "convoy-1-battle-260",
+      "width": 1280,
+      "height": 720,
+      "fx": true,
+      "withHud": true,
+      "items": 192,
+      "triangles": 7880,
+      "renderMs": 276.6,
+      "sha": "fad801541294e1e22aaab317153869ecc9fefd01b34565210b8496bf18ae42e4"
+    },
+    {
+      "name": "convoy-1-calm-260",
+      "width": 390,
+      "height": 720,
+      "fx": true,
+      "withHud": true,
+      "items": 192,
+      "triangles": 7880,
+      "renderMs": 129.19,
+      "sha": "be3c274f12aa020571f731a035407277e5ffdeb890cee34b4e078a9cb63941ce"
+    },
+    {
+      "name": "convoy-2-battle-260",
+      "width": 1280,
+      "height": 720,
+      "fx": true,
+      "withHud": true,
+      "items": 202,
+      "triangles": 7984,
+      "renderMs": 254.08,
+      "sha": "84bbdd1b55d79501f3ca4975bc14cb19abc7f411bb4c059c9b82ef54aa527538"
+    },
+    {
+      "name": "convoy-2-calm-260",
+      "width": 390,
+      "height": 720,
+      "fx": true,
+      "withHud": true,
+      "items": 198,
+      "triangles": 7944,
+      "renderMs": 171.07,
+      "sha": "4006bcea4a68a2dd870c694a7b382b70428ff8c103fe6ffc0d1463a621285049"
+    },
+    {
+      "name": "convoy-3-battle-260",
+      "width": 1280,
+      "height": 720,
+      "fx": true,
+      "withHud": true,
+      "items": 192,
+      "triangles": 7880,
+      "renderMs": 284.88,
+      "sha": "da55bab683874a2edb5fbcbd6f2d84b12c36e8e89c5ad61bba27e498de761f59"
+    },
+    {
+      "name": "convoy-3-calm-260",
+      "width": 390,
+      "height": 720,
+      "fx": true,
+      "withHud": true,
+      "items": 192,
+      "triangles": 7880,
+      "renderMs": 130.28,
+      "sha": "52c6b7c4d6625874a2dc72f97a722d7bf8927af3ce2d8f86b2e356a168771d96"
+    },
+    {
+      "name": "convoy-combat-desktop-260",
+      "width": 1280,
+      "height": 720,
+      "fx": true,
+      "withHud": true,
+      "items": 261,
+      "triangles": 12960,
+      "renderMs": 271.65,
+      "sha": "1496641a5283ac9e16174349778ae9b59638a2ac7a757479628fa7eb4462f0bb"
+    },
+    {
+      "name": "convoy-combat-phone-260",
+      "width": 390,
+      "height": 720,
+      "fx": true,
+      "withHud": true,
+      "items": 261,
+      "triangles": 12960,
+      "renderMs": 145.91,
+      "sha": "f55d2db9eb3ef8787e1ba5d7a9114be21aba7a4d37ea1daea6939bd76867ecfb"
+    },
+    {
+      "name": "convoy-legacy-field-260",
+      "width": 390,
+      "height": 720,
+      "fx": true,
+      "withHud": true,
+      "items": 176,
+      "triangles": 7348,
+      "renderMs": 143.17,
+      "sha": "1b2a1d6a0deb6987ba6a212fc59a902f9b65d8d7adbb3d303e0f47de62d80259"
+    }
+  ],
+  "contracts": [
+    {
+      "stage": 1,
+      "calm": false,
+      "shape": "ring",
+      "radius": 9.6,
+      "safeCenterRadius": 6.8,
+      "center": [
+        22,
+        7
+      ],
+      "warning": 2.4833333333333485,
+      "items": 192
+    },
+    {
+      "stage": 1,
+      "calm": true,
+      "shape": "ring",
+      "radius": 11.899999999999999,
+      "safeCenterRadius": 9.099999999999998,
+      "center": [
+        22,
+        7
+      ],
+      "warning": 2.4833333333333574,
+      "items": 192
+    },
+    {
+      "stage": 2,
+      "calm": false,
+      "shape": "ring",
+      "radius": 8.3,
+      "safeCenterRadius": 5.500000000000001,
+      "center": [
+        -22,
+        8
+      ],
+      "warning": 2.4833333333333485,
+      "items": 202
+    },
+    {
+      "stage": 2,
+      "calm": true,
+      "shape": "ring",
+      "radius": 10.600000000000001,
+      "safeCenterRadius": 7.800000000000002,
+      "center": [
+        -22,
+        8
+      ],
+      "warning": 2.4833333333333574,
+      "items": 198
+    },
+    {
+      "stage": 3,
+      "calm": false,
+      "shape": "ring",
+      "radius": 7.1,
+      "safeCenterRadius": 4.3,
+      "center": [
+        24,
+        9
+      ],
+      "warning": 2.4833333333333485,
+      "items": 192
+    },
+    {
+      "stage": 3,
+      "calm": true,
+      "shape": "ring",
+      "radius": 9.399999999999999,
+      "safeCenterRadius": 6.599999999999999,
+      "center": [
+        24,
+        9
+      ],
+      "warning": 2.4833333333333574,
+      "items": 192
+    }
+  ],
+  "hudProof": [
+    {
+      "stage": 1,
+      "calm": false,
+      "strings": [
+        "КОНВОЙ 1 / 3",
+        "22% ПУТИ",
+        "ПИЛОТ И ПРИКРЫТИЕ",
+        "Архив ФТ",
+        "100%",
+        "Матрица связей",
+        "96%",
+        "Реестр решений",
+        "100%",
+        "ЩИТ 94 · РАКЕТЫ 10 · ПРИКРЫТИЕ 5с"
+      ]
+    },
+    {
+      "stage": 1,
+      "calm": true,
+      "strings": [
+        "КОНВОЙ 1 / 3",
+        "23% ПУТИ",
+        "ПИЛОТ И ПРИКРЫТИЕ",
+        "ПРОЙДИТЕ В СВЕТЛЫЙ ПРОСВЕТ · 2.5 с",
+        "Архив ФТ",
+        "100%",
+        "Матрица связей",
+        "100%",
+        "Реестр решений",
+        "100%",
+        "ЩИТ 100 · РАКЕТЫ 10 · ПРИКРЫТИЕ ГОТОВО"
+      ]
+    },
+    {
+      "stage": 2,
+      "calm": false,
+      "strings": [
+        "КОНВОЙ 2 / 3",
+        "14% ПУТИ",
+        "ЩИТЫ И ТОРПЕДЫ",
+        "Архив ФТ",
+        "100%",
+        "Матрица связей",
+        "80%",
+        "Реестр решений",
+        "100%",
+        "ЩИТ 94 · РАКЕТЫ 8 · ПРИКРЫТИЕ 8с"
+      ]
+    },
+    {
+      "stage": 2,
+      "calm": true,
+      "strings": [
+        "КОНВОЙ 2 / 3",
+        "15% ПУТИ",
+        "ЩИТЫ И ТОРПЕДЫ",
+        "ПРОЙДИТЕ В СВЕТЛЫЙ ПРОСВЕТ · 2.5 с",
+        "Архив ФТ",
+        "100%",
+        "Матрица связей",
+        "91%",
+        "Реестр решений",
+        "100%",
+        "ЩИТ 100 · РАКЕТЫ 7 · ПРИКРЫТИЕ ГОТОВО"
+      ]
+    },
+    {
+      "stage": 3,
+      "calm": false,
+      "strings": [
+        "КОНВОЙ 3 / 3",
+        "10% ПУТИ",
+        "ПРОРЫВ БЛОКАДЫ",
+        "Архив ФТ",
+        "100%",
+        "Матрица связей",
+        "90%",
+        "Реестр решений",
+        "100%",
+        "ЩИТ 100 · РАКЕТЫ 8 · ПРИКРЫТИЕ 8с"
+      ]
+    },
+    {
+      "stage": 3,
+      "calm": true,
+      "strings": [
+        "КОНВОЙ 3 / 3",
+        "11% ПУТИ",
+        "ПРОРЫВ БЛОКАДЫ",
+        "ПРОЙДИТЕ В СВЕТЛЫЙ ПРОСВЕТ · 2.5 с",
+        "Архив ФТ",
+        "100%",
+        "Матрица связей",
+        "100%",
+        "Реестр решений",
+        "100%",
+        "ЩИТ 100 · РАКЕТЫ 8 · ПРИКРЫТИЕ ГОТОВО"
+      ]
+    }
+  ],
+  "benchmark": {
+    "pairs": 6,
+    "method": "Alternating native Canvas draws, one warm-up pair. Same saved gameplay; respective production cameras/sky. Not browser/Android FPS.",
+    "before": {
+      "medianMs": 53.68,
+      "samplesMs": [
+        45.89,
+        46.84,
+        52,
+        55.37,
+        61,
+        84.51
+      ]
+    },
+    "after": {
+      "medianMs": 32.81,
+      "samplesMs": [
+        30.7,
+        32.62,
+        32.69,
+        32.94,
+        34.1,
+        43.83
+      ]
+    },
+    "ratio": 0.611
+  },
+  "stress": {
+    "frames": 300,
+    "resolution": "640x360",
+    "medianMs": 37.22,
+    "p95Ms": 41.75,
+    "maxMs": 196.14,
+    "heapBefore": 50792232,
+    "heapAfter": 48916776,
+    "gcAtBothEnds": true,
+    "surfaceBytes": 2764800,
+    "note": "Node heap, optionally collected at both ends, includes test fixtures. This is not browser heap or device FPS."
+  }
+}

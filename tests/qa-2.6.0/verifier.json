@@ -1,0 +1,417 @@
+{
+  "status": "Independent mechanics regression passed; deployment and real browser evidence are owned by the release report.",
+  "entryFile": "tests/entry-2.6.0.html",
+  "allProductionSourceHashesMatchAtReport": true,
+  "sourceManifest": [
+    {
+      "file": "assets/citadel-startup-v2.3.1.js",
+      "sha256": "99e07b3b93f874b4fc7a830ebf0df228532f62ef4dda96c05e78717182af711a"
+    },
+    {
+      "file": "assets/citadel-compat-v1.7.1.js",
+      "sha256": "e5ea0b065568c5ebcddcd01d483375560bae36308871dd62a87e5d8e97a46599"
+    },
+    {
+      "file": "assets/citadel-launch-v2.3.1.js",
+      "sha256": "ad27ac6974bdff22f3a92d26d94117cddd2e945ea8a5553b657d21c70ce243aa"
+    },
+    {
+      "file": "assets/atlas-v1.3.6.js",
+      "sha256": "9a08d42e08f3bd220a2ace22ae6e9dfff34887268b275aa36a2be4a33965569d"
+    },
+    {
+      "file": "assets/citadel-records-v1.1.1.js",
+      "sha256": "178c584491b2755e93f2e4469a8663db3bb93c8e970f5cc5bcbe75b0e6dc6183"
+    },
+    {
+      "file": "assets/citadel-mrg-v2.6.0.js",
+      "sha256": "79b4bb403207c95752f95d95c308d5be57b4360c5178ce2dab8b676f2fbf2955"
+    },
+    {
+      "file": "assets/citadel-mrg-view-v2.6.0.js",
+      "sha256": "1285c2461e618c466e556c6f51589a3c06dbf5a46ac3ca628d0f81a68588fc7c"
+    },
+    {
+      "file": "assets/citadel-music-v1.4.2.js",
+      "sha256": "11ba6f8ee1d80e7313e7c7c14d1133cf55f9f124ca29eb8d3ed54aba22aafeb0"
+    },
+    {
+      "file": "assets/citadel-sfx-pack-v1.9.1.js",
+      "sha256": "8dc8128a72045c4136a3460de8900720813861e1979926bfc0c0c872cdac590e"
+    },
+    {
+      "file": "assets/citadel-sfx-v1.9.3.js",
+      "sha256": "6cabac06fb8d99684ca2a8252510f90a964ca1d427aa4ac7b214115ee1b9af7b"
+    },
+    {
+      "file": "assets/citadel-voice-pack-v1.8.2.js",
+      "sha256": "e0a0ac89a7ad348a7b107fef9c067b12227d33b7c1427d3eb7cec5472949fbfe"
+    },
+    {
+      "file": "assets/citadel-field-ui-v1.7.0.js",
+      "sha256": "fb2b2545d45aaad74c1009bf2bd3b775ca6b897c9baf027f2c7cff5de0b02bed"
+    },
+    {
+      "file": "assets/citadel-flight-v1.9.1.js",
+      "sha256": "d8e345e6a7ef05ea3aebcb986042c1c36a809bb6608ccce242d00507178199b7"
+    },
+    {
+      "file": "assets/citadel-aim-v1.7.1.js",
+      "sha256": "6c0251b56e8a798597cc0a3b26bec950739665f4d5fed9980db091ed04b25058"
+    },
+    {
+      "file": "assets/citadel-flight-view-v1.7.1.js",
+      "sha256": "b5e7d58a269a75fb71aba8ccb286e84714e17ef016532086dc8d098443acae91"
+    },
+    {
+      "file": "assets/citadel-pursuit-v2.6.0.js",
+      "sha256": "5c60be2944b300610d07dce9438fe0581ac83ee1532d4796b7f6d3c54c90dea7"
+    },
+    {
+      "file": "assets/citadel-swarm-v2.6.0.js",
+      "sha256": "eefda7b81c696d79d361364b1e8a7623d1399d8eef3c9f679eb7327a9ae1e388"
+    },
+    {
+      "file": "assets/citadel-parallax-v2.6.0.js",
+      "sha256": "ab29a1603851ad97a437f9dd3d93dcbc4978c6aeb4d5130bed666eb643fe5315"
+    },
+    {
+      "file": "assets/citadel-bases-v2.0.0.js",
+      "sha256": "9f7cd4346e947f13a3e4185d3e7080b69cd489c7dce959e03627b8adb89cba5a"
+    },
+    {
+      "file": "assets/citadel-decks-v2.0.0.js",
+      "sha256": "4b5f02f17b26c8962768132fd1328e7bbd483e2c8b2d7499610e68c6478213f2"
+    },
+    {
+      "file": "assets/citadel-input-v2.6.0.js",
+      "sha256": "a28a8a68b7bdc3e3eacd2d93d17f75f8311724830026fa86fe2ffb435c94413d"
+    },
+    {
+      "file": "assets/citadel-convoy-v2.3.0.js",
+      "sha256": "115fb8dd424e76d7ddfea2199395101364b258c22cd243e4c137e9980f006ca6"
+    },
+    {
+      "file": "assets/citadel-voice-v2.5.0.js",
+      "sha256": "2868128550afc2ac73eb46bbb5aaaf3d017b6026c596671c76e20340c63ebeb1"
+    },
+    {
+      "file": "assets/citadel-comic-v1.9.3.js",
+      "sha256": "ee26d0c120f8b7d912b90d4dcc0bccf4ca8515e816c836e6427a4676ea2f6a44"
+    },
+    {
+      "file": "assets/citadel-interface-v1.9.0.js",
+      "sha256": "1c86ce29791480920e08b5dddc42dadcc1e4bab0916e8da51c16aedb0b1b1291"
+    },
+    {
+      "file": "assets/citadel-story-v1.9.0.js",
+      "sha256": "85f5c018a42f09b20eb7a62a87f4251a02f219027f1f4799e07c774ff43d2c13"
+    },
+    {
+      "file": "assets/atlas-metrics-v0.1.0.js",
+      "sha256": "79700bbff01f5744e1a2eb44a935ed006857eae4e75ce3602aee6cc69d8101e7"
+    },
+    {
+      "file": "assets/atlas-integration-v1.1.4.js",
+      "sha256": "96eaf8cd36e4c9257f0e531d861230f8ca1610973905027ad6f58dc819937220"
+    },
+    {
+      "file": "assets/citadel-academy-bridge-v1.7.0.js",
+      "sha256": "cc33928c4d0b0271bc5205211ee815d56cba9243838053e4d460edee68ba2033"
+    },
+    {
+      "file": "assets/citadel-ui-fixes-v1.9.2.js",
+      "sha256": "364fc8c1e412eb9b73f826845e23646f8906d37c7027aa1f2ae93ba0548cbf16"
+    },
+    {
+      "file": "assets/citadel-bases-view-v2.0.0.js",
+      "sha256": "506e1ebbfa86a42b0f4dc6918ab1917edb3b8018012e15d98a267060c2cdf8c3"
+    },
+    {
+      "file": "assets/citadel-base-rewards-v2.6.0.js",
+      "sha256": "7504ee78281c31dae812fbfdf15bc3b2030da1b56826a46330519ccc746049b2"
+    },
+    {
+      "file": "assets/citadel-pursuit-view-v2.3.0.js",
+      "sha256": "957ed9dc2f26e104a66a4bf26aad5c8bca4c6234aa0b6f8e56a688c93efd46ec"
+    },
+    {
+      "file": "assets/citadel-pursuit-view-v2.6.0.js",
+      "sha256": "eb4fd3d9099479ada284ea31f1c47453a4fc35f24f8862184b0be1932edbd7f8"
+    },
+    {
+      "file": "assets/citadel-convoy-view-v2.3.0.js",
+      "sha256": "7d7d85f90d9082a14bbbb1dff7defd00f5f31bce23f270ae764aed2e98e77783"
+    },
+    {
+      "file": "assets/citadel-convoy-v2.6.0.js",
+      "sha256": "fb80b02ae850f69df1295bac3bbe64f61a18d05cf93d768e6e66dc1c595d44c7"
+    },
+    {
+      "file": "assets/citadel-convoy-view-v2.4.0.js",
+      "sha256": "9a42c7dcde1e21644f10aaa0f848b8bab2c60794e4f5564898a17f48fd5d2965"
+    },
+    {
+      "file": "assets/citadel-convoy-view-v2.6.0.js",
+      "sha256": "a3e9a4cc44b213c72bfe78f70dff5c4ccda64260ea45e03c83b510c7c11faa54"
+    },
+    {
+      "file": "assets/citadel-swarm-view-v2.6.0.js",
+      "sha256": "a6d4f840839da504332929e7fa19fefc5a318532db4bac76e1a6417f00da6965"
+    },
+    {
+      "file": "assets/citadel-mrg-actors-v2.5.0.js",
+      "sha256": "d0bcec56d741510c8f6e620451ba1681082bfafdec1a1d28a1463dea23442248"
+    },
+    {
+      "file": "assets/citadel-narrative-v2.5.0.js",
+      "sha256": "34232c3f6c16b7f686595ebb8c162f7368e4f12d2e6be1b923cdf2459e85c1fe"
+    },
+    {
+      "file": "assets/citadel-presentation-v2.5.0.js",
+      "sha256": "6e1bef9638c3fefe113ae8cdc1a54883068e38fdc2cf3e1eb9ab7f8cad82327e"
+    },
+    {
+      "file": "assets/citadel-combat-v2.6.0.js",
+      "sha256": "5b55bb15578db6ffac01427245672f46352165790ea617b9d6a42ed075e9edad"
+    },
+    {
+      "file": "assets/citadel-runtime-v1.9.3.js",
+      "sha256": "a026d1eb50252a37f01b7ad097e610252bccacc01f078d6ee75a3bf86e029a6e"
+    }
+  ],
+  "fullCampaigns": [
+    {
+      "mode": "normal",
+      "pass": true,
+      "frames": 66621,
+      "simulatedSeconds": 1109.68,
+      "convoyOperator": {
+        "reaction": 0.35,
+        "device": "joystick",
+        "ordinaryControls": true
+      },
+      "orbitalOperator": "orbital260: visible bomber priority, predicted incoming projectiles, ordinary Tab/fire/missiles/pulse",
+      "upgrades": {
+        "weapons": 2,
+        "armor": 1,
+        "rockets": 0,
+        "baseKit260": {
+          "schema": 1,
+          "collected": [],
+          "capacitor": 0,
+          "armor": 0,
+          "parts": 0,
+          "achievements": []
+        }
+      },
+      "levels": 14,
+      "cards": 23,
+      "listeners": {
+        "window": 31,
+        "document": 37,
+        "elements": 43
+      },
+      "listenersStable": true,
+      "emitIdentityStable": true,
+      "heapStart": 29627040,
+      "heapEnd": 36261416
+    },
+    {
+      "mode": "calm",
+      "pass": true,
+      "frames": 64313,
+      "simulatedSeconds": 1071.22,
+      "convoyOperator": {
+        "reaction": 0.4,
+        "device": "joystick",
+        "ordinaryControls": true
+      },
+      "orbitalOperator": null,
+      "upgrades": {
+        "weapons": 2,
+        "armor": 1,
+        "rockets": 0,
+        "baseKit260": {
+          "schema": 1,
+          "collected": [],
+          "capacitor": 0,
+          "armor": 0,
+          "parts": 0,
+          "achievements": []
+        }
+      },
+      "levels": 14,
+      "cards": 23,
+      "listeners": {
+        "window": 31,
+        "document": 37,
+        "elements": 43
+      },
+      "listenersStable": true,
+      "emitIdentityStable": true,
+      "heapStart": 29619496,
+      "heapEnd": 35908008
+    }
+  ],
+  "contracts": {
+    "pass": true,
+    "passed": 57
+  },
+  "warnings": {
+    "pass": true,
+    "passed": 65
+  },
+  "negativeControls": {
+    "pursuitCandidateOnly": [
+      {
+        "seed": 1,
+        "strategy": "stationary-fire",
+        "status": "crashing",
+        "seconds": 34.58,
+        "minHp": 0,
+        "minForward": 110.6962754713129
+      },
+      {
+        "seed": 1,
+        "strategy": "navigation-no-fire",
+        "status": "crashing",
+        "seconds": 42.5,
+        "minHp": 0,
+        "minForward": 82.00000358837133
+      },
+      {
+        "seed": 1,
+        "strategy": "navigation-fire",
+        "status": "boarding",
+        "seconds": 159.8,
+        "minHp": 34,
+        "minForward": 97.0558605832125
+      },
+      {
+        "seed": 417147,
+        "strategy": "stationary-fire",
+        "status": "crashing",
+        "seconds": 41.7,
+        "minHp": 0,
+        "minForward": 110.6962754713129
+      },
+      {
+        "seed": 417147,
+        "strategy": "navigation-no-fire",
+        "status": "crashing",
+        "seconds": 36.08,
+        "minHp": 0,
+        "minForward": 82.00000358837133
+      },
+      {
+        "seed": 417147,
+        "strategy": "navigation-fire",
+        "status": "boarding",
+        "seconds": 160.57,
+        "minHp": 39,
+        "minForward": 93.21218373349984
+      },
+      {
+        "seed": 620180,
+        "strategy": "stationary-fire",
+        "status": "crashing",
+        "seconds": 76.97,
+        "minHp": 0,
+        "minForward": 108.62278216446975
+      },
+      {
+        "seed": 620180,
+        "strategy": "navigation-no-fire",
+        "status": "crashing",
+        "seconds": 52.75,
+        "minHp": 0,
+        "minForward": 82.00000358837133
+      },
+      {
+        "seed": 620180,
+        "strategy": "navigation-fire",
+        "status": "boarding",
+        "seconds": 156.23,
+        "minHp": 89,
+        "minForward": 87.8749579726682
+      }
+    ],
+    "swarmFinalEntry": [
+      {
+        "mode": "normal",
+        "strategy": "idle",
+        "status": "crashing",
+        "seconds": 13.533333333333585,
+        "firstDamage": 4.233333333333324,
+        "hp": 0,
+        "kills": 0,
+        "wave": 1,
+        "shots": 0
+      },
+      {
+        "mode": "normal",
+        "strategy": "stationary-fire",
+        "status": "crashing",
+        "seconds": 15.50000000000035,
+        "firstDamage": 4.483333333333323,
+        "hp": 0,
+        "kills": 7,
+        "wave": 1,
+        "shots": 62
+      },
+      {
+        "mode": "calm",
+        "strategy": "idle",
+        "status": "crashing",
+        "seconds": 50.583333333331744,
+        "firstDamage": 11.600000000000156,
+        "hp": 0,
+        "kills": 0,
+        "wave": 1,
+        "shots": 0
+      },
+      {
+        "mode": "calm",
+        "strategy": "stationary-fire",
+        "status": "crashing",
+        "seconds": 73.28333333333046,
+        "firstDamage": 11.600000000000156,
+        "hp": 0,
+        "kills": 15,
+        "wave": 2,
+        "shots": 284
+      }
+    ]
+  },
+  "findingsResolved": [
+    {
+      "kind": "pause",
+      "finding": "Core captainClock decreased during pause. Final outer pause guard now freezes the full saved state."
+    },
+    {
+      "kind": "emitter",
+      "finding": "New base scoped emit adapter could be captured by comic.wire during maze-to-MRG transition. Marked scoped; both final campaigns keep emitter identity stable."
+    },
+    {
+      "kind": "balance",
+      "finding": "Initial mixed-build third convoy failed; subsequent tuned convoy passed actual campaign. Third convoy retains demanding timing."
+    },
+    {
+      "kind": "operator",
+      "finding": "Old space operator wasted defense and ignored bomber priority. Observed-projectile/target-priority operator passes without any state changes."
+    },
+    {
+      "kind": "operator",
+      "finding": "MRG fixed firing position lost to real third-wave rockets; ordinary patrol passes with minimum HP16.8."
+    }
+  ],
+  "limits": [
+    "Node VM simulates logic and DOM registrations; no RAF cadence, GPU, physical mouse, real touch or Android performance measurement.",
+    "Final campaigns use ordinary controls and real answer actions only. The operator has exact positions and answer keys; Parallax/MRG retain exact internal attack state access. This proves reachability, not human fairness, learning or entertainment.",
+    "The final normal run used orbital260 bomber/visible-projectile priority before the later optional low-health resupply enhancement; resupply was not used in this recorded run.",
+    "Heap figures include one Node process, game caches and retained QA traces. Stable registrations and emitter identities are evidence against the investigated accumulation, not a formal proof of all leak absence.",
+    "Native visual review supports a substantial qualitative improvement, not a measurable 4x quality claim.",
+    "Public deployment verification and browser results are reported separately by the release owner."
+  ]
+}

@@ -1,4 +1,4 @@
-/* QA input operator: observed projectiles and ammunition discipline. No hidden attack clocks or state writes. */
+/* QA input operator: observed projectiles and target priorities. No hidden attack clocks or direct state writes. */
 (function(root){
  'use strict';
  const clamp=(v,a,b)=>Math.max(a,Math.min(b,v)),dot=(a,b)=>a[0]*b[0]+a[1]*b[1]+a[2]*b[2],sub=(a,b)=>a.map((v,i)=>v-b[i]);
@@ -12,12 +12,15 @@
   }
   return threats;
  }
- function createOrbitalController(h,{reserveForBoss=0,prioritizeBombers=true,defendStation=true}={}){
-  let desired=null,nextSwitch=0;
+ function createOrbitalController(h,{reserveForBoss=0,prioritizeBombers=true,defendStation=true,resupply=true}={}){
+  let desired=null,nextSwitch=0,nextResupply=0;
   return e=>{
    if(e.status!=='playing'||e.finale||!['orientation','battle','retrieve','dock'].includes(e.phase))return {};
    const p=e.player;
-   if(prioritizeBombers&&e.phase==='battle'&&!e.boss){
+   // Green requirement modules are normal in-flight supplies: collecting them
+   // restores shields and opens the real educational card, never edits HP.
+   if(resupply&&e.phase==='battle'&&p.hp<55&&e.navMode!=='module'&&e.elapsed>=nextResupply&&e.pickups.some(x=>x.type==='requirement'&&!x.dead)){h.action('citadel-crystal');nextResupply=e.elapsed+5;desired=null;}
+   if(prioritizeBombers&&e.phase==='battle'&&e.navMode!=='module'&&!e.boss){
     if(!e.enemies.some(x=>!x.dead&&x.id===desired))desired=null;
     const bombers=e.enemies.filter(x=>!x.dead&&x.role==='bomber').sort((a,b)=>Math.hypot(...sub(a.pos,p.pos))-Math.hypot(...sub(b.pos,p.pos)));
     if(bombers.length&&(desired===null||!e.enemies.some(x=>x.id===desired&&x.role==='bomber')))desired=bombers[0].id;
