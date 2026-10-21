@@ -3,7 +3,7 @@
  * health writes, teleporting, force-clear or enemy removal.
  */
 (function(root){'use strict';const memory=new WeakMap(),clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
- function convoyInput(h,e){let m=memory.get(e);if(!m){m={at:-1,input:{},wanted:null};memory.set(e,m);}
+ function convoyInput(h,e){let m=memory.get(e);if(!m||m.trip!==e.escort||e.escort.time<m.at){m={trip:e.escort,at:-1,input:{},wanted:null};memory.set(e,m);}
   if(e.escort.time-m.at<.4)return m.input;m.at=e.escort.time;
   const live=e.enemies.filter(x=>!x.dead&&x.warp<=0),rank=x=>x.torpedo?0:x.role==='shield'?1:x.role==='commander'?2:x.role==='bomber'?3:x.role==='jammer'?4:5;
   const wanted=live.slice().sort((a,b)=>rank(a)-rank(b)||a.hp-b.hp)[0];

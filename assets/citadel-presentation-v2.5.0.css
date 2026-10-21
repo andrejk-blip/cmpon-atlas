@@ -1,0 +1,52 @@
+/* One cockpit across all fourteen missions. Tactical warnings remain local to
+   each renderer; explanatory text belongs to briefing and pause panels. */
+.citadel-unified{--citadel-ink:#07151e;--citadel-paper:#e7f3ef;--citadel-signal:#82e7e5;--citadel-warm:#efbd83;--citadel-line:#365661;color:var(--citadel-paper)}
+.citadel-unified,.citadel-unified button,.citadel-unified input{font-family:Inter,"Segoe UI",system-ui,sans-serif;font-variant-numeric:tabular-nums}
+.citadel-unified #citadel-route,.citadel-unified #convoy-panel{display:none!important}
+.citadel-unified .citadel-objective{padding:12px 18px;min-height:62px;gap:16px;background:linear-gradient(110deg,#102c38,#0b1d28);border:0;border-bottom:1px solid var(--citadel-line)}
+.citadel-unified .citadel-objective>div:first-child{min-width:0}
+.citadel-unified .citadel-objective #citadel-objective-phase{display:block;margin:0 0 4px;font:650 10px/1.2 "Segoe UI",system-ui,sans-serif;letter-spacing:.12em;color:var(--citadel-signal)}
+.citadel-unified .citadel-objective h3{margin:0;font:600 18px/1.2 "Segoe UI",system-ui,sans-serif;letter-spacing:0;color:var(--citadel-paper)}
+.citadel-unified #citadel-objective-detail,.citadel-unified #citadel-objective-progress{display:none}
+.citadel-unified .citadel-next{min-width:0;max-width:190px}
+.citadel-unified #citadel-primary{margin:0;min-height:40px;height:auto;padding:8px 12px;border:1px solid #477781;border-radius:6px;background:#14333d;color:#b7e7df;font:600 12px/1.3 "Segoe UI",system-ui,sans-serif;max-width:190px}
+.citadel-unified #citadel-primary[hidden]{display:none}
+.citadel-unified .arcade-topline{background:var(--citadel-ink);border-color:var(--citadel-line);font-family:inherit}
+.citadel-unified .arcade-topline button,.citadel-unified .citadel-quickbar button{border-color:var(--citadel-line);border-radius:6px;font-family:inherit}
+.citadel-unified button:focus-visible{outline:3px solid var(--citadel-warm);outline-offset:3px}
+.citadel-unified .arcade-command{background:#0b1e28;border-color:var(--citadel-line)}
+.citadel-unified .arcade-command .mission-counters{display:none}
+.citadel-unified .arcade-state-card,.citadel-unified .cup-panel{border-color:#50717a;border-radius:10px;background:linear-gradient(135deg,#16333e,#0b1c27)}
+.citadel-unified .arcade-state-card h3{font-family:"Segoe UI",system-ui,sans-serif;letter-spacing:-.02em;color:var(--citadel-paper)}
+.citadel-unified .arcade-play{background:#bce8d7;color:#10352f;border-color:#d4f5e8;border-radius:7px}
+@media(min-width:961px){
+ .arcade-layout.citadel-unified:not(.is-expanded){grid-template-columns:minmax(0,1fr)}
+ .citadel-unified:not(.is-expanded)>.arcade-command{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));max-width:100%;gap:0;align-items:start}
+ .citadel-unified:not(.is-expanded)>.arcade-command>.citadel-captain{grid-column:1;grid-row:1 / span 3}
+ .citadel-unified:not(.is-expanded) .citadel-captain .captain-photo{height:180px}
+ .citadel-unified:not(.is-expanded) .arcade-command>.arcade-feed{max-height:140px}
+ .citadel-unified .arcade-field{aspect-ratio:16/9}
+ .arcade-layout.citadel-unified.is-expanded{grid-template-columns:minmax(0,1fr) 260px}
+ .citadel-unified.is-expanded .arcade-field{width:min(100%,calc((100dvh - 112px)*16/9))}
+}
+@media(max-width:960px){
+ .arcade-layout.citadel-unified .citadel-objective{height:48px;min-height:48px;max-height:48px;padding:5px 10px;gap:8px}
+ .citadel-unified .citadel-objective #citadel-objective-phase{font-size:8px;letter-spacing:.09em;margin-bottom:3px}
+ .citadel-unified .citadel-objective h3{font-size:12px;line-height:1.1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-height:none}
+ .citadel-unified #citadel-primary{font-size:10px;max-width:112px;min-height:38px;padding:5px 8px}
+ .arcade-layout.citadel-unified .arcade-screen:not(.convoy240-controls) .arcade-touch-actions{width:auto;flex:1;max-width:232px;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:48px 48px;gap:6px;min-width:0}
+ .arcade-layout.citadel-unified .arcade-screen:not(.convoy240-controls) #arcade-fire-touch{grid-column:1;grid-row:1;min-height:48px;height:48px;gap:5px}
+ .arcade-layout.citadel-unified #arcade-fire-touch svg{width:23px;height:23px}
+ .arcade-layout.citadel-unified #arcade-fire-touch small{font-size:10px;letter-spacing:0}
+ .arcade-layout.citadel-unified .arcade-screen:not(.convoy240-controls) .arcade-touch [data-action=arcade-missile]{grid-column:2;grid-row:1;height:48px;min-height:48px}
+ .arcade-layout.citadel-unified .arcade-screen:not(.convoy240-controls) #arcade-boost-touch{grid-column:1;grid-row:2;height:48px;min-height:48px}
+ .arcade-layout.citadel-unified .arcade-screen:not(.convoy240-controls) .arcade-touch .citadel-touch-defense{display:flex;flex-direction:column;justify-content:center;align-items:center;grid-column:2;grid-row:2;white-space:pre-line;min-width:0;min-height:48px;height:48px;line-height:1.3;font-size:10px;letter-spacing:0;touch-action:manipulation;background:#1b493f;border-color:#81c7ac;color:#e0fff1}
+ .arcade-layout.citadel-unified .arcade-touch .citadel-touch-defense[hidden]{display:none!important}
+ .citadel-unified .citadel-touch-defense:disabled{opacity:.58}
+}
+@media(max-width:960px) and (orientation:landscape){
+ .arcade-layout.citadel-unified .arcade-screen:is([data-game-status=playing],[data-game-status=boarding]){grid-template-columns:108px minmax(0,1fr) 168px}
+ .arcade-layout.citadel-unified .arcade-screen .arcade-touch-actions{width:152px;max-width:152px;flex:none}
+}
+
+.citadel-unified .citadel-narrative-note{margin:14px 0;padding:10px 14px;border-left:2px solid var(--citadel-signal);background:#0b222d;color:#bddbdc;font:14px/1.5 "Segoe UI",system-ui,sans-serif;text-align:left}
