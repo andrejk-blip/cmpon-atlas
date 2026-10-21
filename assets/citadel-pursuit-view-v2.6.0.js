@@ -18,7 +18,7 @@
  };
  function beam(a,p,q,r,color,em=0,material=M){return part(a,'p260_tube',V3.lerp(p,q,.5),[r,r,Math.max(.001,V3.len(V3.sub(q,p))*.5)],color,em,spaceBasisDir(V3.sub(q,p)),1,material);}
  function taper(a,p,q,r,color,em=0){return part(a,'p260_horn',V3.lerp(p,q,.5),[r,r,Math.max(.001,V3.len(V3.sub(q,p))*.5)],color,em,spaceBasisDir(V3.sub(q,p)));}
- function compile(key,build){if(templates.has(key))return templates.get(key);const a=[];a.compact=key.endsWith('_1');build(a);const result=stationMerge(a,'p260_'+key);templates.set(key,result);return result;}
+ function compile(key,build){if(templates.has(key))return templates.get(key);const a=[];a.compact=key.endsWith('_1')||key.endsWith('_2');build(a);const result=stationMerge(a,'p260_'+key);templates.set(key,result);return result;}
  function instance(a,model,p,b=SPACE_IDENTITY,s=[1,1,1],tag={},hit=false){const m=spaceModel(p,s,b);for(const x of model)a.push({...x,pos:p,model:m,...tag,...(hit?{color:spaceColor('#ffddbd')}:null)});}
  function mesh(name,vertices,faces,smooth=false){SPACE_MESH[name]=spaceMesh(vertices,faces,smooth);}
  function spindle(name,rings,sides=8,smooth=false){
@@ -32,7 +32,7 @@
  // moving appendages. A phone does not receive a hidden high-detail mesh.
  spindle('p260_muscle',[[-1,.15],[-.82,.62],[-.5,.9],[0,1],[.5,.92],[.82,.62],[1,.15]],10,true);
  spindle('p260_bone',[[-1,.12],[-.7,.7],[0,1],[.7,.76],[1,.12]],8,true);
- spindle('p260_tube_low',[[-1,.8],[0,1],[1,.8]],5,true);
+ spindle('p260_tube_low',[[-1,.8],[0,1],[1,.8]],8,true);
  spindle('p260_horn_low',[[-1,1],[.25,.5],[1,.025]],5,true);
  spindle('p260_muscle_low',[[-1,.15],[-.5,.88],[.5,.9],[1,.15]],6,true);
  spindle('p260_bone_low',[[-1,.12],[0,1],[1,.12]],5,true);
@@ -80,7 +80,7 @@
      part(a,'p260_muscle',[side*4.7,3.0,.3],[2.7,2.8,3.7],C.steel,0,flightBasis(0,0,side*.18));
      part(a,'p260_muscle',[side*4.8,3.3,2.1],[2.6,2.2,2.1],C.gold,0,flightBasis(0,0,side*.18));
      part(a,'p260_muscle',[side*4.8,3.5,2.8],[2.25,1.85,1.7],C.black,0,flightBasis(0,0,side*.18));
-     for(let i=0;i<4;i++){
+     for(let i=0;i<(lod===2?2:4);i++){
        const yy=1.7-i*1.14;
        horn(a,[[side*.72,yy+.25,4.3],[side*2.2,yy+.55,4.15],[side*(3.9-i*.3),yy-.3,3.4]],.32,C.bone);
        if(!lod)part(a,'octa',[side*(3.9-i*.3),yy-.4,3.4],[.17,.17,.18],C.warm,.2);
@@ -88,11 +88,11 @@
      horn(a,[[side*5.7,5.1,.3],[side*7.5,6.4,.5],[side*7.7,7.3,2.1]],.85,C.bone);
      horn(a,[[side*3.5,-2.8,1.1],[side*5.6,-5.3,1.5],[side*4.5,-7.3,3.0]],1.4,skin);
      // The small folded lower claws remain inside the body's contact sphere.
-     for(let i=0;i<3;i++)horn(a,[[side*(2+i*.6),-4.5,2.4],[side*(2.5+i*.65),-6.5,3.9],[side*(1.8+i*.6),-7.3,4.2]],.38,C.bone);
+     for(let i=0;i<(lod===2?1:3);i++)horn(a,[[side*(2+i*.6),-4.5,2.4],[side*(2.5+i*.65),-6.5,3.9],[side*(1.8+i*.6),-7.3,4.2]],.38,C.bone);
    }
    part(a,'p220_armour',[0,-3.8,2.5],[2.9,1.4,.8],C.gold);
    part(a,'p220_armour',[0,-4.9,2.4],[1.8,1.6,.65],C.black);
-   for(let i=0;i<4;i++){const y=.8-i*1.2;part(a,'p220_armour',[0,y,3.9],[.55,.42,.28],C.gold);}
+   for(let i=0;i<(lod===2?2:4);i++){const y=.8-i*1.2;part(a,'p220_armour',[0,y,3.9],[.55,.42,.28],C.gold);}
    // A recessed mouth, two rows of teeth, cheek plates and deep eye sockets
    // read as a face even in the software/phone LOD, rather than an orb.
    part(a,'p260_muscle',[0,5.6,3.2],[2.65,2.8,2.9],C.bone);
@@ -107,11 +107,11 @@
      part(a,'p260_bone',[side*2.05,4.9,5.55],[.4,1.0,.65],C.bone,0,flightBasis(0,0,side*.2));
      horn(a,[[side*1.0,6.55,6],[side*1.75,6.78,5.8],[side*2.4,7.3,5.3]],.32,C.gold);
      horn(a,[[side*1.7,7.0,2.9],[side*3.4,8.1,2.4],[side*3.7,9.8,3.1],[side*2.9,10,4.5]],.95,C.gold);
-     for(let i=0;i<3;i++){
+     for(let i=0;i<(lod===2?2:3);i++){
        taper(a,[side*(.32+i*.46),5.2,6.4],[side*(.3+i*.45),4.35+(i===2?-.18:0),6.5],.16,C.bone);
        taper(a,[side*(.3+i*.45),4.0,6.35],[side*(.32+i*.44),4.55,6.5],.12,C.bone);
      }
-     for(let i=0;i<(lod?3:6);i++){
+     for(let i=0;i<(lod===2?0:lod?3:6);i++){
        const y=3.0+i*.38;
        beam(a,[side*1.95,y,5.5],[side*2.15,y+.18,5.45],.04,C.black);
      }
@@ -141,13 +141,36 @@
    Object.assign(part(a,'p220_armour',mid,[r*1.02,r*1.02,V3.len(V3.sub(q,p))*.22],C.steel,0,b),tag);
    if(!lod)Object.assign(part(a,'p260_tube',V3.lerp(p,q,.76),[r*1.08,r*1.08,.18],C.gold,0,b),tag);
  }
+ function escortFighter(type,lod){return compile('fighter_'+type+'_'+lod,a=>{
+   const heavy=type==='heavy',jam=type==='jammer',color=jam?'#715985':heavy?'#8e6c4b':C.red;
+   part(a,'hull',[0,0,0],[1.6,.95,1.35],C.black);
+   part(a,'p220_armour',[0,.22,-.2],[heavy?1.45:1.1,.48,2.7],color);
+   part(a,'hull',[0,.67,1.6],[.72,.65,.57],C.edge);
+   part(a,'p260_muscle',[0,.75,1.2],[.55,.25,.95],'#466a78',.25);
+   for(const s of [-1,1]){
+     part(a,'wing',[s*.3,0,0],[s*(heavy?1.05:.95),.8,1.3],C.steel);
+     part(a,'p220_armour',[s*(heavy?3.45:2.85),-.1,-1.2],[heavy?.8:.5,.45,2.3],color);
+     part(a,'box',[s*(heavy?3.45:2.85),.38,-.9],[.15,.05,1.7],C.edge);
+     part(a,'box',[s*(heavy?3.45:2.85),-.1,1.4],[heavy?.18:.13,.12,1.0],C.black);
+     part(a,'box',[s*(heavy?3.45:2.85),-.1,2.42],[heavy?.22:.17,.16,.12],C.warm,.7,SPACE_IDENTITY,1,L);
+     part(a,'p260_tube',[s*2.0,-.1,-3.1],[.43,.43,.55],C.steel);
+     part(a,'p260_tube',[s*2.0,-.1,-3.65],[.3,.3,.08],C.warm,.75,SPACE_IDENTITY,1,L);
+     if(heavy){part(a,'p220_armour',[s*1.7,.7,-.8],[.5,.55,1.5],C.gold);part(a,'box',[s*1.7,.8,1.1],[.15,.14,1.0],C.black);}
+     if(!lod)for(let i=0;i<3;i++)part(a,'box',[s*2.85,.4,-2.2+i*.55],[.32,.05,.04],C.black);
+   }
+   if(jam){
+     part(a,'box',[0,1.35,-1.7],[.15,.7,.15],C.edge);
+     part(a,'p220_armour',[0,2.15,-1.7],[2.2,.25,.4],color);
+     for(const s of [-1,1])part(a,'p260_bone',[s*2.1,2.15,-1.7],[.3,.65,.3],C.violet,.55,SPACE_IDENTITY,1,L);
+   }
+ });}
  function warp(a,e,w,lod){
    const tag={pursuit260:true,warpEntity:w.id,warpKind:w.kind},parts=(P.warpParts?.(e,w)||w.segments||[]).filter(x=>x.pos?.every(Number.isFinite));
    const root=w.pos,phase=w.phase||0,age=w.age||0;a.compact=lod>0;
    if(!root?.every(Number.isFinite))return;
    // Tiny breathing is visual only; appendage centres remain exact world poses.
    const breath=1+Math.sin(age*2.1)*.012;
-   instance(a,leviathan(w.kind,lod),root,SPACE_IDENTITY,[1,breath,1],{...tag,warpPart:'body'});
+   instance(a,leviathan(w.kind,lod),root,SPACE_IDENTITY,[.94,.94*breath,.94],{...tag,warpPart:'body'});
    const appendages=parts.filter(x=>x.part!=='body');
    if(w.kind==='hammer'){
      const hammer=appendages.find(x=>x.part==='hammer'),joints=appendages.filter(x=>x.part==='arm');
@@ -167,8 +190,8 @@
        Object.assign(beam(a,last,j.pos,r,i%2?C.skin:C.flesh,0,S),{...tag,warpPart:'tentacle'});
        Object.assign(part(a,'p260_tube',j.pos,[r*.95,r*.95,.28],C.gold,0,b),{...tag,warpPart:'tentacle-ridge'});
        if(!lod||i%2===0){
-         const m=spaceModel(V3.lerp(last,j.pos,.6),[1,1,1],b),pos=spacePoint(m,[0,r,0]);
-         Object.assign(part(a,'p260_sucker',pos,[r*.45,r*.45,r*.45],C.bone,0,flightBasis(0,Math.PI/2)),{...tag,warpPart:'sucker'});
+         const dir=V3.norm(V3.sub(j.pos,last)),normal=V3.norm(V3.sub([0,0,1],V3.scale(dir,dir[2]))),pos=V3.add(V3.lerp(last,j.pos,.6),V3.scale(normal,r*.85));
+         Object.assign(part(a,'p260_sucker',pos,[r*.34,r*.34,r*.34],C.bone,0,spaceBasisDir(normal)),{...tag,warpPart:'sucker'});
        }
        last=j.pos;
      }
@@ -181,10 +204,10 @@
  }
  function ship(a,e,x,type,time,lod){
    const player=type==='player',b=player?flightBasis(x.yaw,x.pitch,x.bank):spaceBasisDir(x.vel||[0,0,-1]),scale=player?1:type==='fz'?1.2:.85;
-   instance(a,base.model(type),x.pos,b,[scale,scale,scale],{pursuit260:true,shipRole:type},x.hit>0);
+   instance(a,player||type==='fz'?base.model(type):escortFighter(type,lod),x.pos,b,[scale,scale,scale],{pursuit260:true,shipRole:type},x.hit>0);
    const m=spaceModel(x.pos,[scale,scale,scale],b),color=player?C.cyan:type==='fz'?C.warm:'#eb8165';
    for(const side of [-1,1]){
-     const pos=spacePoint(m,[side*3.57,.12,-6.0]);
+     const pos=spacePoint(m,[side*(player||type==='fz'?3.57:2),.12,player||type==='fz'?-6.0:-4.0]);
      part(a,'p260_horn',pos,[.48,.4,1.9+Math.sin(time*22+(x.id||0))*.12],color,1,b,1,L);
    }
    if(e.assist&&x.telegraph>0)Object.assign(part(a,'octa',V3.add(x.pos,[0,0,4]),[.75,.75,.75],C.warm,1,SPACE_IDENTITY,1,L),{trainingCue:true});
@@ -210,8 +233,11 @@
      part(a,near&&!lod?'p220_rock'+r.variant:'rock'+r.variant,r.pos,[r.r,r.r,r.r],r.hit>0?'#d4ab78':r.wall?'#46545e':'#8b8479',0,b,1,S);
    }
    for(const g of s.gates||[]){const d=g.distance-s.travel;if(d>=-42&&d<1050)gate(a,e,g,lod||d>350?1:0);}
-   for(const w of (P.warpEntities?.(e)||s.warpEntities||[]).slice(0,2))if(w.pos[2]<p.pos[2]+50&&V3.len(V3.sub(w.pos,p.pos))<650)warp(a,e,w,lod);
-   for(const x of e.enemies)if(!x.dead)ship(a,e,x,x.role==='jammer'?'jammer':'interceptor',clock,lod);
+   for(const w of (P.warpEntities?.(e)||s.warpEntities||[]).slice(0,2)){
+     const distance=V3.len(V3.sub(w.pos,p.pos));
+     if(w.pos[2]<p.pos[2]+50&&distance<650)warp(a,e,w,lod&&distance>95?2:lod);
+   }
+   for(const x of e.enemies)if(!x.dead)ship(a,e,x,['jammer','heavy'].includes(x.role)?x.role:'interceptor',clock,lod);
    if(fx){
      for(const f of (s.visual220?.fragments||[]).slice(0,lod?24:48))part(a,'p220_fragment'+f.variant+'_'+f.piece,f.pos,[f.r,f.r,f.r],f.life>3?'#caa276':'#7b766d',f.life>3?.12:0,flightBasis(...f.rotation),clamp(f.life/.5),S);
      for(const q of e.particles.slice(0,lod?40:90))part(a,'octa',q.pos,[q.size*.32,q.size*.32,q.size*.8],q.color,1,spaceBasisDir(q.vel),Math.min(1,q.life/q.max),L);
@@ -222,9 +248,15 @@
    a.pursuit220=true;a.pursuit260=true;return a;
  }
  spaceScene=scene;
- spaceCamera=function(e,time){const cam=old.camera(e,time);if(active(e))return {...cam,pursuit220:true,pursuit260:true};return cam;};
+ spaceCamera=function(e,time){
+   const cam=old.camera(e,time);if(!active(e))return cam;
+   const rect=ARCADE.canvas?.getBoundingClientRect?.(),portrait=rect&&rect.height>rect.width*1.15;
+   // A portrait camera needs enough horizontal space to read the entire
+   // apparition beside its hammer, instead of seeing only a cropped weapon.
+   return {...cam,fov:portrait?Math.max(cam.fov,1.37):cam.fov,pursuit220:true,pursuit260:true};
+ };
  globalThis.CITADEL_PURSUIT_VIEW=Object.freeze({...base,version:VERSION,
-   scene,ringModel:ring,warpModel:leviathan,hammerModel:hammerHead,
+   scene,ringModel:ring,warpModel:leviathan,hammerModel:hammerHead,enemyModel:escortFighter,
    stats:()=>({...base.stats(),visualVersion:VERSION,templates260:templates.size}),
    inspect:e=>({...base.inspect(e),visualVersion:VERSION,warps:(P.warpEntities?.(e)||e?.pursuit?.warpEntities||[]).length,maxWarps:2}),
    renderWarp:(a,e,w,lod=1)=>warp(a,e,w,lod),

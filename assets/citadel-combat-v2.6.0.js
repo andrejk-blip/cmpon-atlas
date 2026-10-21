@@ -49,6 +49,14 @@
   function labels(){
     if(typeof ARCADE==='undefined'||typeof document==='undefined')return;
     const e=ARCADE.engine,grenade=e?.finale?.phase==='mrg';
+    const canvas=ARCADE.canvas;
+    const description=grenade?'Арена МРГ: движение и прыжок — WASD / джойстик; мышь или касание — прицел; ЛКМ / пробел — огонь; ПКМ / Q — граната; E — импульс.':
+      e?.phase==='escort'?'Сопровождение конвоя: WASD / джойстик — манёвр; Tab — цель; ЛКМ / пробел — огонь; ПКМ / Q — ракета; E — прикрытие.':
+      e?.phase==='pursuit'?'Погоня за ФЗ: WASD / джойстик — манёвр; держитесь в канале связи, проходите кольца; ЛКМ / пробел — огонь; ПКМ / Q — ракета; E — импульс.':
+      e?.phase==='swarm'?'Рой уточнений: WASD / джойстик — манёвр; ЛКМ / пробел — огонь вверх; ПКМ / Q — ракета; E — импульс.':
+      e?.status==='boarding'?'Палуба: WASD / джойстик — движение; мышь или касание — прицел; ЛКМ / пробел — огонь; E — импульс; F — взаимодействие.':
+      '3D-полёт: WASD / джойстик — курс; ЛКМ / пробел — огонь; ПКМ / Q — ракета; Shift — форсаж; E — импульс; P — пауза.';
+    if(canvas?.getAttribute?.('aria-label')!==description)canvas?.setAttribute?.('aria-label',description);
     for(const el of document.querySelectorAll?.('[data-action="arcade-missile"]')||[]){
       const label=grenade?'Граната · ПКМ / Q':'Ракета · ПКМ / Q';
       el.setAttribute('title',label);el.setAttribute('aria-label',label);

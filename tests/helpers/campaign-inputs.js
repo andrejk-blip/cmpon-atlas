@@ -95,7 +95,11 @@ function createMrgController() {
     const retreat = ['telegraph', 'active'].includes(f.tentacle?.phase);
     const zone = f.tentacle?.safeZone;
     const curvedRetreat = retreat && f.tentacle.kind !== 'sweep';
-    const desired = retreat && zone ? (zone.minX + zone.maxX) / 2 : -28 + Math.sin(f.time * .75) * 1.7;
+    // Combat rockets now punish holding one firing position. Patrol through
+    // the open arena between physical boss attacks; this is ordinary movement,
+    // not a change to enemy aim, damage, resources or collision geometry.
+    const desired = retreat && zone ? (zone.minX + zone.maxX) / 2 :
+      e.assist ? -28 + Math.sin(f.time * .75) * 1.7 : -20 + Math.sin(f.time * .8) * 9;
     let aim = f.mrg.pos.slice();
     if (target) {
       const travel = Math.min(.65, Math.hypot(target.pos[0] - b.pos[0], target.pos[1] - b.pos[1]) / 65);

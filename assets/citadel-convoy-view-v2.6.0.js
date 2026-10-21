@@ -2,7 +2,7 @@
  * Presentation only. No gameplay writes, event handlers, timers or new loops.
  * A flat fully-emissive cylinder used to cover both sky renderers. It is gone:
  * a bounded sky pass supplies depth, with real 3D ships/fields in front of it.
- * Canvas keeps reciprocal-depth occlusion; GL owns one disposable sky program.
+ * Canvas keeps reciprocal-depth occlusion; GL owns two disposable programs.
  */
 (() => {
  'use strict';
@@ -31,12 +31,18 @@
  function annulus(name,inner,outer,segments=48){const v=[],f=[];for(let i=0;i<segments;i++){const t=i/segments*TAU;v.push([Math.cos(t)*inner,Math.sin(t)*inner,0],[Math.cos(t)*outer,Math.sin(t)*outer,0]);}
   for(let i=0;i<segments;i++){const j=(i+1)%segments;f.push([i*2,i*2+1,j*2+1,j*2]);}SPACE_MESH[name]=spaceMesh(v,f);
  }
- hullMesh();annulus('c260_field',1,24);annulus('c260_rim',1,1.045);annulus('c260_collar',1.045,1.12);
- function panel(a,p,s,col=C.ivory){part(a,'c260_hull',p,s,col);}
+ hullMesh();annulus('c260_field',1,64);annulus('c260_rim',1,1.045);annulus('c260_collar',1.045,1.12);
+ // Small plates/nozzles are profiled solids, not the 76-triangle main hull.
+ // Visible relief survives without spending full-hull geometry on each detail.
+ {const shape=[[-.75,-1],[-1,-.65],[-.65,.65],[0,1],[.65,.65],[1,-.65],[.75,-1]],v=[],f=[];
+  for(const y of [-1,1])for(const [x,z]of shape)v.push([x,y,z]);for(let i=0;i<7;i++)f.push([i,(i+1)%7,(i+1)%7+7,i+7]);f.push([6,5,4,3,2,1,0],[7,8,9,10,11,12,13]);SPACE_MESH.c260_plate=spaceMesh(v,f);
+  const nv=[],nf=[];for(const [y,r]of [[-1,.83],[-.6,1],[.6,1],[1,.83]])for(let i=0;i<6;i++){const t=i/6*TAU;nv.push([Math.cos(t)*r,y,Math.sin(t)*r]);}for(let j=0;j<3;j++)for(let i=0;i<6;i++){const a=j*6+i,b=j*6+(i+1)%6;nf.push([a,a+6,b+6,b]);}nf.push([0,1,2,3,4,5],[23,22,21,20,19,18]);SPACE_MESH.c260_nozzle=spaceMesh(nv,nf);
+ }
+ function panel(a,p,s,col=C.ivory){part(a,'c260_plate',p,s,col);}
  function nozzle(a,x,y,z,size=1,col=C.cyan){
-  part(a,'p220_nozzle',[x,y,z],[size,size*.4,size],C.dark,0,flightBasis(0,Math.PI/2));
-  part(a,'p220_nozzle',[x,y,z-.32*size],[size*.82,size*.22,size*.82],C.edge,0,flightBasis(0,Math.PI/2));
-  part(a,'p220_nozzle',[x,y,z-.53*size],[size*.63,size*.08,size*.63],col,1,flightBasis(0,Math.PI/2),1,L);
+  part(a,'c260_nozzle',[x,y,z],[size,size*.4,size],C.dark,0,flightBasis(0,Math.PI/2));
+  part(a,'c260_nozzle',[x,y,z-.32*size],[size*.82,size*.22,size*.82],C.edge,0,flightBasis(0,Math.PI/2));
+  part(a,'c260_nozzle',[x,y,z-.53*size],[size*.63,size*.08,size*.63],col,1,flightBasis(0,Math.PI/2),1,L);
  }
  function fleetModel(type){return compile('ship_'+type,a=>{
   const player=type==='player',transport=type==='transport',small=type==='scout'||type==='interceptor';
@@ -161,7 +167,7 @@
   // A low-resolution, once-per-surface turbulent light field replaces hard
   // radial triangles. It is smoothly scaled before ships are depth-rastered.
   // This is cached sky lighting, not an image substituted for gameplay.
-  const fogCanvas=document.createElement('canvas'),fw=384,fh=Math.max(120,Math.round(fw*h/w));fogCanvas.width=fw;fogCanvas.height=fh;
+  const fogCanvas=document.createElement('canvas'),fw=Math.min(256,Math.max(96,Math.round(192*w/h))),fh=Math.min(256,Math.max(96,Math.round(fw*h/w)));fogCanvas.width=fw;fogCanvas.height=fh;
   const fc=fogCanvas.getContext('2d'),data=fc.createImageData(fw,fh),grid=Float32Array.from({length:4096},()=>rand());
   const noise=(x,y)=>{const ix=Math.floor(x),iy=Math.floor(y),u=x-ix,v=y-iy,s=u*u*(3-2*u),t=v*v*(3-2*v),at=(x,y)=>grid[((y%64+64)%64)*64+(x%64+64)%64];return (at(ix,iy)*(1-s)+at(ix+1,iy)*s)*(1-t)+(at(ix,iy+1)*(1-s)+at(ix+1,iy+1)*s)*t;};
   for(let y=0;y<fh;y++)for(let x=0;x<fw;x++){
@@ -182,14 +188,21 @@
  void main(){vec3 ray=normalize(uForward+uRight*uv.x*uAspect*uTan+uUp*uv.y*uTan);float z=max(.08,-ray.z),r=length(ray.xy)/z,a=atan(ray.y,ray.x),turn=a+log(max(r,.015))*.32+uClock*.012;vec3 p=vec3(cos(turn)*3.,sin(turn)*3.,log(max(r,.025))*1.5+uChapter*3.);
  float n=noise(p)*.64+noise(p*2.07)*.25+noise(p*4.03)*.11;float vein=pow(max(0.,sin(turn*4.+n*7.)),3.);float haze=exp(-r*.72)*(.26+vein*.65)*smoothstep(.015,.14,r);vec3 col=mix(vec3(.009,.014,.036),vec3(.035,.095,.17),exp(-r*1.4));col+=mix(vec3(.075,.055,.16),vec3(.06,.24,.36),n)*haze*(.45+n);col+=vec3(.18,.25,.32)*exp(-r*12.)*.36;
  vec3 cell=floor(ray*650.);float star=step(.9985,hash(cell));col+=vec3(.40,.52,.64)*star*.38;gl_FragColor=vec4(col,1.);}`;
+ // The shared 2.3 shader tone-maps dark navy toward grey and clamps engine
+ // contrast. This convoy pass matches the CPU light rig and preserves black
+ // hull recesses, warm armour and white-hot exhaust at the same real geometry.
+ const MATERIAL_FRAGMENT=`precision highp float;varying vec3 vNormal;varying vec3 vLocal;varying vec3 vWorld;uniform vec3 uColor;uniform vec3 uEye;uniform float uEmissive;uniform float uAlpha;uniform float uKind;
+ void main(){vec3 n=normalize(vNormal),eye=normalize(uEye-vWorld),sun=normalize(vec3(-.48,.73,.48));float diffuse=max(0.,dot(n,sun)),rim=pow(1.-max(0.,dot(n,eye)),3.);float glass=step(22.5,uKind)*(1.-step(23.5,uKind));float spec=pow(max(0.,dot(n,normalize(sun+eye))),mix(26.,45.,glass))*mix(.13,.32,glass);float grain=.975+.025*sin(vLocal.x*23.+vLocal.y*42.+vLocal.z*7.);vec3 albedo=uColor*grain;vec3 light=vec3(.28,.32,.40)+vec3(.96,.88,.69)*diffuse;vec3 lit=albedo*light+vec3(spec)+vec3(.035,.07,.1)*rim;vec3 col=mix(lit,albedo*1.08,clamp(uEmissive,0.,1.));float fog=clamp((length(uEye-vWorld)-170.)/1800.,0.,.32);col=mix(col,vec3(.02,.04,.075),fog);gl_FragColor=vec4(col,uAlpha);}`;
  SpaceRendererCore.prototype.render=function(items,cam){
   if(!cam.convoy260||!this.gl)return old.render.call(this,items,cam);const gl=this.gl;if(gl.isContextLost())return;
-  let state=gpu.get(this);if(!state){const program=this.program(SPACE_SKY_VERTEX,SKY_FRAGMENT),loc={};for(const name of ['uForward','uRight','uUp','uAspect','uTan','uClock','uChapter'])loc[name]=gl.getUniformLocation(program,name);state={program,loc,position:gl.getAttribLocation(program,'aPos')};gpu.set(this,state);}
-  const saved={skyProgram:this.skyProgram,skyLoc:this.skyLoc,skyPosition:this.skyPosition};this.skyProgram=state.program;this.skyLoc=state.loc;this.skyPosition=state.position;
+  let state=gpu.get(this);if(!state){const program=this.program(SPACE_SKY_VERTEX,SKY_FRAGMENT),loc={},material=this.program(SPACE_VERTEX,MATERIAL_FRAGMENT),materialLoc={};for(const name of ['uForward','uRight','uUp','uAspect','uTan','uClock','uChapter'])loc[name]=gl.getUniformLocation(program,name);for(const name of ['uModel','uView','uProjection','uColor','uEye','uEmissive','uAlpha','uKind','uInterior','uLightA','uLightB','uLightC','uTintA','uTintB','uTintC'])materialLoc[name]=gl.getUniformLocation(material,name);state={program,loc,position:gl.getAttribLocation(program,'aPos'),material,materialLoc,materialPosition:gl.getAttribLocation(material,'aPosition'),materialNormal:gl.getAttribLocation(material,'aNormal')};gpu.set(this,state);}
+  const saved={skyProgram:this.skyProgram,skyLoc:this.skyLoc,skyPosition:this.skyPosition,program3D:this.program3D,loc:this.loc,position:this.position,normal:this.normal};this.skyProgram=state.program;this.skyLoc=state.loc;this.skyPosition=state.position;this.program3D=state.material;this.loc=state.materialLoc;this.position=state.materialPosition;this.normal=state.materialNormal;
   gl.useProgram(state.program);gl.uniform1f(state.loc.uClock,cam.fx?cam.clock:0);gl.uniform1f(state.loc.uChapter,cam.chapter||0);
-  try{return old.render.call(this,items,cam);}finally{Object.assign(this,saved);}
+  // Bypass only the old material selector; camera basis and all clipping,
+  // mesh buffers, depth/blend rules and the base GL render procedure stay.
+  try{return old.render.call(this,items,{...cam,convoy230:false,pursuit220:false});}finally{Object.assign(this,saved);}
  };
- SpaceRendererCore.prototype.dispose=function(){const state=gpu.get(this);if(state&&this.gl){this.gl.deleteProgram(state.program);gpu.delete(this);}return old.dispose.call(this);};
+ SpaceRendererCore.prototype.dispose=function(){const state=gpu.get(this);if(state&&this.gl){this.gl.deleteProgram(state.program);this.gl.deleteProgram(state.material);gpu.delete(this);}return old.dispose.call(this);};
  function inView(it,cam,w,h){const mesh=SPACE_MESH[it.mesh];let bound=bounds.get(mesh);if(!bound){const p=mesh.p,min=[Infinity,Infinity,Infinity],max=[-Infinity,-Infinity,-Infinity];for(let i=0;i<p.length;i++){const axis=i%3;min[axis]=Math.min(min[axis],p[i]);max[axis]=Math.max(max[axis],p[i]);}const center=min.map((v,i)=>(v+max[i])/2);bound={center,radius:Math.hypot(...max.map((v,i)=>v-center[i]))};bounds.set(mesh,bound);}
   const m=it.model,center=spacePoint(m,bound.center),d=V3.sub(center,cam.pos),z=V3.dot(d,cam.f),radius=bound.radius*Math.max(Math.hypot(m[0],m[1],m[2]),Math.hypot(m[4],m[5],m[6]),Math.hypot(m[8],m[9],m[10]));if(z+radius<.35)return false;const sy=Math.tan(cam.fov/2),sx=sy*w/h;return Math.abs(V3.dot(d,cam.r))<z*sx+radius*Math.sqrt(1+sx*sx)&&Math.abs(V3.dot(d,cam.u))<z*sy+radius*Math.sqrt(1+sy*sy);
  }
@@ -276,5 +289,5 @@
   if(ARCADE.radar)ARCADE.radar.canvas.setAttribute('aria-label','Карта конвоя: белый — ваш корабль, зелёные — транспорты, красные и фиолетовые — противники');
  };
  globalThis.CITADEL_CONVOY_VIEW=Object.freeze({version:'2.6.0',stats:()=>({...lastStats,templates:templates.size,surfaceBuilds}),fieldRects,
-  testVessel:type=>{const a=[];instance(a,fleetModel(type),[0,0,0]);return a;},fieldBoundary:f=>({shape:f.shape||'legacy-rectangle',x:f.gapX,y:f.gapY,z:f.z,radius:f.radius,halfW:f.halfW,halfH:f.halfH}),skyShader:SKY_FRAGMENT});
+  testVessel:type=>{const a=[];instance(a,fleetModel(type),[0,0,0]);return a;},fieldBoundary:f=>({shape:f.shape||'legacy-rectangle',x:f.gapX,y:f.gapY,z:f.z,radius:f.radius,halfW:f.halfW,halfH:f.halfH}),skyShader:SKY_FRAGMENT,materialShader:MATERIAL_FRAGMENT});
 })();

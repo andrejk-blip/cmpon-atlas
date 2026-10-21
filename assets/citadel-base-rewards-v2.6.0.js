@@ -14,7 +14,7 @@
   const clamp = (x,a=0,z=1) => Math.max(a,Math.min(z,x)), distance = (a,b) => Math.hypot(a[0]-b[0],a[2]-b[2]);
   const active = e => !!e?.board?.cells && !e.crash && (!e.finale || e.finale.phase === 'maze');
   const modern = e => active(e) && CITADEL_BASES.modern(e.board);
-  const tier = e => e.finale?.phase === 'maze' ? 4 : clamp(e.stage,0,3);
+  const tier = e => e?.finale?.phase === 'maze' ? 4 : clamp(Number(e?.stage)||0,0,3);
   const definitions = Object.freeze({
     capacitor:{title:'ИМПУЛЬСНЫЙ КОНДЕНСАТОР',short:'КОНДЕНСАТОР',color:'#75d9de'},
     triad:{title:'ДЕТАЛЬ «ТРИАДЫ»',short:'ДЕТАЛЬ ОРУЖИЯ',color:'#eec586'},
@@ -57,14 +57,14 @@
     let detail;
     if(pickup.type==='capacitor') {
       k.capacitor=Math.min(5,k.capacitor+1);b.energy=Math.min(100,b.energy+45);b.pulseCooldown=Math.max(0,b.pulseCooldown-3);
-      detail='Импульс перезаряжается на '+k.capacitor*8+'% быстрее. Энергия +45; текущая перезарядка −3 с.';
+      detail='Импульс на базах перезаряжается на '+k.capacitor*8+'% быстрее. Энергия +45; перезарядка −3 с.';
     } else if(pickup.type==='armor') {
       k.armor=Math.min(5,k.armor+1);b.hp=Math.min(100,b.hp+25);
-      detail='Урон вражеских снарядов −'+k.armor*6+'%. Щит восстановлен на 25.';
+      detail='Урон снарядов на базах −'+k.armor*6+'%. Щит восстановлен на 25.';
     } else {
       k.parts=Math.min(5,k.parts+1);
       detail=k.parts<3 ? 'Сборка '+k.parts+'/3. Темп огня +'+k.parts*4+'%. Третья деталь добавит тройной залп.' :
-        '«Триада» собрана: каждый '+(8-k.parts)+'-й выстрел — тройной залп. Обычная кнопка огня.';
+        'Палубная «Триада» собрана: каждый '+(8-k.parts)+'-й выстрел — тройной залп. Обычная кнопка огня.';
       if(k.parts===3 && !k.achievements.includes('triad'))k.achievements.push('triad');
     }
     if(s.pickups.length===3 && s.pickups.every(x=>x.taken)) {
@@ -102,10 +102,14 @@
         }
       }
       return original.apply(this,arguments);
-    }};emitters.set(e,q);}return q.fn;
+    }};
+      // The shared comic/SFX scope marker prevents transition hooks (notably
+      // beginMRG) from retaining this temporary adapter as a permanent emitter.
+      Object.defineProperty(q.fn,'citadelSfxScope',{value:true});emitters.set(e,q);
+    }return q.fn;
   }
   p.say=function(text){
-    if(active(this) && !this.assist && typeof text==='string' && /^(Охрана заметила тебя\. Резерв|Резерв выходит|Ракета —|Рывок —)/i.test(text))return;
+    if(active(this) && !this.assist && typeof text==='string' && /^(Охрана заметила тебя\. Резерв|Резерв выходит|Ракета —|Рывок —|Ретранслятор вызывает отряд\.|Проходишь шлюз подкрепления\.|Боковой шлюз открывается\.)/i.test(text))return;
     return old.say.apply(this,arguments);
   };
   p.enemyBoardStep=function(x,dt) {
@@ -225,7 +229,7 @@
   for(const [name,fn] of [['hud',old.hud],['mobile',old.mobile],['final',old.final]]) {
     const wrapped=function(c,e,cam,w,h) {
       const fill=c.fillText,stroke=c.strokeText,quiet=active(e)&&!e.assist;
-      const warning=text=>/^(РАКЕТА!|РЫВОК!|ПРЫЖОК!|РЕЗЕРВ · ШЛЮЗ|ПРИЦЕЛЬНЫЙ ВЫСТРЕЛ|ЗАРЯЖАЕТ ВЫСТРЕЛ|НАВОДИТ РАКЕТУ|ГОТОВИТ ПРЫЖОК|ГОТОВИТ РЫВОК)$/.test(text);
+      const warning=text=>/^(РАКЕТА!|РЫВОК!|ПРЫЖОК!|РЕЗЕРВ · ШЛЮЗ|ПРИЦЕЛЬНЫЙ ВЫСТРЕЛ|ЗАРЯЖАЕТ ВЫСТРЕЛ|НАВОДИТ РАКЕТУ|ГОТОВИТ ПРЫЖОК|ГОТОВИТ РЫВОК|СНАЙПЕР ·|РЕТРАНСЛЯТОР · ПРЕРВИТЕ|БЛОКЕР · ОБОЙДИТЕ)/.test(text);
       if(quiet){c.fillText=function(text){if(!warning(text))return fill.apply(this,arguments);};c.strokeText=function(text){if(!warning(text))return stroke.apply(this,arguments);};}
       let result;try{result=fn.apply(this,arguments);}finally{if(quiet){c.fillText=fill;c.strokeText=stroke;}}
       labels(c,e,cam,w,h);return result;

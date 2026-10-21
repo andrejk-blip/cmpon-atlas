@@ -612,7 +612,7 @@ function renderArena(e,time,fx){const items=[],add=(...x)=>items.push(citadelIte
     if(!currentArena(e)||e.finale.phase!=='mrg')return originalHUD(c,e,cam,w,h);
     return renderHUD(c,e,cam,w,h);
   };
-  const aimHelp='Мышь или касание поля — прицел. Пробел / «Огонь» — стрелять; Q / «Граната» — граната. Без прицела огонь идёт по направлению взгляда.';
+  const aimHelp='Мышь или касание поля — прицел. Пробел / «Огонь» — стрелять; ПКМ / Q / «Граната» — граната. Без прицела огонь идёт по направлению взгляда.';
   const pauseHelp=aimHelp+' A/D — бег; W / Shift — прыжок; S — спуск с платформы. Прямой размах — в глубокое левое укрытие. Верхние и боковые щупальца — на пол в зелёный просвет.';
   if(typeof updateFinaleHUD==='function') {
     const update=updateFinaleHUD;
@@ -633,7 +633,7 @@ function renderArena(e,time,fx){const items=[],add=(...x)=>items.push(citadelIte
       const html=overlay.call(this,e,...args);
       if(!currentArena(e)||e.finale.phase!=='mrg'||e.status!=='paused'||typeof html!=='string')return html;
       // Replace only the existing paused help paragraph, preserving the card/actions.
-      return html.replace(/<p>[\s\S]*?<\/p>/,'<p>'+pauseHelp+'</p>');
+      return html.replace(/<p>[\s\S]*?<\/p>/,'<p>'+(e.assist?pauseHelp:aimHelp+' A/D — бег; W / Shift — прыжок; S — спуск. В боевом режиме подсветка будущих атак отключена.')+'</p>');
     };
   }
   globalThis.CITADEL_MRG_VIEW=Object.freeze({

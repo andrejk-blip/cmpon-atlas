@@ -107,8 +107,10 @@
  function aimState(e){const t=e.target(),p=e.player,cone=e.assist?.24:.19,d=t?V3.sub(t.pos,p.pos):[0,0,-1];return {locked:!!t&&t.warp<=0&&d[2]<-4&&Math.hypot(d[0],d[1])<=-d[2]*cone+t.r,targetId:t?.id||null,cone};}
  proto.fire=function(){if(!active(this))return old.fire.call(this);const p=this.player;if(this.status!=='playing'||p.shotCooldown>0)return false;
   const state=aimState(this),t=this.target(),direction=state.locked?V3.norm(V3.sub(V3.add(t.pos,V3.scale(t.vel||[0,0,0],dist(p.pos,t.pos)/210)),p.pos)):[0,0,-1];
-  // Escort guns retain a viable baseline even when all campaign upgrades went to armour.
-  const guns=Math.max(1,this.upgrades.weapons);p.shotCooldown=.24*Math.pow(.9,guns);this.shots++;
+  // The convoy's minimum gun package rises with the sector. Earned weapon
+  // upgrades stay stronger, while a saved armour build can still intercept
+  // the later shield/torpedo combination without changing its upgrades.
+  const guns=Math.max(1+this.stage*.5,this.upgrades.weapons);p.shotCooldown=.24*Math.pow(.9,guns);this.shots++;
   for(const side of [-1,1])this.bullets.push({pos:V3.add(p.pos,[side*1.2,0,-3]),vel:V3.scale(direction,210),life:1.7,damage:12*(1+.25*guns),r:.7,type:'laser',color:'#82f8ff'});this.emit('shot');return true;
  };
  proto.hit=function(x,amount){if(!active(this)||!x.convoy240)return old.hit.call(this,x,amount);if(x.dead||x.warp>0)return;
