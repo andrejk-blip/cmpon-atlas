@@ -5,7 +5,7 @@
  */
 (() => {
  'use strict';
- if(globalThis.CITADEL_PURSUIT_VIEW||globalThis.CITADEL_PURSUIT?.version!=='2.1.0')return;
+ if(globalThis.CITADEL_PURSUIT_VIEW||!['2.1.0','2.6.0'].includes(globalThis.CITADEL_PURSUIT?.version))return;
  const VERSION='2.3.0',P=CITADEL_PURSUIT,TAU=Math.PI*2;
  const old={scene:spaceScene,camera:spaceCamera,draw:spaceDrawCPU,step:RequirementArcade.prototype.step,
    render:SpaceRendererCore.prototype.render,dispose:SpaceRendererCore.prototype.dispose,hud:drawFlightHUD,mobileHUD:drawMobileGameHUD};

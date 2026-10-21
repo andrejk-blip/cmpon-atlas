@@ -89,7 +89,7 @@
     if (kind === 'rescue' && !ownMission) {
       post(e, { text: 'ФТ НА БОРТУ!', label: REQS.get(value)?.number || 'ПАКЕТ ТРЕБОВАНИЙ', kind: 'success' });
     } else if (kind === 'wave' && !ownMission) {
-      post(e, { text: 'ПРАВКИ НАЛЕТАЮТ!', kind: 'warning' });
+      post(e, { text: 'ПРАВКИ НАЛЕТАЮТ!', kind: e.assist ? 'warning' : 'action' });
     } else if (kind === 'pulse') {
       post(e, { text: 'ЗАМЕЧАНИЯ ОТБИТЫ!', kind: 'action' });
     } else if (kind === 'destroy' && !e.finale && !ownMission) {
