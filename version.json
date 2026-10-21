@@ -1,7 +1,7 @@
 {
   "product": "ЦМПОН — атлас требований",
-  "version": "2.4.0",
-  "released_on": "2026-10-19",
+  "version": "2.5.0",
+  "released_on": "2026-10-21",
   "requirements_edition": "2.0.2 (ВСТЕ)",
   "requirements_as_of": "2026-10-14",
   "save_schema": "citadel-review-v3",
@@ -47,7 +47,7 @@
     464
   ],
   "mrg_manual_aim": true,
-  "voice_module_version": "1.9.0",
+  "voice_module_version": "2.5.0",
   "field_ui_module_version": "1.7.0",
   "mrg_batch_sizes": [
     [
@@ -62,11 +62,7 @@
       3
     ]
   ],
-  "mrg_tentacle_patterns": [
-    "sweep",
-    "crown",
-    "pincer"
-  ],
+  "mrg_tentacle_patterns": 3,
   "mrg_viewport_module_version": "1.6.0",
   "voice_sha256": "8cad3194303c1be0f77ad177b8c328e72940a9db23a3e32e5c2912920386d286",
   "field_ui_sha256": "fb2b2545d45aaad74c1009bf2bd3b775ca6b897c9baf027f2c7cff5de0b02bed",
@@ -82,7 +78,7 @@
   "flight_ui_module_version": "1.7.1",
   "flight_ui_sha256": "b5e7d58a269a75fb71aba8ccb286e84714e17ef016532086dc8d098443acae91",
   "pursuit_module_version": "2.1.0",
-  "swarm_module_version": "1.9.0",
+  "swarm_module_version": "2.5.0",
   "parallax_module_version": "1.8.0",
   "comic_module_version": "1.9.3",
   "pursuit_level": 4,
@@ -111,7 +107,7 @@
   "pursuit_mechanic": "three-stage-channel-obstacle-combat-chase",
   "pursuit_target_percent": 100,
   "swarm_mechanic": "formation-shooter",
-  "swarm_waves": 3,
+  "swarm_waves": 6,
   "deck_combat_levels": [
     2,
     5,
@@ -229,5 +225,11 @@
   "convoy_field_warning_seconds": 5.4,
   "convoy_field_collision_radius": 2.8,
   "convoy_style_build": "240r2",
-  "convoy_style_sha256": "c6ca30d3da2304bba7de04df4c63bc2bb223d22b06b62daac21e927479d77495"
+  "convoy_style_sha256": "c6ca30d3da2304bba7de04df4c63bc2bb223d22b06b62daac21e927479d77495",
+  "academy_card_count": 36,
+  "academy_campaign_cases": 23,
+  "presentation_module_version": "2.5.0",
+  "narrative_module_version": "2.5.0",
+  "swarm_view_version": "2.5.0",
+  "mrg_actors_version": "2.5.0"
 }

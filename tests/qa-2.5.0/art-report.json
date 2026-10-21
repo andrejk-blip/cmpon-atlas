@@ -1,0 +1,290 @@
+{
+  "method": "Node VM production-script entry; native @napi-rs/canvas. Direct beginStage/beginMRG fixtures, normal input thereafter. Not a real browser, GPU, touch device or subjective human playtest.",
+  "files": [
+    {
+      "file": "assets/citadel-swarm-view-v2.5.0.js",
+      "sha": "b9048623ccc82bff658af932bd27d201237b68d9b560b39575bb4b199065da34"
+    },
+    {
+      "file": "assets/citadel-mrg-actors-v2.5.0.js",
+      "sha": "d0bcec56d741510c8f6e620451ba1681082bfafdec1a1d28a1463dea23442248"
+    }
+  ],
+  "mechanics": [
+    {
+      "file": "assets/citadel-swarm-v2.5.0.js",
+      "sha": "ce838788092a62ee0af53b8d84754b1f705f3d543276e8d6ff7c770a8c72bd01"
+    }
+  ],
+  "frames": [
+    {
+      "name": "art-swarm-before",
+      "width": 1280,
+      "height": 720,
+      "fx": true,
+      "sha": "5b01a6091cb252a5194d3ae4dfc2fedb432dcb0d341095ba79ffad45fa20c42c",
+      "items": 0,
+      "drawMs": 13.32
+    },
+    {
+      "name": "art-mrg-before",
+      "width": 1280,
+      "height": 720,
+      "fx": true,
+      "sha": "c906e48ea06112499bc0b614ac24f3ad93fe0d80b95326a560d3e3f54f178a01",
+      "items": 366,
+      "drawMs": 651.81
+    },
+    {
+      "name": "art-swarm-after",
+      "width": 1280,
+      "height": 720,
+      "fx": true,
+      "sha": "aacdce67241c2ca8e413a0939247e7b12689a68f61a112c39131ea8a6037c31c",
+      "items": 0,
+      "drawMs": 17.84
+    },
+    {
+      "name": "art-swarm-phone",
+      "width": 390,
+      "height": 640,
+      "fx": true,
+      "sha": "b85962bf77b327f7725a9187165d0663cc7386ad635df60d65c7e47ca068a823",
+      "items": 0,
+      "drawMs": 6.82
+    },
+    {
+      "name": "art-swarm-landscape",
+      "width": 780,
+      "height": 390,
+      "fx": true,
+      "sha": "2e29fd22743482ea0c8b3b09afa14a0fcfdb3dccdb676b3dc69f6908a76d8ec4",
+      "items": 0,
+      "drawMs": 11.75
+    },
+    {
+      "name": "art-swarm-fx-off",
+      "width": 390,
+      "height": 640,
+      "fx": false,
+      "sha": "29a264875b5c96213592b63dd9f9febe470079f28076c93a33aafb990fb12230",
+      "items": 0,
+      "drawMs": 4.26
+    },
+    {
+      "name": "art-mrg-after",
+      "width": 1280,
+      "height": 720,
+      "fx": true,
+      "sha": "3914c777c4e5b869b8cf0580ce48e25e390978cca993c486a181ebc22d1abf2b",
+      "items": 383,
+      "drawMs": 607.05
+    },
+    {
+      "name": "art-mrg-phone",
+      "width": 390,
+      "height": 640,
+      "fx": true,
+      "sha": "314b58f2122d8a8e89f6eaa67cc8b2700b925ab9f35c553a343824079f23ff38",
+      "items": 383,
+      "drawMs": 586.67
+    },
+    {
+      "name": "art-mrg-fx-off",
+      "width": 780,
+      "height": 390,
+      "fx": false,
+      "sha": "bf55c8f071c5791f068190741ebb0c354eeb8fd879f6bbf03e348b72c05c2cbb",
+      "items": 383,
+      "drawMs": 613.3
+    },
+    {
+      "name": "art-mrg-detailed-geometry",
+      "width": 1280,
+      "height": 720,
+      "fx": true,
+      "sha": "e29718c4580b15b319a6a31099767a7bb7f9fb6f66b7ec87c1ec43581f4ddd6e",
+      "items": 467,
+      "drawMs": 796.16
+    }
+  ],
+  "runs": [
+    {
+      "mode": "normal",
+      "rules": "2.5.0",
+      "completed": true,
+      "status": "lesson",
+      "phase": "dock",
+      "seconds": 79.93333333333334,
+      "minHP": 100,
+      "waves": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "roles": [
+        "scout",
+        "interceptor",
+        "bomber",
+        "commander"
+      ],
+      "drops": [
+        "repair",
+        "missiles",
+        "overdrive"
+      ],
+      "samples": [
+        {
+          "wave": 1,
+          "frame": 144,
+          "remaining": 7
+        },
+        {
+          "wave": 2,
+          "frame": 713,
+          "remaining": 11
+        },
+        {
+          "wave": 3,
+          "frame": 1484,
+          "remaining": 10
+        },
+        {
+          "wave": 4,
+          "frame": 2187,
+          "remaining": 13
+        },
+        {
+          "wave": 5,
+          "frame": 3040,
+          "remaining": 15
+        },
+        {
+          "wave": 6,
+          "frame": 3823,
+          "remaining": 18
+        }
+      ]
+    },
+    {
+      "mode": "calm",
+      "rules": "2.5.0",
+      "completed": true,
+      "status": "lesson",
+      "phase": "dock",
+      "seconds": 75.21666666666667,
+      "minHP": 100,
+      "waves": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "roles": [
+        "scout",
+        "interceptor",
+        "bomber",
+        "commander"
+      ],
+      "drops": [
+        "repair",
+        "missiles",
+        "overdrive"
+      ],
+      "samples": [
+        {
+          "wave": 1,
+          "frame": 144,
+          "remaining": 5
+        },
+        {
+          "wave": 2,
+          "frame": 614,
+          "remaining": 8
+        },
+        {
+          "wave": 3,
+          "frame": 1327,
+          "remaining": 9
+        },
+        {
+          "wave": 4,
+          "frame": 2045,
+          "remaining": 13
+        },
+        {
+          "wave": 5,
+          "frame": 2829,
+          "remaining": 13
+        },
+        {
+          "wave": 6,
+          "frame": 3657,
+          "remaining": 17
+        }
+      ]
+    }
+  ],
+  "mrgBenchmark": {
+    "before": {
+      "items": 366,
+      "triangles": 82480,
+      "actorTriangles": 9500,
+      "medianMs": 522.73,
+      "samplesMs": [
+        505.67,
+        510.29,
+        514.65,
+        530.81,
+        543.9,
+        550.69
+      ]
+    },
+    "after": {
+      "items": 383,
+      "triangles": 74716,
+      "actorTriangles": 1928,
+      "medianMs": 519.48,
+      "samplesMs": [
+        498.59,
+        500.42,
+        509.79,
+        529.17,
+        549.12,
+        558.56
+      ]
+    },
+    "pairs": 6,
+    "ratio": 0.994,
+    "method": "Alternating native CPU draws, one warm-up pair and six measured pairs, exact same state/camera. Host timings are not browser or Android FPS."
+  },
+  "assertions": {
+    "readOnly": true,
+    "finiteModels": true,
+    "enemyHullFits": true,
+    "playerCoreRadius": 1.65,
+    "playerVisualScale": 2.5,
+    "protectedMrgGeometryUnchanged": 160,
+    "idempotentInstall": true,
+    "addedListeners": 0,
+    "meshCountBefore": 197,
+    "meshCountAfter": 197
+  },
+  "renderStress": {
+    "swarmFrames": 600,
+    "mrgSceneFrames": 120,
+    "nativeCanvasMs": {
+      "median": 1.229,
+      "p95": 1.867,
+      "max": 4.11
+    },
+    "heapBefore": 78847192,
+    "heapAfter": 165596488,
+    "note": "Raw Node heap includes transient draw/test allocations and GC; this is not retained-heap or browser FPS evidence."
+  }
+}

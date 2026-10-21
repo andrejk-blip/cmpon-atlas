@@ -1,0 +1,282 @@
+{
+  "version": "2.5.0",
+  "pass": true,
+  "method": "Node VM component boundary fixtures, mocked asynchronous Web Audio, and real entry-module integration. No browser, MP3 decoding, full playthrough or claim of human engagement.",
+  "checks": [
+    {
+      "name": "threat predicate: quiet",
+      "pass": true
+    },
+    {
+      "name": "threat predicate: low hull",
+      "pass": true
+    },
+    {
+      "name": "threat predicate: convoy imminent field",
+      "pass": true
+    },
+    {
+      "name": "threat predicate: convoy passed field",
+      "pass": true
+    },
+    {
+      "name": "threat predicate: convoy attack tell",
+      "pass": true
+    },
+    {
+      "name": "threat predicate: convoy regroup quiet",
+      "pass": true
+    },
+    {
+      "name": "threat predicate: convoy nearby torpedo",
+      "pass": true
+    },
+    {
+      "name": "threat predicate: convoy distant torpedo",
+      "pass": true
+    },
+    {
+      "name": "threat predicate: pursuit gate",
+      "pass": true
+    },
+    {
+      "name": "threat predicate: pursuit crossed gate",
+      "pass": true
+    },
+    {
+      "name": "threat predicate: pursuit collision rock",
+      "pass": true
+    },
+    {
+      "name": "threat predicate: pursuit off-axis rock",
+      "pass": true
+    },
+    {
+      "name": "threat predicate: pursuit jammer recovery",
+      "pass": true
+    },
+    {
+      "name": "threat predicate: swarm dive tell",
+      "pass": true
+    },
+    {
+      "name": "threat predicate: swarm dive",
+      "pass": true
+    },
+    {
+      "name": "threat predicate: swarm shot tell",
+      "pass": true
+    },
+    {
+      "name": "threat predicate: swarm 2.5 specialist tell",
+      "pass": true
+    },
+    {
+      "name": "threat predicate: swarm projectile near",
+      "pass": true
+    },
+    {
+      "name": "threat predicate: swarm formation quiet",
+      "pass": true
+    },
+    {
+      "name": "threat predicate: parallax windup",
+      "pass": true
+    },
+    {
+      "name": "threat predicate: MRG tentacle",
+      "pass": true
+    },
+    {
+      "name": "threat predicate: MRG active beam",
+      "pass": true
+    },
+    {
+      "name": "context radio exhausts convoy pool before repetition",
+      "pass": true
+    },
+    {
+      "name": "manual preview retains all 8 prepared commanders",
+      "pass": true
+    },
+    {
+      "name": "an already playing joke stops at convoy danger",
+      "pass": true
+    },
+    {
+      "name": "no queued joke starts during persistent danger",
+      "pass": true
+    },
+    {
+      "name": "learning narration remains active during paused combat threat",
+      "pass": true
+    },
+    {
+      "name": "pause still stops narration",
+      "pass": true
+    },
+    {
+      "name": "prepared clips never fell back to generated/system speech",
+      "pass": true
+    },
+    {
+      "name": "one contextual success reaction",
+      "pass": true
+    },
+    {
+      "name": "same event is not repeated in a mission",
+      "pass": true
+    },
+    {
+      "name": "a different success can react after quiet interval",
+      "pass": true
+    },
+    {
+      "name": "stale reaction expires instead of replaying after danger",
+      "pass": true
+    },
+    {
+      "name": "2.5 swarm reacts to cleared wave before first packet",
+      "pass": true
+    },
+    {
+      "name": "pause discards pending contextual reaction",
+      "pass": true
+    },
+    {
+      "name": "20 repeated module loads add no wrappers or listeners",
+      "pass": true
+    },
+    {
+      "name": "narrative history never enters persistent storage",
+      "pass": true
+    },
+    {
+      "name": "real 14-level states select their intended narrative chapter",
+      "pass": true
+    },
+    {
+      "name": "educational arrays unchanged after narrative module",
+      "pass": true
+    },
+    {
+      "name": "narrative private history not serialized in real save",
+      "pass": true
+    },
+    {
+      "name": "ordinary-input real convoy has identical mechanics with and without narrative",
+      "pass": true
+    }
+  ],
+  "audio": {
+    "automaticConvoyIds": [
+      "commander-04",
+      "commander-12",
+      "commander-01",
+      "commander-10"
+    ],
+    "previewIds": [
+      "commander-02",
+      "commander-01",
+      "commander-03",
+      "commander-04",
+      "commander-05",
+      "commander-08",
+      "commander-10",
+      "commander-12"
+    ],
+    "systemSpeechCalls": 0
+  },
+  "narrative": {
+    "history": [
+      {
+        "level": 3,
+        "kind": "field",
+        "at": 0.08,
+        "text": "Проход чистый. Поправки курса приняты с первого раза."
+      },
+      {
+        "level": 3,
+        "kind": "torpedo",
+        "at": 25.12,
+        "text": "Торпеда снята. Архив едет дальше без лишних приложений."
+      },
+      {
+        "level": 7,
+        "kind": "swarm",
+        "at": 67.24,
+        "text": "Волна закрыта. Без повторной рассылки тех же замечаний."
+      }
+    ],
+    "repeatedLoads": 20
+  },
+  "integration": {
+    "levels": [
+      {
+        "number": 1,
+        "phase": "orientation"
+      },
+      {
+        "number": 2,
+        "phase": "boarding"
+      },
+      {
+        "number": 3,
+        "phase": "escort"
+      },
+      {
+        "number": 4,
+        "phase": "pursuit"
+      },
+      {
+        "number": 5,
+        "phase": "boarding"
+      },
+      {
+        "number": 6,
+        "phase": "escort"
+      },
+      {
+        "number": 7,
+        "phase": "swarm"
+      },
+      {
+        "number": 8,
+        "phase": "boarding"
+      },
+      {
+        "number": 9,
+        "phase": "escort"
+      },
+      {
+        "number": 10,
+        "phase": "orientation"
+      },
+      {
+        "number": 11,
+        "phase": "boarding"
+      },
+      {
+        "number": 12,
+        "phase": "boss"
+      },
+      {
+        "number": 13,
+        "phase": "maze"
+      },
+      {
+        "number": 14,
+        "phase": "mrg"
+      }
+    ],
+    "entryVoice": "2.5.0",
+    "preparedClips": 110,
+    "convoyEquivalence": {
+      "frames": 4081,
+      "simulatedSeconds": 68.02,
+      "status": "escortclear",
+      "score": 4022,
+      "reactions": 1
+    }
+  }
+}

@@ -1,0 +1,210 @@
+{
+  "variant": "compressed",
+  "productionSourceMutated": false,
+  "method": "Node VM/current index; direct beginMRG fixture with legal 2 weapons/1 armour build; no HP, ammo or victory writes after initialization.",
+  "runs": [
+    {
+      "mode": "normal",
+      "strategy": "reactive",
+      "passed": true,
+      "status": "docking",
+      "phase": "upload",
+      "seconds": 56.13333333333333,
+      "minHP": 100,
+      "hits": 0,
+      "peakEnemies": 3,
+      "coreHP": 0,
+      "wave": 2,
+      "soldiersRemaining": [],
+      "position": [
+        -28.00000000000001,
+        1,
+        0
+      ]
+    },
+    {
+      "mode": "normal",
+      "strategy": "paced-0.35",
+      "passed": true,
+      "status": "docking",
+      "phase": "upload",
+      "seconds": 56.6,
+      "minHP": 100,
+      "hits": 0,
+      "peakEnemies": 3,
+      "coreHP": 0,
+      "wave": 2,
+      "soldiersRemaining": [],
+      "position": [
+        -28.01614256809763,
+        1,
+        0
+      ]
+    },
+    {
+      "mode": "normal",
+      "strategy": "paced-0.6",
+      "passed": false,
+      "status": "lost",
+      "phase": "mrg",
+      "seconds": 50.18333333333333,
+      "minHP": 0,
+      "hits": 3,
+      "peakEnemies": 3,
+      "coreHP": 1473.3333333333335,
+      "wave": 2,
+      "soldiersRemaining": [],
+      "position": [
+        -27.166666666666632,
+        1,
+        0
+      ]
+    },
+    {
+      "mode": "normal",
+      "strategy": "paced-0.9",
+      "passed": false,
+      "status": "lost",
+      "phase": "mrg",
+      "seconds": 42.55,
+      "minHP": 0,
+      "hits": 3,
+      "peakEnemies": 3,
+      "coreHP": 1977.3333333333335,
+      "wave": 2,
+      "soldiersRemaining": [
+        {
+          "hp": 40.5,
+          "role": "jumper"
+        },
+        {
+          "hp": 261,
+          "role": "knife"
+        },
+        {
+          "hp": 576,
+          "role": "rocketeer"
+        }
+      ],
+      "position": [
+        -7.999999999999916,
+        1,
+        0
+      ]
+    },
+    {
+      "mode": "normal",
+      "strategy": "no-move",
+      "passed": false,
+      "status": "lost",
+      "phase": "mrg",
+      "seconds": 33.96666666666667,
+      "minHP": 0,
+      "hits": 5,
+      "peakEnemies": 3,
+      "coreHP": 2733.3333333333335,
+      "wave": 2,
+      "soldiersRemaining": [],
+      "position": [
+        -25,
+        1,
+        0
+      ]
+    },
+    {
+      "mode": "calm",
+      "strategy": "reactive",
+      "passed": true,
+      "status": "docking",
+      "phase": "upload",
+      "seconds": 47.983333333333334,
+      "minHP": 100,
+      "hits": 0,
+      "peakEnemies": 3,
+      "coreHP": 0,
+      "wave": 2,
+      "soldiersRemaining": [],
+      "position": [
+        -6.000000000000003,
+        1,
+        0
+      ]
+    },
+    {
+      "mode": "calm",
+      "strategy": "paced-0.35",
+      "passed": true,
+      "status": "docking",
+      "phase": "upload",
+      "seconds": 48.55,
+      "minHP": 100,
+      "hits": 0,
+      "peakEnemies": 3,
+      "coreHP": 0,
+      "wave": 2,
+      "soldiersRemaining": [],
+      "position": [
+        -6.482801673215162,
+        1,
+        0
+      ]
+    },
+    {
+      "mode": "calm",
+      "strategy": "paced-0.6",
+      "passed": true,
+      "status": "docking",
+      "phase": "upload",
+      "seconds": 48.266666666666666,
+      "minHP": 74.4,
+      "hits": 2,
+      "peakEnemies": 3,
+      "coreHP": 0,
+      "wave": 2,
+      "soldiersRemaining": [],
+      "position": [
+        -5.376123524632819,
+        1,
+        0
+      ]
+    },
+    {
+      "mode": "calm",
+      "strategy": "paced-0.9",
+      "passed": true,
+      "status": "docking",
+      "phase": "upload",
+      "seconds": 48.083333333333336,
+      "minHP": 48.800000000000004,
+      "hits": 2,
+      "peakEnemies": 3,
+      "coreHP": 0,
+      "wave": 2,
+      "soldiersRemaining": [],
+      "position": [
+        -7.999999999999916,
+        1,
+        0
+      ]
+    },
+    {
+      "mode": "calm",
+      "strategy": "no-move",
+      "passed": true,
+      "status": "docking",
+      "phase": "upload",
+      "seconds": 48.5,
+      "minHP": 100,
+      "hits": 0,
+      "peakEnemies": 3,
+      "coreHP": 0,
+      "wave": 2,
+      "soldiersRemaining": [],
+      "position": [
+        -25,
+        1,
+        0
+      ]
+    }
+  ]
+}

@@ -1,0 +1,262 @@
+{
+  "method": "Node VM, all current index scripts. Direct per-mission setup fixtures; pause and save checks are not playthroughs.",
+  "passed": 38,
+  "total": 38,
+  "rows": [
+    {
+      "level": 1,
+      "mode": "normal",
+      "pause": true,
+      "saveRoundtrip": true,
+      "continuedSeconds": 2
+    },
+    {
+      "level": 2,
+      "mode": "normal",
+      "pause": true,
+      "saveRoundtrip": true,
+      "continuedSeconds": 2
+    },
+    {
+      "level": 3,
+      "mode": "normal",
+      "pause": true,
+      "saveRoundtrip": true,
+      "continuedSeconds": 2
+    },
+    {
+      "level": 4,
+      "mode": "normal",
+      "pause": true,
+      "saveRoundtrip": true,
+      "continuedSeconds": 2
+    },
+    {
+      "level": 5,
+      "mode": "normal",
+      "pause": true,
+      "saveRoundtrip": true,
+      "continuedSeconds": 2
+    },
+    {
+      "level": 6,
+      "mode": "normal",
+      "pause": true,
+      "saveRoundtrip": true,
+      "continuedSeconds": 2
+    },
+    {
+      "level": 7,
+      "mode": "normal",
+      "pause": true,
+      "saveRoundtrip": true,
+      "continuedSeconds": 2
+    },
+    {
+      "level": 8,
+      "mode": "normal",
+      "pause": true,
+      "saveRoundtrip": true,
+      "continuedSeconds": 2
+    },
+    {
+      "level": 9,
+      "mode": "normal",
+      "pause": true,
+      "saveRoundtrip": true,
+      "continuedSeconds": 2
+    },
+    {
+      "level": 10,
+      "mode": "normal",
+      "pause": true,
+      "saveRoundtrip": true,
+      "continuedSeconds": 2
+    },
+    {
+      "level": 11,
+      "mode": "normal",
+      "pause": true,
+      "saveRoundtrip": true,
+      "continuedSeconds": 2
+    },
+    {
+      "level": 12,
+      "mode": "normal",
+      "pause": true,
+      "saveRoundtrip": true,
+      "continuedSeconds": 2
+    },
+    {
+      "level": 13,
+      "mode": "normal",
+      "pause": true,
+      "saveRoundtrip": true,
+      "continuedSeconds": 2
+    },
+    {
+      "level": 14,
+      "mode": "normal",
+      "pause": true,
+      "saveRoundtrip": true,
+      "continuedSeconds": 2
+    },
+    {
+      "level": 1,
+      "mode": "calm",
+      "pause": true,
+      "saveRoundtrip": true,
+      "continuedSeconds": 2
+    },
+    {
+      "level": 2,
+      "mode": "calm",
+      "pause": true,
+      "saveRoundtrip": true,
+      "continuedSeconds": 2
+    },
+    {
+      "level": 3,
+      "mode": "calm",
+      "pause": true,
+      "saveRoundtrip": true,
+      "continuedSeconds": 2
+    },
+    {
+      "level": 4,
+      "mode": "calm",
+      "pause": true,
+      "saveRoundtrip": true,
+      "continuedSeconds": 2
+    },
+    {
+      "level": 5,
+      "mode": "calm",
+      "pause": true,
+      "saveRoundtrip": true,
+      "continuedSeconds": 2
+    },
+    {
+      "level": 6,
+      "mode": "calm",
+      "pause": true,
+      "saveRoundtrip": true,
+      "continuedSeconds": 2
+    },
+    {
+      "level": 7,
+      "mode": "calm",
+      "pause": true,
+      "saveRoundtrip": true,
+      "continuedSeconds": 2
+    },
+    {
+      "level": 8,
+      "mode": "calm",
+      "pause": true,
+      "saveRoundtrip": true,
+      "continuedSeconds": 2
+    },
+    {
+      "level": 9,
+      "mode": "calm",
+      "pause": true,
+      "saveRoundtrip": true,
+      "continuedSeconds": 2
+    },
+    {
+      "level": 10,
+      "mode": "calm",
+      "pause": true,
+      "saveRoundtrip": true,
+      "continuedSeconds": 2
+    },
+    {
+      "level": 11,
+      "mode": "calm",
+      "pause": true,
+      "saveRoundtrip": true,
+      "continuedSeconds": 2
+    },
+    {
+      "level": 12,
+      "mode": "calm",
+      "pause": true,
+      "saveRoundtrip": true,
+      "continuedSeconds": 2
+    },
+    {
+      "level": 13,
+      "mode": "calm",
+      "pause": true,
+      "saveRoundtrip": true,
+      "continuedSeconds": 2
+    },
+    {
+      "level": 14,
+      "mode": "calm",
+      "pause": true,
+      "saveRoundtrip": true,
+      "continuedSeconds": 2
+    }
+  ],
+  "legacy": [
+    {
+      "level": 2,
+      "from": "1.9.3",
+      "geometryAndEnemiesPreserved": true
+    },
+    {
+      "level": 5,
+      "from": "1.9.3",
+      "geometryAndEnemiesPreserved": true
+    },
+    {
+      "level": 8,
+      "from": "1.9.3",
+      "geometryAndEnemiesPreserved": true
+    },
+    {
+      "level": 11,
+      "from": "1.9.3",
+      "geometryAndEnemiesPreserved": true
+    },
+    {
+      "level": 13,
+      "from": "1.9.3",
+      "geometryAndEnemiesPreserved": true
+    },
+    {
+      "level": 3,
+      "from": "2.3.1",
+      "legacyPhysicsContinues": true,
+      "seconds": 3
+    },
+    {
+      "level": 6,
+      "from": "2.3.1",
+      "legacyPhysicsContinues": true,
+      "seconds": 3
+    },
+    {
+      "level": 9,
+      "from": "2.3.1",
+      "legacyPhysicsContinues": true,
+      "seconds": 3
+    },
+    {
+      "level": 7,
+      "mode": "normal",
+      "from": "2.4.0 (swarm 1.9.0)",
+      "legacyThreeWavePhysicsContinues": true,
+      "seconds": 3
+    },
+    {
+      "level": 7,
+      "mode": "calm",
+      "from": "2.4.0 (swarm 1.9.0)",
+      "legacyThreeWavePhysicsContinues": true,
+      "seconds": 3
+    }
+  ]
+}

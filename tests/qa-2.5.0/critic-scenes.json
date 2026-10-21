@@ -1,0 +1,42 @@
+{
+  "method": "Production scene/HUD native Canvas initial fixtures at 3 seconds, no altered health or outcomes. Not browser/playthrough evidence.",
+  "scenes": [
+    {
+      "name": "orbit",
+      "stage": 0,
+      "status": "lesson",
+      "phase": "orientation",
+      "items": 371
+    },
+    {
+      "name": "swarm",
+      "stage": 2,
+      "status": "playing",
+      "phase": "swarm",
+      "items": 0
+    },
+    {
+      "name": "base",
+      "stage": 0,
+      "status": "boarding",
+      "phase": "boarding",
+      "items": 177
+    },
+    {
+      "name": "mrg",
+      "stage": 3,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": "mrg",
+      "items": 366
+    },
+    {
+      "name": "parallax",
+      "stage": 3,
+      "status": "playing",
+      "phase": "finale",
+      "finale": "boss",
+      "items": 214
+    }
+  ]
+}

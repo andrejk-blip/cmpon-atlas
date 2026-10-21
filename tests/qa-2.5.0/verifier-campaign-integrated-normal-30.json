@@ -1,0 +1,8086 @@
+{
+  "version": "2.5.0",
+  "entrySha256": "f1ff16841276e52922d42d84ec988a0fa6be38efb9b3ac01f391387c73a3978b",
+  "scripts": [
+    {
+      "file": "assets/citadel-startup-v2.3.1.js",
+      "sha256": "99e07b3b93f874b4fc7a830ebf0df228532f62ef4dda96c05e78717182af711a"
+    },
+    {
+      "file": "assets/citadel-compat-v1.7.1.js",
+      "sha256": "e5ea0b065568c5ebcddcd01d483375560bae36308871dd62a87e5d8e97a46599"
+    },
+    {
+      "file": "assets/citadel-launch-v2.3.1.js",
+      "sha256": "ad27ac6974bdff22f3a92d26d94117cddd2e945ea8a5553b657d21c70ce243aa"
+    },
+    {
+      "file": "assets/atlas-v1.3.6.js",
+      "sha256": "9a08d42e08f3bd220a2ace22ae6e9dfff34887268b275aa36a2be4a33965569d"
+    },
+    {
+      "file": "assets/citadel-records-v1.1.1.js",
+      "sha256": "178c584491b2755e93f2e4469a8663db3bb93c8e970f5cc5bcbe75b0e6dc6183"
+    },
+    {
+      "file": "assets/citadel-mrg-v1.7.0.js",
+      "sha256": "1e2decb0c05426cc0989286558d109235e5f35381a153342434f9400b2d16964"
+    },
+    {
+      "file": "assets/citadel-mrg-view-v1.7.0.js",
+      "sha256": "e82fcc77edafcda95364d3851be748c863c23e6677d43f39c75963d265c0797b"
+    },
+    {
+      "file": "assets/citadel-music-v1.4.2.js",
+      "sha256": "11ba6f8ee1d80e7313e7c7c14d1133cf55f9f124ca29eb8d3ed54aba22aafeb0"
+    },
+    {
+      "file": "assets/citadel-sfx-pack-v1.9.1.js",
+      "sha256": "8dc8128a72045c4136a3460de8900720813861e1979926bfc0c0c872cdac590e"
+    },
+    {
+      "file": "assets/citadel-sfx-v1.9.3.js",
+      "sha256": "6cabac06fb8d99684ca2a8252510f90a964ca1d427aa4ac7b214115ee1b9af7b"
+    },
+    {
+      "file": "assets/citadel-voice-pack-v1.8.2.js",
+      "sha256": "e0a0ac89a7ad348a7b107fef9c067b12227d33b7c1427d3eb7cec5472949fbfe"
+    },
+    {
+      "file": "assets/citadel-field-ui-v1.7.0.js",
+      "sha256": "fb2b2545d45aaad74c1009bf2bd3b775ca6b897c9baf027f2c7cff5de0b02bed"
+    },
+    {
+      "file": "assets/citadel-flight-v1.9.1.js",
+      "sha256": "d8e345e6a7ef05ea3aebcb986042c1c36a809bb6608ccce242d00507178199b7"
+    },
+    {
+      "file": "assets/citadel-aim-v1.7.1.js",
+      "sha256": "6c0251b56e8a798597cc0a3b26bec950739665f4d5fed9980db091ed04b25058"
+    },
+    {
+      "file": "assets/citadel-flight-view-v1.7.1.js",
+      "sha256": "b5e7d58a269a75fb71aba8ccb286e84714e17ef016532086dc8d098443acae91"
+    },
+    {
+      "file": "assets/citadel-pursuit-v2.1.0.js",
+      "sha256": "5dbdaf1618b355a1dc883a2b2000fd3549cc1f3bd45c8f7bd49200a1daf13645"
+    },
+    {
+      "file": "assets/citadel-swarm-v2.5.0.js",
+      "sha256": "ce838788092a62ee0af53b8d84754b1f705f3d543276e8d6ff7c770a8c72bd01"
+    },
+    {
+      "file": "assets/citadel-parallax-v1.8.0.js",
+      "sha256": "abbfdb4d46c331cb3c752f27932b2d33349fe6ec761b2e680af5120e0ab34ea8"
+    },
+    {
+      "file": "assets/citadel-bases-v2.0.0.js",
+      "sha256": "9f7cd4346e947f13a3e4185d3e7080b69cd489c7dce959e03627b8adb89cba5a"
+    },
+    {
+      "file": "assets/citadel-decks-v2.0.0.js",
+      "sha256": "4b5f02f17b26c8962768132fd1328e7bbd483e2c8b2d7499610e68c6478213f2"
+    },
+    {
+      "file": "assets/citadel-input-v1.9.1.js",
+      "sha256": "77b4995131a94d0f6091e69b6abe16e18e3b2a1496112ab1ddf11f7eda6bd3af"
+    },
+    {
+      "file": "assets/citadel-convoy-v2.3.0.js",
+      "sha256": "115fb8dd424e76d7ddfea2199395101364b258c22cd243e4c137e9980f006ca6"
+    },
+    {
+      "file": "assets/citadel-voice-v2.5.0.js",
+      "sha256": "2868128550afc2ac73eb46bbb5aaaf3d017b6026c596671c76e20340c63ebeb1"
+    },
+    {
+      "file": "assets/citadel-comic-v1.9.3.js",
+      "sha256": "fca0b9603ff434f060cd9b16680584d062e907bb4f9b32998a438804f7064964"
+    },
+    {
+      "file": "assets/citadel-interface-v1.9.0.js",
+      "sha256": "1c86ce29791480920e08b5dddc42dadcc1e4bab0916e8da51c16aedb0b1b1291"
+    },
+    {
+      "file": "assets/citadel-story-v1.9.0.js",
+      "sha256": "85f5c018a42f09b20eb7a62a87f4251a02f219027f1f4799e07c774ff43d2c13"
+    },
+    {
+      "file": "assets/atlas-metrics-v0.1.0.js",
+      "sha256": "79700bbff01f5744e1a2eb44a935ed006857eae4e75ce3602aee6cc69d8101e7"
+    },
+    {
+      "file": "assets/atlas-integration-v1.1.4.js",
+      "sha256": "96eaf8cd36e4c9257f0e531d861230f8ca1610973905027ad6f58dc819937220"
+    },
+    {
+      "file": "assets/citadel-academy-bridge-v1.7.0.js",
+      "sha256": "cc33928c4d0b0271bc5205211ee815d56cba9243838053e4d460edee68ba2033"
+    },
+    {
+      "file": "assets/citadel-ui-fixes-v1.9.2.js",
+      "sha256": "364fc8c1e412eb9b73f826845e23646f8906d37c7027aa1f2ae93ba0548cbf16"
+    },
+    {
+      "file": "assets/citadel-bases-view-v2.0.0.js",
+      "sha256": "506e1ebbfa86a42b0f4dc6918ab1917edb3b8018012e15d98a267060c2cdf8c3"
+    },
+    {
+      "file": "assets/citadel-pursuit-view-v2.3.0.js",
+      "sha256": "4f934ba804c00e6cd9889e0cf0b101aba595be794c3308719956ef0ac3223ec0"
+    },
+    {
+      "file": "assets/citadel-convoy-view-v2.3.0.js",
+      "sha256": "7d7d85f90d9082a14bbbb1dff7defd00f5f31bce23f270ae764aed2e98e77783"
+    },
+    {
+      "file": "assets/citadel-convoy-v2.4.0.js",
+      "sha256": "8120f00bb2b9903cedd733b1c6162af1aeaf0b615d420f591d2ac3d589853512"
+    },
+    {
+      "file": "assets/citadel-convoy-view-v2.4.0.js",
+      "sha256": "9a42c7dcde1e21644f10aaa0f848b8bab2c60794e4f5564898a17f48fd5d2965"
+    },
+    {
+      "file": "assets/citadel-swarm-view-v2.5.0.js",
+      "sha256": "b9048623ccc82bff658af932bd27d201237b68d9b560b39575bb4b199065da34"
+    },
+    {
+      "file": "assets/citadel-mrg-actors-v2.5.0.js",
+      "sha256": "d728c99bcaf59f540e66e99c11b2fd9a7e6d330da577ca6dcd5b8b9431fa6729"
+    },
+    {
+      "file": "assets/citadel-narrative-v2.5.0.js",
+      "sha256": "34232c3f6c16b7f686595ebb8c162f7368e4f12d2e6be1b923cdf2459e85c1fe"
+    },
+    {
+      "file": "assets/citadel-presentation-v2.5.0.js",
+      "sha256": "6e1bef9638c3fefe113ae8cdc1a54883068e38fdc2cf3e1eb9ab7f8cad82327e"
+    },
+    {
+      "file": "assets/citadel-runtime-v1.9.3.js",
+      "sha256": "a026d1eb50252a37f01b7ad097e610252bccacc01f078d6ee75a3bf86e029a6e"
+    }
+  ],
+  "mode": "normal",
+  "seed": 417147,
+  "pass": true,
+  "error": null,
+  "resumedDiagnostic": false,
+  "frames": 35269,
+  "simulatedSeconds": 1174.3,
+  "status": "won",
+  "phase": "debrief",
+  "finale": "victory",
+  "levels": [
+    {
+      "level": 1,
+      "started": 0,
+      "minHp": 100,
+      "minStationHp": 92.5,
+      "frames": 1627,
+      "peakEnemies": 7,
+      "duration": 54.03
+    },
+    {
+      "level": 2,
+      "started": 54.03,
+      "minHp": 94,
+      "minStationHp": 100,
+      "frames": 2062,
+      "peakEnemies": 15,
+      "duration": 68.6
+    },
+    {
+      "level": 3,
+      "started": 122.63,
+      "minHp": 92,
+      "minStationHp": 100,
+      "frames": 2043,
+      "peakEnemies": 3,
+      "duration": 68.04
+    },
+    {
+      "level": 4,
+      "started": 190.67,
+      "minHp": 88,
+      "minStationHp": 100,
+      "frames": 5069,
+      "peakEnemies": 4,
+      "duration": 168.86
+    },
+    {
+      "level": 5,
+      "started": 359.53,
+      "minHp": 90.19,
+      "minStationHp": 100,
+      "frames": 2190,
+      "peakEnemies": 19,
+      "duration": 72.87
+    },
+    {
+      "level": 6,
+      "started": 432.4,
+      "minHp": 100,
+      "minStationHp": 100,
+      "frames": 2589,
+      "peakEnemies": 5,
+      "duration": 86.23
+    },
+    {
+      "level": 7,
+      "started": 518.63,
+      "minHp": 100,
+      "minStationHp": 100,
+      "frames": 2329,
+      "peakEnemies": 20,
+      "duration": 77.54
+    },
+    {
+      "level": 8,
+      "started": 596.17,
+      "minHp": 100,
+      "minStationHp": 100,
+      "frames": 2326,
+      "peakEnemies": 22,
+      "duration": 77.4
+    },
+    {
+      "level": 9,
+      "started": 673.57,
+      "minHp": 93.6,
+      "minStationHp": 100,
+      "frames": 3258,
+      "peakEnemies": 6,
+      "duration": 108.53
+    },
+    {
+      "level": 10,
+      "started": 782.1,
+      "minHp": 61.6,
+      "minStationHp": 78,
+      "frames": 2706,
+      "peakEnemies": 11,
+      "duration": 90.1
+    },
+    {
+      "level": 11,
+      "started": 872.2,
+      "minHp": 94.92,
+      "minStationHp": 78,
+      "frames": 2245,
+      "peakEnemies": 22,
+      "duration": 74.73
+    },
+    {
+      "level": 12,
+      "started": 946.93,
+      "minHp": 90.4,
+      "minStationHp": 78,
+      "frames": 2286,
+      "peakEnemies": 4,
+      "duration": 76.17
+    },
+    {
+      "level": 13,
+      "started": 1023.1,
+      "minHp": 94.56,
+      "minStationHp": 78,
+      "frames": 2445,
+      "peakEnemies": 24,
+      "duration": 81.4
+    },
+    {
+      "level": 14,
+      "started": 1104.5,
+      "minHp": 100,
+      "minStationHp": 78,
+      "frames": 2095,
+      "peakEnemies": 3,
+      "duration": 69.8
+    }
+  ],
+  "cards": [
+    {
+      "level": 1,
+      "kind": "flight",
+      "index": 0,
+      "title": "Полнота · Неполный маршрут"
+    },
+    {
+      "level": 1,
+      "kind": "flight",
+      "index": 1,
+      "title": "Однозначность · «Оперативно» — это сколько?"
+    },
+    {
+      "level": 2,
+      "kind": "terminal",
+      "index": 0,
+      "title": "Однозначность · Два значения слова «актуальный»"
+    },
+    {
+      "level": 2,
+      "kind": "terminal",
+      "index": 1,
+      "title": "Краткость · Полстраницы вместо условия"
+    },
+    {
+      "level": 2,
+      "kind": "terminal",
+      "index": 2,
+      "title": "Атомарность · Согласие и предзаполнение"
+    },
+    {
+      "level": 4,
+      "kind": "flight",
+      "index": 2,
+      "title": "Атомарность · Форма и показатели"
+    },
+    {
+      "level": 4,
+      "kind": "flight",
+      "index": 3,
+      "title": "Проверяемость · «Красивый и удобный интерфейс»"
+    },
+    {
+      "level": 5,
+      "kind": "terminal",
+      "index": 3,
+      "title": "Проверяемость · Невидимая консолидация"
+    },
+    {
+      "level": 5,
+      "kind": "terminal",
+      "index": 4,
+      "title": "Трассируемость · Непонятно, что принимать"
+    },
+    {
+      "level": 5,
+      "kind": "terminal",
+      "index": 5,
+      "title": "Выполнимость · Безостановочная миграция"
+    },
+    {
+      "level": 7,
+      "kind": "flight",
+      "index": 4,
+      "title": "Согласованность · Период и публикация"
+    },
+    {
+      "level": 7,
+      "kind": "flight",
+      "index": 5,
+      "title": "Трассируемость · История без причины"
+    },
+    {
+      "level": 8,
+      "kind": "terminal",
+      "index": 6,
+      "title": "Приоритетность · Всё обязательно"
+    },
+    {
+      "level": 8,
+      "kind": "terminal",
+      "index": 7,
+      "title": "Полнота · Загрузка из ГАР без данных"
+    },
+    {
+      "level": 8,
+      "kind": "terminal",
+      "index": 8,
+      "title": "Однозначность · «Все заинтересованные»"
+    },
+    {
+      "level": 10,
+      "kind": "flight",
+      "index": 7,
+      "title": "Полнота · Дубликаты после вечерней синхронизации"
+    },
+    {
+      "level": 10,
+      "kind": "flight",
+      "index": 6,
+      "title": "Выполнимость · Любой пользователь видит всё"
+    },
+    {
+      "level": 11,
+      "kind": "terminal",
+      "index": 9,
+      "title": "Атомарность · Сбор и архивирование"
+    },
+    {
+      "level": 11,
+      "kind": "terminal",
+      "index": 10,
+      "title": "Проверяемость · Тест без негативного сценария"
+    },
+    {
+      "level": 11,
+      "kind": "terminal",
+      "index": 11,
+      "title": "Понятность · Зашифрованное для заказчика"
+    },
+    {
+      "level": 13,
+      "kind": "final",
+      "index": 0,
+      "title": "Шлюз доказательств"
+    },
+    {
+      "level": 13,
+      "kind": "final",
+      "index": 1,
+      "title": "Выполнимость · Нулевые ограничения"
+    },
+    {
+      "level": 13,
+      "kind": "final",
+      "index": 2,
+      "title": "Приоритетность · Порог риска"
+    }
+  ],
+  "transitions": [
+    {
+      "level": 1,
+      "status": "briefing",
+      "phase": "orientation",
+      "finale": null,
+      "seconds": 0,
+      "hp": 100
+    },
+    {
+      "level": 1,
+      "status": "playing",
+      "phase": "orientation",
+      "finale": null,
+      "seconds": 0,
+      "hp": 100
+    },
+    {
+      "level": 1,
+      "status": "lesson",
+      "phase": "orientation",
+      "finale": null,
+      "seconds": 1.77,
+      "hp": 100
+    },
+    {
+      "level": 1,
+      "status": "playing",
+      "phase": "battle",
+      "finale": null,
+      "seconds": 1.77,
+      "hp": 100
+    },
+    {
+      "level": 1,
+      "status": "playing",
+      "phase": "retrieve",
+      "finale": null,
+      "seconds": 39.2,
+      "hp": 100
+    },
+    {
+      "level": 1,
+      "status": "lesson",
+      "phase": "retrieve",
+      "finale": null,
+      "seconds": 41.83,
+      "hp": 100
+    },
+    {
+      "level": 1,
+      "status": "playing",
+      "phase": "retrieve",
+      "finale": null,
+      "seconds": 41.83,
+      "hp": 100
+    },
+    {
+      "level": 1,
+      "status": "playing",
+      "phase": "dock",
+      "finale": null,
+      "seconds": 45.2,
+      "hp": 100
+    },
+    {
+      "level": 1,
+      "status": "docking",
+      "phase": "dock",
+      "finale": null,
+      "seconds": 50.2,
+      "hp": 100
+    },
+    {
+      "level": 2,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 54.03,
+      "hp": 100
+    },
+    {
+      "level": 2,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 73.8,
+      "hp": 94
+    },
+    {
+      "level": 2,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 73.8,
+      "hp": 100
+    },
+    {
+      "level": 2,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 100.2,
+      "hp": 95
+    },
+    {
+      "level": 2,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 100.2,
+      "hp": 100
+    },
+    {
+      "level": 2,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 120.17,
+      "hp": 100
+    },
+    {
+      "level": 2,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 120.17,
+      "hp": 100
+    },
+    {
+      "level": 2,
+      "status": "stageclear",
+      "phase": "debrief",
+      "finale": null,
+      "seconds": 122.63,
+      "hp": 100
+    },
+    {
+      "level": 3,
+      "status": "escortbrief",
+      "phase": "escort",
+      "finale": null,
+      "seconds": 122.63,
+      "hp": 100
+    },
+    {
+      "level": 3,
+      "status": "playing",
+      "phase": "escort",
+      "finale": null,
+      "seconds": 122.63,
+      "hp": 100
+    },
+    {
+      "level": 3,
+      "status": "escortclear",
+      "phase": "escort",
+      "finale": null,
+      "seconds": 190.67,
+      "hp": 92
+    },
+    {
+      "level": 4,
+      "status": "briefing",
+      "phase": "pursuit",
+      "finale": null,
+      "seconds": 190.67,
+      "hp": 100
+    },
+    {
+      "level": 4,
+      "status": "playing",
+      "phase": "pursuit",
+      "finale": null,
+      "seconds": 190.67,
+      "hp": 100
+    },
+    {
+      "level": 4,
+      "status": "lesson",
+      "phase": "pursuit",
+      "finale": null,
+      "seconds": 350.57,
+      "hp": 98
+    },
+    {
+      "level": 4,
+      "status": "playing",
+      "phase": "dock",
+      "finale": null,
+      "seconds": 350.57,
+      "hp": 100
+    },
+    {
+      "level": 4,
+      "status": "docking",
+      "phase": "dock",
+      "finale": null,
+      "seconds": 355.7,
+      "hp": 100
+    },
+    {
+      "level": 5,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 359.53,
+      "hp": 100
+    },
+    {
+      "level": 5,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 377.2,
+      "hp": 93.46
+    },
+    {
+      "level": 5,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 377.2,
+      "hp": 100
+    },
+    {
+      "level": 5,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 399.13,
+      "hp": 100
+    },
+    {
+      "level": 5,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 399.13,
+      "hp": 100
+    },
+    {
+      "level": 5,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 429.97,
+      "hp": 90.19
+    },
+    {
+      "level": 5,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 429.97,
+      "hp": 100
+    },
+    {
+      "level": 5,
+      "status": "stageclear",
+      "phase": "debrief",
+      "finale": null,
+      "seconds": 432.4,
+      "hp": 100
+    },
+    {
+      "level": 6,
+      "status": "escortbrief",
+      "phase": "escort",
+      "finale": null,
+      "seconds": 432.4,
+      "hp": 100
+    },
+    {
+      "level": 6,
+      "status": "playing",
+      "phase": "escort",
+      "finale": null,
+      "seconds": 432.4,
+      "hp": 100
+    },
+    {
+      "level": 6,
+      "status": "escortclear",
+      "phase": "escort",
+      "finale": null,
+      "seconds": 518.63,
+      "hp": 100
+    },
+    {
+      "level": 7,
+      "status": "briefing",
+      "phase": "swarm",
+      "finale": null,
+      "seconds": 518.63,
+      "hp": 100
+    },
+    {
+      "level": 7,
+      "status": "playing",
+      "phase": "swarm",
+      "finale": null,
+      "seconds": 518.63,
+      "hp": 100
+    },
+    {
+      "level": 7,
+      "status": "lesson",
+      "phase": "dock",
+      "finale": null,
+      "seconds": 589.47,
+      "hp": 100
+    },
+    {
+      "level": 7,
+      "status": "playing",
+      "phase": "dock",
+      "finale": null,
+      "seconds": 589.47,
+      "hp": 100
+    },
+    {
+      "level": 7,
+      "status": "docking",
+      "phase": "dock",
+      "finale": null,
+      "seconds": 592.33,
+      "hp": 100
+    },
+    {
+      "level": 8,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 596.17,
+      "hp": 100
+    },
+    {
+      "level": 8,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 615.4,
+      "hp": 100
+    },
+    {
+      "level": 8,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 615.4,
+      "hp": 100
+    },
+    {
+      "level": 8,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 645.9,
+      "hp": 100
+    },
+    {
+      "level": 8,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 645.9,
+      "hp": 100
+    },
+    {
+      "level": 8,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 671.1,
+      "hp": 100
+    },
+    {
+      "level": 8,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 671.1,
+      "hp": 100
+    },
+    {
+      "level": 8,
+      "status": "stageclear",
+      "phase": "debrief",
+      "finale": null,
+      "seconds": 673.57,
+      "hp": 100
+    },
+    {
+      "level": 9,
+      "status": "escortbrief",
+      "phase": "escort",
+      "finale": null,
+      "seconds": 673.57,
+      "hp": 100
+    },
+    {
+      "level": 9,
+      "status": "playing",
+      "phase": "escort",
+      "finale": null,
+      "seconds": 673.57,
+      "hp": 100
+    },
+    {
+      "level": 9,
+      "status": "escortclear",
+      "phase": "escort",
+      "finale": null,
+      "seconds": 782.1,
+      "hp": 93.6
+    },
+    {
+      "level": 10,
+      "status": "briefing",
+      "phase": "orientation",
+      "finale": null,
+      "seconds": 782.1,
+      "hp": 100
+    },
+    {
+      "level": 10,
+      "status": "playing",
+      "phase": "battle",
+      "finale": null,
+      "seconds": 782.1,
+      "hp": 100
+    },
+    {
+      "level": 10,
+      "status": "playing",
+      "phase": "retrieve",
+      "finale": null,
+      "seconds": 856.77,
+      "hp": 61.6
+    },
+    {
+      "level": 10,
+      "status": "lesson",
+      "phase": "retrieve",
+      "finale": null,
+      "seconds": 858.83,
+      "hp": 71.6
+    },
+    {
+      "level": 10,
+      "status": "playing",
+      "phase": "retrieve",
+      "finale": null,
+      "seconds": 858.83,
+      "hp": 96.6
+    },
+    {
+      "level": 10,
+      "status": "lesson",
+      "phase": "retrieve",
+      "finale": null,
+      "seconds": 864.7,
+      "hp": 100
+    },
+    {
+      "level": 10,
+      "status": "playing",
+      "phase": "dock",
+      "finale": null,
+      "seconds": 864.7,
+      "hp": 100
+    },
+    {
+      "level": 10,
+      "status": "docking",
+      "phase": "dock",
+      "finale": null,
+      "seconds": 868.37,
+      "hp": 100
+    },
+    {
+      "level": 11,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 872.2,
+      "hp": 100
+    },
+    {
+      "level": 11,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 889.47,
+      "hp": 94.92
+    },
+    {
+      "level": 11,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 889.47,
+      "hp": 100
+    },
+    {
+      "level": 11,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 913.3,
+      "hp": 100
+    },
+    {
+      "level": 11,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 913.3,
+      "hp": 100
+    },
+    {
+      "level": 11,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 944.93,
+      "hp": 100
+    },
+    {
+      "level": 11,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "seconds": 944.93,
+      "hp": 100
+    },
+    {
+      "level": 12,
+      "status": "finalebrief",
+      "phase": "finale",
+      "finale": "boss",
+      "seconds": 946.93,
+      "hp": 100
+    },
+    {
+      "level": 12,
+      "status": "playing",
+      "phase": "finale",
+      "finale": "boss",
+      "seconds": 946.93,
+      "hp": 100
+    },
+    {
+      "level": 12,
+      "status": "playing",
+      "phase": "finale",
+      "finale": "breach",
+      "seconds": 1017.63,
+      "hp": 100
+    },
+    {
+      "level": 12,
+      "status": "docking",
+      "phase": "finale",
+      "finale": "landing",
+      "seconds": 1019.07,
+      "hp": 100
+    },
+    {
+      "level": 13,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": "maze",
+      "seconds": 1023.1,
+      "hp": 100
+    },
+    {
+      "level": 13,
+      "status": "finalcheck",
+      "phase": "boarding",
+      "finale": "maze",
+      "seconds": 1044.53,
+      "hp": 100
+    },
+    {
+      "level": 13,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": "maze",
+      "seconds": 1044.53,
+      "hp": 100
+    },
+    {
+      "level": 13,
+      "status": "finalcheck",
+      "phase": "boarding",
+      "finale": "maze",
+      "seconds": 1074.2,
+      "hp": 100
+    },
+    {
+      "level": 13,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": "maze",
+      "seconds": 1074.2,
+      "hp": 100
+    },
+    {
+      "level": 13,
+      "status": "finalcheck",
+      "phase": "boarding",
+      "finale": "maze",
+      "seconds": 1102.07,
+      "hp": 94.56
+    },
+    {
+      "level": 13,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": "maze",
+      "seconds": 1102.07,
+      "hp": 100
+    },
+    {
+      "level": 14,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": "mrg",
+      "seconds": 1104.5,
+      "hp": 100
+    },
+    {
+      "level": 14,
+      "status": "docking",
+      "phase": "boarding",
+      "finale": "upload",
+      "seconds": 1166.27,
+      "hp": 100
+    },
+    {
+      "level": 14,
+      "status": "won",
+      "phase": "debrief",
+      "finale": "victory",
+      "seconds": 1174.3,
+      "hp": 100
+    }
+  ],
+  "progress": [
+    {
+      "kind": "transition",
+      "level": 1,
+      "status": "briefing",
+      "phase": "orientation",
+      "finale": null,
+      "room": null,
+      "seconds": 0,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 5,
+      "kills": 0,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "speed": 15,
+      "yaw": 0,
+      "pitch": 0,
+      "missiles": 8,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 1,
+      "status": "playing",
+      "phase": "orientation",
+      "finale": null,
+      "room": null,
+      "seconds": 0,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 5,
+      "kills": 0,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "speed": 15,
+      "yaw": 0,
+      "pitch": 0,
+      "missiles": 8,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 1,
+      "status": "lesson",
+      "phase": "orientation",
+      "finale": null,
+      "room": null,
+      "seconds": 1.77,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 5,
+      "kills": 0,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        0,
+        0,
+        -38.25
+      ],
+      "speed": 14.87,
+      "yaw": 0,
+      "pitch": 0,
+      "missiles": 10,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 1,
+      "status": "playing",
+      "phase": "battle",
+      "finale": null,
+      "room": null,
+      "seconds": 1.77,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 1,
+      "waveSpawned": 4,
+      "waveTotal": 5,
+      "kills": 0,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        0,
+        0,
+        -38.25
+      ],
+      "speed": 14.87,
+      "yaw": 0,
+      "pitch": 0,
+      "missiles": 10,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": [
+        {
+          "id": 1,
+          "role": "hacker",
+          "hp": 60,
+          "distance": 33.23,
+          "position": [
+            -33.04,
+            1.06,
+            -41.64
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 2,
+          "role": "bomber",
+          "hp": 85,
+          "distance": 228.98,
+          "position": [
+            219.56,
+            37.77,
+            -91.18
+          ],
+          "hullBlocked": true,
+          "rockBlocked": false
+        },
+        {
+          "id": 3,
+          "role": "fighter",
+          "hp": 40,
+          "distance": 227.95,
+          "position": [
+            147.91,
+            -10.56,
+            -211.37
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 4,
+          "role": "fighter",
+          "hp": 68.75,
+          "distance": 150.56,
+          "position": [
+            -35.69,
+            19.05,
+            -183.28
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        }
+      ]
+    },
+    {
+      "kind": "transition",
+      "level": 1,
+      "status": "playing",
+      "phase": "battle",
+      "finale": null,
+      "room": null,
+      "seconds": 10.67,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 2,
+      "waveSpawned": 4,
+      "waveTotal": 7,
+      "kills": 5,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        29.08,
+        -15.11,
+        -99.79
+      ],
+      "speed": 0,
+      "yaw": 1.18,
+      "pitch": -0.37,
+      "missiles": 8,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": [
+        {
+          "id": 6,
+          "role": "hacker",
+          "hp": 60,
+          "distance": 97.1,
+          "position": [
+            -38.98,
+            21.41,
+            -40.95
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 7,
+          "role": "bomber",
+          "hp": 85,
+          "distance": 183.74,
+          "position": [
+            210.04,
+            -5.12,
+            -69.54
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 8,
+          "role": "fighter",
+          "hp": 40,
+          "distance": 195.37,
+          "position": [
+            216.54,
+            12.35,
+            -147.47
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 9,
+          "role": "fighter",
+          "hp": 68.75,
+          "distance": 155.22,
+          "position": [
+            121.23,
+            18.82,
+            -220
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        }
+      ]
+    },
+    {
+      "kind": "transition",
+      "level": 1,
+      "status": "playing",
+      "phase": "battle",
+      "finale": null,
+      "room": null,
+      "seconds": 28.9,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 3,
+      "waveSpawned": 4,
+      "waveTotal": 8,
+      "kills": 12,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        139.71,
+        4.73,
+        -96.04
+      ],
+      "speed": 0,
+      "yaw": 2.95,
+      "pitch": -0.02,
+      "missiles": 3,
+      "pulseCooldown": 4.37,
+      "navRecoveries": 0,
+      "enemies": [
+        {
+          "id": 13,
+          "role": "hacker",
+          "hp": 60,
+          "distance": 193.66,
+          "position": [
+            -44.41,
+            -17.93,
+            -40.48
+          ],
+          "hullBlocked": true,
+          "rockBlocked": true
+        },
+        {
+          "id": 14,
+          "role": "bomber",
+          "hp": 85,
+          "distance": 72.74,
+          "position": [
+            200.23,
+            8.2,
+            -55.82
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 15,
+          "role": "fighter",
+          "hp": 40,
+          "distance": 90.33,
+          "position": [
+            219.9,
+            4.24,
+            -137.63
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 16,
+          "role": "fighter",
+          "hp": 68.75,
+          "distance": 114.73,
+          "position": [
+            151.7,
+            -4.97,
+            -209.73
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        }
+      ]
+    },
+    {
+      "kind": "transition",
+      "level": 1,
+      "status": "playing",
+      "phase": "retrieve",
+      "finale": null,
+      "room": null,
+      "seconds": 39.2,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 3,
+      "waveSpawned": 8,
+      "waveTotal": 8,
+      "kills": 20,
+      "selected": null,
+      "lock": 18,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        58.3,
+        -6.96,
+        -98.31
+      ],
+      "speed": 22.62,
+      "yaw": -1.29,
+      "pitch": 0.39,
+      "missiles": 0,
+      "pulseCooldown": 8.77,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 1,
+      "status": "lesson",
+      "phase": "retrieve",
+      "finale": null,
+      "room": null,
+      "seconds": 41.83,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 3,
+      "waveSpawned": 8,
+      "waveTotal": 8,
+      "kills": 20,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        41.05,
+        -6.8,
+        -150.48
+      ],
+      "speed": 24,
+      "yaw": -0.17,
+      "pitch": -0.04,
+      "missiles": 2,
+      "pulseCooldown": 6.13,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 1,
+      "status": "playing",
+      "phase": "retrieve",
+      "finale": null,
+      "room": null,
+      "seconds": 41.83,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 3,
+      "waveSpawned": 8,
+      "waveTotal": 8,
+      "kills": 20,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        41.05,
+        -6.8,
+        -150.48
+      ],
+      "speed": 24,
+      "yaw": -0.17,
+      "pitch": -0.04,
+      "missiles": 2,
+      "pulseCooldown": 6.13,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 1,
+      "status": "playing",
+      "phase": "dock",
+      "finale": null,
+      "room": null,
+      "seconds": 45.2,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 3,
+      "waveSpawned": 8,
+      "waveTotal": 8,
+      "kills": 20,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        -12.41,
+        3.71,
+        -134.66
+      ],
+      "speed": 24,
+      "yaw": -2.09,
+      "pitch": 0.18,
+      "missiles": 4,
+      "pulseCooldown": 2.77,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 1,
+      "status": "docking",
+      "phase": "dock",
+      "finale": null,
+      "room": null,
+      "seconds": 50.2,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 3,
+      "waveSpawned": 8,
+      "waveTotal": 8,
+      "kills": 20,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        64.53,
+        11.87,
+        -103.1
+      ],
+      "speed": 21.83,
+      "yaw": -4.49,
+      "pitch": 0.08,
+      "missiles": 4,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 2,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "room": 1,
+      "seconds": 54.03,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 0,
+        "ready": false,
+        "remaining": 5,
+        "alive": 5,
+        "pending": 0,
+        "text": "Зачистите комнату · осталось 5",
+        "detail": "В комнате: 5"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 2,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "room": 1,
+      "seconds": 73.8,
+      "hp": 94,
+      "clearance": {
+        "active": true,
+        "room": 0,
+        "ready": true,
+        "remaining": 0,
+        "alive": 0,
+        "pending": 0,
+        "text": "Комната зачищена · терминал открыт",
+        "detail": "В комнате: 0"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 2,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "room": 2,
+      "seconds": 73.8,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 1,
+        "ready": false,
+        "remaining": 5,
+        "alive": 5,
+        "pending": 0,
+        "text": "Зачистите комнату · осталось 5",
+        "detail": "В комнате: 5"
+      }
+    },
+    {
+      "kind": "heartbeat",
+      "level": 2,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "room": 2,
+      "seconds": 93.83,
+      "hp": 95,
+      "clearance": {
+        "active": true,
+        "room": 1,
+        "ready": false,
+        "remaining": 2,
+        "alive": 2,
+        "pending": 0,
+        "text": "Зачистите комнату · осталось 2",
+        "detail": "В комнате: 2"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 2,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "room": 2,
+      "seconds": 100.2,
+      "hp": 95,
+      "clearance": {
+        "active": true,
+        "room": 1,
+        "ready": true,
+        "remaining": 0,
+        "alive": 0,
+        "pending": 0,
+        "text": "Комната зачищена · терминал открыт",
+        "detail": "В комнате: 0"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 2,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "room": 3,
+      "seconds": 100.2,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 2,
+        "ready": false,
+        "remaining": 5,
+        "alive": 5,
+        "pending": 0,
+        "text": "Зачистите комнату · осталось 5",
+        "detail": "В комнате: 5"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 2,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "room": 3,
+      "seconds": 120.17,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 2,
+        "ready": true,
+        "remaining": 0,
+        "alive": 0,
+        "pending": 0,
+        "text": "Комната зачищена · терминал открыт",
+        "detail": "В комнате: 0"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 2,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "room": 4,
+      "seconds": 120.17,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 3,
+        "ready": true,
+        "remaining": 0,
+        "alive": 0,
+        "pending": 0,
+        "text": "Комнаты зачищены · к выходу"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 2,
+      "status": "stageclear",
+      "phase": "debrief",
+      "finale": null,
+      "room": 4,
+      "seconds": 122.63,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 3,
+        "ready": true,
+        "remaining": 0,
+        "alive": 0,
+        "pending": 0,
+        "text": "Комнаты зачищены · к выходу"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 3,
+      "status": "escortbrief",
+      "phase": "escort",
+      "finale": null,
+      "room": null,
+      "seconds": 122.63,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 3,
+      "waveSpawned": 8,
+      "waveTotal": 8,
+      "kills": 20,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "speed": 24,
+      "yaw": 0,
+      "pitch": 0,
+      "missiles": 10,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 3,
+      "status": "playing",
+      "phase": "escort",
+      "finale": null,
+      "room": null,
+      "seconds": 122.63,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 3,
+      "waveSpawned": 8,
+      "waveTotal": 8,
+      "kills": 20,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "speed": 24,
+      "yaw": 0,
+      "pitch": 0,
+      "missiles": 10,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "heartbeat",
+      "level": 3,
+      "status": "playing",
+      "phase": "escort",
+      "finale": null,
+      "room": null,
+      "seconds": 142.67,
+      "hp": 92,
+      "stationHp": 100,
+      "wave": 3,
+      "waveSpawned": 8,
+      "waveTotal": 8,
+      "kills": 20,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        22,
+        7,
+        0
+      ],
+      "speed": 24,
+      "yaw": 0,
+      "pitch": 0,
+      "missiles": 10,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "heartbeat",
+      "level": 3,
+      "status": "playing",
+      "phase": "escort",
+      "finale": null,
+      "room": null,
+      "seconds": 162.7,
+      "hp": 92,
+      "stationHp": 100,
+      "wave": 3,
+      "waveSpawned": 8,
+      "waveTotal": 8,
+      "kills": 20,
+      "selected": 40,
+      "lock": 40,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        -27.65,
+        1.74,
+        0
+      ],
+      "speed": 24,
+      "yaw": -0.01,
+      "pitch": -0.03,
+      "missiles": 10,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": [
+        {
+          "id": 40,
+          "role": "raider",
+          "hp": 50,
+          "distance": 103.27,
+          "position": [
+            -27.4,
+            -0.25,
+            -103.25
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 41,
+          "role": "interceptor",
+          "hp": 180,
+          "distance": 98.23,
+          "position": [
+            1.41,
+            2.04,
+            -93.83
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 42,
+          "role": "scout",
+          "hp": 90,
+          "distance": 106.43,
+          "position": [
+            -31.96,
+            6.21,
+            -106.25
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        }
+      ]
+    },
+    {
+      "kind": "heartbeat",
+      "level": 3,
+      "status": "playing",
+      "phase": "escort",
+      "finale": null,
+      "room": null,
+      "seconds": 182.73,
+      "hp": 92,
+      "stationHp": 100,
+      "wave": 3,
+      "waveSpawned": 8,
+      "waveTotal": 8,
+      "kills": 20,
+      "selected": 44,
+      "lock": 44,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        8.37,
+        4.99,
+        0
+      ],
+      "speed": 24,
+      "yaw": -0.1,
+      "pitch": 0.03,
+      "missiles": 10,
+      "pulseCooldown": 11,
+      "navRecoveries": 0,
+      "enemies": [
+        {
+          "id": 44,
+          "role": "interceptor",
+          "hp": 110,
+          "distance": 101.47,
+          "position": [
+            18.14,
+            5.02,
+            -101
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        }
+      ]
+    },
+    {
+      "kind": "transition",
+      "level": 3,
+      "status": "escortclear",
+      "phase": "escort",
+      "finale": null,
+      "room": null,
+      "seconds": 190.67,
+      "hp": 92,
+      "stationHp": 100,
+      "wave": 3,
+      "waveSpawned": 8,
+      "waveTotal": 8,
+      "kills": 20,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        20.5,
+        5.18,
+        0
+      ],
+      "speed": 24,
+      "yaw": 0,
+      "pitch": 0,
+      "missiles": 10,
+      "pulseCooldown": 3.07,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 4,
+      "status": "briefing",
+      "phase": "pursuit",
+      "finale": null,
+      "room": null,
+      "seconds": 190.67,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 7,
+      "kills": 0,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "speed": 82,
+      "yaw": 0,
+      "pitch": 0,
+      "missiles": 8,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 4,
+      "status": "playing",
+      "phase": "pursuit",
+      "finale": null,
+      "room": null,
+      "seconds": 190.67,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 7,
+      "kills": 0,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "speed": 82,
+      "yaw": 0,
+      "pitch": 0,
+      "missiles": 8,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "heartbeat",
+      "level": 4,
+      "status": "playing",
+      "phase": "pursuit",
+      "finale": null,
+      "room": null,
+      "seconds": 210.7,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 7,
+      "kills": 2,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        -28.98,
+        -8.62,
+        -1708.02
+      ],
+      "speed": 89.21,
+      "yaw": -0.02,
+      "pitch": -0.02,
+      "missiles": 8,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "heartbeat",
+      "level": 4,
+      "status": "playing",
+      "phase": "pursuit",
+      "finale": null,
+      "room": null,
+      "seconds": 230.73,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 7,
+      "kills": 3,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        10.48,
+        15.15,
+        -3438.53
+      ],
+      "speed": 109.94,
+      "yaw": -0.01,
+      "pitch": -0.01,
+      "missiles": 10,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": [
+        {
+          "id": 105,
+          "role": "interceptor",
+          "hp": 11.5,
+          "distance": 46.27,
+          "position": [
+            34.19,
+            9.72,
+            -3399.18
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        }
+      ]
+    },
+    {
+      "kind": "heartbeat",
+      "level": 4,
+      "status": "playing",
+      "phase": "pursuit",
+      "finale": null,
+      "room": null,
+      "seconds": 250.77,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 7,
+      "kills": 5,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        24.75,
+        -18.51,
+        -5603.79
+      ],
+      "speed": 103.12,
+      "yaw": 0,
+      "pitch": 0.03,
+      "missiles": 10,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "heartbeat",
+      "level": 4,
+      "status": "playing",
+      "phase": "pursuit",
+      "finale": null,
+      "room": null,
+      "seconds": 270.77,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 7,
+      "kills": 8,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        -25.87,
+        7.49,
+        -7763.1
+      ],
+      "speed": 103,
+      "yaw": 0.02,
+      "pitch": -0.04,
+      "missiles": 10,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "heartbeat",
+      "level": 4,
+      "status": "playing",
+      "phase": "pursuit",
+      "finale": null,
+      "room": null,
+      "seconds": 290.77,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 7,
+      "kills": 9,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        -23.39,
+        6.5,
+        -9971.96
+      ],
+      "speed": 139.67,
+      "yaw": -0.1,
+      "pitch": 0.03,
+      "missiles": 12,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": [
+        {
+          "id": 231,
+          "role": "interceptor",
+          "hp": 44,
+          "distance": 57.9,
+          "position": [
+            0.09,
+            2.97,
+            -9919.16
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        }
+      ]
+    },
+    {
+      "kind": "heartbeat",
+      "level": 4,
+      "status": "playing",
+      "phase": "pursuit",
+      "finale": null,
+      "room": null,
+      "seconds": 310.77,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 7,
+      "kills": 12,
+      "selected": null,
+      "lock": 298,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        -2.23,
+        -8.78,
+        -12598.11
+      ],
+      "speed": 126.93,
+      "yaw": -0.09,
+      "pitch": 0.02,
+      "missiles": 12,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": [
+        {
+          "id": 298,
+          "role": "jammer",
+          "hp": 37.5,
+          "distance": 103.59,
+          "position": [
+            -29.16,
+            -0.82,
+            -12697.81
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 299,
+          "role": "interceptor",
+          "hp": 44,
+          "distance": 138.69,
+          "position": [
+            47.15,
+            -10.09,
+            -12727.7
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 300,
+          "role": "interceptor",
+          "hp": 44,
+          "distance": 164.02,
+          "position": [
+            -37.63,
+            -23.45,
+            -12757.59
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        }
+      ]
+    },
+    {
+      "kind": "heartbeat",
+      "level": 4,
+      "status": "playing",
+      "phase": "pursuit",
+      "finale": null,
+      "room": null,
+      "seconds": 330.77,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 7,
+      "kills": 16,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        13.4,
+        -11.42,
+        -15347.09
+      ],
+      "speed": 121.21,
+      "yaw": -0.02,
+      "pitch": 0,
+      "missiles": 12,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": [
+        {
+          "id": 341,
+          "role": "interceptor",
+          "hp": 44,
+          "distance": 72.11,
+          "position": [
+            9.02,
+            -18.43,
+            -15275.46
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        }
+      ]
+    },
+    {
+      "kind": "transition",
+      "level": 4,
+      "status": "lesson",
+      "phase": "pursuit",
+      "finale": null,
+      "room": null,
+      "seconds": 350.57,
+      "hp": 98,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 7,
+      "kills": 18,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        24.09,
+        -0.4,
+        -17940.5
+      ],
+      "speed": 0,
+      "yaw": -0.04,
+      "pitch": -0.04,
+      "missiles": 14,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 4,
+      "status": "playing",
+      "phase": "dock",
+      "finale": null,
+      "room": null,
+      "seconds": 350.57,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 7,
+      "kills": 18,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        78,
+        13,
+        -235
+      ],
+      "speed": 22,
+      "yaw": 3.14,
+      "pitch": 0,
+      "missiles": 14,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 4,
+      "status": "docking",
+      "phase": "dock",
+      "finale": null,
+      "room": null,
+      "seconds": 355.7,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 7,
+      "kills": 18,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        78,
+        13,
+        -112.62
+      ],
+      "speed": 20.73,
+      "yaw": 3.14,
+      "pitch": 0,
+      "missiles": 14,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 5,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "room": 1,
+      "seconds": 359.53,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 0,
+        "ready": false,
+        "remaining": 6,
+        "alive": 6,
+        "pending": 0,
+        "text": "Зачистите комнату · осталось 6",
+        "detail": "В комнате: 6"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 5,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "room": 1,
+      "seconds": 377.2,
+      "hp": 93.46,
+      "clearance": {
+        "active": true,
+        "room": 0,
+        "ready": true,
+        "remaining": 0,
+        "alive": 0,
+        "pending": 0,
+        "text": "Комната зачищена · терминал открыт",
+        "detail": "В комнате: 0"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 5,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "room": 2,
+      "seconds": 377.2,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 1,
+        "ready": false,
+        "remaining": 6,
+        "alive": 6,
+        "pending": 0,
+        "text": "Зачистите комнату · осталось 6",
+        "detail": "В комнате: 6"
+      }
+    },
+    {
+      "kind": "heartbeat",
+      "level": 5,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "room": 2,
+      "seconds": 397.2,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 1,
+        "ready": true,
+        "remaining": 0,
+        "alive": 0,
+        "pending": 0,
+        "text": "Комната зачищена · терминал открыт",
+        "detail": "В комнате: 0"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 5,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "room": 2,
+      "seconds": 399.13,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 1,
+        "ready": true,
+        "remaining": 0,
+        "alive": 0,
+        "pending": 0,
+        "text": "Комната зачищена · терминал открыт",
+        "detail": "В комнате: 0"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 5,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "room": 3,
+      "seconds": 399.13,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 2,
+        "ready": false,
+        "remaining": 7,
+        "alive": 7,
+        "pending": 0,
+        "text": "Зачистите комнату · осталось 7",
+        "detail": "В комнате: 7"
+      }
+    },
+    {
+      "kind": "heartbeat",
+      "level": 5,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "room": 3,
+      "seconds": 419.13,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 2,
+        "ready": false,
+        "remaining": 5,
+        "alive": 5,
+        "pending": 0,
+        "text": "Зачистите комнату · осталось 5",
+        "detail": "В комнате: 5"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 5,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "room": 3,
+      "seconds": 429.97,
+      "hp": 90.19,
+      "clearance": {
+        "active": true,
+        "room": 2,
+        "ready": true,
+        "remaining": 0,
+        "alive": 0,
+        "pending": 0,
+        "text": "Комната зачищена · терминал открыт",
+        "detail": "В комнате: 0"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 5,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "room": 4,
+      "seconds": 429.97,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 3,
+        "ready": true,
+        "remaining": 0,
+        "alive": 0,
+        "pending": 0,
+        "text": "Комнаты зачищены · к выходу"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 5,
+      "status": "stageclear",
+      "phase": "debrief",
+      "finale": null,
+      "room": 4,
+      "seconds": 432.4,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 3,
+        "ready": true,
+        "remaining": 0,
+        "alive": 0,
+        "pending": 0,
+        "text": "Комнаты зачищены · к выходу"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 6,
+      "status": "escortbrief",
+      "phase": "escort",
+      "finale": null,
+      "room": null,
+      "seconds": 432.4,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 7,
+      "kills": 18,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "speed": 24,
+      "yaw": 0,
+      "pitch": 0,
+      "missiles": 10,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 6,
+      "status": "playing",
+      "phase": "escort",
+      "finale": null,
+      "room": null,
+      "seconds": 432.4,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 7,
+      "kills": 18,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "speed": 24,
+      "yaw": 0,
+      "pitch": 0,
+      "missiles": 10,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "heartbeat",
+      "level": 6,
+      "status": "playing",
+      "phase": "escort",
+      "finale": null,
+      "room": null,
+      "seconds": 452.4,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 7,
+      "kills": 18,
+      "selected": 444,
+      "lock": 444,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        -21.32,
+        2.12,
+        0
+      ],
+      "speed": 24,
+      "yaw": -0.08,
+      "pitch": -0.08,
+      "missiles": 7,
+      "pulseCooldown": 2.6,
+      "navRecoveries": 0,
+      "enemies": [
+        {
+          "id": 444,
+          "role": "bomber",
+          "hp": 147,
+          "distance": 140.37,
+          "position": [
+            -16.88,
+            -2.91,
+            -140.21
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 445,
+          "role": "interceptor",
+          "hp": 72,
+          "distance": 125.4,
+          "position": [
+            -18.95,
+            -3.15,
+            -125.27
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 446,
+          "role": "scout",
+          "hp": 150,
+          "distance": 134.84,
+          "position": [
+            -19.85,
+            1.59,
+            -134.83
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        }
+      ]
+    },
+    {
+      "kind": "heartbeat",
+      "level": 6,
+      "status": "playing",
+      "phase": "escort",
+      "finale": null,
+      "room": null,
+      "seconds": 472.4,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 7,
+      "kills": 18,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        20.97,
+        -4.71,
+        0
+      ],
+      "speed": 24,
+      "yaw": 0,
+      "pitch": 0,
+      "missiles": 6,
+      "pulseCooldown": 11.17,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "heartbeat",
+      "level": 6,
+      "status": "playing",
+      "phase": "escort",
+      "finale": null,
+      "room": null,
+      "seconds": 492.4,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 7,
+      "kills": 18,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        6.01,
+        8.05,
+        0
+      ],
+      "speed": 24,
+      "yaw": -0.12,
+      "pitch": 0,
+      "missiles": 1,
+      "pulseCooldown": 7.2,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "heartbeat",
+      "level": 6,
+      "status": "playing",
+      "phase": "escort",
+      "finale": null,
+      "room": null,
+      "seconds": 512.4,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 7,
+      "kills": 18,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        -22,
+        0,
+        0
+      ],
+      "speed": 24,
+      "yaw": 0,
+      "pitch": 0,
+      "missiles": 0,
+      "pulseCooldown": 4.1,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 6,
+      "status": "escortclear",
+      "phase": "escort",
+      "finale": null,
+      "room": null,
+      "seconds": 518.63,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 7,
+      "kills": 18,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        -22,
+        0,
+        0
+      ],
+      "speed": 24,
+      "yaw": 0,
+      "pitch": 0,
+      "missiles": 0,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 7,
+      "status": "briefing",
+      "phase": "swarm",
+      "finale": null,
+      "room": null,
+      "seconds": 518.63,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 8,
+      "kills": 0,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        0,
+        -50,
+        0
+      ],
+      "speed": 0,
+      "yaw": 0,
+      "pitch": 0,
+      "missiles": 8,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": [
+        {
+          "id": 463,
+          "role": "scout",
+          "hp": 26,
+          "distance": 140.43,
+          "position": [
+            -62,
+            76,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 464,
+          "role": "scout",
+          "hp": 26,
+          "distance": 143.13,
+          "position": [
+            62,
+            79,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 465,
+          "role": "scout",
+          "hp": 26,
+          "distance": 145.84,
+          "position": [
+            -62,
+            82,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 466,
+          "role": "scout",
+          "hp": 26,
+          "distance": 148.56,
+          "position": [
+            62,
+            85,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 467,
+          "role": "scout",
+          "hp": 26,
+          "distance": 151.29,
+          "position": [
+            -62,
+            88,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 468,
+          "role": "scout",
+          "hp": 26,
+          "distance": 142.24,
+          "position": [
+            66,
+            76,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 469,
+          "role": "scout",
+          "hp": 26,
+          "distance": 144.9,
+          "position": [
+            -66,
+            79,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 470,
+          "role": "scout",
+          "hp": 26,
+          "distance": 147.58,
+          "position": [
+            66,
+            82,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 471,
+          "role": "scout",
+          "hp": 26,
+          "distance": 150.27,
+          "position": [
+            -66,
+            85,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 472,
+          "role": "scout",
+          "hp": 26,
+          "distance": 152.97,
+          "position": [
+            66,
+            88,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        }
+      ]
+    },
+    {
+      "kind": "transition",
+      "level": 7,
+      "status": "playing",
+      "phase": "swarm",
+      "finale": null,
+      "room": null,
+      "seconds": 518.63,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 8,
+      "kills": 0,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        0,
+        -50,
+        0
+      ],
+      "speed": 0,
+      "yaw": 0,
+      "pitch": 0,
+      "missiles": 8,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": [
+        {
+          "id": 463,
+          "role": "scout",
+          "hp": 26,
+          "distance": 140.43,
+          "position": [
+            -62,
+            76,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 464,
+          "role": "scout",
+          "hp": 26,
+          "distance": 143.13,
+          "position": [
+            62,
+            79,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 465,
+          "role": "scout",
+          "hp": 26,
+          "distance": 145.84,
+          "position": [
+            -62,
+            82,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 466,
+          "role": "scout",
+          "hp": 26,
+          "distance": 148.56,
+          "position": [
+            62,
+            85,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 467,
+          "role": "scout",
+          "hp": 26,
+          "distance": 151.29,
+          "position": [
+            -62,
+            88,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 468,
+          "role": "scout",
+          "hp": 26,
+          "distance": 142.24,
+          "position": [
+            66,
+            76,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 469,
+          "role": "scout",
+          "hp": 26,
+          "distance": 144.9,
+          "position": [
+            -66,
+            79,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 470,
+          "role": "scout",
+          "hp": 26,
+          "distance": 147.58,
+          "position": [
+            66,
+            82,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 471,
+          "role": "scout",
+          "hp": 26,
+          "distance": 150.27,
+          "position": [
+            -66,
+            85,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 472,
+          "role": "scout",
+          "hp": 26,
+          "distance": 152.97,
+          "position": [
+            66,
+            88,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        }
+      ]
+    },
+    {
+      "kind": "heartbeat",
+      "level": 7,
+      "status": "playing",
+      "phase": "swarm",
+      "finale": null,
+      "room": null,
+      "seconds": 538.67,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 8,
+      "kills": 22,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        0,
+        -50,
+        0
+      ],
+      "speed": 0,
+      "yaw": 0,
+      "pitch": 0,
+      "missiles": 10,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "heartbeat",
+      "level": 7,
+      "status": "playing",
+      "phase": "swarm",
+      "finale": null,
+      "room": null,
+      "seconds": 558.7,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 8,
+      "kills": 51,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        36.52,
+        -50,
+        0
+      ],
+      "speed": 32,
+      "yaw": 0,
+      "pitch": 0,
+      "missiles": 7,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": [
+        {
+          "id": 507,
+          "role": "scout",
+          "hp": 26,
+          "distance": 91.61,
+          "position": [
+            42.07,
+            41.44,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        }
+      ]
+    },
+    {
+      "kind": "heartbeat",
+      "level": 7,
+      "status": "playing",
+      "phase": "swarm",
+      "finale": null,
+      "room": null,
+      "seconds": 578.73,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 8,
+      "kills": 78,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        38.19,
+        -50,
+        0
+      ],
+      "speed": 32,
+      "yaw": 0,
+      "pitch": 0,
+      "missiles": 7,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": [
+        {
+          "id": 539,
+          "role": "commander",
+          "hp": 60,
+          "distance": 121.83,
+          "position": [
+            -31.17,
+            50.16,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 540,
+          "role": "commander",
+          "hp": 60,
+          "distance": 118.27,
+          "position": [
+            -18.77,
+            53.65,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 541,
+          "role": "bomber",
+          "hp": 46,
+          "distance": 115.87,
+          "position": [
+            -6.37,
+            56.96,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 542,
+          "role": "scout",
+          "hp": 26,
+          "distance": 112.97,
+          "position": [
+            6.03,
+            58.3,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 546,
+          "role": "interceptor",
+          "hp": 34,
+          "distance": 111.65,
+          "position": [
+            -31.17,
+            37.49,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 547,
+          "role": "bomber",
+          "hp": 46,
+          "distance": 107.34,
+          "position": [
+            -18.77,
+            40.98,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 548,
+          "role": "scout",
+          "hp": 26,
+          "distance": 104.29,
+          "position": [
+            -6.37,
+            44.28,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 549,
+          "role": "interceptor",
+          "hp": 34,
+          "distance": 100.89,
+          "position": [
+            6.03,
+            45.63,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 552,
+          "role": "interceptor",
+          "hp": 34,
+          "distance": 87.63,
+          "position": [
+            43.23,
+            37.49,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 553,
+          "role": "bomber",
+          "hp": 46,
+          "distance": 101.6,
+          "position": [
+            -31.17,
+            24.24,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 554,
+          "role": "scout",
+          "hp": 26,
+          "distance": 96.37,
+          "position": [
+            -18.77,
+            27.73,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 555,
+          "role": "interceptor",
+          "hp": 34,
+          "distance": 92.48,
+          "position": [
+            -6.37,
+            31.04,
+            0
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        }
+      ]
+    },
+    {
+      "kind": "transition",
+      "level": 7,
+      "status": "lesson",
+      "phase": "dock",
+      "finale": null,
+      "room": null,
+      "seconds": 589.47,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 8,
+      "kills": 90,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        0,
+        1,
+        -310
+      ],
+      "speed": 18,
+      "yaw": 3.14,
+      "pitch": 0,
+      "missiles": 6,
+      "pulseCooldown": 6.1,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 7,
+      "status": "playing",
+      "phase": "dock",
+      "finale": null,
+      "room": null,
+      "seconds": 589.47,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 8,
+      "kills": 90,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        0,
+        1,
+        -310
+      ],
+      "speed": 18,
+      "yaw": 3.14,
+      "pitch": 0,
+      "missiles": 6,
+      "pulseCooldown": 6.1,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 7,
+      "status": "docking",
+      "phase": "dock",
+      "finale": null,
+      "room": null,
+      "seconds": 592.33,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 8,
+      "kills": 90,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        0,
+        1,
+        -242.85
+      ],
+      "speed": 20.94,
+      "yaw": 3.14,
+      "pitch": 0,
+      "missiles": 6,
+      "pulseCooldown": 3.23,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 8,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "room": 1,
+      "seconds": 596.17,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 0,
+        "ready": false,
+        "remaining": 7,
+        "alive": 7,
+        "pending": 0,
+        "text": "Зачистите комнату · осталось 7",
+        "detail": "В комнате: 7"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 8,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "room": 1,
+      "seconds": 615.4,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 0,
+        "ready": true,
+        "remaining": 0,
+        "alive": 0,
+        "pending": 0,
+        "text": "Комната зачищена · терминал открыт",
+        "detail": "В комнате: 0"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 8,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "room": 2,
+      "seconds": 615.4,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 1,
+        "ready": false,
+        "remaining": 7,
+        "alive": 7,
+        "pending": 0,
+        "text": "Зачистите комнату · осталось 7",
+        "detail": "В комнате: 7"
+      }
+    },
+    {
+      "kind": "heartbeat",
+      "level": 8,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "room": 2,
+      "seconds": 635.43,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 1,
+        "ready": false,
+        "remaining": 4,
+        "alive": 4,
+        "pending": 0,
+        "text": "Зачистите комнату · осталось 4",
+        "detail": "В комнате: 4"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 8,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "room": 2,
+      "seconds": 645.9,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 1,
+        "ready": true,
+        "remaining": 0,
+        "alive": 0,
+        "pending": 0,
+        "text": "Комната зачищена · терминал открыт",
+        "detail": "В комнате: 0"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 8,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "room": 3,
+      "seconds": 645.9,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 2,
+        "ready": false,
+        "remaining": 8,
+        "alive": 8,
+        "pending": 0,
+        "text": "Зачистите комнату · осталось 8",
+        "detail": "В комнате: 8"
+      }
+    },
+    {
+      "kind": "heartbeat",
+      "level": 8,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "room": 3,
+      "seconds": 665.93,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 2,
+        "ready": false,
+        "remaining": 1,
+        "alive": 1,
+        "pending": 0,
+        "text": "Зачистите комнату · осталось 1",
+        "detail": "В комнате: 1"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 8,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "room": 3,
+      "seconds": 671.1,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 2,
+        "ready": true,
+        "remaining": 0,
+        "alive": 0,
+        "pending": 0,
+        "text": "Комната зачищена · терминал открыт",
+        "detail": "В комнате: 0"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 8,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "room": 4,
+      "seconds": 671.1,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 3,
+        "ready": true,
+        "remaining": 0,
+        "alive": 0,
+        "pending": 0,
+        "text": "Комнаты зачищены · к выходу"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 8,
+      "status": "stageclear",
+      "phase": "debrief",
+      "finale": null,
+      "room": 4,
+      "seconds": 673.57,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 3,
+        "ready": true,
+        "remaining": 0,
+        "alive": 0,
+        "pending": 0,
+        "text": "Комнаты зачищены · к выходу"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 9,
+      "status": "escortbrief",
+      "phase": "escort",
+      "finale": null,
+      "room": null,
+      "seconds": 673.57,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 8,
+      "kills": 90,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "speed": 24,
+      "yaw": 0,
+      "pitch": 0,
+      "missiles": 10,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 9,
+      "status": "playing",
+      "phase": "escort",
+      "finale": null,
+      "room": null,
+      "seconds": 673.57,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 8,
+      "kills": 90,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "speed": 24,
+      "yaw": 0,
+      "pitch": 0,
+      "missiles": 10,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "heartbeat",
+      "level": 9,
+      "status": "playing",
+      "phase": "escort",
+      "finale": null,
+      "room": null,
+      "seconds": 693.6,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 8,
+      "kills": 90,
+      "selected": 590,
+      "lock": 590,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        -13.83,
+        -6.44,
+        0
+      ],
+      "speed": 24,
+      "yaw": 0.03,
+      "pitch": -0.02,
+      "missiles": 6,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": [
+        {
+          "id": 587,
+          "role": "bomber",
+          "hp": 258.5,
+          "distance": 141.51,
+          "position": [
+            -14.37,
+            -3.08,
+            -141.47
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 588,
+          "role": "interceptor",
+          "hp": 108,
+          "distance": 126.14,
+          "position": [
+            -6.23,
+            3.91,
+            -125.49
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 589,
+          "role": "scout",
+          "hp": 150,
+          "distance": 128.32,
+          "position": [
+            -13.6,
+            -10.13,
+            -128.27
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 590,
+          "role": "torpedo",
+          "hp": 25,
+          "distance": 127.63,
+          "position": [
+            -10.54,
+            -4.12,
+            -127.56
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        }
+      ]
+    },
+    {
+      "kind": "heartbeat",
+      "level": 9,
+      "status": "playing",
+      "phase": "escort",
+      "finale": null,
+      "room": null,
+      "seconds": 713.63,
+      "hp": 93.6,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 8,
+      "kills": 90,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        22,
+        -8,
+        0
+      ],
+      "speed": 24,
+      "yaw": 0,
+      "pitch": 0,
+      "missiles": 4,
+      "pulseCooldown": 8.5,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "heartbeat",
+      "level": 9,
+      "status": "playing",
+      "phase": "escort",
+      "finale": null,
+      "room": null,
+      "seconds": 733.67,
+      "hp": 93.6,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 8,
+      "kills": 90,
+      "selected": 605,
+      "lock": 605,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        19.78,
+        -0.22,
+        0
+      ],
+      "speed": 24,
+      "yaw": -0.1,
+      "pitch": -0.04,
+      "missiles": 0,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": [
+        {
+          "id": 604,
+          "role": "commander",
+          "hp": 236.1,
+          "distance": 89.12,
+          "position": [
+            -0.2,
+            -5.27,
+            -86.7
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 605,
+          "role": "shield",
+          "hp": 30,
+          "distance": 97.73,
+          "position": [
+            7.21,
+            1.35,
+            -96.9
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 606,
+          "role": "raider",
+          "hp": 240,
+          "distance": 102.71,
+          "position": [
+            -0.84,
+            6.15,
+            -100.42
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 607,
+          "role": "interceptor",
+          "hp": 158.4,
+          "distance": 90.56,
+          "position": [
+            9.89,
+            -6.53,
+            -89.79
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        }
+      ]
+    },
+    {
+      "kind": "heartbeat",
+      "level": 9,
+      "status": "playing",
+      "phase": "escort",
+      "finale": null,
+      "room": null,
+      "seconds": 753.7,
+      "hp": 93.6,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 8,
+      "kills": 90,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        -11.48,
+        -4.37,
+        0
+      ],
+      "speed": 24,
+      "yaw": 0,
+      "pitch": 0,
+      "missiles": 0,
+      "pulseCooldown": 8.3,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "heartbeat",
+      "level": 9,
+      "status": "playing",
+      "phase": "escort",
+      "finale": null,
+      "room": null,
+      "seconds": 773.73,
+      "hp": 93.6,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 8,
+      "kills": 90,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        -22,
+        -8,
+        0
+      ],
+      "speed": 24,
+      "yaw": 0,
+      "pitch": 0,
+      "missiles": 0,
+      "pulseCooldown": 3,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 9,
+      "status": "escortclear",
+      "phase": "escort",
+      "finale": null,
+      "room": null,
+      "seconds": 782.1,
+      "hp": 93.6,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 8,
+      "kills": 90,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        -22,
+        -8,
+        0
+      ],
+      "speed": 24,
+      "yaw": 0,
+      "pitch": 0,
+      "missiles": 0,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 10,
+      "status": "briefing",
+      "phase": "orientation",
+      "finale": null,
+      "room": null,
+      "seconds": 782.1,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 0,
+      "waveSpawned": 0,
+      "waveTotal": 10,
+      "kills": 0,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "speed": 15,
+      "yaw": 0,
+      "pitch": 0,
+      "missiles": 8,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 10,
+      "status": "playing",
+      "phase": "battle",
+      "finale": null,
+      "room": null,
+      "seconds": 782.1,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 1,
+      "waveSpawned": 4,
+      "waveTotal": 10,
+      "kills": 0,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "speed": 15,
+      "yaw": 0,
+      "pitch": 0,
+      "missiles": 8,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": [
+        {
+          "id": 622,
+          "role": "hacker",
+          "hp": 60,
+          "distance": 66.89,
+          "position": [
+            -53.3,
+            -5.35,
+            -40.06
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 623,
+          "role": "bomber",
+          "hp": 85,
+          "distance": 184.79,
+          "position": [
+            178.08,
+            34.38,
+            -35.4
+          ],
+          "hullBlocked": true,
+          "rockBlocked": false
+        },
+        {
+          "id": 624,
+          "role": "fighter",
+          "hp": 40,
+          "distance": 235.84,
+          "position": [
+            218.37,
+            17.05,
+            -87.42
+          ],
+          "hullBlocked": true,
+          "rockBlocked": false
+        },
+        {
+          "id": 625,
+          "role": "fighter",
+          "hp": 68.75,
+          "distance": 265.74,
+          "position": [
+            212.57,
+            33.23,
+            -155.96
+          ],
+          "hullBlocked": true,
+          "rockBlocked": false
+        }
+      ]
+    },
+    {
+      "kind": "heartbeat",
+      "level": 10,
+      "status": "playing",
+      "phase": "battle",
+      "finale": null,
+      "room": null,
+      "seconds": 802.13,
+      "hp": 100,
+      "stationHp": 92.5,
+      "wave": 1,
+      "waveSpawned": 10,
+      "waveTotal": 10,
+      "kills": 10,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        62.75,
+        49.61,
+        -43.95
+      ],
+      "speed": 3.73,
+      "yaw": -6.72,
+      "pitch": -0.37,
+      "missiles": 1,
+      "pulseCooldown": 8.67,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 10,
+      "status": "playing",
+      "phase": "battle",
+      "finale": null,
+      "room": null,
+      "seconds": 804.17,
+      "hp": 100,
+      "stationHp": 100,
+      "wave": 2,
+      "waveSpawned": 4,
+      "waveTotal": 12,
+      "kills": 10,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        62.42,
+        49.32,
+        -44.64
+      ],
+      "speed": 0,
+      "yaw": -6.72,
+      "pitch": -0.37,
+      "missiles": 3,
+      "pulseCooldown": 6.63,
+      "navRecoveries": 0,
+      "enemies": [
+        {
+          "id": 632,
+          "role": "hacker",
+          "hp": 60,
+          "distance": 122.23,
+          "position": [
+            -42.51,
+            -13.24,
+            -40.63
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 633,
+          "role": "bomber",
+          "hp": 85,
+          "distance": 129.88,
+          "position": [
+            182.48,
+            0.12,
+            -38.73
+          ],
+          "hullBlocked": true,
+          "rockBlocked": false
+        },
+        {
+          "id": 634,
+          "role": "fighter",
+          "hp": 40,
+          "distance": 153.22,
+          "position": [
+            208.64,
+            9.51,
+            -67.27
+          ],
+          "hullBlocked": false,
+          "rockBlocked": true
+        },
+        {
+          "id": 635,
+          "role": "fighter",
+          "hp": 68.75,
+          "distance": 184.61,
+          "position": [
+            220.78,
+            17.86,
+            -134.16
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        }
+      ]
+    },
+    {
+      "kind": "heartbeat",
+      "level": 10,
+      "status": "playing",
+      "phase": "battle",
+      "finale": null,
+      "room": null,
+      "seconds": 824.2,
+      "hp": 71.2,
+      "stationHp": 82.5,
+      "wave": 2,
+      "waveSpawned": 12,
+      "waveTotal": 12,
+      "kills": 18,
+      "selected": 643,
+      "lock": 639,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        80.37,
+        -31.29,
+        -5.91
+      ],
+      "speed": 0.99,
+      "yaw": -12.7,
+      "pitch": 0.5,
+      "missiles": 0,
+      "pulseCooldown": 2.4,
+      "navRecoveries": 0,
+      "enemies": [
+        {
+          "id": 639,
+          "role": "fighter",
+          "hp": 40,
+          "distance": 48.48,
+          "position": [
+            91.24,
+            -15.2,
+            -50.33
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 641,
+          "role": "bomber",
+          "hp": 85,
+          "distance": 101.11,
+          "position": [
+            19.05,
+            22.92,
+            -65.27
+          ],
+          "hullBlocked": true,
+          "rockBlocked": false
+        },
+        {
+          "id": 642,
+          "role": "fighter",
+          "hp": 125,
+          "distance": 76.07,
+          "position": [
+            17.66,
+            4.78,
+            -29.43
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 643,
+          "role": "fighter",
+          "hp": 40,
+          "distance": 32.03,
+          "position": [
+            93.26,
+            -12.59,
+            -28.49
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        }
+      ]
+    },
+    {
+      "kind": "transition",
+      "level": 10,
+      "status": "playing",
+      "phase": "battle",
+      "finale": null,
+      "room": null,
+      "seconds": 829.73,
+      "hp": 89.2,
+      "stationHp": 88,
+      "wave": 3,
+      "waveSpawned": 4,
+      "waveTotal": 14,
+      "kills": 22,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        67.58,
+        -21.66,
+        -15.46
+      ],
+      "speed": 0,
+      "yaw": -14.21,
+      "pitch": 0.43,
+      "missiles": 2,
+      "pulseCooldown": 10.9,
+      "navRecoveries": 0,
+      "enemies": [
+        {
+          "id": 644,
+          "role": "hacker",
+          "hp": 60,
+          "distance": 102.14,
+          "position": [
+            -26.01,
+            8.82,
+            -42.71
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 645,
+          "role": "bomber",
+          "hp": 85,
+          "distance": 97.59,
+          "position": [
+            158.28,
+            13.46,
+            -23.4
+          ],
+          "hullBlocked": true,
+          "rockBlocked": false
+        },
+        {
+          "id": 646,
+          "role": "fighter",
+          "hp": 40,
+          "distance": 134.05,
+          "position": [
+            196.33,
+            -11.61,
+            -51.42
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 647,
+          "role": "fighter",
+          "hp": 68.75,
+          "distance": 182.68,
+          "position": [
+            222.65,
+            7.99,
+            -107.38
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        }
+      ]
+    },
+    {
+      "kind": "heartbeat",
+      "level": 10,
+      "status": "playing",
+      "phase": "battle",
+      "finale": null,
+      "room": null,
+      "seconds": 849.77,
+      "hp": 90.4,
+      "stationHp": 78,
+      "wave": 3,
+      "waveSpawned": 14,
+      "waveTotal": 14,
+      "kills": 35,
+      "selected": 649,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        49.1,
+        32.54,
+        -106.47
+      ],
+      "speed": 14.23,
+      "yaw": -12,
+      "pitch": -0.49,
+      "missiles": 0,
+      "pulseCooldown": 6.97,
+      "navRecoveries": 0,
+      "enemies": [
+        {
+          "id": 649,
+          "role": "bomber",
+          "hp": 46,
+          "distance": 71.88,
+          "position": [
+            115.6,
+            5.27,
+            -107.53
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        }
+      ]
+    },
+    {
+      "kind": "transition",
+      "level": 10,
+      "status": "playing",
+      "phase": "retrieve",
+      "finale": null,
+      "room": null,
+      "seconds": 856.77,
+      "hp": 61.6,
+      "stationHp": 78,
+      "wave": 3,
+      "waveSpawned": 14,
+      "waveTotal": 14,
+      "kills": 36,
+      "selected": null,
+      "lock": 658,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        51.9,
+        34.72,
+        -201.2
+      ],
+      "speed": 8,
+      "yaw": -12.84,
+      "pitch": 0.16,
+      "missiles": 0,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 10,
+      "status": "lesson",
+      "phase": "retrieve",
+      "finale": null,
+      "room": null,
+      "seconds": 858.83,
+      "hp": 71.6,
+      "stationHp": 78,
+      "wave": 3,
+      "waveSpawned": 14,
+      "waveTotal": 14,
+      "kills": 36,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        39.4,
+        16.11,
+        -196.9
+      ],
+      "speed": 22.99,
+      "yaw": -15.38,
+      "pitch": -0.95,
+      "missiles": 2,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 10,
+      "status": "playing",
+      "phase": "retrieve",
+      "finale": null,
+      "room": null,
+      "seconds": 858.83,
+      "hp": 96.6,
+      "stationHp": 78,
+      "wave": 3,
+      "waveSpawned": 14,
+      "waveTotal": 14,
+      "kills": 36,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        39.4,
+        16.11,
+        -196.9
+      ],
+      "speed": 22.99,
+      "yaw": -15.38,
+      "pitch": -0.95,
+      "missiles": 2,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 10,
+      "status": "lesson",
+      "phase": "retrieve",
+      "finale": null,
+      "room": null,
+      "seconds": 864.7,
+      "hp": 100,
+      "stationHp": 78,
+      "wave": 3,
+      "waveSpawned": 14,
+      "waveTotal": 14,
+      "kills": 36,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        -10.06,
+        3.56,
+        -95.44
+      ],
+      "speed": 23.99,
+      "yaw": -16.06,
+      "pitch": -0.12,
+      "missiles": 6,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 10,
+      "status": "playing",
+      "phase": "dock",
+      "finale": null,
+      "room": null,
+      "seconds": 864.7,
+      "hp": 100,
+      "stationHp": 78,
+      "wave": 3,
+      "waveSpawned": 14,
+      "waveTotal": 14,
+      "kills": 36,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        -10.06,
+        3.56,
+        -95.44
+      ],
+      "speed": 23.99,
+      "yaw": -16.06,
+      "pitch": -0.12,
+      "missiles": 6,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 10,
+      "status": "docking",
+      "phase": "dock",
+      "finale": null,
+      "room": null,
+      "seconds": 868.37,
+      "hp": 100,
+      "stationHp": 78,
+      "wave": 3,
+      "waveSpawned": 14,
+      "waveTotal": 14,
+      "kills": 36,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        64.33,
+        11.41,
+        -97.63
+      ],
+      "speed": 21.91,
+      "yaw": -17.45,
+      "pitch": 0.11,
+      "missiles": 6,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 11,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "room": 1,
+      "seconds": 872.2,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 0,
+        "ready": false,
+        "remaining": 7,
+        "alive": 7,
+        "pending": 0,
+        "text": "Зачистите комнату · осталось 7",
+        "detail": "В комнате: 7"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 11,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "room": 1,
+      "seconds": 889.47,
+      "hp": 94.92,
+      "clearance": {
+        "active": true,
+        "room": 0,
+        "ready": true,
+        "remaining": 0,
+        "alive": 0,
+        "pending": 0,
+        "text": "Комната зачищена · терминал открыт",
+        "detail": "В комнате: 0"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 11,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "room": 2,
+      "seconds": 889.47,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 1,
+        "ready": false,
+        "remaining": 7,
+        "alive": 7,
+        "pending": 0,
+        "text": "Зачистите комнату · осталось 7",
+        "detail": "В комнате: 7"
+      }
+    },
+    {
+      "kind": "heartbeat",
+      "level": 11,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "room": 2,
+      "seconds": 909.5,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 1,
+        "ready": false,
+        "remaining": 1,
+        "alive": 1,
+        "pending": 0,
+        "text": "Зачистите комнату · осталось 1",
+        "detail": "В комнате: 1"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 11,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "room": 2,
+      "seconds": 913.3,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 1,
+        "ready": true,
+        "remaining": 0,
+        "alive": 0,
+        "pending": 0,
+        "text": "Комната зачищена · терминал открыт",
+        "detail": "В комнате: 0"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 11,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "room": 3,
+      "seconds": 913.3,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 2,
+        "ready": false,
+        "remaining": 8,
+        "alive": 8,
+        "pending": 0,
+        "text": "Зачистите комнату · осталось 8",
+        "detail": "В комнате: 8"
+      }
+    },
+    {
+      "kind": "heartbeat",
+      "level": 11,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "room": 3,
+      "seconds": 933.33,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 2,
+        "ready": false,
+        "remaining": 3,
+        "alive": 3,
+        "pending": 0,
+        "text": "Зачистите комнату · осталось 3",
+        "detail": "В комнате: 3"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 11,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "room": 3,
+      "seconds": 944.93,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 2,
+        "ready": true,
+        "remaining": 0,
+        "alive": 0,
+        "pending": 0,
+        "text": "Комната зачищена · терминал открыт",
+        "detail": "В комнате: 0"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 11,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "room": 4,
+      "seconds": 944.93,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 3,
+        "ready": true,
+        "remaining": 0,
+        "alive": 0,
+        "pending": 0,
+        "text": "Комнаты зачищены · к выходу"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 12,
+      "status": "finalebrief",
+      "phase": "finale",
+      "finale": "boss",
+      "room": null,
+      "seconds": 946.93,
+      "hp": 100,
+      "stationHp": 78,
+      "wave": 3,
+      "waveSpawned": 14,
+      "waveTotal": 14,
+      "kills": 36,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        78,
+        10,
+        -35
+      ],
+      "speed": 0,
+      "yaw": 3.14,
+      "pitch": 0,
+      "missiles": 6,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 12,
+      "status": "playing",
+      "phase": "finale",
+      "finale": "boss",
+      "room": null,
+      "seconds": 946.93,
+      "hp": 100,
+      "stationHp": 78,
+      "wave": 3,
+      "waveSpawned": 14,
+      "waveTotal": 14,
+      "kills": 36,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        0,
+        0,
+        10
+      ],
+      "speed": 0,
+      "yaw": 0,
+      "pitch": 0,
+      "missiles": 12,
+      "pulseCooldown": 0,
+      "navRecoveries": 0,
+      "enemies": [
+        {
+          "id": 681,
+          "hp": 1800,
+          "distance": 137.76,
+          "position": [
+            -23,
+            15,
+            -125
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 682,
+          "hp": 1800,
+          "distance": 137.76,
+          "position": [
+            23,
+            15,
+            -125
+          ],
+          "hullBlocked": true,
+          "rockBlocked": false
+        },
+        {
+          "id": 683,
+          "hp": 1800,
+          "distance": 137.76,
+          "position": [
+            -23,
+            -15,
+            -125
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 684,
+          "hp": 1800,
+          "distance": 137.76,
+          "position": [
+            23,
+            -15,
+            -125
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 685,
+          "hp": 6000,
+          "distance": 149,
+          "position": [
+            0,
+            0,
+            -139
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        }
+      ]
+    },
+    {
+      "kind": "heartbeat",
+      "level": 12,
+      "status": "playing",
+      "phase": "finale",
+      "finale": "boss",
+      "room": null,
+      "seconds": 966.97,
+      "hp": 95.2,
+      "stationHp": 78,
+      "wave": 3,
+      "waveSpawned": 14,
+      "waveTotal": 14,
+      "kills": 36,
+      "selected": 683,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        11.6,
+        -40.01,
+        -104
+      ],
+      "speed": 42,
+      "yaw": 6.08,
+      "pitch": 0.06,
+      "missiles": 0,
+      "pulseCooldown": 2.73,
+      "navRecoveries": 0,
+      "enemies": [
+        {
+          "id": 682,
+          "hp": 1501.25,
+          "distance": 59.98,
+          "position": [
+            23,
+            15,
+            -125
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 683,
+          "hp": 549.95,
+          "distance": 47.58,
+          "position": [
+            -23,
+            -15,
+            -125
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 684,
+          "hp": 1327.65,
+          "distance": 34.59,
+          "position": [
+            23,
+            -15,
+            -125
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        },
+        {
+          "id": 685,
+          "hp": 6000,
+          "distance": 54.41,
+          "position": [
+            0,
+            0,
+            -139
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        }
+      ]
+    },
+    {
+      "kind": "heartbeat",
+      "level": 12,
+      "status": "playing",
+      "phase": "finale",
+      "finale": "boss",
+      "room": null,
+      "seconds": 987,
+      "hp": 100,
+      "stationHp": 78,
+      "wave": 3,
+      "waveSpawned": 14,
+      "waveTotal": 14,
+      "kills": 36,
+      "selected": 685,
+      "lock": 685,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        -4.61,
+        -9.85,
+        -104
+      ],
+      "speed": 12.83,
+      "yaw": 6.33,
+      "pitch": 0.35,
+      "missiles": 0,
+      "pulseCooldown": 4.3,
+      "navRecoveries": 0,
+      "enemies": [
+        {
+          "id": 685,
+          "hp": 5521.4,
+          "distance": 36.65,
+          "position": [
+            0,
+            0,
+            -139
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        }
+      ]
+    },
+    {
+      "kind": "heartbeat",
+      "level": 12,
+      "status": "playing",
+      "phase": "finale",
+      "finale": "boss",
+      "room": null,
+      "seconds": 1007.03,
+      "hp": 100,
+      "stationHp": 78,
+      "wave": 3,
+      "waveSpawned": 14,
+      "waveTotal": 14,
+      "kills": 36,
+      "selected": 685,
+      "lock": 685,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        20.81,
+        13.25,
+        -104
+      ],
+      "speed": 0,
+      "yaw": 5.75,
+      "pitch": -0.31,
+      "missiles": 0,
+      "pulseCooldown": 5.5,
+      "navRecoveries": 0,
+      "enemies": [
+        {
+          "id": 685,
+          "hp": 1925.6,
+          "distance": 42.82,
+          "position": [
+            0,
+            0,
+            -139
+          ],
+          "hullBlocked": false,
+          "rockBlocked": false
+        }
+      ]
+    },
+    {
+      "kind": "transition",
+      "level": 12,
+      "status": "playing",
+      "phase": "finale",
+      "finale": "breach",
+      "room": null,
+      "seconds": 1017.63,
+      "hp": 100,
+      "stationHp": 78,
+      "wave": 3,
+      "waveSpawned": 14,
+      "waveTotal": 14,
+      "kills": 36,
+      "selected": null,
+      "lock": 685,
+      "navMode": "objective",
+      "autopilot": true,
+      "position": [
+        -21.98,
+        -17.07,
+        -104
+      ],
+      "speed": 1,
+      "yaw": 6.85,
+      "pitch": 0.39,
+      "missiles": 2,
+      "pulseCooldown": 5.4,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 12,
+      "status": "docking",
+      "phase": "finale",
+      "finale": "landing",
+      "room": null,
+      "seconds": 1019.07,
+      "hp": 100,
+      "stationHp": 78,
+      "wave": 3,
+      "waveSpawned": 14,
+      "waveTotal": 14,
+      "kills": 36,
+      "selected": null,
+      "lock": null,
+      "navMode": "objective",
+      "autopilot": false,
+      "position": [
+        -8.86,
+        -6.87,
+        -126.57
+      ],
+      "speed": 21.99,
+      "yaw": 6.8,
+      "pitch": 0.37,
+      "missiles": 2,
+      "pulseCooldown": 3.97,
+      "navRecoveries": 0,
+      "enemies": []
+    },
+    {
+      "kind": "transition",
+      "level": 13,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": "maze",
+      "room": 1,
+      "seconds": 1023.1,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 0,
+        "ready": false,
+        "remaining": 8,
+        "alive": 8,
+        "pending": 0,
+        "text": "Зачистите комнату · осталось 8",
+        "detail": "В комнате: 8"
+      }
+    },
+    {
+      "kind": "heartbeat",
+      "level": 13,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": "maze",
+      "room": 1,
+      "seconds": 1043.13,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 0,
+        "ready": true,
+        "remaining": 0,
+        "alive": 0,
+        "pending": 0,
+        "text": "Комната зачищена · терминал открыт",
+        "detail": "В комнате: 0"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 13,
+      "status": "finalcheck",
+      "phase": "boarding",
+      "finale": "maze",
+      "room": 1,
+      "seconds": 1044.53,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 0,
+        "ready": true,
+        "remaining": 0,
+        "alive": 0,
+        "pending": 0,
+        "text": "Комната зачищена · терминал открыт",
+        "detail": "В комнате: 0"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 13,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": "maze",
+      "room": 2,
+      "seconds": 1044.53,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 1,
+        "ready": false,
+        "remaining": 8,
+        "alive": 8,
+        "pending": 0,
+        "text": "Зачистите комнату · осталось 8",
+        "detail": "В комнате: 8"
+      }
+    },
+    {
+      "kind": "heartbeat",
+      "level": 13,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": "maze",
+      "room": 2,
+      "seconds": 1064.57,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 1,
+        "ready": false,
+        "remaining": 3,
+        "alive": 3,
+        "pending": 0,
+        "text": "Зачистите комнату · осталось 3",
+        "detail": "В комнате: 3"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 13,
+      "status": "finalcheck",
+      "phase": "boarding",
+      "finale": "maze",
+      "room": 2,
+      "seconds": 1074.2,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 1,
+        "ready": true,
+        "remaining": 0,
+        "alive": 0,
+        "pending": 0,
+        "text": "Комната зачищена · терминал открыт",
+        "detail": "В комнате: 0"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 13,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": "maze",
+      "room": 3,
+      "seconds": 1074.2,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 2,
+        "ready": false,
+        "remaining": 8,
+        "alive": 8,
+        "pending": 0,
+        "text": "Зачистите комнату · осталось 8",
+        "detail": "В комнате: 8"
+      }
+    },
+    {
+      "kind": "heartbeat",
+      "level": 13,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": "maze",
+      "room": 3,
+      "seconds": 1094.23,
+      "hp": 94.56,
+      "clearance": {
+        "active": true,
+        "room": 2,
+        "ready": false,
+        "remaining": 2,
+        "alive": 2,
+        "pending": 0,
+        "text": "Зачистите комнату · осталось 2",
+        "detail": "В комнате: 2"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 13,
+      "status": "finalcheck",
+      "phase": "boarding",
+      "finale": "maze",
+      "room": 3,
+      "seconds": 1102.07,
+      "hp": 94.56,
+      "clearance": {
+        "active": true,
+        "room": 2,
+        "ready": true,
+        "remaining": 0,
+        "alive": 0,
+        "pending": 0,
+        "text": "Комната зачищена · терминал открыт",
+        "detail": "В комнате: 0"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 13,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": "maze",
+      "room": 4,
+      "seconds": 1102.07,
+      "hp": 100,
+      "clearance": {
+        "active": true,
+        "room": 3,
+        "ready": true,
+        "remaining": 0,
+        "alive": 0,
+        "pending": 0,
+        "text": "Комнаты зачищены · к выходу"
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 14,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": "mrg",
+      "room": 4,
+      "seconds": 1104.5,
+      "hp": 100,
+      "clearance": {
+        "active": false,
+        "ready": true,
+        "remaining": 0,
+        "alive": 0,
+        "pending": 0,
+        "text": ""
+      }
+    },
+    {
+      "kind": "heartbeat",
+      "level": 14,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": "mrg",
+      "room": 4,
+      "seconds": 1124.53,
+      "hp": 100,
+      "clearance": {
+        "active": false,
+        "ready": true,
+        "remaining": 0,
+        "alive": 0,
+        "pending": 0,
+        "text": ""
+      }
+    },
+    {
+      "kind": "heartbeat",
+      "level": 14,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": "mrg",
+      "room": 4,
+      "seconds": 1144.57,
+      "hp": 100,
+      "clearance": {
+        "active": false,
+        "ready": true,
+        "remaining": 0,
+        "alive": 0,
+        "pending": 0,
+        "text": ""
+      }
+    },
+    {
+      "kind": "heartbeat",
+      "level": 14,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": "mrg",
+      "room": 4,
+      "seconds": 1164.6,
+      "hp": 100,
+      "clearance": {
+        "active": false,
+        "ready": true,
+        "remaining": 0,
+        "alive": 0,
+        "pending": 0,
+        "text": ""
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 14,
+      "status": "docking",
+      "phase": "boarding",
+      "finale": "upload",
+      "room": 4,
+      "seconds": 1166.27,
+      "hp": 100,
+      "clearance": {
+        "active": false,
+        "ready": true,
+        "remaining": 0,
+        "alive": 0,
+        "pending": 0,
+        "text": ""
+      }
+    },
+    {
+      "kind": "transition",
+      "level": 14,
+      "status": "won",
+      "phase": "debrief",
+      "finale": "victory",
+      "room": 4,
+      "seconds": 1174.3,
+      "hp": 100,
+      "clearance": {
+        "active": false,
+        "ready": true,
+        "remaining": 0,
+        "alive": 0,
+        "pending": 0,
+        "text": ""
+      }
+    }
+  ],
+  "score": 93334,
+  "rescued": 12,
+  "completedRemarks": 12,
+  "decisions": 8,
+  "upgrades": {
+    "weapons": 2,
+    "armor": 1,
+    "rockets": 0
+  },
+  "limits": [
+    "Deterministic QA operator has precise positions and answer keys. This verifies a reachable path, not human difficulty or learning.",
+    "Rendering, hardware timing, browser gestures, hearing and network latency are not simulated by this run."
+  ],
+  "audit": "full-current-index-unmodified-production-input-only",
+  "fps": 30,
+  "starts": [
+    {
+      "level": 1,
+      "key": "1/briefing/orientation/",
+      "elapsed": 0,
+      "objective": {
+        "title": "Соберите зелёный кристалл впереди",
+        "detail": "Автокурс включён. Подлетите на 30 м — сбор автоматический. WASD — ручной курс; G — автокурс.",
+        "progress": "0 / 3 МОДУЛЕЙ"
+      },
+      "weapons": 0,
+      "armor": 0,
+      "missiles": 8,
+      "boardEnemyCount": 0,
+      "boardEnemyHP": 0
+    },
+    {
+      "level": 1,
+      "key": "1/playing/orientation/",
+      "elapsed": 0,
+      "objective": {
+        "title": "Заберите зелёный пакет требований",
+        "detail": "Капсула с документом — ФТ из атласа. Нужны все 3 пакета для входа в Цитадель. Подлетите на 30 м: сбор автоматический. «Автокурс» ведёт к пакету.",
+        "progress": "ТРЕБОВАНИЯ 0 / 3"
+      },
+      "weapons": 0,
+      "armor": 0,
+      "missiles": 8,
+      "boardEnemyCount": 0,
+      "boardEnemyHP": 0
+    },
+    {
+      "level": 1,
+      "key": "1/lesson/orientation/",
+      "elapsed": 1.7666666666666688,
+      "objective": {
+        "title": "Прочитайте ФТ и выберите действие",
+        "detail": "Бой остановлен. Разберите учебную ситуацию; после ответа можно продолжить полёт.",
+        "progress": "РЕШЕНИЕ 1 / 8"
+      },
+      "weapons": 0,
+      "armor": 0,
+      "missiles": 10,
+      "boardEnemyCount": 0,
+      "boardEnemyHP": 0
+    },
+    {
+      "level": 1,
+      "key": "1/playing/battle/",
+      "elapsed": 1.7666666666666688,
+      "objective": {
+        "title": "Перехватите отмеченное замечание: пробел",
+        "detail": "G ведёт к замечанию · Tab меняет цель · C ведёт к пакет ФТу. Критические замечания у лучей блокируют принятие ФТ.",
+        "progress": "ВОЛНА 1 / 3 · ОСТАЛОСЬ 5"
+      },
+      "weapons": 0,
+      "armor": 0,
+      "missiles": 10,
+      "boardEnemyCount": 0,
+      "boardEnemyHP": 0
+    },
+    {
+      "level": 1,
+      "key": "1/playing/retrieve/",
+      "elapsed": 39.20000000000034,
+      "objective": {
+        "title": "Заберите зелёный пакет требований",
+        "detail": "Капсула с документом — ФТ из атласа. Нужны все 3 пакета для входа в Цитадель. Подлетите на 30 м: сбор автоматический. «Автокурс» ведёт к пакету.",
+        "progress": "ТРЕБОВАНИЯ 1 / 3"
+      },
+      "weapons": 0,
+      "armor": 0,
+      "missiles": 0,
+      "boardEnemyCount": 0,
+      "boardEnemyHP": 0
+    },
+    {
+      "level": 1,
+      "key": "1/lesson/retrieve/",
+      "elapsed": 41.83333333333352,
+      "objective": {
+        "title": "Прочитайте ФТ и выберите действие",
+        "detail": "Бой остановлен. Разберите учебную ситуацию; после ответа можно продолжить полёт.",
+        "progress": "РЕШЕНИЕ 2 / 8"
+      },
+      "weapons": 0,
+      "armor": 0,
+      "missiles": 2,
+      "boardEnemyCount": 0,
+      "boardEnemyHP": 0
+    },
+    {
+      "level": 1,
+      "key": "1/playing/retrieve/",
+      "elapsed": 41.83333333333352,
+      "objective": {
+        "title": "Заберите зелёный пакет требований",
+        "detail": "Капсула с документом — ФТ из атласа. Нужны все 3 пакета для входа в Цитадель. Подлетите на 30 м: сбор автоматический. «Автокурс» ведёт к пакету.",
+        "progress": "ТРЕБОВАНИЯ 2 / 3"
+      },
+      "weapons": 0,
+      "armor": 0,
+      "missiles": 2,
+      "boardEnemyCount": 0,
+      "boardEnemyHP": 0
+    },
+    {
+      "level": 1,
+      "key": "1/playing/dock/",
+      "elapsed": 45.199999999999996,
+      "objective": {
+        "title": "Войдите в голубой шлюз Цитадели",
+        "detail": "Маркер указывает на ворота базы. Автокурс обойдёт корпус и выполнит заход спереди.",
+        "progress": "3 / 3 ПАКЕТА НА БОРТУ"
+      },
+      "weapons": 0,
+      "armor": 0,
+      "missiles": 4,
+      "boardEnemyCount": 0,
+      "boardEnemyHP": 0
+    },
+    {
+      "level": 1,
+      "key": "1/docking/dock/",
+      "elapsed": 50.19999999999971,
+      "objective": {
+        "title": "Цитадель ЦСИИ · заход в док",
+        "detail": "Автоматический пролёт через шлюз. Затем — архив функционального заказчика.",
+        "progress": "0% · СТЫКОВКА"
+      },
+      "weapons": 0,
+      "armor": 0,
+      "missiles": 4,
+      "boardEnemyCount": 0,
+      "boardEnemyHP": 0
+    },
+    {
+      "level": 2,
+      "key": "2/boarding/boarding/",
+      "elapsed": 54.03333333333283,
+      "objective": {
+        "title": "Пройдите охрану сектора 1",
+        "detail": "Патрули обходят блок. Укрывайтесь за оборудованием; по тревоге резерв выйдет из бокового шлюза. E — импульс, Shift — бег.",
+        "progress": "СЕКТОР 1 / 3 · ОХРАНА 5"
+      },
+      "weapons": 0,
+      "armor": 0,
+      "missiles": 4,
+      "boardEnemyCount": 15,
+      "boardEnemyHP": 1742
+    },
+    {
+      "level": 2,
+      "key": "2/remark/boarding/",
+      "elapsed": 73.79999999999838,
+      "objective": {
+        "title": "Доберитесь до терминала 1",
+        "detail": "АРХИВ ПОТРЕБНОСТЕЙ · разбор начнётся автоматически. Пробел — перехват, E — импульс, G — проводник.",
+        "progress": "0 / 3 РАЗБОРОВ"
+      },
+      "weapons": 0,
+      "armor": 0,
+      "missiles": 4,
+      "boardEnemyCount": 10,
+      "boardEnemyHP": 1176
+    },
+    {
+      "level": 2,
+      "key": "2/boarding/boarding/",
+      "elapsed": 73.79999999999838,
+      "objective": {
+        "title": "Пройдите охрану сектора 2",
+        "detail": "Патрули обходят блок. Укрывайтесь за оборудованием; по тревоге резерв выйдет из бокового шлюза. E — импульс, Shift — бег.",
+        "progress": "СЕКТОР 2 / 3 · ОХРАНА 5"
+      },
+      "weapons": 0,
+      "armor": 0,
+      "missiles": 4,
+      "boardEnemyCount": 10,
+      "boardEnemyHP": 1176
+    },
+    {
+      "level": 2,
+      "key": "2/remark/boarding/",
+      "elapsed": 100.19999999999688,
+      "objective": {
+        "title": "Доберитесь до терминала 2",
+        "detail": "СЦЕНАРНЫЙ ОТДЕЛ · разбор начнётся автоматически. Пробел — перехват, E — импульс, G — проводник.",
+        "progress": "1 / 3 РАЗБОРОВ"
+      },
+      "weapons": 0,
+      "armor": 0,
+      "missiles": 4,
+      "boardEnemyCount": 5,
+      "boardEnemyHP": 601
+    },
+    {
+      "level": 2,
+      "key": "2/boarding/boarding/",
+      "elapsed": 100.19999999999688,
+      "objective": {
+        "title": "Пройдите охрану сектора 3",
+        "detail": "Патрули обходят блок. Укрывайтесь за оборудованием; по тревоге резерв выйдет из бокового шлюза. E — импульс, Shift — бег.",
+        "progress": "СЕКТОР 3 / 3 · ОХРАНА 5"
+      },
+      "weapons": 0,
+      "armor": 0,
+      "missiles": 4,
+      "boardEnemyCount": 5,
+      "boardEnemyHP": 601
+    },
+    {
+      "level": 2,
+      "key": "2/remark/boarding/",
+      "elapsed": 120.16666666666241,
+      "objective": {
+        "title": "Доберитесь до терминала 3",
+        "detail": "РЕЕСТР РЕШЕНИЙ · разбор начнётся автоматически. Пробел — перехват, E — импульс, G — проводник.",
+        "progress": "2 / 3 РАЗБОРОВ"
+      },
+      "weapons": 0,
+      "armor": 0,
+      "missiles": 4,
+      "boardEnemyCount": 0,
+      "boardEnemyHP": 0
+    },
+    {
+      "level": 2,
+      "key": "2/boarding/boarding/",
+      "elapsed": 120.16666666666241,
+      "objective": {
+        "title": "Пройдите к зелёному выходу",
+        "detail": "Замечания отработаны. G включает проводник к шлюзу следующей редакции.",
+        "progress": "3 / 3 РАЗБОРОВ"
+      },
+      "weapons": 0,
+      "armor": 0,
+      "missiles": 4,
+      "boardEnemyCount": 0,
+      "boardEnemyHP": 0
+    },
+    {
+      "level": 2,
+      "key": "2/stageclear/debrief/",
+      "elapsed": 122.63333333332893,
+      "objective": {
+        "title": "Перехватите отмеченное замечание: пробел",
+        "detail": "G ведёт к замечанию · Tab меняет цель · C ведёт к кристаллу. Критические замечания у лучей блокируют принятие ФТ.",
+        "progress": "ВОЛНА 3 / 3 · ОСТАЛОСЬ 0"
+      },
+      "weapons": 0,
+      "armor": 0,
+      "missiles": 4,
+      "boardEnemyCount": 0,
+      "boardEnemyHP": 0
+    },
+    {
+      "level": 3,
+      "key": "3/escortbrief/escort/",
+      "elapsed": 122.63333333332893,
+      "objective": {
+        "title": "Пилот и прикрытие",
+        "detail": "Сохраните 2/3 транспорта · группа 0/4 · совместите прицел с целью"
+      },
+      "weapons": 1,
+      "armor": 0,
+      "missiles": 10,
+      "boardEnemyCount": 0,
+      "boardEnemyHP": 0
+    },
+    {
+      "level": 3,
+      "key": "3/playing/escort/",
+      "elapsed": 122.63333333332893,
+      "objective": {
+        "title": "Пилот и прикрытие",
+        "detail": "Сохраните 2/3 транспорта · группа 0/4 · совместите прицел с целью"
+      },
+      "weapons": 1,
+      "armor": 0,
+      "missiles": 10,
+      "boardEnemyCount": 0,
+      "boardEnemyHP": 0
+    },
+    {
+      "level": 3,
+      "key": "3/escortclear/escort/",
+      "elapsed": 190.66666666665841,
+      "objective": {
+        "title": "Пилот и прикрытие",
+        "detail": "Сохраните 2/3 транспорта · группа 4/4 · совместите прицел с целью"
+      },
+      "weapons": 1,
+      "armor": 0,
+      "missiles": 10,
+      "boardEnemyCount": 0,
+      "boardEnemyHP": 0
+    },
+    {
+      "level": 4,
+      "key": "4/briefing/pursuit/",
+      "elapsed": 190.66666666665841,
+      "objective": {
+        "title": "Этап 1/3 · Захват сигнала",
+        "detail": "Держите голубой канал, проходите светящиеся проёмы. Огонь сбивает перехватчиков и глушителей; тяга подстраивается сама.",
+        "progress": "ПАКЕТ 0% · ВОРОТА 0/2 · ЩИТ 100"
+      },
+      "weapons": 1,
+      "armor": 0,
+      "missiles": 8,
+      "boardEnemyCount": 0,
+      "boardEnemyHP": 0
+    },
+    {
+      "level": 4,
+      "key": "4/playing/pursuit/",
+      "elapsed": 190.66666666665841,
+      "objective": {
+        "title": "Этап 1/3 · Захват сигнала",
+        "detail": "Держите голубой канал, проходите светящиеся проёмы. Огонь сбивает перехватчиков и глушителей; тяга подстраивается сама.",
+        "progress": "ПАКЕТ 0% · ВОРОТА 0/2 · ЩИТ 100"
+      },
+      "weapons": 1,
+      "armor": 0,
+      "missiles": 8,
+      "boardEnemyCount": 0,
+      "boardEnemyHP": 0
+    },
+    {
+      "level": 4,
+      "key": "4/lesson/pursuit/",
+      "elapsed": 350.56666666672993,
+      "objective": {
+        "title": "Прочитайте ФТ и выберите действие",
+        "detail": "Бой остановлен. Разберите учебную ситуацию; после ответа можно продолжить полёт.",
+        "progress": "РЕШЕНИЕ 3 / 8"
+      },
+      "weapons": 1,
+      "armor": 0,
+      "missiles": 14,
+      "boardEnemyCount": 0,
+      "boardEnemyHP": 0
+    },
+    {
+      "level": 4,
+      "key": "4/playing/dock/",
+      "elapsed": 350.56666666672993,
+      "objective": {
+        "title": "Войдите в голубой шлюз Цитадели",
+        "detail": "Маркер указывает на ворота базы. Автокурс обойдёт корпус и выполнит заход спереди.",
+        "progress": "3 / 3 ПАКЕТА НА БОРТУ"
+      },
+      "weapons": 1,
+      "armor": 0,
+      "missiles": 14,
+      "boardEnemyCount": 0,
+      "boardEnemyHP": 0
+    },
+    {
+      "level": 4,
+      "key": "4/docking/dock/",
+      "elapsed": 355.70000000006735,
+      "objective": {
+        "title": "Цитадель ЦСИИ · заход в док",
+        "detail": "Автоматический пролёт через шлюз. Затем — машинный зал исполнителя.",
+        "progress": "0% · СТЫКОВКА"
+      },
+      "weapons": 1,
+      "armor": 0,
+      "missiles": 14,
+      "boardEnemyCount": 0,
+      "boardEnemyHP": 0
+    },
+    {
+      "level": 5,
+      "key": "5/boarding/boarding/",
+      "elapsed": 359.53333333340373,
+      "objective": {
+        "title": "Пройдите охрану сектора 1",
+        "detail": "Патрули обходят блок. Укрывайтесь за оборудованием; по тревоге резерв выйдет из бокового шлюза. E — импульс, Shift — бег.",
+        "progress": "СЕКТОР 1 / 3 · ОХРАНА 6"
+      },
+      "weapons": 1,
+      "armor": 0,
+      "missiles": 14,
+      "boardEnemyCount": 19,
+      "boardEnemyHP": 2421
+    },
+    {
+      "level": 5,
+      "key": "5/remark/boarding/",
+      "elapsed": 377.20000000008446,
+      "objective": {
+        "title": "Доберитесь до терминала 1",
+        "detail": "СБОРОЧНЫЙ ЦЕХ · разбор начнётся автоматически. Пробел — перехват, E — импульс, G — проводник.",
+        "progress": "0 / 3 РАЗБОРОВ"
+      },
+      "weapons": 1,
+      "armor": 0,
+      "missiles": 14,
+      "boardEnemyCount": 13,
+      "boardEnemyHP": 1678
+    },
+    {
+      "level": 5,
+      "key": "5/boarding/boarding/",
+      "elapsed": 377.20000000008446,
+      "objective": {
+        "title": "Пройдите охрану сектора 2",
+        "detail": "Патрули обходят блок. Укрывайтесь за оборудованием; по тревоге резерв выйдет из бокового шлюза. E — импульс, Shift — бег.",
+        "progress": "СЕКТОР 2 / 3 · ОХРАНА 6"
+      },
+      "weapons": 1,
+      "armor": 0,
+      "missiles": 14,
+      "boardEnemyCount": 13,
+      "boardEnemyHP": 1678
+    },
+    {
+      "level": 5,
+      "key": "5/remark/boarding/",
+      "elapsed": 399.13333333343525,
+      "objective": {
+        "title": "Доберитесь до терминала 2",
+        "detail": "РЕАКТОРНЫЙ БЛОК · разбор начнётся автоматически. Пробел — перехват, E — импульс, G — проводник.",
+        "progress": "1 / 3 РАЗБОРОВ"
+      },
+      "weapons": 1,
+      "armor": 0,
+      "missiles": 14,
+      "boardEnemyCount": 7,
+      "boardEnemyHP": 907
+    },
+    {
+      "level": 5,
+      "key": "5/boarding/boarding/",
+      "elapsed": 399.13333333343525,
+      "objective": {
+        "title": "Пройдите охрану сектора 3",
+        "detail": "Патрули обходят блок. Укрывайтесь за оборудованием; по тревоге резерв выйдет из бокового шлюза. E — импульс, Shift — бег.",
+        "progress": "СЕКТОР 3 / 3 · ОХРАНА 7"
+      },
+      "weapons": 1,
+      "armor": 0,
+      "missiles": 14,
+      "boardEnemyCount": 7,
+      "boardEnemyHP": 907
+    },
+    {
+      "level": 5,
+      "key": "5/remark/boarding/",
+      "elapsed": 429.9666666667931,
+      "objective": {
+        "title": "Доберитесь до терминала 3",
+        "detail": "ИСПЫТАТЕЛЬНЫЙ КОНТУР · разбор начнётся автоматически. Пробел — перехват, E — импульс, G — проводник.",
+        "progress": "2 / 3 РАЗБОРОВ"
+      },
+      "weapons": 1,
+      "armor": 0,
+      "missiles": 14,
+      "boardEnemyCount": 0,
+      "boardEnemyHP": 0
+    },
+    {
+      "level": 5,
+      "key": "5/boarding/boarding/",
+      "elapsed": 429.9666666667931,
+      "objective": {
+        "title": "Пройдите к зелёному выходу",
+        "detail": "Замечания отработаны. G включает проводник к шлюзу следующей редакции.",
+        "progress": "3 / 3 РАЗБОРОВ"
+      },
+      "weapons": 1,
+      "armor": 0,
+      "missiles": 14,
+      "boardEnemyCount": 0,
+      "boardEnemyHP": 0
+    },
+    {
+      "level": 5,
+      "key": "5/stageclear/debrief/",
+      "elapsed": 432.4000000001284,
+      "objective": {
+        "title": "Перехватите отмеченное замечание: пробел",
+        "detail": "G ведёт к замечанию · Tab меняет цель · C ведёт к кристаллу. Критические замечания у лучей блокируют принятие ФТ.",
+        "progress": "ВОЛНА 1 / 3 · ОСТАЛОСЬ 0"
+      },
+      "weapons": 1,
+      "armor": 0,
+      "missiles": 14,
+      "boardEnemyCount": 0,
+      "boardEnemyHP": 0
+    },
+    {
+      "level": 6,
+      "key": "6/escortbrief/escort/",
+      "elapsed": 432.4000000001284,
+      "objective": {
+        "title": "Щиты и торпеды",
+        "detail": "Сохраните 2/3 транспорта · группа 0/5 · совместите прицел с целью"
+      },
+      "weapons": 2,
+      "armor": 0,
+      "missiles": 10,
+      "boardEnemyCount": 0,
+      "boardEnemyHP": 0
+    },
+    {
+      "level": 6,
+      "key": "6/playing/escort/",
+      "elapsed": 432.4000000001284,
+      "objective": {
+        "title": "Щиты и торпеды",
+        "detail": "Сохраните 2/3 транспорта · группа 0/5 · совместите прицел с целью"
+      },
+      "weapons": 2,
+      "armor": 0,
+      "missiles": 10,
+      "boardEnemyCount": 0,
+      "boardEnemyHP": 0
+    },
+    {
+      "level": 6,
+      "key": "6/escortclear/escort/",
+      "elapsed": 518.633333333519,
+      "objective": {
+        "title": "Щиты и торпеды",
+        "detail": "Сохраните 2/3 транспорта · группа 5/5 · совместите прицел с целью"
+      },
+      "weapons": 2,
+      "armor": 0,
+      "missiles": 0,
+      "boardEnemyCount": 0,
+      "boardEnemyHP": 0
+    },
+    {
+      "level": 7,
+      "key": "7/briefing/swarm/",
+      "elapsed": 518.633333333519,
+      "objective": {
+        "title": "РАЗВЕДКА КУРСА",
+        "detail": "Джойстик — манёвр, «Огонь» — стрелять вверх. Одиночные пике. Подсветка показывает, кто выйдет из строя. Снабжение подбирается кораблём.",
+        "progress": "ВОЛНА 1/6 · ОСТАЛОСЬ 10 · ФТ 0/3"
+      },
+      "weapons": 2,
+      "armor": 0,
+      "missiles": 8,
+      "boardEnemyCount": 0,
+      "boardEnemyHP": 0
+    },
+    {
+      "level": 7,
+      "key": "7/playing/swarm/",
+      "elapsed": 518.633333333519,
+      "objective": {
+        "title": "РАЗВЕДКА КУРСА",
+        "detail": "Джойстик — манёвр, «Огонь» — стрелять вверх. Одиночные пике. Подсветка показывает, кто выйдет из строя. Снабжение подбирается кораблём.",
+        "progress": "ВОЛНА 1/6 · ОСТАЛОСЬ 10 · ФТ 0/3"
+      },
+      "weapons": 2,
+      "armor": 0,
+      "missiles": 8,
+      "boardEnemyCount": 0,
+      "boardEnemyHP": 0
+    },
+    {
+      "level": 7,
+      "key": "7/lesson/dock/",
+      "elapsed": 589.4666666667879,
+      "objective": {
+        "title": "Прочитайте ФТ и выберите действие",
+        "detail": "Бой остановлен. Разберите учебную ситуацию; после ответа можно продолжить полёт.",
+        "progress": "РЕШЕНИЕ 5 / 8"
+      },
+      "weapons": 2,
+      "armor": 0,
+      "missiles": 6,
+      "boardEnemyCount": 0,
+      "boardEnemyHP": 0
+    },
+    {
+      "level": 7,
+      "key": "7/playing/dock/",
+      "elapsed": 589.4666666667879,
+      "objective": {
+        "title": "Войдите в голубой шлюз Цитадели",
+        "detail": "Маркер указывает на ворота базы. Автокурс обойдёт корпус и выполнит заход спереди.",
+        "progress": "3 / 3 ПАКЕТА НА БОРТУ"
+      },
+      "weapons": 2,
+      "armor": 0,
+      "missiles": 6,
+      "boardEnemyCount": 0,
+      "boardEnemyHP": 0
+    },
+    {
+      "level": 7,
+      "key": "7/docking/dock/",
+      "elapsed": 592.333333333452,
+      "objective": {
+        "title": "Цитадель ЦСИИ · заход в док",
+        "detail": "Автоматический пролёт через шлюз. Затем — узел полномочий и интеграций.",
+        "progress": "0% · СТЫКОВКА"
+      },
+      "weapons": 2,
+      "armor": 0,
+      "missiles": 6,
+      "boardEnemyCount": 0,
+      "boardEnemyHP": 0
+    },
+    {
+      "level": 8,
+      "key": "8/boarding/boarding/",
+      "elapsed": 596.1666666667818,
+      "objective": {
+        "title": "Пройдите охрану сектора 1",
+        "detail": "Патрули обходят блок. Укрывайтесь за оборудованием; по тревоге резерв выйдет из бокового шлюза. E — импульс, Shift — бег.",
+        "progress": "СЕКТОР 1 / 3 · ОХРАНА 7"
+      },
+      "weapons": 2,
+      "armor": 0,
+      "missiles": 6,
+      "boardEnemyCount": 22,
+      "boardEnemyHP": 2995
+    },
+    {
+      "level": 8,
+      "key": "8/remark/boarding/",
+      "elapsed": 615.4000000000976,
+      "objective": {
+        "title": "Доберитесь до терминала 1",
+        "detail": "КОНТРОЛЬ ДОСТУПА · разбор начнётся автоматически. Пробел — перехват, E — импульс, G — проводник.",
+        "progress": "0 / 3 РАЗБОРОВ"
+      },
+      "weapons": 2,
+      "armor": 0,
+      "missiles": 6,
+      "boardEnemyCount": 15,
+      "boardEnemyHP": 2075
+    },
+    {
+      "level": 8,
+      "key": "8/boarding/boarding/",
+      "elapsed": 615.4000000000976,
+      "objective": {
+        "title": "Пройдите охрану сектора 2",
+        "detail": "Патрули обходят блок. Укрывайтесь за оборудованием; по тревоге резерв выйдет из бокового шлюза. E — импульс, Shift — бег.",
+        "progress": "СЕКТОР 2 / 3 · ОХРАНА 7"
+      },
+      "weapons": 2,
+      "armor": 0,
+      "missiles": 6,
+      "boardEnemyCount": 15,
+      "boardEnemyHP": 2075
+    },
+    {
+      "level": 8,
+      "key": "8/remark/boarding/",
+      "elapsed": 645.9000000000699,
+      "objective": {
+        "title": "Доберитесь до терминала 2",
+        "detail": "СЕТЕВОЙ УЗЕЛ · разбор начнётся автоматически. Пробел — перехват, E — импульс, G — проводник.",
+        "progress": "1 / 3 РАЗБОРОВ"
+      },
+      "weapons": 2,
+      "armor": 0,
+      "missiles": 6,
+      "boardEnemyCount": 8,
+      "boardEnemyHP": 1124
+    },
+    {
+      "level": 8,
+      "key": "8/boarding/boarding/",
+      "elapsed": 645.9000000000699,
+      "objective": {
+        "title": "Пройдите охрану сектора 3",
+        "detail": "Патрули обходят блок. Укрывайтесь за оборудованием; по тревоге резерв выйдет из бокового шлюза. E — импульс, Shift — бег.",
+        "progress": "СЕКТОР 3 / 3 · ОХРАНА 8"
+      },
+      "weapons": 2,
+      "armor": 0,
+      "missiles": 6,
+      "boardEnemyCount": 8,
+      "boardEnemyHP": 1124
+    },
+    {
+      "level": 8,
+      "key": "8/remark/boarding/",
+      "elapsed": 671.100000000047,
+      "objective": {
+        "title": "Доберитесь до терминала 3",
+        "detail": "ШЛЮЗ ИНТЕГРАЦИЙ · разбор начнётся автоматически. Пробел — перехват, E — импульс, G — проводник.",
+        "progress": "2 / 3 РАЗБОРОВ"
+      },
+      "weapons": 2,
+      "armor": 0,
+      "missiles": 6,
+      "boardEnemyCount": 0,
+      "boardEnemyHP": 0
+    },
+    {
+      "level": 8,
+      "key": "8/boarding/boarding/",
+      "elapsed": 671.100000000047,
+      "objective": {
+        "title": "Пройдите к зелёному выходу",
+        "detail": "Замечания отработаны. G включает проводник к шлюзу следующей редакции.",
+        "progress": "3 / 3 РАЗБОРОВ"
+      },
+      "weapons": 2,
+      "armor": 0,
+      "missiles": 6,
+      "boardEnemyCount": 0,
+      "boardEnemyHP": 0
+    },
+    {
+      "level": 8,
+      "key": "8/stageclear/debrief/",
+      "elapsed": 673.5666666667114,
+      "objective": {
+        "title": "Перехватите отмеченное замечание: пробел",
+        "detail": "G ведёт к замечанию · Tab меняет цель · C ведёт к кристаллу. Критические замечания у лучей блокируют принятие ФТ.",
+        "progress": "ВОЛНА 1 / 3 · ОСТАЛОСЬ 0"
+      },
+      "weapons": 2,
+      "armor": 0,
+      "missiles": 6,
+      "boardEnemyCount": 0,
+      "boardEnemyHP": 0
+    },
+    {
+      "level": 9,
+      "key": "9/escortbrief/escort/",
+      "elapsed": 673.5666666667114,
+      "objective": {
+        "title": "Прорыв блокады",
+        "detail": "Сохраните 2/3 транспорта · группа 0/7 · совместите прицел с целью"
+      },
+      "weapons": 2,
+      "armor": 1,
+      "missiles": 10,
+      "boardEnemyCount": 0,
+      "boardEnemyHP": 0
+    },
+    {
+      "level": 9,
+      "key": "9/playing/escort/",
+      "elapsed": 673.5666666667114,
+      "objective": {
+        "title": "Прорыв блокады",
+        "detail": "Сохраните 2/3 транспорта · группа 0/7 · совместите прицел с целью"
+      },
+      "weapons": 2,
+      "armor": 1,
+      "missiles": 10,
+      "boardEnemyCount": 0,
+      "boardEnemyHP": 0
+    },
+    {
+      "level": 9,
+      "key": "9/escortclear/escort/",
+      "elapsed": 782.099999999946,
+      "objective": {
+        "title": "Прорыв блокады",
+        "detail": "Сохраните 2/3 транспорта · группа 7/7 · совместите прицел с целью"
+      },
+      "weapons": 2,
+      "armor": 1,
+      "missiles": 0,
+      "boardEnemyCount": 0,
+      "boardEnemyHP": 0
+    },
+    {
+      "level": 10,
+      "key": "10/briefing/orientation/",
+      "elapsed": 782.099999999946,
+      "objective": {
+        "title": "Соберите зелёный кристалл впереди",
+        "detail": "Автокурс включён. Подлетите на 30 м — сбор автоматический. WASD — ручной курс; G — автокурс.",
+        "progress": "0 / 3 МОДУЛЕЙ"
+      },
+      "weapons": 2,
+      "armor": 1,
+      "missiles": 8,
+      "boardEnemyCount": 0,
+      "boardEnemyHP": 0
+    },
+    {
+      "level": 10,
+      "key": "10/playing/battle/",
+      "elapsed": 782.099999999946,
+      "objective": {
+        "title": "Перехватите отмеченное замечание: пробел",
+        "detail": "G ведёт к замечанию · Tab меняет цель · C ведёт к пакет ФТу. Критические замечания у лучей блокируют принятие ФТ.",
+        "progress": "ВОЛНА 1 / 3 · ОСТАЛОСЬ 10"
+      },
+      "weapons": 2,
+      "armor": 1,
+      "missiles": 8,
+      "boardEnemyCount": 0,
+      "boardEnemyHP": 0
+    },
+    {
+      "level": 10,
+      "key": "10/playing/retrieve/",
+      "elapsed": 856.7666666665448,
+      "objective": {
+        "title": "Заберите зелёный пакет требований",
+        "detail": "Капсула с документом — ФТ из атласа. Нужны все 3 пакета для входа в Цитадель. Подлетите на 30 м: сбор автоматический. «Автокурс» ведёт к пакету.",
+        "progress": "ТРЕБОВАНИЯ 0 / 3"
+      },
+      "weapons": 2,
+      "armor": 1,
+      "missiles": 0,
+      "boardEnemyCount": 0,
+      "boardEnemyHP": 0
+    },
+    {
+      "level": 10,
+      "key": "10/lesson/retrieve/",
+      "elapsed": 858.8333333332096,
+      "objective": {
+        "title": "Прочитайте ФТ и выберите действие",
+        "detail": "Бой остановлен. Разберите учебную ситуацию; после ответа можно продолжить полёт.",
+        "progress": "РЕШЕНИЕ 8 / 8"
+      },
+      "weapons": 2,
+      "armor": 1,
+      "missiles": 2,
+      "boardEnemyCount": 0,
+      "boardEnemyHP": 0
+    },
+    {
+      "level": 10,
+      "key": "10/playing/retrieve/",
+      "elapsed": 858.8333333332096,
+      "objective": {
+        "title": "Заберите зелёный пакет требований",
+        "detail": "Капсула с документом — ФТ из атласа. Нужны все 3 пакета для входа в Цитадель. Подлетите на 30 м: сбор автоматический. «Автокурс» ведёт к пакету.",
+        "progress": "ТРЕБОВАНИЯ 1 / 3"
+      },
+      "weapons": 2,
+      "armor": 1,
+      "missiles": 2,
+      "boardEnemyCount": 0,
+      "boardEnemyHP": 0
+    },
+    {
+      "level": 10,
+      "key": "10/lesson/retrieve/",
+      "elapsed": 864.6999999998709,
+      "objective": {
+        "title": "Прочитайте ФТ и выберите действие",
+        "detail": "Бой остановлен. Разберите учебную ситуацию; после ответа можно продолжить полёт.",
+        "progress": "РЕШЕНИЕ 7 / 8"
+      },
+      "weapons": 2,
+      "armor": 1,
+      "missiles": 6,
+      "boardEnemyCount": 0,
+      "boardEnemyHP": 0
+    },
+    {
+      "level": 10,
+      "key": "10/playing/dock/",
+      "elapsed": 864.6999999998709,
+      "objective": {
+        "title": "Войдите в голубой шлюз Цитадели",
+        "detail": "Маркер указывает на ворота базы. Автокурс обойдёт корпус и выполнит заход спереди.",
+        "progress": "3 / 3 ПАКЕТА НА БОРТУ"
+      },
+      "weapons": 2,
+      "armor": 1,
+      "missiles": 6,
+      "boardEnemyCount": 0,
+      "boardEnemyHP": 0
+    },
+    {
+      "level": 10,
+      "key": "10/docking/dock/",
+      "elapsed": 868.3666666665342,
+      "objective": {
+        "title": "Цитадель ЦСИИ · заход в док",
+        "detail": "Автоматический пролёт через шлюз. Затем — командный мостик согласования.",
+        "progress": "0% · СТЫКОВКА"
+      },
+      "weapons": 2,
+      "armor": 1,
+      "missiles": 6,
+      "boardEnemyCount": 0,
+      "boardEnemyHP": 0
+    },
+    {
+      "level": 11,
+      "key": "11/boarding/boarding/",
+      "elapsed": 872.1999999998641,
+      "objective": {
+        "title": "Пройдите охрану сектора 1",
+        "detail": "Патрули обходят блок. Укрывайтесь за оборудованием; по тревоге резерв выйдет из бокового шлюза. E — импульс, Shift — бег.",
+        "progress": "СЕКТОР 1 / 3 · ОХРАНА 7"
+      },
+      "weapons": 2,
+      "armor": 1,
+      "missiles": 6,
+      "boardEnemyCount": 22,
+      "boardEnemyHP": 3234
+    },
+    {
+      "level": 11,
+      "key": "11/remark/boarding/",
+      "elapsed": 889.466666666515,
+      "objective": {
+        "title": "Доберитесь до терминала 1",
+        "detail": "ЗАЛ ПРИОРИТЕТОВ · разбор начнётся автоматически. Пробел — перехват, E — импульс, G — проводник.",
+        "progress": "0 / 3 РАЗБОРОВ"
+      },
+      "weapons": 2,
+      "armor": 1,
+      "missiles": 6,
+      "boardEnemyCount": 15,
+      "boardEnemyHP": 2239
+    },
+    {
+      "level": 11,
+      "key": "11/boarding/boarding/",
+      "elapsed": 889.466666666515,
+      "objective": {
+        "title": "Пройдите охрану сектора 2",
+        "detail": "Патрули обходят блок. Укрывайтесь за оборудованием; по тревоге резерв выйдет из бокового шлюза. E — импульс, Shift — бег.",
+        "progress": "СЕКТОР 2 / 3 · ОХРАНА 7"
+      },
+      "weapons": 2,
+      "armor": 1,
+      "missiles": 6,
+      "boardEnemyCount": 15,
+      "boardEnemyHP": 2239
+    },
+    {
+      "level": 11,
+      "key": "11/remark/boarding/",
+      "elapsed": 913.2999999998267,
+      "objective": {
+        "title": "Доберитесь до терминала 2",
+        "detail": "ОБСЕРВАТОРИЯ · разбор начнётся автоматически. Пробел — перехват, E — импульс, G — проводник.",
+        "progress": "1 / 3 РАЗБОРОВ"
+      },
+      "weapons": 2,
+      "armor": 1,
+      "missiles": 6,
+      "boardEnemyCount": 8,
+      "boardEnemyHP": 1211
+    },
+    {
+      "level": 11,
+      "key": "11/boarding/boarding/",
+      "elapsed": 913.2999999998267,
+      "objective": {
+        "title": "Пройдите охрану сектора 3",
+        "detail": "Патрули обходят блок. Укрывайтесь за оборудованием; по тревоге резерв выйдет из бокового шлюза. E — импульс, Shift — бег.",
+        "progress": "СЕКТОР 3 / 3 · ОХРАНА 8"
+      },
+      "weapons": 2,
+      "armor": 1,
+      "missiles": 6,
+      "boardEnemyCount": 8,
+      "boardEnemyHP": 1211
+    },
+    {
+      "level": 11,
+      "key": "11/remark/boarding/",
+      "elapsed": 944.9333333331313,
+      "objective": {
+        "title": "Доберитесь до терминала 3",
+        "detail": "КОМАНДНЫЙ ЦЕНТР · разбор начнётся автоматически. Пробел — перехват, E — импульс, G — проводник.",
+        "progress": "2 / 3 РАЗБОРОВ"
+      },
+      "weapons": 2,
+      "armor": 1,
+      "missiles": 6,
+      "boardEnemyCount": 0,
+      "boardEnemyHP": 0
+    },
+    {
+      "level": 11,
+      "key": "11/boarding/boarding/",
+      "elapsed": 944.9333333331313,
+      "objective": {
+        "title": "Пройдите к зелёному выходу",
+        "detail": "Замечания отработаны. G включает проводник к шлюзу следующей редакции.",
+        "progress": "3 / 3 РАЗБОРОВ"
+      },
+      "weapons": 2,
+      "armor": 1,
+      "missiles": 6,
+      "boardEnemyCount": 0,
+      "boardEnemyHP": 0
+    },
+    {
+      "level": 12,
+      "key": "12/finalebrief/finale/boss",
+      "elapsed": 946.9333333331294,
+      "objective": {
+        "title": "Уничтожьте открытое ядро",
+        "detail": "Пока щупальца готовы к удару, броня поглощает 45% урона. Во время их отхода урон оружия выше на 35%. E — импульс, Shift — форсаж, G — курс на цель.",
+        "progress": "4 / 4 ОПОРЫ · СЛЕДИ ЗА ЩУПАЛЬЦАМИ"
+      },
+      "weapons": 2,
+      "armor": 1,
+      "missiles": 6,
+      "boardEnemyCount": 0,
+      "boardEnemyHP": 0
+    },
+    {
+      "level": 12,
+      "key": "12/playing/finale/boss",
+      "elapsed": 946.9333333331294,
+      "objective": {
+        "title": "Разрушьте опоры щупалец",
+        "detail": "Пока щупальца готовы к удару, броня поглощает 45% урона. Во время их отхода урон оружия выше на 35%. E — импульс, Shift — форсаж, G — курс на цель.",
+        "progress": "0 / 4 ОПОРЫ · СЛЕДИ ЗА ЩУПАЛЬЦАМИ"
+      },
+      "weapons": 2,
+      "armor": 1,
+      "missiles": 12,
+      "boardEnemyCount": 0,
+      "boardEnemyHP": 0
+    },
+    {
+      "level": 12,
+      "key": "12/playing/finale/breach",
+      "elapsed": 1017.6333333330651,
+      "objective": {
+        "title": "Пролетите в золотое окно",
+        "detail": "Проём в центре корпуса. Автокурс включён; за окном начнётся высадка.",
+        "progress": "ПРОРЫВ В ЛОГОВО"
+      },
+      "weapons": 2,
+      "armor": 1,
+      "missiles": 2,
+      "boardEnemyCount": 0,
+      "boardEnemyHP": 0
+    },
+    {
+      "level": 12,
+      "key": "12/docking/finale/landing",
+      "elapsed": 1019.0666666663972,
+      "objective": {
+        "title": "Высадка в логово",
+        "detail": "Доставляем проверенный архив в посадочный шлюз.",
+        "progress": "0% · ВЫСАДКА"
+      },
+      "weapons": 2,
+      "armor": 1,
+      "missiles": 2,
+      "boardEnemyCount": 0,
+      "boardEnemyHP": 0
+    },
+    {
+      "level": 13,
+      "key": "13/boarding/boarding/maze",
+      "elapsed": 1023.0999999997268,
+      "objective": {
+        "title": "Пройдите охрану сектора 1",
+        "detail": "Патрули обходят блок. Укрывайтесь за оборудованием; по тревоге резерв выйдет из бокового шлюза. E — импульс, Shift — бег.",
+        "progress": "СЕКТОР 1 / 3 · ОХРАНА 8"
+      },
+      "weapons": 2,
+      "armor": 1,
+      "missiles": 2,
+      "boardEnemyCount": 24,
+      "boardEnemyHP": 3785
+    },
+    {
+      "level": 13,
+      "key": "13/finalcheck/boarding/maze",
+      "elapsed": 1044.5333333330407,
+      "objective": {
+        "title": "Шлюз доказательств",
+        "detail": "Пакет ФТ с вами. Следуйте золотой линии. G — включить проводник.",
+        "progress": "0 / 3 ПРОВЕРКИ"
+      },
+      "weapons": 2,
+      "armor": 1,
+      "missiles": 2,
+      "boardEnemyCount": 16,
+      "boardEnemyHP": 2561
+    },
+    {
+      "level": 13,
+      "key": "13/boarding/boarding/maze",
+      "elapsed": 1044.5333333330407,
+      "objective": {
+        "title": "Пройдите охрану сектора 2",
+        "detail": "Патрули обходят блок. Укрывайтесь за оборудованием; по тревоге резерв выйдет из бокового шлюза. E — импульс, Shift — бег.",
+        "progress": "СЕКТОР 2 / 3 · ОХРАНА 8"
+      },
+      "weapons": 2,
+      "armor": 1,
+      "missiles": 2,
+      "boardEnemyCount": 16,
+      "boardEnemyHP": 2561
+    },
+    {
+      "level": 13,
+      "key": "13/finalcheck/boarding/maze",
+      "elapsed": 1074.1999999996804,
+      "objective": {
+        "title": "Выполнимость · Нулевые ограничения",
+        "detail": "Пакет ФТ с вами. Следуйте золотой линии. G — включить проводник.",
+        "progress": "1 / 3 ПРОВЕРКИ"
+      },
+      "weapons": 2,
+      "armor": 1,
+      "missiles": 2,
+      "boardEnemyCount": 8,
+      "boardEnemyHP": 1299
+    },
+    {
+      "level": 13,
+      "key": "13/boarding/boarding/maze",
+      "elapsed": 1074.1999999996804,
+      "objective": {
+        "title": "Пройдите охрану сектора 3",
+        "detail": "Патрули обходят блок. Укрывайтесь за оборудованием; по тревоге резерв выйдет из бокового шлюза. E — импульс, Shift — бег.",
+        "progress": "СЕКТОР 3 / 3 · ОХРАНА 8"
+      },
+      "weapons": 2,
+      "armor": 1,
+      "missiles": 2,
+      "boardEnemyCount": 8,
+      "boardEnemyHP": 1299
+    },
+    {
+      "level": 13,
+      "key": "13/finalcheck/boarding/maze",
+      "elapsed": 1102.0666666663217,
+      "objective": {
+        "title": "Приоритетность · Порог риска",
+        "detail": "Пакет ФТ с вами. Следуйте золотой линии. G — включить проводник.",
+        "progress": "2 / 3 ПРОВЕРКИ"
+      },
+      "weapons": 2,
+      "armor": 1,
+      "missiles": 2,
+      "boardEnemyCount": 0,
+      "boardEnemyHP": 0
+    },
+    {
+      "level": 13,
+      "key": "13/boarding/boarding/maze",
+      "elapsed": 1102.0666666663217,
+      "objective": {
+        "title": "Донесите ФТ к МРГ",
+        "detail": "Пакет ФТ с вами. Следуйте золотой линии. G — включить проводник.",
+        "progress": "3 / 3 ПРОВЕРКИ"
+      },
+      "weapons": 2,
+      "armor": 1,
+      "missiles": 2,
+      "boardEnemyCount": 0,
+      "boardEnemyHP": 0
+    },
+    {
+      "level": 14,
+      "key": "14/boarding/boarding/mrg",
+      "elapsed": 1104.4999999996528,
+      "objective": {
+        "title": "Волна 1: Периметр МРГ",
+        "detail": "Горизонтальный ход. Урон противников ×1. Мышь + огонь: ручной прицел. Без прицела огонь и гранаты летят по направлению взгляда.",
+        "progress": "ВОЛНА 1 / 3 · ПАЧКИ 1 / 1 · УНИЧТОЖЕНО 0 / 3 · МРГ 100%"
+      },
+      "weapons": 2,
+      "armor": 1,
+      "missiles": 9,
+      "boardEnemyCount": 3,
+      "boardEnemyHP": 432
+    },
+    {
+      "level": 14,
+      "key": "14/docking/boarding/upload",
+      "elapsed": 1166.2666666662633,
+      "objective": {
+        "title": "ФТ загружаются на исполнение",
+        "detail": "Проверки пройдены. Целостность подтверждена. Команда ЦСИИ на связи.",
+        "progress": "0% · ЗАГРУЗКА"
+      },
+      "weapons": 2,
+      "armor": 1,
+      "missiles": 0,
+      "boardEnemyCount": 0,
+      "boardEnemyHP": 0
+    },
+    {
+      "level": 14,
+      "key": "14/won/debrief/victory",
+      "elapsed": 1174.2999999995893,
+      "objective": {
+        "title": "Команда ЦСИИ победила",
+        "detail": "Согласованный пакет передан на исполнение.",
+        "progress": "ОПЕРАЦИЯ ЗАВЕРШЕНА"
+      },
+      "weapons": 2,
+      "armor": 1,
+      "missiles": 0,
+      "boardEnemyCount": 0,
+      "boardEnemyHP": 0
+    }
+  ],
+  "metrics": [
+    {
+      "level": 1,
+      "initialHP": 100,
+      "initialStationHP": 100,
+      "minBoardOrShipHP": 100,
+      "incomingHits": 0,
+      "peakHostile": 4,
+      "passiveSeconds": 17.70000000000004,
+      "activeSeconds": 50.19999999999971,
+      "lastHP": 100,
+      "firstEnemies": 1.7666666666666688,
+      "lastEnemies": 39.166666666667005
+    },
+    {
+      "level": 2,
+      "initialHP": 100,
+      "initialStationHP": 100,
+      "minBoardOrShipHP": 94,
+      "incomingHits": 2,
+      "peakHostile": 2,
+      "passiveSeconds": 5.733333333333323,
+      "activeSeconds": 68.59999999999867,
+      "lastHP": 100,
+      "firstEnemies": 54.03333333333283,
+      "lastEnemies": 116.8666666666626
+    },
+    {
+      "level": 3,
+      "initialHP": 100,
+      "initialStationHP": 100,
+      "minBoardOrShipHP": 92,
+      "incomingHits": 1,
+      "peakHostile": 8,
+      "passiveSeconds": 42.1333333333335,
+      "activeSeconds": 68.03333333333204,
+      "lastHP": 92,
+      "firstEnemies": 126.66666666666204,
+      "lastEnemies": 183.49999999999216
+    },
+    {
+      "level": 4,
+      "initialHP": 100,
+      "initialStationHP": 100,
+      "minBoardOrShipHP": 88,
+      "incomingHits": 1,
+      "peakHostile": 1,
+      "passiveSeconds": 68.59999999999867,
+      "activeSeconds": 165.03333333332654,
+      "lastHP": 100,
+      "firstEnemies": 202.69999999999106,
+      "lastEnemies": 350.53333333339657
+    },
+    {
+      "level": 5,
+      "initialHP": 100,
+      "initialStationHP": 100,
+      "minBoardOrShipHP": 90.19,
+      "incomingHits": 3,
+      "peakHostile": 2,
+      "passiveSeconds": 5.966666666666655,
+      "activeSeconds": 72.8666666666651,
+      "lastHP": 100,
+      "firstEnemies": 359.53333333340373,
+      "lastEnemies": 426.4000000001236
+    },
+    {
+      "level": 6,
+      "initialHP": 100,
+      "initialStationHP": 100,
+      "minBoardOrShipHP": 100,
+      "incomingHits": 0,
+      "peakHostile": 8,
+      "passiveSeconds": 57.53333333333263,
+      "activeSeconds": 86.233333333331,
+      "lastHP": 100,
+      "firstEnemies": 436.43333333346493,
+      "lastEnemies": 506.3666666668539
+    },
+    {
+      "level": 7,
+      "initialHP": 100,
+      "initialStationHP": 100,
+      "minBoardOrShipHP": 100,
+      "incomingHits": 0,
+      "peakHostile": 10,
+      "passiveSeconds": 20.366666666666838,
+      "activeSeconds": 73.69999999999838,
+      "lastHP": 100,
+      "firstEnemies": 518.633333333519,
+      "lastEnemies": 586.2000000001242
+    },
+    {
+      "level": 8,
+      "initialHP": 100,
+      "initialStationHP": 100,
+      "minBoardOrShipHP": 100,
+      "incomingHits": 0,
+      "peakHostile": 2,
+      "passiveSeconds": 7.199999999999984,
+      "activeSeconds": 77.39999999999817,
+      "lastHP": 100,
+      "firstEnemies": 596.1666666667818,
+      "lastEnemies": 666.3333333333846
+    },
+    {
+      "level": 9,
+      "initialHP": 100,
+      "initialStationHP": 100,
+      "minBoardOrShipHP": 93.6,
+      "incomingHits": 1,
+      "peakHostile": 9,
+      "passiveSeconds": 50.066666666666386,
+      "activeSeconds": 108.53333333332974,
+      "lastHP": 93.6,
+      "firstEnemies": 676.600000000042,
+      "lastEnemies": 768.233333333292
+    },
+    {
+      "level": 10,
+      "initialHP": 100,
+      "initialStationHP": 100,
+      "minBoardOrShipHP": 61.6,
+      "incomingHits": 6,
+      "peakHostile": 6,
+      "passiveSeconds": 22.533333333333612,
+      "activeSeconds": 86.26666666666434,
+      "lastHP": 100,
+      "firstEnemies": 782.099999999946,
+      "lastEnemies": 850.7333333332169
+    },
+    {
+      "level": 11,
+      "initialHP": 100,
+      "initialStationHP": 78,
+      "minBoardOrShipHP": 94.92,
+      "incomingHits": 1,
+      "peakHostile": 2,
+      "passiveSeconds": 5.033333333333325,
+      "activeSeconds": 74.73333333333166,
+      "lastHP": 100,
+      "firstEnemies": 872.1999999998641,
+      "lastEnemies": 941.8666666664674
+    },
+    {
+      "level": 12,
+      "initialHP": 100,
+      "initialStationHP": 78,
+      "minBoardOrShipHP": 90.4,
+      "incomingHits": 4,
+      "peakHostile": 2,
+      "passiveSeconds": 33.9666666666673,
+      "activeSeconds": 72.1333333333318,
+      "lastHP": 100,
+      "firstEnemies": 946.9333333331294,
+      "lastEnemies": 985.0666666664281
+    },
+    {
+      "level": 13,
+      "initialHP": 100,
+      "initialStationHP": 78,
+      "minBoardOrShipHP": 94.56,
+      "incomingHits": 1,
+      "peakHostile": 2,
+      "passiveSeconds": 6.799999999999986,
+      "activeSeconds": 81.39999999999795,
+      "lastHP": 100,
+      "firstEnemies": 1023.0999999997268,
+      "lastEnemies": 1097.6666666663257
+    },
+    {
+      "level": 14,
+      "initialHP": 100,
+      "initialStationHP": 78,
+      "minBoardOrShipHP": 100,
+      "incomingHits": 0,
+      "peakHostile": 10,
+      "passiveSeconds": 43.90000000000007,
+      "activeSeconds": 61.76666666666572,
+      "lastHP": 100,
+      "firstEnemies": 1104.4999999996528,
+      "lastEnemies": 1151.5666666662767
+    }
+  ],
+  "samples": [
+    {
+      "frame": 0,
+      "level": 1,
+      "time": 0,
+      "hp": 100,
+      "phase": "orientation",
+      "finale": null
+    },
+    {
+      "frame": 900,
+      "level": 1,
+      "time": 29.833333333333975,
+      "hp": 100,
+      "phase": "battle",
+      "finale": null
+    },
+    {
+      "frame": 1800,
+      "level": 2,
+      "time": 59.799999999999166,
+      "hp": 100,
+      "phase": "boarding",
+      "finale": null
+    },
+    {
+      "frame": 2700,
+      "level": 2,
+      "time": 89.76666666666414,
+      "hp": 95,
+      "phase": "boarding",
+      "finale": null
+    },
+    {
+      "frame": 3600,
+      "level": 2,
+      "time": 119.7333333333291,
+      "hp": 100,
+      "phase": "boarding",
+      "finale": null
+    },
+    {
+      "frame": 4500,
+      "level": 3,
+      "time": 149.6333333333274,
+      "hp": 92,
+      "phase": "escort",
+      "finale": null
+    },
+    {
+      "frame": 5400,
+      "level": 3,
+      "time": 179.6333333333257,
+      "hp": 92,
+      "phase": "escort",
+      "finale": null
+    },
+    {
+      "frame": 6300,
+      "level": 4,
+      "time": 209.56666666665734,
+      "hp": 100,
+      "phase": "pursuit",
+      "finale": null
+    },
+    {
+      "frame": 7200,
+      "level": 4,
+      "time": 239.56666666665564,
+      "hp": 100,
+      "phase": "pursuit",
+      "finale": null
+    },
+    {
+      "frame": 8100,
+      "level": 4,
+      "time": 269.56666666666547,
+      "hp": 100,
+      "phase": "pursuit",
+      "finale": null
+    },
+    {
+      "frame": 9000,
+      "level": 4,
+      "time": 299.56666666668934,
+      "hp": 100,
+      "phase": "pursuit",
+      "finale": null
+    },
+    {
+      "frame": 9900,
+      "level": 4,
+      "time": 329.5666666667132,
+      "hp": 100,
+      "phase": "pursuit",
+      "finale": null
+    },
+    {
+      "frame": 10800,
+      "level": 4,
+      "time": 359.5000000000704,
+      "hp": 100,
+      "phase": "dock",
+      "finale": null
+    },
+    {
+      "frame": 11700,
+      "level": 5,
+      "time": 389.4666666667609,
+      "hp": 100,
+      "phase": "boarding",
+      "finale": null
+    },
+    {
+      "frame": 12600,
+      "level": 5,
+      "time": 419.4333333334514,
+      "hp": 100,
+      "phase": "boarding",
+      "finale": null
+    },
+    {
+      "frame": 13500,
+      "level": 6,
+      "time": 449.3333333334752,
+      "hp": 100,
+      "phase": "escort",
+      "finale": null
+    },
+    {
+      "frame": 14400,
+      "level": 6,
+      "time": 479.33333333349907,
+      "hp": 100,
+      "phase": "escort",
+      "finale": null
+    },
+    {
+      "frame": 15300,
+      "level": 6,
+      "time": 509.33333333352294,
+      "hp": 100,
+      "phase": "escort",
+      "finale": null
+    },
+    {
+      "frame": 16200,
+      "level": 7,
+      "time": 539.2666666668335,
+      "hp": 100,
+      "phase": "swarm",
+      "finale": null
+    },
+    {
+      "frame": 17100,
+      "level": 7,
+      "time": 569.2666666668063,
+      "hp": 100,
+      "phase": "swarm",
+      "finale": null
+    },
+    {
+      "frame": 18000,
+      "level": 8,
+      "time": 599.2000000001124,
+      "hp": 100,
+      "phase": "boarding",
+      "finale": null
+    },
+    {
+      "frame": 18900,
+      "level": 8,
+      "time": 629.1666666667518,
+      "hp": 100,
+      "phase": "boarding",
+      "finale": null
+    },
+    {
+      "frame": 19800,
+      "level": 8,
+      "time": 659.1333333333912,
+      "hp": 100,
+      "phase": "boarding",
+      "finale": null
+    },
+    {
+      "frame": 20700,
+      "level": 9,
+      "time": 689.033333333364,
+      "hp": 100,
+      "phase": "escort",
+      "finale": null
+    },
+    {
+      "frame": 21600,
+      "level": 9,
+      "time": 719.0333333333367,
+      "hp": 93.6,
+      "phase": "escort",
+      "finale": null
+    },
+    {
+      "frame": 22500,
+      "level": 9,
+      "time": 749.0333333333094,
+      "hp": 93.6,
+      "phase": "escort",
+      "finale": null
+    },
+    {
+      "frame": 23400,
+      "level": 9,
+      "time": 779.0333333332821,
+      "hp": 93.6,
+      "phase": "escort",
+      "finale": null
+    },
+    {
+      "frame": 24300,
+      "level": 10,
+      "time": 808.9666666665883,
+      "hp": 100,
+      "phase": "battle",
+      "finale": null
+    },
+    {
+      "frame": 25200,
+      "level": 10,
+      "time": 838.966666666561,
+      "hp": 100,
+      "phase": "battle",
+      "finale": null
+    },
+    {
+      "frame": 26100,
+      "level": 10,
+      "time": 868.8999999998671,
+      "hp": 100,
+      "phase": "dock",
+      "finale": null
+    },
+    {
+      "frame": 27000,
+      "level": 11,
+      "time": 898.8666666665065,
+      "hp": 100,
+      "phase": "boarding",
+      "finale": null
+    },
+    {
+      "frame": 27900,
+      "level": 11,
+      "time": 928.8333333331459,
+      "hp": 100,
+      "phase": "boarding",
+      "finale": null
+    },
+    {
+      "frame": 28800,
+      "level": 12,
+      "time": 958.766666666452,
+      "hp": 100,
+      "phase": "finale",
+      "finale": "boss"
+    },
+    {
+      "frame": 29700,
+      "level": 12,
+      "time": 988.7666666664247,
+      "hp": 100,
+      "phase": "finale",
+      "finale": "boss"
+    },
+    {
+      "frame": 30600,
+      "level": 12,
+      "time": 1018.7666666663974,
+      "hp": 100,
+      "phase": "finale",
+      "finale": "breach"
+    },
+    {
+      "frame": 31500,
+      "level": 13,
+      "time": 1048.7333333330369,
+      "hp": 100,
+      "phase": "boarding",
+      "finale": "maze"
+    },
+    {
+      "frame": 32400,
+      "level": 13,
+      "time": 1078.6999999996763,
+      "hp": 100,
+      "phase": "boarding",
+      "finale": "maze"
+    },
+    {
+      "frame": 33300,
+      "level": 14,
+      "time": 1108.6666666663157,
+      "hp": 100,
+      "phase": "boarding",
+      "finale": "mrg"
+    },
+    {
+      "frame": 34200,
+      "level": 14,
+      "time": 1138.6666666662884,
+      "hp": 100,
+      "phase": "boarding",
+      "finale": "mrg"
+    },
+    {
+      "frame": 35100,
+      "level": 14,
+      "time": 1168.666666666261,
+      "hp": 100,
+      "phase": "boarding",
+      "finale": "upload"
+    }
+  ],
+  "mrg": {
+    "waves": [
+      0,
+      1,
+      2
+    ],
+    "incoming": 0
+  },
+  "swarm": {
+    "waves": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "packets": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "version": "2.5.0",
+    "wavesCleared": 6,
+    "complete": true,
+    "damageTaken": 0,
+    "hitsTaken": 0
+  },
+  "convoys": [
+    {
+      "level": 3,
+      "minTransportHP": 79,
+      "minSurviving": 3,
+      "lastTransportHP": [
+        98,
+        79,
+        90
+      ],
+      "distance": 1,
+      "stats": {
+        "spawned": 11,
+        "volleys": 32,
+        "torpedoes": 0,
+        "intercepts": 0,
+        "shieldHits": 0,
+        "disruptions": 0,
+        "fieldsPassed": 3,
+        "fieldsHit": 0,
+        "peakEnemies": 3,
+        "peakHostile": 8
+      }
+    },
+    {
+      "level": 6,
+      "minTransportHP": 84,
+      "minSurviving": 3,
+      "lastTransportHP": [
+        95,
+        90,
+        84
+      ],
+      "distance": 1,
+      "stats": {
+        "spawned": 18,
+        "volleys": 36,
+        "torpedoes": 3,
+        "intercepts": 3,
+        "shieldHits": 15,
+        "disruptions": 0,
+        "fieldsPassed": 5,
+        "fieldsHit": 0,
+        "peakEnemies": 5,
+        "peakHostile": 8
+      }
+    },
+    {
+      "level": 9,
+      "minTransportHP": 38,
+      "minSurviving": 3,
+      "lastTransportHP": [
+        38,
+        84,
+        94
+      ],
+      "distance": 1,
+      "stats": {
+        "spawned": 29,
+        "volleys": 47,
+        "torpedoes": 10,
+        "intercepts": 10,
+        "shieldHits": 47,
+        "disruptions": 3,
+        "fieldsPassed": 8,
+        "fieldsHit": 0,
+        "peakEnemies": 6,
+        "peakHostile": 9
+      }
+    }
+  ],
+  "stress": {
+    "enabled": true,
+    "forcedGC": true,
+    "scope": "Node VM logic, mocked DOM listener registries, full process heap including retained QA reports; no browser RAF/FPS/WebGL/audio measurement",
+    "samples": [
+      {
+        "level": 1,
+        "seconds": 0,
+        "frame": 0,
+        "heapUsed": 29092672,
+        "external": 6556730,
+        "rss": 151887872,
+        "listeners": {
+          "window": 31,
+          "document": 37,
+          "elements": 42
+        },
+        "retainedMockNodes": 94,
+        "engineEntities": 0
+      },
+      {
+        "level": 1,
+        "seconds": 30,
+        "frame": 905,
+        "heapUsed": 30513744,
+        "external": 6556770,
+        "rss": 179675136,
+        "listeners": {
+          "window": 31,
+          "document": 37,
+          "elements": 42
+        },
+        "retainedMockNodes": 96,
+        "engineEntities": 27
+      },
+      {
+        "level": 2,
+        "seconds": 60.03,
+        "frame": 1807,
+        "heapUsed": 32747192,
+        "external": 6556770,
+        "rss": 181641216,
+        "listeners": {
+          "window": 31,
+          "document": 37,
+          "elements": 42
+        },
+        "retainedMockNodes": 96,
+        "engineEntities": 30
+      },
+      {
+        "level": 2,
+        "seconds": 90.07,
+        "frame": 2709,
+        "heapUsed": 32855976,
+        "external": 6556770,
+        "rss": 181641216,
+        "listeners": {
+          "window": 31,
+          "document": 37,
+          "elements": 42
+        },
+        "retainedMockNodes": 96,
+        "engineEntities": 26
+      },
+      {
+        "level": 2,
+        "seconds": 120.1,
+        "frame": 3611,
+        "heapUsed": 32823112,
+        "external": 6556770,
+        "rss": 180699136,
+        "listeners": {
+          "window": 31,
+          "document": 37,
+          "elements": 42
+        },
+        "retainedMockNodes": 96,
+        "engineEntities": 16
+      },
+      {
+        "level": 3,
+        "seconds": 150.13,
+        "frame": 4515,
+        "heapUsed": 32911600,
+        "external": 6556770,
+        "rss": 180699136,
+        "listeners": {
+          "window": 31,
+          "document": 37,
+          "elements": 42
+        },
+        "retainedMockNodes": 96,
+        "engineEntities": 13
+      },
+      {
+        "level": 3,
+        "seconds": 180.17,
+        "frame": 5416,
+        "heapUsed": 33057792,
+        "external": 6556770,
+        "rss": 180699136,
+        "listeners": {
+          "window": 31,
+          "document": 37,
+          "elements": 42
+        },
+        "retainedMockNodes": 96,
+        "engineEntities": 12
+      },
+      {
+        "level": 4,
+        "seconds": 210.2,
+        "frame": 6319,
+        "heapUsed": 33458848,
+        "external": 6556770,
+        "rss": 180830208,
+        "listeners": {
+          "window": 31,
+          "document": 37,
+          "elements": 42
+        },
+        "retainedMockNodes": 96,
+        "engineEntities": 26
+      },
+      {
+        "level": 4,
+        "seconds": 240.23,
+        "frame": 7220,
+        "heapUsed": 33638448,
+        "external": 6556770,
+        "rss": 181223424,
+        "listeners": {
+          "window": 31,
+          "document": 37,
+          "elements": 42
+        },
+        "retainedMockNodes": 96,
+        "engineEntities": 23
+      },
+      {
+        "level": 4,
+        "seconds": 270.23,
+        "frame": 8120,
+        "heapUsed": 33772576,
+        "external": 6556770,
+        "rss": 181223424,
+        "listeners": {
+          "window": 31,
+          "document": 37,
+          "elements": 42
+        },
+        "retainedMockNodes": 96,
+        "engineEntities": 20
+      },
+      {
+        "level": 4,
+        "seconds": 300.23,
+        "frame": 9020,
+        "heapUsed": 33798600,
+        "external": 6556770,
+        "rss": 181223424,
+        "listeners": {
+          "window": 31,
+          "document": 37,
+          "elements": 42
+        },
+        "retainedMockNodes": 96,
+        "engineEntities": 21
+      },
+      {
+        "level": 4,
+        "seconds": 330.23,
+        "frame": 9920,
+        "heapUsed": 33846328,
+        "external": 6556770,
+        "rss": 181223424,
+        "listeners": {
+          "window": 31,
+          "document": 37,
+          "elements": 42
+        },
+        "retainedMockNodes": 96,
+        "engineEntities": 22
+      },
+      {
+        "level": 5,
+        "seconds": 360.23,
+        "frame": 10822,
+        "heapUsed": 33968256,
+        "external": 6556770,
+        "rss": 181485568,
+        "listeners": {
+          "window": 31,
+          "document": 37,
+          "elements": 42
+        },
+        "retainedMockNodes": 96,
+        "engineEntities": 23
+      },
+      {
+        "level": 5,
+        "seconds": 390.23,
+        "frame": 11723,
+        "heapUsed": 34211168,
+        "external": 6556770,
+        "rss": 182009856,
+        "listeners": {
+          "window": 31,
+          "document": 37,
+          "elements": 42
+        },
+        "retainedMockNodes": 96,
+        "engineEntities": 13
+      },
+      {
+        "level": 5,
+        "seconds": 420.23,
+        "frame": 12624,
+        "heapUsed": 34439128,
+        "external": 6556770,
+        "rss": 182403072,
+        "listeners": {
+          "window": 31,
+          "document": 37,
+          "elements": 42
+        },
+        "retainedMockNodes": 96,
+        "engineEntities": 9
+      },
+      {
+        "level": 6,
+        "seconds": 450.23,
+        "frame": 13527,
+        "heapUsed": 34372160,
+        "external": 6556770,
+        "rss": 182403072,
+        "listeners": {
+          "window": 31,
+          "document": 37,
+          "elements": 42
+        },
+        "retainedMockNodes": 96,
+        "engineEntities": 18
+      },
+      {
+        "level": 6,
+        "seconds": 480.23,
+        "frame": 14427,
+        "heapUsed": 34314752,
+        "external": 6556770,
+        "rss": 182796288,
+        "listeners": {
+          "window": 31,
+          "document": 37,
+          "elements": 42
+        },
+        "retainedMockNodes": 96,
+        "engineEntities": 18
+      },
+      {
+        "level": 6,
+        "seconds": 510.23,
+        "frame": 15327,
+        "heapUsed": 34445368,
+        "external": 6556770,
+        "rss": 182796288,
+        "listeners": {
+          "window": 31,
+          "document": 37,
+          "elements": 42
+        },
+        "retainedMockNodes": 96,
+        "engineEntities": 18
+      },
+      {
+        "level": 7,
+        "seconds": 540.27,
+        "frame": 16230,
+        "heapUsed": 34606304,
+        "external": 6556770,
+        "rss": 182796288,
+        "listeners": {
+          "window": 31,
+          "document": 37,
+          "elements": 42
+        },
+        "retainedMockNodes": 96,
+        "engineEntities": 24
+      },
+      {
+        "level": 7,
+        "seconds": 570.3,
+        "frame": 17131,
+        "heapUsed": 34351520,
+        "external": 6556770,
+        "rss": 182927360,
+        "listeners": {
+          "window": 31,
+          "document": 37,
+          "elements": 42
+        },
+        "retainedMockNodes": 96,
+        "engineEntities": 14
+      },
+      {
+        "level": 8,
+        "seconds": 600.33,
+        "frame": 18034,
+        "heapUsed": 34285360,
+        "external": 6556770,
+        "rss": 214777856,
+        "listeners": {
+          "window": 31,
+          "document": 37,
+          "elements": 42
+        },
+        "retainedMockNodes": 96,
+        "engineEntities": 25
+      },
+      {
+        "level": 8,
+        "seconds": 630.37,
+        "frame": 18936,
+        "heapUsed": 34390880,
+        "external": 6556770,
+        "rss": 214777856,
+        "listeners": {
+          "window": 31,
+          "document": 37,
+          "elements": 42
+        },
+        "retainedMockNodes": 96,
+        "engineEntities": 17
+      },
+      {
+        "level": 8,
+        "seconds": 660.4,
+        "frame": 19838,
+        "heapUsed": 34637208,
+        "external": 6556770,
+        "rss": 214777856,
+        "listeners": {
+          "window": 31,
+          "document": 37,
+          "elements": 42
+        },
+        "retainedMockNodes": 96,
+        "engineEntities": 8
+      },
+      {
+        "level": 9,
+        "seconds": 690.43,
+        "frame": 20742,
+        "heapUsed": 34600968,
+        "external": 6556770,
+        "rss": 214777856,
+        "listeners": {
+          "window": 31,
+          "document": 37,
+          "elements": 42
+        },
+        "retainedMockNodes": 96,
+        "engineEntities": 22
+      },
+      {
+        "level": 9,
+        "seconds": 720.47,
+        "frame": 21643,
+        "heapUsed": 34481288,
+        "external": 6556770,
+        "rss": 214777856,
+        "listeners": {
+          "window": 31,
+          "document": 37,
+          "elements": 42
+        },
+        "retainedMockNodes": 96,
+        "engineEntities": 12
+      },
+      {
+        "level": 9,
+        "seconds": 750.5,
+        "frame": 22544,
+        "heapUsed": 34638240,
+        "external": 6556770,
+        "rss": 214777856,
+        "listeners": {
+          "window": 31,
+          "document": 37,
+          "elements": 42
+        },
+        "retainedMockNodes": 96,
+        "engineEntities": 8
+      },
+      {
+        "level": 9,
+        "seconds": 780.53,
+        "frame": 23445,
+        "heapUsed": 34566120,
+        "external": 6556770,
+        "rss": 214777856,
+        "listeners": {
+          "window": 31,
+          "document": 37,
+          "elements": 42
+        },
+        "retainedMockNodes": 96,
+        "engineEntities": 16
+      },
+      {
+        "level": 10,
+        "seconds": 810.57,
+        "frame": 24348,
+        "heapUsed": 34946672,
+        "external": 6556770,
+        "rss": 218185728,
+        "listeners": {
+          "window": 31,
+          "document": 37,
+          "elements": 42
+        },
+        "retainedMockNodes": 96,
+        "engineEntities": 36
+      },
+      {
+        "level": 10,
+        "seconds": 840.6,
+        "frame": 25249,
+        "heapUsed": 34947232,
+        "external": 6556770,
+        "rss": 220676096,
+        "listeners": {
+          "window": 31,
+          "document": 37,
+          "elements": 42
+        },
+        "retainedMockNodes": 96,
+        "engineEntities": 31
+      },
+      {
+        "level": 10,
+        "seconds": 870.63,
+        "frame": 26152,
+        "heapUsed": 34806848,
+        "external": 6556770,
+        "rss": 220807168,
+        "listeners": {
+          "window": 31,
+          "document": 37,
+          "elements": 42
+        },
+        "retainedMockNodes": 96,
+        "engineEntities": 24
+      },
+      {
+        "level": 11,
+        "seconds": 900.67,
+        "frame": 27054,
+        "heapUsed": 34727760,
+        "external": 6556770,
+        "rss": 221200384,
+        "listeners": {
+          "window": 31,
+          "document": 37,
+          "elements": 42
+        },
+        "retainedMockNodes": 96,
+        "engineEntities": 40
+      },
+      {
+        "level": 11,
+        "seconds": 930.7,
+        "frame": 27956,
+        "heapUsed": 34721800,
+        "external": 6556770,
+        "rss": 220590080,
+        "listeners": {
+          "window": 31,
+          "document": 37,
+          "elements": 42
+        },
+        "retainedMockNodes": 96,
+        "engineEntities": 29
+      },
+      {
+        "level": 12,
+        "seconds": 960.73,
+        "frame": 28859,
+        "heapUsed": 34937592,
+        "external": 6556770,
+        "rss": 220721152,
+        "listeners": {
+          "window": 31,
+          "document": 37,
+          "elements": 42
+        },
+        "retainedMockNodes": 96,
+        "engineEntities": 7
+      },
+      {
+        "level": 12,
+        "seconds": 990.77,
+        "frame": 29760,
+        "heapUsed": 34769888,
+        "external": 6556770,
+        "rss": 220078080,
+        "listeners": {
+          "window": 31,
+          "document": 37,
+          "elements": 42
+        },
+        "retainedMockNodes": 96,
+        "engineEntities": 9
+      },
+      {
+        "level": 12,
+        "seconds": 1020.8,
+        "frame": 30661,
+        "heapUsed": 34740576,
+        "external": 6556770,
+        "rss": 220209152,
+        "listeners": {
+          "window": 31,
+          "document": 37,
+          "elements": 42
+        },
+        "retainedMockNodes": 96,
+        "engineEntities": 0
+      },
+      {
+        "level": 13,
+        "seconds": 1050.83,
+        "frame": 31563,
+        "heapUsed": 35081408,
+        "external": 6556770,
+        "rss": 220602368,
+        "listeners": {
+          "window": 31,
+          "document": 37,
+          "elements": 42
+        },
+        "retainedMockNodes": 96,
+        "engineEntities": 17
+      },
+      {
+        "level": 13,
+        "seconds": 1080.87,
+        "frame": 32465,
+        "heapUsed": 34992168,
+        "external": 6556770,
+        "rss": 220733440,
+        "listeners": {
+          "window": 31,
+          "document": 37,
+          "elements": 42
+        },
+        "retainedMockNodes": 96,
+        "engineEntities": 10
+      },
+      {
+        "level": 14,
+        "seconds": 1110.9,
+        "frame": 33367,
+        "heapUsed": 35096128,
+        "external": 6556770,
+        "rss": 220864512,
+        "listeners": {
+          "window": 31,
+          "document": 37,
+          "elements": 42
+        },
+        "retainedMockNodes": 96,
+        "engineEntities": 10
+      },
+      {
+        "level": 14,
+        "seconds": 1140.93,
+        "frame": 34268,
+        "heapUsed": 35134640,
+        "external": 6556770,
+        "rss": 220864512,
+        "listeners": {
+          "window": 31,
+          "document": 37,
+          "elements": 42
+        },
+        "retainedMockNodes": 96,
+        "engineEntities": 7
+      },
+      {
+        "level": 14,
+        "seconds": 1170.97,
+        "frame": 35169,
+        "heapUsed": 35121400,
+        "external": 6556770,
+        "rss": 220864512,
+        "listeners": {
+          "window": 31,
+          "document": 37,
+          "elements": 42
+        },
+        "retainedMockNodes": 96,
+        "engineEntities": 0
+      },
+      {
+        "level": 14,
+        "seconds": 1174.3,
+        "frame": 35269,
+        "heapUsed": 35066576,
+        "external": 6556770,
+        "rss": 220864512,
+        "listeners": {
+          "window": 31,
+          "document": 37,
+          "elements": 42
+        },
+        "retainedMockNodes": 96,
+        "engineEntities": 0
+      }
+    ],
+    "emitIdentityChanges": [],
+    "listenerBaseline": {
+      "window": 31,
+      "document": 37,
+      "elements": 42
+    },
+    "listenerInvariant": true,
+    "emitIdentityStable": true,
+    "heapStart": 29092672,
+    "heapEnd": 35066576,
+    "heapMax": 35134640
+  }
+}
