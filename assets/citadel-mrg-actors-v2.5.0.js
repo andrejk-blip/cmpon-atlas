@@ -41,6 +41,11 @@
     for(const source of parts) {
       if(customHands&&heldParts.has(source.baseFeature))continue;
       const part={...source,model:Array.from(source.model)},m=part.model;
+      if(player) {
+        const close=color=>spaceColor(color).every((v,i)=>Math.abs(v-part.color[i])<.001);
+        if(close('#d2d9cc'))part.color=spaceColor('#e7f3ef');
+        else if(close('#47666b'))part.color=spaceColor('#8caeaf');
+      }
       // Affine transform only; neither the cached rig nor gameplay pose mutates.
       for(let j=0;j<12;j+=4) {
         const x=m[j]*scale,y=m[j+1]*scale;m[j]=x*co-y*si;m[j+1]=x*si+y*co;m[j+2]*=scale;
@@ -61,7 +66,7 @@
         const shoulder=V3.add(subject.pos,[facing*.03,2.04,side*.57]);
         const hand=V3.add(grip,[side<0?0:-facing*.18,side<0?0:-.07,side*.10]);
         const elbow=V3.add(V3.lerp(shoulder,hand,.54),[-facing*.16,-.08,side*.12]);
-        arm(items,shoulder,elbow,hand,CITADEL_BASE_VIEW.palettes[kind].cloth,skins[appearance],detail);
+        arm(items,shoulder,elbow,hand,player?'#e7f3ef':CITADEL_BASE_VIEW.palettes[kind].cloth,skins[appearance],detail);
       }
     }
   }

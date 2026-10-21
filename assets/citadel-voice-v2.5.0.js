@@ -471,9 +471,13 @@
   function tacticalWarning(e) {
     if(!e)return false;
     const f=e.finale;
-    if(f?.telegraph>0||f?.waveIntro>0||['telegraph','active'].includes(f?.tentacle?.phase)||
+    if(f?.telegraph>0||f?.beamTime>0||f?.waveIntro>0||['telegraph','active'].includes(f?.tentacle?.phase)||
       ['windup','strike'].includes(f?.parallax?.attack?.phase)||
       ['telegraph','active'].includes(e.swarm?.attack?.stage)&&!e.swarm?.attack?.cancelled||e.swarm?.transition>0)return true;
+    // Formation combat exposes its tells on the actual ships, rather than the
+    // old experimental swarm.attack object. These are gameplay warnings.
+    if(e.phase==='swarm'&&(e.enemies?.some(x=>!x.dead&&(['tell','dive'].includes(x.mode)||x.fireCue>0||x.attackCue>0))||
+      e.hostile?.some(x=>x.life>0&&e.player?.pos&&Math.hypot(x.pos[0]-e.player.pos[0],x.pos[1]-e.player.pos[1])<18)))return true;
     const hp=e.status==='boarding'?e.board?.hp:e.player?.hp;
     if(Number.isFinite(hp)&&hp<=25)return true;
     const o=e.phase==='escort'&&e.escort?.ops240;

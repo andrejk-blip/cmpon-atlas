@@ -49,7 +49,7 @@
     return { package: e.rescued?.length || 0, terminal: e.board?.completed?.length || 0,
       field: o?.stats?.fieldsPassed || 0, torpedo: o?.stats?.intercepts || 0,
       commander: o?.stats?.disruptions || 0, pursuit: e.pursuit?.chapter || 0,
-      jammer: e.pursuit?.jammersDestroyed || 0, swarm: e.swarm?.packet || 0,
+      jammer: e.pursuit?.jammersDestroyed || 0, swarm: e.swarm?.wavesCleared ?? e.swarm?.packet ?? 0,
       support: f?.phase === 'boss' ? 4 - (e.enemies || []).filter(x => x.core && !x.dead).length : 0,
       mrg: f?.waveIndex || 0 };
   }

@@ -1,6 +1,7 @@
 /* Цитадель ЦСИИ 2.5.0 — shared fleet materials for the orthographic swarm.
  * Rendering only: no timers, listeners, RNG, simulation state or image cache.
- * Solid silhouettes fit the existing collision ellipses (player r = 1.65).
+ * Enemy hulls fit existing collision ellipses. The larger arcade player ship
+ * has an explicit luminous vulnerable core at the unchanged radius of 1.65.
  * Navigation marks, exhaust and dive warnings are deliberately non-solid.
  */
 (() => {
@@ -14,13 +15,14 @@
   const active = e => e?.stage === 2 && !e.finale && e.phase === 'swarm' &&
     ['1.9.0','2.5.0'].includes(e.swarm?.version) && !e.swarm.complete;
   const palettes = Object.freeze([
-    Object.freeze({low:'#182b38', mid:'#425965', high:'#85959a', edge:'#a3b4b6', trim:'#a8535a', glass:'#e4a3a0'}),
-    Object.freeze({low:'#202a35', mid:'#465561', high:'#93a0a1', edge:'#bfbbad', trim:'#9b404f', glass:'#f1b4a5'}),
-    Object.freeze({low:'#252937', mid:'#4d5362', high:'#b0b1a5', edge:'#e0d2b0', trim:'#89404f', glass:'#f6c3ab'}),
+    Object.freeze({low:'#182b38', mid:'#4e6672', high:'#a7b4b6', edge:'#c2cdca', trim:'#a8535a', glass:'#e4a3a0'}),
+    Object.freeze({low:'#202a35', mid:'#526574', high:'#b2bfbc', edge:'#d2d2c2', trim:'#9b404f', glass:'#f1b4a5'}),
+    Object.freeze({low:'#252937', mid:'#596574', high:'#c7c8b9', edge:'#e0d2b0', trim:'#89404f', glass:'#f6c3ab'}),
     Object.freeze({low:'#294d60', mid:'#94b3bc', high:'#e3e6d7', edge:'#f2f5e9', trim:'#43b9c6', glass:'#a5f4f2'}),
   ]);
   // All points are inside the unit disk. Scaling by the projected radius
-  // therefore remains truthful even on a narrow or anisotropic viewport.
+    // therefore remains truthful even on a narrow or anisotropic viewport.
+    // Player template is a visible spacecraft; its separate core shows damage.
   const hulls = Object.freeze([
     Object.freeze([[0,-.96],[.22,-.39],[.69,-.51],[.84,-.16],[.67,.58],[.32,.36],[.21,.76],[-.21,.76],[-.32,.36],[-.67,.58],[-.84,-.16],[-.69,-.51],[-.22,-.39]]),
     Object.freeze([[0,-.92],[.29,-.57],[.58,-.65],[.86,-.23],[.86,.24],[.54,.66],[.26,.46],[.19,.82],[-.19,.82],[-.26,.46],[-.54,.66],[-.86,.24],[-.86,-.23],[-.58,-.65],[-.29,-.57]]),
@@ -154,9 +156,16 @@
     const player=projectedRadius(project,p.pos,1.65);
     // Open brackets are a location aid, not hull or a shield/hitbox promise.
     if(p.hp>0) {
-      const r=Math.max(13,player.rx+6);c.strokeStyle='#78d9e56e';c.lineWidth=1;
+      const r=Math.max(16,player.rx*2.5+5);c.strokeStyle='#78d9e56e';c.lineWidth=1;
       for(const side of [-1,1]){c.beginPath();c.moveTo(player.x+side*(r-3),player.y-5);c.lineTo(player.x+side*r,player.y-5);c.lineTo(player.x+side*r,player.y+5);c.lineTo(player.x+side*(r-3),player.y+5);c.stroke();}
-      if(!(p.invulnerable>0&&Math.floor(s.time*13)%2))ship(c,player,3,p.bank||0,false,fx,s.time,p.boosting);
+      if(!(p.invulnerable>0&&Math.floor(s.time*13)%2)) {
+        ship(c,{...player,rx:player.rx*2.5,ry:player.ry*2.5},3,p.bank||0,false,fx,s.time,p.boosting);
+        // The ring is the real projected damage radius; the central light
+        // keeps the exact vulnerable center legible even on small screens.
+        c.strokeStyle='#b9ffffbb';c.lineWidth=1;c.beginPath();
+        c.ellipse(player.x,player.y,player.rx,player.ry,0,0,TAU);c.stroke();
+        ellipse(c,player.x,player.y,Math.max(1.2,player.rx*.18),Math.max(1.2,player.ry*.18),'#edffff');
+      }
     }
     if(e.pulseWave>0) {
       c.globalAlpha=Math.min(.6,e.pulseWave);c.strokeStyle='#a4ffff';c.lineWidth=2;
@@ -216,12 +225,13 @@
     const width=Math.min(293,W-pad*2);c.fillStyle='#25445c';c.fillRect(pad,y+10,width,3);c.fillStyle='#92e2c0';c.fillRect(pad,y+10,width*clamp(p.hp/100,0,1),3);
     c.textAlign=l.landscape?'right':'center';c.font='700 '+(l.compact?13:18)+'px '+FONT;c.fillStyle='#dce9e9';
     const waveTotal=s.waveTotal||3,wave=Math.min(waveTotal,(s.waveIndex??s.packet)+1);
-    c.fillText('РОЙ УТОЧНЕНИЙ · ВОЛНА '+wave+' / '+waveTotal,titleX,titleY,maxTitle);
+    const waveName=s.rulesVersion==='2.5.0'?CITADEL_SWARM.waves?.[s.waveIndex]?.name:null;
+    c.fillText(waveName?'ВОЛНА '+wave+'/'+waveTotal+' · '+waveName:'РОЙ УТОЧНЕНИЙ · ВОЛНА '+wave+' / '+waveTotal,titleX,titleY,maxTitle);
     c.font='600 '+(l.compact?10:12)+'px '+FONT;c.fillStyle='#e6c9a4';
     const overdrive=Math.max(0,(s.overdriveUntil||0)-s.time);
     const state=s.phase==='cleared'?'ВОЛНА ПРОЙДЕНА':'ОСТАЛОСЬ '+count+' / '+total;
     c.fillText(state+' · ФТ '+CITADEL_SWARM.completed(e)+' / 3'+(overdrive>0?' · УСИЛЕНИЕ '+Math.ceil(overdrive)+'с':''),titleX,titleY+(l.compact?19:25),maxTitle);
-    if(!l.compact){c.textAlign='center';c.font='11px '+FONT;c.fillStyle='#8fa8ba';c.fillText('Кольцо и стрелка — пике · Янтарные точки — снаряды · Ромбы — снабжение',W/2,71,W-30);}
+    if(!l.compact){c.textAlign='center';c.font='11px '+FONT;c.fillStyle='#8fa8ba';c.fillText('Уязвимо светящееся ядро корабля · Кольцо и стрелка — пике · Ромбы — снабжение',W/2,71,W-30);}
     c.textAlign='center';c.font=(l.compact?10:12)+'px '+FONT;c.fillStyle='#9eb4c4';
     c.fillText(l.compact?'ДЖОЙСТИК — МАНЁВР · ОГОНЬ — ВВЕРХ':'WASD — МАНЁВР · ПРОБЕЛ — ОГОНЬ · Q — РАКЕТА · E — ИМПУЛЬС',W/2,H-(l.compact?10:13),W-20);c.restore();
   }
@@ -236,5 +246,5 @@
   drawMobileGameHUD=function(c,e,cam,w,h){return active(e)?draw(c,e,cam,w,h):originalMobile(c,e,cam,w,h);};
   globalThis.CITADEL_SWARM_VIEW=Object.freeze({version:VERSION,active,draw,drawScene,drawHUD,
     layout:CITADEL_SWARM.layout,projectedRadius,hullPoints:hulls,
-    status:()=>({version:VERSION,templates:4,stars:108,retainedParticles:0,playerRadius:1.65})});
+    status:()=>({version:VERSION,templates:4,stars:108,retainedParticles:0,playerRadius:1.65,playerVisualScale:2.5})});
 })();
