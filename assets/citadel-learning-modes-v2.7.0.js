@@ -142,7 +142,7 @@
  if(old.lobby)cupLobbyHTML=function(){return preferred==='pro'?withPicker(old.lobby.apply(this,arguments)):quizLobby();};
  if(old.panel)cupPanelHTML=function(){const local='<div class="learning-record-summary"><b>Короткие вопросы · на этом устройстве</b><p>Учебный: '+histories.training+' · Боевой: '+histories.combat+'</p><small>Ниже — отдельный облачный зачёт профессиональных кейсов и прежних прохождений.</small></div>';
   return old.panel.apply(this,arguments).replace('</header>','</header>'+local).replace(/(<option value="normal"[^>]*>)Боевой(<\/option>)/g,'$1Профессиональный / прежний боевой$2').replace(/(<option value="calm"[^>]*>)Учебный(<\/option>)/g,'$1Прежний учебный · развёрнутые кейсы$2');};
- function modeLabel(e){return LABEL[getMode(e)]+(e?.educationLegacyCases?' · прежние кейсы':'');}
+ function modeLabel(e){const menu=e?.status==='menu';return LABEL[menu?preferred:getMode(e)]+(!menu&&e?.educationLegacyCases?' · прежние кейсы':'');}
  arcadeOverlayHTML=function(){const e=ARCADE.engine,story=globalThis.CITADEL_STORY?.status(e).active;
   if(usesQuiz(e)&&CARDS.includes(e.status)&&!story&&(typeof CUP==='undefined'||!CUP.panel))return quizHTML(e);
   if(e?.status==='menu'&&preferred!=='pro'&&!story&&(typeof CUP==='undefined'||!CUP.panel))return quizLobby();let html=withPicker(old.overlay.apply(this,arguments));

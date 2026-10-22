@@ -16,7 +16,7 @@ updates = dict(version='2.7.0', released_on='2026-10-22', voice_module_version='
                base_missions_version='2.7.0', base_missions_view_version='2.7.0',
                mobile_layout_version='2.7.0', install_module_version='2.7.0',
                learning_modes_version='2.7.0', quiz_bank_version='2.7.0',
-               launch_build='270r4', launch_module_version='2.7.0',
+               launch_build='270r5', launch_module_version='2.7.0',
                education_modes=['training','combat','pro'],
                quiz_questions=len(re.findall(r'^\s+add\(', (root/'assets/citadel-quiz-bank-v2.7.0.js').read_text(), re.M)),
                install_delivery='online-standalone', install_manifest='citadel.webmanifest')

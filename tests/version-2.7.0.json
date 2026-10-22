@@ -10,7 +10,7 @@
   "finale_save_schema": "citadel-finale-v1",
   "analytics_module_version": "0.1.0",
   "tournament_module_version": "1.1.0",
-  "index_sha256": "2f453206f60f10ce85fbe1d638134de99cad29db9988bb37d44c9e8d4c49a4c0",
+  "index_sha256": "b1e1ab979b22d7af29bdcac4baee8ad5b63fd89bda8df6c4850f74d2b58824e7",
   "offline_sha256": "754ccde3777ace0150d9b062461301ea9542f893c4f158ebc0ae7e07a3e8a2c3",
   "core_assets_version": "1.3.6",
   "soundtrack_module_version": "1.4.2",
@@ -214,7 +214,7 @@
   "local_save_schema": "cmpon.citadel.local.v1",
   "ranking_start_deadline_ms": 7000,
   "captain_sheet_sha256": "de696d9d5f305b73f93bfe6d3b3ee55d4b53b8f3e49962d4c976da509493b2c9",
-  "launch_build": "270r4",
+  "launch_build": "270r5",
   "convoy_fields": [
     3,
     5,
@@ -315,7 +315,7 @@
     "assets/citadel-base-missions-v2.7.0.js": "8eec5d00636ebf654c27223dab7b716f71f31189e9c434ed371ca5fb8008e0e6",
     "assets/citadel-base-missions-view-v2.7.0.js": "396e1e95a0dda8b21639ac65c036f3d500a87ef303a42a70d0253dd9cb2311e6",
     "assets/citadel-quiz-bank-v2.7.0.js": "9bd8a4302f2e570296d3bd2ae2ded6cb274699b954f0b1c312932103e2cd5004",
-    "assets/citadel-learning-modes-v2.7.0.js": "f316cb34ca9ee32492f2b2532c1c3271fae03e3fe497621564b4ef89adc1d7d1",
+    "assets/citadel-learning-modes-v2.7.0.js": "e2960804b5b891b54f8a405b8b3302bef9ef4be6d466bda823cea4ff739bfa16",
     "assets/citadel-mobile-v2.7.0.js": "57ce0d28c1edc8570406c5f36ee867a9e94483f61e868ca4b84348b96632f86b",
     "assets/citadel-install-v2.7.0.js": "42fc03d340739e15b63a719165c3ff294cf287583ab44c50dbfa26ec7959eba5",
     "assets/citadel-runtime-v1.9.3.js": "a026d1eb50252a37f01b7ad097e610252bccacc01f078d6ee75a3bf86e029a6e"
@@ -364,7 +364,7 @@
     "pro"
   ],
   "quiz_questions": 84,
-  "learning_modes_sha256": "f316cb34ca9ee32492f2b2532c1c3271fae03e3fe497621564b4ef89adc1d7d1",
+  "learning_modes_sha256": "e2960804b5b891b54f8a405b8b3302bef9ef4be6d466bda823cea4ff739bfa16",
   "learning_modes_style_sha256": "f80ecbe394e4a42d438ec81963d8fa28eb559be2a1d23e90502008cc0f4415c7",
   "quiz_bank_sha256": "9bd8a4302f2e570296d3bd2ae2ded6cb274699b954f0b1c312932103e2cd5004"
 }

@@ -1,0 +1,40 @@
+{
+  "pass": true,
+  "method": "Node VM targeted UI checks only; all three menu selections and paused combat HUD. Engine snapshot unchanged during UI preference changes.",
+  "sha256": "e2960804b5b891b54f8a405b8b3302bef9ef4be6d466bda823cea4ff739bfa16",
+  "rows": [
+    {
+      "state": "menu",
+      "selected": "training",
+      "label": "УЧЕБНЫЙ"
+    },
+    {
+      "state": "menu",
+      "selected": "combat",
+      "label": "БОЕВОЙ"
+    },
+    {
+      "state": "menu",
+      "selected": "pro",
+      "label": "ПРОФЕССИОНАЛЬНЫЙ"
+    },
+    {
+      "state": "paused",
+      "selected": "training",
+      "engineMode": "combat",
+      "label": "БОЕВОЙ"
+    },
+    {
+      "state": "paused",
+      "selected": "combat",
+      "engineMode": "combat",
+      "label": "БОЕВОЙ"
+    },
+    {
+      "state": "paused",
+      "selected": "pro",
+      "engineMode": "combat",
+      "label": "БОЕВОЙ"
+    }
+  ]
+}
