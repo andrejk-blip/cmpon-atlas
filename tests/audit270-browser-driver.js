@@ -24,7 +24,7 @@
  },lessonCase:citadelLessonCase,arcade:ARCADE,deckQA:{path:stationPath,line:stationLine,input:arcadeInput}};
  const convoyPilots=new WeakMap();
  const convoyCommand=()=>{let p=convoyPilots.get(e.escort);if(!p){p=CITADEL_CONVOY_PILOT(h,e,{reaction:.35,device:'joystick'});convoyPilots.set(e.escort,p);}return p.input();};
- const orbital=CITADEL_QA_ORBITAL260.createOrbitalController(h,{resupply:false}),deck=CITADEL_QA_BASE270.createController(h),swarm=CITADEL_QA_SWARM270.createController(CITADEL_SWARM,{reaction:.12}),mrg=operators.createMrgController();
+ const orbital=CITADEL_QA_ORBITAL260.createOrbitalController(h,{resupply:false}),deck=CITADEL_QA_BASE270.createController(h),swarm=CITADEL_QA_SWARM270.createController(CITADEL_SWARM,{reaction:.2}),mrg=operators.createMrgController();
  let parallax=null,key='',frameCalls=0,emitChanges=0,lastEmit=e.emit,finished=null,manualPause=false;
  let lastElapsed=e.elapsed,lastMovement=performance.now(),lastSample=0,maxGap=0,lastInputTime=performance.now();
  const level=()=>e.finale?(['mrg','upload','victory'].includes(e.finale.phase)?14:e.finale.phase==='maze'?13:12):e.phase==='escort'?e.stage*3+3:e.board?e.stage*3+2:e.stage*3+1;

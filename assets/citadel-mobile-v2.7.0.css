@@ -32,11 +32,11 @@
   padding:0;background:transparent;border:0;pointer-events:none;z-index:5;
 }
 #arcade-layout.citadel-landscape270 .arcade-touch #arcade-stick {
-  position:absolute;left:10px;bottom:14px;width:88px;height:88px;min-width:88px;margin:0;pointer-events:auto;
+  position:absolute;left:10px;bottom:54px;width:88px;height:88px;min-width:88px;margin:0;pointer-events:auto;
   background:#0b233bcc;box-shadow:0 0 18px #0006;align-self:auto;
 }
 #arcade-layout.citadel-landscape270 .arcade-touch-actions {
-  position:absolute;right:10px;bottom:12px;display:grid;grid-template-columns:repeat(2,70px);
+  position:absolute;right:10px;bottom:52px;display:grid;grid-template-columns:repeat(2,70px);
   grid-auto-rows:48px;grid-template-rows:48px 48px;gap:6px;width:146px;max-width:146px;
   min-height:0;margin:0;pointer-events:auto;align-self:auto;flex:none;
 }
@@ -45,6 +45,6 @@
 #arcade-layout.citadel-landscape270.mobile-command-open>.arcade-command {display:block;position:absolute;inset:44px 0 0;z-index:30;overflow:auto;background:#0b1e28}
 #arcade-layout.citadel-landscape270 .arcade-screen:is([data-game-status=playing],[data-game-status=boarding]) [data-citadel-install270]{display:none}
 @media(max-height:330px){
- #arcade-layout.citadel-landscape270 .arcade-touch #arcade-stick{width:80px;height:80px;min-width:80px;bottom:8px}
- #arcade-layout.citadel-landscape270 .arcade-touch-actions{bottom:8px}
+ #arcade-layout.citadel-landscape270 .arcade-touch #arcade-stick{width:80px;height:80px;min-width:80px;bottom:34px}
+ #arcade-layout.citadel-landscape270 .arcade-touch-actions{bottom:32px}
 }
