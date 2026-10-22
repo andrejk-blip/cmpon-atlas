@@ -1,0 +1,186 @@
+{
+  "pass": true,
+  "method": "Node VM. Earned terminal checkpoints, ordinary exit walking and upgrade; three explicit retry/save/reload cycles per convoy and mode. No health/ammo/objective edits.",
+  "cases": 6,
+  "retryReloadCycles": 18,
+  "rows": [
+    {
+      "mode": "training",
+      "level": 3,
+      "exitWalkFrames": 91,
+      "retries": [
+        {
+          "retry": 1,
+          "score": 9840,
+          "answered": 5,
+          "phase": "escort",
+          "status": "escortbrief"
+        },
+        {
+          "retry": 2,
+          "score": 9840,
+          "answered": 5,
+          "phase": "escort",
+          "status": "escortbrief"
+        },
+        {
+          "retry": 3,
+          "score": 9840,
+          "answered": 5,
+          "phase": "escort",
+          "status": "escortbrief"
+        }
+      ]
+    },
+    {
+      "mode": "training",
+      "level": 6,
+      "exitWalkFrames": 93,
+      "retries": [
+        {
+          "retry": 1,
+          "score": 33992,
+          "answered": 10,
+          "phase": "escort",
+          "status": "escortbrief"
+        },
+        {
+          "retry": 2,
+          "score": 33992,
+          "answered": 10,
+          "phase": "escort",
+          "status": "escortbrief"
+        },
+        {
+          "retry": 3,
+          "score": 33992,
+          "answered": 10,
+          "phase": "escort",
+          "status": "escortbrief"
+        }
+      ]
+    },
+    {
+      "mode": "training",
+      "level": 9,
+      "exitWalkFrames": 93,
+      "retries": [
+        {
+          "retry": 1,
+          "score": 50361,
+          "answered": 15,
+          "phase": "escort",
+          "status": "escortbrief"
+        },
+        {
+          "retry": 2,
+          "score": 50361,
+          "answered": 15,
+          "phase": "escort",
+          "status": "escortbrief"
+        },
+        {
+          "retry": 3,
+          "score": 50361,
+          "answered": 15,
+          "phase": "escort",
+          "status": "escortbrief"
+        }
+      ]
+    },
+    {
+      "mode": "combat",
+      "level": 3,
+      "exitWalkFrames": 93,
+      "retries": [
+        {
+          "retry": 1,
+          "score": 9238,
+          "answered": 5,
+          "phase": "escort",
+          "status": "escortbrief"
+        },
+        {
+          "retry": 2,
+          "score": 9238,
+          "answered": 5,
+          "phase": "escort",
+          "status": "escortbrief"
+        },
+        {
+          "retry": 3,
+          "score": 9238,
+          "answered": 5,
+          "phase": "escort",
+          "status": "escortbrief"
+        }
+      ]
+    },
+    {
+      "mode": "combat",
+      "level": 6,
+      "exitWalkFrames": 94,
+      "retries": [
+        {
+          "retry": 1,
+          "score": 37722,
+          "answered": 10,
+          "phase": "escort",
+          "status": "escortbrief"
+        },
+        {
+          "retry": 2,
+          "score": 37722,
+          "answered": 10,
+          "phase": "escort",
+          "status": "escortbrief"
+        },
+        {
+          "retry": 3,
+          "score": 37722,
+          "answered": 10,
+          "phase": "escort",
+          "status": "escortbrief"
+        }
+      ]
+    },
+    {
+      "mode": "combat",
+      "level": 9,
+      "exitWalkFrames": 92,
+      "retries": [
+        {
+          "retry": 1,
+          "score": 66981,
+          "answered": 15,
+          "phase": "escort",
+          "status": "escortbrief"
+        },
+        {
+          "retry": 2,
+          "score": 66981,
+          "answered": 15,
+          "phase": "escort",
+          "status": "escortbrief"
+        },
+        {
+          "retry": 3,
+          "score": 66981,
+          "answered": 15,
+          "phase": "escort",
+          "status": "escortbrief"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "file": "assets/citadel-learning-modes-v2.7.0.js",
+      "sha256": "f316cb34ca9ee32492f2b2532c1c3271fae03e3fe497621564b4ef89adc1d7d1"
+    },
+    {
+      "file": "assets/citadel-quiz-bank-v2.7.0.js",
+      "sha256": "9bd8a4302f2e570296d3bd2ae2ded6cb274699b954f0b1c312932103e2cd5004"
+    }
+  ]
+}

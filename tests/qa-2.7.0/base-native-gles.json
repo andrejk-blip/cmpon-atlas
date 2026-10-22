@@ -1,0 +1,23 @@
+{
+  "pass": true,
+  "files": [
+    {
+      "file": "assets/citadel-base-missions-v2.7.0.js",
+      "sha": "8eec5d00636ebf654c27223dab7b716f71f31189e9c434ed371ca5fb8008e0e6"
+    },
+    {
+      "file": "assets/citadel-base-missions-view-v2.7.0.js",
+      "sha": "396e1e95a0dda8b21639ac65c036f3d500a87ef303a42a70d0253dd9cb2311e6"
+    }
+  ],
+  "vendor": "Mesa",
+  "renderer": "llvmpipe (LLVM 20.1.2, 256 bits)",
+  "version": "OpenGL ES 3.2 Mesa 25.2.8-0ubuntu0.24.04.2",
+  "egl": "1.5",
+  "shaderCompile": true,
+  "programLink": true,
+  "glError": 0,
+  "items": 646,
+  "millisecondsIncludingReadback": 391.95692199791665,
+  "method": "Native surfaceless EGL/GLES, exact exported scene and production shader. Software GPU integration with production interior lights and projection. No browser, postprocessing, hardware GPU or FPS claim."
+}

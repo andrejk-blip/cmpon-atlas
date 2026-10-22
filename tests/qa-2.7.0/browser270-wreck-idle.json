@@ -1,0 +1,1686 @@
+{
+  "version": "2.7.0",
+  "config": {
+    "mode": "normal",
+    "scene": "wreck",
+    "accelerated": true,
+    "manual": true
+  },
+  "renderer": "3D · совместимый режим",
+  "mode": "normal",
+  "accelerated": true,
+  "rafInputCalls": 72231,
+  "finished": null,
+  "status": "boarding",
+  "level": 13,
+  "levels": [],
+  "cards": 0,
+  "wallSeconds": 1206,
+  "simulatedSeconds": 1205.43,
+  "frameCalls": 0,
+  "emitChanges": 0,
+  "maxInputGapMs": 0,
+  "metrics": {
+    "listeners": 73,
+    "peakListeners": 73,
+    "rafCalls": 72236,
+    "rafDone": 72233,
+    "rafPending": 1,
+    "rafPeak": 2,
+    "errors": [],
+    "heap": 56318704
+  },
+  "input": {
+    "version": "2.6.0",
+    "boundCanvases": 1,
+    "rightClicks": 0,
+    "active": false,
+    "pointerId": null,
+    "mode": "idle"
+  },
+  "player": {
+    "hp": 100,
+    "missiles": 8
+  },
+  "runtime": {
+    "version": "1.9.3",
+    "build": "193r2",
+    "frames": 72231,
+    "updates": 72231,
+    "renders": 72231,
+    "recoveries": 0,
+    "failures": 0,
+    "stopped": false,
+    "contextLost": false,
+    "pending": true,
+    "stage": "idle",
+    "lastFrameAge": 8,
+    "lastUpdateAge": 8,
+    "lastRenderAge": 3,
+    "recoverySave": "none",
+    "faults": [],
+    "events": [
+      {
+        "at": 320,
+        "kind": "detach",
+        "status": "unknown",
+        "stage": null,
+        "phase": "other",
+        "finale": null,
+        "wave": null,
+        "seconds": null,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "webgl"
+      },
+      {
+        "at": 506,
+        "kind": "engine",
+        "status": "boarding",
+        "stage": 3,
+        "phase": "boarding",
+        "finale": "maze",
+        "wave": 0,
+        "seconds": 0,
+        "mode": "normal",
+        "enemies": 24,
+        "renderer": "canvas"
+      },
+      {
+        "at": 523,
+        "kind": "transition",
+        "status": "boarding",
+        "stage": 3,
+        "phase": "boarding",
+        "finale": "maze",
+        "wave": 0,
+        "seconds": 0.04,
+        "mode": "normal",
+        "enemies": 24,
+        "renderer": "canvas"
+      }
+    ]
+  },
+  "sound": {
+    "context": "running",
+    "loaded": 28,
+    "active": 0,
+    "cacheBytes": 5360692,
+    "played": {}
+  },
+  "voice": {
+    "busy": false,
+    "source": "recorded"
+  },
+  "swarm": null,
+  "base": {
+    "active": true,
+    "version": "2.7.0",
+    "legacy": false,
+    "layout": "base270-4",
+    "tier": 4,
+    "theme": "wreck",
+    "stats": {
+      "dogDashes": 0,
+      "dogHits": 0,
+      "beamCycles": 0,
+      "beamHits": 0,
+      "hazardHits": 0,
+      "systemsUsed": 0,
+      "liftTrips": 0
+    },
+    "hazards": [
+      {
+        "id": "breach-0-0",
+        "type": "breach",
+        "room": 0,
+        "pos": [
+          0,
+          0,
+          -16
+        ],
+        "radius": 0,
+        "active": true,
+        "removedCells": [
+          [
+            -2,
+            -5
+          ],
+          [
+            -2,
+            -4
+          ],
+          [
+            -2,
+            -3
+          ],
+          [
+            -1,
+            -5
+          ],
+          [
+            -1,
+            -4
+          ],
+          [
+            -1,
+            -3
+          ],
+          [
+            0,
+            -5
+          ],
+          [
+            0,
+            -4
+          ],
+          [
+            0,
+            -3
+          ],
+          [
+            1,
+            -5
+          ],
+          [
+            1,
+            -4
+          ],
+          [
+            1,
+            -3
+          ],
+          [
+            2,
+            -5
+          ],
+          [
+            2,
+            -4
+          ],
+          [
+            2,
+            -3
+          ]
+        ],
+        "clock": 1205.4313999985382
+      },
+      {
+        "id": "fire-0",
+        "type": "fire",
+        "room": 0,
+        "pos": [
+          -14,
+          0,
+          -13
+        ],
+        "radius": 2.6,
+        "active": true,
+        "phase": "burn",
+        "clock": 1205.4313999985382,
+        "damage": 13,
+        "systemId": "coolant-0"
+      },
+      {
+        "id": "breach-1-2",
+        "type": "breach",
+        "room": 1,
+        "pos": [
+          20,
+          0,
+          -96
+        ],
+        "radius": 0,
+        "active": true,
+        "removedCells": [
+          [
+            3,
+            -25
+          ],
+          [
+            3,
+            -24
+          ],
+          [
+            3,
+            -23
+          ],
+          [
+            4,
+            -25
+          ],
+          [
+            4,
+            -24
+          ],
+          [
+            4,
+            -23
+          ],
+          [
+            5,
+            -25
+          ],
+          [
+            5,
+            -24
+          ],
+          [
+            5,
+            -23
+          ],
+          [
+            6,
+            -25
+          ],
+          [
+            6,
+            -24
+          ],
+          [
+            6,
+            -23
+          ],
+          [
+            7,
+            -25
+          ],
+          [
+            7,
+            -24
+          ],
+          [
+            7,
+            -23
+          ]
+        ],
+        "clock": 1205.4313999985382
+      },
+      {
+        "id": "fire-1",
+        "type": "fire",
+        "room": 1,
+        "pos": [
+          6,
+          0,
+          -93
+        ],
+        "radius": 2.6,
+        "active": true,
+        "phase": "burn",
+        "clock": 1205.4313999985382,
+        "damage": 13,
+        "systemId": "coolant-0"
+      },
+      {
+        "id": "breach-2-4",
+        "type": "breach",
+        "room": 2,
+        "pos": [
+          -16,
+          0,
+          -176
+        ],
+        "radius": 0,
+        "active": true,
+        "removedCells": [
+          [
+            -9,
+            -48
+          ],
+          [
+            -9,
+            -47
+          ],
+          [
+            -8,
+            -48
+          ],
+          [
+            -8,
+            -47
+          ]
+        ],
+        "clock": 1205.4313999985382
+      },
+      {
+        "id": "breach-2-5",
+        "type": "breach",
+        "room": 2,
+        "pos": [
+          -16,
+          0,
+          -176
+        ],
+        "radius": 0,
+        "active": true,
+        "removedCells": [
+          [
+            0,
+            -41
+          ],
+          [
+            0,
+            -40
+          ],
+          [
+            1,
+            -41
+          ],
+          [
+            1,
+            -40
+          ]
+        ],
+        "clock": 1205.4313999985382
+      },
+      {
+        "id": "fire-2",
+        "type": "fire",
+        "room": 2,
+        "pos": [
+          -16,
+          0,
+          -170
+        ],
+        "radius": 2.6,
+        "active": true,
+        "phase": "burn",
+        "clock": 1205.4313999985382,
+        "damage": 13,
+        "systemId": "coolant-0"
+      },
+      {
+        "id": "fire-core",
+        "type": "fire",
+        "room": 2,
+        "pos": [
+          -2,
+          0,
+          -178
+        ],
+        "radius": 2.4,
+        "active": true,
+        "phase": "burn",
+        "clock": 1205.4313999985382,
+        "damage": 13,
+        "systemId": "coolant-0"
+      }
+    ],
+    "systems": [
+      {
+        "id": "lift-0",
+        "type": "lift",
+        "pos": [
+          0,
+          0,
+          -8
+        ],
+        "room": 0,
+        "unlockAfter": 0,
+        "state": "ready",
+        "progress": 0,
+        "cooldown": 0,
+        "target": [
+          0,
+          0,
+          -24
+        ],
+        "halfExtents": [
+          1.65,
+          1.65
+        ]
+      },
+      {
+        "id": "lift-1",
+        "type": "lift",
+        "pos": [
+          20,
+          0,
+          -88
+        ],
+        "room": 1,
+        "unlockAfter": 1,
+        "state": "ready",
+        "progress": 0,
+        "cooldown": 0,
+        "target": [
+          20,
+          0,
+          -104
+        ],
+        "halfExtents": [
+          1.65,
+          1.65
+        ]
+      },
+      {
+        "id": "coolant-0",
+        "type": "coolant",
+        "pos": [
+          17,
+          0,
+          -2
+        ],
+        "room": 0,
+        "unlockAfter": 0,
+        "state": "ready",
+        "progress": 0,
+        "cooldown": 0
+      }
+    ],
+    "transport": null,
+    "enemies": [
+      {
+        "id": 4,
+        "kind": "dog",
+        "room": 0,
+        "hp": 134,
+        "pos": [
+          16,
+          0,
+          -20
+        ],
+        "phase": "hunt",
+        "phaseClock": 1205.4313999985382,
+        "clock": 1205.4313999985382,
+        "heading": [
+          0,
+          0,
+          -1
+        ],
+        "gait": 0,
+        "scale": 0.75,
+        "cooldown": 0,
+        "hit": false,
+        "beams": [],
+        "speed": 0,
+        "stuck": 0,
+        "packSide": -1
+      },
+      {
+        "id": 6,
+        "kind": "dog",
+        "room": 0,
+        "hp": 134,
+        "pos": [
+          4,
+          0,
+          -28
+        ],
+        "phase": "hunt",
+        "phaseClock": 1205.4313999985382,
+        "clock": 1205.4313999985382,
+        "heading": [
+          0,
+          0,
+          -1
+        ],
+        "gait": 0,
+        "scale": 0.75,
+        "cooldown": 0,
+        "hit": false,
+        "beams": [],
+        "speed": 0,
+        "stuck": 0,
+        "packSide": -1
+      },
+      {
+        "id": 8,
+        "kind": "dog",
+        "room": 0,
+        "hp": 134,
+        "pos": [
+          32,
+          0,
+          -14
+        ],
+        "phase": "hunt",
+        "phaseClock": 1205.4313999985382,
+        "clock": 1205.4313999985382,
+        "heading": [
+          0,
+          0,
+          -1
+        ],
+        "gait": 0,
+        "scale": 0.75,
+        "cooldown": 0,
+        "hit": false,
+        "beams": [],
+        "speed": 0,
+        "stuck": 0,
+        "packSide": -1
+      },
+      {
+        "id": 12,
+        "kind": "dog",
+        "room": 1,
+        "hp": 134,
+        "pos": [
+          36,
+          0,
+          -100
+        ],
+        "phase": "hunt",
+        "phaseClock": 1205.4313999985382,
+        "clock": 1205.4313999985382,
+        "heading": [
+          0,
+          0,
+          -1
+        ],
+        "gait": 0,
+        "scale": 0.75,
+        "cooldown": 0,
+        "hit": false,
+        "beams": [],
+        "speed": 0,
+        "stuck": 0,
+        "packSide": -1
+      },
+      {
+        "id": 14,
+        "kind": "dog",
+        "room": 1,
+        "hp": 134,
+        "pos": [
+          24,
+          0,
+          -108
+        ],
+        "phase": "hunt",
+        "phaseClock": 1205.4313999985382,
+        "clock": 1205.4313999985382,
+        "heading": [
+          0,
+          0,
+          -1
+        ],
+        "gait": 0,
+        "scale": 0.75,
+        "cooldown": 0,
+        "hit": false,
+        "beams": [],
+        "speed": 0,
+        "stuck": 0,
+        "packSide": -1
+      },
+      {
+        "id": 16,
+        "kind": "dog",
+        "room": 1,
+        "hp": 134,
+        "pos": [
+          52,
+          0,
+          -94
+        ],
+        "phase": "hunt",
+        "phaseClock": 1205.4313999985382,
+        "clock": 1205.4313999985382,
+        "heading": [
+          0,
+          0,
+          -1
+        ],
+        "gait": 0,
+        "scale": 0.75,
+        "cooldown": 0,
+        "hit": false,
+        "beams": [],
+        "speed": 0,
+        "stuck": 0,
+        "packSide": -1
+      },
+      {
+        "id": 17,
+        "kind": "mech",
+        "room": 2,
+        "hp": 750,
+        "pos": [
+          -16,
+          0,
+          -184
+        ],
+        "phase": "hunt",
+        "phaseClock": 1205.4313999985382,
+        "clock": 1205.4313999985382,
+        "heading": [
+          0,
+          0,
+          -1
+        ],
+        "gait": 0,
+        "scale": 1.9,
+        "cooldown": 0,
+        "hit": false,
+        "beams": [],
+        "speed": 0,
+        "stuck": 0,
+        "packSide": 1
+      },
+      {
+        "id": 22,
+        "kind": "dog",
+        "room": 2,
+        "hp": 134,
+        "pos": [
+          -12,
+          0,
+          -188
+        ],
+        "phase": "hunt",
+        "phaseClock": 1205.4313999985382,
+        "clock": 1205.4313999985382,
+        "heading": [
+          0,
+          0,
+          -1
+        ],
+        "gait": 0,
+        "scale": 0.75,
+        "cooldown": 0,
+        "hit": false,
+        "beams": [],
+        "speed": 0,
+        "stuck": 0,
+        "packSide": -1
+      },
+      {
+        "id": 24,
+        "kind": "dog",
+        "room": 2,
+        "hp": 134,
+        "pos": [
+          16,
+          0,
+          -174
+        ],
+        "phase": "hunt",
+        "phaseClock": 1205.4313999985382,
+        "clock": 1205.4313999985382,
+        "heading": [
+          0,
+          0,
+          -1
+        ],
+        "gait": 0,
+        "scale": 0.75,
+        "cooldown": 0,
+        "hit": false,
+        "beams": [],
+        "speed": 0,
+        "stuck": 0,
+        "packSide": -1
+      }
+    ],
+    "events": [
+      {
+        "at": 0,
+        "kind": "mission-crew",
+        "dogs": 8,
+        "mechs": 1
+      }
+    ]
+  },
+  "samples": [
+    {
+      "wallSeconds": 10,
+      "gameSeconds": 10,
+      "level": 13,
+      "listeners": 73,
+      "heap": 43478078,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 22,
+      "gameSeconds": 22,
+      "level": 13,
+      "listeners": 73,
+      "heap": 49134121,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 34,
+      "gameSeconds": 34,
+      "level": 13,
+      "listeners": 73,
+      "heap": 44673108,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 44,
+      "gameSeconds": 44,
+      "level": 13,
+      "listeners": 73,
+      "heap": 56545031,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 56,
+      "gameSeconds": 56,
+      "level": 13,
+      "listeners": 73,
+      "heap": 51542696,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 68,
+      "gameSeconds": 68,
+      "level": 13,
+      "listeners": 73,
+      "heap": 45483268,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 78,
+      "gameSeconds": 78,
+      "level": 13,
+      "listeners": 73,
+      "heap": 47473591,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 90,
+      "gameSeconds": 90,
+      "level": 13,
+      "listeners": 73,
+      "heap": 47738987,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 102,
+      "gameSeconds": 102,
+      "level": 13,
+      "listeners": 73,
+      "heap": 37984258,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 114,
+      "gameSeconds": 114,
+      "level": 13,
+      "listeners": 73,
+      "heap": 34092166,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 124,
+      "gameSeconds": 124,
+      "level": 13,
+      "listeners": 73,
+      "heap": 52844140,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 136,
+      "gameSeconds": 136,
+      "level": 13,
+      "listeners": 73,
+      "heap": 52261510,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 148,
+      "gameSeconds": 148,
+      "level": 13,
+      "listeners": 73,
+      "heap": 36677816,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 158,
+      "gameSeconds": 158,
+      "level": 13,
+      "listeners": 73,
+      "heap": 40077893,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 170,
+      "gameSeconds": 170,
+      "level": 13,
+      "listeners": 73,
+      "heap": 41295770,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 182,
+      "gameSeconds": 182,
+      "level": 13,
+      "listeners": 73,
+      "heap": 55677939,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 192,
+      "gameSeconds": 192,
+      "level": 13,
+      "listeners": 73,
+      "heap": 40163060,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 202,
+      "gameSeconds": 202,
+      "level": 13,
+      "listeners": 73,
+      "heap": 59401225,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 214,
+      "gameSeconds": 214,
+      "level": 13,
+      "listeners": 73,
+      "heap": 54661401,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 226,
+      "gameSeconds": 226,
+      "level": 13,
+      "listeners": 73,
+      "heap": 41651911,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 238,
+      "gameSeconds": 238,
+      "level": 13,
+      "listeners": 73,
+      "heap": 51448038,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 248,
+      "gameSeconds": 248,
+      "level": 13,
+      "listeners": 73,
+      "heap": 51478025,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 260,
+      "gameSeconds": 260,
+      "level": 13,
+      "listeners": 73,
+      "heap": 53882613,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 270,
+      "gameSeconds": 270,
+      "level": 13,
+      "listeners": 73,
+      "heap": 53764475,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 282,
+      "gameSeconds": 282,
+      "level": 13,
+      "listeners": 73,
+      "heap": 39806273,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 294,
+      "gameSeconds": 294,
+      "level": 13,
+      "listeners": 73,
+      "heap": 51770253,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 306,
+      "gameSeconds": 306,
+      "level": 13,
+      "listeners": 73,
+      "heap": 43501117,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 318,
+      "gameSeconds": 318,
+      "level": 13,
+      "listeners": 73,
+      "heap": 50350735,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 330,
+      "gameSeconds": 330,
+      "level": 13,
+      "listeners": 73,
+      "heap": 42686055,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 342,
+      "gameSeconds": 342,
+      "level": 13,
+      "listeners": 73,
+      "heap": 37158245,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 352,
+      "gameSeconds": 352,
+      "level": 13,
+      "listeners": 73,
+      "heap": 59671215,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 364,
+      "gameSeconds": 364,
+      "level": 13,
+      "listeners": 73,
+      "heap": 40911594,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 376,
+      "gameSeconds": 376,
+      "level": 13,
+      "listeners": 73,
+      "heap": 41788853,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 388,
+      "gameSeconds": 388,
+      "level": 13,
+      "listeners": 73,
+      "heap": 42711169,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 400,
+      "gameSeconds": 400,
+      "level": 13,
+      "listeners": 73,
+      "heap": 50171282,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 410,
+      "gameSeconds": 410,
+      "level": 13,
+      "listeners": 73,
+      "heap": 52756367,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 420,
+      "gameSeconds": 420,
+      "level": 13,
+      "listeners": 73,
+      "heap": 52512607,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 432,
+      "gameSeconds": 432,
+      "level": 13,
+      "listeners": 73,
+      "heap": 57565182,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 444,
+      "gameSeconds": 444,
+      "level": 13,
+      "listeners": 73,
+      "heap": 52453391,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 456,
+      "gameSeconds": 456,
+      "level": 13,
+      "listeners": 73,
+      "heap": 34117324,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 468,
+      "gameSeconds": 468,
+      "level": 13,
+      "listeners": 73,
+      "heap": 58756184,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 480,
+      "gameSeconds": 480,
+      "level": 13,
+      "listeners": 73,
+      "heap": 51847630,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 490,
+      "gameSeconds": 490,
+      "level": 13,
+      "listeners": 73,
+      "heap": 33175373,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 500,
+      "gameSeconds": 500,
+      "level": 13,
+      "listeners": 73,
+      "heap": 36143678,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 512,
+      "gameSeconds": 512,
+      "level": 13,
+      "listeners": 73,
+      "heap": 55258650,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 524,
+      "gameSeconds": 524,
+      "level": 13,
+      "listeners": 73,
+      "heap": 54996104,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 536,
+      "gameSeconds": 536,
+      "level": 13,
+      "listeners": 73,
+      "heap": 34736951,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 548,
+      "gameSeconds": 548,
+      "level": 13,
+      "listeners": 73,
+      "heap": 58226061,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 560,
+      "gameSeconds": 560,
+      "level": 13,
+      "listeners": 73,
+      "heap": 40731138,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 570,
+      "gameSeconds": 570,
+      "level": 13,
+      "listeners": 73,
+      "heap": 46890641,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 582,
+      "gameSeconds": 582,
+      "level": 13,
+      "listeners": 73,
+      "heap": 45610778,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 594,
+      "gameSeconds": 594,
+      "level": 13,
+      "listeners": 73,
+      "heap": 39677566,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 606,
+      "gameSeconds": 606,
+      "level": 13,
+      "listeners": 73,
+      "heap": 51965360,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 618,
+      "gameSeconds": 618,
+      "level": 13,
+      "listeners": 73,
+      "heap": 39202194,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 630,
+      "gameSeconds": 630,
+      "level": 13,
+      "listeners": 73,
+      "heap": 57897365,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 642,
+      "gameSeconds": 642,
+      "level": 13,
+      "listeners": 73,
+      "heap": 39636118,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 652,
+      "gameSeconds": 652,
+      "level": 13,
+      "listeners": 73,
+      "heap": 57370514,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 664,
+      "gameSeconds": 664,
+      "level": 13,
+      "listeners": 73,
+      "heap": 53928692,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 676,
+      "gameSeconds": 676,
+      "level": 13,
+      "listeners": 73,
+      "heap": 47603177,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 688,
+      "gameSeconds": 688,
+      "level": 13,
+      "listeners": 73,
+      "heap": 37852841,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 700,
+      "gameSeconds": 700,
+      "level": 13,
+      "listeners": 73,
+      "heap": 48726147,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 712,
+      "gameSeconds": 712,
+      "level": 13,
+      "listeners": 73,
+      "heap": 48130866,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 722,
+      "gameSeconds": 722,
+      "level": 13,
+      "listeners": 73,
+      "heap": 39996711,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 732,
+      "gameSeconds": 732,
+      "level": 13,
+      "listeners": 73,
+      "heap": 45199132,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 744,
+      "gameSeconds": 744,
+      "level": 13,
+      "listeners": 73,
+      "heap": 43982000,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 756,
+      "gameSeconds": 756,
+      "level": 13,
+      "listeners": 73,
+      "heap": 41255510,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 768,
+      "gameSeconds": 768,
+      "level": 13,
+      "listeners": 73,
+      "heap": 50769010,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 780,
+      "gameSeconds": 780,
+      "level": 13,
+      "listeners": 73,
+      "heap": 56196573,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 792,
+      "gameSeconds": 792,
+      "level": 13,
+      "listeners": 73,
+      "heap": 49467355,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 802,
+      "gameSeconds": 802,
+      "level": 13,
+      "listeners": 73,
+      "heap": 55873099,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 814,
+      "gameSeconds": 814,
+      "level": 13,
+      "listeners": 73,
+      "heap": 59762655,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 826,
+      "gameSeconds": 826,
+      "level": 13,
+      "listeners": 73,
+      "heap": 59128979,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 838,
+      "gameSeconds": 838,
+      "level": 13,
+      "listeners": 73,
+      "heap": 34927909,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 850,
+      "gameSeconds": 850,
+      "level": 13,
+      "listeners": 73,
+      "heap": 50888753,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 860,
+      "gameSeconds": 860,
+      "level": 13,
+      "listeners": 73,
+      "heap": 52998562,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 872,
+      "gameSeconds": 872,
+      "level": 13,
+      "listeners": 73,
+      "heap": 36508296,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 882,
+      "gameSeconds": 882,
+      "level": 13,
+      "listeners": 73,
+      "heap": 53796288,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 894,
+      "gameSeconds": 894,
+      "level": 13,
+      "listeners": 73,
+      "heap": 55122508,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 906,
+      "gameSeconds": 906,
+      "level": 13,
+      "listeners": 73,
+      "heap": 50682592,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 918,
+      "gameSeconds": 918,
+      "level": 13,
+      "listeners": 73,
+      "heap": 39980905,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 930,
+      "gameSeconds": 930,
+      "level": 13,
+      "listeners": 73,
+      "heap": 44822354,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 942,
+      "gameSeconds": 942,
+      "level": 13,
+      "listeners": 73,
+      "heap": 40729077,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 952,
+      "gameSeconds": 952,
+      "level": 13,
+      "listeners": 73,
+      "heap": 34868160,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 964,
+      "gameSeconds": 964,
+      "level": 13,
+      "listeners": 73,
+      "heap": 37482743,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 976,
+      "gameSeconds": 976,
+      "level": 13,
+      "listeners": 73,
+      "heap": 35058999,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 988,
+      "gameSeconds": 988,
+      "level": 13,
+      "listeners": 73,
+      "heap": 34213625,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 998,
+      "gameSeconds": 997,
+      "level": 13,
+      "listeners": 73,
+      "heap": 50884709,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 1010,
+      "gameSeconds": 1009,
+      "level": 13,
+      "listeners": 73,
+      "heap": 57365761,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 1020,
+      "gameSeconds": 1019,
+      "level": 13,
+      "listeners": 73,
+      "heap": 32904051,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 1030,
+      "gameSeconds": 1029,
+      "level": 13,
+      "listeners": 73,
+      "heap": 51371339,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 1042,
+      "gameSeconds": 1041,
+      "level": 13,
+      "listeners": 73,
+      "heap": 57859984,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 1054,
+      "gameSeconds": 1053,
+      "level": 13,
+      "listeners": 73,
+      "heap": 49713969,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 1066,
+      "gameSeconds": 1065,
+      "level": 13,
+      "listeners": 73,
+      "heap": 46328248,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 1078,
+      "gameSeconds": 1077,
+      "level": 13,
+      "listeners": 73,
+      "heap": 41483640,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 1090,
+      "gameSeconds": 1089,
+      "level": 13,
+      "listeners": 73,
+      "heap": 41451489,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 1100,
+      "gameSeconds": 1099,
+      "level": 13,
+      "listeners": 73,
+      "heap": 49709148,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 1112,
+      "gameSeconds": 1111,
+      "level": 13,
+      "listeners": 73,
+      "heap": 48654294,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 1124,
+      "gameSeconds": 1123,
+      "level": 13,
+      "listeners": 73,
+      "heap": 51863122,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 1136,
+      "gameSeconds": 1135,
+      "level": 13,
+      "listeners": 73,
+      "heap": 47115180,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 1148,
+      "gameSeconds": 1147,
+      "level": 13,
+      "listeners": 73,
+      "heap": 56677274,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 1160,
+      "gameSeconds": 1159,
+      "level": 13,
+      "listeners": 73,
+      "heap": 42506382,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 1170,
+      "gameSeconds": 1169,
+      "level": 13,
+      "listeners": 73,
+      "heap": 46440116,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 1180,
+      "gameSeconds": 1179,
+      "level": 13,
+      "listeners": 73,
+      "heap": 44831458,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 1192,
+      "gameSeconds": 1191,
+      "level": 13,
+      "listeners": 73,
+      "heap": 37249239,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 1204,
+      "gameSeconds": 1203,
+      "level": 13,
+      "listeners": 73,
+      "heap": 47442621,
+      "rafPending": 1
+    }
+  ],
+  "transitions": [],
+  "presentation": {
+    "number": 13,
+    "name": "Логово МРГ",
+    "active": true,
+    "convoy": false,
+    "mrg": false,
+    "inside": true,
+    "guideOn": false,
+    "guideName": "Проводник",
+    "guideVisible": true,
+    "pulseName": "ИМПУЛЬС",
+    "cooldown": 0,
+    "boostName": "РЫВОК",
+    "help": "Джойстик — движение и направление огня. Рывок помогает сменить позицию. Импульс оглушает врагов и сбивает ближайшие снаряды. Проводник ведёт к терминалу только по вашей команде."
+  },
+  "art": null,
+  "dom": {
+    "viewport": {
+      "w": 780,
+      "h": 430
+    },
+    "layout": {
+      "x": 0,
+      "y": 0,
+      "w": 780,
+      "h": 430,
+      "display": "block",
+      "visible": true,
+      "text": " ЦИТАДЕЛЬ ЦСИИ · БОЕВОЙ РЕЖИМУправлениеРекорды♫ вкл◖))×✓ Параллакс✓ ПрорывЛабиринтМРГИсполнениеУРОВЕНЬ 13 / 14Логово МРГПожар, настоящие проломы и грузовые платформы. Обходите опас",
+      "disabled": false
+    },
+    "canvas": {
+      "x": 0,
+      "y": 44,
+      "w": 780,
+      "h": 386,
+      "display": "block",
+      "visible": true,
+      "text": "",
+      "disabled": false
+    },
+    "header": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "display": "none",
+      "visible": false,
+      "text": "УРОВЕНЬ 13 / 14Логово МРГПожар, настоящие проломы и грузовые платформы. Обходите опасные зоны или отключайте их на пультах. Пульт включается короткой остановкой рядом.СЕКТОР 1 / 3 ",
+      "disabled": false
+    },
+    "route": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "display": "none",
+      "visible": false,
+      "text": "✓ Параллакс✓ ПрорывЛабиринтМРГИсполнение",
+      "disabled": false
+    },
+    "defense": {
+      "x": 700,
+      "y": 330,
+      "w": 70,
+      "h": 48,
+      "display": "flex",
+      "visible": true,
+      "text": "ИМПУЛЬС\nГОТОВ",
+      "disabled": false
+    },
+    "cover": null,
+    "boost": {
+      "x": 624,
+      "y": 330,
+      "w": 70,
+      "h": 48,
+      "display": "flex",
+      "visible": true,
+      "text": "РЫВОК",
+      "disabled": false
+    },
+    "buttons": [
+      {
+        "x": 624,
+        "y": 276,
+        "w": 70,
+        "h": 48,
+        "display": "flex",
+        "visible": true,
+        "text": "ОГОНЬ",
+        "disabled": false
+      },
+      {
+        "x": 624,
+        "y": 330,
+        "w": 70,
+        "h": 48,
+        "display": "flex",
+        "visible": true,
+        "text": "РЫВОК",
+        "disabled": false
+      },
+      {
+        "x": 700,
+        "y": 330,
+        "w": 70,
+        "h": 48,
+        "display": "flex",
+        "visible": true,
+        "text": "ИМПУЛЬС\nГОТОВ",
+        "disabled": false
+      }
+    ],
+    "horizontalOverflow": false
+  }
+}

@@ -1,0 +1,55 @@
+START One owner, idempotent script installation and ordinary pause/resume
+START Lost RAF repaired once, stale callback cannot duplicate updates
+START Hidden tab is exempt; visibility return owns exactly one frame
+START Transient render failure pauses, preserves completed state and never replays a step
+START Interrupted update saves last good state and stops without replay or automatic reload
+START An asynchronous restore may start a new engine after a fatal update; the broken instance never restarts
+START Denied localStorage retains an in-memory backup and does not throw from the failure handler
+START Repeated render fault stops instead of an exception/recovery loop
+START Context-loss lifecycle pauses updates; restoration schedules only one frame
+START Journal bounded; diagnostics omit save, name, message and action payload
+{
+  "pass": true,
+  "checks": [
+    {
+      "name": "One owner, idempotent script installation and ordinary pause/resume",
+      "pass": true
+    },
+    {
+      "name": "Lost RAF repaired once, stale callback cannot duplicate updates",
+      "pass": true
+    },
+    {
+      "name": "Hidden tab is exempt; visibility return owns exactly one frame",
+      "pass": true
+    },
+    {
+      "name": "Transient render failure pauses, preserves completed state and never replays a step",
+      "pass": true
+    },
+    {
+      "name": "Interrupted update saves last good state and stops without replay or automatic reload",
+      "pass": true
+    },
+    {
+      "name": "An asynchronous restore may start a new engine after a fatal update; the broken instance never restarts",
+      "pass": true
+    },
+    {
+      "name": "Denied localStorage retains an in-memory backup and does not throw from the failure handler",
+      "pass": true
+    },
+    {
+      "name": "Repeated render fault stops instead of an exception/recovery loop",
+      "pass": true
+    },
+    {
+      "name": "Context-loss lifecycle pauses updates; restoration schedules only one frame",
+      "pass": true
+    },
+    {
+      "name": "Journal bounded; diagnostics omit save, name, message and action payload",
+      "pass": true
+    }
+  ]
+}

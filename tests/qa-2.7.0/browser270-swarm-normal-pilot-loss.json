@@ -1,0 +1,311 @@
+{
+  "version": "2.7.0",
+  "config": {
+    "mode": "normal",
+    "scene": "swarm",
+    "accelerated": true,
+    "manual": false
+  },
+  "renderer": "3D · совместимый режим",
+  "mode": "normal",
+  "accelerated": true,
+  "rafInputCalls": 289,
+  "finished": "pilot-lost",
+  "status": "lost",
+  "level": 7,
+  "levels": [
+    7
+  ],
+  "cards": 0,
+  "wallSeconds": 64,
+  "simulatedSeconds": 162.14,
+  "frameCalls": 9435,
+  "emitChanges": 0,
+  "maxInputGapMs": 17,
+  "metrics": {
+    "listeners": 60,
+    "peakListeners": 62,
+    "rafCalls": 3776,
+    "rafDone": 3773,
+    "rafPending": 1,
+    "rafPeak": 2,
+    "errors": [],
+    "heap": 42503349
+  },
+  "input": {
+    "version": "2.6.0",
+    "boundCanvases": 1,
+    "rightClicks": 0,
+    "active": false,
+    "pointerId": null,
+    "mode": "idle"
+  },
+  "player": {
+    "hp": 0,
+    "missiles": 0
+  },
+  "runtime": {
+    "version": "1.9.3",
+    "build": "193r2",
+    "frames": 3771,
+    "updates": 289,
+    "renders": 3771,
+    "recoveries": 0,
+    "failures": 0,
+    "stopped": false,
+    "contextLost": false,
+    "pending": true,
+    "stage": "idle",
+    "lastFrameAge": 18,
+    "lastUpdateAge": 58148,
+    "lastRenderAge": 17,
+    "recoverySave": "none",
+    "faults": [],
+    "events": [
+      {
+        "at": 796,
+        "kind": "detach",
+        "status": "unknown",
+        "stage": null,
+        "phase": "other",
+        "finale": null,
+        "wave": null,
+        "seconds": null,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "webgl"
+      },
+      {
+        "at": 848,
+        "kind": "engine",
+        "status": "playing",
+        "stage": 2,
+        "phase": "swarm",
+        "finale": null,
+        "wave": 0,
+        "seconds": 0,
+        "mode": "normal",
+        "enemies": 8,
+        "renderer": "canvas"
+      },
+      {
+        "at": 905,
+        "kind": "transition",
+        "status": "playing",
+        "stage": 2,
+        "phase": "swarm",
+        "finale": null,
+        "wave": 0,
+        "seconds": 10,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 2151,
+        "kind": "transition",
+        "status": "crashing",
+        "stage": 2,
+        "phase": "swarm",
+        "finale": null,
+        "wave": 0,
+        "seconds": 157.57,
+        "mode": "normal",
+        "enemies": 13,
+        "renderer": "canvas"
+      },
+      {
+        "at": 6693,
+        "kind": "transition",
+        "status": "lost",
+        "stage": 2,
+        "phase": "swarm",
+        "finale": null,
+        "wave": 0,
+        "seconds": 162.14,
+        "mode": "normal",
+        "enemies": 13,
+        "renderer": "canvas"
+      }
+    ]
+  },
+  "sound": {
+    "context": "running",
+    "loaded": 16,
+    "active": 0,
+    "cacheBytes": 2046804,
+    "played": {
+      "shot": 13,
+      "robot-death": 13,
+      "robot-hit": 20,
+      "missile": 6,
+      "player-damage": 4,
+      "crash": 1,
+      "detonate": 1
+    }
+  },
+  "voice": {
+    "busy": false,
+    "source": "recorded"
+  },
+  "swarm": {
+    "enemies": 13,
+    "hostile": 61
+  },
+  "base": {
+    "active": false,
+    "version": "2.7.0",
+    "legacy": false,
+    "tier": null,
+    "theme": null,
+    "stats": null,
+    "hazards": [],
+    "systems": [],
+    "transport": null,
+    "enemies": [],
+    "events": []
+  },
+  "samples": [
+    {
+      "wallSeconds": 10,
+      "gameSeconds": 162,
+      "level": 7,
+      "listeners": 60,
+      "heap": 44637586,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 22,
+      "gameSeconds": 162,
+      "level": 7,
+      "listeners": 60,
+      "heap": 29369273,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 34,
+      "gameSeconds": 162,
+      "level": 7,
+      "listeners": 60,
+      "heap": 24424754,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 46,
+      "gameSeconds": 162,
+      "level": 7,
+      "listeners": 60,
+      "heap": 38007721,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 58,
+      "gameSeconds": 162,
+      "level": 7,
+      "listeners": 60,
+      "heap": 51187494,
+      "rafPending": 1
+    }
+  ],
+  "transitions": [
+    {
+      "level": 7,
+      "status": "playing",
+      "phase": "swarm",
+      "finale": null,
+      "seconds": 0
+    },
+    {
+      "level": 7,
+      "status": "crashing",
+      "phase": "swarm",
+      "finale": null,
+      "seconds": 157.53
+    }
+  ],
+  "presentation": {
+    "number": 7,
+    "name": "Рой уточнений",
+    "active": false,
+    "convoy": false,
+    "mrg": false,
+    "inside": false,
+    "guideOn": false,
+    "guideName": "Автокурс",
+    "guideVisible": false,
+    "pulseName": "ИМПУЛЬС",
+    "cooldown": 9,
+    "boostName": "ФОРСАЖ",
+    "help": "Джойстик — движение по арене. Стреляйте в строй и уклоняйтесь от пике. Импульс — в боевой панели справа; он помогает против близких снарядов."
+  },
+  "art": null,
+  "dom": {
+    "viewport": {
+      "w": 780,
+      "h": 430
+    },
+    "layout": {
+      "x": 0,
+      "y": 0,
+      "w": 780,
+      "h": 430,
+      "display": "block",
+      "visible": true,
+      "text": " ЦИТАДЕЛЬ ЦСИИ · БОЕВОЙ РЕЖИМУправлениеРекорды♫ вкл◖))×✓✓34РЕДАКЦИЯ 3/4ПАКЕТ · 0 / 23 РЕШЕНИЯ◆ МОДУЛИ2/3⌖ ПЕРЕХВАЧЕНО235/30✓ РЕШЕНИЯ0/5УРОВЕНЬ 07 / 14Рой уточнений«Автокурс» — к за",
+      "disabled": false
+    },
+    "canvas": {
+      "x": 0,
+      "y": 92,
+      "w": 780,
+      "h": 338,
+      "display": "block",
+      "visible": true,
+      "text": "",
+      "disabled": false
+    },
+    "header": {
+      "x": 0,
+      "y": 44,
+      "w": 780,
+      "h": 48,
+      "display": "flex",
+      "visible": true,
+      "text": "УРОВЕНЬ 07 / 14Рой уточнений«Автокурс» — к замечанию. Смена цели и кристаллы — в панели «Управление». Критические замечания у лучей блокируют принятие ФТ.ВОЛНА 1 / 3 · ОСТАЛОСЬ 0Ав",
+      "disabled": false
+    },
+    "route": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "display": "none",
+      "visible": false,
+      "text": "✓✓34РЕДАКЦИЯ 3/4ПАКЕТ · 0 / 23 РЕШЕНИЯ◆ МОДУЛИ2/3⌖ ПЕРЕХВАЧЕНО235/30✓ РЕШЕНИЯ0/5",
+      "disabled": false
+    },
+    "defense": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "display": "flex",
+      "visible": false,
+      "text": "ИМПУЛЬС\n9 с",
+      "disabled": true
+    },
+    "cover": null,
+    "boost": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "display": "flex",
+      "visible": false,
+      "text": "ФОРСАЖ",
+      "disabled": false
+    },
+    "buttons": [],
+    "horizontalOverflow": false
+  }
+}

@@ -1,0 +1,240 @@
+{
+  "version": "2.7.0",
+  "entry": "tests/entry-2.7.0.html",
+  "method": "Node VM design contracts; not browser, real-device or full-campaign evidence.",
+  "source": [
+    {
+      "file": "assets/citadel-base-missions-v2.7.0.js",
+      "sha256": "8eec5d00636ebf654c27223dab7b716f71f31189e9c434ed371ca5fb8008e0e6"
+    }
+  ],
+  "passed": 7,
+  "total": 7,
+  "rows": [
+    {
+      "name": "Every advanced room has a safe physical route to its terminal and controls",
+      "pass": true,
+      "data": {
+        "scope": "Local room topology; doors ignored for graph construction, no lift edges, active fire/grid excluded with 0.7 m player clearance.",
+        "routes": [
+          {
+            "level": 5,
+            "room": 0,
+            "goal": "terminal",
+            "waypoints": 7
+          },
+          {
+            "level": 5,
+            "room": 0,
+            "goal": "coolant",
+            "waypoints": 8
+          },
+          {
+            "level": 5,
+            "room": 1,
+            "goal": "terminal",
+            "waypoints": 14
+          },
+          {
+            "level": 5,
+            "room": 2,
+            "goal": "terminal",
+            "waypoints": 8
+          },
+          {
+            "level": 8,
+            "room": 0,
+            "goal": "terminal",
+            "waypoints": 10
+          },
+          {
+            "level": 8,
+            "room": 0,
+            "goal": "power",
+            "waypoints": 5
+          },
+          {
+            "level": 8,
+            "room": 1,
+            "goal": "terminal",
+            "waypoints": 7
+          },
+          {
+            "level": 8,
+            "room": 1,
+            "goal": "power",
+            "waypoints": 5
+          },
+          {
+            "level": 8,
+            "room": 2,
+            "goal": "terminal",
+            "waypoints": 8
+          },
+          {
+            "level": 11,
+            "room": 0,
+            "goal": "terminal",
+            "waypoints": 9
+          },
+          {
+            "level": 11,
+            "room": 0,
+            "goal": "power",
+            "waypoints": 5
+          },
+          {
+            "level": 11,
+            "room": 1,
+            "goal": "terminal",
+            "waypoints": 18
+          },
+          {
+            "level": 11,
+            "room": 1,
+            "goal": "power",
+            "waypoints": 5
+          },
+          {
+            "level": 11,
+            "room": 1,
+            "goal": "left outer bypass",
+            "waypoints": 20
+          },
+          {
+            "level": 11,
+            "room": 1,
+            "goal": "right outer bypass",
+            "waypoints": 15
+          },
+          {
+            "level": 11,
+            "room": 2,
+            "goal": "terminal",
+            "waypoints": 8
+          },
+          {
+            "level": 13,
+            "room": 0,
+            "goal": "terminal",
+            "waypoints": 17
+          },
+          {
+            "level": 13,
+            "room": 0,
+            "goal": "coolant",
+            "waypoints": 15
+          },
+          {
+            "level": 13,
+            "room": 0,
+            "goal": "left outer bypass",
+            "waypoints": 18
+          },
+          {
+            "level": 13,
+            "room": 0,
+            "goal": "right outer bypass",
+            "waypoints": 15
+          },
+          {
+            "level": 13,
+            "room": 1,
+            "goal": "terminal",
+            "waypoints": 17
+          },
+          {
+            "level": 13,
+            "room": 1,
+            "goal": "left outer bypass",
+            "waypoints": 18
+          },
+          {
+            "level": 13,
+            "room": 1,
+            "goal": "right outer bypass",
+            "waypoints": 15
+          },
+          {
+            "level": 13,
+            "room": 2,
+            "goal": "terminal",
+            "waypoints": 8
+          }
+        ]
+      }
+    },
+    {
+      "name": "An actual lift trip stays docked and needs leave/re-enter to ride back",
+      "pass": true,
+      "data": {
+        "method": "Isolated non-combat fixture: enemies omitted and starting player placed on platform. Thereafter only ordinary movement and empty input; no completion/health edits.",
+        "stationarySeconds": 12,
+        "trips": 2,
+        "arrivalSaved": true
+      }
+    },
+    {
+      "name": "A future-room lift cannot bypass the educational-sector lock",
+      "pass": true,
+      "data": {
+        "method": "Explicit locked-endpoint placement for access-control unit check, not a reachable playthrough.",
+        "lockedRoom": 1,
+        "completedRooms": 0
+      }
+    },
+    {
+      "name": "Crossing a landing does not board, and a latched lift has a physical return path",
+      "pass": true,
+      "data": {
+        "method": "Isolated landing fixture, ordinary lateral movement; separate arrival-state path contract using the player collider radius 0.65 m.",
+        "sidewaysFrames": 100,
+        "unwantedTrips": 0,
+        "physicalReturnWaypoints": 13
+      }
+    },
+    {
+      "name": "A dog commits its heading and makes a real recovery window",
+      "pass": true,
+      "data": {
+        "method": "Single-dog contact fixture with ordinary lateral player input after AI acquisition.",
+        "results": [
+          {
+            "mode": "normal",
+            "chargeSeconds": 0.37,
+            "dashSeconds": 0.48,
+            "verifiedRecoverySeconds": 0.5
+          },
+          {
+            "mode": "calm",
+            "chargeSeconds": 0.72,
+            "dashSeconds": 0.48,
+            "verifiedRecoverySeconds": 0.5
+          }
+        ]
+      }
+    },
+    {
+      "name": "The mech sweeps a frozen angle and exposes recovery without tracking the dodge",
+      "pass": true,
+      "data": {
+        "method": "Single-mech fixture relocated to unlocked room; ordinary lateral movement. No health/ammunition/completion edits.",
+        "beamFrames": 117,
+        "sweepRadians": 0.833,
+        "verifiedRecoverySeconds": 0.75,
+        "hpAfter": 100
+      }
+    },
+    {
+      "name": "The late mech makes a real fast flank after its cooling interval",
+      "pass": true,
+      "data": {
+        "method": "One live mech begins an explicit cooling-state fixture in an open lane, then advances through its own AI; no health or victory changes.",
+        "coolingSeconds": 1.58,
+        "movingSeconds": 0.75,
+        "peakMetresPerSecond": 9,
+        "distanceMetres": 6.75
+      }
+    }
+  ]
+}

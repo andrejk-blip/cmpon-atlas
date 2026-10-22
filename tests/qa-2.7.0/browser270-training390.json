@@ -1,0 +1,329 @@
+{
+  "version": "2.7.0",
+  "config": {
+    "mode": "training",
+    "scene": "orbit",
+    "accelerated": true,
+    "manual": false,
+    "holdQuestions": true
+  },
+  "education": {
+    "mode": "training",
+    "quiz": true,
+    "current": {
+      "kind": "lesson",
+      "index": 0,
+      "q": {
+        "quizId": "quiz270-01-functional",
+        "caseId": "quiz270-01-functional",
+        "quizPoints": 100,
+        "quizLevel": 1,
+        "question": "Какой пункт задаёт функцию системы?",
+        "explanation": "Функциональное требование описывает действие или поведение системы.",
+        "hint": "Ищите действие, а не показатель качества работы.",
+        "skill": "Короткий вопрос",
+        "title": "Короткий вопрос",
+        "situation": "Какой пункт задаёт функцию системы?",
+        "q": "Какой пункт задаёт функцию системы?",
+        "choices": [
+          "Оператор может отменить черновик заявки.",
+          "Доступность сервиса составляет 99,9%.",
+          "Ответ поиска занимает не более 2 секунд.",
+          "Сервис выдерживает 500 одновременных сессий."
+        ],
+        "correct": 0,
+        "why": "Функциональное требование описывает действие или поведение системы.",
+        "outcome": {
+          "label": "Ответ принят",
+          "title": "Вопрос разобран",
+          "symbol": "✓",
+          "before": "Какой пункт задаёт функцию системы?",
+          "after": "Функциональное требование описывает действие или поведение системы.",
+          "color": "#91e5c7"
+        }
+      },
+      "feedback": null
+    }
+  },
+  "renderer": "3D · совместимый режим",
+  "mode": "training",
+  "accelerated": true,
+  "rafInputCalls": 530,
+  "finished": null,
+  "status": "lesson",
+  "level": 1,
+  "levels": [
+    1
+  ],
+  "cards": 0,
+  "wallSeconds": 74,
+  "simulatedSeconds": 1.77,
+  "frameCalls": 318000,
+  "emitChanges": 0,
+  "maxInputGapMs": 245,
+  "metrics": {
+    "listeners": 62,
+    "peakListeners": 64,
+    "rafCalls": 535,
+    "rafDone": 532,
+    "rafPending": 1,
+    "rafPeak": 2,
+    "errors": [],
+    "heap": 93402207
+  },
+  "input": {
+    "version": "2.6.0",
+    "boundCanvases": 1,
+    "rightClicks": 0,
+    "active": false,
+    "pointerId": null,
+    "mode": "idle"
+  },
+  "player": {
+    "hp": 100,
+    "missiles": 10
+  },
+  "runtime": {
+    "version": "1.9.3",
+    "build": "193r2",
+    "frames": 530,
+    "updates": 530,
+    "renders": 530,
+    "recoveries": 0,
+    "failures": 0,
+    "stopped": false,
+    "contextLost": false,
+    "pending": true,
+    "stage": "idle",
+    "lastFrameAge": 132,
+    "lastUpdateAge": 130,
+    "lastRenderAge": 20,
+    "recoverySave": "none",
+    "faults": [],
+    "events": [
+      {
+        "at": 513,
+        "kind": "detach",
+        "status": "unknown",
+        "stage": null,
+        "phase": "other",
+        "finale": null,
+        "wave": null,
+        "seconds": null,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "webgl"
+      },
+      {
+        "at": 566,
+        "kind": "engine",
+        "status": "playing",
+        "stage": 0,
+        "phase": "orientation",
+        "finale": null,
+        "wave": 0,
+        "seconds": 0,
+        "mode": "calm",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 619,
+        "kind": "transition",
+        "status": "lesson",
+        "stage": 0,
+        "phase": "orientation",
+        "finale": null,
+        "wave": 0,
+        "seconds": 1.77,
+        "mode": "calm",
+        "enemies": 0,
+        "renderer": "canvas"
+      }
+    ]
+  },
+  "sound": {
+    "context": "running",
+    "loaded": 14,
+    "active": 0,
+    "cacheBytes": 1766452,
+    "played": {}
+  },
+  "voice": {
+    "busy": false,
+    "source": null
+  },
+  "swarm": null,
+  "base": {
+    "active": false,
+    "version": "2.7.0",
+    "legacy": false,
+    "tier": null,
+    "theme": null,
+    "stats": null,
+    "hazards": [],
+    "systems": [],
+    "transport": null,
+    "enemies": [],
+    "events": []
+  },
+  "samples": [
+    {
+      "wallSeconds": 10,
+      "gameSeconds": 2,
+      "level": 1,
+      "listeners": 62,
+      "heap": 111973056,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 20,
+      "gameSeconds": 2,
+      "level": 1,
+      "listeners": 62,
+      "heap": 149625677,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 32,
+      "gameSeconds": 2,
+      "level": 1,
+      "listeners": 62,
+      "heap": 84065603,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 42,
+      "gameSeconds": 2,
+      "level": 1,
+      "listeners": 62,
+      "heap": 105042276,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 54,
+      "gameSeconds": 2,
+      "level": 1,
+      "listeners": 62,
+      "heap": 136678991,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 64,
+      "gameSeconds": 2,
+      "level": 1,
+      "listeners": 62,
+      "heap": 58320092,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 74,
+      "gameSeconds": 2,
+      "level": 1,
+      "listeners": 62,
+      "heap": 93402207,
+      "rafPending": 1
+    }
+  ],
+  "transitions": [
+    {
+      "level": 1,
+      "status": "playing",
+      "phase": "orientation",
+      "finale": null,
+      "seconds": 0
+    },
+    {
+      "level": 1,
+      "status": "lesson",
+      "phase": "orientation",
+      "finale": null,
+      "seconds": 1.77
+    }
+  ],
+  "presentation": {
+    "number": 1,
+    "name": "Орбита Цитадели",
+    "active": false,
+    "convoy": false,
+    "mrg": false,
+    "inside": false,
+    "guideOn": true,
+    "guideName": "Автокурс",
+    "guideVisible": false,
+    "pulseName": "ИМПУЛЬС",
+    "cooldown": 0,
+    "boostName": "ФОРСАЖ",
+    "help": "Джойстик — курс; Огонь — удерживать. Форсаж — ускорение; Импульс — защита вблизи. Автокурс включается кнопкой над полем. После ручного манёвра проверяйте его состояние на кнопке."
+  },
+  "art": null,
+  "dom": {
+    "viewport": {
+      "w": 390,
+      "h": 780
+    },
+    "layout": {
+      "x": 0,
+      "y": 0,
+      "w": 390,
+      "h": 780,
+      "display": "block",
+      "visible": true,
+      "text": " ЦИТАДЕЛЬ ЦСИИ · УЧЕБНЫЙУправлениеРекорды♫ вкл◖))×1234РЕДАКЦИЯ 1/4ПАКЕТ · 0 / 23 РЕШЕНИЯ◆ МОДУЛИ1/3⌖ ПЕРЕХВАЧЕНО0/20✓ РЕШЕНИЯ0/5УРОВЕНЬ 01 / 14Орбита ЦитаделиБой остановлен. Разбер",
+      "disabled": false
+    },
+    "canvas": {
+      "x": 0,
+      "y": 44,
+      "w": 390,
+      "h": 736,
+      "display": "block",
+      "visible": true,
+      "text": "",
+      "disabled": false
+    },
+    "header": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "display": "none",
+      "visible": false,
+      "text": "УРОВЕНЬ 01 / 14Орбита ЦитаделиБой остановлен. Разберите учебную ситуацию; после ответа можно продолжить полёт.РЕШЕНИЕ 1 / 8Автокурс · вкл.",
+      "disabled": false
+    },
+    "route": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "display": "none",
+      "visible": false,
+      "text": "1234РЕДАКЦИЯ 1/4ПАКЕТ · 0 / 23 РЕШЕНИЯ◆ МОДУЛИ1/3⌖ ПЕРЕХВАЧЕНО0/20✓ РЕШЕНИЯ0/5",
+      "disabled": false
+    },
+    "defense": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "display": "flex",
+      "visible": false,
+      "text": "ИМПУЛЬС\nГОТОВ",
+      "disabled": true
+    },
+    "cover": null,
+    "boost": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "display": "flex",
+      "visible": false,
+      "text": "ФОРСАЖ",
+      "disabled": false
+    },
+    "buttons": [],
+    "horizontalOverflow": false
+  }
+}

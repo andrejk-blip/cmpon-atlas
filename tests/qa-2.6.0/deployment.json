@@ -1,0 +1,12 @@
+{
+  "version": "2.6.0",
+  "public_commit": "fcdd77e2d1293e4c35693392829f7614484c8459",
+  "pages_workflow": 39644875631,
+  "pages_status": "success",
+  "private_source_commit": "0739227595c2abbbbda7c358320c767d67b64116",
+  "private_deployment": "appgdep_6ad8f7ef0d608191aa54b64057e4d28c",
+  "private_status": "succeeded",
+  "private_url": "https://cmpon-analytics-admin.carlafloriano1958.chatgpt.site/game-test",
+  "audience": "unchanged-owner-private",
+  "private_verification": "22 entry points × 2 modes; full build, audio and no-real-storage checks passed"
+}

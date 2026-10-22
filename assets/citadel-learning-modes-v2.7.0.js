@@ -62,7 +62,7 @@
  citadelFinalCase=index=>getCase(typeof ARCADE!=='undefined'?ARCADE.engine:null,'final',index);
  p.start=function(assist=false){const mode=cloudLaunchMode|| (MODES.includes(this.educationMode)?this.educationMode:assist?'training':preferred);setEngineMode(this,mode);
   this.quiz270={schema:1,bankVersion:VERSION,cards:{},answers:{},points:0};if(cloudLaunchMode){this.educationLegacyCases=true;delete this.quiz270;}return old.start.call(this,mode==='training');};
- if(typeof CUP_ENGINE_KEYS!=='undefined')for(const key of ['educationMode','educationLegacyCases','quiz270','overdriveUntil'])if(!CUP_ENGINE_KEYS.includes(key))CUP_ENGINE_KEYS.push(key);
+ if(typeof CUP_ENGINE_KEYS!=='undefined')for(const key of ['educationMode','educationLegacyCases','quiz270','overdriveUntil','escortStart'])if(!CUP_ENGINE_KEYS.includes(key))CUP_ENGINE_KEYS.push(key);
  if(old.unpack)cupUnpack=function(snapshot,...rest){return migrate(old.unpack.call(this,snapshot,...rest),snapshot?.engine);};
  p.checkpoint=function(){return{...old.checkpoint.apply(this,arguments),educationMode:getMode(this),educationLegacyCases:!!this.educationLegacyCases,...(usesQuiz(this)?{quiz270:clone(state(this))}:{})};};
  p.beginStage=function(){const result=old.beginStage.apply(this,arguments);if(usesQuiz(this)&&this.stageStart)this.stageStart.learning270=clone(state(this));return result;};
@@ -99,6 +99,7 @@
   e.status='boarding';b.hostile=[];b.bullets=[];b.hp=Math.min(100,b.hp+(final?30:22));b.energy=100;b.invulnerable=2;
   b.guideRoute=null;b.guideWatch=null;b.terminalGrace=final?.8:.45;e.remarkFeedback=null;
   if(b.completed.length<3)e.spawnBoardWave(final?(e.assist?5:8):5+e.stage);else b.returning=true;
+  if(b.missions270&&typeof stationBuildNav==='function')stationBuildNav(b);
   e.say(b.completed.length<3?'Ответ сохранён. Следующий терминал отмечен на карте.':'Три вопроса разобраны. Следуйте к выходу.','success',true);
   e.emit('state','boarding');saveLocal(e,true);return true;
  }
@@ -117,7 +118,13 @@
  if(old.retry)citadelRetry=function(...args){const before=ARCADE.engine;if(!usesQuiz(before))return old.retry.apply(this,args);
   const mode=getMode(before),saved=before.finale?.learningCheckpoint||before.escortStart?.quiz270||before.stageStart?.learning270||state(before),run=typeof CUP!=='undefined'?CUP.run:null;
   let result;try{if(typeof CUP!=='undefined')CUP.run=null;result=old.retry.call(this,mode==='training');}finally{if(typeof CUP!=='undefined')CUP.run=run;}
-  const e=ARCADE.engine;setEngineMode(e,mode);e.quiz270=clone(saved);saveLocal(e,true);return result;
+  const e=ARCADE.engine;setEngineMode(e,mode);e.quiz270=clone(saved);
+  // The legacy retry builds its replacement before the education mode is
+  // installed. Seed its new retry checkpoint too; a second death must roll
+  // answers and score back to the same boundary as the first death.
+  if(!e.finale&&e.phase!=='escort'&&e.stageStart)e.stageStart.learning270=clone(saved);
+  if(e.phase==='escort'&&e.escortStart){e.escortStart.educationMode=mode;e.escortStart.educationLegacyCases=false;e.escortStart.quiz270=clone(saved);}
+  saveLocal(e,true);refresh();return result;
  };
  saveArcadeRecord=function(){if(usesQuiz(ARCADE.engine))return localRecord(ARCADE.engine);return old.record.apply(this,arguments);};
  arcadeEvent=function(type,value){if(usesQuiz(ARCADE.engine)&&type==='state'&&value==='won'){
@@ -131,7 +138,7 @@
  const DESCRIPTIONS={training:'Мягкий бой, подсказки и короткие вопросы. Результаты — на этом устройстве.',combat:'Полный бой и короткие вопросы. Ошибка влияет только на очки. Результаты — на этом устройстве.',pro:'Полный бой и развёрнутые профессиональные кейсы. Сохраняются прежние правила вопросов и облачный рейтинг.'};
  function localSave(mode=preferred){const s=read(SAVE+mode);return s?.schema===1&&s.mode===mode&&s.snapshot?.engine?.educationMode===mode?s:null;}
  function quizLobby(){const saved=localSave(),continueRun=saved&&saved.snapshot.engine.status!=='won';return '<div class="arcade-menu campaign-menu learning-lobby"><span class="arcade-serial">ЦИТАДЕЛЬ ЦСИИ · 14 МИССИЙ</span><h3>ЦИТАДЕЛЬ <span>ЦСИИ</span></h3>'+modePicker()+'<p class="learning-mode-description">'+DESCRIPTIONS[preferred]+'</p>'+(continueRun?'<button class="arcade-play" data-action="learning-continue">Продолжить игру →</button>':'')+'<button class="'+(continueRun?'arcade-secondary':'arcade-play')+'" data-action="learning-start">'+(continueRun?'Начать заново':'Начать игру →')+'</button><p class="learning-local-record">Рекорд · '+LABEL[preferred]+' · <b>'+Math.floor(histories[preferred]||0).toLocaleString('ru-RU')+'</b> очков<br><small>на этом устройстве</small></p><button class="cup-link" data-action="learning-mode" data-value="pro">Профессиональные кейсы и прежние облачные рекорды ↗</button><small class="app-release">Приложение v'+VERSION+'</small></div>';}
- function withPicker(html){const picker=modePicker()+'<p class="learning-mode-description">'+DESCRIPTIONS[preferred]+'</p>';return /<div class="arcade-mode">/.test(html)?html.replace(/<div class="arcade-mode">[\s\S]*?<\/div>/,picker):html.replace('<div class="cup-entry">','<div class="cup-entry">'+picker);}
+ function withPicker(html){if(html.includes('class="learning-mode-picker"'))return html;const picker=modePicker()+'<p class="learning-mode-description">'+DESCRIPTIONS[preferred]+'</p>';return /<div class="arcade-mode">/.test(html)?html.replace(/<div class="arcade-mode">[\s\S]*?<\/div>/,picker):html.replace('<div class="cup-entry">','<div class="cup-entry">'+picker);}
  if(old.lobby)cupLobbyHTML=function(){return preferred==='pro'?withPicker(old.lobby.apply(this,arguments)):quizLobby();};
  if(old.panel)cupPanelHTML=function(){const local='<div class="learning-record-summary"><b>Короткие вопросы · на этом устройстве</b><p>Учебный: '+histories.training+' · Боевой: '+histories.combat+'</p><small>Ниже — отдельный облачный зачёт профессиональных кейсов и прежних прохождений.</small></div>';
   return old.panel.apply(this,arguments).replace('</header>','</header>'+local).replace(/(<option value="normal"[^>]*>)Боевой(<\/option>)/g,'$1Профессиональный / прежний боевой$2').replace(/(<option value="calm"[^>]*>)Учебный(<\/option>)/g,'$1Прежний учебный · развёрнутые кейсы$2');};

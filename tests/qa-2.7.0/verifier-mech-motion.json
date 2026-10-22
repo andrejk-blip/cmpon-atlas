@@ -1,0 +1,98 @@
+{
+  "pass": true,
+  "entryFile": "tests/entry-2.7.0.html",
+  "method": "Node VM isolated physical-motion fixture. Initial roster/position selects a visible encounter; afterwards ordinary movement only. Not a full mission or browser FPS test.",
+  "transitions": [
+    {
+      "frame": 0,
+      "phase": "hunt",
+      "position": [
+        0,
+        0,
+        -24.098333333333333
+      ]
+    },
+    {
+      "frame": 47,
+      "phase": "charge",
+      "position": [
+        0,
+        0,
+        -25
+      ]
+    },
+    {
+      "frame": 63,
+      "phase": "beam",
+      "position": [
+        0,
+        0,
+        -25
+      ]
+    },
+    {
+      "frame": 181,
+      "phase": "recover",
+      "position": [
+        0,
+        0,
+        -25
+      ]
+    },
+    {
+      "frame": 297,
+      "phase": "reposition",
+      "position": [
+        0,
+        0,
+        -25
+      ]
+    },
+    {
+      "frame": 342,
+      "phase": "hunt",
+      "position": [
+        -5.014364533920024,
+        0,
+        -27.54887687442238
+      ]
+    },
+    {
+      "frame": 390,
+      "phase": "charge",
+      "position": [
+        -5.207004043812393,
+        0,
+        -24.966743516144096
+      ]
+    },
+    {
+      "frame": 406,
+      "phase": "beam",
+      "position": [
+        -5.207004043812393,
+        0,
+        -24.966743516144096
+      ]
+    },
+    {
+      "frame": 524,
+      "phase": "recover",
+      "position": [
+        -5.207004043812393,
+        0,
+        -24.966743516144096
+      ]
+    }
+  ],
+  "repositionFrames": 45,
+  "maximumSpeed": 7.5,
+  "distance": 5.625,
+  "hpAfter": 79,
+  "source": [
+    {
+      "file": "assets/citadel-base-missions-v2.7.0.js",
+      "sha256": "8eec5d00636ebf654c27223dab7b716f71f31189e9c434ed371ca5fb8008e0e6"
+    }
+  ]
+}

@@ -1,0 +1,1487 @@
+{
+  "version": "2.7.0",
+  "method": "Node VM with exact production engine and ordinary arcadeInput; native Canvas screenshots and timing are not browser or device FPS. No HP, enemy-death, score, time or victory writes in any passage.",
+  "files": [
+    {
+      "file": "assets/citadel-swarm-v2.7.0.js",
+      "sha256": "7a9772c906ece8b14ddca3206060bb0f2048609bb74729382f0703f33a7a9535"
+    },
+    {
+      "file": "assets/citadel-swarm-view-v2.7.0.js",
+      "sha256": "dff917ac921f0eea01148f99bb9e6015ab50b7736893b1595c0b9b3c571b56ea"
+    },
+    {
+      "file": "tests/helpers/swarm270-inputs.js",
+      "sha256": "4ed90c35ab215a7c67ad5a51919fc8e08d92204d6d48e24e0d6b56e53f5f3378"
+    }
+  ],
+  "checks": [
+    {
+      "name": "Six real formations, 248 kills, three packets and exactly the two unchanged educational decisions",
+      "pass": true,
+      "mode": "normal",
+      "seed": 417147,
+      "fps": 60,
+      "touch": false,
+      "profile": "helper",
+      "reaction": 0.2,
+      "complete": true,
+      "status": "playing",
+      "seconds": 164.6166666666898,
+      "minHP": 27.199999999999992,
+      "hp": 100,
+      "kills": 248,
+      "score": 19130,
+      "packets": 3,
+      "lessons": 2,
+      "waves": [
+        {
+          "wave": 1,
+          "count": 8,
+          "start": 0,
+          "hp": 100
+        },
+        {
+          "wave": 2,
+          "count": 16,
+          "start": 10.300000000000091,
+          "hp": 100
+        },
+        {
+          "wave": 3,
+          "count": 32,
+          "start": 27.366666666666394,
+          "hp": 100
+        },
+        {
+          "wave": 4,
+          "count": 64,
+          "start": 50.499999999998415,
+          "hp": 100
+        },
+        {
+          "wave": 5,
+          "count": 64,
+          "start": 93.33333333332932,
+          "hp": 37.19999999999999
+        },
+        {
+          "wave": 6,
+          "count": 64,
+          "start": 129.21666666666164,
+          "hp": 51.19999999999999
+        }
+      ],
+      "peakEnemies": 64,
+      "peakHostile": 76,
+      "peakDivers": 6,
+      "cueFrames": 0,
+      "drops": {
+        "repair": 3,
+        "missiles": 5,
+        "overdrive": 1
+      },
+      "patterns": {
+        "aimed": 227,
+        "lead": 200,
+        "fan": 247,
+        "pair": 40,
+        "crown": 67,
+        "torpedo": 124
+      },
+      "cpuStepMs": {
+        "median": 0.2204260000000886,
+        "p95": 0.5793770000000222,
+        "p99": 0.8152869999998984,
+        "max": 5.176363000000038
+      },
+      "wallSeconds": 2.6737234549999997
+    },
+    {
+      "name": "All six actual projectile behaviors appeared, rather than placeholder role names",
+      "pass": true,
+      "patterns": {
+        "aimed": 227,
+        "lead": 200,
+        "fan": 247,
+        "pair": 40,
+        "crown": 67,
+        "torpedo": 124
+      }
+    },
+    {
+      "name": "Every wave roundtrips and continues deterministically; pause blocks clocks, weapons and movement",
+      "pass": true,
+      "waves": 6
+    },
+    {
+      "name": "Live 2.5 and 2.6 saves retain original counts, clocks, RNG and all future rule selection",
+      "pass": true,
+      "cases": 4
+    },
+    {
+      "name": "Reinstall is idempotent and does not add wrappers or event listeners",
+      "pass": true,
+      "listeners": 111
+    },
+    {
+      "name": "Native mobile/desktop/Landscape/FX-off renders preserve state and draw all 64 physical ships",
+      "pass": true
+    },
+    {
+      "name": "At least 30 simulated minutes keep event listeners and all entity/history bounds stable",
+      "pass": true
+    }
+  ],
+  "legacy": [
+    {
+      "version": "2.5.0",
+      "mode": "normal",
+      "savedWave": 1,
+      "enemyCount": 0,
+      "unchanged": true,
+      "complete": true,
+      "wavesAfterSaved": [
+        12,
+        14,
+        16,
+        18,
+        20
+      ],
+      "packets": 3,
+      "lessons": 2
+    },
+    {
+      "version": "2.5.0",
+      "mode": "calm",
+      "savedWave": 1,
+      "enemyCount": 0,
+      "unchanged": true,
+      "complete": true,
+      "wavesAfterSaved": [
+        10,
+        12,
+        14,
+        16,
+        18
+      ],
+      "packets": 3,
+      "lessons": 2
+    },
+    {
+      "version": "2.6.0",
+      "mode": "normal",
+      "savedWave": 1,
+      "enemyCount": 0,
+      "unchanged": true,
+      "complete": true,
+      "wavesAfterSaved": [
+        12,
+        14,
+        16,
+        18,
+        20
+      ],
+      "packets": 3,
+      "lessons": 2
+    },
+    {
+      "version": "2.6.0",
+      "mode": "calm",
+      "savedWave": 1,
+      "enemyCount": 0,
+      "unchanged": true,
+      "complete": true,
+      "wavesAfterSaved": [
+        10,
+        12,
+        14,
+        16,
+        18
+      ],
+      "packets": 3,
+      "lessons": 2
+    }
+  ],
+  "runs": [
+    {
+      "mode": "normal",
+      "seed": 417147,
+      "fps": 60,
+      "touch": false,
+      "profile": "helper",
+      "reaction": 0.2,
+      "complete": true,
+      "status": "playing",
+      "seconds": 164.6166666666898,
+      "minHP": 27.199999999999992,
+      "hp": 100,
+      "kills": 248,
+      "score": 19130,
+      "packets": 3,
+      "lessons": 2,
+      "waves": [
+        {
+          "wave": 1,
+          "count": 8,
+          "start": 0,
+          "hp": 100
+        },
+        {
+          "wave": 2,
+          "count": 16,
+          "start": 10.300000000000091,
+          "hp": 100
+        },
+        {
+          "wave": 3,
+          "count": 32,
+          "start": 27.366666666666394,
+          "hp": 100
+        },
+        {
+          "wave": 4,
+          "count": 64,
+          "start": 50.499999999998415,
+          "hp": 100
+        },
+        {
+          "wave": 5,
+          "count": 64,
+          "start": 93.33333333332932,
+          "hp": 37.19999999999999
+        },
+        {
+          "wave": 6,
+          "count": 64,
+          "start": 129.21666666666164,
+          "hp": 51.19999999999999
+        }
+      ],
+      "peakEnemies": 64,
+      "peakHostile": 76,
+      "peakDivers": 6,
+      "cueFrames": 0,
+      "drops": {
+        "repair": 3,
+        "missiles": 5,
+        "overdrive": 1
+      },
+      "patterns": {
+        "aimed": 227,
+        "lead": 200,
+        "fan": 247,
+        "pair": 40,
+        "crown": 67,
+        "torpedo": 124
+      },
+      "cpuStepMs": {
+        "median": 0.19820399999844085,
+        "p95": 0.6524899999985792,
+        "p99": 0.8399799999988318,
+        "max": 7.3517030000002705
+      },
+      "wallSeconds": 2.8388227670000017
+    },
+    {
+      "mode": "normal",
+      "seed": 819337,
+      "fps": 30,
+      "touch": true,
+      "profile": "helper",
+      "reaction": 0.2,
+      "complete": false,
+      "status": "crashing",
+      "seconds": 130.03333333332853,
+      "minHP": 0,
+      "hp": 0,
+      "kills": 178,
+      "score": 13080,
+      "packets": 2,
+      "lessons": 0,
+      "waves": [
+        {
+          "wave": 1,
+          "count": 8,
+          "start": 0,
+          "hp": 100
+        },
+        {
+          "wave": 2,
+          "count": 16,
+          "start": 11.033333333333305,
+          "hp": 100
+        },
+        {
+          "wave": 3,
+          "count": 32,
+          "start": 23.266666666666982,
+          "hp": 100
+        },
+        {
+          "wave": 4,
+          "count": 64,
+          "start": 44.43333333333337,
+          "hp": 83.2
+        },
+        {
+          "wave": 5,
+          "count": 64,
+          "start": 87.09999999999762,
+          "hp": 91.8
+        }
+      ],
+      "peakEnemies": 64,
+      "peakHostile": 70,
+      "peakDivers": 5,
+      "cueFrames": 0,
+      "drops": {
+        "repair": 3,
+        "missiles": 2,
+        "overdrive": 3
+      },
+      "patterns": {
+        "aimed": 137,
+        "lead": 153,
+        "fan": 198,
+        "pair": 20,
+        "crown": 51,
+        "torpedo": 124
+      },
+      "cpuStepMs": {
+        "median": 0.1930979999997362,
+        "p95": 0.5930119999993622,
+        "p99": 0.7752330000002985,
+        "max": 3.1659469999995054
+      },
+      "wallSeconds": 1.2080112289999998
+    },
+    {
+      "mode": "normal",
+      "seed": 417147,
+      "fps": 60,
+      "touch": false,
+      "profile": "helper",
+      "reaction": 0.2,
+      "complete": true,
+      "status": "playing",
+      "seconds": 164.6166666666898,
+      "minHP": 27.199999999999992,
+      "hp": 100,
+      "kills": 248,
+      "score": 19130,
+      "packets": 3,
+      "lessons": 2,
+      "waves": [
+        {
+          "wave": 1,
+          "count": 8,
+          "start": 0,
+          "hp": 100
+        },
+        {
+          "wave": 2,
+          "count": 16,
+          "start": 10.300000000000091,
+          "hp": 100
+        },
+        {
+          "wave": 3,
+          "count": 32,
+          "start": 27.366666666666394,
+          "hp": 100
+        },
+        {
+          "wave": 4,
+          "count": 64,
+          "start": 50.499999999998415,
+          "hp": 100
+        },
+        {
+          "wave": 5,
+          "count": 64,
+          "start": 93.33333333332932,
+          "hp": 37.19999999999999
+        },
+        {
+          "wave": 6,
+          "count": 64,
+          "start": 129.21666666666164,
+          "hp": 51.19999999999999
+        }
+      ],
+      "peakEnemies": 64,
+      "peakHostile": 76,
+      "peakDivers": 6,
+      "cueFrames": 0,
+      "drops": {
+        "repair": 3,
+        "missiles": 5,
+        "overdrive": 1
+      },
+      "patterns": {
+        "aimed": 227,
+        "lead": 200,
+        "fan": 247,
+        "pair": 40,
+        "crown": 67,
+        "torpedo": 124
+      },
+      "cpuStepMs": {
+        "median": 0.19138500000190106,
+        "p95": 0.638040000001638,
+        "p99": 0.8416319999996631,
+        "max": 4.656234000001859
+      },
+      "wallSeconds": 2.813197321999998
+    },
+    {
+      "mode": "normal",
+      "seed": 819337,
+      "fps": 30,
+      "touch": true,
+      "profile": "helper",
+      "reaction": 0.2,
+      "complete": false,
+      "status": "crashing",
+      "seconds": 130.03333333332853,
+      "minHP": 0,
+      "hp": 0,
+      "kills": 178,
+      "score": 13080,
+      "packets": 2,
+      "lessons": 0,
+      "waves": [
+        {
+          "wave": 1,
+          "count": 8,
+          "start": 0,
+          "hp": 100
+        },
+        {
+          "wave": 2,
+          "count": 16,
+          "start": 11.033333333333305,
+          "hp": 100
+        },
+        {
+          "wave": 3,
+          "count": 32,
+          "start": 23.266666666666982,
+          "hp": 100
+        },
+        {
+          "wave": 4,
+          "count": 64,
+          "start": 44.43333333333337,
+          "hp": 83.2
+        },
+        {
+          "wave": 5,
+          "count": 64,
+          "start": 87.09999999999762,
+          "hp": 91.8
+        }
+      ],
+      "peakEnemies": 64,
+      "peakHostile": 70,
+      "peakDivers": 5,
+      "cueFrames": 0,
+      "drops": {
+        "repair": 3,
+        "missiles": 2,
+        "overdrive": 3
+      },
+      "patterns": {
+        "aimed": 137,
+        "lead": 153,
+        "fan": 198,
+        "pair": 20,
+        "crown": 51,
+        "torpedo": 124
+      },
+      "cpuStepMs": {
+        "median": 0.19737399999939953,
+        "p95": 0.6916799999999057,
+        "p99": 0.8711269999985234,
+        "max": 1.44513200000074
+      },
+      "wallSeconds": 1.2636845609999983
+    },
+    {
+      "mode": "normal",
+      "seed": 417147,
+      "fps": 60,
+      "touch": false,
+      "profile": "helper",
+      "reaction": 0.2,
+      "complete": true,
+      "status": "playing",
+      "seconds": 164.6166666666898,
+      "minHP": 27.199999999999992,
+      "hp": 100,
+      "kills": 248,
+      "score": 19130,
+      "packets": 3,
+      "lessons": 2,
+      "waves": [
+        {
+          "wave": 1,
+          "count": 8,
+          "start": 0,
+          "hp": 100
+        },
+        {
+          "wave": 2,
+          "count": 16,
+          "start": 10.300000000000091,
+          "hp": 100
+        },
+        {
+          "wave": 3,
+          "count": 32,
+          "start": 27.366666666666394,
+          "hp": 100
+        },
+        {
+          "wave": 4,
+          "count": 64,
+          "start": 50.499999999998415,
+          "hp": 100
+        },
+        {
+          "wave": 5,
+          "count": 64,
+          "start": 93.33333333332932,
+          "hp": 37.19999999999999
+        },
+        {
+          "wave": 6,
+          "count": 64,
+          "start": 129.21666666666164,
+          "hp": 51.19999999999999
+        }
+      ],
+      "peakEnemies": 64,
+      "peakHostile": 76,
+      "peakDivers": 6,
+      "cueFrames": 0,
+      "drops": {
+        "repair": 3,
+        "missiles": 5,
+        "overdrive": 1
+      },
+      "patterns": {
+        "aimed": 227,
+        "lead": 200,
+        "fan": 247,
+        "pair": 40,
+        "crown": 67,
+        "torpedo": 124
+      },
+      "cpuStepMs": {
+        "median": 0.1948499999998603,
+        "p95": 0.5564480000030017,
+        "p99": 0.896165000001929,
+        "max": 4.888887999997678
+      },
+      "wallSeconds": 2.723338424999998
+    },
+    {
+      "mode": "normal",
+      "seed": 819337,
+      "fps": 30,
+      "touch": true,
+      "profile": "helper",
+      "reaction": 0.2,
+      "complete": false,
+      "status": "crashing",
+      "seconds": 130.03333333332853,
+      "minHP": 0,
+      "hp": 0,
+      "kills": 178,
+      "score": 13080,
+      "packets": 2,
+      "lessons": 0,
+      "waves": [
+        {
+          "wave": 1,
+          "count": 8,
+          "start": 0,
+          "hp": 100
+        },
+        {
+          "wave": 2,
+          "count": 16,
+          "start": 11.033333333333305,
+          "hp": 100
+        },
+        {
+          "wave": 3,
+          "count": 32,
+          "start": 23.266666666666982,
+          "hp": 100
+        },
+        {
+          "wave": 4,
+          "count": 64,
+          "start": 44.43333333333337,
+          "hp": 83.2
+        },
+        {
+          "wave": 5,
+          "count": 64,
+          "start": 87.09999999999762,
+          "hp": 91.8
+        }
+      ],
+      "peakEnemies": 64,
+      "peakHostile": 70,
+      "peakDivers": 5,
+      "cueFrames": 0,
+      "drops": {
+        "repair": 3,
+        "missiles": 2,
+        "overdrive": 3
+      },
+      "patterns": {
+        "aimed": 137,
+        "lead": 153,
+        "fan": 198,
+        "pair": 20,
+        "crown": 51,
+        "torpedo": 124
+      },
+      "cpuStepMs": {
+        "median": 0.17446999999810942,
+        "p95": 0.5813249999991967,
+        "p99": 0.7111890000014682,
+        "max": 2.0496710000006715
+      },
+      "wallSeconds": 1.1805271439999996
+    },
+    {
+      "mode": "normal",
+      "seed": 417147,
+      "fps": 60,
+      "touch": false,
+      "profile": "helper",
+      "reaction": 0.2,
+      "complete": true,
+      "status": "playing",
+      "seconds": 164.6166666666898,
+      "minHP": 27.199999999999992,
+      "hp": 100,
+      "kills": 248,
+      "score": 19130,
+      "packets": 3,
+      "lessons": 2,
+      "waves": [
+        {
+          "wave": 1,
+          "count": 8,
+          "start": 0,
+          "hp": 100
+        },
+        {
+          "wave": 2,
+          "count": 16,
+          "start": 10.300000000000091,
+          "hp": 100
+        },
+        {
+          "wave": 3,
+          "count": 32,
+          "start": 27.366666666666394,
+          "hp": 100
+        },
+        {
+          "wave": 4,
+          "count": 64,
+          "start": 50.499999999998415,
+          "hp": 100
+        },
+        {
+          "wave": 5,
+          "count": 64,
+          "start": 93.33333333332932,
+          "hp": 37.19999999999999
+        },
+        {
+          "wave": 6,
+          "count": 64,
+          "start": 129.21666666666164,
+          "hp": 51.19999999999999
+        }
+      ],
+      "peakEnemies": 64,
+      "peakHostile": 76,
+      "peakDivers": 6,
+      "cueFrames": 0,
+      "drops": {
+        "repair": 3,
+        "missiles": 5,
+        "overdrive": 1
+      },
+      "patterns": {
+        "aimed": 227,
+        "lead": 200,
+        "fan": 247,
+        "pair": 40,
+        "crown": 67,
+        "torpedo": 124
+      },
+      "cpuStepMs": {
+        "median": 0.19708299999911105,
+        "p95": 0.5952760000000126,
+        "p99": 0.87653599999976,
+        "max": 9.163190999999642
+      },
+      "wallSeconds": 2.8509871059999967
+    },
+    {
+      "mode": "normal",
+      "seed": 819337,
+      "fps": 30,
+      "touch": true,
+      "profile": "helper",
+      "reaction": 0.2,
+      "complete": false,
+      "status": "crashing",
+      "seconds": 130.03333333332853,
+      "minHP": 0,
+      "hp": 0,
+      "kills": 178,
+      "score": 13080,
+      "packets": 2,
+      "lessons": 0,
+      "waves": [
+        {
+          "wave": 1,
+          "count": 8,
+          "start": 0,
+          "hp": 100
+        },
+        {
+          "wave": 2,
+          "count": 16,
+          "start": 11.033333333333305,
+          "hp": 100
+        },
+        {
+          "wave": 3,
+          "count": 32,
+          "start": 23.266666666666982,
+          "hp": 100
+        },
+        {
+          "wave": 4,
+          "count": 64,
+          "start": 44.43333333333337,
+          "hp": 83.2
+        },
+        {
+          "wave": 5,
+          "count": 64,
+          "start": 87.09999999999762,
+          "hp": 91.8
+        }
+      ],
+      "peakEnemies": 64,
+      "peakHostile": 70,
+      "peakDivers": 5,
+      "cueFrames": 0,
+      "drops": {
+        "repair": 3,
+        "missiles": 2,
+        "overdrive": 3
+      },
+      "patterns": {
+        "aimed": 137,
+        "lead": 153,
+        "fan": 198,
+        "pair": 20,
+        "crown": 51,
+        "torpedo": 124
+      },
+      "cpuStepMs": {
+        "median": 0.1805190000013681,
+        "p95": 0.608938000001217,
+        "p99": 0.7657120000003488,
+        "max": 2.0997200000019802
+      },
+      "wallSeconds": 1.1366553789999998
+    },
+    {
+      "mode": "normal",
+      "seed": 417147,
+      "fps": 60,
+      "touch": false,
+      "profile": "helper",
+      "reaction": 0.2,
+      "complete": true,
+      "status": "playing",
+      "seconds": 164.6166666666898,
+      "minHP": 27.199999999999992,
+      "hp": 100,
+      "kills": 248,
+      "score": 19130,
+      "packets": 3,
+      "lessons": 2,
+      "waves": [
+        {
+          "wave": 1,
+          "count": 8,
+          "start": 0,
+          "hp": 100
+        },
+        {
+          "wave": 2,
+          "count": 16,
+          "start": 10.300000000000091,
+          "hp": 100
+        },
+        {
+          "wave": 3,
+          "count": 32,
+          "start": 27.366666666666394,
+          "hp": 100
+        },
+        {
+          "wave": 4,
+          "count": 64,
+          "start": 50.499999999998415,
+          "hp": 100
+        },
+        {
+          "wave": 5,
+          "count": 64,
+          "start": 93.33333333332932,
+          "hp": 37.19999999999999
+        },
+        {
+          "wave": 6,
+          "count": 64,
+          "start": 129.21666666666164,
+          "hp": 51.19999999999999
+        }
+      ],
+      "peakEnemies": 64,
+      "peakHostile": 76,
+      "peakDivers": 6,
+      "cueFrames": 0,
+      "drops": {
+        "repair": 3,
+        "missiles": 5,
+        "overdrive": 1
+      },
+      "patterns": {
+        "aimed": 227,
+        "lead": 200,
+        "fan": 247,
+        "pair": 40,
+        "crown": 67,
+        "torpedo": 124
+      },
+      "cpuStepMs": {
+        "median": 0.1836939999993774,
+        "p95": 0.5197249999982887,
+        "p99": 0.7396719999997003,
+        "max": 4.337663999998767
+      },
+      "wallSeconds": 2.559683591000001
+    },
+    {
+      "mode": "normal",
+      "seed": 819337,
+      "fps": 30,
+      "touch": true,
+      "profile": "helper",
+      "reaction": 0.2,
+      "complete": false,
+      "status": "crashing",
+      "seconds": 130.03333333332853,
+      "minHP": 0,
+      "hp": 0,
+      "kills": 178,
+      "score": 13080,
+      "packets": 2,
+      "lessons": 0,
+      "waves": [
+        {
+          "wave": 1,
+          "count": 8,
+          "start": 0,
+          "hp": 100
+        },
+        {
+          "wave": 2,
+          "count": 16,
+          "start": 11.033333333333305,
+          "hp": 100
+        },
+        {
+          "wave": 3,
+          "count": 32,
+          "start": 23.266666666666982,
+          "hp": 100
+        },
+        {
+          "wave": 4,
+          "count": 64,
+          "start": 44.43333333333337,
+          "hp": 83.2
+        },
+        {
+          "wave": 5,
+          "count": 64,
+          "start": 87.09999999999762,
+          "hp": 91.8
+        }
+      ],
+      "peakEnemies": 64,
+      "peakHostile": 70,
+      "peakDivers": 5,
+      "cueFrames": 0,
+      "drops": {
+        "repair": 3,
+        "missiles": 2,
+        "overdrive": 3
+      },
+      "patterns": {
+        "aimed": 137,
+        "lead": 153,
+        "fan": 198,
+        "pair": 20,
+        "crown": 51,
+        "torpedo": 124
+      },
+      "cpuStepMs": {
+        "median": 0.20848100000148406,
+        "p95": 0.4792750000015076,
+        "p99": 0.7585800000015297,
+        "max": 54.61858700000084
+      },
+      "wallSeconds": 1.3213487590000004
+    },
+    {
+      "mode": "normal",
+      "seed": 417147,
+      "fps": 60,
+      "touch": false,
+      "profile": "helper",
+      "reaction": 0.2,
+      "complete": true,
+      "status": "playing",
+      "seconds": 164.6166666666898,
+      "minHP": 27.199999999999992,
+      "hp": 100,
+      "kills": 248,
+      "score": 19130,
+      "packets": 3,
+      "lessons": 2,
+      "waves": [
+        {
+          "wave": 1,
+          "count": 8,
+          "start": 0,
+          "hp": 100
+        },
+        {
+          "wave": 2,
+          "count": 16,
+          "start": 10.300000000000091,
+          "hp": 100
+        },
+        {
+          "wave": 3,
+          "count": 32,
+          "start": 27.366666666666394,
+          "hp": 100
+        },
+        {
+          "wave": 4,
+          "count": 64,
+          "start": 50.499999999998415,
+          "hp": 100
+        },
+        {
+          "wave": 5,
+          "count": 64,
+          "start": 93.33333333332932,
+          "hp": 37.19999999999999
+        },
+        {
+          "wave": 6,
+          "count": 64,
+          "start": 129.21666666666164,
+          "hp": 51.19999999999999
+        }
+      ],
+      "peakEnemies": 64,
+      "peakHostile": 76,
+      "peakDivers": 6,
+      "cueFrames": 0,
+      "drops": {
+        "repair": 3,
+        "missiles": 5,
+        "overdrive": 1
+      },
+      "patterns": {
+        "aimed": 227,
+        "lead": 200,
+        "fan": 247,
+        "pair": 40,
+        "crown": 67,
+        "torpedo": 124
+      },
+      "cpuStepMs": {
+        "median": 0.247058000000834,
+        "p95": 0.7572269999946002,
+        "p99": 0.9998190000042086,
+        "max": 12.29585799999768
+      },
+      "wallSeconds": 3.6798251550000023
+    },
+    {
+      "mode": "normal",
+      "seed": 819337,
+      "fps": 30,
+      "touch": true,
+      "profile": "helper",
+      "reaction": 0.2,
+      "complete": false,
+      "status": "crashing",
+      "seconds": 130.03333333332853,
+      "minHP": 0,
+      "hp": 0,
+      "kills": 178,
+      "score": 13080,
+      "packets": 2,
+      "lessons": 0,
+      "waves": [
+        {
+          "wave": 1,
+          "count": 8,
+          "start": 0,
+          "hp": 100
+        },
+        {
+          "wave": 2,
+          "count": 16,
+          "start": 11.033333333333305,
+          "hp": 100
+        },
+        {
+          "wave": 3,
+          "count": 32,
+          "start": 23.266666666666982,
+          "hp": 100
+        },
+        {
+          "wave": 4,
+          "count": 64,
+          "start": 44.43333333333337,
+          "hp": 83.2
+        },
+        {
+          "wave": 5,
+          "count": 64,
+          "start": 87.09999999999762,
+          "hp": 91.8
+        }
+      ],
+      "peakEnemies": 64,
+      "peakHostile": 70,
+      "peakDivers": 5,
+      "cueFrames": 0,
+      "drops": {
+        "repair": 3,
+        "missiles": 2,
+        "overdrive": 3
+      },
+      "patterns": {
+        "aimed": 137,
+        "lead": 153,
+        "fan": 198,
+        "pair": 20,
+        "crown": 51,
+        "torpedo": 124
+      },
+      "cpuStepMs": {
+        "median": 0.20406399999774294,
+        "p95": 0.5890670000007958,
+        "p99": 0.8987080000006245,
+        "max": 7.993198999996821
+      },
+      "wallSeconds": 1.291898132000002
+    },
+    {
+      "mode": "normal",
+      "seed": 417147,
+      "fps": 60,
+      "touch": false,
+      "profile": "helper",
+      "reaction": 0.2,
+      "complete": true,
+      "status": "playing",
+      "seconds": 164.6166666666898,
+      "minHP": 27.199999999999992,
+      "hp": 100,
+      "kills": 248,
+      "score": 19130,
+      "packets": 3,
+      "lessons": 2,
+      "waves": [
+        {
+          "wave": 1,
+          "count": 8,
+          "start": 0,
+          "hp": 100
+        },
+        {
+          "wave": 2,
+          "count": 16,
+          "start": 10.300000000000091,
+          "hp": 100
+        },
+        {
+          "wave": 3,
+          "count": 32,
+          "start": 27.366666666666394,
+          "hp": 100
+        },
+        {
+          "wave": 4,
+          "count": 64,
+          "start": 50.499999999998415,
+          "hp": 100
+        },
+        {
+          "wave": 5,
+          "count": 64,
+          "start": 93.33333333332932,
+          "hp": 37.19999999999999
+        },
+        {
+          "wave": 6,
+          "count": 64,
+          "start": 129.21666666666164,
+          "hp": 51.19999999999999
+        }
+      ],
+      "peakEnemies": 64,
+      "peakHostile": 76,
+      "peakDivers": 6,
+      "cueFrames": 0,
+      "drops": {
+        "repair": 3,
+        "missiles": 5,
+        "overdrive": 1
+      },
+      "patterns": {
+        "aimed": 227,
+        "lead": 200,
+        "fan": 247,
+        "pair": 40,
+        "crown": 67,
+        "torpedo": 124
+      },
+      "cpuStepMs": {
+        "median": 0.27300600000307895,
+        "p95": 0.7196810000023106,
+        "p99": 0.916453999998339,
+        "max": 8.944084000002476
+      },
+      "wallSeconds": 3.481964291999997
+    },
+    {
+      "mode": "normal",
+      "seed": 819337,
+      "fps": 30,
+      "touch": true,
+      "profile": "helper",
+      "reaction": 0.2,
+      "complete": false,
+      "status": "crashing",
+      "seconds": 130.03333333332853,
+      "minHP": 0,
+      "hp": 0,
+      "kills": 178,
+      "score": 13080,
+      "packets": 2,
+      "lessons": 0,
+      "waves": [
+        {
+          "wave": 1,
+          "count": 8,
+          "start": 0,
+          "hp": 100
+        },
+        {
+          "wave": 2,
+          "count": 16,
+          "start": 11.033333333333305,
+          "hp": 100
+        },
+        {
+          "wave": 3,
+          "count": 32,
+          "start": 23.266666666666982,
+          "hp": 100
+        },
+        {
+          "wave": 4,
+          "count": 64,
+          "start": 44.43333333333337,
+          "hp": 83.2
+        },
+        {
+          "wave": 5,
+          "count": 64,
+          "start": 87.09999999999762,
+          "hp": 91.8
+        }
+      ],
+      "peakEnemies": 64,
+      "peakHostile": 70,
+      "peakDivers": 5,
+      "cueFrames": 0,
+      "drops": {
+        "repair": 3,
+        "missiles": 2,
+        "overdrive": 3
+      },
+      "patterns": {
+        "aimed": 137,
+        "lead": 153,
+        "fan": 198,
+        "pair": 20,
+        "crown": 51,
+        "torpedo": 124
+      },
+      "cpuStepMs": {
+        "median": 0.24214100000244798,
+        "p95": 0.5235990000001038,
+        "p99": 0.7381989999994403,
+        "max": 5.238607999999658
+      },
+      "wallSeconds": 1.3039186499999995
+    }
+  ],
+  "frames": [
+    {
+      "width": 1280,
+      "height": 720,
+      "fx": true,
+      "ms": 13.525,
+      "sha256": "e5aa96be1968b31094471b42245e4da9112cc6e551b92fccca78f47c5b4f2d8e",
+      "enemies": 64,
+      "hostile": 28
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "fx": false,
+      "ms": 6.129,
+      "sha256": "3c1c7ca835702769a85dbac07a1efa36f6d47486df90eaff276a76b4772340aa",
+      "enemies": 64,
+      "hostile": 28
+    },
+    {
+      "width": 390,
+      "height": 720,
+      "fx": true,
+      "ms": 4.501,
+      "sha256": "f749d5889b91e74a690f054e622f4c35d83b84561e9535454e2d1bf434246313",
+      "enemies": 64,
+      "hostile": 28
+    },
+    {
+      "width": 390,
+      "height": 720,
+      "fx": false,
+      "ms": 2.51,
+      "sha256": "b53b5e12cd65f1adf3896093510607d870d9629914bde864ca46d5142f64f130",
+      "enemies": 64,
+      "hostile": 28
+    },
+    {
+      "width": 780,
+      "height": 430,
+      "fx": true,
+      "ms": 3.513,
+      "sha256": "23fc4b6c8173249fc723445df52d3578f451f5a95e62964735286a0c9ab333dc",
+      "enemies": 64,
+      "hostile": 28
+    },
+    {
+      "width": 780,
+      "height": 430,
+      "fx": false,
+      "ms": 2.636,
+      "sha256": "f6ccc959ada7fa7c071768af136e07e372c5a201d70ccc0caf4795ec775f7073",
+      "enemies": 64,
+      "hostile": 28
+    },
+    {
+      "width": 640,
+      "height": 360,
+      "fx": true,
+      "ms": 3.708,
+      "sha256": "71ef5087f5f5d160ce9690bda871b083eaa3f41a19cfebfade76c1078887a6fd",
+      "enemies": 64,
+      "hostile": 28
+    },
+    {
+      "width": 640,
+      "height": 360,
+      "fx": false,
+      "ms": 2.897,
+      "sha256": "14ef2711a4cadb2f6e73617a36fc9fa4b2d402bd2fedb600d9c1d1bda53e4dc8",
+      "enemies": 64,
+      "hostile": 28
+    }
+  ],
+  "renderStress": {
+    "frames": 240,
+    "canvas": "640x360",
+    "medianMs": 2.854445000000851,
+    "p95Ms": 4.626140000000305,
+    "maxMs": 5.095145999999659,
+    "stateReadOnly": true
+  },
+  "stress": {
+    "runs": [
+      {
+        "run": 1,
+        "seconds": 164.6166666666898,
+        "complete": true,
+        "kills": 248,
+        "hp": 100
+      },
+      {
+        "run": 2,
+        "seconds": 130.03333333332853,
+        "complete": false,
+        "kills": 178,
+        "hp": 0
+      },
+      {
+        "run": 3,
+        "seconds": 164.6166666666898,
+        "complete": true,
+        "kills": 248,
+        "hp": 100
+      },
+      {
+        "run": 4,
+        "seconds": 130.03333333332853,
+        "complete": false,
+        "kills": 178,
+        "hp": 0
+      },
+      {
+        "run": 5,
+        "seconds": 164.6166666666898,
+        "complete": true,
+        "kills": 248,
+        "hp": 100
+      },
+      {
+        "run": 6,
+        "seconds": 130.03333333332853,
+        "complete": false,
+        "kills": 178,
+        "hp": 0
+      },
+      {
+        "run": 7,
+        "seconds": 164.6166666666898,
+        "complete": true,
+        "kills": 248,
+        "hp": 100
+      },
+      {
+        "run": 8,
+        "seconds": 130.03333333332853,
+        "complete": false,
+        "kills": 178,
+        "hp": 0
+      },
+      {
+        "run": 9,
+        "seconds": 164.6166666666898,
+        "complete": true,
+        "kills": 248,
+        "hp": 100
+      },
+      {
+        "run": 10,
+        "seconds": 130.03333333332853,
+        "complete": false,
+        "kills": 178,
+        "hp": 0
+      },
+      {
+        "run": 11,
+        "seconds": 164.6166666666898,
+        "complete": true,
+        "kills": 248,
+        "hp": 100
+      },
+      {
+        "run": 12,
+        "seconds": 130.03333333332853,
+        "complete": false,
+        "kills": 178,
+        "hp": 0
+      },
+      {
+        "run": 13,
+        "seconds": 164.6166666666898,
+        "complete": true,
+        "kills": 248,
+        "hp": 100
+      },
+      {
+        "run": 14,
+        "seconds": 130.03333333332853,
+        "complete": false,
+        "kills": 178,
+        "hp": 0
+      }
+    ],
+    "simulationSeconds": 2062.5500000001284,
+    "simulationMinutes": 34.37583333333547,
+    "listenersBefore": 111,
+    "listenersAfter": 111,
+    "heapSamples": [
+      51197992,
+      50889752,
+      50990240,
+      50930456,
+      51045480,
+      51037064,
+      51182200,
+      51203008,
+      51298672,
+      51299936,
+      51385888,
+      51366016,
+      51451368,
+      51462768
+    ],
+    "heapWarmSpreadMiB": 0.5076522827148438,
+    "gc": true,
+    "limits": {
+      "enemies": 64,
+      "hostile": 80,
+      "divers": 6,
+      "events": 24,
+      "particles": 36,
+      "explosions": 14
+    }
+  },
+  "pass": true
+}

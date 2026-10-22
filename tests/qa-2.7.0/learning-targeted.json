@@ -1,0 +1,119 @@
+{
+  "version": "2.7.0",
+  "method": "Node VM targeted card/state/network fixtures; not gameplay completion or real browser layout.",
+  "pass": true,
+  "results": [
+    {
+      "name": "all-84-questions-reachable-through-23-points",
+      "pass": true,
+      "seeds": 256,
+      "uniqueQuestions": 84,
+      "tiers": {
+        "lesson:0": 1,
+        "lesson:1": 1,
+        "lesson:2": 4,
+        "lesson:3": 4,
+        "lesson:4": 7,
+        "lesson:5": 7,
+        "lesson:6": 10,
+        "lesson:7": 10,
+        "remark:0": 2,
+        "remark:1": 2,
+        "remark:2": 3,
+        "remark:3": 5,
+        "remark:4": 5,
+        "remark:5": 6,
+        "remark:6": 8,
+        "remark:7": 8,
+        "remark:8": 9,
+        "remark:9": 11,
+        "remark:10": 11,
+        "remark:11": 12,
+        "final:0": 13,
+        "final:1": 13,
+        "final:2": 14
+      }
+    },
+    {
+      "name": "training-lesson-answer-save-continue",
+      "pass": true,
+      "points": 100,
+      "quizId": "quiz270-01-functional"
+    },
+    {
+      "name": "training-remark-answer-save-continue",
+      "pass": true,
+      "points": 125,
+      "quizId": "quiz270-02-source"
+    },
+    {
+      "name": "training-final-answer-save-continue",
+      "pass": true,
+      "points": 400,
+      "quizId": "quiz270-13-sourceoftruth"
+    },
+    {
+      "name": "combat-lesson-answer-save-continue",
+      "pass": true,
+      "points": 100,
+      "quizId": "quiz270-01-functional"
+    },
+    {
+      "name": "combat-remark-answer-save-continue",
+      "pass": true,
+      "points": 125,
+      "quizId": "quiz270-02-source"
+    },
+    {
+      "name": "combat-final-answer-save-continue",
+      "pass": true,
+      "points": 400,
+      "quizId": "quiz270-13-sourceoftruth"
+    },
+    {
+      "name": "professional-cases-unchanged",
+      "pass": true
+    },
+    {
+      "name": "legacy-save-migration",
+      "pass": true
+    },
+    {
+      "name": "repeated-retry-rolls-score-and-answers-back-together",
+      "pass": true,
+      "retries": 3
+    },
+    {
+      "name": "default-local-launch-preserves-cloud-and-old-save",
+      "pass": true
+    },
+    {
+      "name": "paused-local-restore-does-not-toggle",
+      "pass": true
+    },
+    {
+      "name": "won-record-write-is-bounded-and-preserves-legacy",
+      "pass": true,
+      "frames": 180,
+      "recordWrites": 1
+    },
+    {
+      "name": "story-menu-and-hud-modes",
+      "pass": true
+    }
+  ],
+  "sources": [
+    {
+      "file": "assets/citadel-launch-v2.7.0.js",
+      "sha256": "491278ad4dc8ea9020aa2123b1812db19e1fca4969f195930711f189ca654d96"
+    },
+    {
+      "file": "assets/citadel-quiz-bank-v2.7.0.js",
+      "sha256": "9bd8a4302f2e570296d3bd2ae2ded6cb274699b954f0b1c312932103e2cd5004"
+    },
+    {
+      "file": "assets/citadel-learning-modes-v2.7.0.js",
+      "sha256": "b3d8ae0a659f36668c8f81bf3af7f56ceceb0094450e35b7745d12c72293eb3c"
+    }
+  ]
+}

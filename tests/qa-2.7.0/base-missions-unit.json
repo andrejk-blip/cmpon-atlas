@@ -1,0 +1,124 @@
+{
+  "version": "2.7.0",
+  "environment": "Node VM, input-only mission fixtures. Not a browser or human balance claim.",
+  "rulesSha256": "8eec5d00636ebf654c27223dab7b716f71f31189e9c434ed371ca5fb8008e0e6",
+  "passed": 5,
+  "total": 5,
+  "rows": [
+    {
+      "name": "Fresh missions have distinct geometry, roles, and reachable rewards",
+      "pass": true,
+      "seconds": 5.621,
+      "data": [
+        {
+          "level": 2,
+          "theme": "academy",
+          "plans": [
+            "intro-ring",
+            "intro-ring",
+            "intro-ring"
+          ],
+          "cells": 428,
+          "dogs": 0,
+          "hazards": 0,
+          "systems": 0
+        },
+        {
+          "level": 5,
+          "theme": "foundry",
+          "plans": [
+            "assembly",
+            "reactor",
+            "arena"
+          ],
+          "cells": 511,
+          "dogs": 4,
+          "hazards": 3,
+          "systems": 1
+        },
+        {
+          "level": 8,
+          "theme": "switchyard",
+          "plans": [
+            "split-grid",
+            "assembly",
+            "arena"
+          ],
+          "cells": 552,
+          "dogs": 6,
+          "hazards": 2,
+          "systems": 2
+        },
+        {
+          "level": 11,
+          "theme": "command",
+          "plans": [
+            "gallery",
+            "fracture",
+            "arena"
+          ],
+          "cells": 502,
+          "dogs": 7,
+          "hazards": 3,
+          "systems": 3
+        },
+        {
+          "level": 13,
+          "theme": "wreck",
+          "plans": [
+            "fracture",
+            "fracture",
+            "arena"
+          ],
+          "cells": 533,
+          "dogs": 8,
+          "hazards": 8,
+          "systems": 3
+        }
+      ]
+    },
+    {
+      "name": "Saved active 2.6 board is never remapped or given a replacement crew",
+      "pass": true,
+      "seconds": 0.966,
+      "data": {
+        "layout": "legacy",
+        "unchanged": true
+      }
+    },
+    {
+      "name": "Broken floors block walking, allow fire, and lift state survives midair restore",
+      "pass": true,
+      "seconds": 5.144,
+      "data": {
+        "physicalHole": true,
+        "shootAcross": true,
+        "midairPause": true,
+        "arrivalLatch": true,
+        "trips": 1,
+        "afterWaitStatus": "boarding"
+      }
+    },
+    {
+      "name": "Custom robot AI advances once and never falls through legacy human cadence",
+      "pass": true,
+      "seconds": 1.045,
+      "data": {
+        "robotClockDelta": 0.1,
+        "legacyHumanShots": 0
+      }
+    },
+    {
+      "name": "Pause, restore and repeated script loads preserve exact simulation state",
+      "pass": true,
+      "seconds": 5.878,
+      "data": {
+        "pausedSeconds": 4,
+        "deterministicFrames": 120,
+        "loads": 40,
+        "listeners": 68
+      }
+    }
+  ],
+  "runs": []
+}

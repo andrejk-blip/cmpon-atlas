@@ -1,0 +1,313 @@
+{
+  "version": "2.7.0",
+  "config": {
+    "mode": "combat",
+    "scene": "menu",
+    "accelerated": true,
+    "manual": true,
+    "holdQuestions": false
+  },
+  "education": {
+    "mode": "pro",
+    "quiz": false,
+    "current": null
+  },
+  "renderer": "3D · совместимый режим",
+  "mode": "combat",
+  "accelerated": true,
+  "rafInputCalls": 0,
+  "finished": null,
+  "status": "briefing",
+  "level": 1,
+  "levels": [],
+  "cards": 0,
+  "wallSeconds": 86,
+  "simulatedSeconds": 0,
+  "frameCalls": 0,
+  "emitChanges": 0,
+  "maxInputGapMs": 0,
+  "metrics": {
+    "listeners": 75,
+    "peakListeners": 75,
+    "rafCalls": 440,
+    "rafDone": 437,
+    "rafPending": 1,
+    "rafPeak": 2,
+    "errors": [],
+    "heap": 91767380
+  },
+  "input": {
+    "version": "2.6.0",
+    "boundCanvases": 1,
+    "rightClicks": 0,
+    "active": false,
+    "pointerId": null,
+    "mode": "idle"
+  },
+  "player": {
+    "hp": 100,
+    "missiles": 8
+  },
+  "runtime": {
+    "version": "1.9.3",
+    "build": "193r2",
+    "frames": 428,
+    "updates": 0,
+    "renders": 428,
+    "recoveries": 0,
+    "failures": 0,
+    "stopped": false,
+    "contextLost": false,
+    "pending": true,
+    "stage": "idle",
+    "lastFrameAge": 257,
+    "lastUpdateAge": 86126,
+    "lastRenderAge": 24,
+    "recoverySave": "none",
+    "faults": [],
+    "events": [
+      {
+        "at": 982,
+        "kind": "detach",
+        "status": "unknown",
+        "stage": null,
+        "phase": "other",
+        "finale": null,
+        "wave": null,
+        "seconds": null,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "webgl"
+      },
+      {
+        "at": 1047,
+        "kind": "engine",
+        "status": "menu",
+        "stage": 0,
+        "phase": "brief",
+        "finale": null,
+        "wave": 0,
+        "seconds": 0,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 1047,
+        "kind": "transition",
+        "status": "menu",
+        "stage": 0,
+        "phase": "brief",
+        "finale": null,
+        "wave": 0,
+        "seconds": 0,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 55337,
+        "kind": "engine",
+        "status": "briefing",
+        "stage": 0,
+        "phase": "orientation",
+        "finale": null,
+        "wave": 0,
+        "seconds": 0,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 55337,
+        "kind": "transition",
+        "status": "briefing",
+        "stage": 0,
+        "phase": "orientation",
+        "finale": null,
+        "wave": 0,
+        "seconds": 0,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      }
+    ]
+  },
+  "sound": {
+    "context": "running",
+    "loaded": 14,
+    "active": 0,
+    "cacheBytes": 1766452,
+    "played": {}
+  },
+  "voice": {
+    "busy": false,
+    "source": null
+  },
+  "swarm": null,
+  "base": {
+    "active": false,
+    "version": "2.7.0",
+    "legacy": false,
+    "tier": null,
+    "theme": null,
+    "stats": null,
+    "hazards": [],
+    "systems": [],
+    "transport": null,
+    "enemies": [],
+    "events": []
+  },
+  "samples": [
+    {
+      "wallSeconds": 10,
+      "gameSeconds": 0,
+      "level": 1,
+      "listeners": 75,
+      "heap": 137880228,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 20,
+      "gameSeconds": 0,
+      "level": 1,
+      "listeners": 75,
+      "heap": 95110843,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 30,
+      "gameSeconds": 0,
+      "level": 1,
+      "listeners": 75,
+      "heap": 102449059,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 42,
+      "gameSeconds": 0,
+      "level": 1,
+      "listeners": 75,
+      "heap": 70442963,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 52,
+      "gameSeconds": 0,
+      "level": 1,
+      "listeners": 75,
+      "heap": 110991447,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 64,
+      "gameSeconds": 0,
+      "level": 1,
+      "listeners": 75,
+      "heap": 93461037,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 74,
+      "gameSeconds": 0,
+      "level": 1,
+      "listeners": 75,
+      "heap": 110041936,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 86,
+      "gameSeconds": 0,
+      "level": 1,
+      "listeners": 75,
+      "heap": 91767380,
+      "rafPending": 1
+    }
+  ],
+  "transitions": [],
+  "presentation": {
+    "number": 1,
+    "name": "Орбита Цитадели",
+    "active": false,
+    "convoy": false,
+    "mrg": false,
+    "inside": false,
+    "guideOn": false,
+    "guideName": "Автокурс",
+    "guideVisible": false,
+    "pulseName": "ИМПУЛЬС",
+    "cooldown": 0,
+    "boostName": "ФОРСАЖ",
+    "help": "Джойстик — курс; Огонь — удерживать. Форсаж — ускорение; Импульс — защита вблизи. Автокурс включается кнопкой над полем. После ручного манёвра проверяйте его состояние на кнопке."
+  },
+  "art": null,
+  "dom": {
+    "viewport": {
+      "w": 640,
+      "h": 360
+    },
+    "layout": {
+      "x": 0,
+      "y": 0,
+      "w": 640,
+      "h": 360,
+      "display": "block",
+      "visible": true,
+      "text": " ЦИТАДЕЛЬ ЦСИИ · ПРОФЕССИОНАЛЬНЫЙУправлениеРекорды♫ вкл◖))×1234РЕДАКЦИЯ 1/4ПАКЕТ · 0 / 23 РЕШЕНИЯ◆ МОДУЛИ0/3⌖ ПЕРЕХВАЧЕНО0/20✓ РЕШЕНИЯ0/5УРОВЕНЬ 01 / 14Орбита ЦитаделиАвтокурс вклю",
+      "disabled": false
+    },
+    "canvas": {
+      "x": 0,
+      "y": 44,
+      "w": 640,
+      "h": 316,
+      "display": "block",
+      "visible": true,
+      "text": "",
+      "disabled": false
+    },
+    "header": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "display": "none",
+      "visible": false,
+      "text": "УРОВЕНЬ 01 / 14Орбита ЦитаделиАвтокурс включён. Подлетите на 30 м — сбор автоматический. Джойстик — ручной курс; «Автокурс» — помощь.0 / 3 МОДУЛЕЙАвтокурс · выкл.",
+      "disabled": false
+    },
+    "route": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "display": "none",
+      "visible": false,
+      "text": "1234РЕДАКЦИЯ 1/4ПАКЕТ · 0 / 23 РЕШЕНИЯ◆ МОДУЛИ0/3⌖ ПЕРЕХВАЧЕНО0/20✓ РЕШЕНИЯ0/5",
+      "disabled": false
+    },
+    "defense": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "display": "flex",
+      "visible": false,
+      "text": "ИМПУЛЬС\nГОТОВ",
+      "disabled": true
+    },
+    "cover": null,
+    "boost": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "display": "flex",
+      "visible": false,
+      "text": "ФОРСАЖ",
+      "disabled": false
+    },
+    "buttons": [],
+    "horizontalOverflow": false
+  }
+}

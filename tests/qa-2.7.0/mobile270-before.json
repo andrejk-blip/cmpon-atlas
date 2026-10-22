@@ -1,0 +1,261 @@
+{
+  "version": "2.6.0",
+  "config": {
+    "mode": "normal",
+    "scene": "convoy",
+    "accelerated": true,
+    "manual": true
+  },
+  "renderer": "3D · совместимый режим",
+  "mode": "normal",
+  "accelerated": true,
+  "rafInputCalls": 13,
+  "finished": null,
+  "status": "playing",
+  "level": 9,
+  "levels": [],
+  "cards": 0,
+  "wallSeconds": 12,
+  "simulatedSeconds": 0.52,
+  "frameCalls": 0,
+  "emitChanges": 0,
+  "maxInputGapMs": 0,
+  "metrics": {
+    "listeners": 60,
+    "peakListeners": 62,
+    "rafCalls": 17,
+    "rafDone": 14,
+    "rafPending": 1,
+    "rafPeak": 2,
+    "errors": [],
+    "heap": 22159495
+  },
+  "input": {
+    "version": "2.6.0",
+    "boundCanvases": 1,
+    "rightClicks": 0,
+    "active": false,
+    "pointerId": null,
+    "mode": "idle"
+  },
+  "player": {
+    "hp": 100,
+    "missiles": 10
+  },
+  "runtime": {
+    "version": "1.9.3",
+    "build": "193r2",
+    "frames": 13,
+    "updates": 13,
+    "renders": 13,
+    "recoveries": 0,
+    "failures": 0,
+    "stopped": false,
+    "contextLost": false,
+    "pending": true,
+    "stage": "idle",
+    "lastFrameAge": 731,
+    "lastUpdateAge": 731,
+    "lastRenderAge": 725,
+    "recoverySave": "none",
+    "faults": [],
+    "events": [
+      {
+        "at": 852,
+        "kind": "detach",
+        "status": "unknown",
+        "stage": null,
+        "phase": "other",
+        "finale": null,
+        "wave": null,
+        "seconds": null,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "webgl"
+      },
+      {
+        "at": 1061,
+        "kind": "engine",
+        "status": "playing",
+        "stage": 2,
+        "phase": "escort",
+        "finale": null,
+        "wave": 0,
+        "seconds": 0,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 1065,
+        "kind": "transition",
+        "status": "playing",
+        "stage": 2,
+        "phase": "escort",
+        "finale": null,
+        "wave": 0,
+        "seconds": 0.04,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      }
+    ]
+  },
+  "sound": {
+    "context": "running",
+    "loaded": 14,
+    "active": 0,
+    "cacheBytes": 1904316,
+    "played": {}
+  },
+  "voice": {
+    "busy": false,
+    "source": null
+  },
+  "samples": [
+    {
+      "wallSeconds": 10,
+      "gameSeconds": 0,
+      "level": 9,
+      "listeners": 60,
+      "heap": 20955966,
+      "rafPending": 1
+    }
+  ],
+  "transitions": [],
+  "presentation": {
+    "number": 9,
+    "name": "Конвой · блокада",
+    "active": true,
+    "convoy": true,
+    "mrg": false,
+    "inside": false,
+    "guideOn": false,
+    "guideName": "К строю",
+    "guideVisible": true,
+    "pulseName": "ПРИКРЫТИЕ",
+    "cooldown": 0,
+    "boostName": "ФОРСАЖ",
+    "help": "Джойстик — манёвр. Цель — выбрать противника; наведите на него прицел и стреляйте. Прикрытие защищает конвой. К строю — вернуться в центр; корабль не ведётся за вас."
+  },
+  "art": null,
+  "dom": {
+    "viewport": {
+      "w": 780,
+      "h": 430
+    },
+    "layout": {
+      "x": 0,
+      "y": 0,
+      "w": 780,
+      "h": 430,
+      "display": "block",
+      "visible": true,
+      "text": " ЦИТАДЕЛЬ ЦСИИ · БОЕВОЙ РЕЖИМУправлениеРекорды♫ вкл◖))×ПРОРЫВ БЛОКАДЫГИПЕРПЕРЕХОД0%ЗВЕНЬЯ ПРОТИВНИКА0/7Манёвр · перехват · прикрытиеСохраните 2 / 3 транспортаУРОВЕНЬ 09 / 14Конвой ",
+      "disabled": false
+    },
+    "canvas": {
+      "x": 109,
+      "y": 88,
+      "w": 502,
+      "h": 342,
+      "display": "block",
+      "visible": true,
+      "text": "",
+      "disabled": false
+    },
+    "header": {
+      "x": 0,
+      "y": 44,
+      "w": 780,
+      "h": 48,
+      "display": "flex",
+      "visible": true,
+      "text": "УРОВЕНЬ 09 / 14Конвой · блокадаСохраните 2/3 транспорта · группа 0/7 · совместите прицел с цельюК строю",
+      "disabled": false
+    },
+    "route": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "display": "none",
+      "visible": false,
+      "text": "ПРОРЫВ БЛОКАДЫГИПЕРПЕРЕХОД0%ЗВЕНЬЯ ПРОТИВНИКА0/7Манёвр · перехват · прикрытиеСохраните 2 / 3 транспорта",
+      "disabled": false
+    },
+    "defense": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "display": "none",
+      "visible": false,
+      "text": "ПРИКРЫТИЕ\nГОТОВ",
+      "disabled": false
+    },
+    "cover": {
+      "x": 699,
+      "y": 262,
+      "w": 73,
+      "h": 48,
+      "display": "flex",
+      "visible": true,
+      "text": "ПРИКРЫТИЕ\nГОТОВО",
+      "disabled": false
+    },
+    "boost": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "display": "none",
+      "visible": false,
+      "text": "ФОРСАЖ",
+      "disabled": false
+    },
+    "buttons": [
+      {
+        "x": 620,
+        "y": 208,
+        "w": 73,
+        "h": 48,
+        "display": "flex",
+        "visible": true,
+        "text": "ОГОНЬ",
+        "disabled": false
+      },
+      {
+        "x": 699,
+        "y": 208,
+        "w": 73,
+        "h": 48,
+        "display": "flex",
+        "visible": true,
+        "text": "РАКЕТА",
+        "disabled": false
+      },
+      {
+        "x": 620,
+        "y": 262,
+        "w": 73,
+        "h": 48,
+        "display": "flex",
+        "visible": true,
+        "text": "ЦЕЛЬ",
+        "disabled": false
+      },
+      {
+        "x": 699,
+        "y": 262,
+        "w": 73,
+        "h": 48,
+        "display": "flex",
+        "visible": true,
+        "text": "ПРИКРЫТИЕ\nГОТОВО",
+        "disabled": false
+      }
+    ],
+    "horizontalOverflow": false
+  }
+}

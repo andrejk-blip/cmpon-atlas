@@ -1,0 +1,12 @@
+{
+  "clips": 76,
+  "locallyGenerated": 74,
+  "bytes": 3950095,
+  "seconds": 488.42,
+  "maxPeakDbfs": -1.73,
+  "localGenerationSeconds": 39.85,
+  "modelSha256": "ba41b18f6a707ad93605a162998865e7c087153d2e010a26dd02229dab0e672a",
+  "externalTtsRequests": 0,
+  "runtimeModels": 0,
+  "legacy110Touched": false
+}

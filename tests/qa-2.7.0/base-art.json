@@ -1,0 +1,897 @@
+{
+  "version": "2.7.0",
+  "method": "Native @napi-rs/canvas + production Node VM. Staged art fixtures, ordinary AI laser and ordinary platform interaction. Not browser, physical mobile, GPU FPS or campaign completion evidence.",
+  "files": [
+    {
+      "file": "assets/citadel-base-missions-v2.7.0.js",
+      "sha": "8eec5d00636ebf654c27223dab7b716f71f31189e9c434ed371ca5fb8008e0e6"
+    },
+    {
+      "file": "assets/citadel-base-missions-view-v2.7.0.js",
+      "sha": "396e1e95a0dda8b21639ac65c036f3d500a87ef303a42a70d0253dd9cb2311e6"
+    }
+  ],
+  "checks": {
+    "idempotent": true,
+    "readOnly": true,
+    "introUnchanged": true,
+    "legacyHumansRetained": true,
+    "finiteTransforms": true,
+    "actualBeamEndpoints": true,
+    "actualPitGeometry": true,
+    "physicalLiftPose": true,
+    "saveRestoreLift": true,
+    "noCombatWarnings": true,
+    "trainingWarnings": true,
+    "addedListeners": 0,
+    "boundedRegistry": true,
+    "rgbaIdentical": true
+  },
+  "dimensions": [
+    {
+      "kind": "dog",
+      "high": false,
+      "height": 1.96,
+      "width": 1.64
+    },
+    {
+      "kind": "mech",
+      "high": false,
+      "height": 6.44,
+      "width": 3.754
+    },
+    {
+      "kind": "dog",
+      "high": true,
+      "height": 1.96,
+      "width": 1.64
+    },
+    {
+      "kind": "mech",
+      "high": true,
+      "height": 6.44,
+      "width": 3.753
+    }
+  ],
+  "cost": [
+    {
+      "kind": "dog",
+      "high": false,
+      "items": 33,
+      "triangles": 1052
+    },
+    {
+      "kind": "mech",
+      "high": false,
+      "items": 40,
+      "triangles": 1872
+    },
+    {
+      "kind": "dog",
+      "high": true,
+      "items": 39,
+      "triangles": 1480
+    },
+    {
+      "kind": "mech",
+      "high": true,
+      "items": 43,
+      "triangles": 2536
+    }
+  ],
+  "cases": [
+    {
+      "tier": 1,
+      "room": 0,
+      "robots": [
+        {
+          "id": 16,
+          "kind": "dog",
+          "room": 0
+        },
+        {
+          "id": 20,
+          "kind": "dog",
+          "room": 1
+        },
+        {
+          "id": 22,
+          "kind": "dog",
+          "room": 1
+        },
+        {
+          "id": 23,
+          "kind": "mech",
+          "room": 2
+        },
+        {
+          "id": 28,
+          "kind": "dog",
+          "room": 2
+        }
+      ],
+      "hazards": [
+        "fire",
+        "fire",
+        "fire"
+      ],
+      "plans": [
+        "assembly",
+        "reactor",
+        "arena"
+      ]
+    },
+    {
+      "tier": 1,
+      "room": 2,
+      "robots": [
+        {
+          "id": 16,
+          "kind": "dog",
+          "room": 0
+        },
+        {
+          "id": 20,
+          "kind": "dog",
+          "room": 1
+        },
+        {
+          "id": 22,
+          "kind": "dog",
+          "room": 1
+        },
+        {
+          "id": 23,
+          "kind": "mech",
+          "room": 2
+        },
+        {
+          "id": 28,
+          "kind": "dog",
+          "room": 2
+        }
+      ],
+      "hazards": [
+        "fire",
+        "fire",
+        "fire"
+      ],
+      "plans": [
+        "assembly",
+        "reactor",
+        "arena"
+      ]
+    },
+    {
+      "tier": 2,
+      "room": 0,
+      "robots": [
+        {
+          "id": 14,
+          "kind": "dog",
+          "room": 0
+        },
+        {
+          "id": 16,
+          "kind": "dog",
+          "room": 0
+        },
+        {
+          "id": 21,
+          "kind": "dog",
+          "room": 1
+        },
+        {
+          "id": 23,
+          "kind": "dog",
+          "room": 1
+        },
+        {
+          "id": 25,
+          "kind": "mech",
+          "room": 2
+        },
+        {
+          "id": 30,
+          "kind": "dog",
+          "room": 2
+        },
+        {
+          "id": 32,
+          "kind": "dog",
+          "room": 2
+        }
+      ],
+      "hazards": [
+        "laser-grid",
+        "laser-grid"
+      ],
+      "plans": [
+        "split-grid",
+        "assembly",
+        "arena"
+      ]
+    },
+    {
+      "tier": 2,
+      "room": 2,
+      "robots": [
+        {
+          "id": 14,
+          "kind": "dog",
+          "room": 0
+        },
+        {
+          "id": 16,
+          "kind": "dog",
+          "room": 0
+        },
+        {
+          "id": 21,
+          "kind": "dog",
+          "room": 1
+        },
+        {
+          "id": 23,
+          "kind": "dog",
+          "room": 1
+        },
+        {
+          "id": 25,
+          "kind": "mech",
+          "room": 2
+        },
+        {
+          "id": 30,
+          "kind": "dog",
+          "room": 2
+        },
+        {
+          "id": 32,
+          "kind": "dog",
+          "room": 2
+        }
+      ],
+      "hazards": [
+        "laser-grid",
+        "laser-grid"
+      ],
+      "plans": [
+        "split-grid",
+        "assembly",
+        "arena"
+      ]
+    },
+    {
+      "tier": 3,
+      "room": 0,
+      "robots": [
+        {
+          "id": 4,
+          "kind": "dog",
+          "room": 0
+        },
+        {
+          "id": 6,
+          "kind": "dog",
+          "room": 0
+        },
+        {
+          "id": 8,
+          "kind": "dog",
+          "room": 1
+        },
+        {
+          "id": 11,
+          "kind": "dog",
+          "room": 1
+        },
+        {
+          "id": 13,
+          "kind": "dog",
+          "room": 1
+        },
+        {
+          "id": 15,
+          "kind": "mech",
+          "room": 2
+        },
+        {
+          "id": 20,
+          "kind": "dog",
+          "room": 2
+        },
+        {
+          "id": 22,
+          "kind": "dog",
+          "room": 2
+        }
+      ],
+      "hazards": [
+        "laser-grid",
+        "breach",
+        "laser-grid"
+      ],
+      "plans": [
+        "gallery",
+        "fracture",
+        "arena"
+      ]
+    },
+    {
+      "tier": 3,
+      "room": 2,
+      "robots": [
+        {
+          "id": 4,
+          "kind": "dog",
+          "room": 0
+        },
+        {
+          "id": 6,
+          "kind": "dog",
+          "room": 0
+        },
+        {
+          "id": 8,
+          "kind": "dog",
+          "room": 1
+        },
+        {
+          "id": 11,
+          "kind": "dog",
+          "room": 1
+        },
+        {
+          "id": 13,
+          "kind": "dog",
+          "room": 1
+        },
+        {
+          "id": 15,
+          "kind": "mech",
+          "room": 2
+        },
+        {
+          "id": 20,
+          "kind": "dog",
+          "room": 2
+        },
+        {
+          "id": 22,
+          "kind": "dog",
+          "room": 2
+        }
+      ],
+      "hazards": [
+        "laser-grid",
+        "breach",
+        "laser-grid"
+      ],
+      "plans": [
+        "gallery",
+        "fracture",
+        "arena"
+      ]
+    },
+    {
+      "tier": 4,
+      "room": 0,
+      "robots": [
+        {
+          "id": 4,
+          "kind": "dog",
+          "room": 0
+        },
+        {
+          "id": 6,
+          "kind": "dog",
+          "room": 0
+        },
+        {
+          "id": 8,
+          "kind": "dog",
+          "room": 0
+        },
+        {
+          "id": 12,
+          "kind": "dog",
+          "room": 1
+        },
+        {
+          "id": 14,
+          "kind": "dog",
+          "room": 1
+        },
+        {
+          "id": 16,
+          "kind": "dog",
+          "room": 1
+        },
+        {
+          "id": 17,
+          "kind": "mech",
+          "room": 2
+        },
+        {
+          "id": 22,
+          "kind": "dog",
+          "room": 2
+        },
+        {
+          "id": 24,
+          "kind": "dog",
+          "room": 2
+        }
+      ],
+      "hazards": [
+        "breach",
+        "fire",
+        "breach",
+        "fire",
+        "breach",
+        "breach",
+        "fire",
+        "fire"
+      ],
+      "plans": [
+        "fracture",
+        "fracture",
+        "arena"
+      ]
+    },
+    {
+      "tier": 4,
+      "room": 2,
+      "robots": [
+        {
+          "id": 4,
+          "kind": "dog",
+          "room": 0
+        },
+        {
+          "id": 6,
+          "kind": "dog",
+          "room": 0
+        },
+        {
+          "id": 8,
+          "kind": "dog",
+          "room": 0
+        },
+        {
+          "id": 12,
+          "kind": "dog",
+          "room": 1
+        },
+        {
+          "id": 14,
+          "kind": "dog",
+          "room": 1
+        },
+        {
+          "id": 16,
+          "kind": "dog",
+          "room": 1
+        },
+        {
+          "id": 17,
+          "kind": "mech",
+          "room": 2
+        },
+        {
+          "id": 22,
+          "kind": "dog",
+          "room": 2
+        },
+        {
+          "id": 24,
+          "kind": "dog",
+          "room": 2
+        }
+      ],
+      "hazards": [
+        "breach",
+        "fire",
+        "breach",
+        "fire",
+        "breach",
+        "breach",
+        "fire",
+        "fire"
+      ],
+      "plans": [
+        "fracture",
+        "fracture",
+        "arena"
+      ]
+    }
+  ],
+  "frames": [
+    {
+      "name": "base-intro-retained",
+      "width": 390,
+      "height": 720,
+      "fx": true,
+      "high": false,
+      "hud": true,
+      "items": 197,
+      "triangles": 12936,
+      "milliseconds": 82.46,
+      "sha": "8824249def26fc4db46b6a10fd34683e31871962ff06f6cbfa9d33650a776252"
+    },
+    {
+      "name": "base-2-room-0-desktop",
+      "width": 1280,
+      "height": 720,
+      "fx": true,
+      "high": false,
+      "hud": true,
+      "items": 489,
+      "triangles": 38914,
+      "milliseconds": 226.55,
+      "sha": "2102c2843bd0c1e9826a4a00364db7dea2fbbb6e96587d3c29110955c4dc3fd4"
+    },
+    {
+      "name": "base-2-room-0-phone",
+      "width": 390,
+      "height": 720,
+      "fx": true,
+      "high": false,
+      "hud": true,
+      "items": 489,
+      "triangles": 38914,
+      "milliseconds": 48.5,
+      "sha": "6be809c48cd9b3e2c70c7b5f775e6bb19f5058b683c6a7992c52863132d314e7"
+    },
+    {
+      "name": "base-2-room-2-desktop",
+      "width": 1280,
+      "height": 720,
+      "fx": true,
+      "high": false,
+      "hud": true,
+      "items": 529,
+      "triangles": 41078,
+      "milliseconds": 119.55,
+      "sha": "f2fe2afc481198ced5a2381d5bf80d04fcc1f64c2da1ac49ebbaf1cd0acc847e"
+    },
+    {
+      "name": "base-2-room-2-phone",
+      "width": 390,
+      "height": 720,
+      "fx": true,
+      "high": false,
+      "hud": true,
+      "items": 529,
+      "triangles": 41078,
+      "milliseconds": 48.99,
+      "sha": "05c229769cef6f253ba91e1bebfdcec3b4e49b8f9cdcd2a194b8b12298520502"
+    },
+    {
+      "name": "base-3-room-0-desktop",
+      "width": 1280,
+      "height": 720,
+      "fx": true,
+      "high": false,
+      "hud": true,
+      "items": 514,
+      "triangles": 40078,
+      "milliseconds": 150.8,
+      "sha": "00788efb6582d9092aa3aab66a370995fcea161e3ebc7cfecbed4d88e0435d86"
+    },
+    {
+      "name": "base-3-room-0-phone",
+      "width": 390,
+      "height": 720,
+      "fx": true,
+      "high": false,
+      "hud": true,
+      "items": 514,
+      "triangles": 40078,
+      "milliseconds": 84.62,
+      "sha": "dc5e77e3e876e80aa89ccefbb76349ea2c5031064b0343bce87e710603acf4a1"
+    },
+    {
+      "name": "base-3-room-2-desktop",
+      "width": 1280,
+      "height": 720,
+      "fx": true,
+      "high": false,
+      "hud": true,
+      "items": 544,
+      "triangles": 41880,
+      "milliseconds": 178.77,
+      "sha": "c51a713c15b6e169ea5d06a69cbdc2d4f9c747d123f19974496c584cf93a859b"
+    },
+    {
+      "name": "base-3-room-2-phone",
+      "width": 390,
+      "height": 720,
+      "fx": true,
+      "high": false,
+      "hud": true,
+      "items": 544,
+      "triangles": 41880,
+      "milliseconds": 47.03,
+      "sha": "800e710711fb4f74f417e1531908059703360b6d18985b7362c6ffa4d0e7fd6c"
+    },
+    {
+      "name": "base-4-room-0-desktop",
+      "width": 1280,
+      "height": 720,
+      "fx": true,
+      "high": false,
+      "hud": true,
+      "items": 514,
+      "triangles": 39800,
+      "milliseconds": 228.91,
+      "sha": "aaf96c2f8f0f93aac31e7344d4f08eee0119e218f4c9f4e599288eb6c149ab86"
+    },
+    {
+      "name": "base-4-room-0-phone",
+      "width": 390,
+      "height": 720,
+      "fx": true,
+      "high": false,
+      "hud": true,
+      "items": 514,
+      "triangles": 39800,
+      "milliseconds": 42.26,
+      "sha": "119ed4d775963c01c9ae7f0d751480f741028f19df43b35694cd961d3fe2a56e"
+    },
+    {
+      "name": "base-4-room-2-desktop",
+      "width": 1280,
+      "height": 720,
+      "fx": true,
+      "high": false,
+      "hud": true,
+      "items": 550,
+      "triangles": 42362,
+      "milliseconds": 116.59,
+      "sha": "9ee941c150262200458489f1fc14222a3f94b972fb9977cda5ccf44478babbe9"
+    },
+    {
+      "name": "base-4-room-2-phone",
+      "width": 390,
+      "height": 720,
+      "fx": true,
+      "high": false,
+      "hud": true,
+      "items": 550,
+      "triangles": 42362,
+      "milliseconds": 49.69,
+      "sha": "941a27595aa319f7c7cc6493c0b5cfbf8aad21d7bd7cc37964fde79d46452d36"
+    },
+    {
+      "name": "base-5-room-0-desktop",
+      "width": 1280,
+      "height": 720,
+      "fx": true,
+      "high": false,
+      "hud": true,
+      "items": 596,
+      "triangles": 43436,
+      "milliseconds": 203.45,
+      "sha": "ea9ad5e7591352f59fb8a67ce013e47a210bd9db48ee8bdb373824070ac5a9c2"
+    },
+    {
+      "name": "base-5-room-0-phone",
+      "width": 390,
+      "height": 720,
+      "fx": true,
+      "high": false,
+      "hud": true,
+      "items": 596,
+      "triangles": 43436,
+      "milliseconds": 72.28,
+      "sha": "7a7c06486edee415438392f99785b3dee370caab449c738aba37f0e1ed75815b"
+    },
+    {
+      "name": "base-5-room-2-desktop",
+      "width": 1280,
+      "height": 720,
+      "fx": true,
+      "high": false,
+      "hud": true,
+      "items": 612,
+      "triangles": 43690,
+      "milliseconds": 165.19,
+      "sha": "4204ace126147ef27e868ec43d8b8ec72e3b0f1a4534b0942c7e065086cbf0f8"
+    },
+    {
+      "name": "base-5-room-2-phone",
+      "width": 390,
+      "height": 720,
+      "fx": true,
+      "high": false,
+      "hud": true,
+      "items": 612,
+      "triangles": 43690,
+      "milliseconds": 51.09,
+      "sha": "4ad7b15f983eb6b2e39077a9c28e31168838d7cf315cf8044c1bb4636db5d638"
+    },
+    {
+      "name": "base-mech-active-laser",
+      "width": 1280,
+      "height": 720,
+      "fx": true,
+      "high": false,
+      "hud": true,
+      "items": 646,
+      "triangles": 45724,
+      "milliseconds": 161.26,
+      "sha": "f75ec57d78b084a1f83cb795988681b55b3592460e68ac8358092551bc75589f"
+    },
+    {
+      "name": "base-mech-active-laser-phone",
+      "width": 390,
+      "height": 720,
+      "fx": true,
+      "high": false,
+      "hud": true,
+      "items": 646,
+      "triangles": 45724,
+      "milliseconds": 65.64,
+      "sha": "8ec01c120ffcabefe98fd9bcd364d59cc7b777995014bc640ea2b053092f8281"
+    },
+    {
+      "name": "base-mech-detail",
+      "width": 1280,
+      "height": 720,
+      "fx": true,
+      "high": true,
+      "hud": true,
+      "items": 686,
+      "triangles": 48688,
+      "milliseconds": 195.97,
+      "sha": "181a142b10f11a7df75443f2e2bd6fbc46d1c1d7121854e40dc575e124f80601"
+    },
+    {
+      "name": "base-mech-fxoff-phone",
+      "width": 390,
+      "height": 720,
+      "fx": false,
+      "high": false,
+      "hud": true,
+      "items": 642,
+      "triangles": 45676,
+      "milliseconds": 87.22,
+      "sha": "d9d6a2fa076813c91063fdc130cec6c115efb19b0a02a5132e01a8d6be5dfc15"
+    },
+    {
+      "name": "base-ruin-lift-desktop",
+      "width": 1280,
+      "height": 720,
+      "fx": true,
+      "high": false,
+      "hud": true,
+      "items": 603,
+      "triangles": 43996,
+      "milliseconds": 133.75,
+      "sha": "0759ec1cd435465f69e17bdae4ca6fe243ea1146850c3e5dd14dbaba507ae3b2"
+    },
+    {
+      "name": "base-ruin-lift-phone",
+      "width": 390,
+      "height": 720,
+      "fx": true,
+      "high": false,
+      "hud": true,
+      "items": 603,
+      "triangles": 43996,
+      "milliseconds": 70.22,
+      "sha": "e7f5026fb29a5a862eda356371a80ec7634352dcc3ad413d9a0b71afcf9450bc"
+    }
+  ],
+  "pixelComparisons": [
+    {
+      "tier": 1,
+      "width": 640,
+      "height": 360,
+      "differingBytes": 0
+    },
+    {
+      "tier": 1,
+      "width": 390,
+      "height": 720,
+      "differingBytes": 0
+    },
+    {
+      "tier": 2,
+      "width": 640,
+      "height": 360,
+      "differingBytes": 0
+    },
+    {
+      "tier": 2,
+      "width": 390,
+      "height": 720,
+      "differingBytes": 0
+    },
+    {
+      "tier": 3,
+      "width": 640,
+      "height": 360,
+      "differingBytes": 0
+    },
+    {
+      "tier": 3,
+      "width": 390,
+      "height": 720,
+      "differingBytes": 0
+    },
+    {
+      "tier": 4,
+      "width": 640,
+      "height": 360,
+      "differingBytes": 0
+    },
+    {
+      "tier": 4,
+      "width": 390,
+      "height": 720,
+      "differingBytes": 0
+    },
+    {
+      "tier": 4,
+      "width": 640,
+      "height": 360,
+      "differingBytes": 0
+    },
+    {
+      "tier": 4,
+      "width": 390,
+      "height": 720,
+      "differingBytes": 0
+    }
+  ],
+  "resources": {
+    "templates": 8,
+    "architectureLayouts": 8,
+    "meshes": 5014,
+    "raster": {
+      "items": 613,
+      "culledItems": 139,
+      "testedTriangles": 31404,
+      "visibleTriangles": 12028,
+      "transparentCapacity": 353,
+      "scratchValues": 13020,
+      "milliseconds": 92.03037200000108
+    }
+  },
+  "stress": {
+    "frames": 180,
+    "resolution": "640x360",
+    "medianMs": 75.12,
+    "p95Ms": 93.3,
+    "maxMs": 96.3,
+    "baselineMedianMs": 141.02,
+    "medianReductionPercent": 46.7,
+    "heapBefore": 72478896,
+    "heapAfter": 73326976,
+    "gcAtBothEnds": true
+  },
+  "transport": {
+    "id": "lift-0",
+    "from": [
+      0,
+      0,
+      -8
+    ],
+    "to": [
+      0,
+      0,
+      -24
+    ],
+    "progress": 0.35714285714285693,
+    "duration": 2.8,
+    "pos": [
+      0,
+      3.6038754716096753,
+      -13.714285714285712
+    ],
+    "rider": true
+  }
+}

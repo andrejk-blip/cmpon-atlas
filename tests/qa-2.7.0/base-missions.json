@@ -1,0 +1,691 @@
+{
+  "version": "2.7.0",
+  "environment": "Node VM, input-only mission fixtures. Not a browser or human balance claim.",
+  "passed": 6,
+  "total": 6,
+  "rows": [
+    {
+      "name": "Fresh missions have distinct geometry, roles, and reachable rewards",
+      "pass": true,
+      "seconds": 6.248,
+      "data": [
+        {
+          "level": 2,
+          "theme": "academy",
+          "plans": [
+            "intro-ring",
+            "intro-ring",
+            "intro-ring"
+          ],
+          "cells": 428,
+          "dogs": 0,
+          "hazards": 0,
+          "systems": 0
+        },
+        {
+          "level": 5,
+          "theme": "foundry",
+          "plans": [
+            "assembly",
+            "reactor",
+            "arena"
+          ],
+          "cells": 511,
+          "dogs": 4,
+          "hazards": 3,
+          "systems": 1
+        },
+        {
+          "level": 8,
+          "theme": "switchyard",
+          "plans": [
+            "split-grid",
+            "assembly",
+            "arena"
+          ],
+          "cells": 552,
+          "dogs": 6,
+          "hazards": 2,
+          "systems": 2
+        },
+        {
+          "level": 11,
+          "theme": "command",
+          "plans": [
+            "gallery",
+            "fracture",
+            "arena"
+          ],
+          "cells": 502,
+          "dogs": 7,
+          "hazards": 3,
+          "systems": 3
+        },
+        {
+          "level": 13,
+          "theme": "wreck",
+          "plans": [
+            "fracture",
+            "fracture",
+            "arena"
+          ],
+          "cells": 533,
+          "dogs": 8,
+          "hazards": 8,
+          "systems": 3
+        }
+      ]
+    },
+    {
+      "name": "Saved active 2.6 board is never remapped or given a replacement crew",
+      "pass": true,
+      "seconds": 1.225,
+      "data": {
+        "layout": "legacy",
+        "unchanged": true
+      }
+    },
+    {
+      "name": "Broken floors block walking, allow fire, and lift state survives midair restore",
+      "pass": true,
+      "seconds": 5.754,
+      "data": {
+        "physicalHole": true,
+        "shootAcross": true,
+        "midairPause": true,
+        "arrivalLatch": true,
+        "trips": 1,
+        "afterWaitStatus": "boarding"
+      }
+    },
+    {
+      "name": "Custom robot AI advances once and never falls through legacy human cadence",
+      "pass": true,
+      "seconds": 1.104,
+      "data": {
+        "robotClockDelta": 0.1,
+        "legacyHumanShots": 0
+      }
+    },
+    {
+      "name": "Five fresh bases × two modes, real cards, loot and optional systems",
+      "pass": true,
+      "seconds": 140.525,
+      "data": [
+        {
+          "level": 2,
+          "mode": "normal",
+          "reaction": 0.2,
+          "status": "stageclear",
+          "phase": "debrief",
+          "seconds": 73.22,
+          "cards": 3,
+          "minHp": 71,
+          "hp": 100,
+          "pickups": 3,
+          "stats": {
+            "dogDashes": 0,
+            "dogHits": 0,
+            "beamCycles": 0,
+            "beamHits": 0,
+            "hazardHits": 0,
+            "systemsUsed": 0,
+            "liftTrips": 0
+          },
+          "peakProjectiles": 8,
+          "remaining": [],
+          "player": [
+            -2.026341068228307,
+            0,
+            -157.6954635329912
+          ]
+        },
+        {
+          "level": 5,
+          "mode": "normal",
+          "reaction": 0.2,
+          "status": "stageclear",
+          "phase": "debrief",
+          "seconds": 107.9,
+          "cards": 3,
+          "minHp": 67.01,
+          "hp": 100,
+          "pickups": 3,
+          "stats": {
+            "dogDashes": 3,
+            "dogHits": 0,
+            "beamCycles": 2,
+            "beamHits": 1,
+            "hazardHits": 0,
+            "systemsUsed": 1,
+            "liftTrips": 0
+          },
+          "peakProjectiles": 8,
+          "remaining": [],
+          "player": [
+            13.986343541228143,
+            0,
+            -173.6933996110343
+          ]
+        },
+        {
+          "level": 8,
+          "mode": "normal",
+          "reaction": 0.2,
+          "status": "stageclear",
+          "phase": "debrief",
+          "seconds": 102.7,
+          "cards": 3,
+          "minHp": 46.1,
+          "hp": 93.1,
+          "pickups": 3,
+          "stats": {
+            "dogDashes": 3,
+            "dogHits": 0,
+            "beamCycles": 2,
+            "beamHits": 2,
+            "hazardHits": 0,
+            "systemsUsed": 2,
+            "liftTrips": 0
+          },
+          "peakProjectiles": 10,
+          "remaining": [],
+          "player": [
+            -9.940810347330377,
+            0,
+            -181.6135001098593
+          ]
+        },
+        {
+          "level": 11,
+          "mode": "normal",
+          "reaction": 0.2,
+          "status": "finalebrief",
+          "phase": "boss",
+          "seconds": 87.53,
+          "cards": 3,
+          "minHp": 39.53,
+          "hp": 86.53,
+          "pickups": 3,
+          "stats": {
+            "dogDashes": 6,
+            "dogHits": 0,
+            "beamCycles": 3,
+            "beamHits": 2,
+            "hazardHits": 0,
+            "systemsUsed": 2,
+            "liftTrips": 1
+          },
+          "peakProjectiles": 9,
+          "remaining": [],
+          "player": [
+            -22.04311071354365,
+            0,
+            -181.60214454027985
+          ]
+        },
+        {
+          "level": 13,
+          "mode": "normal",
+          "reaction": 0.2,
+          "status": "boarding",
+          "phase": "mrg",
+          "seconds": 106.8,
+          "cards": 3,
+          "minHp": 45.47,
+          "hp": 100,
+          "pickups": 3,
+          "stats": {
+            "dogDashes": 1,
+            "dogHits": 0,
+            "beamCycles": 3,
+            "beamHits": 2,
+            "hazardHits": 0,
+            "systemsUsed": 1,
+            "liftTrips": 2
+          },
+          "peakProjectiles": 10,
+          "remaining": [],
+          "player": [
+            -25,
+            1,
+            0
+          ]
+        },
+        {
+          "level": 2,
+          "mode": "calm",
+          "reaction": 0.2,
+          "status": "stageclear",
+          "phase": "debrief",
+          "seconds": 71.07,
+          "cards": 3,
+          "minHp": 93.4,
+          "hp": 100,
+          "pickups": 3,
+          "stats": {
+            "dogDashes": 0,
+            "dogHits": 0,
+            "beamCycles": 0,
+            "beamHits": 0,
+            "hazardHits": 0,
+            "systemsUsed": 0,
+            "liftTrips": 0
+          },
+          "peakProjectiles": 6,
+          "remaining": [],
+          "player": [
+            -2.0185563885607665,
+            0,
+            -157.5724224982257
+          ]
+        },
+        {
+          "level": 5,
+          "mode": "calm",
+          "reaction": 0.2,
+          "status": "stageclear",
+          "phase": "debrief",
+          "seconds": 106.15,
+          "cards": 3,
+          "minHp": 96.08,
+          "hp": 100,
+          "pickups": 3,
+          "stats": {
+            "dogDashes": 0,
+            "dogHits": 0,
+            "beamCycles": 1,
+            "beamHits": 0,
+            "hazardHits": 0,
+            "systemsUsed": 1,
+            "liftTrips": 0
+          },
+          "peakProjectiles": 8,
+          "remaining": [],
+          "player": [
+            14.04593566890366,
+            0,
+            -173.6208228588118
+          ]
+        },
+        {
+          "level": 8,
+          "mode": "calm",
+          "reaction": 0.2,
+          "status": "stageclear",
+          "phase": "debrief",
+          "seconds": 95.33,
+          "cards": 3,
+          "minHp": 87.52,
+          "hp": 100,
+          "pickups": 3,
+          "stats": {
+            "dogDashes": 0,
+            "dogHits": 0,
+            "beamCycles": 1,
+            "beamHits": 1,
+            "hazardHits": 0,
+            "systemsUsed": 2,
+            "liftTrips": 0
+          },
+          "peakProjectiles": 7,
+          "remaining": [],
+          "player": [
+            -10.067251755843387,
+            0,
+            -181.6332434571613
+          ]
+        },
+        {
+          "level": 11,
+          "mode": "calm",
+          "reaction": 0.2,
+          "status": "finalebrief",
+          "phase": "boss",
+          "seconds": 79.05,
+          "cards": 3,
+          "minHp": 96.34,
+          "hp": 100,
+          "pickups": 3,
+          "stats": {
+            "dogDashes": 0,
+            "dogHits": 0,
+            "beamCycles": 1,
+            "beamHits": 0,
+            "hazardHits": 0,
+            "systemsUsed": 2,
+            "liftTrips": 1
+          },
+          "peakProjectiles": 9,
+          "remaining": [],
+          "player": [
+            -21.97542489065401,
+            0,
+            -181.63498995127836
+          ]
+        },
+        {
+          "level": 13,
+          "mode": "calm",
+          "reaction": 0.2,
+          "status": "boarding",
+          "phase": "mrg",
+          "seconds": 101.62,
+          "cards": 3,
+          "minHp": 96.74,
+          "hp": 100,
+          "pickups": 3,
+          "stats": {
+            "dogDashes": 1,
+            "dogHits": 0,
+            "beamCycles": 2,
+            "beamHits": 0,
+            "hazardHits": 0,
+            "systemsUsed": 1,
+            "liftTrips": 2
+          },
+          "peakProjectiles": 9,
+          "remaining": [],
+          "player": [
+            -25,
+            1,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pause, restore and repeated script loads preserve exact simulation state",
+      "pass": true,
+      "seconds": 6.709,
+      "data": {
+        "pausedSeconds": 4,
+        "deterministicFrames": 120,
+        "loads": 40,
+        "listeners": 68
+      }
+    }
+  ],
+  "runs": [
+    {
+      "level": 2,
+      "mode": "normal",
+      "reaction": 0.2,
+      "status": "stageclear",
+      "phase": "debrief",
+      "seconds": 73.22,
+      "cards": 3,
+      "minHp": 71,
+      "hp": 100,
+      "pickups": 3,
+      "stats": {
+        "dogDashes": 0,
+        "dogHits": 0,
+        "beamCycles": 0,
+        "beamHits": 0,
+        "hazardHits": 0,
+        "systemsUsed": 0,
+        "liftTrips": 0
+      },
+      "peakProjectiles": 8,
+      "remaining": [],
+      "player": [
+        -2.026341068228307,
+        0,
+        -157.6954635329912
+      ]
+    },
+    {
+      "level": 5,
+      "mode": "normal",
+      "reaction": 0.2,
+      "status": "stageclear",
+      "phase": "debrief",
+      "seconds": 107.9,
+      "cards": 3,
+      "minHp": 67.01,
+      "hp": 100,
+      "pickups": 3,
+      "stats": {
+        "dogDashes": 3,
+        "dogHits": 0,
+        "beamCycles": 2,
+        "beamHits": 1,
+        "hazardHits": 0,
+        "systemsUsed": 1,
+        "liftTrips": 0
+      },
+      "peakProjectiles": 8,
+      "remaining": [],
+      "player": [
+        13.986343541228143,
+        0,
+        -173.6933996110343
+      ]
+    },
+    {
+      "level": 8,
+      "mode": "normal",
+      "reaction": 0.2,
+      "status": "stageclear",
+      "phase": "debrief",
+      "seconds": 102.7,
+      "cards": 3,
+      "minHp": 46.1,
+      "hp": 93.1,
+      "pickups": 3,
+      "stats": {
+        "dogDashes": 3,
+        "dogHits": 0,
+        "beamCycles": 2,
+        "beamHits": 2,
+        "hazardHits": 0,
+        "systemsUsed": 2,
+        "liftTrips": 0
+      },
+      "peakProjectiles": 10,
+      "remaining": [],
+      "player": [
+        -9.940810347330377,
+        0,
+        -181.6135001098593
+      ]
+    },
+    {
+      "level": 11,
+      "mode": "normal",
+      "reaction": 0.2,
+      "status": "finalebrief",
+      "phase": "boss",
+      "seconds": 87.53,
+      "cards": 3,
+      "minHp": 39.53,
+      "hp": 86.53,
+      "pickups": 3,
+      "stats": {
+        "dogDashes": 6,
+        "dogHits": 0,
+        "beamCycles": 3,
+        "beamHits": 2,
+        "hazardHits": 0,
+        "systemsUsed": 2,
+        "liftTrips": 1
+      },
+      "peakProjectiles": 9,
+      "remaining": [],
+      "player": [
+        -22.04311071354365,
+        0,
+        -181.60214454027985
+      ]
+    },
+    {
+      "level": 13,
+      "mode": "normal",
+      "reaction": 0.2,
+      "status": "boarding",
+      "phase": "mrg",
+      "seconds": 106.8,
+      "cards": 3,
+      "minHp": 45.47,
+      "hp": 100,
+      "pickups": 3,
+      "stats": {
+        "dogDashes": 1,
+        "dogHits": 0,
+        "beamCycles": 3,
+        "beamHits": 2,
+        "hazardHits": 0,
+        "systemsUsed": 1,
+        "liftTrips": 2
+      },
+      "peakProjectiles": 10,
+      "remaining": [],
+      "player": [
+        -25,
+        1,
+        0
+      ]
+    },
+    {
+      "level": 2,
+      "mode": "calm",
+      "reaction": 0.2,
+      "status": "stageclear",
+      "phase": "debrief",
+      "seconds": 71.07,
+      "cards": 3,
+      "minHp": 93.4,
+      "hp": 100,
+      "pickups": 3,
+      "stats": {
+        "dogDashes": 0,
+        "dogHits": 0,
+        "beamCycles": 0,
+        "beamHits": 0,
+        "hazardHits": 0,
+        "systemsUsed": 0,
+        "liftTrips": 0
+      },
+      "peakProjectiles": 6,
+      "remaining": [],
+      "player": [
+        -2.0185563885607665,
+        0,
+        -157.5724224982257
+      ]
+    },
+    {
+      "level": 5,
+      "mode": "calm",
+      "reaction": 0.2,
+      "status": "stageclear",
+      "phase": "debrief",
+      "seconds": 106.15,
+      "cards": 3,
+      "minHp": 96.08,
+      "hp": 100,
+      "pickups": 3,
+      "stats": {
+        "dogDashes": 0,
+        "dogHits": 0,
+        "beamCycles": 1,
+        "beamHits": 0,
+        "hazardHits": 0,
+        "systemsUsed": 1,
+        "liftTrips": 0
+      },
+      "peakProjectiles": 8,
+      "remaining": [],
+      "player": [
+        14.04593566890366,
+        0,
+        -173.6208228588118
+      ]
+    },
+    {
+      "level": 8,
+      "mode": "calm",
+      "reaction": 0.2,
+      "status": "stageclear",
+      "phase": "debrief",
+      "seconds": 95.33,
+      "cards": 3,
+      "minHp": 87.52,
+      "hp": 100,
+      "pickups": 3,
+      "stats": {
+        "dogDashes": 0,
+        "dogHits": 0,
+        "beamCycles": 1,
+        "beamHits": 1,
+        "hazardHits": 0,
+        "systemsUsed": 2,
+        "liftTrips": 0
+      },
+      "peakProjectiles": 7,
+      "remaining": [],
+      "player": [
+        -10.067251755843387,
+        0,
+        -181.6332434571613
+      ]
+    },
+    {
+      "level": 11,
+      "mode": "calm",
+      "reaction": 0.2,
+      "status": "finalebrief",
+      "phase": "boss",
+      "seconds": 79.05,
+      "cards": 3,
+      "minHp": 96.34,
+      "hp": 100,
+      "pickups": 3,
+      "stats": {
+        "dogDashes": 0,
+        "dogHits": 0,
+        "beamCycles": 1,
+        "beamHits": 0,
+        "hazardHits": 0,
+        "systemsUsed": 2,
+        "liftTrips": 1
+      },
+      "peakProjectiles": 9,
+      "remaining": [],
+      "player": [
+        -21.97542489065401,
+        0,
+        -181.63498995127836
+      ]
+    },
+    {
+      "level": 13,
+      "mode": "calm",
+      "reaction": 0.2,
+      "status": "boarding",
+      "phase": "mrg",
+      "seconds": 101.62,
+      "cards": 3,
+      "minHp": 96.74,
+      "hp": 100,
+      "pickups": 3,
+      "stats": {
+        "dogDashes": 1,
+        "dogHits": 0,
+        "beamCycles": 2,
+        "beamHits": 0,
+        "hazardHits": 0,
+        "systemsUsed": 1,
+        "liftTrips": 2
+      },
+      "peakProjectiles": 9,
+      "remaining": [],
+      "player": [
+        -25,
+        1,
+        0
+      ]
+    }
+  ]
+}

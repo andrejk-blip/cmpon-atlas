@@ -1,0 +1,680 @@
+{
+  "version": "2.7.0",
+  "entryFile": "tests/entry-2.7.0.html",
+  "pass": true,
+  "passed": 7,
+  "failed": 0,
+  "rows": [
+    {
+      "name": "content-and-real-assets",
+      "pass": true,
+      "data": {
+        "lines": 76,
+        "contexts": [
+          "orbit",
+          "base",
+          "pursuit",
+          "swarm",
+          "convoy",
+          "parallax",
+          "mrg"
+        ],
+        "assets": [
+          {
+            "file": "assets/voice-v2.7.0/radio270-captain-office.mp3",
+            "duration": 9.926531,
+            "bytes": 79665
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-enemy-taunt.mp3",
+            "duration": 4.231837,
+            "bytes": 34107
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-orbit-01.mp3",
+            "duration": 8.411429,
+            "bytes": 67544
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-orbit-02.mp3",
+            "duration": 8.437551,
+            "bytes": 67753
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-orbit-03.mp3",
+            "duration": 7.68,
+            "bytes": 61693
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-orbit-04.mp3",
+            "duration": 8.228571,
+            "bytes": 66081
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-orbit-05.mp3",
+            "duration": 8.176327,
+            "bytes": 65663
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-orbit-06.mp3",
+            "duration": 4.414694,
+            "bytes": 35570
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-orbit-07.mp3",
+            "duration": 4.153469,
+            "bytes": 33480
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-orbit-08.mp3",
+            "duration": 4.310204,
+            "bytes": 34734
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-base-01.mp3",
+            "duration": 7.340408,
+            "bytes": 58976
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-base-02.mp3",
+            "duration": 6.582857,
+            "bytes": 52915
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-base-03.mp3",
+            "duration": 6.138776,
+            "bytes": 49363
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-base-04.mp3",
+            "duration": 6.478367,
+            "bytes": 52079
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-base-05.mp3",
+            "duration": 7.262041,
+            "bytes": 58349
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-base-06.mp3",
+            "duration": 4.571429,
+            "bytes": 36824
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-base-07.mp3",
+            "duration": 3.866122,
+            "bytes": 31181
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-base-08.mp3",
+            "duration": 4.310204,
+            "bytes": 34734
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-pursuit-01.mp3",
+            "duration": 8.411429,
+            "bytes": 67544
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-pursuit-02.mp3",
+            "duration": 8.385306,
+            "bytes": 67335
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-pursuit-03.mp3",
+            "duration": 7.862857,
+            "bytes": 63155
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-pursuit-04.mp3",
+            "duration": 7.444898,
+            "bytes": 59812
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-pursuit-05.mp3",
+            "duration": 8.071837,
+            "bytes": 64827
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-pursuit-06.mp3",
+            "duration": 5.955918,
+            "bytes": 47900
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-pursuit-07.mp3",
+            "duration": 4.388571,
+            "bytes": 35361
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-pursuit-08.mp3",
+            "duration": 5.276735,
+            "bytes": 42466
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-swarm-01.mp3",
+            "duration": 8.646531,
+            "bytes": 69425
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-swarm-02.mp3",
+            "duration": 7.079184,
+            "bytes": 56886
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-swarm-03.mp3",
+            "duration": 6.478367,
+            "bytes": 52079
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-swarm-04.mp3",
+            "duration": 7.444898,
+            "bytes": 59812
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-swarm-05.mp3",
+            "duration": 8.150204,
+            "bytes": 65454
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-swarm-06.mp3",
+            "duration": 4.989388,
+            "bytes": 40168
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-swarm-07.mp3",
+            "duration": 3.448163,
+            "bytes": 27838
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-swarm-08.mp3",
+            "duration": 4.884898,
+            "bytes": 39332
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-convoy-01.mp3",
+            "duration": 7.601633,
+            "bytes": 61066
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-convoy-02.mp3",
+            "duration": 7.262041,
+            "bytes": 58349
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-convoy-03.mp3",
+            "duration": 7.105306,
+            "bytes": 57095
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-convoy-04.mp3",
+            "duration": 7.68,
+            "bytes": 61693
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-convoy-05.mp3",
+            "duration": 8.124082,
+            "bytes": 65245
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-convoy-06.mp3",
+            "duration": 4.519184,
+            "bytes": 36406
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-convoy-07.mp3",
+            "duration": 4.310204,
+            "bytes": 34734
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-convoy-08.mp3",
+            "duration": 3.94449,
+            "bytes": 31808
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-parallax-01.mp3",
+            "duration": 7.366531,
+            "bytes": 59185
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-parallax-02.mp3",
+            "duration": 7.862857,
+            "bytes": 63155
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-parallax-03.mp3",
+            "duration": 7.47102,
+            "bytes": 60021
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-parallax-04.mp3",
+            "duration": 6.426122,
+            "bytes": 51661
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-parallax-05.mp3",
+            "duration": 7.131429,
+            "bytes": 57304
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-parallax-06.mp3",
+            "duration": 5.198367,
+            "bytes": 41839
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-parallax-07.mp3",
+            "duration": 4.127347,
+            "bytes": 33271
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-parallax-08.mp3",
+            "duration": 3.918367,
+            "bytes": 31599
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-mrg-01.mp3",
+            "duration": 8.359184,
+            "bytes": 67126
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-mrg-02.mp3",
+            "duration": 8.515918,
+            "bytes": 68380
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-mrg-03.mp3",
+            "duration": 7.758367,
+            "bytes": 62319
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-mrg-04.mp3",
+            "duration": 7.836735,
+            "bytes": 62946
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-mrg-05.mp3",
+            "duration": 8.594286,
+            "bytes": 69007
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-mrg-06.mp3",
+            "duration": 4.806531,
+            "bytes": 38705
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-mrg-07.mp3",
+            "duration": 4.440816,
+            "bytes": 35779
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-mrg-08.mp3",
+            "duration": 5.616327,
+            "bytes": 45183
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-base-academy-1.mp3",
+            "duration": 6.426122,
+            "bytes": 51661
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-base-academy-2.mp3",
+            "duration": 7.209796,
+            "bytes": 57931
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-base-academy-3.mp3",
+            "duration": 6.426122,
+            "bytes": 51661
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-base-foundry-1.mp3",
+            "duration": 6.138776,
+            "bytes": 49363
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-base-foundry-2.mp3",
+            "duration": 6.530612,
+            "bytes": 52497
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-base-foundry-3.mp3",
+            "duration": 4.649796,
+            "bytes": 37451
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-base-switchyard-1.mp3",
+            "duration": 8.019592,
+            "bytes": 64409
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-base-switchyard-2.mp3",
+            "duration": 6.791837,
+            "bytes": 54587
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-base-switchyard-3.mp3",
+            "duration": 5.616327,
+            "bytes": 45183
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-base-command-1.mp3",
+            "duration": 6.870204,
+            "bytes": 55214
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-base-command-2.mp3",
+            "duration": 6.008163,
+            "bytes": 48318
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-base-command-3.mp3",
+            "duration": 5.668571,
+            "bytes": 45601
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-base-wreck-1.mp3",
+            "duration": 5.746939,
+            "bytes": 46228
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-base-wreck-2.mp3",
+            "duration": 6.4,
+            "bytes": 51453
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-base-wreck-3.mp3",
+            "duration": 6.060408,
+            "bytes": 48736
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-swarm-armada-1.mp3",
+            "duration": 8.150204,
+            "bytes": 65454
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-swarm-armada-2.mp3",
+            "duration": 7.418776,
+            "bytes": 59603
+          },
+          {
+            "file": "assets/voice-v2.7.0/radio270-swarm-armada-3.mp3",
+            "duration": 3.813878,
+            "bytes": 30764
+          }
+        ],
+        "review": "Text pattern check plus source review; humour quality remains subjective."
+      }
+    },
+    {
+      "name": "three-times-radio-in-identical-clear-audio-window",
+      "pass": true,
+      "data": {
+        "baseline": {
+          "version": "2.5.0",
+          "seconds": 600,
+          "starts": 11,
+          "completed": 11,
+          "maxConcurrent": 1,
+          "systemCalls": 0,
+          "startSeconds": [
+            50,
+            100,
+            150.04,
+            200.08,
+            250.12,
+            300.12,
+            350.12,
+            400.12,
+            450.12,
+            500.12,
+            550.16
+          ],
+          "clipIds": [
+            "commander-02",
+            "commander-01",
+            "commander-04",
+            "commander-03",
+            "commander-12",
+            "commander-02",
+            "commander-01",
+            "commander-04",
+            "commander-03",
+            "commander-12",
+            "commander-02"
+          ],
+          "durations": {
+            "commander-02": 9.116735,
+            "commander-01": 5.355102,
+            "commander-04": 6.19102,
+            "commander-03": 6.217143,
+            "commander-12": 5.537959
+          }
+        },
+        "candidate": {
+          "version": "2.7.0",
+          "seconds": 600,
+          "starts": 35,
+          "completed": 35,
+          "maxConcurrent": 1,
+          "systemCalls": 0,
+          "startSeconds": [
+            16.64,
+            33.32,
+            50,
+            66.68,
+            83.36,
+            100.04,
+            116.72,
+            133.4,
+            150.08,
+            166.76,
+            183.44,
+            200.12,
+            216.8,
+            233.48,
+            250.16,
+            266.84,
+            283.52,
+            300.2,
+            316.88,
+            333.56,
+            350.24,
+            366.92,
+            383.6,
+            400.28,
+            416.96,
+            433.64,
+            450.32,
+            467,
+            483.68,
+            500.36,
+            517.04,
+            533.72,
+            550.4,
+            567.08,
+            583.76
+          ],
+          "clipIds": [
+            "commander-02",
+            "commander-01",
+            "commander-03",
+            "commander-04",
+            "commander-12",
+            "radio270-captain-office",
+            "radio270-orbit-01",
+            "radio270-orbit-02",
+            "radio270-orbit-03",
+            "radio270-orbit-04",
+            "radio270-orbit-05",
+            "commander-02",
+            "commander-01",
+            "commander-03",
+            "commander-04",
+            "commander-12",
+            "radio270-captain-office",
+            "radio270-orbit-01",
+            "radio270-orbit-02",
+            "radio270-orbit-03",
+            "radio270-orbit-04",
+            "radio270-orbit-05",
+            "commander-02",
+            "commander-01",
+            "commander-03",
+            "commander-04",
+            "commander-12",
+            "radio270-captain-office",
+            "radio270-orbit-01",
+            "radio270-orbit-02",
+            "radio270-orbit-03",
+            "radio270-orbit-04",
+            "radio270-orbit-05",
+            "commander-02",
+            "commander-01"
+          ],
+          "durations": {
+            "commander-02": 9.116735,
+            "commander-01": 5.355102,
+            "commander-03": 6.217143,
+            "commander-04": 6.19102,
+            "commander-12": 5.537959,
+            "radio270-captain-office": 9.926531,
+            "radio270-orbit-01": 8.411429,
+            "radio270-orbit-02": 8.437551,
+            "radio270-orbit-03": 7.68,
+            "radio270-orbit-04": 8.228571,
+            "radio270-orbit-05": 8.176327
+          }
+        },
+        "startRatio": 3.1818181818181817,
+        "method": "Same 600-second passive permitted window; cosmetic random .5; measured local MP3 durations. This is an audio protocol fixture, not gameplay."
+      }
+    },
+    {
+      "name": "english-only-system-voice-does-not-speak-russian-bank",
+      "pass": true,
+      "data": {
+        "version": "2.7.0",
+        "seconds": 90,
+        "starts": 5,
+        "completed": 5,
+        "maxConcurrent": 1,
+        "systemCalls": 0,
+        "startSeconds": [
+          16.64,
+          33.32,
+          50,
+          66.68,
+          83.36
+        ],
+        "clipIds": [
+          "commander-02",
+          "commander-01",
+          "commander-03",
+          "commander-04",
+          "commander-12"
+        ],
+        "durations": {
+          "commander-02": 9.116735,
+          "commander-01": 5.355102,
+          "commander-03": 6.217143,
+          "commander-04": 6.19102,
+          "commander-12": 5.537959
+        }
+      }
+    },
+    {
+      "name": "prepared-bank-works-without-invoking-an-installed-russian-voice",
+      "pass": true,
+      "data": {
+        "version": "2.7.0",
+        "seconds": 120,
+        "starts": 7,
+        "completed": 6,
+        "maxConcurrent": 1,
+        "systemCalls": 0,
+        "startSeconds": [
+          16.64,
+          33.32,
+          50,
+          66.68,
+          83.36,
+          100.04,
+          116.72
+        ],
+        "clipIds": [
+          "commander-02",
+          "commander-01",
+          "commander-03",
+          "commander-04",
+          "commander-12",
+          "radio270-captain-office",
+          "radio270-orbit-01"
+        ],
+        "durations": {
+          "commander-02": 9.116735,
+          "commander-01": 5.355102,
+          "commander-03": 6.217143,
+          "commander-04": 6.19102,
+          "commander-12": 5.537959,
+          "radio270-captain-office": 9.926531,
+          "radio270-orbit-01": 8.411429
+        }
+      }
+    },
+    {
+      "name": "real-recording-http-failure-and-russian-fallback-share-one-channel",
+      "pass": true,
+      "data": {
+        "seconds": 240,
+        "recordedStarts": 7,
+        "systemStarts": 7,
+        "usedVoices": [
+          "qa-captain",
+          "qa-enemy"
+        ],
+        "radioStarts": 14,
+        "maxConcurrent": 1,
+        "syntheticSystemDurations": true,
+        "fixture": "Every other initial MP3 response is HTTP 404; real production fallback runs."
+      }
+    },
+    {
+      "name": "education-preempts-radio-and-no-backlog-after-card",
+      "pass": true,
+      "data": {
+        "interruptedSource": 9,
+        "cardHoldSeconds": 60,
+        "resumeDelaySeconds": 16.64,
+        "maxConcurrent": 1
+      }
+    },
+    {
+      "name": "pause-during-loading-invalidates-late-audio",
+      "pass": true,
+      "data": {
+        "pendingRequests": 1,
+        "lateStarts": 0,
+        "status": "paused"
+      }
+    }
+  ],
+  "failures": [],
+  "sources": [
+    {
+      "file": "assets/citadel-voice-pack-v1.8.2.js",
+      "sha256": "e0a0ac89a7ad348a7b107fef9c067b12227d33b7c1427d3eb7cec5472949fbfe"
+    },
+    {
+      "file": "assets/citadel-radio-pack-v2.7.0.js",
+      "sha256": "f9a747059851f8622b89a02e5efc923542d9939dafcdf3ee90f08c4c57d49aad"
+    },
+    {
+      "file": "assets/citadel-voice-v2.7.0.js",
+      "sha256": "25fda4fb2a08a75f9686e005d3774d57ed24be6fa18879f84ce728cdd5c3714b"
+    }
+  ],
+  "limits": [
+    "Deterministic isolated voice-protocol fixtures with a passive engine clock; no gameplay, browser codec timing, actual hearing or Android device claim.",
+    "MP3 durations and decoding are checked against real local assets. System TTS voices are controlled mocks.",
+    "A 3x permitted-window cadence does not imply exactly 3x spoken lines during every live combat sequence."
+  ]
+}

@@ -1,0 +1,1084 @@
+{
+  "before": {
+    "version": "2.7.0",
+    "config": {
+      "mode": "combat",
+      "scene": "orbit",
+      "accelerated": true,
+      "manual": false,
+      "holdQuestions": true
+    },
+    "education": {
+      "mode": "combat",
+      "quiz": true,
+      "current": {
+        "kind": "lesson",
+        "index": 0,
+        "q": {
+          "quizId": "quiz270-01-functional",
+          "caseId": "quiz270-01-functional",
+          "quizPoints": 100,
+          "quizLevel": 1,
+          "question": "Какой пункт задаёт функцию системы?",
+          "explanation": "Функциональное требование описывает действие или поведение системы.",
+          "hint": "Ищите действие, а не показатель качества работы.",
+          "skill": "Короткий вопрос",
+          "title": "Короткий вопрос",
+          "situation": "Какой пункт задаёт функцию системы?",
+          "q": "Какой пункт задаёт функцию системы?",
+          "choices": [
+            "Оператор может отменить черновик заявки.",
+            "Доступность сервиса составляет 99,9%.",
+            "Ответ поиска занимает не более 2 секунд.",
+            "Сервис выдерживает 500 одновременных сессий."
+          ],
+          "correct": 0,
+          "why": "Функциональное требование описывает действие или поведение системы.",
+          "outcome": {
+            "label": "Ответ принят",
+            "title": "Вопрос разобран",
+            "symbol": "✓",
+            "before": "Какой пункт задаёт функцию системы?",
+            "after": "Функциональное требование описывает действие или поведение системы.",
+            "color": "#91e5c7"
+          }
+        },
+        "feedback": null
+      }
+    },
+    "renderer": "3D · совместимый режим",
+    "mode": "combat",
+    "accelerated": true,
+    "rafInputCalls": 84,
+    "finished": null,
+    "status": "lesson",
+    "level": 1,
+    "levels": [
+      1
+    ],
+    "cards": 0,
+    "wallSeconds": 16,
+    "simulatedSeconds": 1.77,
+    "frameCalls": 50400,
+    "emitChanges": 0,
+    "maxInputGapMs": 284,
+    "metrics": {
+      "listeners": 75,
+      "peakListeners": 75,
+      "rafCalls": 89,
+      "rafDone": 86,
+      "rafPending": 1,
+      "rafPeak": 2,
+      "errors": [],
+      "heap": 51453785
+    },
+    "input": {
+      "version": "2.6.0",
+      "boundCanvases": 1,
+      "rightClicks": 0,
+      "active": false,
+      "pointerId": null,
+      "mode": "idle"
+    },
+    "player": {
+      "hp": 100,
+      "missiles": 10
+    },
+    "runtime": {
+      "version": "1.9.3",
+      "build": "193r2",
+      "frames": 84,
+      "updates": 84,
+      "renders": 84,
+      "recoveries": 0,
+      "failures": 0,
+      "stopped": false,
+      "contextLost": false,
+      "pending": true,
+      "stage": "idle",
+      "lastFrameAge": 181,
+      "lastUpdateAge": 180,
+      "lastRenderAge": 17,
+      "recoverySave": "none",
+      "faults": [],
+      "events": [
+        {
+          "at": 615,
+          "kind": "detach",
+          "status": "unknown",
+          "stage": null,
+          "phase": "other",
+          "finale": null,
+          "wave": null,
+          "seconds": null,
+          "mode": "normal",
+          "enemies": 0,
+          "renderer": "webgl"
+        },
+        {
+          "at": 661,
+          "kind": "engine",
+          "status": "playing",
+          "stage": 0,
+          "phase": "orientation",
+          "finale": null,
+          "wave": 0,
+          "seconds": 0,
+          "mode": "normal",
+          "enemies": 0,
+          "renderer": "canvas"
+        },
+        {
+          "at": 728,
+          "kind": "transition",
+          "status": "lesson",
+          "stage": 0,
+          "phase": "orientation",
+          "finale": null,
+          "wave": 0,
+          "seconds": 1.77,
+          "mode": "normal",
+          "enemies": 0,
+          "renderer": "canvas"
+        }
+      ]
+    },
+    "sound": {
+      "context": "running",
+      "loaded": 14,
+      "active": 0,
+      "cacheBytes": 1766452,
+      "played": {}
+    },
+    "voice": {
+      "busy": false,
+      "source": null
+    },
+    "swarm": null,
+    "base": {
+      "active": false,
+      "version": "2.7.0",
+      "legacy": false,
+      "tier": null,
+      "theme": null,
+      "stats": null,
+      "hazards": [],
+      "systems": [],
+      "transport": null,
+      "enemies": [],
+      "events": []
+    },
+    "samples": [
+      {
+        "wallSeconds": 10,
+        "gameSeconds": 2,
+        "level": 1,
+        "listeners": 75,
+        "heap": 105150304,
+        "rafPending": 1
+      }
+    ],
+    "transitions": [
+      {
+        "level": 1,
+        "status": "playing",
+        "phase": "orientation",
+        "finale": null,
+        "seconds": 0
+      },
+      {
+        "level": 1,
+        "status": "lesson",
+        "phase": "orientation",
+        "finale": null,
+        "seconds": 1.77
+      }
+    ],
+    "presentation": {
+      "number": 1,
+      "name": "Орбита Цитадели",
+      "active": false,
+      "convoy": false,
+      "mrg": false,
+      "inside": false,
+      "guideOn": true,
+      "guideName": "Автокурс",
+      "guideVisible": false,
+      "pulseName": "ИМПУЛЬС",
+      "cooldown": 0,
+      "boostName": "ФОРСАЖ",
+      "help": "Джойстик — курс; Огонь — удерживать. Форсаж — ускорение; Импульс — защита вблизи. Автокурс включается кнопкой над полем. После ручного манёвра проверяйте его состояние на кнопке."
+    },
+    "art": null,
+    "dom": {
+      "viewport": {
+        "w": 640,
+        "h": 360
+      },
+      "layout": {
+        "x": 0,
+        "y": 0,
+        "w": 640,
+        "h": 360,
+        "display": "block",
+        "visible": true,
+        "text": " ЦИТАДЕЛЬ ЦСИИ · БОЕВОЙУправлениеРекорды♫ вкл◖))×1234РЕДАКЦИЯ 1/4ПАКЕТ · 0 / 23 РЕШЕНИЯ◆ МОДУЛИ1/3⌖ ПЕРЕХВАЧЕНО0/20✓ РЕШЕНИЯ0/5УРОВЕНЬ 01 / 14Орбита ЦитаделиБой остановлен. Разбери",
+        "disabled": false
+      },
+      "canvas": {
+        "x": 0,
+        "y": 44,
+        "w": 640,
+        "h": 316,
+        "display": "block",
+        "visible": true,
+        "text": "",
+        "disabled": false
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "display": "none",
+        "visible": false,
+        "text": "УРОВЕНЬ 01 / 14Орбита ЦитаделиБой остановлен. Разберите учебную ситуацию; после ответа можно продолжить полёт.РЕШЕНИЕ 1 / 8Автокурс · вкл.",
+        "disabled": false
+      },
+      "route": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "display": "none",
+        "visible": false,
+        "text": "1234РЕДАКЦИЯ 1/4ПАКЕТ · 0 / 23 РЕШЕНИЯ◆ МОДУЛИ1/3⌖ ПЕРЕХВАЧЕНО0/20✓ РЕШЕНИЯ0/5",
+        "disabled": false
+      },
+      "defense": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "display": "flex",
+        "visible": false,
+        "text": "ИМПУЛЬС\nГОТОВ",
+        "disabled": true
+      },
+      "cover": null,
+      "boost": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "display": "flex",
+        "visible": false,
+        "text": "ФОРСАЖ",
+        "disabled": false
+      },
+      "buttons": [],
+      "horizontalOverflow": false
+    }
+  },
+  "wrong": {
+    "version": "2.7.0",
+    "config": {
+      "mode": "combat",
+      "scene": "orbit",
+      "accelerated": true,
+      "manual": false,
+      "holdQuestions": true
+    },
+    "education": {
+      "mode": "combat",
+      "quiz": true,
+      "current": {
+        "kind": "lesson",
+        "index": 0,
+        "q": {
+          "quizId": "quiz270-01-functional",
+          "caseId": "quiz270-01-functional",
+          "quizPoints": 100,
+          "quizLevel": 1,
+          "question": "Какой пункт задаёт функцию системы?",
+          "explanation": "Функциональное требование описывает действие или поведение системы.",
+          "hint": "Ищите действие, а не показатель качества работы.",
+          "skill": "Короткий вопрос",
+          "title": "Короткий вопрос",
+          "situation": "Какой пункт задаёт функцию системы?",
+          "q": "Какой пункт задаёт функцию системы?",
+          "choices": [
+            "Оператор может отменить черновик заявки.",
+            "Доступность сервиса составляет 99,9%.",
+            "Ответ поиска занимает не более 2 секунд.",
+            "Сервис выдерживает 500 одновременных сессий."
+          ],
+          "correct": 0,
+          "why": "Функциональное требование описывает действие или поведение системы.",
+          "outcome": {
+            "label": "Ответ принят",
+            "title": "Вопрос разобран",
+            "symbol": "✓",
+            "before": "Какой пункт задаёт функцию системы?",
+            "after": "Функциональное требование описывает действие или поведение системы.",
+            "color": "#91e5c7"
+          }
+        },
+        "feedback": {
+          "index": 3,
+          "correct": false,
+          "points": 0,
+          "quizId": "quiz270-01-functional"
+        }
+      }
+    },
+    "renderer": "3D · совместимый режим",
+    "mode": "combat",
+    "accelerated": true,
+    "rafInputCalls": 468,
+    "finished": null,
+    "status": "lesson",
+    "level": 1,
+    "levels": [
+      1
+    ],
+    "cards": 0,
+    "wallSeconds": 90,
+    "simulatedSeconds": 1.77,
+    "frameCalls": 280800,
+    "emitChanges": 0,
+    "maxInputGapMs": 309,
+    "metrics": {
+      "listeners": 75,
+      "peakListeners": 75,
+      "rafCalls": 475,
+      "rafDone": 472,
+      "rafPending": 1,
+      "rafPeak": 2,
+      "errors": [],
+      "heap": 58439547
+    },
+    "input": {
+      "version": "2.6.0",
+      "boundCanvases": 1,
+      "rightClicks": 0,
+      "active": false,
+      "pointerId": null,
+      "mode": "idle"
+    },
+    "player": {
+      "hp": 100,
+      "missiles": 10
+    },
+    "runtime": {
+      "version": "1.9.3",
+      "build": "193r2",
+      "frames": 468,
+      "updates": 468,
+      "renders": 468,
+      "recoveries": 0,
+      "failures": 0,
+      "stopped": false,
+      "contextLost": false,
+      "pending": true,
+      "stage": "idle",
+      "lastFrameAge": 201,
+      "lastUpdateAge": 200,
+      "lastRenderAge": 19,
+      "recoverySave": "none",
+      "faults": [],
+      "events": [
+        {
+          "at": 615,
+          "kind": "detach",
+          "status": "unknown",
+          "stage": null,
+          "phase": "other",
+          "finale": null,
+          "wave": null,
+          "seconds": null,
+          "mode": "normal",
+          "enemies": 0,
+          "renderer": "webgl"
+        },
+        {
+          "at": 661,
+          "kind": "engine",
+          "status": "playing",
+          "stage": 0,
+          "phase": "orientation",
+          "finale": null,
+          "wave": 0,
+          "seconds": 0,
+          "mode": "normal",
+          "enemies": 0,
+          "renderer": "canvas"
+        },
+        {
+          "at": 728,
+          "kind": "transition",
+          "status": "lesson",
+          "stage": 0,
+          "phase": "orientation",
+          "finale": null,
+          "wave": 0,
+          "seconds": 1.77,
+          "mode": "normal",
+          "enemies": 0,
+          "renderer": "canvas"
+        }
+      ]
+    },
+    "sound": {
+      "context": "running",
+      "loaded": 14,
+      "active": 0,
+      "cacheBytes": 1766452,
+      "played": {}
+    },
+    "voice": {
+      "busy": false,
+      "source": null
+    },
+    "swarm": null,
+    "base": {
+      "active": false,
+      "version": "2.7.0",
+      "legacy": false,
+      "tier": null,
+      "theme": null,
+      "stats": null,
+      "hazards": [],
+      "systems": [],
+      "transport": null,
+      "enemies": [],
+      "events": []
+    },
+    "samples": [
+      {
+        "wallSeconds": 10,
+        "gameSeconds": 2,
+        "level": 1,
+        "listeners": 75,
+        "heap": 105150304,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 22,
+        "gameSeconds": 2,
+        "level": 1,
+        "listeners": 75,
+        "heap": 115876618,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 34,
+        "gameSeconds": 2,
+        "level": 1,
+        "listeners": 75,
+        "heap": 49765847,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 46,
+        "gameSeconds": 2,
+        "level": 1,
+        "listeners": 75,
+        "heap": 118319367,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 58,
+        "gameSeconds": 2,
+        "level": 1,
+        "listeners": 75,
+        "heap": 56935591,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 68,
+        "gameSeconds": 2,
+        "level": 1,
+        "listeners": 75,
+        "heap": 119750113,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 80,
+        "gameSeconds": 2,
+        "level": 1,
+        "listeners": 75,
+        "heap": 154475370,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 90,
+        "gameSeconds": 2,
+        "level": 1,
+        "listeners": 75,
+        "heap": 58439547,
+        "rafPending": 1
+      }
+    ],
+    "transitions": [
+      {
+        "level": 1,
+        "status": "playing",
+        "phase": "orientation",
+        "finale": null,
+        "seconds": 0
+      },
+      {
+        "level": 1,
+        "status": "lesson",
+        "phase": "orientation",
+        "finale": null,
+        "seconds": 1.77
+      }
+    ],
+    "presentation": {
+      "number": 1,
+      "name": "Орбита Цитадели",
+      "active": false,
+      "convoy": false,
+      "mrg": false,
+      "inside": false,
+      "guideOn": true,
+      "guideName": "Автокурс",
+      "guideVisible": false,
+      "pulseName": "ИМПУЛЬС",
+      "cooldown": 0,
+      "boostName": "ФОРСАЖ",
+      "help": "Джойстик — курс; Огонь — удерживать. Форсаж — ускорение; Импульс — защита вблизи. Автокурс включается кнопкой над полем. После ручного манёвра проверяйте его состояние на кнопке."
+    },
+    "art": null,
+    "dom": {
+      "viewport": {
+        "w": 640,
+        "h": 360
+      },
+      "layout": {
+        "x": 0,
+        "y": 0,
+        "w": 640,
+        "h": 360,
+        "display": "block",
+        "visible": true,
+        "text": " ЦИТАДЕЛЬ ЦСИИ · БОЕВОЙУправлениеРекорды♫ вкл◖))×1234РЕДАКЦИЯ 1/4ПАКЕТ · 1 / 23 РЕШЕНИЯ◆ МОДУЛИ1/3⌖ ПЕРЕХВАЧЕНО0/20✓ РЕШЕНИЯ1/5УРОВЕНЬ 01 / 14Орбита ЦитаделиБой остановлен. Разбери",
+        "disabled": false
+      },
+      "canvas": {
+        "x": 0,
+        "y": 44,
+        "w": 640,
+        "h": 316,
+        "display": "block",
+        "visible": true,
+        "text": "",
+        "disabled": false
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "display": "none",
+        "visible": false,
+        "text": "УРОВЕНЬ 01 / 14Орбита ЦитаделиБой остановлен. Разберите учебную ситуацию; после ответа можно продолжить полёт.РЕШЕНИЕ 1 / 8Автокурс · вкл.",
+        "disabled": false
+      },
+      "route": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "display": "none",
+        "visible": false,
+        "text": "1234РЕДАКЦИЯ 1/4ПАКЕТ · 1 / 23 РЕШЕНИЯ◆ МОДУЛИ1/3⌖ ПЕРЕХВАЧЕНО0/20✓ РЕШЕНИЯ1/5",
+        "disabled": false
+      },
+      "defense": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "display": "flex",
+        "visible": false,
+        "text": "ИМПУЛЬС\nГОТОВ",
+        "disabled": true
+      },
+      "cover": null,
+      "boost": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "display": "flex",
+        "visible": false,
+        "text": "ФОРСАЖ",
+        "disabled": false
+      },
+      "buttons": [],
+      "horizontalOverflow": false
+    }
+  },
+  "continued": {
+    "version": "2.7.0",
+    "config": {
+      "mode": "combat",
+      "scene": "orbit",
+      "accelerated": true,
+      "manual": false,
+      "holdQuestions": true
+    },
+    "education": {
+      "mode": "combat",
+      "quiz": true,
+      "current": {
+        "kind": "lesson",
+        "index": 1,
+        "q": {
+          "quizId": "quiz270-01-goal",
+          "caseId": "quiz270-01-goal",
+          "quizPoints": 100,
+          "quizLevel": 1,
+          "question": "Какой пункт описывает бизнес-цель портала?",
+          "explanation": "Бизнес-цель описывает нужный организации результат, а не способ реализации.",
+          "hint": "Отделите пользу для работы от функций и технологий.",
+          "skill": "Короткий вопрос",
+          "title": "Короткий вопрос",
+          "situation": "Какой пункт описывает бизнес-цель портала?",
+          "q": "Какой пункт описывает бизнес-цель портала?",
+          "choices": [
+            "Добавить кнопку выгрузки в таблицу.",
+            "Сократить время обработки заявки на 20%.",
+            "Разместить меню в левой части экрана.",
+            "Использовать базу данных PostgreSQL."
+          ],
+          "correct": 1,
+          "why": "Бизнес-цель описывает нужный организации результат, а не способ реализации.",
+          "outcome": {
+            "label": "Ответ принят",
+            "title": "Вопрос разобран",
+            "symbol": "✓",
+            "before": "Какой пункт описывает бизнес-цель портала?",
+            "after": "Бизнес-цель описывает нужный организации результат, а не способ реализации.",
+            "color": "#91e5c7"
+          }
+        },
+        "feedback": null
+      }
+    },
+    "renderer": "3D · совместимый режим",
+    "mode": "combat",
+    "accelerated": true,
+    "rafInputCalls": 694,
+    "finished": null,
+    "status": "lesson",
+    "level": 1,
+    "levels": [
+      1
+    ],
+    "cards": 0,
+    "wallSeconds": 124,
+    "simulatedSeconds": 37.52,
+    "frameCalls": 416400,
+    "emitChanges": 0,
+    "maxInputGapMs": 309,
+    "metrics": {
+      "listeners": 75,
+      "peakListeners": 75,
+      "rafCalls": 703,
+      "rafDone": 700,
+      "rafPending": 1,
+      "rafPeak": 2,
+      "errors": [],
+      "heap": 138575500
+    },
+    "input": {
+      "version": "2.6.0",
+      "boundCanvases": 1,
+      "rightClicks": 0,
+      "active": false,
+      "pointerId": null,
+      "mode": "idle"
+    },
+    "player": {
+      "hp": 100,
+      "missiles": 2
+    },
+    "runtime": {
+      "version": "1.9.3",
+      "build": "193r2",
+      "frames": 694,
+      "updates": 694,
+      "renders": 694,
+      "recoveries": 0,
+      "failures": 0,
+      "stopped": false,
+      "contextLost": false,
+      "pending": true,
+      "stage": "idle",
+      "lastFrameAge": 131,
+      "lastUpdateAge": 127,
+      "lastRenderAge": 17,
+      "recoverySave": "none",
+      "faults": [],
+      "events": [
+        {
+          "at": 615,
+          "kind": "detach",
+          "status": "unknown",
+          "stage": null,
+          "phase": "other",
+          "finale": null,
+          "wave": null,
+          "seconds": null,
+          "mode": "normal",
+          "enemies": 0,
+          "renderer": "webgl"
+        },
+        {
+          "at": 661,
+          "kind": "engine",
+          "status": "playing",
+          "stage": 0,
+          "phase": "orientation",
+          "finale": null,
+          "wave": 0,
+          "seconds": 0,
+          "mode": "normal",
+          "enemies": 0,
+          "renderer": "canvas"
+        },
+        {
+          "at": 728,
+          "kind": "transition",
+          "status": "lesson",
+          "stage": 0,
+          "phase": "orientation",
+          "finale": null,
+          "wave": 0,
+          "seconds": 1.77,
+          "mode": "normal",
+          "enemies": 0,
+          "renderer": "canvas"
+        },
+        {
+          "at": 93239,
+          "kind": "citadel-lesson-next",
+          "status": "lesson",
+          "stage": 0,
+          "phase": "orientation",
+          "finale": null,
+          "wave": 0,
+          "seconds": 1.77,
+          "mode": "normal",
+          "enemies": 0,
+          "renderer": "canvas"
+        },
+        {
+          "at": 93681,
+          "kind": "transition",
+          "status": "playing",
+          "stage": 0,
+          "phase": "battle",
+          "finale": null,
+          "wave": 1,
+          "seconds": 11.79,
+          "mode": "normal",
+          "enemies": 2,
+          "renderer": "canvas"
+        },
+        {
+          "at": 94239,
+          "kind": "transition",
+          "status": "playing",
+          "stage": 0,
+          "phase": "battle",
+          "finale": null,
+          "wave": 2,
+          "seconds": 21.81,
+          "mode": "normal",
+          "enemies": 0,
+          "renderer": "canvas"
+        },
+        {
+          "at": 94802,
+          "kind": "transition",
+          "status": "playing",
+          "stage": 0,
+          "phase": "battle",
+          "finale": null,
+          "wave": 3,
+          "seconds": 31.84,
+          "mode": "normal",
+          "enemies": 3,
+          "renderer": "canvas"
+        },
+        {
+          "at": 95094,
+          "kind": "transition",
+          "status": "lesson",
+          "stage": 0,
+          "phase": "retrieve",
+          "finale": null,
+          "wave": 3,
+          "seconds": 37.52,
+          "mode": "normal",
+          "enemies": 0,
+          "renderer": "canvas"
+        }
+      ]
+    },
+    "sound": {
+      "context": "running",
+      "loaded": 16,
+      "active": 0,
+      "cacheBytes": 2046804,
+      "played": {
+        "missile": 7,
+        "shot": 14,
+        "robot-hit": 8,
+        "robot-death": 7,
+        "player-damage": 2
+      }
+    },
+    "voice": {
+      "busy": false,
+      "source": null
+    },
+    "swarm": null,
+    "base": {
+      "active": false,
+      "version": "2.7.0",
+      "legacy": false,
+      "tier": null,
+      "theme": null,
+      "stats": null,
+      "hazards": [],
+      "systems": [],
+      "transport": null,
+      "enemies": [],
+      "events": []
+    },
+    "samples": [
+      {
+        "wallSeconds": 10,
+        "gameSeconds": 2,
+        "level": 1,
+        "listeners": 75,
+        "heap": 105150304,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 22,
+        "gameSeconds": 2,
+        "level": 1,
+        "listeners": 75,
+        "heap": 115876618,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 34,
+        "gameSeconds": 2,
+        "level": 1,
+        "listeners": 75,
+        "heap": 49765847,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 46,
+        "gameSeconds": 2,
+        "level": 1,
+        "listeners": 75,
+        "heap": 118319367,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 58,
+        "gameSeconds": 2,
+        "level": 1,
+        "listeners": 75,
+        "heap": 56935591,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 68,
+        "gameSeconds": 2,
+        "level": 1,
+        "listeners": 75,
+        "heap": 119750113,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 80,
+        "gameSeconds": 2,
+        "level": 1,
+        "listeners": 75,
+        "heap": 154475370,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 90,
+        "gameSeconds": 2,
+        "level": 1,
+        "listeners": 75,
+        "heap": 58439547,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 102,
+        "gameSeconds": 38,
+        "level": 1,
+        "listeners": 75,
+        "heap": 125698662,
+        "rafPending": 1
+      },
+      {
+        "wallSeconds": 114,
+        "gameSeconds": 38,
+        "level": 1,
+        "listeners": 75,
+        "heap": 101544035,
+        "rafPending": 1
+      }
+    ],
+    "transitions": [
+      {
+        "level": 1,
+        "status": "playing",
+        "phase": "orientation",
+        "finale": null,
+        "seconds": 0
+      },
+      {
+        "level": 1,
+        "status": "lesson",
+        "phase": "orientation",
+        "finale": null,
+        "seconds": 1.77
+      },
+      {
+        "level": 1,
+        "status": "playing",
+        "phase": "battle",
+        "finale": null,
+        "seconds": 1.77
+      },
+      {
+        "level": 1,
+        "status": "playing",
+        "phase": "battle",
+        "finale": null,
+        "seconds": 15.66
+      },
+      {
+        "level": 1,
+        "status": "playing",
+        "phase": "battle",
+        "finale": null,
+        "seconds": 23.73
+      },
+      {
+        "level": 1,
+        "status": "playing",
+        "phase": "retrieve",
+        "finale": null,
+        "seconds": 34.25
+      },
+      {
+        "level": 1,
+        "status": "lesson",
+        "phase": "retrieve",
+        "finale": null,
+        "seconds": 37.52
+      }
+    ],
+    "presentation": {
+      "number": 1,
+      "name": "Орбита Цитадели",
+      "active": false,
+      "convoy": false,
+      "mrg": false,
+      "inside": false,
+      "guideOn": true,
+      "guideName": "Автокурс",
+      "guideVisible": false,
+      "pulseName": "ИМПУЛЬС",
+      "cooldown": 7,
+      "boostName": "ФОРСАЖ",
+      "help": "Джойстик — курс; Огонь — удерживать. Форсаж — ускорение; Импульс — защита вблизи. Автокурс включается кнопкой над полем. После ручного манёвра проверяйте его состояние на кнопке."
+    },
+    "art": null,
+    "dom": {
+      "viewport": {
+        "w": 640,
+        "h": 360
+      },
+      "layout": {
+        "x": 0,
+        "y": 0,
+        "w": 640,
+        "h": 360,
+        "display": "block",
+        "visible": true,
+        "text": " ЦИТАДЕЛЬ ЦСИИ · БОЕВОЙУправлениеРекорды♫ вкл◖))×1234РЕДАКЦИЯ 1/4ПАКЕТ · 1 / 23 РЕШЕНИЯ◆ МОДУЛИ2/3⌖ ПЕРЕХВАЧЕНО20/20✓ РЕШЕНИЯ1/5УРОВЕНЬ 01 / 14Орбита ЦитаделиБой остановлен. Разбер",
+        "disabled": false
+      },
+      "canvas": {
+        "x": 0,
+        "y": 44,
+        "w": 640,
+        "h": 316,
+        "display": "block",
+        "visible": true,
+        "text": "",
+        "disabled": false
+      },
+      "header": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "display": "none",
+        "visible": false,
+        "text": "УРОВЕНЬ 01 / 14Орбита ЦитаделиБой остановлен. Разберите учебную ситуацию; после ответа можно продолжить полёт.РЕШЕНИЕ 2 / 8Автокурс · вкл.",
+        "disabled": false
+      },
+      "route": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "display": "none",
+        "visible": false,
+        "text": "1234РЕДАКЦИЯ 1/4ПАКЕТ · 1 / 23 РЕШЕНИЯ◆ МОДУЛИ2/3⌖ ПЕРЕХВАЧЕНО20/20✓ РЕШЕНИЯ1/5",
+        "disabled": false
+      },
+      "defense": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "display": "flex",
+        "visible": false,
+        "text": "ИМПУЛЬС\n7 с",
+        "disabled": true
+      },
+      "cover": null,
+      "boost": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0,
+        "display": "flex",
+        "visible": false,
+        "text": "ФОРСАЖ",
+        "disabled": false
+      },
+      "buttons": [],
+      "horizontalOverflow": false
+    }
+  }
+}

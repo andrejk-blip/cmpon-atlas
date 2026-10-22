@@ -1,12 +1,15 @@
 #!/usr/bin/env node
 'use strict';
-const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
+const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict'),crypto=require('node:crypto');
 const {entrySnapshot,entryHarness}=require('./mission-integration-regression-1.9.1.cjs');
+const {readEntry}=require('./release260-verifier.cjs');
+const entryArgument=process.argv.find(x=>x.startsWith('--entry='))?.slice(8);
+const sourceEntry=entryArgument?readEntry(entryArgument):entrySnapshot();
 const file='assets/citadel-runtime-v1.9.3.js',checks=[];
 const plain=x=>JSON.parse(JSON.stringify(x));
 async function fixture(){
  let time=0,serial=0;const raf=new Map(),intervals=new Map();
- const h=entryHarness(entrySnapshot(),{frameClock:true,beforeScripts({c}){
+ const h=entryHarness(sourceEntry,{frameClock:true,beforeScripts({c}){
   c.performance.now=()=>time;
   c.requestAnimationFrame=fn=>{const id=++serial;raf.set(id,fn);return id;};c.cancelAnimationFrame=id=>raf.delete(id);
   c.setInterval=(fn,ms)=>{const id=++serial;intervals.set(id,{fn,ms});return id;};c.clearInterval=id=>intervals.delete(id);
@@ -80,7 +83,7 @@ async function check(name,fn){console.log("START "+name);try{const data=await fn
   const f=await fixture();for(let i=0;i<160;i++){f.h.action('arcade-pause','private-value');f.tick();}
   const d=plain(f.diag());assert(d.events.length<=64);assert(!JSON.stringify(d).includes('private-value'));assert.equal(d.failures,0);return{events:d.events.length,frames:d.frames};
  });
- const report={suite:'runtime193',environment:'Node VM, mocked renderer/RAF/timers/storage; native Canvas integration tested separately',checks,pass:checks.every(x=>x.pass)};
+ const report={suite:'runtime193',entry:entryArgument||'index.html',entrySHA256:crypto.createHash('sha256').update(sourceEntry.html).digest('hex'),sourceHashes:sourceEntry.scripts.map(file=>({file,sha256:crypto.createHash('sha256').update(sourceEntry.sources.get(file)).digest('hex')})),environment:'Node VM, mocked renderer/RAF/timers/storage; native Canvas integration tested separately',checks,pass:checks.every(x=>x.pass)};
  const reportArg=process.argv.indexOf('--report');
  fs.writeFileSync(reportArg>=0?process.argv[reportArg+1]:'tests/qa-1.9.3/runtime.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({pass:report.pass,checks:checks.map(({name,pass,error})=>({name,pass,error}))},null,2));if(!report.pass)process.exitCode=1;
 })();

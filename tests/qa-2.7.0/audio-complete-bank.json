@@ -1,0 +1,11 @@
+{
+  "method": "Node audio lifecycle: every added recording requested by exact line; decoded duration supplied from manifest. Independent verifier performs actual MP3 decoding.",
+  "clips": 76,
+  "starts": 76,
+  "systemCalls": 0,
+  "maxCache": 11,
+  "maxBytes": 12557452,
+  "pass": true,
+  "legacyHashesVerified": 110,
+  "legacyHashMismatches": 0
+}

@@ -1,0 +1,1187 @@
+{
+  "version": "2.7.0",
+  "strategy": "74 build-time Silero MIT CPU recordings; preserve 2 existing and all 110 legacy recordings",
+  "availability": {
+    "newPreparedCount": 76,
+    "fullNewTextBankPrepared": true,
+    "expandedTextDelivery": "All 76 new lines are same-origin MP3 files. No system Russian voice or TTS service required."
+  },
+  "generation": {
+    "service": "Local CPU synthesis",
+    "model": "Silero v5_cis_base",
+    "modelUrl": "https://models.silero.ai/models/tts/ru/v5_cis_base.pt",
+    "modelSha256": "ba41b18f6a707ad93605a162998865e7c087153d2e010a26dd02229dab0e672a",
+    "license": "MIT",
+    "software": {
+      "torch": "2.14.1+cpu",
+      "numpy": "2.3.5"
+    },
+    "newLocalRecordings": 74,
+    "preservedEarlierRecordings": 2,
+    "roles": {
+      "navigator": {
+        "speaker": "ru_dmitriy",
+        "sender": "Штурман",
+        "voiceName": "Дмитрий"
+      },
+      "engineer": {
+        "speaker": "ru_bogdan",
+        "sender": "Бортинженер",
+        "voiceName": "Богдан"
+      },
+      "operator": {
+        "speaker": "ru_eduard",
+        "sender": "Оператор связи",
+        "voiceName": "Эдуард"
+      },
+      "cargo": {
+        "speaker": "ru_marat",
+        "sender": "Старший конвоя",
+        "voiceName": "Марат"
+      },
+      "antagonist": {
+        "speaker": "ru_alexandr",
+        "sender": null,
+        "voiceName": "Александр"
+      },
+      "hostile": {
+        "speaker": "ru_roman",
+        "sender": null,
+        "voiceName": "Роман"
+      }
+    },
+    "legacyRecordingSource": {
+      "service": "Runway",
+      "model": "eleven_v3",
+      "presets": [
+        "Bernard",
+        "Clint"
+      ]
+    },
+    "recordings": "Original game dialogue. Public preset voices; no cloning or private voice samples."
+  },
+  "clips": [
+    {
+      "id": "radio270-captain-office",
+      "file": "radio270-captain-office.mp3",
+      "text": "У нас в отделе отменили лишние согласования. Теперь отмену согласуют в трёх экземплярах. Ладно, экипаж, хоть маршрут у нас один.",
+      "voice": "Капитан · Bernard"
+    },
+    {
+      "id": "radio270-enemy-taunt",
+      "file": "radio270-enemy-taunt.mp3",
+      "text": "Ха-ха! Нормально делай — нормально будет!",
+      "voice": "Противник · Clint"
+    },
+    {
+      "id": "radio270-orbit-01",
+      "file": "radio270-orbit-01.mp3",
+      "text": "В прошлый рейс взяли стажёра. Он спросил, где тут кнопка «сделать хорошо». Теперь я тоже её ищу.",
+      "synthesisText": "В пр+ошлый рейс вз+яли стажёра. Он спрос+ил, где тут кн+опка «сд+елать хорош+о». Теп+ерь я т+оже её ищ+у.",
+      "voice": "Штурман · Дмитрий",
+      "sender": "Штурман",
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_dmitriy",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-orbit-02",
+      "file": "radio270-orbit-02.mp3",
+      "text": "Штурман подписал карту «финальная». Я попросил уточнить номер. Оказалось, финальная семнадцатая.",
+      "synthesisText": "Шт+урман подпис+ал к+арту «фин+альная». Я попрос+ил уточн+ить н+омер. Оказ+алось, фин+альная семн+адцатая.",
+      "voice": "Штурман · Дмитрий",
+      "sender": "Штурман",
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_dmitriy",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-orbit-03",
+      "file": "radio270-orbit-03.mp3",
+      "text": "На планёрке обещали короткую дорогу. Потом добавили два согласования и маленькую орбиту.",
+      "synthesisText": "На планёрке обещ+али кор+откую дор+огу. Пот+ом доб+авили два согласов+ания и м+аленькую +орбиту.",
+      "voice": "Штурман · Дмитрий",
+      "sender": "Штурман",
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_dmitriy",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-orbit-04",
+      "file": "radio270-orbit-04.mp3",
+      "text": "Кофе на мостике закончился. Топлива пока хватает. Очень прошу не перепутать, что куда заливать.",
+      "synthesisText": "К+офе на м+остике зак+ончился. Т+оплива пок+а хват+ает. +Очень прош+у не переп+утать, что куд+а залив+ать.",
+      "voice": "Штурман · Дмитрий",
+      "sender": "Штурман",
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_dmitriy",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-orbit-05",
+      "file": "radio270-orbit-05.mp3",
+      "text": "Мы однажды приняли сигнал бедствия за приглашение на созвон. С тех пор читаем тему сообщения целиком.",
+      "synthesisText": "Мы одн+ажды пр+иняли сигн+ал б+едствия за приглаш+ение на созв+он. С тех пор чит+аем т+ему сообщ+ения целик+ом.",
+      "voice": "Штурман · Дмитрий",
+      "sender": "Штурман",
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_dmitriy",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-orbit-06",
+      "file": "radio270-orbit-06.mp3",
+      "text": "Не называйте нас ошибками. Мы особенности вашей орбиты!",
+      "synthesisText": "Не назыв+айте нас ош+ибками. Мы ос+обенности в+ашей +орбиты!",
+      "voice": "Перехваченный канал · Александр",
+      "sender": null,
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_alexandr",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-orbit-07",
+      "file": "radio270-orbit-07.mp3",
+      "text": "Капитан, у вас смелый маршрут. Мы его уже отклонили.",
+      "synthesisText": "Капит+ан, у вас см+елый маршр+ут. Мы ег+о уж+е отклон+или.",
+      "voice": "Перехваченный канал · Александр",
+      "sender": null,
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_alexandr",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-orbit-08",
+      "file": "radio270-orbit-08.mp3",
+      "text": "Ваш пропуск действителен. Ваше присутствие — спорный вопрос.",
+      "synthesisText": "Ваш пр+опуск действ+ителен. В+аше прис+утствие — сп+орный вопр+ос.",
+      "voice": "Перехваченный канал · Александр",
+      "sender": null,
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_alexandr",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-base-01",
+      "file": "radio270-base-01.mp3",
+      "text": "На прошлой базе дверь открывалась по заявке. Заявку принимали за той же дверью. Очень защищённая система.",
+      "synthesisText": "На пр+ошлой б+азе дверь открыв+алась по за+явке. За+явку приним+али за той же дв+ерью. +Очень защищённая сист+ема.",
+      "voice": "Бортинженер · Богдан",
+      "sender": "Бортинженер",
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_bogdan",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-base-02",
+      "file": "radio270-base-02.mp3",
+      "text": "Нашёл комнату отдыха. В ней три стула и приказ отдыхать без отрыва от работы. Знакомое место.",
+      "synthesisText": "Нашёл к+омнату +отдыха. В ней три ст+ула и прик+аз отдых+ать без отр+ыва от раб+оты. Знак+омое м+есто.",
+      "voice": "Бортинженер · Богдан",
+      "sender": "Бортинженер",
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_bogdan",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-base-03",
+      "file": "radio270-base-03.mp3",
+      "text": "Техник починил кофемашину. Теперь она выдаёт кофе и три замечания к формулировке заказа.",
+      "synthesisText": "Т+ехник почин+ил кофемаш+ину. Теп+ерь он+а выдаёт к+офе и три замеч+ания к формулир+овке зак+аза.",
+      "voice": "Бортинженер · Богдан",
+      "sender": "Бортинженер",
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_bogdan",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-base-04",
+      "file": "radio270-base-04.mp3",
+      "text": "Мне прислали схему этих коридоров. В письме написано: «Ничего не меняли». Это меня и тревожит.",
+      "synthesisText": "Мне присл+али сх+ему +этих корид+оров. В письм+е нап+исано: «Ничег+о не мен+яли». +Это мен+я и трев+ожит.",
+      "voice": "Бортинженер · Богдан",
+      "sender": "Бортинженер",
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_bogdan",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-base-05",
+      "file": "radio270-base-05.mp3",
+      "text": "Раньше я оставлял заметки на двери. Потом дверь заменили. Теперь у нас две версии знаний и ни одного входа.",
+      "synthesisText": "Р+аньше я оставл+ял зам+етки на дв+ери. Пот+ом дверь замен+или. Теп+ерь у нас две в+ерсии зн+аний и ни одног+о вх+ода.",
+      "voice": "Бортинженер · Богдан",
+      "sender": "Бортинженер",
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_bogdan",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-base-06",
+      "file": "radio270-base-06.mp3",
+      "text": "Вы в наш отдел без записи? Какая восхитительная самоуверенность.",
+      "synthesisText": "Вы в наш отд+ел без з+аписи? Как+ая восхит+ительная самоувер+енность.",
+      "voice": "Перехваченный канал · Роман",
+      "sender": null,
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_roman",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-base-07",
+      "file": "radio270-base-07.mp3",
+      "text": "Мы здесь не потерялись. Это свободная планировка!",
+      "synthesisText": "Мы здесь не потер+ялись. +Это своб+одная планир+овка!",
+      "voice": "Перехваченный канал · Роман",
+      "sender": null,
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_roman",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-base-08",
+      "file": "radio270-base-08.mp3",
+      "text": "Ваше замечание принято. Номер обращения — бесконечность.",
+      "synthesisText": "В+аше замеч+ание пр+инято. Н+омер обращ+ения — бескон+ечность.",
+      "voice": "Перехваченный канал · Роман",
+      "sender": null,
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_roman",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-pursuit-01",
+      "file": "radio270-pursuit-01.mp3",
+      "text": "Однажды требование прислали архивом. Пароль лежал в другом архиве. Этот хотя бы летит на виду.",
+      "synthesisText": "Одн+ажды тр+ебование присл+али арх+ивом. Пар+оль леж+ал в друг+ом арх+иве. +Этот хот+я бы лет+ит на вид+у.",
+      "voice": "Штурман · Дмитрий",
+      "sender": "Штурман",
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_dmitriy",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-pursuit-02",
+      "file": "radio270-pursuit-02.mp3",
+      "text": "Функциональный заказчик говорит: «Я всегда на связи». Видимо, имел в виду связь со своей свободой.",
+      "synthesisText": "Функцион+альный зак+азчик говор+ит: «Я всегд+а на св+язи». В+идимо, им+ел в вид+у связь со сво+ей своб+одой.",
+      "voice": "Штурман · Дмитрий",
+      "sender": "Штурман",
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_dmitriy",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-pursuit-03",
+      "file": "radio270-pursuit-03.mp3",
+      "text": "Когда я просил заказчика быть мобильнее, я имел в виду отвечать на письма. Получилось буквально.",
+      "synthesisText": "Когд+а я прос+ил зак+азчика быть моб+ильнее, я им+ел в вид+у отвеч+ать на п+исьма. Получ+илось букв+ально.",
+      "voice": "Штурман · Дмитрий",
+      "sender": "Штурман",
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_dmitriy",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-pursuit-04",
+      "file": "radio270-pursuit-04.mp3",
+      "text": "У меня так курьер уезжал с обедом. Только у обеда не было двигателя и такого самомнения.",
+      "synthesisText": "У мен+я так курь+ер уезж+ал с об+едом. Т+олько у об+еда не б+ыло дв+игателя и так+ого самомн+ения.",
+      "voice": "Штурман · Дмитрий",
+      "sender": "Штурман",
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_dmitriy",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-pursuit-05",
+      "file": "radio270-pursuit-05.mp3",
+      "text": "Заказчик обещал одну маленькую правку. Теперь маленькая правка разогналась до космической скорости.",
+      "synthesisText": "Зак+азчик обещ+ал одн+у м+аленькую пр+авку. Теп+ерь м+аленькая пр+авка разогнал+ась до косм+ической ск+орости.",
+      "voice": "Штурман · Дмитрий",
+      "sender": "Штурман",
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_dmitriy",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-pursuit-06",
+      "file": "radio270-pursuit-06.mp3",
+      "text": "Хе-хе! Не отдам тебе требование. У меня ещё не согласовано, хочу ли я его отдавать!",
+      "synthesisText": "Хе-хе! Не отд+ам теб+е тр+ебование. У мен+я ещё не соглас+овано, хоч+у ли я ег+о отдав+ать!",
+      "voice": "Перехваченный канал · Александр",
+      "sender": null,
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_alexandr",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-pursuit-07",
+      "file": "radio270-pursuit-07.mp3",
+      "text": "Я не меняю мнение. Я уточняю предыдущие семнадцать!",
+      "synthesisText": "Я не мен+яю мн+ение. Я уточн+яю предыд+ущие семн+адцать!",
+      "voice": "Перехваченный канал · Александр",
+      "sender": null,
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_alexandr",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-pursuit-08",
+      "file": "radio270-pursuit-08.mp3",
+      "text": "Ха! Нормально делай — нормально будет. Подробности будут в следующей редакции!",
+      "synthesisText": "Ха! Норм+ально д+елай — норм+ально б+удет. Подр+обности б+удут в сл+едующей ред+акции!",
+      "voice": "Перехваченный канал · Александр",
+      "sender": null,
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_alexandr",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-swarm-01",
+      "file": "radio270-swarm-01.mp3",
+      "text": "Рой напоминает почту в понедельник. Один спросил, сорок ответили всем. И каждый начал с «коллеги, коротко».",
+      "synthesisText": "Рой напомин+ает п+очту в понед+ельник. Од+ин спрос+ил, с+орок отв+етили всем. И к+аждый н+ачал с «колл+еги, к+оротко».",
+      "voice": "Оператор связи · Эдуард",
+      "sender": "Оператор связи",
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_eduard",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-swarm-02",
+      "file": "radio270-swarm-02.mp3",
+      "text": "Уточнение было одно. Потом его переслали в общий чат. Вот так и появляются созвездия.",
+      "synthesisText": "Уточн+ение б+ыло одн+о. Пот+ом ег+о пересл+али в +общий чат. Вот так и появл+яются созв+ездия.",
+      "voice": "Оператор связи · Эдуард",
+      "sender": "Оператор связи",
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_eduard",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-swarm-03",
+      "file": "radio270-swarm-03.mp3",
+      "text": "В академии я тоже любил эти строи. Только там они не присылали замечания после зачёта.",
+      "synthesisText": "В акад+емии я т+оже люб+ил +эти стро+и. Т+олько там он+и не присыл+али замеч+ания п+осле зачёта.",
+      "voice": "Оператор связи · Эдуард",
+      "sender": "Оператор связи",
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_eduard",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-swarm-04",
+      "file": "radio270-swarm-04.mp3",
+      "text": "Мы завели единый список вопросов. Теперь к нему есть четыре списка уточнений. Зато единый.",
+      "synthesisText": "Мы завел+и ед+иный сп+исок вопр+осов. Теп+ерь к нем+у есть чет+ыре сп+иска уточн+ений. Зат+о ед+иный.",
+      "voice": "Оператор связи · Эдуард",
+      "sender": "Оператор связи",
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_eduard",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-swarm-05",
+      "file": "radio270-swarm-05.mp3",
+      "text": "Аналитик попросил обратную связь. Получил круговую. Смотрите, какая организованная общественность.",
+      "synthesisText": "Ан+алитик попрос+ил обр+атную связь. Получ+ил кругов+ую. Смотр+ите, как+ая организ+ованная общ+ественность.",
+      "voice": "Оператор связи · Эдуард",
+      "sender": "Оператор связи",
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_eduard",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-swarm-06",
+      "file": "radio270-swarm-06.mp3",
+      "text": "Мы всего лишь маленькие уточнения. Очень много маленьких уточнений!",
+      "synthesisText": "Мы всег+о лишь м+аленькие уточн+ения. +Очень мн+ого м+аленьких уточн+ений!",
+      "voice": "Перехваченный канал · Роман",
+      "sender": null,
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_roman",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-swarm-07",
+      "file": "radio270-swarm-07.mp3",
+      "text": "Ответить всем! Ответить всем! Кто-нибудь понял вопрос?",
+      "synthesisText": "Отв+етить всем! Отв+етить всем! Кто-ниб+удь п+онял вопр+ос?",
+      "voice": "Перехваченный канал · Роман",
+      "sender": null,
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_roman",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-swarm-08",
+      "file": "radio270-swarm-08.mp3",
+      "text": "Ваш ответ породил ещё один вопрос. Поздравляем с продуктивностью!",
+      "synthesisText": "Ваш отв+ет пород+ил ещё од+ин вопр+ос. Поздравл+яем с продукт+ивностью!",
+      "voice": "Перехваченный канал · Роман",
+      "sender": null,
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_roman",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-convoy-01",
+      "file": "radio270-convoy-01.mp3",
+      "text": "В накладной значатся модули, кабель и одна кружка. За кружку экспедитор переживает сильнее всего.",
+      "synthesisText": "В накладн+ой зн+ачатся м+одули, к+абель и одн+а кр+ужка. За кр+ужку экспед+итор пережив+ает сильн+ее всег+о.",
+      "voice": "Старший конвоя · Марат",
+      "sender": "Старший конвоя",
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_marat",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-convoy-02",
+      "file": "radio270-convoy-02.mp3",
+      "text": "Грузовик запросил остановку на кофе. В гиперпространстве. Люблю людей, которые верят в сервис.",
+      "synthesisText": "Грузов+ик запрос+ил остан+овку на к+офе. В гиперпростр+анстве. Любл+ю люд+ей, кот+орые в+ерят в с+ервис.",
+      "voice": "Старший конвоя · Марат",
+      "sender": "Старший конвоя",
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_marat",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-convoy-03",
+      "file": "radio270-convoy-03.mp3",
+      "text": "Перед рейсом проверили всё по списку. Потом нашли второй список. Его тоже взяли с собой.",
+      "synthesisText": "П+еред р+ейсом пров+ерили всё по сп+иску. Пот+ом нашл+и втор+ой сп+исок. Ег+о т+оже вз+яли с соб+ой.",
+      "voice": "Старший конвоя · Марат",
+      "sender": "Старший конвоя",
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_marat",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-convoy-04",
+      "file": "radio270-convoy-04.mp3",
+      "text": "Экспедитор сказал: «Главное — довезти документы». Я напомнил, что корабли тоже хотелось бы вернуть.",
+      "synthesisText": "Экспед+итор сказ+ал: «Гл+авное — довезт+и докум+енты». Я нап+омнил, что корабл+и т+оже хот+елось бы верн+уть.",
+      "voice": "Старший конвоя · Марат",
+      "sender": "Старший конвоя",
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_marat",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-convoy-05",
+      "file": "radio270-convoy-05.mp3",
+      "text": "Я обещал грузовому экипажу спокойный рейс. Теперь они просят оформить обещание как исторический документ.",
+      "synthesisText": "Я обещ+ал грузов+ому экип+ажу спок+ойный рейс. Теп+ерь он+и пр+осят оф+ормить обещ+ание как истор+ический докум+ент.",
+      "voice": "Старший конвоя · Марат",
+      "sender": "Старший конвоя",
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_marat",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-convoy-06",
+      "file": "radio270-convoy-06.mp3",
+      "text": "Доставка за наш счёт? Нет, за ваш. Мы просто участвуем!",
+      "synthesisText": "Дост+авка за наш счёт? Нет, за ваш. Мы пр+осто уч+аствуем!",
+      "voice": "Перехваченный канал · Роман",
+      "sender": null,
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_roman",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-convoy-07",
+      "file": "radio270-convoy-07.mp3",
+      "text": "У вас прекрасный груз. Мы уже включили его в свои планы.",
+      "synthesisText": "У вас прекр+асный груз. Мы уж+е включ+или ег+о в сво+и пл+аны.",
+      "voice": "Перехваченный канал · Роман",
+      "sender": null,
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_roman",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-convoy-08",
+      "file": "radio270-convoy-08.mp3",
+      "text": "Отметьте в накладной: получатель немного изменился!",
+      "synthesisText": "Отм+етьте в накладн+ой: получ+атель немн+ого измен+ился!",
+      "voice": "Перехваченный канал · Роман",
+      "sender": null,
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_roman",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-parallax-01",
+      "file": "radio270-parallax-01.mp3",
+      "text": "Параллакс похож на согласование макета. С одной стороны красиво, с другой — совсем другой проект.",
+      "synthesisText": "Паралл+акс пох+ож на согласов+ание мак+ета. С одн+ой сторон+ы крас+иво, с друг+ой — совс+ем друг+ой про+ект.",
+      "voice": "Оператор связи · Эдуард",
+      "sender": "Оператор связи",
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_eduard",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-parallax-02",
+      "file": "radio270-parallax-02.mp3",
+      "text": "Два эксперта увидели одну схему и согласились. Потом выяснилось, что смотрели на разные страницы.",
+      "synthesisText": "Два эксп+ерта ув+идели одн+у сх+ему и соглас+ились. Пот+ом в+ыяснилось, что смотр+ели на р+азные стран+ицы.",
+      "voice": "Оператор связи · Эдуард",
+      "sender": "Оператор связи",
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_eduard",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-parallax-03",
+      "file": "radio270-parallax-03.mp3",
+      "text": "Я однажды спорил с отражением в стекле. Победил только уборщик: попросил нас обоих отойти.",
+      "synthesisText": "Я одн+ажды сп+орил с отраж+ением в стекл+е. Побед+ил т+олько уб+орщик: попрос+ил нас об+оих отойт+и.",
+      "voice": "Оператор связи · Эдуард",
+      "sender": "Оператор связи",
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_eduard",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-parallax-04",
+      "file": "radio270-parallax-04.mp3",
+      "text": "В параллельной вселенной этот отчёт уже приняли. Надеюсь, там хотя бы чай ещё тёплый.",
+      "synthesisText": "В паралл+ельной всел+енной +этот отчёт уж+е пр+иняли. Над+еюсь, там хот+я бы чай ещё тёплый.",
+      "voice": "Оператор связи · Эдуард",
+      "sender": "Оператор связи",
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_eduard",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-parallax-05",
+      "file": "radio270-parallax-05.mp3",
+      "text": "Кто-то опять открыл файл «точно последний». Судя по происходящему, файл открыл ответный спор.",
+      "synthesisText": "Кто-то оп+ять откр+ыл файл «т+очно посл+едний». С+удя по происход+ящему, файл откр+ыл отв+етный спор.",
+      "voice": "Оператор связи · Эдуард",
+      "sender": "Оператор связи",
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_eduard",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-parallax-06",
+      "file": "radio270-parallax-06.mp3",
+      "text": "У меня нет противоречий. У меня несколько одинаково правильных позиций!",
+      "synthesisText": "У мен+я нет противор+ечий. У мен+я н+есколько один+аково пр+авильных поз+иций!",
+      "voice": "Перехваченный канал · Александр",
+      "sender": null,
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_alexandr",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-parallax-07",
+      "file": "radio270-parallax-07.mp3",
+      "text": "Вы всё поняли верно. Но с неправильной точки зрения.",
+      "synthesisText": "Вы всё п+оняли в+ерно. Но с непр+авильной т+очки зр+ения.",
+      "voice": "Перехваченный канал · Александр",
+      "sender": null,
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_alexandr",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-parallax-08",
+      "file": "radio270-parallax-08.mp3",
+      "text": "Наша встреча состоялась. В другой версии протокола!",
+      "synthesisText": "Н+аша встр+еча состо+ялась. В друг+ой в+ерсии проток+ола!",
+      "voice": "Перехваченный канал · Александр",
+      "sender": null,
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_alexandr",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-mrg-01",
+      "file": "radio270-mrg-01.mp3",
+      "text": "На межведомственной встрече попросили представиться коротко. К обеду дошли до заместителей. Мы всё-таки быстрее.",
+      "synthesisText": "На межв+едомственной встр+ече попрос+или предст+авиться к+оротко. К об+еду дошл+и до замест+ителей. Мы всё-т+аки быстр+ее.",
+      "voice": "Оператор связи · Эдуард",
+      "sender": "Оператор связи",
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_eduard",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-mrg-02",
+      "file": "radio270-mrg-02.mp3",
+      "text": "Председатель сказал: «Последний вопрос». Секретарь даже не стал закрывать новый блокнот. Опытный человек.",
+      "synthesisText": "Председ+атель сказ+ал: «Посл+едний вопр+ос». Секрет+арь д+аже не стал закрыв+ать н+овый блокн+от. +Опытный челов+ек.",
+      "voice": "Оператор связи · Эдуард",
+      "sender": "Оператор связи",
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_eduard",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-mrg-03",
+      "file": "radio270-mrg-03.mp3",
+      "text": "Однажды мы закончили совещание вовремя. Потом полчаса выясняли, можно ли это считать прецедентом.",
+      "synthesisText": "Одн+ажды мы зак+ончили совещ+ание в+овремя. Пот+ом полчас+а выясн+яли, м+ожно ли +это счит+ать прецед+ентом.",
+      "voice": "Оператор связи · Эдуард",
+      "sender": "Оператор связи",
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_eduard",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-mrg-04",
+      "file": "radio270-mrg-04.mp3",
+      "text": "У нас был сотрудник, который сводил все замечания в один файл. Легенды говорят, файл ещё открывается.",
+      "synthesisText": "У нас был сотр+удник, кот+орый свод+ил все замеч+ания в од+ин файл. Лег+енды говор+ят, файл ещё открыв+ается.",
+      "voice": "Оператор связи · Эдуард",
+      "sender": "Оператор связи",
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_eduard",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-mrg-05",
+      "file": "radio270-mrg-05.mp3",
+      "text": "Если выберемся, я устрою встречу без повестки. Назову её обедом. Прошу не присылать к ней замечаний.",
+      "synthesisText": "+Если в+ыберемся, я устр+ою встр+ечу без пов+естки. Назов+у её об+едом. Прош+у не присыл+ать к ней замеч+аний.",
+      "voice": "Оператор связи · Эдуард",
+      "sender": "Оператор связи",
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_eduard",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-mrg-06",
+      "file": "radio270-mrg-06.mp3",
+      "text": "Решение окончательное. До следующего окончательного решения!",
+      "synthesisText": "Реш+ение оконч+ательное. До сл+едующего оконч+ательного реш+ения!",
+      "voice": "Перехваченный канал · Роман",
+      "sender": null,
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_roman",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-mrg-07",
+      "file": "radio270-mrg-07.mp3",
+      "text": "Возражений нет? Прекрасно. Тогда обсудим, почему их нет.",
+      "synthesisText": "Возраж+ений нет? Прекр+асно. Тогд+а обс+удим, почем+у их нет.",
+      "voice": "Перехваченный канал · Роман",
+      "sender": null,
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_roman",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-mrg-08",
+      "file": "radio270-mrg-08.mp3",
+      "text": "Ваш вопрос снят с повестки. Вместе с повесткой. И с корабля мы бы тоже сняли!",
+      "synthesisText": "Ваш вопр+ос снят с пов+естки. Вм+есте с пов+есткой. И с корабл+я мы бы т+оже сн+яли!",
+      "voice": "Перехваченный канал · Роман",
+      "sender": null,
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_roman",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-base-academy-1",
+      "file": "radio270-base-academy-1.mp3",
+      "text": "В учебном архиве всё подписано. Даже табличка «непонятно» лежит по алфавиту. Уважаю порядок.",
+      "synthesisText": "В уч+ебном арх+иве всё подп+исано. Д+аже табл+ичка «непон+ятно» леж+ит по алфав+иту. Уваж+аю пор+ядок.",
+      "voice": "Бортинженер · Богдан",
+      "sender": "Бортинженер",
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_bogdan",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-base-academy-2",
+      "file": "radio270-base-academy-2.mp3",
+      "text": "На первой практике я перепутал терминал и автомат с чаем. Требования зато сформулировал очень конкретно.",
+      "synthesisText": "На п+ервой пр+актике я переп+утал термин+ал и автом+ат с ч+аем. Тр+ебования зат+о сформулир+овал +очень конкр+етно.",
+      "voice": "Бортинженер · Богдан",
+      "sender": "Бортинженер",
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_bogdan",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-base-academy-3",
+      "file": "radio270-base-academy-3.mp3",
+      "text": "Это учебный архив. Ошибаться разрешается. Вам понравится наша коллекция ошибок!",
+      "synthesisText": "+Это уч+ебный арх+ив. Ошиб+аться разреш+ается. Вам понр+авится н+аша колл+екция ош+ибок!",
+      "voice": "Перехваченный канал · Роман",
+      "sender": null,
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_roman",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-base-foundry-1",
+      "file": "radio270-base-foundry-1.mp3",
+      "text": "В машинном зале шумно. Зато здесь фраза «давайте созвонимся» наконец звучит неубедительно.",
+      "synthesisText": "В маш+инном з+але ш+умно. Зат+о здесь фр+аза «дав+айте созвон+имся» након+ец звуч+ит неубед+ительно.",
+      "voice": "Бортинженер · Богдан",
+      "sender": "Бортинженер",
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_bogdan",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-base-foundry-2",
+      "file": "radio270-base-foundry-2.mp3",
+      "text": "Система охлаждения настоящая. Не та, где горячий вопрос просто перекладывают в соседний отдел.",
+      "synthesisText": "Сист+ема охлажд+ения насто+ящая. Не та, где гор+ячий вопр+ос пр+осто перекл+адывают в сос+едний отд+ел.",
+      "voice": "Бортинженер · Богдан",
+      "sender": "Бортинженер",
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_bogdan",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-base-foundry-3",
+      "file": "radio270-base-foundry-3.mp3",
+      "text": "У нас даже робопсы на производственном графике. Кто сказал «перерыв»?",
+      "synthesisText": "У нас д+аже р+обопсы на произв+одственном гр+афике. Кто сказ+ал «перер+ыв»?",
+      "voice": "Перехваченный канал · Роман",
+      "sender": null,
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_roman",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-base-switchyard-1",
+      "file": "radio270-base-switchyard-1.mp3",
+      "text": "На палубе интеграций всё связано. Именно поэтому электрик сначала читает схему, а уже потом проявляет инициативу.",
+      "synthesisText": "На п+алубе интегр+аций всё св+язано. +Именно по+этому эл+ектрик снач+ала чит+ает сх+ему, а уж+е пот+ом проявл+яет инициат+иву.",
+      "voice": "Бортинженер · Богдан",
+      "sender": "Бортинженер",
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_bogdan",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-base-switchyard-2",
+      "file": "radio270-base-switchyard-2.mp3",
+      "text": "У этого силового пульта есть выключатель. У общего рабочего чата, к сожалению, такого пока не нашли.",
+      "synthesisText": "У +этого силов+ого п+ульта есть выключ+атель. У +общего раб+очего ч+ата, к сожал+ению, так+ого пок+а не нашл+и.",
+      "voice": "Бортинженер · Богдан",
+      "sender": "Бортинженер",
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_bogdan",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-base-switchyard-3",
+      "file": "radio270-base-switchyard-3.mp3",
+      "text": "Связи между отделами установлены. Причины связи всё ещё согласовываются!",
+      "synthesisText": "Св+язи м+ежду отд+елами устан+овлены. Прич+ины св+язи всё ещё соглас+овываются!",
+      "voice": "Перехваченный канал · Роман",
+      "sender": null,
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_roman",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-base-command-1",
+      "file": "radio270-base-command-1.mp3",
+      "text": "Командный центр и грузовая платформа. Наконец-то понятно, что значит поднимать вопрос на высокий уровень.",
+      "synthesisText": "Ком+андный центр и грузов+ая платф+орма. Након+ец-то пон+ятно, что зн+ачит подним+ать вопр+ос на выс+окий +уровень.",
+      "voice": "Бортинженер · Богдан",
+      "sender": "Бортинженер",
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_bogdan",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-base-command-2",
+      "file": "radio270-base-command-2.mp3",
+      "text": "На мостике всё видно лучше. Кроме того, кто опять занял единственную зарядку для планшета.",
+      "synthesisText": "На м+остике всё в+идно л+учше. Кр+оме тог+о, кто оп+ять з+анял ед+инственную зар+ядку для планш+ета.",
+      "voice": "Бортинженер · Богдан",
+      "sender": "Бортинженер",
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_bogdan",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-base-command-3",
+      "file": "radio270-base-command-3.mp3",
+      "text": "Вопрос передан наверх. Лифт занят. Ожидайте управленческого решения!",
+      "synthesisText": "Вопр+ос п+ередан нав+ерх. Лифт з+анят. Ожид+айте управл+енческого реш+ения!",
+      "voice": "Перехваченный канал · Роман",
+      "sender": null,
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_roman",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-base-wreck-1",
+      "file": "radio270-base-wreck-1.mp3",
+      "text": "В аварийном отсеке опять пахнет дымом. В прошлый раз это назвали горячей фазой проекта.",
+      "synthesisText": "В авар+ийном отс+еке оп+ять п+ахнет д+ымом. В пр+ошлый раз +это назв+али гор+ячей ф+азой про+екта.",
+      "voice": "Бортинженер · Богдан",
+      "sender": "Бортинженер",
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_bogdan",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-base-wreck-2",
+      "file": "radio270-base-wreck-2.mp3",
+      "text": "Пробоины на схеме пометили как открытые вопросы. Хорошо хоть ремонтная бригада поняла буквально.",
+      "synthesisText": "Проб+оины на сх+еме пом+етили как откр+ытые вопр+осы. Хорош+о хоть рем+онтная бриг+ада понял+а букв+ально.",
+      "voice": "Бортинженер · Богдан",
+      "sender": "Бортинженер",
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_bogdan",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-base-wreck-3",
+      "file": "radio270-base-wreck-3.mp3",
+      "text": "Состояние объекта удовлетворительное. Кто это написал? Дайте сюда протокол!",
+      "synthesisText": "Состо+яние объ+екта удовлетвор+ительное. Кто +это напис+ал? Д+айте сюд+а проток+ол!",
+      "voice": "Перехваченный канал · Роман",
+      "sender": null,
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_roman",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-swarm-armada-1",
+      "file": "radio270-swarm-armada-1.mp3",
+      "text": "Уточнений уже больше, чем участников совещания. Значит, кто-то прислал замечания от имени принтера.",
+      "synthesisText": "Уточн+ений уж+е б+ольше, чем уч+астников совещ+ания. Зн+ачит, кто-то присл+ал замеч+ания от +имени пр+интера.",
+      "voice": "Оператор связи · Эдуард",
+      "sender": "Оператор связи",
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_eduard",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-swarm-armada-2",
+      "file": "radio270-swarm-armada-2.mp3",
+      "text": "Вот теперь это общий чат. Половина отвечает всем, половина просит удалить себя из рассылки.",
+      "synthesisText": "Вот теп+ерь +это +общий чат. Полов+ина отвеч+ает всем, полов+ина пр+осит удал+ить себ+я из расс+ылки.",
+      "voice": "Оператор связи · Эдуард",
+      "sender": "Оператор связи",
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_eduard",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    },
+    {
+      "id": "radio270-swarm-armada-3",
+      "file": "radio270-swarm-armada-3.mp3",
+      "text": "Нас много? Это только те, кто нажал «ответить всем»!",
+      "synthesisText": "Нас мн+ого? +Это т+олько те, кто наж+ал «отв+етить всем»!",
+      "voice": "Перехваченный канал · Роман",
+      "sender": null,
+      "generation": {
+        "engine": "Silero",
+        "model": "v5_cis_base",
+        "speaker": "ru_roman",
+        "license": "MIT",
+        "sampleRate": 24000
+      }
+    }
+  ]
+}

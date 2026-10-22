@@ -7,7 +7,8 @@ const fs=require('node:fs'),path=require('node:path'),assert=require('node:asser
 const {readEntry,lab,fixture}=require('./release260-verifier.cjs');
 const {createParallaxController,createMrgController,createSwarmController}=require('./helpers/campaign-inputs.js');
 const {createCanvas}=require(require.resolve('@napi-rs/canvas',{paths:[process.env.CODEX_PRIMARY_RUNTIME_NODE_MODULES].filter(Boolean)}));
-const out=path.join(__dirname,'qa-2.6.0'),clone=x=>JSON.parse(JSON.stringify(x));
+const outputArgument=process.argv.find(x=>x.startsWith('--out='))?.slice(6);
+const out=outputArgument?path.resolve(outputArgument):path.join(__dirname,'qa-2.6.0'),clone=x=>JSON.parse(JSON.stringify(x));
 const tactical=/УДАР ЧЕРЕЗ|АТАКА ЧЕРЕЗ|ЗОНА УДАРА|В ЗЕЛЁНЫЙ ПРОСВЕТ|До удара|СМЕНИ КУРС|ХЛЁСТ —|КЛЕЩИ —|Подсвеченные корабли|Подсветка врага|На пол слева от центра|На пол между захватами|В глубокое левое укрытие|ИМПУЛЬС ПЕРЕД УДАРОМ|ЩУПАЛЬЦА — В УКРЫТИЕ/i;
 function hud(h,e,width,height){
  h.c.innerWidth=width;h.c.innerHeight=height;h.c.matchMedia=()=>({matches:width<900});h.arcade.canvas.width=width;h.arcade.canvas.height=height;h.arcade.canvas.getBoundingClientRect=()=>({left:0,top:0,width,height});h.arcade.engine=e;
