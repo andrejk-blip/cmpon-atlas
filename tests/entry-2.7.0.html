@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ru" prefix="og: https://ogp.me/ns#">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="application-version" content="2.7.0">
+<meta name="description" content="Интерактивный атлас оснований требований ЦМПОН: 417 требований, 50 концепций, сравнение с ФТ сервиса 39 и ФТТ ГИС ЦАП 57.1.">
+<title>ЦМПОН — атлас требований | CMPON Atlas</title>
+<link rel="canonical" href="https://andrejk-blip.github.io/cmpon-atlas/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="ЦМПОН · Атлас требований">
+<meta property="og:title" content="ЦМПОН — атлас требований">
+<meta property="og:description" content="417 требований и 50 концепций. Сопоставление с С39 и ФТТ, точные основания, геокарта и рецензирование.">
+<meta property="og:url" content="https://andrejk-blip.github.io/cmpon-atlas/">
+<meta property="og:image" content="https://andrejk-blip.github.io/cmpon-atlas/assets/og-atlas-v1.1.3.png">
+<meta property="og:image:secure_url" content="https://andrejk-blip.github.io/cmpon-atlas/assets/og-atlas-v1.1.3.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ЦМПОН — атлас требований: 417 ФТ, 50 концепций, С39 и ФТТ">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ЦМПОН — атлас требований">
+<meta name="twitter:description" content="Сопоставляйте требования с источниками, проверяйте трактовки и сохраняйте рецензии.">
+<meta name="twitter:image" content="https://andrejk-blip.github.io/cmpon-atlas/assets/og-atlas-v1.1.3.png">
+<meta name="twitter:image:alt" content="ЦМПОН — интерактивный атлас требований">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="icon" href="https://andrejk-blip.github.io/cmpon-atlas/assets/atlas-icon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#183e3d">
+<link rel="stylesheet" href="./assets/atlas-v1.3.5.css">
+<link rel="stylesheet" href="./assets/atlas-metrics-v0.1.0.css">
+<link rel="stylesheet" href="./assets/citadel-mrg-viewport-v1.6.0.css">
+<link rel="stylesheet" href="./assets/citadel-interface-v1.9.0.css">
+<style>#citadel-startup{position:fixed;z-index:10000;left:50%;bottom:16px;transform:translateX(-50%);box-sizing:border-box;width:max-content;max-width:calc(100% - 24px);padding:12px 16px;background:#0a2231;color:#e1f6f4;border:1px solid #73c4c0;border-radius:8px;font:14px/1.4 system-ui,sans-serif;box-shadow:0 6px 24px #0005}#citadel-startup-retry{display:block;margin-top:8px;padding:7px 12px;color:#0a2231;background:#b5ffe0;border:0;border-radius:4px;font:inherit;cursor:pointer}#citadel-startup[hidden],#citadel-startup-retry[hidden]{display:none!important}</style>
+<link rel="stylesheet" href="./assets/citadel-ui-fixes-v1.9.2.css">
+<link rel="stylesheet" href="./assets/citadel-bases-v2.0.0.css?build=200r4">
+<link rel="stylesheet" href="./assets/citadel-pursuit-v2.1.0.css?build=210r2">
+<link rel="stylesheet" href="./assets/citadel-pursuit-view-v2.2.0.css?build=220r1">
+<link rel="stylesheet" href="./assets/citadel-convoy-v2.4.0.css?build=240r2">
+<link rel="stylesheet" href="./assets/citadel-presentation-v2.5.0.css?build=250r2">
+<link rel="stylesheet" href="./assets/citadel-mobile-v2.7.0.css?build=270r1">
+<link rel="manifest" href="./citadel.webmanifest">
+<link rel="apple-touch-icon" href="./assets/citadel-icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Цитадель">
+</head>
+<body>
+<div id="citadel-startup" role="status" aria-live="polite"><span id="citadel-startup-message">Загружаем Цитадель…</span><button id="citadel-startup-retry" type="button" hidden>Повторить</button></div>
+<a class="skip" href="#content">Перейти к содержимому</a>
+<aside class="rail" id="site-rail" aria-label="Навигация">
+ <a class="brand" href="#" data-action="view" data-value="map" aria-label="ЦМПОН — карта оснований"><span class="brand-mark">Ц</span><span>ЦМПОН<small>АТЛАС ТРЕБОВАНИЙ</small></span></a>
+ <div class="mobile-controls"><button class="mobile-play" id="mobile-play" data-action="mobile-play">▶ Играть</button><button id="mobile-menu-toggle" data-action="mobile-menu" aria-expanded="false" aria-controls="nav"><span aria-hidden="true">☰</span> Меню</button></div>
+ <div class="rail-rule"></div><p class="rail-label">РАБОЧЕЕ ПРОСТРАНСТВО</p>
+ <nav id="nav" aria-label="Разделы атласа"></nav>
+ <div class="rail-bottom"><span class="edition">2.0.2<span>ВСТЕ</span></span><p>Сопоставление документов<br>по состоянию на 14.10.2026</p><div class="author"><span>АК</span><div>Андрей Костюк<small>Аналитическая редакция</small></div></div></div>
+</aside>
+<button id="mobile-nav-backdrop" class="mobile-nav-backdrop" data-action="mobile-menu-close" aria-label="Закрыть меню" tabindex="-1" hidden></button>
+<div class="workspace" id="workspace">
+ <header class="topbar"><div class="breadcrumb">ГИС ЦАП <span>/</span> ЦМПОН <span>/</span> <b id="crumb">Карта оснований</b></div><div class="top-actions"><span class="offline"><i></i> Веб-атлас</span><a class="button quiet" href="./academy.html" target="_blank" rel="noopener noreferrer" title="Практикум и редактор учебных карточек">Академия ФТ ↗</a><button class="button quiet" data-action="export" title="Выгрузить требования с учетом действующих фильтров"><span data-icon="download"></span><span>Экспорт CSV</span></button></div></header>
+ <main id="main">
+  <div class="heading"><div><p class="eyebrow">СРАВНЕНИЕ ТРЕХ ДОКУМЕНТОВ · 14 ОКТЯБРЯ 2026</p><h1>Основания требований<span>.</span></h1><p class="intro">Что зафиксировано в исходниках, что покрыто частично,<br class="desktop-break"> а что требует самостоятельного обоснования.</p></div><button class="method-link" data-action="view" data-value="methods"><span data-icon="compass"></span><span>Как читать<br>эту карту</span><span aria-hidden="true">↗</span></button></div>
+  <div class="scope-bar"><label class="search"><span data-icon="search"></span><input id="search" type="search" placeholder="Найти требование, концепцию или номер ФТ…" autocomplete="off" aria-label="Поиск требований и концепций"><kbd>/</kbd></label><label class="select-label">Основание<select id="scope"><option value="best">Сильнейшее из двух</option><option value="c39">ФТ сервиса 39</option><option value="ftt">ФТТ 57.1</option></select></label></div>
+  <div id="metrics" class="metrics"></div>
+  <div class="summary-caption"><span id="scope-caption"></span><button class="text-button" data-action="clear">Сбросить фильтры <span aria-hidden="true">↺</span></button></div>
+  <section id="content" tabindex="-1"></section>
+  <footer class="footer"><span>ЦМПОН / Приложение v2.7.0 · 21.10.2026</span><span>Покрытие текстом ≠ подтверждение реализации</span><button class="text-button" data-action="view" data-value="methods">Источники и ограничения ↗</button></footer>
+ </main>
+</div>
+<dialog id="detail" aria-labelledby="detail-title"><div class="drawer-toolbar"><span id="drawer-type">КАРТОЧКА ОСНОВАНИЯ</span><div><button class="button quiet" data-action="copy"><span data-icon="copy"></span>Скопировать вывод</button><button class="icon-button" data-action="close" aria-label="Закрыть карточку">×</button></div></div><div id="detail-body"></div></dialog>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<noscript><div class="noscript">Для интерактивной карты необходим JavaScript. Откройте этот HTML-файл в обычном браузере с включенным JavaScript.</div></noscript>
+<script type="application/json" id="atlas-data"></script>
+<script type="application/json" id="release-data">{"product":"ЦМПОН — атлас требований","version":"2.7.0","soundtrack_module_version":"1.4.2","released_on":"2026-10-22","requirements_edition":"2.0.2 (ВСТЕ)","requirements_as_of":"2026-10-14","save_schema":"citadel-review-v3","distribution":"offline-html-and-lightweight-web-entry","public_url":"https://andrejk-blip.github.io/cmpon-atlas/","finale_save_schema":"citadel-finale-v1","analytics_module_version":"0.1.0","tournament_module_version":"1.1.0","music_module_version":"1.4.2","academy_module_version":"1.7.0","academy_card_count":36,"academy_campaign_cases":23,"effects_module_version":"1.9.3","mrg_module_version":"2.6.0","mrg_waves":3,"records_module_version":"1.1.1","mrg_soldiers_per_wave":[3,4,6],"mrg_manual_aim":true,"voice_module_version":"2.7.0","field_ui_module_version":"1.7.0","mrg_tentacle_patterns":3,"mrg_viewport_module_version":"1.6.0","compat_module_version":"1.7.1","startup_module_version":"2.3.1","flight_module_version":"1.9.1","aim_module_version":"1.7.1","flight_ui_module_version":"1.7.1","pursuit_module_version":"2.6.0","swarm_module_version":"2.7.0","parallax_module_version":"2.6.0","comic_module_version":"1.9.3","pursuit_level":4,"swarm_level":7,"voice_pack_module_version":"1.8.2","voice_clips":110,"decks_module_version":"2.0.0","interface_module_version":"1.9.0","story_module_version":"1.9.0","art_module_version":"1.9.0","effects_pack_module_version":"1.9.1","effects_delivery":"prepared-mp3-with-immediate-fallback","effects_clips":42,"terminal_clearance_required":true,"enemy_contact_damage":3,"enemy_contact_cooldown_seconds":0.9,"input_module_version":"2.6.0","boarding_touch_aim":true,"finite_combat_detours":true,"ui_fixes_module_version":"1.9.2","bases_module_version":"2.0.0","bases_view_version":"2.0.0","pursuit_stages":3,"core_assets_version":"1.3.6","launch_module_version":"2.3.1","convoy_module_version":"2.6.0","convoy_view_version":"2.6.0","convoy_levels":[3,6,9],"convoy_groups":[4,5,7],"convoy_fields":[3,5,8],"presentation_module_version":"2.5.0","narrative_module_version":"2.5.0","swarm_view_version":"2.7.0","mrg_actors_version":"2.5.0","swarm_waves":6,"pursuit_view_version":"2.6.0","mrg_view_version":"2.6.0","base_rewards_version":"2.6.0","combat_module_version":"2.6.0","mouse_missiles":"right-button","combat_warnings":false,"training_warnings":true,"radio_pack_version":"2.7.0","mobile_layout_version":"2.7.0","install_module_version":"2.7.0","base_missions_version":"2.7.0","base_missions_view_version":"2.7.0"}</script>
+<script defer src="./assets/citadel-startup-v2.3.1.js"></script>
+<script defer src="./assets/citadel-compat-v1.7.1.js"></script>
+<script defer src="./assets/citadel-launch-v2.3.1.js?build=231r2"></script>
+<script defer src="./assets/atlas-v1.3.6.js"></script>
+<script defer src="./assets/citadel-records-v1.1.1.js"></script>
+<script defer src="./assets/citadel-mrg-v2.6.0.js?build=260r2"></script>
+<script defer src="./assets/citadel-mrg-view-v2.6.0.js?build=260r2"></script>
+<script defer src="./assets/citadel-music-v1.4.2.js"></script>
+<script defer src="./assets/citadel-sfx-pack-v1.9.1.js"></script>
+<script defer src="./assets/citadel-sfx-v1.9.3.js"></script>
+<script defer src="./assets/citadel-voice-pack-v1.8.2.js"></script>
+<script defer src="./assets/citadel-radio-pack-v2.7.0.js?build=270r1"></script>
+<script defer src="./assets/citadel-field-ui-v1.7.0.js"></script>
+<script defer src="./assets/citadel-flight-v1.9.1.js"></script>
+<script defer src="./assets/citadel-aim-v1.7.1.js"></script>
+<script defer src="./assets/citadel-flight-view-v1.7.1.js"></script>
+<script defer src="./assets/citadel-pursuit-v2.6.0.js?build=260r2"></script>
+<script defer src="./assets/citadel-swarm-v2.7.0.js?build=270r1"></script>
+<script defer src="./assets/citadel-parallax-v2.6.0.js?build=260r2"></script>
+<script defer src="./assets/citadel-bases-v2.0.0.js"></script>
+<script defer src="./assets/citadel-decks-v2.0.0.js"></script>
+<script defer src="./assets/citadel-input-v2.6.0.js?build=260r2"></script>
+<script defer src="./assets/citadel-convoy-v2.3.0.js"></script>
+<script defer src="./assets/citadel-voice-v2.7.0.js?build=270r1"></script>
+<script defer src="./assets/citadel-comic-v1.9.3.js?build=260r2"></script>
+<script defer src="./assets/citadel-interface-v1.9.0.js"></script>
+<script defer src="./assets/citadel-story-v1.9.0.js"></script>
+<script defer src="./assets/atlas-metrics-v0.1.0.js"></script>
+<script defer src="./assets/atlas-integration-v1.1.4.js"></script>
+<script defer src="./assets/citadel-academy-bridge-v1.7.0.js"></script>
+<script defer src="./assets/citadel-ui-fixes-v1.9.2.js"></script>
+<script defer src="./assets/citadel-bases-view-v2.0.0.js?build=200r3"></script>
+<script defer src="./assets/citadel-base-rewards-v2.6.0.js?build=260r2"></script>
+<script defer src="./assets/citadel-pursuit-view-v2.3.0.js?build=260r2"></script>
+<script defer src="./assets/citadel-pursuit-view-v2.6.0.js?build=260r2"></script>
+<script defer src="./assets/citadel-convoy-view-v2.3.0.js?build=230r2"></script>
+<script defer src="./assets/citadel-convoy-v2.6.0.js?build=260r2"></script>
+<script defer src="./assets/citadel-convoy-view-v2.4.0.js?build=240r2"></script>
+<script defer src="./assets/citadel-convoy-view-v2.6.0.js?build=260r2"></script>
+<script defer src="./assets/citadel-swarm-view-v2.7.0.js?build=270r1"></script>
+<script defer src="./assets/citadel-mrg-actors-v2.5.0.js?build=250r3"></script>
+<script defer src="./assets/citadel-narrative-v2.5.0.js?build=250r2"></script>
+<script defer src="./assets/citadel-presentation-v2.5.0.js?build=250r2"></script>
+<script defer src="./assets/citadel-combat-v2.6.0.js?build=260r2"></script>
+<script defer src="./assets/citadel-base-missions-v2.7.0.js?build=270r1"></script>
+<script defer src="./assets/citadel-base-missions-view-v2.7.0.js?build=270r1"></script>
+<script defer src="./assets/citadel-mobile-v2.7.0.js?build=270r1"></script>
+<script defer src="./assets/citadel-install-v2.7.0.js?build=270r1"></script>
+<script defer src="./assets/citadel-runtime-v1.9.3.js?build=193r2"></script>
+</body></html>

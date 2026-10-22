@@ -1,0 +1,50 @@
+/* The live landscape field uses the entire width. Touch pads float over its
+   bottom corners; readable cards and paused controls retain their scroll area. */
+#arcade-layout.citadel-landscape270 {
+  position:fixed;inset:var(--test-bar,0px) 0 auto;box-sizing:border-box;
+  height:calc(var(--mobile-vh,100dvh) - var(--test-bar,0px));min-height:0;
+  padding:env(safe-area-inset-top,0px) env(safe-area-inset-right,0px) env(safe-area-inset-bottom,0px) env(safe-area-inset-left,0px);
+  display:block;overflow:hidden;border:0;border-radius:0;z-index:5000;background:#07111e;
+}
+#arcade-layout.citadel-landscape270>.arcade-command{display:none}
+#arcade-layout.citadel-landscape270>.arcade-screen {
+  position:relative;display:flex;flex-direction:column;align-items:stretch;
+  width:100%;height:100%;min-height:0;overflow:hidden;border:0;
+}
+#arcade-layout.citadel-landscape270 .arcade-topline {
+  flex:0 0 44px;height:44px;min-height:44px;max-height:44px;padding:0 8px;box-sizing:border-box;
+}
+#arcade-layout.citadel-landscape270 .arcade-topline>span{white-space:nowrap;overflow:hidden;font-size:10px}
+#arcade-layout.citadel-landscape270 .arcade-topline button {min-width:44px;height:44px;padding:4px 7px}
+#arcade-layout.citadel-landscape270 .arcade-topline button.mobile-only {display:inline-flex;align-items:center}
+#arcade-layout.citadel-landscape270 .arcade-field {
+  position:relative;flex:1 1 0;align-self:stretch;aspect-ratio:auto;
+  width:100%;height:auto;min-height:0;max-height:none;border:0;
+}
+#arcade-layout.citadel-landscape270 .arcade-field>canvas {
+  position:absolute;inset:0;display:block;width:100%;height:100%;max-width:none;max-height:none;object-fit:fill;
+}
+#arcade-layout.citadel-landscape270 .arcade-screen:is([data-game-status=playing],[data-game-status=boarding],[data-game-status=docking])>.citadel-objective,
+#arcade-layout.citadel-landscape270 .arcade-screen>.citadel-route,
+#arcade-layout.citadel-landscape270 .arcade-screen>.arcade-flightbar {display:none}
+#arcade-layout.citadel-landscape270 .arcade-touch.flight-active {
+  display:flex;position:absolute;inset:44px 0 0;box-sizing:border-box;width:100%;height:auto;min-height:0;
+  padding:0;background:transparent;border:0;pointer-events:none;z-index:5;
+}
+#arcade-layout.citadel-landscape270 .arcade-touch #arcade-stick {
+  position:absolute;left:10px;bottom:14px;width:88px;height:88px;min-width:88px;margin:0;pointer-events:auto;
+  background:#0b233bcc;box-shadow:0 0 18px #0006;align-self:auto;
+}
+#arcade-layout.citadel-landscape270 .arcade-touch-actions {
+  position:absolute;right:10px;bottom:12px;display:grid;grid-template-columns:repeat(2,70px);
+  grid-auto-rows:48px;grid-template-rows:48px 48px;gap:6px;width:146px;max-width:146px;
+  min-height:0;margin:0;pointer-events:auto;align-self:auto;flex:none;
+}
+#arcade-layout.citadel-landscape270 .arcade-touch-actions button {min-height:48px;height:48px;font-size:10px;box-shadow:0 2px 10px #0007}
+#arcade-layout.citadel-landscape270 .arcade-overlay {inset:0;padding:12px 18px;overflow:auto;max-height:none;overscroll-behavior:contain}
+#arcade-layout.citadel-landscape270.mobile-command-open>.arcade-command {display:block;position:absolute;inset:44px 0 0;z-index:30;overflow:auto;background:#0b1e28}
+#arcade-layout.citadel-landscape270 .arcade-screen:is([data-game-status=playing],[data-game-status=boarding]) [data-citadel-install270]{display:none}
+@media(max-height:330px){
+ #arcade-layout.citadel-landscape270 .arcade-touch #arcade-stick{width:80px;height:80px;min-width:80px;bottom:8px}
+ #arcade-layout.citadel-landscape270 .arcade-touch-actions{bottom:8px}
+}
