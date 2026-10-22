@@ -1,0 +1,1046 @@
+{
+  "release": "2.7.0",
+  "activation_commit": "9bc526f90c2d0da967b09a507510abc87c79b77f",
+  "url": "https://andrejk-blip.github.io/cmpon-atlas/",
+  "verified_at": "2026-10-22T18:46:46.675004+00:00",
+  "matched": 148,
+  "total": 148,
+  "files": [
+    {
+      "path": "assets/atlas-integration-v1.1.4.js",
+      "status": 200,
+      "bytes": 2577,
+      "sha256": "96eaf8cd36e4c9257f0e531d861230f8ca1610973905027ad6f58dc819937220",
+      "matches": true
+    },
+    {
+      "path": "assets/atlas-metrics-v0.1.0.css",
+      "status": 200,
+      "bytes": 2031,
+      "sha256": "4a15f12b8836f8f25a1a0b99ac1256fecf3ebca63962183cbf557de64bd553b3",
+      "matches": true
+    },
+    {
+      "path": "assets/atlas-metrics-v0.1.0.js",
+      "status": 200,
+      "bytes": 8435,
+      "sha256": "79700bbff01f5744e1a2eb44a935ed006857eae4e75ce3602aee6cc69d8101e7",
+      "matches": true
+    },
+    {
+      "path": "assets/atlas-v1.3.5.css",
+      "status": 200,
+      "bytes": 156450,
+      "sha256": "e4e378988c9198e6c53828abbcd11614a24ce399dc1a306e3c18f00b7d8233dd",
+      "matches": true
+    },
+    {
+      "path": "assets/atlas-v1.3.6.js",
+      "status": 200,
+      "bytes": 3282657,
+      "sha256": "9a08d42e08f3bd220a2ace22ae6e9dfff34887268b275aa36a2be4a33965569d",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-academy-bridge-v1.7.0.js",
+      "status": 200,
+      "bytes": 18557,
+      "sha256": "cc33928c4d0b0271bc5205211ee815d56cba9243838053e4d460edee68ba2033",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-aim-v1.7.1.js",
+      "status": 200,
+      "bytes": 5627,
+      "sha256": "6c0251b56e8a798597cc0a3b26bec950739665f4d5fed9980db091ed04b25058",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-base-missions-v2.7.0.js",
+      "status": 200,
+      "bytes": 27668,
+      "sha256": "8eec5d00636ebf654c27223dab7b716f71f31189e9c434ed371ca5fb8008e0e6",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-base-missions-view-v2.7.0.js",
+      "status": 200,
+      "bytes": 32038,
+      "sha256": "396e1e95a0dda8b21639ac65c036f3d500a87ef303a42a70d0253dd9cb2311e6",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-base-rewards-v2.6.0.js",
+      "status": 200,
+      "bytes": 16095,
+      "sha256": "7504ee78281c31dae812fbfdf15bc3b2030da1b56826a46330519ccc746049b2",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-bases-v2.0.0.css",
+      "status": 200,
+      "bytes": 492,
+      "sha256": "66eb30d9d14aedd3426559107d21a97fffced94e35e1637d2775b9cc0c33f416",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-bases-v2.0.0.js",
+      "status": 200,
+      "bytes": 16440,
+      "sha256": "9f7cd4346e947f13a3e4185d3e7080b69cd489c7dce959e03627b8adb89cba5a",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-bases-view-v2.0.0.js",
+      "status": 200,
+      "bytes": 28950,
+      "sha256": "506e1ebbfa86a42b0f4dc6918ab1917edb3b8018012e15d98a267060c2cdf8c3",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-captain-sheet-v2.3.1.png",
+      "status": 200,
+      "bytes": 2670671,
+      "sha256": "de696d9d5f305b73f93bfe6d3b3ee55d4b53b8f3e49962d4c976da509493b2c9",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-combat-v2.6.0.js",
+      "status": 200,
+      "bytes": 4763,
+      "sha256": "5b55bb15578db6ffac01427245672f46352165790ea617b9d6a42ed075e9edad",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-comic-v1.9.3.js",
+      "status": 200,
+      "bytes": 17278,
+      "sha256": "ee26d0c120f8b7d912b90d4dcc0bccf4ca8515e816c836e6427a4676ea2f6a44",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-compat-v1.7.1.js",
+      "status": 200,
+      "bytes": 8723,
+      "sha256": "e5ea0b065568c5ebcddcd01d483375560bae36308871dd62a87e5d8e97a46599",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-convoy-v2.3.0.js",
+      "status": 200,
+      "bytes": 16902,
+      "sha256": "115fb8dd424e76d7ddfea2199395101364b258c22cd243e4c137e9980f006ca6",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-convoy-v2.4.0.css",
+      "status": 200,
+      "bytes": 1969,
+      "sha256": "c6ca30d3da2304bba7de04df4c63bc2bb223d22b06b62daac21e927479d77495",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-convoy-v2.6.0.js",
+      "status": 200,
+      "bytes": 23674,
+      "sha256": "fb80b02ae850f69df1295bac3bbe64f61a18d05cf93d768e6e66dc1c595d44c7",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-convoy-view-v2.3.0.js",
+      "status": 200,
+      "bytes": 13588,
+      "sha256": "7d7d85f90d9082a14bbbb1dff7defd00f5f31bce23f270ae764aed2e98e77783",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-convoy-view-v2.4.0.js",
+      "status": 200,
+      "bytes": 22054,
+      "sha256": "9a42c7dcde1e21644f10aaa0f848b8bab2c60794e4f5564898a17f48fd5d2965",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-convoy-view-v2.6.0.js",
+      "status": 200,
+      "bytes": 34824,
+      "sha256": "a3e9a4cc44b213c72bfe78f70dff5c4ccda64260ea45e03c83b510c7c11faa54",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-decks-v2.0.0.js",
+      "status": 200,
+      "bytes": 53911,
+      "sha256": "4b5f02f17b26c8962768132fd1328e7bbd483e2c8b2d7499610e68c6478213f2",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-field-ui-v1.7.0.js",
+      "status": 200,
+      "bytes": 9092,
+      "sha256": "fb2b2545d45aaad74c1009bf2bd3b775ca6b897c9baf027f2c7cff5de0b02bed",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-flight-v1.9.1.js",
+      "status": 200,
+      "bytes": 16524,
+      "sha256": "d8e345e6a7ef05ea3aebcb986042c1c36a809bb6608ccce242d00507178199b7",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-flight-view-v1.7.1.js",
+      "status": 200,
+      "bytes": 12070,
+      "sha256": "b5e7d58a269a75fb71aba8ccb286e84714e17ef016532086dc8d098443acae91",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-icon-192.png",
+      "status": 200,
+      "bytes": 11257,
+      "sha256": "2009b8e7d270257e1b4e76ed007563fb1cefcd42d6ac4a48a1706b692cc3ff12",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-icon-512.png",
+      "status": 200,
+      "bytes": 39232,
+      "sha256": "6152e84bb4a1dbb4f979ca1a15cf6c4946509e1588e71e2a0c55d9ce5c659db6",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-input-v2.6.0.js",
+      "status": 200,
+      "bytes": 6732,
+      "sha256": "a28a8a68b7bdc3e3eacd2d93d17f75f8311724830026fa86fe2ffb435c94413d",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-install-v2.7.0.js",
+      "status": 200,
+      "bytes": 3287,
+      "sha256": "42fc03d340739e15b63a719165c3ff294cf287583ab44c50dbfa26ec7959eba5",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-interface-v1.9.0.css",
+      "status": 200,
+      "bytes": 11446,
+      "sha256": "4762f841eb50967fe36b1520eb48896319b49903751c1262a95525552027af9a",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-interface-v1.9.0.js",
+      "status": 200,
+      "bytes": 3716,
+      "sha256": "1c86ce29791480920e08b5dddc42dadcc1e4bab0916e8da51c16aedb0b1b1291",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-launch-v2.7.0.js",
+      "status": 200,
+      "bytes": 16885,
+      "sha256": "491278ad4dc8ea9020aa2123b1812db19e1fca4969f195930711f189ca654d96",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-learning-modes-v2.7.0.css",
+      "status": 200,
+      "bytes": 5040,
+      "sha256": "f80ecbe394e4a42d438ec81963d8fa28eb559be2a1d23e90502008cc0f4415c7",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-learning-modes-v2.7.0.js",
+      "status": 200,
+      "bytes": 27076,
+      "sha256": "e2960804b5b891b54f8a405b8b3302bef9ef4be6d466bda823cea4ff739bfa16",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-mobile-v2.7.0.css",
+      "status": 200,
+      "bytes": 3594,
+      "sha256": "6cfeae16599c481e091ecdd5545887186283420eb4e06662e91c5e29bebfad09",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-mobile-v2.7.0.js",
+      "status": 200,
+      "bytes": 1080,
+      "sha256": "57ce0d28c1edc8570406c5f36ee867a9e94483f61e868ca4b84348b96632f86b",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-mrg-actors-v2.5.0.js",
+      "status": 200,
+      "bytes": 10378,
+      "sha256": "d0bcec56d741510c8f6e620451ba1681082bfafdec1a1d28a1463dea23442248",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-mrg-v2.6.0.js",
+      "status": 200,
+      "bytes": 37325,
+      "sha256": "79b4bb403207c95752f95d95c308d5be57b4360c5178ce2dab8b676f2fbf2955",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-mrg-view-v2.6.0.js",
+      "status": 200,
+      "bytes": 44157,
+      "sha256": "1285c2461e618c466e556c6f51589a3c06dbf5a46ac3ca628d0f81a68588fc7c",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-mrg-viewport-v1.6.0.css",
+      "status": 200,
+      "bytes": 3633,
+      "sha256": "60426620a6f3e82d0893fd5dbeb3c3f21b1b398f343ed5311566c4fc02a9c367",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-music-v1.4.2.js",
+      "status": 200,
+      "bytes": 28487,
+      "sha256": "11ba6f8ee1d80e7313e7c7c14d1133cf55f9f124ca29eb8d3ed54aba22aafeb0",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-narrative-v2.5.0.js",
+      "status": 200,
+      "bytes": 12176,
+      "sha256": "34232c3f6c16b7f686595ebb8c162f7368e4f12d2e6be1b923cdf2459e85c1fe",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-parallax-v2.6.0.js",
+      "status": 200,
+      "bytes": 21426,
+      "sha256": "ab29a1603851ad97a437f9dd3d93dcbc4978c6aeb4d5130bed666eb643fe5315",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-presentation-v2.5.0.css",
+      "status": 200,
+      "bytes": 5722,
+      "sha256": "b34da0436c755d6009097d6f9c2da22d222a37f078d890ff3b44102c926c061d",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-presentation-v2.5.0.js",
+      "status": 200,
+      "bytes": 7138,
+      "sha256": "6e1bef9638c3fefe113ae8cdc1a54883068e38fdc2cf3e1eb9ab7f8cad82327e",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-pursuit-v2.1.0.css",
+      "status": 200,
+      "bytes": 412,
+      "sha256": "dd04f466851b586e1bd160816ceb9a84a9d6d68f6b0b06a93866ef1bb50f6b74",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-pursuit-v2.6.0.js",
+      "status": 200,
+      "bytes": 59549,
+      "sha256": "5c60be2944b300610d07dce9438fe0581ac83ee1532d4796b7f6d3c54c90dea7",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-pursuit-view-v2.2.0.css",
+      "status": 200,
+      "bytes": 688,
+      "sha256": "135b1a8116fbeb0c7c0f775a26f3b8ed26f1996e79013c4dcbfe315859118d6c",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-pursuit-view-v2.3.0.js",
+      "status": 200,
+      "bytes": 32067,
+      "sha256": "957ed9dc2f26e104a66a4bf26aad5c8bca4c6234aa0b6f8e56a688c93efd46ec",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-pursuit-view-v2.6.0.js",
+      "status": 200,
+      "bytes": 19042,
+      "sha256": "eb4fd3d9099479ada284ea31f1c47453a4fc35f24f8862184b0be1932edbd7f8",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-quiz-bank-v2.7.0.js",
+      "status": 200,
+      "bytes": 64325,
+      "sha256": "9bd8a4302f2e570296d3bd2ae2ded6cb274699b954f0b1c312932103e2cd5004",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-radio-pack-v2.7.0.js",
+      "status": 200,
+      "bytes": 63715,
+      "sha256": "f9a747059851f8622b89a02e5efc923542d9939dafcdf3ee90f08c4c57d49aad",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-records-v1.1.1.js",
+      "status": 200,
+      "bytes": 6397,
+      "sha256": "178c584491b2755e93f2e4469a8663db3bb93c8e970f5cc5bcbe75b0e6dc6183",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-runtime-v1.9.3.js",
+      "status": 200,
+      "bytes": 13989,
+      "sha256": "a026d1eb50252a37f01b7ad097e610252bccacc01f078d6ee75a3bf86e029a6e",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-sfx-pack-v1.9.1.js",
+      "status": 200,
+      "bytes": 20094,
+      "sha256": "8dc8128a72045c4136a3460de8900720813861e1979926bfc0c0c872cdac590e",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-sfx-v1.9.3.js",
+      "status": 200,
+      "bytes": 34687,
+      "sha256": "6cabac06fb8d99684ca2a8252510f90a964ca1d427aa4ac7b214115ee1b9af7b",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-startup-v2.3.1.js",
+      "status": 200,
+      "bytes": 2873,
+      "sha256": "99e07b3b93f874b4fc7a830ebf0df228532f62ef4dda96c05e78717182af711a",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-story-v1.9.0.js",
+      "status": 200,
+      "bytes": 12573,
+      "sha256": "85f5c018a42f09b20eb7a62a87f4251a02f219027f1f4799e07c774ff43d2c13",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-swarm-v2.7.0.js",
+      "status": 200,
+      "bytes": 60949,
+      "sha256": "7a9772c906ece8b14ddca3206060bb0f2048609bb74729382f0703f33a7a9535",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-swarm-view-v2.7.0.js",
+      "status": 200,
+      "bytes": 19267,
+      "sha256": "dff917ac921f0eea01148f99bb9e6015ab50b7736893b1595c0b9b3c571b56ea",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-ui-fixes-v1.9.2.css",
+      "status": 200,
+      "bytes": 4008,
+      "sha256": "70f57cd512d57dcc378b4a44159ce690ae4fa064c9ccb9ba163cd1469f230bbe",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-ui-fixes-v1.9.2.js",
+      "status": 200,
+      "bytes": 7352,
+      "sha256": "364fc8c1e412eb9b73f826845e23646f8906d37c7027aa1f2ae93ba0548cbf16",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-voice-pack-v1.8.2.js",
+      "status": 200,
+      "bytes": 61373,
+      "sha256": "e0a0ac89a7ad348a7b107fef9c067b12227d33b7c1427d3eb7cec5472949fbfe",
+      "matches": true
+    },
+    {
+      "path": "assets/citadel-voice-v2.7.0.js",
+      "status": 200,
+      "bytes": 43649,
+      "sha256": "25fda4fb2a08a75f9686e005d3774d57ed24be6fa18879f84ce728cdd5c3714b",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/LICENSE-Silero.txt",
+      "status": 200,
+      "bytes": 1076,
+      "sha256": "a27fc071e03323fecda8a6ba416109bf36811801fa0c95e4371cf9105848718d",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/README.md",
+      "status": 200,
+      "bytes": 4609,
+      "sha256": "b6669acfbb657869dfc72cca8b1c4aeb9e27c5fa9ad414cd4a3cb3657028d6fc",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/manifest.json",
+      "status": 200,
+      "bytes": 98335,
+      "sha256": "98d214e719ef9c6396187f5aefb1257475efef3349e0c5f04645a519b9181f30",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-base-01.mp3",
+      "status": 200,
+      "bytes": 58976,
+      "sha256": "54a93b2cb73a573b4bc3ad23a66efca86bd3a482b24261803bde4b5c2c4debaf",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-base-02.mp3",
+      "status": 200,
+      "bytes": 52915,
+      "sha256": "a1bd7ca2ce1bb30a595276f519fe454b065a6d0f2da039ab5d0e98affd3ca869",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-base-03.mp3",
+      "status": 200,
+      "bytes": 49363,
+      "sha256": "3088ef12c2b3e28f54b3b555063ae772a1be804a68039598c5eb9536b9588205",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-base-04.mp3",
+      "status": 200,
+      "bytes": 52079,
+      "sha256": "4a19e42e97c8d2dc6196cb102de36580271d4a673fe105cea2bdb5ab6c9c9a2f",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-base-05.mp3",
+      "status": 200,
+      "bytes": 58349,
+      "sha256": "8936f1db7574888b575f9cfca578af33819d724f5bba92d707de50bec6ab273d",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-base-06.mp3",
+      "status": 200,
+      "bytes": 36824,
+      "sha256": "3523500c4e21fb78560b2f5a31d7ae8bcb2600e3560f35c0b3a28277437db982",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-base-07.mp3",
+      "status": 200,
+      "bytes": 31181,
+      "sha256": "cd1b21ea7dc9389216b2a13319e0ac9b6618f0e9d7703a8402ca16a4c4d64475",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-base-08.mp3",
+      "status": 200,
+      "bytes": 34734,
+      "sha256": "8cc80ff64cc6c34e3b0f70e6137476168c414c637cb07aa06aef66e6b71b9b7d",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-base-academy-1.mp3",
+      "status": 200,
+      "bytes": 51661,
+      "sha256": "b35007bf51d1bc18879abeab70a01568b4e44d56642340afd6c105c7882dc6d4",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-base-academy-2.mp3",
+      "status": 200,
+      "bytes": 57931,
+      "sha256": "a28d090fa3aa284384c6caa6a8f2586688d7e3d4491d45b52ed1870ccefe0cd8",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-base-academy-3.mp3",
+      "status": 200,
+      "bytes": 51661,
+      "sha256": "135fd2fcf741a7442df7f14555ae5c610e1638b4661b885eaa13b76419d4c918",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-base-command-1.mp3",
+      "status": 200,
+      "bytes": 55214,
+      "sha256": "0fba3c9077bfd2e9a3ddb96e0f4475509bb0589a82decc4803366e65ba81ac4a",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-base-command-2.mp3",
+      "status": 200,
+      "bytes": 48318,
+      "sha256": "427fbe2e0c07aac09d147ddf3c6a3723a69f7df15d052e8f91bc0884140e89db",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-base-command-3.mp3",
+      "status": 200,
+      "bytes": 45601,
+      "sha256": "6dc58ae6087c5b541e50c7537d3abcbe140cbc85e72ab6d211d64709e003fa4a",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-base-foundry-1.mp3",
+      "status": 200,
+      "bytes": 49363,
+      "sha256": "358febb3deee13423f87f2c89b3aa4f42ed96fe81fa661677a3d8b7f4463d72b",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-base-foundry-2.mp3",
+      "status": 200,
+      "bytes": 52497,
+      "sha256": "fcc8dbfb992380a1ed91ace27574c60ff688423ea78e2085a3ba432694ad58d8",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-base-foundry-3.mp3",
+      "status": 200,
+      "bytes": 37451,
+      "sha256": "b29b4df126450b25d241c9394c9d4f8822ef6864984367e9973c774d810353b6",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-base-switchyard-1.mp3",
+      "status": 200,
+      "bytes": 64409,
+      "sha256": "a1f9a94049bccd69f09c8faa4cea505b5323db328a6f9f9c314c7e0e8dbbc1ce",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-base-switchyard-2.mp3",
+      "status": 200,
+      "bytes": 54587,
+      "sha256": "97d59709f8a3044cfacebc18a9be4637726ffc3434f012425e9e1a774e866aec",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-base-switchyard-3.mp3",
+      "status": 200,
+      "bytes": 45183,
+      "sha256": "f90b883601e46870e3bc0a1abb873419029a700b4082451fc8226a4fa614d2f8",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-base-wreck-1.mp3",
+      "status": 200,
+      "bytes": 46228,
+      "sha256": "d19a29c11e241749cb2f4edb59535cf0b3990a0aca546ca275308f932cd800df",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-base-wreck-2.mp3",
+      "status": 200,
+      "bytes": 51453,
+      "sha256": "651156b160515fd0b54fd390d854c90a9756e25e109edf3a4811ed7061b81987",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-base-wreck-3.mp3",
+      "status": 200,
+      "bytes": 48736,
+      "sha256": "458d5bea15e94e4a185dd4d92a6160370b6a3c255f4932eb9496747d69d5fce0",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-captain-office.mp3",
+      "status": 200,
+      "bytes": 79665,
+      "sha256": "48cba482936a6853da9cfc5ffc4304551960cffc1e2f08ee98609dc751fbff6b",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-convoy-01.mp3",
+      "status": 200,
+      "bytes": 61066,
+      "sha256": "8cd440b0743a965a49660b368a2aaf4657827519cb6e78012ac49221700fae6d",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-convoy-02.mp3",
+      "status": 200,
+      "bytes": 58349,
+      "sha256": "9990610d8bd916cc7ab4f5622eeaa463c73f1ab23b82102e4287d9d32e3b3ff5",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-convoy-03.mp3",
+      "status": 200,
+      "bytes": 57095,
+      "sha256": "168abb393d05fae2584f730971e460aef2fc8c33adf34fb8686824fa4399ba33",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-convoy-04.mp3",
+      "status": 200,
+      "bytes": 61693,
+      "sha256": "3afdbc4b36869a64681dfc973dc1282bc21816d41f05b0dfb8fdda1251b90b0a",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-convoy-05.mp3",
+      "status": 200,
+      "bytes": 65245,
+      "sha256": "96b8576c2f7329b4005ee458614e14cc0faf9cd3fbd38b3d5f455ca3fdf76344",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-convoy-06.mp3",
+      "status": 200,
+      "bytes": 36406,
+      "sha256": "254dafd680b7e618d9d9339669726fe8abae9363b6988085da57ece02a67958a",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-convoy-07.mp3",
+      "status": 200,
+      "bytes": 34734,
+      "sha256": "ce67e38b1aa6eb74abda039e966cdf6ce941f9043eec9e306ed7bf48b23e2140",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-convoy-08.mp3",
+      "status": 200,
+      "bytes": 31808,
+      "sha256": "6c299866fd68222467eadf431fe6b71e2771697f1f875478b9b1cc381746415d",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-enemy-taunt.mp3",
+      "status": 200,
+      "bytes": 34107,
+      "sha256": "bec02102bdf2412d8cde642f8d3116f595b2c0a6d307ba18e6388c34060729c8",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-mrg-01.mp3",
+      "status": 200,
+      "bytes": 67126,
+      "sha256": "061fa60f24a7365635314c50d9c1303fd7e060a6cd1e41ab94d9d0414d07653b",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-mrg-02.mp3",
+      "status": 200,
+      "bytes": 68380,
+      "sha256": "45fd70de804c44ed6586182097bac7acfa816e6d9fba709c3bb73d781f2fd8b5",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-mrg-03.mp3",
+      "status": 200,
+      "bytes": 62319,
+      "sha256": "ee481738205ec3a2b0abe35d2684e581f9f9da90245d0711587b749353c3fb36",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-mrg-04.mp3",
+      "status": 200,
+      "bytes": 62946,
+      "sha256": "24c36ab959424a834420d4185484a56788826a2ab6d5ecb78b220092f573d280",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-mrg-05.mp3",
+      "status": 200,
+      "bytes": 69007,
+      "sha256": "47fa3a241b2161b73544b19d4a2f33224f65a1c2d4a7cfb02d0bed5b69fa37ee",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-mrg-06.mp3",
+      "status": 200,
+      "bytes": 38705,
+      "sha256": "c3048a34c23d14d6637795d3fc6f13b6a7a7c176ac8b5edd6cbc3360241686d5",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-mrg-07.mp3",
+      "status": 200,
+      "bytes": 35779,
+      "sha256": "70fc955cd13ada9bc02e15024455e9237bdc39b6b697645b54d8919a57d95e33",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-mrg-08.mp3",
+      "status": 200,
+      "bytes": 45183,
+      "sha256": "34c468e8a5e4bb85a4fade3c7757270819528dbfb651ddea22c5545b22cd684b",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-orbit-01.mp3",
+      "status": 200,
+      "bytes": 67544,
+      "sha256": "6a40fe37a962b8cc1a059a97a92c718700a2ba3c3e70de858be064fbd40d654e",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-orbit-02.mp3",
+      "status": 200,
+      "bytes": 67753,
+      "sha256": "add01f8fd1f8ac539a74887f2c0d1fb3162afeb8607875a0fabf425c0a661979",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-orbit-03.mp3",
+      "status": 200,
+      "bytes": 61693,
+      "sha256": "4a474f8748922b5298c02c7007111f38603dbe7fde8b27cdd404dbb39aa0c67b",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-orbit-04.mp3",
+      "status": 200,
+      "bytes": 66081,
+      "sha256": "862bdf82803c3d2985891e3345c33c5c2a48423fe574b637dac89a6c25adc4d6",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-orbit-05.mp3",
+      "status": 200,
+      "bytes": 65663,
+      "sha256": "922d60fd4d2c51b518e61ddfb9e0aae07d153e967a4cbbffa8775a89eaf16677",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-orbit-06.mp3",
+      "status": 200,
+      "bytes": 35570,
+      "sha256": "64f71703c75eab35de70a8bd0d310e922b9eb3bb82b7ff7dfd52cab53c3cf972",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-orbit-07.mp3",
+      "status": 200,
+      "bytes": 33480,
+      "sha256": "cc212fa753c46ea245d13ee6f9f357783f005b2650492ec8509402d6c3ec9214",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-orbit-08.mp3",
+      "status": 200,
+      "bytes": 34734,
+      "sha256": "036a1416477653f776b2b698e9baf4443882ef92e730b6df6750dd44a130ec26",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-parallax-01.mp3",
+      "status": 200,
+      "bytes": 59185,
+      "sha256": "e78b2063e13ee4e54fd81ab536b3ed6e4f5e107ca319c694e797e0de146ac0ed",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-parallax-02.mp3",
+      "status": 200,
+      "bytes": 63155,
+      "sha256": "692f94656763d1a32e3636b05eea2a2cde3bae5dd761e9b99954207b6035778a",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-parallax-03.mp3",
+      "status": 200,
+      "bytes": 60021,
+      "sha256": "4266a1e7eb30f00dc889d611d8e5e0e684669ac7f04c9b65d47ce0a36423d9f3",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-parallax-04.mp3",
+      "status": 200,
+      "bytes": 51661,
+      "sha256": "41b54944b23e5ce680a09589f04f1e7a03e47fc755c84dd612ae05d4c4150039",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-parallax-05.mp3",
+      "status": 200,
+      "bytes": 57304,
+      "sha256": "a93078e3d74a8b5ce96d4c17b129addfb0528301caa4ff3d8f9e5fc41c7fc6a9",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-parallax-06.mp3",
+      "status": 200,
+      "bytes": 41839,
+      "sha256": "1f72369fc82e80e9976b1699fda77afb56811bf41024c28d807a873fec1f68b6",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-parallax-07.mp3",
+      "status": 200,
+      "bytes": 33271,
+      "sha256": "09aae2cd91018088e79fca7a10a65b5b273a65608f251b9f473818f861786559",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-parallax-08.mp3",
+      "status": 200,
+      "bytes": 31599,
+      "sha256": "3483cac35875a3e83f47042dd07458ce10a12ddab701a71f29400fe070324354",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-pursuit-01.mp3",
+      "status": 200,
+      "bytes": 67544,
+      "sha256": "1b3949d01f2de294f3bd784363689068abec530cf05db4fad481739f57cf0de1",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-pursuit-02.mp3",
+      "status": 200,
+      "bytes": 67335,
+      "sha256": "614419e28abcdc1eb6927970c8d5afe60bff834b770caee407cfad6699468896",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-pursuit-03.mp3",
+      "status": 200,
+      "bytes": 63155,
+      "sha256": "2594dbc9dcb1b0fcdd8335a1545accf39b659d95c11de9422a497bf4c3faff88",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-pursuit-04.mp3",
+      "status": 200,
+      "bytes": 59812,
+      "sha256": "99eb570cc7d14f82f3a906377a60eee050a8e318c029eb1b5eb9b94ffd2f0a41",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-pursuit-05.mp3",
+      "status": 200,
+      "bytes": 64827,
+      "sha256": "0ab8df2d9c6caf6cbb6fc997bb94435f199002412c8887a226cfb3df4a928d0e",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-pursuit-06.mp3",
+      "status": 200,
+      "bytes": 47900,
+      "sha256": "d8f921f29928497933b852d87843bccfc7f6a03cb4bff8374a76370951559f7e",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-pursuit-07.mp3",
+      "status": 200,
+      "bytes": 35361,
+      "sha256": "858a5195154e5b9dcec0e48ea80f02216336dca336a604a42bfb9b09c5ed6f7b",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-pursuit-08.mp3",
+      "status": 200,
+      "bytes": 42466,
+      "sha256": "b76975eafb149f52062b8e1f7f4ce204c6adb574b3155e6d3e5f6003d857e22b",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-swarm-01.mp3",
+      "status": 200,
+      "bytes": 69425,
+      "sha256": "88a87a935dc38186041bf6da8d04468ddf68e66a05c53b3932d1a8c2df95f8a0",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-swarm-02.mp3",
+      "status": 200,
+      "bytes": 56886,
+      "sha256": "376efc3fb951966f1dc6e688e766fcc8b0a7f8c96ae1efefe5e2bf65e0811097",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-swarm-03.mp3",
+      "status": 200,
+      "bytes": 52079,
+      "sha256": "7895bfb3e790ee94e920682d914aa0fd9e8a9ce4fb6888d9c53f05993ab9c746",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-swarm-04.mp3",
+      "status": 200,
+      "bytes": 59812,
+      "sha256": "a0660bfe800392d20ce628d71c7c355f1be3905807fc4077879874747c4ae679",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-swarm-05.mp3",
+      "status": 200,
+      "bytes": 65454,
+      "sha256": "7dd023cf00cfaca3b42ef750cae7c1ef3855eb35a611a897de184985caf140e1",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-swarm-06.mp3",
+      "status": 200,
+      "bytes": 40168,
+      "sha256": "52380db7dbe056f6a80319900396e42c4abd111ad16cb7d8e1a1b0a26670d6ea",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-swarm-07.mp3",
+      "status": 200,
+      "bytes": 27838,
+      "sha256": "9e41de9a5958789d6a4525d55c64180d8fca87d7dbd50cdff211e7db89e3583f",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-swarm-08.mp3",
+      "status": 200,
+      "bytes": 39332,
+      "sha256": "a98f13f36ae97245310718957b7cf7e86a35002c1e91c66c3cf183696ccf97bc",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-swarm-armada-1.mp3",
+      "status": 200,
+      "bytes": 65454,
+      "sha256": "76d28c60f8a432df4ffcf52e32e90c317d1865f5294e95155b58e8de4d2701f1",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-swarm-armada-2.mp3",
+      "status": 200,
+      "bytes": 59603,
+      "sha256": "ed5ede4f0a8ca665abf0416dc73778cf8b89381b6896c336dcc98eeefc278aa7",
+      "matches": true
+    },
+    {
+      "path": "assets/voice-v2.7.0/radio270-swarm-armada-3.mp3",
+      "status": 200,
+      "bytes": 30764,
+      "sha256": "c56154957d358b2e2d3abff9a2b2bf5fe27ebe9ce9810ba0b0225313c063f904",
+      "matches": true
+    },
+    {
+      "path": "citadel.webmanifest",
+      "status": 200,
+      "bytes": 694,
+      "sha256": "bfcde9f56f0bbd9251a93759c4f33b78e670f89711d3c9a2b735d64413cf504f",
+      "matches": true
+    },
+    {
+      "path": "index.html",
+      "status": 200,
+      "bytes": 15758,
+      "sha256": "b1e1ab979b22d7af29bdcac4baee8ad5b63fd89bda8df6c4850f74d2b58824e7",
+      "matches": true
+    },
+    {
+      "path": "version.json",
+      "status": 200,
+      "bytes": 18314,
+      "sha256": "3c86ffdbdc5be9982a38bb81b5f006339b229b6960ef1ae2be58b7c31fd7df03",
+      "matches": true
+    }
+  ]
+}

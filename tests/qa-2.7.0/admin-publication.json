@@ -1,0 +1,53 @@
+{
+  "version": "2.7.0",
+  "source_commit": "b3100fe706dc12e700726c16a8273e9e0855eee9",
+  "url": "https://cmpon-analytics-admin.carlafloriano1958.chatgpt.site/game-test",
+  "verified_at": "2026-10-22T18:48:24.158767+00:00",
+  "matched": 6,
+  "total": 6,
+  "files": [
+    {
+      "path": "version.json",
+      "status": 200,
+      "bytes": 1790,
+      "sha256": "98a9666062c2b74bd6155b41025caa5ea4b24c91adb2fc265a314abad91513dc",
+      "matches": true
+    },
+    {
+      "path": "citadel-test/version.json",
+      "status": 200,
+      "bytes": 1633,
+      "sha256": "b1b4a10503f9a3e2f7ad6693b5d49eebbbff3b8778c0c7232d4b0861a2804a3d",
+      "matches": true
+    },
+    {
+      "path": "citadel-test/index.html",
+      "status": 200,
+      "bytes": 6466,
+      "sha256": "03b05315cc5bf1eb68852f37ef0e2334a33acd60ed8619f2163cb7114e6ae5f2",
+      "matches": true
+    },
+    {
+      "path": "citadel-test/assets/game-test-v2.7.0.js",
+      "status": 200,
+      "bytes": 7920210,
+      "sha256": "76615c27c707089c9a42957ffccf18404dfc67d7d20a01abd9e1de0bf5f23456",
+      "matches": true
+    },
+    {
+      "path": "citadel-test/assets/game-test-v2.7.0.css",
+      "status": 200,
+      "bytes": 183970,
+      "sha256": "b395fbcc21b4b2b2005b4f96487ec23a203b9e1036882abfe31745d0abb2191e",
+      "matches": true
+    },
+    {
+      "path": "citadel-test/assets/voice-v2.7.0/manifest.json",
+      "status": 200,
+      "bytes": 98335,
+      "sha256": "98d214e719ef9c6396187f5aefb1257475efef3349e0c5f04645a519b9181f30",
+      "matches": true
+    }
+  ],
+  "access": "owner-private; unchanged"
+}

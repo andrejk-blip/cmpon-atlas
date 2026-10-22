@@ -15,16 +15,27 @@ paths = list(dict.fromkeys([
 ]))
 commit = sys.argv[1]
 base = 'https://andrejk-blip.github.io/cmpon-atlas/'
+expected_by_path = {p: hashlib.sha256((root / p).read_bytes()).hexdigest() for p in paths}
 def check(path):
     request = urllib.request.Request(base + path + '?verify=' + commit[:12], headers={'Cache-Control': 'no-cache'})
     with urllib.request.urlopen(request, timeout=45) as response:
         data, status = response.read(), response.status
     actual = hashlib.sha256(data).hexdigest()
-    expected = hashlib.sha256((root / path).read_bytes()).hexdigest()
+    expected = expected_by_path[path]
     return dict(path=path, status=status, bytes=len(data), sha256=actual, matches=actual == expected)
 
-with concurrent.futures.ThreadPoolExecutor(max_workers=5) as pool:
-    results = list(pool.map(check, paths))
+with concurrent.futures.ThreadPoolExecutor(max_workers=8) as pool:
+    pending = {pool.submit(check, path): path for path in paths}
+    results = []
+    for future in concurrent.futures.as_completed(pending):
+        path = pending[future]
+        try:
+            results.append(future.result())
+        except Exception as error:
+            results.append(dict(path=path, status=0, matches=False, error=str(error)))
+        if len(results) % 25 == 0:
+            print(json.dumps(dict(checked=len(results), total=len(paths))), flush=True)
+results.sort(key=lambda item: item['path'])
 report = dict(release='2.7.0', activation_commit=commit, url=base,
               verified_at=datetime.now(timezone.utc).isoformat(),
               matched=sum(x['matches'] for x in results), total=len(results), files=results)
