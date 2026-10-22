@@ -10,10 +10,11 @@
     if(!dialog){
       dialog=document.createElement('dialog');dialog.id='citadel-install-help';dialog.setAttribute('aria-labelledby','citadel-install-title');
       dialog.innerHTML='<h2 id="citadel-install-title">Игра на главном экране</h2><p><b>Android:</b> откройте меню браузера ⋮ → «Установить приложение» или «Добавить на главный экран».</p><p><b>iPhone:</b> в Safari нажмите «Поделиться» → «На экран Домой» → «Добавить».</p><p>Иконка открывает сразу «Цитадель». Для загрузки игры нужен интернет.</p><button type="button">Понятно</button>';
-      dialog.style.cssText='max-width:420px;width:calc(100% - 32px);max-height:85dvh;overflow:auto;background:#102b38;color:#e7f3ef;border:1px solid #82e7e5;border-radius:12px;padding:22px;font:16px/1.5 system-ui';
-      dialog.querySelector('button').onclick=()=>dialog.close();document.body.appendChild(dialog);
+      dialog.style.cssText='max-width:420px;width:calc(100% - 32px);max-height:85vh;max-height:85dvh;overflow:auto;background:#102b38;color:#e7f3ef;border:1px solid #82e7e5;border-radius:12px;padding:22px;font:16px/1.5 system-ui';
+      dialog.querySelector('button').onclick=()=>typeof dialog.close==='function'?dialog.close():dialog.removeAttribute('open');document.body.appendChild(dialog);
     }
-    dialog.showModal();
+    if(typeof dialog.showModal==='function')dialog.showModal();
+    else {dialog.setAttribute('open','');dialog.style.position='fixed';dialog.style.inset='10% 0 auto';dialog.style.zIndex='10000';}
   }
   function decorate(){
     if(installed())return;
