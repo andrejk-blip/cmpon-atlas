@@ -5,8 +5,8 @@
  */
 (() => {
  'use strict';
- if(globalThis.CITADEL_BASE_MISSIONS_VIEW?.version==='2.7.0'||!globalThis.CITADEL_BASE_VIEW)return;
- const VERSION='2.7.0',TAU=Math.PI*2,old={interior:citadelInterior,camera:spaceCamera,draw:spaceDrawCPU,hud:drawBoardHUD,mobile:drawMobileGameHUD,final:drawFinaleHUD};
+ if(globalThis.CITADEL_BASE_MISSIONS_VIEW?.version==='2.8.0'||!globalThis.CITADEL_BASE_VIEW)return;
+ const VERSION='2.8.0',TAU=Math.PI*2,old={interior:citadelInterior,camera:spaceCamera,draw:spaceDrawCPU,hud:drawBoardHUD,mobile:drawMobileGameHUD,final:drawFinaleHUD};
  const templates=new Map(),architecture=new Map(),EMPTY_CELLS=new Map();
  const C={black:'#13232d',dark:'#263b49',steel:'#6c8591',edge:'#c3d1cf',ivory:'#ddd8be',gold:'#c3a065',red:'#943d43',orange:'#f5a751',cyan:'#88e9e2',blue:'#6dafe0',purple:'#ac8ec8'};
  const clamp=(v,a=0,b=1)=>Math.max(a,Math.min(b,v)),distance=(a,b)=>Math.hypot(a[0]-b[0],a[2]-b[2]);
@@ -24,6 +24,12 @@
  }
  function tube(name,sides){const v=[],f=[];for(const z of [-1,1])for(let i=0;i<sides;i++){const a=i/sides*TAU;v.push([Math.cos(a),Math.sin(a),z]);}for(let i=0;i<sides;i++){const j=(i+1)%sides;f.push([i,j,j+sides,i+sides]);}f.push(Array.from({length:sides},(_,i)=>sides-1-i),Array.from({length:sides},(_,i)=>sides+i));mesh(name,v,f);}
  tube('b270_tube',6);tube('b270_tube_detail',10);
+ // Tapered skull: broad brow, sunken temples, narrow jaw. Unlike the armour
+ // primitive the face has its own human proportions and uneven planes.
+ {const v=[],f=[],shape=[[-.7,-1],[.7,-1],[1,-.35],[.8,.65],[.42,1],[-.42,1],[-.8,.65],[-1,-.35]];
+  for(const [y,w,d]of [[-1,.58,.72],[-.45,.75,.92],[.25,1,1],[.8,.93,.95],[1,.62,.7]])for(const[x,z]of shape)v.push([x*w,y,z*d]);
+  for(let j=0;j<4;j++)for(let i=0;i<8;i++)f.push([j*8+i,(j+1)*8+i,(j+1)*8+(i+1)%8,j*8+(i+1)%8]);f.push([0,1,2,3,4,5,6,7],[39,38,37,36,35,34,33,32]);mesh('b280_skull',v,f);
+ }
  {const v=[[0,0,0]],f=[];for(let i=0;i<32;i++){const a=i/32*TAU;v.push([Math.cos(a),0,Math.sin(a)]);}for(let i=1;i<=32;i++)f.push([0,i%32+1,i]);mesh('b270_disc',v,f);}
  mesh('b270_floor',[[-1,0,-1],[1,0,-1],[1,0,1],[-1,0,1]],[[3,2,1,0]]);
  {const v=[],f=[];for(const [y,r,drift]of [[0,1,0],[.65,.78,-.20],[1.15,.38,.10]])for(let i=0;i<5;i++){const a=i/5*TAU;v.push([Math.cos(a)*r+drift,y,Math.sin(a)*r]);}v.push([-.28,1.9,.06]);for(let ring=0;ring<2;ring++)for(let i=0;i<5;i++)f.push([ring*5+i,ring*5+(i+1)%5,(ring+1)*5+(i+1)%5,(ring+1)*5+i]);for(let i=0;i<5;i++)f.push([10+i,10+(i+1)%5,15]);mesh('b270_flame',v,f);}
@@ -92,12 +98,27 @@
     part(a,'box',[side*.67,4.4+k*.2,.87],[.12,.022,.02],C.edge,'plate-rivet');
    }
   }
-  part(a,'b270_armour',[0,5.90,.10],[.50,.48,.45],C.steel,'helmet');
-  part(a,'b270_armour',[0,6.28,.03],[.54,.16,.45],C.ivory,'helmet-crest');
-  part(a,'box',[0,5.94,.56],[.40,.11,.04],C.black,'visor');
-  for(const side of [-1,1])part(a,'box',[side*.21,5.94,.61],[.12,.045,.025],'#ffc878','optic',1);
-  part(a,'b270_plate',[0,5.63,.43],[.29,.16,.18],C.dark,'breather');
-  for(let k=-1;k<=1;k++)part(a,'box',[k*.13,5.64,.62],[.025,.1,.025],C.gold,'breather-grille');
+  // A humanoid machine with a recognisable skull, recessed eyes, exposed
+  // ribs and articulated metal teeth. The silhouette stays inside its old
+  // physical chassis; terror comes from anatomy instead of hidden hitboxes.
+  part(a,'b280_skull',[0,5.98,.12],[.51,.47,.45],'#b9c1a9','skull-cranium');
+  for(const side of [-1,1]){
+   part(a,'b270_armour',[side*.35,5.85,.49],[.13,.19,.10],C.ivory,'skull-cheek');
+   part(a,'b270_plate',[side*.22,6.04,.50],[.21,.105,.08],C.dark,'eye-socket');
+   part(a,'box',[side*.22,6.04,.59],[.075,.036,.025],'#ff4f49','optic',1);
+   beam(a,[side*.20,5.51,.02],[side*.36,5.18,-.15],.08,C.gold,'neck-tendon');
+   beam(a,[side*.32,5.90,-.27],[side*.62,5.42,-.65],.08,C.black,'cranial-cable');
+   beam(a,[side*.62,5.42,-.65],[side*.66,4.91,-1.03],.075,C.gold,'cranial-cable');
+   for(let spike=0;spike<2;spike++)part(a,'octa',[side*(1.12+spike*.36),5.69+spike*.07,-.30],[.13,.40+spike*.12,.15],C.dark,'shoulder-spike');
+   for(let k=0;k<3;k++){
+    beam(a,[side*.14,4.95-k*.28,.99],[side*.67,4.88-k*.28,.85],.07,C.ivory,'exposed-rib');
+    if(high)beam(a,[side*.67,4.88-k*.28,.85],[side*.87,4.77-k*.28,.39],.06,C.steel,'rib-return');
+   }
+  }
+  part(a,'octa',[0,5.87,.61],[.085,.13,.10],C.dark,'skull-nose');
+  part(a,'box',[-.09,6.21,.51],[.022,.14,.015],C.black,'skull-fracture');
+  for(let k=-2;k<=2;k++)part(a,'box',[k*.105,5.70,.56],[.03,.10,.04],C.ivory,'upper-teeth');
+  for(let k=0;k<4;k++)part(a,'b270_plate',[0,3.80+k*.22,-1.17],[.16,.075,.10],C.ivory,'spine-vertebra');
   for(const side of [-1,1])beam(a,[side*.36,3.96,.35],[side*.63,3.66,.24],.10,C.gold,'waist-piston');
  });}
  function cannon(high){return compile('mech-cannon-'+Number(high),a=>{
@@ -111,6 +132,10 @@
  });}
  function mech(a,x,time,high,fx){const m=x.missions270,duty=x.duty||{},yaw=Number.isFinite(x.yaw)?x.yaw:0,b=stationYaw(yaw),gait=fx===false?0:m.gait??duty.gait??0,speed=clamp((m.speed??duty.speed??0)/4),tag={id:x.id,kind:'mech',lod:high?'detail':'compatible'},origin=V3.add(x.pos,[0,Math.cos(gait*2)*.045*speed,0]),model=spaceModel(origin,[1,1,1],b),local=p=>spacePoint(model,p);
   instance(a,mechBody(high),origin,b,[1,1,1],tag);
+  const breath=fx===false?0:Math.sin((m.clock||time)*3.1)*.035,jaw=m.phase==='beam'?.14:m.phase==='recover'?.08:0;
+  part(a,'b270_plate',local([0,5.49-jaw+breath,.41]),[.34,.105,.23],C.steel,'articulated-jaw',0,b).baseActor=true;
+  for(let tooth=-2;tooth<=2;tooth++)part(a,'box',local([tooth*.105,5.58-jaw+breath,.59]),[.027,.075,.035],C.ivory,'lower-teeth',0,b).baseActor=true;
+  const core=part(a,'octa',local([0,4.55,1.02]),[.13,.28+breath,.10],m.phase==='recover'?'#8de2da':'#ff5c46','reactor-heart',.9,b);core.baseActor=true;
   for(const side of [-1,1]){
    const stride=Math.sin(gait+(side===1?0:Math.PI))*.58*speed,lift=Math.max(0,Math.cos(gait+(side===1?0:Math.PI)))*.30*speed;
    const hip=[side*.56,3.45,0],knee=[side*.78,1.75+lift*.25,.24+stride*.4],foot=[side*.81,.22+lift,.20+stride];
@@ -125,6 +150,13 @@
    const shoulder=local([side*1.25,4.95,0]),elbow=local([side*1.63,3.69,-.17]);
    beam(a,shoulder,elbow,.25,C.steel,'mech-upper-arm',0,1,high).baseActor=true;beam(a,elbow,V3.sub(gunPos,V3.scale(dir,.15)),.22,C.dark,'mech-forearm',0,1,high).baseActor=true;
    instance(a,cannon(high),gunPos,gunBasis,[1,1,1],tag);
+   // Three skeletal fingers grip each cannon; a small phase-linked curl
+   // makes the machine read as a living adversary without extra animation state.
+   for(let finger=0;finger<3;finger++){
+    const curl=(m.phase==='beam'?.12:.04)+breath,hand=V3.add(gunPos,V3.add(V3.scale(gunBasis.r,(finger-1)*.23),V3.scale(gunBasis.u,-.42))),tip=V3.add(hand,V3.add(V3.scale(dir,.67),V3.scale(gunBasis.u,-curl)));
+    beam(a,hand,tip,.065,C.ivory,'mech-finger',0,1,high).baseActor=true;
+    beam(a,tip,V3.add(tip,V3.add(V3.scale(dir,.14),V3.scale(gunBasis.u,.20))),.045,C.dark,'mech-claw',0,1,high).baseActor=true;
+   }
   }
   part(a,'b270_disc',V3.add(x.pos,[0,.015,0]),[1.43,1,1.35],'#09131c','machine-shadow',0,SPACE_IDENTITY,.35);
  }

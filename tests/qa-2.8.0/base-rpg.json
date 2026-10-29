@@ -1,0 +1,145 @@
+{
+  "environment": "Node VM + native Canvas fixtures, not real mobile/browser play",
+  "passed": 9,
+  "total": 9,
+  "rows": [
+    {
+      "name": "Six reachable finite pickups, preserved old armory, pure render",
+      "pass": true,
+      "result": [
+        {
+          "tier": 0,
+          "pickups": 6,
+          "oldRetained": 3
+        },
+        {
+          "tier": 1,
+          "pickups": 6,
+          "oldRetained": 3
+        },
+        {
+          "tier": 2,
+          "pickups": 6,
+          "oldRetained": 3
+        },
+        {
+          "tier": 3,
+          "pickups": 6,
+          "oldRetained": 3
+        },
+        {
+          "tier": 4,
+          "pickups": 6,
+          "oldRetained": 3
+        }
+      ]
+    },
+    {
+      "name": "Quiz answers earn the same finite skill milestones; no extra score",
+      "pass": true,
+      "result": [
+        {
+          "mode": "training",
+          "earned": 2,
+          "rank": 1,
+          "scoreUnchangedBySkill": true
+        },
+        {
+          "mode": "combat",
+          "earned": 2,
+          "rank": 1,
+          "scoreUnchangedBySkill": true
+        },
+        {
+          "mode": "pro",
+          "earned": 2,
+          "rank": 1,
+          "scoreUnchangedBySkill": true
+        }
+      ]
+    },
+    {
+      "name": "Choices enforce safety/ranks, COW snapshots and save restoration",
+      "pass": true,
+      "result": {
+        "snapshotUnchanged": true,
+        "restored": true,
+        "maxRank": 3,
+        "choices": 3
+      }
+    },
+    {
+      "name": "Ordinary retry cannot farm a terminal skill point",
+      "pass": true,
+      "result": {
+        "milestones": [
+          "base-0-terminal-1"
+        ],
+        "points": 1
+      }
+    },
+    {
+      "name": "Skills change pickup reach, cooling and protection with real mechanics",
+      "pass": true,
+      "result": {
+        "pulseCooldown": 8.280000000000001,
+        "repairAtDistance": 2.45,
+        "repairOnce": true,
+        "vulnerableDamage": 11.2,
+        "protection": 0.93
+      }
+    },
+    {
+      "name": "Hazards and actual hostile projectiles use systems protection once",
+      "pass": true,
+      "result": {
+        "hazardLosses": [
+          9,
+          7.109999999999999
+        ],
+        "projectileDamage": [
+          5,
+          3.95
+        ],
+        "reduction": 0.21
+      }
+    },
+    {
+      "name": "Final base awards finite milestones in pro and quiz",
+      "pass": true,
+      "result": [
+        {
+          "mode": "combat",
+          "earned": [
+            "base-4-terminal-1",
+            "base-4-terminal-3"
+          ]
+        },
+        {
+          "mode": "pro",
+          "earned": [
+            "base-4-terminal-1",
+            "base-4-terminal-3"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "New monster geometry is finite, phase-linked, read-only and bounded",
+      "pass": true,
+      "result": {
+        "items": 60,
+        "jawMoves": true,
+        "savedStateUntouched": true
+      }
+    },
+    {
+      "name": "Repeated script install does not stack wrappers or handlers",
+      "pass": true,
+      "result": {
+        "loads": 20,
+        "listeners": 77
+      }
+    }
+  ]
+}

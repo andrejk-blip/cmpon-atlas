@@ -189,7 +189,7 @@
     const b=e.board,s=state(b);if(e.status!=='boarding'||b.invulnerable>0||b.hp<=0||s.transport)return false;
     if(from&&!e.boardLOS(from,b.pos,.04))return false;
     const ranged=kind==='beam'||kind==='grid',kit=ranged?1-(e.upgrades.baseKit260?.armor||0)*.06:1;
-    const n=amount*(e.assist?.52:1)*Math.pow(.8,e.upgrades.armor||0)*kit;
+    const n=amount*(e.assist?.52:1)*Math.pow(.8,e.upgrades.armor||0)*kit*(globalThis.CITADEL_SKILLS?.protection(e)||1);
     b.hp=Math.max(0,b.hp-n);b.invulnerable=.68;e.flash=.2;e.emit('damage');
     log(b,{kind:'hit',source:kind,damage:+n.toFixed(3)});
     if(b.hp<=0){e.status='lost';e.lossReason='Щит исчерпан. Используйте внешние проходы, пульты и укрытия; после рывка или лазера машины делают паузу.';e.emit('state','lost');}return true;

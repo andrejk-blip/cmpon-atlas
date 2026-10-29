@@ -1,0 +1,22 @@
+PASS Six reachable finite pickups, preserved old armory, pure render
+PASS Quiz answers earn the same finite skill milestones; no extra score
+PASS Choices enforce safety/ranks, COW snapshots and save restoration
+PASS Ordinary retry cannot farm a terminal skill point
+PASS Skills change pickup reach, cooling and protection with real mechanics
+PASS New monster geometry is finite, phase-linked, read-only and bounded
+PASS Repeated script install does not stack wrappers or handlers
+{"tier":0,"status":"boarding","cards":3,"seconds":899.95,"minHp":75,"pickups":6,"skills":{"schema":1,"earned":["base-0-terminal-1","base-0-terminal-3"],"points":0,"ranks":{"observation":1,"priority":0,"systems":1}}}
+FAIL Five bases with normal controls, all terminals, six supplies and skills AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+  assert(frame<60*900)
+
+    at /workspace/scratch/440222e02ec8/cmpon-atlas/tests/base280-rpg.cjs:48:313
+    at test (/workspace/scratch/440222e02ec8/cmpon-atlas/tests/base280-rpg.cjs:15:41)
+    at Object.<anonymous> (/workspace/scratch/440222e02ec8/cmpon-atlas/tests/base280-rpg.cjs:46:40)
+    at Module._compile (node:internal/modules/cjs/loader:1929:14)
+    at Object..js (node:internal/modules/cjs/loader:2060:10)
+    at Module.load (node:internal/modules/cjs/loader:1651:32)
+    at Module._load (node:internal/modules/cjs/loader:1443:12)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47

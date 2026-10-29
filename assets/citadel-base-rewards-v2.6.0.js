@@ -5,7 +5,7 @@
  */
 (() => {
   'use strict';
-  const VERSION = '2.6.0';
+  const VERSION = '2.8.0';
   if (globalThis.CITADEL_BASE_REWARDS?.version === VERSION || !globalThis.CITADEL_BASES) return;
   const p = RequirementArcade.prototype, old = { step:p.stepBoard, enemy:p.enemyBoardStep,
     pulse:p.boardPulse, begin:p.beginBoarding, lair:p.beginLair, objective:p.objective, say:p.say,
@@ -18,7 +18,9 @@
   const definitions = Object.freeze({
     capacitor:{title:'ИМПУЛЬСНЫЙ КОНДЕНСАТОР',short:'КОНДЕНСАТОР',color:'#75d9de'},
     triad:{title:'ДЕТАЛЬ «ТРИАДЫ»',short:'ДЕТАЛЬ ОРУЖИЯ',color:'#eec586'},
-    armor:{title:'РЕАКТИВНАЯ БРОНЯ',short:'БРОНЕПЛАСТИНА',color:'#a5c9b5'}
+    armor:{title:'РЕАКТИВНАЯ БРОНЯ',short:'БРОНЕПЛАСТИНА',color:'#a5c9b5'},
+    repair:{title:'ПОЛЕВОЙ РЕМКОМПЛЕКТ',short:'ЩИТ +20',color:'#93e1b0'},
+    charge:{title:'ЭНЕРГОЯЧЕЙКА',short:'ЭНЕРГИЯ +35',color:'#8cdbfa'}
   });
   function equipment(e) {
     let k = e.upgrades.baseKit260;
@@ -41,6 +43,14 @@
       if (!stationWalkable(b,pos,.8,true) || !stationPath(b,room.posts?.[0]||b.pos,pos).length) continue;
       pickups.push({id,type,room:room.id,pos,taken:k.collected.includes(id)});
     }
+    // Extra finite supplies belong only to a fresh authored 2.7+ floor plan.
+    // Existing saved armories return above and are never repopulated.
+    if(b.definition.missions270Version)for(const room of b.definition.rooms||[]) {
+      const type=room.id===1?'charge':'repair',id='field-'+tier(e)+'-'+room.id;
+      const options=[[-15,8],[15,-9],[-12,-13],[12,13]].map(([x,z])=>V3.add(room.center,[x,0,z]));
+      const pos=options.find(q=>stationWalkable(b,q,.8,true)&&stationPath(b,room.posts?.[0]||b.pos,q).length&&pickups.every(x=>distance(x.pos,q)>5));
+      if(pos)pickups.push({id,type,room:room.id,pos,taken:k.collected.includes(id),fieldSupply:true});
+    }
     b.armory260={schema:1,pickups,shots:0,notice:null,events:[],firstContact:null,shotsFired:0};
     return b.armory260;
   }
@@ -61,13 +71,17 @@
     } else if(pickup.type==='armor') {
       k.armor=Math.min(5,k.armor+1);b.hp=Math.min(100,b.hp+25);
       detail='Урон снарядов на базах −'+k.armor*6+'%. Щит восстановлен на 25.';
+    } else if(pickup.type==='repair') {
+      b.hp=Math.min(100,b.hp+20);detail='Щит группы восстановлен на 20. Этот комплект можно взять один раз за поход.';
+    } else if(pickup.type==='charge') {
+      b.energy=Math.min(100,b.energy+35);b.pulseCooldown=Math.max(0,b.pulseCooldown-2);detail='Энергия +35. Перезарядка импульса сокращена на 2 секунды.';
     } else {
       k.parts=Math.min(5,k.parts+1);
       detail=k.parts<3 ? 'Сборка '+k.parts+'/3. Темп огня +'+k.parts*4+'%. Третья деталь добавит тройной залп.' :
         'Палубная «Триада» собрана: каждый '+(8-k.parts)+'-й выстрел — тройной залп. Обычная кнопка огня.';
       if(k.parts===3 && !k.achievements.includes('triad'))k.achievements.push('triad');
     }
-    if(s.pickups.length===3 && s.pickups.every(x=>x.taken)) {
+    if(s.pickups.filter(x=>!x.fieldSupply).length===3 && s.pickups.filter(x=>!x.fieldSupply).every(x=>x.taken)) {
       const badge='supply-'+tier(e);if(!k.achievements.includes(badge)){k.achievements.push(badge);detail+=' Знак «Снабженец '+(tier(e)+1)+'».';}
     }
     s.notice={title:definitions[pickup.type].title,detail,until:b.time+8};
@@ -76,7 +90,8 @@
   }
   function collect(e) {
     const b=e.board,s=ensure(e);if(!s || e.status!=='boarding')return;
-    for(const x of s.pickups)if(!x.taken && x.room<=b.completed.length && distance(x.pos,b.pos)<2.15 && e.boardLOS(b.pos,x.pos,.15))take(e,x);
+    const reach=2.15+(globalThis.CITADEL_SKILLS?.pickupReach(e)||0);
+    for(const x of s.pickups)if(!x.taken && x.room<=b.completed.length && distance(x.pos,b.pos)<reach && e.boardLOS(b.pos,x.pos,.15))take(e,x);
   }
   for(const [key,fn] of [['beginBoarding',old.begin],['beginLair',old.lair]])p[key]=function(){const result=fn.apply(this,arguments);ensure(this);return result;};
   if(old.unpack)cupUnpack=function(){const e=old.unpack.apply(this,arguments);ensure(e);return e;};
@@ -139,7 +154,7 @@
       if(x.decksAttack.phase==='windup')x.decksAttack.windup=x.decksAttack.kind==='rocket'?0:.34;
       x.decksAttack.recovery=Math.min(x.decksAttack.recovery,.58);
     }
-    const protection=1-k.armor*.06;
+    const protection=(1-k.armor*.06)*(globalThis.CITADEL_SKILLS?.protection(this)||1);
     for(let i=shotStart;i<b.hostile.length;i++) {
       const shot=b.hostile[i];shot.damage*=protection;shot.baseKitScaled=true;s.shotsFired++;
     }
@@ -191,6 +206,12 @@
       put('armor',[0,y,.12],[.58,.2,.23],'#697d7f');put('box',[-.4,y-.25,.12],[.12,.22,.13],'#2c414b');
       for(const q of [-1,0,1]) {put('armor',[q*.25,y,-.4],[.095,.11,.47],'#c2b89c');put('box',[q*.25,y,-.87],[.06,.07,.045],c,.9);}
       put('box',[0,y+.24,.12],[.24,.055,.075],c,.35);
+    } else if(x.type==='repair'||x.type==='charge') {
+      const basis=stationYaw(time*.8+x.room);
+      put('octa',[0,y+.1,0],[.48,.6,.48],c,.45,basis);
+      put('box',[0,y+.1,.49],[.26,.075,.03],'#effff2',.7);
+      if(x.type==='repair')put('box',[0,y+.1,.5],[.075,.27,.035],'#effff2',.7);
+      else for(const sign of [-1,1])put('box',[sign*.16,y+.1,.5],[.03,.27,.035],'#effff2',.7);
     } else {
       for(const side of [-1,1])put('armor',[side*.32,y,0],[.31,.5,.16],'#98a99d');
       put('armor',[0,y+.13,.2],[.2,.34,.08],'#d2d5ba');put('box',[0,y+.12,.3],[.04,.2,.025],c,.8);

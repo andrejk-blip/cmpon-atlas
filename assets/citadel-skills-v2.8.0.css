@@ -1,0 +1,13 @@
+.analyst-skills{box-sizing:border-box;width:min(760px,100%);margin:18px auto 0;padding:16px;color:#d9e8e5;background:#102933;border:1px solid #4e737c;border-radius:14px;text-align:left;font:14px/1.45 system-ui,sans-serif}
+.analyst-skills header{display:flex;justify-content:space-between;gap:12px;color:#f4d7a6;font-size:13px;letter-spacing:.05em}
+.analyst-skills p{margin:9px 0 14px!important;font-size:13px!important;line-height:1.45!important;color:#b9cdd1!important}
+.analyst-skills-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.analyst-skills-grid button{display:flex;flex-direction:column;gap:10px;min-height:170px;width:100%;padding:12px;border:1px solid var(--skill-color);border-radius:10px;background:#183846;color:#eff5f4;text-align:left;white-space:normal;font:13px/1.45 system-ui,sans-serif;touch-action:manipulation}
+.analyst-skills-grid button:disabled{opacity:1;border-color:#536b75;background:#152d38;color:#acbec5;cursor:default}
+.analyst-skills-grid button:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.analyst-skill-title{display:flex;align-items:center;gap:6px;min-height:40px}.analyst-skill-title i{font-size:24px;color:var(--skill-color);font-style:normal}.analyst-skill-title b{flex:1;font-size:13px}.analyst-skill-title strong{font-size:12px;white-space:nowrap}
+.analyst-skill-ranks{display:flex;gap:5px}.analyst-skill-ranks i{height:5px;flex:1;background:#405963;border-radius:3px}.analyst-skill-ranks i.earned{background:var(--skill-color)}
+.analyst-skills-grid em{margin-top:auto;font-style:normal;font-weight:650;color:var(--skill-color)}
+@media(max-width:560px){.analyst-skills{padding:12px}.analyst-skills-grid{grid-template-columns:1fr}.analyst-skills-grid button{min-height:120px}.analyst-skill-title{min-height:28px}}
+.analyst-pause-stack{box-sizing:border-box;width:min(790px,100%);min-width:0;margin:auto;flex:none}
+.analyst-pause-stack>.arcade-state-card{box-sizing:border-box;width:100%;max-height:none!important;overflow:visible}
