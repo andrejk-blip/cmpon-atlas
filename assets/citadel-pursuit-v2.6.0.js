@@ -4,7 +4,9 @@
  */
 (function () {
   'use strict';
-  const VERSION = '2.6.0';
+  const VERSION = '2.6.0', RULES_REVISION = 280;
+  const WARP_KINDS = Object.freeze(['hammer','tentacle','maw','mantis','medusa']);
+  const WARP_NAMES = Object.freeze({hammer:'Кузнец разлома',tentacle:'Спрут пустоты',maw:'Пожиратель сигнала',mantis:'Косарь',medusa:'Медуза помех'});
   if (globalThis.CITADEL_PURSUIT || typeof RequirementArcade !== 'function') return;
   const proto = RequirementArcade.prototype;
   const before = {
@@ -103,40 +105,94 @@
     return first;
   }
   function warpParts(e,w){return w.segments||[];}
-  function warpHit(e,from,to,radius=0){
+  function warpHit(e,from,to,radius=0,moving=false){
     let first=null;
     for(const w of e.pursuit.warpEntities||[])for(const part of warpParts(e,w)){
-      const t=flightSegment(from,to,part.pos,part.r+radius);
+      // Sweep in each moving joint's frame. A fast tentacle crossing the ship
+      // between two simulation ticks now hits exactly like the visible pose.
+      const start=moving&&part.previous?V3.add(from,V3.sub(part.pos,part.previous)):from;
+      const t=flightSegment(start,to,part.pos,part.r+radius);
       if(t!==null&&(!first||t<first.t))first={t,entity:w,part};
     }
     return first;
   }
+  function poseWarp(e,w,dt){
+    const previous=new Map((w.segments||[]).map((x,i)=>[x.key||String(i),x.pos]));
+    const c=w.center,side=w.side||1,phase=w.phase;
+    if(w.schema!==280){
+      // Keep an already encountered 2.6 apparition at its original size.
+      const head=[c[0]+side*(25+5*Math.sin(phase)),c[1]+Math.cos(phase*.83)*13,c[2]+Math.sin(phase)*8];
+      w.head=head;w.segments=[{pos:w.pos.slice(),r:w.bodyRadius,part:'body'}];
+      const n=w.kind==='hammer'?2:6;
+      for(let i=1;i<=n;i++){const t=i/(w.kind==='hammer'?3:n),pos=V3.lerp(w.pos,head,t);pos[1]+=Math.sin(phase+t*4)*4*Math.sin(t*Math.PI);w.segments.push({pos,r:w.kind==='hammer'?3.5:3.8,part:w.kind==='hammer'?'arm':'tentacle'});}
+      if(w.kind==='hammer')w.segments.push({pos:head.slice(),r:7,part:'hammer'});
+    }else{
+      w.segments=[];
+      const add=(key,pos,r,part,chain=0)=>w.segments.push({key,pos,r,part,chain,previous:dt>0?(previous.get(key)||pos).slice():pos.slice()});
+      const scale=w.scale||3.4, body=(key,off,r)=>add(key,V3.add(w.pos,V3.scale(off,scale)),r*scale,'body');
+      // Piecewise anatomical volumes, not one giant invisible sphere around
+      // the whole silhouette. Open space between horns/limbs remains flyable.
+      body('torso',[0,0,0],4.5);body('chest',[0,3,1],4.4);body('pelvis',[0,-4,1],2.8);
+      if(w.kind==='medusa'){
+        body('bell',[0,5,0],4.8);body('eye',[0,1.8,5],3.7);
+        for(const side of [-1,1])body('bell'+side,[side*6,5,0],3.6);
+      }else if(w.kind==='mantis'){
+        body('head',[0,6.5,3.7],3.2);
+        for(const side of [-1,1])body('shoulder'+side,[side*5.5,3,0],3.1);
+      }else if(w.kind==='maw'){
+        body('skull',[0,6,2],3.8);
+        for(const side of [-1,1]){body('rib'+side,[side*4,0,2],2.5);body('cheek'+side,[side*3.8,4,3],2.5);}
+      }else{
+        body('head',[0,5.6,3.2],2.7);
+        for(const side of [-1,1])body('shoulder'+side,[side*4.8,3,1],2.8);
+      }
+      // Large bodies remain at the corridor edge; only articulated weapons
+      // sweep the navigable space. Ring apertures are never covered by a spawn.
+      const arms=w.kind==='medusa'?3:w.kind==='mantis'||w.kind==='maw'?2:1;
+      for(let arm=0;arm<arms;arm++){
+        const ph=phase+arm*1.4,down=arm%2?-1:1;
+        let head,part='tentacle',radius=4.4;
+        if(w.kind==='hammer'){head=[c[0]+side*(17+15*Math.sin(ph)),c[1]+Math.cos(ph)*19,c[2]+Math.sin(ph)*8];part='arm';radius=4.8;}
+        else if(w.kind==='tentacle')head=[c[0]+side*(20+19*Math.sin(ph)),c[1]+Math.sin(ph*1.3)*20,c[2]+Math.cos(ph)*12];
+        else if(w.kind==='maw'){head=[c[0]+side*(22+7*Math.sin(ph)),c[1]+down*(11+8*(1+Math.sin(phase))),c[2]+5];part='jaw';radius=6;}
+        else if(w.kind==='mantis'){head=[c[0]+side*(20+17*Math.sin(ph)),c[1]+down*(10+Math.cos(ph)*14),c[2]+Math.sin(ph)*10];part='scythe';radius=4.8;}
+        else head=[c[0]+side*(29+16*Math.sin(ph)),c[1]+(arm-1)*19+Math.cos(ph)*9,c[2]+Math.sin(ph)*11];
+        if(arm===0)w.head=head;
+        const start=V3.add(w.pos,[-side*13,(arm-(arms-1)/2)*10,3]);
+        // Overlapping spheres cover the same tube rendered between the joints.
+        const n=16;
+        for(let i=0;i<=n;i++){
+          const t=i/n,pos=V3.lerp(start,head,t);
+          pos[1]+=Math.sin(ph+t*5)*7*Math.sin(t*Math.PI);
+          pos[2]+=Math.cos(ph+t*4)*4*Math.sin(t*Math.PI);
+          add('a'+arm+'j'+i,pos,radius*(1-t*.18),part,arm);
+        }
+        if(w.kind==='hammer')add('hammer',head.slice(),10,'hammer',arm);
+        if(w.kind==='mantis')add('blade'+arm,head.slice(),7,'blade',arm);
+      }
+    }
+  }
   function updateWarp(e,dt){
     const s=e.pursuit;
-    s.warpEntities=s.warpEntities.filter(w=>w.distance>s.travel-80);
+    s.warpEntities=s.warpEntities.filter(w=>w.distance>s.travel-100);
     while(s.nextWarpDistance<s.travel+RULES.lookAhead){
       const index=s.nextWarp++;let d=s.nextWarpDistance;
-      // Put an apparition between rings instead of stacking mandatory hazards.
       const nearby=s.gates.find(g=>Math.abs(g.distance-d)<180);
       if(nearby)d=nearby.distance+stageOf(e).gap*.5;
       s.nextWarpDistance=d+[1200,1000,820][s.chapter];
-      const center=route(e,d),side=index%2?-1:1;
-      s.warpEntities.push({id:++e.entityId,kind:index%2?'tentacle':'hammer',pos:[center[0]+side*54,center[1]+(index%3-1)*8,center[2]],
-        center,distance:d,side,phase:index*1.73,age:0,reach:40,bodyRadius:11,segments:[],contactUntil:0});s.warpSpawned++;
+      const center=route(e,d),side=index%2?-1:1,kind=WARP_KINDS[index%WARP_KINDS.length];
+      s.warpEntities.push({id:++e.entityId,schema:280,kind,name:WARP_NAMES[kind],scale:3.4,
+        pos:[center[0]+side*87,center[1]+(index%3-1)*8,center[2]],center,distance:d,side,
+        phase:index*1.73,age:0,reach:100,bodyRadius:34,segments:[],contactUntil:0});s.warpSpawned++;
     }
     s.warpEntities=s.warpEntities.slice(-RULES.maxWarp);
     for(const w of s.warpEntities){
-      w.age+=dt;w.phase=(w.phase+dt*(w.kind==='hammer'?1.15:1.6))%(Math.PI*2);
-      const c=w.center,phase=w.phase,head=[c[0]+w.side*(25+5*Math.sin(phase)),c[1]+Math.cos(phase*.83)*13,c[2]+Math.sin(phase)*8];
-      w.head=head;w.segments=[{pos:w.pos.slice(),r:w.bodyRadius,part:'body'}];
-      const n=w.kind==='hammer'?2:6;
-      for(let i=1;i<=n;i++){
-        const t=i/(w.kind==='hammer'?3:n),pos=V3.lerp(w.pos,head,t);
-        pos[1]+=Math.sin(phase+t*4)*4*Math.sin(t*Math.PI);
-        w.segments.push({pos,r:w.kind==='hammer'?3.5:3.8,part:w.kind==='hammer'?'arm':'tentacle'});
-      }
-      if(w.kind==='hammer')w.segments.push({pos:head.slice(),r:7,part:'hammer'});
+      w.age+=dt;w.phase=(w.phase+dt*({hammer:1.15,tentacle:1.35,maw:.85,mantis:1.65,medusa:1.05}[w.kind]||1.3))%(Math.PI*2);
+      poseWarp(e,w,dt);
     }
+    // Edge boulders must not hide a monster's face or occupy the same body.
+    // Keep central destructible obstacles and every mandatory ring intact.
+    e.asteroids=e.asteroids.filter(a=>!a.wall||!s.warpEntities.some(w=>w.schema===280&&Math.abs(a.pos[2]-w.pos[2])<90&&Math.hypot(a.pos[0]-w.pos[0],a.pos[1]-w.pos[1])<60));
   }
   function coursePoint(e, travel) {
     const point=route(e,travel), nearby=e.pursuit.gates.filter(g=>Math.abs(g.distance-travel)<140)
@@ -155,16 +211,16 @@
   function evasion(e,dt,nearGate){
     const s=e.pursuit,m=s.evasion;
     if(s.clock>=m.next){
-      m.index++;m.until=s.clock+(e.assist?3.2:4.2)+s.chapter*.55;m.next=s.clock+17-s.chapter*2;
+      m.index++;m.until=s.clock+(e.assist?3.2:4.2)+s.chapter*.55;m.next=s.clock+17-s.chapter*2-(s.chapter===2?2:0);
       m.phase=arcadeSeed((e.seed+26061+m.index*7919)>>>0)()*Math.PI*2;s.maneuvers++;
       e.say('ФЗ: «'+TAUNTS[(m.index-1)%TAUNTS.length]+'»','enemy',true);s.lastTaunt=TAUNTS[(m.index-1)%TAUNTS.length];
       e.emit('pursuit-evasion',{stage:s.chapter+1,index:m.index});
     }
-    const enabled=s.clock<m.until&&!nearGate&&s.clock>7,amp=(e.assist?7:12)+s.chapter*2;
+    const enabled=s.clock<m.until&&!nearGate&&s.clock>7,amp=(e.assist?7:12)+s.chapter*2+(s.chapter===2&&!e.assist?3:0);
     const tx=enabled?amp*(.7*Math.sin(s.clock*1.7+m.phase)+.3*Math.sin(s.clock*3.2+m.phase*2)):0;
     const ty=enabled?amp*.65*Math.sin(s.clock*2.15+m.phase*.8):0;
     // Slew limit bounds apparent lateral speed; no teleport, impossible corner or RNG per frame.
-    for(let i=0;i<2;i++){const goal=i?ty:tx,limit=(e.assist?15:24)*dt;m.offset[i]+=arcadeClamp(goal-m.offset[i],-limit,limit);}
+    for(let i=0;i<2;i++){const goal=i?ty:tx,limit=(e.assist?15:s.chapter===2?31:24)*dt;m.offset[i]+=arcadeClamp(goal-m.offset[i],-limit,limit);}
     m.active=enabled;return m.offset;
   }
   function moveLead(e, dt) {
@@ -229,7 +285,7 @@
     if(migrating&&previous?.version==='1.8.0')fraction=Math.max(fraction,(rescued+Math.max(0,...previous.carriers.filter(c=>!e.rescued.includes(c.reqId)).map(c=>Math.min(.99,finite(c.transfer)/Math.max(.1,finite(c.transferTime,3))))))/3);
     const origin=e.player.pos.slice(),leaderId=++e.entityId,chapter=Math.min(2,rescued);
     const packets=STAGES.map((x,i)=>arcadeClamp(fraction*3-i,0,1)*(e.assist?x.calm:x.seconds));
-    e.pursuit={version:VERSION,clock:0,state:'chase',migrated:!!migrating,origin,returnStation:previous?.returnStation?.slice()||e.station.pos.slice(),
+    e.pursuit={version:VERSION,rulesRevision:RULES_REVISION,clock:0,state:'chase',migrated:!!migrating,origin,returnStation:previous?.returnStation?.slice()||e.station.pos.slice(),
       speed:(STAGES[chapter].speed)*(e.assist?.9:1),travel:0,leadTravel:84,leadSpeed:82,burst:0,
       routePhase:arcadeSeed((e.seed+91047)>>>0)()*Math.PI*2,requiredSeconds:seconds,packets,uploaded:0,progress:0,
       chapter,chapterClock:0,stageHistory:[{stage:chapter+1,at:0}],stageGates:[0,0,0],gates:[],nextGate:0,nextGateDistance:950,
@@ -346,10 +402,10 @@
       const aim=x.aim||[p.pos[0]+s.velocity[0]*lead,p.pos[1]+s.velocity[1]*lead,p.pos[2]];
       const velocity=V3.add(V3.scale(V3.norm(V3.sub(aim,x.pos)),e.assist?96:112),[0,0,-s.speed]);
       e.hostile.push({pursuitShot:true,pos:x.pos.slice(),vel:velocity,life:2.8,r:.8,damage:x.role==='heavy'?14:x.role==='jammer'?9:11,color:x.color});
-      x.volleys++;s.shotsOpened++;x.aim=null;x.shot=(e.assist?4.4:3.3)-s.chapter*.2+x.slot%3*.18;
+      x.volleys++;x.muzzleFlash=.12;s.shotsOpened++;x.aim=null;x.shot=(e.assist?4.4:3.3)-s.chapter*.2+x.slot%3*.18;
     };
     for(const x of e.enemies){
-      if(x.dead)continue;const old=x.pos.slice();x.age+=dt;x.hit=Math.max(0,x.hit-dt);
+      if(x.dead)continue;const old=x.pos.slice();x.age+=dt;x.hit=Math.max(0,x.hit-dt);x.muzzleFlash=Math.max(0,(x.muzzleFlash||0)-dt);
       const departing=x.age>19,forward=departing?245+(x.age-19)*72:82+(x.slot%3)*30;
       const target=[p.pos[0]+x.side*(departing?40:10+(x.slot%3)*8+Math.sin(x.age*.9+x.slot)*8),
         p.pos[1]+Math.sin(x.age*.65+x.slot)*12+(x.slot%3-1)*7,p.pos[2]-forward];
@@ -399,13 +455,13 @@
         e.notify('ПРОЛЁТ ПРОПУЩЕН','Следующие ворота впереди. Принятые данные сохранены.');}
       if(e.status!=='playing')return;
     }
-    const contact=warpHit(e,old,p.pos,1.8);
+    const contact=warpHit(e,old,p.pos,1.8,true);
     if(contact&&s.clock>=contact.entity.contactUntil){
       contact.entity.contactUntil=s.clock+1.4;
-      if(e.damage(e.assist?18:27)){s.warpContacts++;s.linkRecovery=1.1;e.burst(p.pos,'#b8a0ff',8);}
+      if(e.damage(e.assist?18:24)){s.warpContacts++;s.linkRecovery=1.1;e.burst(p.pos,'#b8a0ff',8);e.notify('УДАР ВАРПА',contact.entity.name||'Обходите движущиеся щупальца и оружие');}
     }
   }
-  function projectiles(e, dt, input) {
+  function projectiles(e, dt, input, playerOld) {
     const s=e.pursuit,p=e.player;
     if(input.fire){
       const beforeCount=e.bullets.length;
@@ -436,7 +492,7 @@
     e.bullets=e.bullets.filter(b=>b.life>0).slice(-RULES.maxBullets);
     for(const shot of e.hostile){
       const old=shot.pos;shot.pos=V3.add(old,V3.scale(shot.vel,dt));shot.life-=dt;
-      const obstruction=gateHit(e,old,shot.pos,shot.r),hit=flightSegment(old,shot.pos,p.pos,shot.r+1.8);
+      const obstruction=gateHit(e,old,shot.pos,shot.r),hit=flightSegment(V3.add(old,V3.sub(p.pos,playerOld||p.pos)),shot.pos,p.pos,shot.r+1.8);
       if(obstruction||warpHit(e,old,shot.pos,shot.r)||(e.asteroids.some(a=>!a.dead&&flightSegment(old,shot.pos,a.pos,a.r+shot.r)!==null)))shot.life=0;
       else if(hit!==null){shot.life=0;e.damage(shot.damage);}
     }
@@ -554,7 +610,7 @@
     p.bank += (-turn * .62 - p.bank) * blend; p.speed = s.speed; p.boosting = true;
     hazards(this, old, dt);
     if (this.status !== 'playing') return;
-    encounters(this,dt); projectiles(this, dt, input); effects(this, dt);
+    encounters(this,dt); projectiles(this, dt, input,old); effects(this, dt);
     if(this.status!=='playing')return;
     transfer(this,dt);
   };
@@ -563,7 +619,7 @@
     const s = this.pursuit;
     const stage=stageOf(this),pending=s.packets[s.chapter]>=packetSeconds(this,s.chapter)&&s.stageGates[s.chapter]<stage.gates;
     return { title: 'Этап '+(s.chapter+1)+'/3 · '+stage.name,
-      detail: pending ? 'Пакет передан. Завершите пролёт через кольца этого этапа.' : 'Держите голубой канал, проходите внутри колец. Сбивайте эскадрильи и глушителей; неуязвимые сущности Варпа нужно обходить.',
+      detail: pending ? 'Пакет передан. Завершите пролёт через кольца этого этапа.' : 'Держите голубой канал, проходите внутри колец. Перехватчики стреляют по вашему щиту, глушители рвут связь; неуязвимые сущности Варпа нужно обходить.',
       progress: 'ПАКЕТ '+Math.floor(s.packets[s.chapter]/packetSeconds(this,s.chapter)*100)+'% · ВОРОТА '+Math.min(stage.gates,s.stageGates[s.chapter])+'/'+stage.gates+' · ЩИТ '+Math.ceil(this.player.hp) };
 
   };
@@ -717,7 +773,7 @@
     const messages={acquiring:'Захват канала… '+Math.floor(s.lockTime/RULES.acquisition*100)+'%',jammed:'ПОМЕХА · сбейте фиолетовый глушитель',obstructed:'Заграждение перекрыло канал',occluded:'Астероид перекрыл канал',recovering:'Восстановление после удара',range:'Дистанция велика · тяга догоняет ФЗ','off-course':'Следуйте за ФЗ · канал потерян'};
     ctx.fillText(connected?'КАНАЛ УСТАНОВЛЕН · передача '+Math.floor(s.progress)+'%':messages[s.link.reason]||'Приблизьтесь к ФЗ',x+10,top+54,width-20);
     const completed=Math.min(stage.gates,s.stageGates[s.chapter]),waiting=s.packets[s.chapter]>=packetSeconds(e,s.chapter)&&completed<stage.gates;
-    ctx.fillStyle='#b7cbd7';ctx.fillText('Ворота '+completed+'/'+stage.gates+' · '+(waiting?'Завершите пролёт':s.burst>.3?'ФЗ УСКОРЯЕТСЯ':e.enemies.length?'Перехватчики '+e.enemies.length+' · ОГОНЬ':'Следуйте через светящиеся проёмы'),x+10,top+78,width-20);
+    ctx.fillStyle='#b7cbd7';ctx.fillText('Ворота '+completed+'/'+stage.gates+' · '+(waiting?'Завершите пролёт':s.burst>.3?'ФЗ УСКОРЯЕТСЯ':e.enemies.length?'По вам стреляют · ОГОНЬ / РАКЕТА':'Следуйте через светящиеся проёмы'),x+10,top+78,width-20);
     const q=spaceProject(s.leader.pos,cam,W,H),aim=spaceProject([e.player.pos[0],e.player.pos[1],s.leader.pos[2]],cam,W,H);
     if(aim.z>0){ctx.strokeStyle=color+'66';ctx.lineWidth=1.1;ctx.setLineDash([4,7]);ctx.beginPath();ctx.arc(aim.x,aim.y,Math.min(86,linkRadius(e)*aim.scale),0,Math.PI*2);ctx.stroke();ctx.setLineDash([]);}
     if(q.z>0){ctx.textAlign='center';ctx.font='bold 12px Arial';ctx.fillStyle='#ffe4b5';ctx.strokeStyle='#071624';ctx.lineWidth=4;
@@ -769,7 +825,7 @@
       '<h3>ФЗ уходит со связи</h3><p>ФЗ уносит три пакета требований. Пройдите <b>три этапа</b>: захват сигнала, канал под огнём и последний рывок до <b>100%</b>.</p>' +
       '<div class="brief-command"><span class="crystal-symbol">↗</span><div><b>Пролетайте внутри колец и обходите Варп</b><small>' + controls + ' ФЗ ускоряется и резко меняет курс. Молоты и щупальца Варпа неуязвимы: обходите их. Тяга подстраивается сама.</small></div></div>' +
       '<div class="brief-command"><span class="crystal-symbol">◉</span><div><b>Голубой канал — передача данных</b><small>После захвата связи между кораблями виден поток пакетов. Канал исчез — передача остановилась. Полученные данные сохраняются.</small></div></div>' +
-      '<div class="brief-command"><span class="crystal-symbol">✦</span><div><b>Перехватчиков нужно сбивать</b><small>Пробел, левая кнопка мыши или кнопка огня. Правая кнопка мыши — ракеты. Фиолетовый глушитель мешает связи. Все корабли противника держатся впереди.</small></div></div>' +
+      '<div class="brief-command"><span class="crystal-symbol">✦</span><div><b>Перехватчиков нужно сбивать</b><small>Пробел, левая кнопка мыши или кнопка огня. Правая кнопка мыши — ракеты. Перехватчики стреляют по вашему кораблю и снимают щит. ФЗ не получает урон. Фиолетовый глушитель мешает связи.</small></div></div>' +
       '<p>После полной загрузки спокойно сверим решения и вернёмся в Цитадель.</p>' +
       '<button class="arcade-play" data-action="citadel-launch">В ПОГОНЮ ↗</button></div>';
   };
@@ -798,7 +854,7 @@
     };
   }
   globalThis.CITADEL_PURSUIT = Object.freeze({ version: VERSION, active, flight: active, count, linkEligible, carrierMeshes, hudBounds,
-    rules: RULES, stages: STAGES, channel, gateOpening, gateParts, gateHit, warpHit, warpParts, warpEntities:e=>e.pursuit?.warpEntities||[], navigationPoint,
+    rules: RULES, rulesRevision:RULES_REVISION, warpKinds:WARP_KINDS, warpNames:WARP_NAMES, stages: STAGES, channel, gateOpening, gateParts, gateHit, warpHit, warpParts, warpEntities:e=>e.pursuit?.warpEntities||[], navigationPoint,
     carriers: e => loaded(e) ? e.pursuit.carriers.map(c => ({ id: c.id, reqId: c.reqId, profile: c.profile,
       pos: c.pos.slice(), shield: 0, open: true, escaped: false, delivered: c.delivered,
       transfer: c.transfer, transferTime: 1 })) : [],

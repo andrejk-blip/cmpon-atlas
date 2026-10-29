@@ -5,7 +5,7 @@
  */
 (() => {
  'use strict';
- if(globalThis.CITADEL_PURSUIT_VIEW?.version==='2.6.0'||!globalThis.CITADEL_PURSUIT_VIEW||!globalThis.CITADEL_PURSUIT)return;
+ if(globalThis.CITADEL_PURSUIT_VIEW?.build==='280'||!globalThis.CITADEL_PURSUIT_VIEW||!globalThis.CITADEL_PURSUIT)return;
  const VERSION='2.6.0',P=CITADEL_PURSUIT,base=CITADEL_PURSUIT_VIEW;
  const old={scene:spaceScene,camera:spaceCamera},TAU=Math.PI*2;
  const M=20,S=21,L=24,templates=new Map();
@@ -71,6 +71,45 @@
    }
  }
  function leviathan(kind,lod){return compile('leviathan_'+kind+'_'+lod,a=>{
+   if(['maw','mantis','medusa'].includes(kind)){
+     const skin=kind==='maw'?'#60485b':kind==='mantis'?'#365f61':'#695c88';
+     const organic=kind==='medusa';
+     part(a,'p260_muscle',[0,0,0],[organic?8.7:6.0,organic?7:8.3,4.6],skin);
+     part(a,'p260_muscle',[0,1.4,2.9],[organic?8:5.4,organic?5.4:7,2.5],C.black);
+     if(kind==='maw'){
+       // A vertical tooth-lined abyss, rib cage and asymmetrical tusks.
+       part(a,'p260_muscle',[0,1.8,4.8],[4.5,6.8,1.5],C.void);
+       for(const side of [-1,1])for(let i=0;i<(lod===2?4:7);i++){
+         const y=-4.8+i*(lod===2?3:1.7),x=side*(3.3+Math.cos(y*.3)*.8);
+         taper(a,[x,y,5.1],[x-side*1.4,y-.5,6.2],.38,C.bone);
+         beam(a,[side*5.0,y,2.4],[side*6.3,y+1,1.2],.38,C.gold);
+       }
+       for(const side of [-1,1])horn(a,[[side*4,6,2],[side*7,9,3],[side*4,11,4]],1.2,C.bone);
+       part(a,'p260_bone',[0,7.3,4.2],[1.4,.55,.65],C.eye,1,SPACE_IDENTITY,1,L);
+     }else if(kind==='mantis'){
+       part(a,'p260_muscle',[0,6.5,3.7],[3.2,3.7,2.4],C.black);
+       for(const side of [-1,1]){
+         part(a,'p260_muscle',[side*2,6.5,5.5],[1.65,2.4,.9],side<0?'#80c9a8':'#e4ba7c',.35,SPACE_IDENTITY,1,L);
+         horn(a,[[side*2,9,3],[side*5,12,1],[side*4,14,4]],.8,C.bone);
+         part(a,'p220_armour',[side*6,3,0],[2.4,5.2,3],skin,0,flightBasis(0,0,side*.3));
+         for(let i=0;i<4;i++)horn(a,[[side*3,-1-i*1.6,2],[side*6,-2-i*1.7,3],[side*8,-3-i*1.7,6]],.75,C.bone);
+         horn(a,[[side*1.6,3.8,5.6],[side*2.1,2.5,6.5],[side*.3,2.4,7]],.6,C.gold);
+       }
+     }else{
+       // Wide bell, crown and one enormous recessed eye; unmistakable silhouette.
+       part(a,'p260_muscle',[0,5,0],[10,4.5,5.0],skin);
+       part(a,'p260_muscle',[0,1.8,5],[5.5,4.6,1.3],C.bone);
+       part(a,'p260_muscle',[0,1.8,6.1],[3.3,3.4,.8],'#93d3c4',.45,SPACE_IDENTITY,1,L);
+       part(a,'p260_muscle',[0,1.8,6.8],[.65,2.6,.22],C.void);
+       for(let i=0;i<(lod===2?5:9);i++){
+         const x=(i-(lod===2?2:4))*(lod===2?3:1.7);
+         horn(a,[[x,7,0],[x*1.25,9.2,-.5],[x*1.35,11,1.6]],.55,C.bone);
+         beam(a,[x,-3.5,2.5],[x*.8,-7,3.3],.5,C.gold);
+       }
+     }
+     return;
+   }
+
    const hammer=kind==='hammer',skin=hammer?C.skin:'#394653';
    // Chest, neck and overlapping rib plates form a solid anatomical mass.
    part(a,'p260_muscle',[0,.0,.0],[5.3,6.8,3.7],skin);
@@ -166,40 +205,68 @@
  });}
  function warp(a,e,w,lod){
    const tag={pursuit260:true,warpEntity:w.id,warpKind:w.kind},parts=(P.warpParts?.(e,w)||w.segments||[]).filter(x=>x.pos?.every(Number.isFinite));
-   const root=w.pos,phase=w.phase||0,age=w.age||0;a.compact=lod>0;
+   const root=w.pos,phase=w.phase||0,age=w.age||0,scale=w.scale||.94;a.compact=lod>0;
    if(!root?.every(Number.isFinite))return;
-   // Tiny breathing is visual only; appendage centres remain exact world poses.
-   const breath=1+Math.sin(age*2.1)*.012;
-   instance(a,leviathan(w.kind,lod),root,SPACE_IDENTITY,[.94,.94*breath,.94],{...tag,warpPart:'body'});
-   const appendages=parts.filter(x=>x.part!=='body');
-   if(w.kind==='hammer'){
-     const hammer=appendages.find(x=>x.part==='hammer'),joints=appendages.filter(x=>x.part==='arm');
-     let last=V3.add(root,[(w.side||1)*5,1.7,0]);
-     for(const j of joints){arm(a,last,j.pos,Math.min(j.r||3.5,2.5),lod,{...tag,warpPart:'arm'});last=j.pos;}
-     if(hammer){
-       const b=spaceBasisDir(V3.sub(hammer.pos,last)),len=V3.len(V3.sub(hammer.pos,last));
-       Object.assign(beam(a,last,hammer.pos,.75,C.gold),{...tag,warpPart:'haft'});
-       // The head stays within the physical radius seven contact sphere.
-       instance(a,hammerHead(lod),hammer.pos,flightBasis(0,0,Math.sin(phase)*.15),[1,1,1],{...tag,warpPart:'hammer'});
-       if(len>3)for(let i=0;i<3;i++)Object.assign(part(a,'p260_tube',V3.lerp(last,hammer.pos,.12+i*.13),[.9,.9,.2],C.black,0,b),{...tag,warpPart:'grip'});
-     }
-   }else{
-     let last=V3.add(root,[-(w.side||1)*4,-2,2]);
-     for(let i=0;i<appendages.length;i++){
-       const j=appendages[i],b=spaceBasisDir(V3.sub(j.pos,last)),r=Math.min(j.r||3.8,3.15)*(1-i*.075);
-       Object.assign(beam(a,last,j.pos,r,i%2?C.skin:C.flesh,0,S),{...tag,warpPart:'tentacle'});
-       Object.assign(part(a,'p260_tube',j.pos,[r*.95,r*.95,.28],C.gold,0,b),{...tag,warpPart:'tentacle-ridge'});
-       if(!lod||i%2===0){
-         const dir=V3.norm(V3.sub(j.pos,last)),normal=V3.norm(V3.sub([0,0,1],V3.scale(dir,dir[2]))),pos=V3.add(V3.lerp(last,j.pos,.6),V3.scale(normal,r*.85));
-         Object.assign(part(a,'p260_sucker',pos,[r*.34,r*.34,r*.34],C.bone,0,spaceBasisDir(normal)),{...tag,warpPart:'sucker'});
+   const breath=1+Math.sin(age*2.1)*.018;
+   instance(a,leviathan(w.kind,lod),root,SPACE_IDENTITY,[scale,scale*breath,scale],{...tag,warpPart:'body'});
+   const appendages=parts.filter(x=>x.part!=='body'&&x.part!=='hammer'&&x.part!=='blade');
+   for(const chain of [...new Set(appendages.map(x=>x.chain||0))]){
+     const joints=appendages.filter(x=>(x.chain||0)===chain);
+     let last=w.schema===280?joints[0]?.pos:V3.add(root,[-(w.side||1)*4,-2,2]);
+     if(!last)continue;
+     // The phone joins alternate physical samples into a continuous tube.
+     const stride=lod?2:1;
+     for(let i=w.schema===280?stride:0;i<joints.length;i+=stride){
+       const j=joints[Math.min(i,joints.length-1)],r=j.r*.82,b=spaceBasisDir(V3.sub(j.pos,last));
+       if(w.kind==='hammer'||w.kind==='mantis')arm(a,last,j.pos,r,lod,{...tag,warpPart:j.part});
+       else Object.assign(beam(a,last,j.pos,r,i%2?C.skin:C.flesh,0,S),{...tag,warpPart:j.part});
+       if(w.kind==='maw'&&i%4===0){const tooth=V3.add(j.pos,[0,chain%2?2.4:-2.4,2.5]);Object.assign(taper(a,j.pos,tooth,1.1,C.bone),{...tag,warpPart:'jaw-tooth'});}
+       if(i%4===0){
+         Object.assign(part(a,'p260_tube',j.pos,[r*1.06,r*1.06,.35],C.gold,0,b),{...tag,warpPart:'ridge'});
+         if(w.kind!=='hammer'){
+           const pos=V3.add(V3.lerp(last,j.pos,.6),[0,0,r*.8]);
+           Object.assign(part(a,'p260_sucker',pos,[r*.4,r*.4,r*.4],C.bone,0,SPACE_IDENTITY),{...tag,warpPart:'sucker'});
+         }
        }
        last=j.pos;
      }
-     if(appendages.length){const tip=appendages.at(-1),prev=appendages.length>1?appendages.at(-2).pos:root,dir=V3.norm(V3.sub(tip.pos,prev));
-       Object.assign(taper(a,tip.pos,V3.add(tip.pos,V3.scale(dir,Math.min(tip.r||3.8,2.6))),1.3,C.bone),{...tag,warpPart:'tip'});}
+     const tip=joints.at(-1);
+     if(tip&&w.kind!=='hammer'){
+       const prev=joints.at(-2)?.pos||root,dir=V3.norm(V3.sub(tip.pos,prev));
+       Object.assign(taper(a,tip.pos,V3.add(tip.pos,V3.scale(dir,2.5)),Math.min(tip.r,3),C.bone),{...tag,warpPart:'tip'});
+     }
    }
-   // Contact illumination is damage feedback, never an advance attack cue.
-   if((w.contactUntil||0)>(e.pursuit.clock||0))for(const j of appendages.slice(-1))Object.assign(part(a,'octa',j.pos,[j.r*.6,j.r*.6,j.r*.6],C.warm,1,SPACE_IDENTITY,.45,L),{...tag,warpPart:'contact'});
+   const hammer=parts.find(x=>x.part==='hammer');
+   if(hammer)instance(a,hammerHead(lod),hammer.pos,flightBasis(0,0,Math.sin(phase)*.55),[1.4,1.4,1.4],{...tag,warpPart:'hammer'});
+   for(const blade of parts.filter(x=>x.part==='blade')){
+     const handed=blade.chain%2?-1:1,points=[[0,-5,0],[2*handed,-3,1],[4*handed,1,2],[3*handed,5,2],[0,6,2]].map(p=>V3.add(blade.pos,p));
+     for(let i=0;i<points.length-1;i++){
+       Object.assign(taper(a,points[i],points[i+1],1.3-i*.2,C.bone),{...tag,warpPart:'scythe-blade'});
+       Object.assign(beam(a,V3.add(points[i],[0,0,.4]),V3.add(points[i+1],[0,0,.4]),.14,'#9cefd4',.85,L),{...tag,warpPart:'scythe-edge'});
+     }
+   }
+   // Living jaws and iris movement stay inside the large body volume.
+   if(w.schema===280){
+     const eyeY=w.kind==='medusa'?1.8:5.8,eyeZ=w.kind==='medusa'?6.9:6.2;
+     for(const side of w.kind==='medusa'?[0]:[-1,1]){
+       const pos=V3.add(root,[(side*1.25+Math.sin(phase)*.15)*scale,eyeY*scale,eyeZ*scale]);
+       Object.assign(part(a,'p260_bone',pos,[scale*.35,scale*.13,scale*.10],w.kind==='mantis'?'#9fffd0':C.eye,1,SPACE_IDENTITY,1,L),{...tag,warpPart:'eye'});
+     }
+     // Narrow luminous rib seams give the dark anatomy a readable rim against
+     // the planet, without a screen-space outline or hiding approaching shots.
+     const seam=w.kind==='hammer'?'#efbb7c':w.kind==='mantis'?'#8bdfc1':'#b4c3f1';
+     for(const side of [-1,1])for(let i=0;i<(lod===2?1:3);i++){
+       const p=V3.add(root,[side*scale*1.2,(2-i*1.55)*scale,4.35*scale]);
+       const q=V3.add(root,[side*scale*(3.6-i*.25),(1.65-i*1.4)*scale,3.8*scale]);
+       Object.assign(beam(a,p,q,scale*.065,seam,.72,L),{...tag,warpPart:'rib-light'});
+     }
+     // Energy veins pulse through the armour, not a static halo over the ship.
+     if(lod<2)for(let i=0;i<3;i++){
+       const pos=V3.add(root,[Math.sin(i*2.1)*scale*3,(-2+i*1.7)*scale,scale*4.1]);
+       Object.assign(part(a,'octa',pos,[.3,.8,.25],C.violet,.5+.5*Math.sin(phase*2+i),SPACE_IDENTITY,1,L),{...tag,warpPart:'vein'});
+     }
+   }
+   if((w.contactUntil||0)>(e.pursuit.clock||0))for(const j of parts.filter(x=>x.part!=='body').slice(-1))Object.assign(part(a,'octa',j.pos,[j.r*.6,j.r*.6,j.r*.6],C.warm,1,SPACE_IDENTITY,.45,L),{...tag,warpPart:'contact'});
    if(e.assist&&appendages.length&&w.age<1.5){const j=appendages.at(-1);Object.assign(part(a,'ring',j.pos,[j.r+1,j.r+1,.1],C.warm,.8,SPACE_IDENTITY,.45,L),{...tag,trainingCue:true});}
  }
  function ship(a,e,x,type,time,lod){
@@ -210,6 +277,7 @@
      const pos=spacePoint(m,[side*(player||type==='fz'?3.57:2),.12,player||type==='fz'?-6.0:-4.0]);
      part(a,'p260_horn',pos,[.48,.4,1.9+Math.sin(time*22+(x.id||0))*.12],color,1,b,1,L);
    }
+   if(x.muzzleFlash>0)for(const side of [-1,1])Object.assign(part(a,'octa',V3.add(x.pos,[side*2,.15,4.5]),[.6,.6,1.4],C.warm,1,SPACE_IDENTITY,1,L),{pursuit260:true,muzzleFlash:true});
    if(e.assist&&x.telegraph>0)Object.assign(part(a,'octa',V3.add(x.pos,[0,0,4]),[.75,.75,.75],C.warm,1,SPACE_IDENTITY,1,L),{trainingCue:true});
  }
  function gate(a,e,g,lod){
@@ -235,7 +303,7 @@
    for(const g of s.gates||[]){const d=g.distance-s.travel;if(d>=-42&&d<1050)gate(a,e,g,lod||d>350?1:0);}
    for(const w of (P.warpEntities?.(e)||s.warpEntities||[]).slice(0,2)){
      const distance=V3.len(V3.sub(w.pos,p.pos));
-     if(w.pos[2]<p.pos[2]+50&&distance<650)warp(a,e,w,lod&&distance>95?2:lod);
+     if(w.pos[2]<p.pos[2]+50&&distance<650)warp(a,e,w,lod&&w.distance-s.travel>300?2:lod);
    }
    for(const x of e.enemies)if(!x.dead)ship(a,e,x,['jammer','heavy'].includes(x.role)?x.role:'interceptor',clock,lod);
    if(fx){
@@ -243,7 +311,7 @@
      for(const q of e.particles.slice(0,lod?40:90))part(a,'octa',q.pos,[q.size*.32,q.size*.32,q.size*.8],q.color,1,spaceBasisDir(q.vel),Math.min(1,q.life/q.max),L);
      for(let i=0;i<18;i++){const z=p.pos[2]-((s.travel*.8+i*37)%500),x=s.origin[0]+(i%2?1:-1)*(61+i%3*9),y=s.origin[1]+(i%5-2)*19;beam(a,[x,y,z],[x,y,z+8],.025,'#7297b6',.65,L);}
    }
-   for(const b of [...e.bullets,...e.hostile])part(a,'box',b.pos,[.1,.1,2.8],b.color,1,spaceBasisDir(b.vel),1,L);
+   for(const b of [...e.bullets,...e.hostile]){const hostile=b.pursuitShot;Object.assign(part(a,'box',b.pos,[hostile?.28:.1,hostile?.28:.1,hostile?4.5:2.8],hostile?'#ffba77':b.color,1,spaceBasisDir(b.vel),1,L),{pursuit260:true,hostileShot:!!hostile});}
    ship(a,e,s.leader,'fz',clock,lod);ship(a,e,p,'player',clock,lod);
    a.pursuit220=true;a.pursuit260=true;return a;
  }
@@ -255,7 +323,7 @@
    // apparition beside its hammer, instead of seeing only a cropped weapon.
    return {...cam,fov:portrait?Math.max(cam.fov,1.37):cam.fov,pursuit220:true,pursuit260:true};
  };
- globalThis.CITADEL_PURSUIT_VIEW=Object.freeze({...base,version:VERSION,
+ globalThis.CITADEL_PURSUIT_VIEW=Object.freeze({...base,version:VERSION,build:'280',
    scene,ringModel:ring,warpModel:leviathan,hammerModel:hammerHead,enemyModel:escortFighter,
    stats:()=>({...base.stats(),visualVersion:VERSION,templates260:templates.size}),
    inspect:e=>({...base.inspect(e),visualVersion:VERSION,warps:(P.warpEntities?.(e)||e?.pursuit?.warpEntities||[]).length,maxWarps:2}),

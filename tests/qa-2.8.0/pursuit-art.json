@@ -1,0 +1,96 @@
+{
+  "sources": {
+    "citadel-pursuit-v2.6.0.js": "4942dd93b4744844687569dd3cdae0e947b33123b28486259824ecad05f71358",
+    "citadel-pursuit-view-v2.6.0.js": "6ee3f4a0853a26e850d548f39c2c81ec8a8f59c825eb1c45c21960a2a846ac7a"
+  },
+  "method": "Reached states from ordinary Node VM flights. Native CPU Canvas renders, not browser/device performance.",
+  "rows": [
+    {
+      "kind": "hammer",
+      "width": 1280,
+      "height": 720,
+      "items": 134,
+      "triangles": 18702,
+      "drawMs": 4058.59
+    },
+    {
+      "kind": "hammer",
+      "width": 780,
+      "height": 390,
+      "items": 134,
+      "triangles": 18702,
+      "drawMs": 2604.95
+    },
+    {
+      "kind": "tentacle",
+      "width": 1280,
+      "height": 720,
+      "items": 180,
+      "triangles": 20260,
+      "drawMs": 4660.33
+    },
+    {
+      "kind": "tentacle",
+      "width": 780,
+      "height": 390,
+      "items": 180,
+      "triangles": 20260,
+      "drawMs": 2151.59
+    },
+    {
+      "kind": "maw",
+      "width": 1280,
+      "height": 720,
+      "items": 174,
+      "triangles": 17130,
+      "drawMs": 3255.09
+    },
+    {
+      "kind": "maw",
+      "width": 780,
+      "height": 390,
+      "items": 174,
+      "triangles": 17130,
+      "drawMs": 2171.33
+    },
+    {
+      "kind": "mantis",
+      "width": 1280,
+      "height": 720,
+      "items": 180,
+      "triangles": 17880,
+      "drawMs": 2761.49
+    },
+    {
+      "kind": "mantis",
+      "width": 780,
+      "height": 390,
+      "items": 180,
+      "triangles": 17880,
+      "drawMs": 2231.67
+    },
+    {
+      "kind": "medusa",
+      "width": 1280,
+      "height": 720,
+      "items": 162,
+      "triangles": 17074,
+      "drawMs": 2485.2
+    },
+    {
+      "kind": "medusa",
+      "width": 780,
+      "height": 390,
+      "items": 162,
+      "triangles": 17074,
+      "drawMs": 2264.85
+    }
+  ],
+  "checks": [
+    "five naturally encountered monster types rendered at desktop and landscape sizes",
+    "finite transforms",
+    "drawing read-only",
+    "90 scene builds no new meshes",
+    "idempotent module load"
+  ]
+}
