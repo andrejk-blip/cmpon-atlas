@@ -11,8 +11,8 @@ html = (root / 'index.html').read_text()
 version = json.loads((root / 'version.json').read_text())
 previous = version.get('active_asset_sha256', {})
 updates = dict(
-    version='2.8.0', released_on='2026-10-29', asset_build='280r1',
-    launch_build='280r1', input_module_version='2.8.0', mobile_layout_version='2.8.0',
+    version='2.8.0', released_on='2026-10-29', asset_build='280r2',
+    launch_build='280r2', input_module_version='2.8.0', mobile_layout_version='2.8.0',
     skills_module_version='2.8.0', skills_max_ranks=9,
     skills_branches=['observation', 'priority', 'systems'],
     pursuit_rules_revision=280, pursuit_build='280r1', pursuit_view_build='280r1',

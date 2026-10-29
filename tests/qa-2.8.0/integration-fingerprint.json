@@ -1,9 +1,10 @@
 {
-  "generatedAt": "2026-10-29T13:29:31.350Z",
+  "generatedAt": "2026-10-29T13:41:07.787Z",
   "entryFile": "tests/entry-2.8.0.html",
-  "entrySHA256": "20a58b82f4d127085e65a459282c5d98eae7afd15d9a7286537d97f549ceee7f",
-  "indexSHA256": "20a58b82f4d127085e65a459282c5d98eae7afd15d9a7286537d97f549ceee7f",
+  "entrySHA256": "75023f3e85ad01a25408d90b9795815a71ca6579ec60559ef5f4e02899ddd18a",
+  "indexSHA256": "75023f3e85ad01a25408d90b9795815a71ca6579ec60559ef5f4e02899ddd18a",
   "indexMatchesEntry": true,
+  "cacheKey": "build=280r2",
   "scriptCount": 52,
   "scripts": [
     {
@@ -196,7 +197,7 @@
     },
     {
       "file": "assets/citadel-learning-modes-v2.7.0.js",
-      "sha256": "e2960804b5b891b54f8a405b8b3302bef9ef4be6d466bda823cea4ff739bfa16"
+      "sha256": "4fc2a0b6831787f62bec5a9cccefe7ff4e8576cd4c2e558f95f52c296375261c"
     },
     {
       "file": "assets/citadel-mobile-v2.7.0.js",
@@ -215,7 +216,26 @@
       "sha256": "a026d1eb50252a37f01b7ad097e610252bccacc01f078d6ee75a3bf86e029a6e"
     }
   ],
-  "allSuccessfulRunsMatchEveryScript": true,
+  "unchangedCampaignScriptCount": 51,
+  "allSuccessfulRunsMatchEveryScript": false,
+  "allSuccessfulRunsMatchExpectedSourcePolicy": true,
+  "displayOnlyPatch": {
+    "file": "assets/citadel-learning-modes-v2.7.0.js",
+    "baseline": "4c39df6",
+    "beforeSHA256": "e2960804b5b891b54f8a405b8b3302bef9ef4be6d466bda823cea4ff739bfa16",
+    "afterSHA256": "4fc2a0b6831787f62bec5a9cccefe7ff4e8576cd4c2e558f95f52c296375261c",
+    "replacement": {
+      "before": "Приложение v'+VERSION+'",
+      "after": "Приложение v'+esc(typeof APP_RELEASE==='object'&&APP_RELEASE.version||VERSION)+'"
+    },
+    "proof": "lobby-version-280r2.json / single-display-interpolation-only",
+    "note": "Only quizLobby app-release interpolation changed. Module version, save bank version, game logic and all other source bytes are unchanged."
+  },
+  "previousFingerprint": {
+    "file": "integration-fingerprint-280r1.json",
+    "sha256": "af93fefc5079bb20a41b5fcf30d6d23b194d59dea3c838b88ee0eacf164e62ae"
+  },
+  "historicalReportsPreserved": true,
   "reports": [
     {
       "file": "learning-campaign-training-final.json",
@@ -224,7 +244,11 @@
       "entrySHA256": "3f43c432059fda49f761d4554e7d6389793aafa6e27b7fbb70e20f840015c208",
       "entryMetadataDiffers": true,
       "scriptOrderMatches": true,
-      "scriptMismatches": []
+      "exactScriptMatches": 51,
+      "scriptMismatches": [
+        "assets/citadel-learning-modes-v2.7.0.js"
+      ],
+      "allDifferencesAreVerifiedDisplayOnlyPatch": true
     },
     {
       "file": "learning-campaign-combat-attempt2.json",
@@ -233,7 +257,11 @@
       "entrySHA256": "3f43c432059fda49f761d4554e7d6389793aafa6e27b7fbb70e20f840015c208",
       "entryMetadataDiffers": true,
       "scriptOrderMatches": true,
-      "scriptMismatches": []
+      "exactScriptMatches": 51,
+      "scriptMismatches": [
+        "assets/citadel-learning-modes-v2.7.0.js"
+      ],
+      "allDifferencesAreVerifiedDisplayOnlyPatch": true
     },
     {
       "file": "learning-campaign-pro-attempt2.json",
@@ -242,25 +270,37 @@
       "entrySHA256": "3f43c432059fda49f761d4554e7d6389793aafa6e27b7fbb70e20f840015c208",
       "entryMetadataDiffers": true,
       "scriptOrderMatches": true,
-      "scriptMismatches": []
+      "exactScriptMatches": 51,
+      "scriptMismatches": [
+        "assets/citadel-learning-modes-v2.7.0.js"
+      ],
+      "allDifferencesAreVerifiedDisplayOnlyPatch": true
     },
     {
       "file": "learning-contracts-summary.json",
       "sha256": "9e3d46d2c6d038f7cf2c7a2138da4cb86d3f8bde73c65cb883a40a23d4a3dea5",
       "pass": true,
       "entrySHA256": "20a58b82f4d127085e65a459282c5d98eae7afd15d9a7286537d97f549ceee7f",
-      "entryMetadataDiffers": false,
+      "entryMetadataDiffers": true,
       "scriptOrderMatches": true,
-      "scriptMismatches": []
+      "exactScriptMatches": 51,
+      "scriptMismatches": [
+        "assets/citadel-learning-modes-v2.7.0.js"
+      ],
+      "allDifferencesAreVerifiedDisplayOnlyPatch": true
     },
     {
       "file": "learning-contracts-targeted-final.json",
       "sha256": "bde61a09b79fae1c97384d93f0d7e9944ee36577fb54df85b19e8875ce841e0f",
       "pass": true,
       "entrySHA256": "20a58b82f4d127085e65a459282c5d98eae7afd15d9a7286537d97f549ceee7f",
-      "entryMetadataDiffers": false,
+      "entryMetadataDiffers": true,
       "scriptOrderMatches": true,
-      "scriptMismatches": []
+      "exactScriptMatches": 51,
+      "scriptMismatches": [
+        "assets/citadel-learning-modes-v2.7.0.js"
+      ],
+      "allDifferencesAreVerifiedDisplayOnlyPatch": true
     },
     {
       "file": "learning-integrity-final.json",
@@ -269,7 +309,11 @@
       "entrySHA256": "3f43c432059fda49f761d4554e7d6389793aafa6e27b7fbb70e20f840015c208",
       "entryMetadataDiffers": true,
       "scriptOrderMatches": true,
-      "scriptMismatches": []
+      "exactScriptMatches": 51,
+      "scriptMismatches": [
+        "assets/citadel-learning-modes-v2.7.0.js"
+      ],
+      "allDifferencesAreVerifiedDisplayOnlyPatch": true
     },
     {
       "file": "legacy-continuation.json",
@@ -278,7 +322,11 @@
       "entrySHA256": "3f43c432059fda49f761d4554e7d6389793aafa6e27b7fbb70e20f840015c208",
       "entryMetadataDiffers": true,
       "scriptOrderMatches": true,
-      "scriptMismatches": []
+      "exactScriptMatches": 51,
+      "scriptMismatches": [
+        "assets/citadel-learning-modes-v2.7.0.js"
+      ],
+      "allDifferencesAreVerifiedDisplayOnlyPatch": true
     },
     {
       "file": "learning-network-final.json",
@@ -287,7 +335,11 @@
       "entrySHA256": "3f43c432059fda49f761d4554e7d6389793aafa6e27b7fbb70e20f840015c208",
       "entryMetadataDiffers": true,
       "scriptOrderMatches": true,
-      "scriptMismatches": []
+      "exactScriptMatches": 51,
+      "scriptMismatches": [
+        "assets/citadel-learning-modes-v2.7.0.js"
+      ],
+      "allDifferencesAreVerifiedDisplayOnlyPatch": true
     },
     {
       "file": "runtime-final.json",
@@ -296,11 +348,37 @@
       "entrySHA256": "3f43c432059fda49f761d4554e7d6389793aafa6e27b7fbb70e20f840015c208",
       "entryMetadataDiffers": true,
       "scriptOrderMatches": true,
-      "scriptMismatches": []
+      "exactScriptMatches": 51,
+      "scriptMismatches": [
+        "assets/citadel-learning-modes-v2.7.0.js"
+      ],
+      "allDifferencesAreVerifiedDisplayOnlyPatch": true
+    },
+    {
+      "file": "learning-network-280r2.json",
+      "sha256": "cb546b9259ce05a632a367ecc6a15ddf1ef29c2033b49a67b864764aacea62e6",
+      "pass": true,
+      "entrySHA256": "75023f3e85ad01a25408d90b9795815a71ca6579ec60559ef5f4e02899ddd18a",
+      "entryMetadataDiffers": false,
+      "scriptOrderMatches": true,
+      "exactScriptMatches": 52,
+      "scriptMismatches": [],
+      "allDifferencesAreVerifiedDisplayOnlyPatch": false
+    },
+    {
+      "file": "lobby-version-280r2.json",
+      "sha256": "efb88551cde98a23125f7c556dbcdb3e0833520fed86ac70c9079842319cd97d",
+      "pass": true,
+      "entrySHA256": "75023f3e85ad01a25408d90b9795815a71ca6579ec60559ef5f4e02899ddd18a",
+      "entryMetadataDiffers": false,
+      "scriptOrderMatches": true,
+      "exactScriptMatches": 52,
+      "scriptMismatches": [],
+      "allDifferencesAreVerifiedDisplayOnlyPatch": false
     }
   ],
-  "metadataNote": "The full campaigns, lifecycle, legacy, integrity and network tests preceded the final release metadata edit. JavaScript bytes and script order are identical; the final targeted contracts loaded the final entry exactly.",
-  "cssNote": "Final narrow-landscape skills CSS refinement is outside these Node VM gameplay checks; visual verification belongs to the separate browser review.",
+  "metadataNote": "Historical gameplay, card, save and lifecycle reports remain intact. The 280r2 entry updates cache queries and the visible release caption. 51 scripts match those runs exactly; the sole changed script differs only by the tested caption interpolation. Network and lobby follow-ups loaded all final 52 scripts.",
+  "cssNote": "Final narrow-landscape skills CSS refinement is outside Node VM gameplay checks and belongs to the separate browser review.",
   "finalSkillsCSS": {
     "file": "assets/citadel-skills-v2.8.0.css",
     "sha256": "fb7accdec7496d172a81d5594292721ee6266af6e85ab0394f18c4062c0fcfcc"
