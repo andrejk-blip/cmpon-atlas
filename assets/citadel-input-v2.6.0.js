@@ -18,7 +18,7 @@
   const actionTouches=new Map(),lastTouch=new WeakMap();
   const touchActions=new Set(['arcade-missile','arcade-pulse','arcade-flip','citadel-target','citadel-convoy-cover','citadel-convoy-target']);
   function releaseAction(id){const touch=actionTouches.get(id);if(!touch)return;actionTouches.delete(id);touch.button.classList.remove('is-held');try{touch.button.releasePointerCapture?.(id);}catch(_){}}
-  function cancel() {release();for(const id of [...actionTouches.keys()])releaseAction(id);ARCADE.missileQueued=false;missileAim=null;
+  function cancel() {release();for(const id of [...actionTouches.keys()])releaseAction(id);ARCADE.missileQueued=false;ARCADE.pulseQueued=false;ARCADE.flipQueued=false;missileAim=null;
     for(const key of Object.keys(ARCADE.touchPointers||{}))ARCADE.keys.delete(key);
     ARCADE.touchPointers={};ARCADE.drag=null;ARCADE.joystick=null;
     for(const id of ['arcade-fire-touch','arcade-boost-touch'])document.getElementById(id)?.classList.remove('is-held');

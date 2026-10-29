@@ -43,10 +43,10 @@ test('Pause, disabled buttons and hidden tab cannot queue actions',()=>{
   f.e.resume();f.doc.hidden=true;f.dispatch(b,'pointerdown',{pointerId:3});assert(!f.input().missile);
 });
 test('Blur and orientation release action/fire/steering without stuck controls',()=>{
-  for(const event of ['blur','orientationchange']){
-    const f=setup(),b=f.button('arcade-missile'),fire=f.doc.getElementById('arcade-fire-touch');
+  for(const event of ['blur','orientationchange'])for(const action of ['arcade-missile','arcade-pulse','arcade-flip']){
+    const f=setup(),b=f.button(action),fire=f.doc.getElementById('arcade-fire-touch');
     f.dispatch(fire,'pointerdown',{pointerId:12});f.dispatch(b,'pointerdown',{pointerId:13});f.dispatch(f.c,event);
-    const i=f.input();assert(!i.fire&&!i.missile);assert(!b.classList.contains('is-held'));assert.equal(f.arcade.drag,null);
+    const i=f.input();assert(!i.fire&&!i.missile&&!i.pulse&&!i.flip);assert(!b.classList.contains('is-held'));assert.equal(f.arcade.drag,null);
   }
 });
 test('Rocket hint appears only in live escort with ammunition, and expires',()=>{
