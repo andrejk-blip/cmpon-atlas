@@ -39,11 +39,22 @@
     {name:'ПОСЛЕДНИЙ КОНТРАРГУМЕНТ',normal:64,groups:4,divers:6,dive:'mixed',diveEvery:2.75,fire:.52,shooters:5}
   ].map(Object.freeze));
   const LIMITS = Object.freeze({enemies:64,hostile:80,playerShots:36,pickups:4,divers:6});
+  const TACTIC_TIPS=Object.freeze([
+    'Перехватчики режут курс. Стреляй и меняй полосу.',
+    'Бомбардировщики заходят по дуге. Сбей их до следующего веера.',
+    'Щитоносцы закрывают строй. Ракета вскрывает их броню.',
+    'Красные торпеды можно сбивать огнём. Импульс оставь на окружение.',
+    'Уходи из перекрёстного огня. На флангах работают торпедоносцы.',
+    'Командиры идут восьмёркой. Убирай тяжёлые цели и подбирай снабжение.'
+  ]);
   const clamp = (n, a, b) => arcadeClamp(n, a, b);
   const mobile = () => typeof isMobileLayout === 'function' && isMobileLayout();
   const completed = e => e.plan[2].filter(id => e.rescued.includes(id)).length;
   const modern = e => [VERSION,'2.6.0','2.5.0'].includes(e?.swarm?.rulesVersion);
   const challenge = e => e?.swarm?.rulesVersion===VERSION&&!e.assist;
+  // Tactics are attached to a new sortie, never silently applied to an active
+  // 2.7 save. State, schedules and route choice remain deterministic on reload.
+  const tactics = e => challenge(e) && e.swarm.tacticsVersion === '2.8.0';
   const classic = e => e?.swarm?.rulesVersion==='2.5.0';
   const configured = e => !!e && e.stage === 2 && !e.finale && [VERSION,'2.6.0','2.5.0',LEGACY].includes(e.swarm?.version);
   const inArena = e => configured(e) && e.phase === 'swarm' && !e.swarm.complete;
@@ -70,6 +81,14 @@
       let x=(c-(cols-1)/2)*9.2,y=(rows-1)/2*8.4-r*8.4;
       if(shape===1)y-=Math.abs(c-(cols-1)/2)*1.3;
       if(shape===2)x+=Math.sin((r+1)*1.3)*1.2;
+      if(tactics(e)){
+        // Squadrons breathe, wheel and change altitude independently. There is
+        // always a corridor between groups; even 64 hulls remain in bounds.
+        const bank=Math.sin(time*(.34+n*.035)+group*1.4)*(.12+n*.018);
+        const turnX=x*Math.cos(bank)-y*Math.sin(bank),turnY=x*Math.sin(bank)+y*Math.cos(bank);
+        const drift=Math.sin(time*.59+group*2.1)*(2.3+n*.45);
+        return [clamp(cx+turnX+swing*3.5,-50,50),cy+turnY+drift,0];
+      }
       return [cx+x+swing*2.8,cy+y+Math.cos(time*.48+group)*1.1,0];
     }
     if(modern(e)){
@@ -98,6 +117,7 @@
       mode: 'enter', modeTime: -index % columns * .06, from: [side * (62 + row * 4), 76 + index % columns * 3, 0],
       hit: 0, age: 0, warp: 0, phase: index * .7, channel: false, dead: false, fireCue: 0, route: null };
     if(challenge(e))Object.assign(enemy,{squad:Math.floor(index/(count/waveDef(e).groups)),shield:role==='shield'?24:0,shieldMax:role==='shield'?24:0});
+    if(tactics(e))Object.assign(enemy,{lastShot:-100,attackSerial:0,thruster:0});
     s.slots[index].id = enemy.id; e.enemies.push(enemy); return enemy;
   }
   function formSwarm(e, announce = true, credit = 0) {
@@ -112,7 +132,7 @@
     e.enemies = []; e.bullets = []; e.hostile = []; e.selectedTarget = null; e.lock = null;
     for (let i = credit; i < count; i++) spawn(e, i);
     if (announce) {
-      e.notify('ВОЛНА ' + (waveIndex(e)+1) + ' / '+waveTotal(e)+' · ' + waveName(e), e.assist?(modern(e)?waveDef(e).lesson:'Подсвеченные корабли готовятся пикировать.'):'Разбей звено. Ракеты — ПКМ / Q. Снабжение подбирается кораблём.');
+      e.notify('ВОЛНА ' + (waveIndex(e)+1) + ' / '+waveTotal(e)+' · ' + waveName(e), e.assist?(modern(e)?waveDef(e).lesson:'Подсвеченные корабли готовятся пикировать.'):tactics(e)?TACTIC_TIPS[waveIndex(e)]:'Разбей звено. Ракеты — ПКМ / Q. Снабжение подбирается кораблём.');
       e.emit('wave', waveIndex(e)+1);
     }
   }
@@ -147,7 +167,7 @@
       window: null, radius: 0, inside: false, blocked: false, attack: null, slots: [],
       formationStart: 0, waveAge: 0, transition: 2.3, diveSerial: 0, fireSerial: 0,
       shotsCleared: 0, damageTaken: 0, hitsTaken: 0, dodgedDives: 0, warnedManual: false };
-    if(!migration)Object.assign(s,{rulesVersion:VERSION,waveIndex:0,waveTotal:6,wavesCleared:0,waveKills:0,pickups:[],dropSerial:0,droppedThisWave:0,
+    if(!migration)Object.assign(s,{rulesVersion:VERSION,tacticsVersion:'2.8.0',waveIndex:0,waveTotal:6,wavesCleared:0,waveKills:0,pickups:[],dropSerial:0,droppedThisWave:0,
       dropsSpawned:{repair:0,missiles:0,overdrive:0},dropsCollected:{repair:0,missiles:0,overdrive:0},overdriveUntil:0,events:[]});
     s.packet = e.plan[2].findIndex(id => !e.rescued.includes(id)); if (s.packet < 0) s.packet = 3;
     if(modern(e))s.waveIndex=Math.min(5,s.packet*2);
@@ -230,17 +250,18 @@
     // Muzzle separation and finite homing give time to react to the projectile
     // itself. No hidden region damage or advance targeting markers are used.
     if(e.hostile.length>=LIMITS.hostile||x.pos[1]<p.pos[1]+30)return;
-    const lead=x.role==='interceptor'?.25:0,target=p.pos[0]+clamp((s.playerVelocity?.[0]||0)*lead,-9,9);
+    const tactical=tactics(e),lead=x.role==='interceptor'?(tactical?.42:.25):0,target=p.pos[0]+clamp((s.playerVelocity?.[0]||0)*lead,-12,12);
     const dx=clamp(target-x.pos[0],-65,65),dy=Math.min(-28,p.pos[1]-x.pos[1]),angle=Math.atan2(dx,-dy);
-    const torpedo=x.role==='torpedo',speed=torpedo?26+n:35+n*1.4;
-    const angles=x.role==='commander'?[-.32,-.16,0,.16,.32]:x.role==='bomber'?[-.24,0,.24]:x.role==='shield'?[-.105,.105]:[0];
+    const torpedo=x.role==='torpedo',speed=torpedo?26+n:35+n*(tactical?1.9:1.4);
+    const angles=x.role==='commander'?[-.32,-.16,0,.16,.32]:x.role==='bomber'?(tactical?[-.34,0,.34]:[-.24,0,.24]):x.role==='shield'?[-.105,.105]:tactical&&torpedo&&n>3?[-.15,.15]:[0];
     const pattern=torpedo?'torpedo':x.role==='commander'?'crown':x.role==='bomber'?'fan':x.role==='shield'?'pair':x.role==='interceptor'?'lead':'aimed';
     for(const offset of angles){
       if(e.hostile.length>=LIMITS.hostile)break;const a=angle+offset;
       e.hostile.push({pos:[x.pos[0],x.pos[1]-4,0],vel:[Math.sin(a)*speed,-Math.cos(a)*speed,0],
         life:6.5,r:torpedo?1.35:.8,damage:torpedo?22:14+n*1.4,type:torpedo?'swarm-torpedo':'swarm-bolt',
-        color:torpedo?'#ee897c':'#ffb765',owner:x.id,pattern,age:0,homing:torpedo?.75:0,speed});
+        color:torpedo?'#ee897c':'#ffb765',owner:x.id,pattern,age:0,homing:torpedo?(tactical?1.05:.75):0,speed});
     }
+    if(tactical){x.lastShot=s.time;x.attackSerial++;x.thruster=.18;}
     s.patternCounts[pattern]=(s.patternCounts[pattern]||0)+1;x.cueAim=null;x.fireCue=x.attackCue=0;e.emit('shot',{swarmEnemy:true});
   }
   function modernDivers(e){
@@ -252,9 +273,13 @@
     available.sort((a,b)=>a.pos[0]-b.pos[0]);
     for(let i=0;i<count;i++){
       const fromLeft=(s.diveSerial+i)%2===0,x=fromLeft?available.shift():available.pop();if(!x)break;
-      const kind=def.dive==='mixed'?(challenge(e)?['hook','cross','pincer','flank']:['hook','cross','pincer'])[(s.diveSerial+i)%(challenge(e)?4:3)]:def.dive;
+      const kind=tactics(e)?({scout:'serpent',interceptor:'intercept',bomber:'siege',shield:'bulwark',torpedo:'flank',commander:'orbit'}[x.role]):def.dive==='mixed'?(challenge(e)?['hook','cross','pincer','flank']:['hook','cross','pincer'])[(s.diveSerial+i)%(challenge(e)?4:3)]:def.dive;
       x.mode='tell';x.modeTime=0;x.fireCue=0;x.attackCue=0;
       x.route={kind,side:fromLeft?1:-1,duration:e.assist?5.05:challenge(e)?4.1-waveIndex(e)*.13:4.15-waveIndex(e)*.07,fired:false,firedAgain:false,hit:false};
+      if(tactics(e)){
+        x.route.duration*=({serpent:1.0,intercept:.81,siege:1.85,bulwark:1.6,flank:1.3,orbit:1.75}[kind]||1);
+        s.routeCounts=s.routeCounts||{};s.routeCounts[kind]=(s.routeCounts[kind]||0)+1;
+      }
     }
     if(e.assist&&s.diveSerial===0)e.emit('comic',{text:waveIndex(e)<2?'ПРАВКИ ИДУТ В ПИКЕ!':'СОГЛАСОВАНИЕ С ДВУХ СТОРОН!',kind:'warning',anchor:[0,23,0]});
     s.diveSerial++;
@@ -287,6 +312,7 @@
   function updateEnemy(e, x, dt) {
     const s = e.swarm, before = x.pos.slice();
     x.age += dt; x.modeTime += dt; x.hit = Math.max(0, x.hit - dt); x.channel = false;
+    if(tactics(e))x.thruster=Math.max(0,(x.thruster||0)-dt);
     if (x.fireCue > 0) {
       x.fireCue -= dt;
       // A negative timer is truthy: leaving it below zero permanently excludes
@@ -311,11 +337,24 @@
       const diveX=mix(r.from[0],r.targetX,t)+curve;
       x.pos = [challenge(e)?clamp(diveX,-52,52):diveX,
         mix(r.from[1], -76, t), 0];
+      if(tactics(e)){
+        // Attack roles have different routes and different commitments. Siege
+        // ships strafe above the player; interceptors can be sidestepped after
+        // their aim locks. None teleports into the player corridor.
+        if(r.kind==='serpent')x.pos=[clamp(mix(r.from[0],r.targetX,t)+Math.sin(t*Math.PI*3)*r.side*13*Math.sin(t*Math.PI),-52,52),mix(r.from[1],-76,t),0];
+        if(r.kind==='intercept')x.pos=[clamp(mix(r.from[0],r.targetX,smooth(t)),-52,52),mix(r.from[1],-76,t),0];
+        if(r.kind==='flank')x.pos=[clamp(mix(r.from[0],-r.side*46,Math.sin(t*Math.PI)),-52,52),r.from[1]-Math.sin(t*Math.PI)*49,0];
+        if(r.kind==='siege')x.pos=[clamp(r.from[0]+Math.sin(t*Math.PI*2)*r.side*25,-50,50),r.from[1]-Math.sin(t*Math.PI)*Math.max(10,r.from[1]+5),0];
+        if(r.kind==='bulwark')x.pos=[clamp(mix(r.from[0],-r.from[0],smooth(t)),-50,50),r.from[1]-Math.sin(t*Math.PI)*Math.max(8,r.from[1]-1),0];
+        if(r.kind==='orbit')x.pos=[clamp(r.from[0]+Math.sin(t*Math.PI*2)*24,-50,50),r.from[1]-Math.sin(t*Math.PI)*Math.max(12,r.from[1]+3)+Math.sin(t*Math.PI*4)*5,0];
+      }
       if (!r.fired && t > .28) { r.fired = true;if(modern(e)){x.cueAim=e.player.pos.slice();if(e.assist||classic(e))x.fireCue=x.attackCue=e.assist?1.15:.85;else enemyShot(e,x);}else enemyShot(e,x); }
       if (!modern(e)&&s.packet === 2 && !e.assist && !r.firedAgain && t > .53) { r.firedAgain = true; enemyShot(e, x); }
       if(challenge(e)&&!r.firedAgain&&t>.43&&['interceptor','commander'].includes(x.role)){r.firedAgain=true;enemyShot(e,x);}
+      if(tactics(e)&&!r.firedAgain&&t>.56&&['bomber','torpedo','shield'].includes(x.role)){r.firedAgain=true;enemyShot(e,x);}
+      if(tactics(e)&&!r.thirdShot&&t>.74&&['bomber','commander'].includes(x.role)){r.thirdShot=true;enemyShot(e,x);}
       if (t >= 1) {
-        x.mode = 'return'; x.modeTime = 0; x.from = [clamp(r.targetX + r.side * 13, -53, 53), 80, 0];
+        x.mode = 'return'; x.modeTime = 0; x.from = tactics(e)&&['siege','bulwark','flank','orbit'].includes(r.kind)?x.pos.slice():[clamp(r.targetX + r.side * 13, -53, 53), 80, 0];
         x.pos = x.from.slice(); s.dodgedDives++;
       }
     }
@@ -368,13 +407,14 @@
               // Rotate real squadrons, rather than letting all 64 fire in the
               // same frame. Depleted groups hand their turn to the next group.
               const group=s.squadSerial++%def.groups;
-              ready.sort((a,b)=>((a.squad-group+def.groups)%def.groups)-((b.squad-group+def.groups)%def.groups)||a.slot-b.slot);
+              ready.sort((a,b)=>((a.squad-group+def.groups)%def.groups)-((b.squad-group+def.groups)%def.groups)||(tactics(e)?(a.lastShot||-100)-(b.lastShot||-100):0)||a.slot-b.slot);
             }else
             ready.sort((a,b)=>a.pos[0]-b.pos[0]);
             for(let i=0;i<Math.min(many,ready.length);i++){
               const x=challenge(e)?ready[(s.fireSerial%Math.max(1,Math.min(4,ready.length))+i)%ready.length]:ready[(s.fireSerial+(i?Math.floor(ready.length/2):0))%ready.length];x.cueAim=p.pos.slice();if(e.assist||classic(e))x.fireCue=x.attackCue=e.assist?1.15:.85;else enemyShot(e,x);
             }
             s.fireSerial++;s.fireClock=e.assist?def.fire+.85:challenge(e)||classic(e)?def.fire:def.fire/3;
+            if(tactics(e))s.fireClock*=1-waveIndex(e)*.035;
           }else{
             if (ready.length) { ready[s.fireSerial++ % ready.length].fireCue = e.assist ? .95 : .7; }
             s.fireClock = e.assist ? 2.5 - s.packet * .15 : 1.75 - s.packet * .12;
@@ -397,12 +437,21 @@
           const contact = flightSegment(old, b.pos, x.pos, x.r + b.r);
           if (contact !== null && contact < first) { target = x; first = contact; }
         }
+        // Torpedoes are physical targets: holding a firing lane can destroy
+        // them. This creates an offensive answer besides pulse/evade.
+        if(tactics(e))for(const rocket of e.hostile){
+          if(rocket.type!=='swarm-torpedo'||rocket.life<=0)continue;
+          const contact=flightSegment(old,b.pos,rocket.pos,rocket.r+b.r);
+          if(contact!==null&&contact<first){rocket.life=0;b.life=0;target=null;first=contact;
+            s.torpedoesIntercepted=(s.torpedoesIntercepted||0)+1;e.explosions.push({pos:rocket.pos.slice(),life:.28,max:.28,color:'#eeb98c'});break;}
+        }
         if (target) {
           b.life = 0; e.hit(target, b.damage);
           if (b.type === 'missile') for (const x of e.enemies) if (!x.dead && x !== target && V3.len(V3.sub(x.pos, target.pos)) < 12) e.hit(x, b.damage * .65);
         }
       }
       for (const b of e.hostile) {
+        if(tactics(e)&&b.life<=0)continue;
         if(challenge(e)&&b.homing>0){
           b.age=(b.age||0)+dt;b.homing=Math.max(0,b.homing-dt);
           const delta=V3.sub(p.pos,b.pos),length=Math.hypot(delta[0],delta[1])||1,k=Math.min(1,dt*1.15),speed=b.speed||30;
@@ -473,6 +522,9 @@
     if (slot && !slot.paid) { this.score += [55, 85, 125][enemy.rank]; slot.paid = true; slot.dead = true; s.cleared[s.packet]++; s.transfer[s.packet] = s.cleared[s.packet]; }
     s.shotsCleared++; this.explosions.push({ pos: enemy.pos.slice(), life: .5, max: .5, color: enemy.color });
     if(modern(this))s.waveKills++;
+    if(tactics(this))for(let i=0;i<4;i++){
+      const angle=(enemy.slot*.7+i*Math.PI*.5);this.particles.push({pos:enemy.pos.slice(),vel:[Math.cos(angle)*12,Math.sin(angle)*12,0],life:.48,max:.48,color:enemy.color,shard:true});
+    }
     this.emit('destroy', 'swarm');
   };
   proto.pulse = function (...args) {
@@ -746,7 +798,7 @@
   }
   // Older diagnostics may still ask about the retired communication window or
   // hazard rectangles. Keep those query names harmless, but expose real waves.
-  globalThis.CITADEL_SWARM = Object.freeze({ version: VERSION, active, completed, modern, challenge, waveIndex, waveTotal, waveDefinition:waveDef, waves:CHALLENGE,trainingWaves:WAVES,limits:LIMITS,
+  globalThis.CITADEL_SWARM = Object.freeze({ version: VERSION, tacticsVersion:'2.8.0',active, completed, modern, challenge, tactics,waveIndex, waveTotal, waveDefinition:waveDef, waves:CHALLENGE,trainingWaves:WAVES,limits:LIMITS,
     insideWindow: () => false, windowAt: () => null, formationPoint, secondsNeeded: waveCount,
     arena: ARENA, formations: FORMS, liveRegions: () => [], regionContains: () => false,
     regionPoint: (a, u, v, z = 0) => [a.u[0] * u + a.v[0] * v, a.u[1] * u + a.v[1] * v, z],

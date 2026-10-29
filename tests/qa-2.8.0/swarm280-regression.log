@@ -1,0 +1,155 @@
+{
+  "pass": true,
+  "checks": 9,
+  "runs": [
+    {
+      "mode": "normal",
+      "reaction": 0.1,
+      "fps": 60,
+      "seed": 417147,
+      "profile": "helper",
+      "complete": true,
+      "kills": 248,
+      "minHP": 18.800000000000004,
+      "seconds": 217.91666666673223
+    },
+    {
+      "mode": "normal",
+      "reaction": 0.2,
+      "fps": 60,
+      "seed": 417147,
+      "profile": "helper",
+      "complete": false,
+      "kills": 235,
+      "minHP": 0,
+      "seconds": 173.3333333333634
+    },
+    {
+      "mode": "normal",
+      "reaction": 0.2,
+      "fps": 60,
+      "seed": 417147,
+      "profile": "helper",
+      "complete": true,
+      "kills": 248,
+      "minHP": 47.2,
+      "seconds": 166.51666666669132
+    },
+    {
+      "mode": "normal",
+      "reaction": 0.2,
+      "fps": 30,
+      "seed": 417147,
+      "profile": "helper",
+      "complete": true,
+      "kills": 248,
+      "minHP": 15,
+      "seconds": 206.39999999999085
+    },
+    {
+      "mode": "normal",
+      "reaction": 0.1,
+      "fps": 60,
+      "seed": 819337,
+      "profile": "helper",
+      "complete": false,
+      "kills": 200,
+      "minHP": 0,
+      "seconds": 157.96666666668452
+    },
+    {
+      "mode": "calm",
+      "reaction": 0.2,
+      "fps": 60,
+      "seed": 417147,
+      "profile": "helper",
+      "complete": true,
+      "kills": 78,
+      "minHP": 100,
+      "seconds": 81.18333333333001
+    },
+    {
+      "mode": "calm",
+      "reaction": 0.2,
+      "fps": 30,
+      "seed": 417147,
+      "profile": "helper",
+      "complete": true,
+      "kills": 78,
+      "minHP": 100,
+      "seconds": 78.39999999999812
+    },
+    {
+      "mode": "normal",
+      "reaction": 0.2,
+      "fps": 60,
+      "seed": 417147,
+      "profile": "stationary-fire",
+      "complete": false,
+      "kills": 1,
+      "minHP": 0,
+      "seconds": 10.700000000000111
+    },
+    {
+      "mode": "normal",
+      "reaction": 0.2,
+      "fps": 60,
+      "seed": 417147,
+      "profile": "no-fire",
+      "complete": false,
+      "kills": 0,
+      "minHP": 6,
+      "seconds": 599.999999999783
+    }
+  ],
+  "frames": [
+    {
+      "name": "swarm280-1280x720.png",
+      "ms": 20.794922000000952,
+      "width": 1280,
+      "height": 720,
+      "fx": true,
+      "sha256": "8cfda42b2e74dda47e95464c4d30b6e5c6ed2f59ece2cfdd2cd0d1fd8f10804b"
+    },
+    {
+      "name": "swarm280-1280x720-fxoff.png",
+      "ms": 11.154641999994055,
+      "width": 1280,
+      "height": 720,
+      "fx": false,
+      "sha256": "7d060a3e784e1ea1701582b28026b9c13665f52d246bfbca728cddba429498be"
+    },
+    {
+      "name": "swarm280-640x360.png",
+      "ms": 8.203238000001875,
+      "width": 640,
+      "height": 360,
+      "fx": true,
+      "sha256": "6f4de73c692000cc2e84d118c1fb4da718e5b63e62c83172b4f355616b8b569a"
+    },
+    {
+      "name": "swarm280-640x360-fxoff.png",
+      "ms": 5.130388000005041,
+      "width": 640,
+      "height": 360,
+      "fx": false,
+      "sha256": "f4579bfdc47f2cc8888aab07951d12e014b6cc5c1e9786799b4f5d922136d377"
+    },
+    {
+      "name": "swarm280-390x720.png",
+      "ms": 8.608596999998554,
+      "width": 390,
+      "height": 720,
+      "fx": true,
+      "sha256": "3e38fc4a8a323b70be77649bb649de5006108415bd3a7b2fe44754d4d86948c9"
+    },
+    {
+      "name": "swarm280-390x720-fxoff.png",
+      "ms": 5.999684000002162,
+      "width": 390,
+      "height": 720,
+      "fx": false,
+      "sha256": "eef0cc64086a7d8e7d40d02a20c93dd2f26ddebb1ef0508ae6d4659b3cf53118"
+    }
+  ]
+}
