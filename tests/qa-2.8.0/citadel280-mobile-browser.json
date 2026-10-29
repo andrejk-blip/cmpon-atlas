@@ -1,0 +1,364 @@
+{
+  "version": "2.8.0",
+  "config": {
+    "mode": "combat",
+    "scene": "convoy",
+    "accelerated": false,
+    "manual": true,
+    "holdQuestions": false
+  },
+  "education": {
+    "mode": "combat",
+    "quiz": true,
+    "current": null
+  },
+  "renderer": "3D · совместимый режим",
+  "mode": "combat",
+  "accelerated": false,
+  "rafInputCalls": 138,
+  "finished": null,
+  "status": "paused",
+  "level": 9,
+  "levels": [],
+  "cards": 0,
+  "wallSeconds": 124,
+  "simulatedSeconds": 5.4,
+  "frameCalls": 0,
+  "emitChanges": 0,
+  "maxInputGapMs": 0,
+  "metrics": {
+    "listeners": 82,
+    "peakListeners": 82,
+    "rafCalls": 161,
+    "rafDone": 150,
+    "rafPending": 1,
+    "rafPeak": 2,
+    "errors": [],
+    "heap": 33533325
+  },
+  "input": {
+    "version": "2.8.0",
+    "boundCanvases": 1,
+    "rightClicks": 0,
+    "active": false,
+    "pointerId": null,
+    "mode": "idle"
+  },
+  "player": {
+    "hp": 100,
+    "missiles": 10
+  },
+  "runtime": {
+    "version": "1.9.3",
+    "build": "193r2",
+    "frames": 149,
+    "updates": 138,
+    "renders": 149,
+    "recoveries": 0,
+    "failures": 0,
+    "stopped": false,
+    "contextLost": false,
+    "pending": true,
+    "stage": "idle",
+    "lastFrameAge": 831,
+    "lastUpdateAge": 11608,
+    "lastRenderAge": 791,
+    "recoverySave": "none",
+    "faults": [],
+    "events": [
+      {
+        "at": 878,
+        "kind": "detach",
+        "status": "unknown",
+        "stage": null,
+        "phase": "other",
+        "finale": null,
+        "wave": null,
+        "seconds": null,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "webgl"
+      },
+      {
+        "at": 1006,
+        "kind": "engine",
+        "status": "playing",
+        "stage": 2,
+        "phase": "escort",
+        "finale": null,
+        "wave": 0,
+        "seconds": 0,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 1009,
+        "kind": "transition",
+        "status": "playing",
+        "stage": 2,
+        "phase": "escort",
+        "finale": null,
+        "wave": 0,
+        "seconds": 0.04,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 70306,
+        "kind": "arcade-pause",
+        "status": "paused",
+        "stage": 2,
+        "phase": "escort",
+        "finale": null,
+        "wave": 0,
+        "seconds": 3.29,
+        "mode": "normal",
+        "enemies": 4,
+        "renderer": "canvas"
+      },
+      {
+        "at": 113454,
+        "kind": "arcade-pause",
+        "status": "playing",
+        "stage": 2,
+        "phase": "escort",
+        "finale": null,
+        "wave": 0,
+        "seconds": 5.4,
+        "mode": "normal",
+        "enemies": 4,
+        "renderer": "canvas"
+      },
+      {
+        "at": 113857,
+        "kind": "transition",
+        "status": "paused",
+        "stage": 2,
+        "phase": "escort",
+        "finale": null,
+        "wave": 0,
+        "seconds": 5.4,
+        "mode": "normal",
+        "enemies": 4,
+        "renderer": "canvas"
+      }
+    ]
+  },
+  "sound": {
+    "context": "running",
+    "loaded": 15,
+    "active": 0,
+    "cacheBytes": 1964168,
+    "played": {
+      "robot-hit": 3
+    }
+  },
+  "voice": {
+    "busy": false,
+    "source": null
+  },
+  "swarm": {
+    "enemies": 4,
+    "hostile": 18
+  },
+  "base": {
+    "active": false,
+    "version": "2.7.0",
+    "legacy": false,
+    "tier": null,
+    "theme": null,
+    "stats": null,
+    "hazards": [],
+    "systems": [],
+    "transport": null,
+    "enemies": [],
+    "events": []
+  },
+  "samples": [
+    {
+      "wallSeconds": 10,
+      "gameSeconds": 0,
+      "level": 9,
+      "listeners": 69,
+      "heap": 74753927,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 20,
+      "gameSeconds": 1,
+      "level": 9,
+      "listeners": 69,
+      "heap": 36022468,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 32,
+      "gameSeconds": 2,
+      "level": 9,
+      "listeners": 82,
+      "heap": 53447700,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 44,
+      "gameSeconds": 2,
+      "level": 9,
+      "listeners": 82,
+      "heap": 25113322,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 54,
+      "gameSeconds": 3,
+      "level": 9,
+      "listeners": 82,
+      "heap": 38951608,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 66,
+      "gameSeconds": 3,
+      "level": 9,
+      "listeners": 82,
+      "heap": 33549742,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 76,
+      "gameSeconds": 4,
+      "level": 9,
+      "listeners": 82,
+      "heap": 31239706,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 88,
+      "gameSeconds": 4,
+      "level": 9,
+      "listeners": 82,
+      "heap": 51079192,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 98,
+      "gameSeconds": 5,
+      "level": 9,
+      "listeners": 82,
+      "heap": 39845108,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 110,
+      "gameSeconds": 5,
+      "level": 9,
+      "listeners": 82,
+      "heap": 24493294,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 120,
+      "gameSeconds": 5,
+      "level": 9,
+      "listeners": 82,
+      "heap": 50666576,
+      "rafPending": 1
+    }
+  ],
+  "transitions": [],
+  "presentation": {
+    "number": 9,
+    "name": "Конвой · блокада",
+    "active": false,
+    "convoy": true,
+    "mrg": false,
+    "inside": false,
+    "guideOn": false,
+    "guideName": "К строю",
+    "guideVisible": true,
+    "pulseName": "ПРИКРЫТИЕ",
+    "cooldown": 10,
+    "boostName": "ФОРСАЖ",
+    "help": "Джойстик — манёвр. Цель — выбрать противника; наведите на него прицел и стреляйте. Прикрытие защищает конвой. К строю — вернуться в центр; корабль не ведётся за вас."
+  },
+  "art": null,
+  "dom": {
+    "viewport": {
+      "w": 640,
+      "h": 360
+    },
+    "layout": {
+      "x": 0,
+      "y": 0,
+      "w": 640,
+      "h": 360,
+      "display": "block",
+      "visible": true,
+      "text": " ЦИТАДЕЛЬ ЦСИИ · БОЕВОЙУправлениеРекорды♫ вкл◖))×ПРОРЫВ БЛОКАДЫГИПЕРПЕРЕХОД5%ЗВЕНЬЯ ПРОТИВНИКА1/7Манёвр · перехват · прикрытиеСохраните 2 / 3 транспортаУРОВЕНЬ 09 / 14Конвой · блок",
+      "disabled": false
+    },
+    "canvas": {
+      "x": 0,
+      "y": 92,
+      "w": 640,
+      "h": 268,
+      "display": "block",
+      "visible": true,
+      "text": "",
+      "disabled": false
+    },
+    "header": {
+      "x": 0,
+      "y": 44,
+      "w": 640,
+      "h": 48,
+      "display": "flex",
+      "visible": true,
+      "text": "УРОВЕНЬ 09 / 14Конвой · блокадаСохраните 2/3 транспорта · группа 1/7 · совместите прицел с цельюК строю",
+      "disabled": false
+    },
+    "route": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "display": "none",
+      "visible": false,
+      "text": "ПРОРЫВ БЛОКАДЫГИПЕРПЕРЕХОД5%ЗВЕНЬЯ ПРОТИВНИКА1/7Манёвр · перехват · прикрытиеСохраните 2 / 3 транспорта",
+      "disabled": false
+    },
+    "defense": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "display": "none",
+      "visible": false,
+      "text": "ПРИКРЫТИЕ\n10 с",
+      "disabled": true
+    },
+    "cover": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "display": "flex",
+      "visible": false,
+      "text": "ПРИКРЫТИЕ\n10 с",
+      "disabled": true
+    },
+    "boost": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "display": "none",
+      "visible": false,
+      "text": "ФОРСАЖ",
+      "disabled": false
+    },
+    "buttons": [],
+    "horizontalOverflow": false
+  }
+}
