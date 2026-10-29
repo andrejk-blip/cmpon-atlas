@@ -18,6 +18,11 @@
     ['deck1', 'Коридоры исполнителя', 'Неоклассика', 90, 'classical'],
     ['hyper1', 'Гиперпереход II', 'Брейкбит', 146, 'breakbeat'],
     ['orbit2', 'Тихая граница', 'Космический эмбиент', 70, 'ambient'],
+    ['swarm280', 'Пиксельная эскадрилья', '8-бит · разведка', 148, 'arcade8'],
+    ['swarm280Assault', 'Ответить всем', '8-бит · атака', 164, 'arcade8'],
+    ['swarm280Final', 'Последний кредит', '8-бит · финальная волна', 176, 'arcade8'],
+    ['pursuit280', 'На хвосте у ФЗ', 'Космический брейкбит', 140, 'breakbeat'],
+    ['pursuit280Final', 'Сквозь разлом', 'Тёмный синтвейв', 154, 'synthwave'],
     ['deck2', 'Переход смежников', 'Индастриал', 132, 'industrial'],
     ['hyper2', 'Гиперпереход III', 'Симфоник-метал', 152, 'metal'],
     ['orbit3', 'Последняя редакция', 'Транс', 134, 'trance'],
@@ -28,6 +33,13 @@
     ['finaleVictory', 'Команда на связи', 'Симфонический оркестр', 88, 'orchestral']
   ].map(([key, name, genre, bpm, style]) => Object.freeze({key, name, genre, bpm, style})));
   const byKey = new Map(catalogue.map(cue => [cue.key, cue]));
+  Object.assign(SPACE_THEMES, {
+    swarm280: {root:45,chords:[0,5,3,7,0,3,5,7],motif:[12,19,24,22,19,15,17,19],kind:'orbit',arcadeStage:0},
+    swarm280Assault: {root:45,chords:[0,3,5,7,5,3,0,7],motif:[24,19,22,15,24,26,22,19],kind:'orbit',arcadeStage:1},
+    swarm280Final: {root:45,chords:[0,1,5,7,0,3,1,7],motif:[24,25,31,27,24,22,19,25],kind:'orbit',arcadeStage:2},
+    pursuit280: {root:42,chords:[0,3,5,7],motif:[12,19,15,22,19,14,17,22],kind:'hyper'},
+    pursuit280Final: {root:42,chords:[0,1,5,7],motif:[24,19,25,22,17,19,26,22],kind:'hyper'}
+  });
   for (const cue of catalogue) {
     if (SPACE_THEMES[cue.key]) Object.assign(SPACE_THEMES[cue.key], {
       name: cue.name + ' · ' + cue.genre, bpm: cue.bpm, style: cue.style
@@ -44,6 +56,10 @@
   let pickerKey = null, notice = '';
 
   function sceneKey(engine = ARCADE.engine) {
+    if(engine && engine.status!=='menu') {
+      if(engine.phase==='swarm') {const wave=engine.swarm?.waveIndex??0;return wave>=4?'swarm280Final':wave>=2?'swarm280Assault':'swarm280';}
+      if(engine.phase==='pursuit') return (engine.pursuit?.chapter??0)>=2?'pursuit280Final':'pursuit280';
+    }
     const key = spaceAudioScene(engine);
     return byKey.has(key) ? key : 'port';
   }
@@ -144,7 +160,9 @@
     lead:      {waves:['sawtooth','triangle'],detune:[-4,4],cut:2400,attack:.02,tail:.17},
     guitar:    {waves:['sawtooth','sawtooth'],detune:[-8,8],cut:2850,attack:.008,tail:.08},
     chip:      {waves:['square','triangle'],detune:[0,0],cut:3900,attack:.003,tail:.02},
-    bell:      {waves:['sine','triangle'],detune:[0,0],cut:5000,attack:.006,tail:.18}
+    bell:      {waves:['sine','triangle'],detune:[0,0],cut:5000,attack:.006,tail:.18},
+    pulse8:    {waves:['square'],detune:[0],cut:5200,attack:.002,tail:.015},
+    triangle8:{waves:['triangle'],detune:[0],cut:1800,attack:.003,tail:.025}
   };
   function voice(ctx, track, event, when) {
     if (musicVoices.size >= 62) return;
@@ -187,6 +205,31 @@
     const melody=theme.motif[(step+phrase*2)%8],
           lead=root+(melody===null?19:melody)+(energy?12:0);
     const verseMod=bar%16<8?0:3;
+    // Original, deliberately recognisable arcade score: four eight-bar
+    // sections, different bass/melody lines and late-wave counterpoint.
+    // No sampled music or melodies copied from an existing game.
+    if(style==='arcade8'){
+      const act=theme.arcadeStage||0, part=Math.floor(bar/8)%4, turn=bar%8;
+      const phrases=[
+        [12,19,24,null,22,19,15,17,19,null,24,26,22,19,17,null],
+        [24,22,19,15,17,null,19,22,24,31,27,26,24,null,22,19],
+        [12,null,15,19,null,22,24,null,19,17,null,15,14,null,19,22],
+        [24,19,27,26,24,22,19,17,19,22,24,31,29,27,26,24]
+      ];
+      const pos=(bar%2)*8+step, tune=phrases[(part+act)%4][pos];
+      if(tune!==null)put(root+tune+(part===3?12:0),step%4===0?.72:.40,.040,'pulse8',-.20);
+      const bass=[0,12,0,7,0,12,7,10][(step+part*2)%8];
+      if(part!==2||step%2===0)put(root-12+bass,.44,.065,'triangle8',.05);
+      if((act>0||part===1||part===3)&&step%2===1)
+        put(root+[12,15,19,24][(step+turn)%4],.24,.021,'pulse8',.26);
+      if(part!==2||step%4===0){
+        if([0,4].includes(step)||act===2&&step===3)hit('kick',.085);
+        if([2,6].includes(step))hit('snare',.032);
+        if(step%2===1||act===2)hit('hat',.008);
+      }
+      if(turn===7&&step>=6){hit('snare',.027);hit('hat',.009,.07);}
+      return {notes,percussion};
+    }
     if(style==='ambient'||style==='darkambient'){
       if(step===0&&bar%2===0){
         for(const [degree,pan] of [[12,-.30],[15,0],[19,.28],[24,.1]])
@@ -215,6 +258,7 @@
       return {notes,percussion};
     }
     if(style==='techno'||style==='trance'||style==='synthwave'){
+      if(section===2&&bar%4<2){if(step===0)for(const iv of [0,15,19])put(root+iv,3.6,.024,'pad');if(step===3||step===7)put(root+melody+12,.7,.037,'bell',.2);return {notes,percussion};}
       if(step%2===0)hit('kick',style==='techno'?.13:.108);
       if(step===2||step===6)hit('snare',style==='synthwave'?.038:.027);
       if(step%2===1)hit('hat',.015);
@@ -249,6 +293,7 @@
       return {notes,percussion};
     }
     if(style==='breakbeat'){
+      if(section===2&&bar%4<2){if(step===0)put(root-12,3.2,.047,'bass');if(step%2===1)put(root+melody+12,.55,.031,'bell',step%4===1?-.3:.3);if(step===6)hit('snare',.035);return {notes,percussion};}
       if([0,3,5].includes(step))hit('kick',.116);
       if([2,6].includes(step))hit('snare',.058);
       hit('hat',step%2?.012:.019);
@@ -348,7 +393,7 @@
     else if (!SPACE_AUDIO.track) reason = 'idle';
     const activeKey = !reason ? SPACE_AUDIO.track.key : null;
     return {
-      version: VERSION, mode: playback.mode, selectedKey: key, activeKey,
+      version: VERSION, build: '280r1', mode: playback.mode, selectedKey: key, activeKey,
       sceneKey: sceneKey(), selected: byKey.get(key), active: byKey.get(activeKey) || null,
       enabled: SPACE_AUDIO.music, autoEnabled: playback.savedEnabled ?? SPACE_AUDIO.music,
       volume: SPACE_AUDIO.volume, contextState: ctx?.state || 'unavailable',
@@ -541,7 +586,7 @@
   document.addEventListener('keydown', handleControlKey, true);
   document.addEventListener('visibilitychange', onHidden);
   globalThis.addEventListener?.('pagehide', onPageHide);
-  globalThis.citadelMusic = Object.freeze({version: VERSION, catalog: catalogue, preview, stop, resumeAuto, status, next, dispose});
+  globalThis.citadelMusic = Object.freeze({version: VERSION, catalog: catalogue, preview, stop, resumeAuto, status, next, dispose, score:(key,index)=>byKey.has(key)?compose(SPACE_THEMES[key],Math.max(0,Math.floor(index))):null});
   // Compatibility for callers of the old button/API, now with a real track change.
   globalThis.citadelSoundtrack = Object.freeze({version: VERSION, cues: catalogue.map(cue => cue.key), next});
   globalThis.CITADEL_MUSIC_VERSION = VERSION;

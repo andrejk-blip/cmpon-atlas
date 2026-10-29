@@ -35,6 +35,7 @@
     'soldier-hit':{title:'Короткая реакция солдата',interval:.12,group:'combat',human:true,gain:.72},
     'soldier-death':{title:'Солдат повержен',interval:.10,group:'combat',human:true,gain:.88},
     'soldier-death-voice':{title:'Редкая реплика солдата',interval:.10,group:'combat',human:true,phrase:true,gain:1},
+    'robot-bark':{title:'Робопёс · рывок',interval:1.3,group:'combat',gain:.80},
     'robot-hit':{title:'Попадание в робота',interval:.055,group:'combat',gain:.86},
     'robot-death':{title:'Робот или дрон уничтожен',interval:.085,group:'combat',gain:.9},
     'player-damage':{title:'Урон игроку',interval:.18,group:'combat',gain:1},
@@ -205,11 +206,11 @@
   }
   function fallbackBuffer(ctx, kind) {
     let buffers = fallbackBuffers.get(ctx); if (!buffers) { buffers=new Map(); fallbackBuffers.set(ctx,buffers); }
-    const family = definitions[kind].human?'impact':definitions[kind].group==='radio'?kind:
+    const family = kind==='robot-bark'?'bark':definitions[kind].human?'impact':definitions[kind].group==='radio'?kind:
       kind.startsWith('shot')?'shot':['armor-hit','robot-hit','player-damage'].includes(kind)?'impact':
       ['destroy','detonate','crash','robot-death'].includes(kind)?'blast':kind==='knife-swing'?'knife':'missile';
     if (buffers.has(family)) return buffers.get(family);
-    const duration = {shot:.075,impact:.085,blast:.26,knife:.12,missile:.23,'radio-in':.065,'radio-out':.04}[family];
+    const duration = {bark:.38,shot:.075,impact:.085,blast:.26,knife:.12,missile:.23,'radio-in':.065,'radio-out':.04}[family];
     const buffer = ctx.createBuffer(1,Math.ceil(ctx.sampleRate*duration),ctx.sampleRate), data=buffer.getChannelData(0);
     let random = 927170, filtered = 0;
     for (let i=0;i<data.length;i++) {
@@ -217,7 +218,14 @@
       const noise=random/2147483648-1; filtered += (noise-filtered)*(family==='blast'?.12:.5);
       const attack=Math.min(1,t/(family==='knife'?.015:.002)), decay=Math.pow(1-x,family==='blast'?2:3);
       const body=family==='impact'?Math.sin(t*6900)*Math.exp(-t*60):Math.sin(t*(family==='blast'?410:870))*Math.exp(-t*28);
-      data[i]=clamp((filtered*.34+body*.2)*attack*decay,-.65,.65);
+      if(family==='bark'){
+        // Two guttural syllables with a metallic servo tail. Fixed PCM means
+        // no extra oscillator graph, timer or runtime allocation per bark.
+        const local=t<.16?t:t-.19, env=local>=0?Math.sin(Math.PI*Math.min(1,local/.16))*Math.exp(-local*7):0;
+        const fundamental=Math.sin(2*Math.PI*(210*local-260*local*local));
+        const throat=Math.tanh(3*(fundamental+.42*Math.sin(2*Math.PI*830*local)));
+        data[i]=clamp((throat*.39+filtered*.20)*env+.028*Math.sin(t*17000)*Math.exp(-t*12),-.65,.65);
+      }else data[i]=clamp((filtered*.34+body*.2)*attack*decay,-.65,.65);
     }
     buffers.set(family,buffer); return buffer;
   }
@@ -264,6 +272,7 @@
     } catch (error) { lastError=String(error?.message||error); cleanup(); return false; }
   }
   function canHuman(kind, preview) {
+    if(!preview&&definitions[kind].phrase&&globalThis.CITADEL_VOICE?.radioStyle==='original')return 'single-voice-mode';
     if (!definitions[kind].human) return '';
     if (captainBusy()) return 'captain-priority';
     if (humanVoices().length) return 'human-lane-busy';
@@ -272,6 +281,7 @@
   }
   function effect(kind, metadata = {}) {
     if (!has(definitions,kind)) return fail(kind,'unknown');
+    if(definitions[kind]?.phrase&&globalThis.CITADEL_VOICE?.radioStyle==='original')return fail(kind,'single-voice-mode');
     const info=details(kind,metadata), reason=blockedReason(info.preview)||canHuman(kind,info.preview); if (reason) return fail(kind,reason);
     const ctx=ARCADE.audio; if (!ctx||ctx.state!=='running') return fail(kind,'context-unavailable');
     contextChanged(ctx); if (!busFor(ctx,info.preview)) return fail(kind,'bus-unavailable');
@@ -410,7 +420,8 @@
       event={engine,type,value,victim,hpLoss,knife,consumed:false};
       try {
         const result=typeof previousEmit==='function'?previousEmit.call(this,type,value,...args):undefined;
-        if (type==='enemy-fire'&&!event.consumed&&attacker?.archetype!=='robodog') effect(knife?'knife-swing':'shot',{engine,pos:attacker?.pos});
+        if(type==='enemy-fire'&&/dog/i.test(attacker?.archetype||'')) effect('robot-bark',{engine,pos:attacker?.pos});
+        else if (type==='enemy-fire'&&!event.consumed) effect(knife?'knife-swing':'shot',{engine,pos:attacker?.pos});
         return result;
       } finally { event=prior; }
     };

@@ -1,0 +1,80 @@
+{
+  "date": "2026-10-29",
+  "method": "Node VM real production modules, deterministic Web Audio/fetch boundary. No physical device or timbre/ear-quality claim.",
+  "tests": [
+    {
+      "name": "Default original voice plays only exact stored Bernard; every added joke remains caption-eligible",
+      "ok": true,
+      "detail": {
+        "spoken": 14,
+        "textRadio": 21,
+        "uniqueSpoken": 5,
+        "voices": [
+          "Капитан",
+          "Капитан · Bernard"
+        ],
+        "maxVoices": 1
+      }
+    },
+    {
+      "name": "Ensemble remains optional; changing style cancels active and pending sources and persists preference",
+      "ok": true
+    },
+    {
+      "name": "No surprise system voice when original recording missing, fails, or new lesson is unrecorded",
+      "ok": true
+    },
+    {
+      "name": "Pause, visibility, mute and re-entry preserve one voice and release timers",
+      "ok": true
+    },
+    {
+      "name": "Field radio subtitle remains available when sidebar is hidden, yields to rocket tip and disappears on pause",
+      "ok": true
+    },
+    {
+      "name": "Three original eight-bit scores have four different sections, layered arrangement, finite pitches",
+      "ok": true,
+      "detail": [
+        {
+          "key": "swarm280",
+          "sections": 4,
+          "maxNotes": 3,
+          "percussion": 224
+        },
+        {
+          "key": "swarm280Assault",
+          "sections": 4,
+          "maxNotes": 3,
+          "percussion": 224
+        },
+        {
+          "key": "swarm280Final",
+          "sections": 4,
+          "maxNotes": 3,
+          "percussion": 360
+        }
+      ]
+    },
+    {
+      "name": "Live music escalates with wave/chapter; 15 min scheduling bounded; stop/hidden/suspended context clean up",
+      "ok": true,
+      "detail": {
+        "simulatedSeconds": 900,
+        "maxVoices": 23,
+        "contexts": 1
+      }
+    },
+    {
+      "name": "Robodog dash creates distinctive bounded PCM bark; rate limit and pause stop it",
+      "ok": true,
+      "detail": {
+        "duration": 0.38,
+        "samples": 18240,
+        "starts": 2
+      }
+    }
+  ],
+  "passed": 8,
+  "total": 8
+}

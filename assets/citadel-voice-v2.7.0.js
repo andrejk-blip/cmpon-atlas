@@ -7,7 +7,7 @@
   'use strict';
   if(globalThis.CITADEL_VOICE?.version==='2.7.0'&&!globalThis.CITADEL_VOICE.status().disposed)return;
   globalThis.CITADEL_VOICE?.dispose?.();
-  const VERSION='2.7.0',PREF='citadel-academy-voice-v1';
+  const VERSION='2.7.0',PREF='citadel-academy-voice-v1',STYLE_PREF='citadel-radio-voice-style-v2';
   const CARD_STATES=['lesson','remark','finalcheck'];
   const fallbackJokes=Object.freeze([
     'Без ТЗ и результат ХЗ! Держим формулировки под прицелом.',
@@ -69,12 +69,15 @@
   }
   let enabled=true;
   try{enabled=JSON.parse(localStorage.getItem(PREF)||'true')!==false;}catch{}
+  let radioStyle='original';
+  try{if(localStorage.getItem(STYLE_PREF)==='ensemble')radioStyle='ensemble';}catch{}
   let generation=0,current=null,jokeIndex=0,disposed=false,selectedVoice='',selectedEnemyVoice='';
   const SILENCE=3.2, CADENCE=3, restorers=[];
   const nextInterval=()=> (35+Math.random()*30)/CADENCE;
   function replace(get,set,wrapped) { const previous=get();set(wrapped);restorers.push(()=>{if(get()===wrapped)set(previous);}); }
   const soundOn=()=>typeof ARCADE==='undefined'||ARCADE.sound!==false;
-  const stats={radioStarts:0,radioCompleted:0,radioInterrupted:0,recordedStarts:0,systemStarts:0};
+  let radioCaption=null;
+  const stats={textRadioStarts:0,radioStarts:0,radioCompleted:0,radioInterrupted:0,recordedStarts:0,systemStarts:0};
   let lastRadioEnd=-Infinity,systemRadioBlockedUntil=-Infinity;
   const wallNow=()=>typeof performance!=='undefined'?performance.now()/1000:Date.now()/1000;
   function markStarted(job) {
@@ -84,7 +87,7 @@
     if(job.radioId){radioRecent.push(job.radioId);if(radioRecent.length>18)radioRecent.shift();}
     // Caption is published only after actual speech/audio starts, with the
     // speaker identity. A rejected autoplay promise never produces fake radio.
-    if(job.caption&&permitted(job))job.engine.say?.(job.caption,'order',false);
+    if(job.caption&&permitted(job)){job.engine.say?.(job.caption,'order',false);showRadioCaption(job.engine,job.caption,Math.max(6,(job.buffers||[]).reduce((n,b)=>n+b.duration,0)));}
   }
   function markFinished(job,reason) {
     if(job.radioEnded||job.kind!=='commander'||job.preview||!job.started)return;
@@ -153,13 +156,14 @@
       voice:String(pack?.voice||'Капитан'),baseUrl:String(pack?.baseUrl||'./assets/voice-v1.8.2/')};
     return packIndex;
   }
+  const originalClip=clip=>!!clip&&(!clip.id.startsWith('radio270-')||clip.preset==='Bernard'||clip.voice==='Капитан · Bernard');
   function playlist(kind,text) {
     const pack=prepared(),direct=pack.byText.get(text);
-    if(direct&&(kind==='commander'?direct.kind==='commander':['lesson','preview','prefix'].includes(direct.kind)))return [direct];
+    if(direct&&(radioStyle==='ensemble'||originalClip(direct))&&(kind==='commander'?direct.kind==='commander':['lesson','preview','prefix'].includes(direct.kind)))return [direct];
     if(kind==='lesson')for(const prefix of pack.prefixes) {
       if(!text.startsWith(prefix.text+' '))continue;
       const body=pack.byText.get(text.slice(prefix.text.length+1));
-      if(body?.kind==='lesson')return [prefix,body];
+      if(body?.kind==='lesson'&&(radioStyle==='ensemble'||originalClip(prefix)&&originalClip(body)))return [prefix,body];
     }
     return null;
   }
@@ -277,7 +281,7 @@
   function fallback(job,reason) {
     if(!alive(job))return;
     job.attempt++;clearTimers(job);clearRecording(job);lastError=reason;
-    if(!speechSupported()||(job.kind==='commander'&&!ruVoices().length)){finish(job,reason||'recording-unavailable');return;}
+    if(radioStyle==='original'||!speechSupported()||(job.kind==='commander'&&!ruVoices().length)){finish(job,reason||'recording-unavailable');return;}
     job.source='system';job.phase='preparing';job.voice=null;
     startSystem(job);
   }
@@ -337,7 +341,7 @@
   }
   function status() {
     const list=voices(),pack=prepared(),preparedAvailable=pack.clips.length>0&&recordingSupported();
-    return {version:VERSION,supported:supported(),enabled,busy:!!current,phase:current?.phase||'idle',
+    return {version:VERSION,build:'280r1',radioStyle,textRadioStarts:stats.textRadioStarts,originalRadioClips:pack.commanders.filter(originalClip).length,supported:supported(),enabled,busy:!!current,phase:current?.phase||'idle',
       kind:current?.kind||null,preview:!!current?.preview,started:!!current?.started,
       voice:current?.voice?.name||null,ruVoices:list.length,maleCommanderAvailable:list.some(v=>v.maleNameHint),
       preparedAvailable,preparedClips:pack.clips.length,backend:preparedAvailable?'recorded':speechSupported()?'system':'unavailable',
@@ -346,21 +350,44 @@
       radioContext:radioContext(engine()),radioRecent:radioRecent.slice(),muted:!soundOn(),
       radioBank:radioLines().length,radioPrepared:pack.commanders.length,
       radioSystemAvailable:russianRadioAvailable(),
-      radioDelivery:radioLines().every(line=>pack.commanders.some(clip=>clip.id===line.id))?'all-prepared':russianRadioAvailable()?'prepared-and-russian-system':'prepared-only',
+      radioDelivery:radioStyle==='original'?'original-recordings-and-text':radioLines().every(line=>pack.commanders.some(clip=>clip.id===line.id))?'all-prepared':russianRadioAvailable()?'prepared-and-russian-system':'prepared-only',
       cadenceMultiplier:CADENCE,minimumSilenceSeconds:SILENCE,
       radioStarts:stats.radioStarts,radioCompleted:stats.radioCompleted,radioInterrupted:stats.radioInterrupted,
       recordedRadioStarts:stats.recordedStarts,systemRadioStarts:stats.systemStarts,
       cachedClips:buffers.size,cachedBytes};
+  }
+  function showRadioCaption(e,text,seconds=8) {
+    radioCaption={engine:e,text,scene:sceneStamp(e),until:wallNow()+Math.min(18,Math.max(6,seconds))};syncRadioCaption();
+  }
+  function syncRadioCaption() {
+    if(typeof document==='undefined')return;
+    const field=document.querySelector?.('#arcade-layout .arcade-field');if(!field)return;
+    let el=field.querySelector?.('.citadel-radio-subtitle280');
+    if(!el){el=document.createElement('div');el.className='citadel-radio-subtitle280';el.setAttribute('aria-live','polite');el.setAttribute('aria-atomic','true');el.hidden=true;field.appendChild(el);}
+    const valid=radioCaption&&radioCaption.engine===engine()&&radioCaption.scene===sceneStamp(engine())&&
+      wallNow()<radioCaption.until&&enabled&&combat(engine());
+    const rocket=document.querySelector?.('.citadel-rocket-tip');
+    el.hidden=!valid||!!rocket&&!rocket.hidden;
+    if(valid&&el.textContent!==radioCaption.text)el.textContent=radioCaption.text;
   }
   function syncControls() {
     if(typeof document==='undefined')return;
     // Core initialize() can render the panel before this deferred module loads.
     // Reconcile that existing DOM as well as panels created by later renders.
     for(const panel of document.querySelectorAll?.('.space-audio-buttons')||[]) {
+      if(!panel.querySelector('[data-action="arcade-voice-style"]')){
+        const mode=document.createElement('button');mode.type='button';mode.setAttribute('data-action','arcade-voice-style');panel.appendChild(mode);
+      }
       if(panel.querySelector('[data-action="arcade-voice"]'))continue;
       const button=document.createElement('button');
       button.type='button';button.setAttribute('data-action','arcade-voice');
       panel.insertBefore(button,panel.firstChild);
+    }
+    for(const button of document.querySelectorAll?.('[data-action="arcade-voice-style"]')||[]) {
+      const label=radioStyle==='original'?'Капитан + текстовое радио':'Радио: все голоса';
+      if(button.textContent!==label)button.textContent=label;
+      button.setAttribute('aria-pressed',String(radioStyle==='original'));
+      button.setAttribute('title',radioStyle==='original'?'Исходный голос капитана. Новые шутки и реплики врагов показываются текстом. Нажмите, чтобы включить все записи.':'Полный банк записей разными голосами. Нажмите для исходного голоса капитана.');
     }
     for(const button of document.querySelectorAll?.('[data-action="arcade-voice"]')||[]) {
       const label='Голос '+(enabled?'вкл':'выкл');
@@ -368,6 +395,12 @@
       button.setAttribute('aria-pressed',String(enabled));
       button.setAttribute('aria-label','Озвучка и радио: '+(enabled?'включены':'выключены'));
     }
+  }
+  function setRadioStyle(value) {
+    if(!['original','ensemble'].includes(value))return false;
+    if(value===radioStyle)return true;
+    stop('voice-style-change');radioStyle=value;radioCycles.clear();radioRecent.length=0;
+    try{localStorage.setItem(STYLE_PREF,value);}catch{}announce();return true;
   }
   function announce(name='citadel-voice-status') {
     syncControls();
@@ -380,7 +413,7 @@
   function clearTimers(job) {for(const id of job.timers)clearTimeout(id);job.timers.clear();}
   function settle(job,result) {if(!job.settled){job.settled=true;job.resolve({...result,kind:job.kind});}}
   function stop(reason='stopped') {
-    generation++;const job=current;current=null;lastReason=reason;
+    generation++;const job=current;current=null;lastReason=reason;radioCaption=null;syncRadioCaption();
     if(job)markFinished(job,reason);
     if(job){clearTimers(job);clearRecording(job);if(job.utter){job.utter.onstart=job.utter.onend=job.utter.onerror=null;try{synth()?.cancel();}catch{}}
       settle(job,{ok:false,reason});}
@@ -486,6 +519,7 @@
     if(current)stop(kind==='lesson'?'lesson-priority':'replaced');
     else if(synth()?.speaking||synth()?.pending)return Promise.resolve({ok:false,kind,reason:'busy'});
     const clips=recordingSupported()?playlist(kind,clean):null;
+    if(!clips&&radioStyle==='original')return Promise.resolve({ok:false,kind,reason:'original-recording-unavailable',source:'text'});
     if(!clips&&!speechSupported())return Promise.resolve({ok:false,kind,reason:'recording-unavailable'});
     lastError='';lastReason='';
     return new Promise(resolve=>{
@@ -527,7 +561,7 @@
     const enemyCount=e?.enemies?.filter(x=>!x.dead&&(x.hp??1)>0).length||0;
     const available=radioLines().filter(line=>(preview||!line.contexts?.length||line.contexts.includes(key))&&
       (preview||!line.theme||line.theme===theme)&&(preview||!line.minEnemies||enemyCount>=line.minEnemies)&&
-      (ru||recordingSupported()&&recordings.some(c=>c.id===line.id)));
+      (radioStyle==='original'||ru||recordingSupported()&&recordings.some(c=>c.id===line.id)));
     if(!available.length)return null;
     let line;
     if(preview)line=available[(jokeIndex++)%available.length];
@@ -584,6 +618,7 @@
   }
   function tick(e,delta) {
     if(disposed)return;
+    syncRadioCaption();
     if(current&&!permitted(current))stop('inactive');
     if(e!==engine()||!enabled)return;
     let clock=clocks.get(e);
@@ -603,6 +638,13 @@
     // attack frame. A started line finishes unless education/lifecycle wins.
     if(e.captainClock>0&&clock.elapsed<clock.captainUntil||e.assist&&tacticalWarning(e))return;
     const line=nextJoke(e);if(!line){clock.next=clock.elapsed+nextInterval();return;}
+    if(radioStyle==='original'&&!originalClip(prepared().commanders.find(c=>c.id===line.id))){
+      // Keep every joke and enemy reply visible without mislabelling another
+      // voice as the captain. No audio job, fake playback event or TTS fallback.
+      e.say?.(line.caption,'order',false);showRadioCaption(e,line.caption,Math.max(7,line.caption.length/17));stats.textRadioStarts++;clock.turn++;
+      clock.next=clock.elapsed+nextInterval();clock.quietUntil=clock.elapsed+SILENCE;
+      radioRecent.push(line.id);if(radioRecent.length>18)radioRecent.shift();return;
+    }
     clock.next=clock.elapsed+2;
     request('commander',line.text,{speaker:line.speaker,radioId:line.id,caption:line.caption,contextKey:line.contextKey})
       .then(result=>{if(!result.ok&&clocks.get(e)===clock)clock.next=Math.max(clock.next,clock.elapsed+2);});
@@ -654,6 +696,7 @@
   if(typeof spaceAudioAction==='function') {
     const original=spaceAudioAction;
     replace(()=>spaceAudioAction,value=>{spaceAudioAction=value;},function(action,...args){
+      if(action==='arcade-voice-style'&&!disposed){setRadioStyle(radioStyle==='original'?'ensemble':'original');return true;}
       if(action==='arcade-voice'&&!disposed){setEnabled(!enabled);return true;}
       const result=original.call(this,action,...args);if(!disposed&&!soundOn())stop('muted');return result;
     });
@@ -667,12 +710,12 @@
     replace(()=>arcadeAction,value=>{arcadeAction=value;},function(...args){const result=original.apply(this,args);if(!disposed&&current&&!permitted(current))stop(soundOn()?'scene-change':'muted');return result;});
   }
   const hidden=()=>{if(!visible())stop('hidden');},pagehide=()=>stop('pagehide'),blur=()=>stop('blur'),changed=()=>announce('citadel-voice-change');
-  const keyboard=event=>{if(event.target?.closest?.('[data-action="arcade-voice"]'))event.stopImmediatePropagation();};
+  const keyboard=event=>{if(event.target?.closest?.('[data-action="arcade-voice"],[data-action="arcade-voice-style"]'))event.stopImmediatePropagation();};
   if(typeof document!=='undefined'){document.addEventListener('visibilitychange',hidden);document.addEventListener('keydown',keyboard,true);}
   globalThis.addEventListener?.('pagehide',pagehide);globalThis.addEventListener?.('blur',blur);
   synth()?.addEventListener?.('voiceschanged',changed);
   globalThis.CITADEL_VOICE=Object.freeze({
-    version:VERSION,get enabled(){return enabled;},setEnabled,speakLesson,previewLesson,previewCommander,stop,status,sanitizeText,voices,
+    version:VERSION,get enabled(){return enabled;},get radioStyle(){return radioStyle;},setRadioStyle,setEnabled,speakLesson,previewLesson,previewCommander,stop,status,sanitizeText,voices,
     tacticalWarning,
     get jokes(){return Object.freeze(radioLines().map(x=>x.caption||x.text));},
     dispose(){if(disposed)return;disposed=true;stop('disposed');buffers.clear();cachedBytes=0;
@@ -682,5 +725,10 @@
       for(const restore of restorers.reverse())restore();restorers.length=0;radioCycles.clear();radioRecent.length=0;
     }
   });
+  if(typeof document!=='undefined'&&document.head&&!document.getElementById('citadel-radio-subtitle-style280')){
+    const style=document.createElement('style');style.id='citadel-radio-subtitle-style280';
+    style.textContent='.citadel-radio-subtitle280{display:none;pointer-events:none;position:absolute;top:72px;left:50%;transform:translateX(-50%);width:max-content;max-width:calc(100% - 28px);box-sizing:border-box;padding:5px 9px;border-radius:6px;background:#071420df;color:#eef6ff;text-shadow:0 1px 2px #000;font:11px/1.35 system-ui,sans-serif;text-align:center;z-index:6}.citadel-landscape270 .citadel-radio-subtitle280:not([hidden]){display:block}.citadel-radio-subtitle280[hidden]{display:none}';
+    document.head.appendChild(style);
+  }
   syncControls();
 })();
