@@ -1,0 +1,153 @@
+{
+  "date": "2026-10-29",
+  "method": "Independent reviewer, Node VM explicit control/save/collision/audio fixtures; no browser or device claim. Uses actual integrated index script order.",
+  "passed": 16,
+  "total": 16,
+  "rows": [
+    {
+      "name": "arcade-missile pending action cleared by orientationchange",
+      "pass": true,
+      "detail": {
+        "queuesCleared": true
+      }
+    },
+    {
+      "name": "arcade-missile pending action cleared by blur",
+      "pass": true,
+      "detail": {
+        "queuesCleared": true
+      }
+    },
+    {
+      "name": "arcade-pulse pending action cleared by orientationchange",
+      "pass": true,
+      "detail": {
+        "queuesCleared": true
+      }
+    },
+    {
+      "name": "arcade-pulse pending action cleared by blur",
+      "pass": true,
+      "detail": {
+        "queuesCleared": true
+      }
+    },
+    {
+      "name": "arcade-flip pending action cleared by orientationchange",
+      "pass": true,
+      "detail": {
+        "queuesCleared": true
+      }
+    },
+    {
+      "name": "arcade-flip pending action cleared by blur",
+      "pass": true,
+      "detail": {
+        "queuesCleared": true
+      }
+    },
+    {
+      "name": "Dynamic action supports two separate taps, suppresses two delayed clicks",
+      "pass": true,
+      "detail": {
+        "shots": 2
+      }
+    },
+    {
+      "name": "Pointer cancel clears held state, does not cancel a different fire finger",
+      "pass": true
+    },
+    {
+      "name": "Repeated module loading does not grow listeners",
+      "pass": true,
+      "detail": {
+        "listeners": 12,
+        "loads": 100
+      }
+    },
+    {
+      "name": "training wrong answer cannot alter skill milestone or combat resources",
+      "pass": true,
+      "detail": [
+        {
+          "hp": 100,
+          "energy": 100,
+          "points": 125
+        },
+        {
+          "hp": 100,
+          "energy": 100,
+          "points": 0
+        }
+      ]
+    },
+    {
+      "name": "combat wrong answer cannot alter skill milestone or combat resources",
+      "pass": true,
+      "detail": [
+        {
+          "hp": 100,
+          "energy": 100,
+          "points": 125
+        },
+        {
+          "hp": 100,
+          "energy": 100,
+          "points": 0
+        }
+      ]
+    },
+    {
+      "name": "Every skill choice leaves all pre-existing snapshots byte-identical",
+      "pass": true,
+      "detail": {
+        "branches": 3
+      }
+    },
+    {
+      "name": "Ordinary legacy save without skills round-trips and does not create free points",
+      "pass": true
+    },
+    {
+      "name": "HUD and pause cycles do not install more runtime listeners",
+      "pass": true,
+      "detail": {
+        "cycles": 200,
+        "listeners": 77
+      }
+    },
+    {
+      "name": "Swept monster collision matches relative movement, avoids parallel near miss",
+      "pass": true,
+      "detail": {
+        "crossingHits": true,
+        "nearMisses": 2
+      }
+    },
+    {
+      "name": "Original radio caption matches exact manifest line (spoken salutations may be omitted)",
+      "pass": true,
+      "detail": {
+        "spoken": 10,
+        "text": 16,
+        "overlaps": 0
+      }
+    }
+  ],
+  "hashes": {
+    "assets/citadel-music-v1.4.2.js": "f277463e7ac27f43fd46b8a03d7880e2c49474b065f543f6b1f8feae75dd6077",
+    "assets/citadel-voice-pack-v1.8.2.js": "e0a0ac89a7ad348a7b107fef9c067b12227d33b7c1427d3eb7cec5472949fbfe",
+    "assets/citadel-pursuit-v2.6.0.js": "4942dd93b4744844687569dd3cdae0e947b33123b28486259824ecad05f71358",
+    "assets/citadel-swarm-v2.7.0.js": "d82335eb55ef3c668f894cf99eed5137e9e83c21350d1004393c2a474f35242a",
+    "assets/citadel-input-v2.6.0.js": "c67b470bd2affd3b9f873e5a0fcfe96a69463b83565fac1293fc653ddc2e929c",
+    "assets/citadel-voice-v2.7.0.js": "a0f53c76589b64e49ee1e44ff8fe999f2dab380cc567a829b7b81284db5ac76a",
+    "assets/citadel-base-rewards-v2.6.0.js": "03556357ea6ecdbee4e39a20970b618e41116c9e56c1f97e38880b6471012bac",
+    "assets/citadel-pursuit-view-v2.3.0.js": "957ed9dc2f26e104a66a4bf26aad5c8bca4c6234aa0b6f8e56a688c93efd46ec",
+    "assets/citadel-pursuit-view-v2.6.0.js": "6ee3f4a0853a26e850d548f39c2c81ec8a8f59c825eb1c45c21960a2a846ac7a",
+    "assets/citadel-swarm-view-v2.7.0.js": "323dee1225f48962c7866d3e53a2f56a13ee6b7a9759763dcf7b2444dc14d253",
+    "assets/citadel-base-missions-v2.7.0.js": "1de1ebda0fce1aa209639d00c2e0a0d38ad448fb917b279e8d509dc4f53ec003",
+    "assets/citadel-base-missions-view-v2.7.0.js": "2fe4ee229e8ba3b93a8121a51dafb56eaa19bd9d0eda778a5cd84273adb1f371",
+    "assets/citadel-mobile-v2.7.0.js": "72904b7bc4f70b81b23c58bd5f298bb4e9264ce4ff51bbe5267847b4169f5332",
+    "assets/citadel-skills-v2.8.0.js": "c19ed9a02d83167ce43d892f38172e81d2c2a6534885c818696b592ce64d5ced"
+  }
+}
