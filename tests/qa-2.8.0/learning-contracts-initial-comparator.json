@@ -1,0 +1,2004 @@
+{
+  "pass": false,
+  "method": "Node VM; checkpoints earned by independent full campaigns. No browser layout or human learning claim.",
+  "passed": 259,
+  "failed": 18,
+  "rows": [
+    {
+      "name": "bank-schema",
+      "pass": true,
+      "questions": 84,
+      "correctIndexCounts": [
+        21,
+        21,
+        21,
+        21
+      ],
+      "tiers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ]
+    },
+    {
+      "name": "all-84-bank-entries-reachable-and-no-repeat-in-one-run",
+      "pass": true,
+      "questions": 84,
+      "selectionFixtures": 512,
+      "selections": 11776,
+      "method": "Question-selector fixtures only, not 512 game playthroughs."
+    },
+    {
+      "name": "training-all-23-earned-points",
+      "pass": true,
+      "points": 23
+    },
+    {
+      "name": "training-lesson-0-save-roundtrip",
+      "pass": true,
+      "level": 1,
+      "quizId": "quiz270-01-functional"
+    },
+    {
+      "name": "training-lesson-0-four-options-and-hint",
+      "pass": true,
+      "optionsChecked": 4
+    },
+    {
+      "name": "training-lesson-0-wrong-score-only-and-duplicate",
+      "pass": true,
+      "level": 1,
+      "quizId": "quiz270-01-functional",
+      "correctBonus": 100
+    },
+    {
+      "name": "training-lesson-0-answered-pause-resume",
+      "pass": true,
+      "secondsCombatSuspended": 2
+    },
+    {
+      "name": "training-lesson-1-save-roundtrip",
+      "pass": true,
+      "level": 1,
+      "quizId": "quiz270-01-goal"
+    },
+    {
+      "name": "training-lesson-1-four-options-and-hint",
+      "pass": true,
+      "optionsChecked": 4
+    },
+    {
+      "name": "training-lesson-1-wrong-score-only-and-duplicate",
+      "pass": true,
+      "level": 1,
+      "quizId": "quiz270-01-goal",
+      "correctBonus": 100
+    },
+    {
+      "name": "training-lesson-1-answered-pause-resume",
+      "pass": true,
+      "secondsCombatSuspended": 2
+    },
+    {
+      "name": "training-remark-0-save-roundtrip",
+      "pass": true,
+      "level": 2,
+      "quizId": "quiz270-02-source"
+    },
+    {
+      "name": "training-remark-0-four-options-and-hint",
+      "pass": true,
+      "optionsChecked": 4
+    },
+    {
+      "name": "training-remark-0-wrong-score-only-and-duplicate",
+      "pass": true,
+      "level": 2,
+      "quizId": "quiz270-02-source",
+      "correctBonus": 125
+    },
+    {
+      "name": "training-remark-0-answered-pause-resume",
+      "pass": true,
+      "secondsCombatSuspended": 2
+    },
+    {
+      "name": "training-remark-1-save-roundtrip",
+      "pass": true,
+      "level": 2,
+      "quizId": "quiz270-02-scope"
+    },
+    {
+      "name": "training-remark-1-four-options-and-hint",
+      "pass": true,
+      "optionsChecked": 4
+    },
+    {
+      "name": "training-remark-1-wrong-score-only-and-duplicate",
+      "pass": true,
+      "level": 2,
+      "quizId": "quiz270-02-scope",
+      "correctBonus": 125
+    },
+    {
+      "name": "training-remark-1-answered-pause-resume",
+      "pass": true,
+      "secondsCombatSuspended": 2
+    },
+    {
+      "name": "training-remark-2-save-roundtrip",
+      "pass": true,
+      "level": 2,
+      "quizId": "quiz270-03-baseline"
+    },
+    {
+      "name": "training-remark-2-four-options-and-hint",
+      "pass": true,
+      "optionsChecked": 4
+    },
+    {
+      "name": "training-remark-2-wrong-score-only-and-duplicate",
+      "pass": true,
+      "level": 2,
+      "quizId": "quiz270-03-baseline",
+      "correctBonus": 125
+    },
+    {
+      "name": "training-remark-2-answered-pause-resume",
+      "pass": true,
+      "secondsCombatSuspended": 2
+    },
+    {
+      "name": "training-lesson-2-save-roundtrip",
+      "pass": true,
+      "level": 4,
+      "quizId": "quiz270-04-null"
+    },
+    {
+      "name": "training-lesson-2-four-options-and-hint",
+      "pass": true,
+      "optionsChecked": 4
+    },
+    {
+      "name": "training-lesson-2-wrong-score-only-and-duplicate",
+      "pass": true,
+      "level": 4,
+      "quizId": "quiz270-04-null",
+      "correctBonus": 175
+    },
+    {
+      "name": "training-lesson-2-answered-pause-resume",
+      "pass": true,
+      "secondsCombatSuspended": 2
+    },
+    {
+      "name": "training-lesson-3-save-roundtrip",
+      "pass": true,
+      "level": 4,
+      "quizId": "quiz270-04-provenance"
+    },
+    {
+      "name": "training-lesson-3-four-options-and-hint",
+      "pass": true,
+      "optionsChecked": 4
+    },
+    {
+      "name": "training-lesson-3-wrong-score-only-and-duplicate",
+      "pass": true,
+      "level": 4,
+      "quizId": "quiz270-04-provenance",
+      "correctBonus": 175
+    },
+    {
+      "name": "training-lesson-3-answered-pause-resume",
+      "pass": true,
+      "secondsCombatSuspended": 2
+    },
+    {
+      "name": "training-remark-3-save-roundtrip",
+      "pass": true,
+      "level": 5,
+      "quizId": "quiz270-05-decision"
+    },
+    {
+      "name": "training-remark-3-four-options-and-hint",
+      "pass": true,
+      "optionsChecked": 4
+    },
+    {
+      "name": "training-remark-3-wrong-score-only-and-duplicate",
+      "pass": true,
+      "level": 5,
+      "quizId": "quiz270-05-decision",
+      "correctBonus": 200
+    },
+    {
+      "name": "training-remark-3-answered-pause-resume",
+      "pass": true,
+      "secondsCombatSuspended": 2
+    },
+    {
+      "name": "training-remark-4-save-roundtrip",
+      "pass": true,
+      "level": 5,
+      "quizId": "quiz270-05-verification"
+    },
+    {
+      "name": "training-remark-4-four-options-and-hint",
+      "pass": true,
+      "optionsChecked": 4
+    },
+    {
+      "name": "training-remark-4-wrong-score-only-and-duplicate",
+      "pass": true,
+      "level": 5,
+      "quizId": "quiz270-05-verification",
+      "correctBonus": 200
+    },
+    {
+      "name": "training-remark-4-answered-pause-resume",
+      "pass": true,
+      "secondsCombatSuspended": 2
+    },
+    {
+      "name": "training-remark-5-save-roundtrip",
+      "pass": true,
+      "level": 5,
+      "quizId": "quiz270-06-errorcode"
+    },
+    {
+      "name": "training-remark-5-four-options-and-hint",
+      "pass": true,
+      "optionsChecked": 4
+    },
+    {
+      "name": "training-remark-5-wrong-score-only-and-duplicate",
+      "pass": true,
+      "level": 5,
+      "quizId": "quiz270-06-errorcode",
+      "correctBonus": 200
+    },
+    {
+      "name": "training-remark-5-answered-pause-resume",
+      "pass": true,
+      "secondsCombatSuspended": 2
+    },
+    {
+      "name": "training-lesson-4-save-roundtrip",
+      "pass": true,
+      "level": 7,
+      "quizId": "quiz270-07-rto"
+    },
+    {
+      "name": "training-lesson-4-four-options-and-hint",
+      "pass": true,
+      "optionsChecked": 4
+    },
+    {
+      "name": "training-lesson-4-wrong-score-only-and-duplicate",
+      "pass": true,
+      "level": 7,
+      "quizId": "quiz270-07-rto",
+      "correctBonus": 250
+    },
+    {
+      "name": "training-lesson-4-answered-pause-resume",
+      "pass": true,
+      "secondsCombatSuspended": 2
+    },
+    {
+      "name": "training-lesson-5-save-roundtrip",
+      "pass": true,
+      "level": 7,
+      "quizId": "quiz270-07-availability"
+    },
+    {
+      "name": "training-lesson-5-four-options-and-hint",
+      "pass": true,
+      "optionsChecked": 4
+    },
+    {
+      "name": "training-lesson-5-wrong-score-only-and-duplicate",
+      "pass": true,
+      "level": 7,
+      "quizId": "quiz270-07-availability",
+      "correctBonus": 250
+    },
+    {
+      "name": "training-lesson-5-answered-pause-resume",
+      "pass": true,
+      "secondsCombatSuspended": 2
+    },
+    {
+      "name": "training-remark-6-save-roundtrip",
+      "pass": true,
+      "level": 8,
+      "quizId": "quiz270-08-negative"
+    },
+    {
+      "name": "training-remark-6-four-options-and-hint",
+      "pass": true,
+      "optionsChecked": 4
+    },
+    {
+      "name": "training-remark-6-wrong-score-only-and-duplicate",
+      "pass": true,
+      "level": 8,
+      "quizId": "quiz270-08-negative",
+      "correctBonus": 275
+    },
+    {
+      "name": "training-remark-6-answered-pause-resume",
+      "pass": true,
+      "secondsCombatSuspended": 2
+    },
+    {
+      "name": "training-remark-7-save-roundtrip",
+      "pass": true,
+      "level": 8,
+      "quizId": "quiz270-08-expected"
+    },
+    {
+      "name": "training-remark-7-four-options-and-hint",
+      "pass": true,
+      "optionsChecked": 4
+    },
+    {
+      "name": "training-remark-7-wrong-score-only-and-duplicate",
+      "pass": true,
+      "level": 8,
+      "quizId": "quiz270-08-expected",
+      "correctBonus": 275
+    },
+    {
+      "name": "training-remark-7-answered-pause-resume",
+      "pass": true,
+      "secondsCombatSuspended": 2
+    },
+    {
+      "name": "training-remark-8-save-roundtrip",
+      "pass": true,
+      "level": 8,
+      "quizId": "quiz270-09-correlation"
+    },
+    {
+      "name": "training-remark-8-four-options-and-hint",
+      "pass": true,
+      "optionsChecked": 4
+    },
+    {
+      "name": "training-remark-8-wrong-score-only-and-duplicate",
+      "pass": true,
+      "level": 8,
+      "quizId": "quiz270-09-correlation",
+      "correctBonus": 275
+    },
+    {
+      "name": "training-remark-8-answered-pause-resume",
+      "pass": true,
+      "secondsCombatSuspended": 2
+    },
+    {
+      "name": "training-lesson-7-save-roundtrip",
+      "pass": true,
+      "level": 10,
+      "quizId": "quiz270-10-late"
+    },
+    {
+      "name": "training-lesson-7-four-options-and-hint",
+      "pass": true,
+      "optionsChecked": 4
+    },
+    {
+      "name": "training-lesson-7-wrong-score-only-and-duplicate",
+      "pass": true,
+      "level": 10,
+      "quizId": "quiz270-10-late",
+      "correctBonus": 325
+    },
+    {
+      "name": "training-lesson-7-answered-pause-resume",
+      "pass": true,
+      "secondsCombatSuspended": 2
+    },
+    {
+      "name": "training-lesson-6-save-roundtrip",
+      "pass": true,
+      "level": 10,
+      "quizId": "quiz270-10-quality"
+    },
+    {
+      "name": "training-lesson-6-four-options-and-hint",
+      "pass": true,
+      "optionsChecked": 4
+    },
+    {
+      "name": "training-lesson-6-wrong-score-only-and-duplicate",
+      "pass": true,
+      "level": 10,
+      "quizId": "quiz270-10-quality",
+      "correctBonus": 325
+    },
+    {
+      "name": "training-lesson-6-answered-pause-resume",
+      "pass": true,
+      "secondsCombatSuspended": 2
+    },
+    {
+      "name": "training-remark-9-save-roundtrip",
+      "pass": true,
+      "level": 11,
+      "quizId": "quiz270-11-paralleljoin"
+    },
+    {
+      "name": "training-remark-9-four-options-and-hint",
+      "pass": true,
+      "optionsChecked": 4
+    },
+    {
+      "name": "training-remark-9-wrong-score-only-and-duplicate",
+      "pass": true,
+      "level": 11,
+      "quizId": "quiz270-11-paralleljoin",
+      "correctBonus": 350
+    },
+    {
+      "name": "training-remark-9-answered-pause-resume",
+      "pass": true,
+      "secondsCombatSuspended": 2
+    },
+    {
+      "name": "training-remark-10-save-roundtrip",
+      "pass": true,
+      "level": 11,
+      "quizId": "quiz270-11-messageflow"
+    },
+    {
+      "name": "training-remark-10-four-options-and-hint",
+      "pass": true,
+      "optionsChecked": 4
+    },
+    {
+      "name": "training-remark-10-wrong-score-only-and-duplicate",
+      "pass": true,
+      "level": 11,
+      "quizId": "quiz270-11-messageflow",
+      "correctBonus": 350
+    },
+    {
+      "name": "training-remark-10-answered-pause-resume",
+      "pass": true,
+      "secondsCombatSuspended": 2
+    },
+    {
+      "name": "training-remark-11-save-roundtrip",
+      "pass": true,
+      "level": 11,
+      "quizId": "quiz270-12-optimistic"
+    },
+    {
+      "name": "training-remark-11-four-options-and-hint",
+      "pass": true,
+      "optionsChecked": 4
+    },
+    {
+      "name": "training-remark-11-wrong-score-only-and-duplicate",
+      "pass": true,
+      "level": 11,
+      "quizId": "quiz270-12-optimistic",
+      "correctBonus": 350
+    },
+    {
+      "name": "training-remark-11-answered-pause-resume",
+      "pass": true,
+      "secondsCombatSuspended": 2
+    },
+    {
+      "name": "training-final-0-save-roundtrip",
+      "pass": true,
+      "level": 13,
+      "quizId": "quiz270-13-sourceoftruth"
+    },
+    {
+      "name": "training-final-0-four-options-and-hint",
+      "pass": true,
+      "optionsChecked": 4
+    },
+    {
+      "name": "training-final-0-wrong-score-only-and-duplicate",
+      "pass": true,
+      "level": 13,
+      "quizId": "quiz270-13-sourceoftruth",
+      "correctBonus": 400
+    },
+    {
+      "name": "training-final-0-answered-pause-resume",
+      "pass": true,
+      "secondsCombatSuspended": 2
+    },
+    {
+      "name": "training-final-1-save-roundtrip",
+      "pass": true,
+      "level": 13,
+      "quizId": "quiz270-13-regressionrisk"
+    },
+    {
+      "name": "training-final-1-four-options-and-hint",
+      "pass": true,
+      "optionsChecked": 4
+    },
+    {
+      "name": "training-final-1-wrong-score-only-and-duplicate",
+      "pass": true,
+      "level": 13,
+      "quizId": "quiz270-13-regressionrisk",
+      "correctBonus": 400
+    },
+    {
+      "name": "training-final-1-answered-pause-resume",
+      "pass": true,
+      "secondsCombatSuspended": 2
+    },
+    {
+      "name": "training-final-2-save-roundtrip",
+      "pass": true,
+      "level": 13,
+      "quizId": "quiz270-14-rollout"
+    },
+    {
+      "name": "training-final-2-four-options-and-hint",
+      "pass": true,
+      "optionsChecked": 4
+    },
+    {
+      "name": "training-final-2-wrong-score-only-and-duplicate",
+      "pass": true,
+      "level": 13,
+      "quizId": "quiz270-14-rollout",
+      "correctBonus": 400
+    },
+    {
+      "name": "training-final-2-answered-pause-resume",
+      "pass": true,
+      "secondsCombatSuspended": 2
+    },
+    {
+      "name": "combat-all-23-earned-points",
+      "pass": true,
+      "points": 23
+    },
+    {
+      "name": "combat-lesson-0-save-roundtrip",
+      "pass": true,
+      "level": 1,
+      "quizId": "quiz270-01-functional"
+    },
+    {
+      "name": "combat-lesson-0-four-options-and-hint",
+      "pass": true,
+      "optionsChecked": 4
+    },
+    {
+      "name": "combat-lesson-0-wrong-score-only-and-duplicate",
+      "pass": true,
+      "level": 1,
+      "quizId": "quiz270-01-functional",
+      "correctBonus": 100
+    },
+    {
+      "name": "combat-lesson-0-answered-pause-resume",
+      "pass": true,
+      "secondsCombatSuspended": 2
+    },
+    {
+      "name": "combat-lesson-1-save-roundtrip",
+      "pass": true,
+      "level": 1,
+      "quizId": "quiz270-01-goal"
+    },
+    {
+      "name": "combat-lesson-1-four-options-and-hint",
+      "pass": true,
+      "optionsChecked": 4
+    },
+    {
+      "name": "combat-lesson-1-wrong-score-only-and-duplicate",
+      "pass": true,
+      "level": 1,
+      "quizId": "quiz270-01-goal",
+      "correctBonus": 100
+    },
+    {
+      "name": "combat-lesson-1-answered-pause-resume",
+      "pass": true,
+      "secondsCombatSuspended": 2
+    },
+    {
+      "name": "combat-remark-0-save-roundtrip",
+      "pass": true,
+      "level": 2,
+      "quizId": "quiz270-02-source"
+    },
+    {
+      "name": "combat-remark-0-four-options-and-hint",
+      "pass": true,
+      "optionsChecked": 4
+    },
+    {
+      "name": "combat-remark-0-wrong-score-only-and-duplicate",
+      "pass": true,
+      "level": 2,
+      "quizId": "quiz270-02-source",
+      "correctBonus": 125
+    },
+    {
+      "name": "combat-remark-0-answered-pause-resume",
+      "pass": true,
+      "secondsCombatSuspended": 2
+    },
+    {
+      "name": "combat-remark-1-save-roundtrip",
+      "pass": true,
+      "level": 2,
+      "quizId": "quiz270-02-scope"
+    },
+    {
+      "name": "combat-remark-1-four-options-and-hint",
+      "pass": true,
+      "optionsChecked": 4
+    },
+    {
+      "name": "combat-remark-1-wrong-score-only-and-duplicate",
+      "pass": true,
+      "level": 2,
+      "quizId": "quiz270-02-scope",
+      "correctBonus": 125
+    },
+    {
+      "name": "combat-remark-1-answered-pause-resume",
+      "pass": true,
+      "secondsCombatSuspended": 2
+    },
+    {
+      "name": "combat-remark-2-save-roundtrip",
+      "pass": true,
+      "level": 2,
+      "quizId": "quiz270-03-baseline"
+    },
+    {
+      "name": "combat-remark-2-four-options-and-hint",
+      "pass": true,
+      "optionsChecked": 4
+    },
+    {
+      "name": "combat-remark-2-wrong-score-only-and-duplicate",
+      "pass": true,
+      "level": 2,
+      "quizId": "quiz270-03-baseline",
+      "correctBonus": 125
+    },
+    {
+      "name": "combat-remark-2-answered-pause-resume",
+      "pass": true,
+      "secondsCombatSuspended": 2
+    },
+    {
+      "name": "combat-lesson-2-save-roundtrip",
+      "pass": true,
+      "level": 4,
+      "quizId": "quiz270-04-null"
+    },
+    {
+      "name": "combat-lesson-2-four-options-and-hint",
+      "pass": true,
+      "optionsChecked": 4
+    },
+    {
+      "name": "combat-lesson-2-wrong-score-only-and-duplicate",
+      "pass": true,
+      "level": 4,
+      "quizId": "quiz270-04-null",
+      "correctBonus": 175
+    },
+    {
+      "name": "combat-lesson-2-answered-pause-resume",
+      "pass": true,
+      "secondsCombatSuspended": 2
+    },
+    {
+      "name": "combat-lesson-3-save-roundtrip",
+      "pass": true,
+      "level": 4,
+      "quizId": "quiz270-04-provenance"
+    },
+    {
+      "name": "combat-lesson-3-four-options-and-hint",
+      "pass": true,
+      "optionsChecked": 4
+    },
+    {
+      "name": "combat-lesson-3-wrong-score-only-and-duplicate",
+      "pass": true,
+      "level": 4,
+      "quizId": "quiz270-04-provenance",
+      "correctBonus": 175
+    },
+    {
+      "name": "combat-lesson-3-answered-pause-resume",
+      "pass": true,
+      "secondsCombatSuspended": 2
+    },
+    {
+      "name": "combat-remark-3-save-roundtrip",
+      "pass": true,
+      "level": 5,
+      "quizId": "quiz270-05-decision"
+    },
+    {
+      "name": "combat-remark-3-four-options-and-hint",
+      "pass": true,
+      "optionsChecked": 4
+    },
+    {
+      "name": "combat-remark-3-wrong-score-only-and-duplicate",
+      "pass": true,
+      "level": 5,
+      "quizId": "quiz270-05-decision",
+      "correctBonus": 200
+    },
+    {
+      "name": "combat-remark-3-answered-pause-resume",
+      "pass": true,
+      "secondsCombatSuspended": 2
+    },
+    {
+      "name": "combat-remark-4-save-roundtrip",
+      "pass": true,
+      "level": 5,
+      "quizId": "quiz270-05-verification"
+    },
+    {
+      "name": "combat-remark-4-four-options-and-hint",
+      "pass": true,
+      "optionsChecked": 4
+    },
+    {
+      "name": "combat-remark-4-wrong-score-only-and-duplicate",
+      "pass": true,
+      "level": 5,
+      "quizId": "quiz270-05-verification",
+      "correctBonus": 200
+    },
+    {
+      "name": "combat-remark-4-answered-pause-resume",
+      "pass": true,
+      "secondsCombatSuspended": 2
+    },
+    {
+      "name": "combat-remark-5-save-roundtrip",
+      "pass": true,
+      "level": 5,
+      "quizId": "quiz270-06-errorcode"
+    },
+    {
+      "name": "combat-remark-5-four-options-and-hint",
+      "pass": true,
+      "optionsChecked": 4
+    },
+    {
+      "name": "combat-remark-5-wrong-score-only-and-duplicate",
+      "pass": true,
+      "level": 5,
+      "quizId": "quiz270-06-errorcode",
+      "correctBonus": 200
+    },
+    {
+      "name": "combat-remark-5-answered-pause-resume",
+      "pass": true,
+      "secondsCombatSuspended": 2
+    },
+    {
+      "name": "combat-lesson-4-save-roundtrip",
+      "pass": true,
+      "level": 7,
+      "quizId": "quiz270-07-rto"
+    },
+    {
+      "name": "combat-lesson-4-four-options-and-hint",
+      "pass": true,
+      "optionsChecked": 4
+    },
+    {
+      "name": "combat-lesson-4-wrong-score-only-and-duplicate",
+      "pass": true,
+      "level": 7,
+      "quizId": "quiz270-07-rto",
+      "correctBonus": 250
+    },
+    {
+      "name": "combat-lesson-4-answered-pause-resume",
+      "pass": true,
+      "secondsCombatSuspended": 2
+    },
+    {
+      "name": "combat-lesson-5-save-roundtrip",
+      "pass": true,
+      "level": 7,
+      "quizId": "quiz270-07-availability"
+    },
+    {
+      "name": "combat-lesson-5-four-options-and-hint",
+      "pass": true,
+      "optionsChecked": 4
+    },
+    {
+      "name": "combat-lesson-5-wrong-score-only-and-duplicate",
+      "pass": true,
+      "level": 7,
+      "quizId": "quiz270-07-availability",
+      "correctBonus": 250
+    },
+    {
+      "name": "combat-lesson-5-answered-pause-resume",
+      "pass": true,
+      "secondsCombatSuspended": 2
+    },
+    {
+      "name": "combat-remark-6-save-roundtrip",
+      "pass": true,
+      "level": 8,
+      "quizId": "quiz270-08-negative"
+    },
+    {
+      "name": "combat-remark-6-four-options-and-hint",
+      "pass": true,
+      "optionsChecked": 4
+    },
+    {
+      "name": "combat-remark-6-wrong-score-only-and-duplicate",
+      "pass": true,
+      "level": 8,
+      "quizId": "quiz270-08-negative",
+      "correctBonus": 275
+    },
+    {
+      "name": "combat-remark-6-answered-pause-resume",
+      "pass": true,
+      "secondsCombatSuspended": 2
+    },
+    {
+      "name": "combat-remark-7-save-roundtrip",
+      "pass": true,
+      "level": 8,
+      "quizId": "quiz270-08-expected"
+    },
+    {
+      "name": "combat-remark-7-four-options-and-hint",
+      "pass": true,
+      "optionsChecked": 4
+    },
+    {
+      "name": "combat-remark-7-wrong-score-only-and-duplicate",
+      "pass": true,
+      "level": 8,
+      "quizId": "quiz270-08-expected",
+      "correctBonus": 275
+    },
+    {
+      "name": "combat-remark-7-answered-pause-resume",
+      "pass": true,
+      "secondsCombatSuspended": 2
+    },
+    {
+      "name": "combat-remark-8-save-roundtrip",
+      "pass": true,
+      "level": 8,
+      "quizId": "quiz270-09-correlation"
+    },
+    {
+      "name": "combat-remark-8-four-options-and-hint",
+      "pass": true,
+      "optionsChecked": 4
+    },
+    {
+      "name": "combat-remark-8-wrong-score-only-and-duplicate",
+      "pass": true,
+      "level": 8,
+      "quizId": "quiz270-09-correlation",
+      "correctBonus": 275
+    },
+    {
+      "name": "combat-remark-8-answered-pause-resume",
+      "pass": true,
+      "secondsCombatSuspended": 2
+    },
+    {
+      "name": "combat-lesson-6-save-roundtrip",
+      "pass": true,
+      "level": 10,
+      "quizId": "quiz270-10-join"
+    },
+    {
+      "name": "combat-lesson-6-four-options-and-hint",
+      "pass": true,
+      "optionsChecked": 4
+    },
+    {
+      "name": "combat-lesson-6-wrong-score-only-and-duplicate",
+      "pass": true,
+      "level": 10,
+      "quizId": "quiz270-10-join",
+      "correctBonus": 325
+    },
+    {
+      "name": "combat-lesson-6-answered-pause-resume",
+      "pass": true,
+      "secondsCombatSuspended": 2
+    },
+    {
+      "name": "combat-lesson-7-save-roundtrip",
+      "pass": true,
+      "level": 10,
+      "quizId": "quiz270-10-snapshot"
+    },
+    {
+      "name": "combat-lesson-7-four-options-and-hint",
+      "pass": true,
+      "optionsChecked": 4
+    },
+    {
+      "name": "combat-lesson-7-wrong-score-only-and-duplicate",
+      "pass": true,
+      "level": 10,
+      "quizId": "quiz270-10-snapshot",
+      "correctBonus": 325
+    },
+    {
+      "name": "combat-lesson-7-answered-pause-resume",
+      "pass": true,
+      "secondsCombatSuspended": 2
+    },
+    {
+      "name": "combat-remark-9-save-roundtrip",
+      "pass": true,
+      "level": 11,
+      "quizId": "quiz270-11-paralleljoin"
+    },
+    {
+      "name": "combat-remark-9-four-options-and-hint",
+      "pass": true,
+      "optionsChecked": 4
+    },
+    {
+      "name": "combat-remark-9-wrong-score-only-and-duplicate",
+      "pass": true,
+      "level": 11,
+      "quizId": "quiz270-11-paralleljoin",
+      "correctBonus": 350
+    },
+    {
+      "name": "combat-remark-9-answered-pause-resume",
+      "pass": true,
+      "secondsCombatSuspended": 2
+    },
+    {
+      "name": "combat-remark-10-save-roundtrip",
+      "pass": true,
+      "level": 11,
+      "quizId": "quiz270-11-messageflow"
+    },
+    {
+      "name": "combat-remark-10-four-options-and-hint",
+      "pass": true,
+      "optionsChecked": 4
+    },
+    {
+      "name": "combat-remark-10-wrong-score-only-and-duplicate",
+      "pass": true,
+      "level": 11,
+      "quizId": "quiz270-11-messageflow",
+      "correctBonus": 350
+    },
+    {
+      "name": "combat-remark-10-answered-pause-resume",
+      "pass": true,
+      "secondsCombatSuspended": 2
+    },
+    {
+      "name": "combat-remark-11-save-roundtrip",
+      "pass": true,
+      "level": 11,
+      "quizId": "quiz270-12-optimistic"
+    },
+    {
+      "name": "combat-remark-11-four-options-and-hint",
+      "pass": true,
+      "optionsChecked": 4
+    },
+    {
+      "name": "combat-remark-11-wrong-score-only-and-duplicate",
+      "pass": true,
+      "level": 11,
+      "quizId": "quiz270-12-optimistic",
+      "correctBonus": 350
+    },
+    {
+      "name": "combat-remark-11-answered-pause-resume",
+      "pass": true,
+      "secondsCombatSuspended": 2
+    },
+    {
+      "name": "combat-final-0-save-roundtrip",
+      "pass": true,
+      "level": 13,
+      "quizId": "quiz270-13-sourceoftruth"
+    },
+    {
+      "name": "combat-final-0-four-options-and-hint",
+      "pass": true,
+      "optionsChecked": 4
+    },
+    {
+      "name": "combat-final-0-wrong-score-only-and-duplicate",
+      "pass": true,
+      "level": 13,
+      "quizId": "quiz270-13-sourceoftruth",
+      "correctBonus": 400
+    },
+    {
+      "name": "combat-final-0-answered-pause-resume",
+      "pass": true,
+      "secondsCombatSuspended": 2
+    },
+    {
+      "name": "combat-final-1-save-roundtrip",
+      "pass": true,
+      "level": 13,
+      "quizId": "quiz270-13-regressionrisk"
+    },
+    {
+      "name": "combat-final-1-four-options-and-hint",
+      "pass": true,
+      "optionsChecked": 4
+    },
+    {
+      "name": "combat-final-1-wrong-score-only-and-duplicate",
+      "pass": true,
+      "level": 13,
+      "quizId": "quiz270-13-regressionrisk",
+      "correctBonus": 400
+    },
+    {
+      "name": "combat-final-1-answered-pause-resume",
+      "pass": true,
+      "secondsCombatSuspended": 2
+    },
+    {
+      "name": "combat-final-2-save-roundtrip",
+      "pass": true,
+      "level": 13,
+      "quizId": "quiz270-14-rollout"
+    },
+    {
+      "name": "combat-final-2-four-options-and-hint",
+      "pass": true,
+      "optionsChecked": 4
+    },
+    {
+      "name": "combat-final-2-wrong-score-only-and-duplicate",
+      "pass": true,
+      "level": 13,
+      "quizId": "quiz270-14-rollout",
+      "correctBonus": 400
+    },
+    {
+      "name": "combat-final-2-answered-pause-resume",
+      "pass": true,
+      "secondsCombatSuspended": 2
+    },
+    {
+      "name": "pro-lesson-0-unchanged-case-and-answer-rules",
+      "pass": true,
+      "level": 1,
+      "caseId": "L01.0"
+    },
+    {
+      "name": "pro-lesson-1-unchanged-case-and-answer-rules",
+      "pass": true,
+      "level": 1,
+      "caseId": "L02.1"
+    },
+    {
+      "name": "pro-remark-0-unchanged-case-and-answer-rules",
+      "pass": true,
+      "level": 2,
+      "caseId": "T01.0"
+    },
+    {
+      "name": "pro-remark-1-unchanged-case-and-answer-rules",
+      "pass": true,
+      "level": 2,
+      "caseId": "T02.1"
+    },
+    {
+      "name": "pro-remark-2-unchanged-case-and-answer-rules",
+      "pass": true,
+      "level": 2,
+      "caseId": "T03.1"
+    },
+    {
+      "name": "pre-learning-270-lesson-0-legacy-cases",
+      "pass": true,
+      "level": 1,
+      "from": "2.7 pre-learning script chain"
+    },
+    {
+      "name": "pre-learning-270-lesson-1-legacy-cases",
+      "pass": true,
+      "level": 1,
+      "from": "2.7 pre-learning script chain"
+    },
+    {
+      "name": "pre-learning-270-remark-0-legacy-cases",
+      "pass": true,
+      "level": 2,
+      "from": "2.7 pre-learning script chain"
+    },
+    {
+      "name": "pre-learning-270-remark-1-legacy-cases",
+      "pass": true,
+      "level": 2,
+      "from": "2.7 pre-learning script chain"
+    },
+    {
+      "name": "pre-learning-270-remark-2-legacy-cases",
+      "pass": true,
+      "level": 2,
+      "from": "2.7 pre-learning script chain"
+    },
+    {
+      "name": "pre-learning-270-lesson-2-legacy-cases",
+      "pass": true,
+      "level": 4,
+      "from": "2.7 pre-learning script chain"
+    },
+    {
+      "name": "pre-learning-270-lesson-3-legacy-cases",
+      "pass": true,
+      "level": 4,
+      "from": "2.7 pre-learning script chain"
+    },
+    {
+      "name": "pre-learning-270-remark-3-legacy-cases",
+      "pass": true,
+      "level": 5,
+      "from": "2.7 pre-learning script chain"
+    },
+    {
+      "name": "pre-learning-270-remark-4-legacy-cases",
+      "pass": true,
+      "level": 5,
+      "from": "2.7 pre-learning script chain"
+    },
+    {
+      "name": "pre-learning-270-remark-5-legacy-cases",
+      "pass": true,
+      "level": 5,
+      "from": "2.7 pre-learning script chain"
+    },
+    {
+      "name": "pre-learning-270-lesson-4-legacy-cases",
+      "pass": true,
+      "level": 7,
+      "from": "2.7 pre-learning script chain"
+    },
+    {
+      "name": "pre-learning-270-lesson-5-legacy-cases",
+      "pass": true,
+      "level": 7,
+      "from": "2.7 pre-learning script chain"
+    },
+    {
+      "name": "pre-learning-270-remark-6-legacy-cases",
+      "pass": true,
+      "level": 8,
+      "from": "2.7 pre-learning script chain"
+    },
+    {
+      "name": "pre-learning-270-remark-7-legacy-cases",
+      "pass": true,
+      "level": 8,
+      "from": "2.7 pre-learning script chain"
+    },
+    {
+      "name": "pre-learning-270-remark-8-legacy-cases",
+      "pass": true,
+      "level": 8,
+      "from": "2.7 pre-learning script chain"
+    },
+    {
+      "name": "pre-learning-270-lesson-6-legacy-cases",
+      "pass": true,
+      "level": 10,
+      "from": "2.7 pre-learning script chain"
+    },
+    {
+      "name": "pre-learning-270-lesson-7-legacy-cases",
+      "pass": true,
+      "level": 10,
+      "from": "2.7 pre-learning script chain"
+    },
+    {
+      "name": "pre-learning-270-remark-9-legacy-cases",
+      "pass": true,
+      "level": 11,
+      "from": "2.7 pre-learning script chain"
+    },
+    {
+      "name": "pre-learning-270-remark-10-legacy-cases",
+      "pass": true,
+      "level": 11,
+      "from": "2.7 pre-learning script chain"
+    },
+    {
+      "name": "pre-learning-270-remark-11-legacy-cases",
+      "pass": true,
+      "level": 11,
+      "from": "2.7 pre-learning script chain"
+    },
+    {
+      "name": "pre-learning-270-final-0-legacy-cases",
+      "pass": true,
+      "level": 13,
+      "from": "2.7 pre-learning script chain"
+    },
+    {
+      "name": "pre-learning-270-final-1-legacy-cases",
+      "pass": true,
+      "level": 13,
+      "from": "2.7 pre-learning script chain"
+    },
+    {
+      "name": "pre-learning-270-final-2-legacy-cases",
+      "pass": true,
+      "level": 13,
+      "from": "2.7 pre-learning script chain"
+    },
+    {
+      "name": "legacy-270-1-training",
+      "pass": true,
+      "level": 1,
+      "mode": "training",
+      "baseline": "5e057d5",
+      "casesCompared": 8
+    },
+    {
+      "name": "legacy-270-2-training",
+      "pass": true,
+      "level": 2,
+      "mode": "training",
+      "baseline": "5e057d5",
+      "casesCompared": 8
+    },
+    {
+      "name": "legacy-270-3-training",
+      "pass": true,
+      "level": 3,
+      "mode": "training",
+      "baseline": "5e057d5",
+      "casesCompared": 8
+    },
+    {
+      "name": "legacy-270-4-training",
+      "pass": true,
+      "level": 4,
+      "mode": "training",
+      "baseline": "5e057d5",
+      "casesCompared": 8
+    },
+    {
+      "name": "legacy-270-5-training",
+      "pass": true,
+      "level": 5,
+      "mode": "training",
+      "baseline": "5e057d5",
+      "casesCompared": 8
+    },
+    {
+      "name": "legacy-270-6-training",
+      "pass": true,
+      "level": 6,
+      "mode": "training",
+      "baseline": "5e057d5",
+      "casesCompared": 8
+    },
+    {
+      "name": "legacy-270-7-training",
+      "pass": true,
+      "level": 7,
+      "mode": "training",
+      "baseline": "5e057d5",
+      "casesCompared": 8
+    },
+    {
+      "name": "legacy-270-8-training",
+      "pass": true,
+      "level": 8,
+      "mode": "training",
+      "baseline": "5e057d5",
+      "casesCompared": 8
+    },
+    {
+      "name": "legacy-270-9-training",
+      "pass": true,
+      "level": 9,
+      "mode": "training",
+      "baseline": "5e057d5",
+      "casesCompared": 8
+    },
+    {
+      "name": "legacy-270-10-training",
+      "pass": true,
+      "level": 10,
+      "mode": "training",
+      "baseline": "5e057d5",
+      "casesCompared": 8
+    },
+    {
+      "name": "legacy-270-11-training",
+      "pass": true,
+      "level": 11,
+      "mode": "training",
+      "baseline": "5e057d5",
+      "casesCompared": 8
+    },
+    {
+      "name": "legacy-270-12-training",
+      "pass": true,
+      "level": 12,
+      "mode": "training",
+      "baseline": "5e057d5",
+      "casesCompared": 8
+    },
+    {
+      "name": "legacy-270-13-training",
+      "pass": true,
+      "level": 13,
+      "mode": "training",
+      "baseline": "5e057d5",
+      "casesCompared": 8
+    },
+    {
+      "name": "legacy-270-14-training",
+      "pass": true,
+      "level": 14,
+      "mode": "training",
+      "baseline": "5e057d5",
+      "casesCompared": 8
+    },
+    {
+      "name": "legacy-270-1-combat",
+      "pass": true,
+      "level": 1,
+      "mode": "combat",
+      "baseline": "5e057d5",
+      "casesCompared": 8
+    },
+    {
+      "name": "legacy-270-2-combat",
+      "pass": true,
+      "level": 2,
+      "mode": "combat",
+      "baseline": "5e057d5",
+      "casesCompared": 8
+    },
+    {
+      "name": "legacy-270-3-combat",
+      "pass": true,
+      "level": 3,
+      "mode": "combat",
+      "baseline": "5e057d5",
+      "casesCompared": 8
+    },
+    {
+      "name": "legacy-270-4-combat",
+      "pass": true,
+      "level": 4,
+      "mode": "combat",
+      "baseline": "5e057d5",
+      "casesCompared": 8
+    },
+    {
+      "name": "legacy-270-5-combat",
+      "pass": true,
+      "level": 5,
+      "mode": "combat",
+      "baseline": "5e057d5",
+      "casesCompared": 8
+    },
+    {
+      "name": "legacy-270-6-combat",
+      "pass": true,
+      "level": 6,
+      "mode": "combat",
+      "baseline": "5e057d5",
+      "casesCompared": 8
+    },
+    {
+      "name": "legacy-270-7-combat",
+      "pass": true,
+      "level": 7,
+      "mode": "combat",
+      "baseline": "5e057d5",
+      "casesCompared": 8
+    },
+    {
+      "name": "legacy-270-8-combat",
+      "pass": true,
+      "level": 8,
+      "mode": "combat",
+      "baseline": "5e057d5",
+      "casesCompared": 8
+    },
+    {
+      "name": "legacy-270-9-combat",
+      "pass": true,
+      "level": 9,
+      "mode": "combat",
+      "baseline": "5e057d5",
+      "casesCompared": 8
+    },
+    {
+      "name": "legacy-270-10-combat",
+      "pass": true,
+      "level": 10,
+      "mode": "combat",
+      "baseline": "5e057d5",
+      "casesCompared": 8
+    },
+    {
+      "name": "legacy-270-11-combat",
+      "pass": true,
+      "level": 11,
+      "mode": "combat",
+      "baseline": "5e057d5",
+      "casesCompared": 8
+    },
+    {
+      "name": "legacy-270-12-combat",
+      "pass": true,
+      "level": 12,
+      "mode": "combat",
+      "baseline": "5e057d5",
+      "casesCompared": 8
+    },
+    {
+      "name": "legacy-270-13-combat",
+      "pass": true,
+      "level": 13,
+      "mode": "combat",
+      "baseline": "5e057d5",
+      "casesCompared": 8
+    },
+    {
+      "name": "legacy-270-14-combat",
+      "pass": true,
+      "level": 14,
+      "mode": "combat",
+      "baseline": "5e057d5",
+      "casesCompared": 8
+    },
+    {
+      "name": "legacy-270-1-pro",
+      "pass": true,
+      "level": 1,
+      "mode": "pro",
+      "baseline": "5e057d5",
+      "casesCompared": 8
+    },
+    {
+      "name": "legacy-270-2-pro",
+      "pass": true,
+      "level": 2,
+      "mode": "pro",
+      "baseline": "5e057d5",
+      "casesCompared": 8
+    },
+    {
+      "name": "legacy-270-3-pro",
+      "pass": true,
+      "level": 3,
+      "mode": "pro",
+      "baseline": "5e057d5",
+      "casesCompared": 8
+    },
+    {
+      "name": "legacy-270-4-pro",
+      "pass": true,
+      "level": 4,
+      "mode": "pro",
+      "baseline": "5e057d5",
+      "casesCompared": 8
+    },
+    {
+      "name": "legacy-270-5-pro",
+      "pass": true,
+      "level": 5,
+      "mode": "pro",
+      "baseline": "5e057d5",
+      "casesCompared": 8
+    },
+    {
+      "name": "legacy-270-6-pro",
+      "pass": true,
+      "level": 6,
+      "mode": "pro",
+      "baseline": "5e057d5",
+      "casesCompared": 8
+    },
+    {
+      "name": "legacy-270-7-pro",
+      "pass": true,
+      "level": 7,
+      "mode": "pro",
+      "baseline": "5e057d5",
+      "casesCompared": 8
+    },
+    {
+      "name": "legacy-270-8-pro",
+      "pass": true,
+      "level": 8,
+      "mode": "pro",
+      "baseline": "5e057d5",
+      "casesCompared": 8
+    },
+    {
+      "name": "legacy-270-9-pro",
+      "pass": true,
+      "level": 9,
+      "mode": "pro",
+      "baseline": "5e057d5",
+      "casesCompared": 8
+    },
+    {
+      "name": "legacy-270-10-pro",
+      "pass": true,
+      "level": 10,
+      "mode": "pro",
+      "baseline": "5e057d5",
+      "casesCompared": 8
+    },
+    {
+      "name": "legacy-270-11-pro",
+      "pass": true,
+      "level": 11,
+      "mode": "pro",
+      "baseline": "5e057d5",
+      "casesCompared": 8
+    },
+    {
+      "name": "legacy-270-12-pro",
+      "pass": true,
+      "level": 12,
+      "mode": "pro",
+      "baseline": "5e057d5",
+      "casesCompared": 8
+    },
+    {
+      "name": "legacy-270-13-pro",
+      "pass": true,
+      "level": 13,
+      "mode": "pro",
+      "baseline": "5e057d5",
+      "casesCompared": 8
+    },
+    {
+      "name": "legacy-270-14-pro",
+      "pass": true,
+      "level": 14,
+      "mode": "pro",
+      "baseline": "5e057d5",
+      "casesCompared": 8
+    },
+    {
+      "name": "idempotent-learning-install",
+      "pass": true,
+      "files": [
+        "assets/citadel-quiz-bank-v2.7.0.js",
+        "assets/citadel-learning-modes-v2.7.0.js"
+      ],
+      "listeners": {
+        "window": 33,
+        "document": 44,
+        "elements": 43
+      }
+    }
+  ],
+  "failures": [
+    {
+      "name": "pro-lesson-2-unchanged-case-and-answer-rules",
+      "error": "Pro wrong-answer behavior changed\n+ actual - expected\n... Skipped lines\n\n  {\n    engine: {\n      assist: false,\n      asteroids: [\n        {\n...\n      escort: null,\n+     escortStart: {\n+       assist: false,\n+       caseBank: 1,\n+       completedRemarks: [\n+         0,\n+         1,\n+         2\n+       ],\n+       decisions: [\n+         {\n+           caseIndex: 0,\n+           decision: 1,\n+           firstTry: true,\n+           reqId: 'ФТ-368',\n+           stage: 0\n+         },\n+         {\n+           caseIndex: 1,\n+           decision: 2,\n+           firstTry: true,\n+           reqId: 'ФТ-366',\n+           stage: 0\n+         }\n+       ],\n+       elapsed: 153.43333333334758,\n+       escorts: [],\n+       rescued: [\n+         'ФТ-368',\n+         'ФТ-366',\n+         'ФТ-408'\n+       ],\n+       schema: 'citadel-review-v3',\n+       score: 12213,\n+       seed: 417147,\n+       stage: 0,\n+       status: 'stageclear',\n+       totalKills: 20,\n+       upgradeChoice: 'weapons',\n+       upgrades: {\n+         analyst280: {\n+           earned: [\n+             'base-0-terminal-1',\n+             'base-0-terminal-3'\n+           ],\n+           points: 2,\n+           ranks: {\n+             observation: 0,\n+             priority: 0,\n+             systems: 0\n+           },\n+           schema: 1\n+         },\n+         armor: 0,\n+         baseKit260: {\n+           achievements: [\n+             'supply-0'\n+           ],\n+           armor: 1,\n+           capacitor: 1,\n+           collected: [\n+             'base-0-0',\n+             'field-0-0',\n+             'base-0-1',\n+             'field-0-1',\n+             'base-0-2',\n+             'field-0-2'\n+           ],\n+           parts: 1,\n+           schema: 1\n+         },\n+         rockets: 0,\n+         weapons: 1\n+       }\n+     },\n      escorts: [\n        {\n          from: 0,\n          kills: 11,\n          score: 1922,\n",
+      "stack": [
+        "+ actual - expected",
+        "... Skipped lines",
+        ""
+      ]
+    },
+    {
+      "name": "pro-lesson-3-unchanged-case-and-answer-rules",
+      "error": "Pro wrong-answer behavior changed\n+ actual - expected\n... Skipped lines\n\n  {\n    engine: {\n      assist: false,\n      asteroids: [\n        {\n...\n      escort: null,\n+     escortStart: {\n+       assist: false,\n+       caseBank: 1,\n+       completedRemarks: [\n+         0,\n+         1,\n+         2\n+       ],\n+       decisions: [\n+         {\n+           caseIndex: 0,\n+           decision: 1,\n+           firstTry: true,\n+           reqId: 'ФТ-368',\n+           stage: 0\n+         },\n+         {\n+           caseIndex: 1,\n+           decision: 2,\n+           firstTry: true,\n+           reqId: 'ФТ-366',\n+           stage: 0\n+         }\n+       ],\n+       elapsed: 153.43333333334758,\n+       escorts: [],\n+       rescued: [\n+         'ФТ-368',\n+         'ФТ-366',\n+         'ФТ-408'\n+       ],\n+       schema: 'citadel-review-v3',\n+       score: 12213,\n+       seed: 417147,\n+       stage: 0,\n+       status: 'stageclear',\n+       totalKills: 20,\n+       upgradeChoice: 'weapons',\n+       upgrades: {\n+         analyst280: {\n+           earned: [\n+             'base-0-terminal-1',\n+             'base-0-terminal-3'\n+           ],\n+           points: 2,\n+           ranks: {\n+             observation: 0,\n+             priority: 0,\n+             systems: 0\n+           },\n+           schema: 1\n+         },\n+         armor: 0,\n+         baseKit260: {\n+           achievements: [\n+             'supply-0'\n+           ],\n+           armor: 1,\n+           capacitor: 1,\n+           collected: [\n+             'base-0-0',\n+             'field-0-0',\n+             'base-0-1',\n+             'field-0-1',\n+             'base-0-2',\n+             'field-0-2'\n+           ],\n+           parts: 1,\n+           schema: 1\n+         },\n+         rockets: 0,\n+         weapons: 1\n+       }\n+     },\n      escorts: [\n        {\n          from: 0,\n          kills: 11,\n          score: 1922,\n",
+      "stack": [
+        "+ actual - expected",
+        "... Skipped lines",
+        ""
+      ]
+    },
+    {
+      "name": "pro-remark-3-unchanged-case-and-answer-rules",
+      "error": "Pro wrong-answer behavior changed\n+ actual - expected\n... Skipped lines\n\n  {\n    engine: {\n      assist: false,\n      asteroids: [],\n      autopilot: false,\n...\n      escort: null,\n+     escortStart: {\n+       assist: false,\n+       caseBank: 1,\n+       completedRemarks: [\n+         0,\n+         1,\n+         2\n+       ],\n+       decisions: [\n+         {\n+           caseIndex: 0,\n+           decision: 1,\n+           firstTry: true,\n+           reqId: 'ФТ-368',\n+           stage: 0\n+         },\n+         {\n+           caseIndex: 1,\n+           decision: 2,\n+           firstTry: true,\n+           reqId: 'ФТ-366',\n+           stage: 0\n+         }\n+       ],\n+       elapsed: 153.43333333334758,\n+       escorts: [],\n+       rescued: [\n+         'ФТ-368',\n+         'ФТ-366',\n+         'ФТ-408'\n+       ],\n+       schema: 'citadel-review-v3',\n+       score: 12213,\n+       seed: 417147,\n+       stage: 0,\n+       status: 'stageclear',\n+       totalKills: 20,\n+       upgradeChoice: 'weapons',\n+       upgrades: {\n+         analyst280: {\n+           earned: [\n+             'base-0-terminal-1',\n+             'base-0-terminal-3'\n+           ],\n+           points: 2,\n+           ranks: {\n+             observation: 0,\n+             priority: 0,\n+             systems: 0\n+           },\n+           schema: 1\n+         },\n+         armor: 0,\n+         baseKit260: {\n+           achievements: [\n+             'supply-0'\n+           ],\n+           armor: 1,\n+           capacitor: 1,\n+           collected: [\n+             'base-0-0',\n+             'field-0-0',\n+             'base-0-1',\n+             'field-0-1',\n+             'base-0-2',\n+             'field-0-2'\n+           ],\n+           parts: 1,\n+           schema: 1\n+         },\n+         rockets: 0,\n+         weapons: 1\n+       }\n+     },\n      escorts: [\n        {\n          from: 0,\n          kills: 11,\n          score: 1922,\n",
+      "stack": [
+        "+ actual - expected",
+        "... Skipped lines",
+        ""
+      ]
+    },
+    {
+      "name": "pro-remark-4-unchanged-case-and-answer-rules",
+      "error": "Pro wrong-answer behavior changed\n+ actual - expected\n... Skipped lines\n\n  {\n    engine: {\n      assist: false,\n      asteroids: [],\n      autopilot: false,\n...\n      escort: null,\n+     escortStart: {\n+       assist: false,\n+       caseBank: 1,\n+       completedRemarks: [\n+         0,\n+         1,\n+         2\n+       ],\n+       decisions: [\n+         {\n+           caseIndex: 0,\n+           decision: 1,\n+           firstTry: true,\n+           reqId: 'ФТ-368',\n+           stage: 0\n+         },\n+         {\n+           caseIndex: 1,\n+           decision: 2,\n+           firstTry: true,\n+           reqId: 'ФТ-366',\n+           stage: 0\n+         }\n+       ],\n+       elapsed: 153.43333333334758,\n+       escorts: [],\n+       rescued: [\n+         'ФТ-368',\n+         'ФТ-366',\n+         'ФТ-408'\n+       ],\n+       schema: 'citadel-review-v3',\n+       score: 12213,\n+       seed: 417147,\n+       stage: 0,\n+       status: 'stageclear',\n+       totalKills: 20,\n+       upgradeChoice: 'weapons',\n+       upgrades: {\n+         analyst280: {\n+           earned: [\n+             'base-0-terminal-1',\n+             'base-0-terminal-3'\n+           ],\n+           points: 2,\n+           ranks: {\n+             observation: 0,\n+             priority: 0,\n+             systems: 0\n+           },\n+           schema: 1\n+         },\n+         armor: 0,\n+         baseKit260: {\n+           achievements: [\n+             'supply-0'\n+           ],\n+           armor: 1,\n+           capacitor: 1,\n+           collected: [\n+             'base-0-0',\n+             'field-0-0',\n+             'base-0-1',\n+             'field-0-1',\n+             'base-0-2',\n+             'field-0-2'\n+           ],\n+           parts: 1,\n+           schema: 1\n+         },\n+         rockets: 0,\n+         weapons: 1\n+       }\n+     },\n      escorts: [\n        {\n          from: 0,\n          kills: 11,\n          score: 1922,\n",
+      "stack": [
+        "+ actual - expected",
+        "... Skipped lines",
+        ""
+      ]
+    },
+    {
+      "name": "pro-remark-5-unchanged-case-and-answer-rules",
+      "error": "Pro wrong-answer behavior changed\n+ actual - expected\n... Skipped lines\n\n  {\n    engine: {\n      assist: false,\n      asteroids: [],\n      autopilot: false,\n...\n      escort: null,\n+     escortStart: {\n+       assist: false,\n+       caseBank: 1,\n+       completedRemarks: [\n+         0,\n+         1,\n+         2\n+       ],\n+       decisions: [\n+         {\n+           caseIndex: 0,\n+           decision: 1,\n+           firstTry: true,\n+           reqId: 'ФТ-368',\n+           stage: 0\n+         },\n+         {\n+           caseIndex: 1,\n+           decision: 2,\n+           firstTry: true,\n+           reqId: 'ФТ-366',\n+           stage: 0\n+         }\n+       ],\n+       elapsed: 153.43333333334758,\n+       escorts: [],\n+       rescued: [\n+         'ФТ-368',\n+         'ФТ-366',\n+         'ФТ-408'\n+       ],\n+       schema: 'citadel-review-v3',\n+       score: 12213,\n+       seed: 417147,\n+       stage: 0,\n+       status: 'stageclear',\n+       totalKills: 20,\n+       upgradeChoice: 'weapons',\n+       upgrades: {\n+         analyst280: {\n+           earned: [\n+             'base-0-terminal-1',\n+             'base-0-terminal-3'\n+           ],\n+           points: 2,\n+           ranks: {\n+             observation: 0,\n+             priority: 0,\n+             systems: 0\n+           },\n+           schema: 1\n+         },\n+         armor: 0,\n+         baseKit260: {\n+           achievements: [\n+             'supply-0'\n+           ],\n+           armor: 1,\n+           capacitor: 1,\n+           collected: [\n+             'base-0-0',\n+             'field-0-0',\n+             'base-0-1',\n+             'field-0-1',\n+             'base-0-2',\n+             'field-0-2'\n+           ],\n+           parts: 1,\n+           schema: 1\n+         },\n+         rockets: 0,\n+         weapons: 1\n+       }\n+     },\n      escorts: [\n        {\n          from: 0,\n          kills: 11,\n          score: 1922,\n",
+      "stack": [
+        "+ actual - expected",
+        "... Skipped lines",
+        ""
+      ]
+    },
+    {
+      "name": "pro-lesson-4-unchanged-case-and-answer-rules",
+      "error": "Pro wrong-answer behavior changed\n+ actual - expected\n... Skipped lines\n\n  {\n    engine: {\n      assist: false,\n      asteroids: [],\n      autopilot: true,\n...\n      escort: null,\n+     escortStart: {\n+       assist: false,\n+       caseBank: 1,\n+       completedRemarks: [\n+         0,\n+         1,\n+         2,\n+         3,\n+         4,\n+         5\n+       ],\n+       decisions: [\n+         {\n+           caseIndex: 0,\n+           decision: 1,\n+           firstTry: true,\n+           reqId: 'ФТ-368',\n+           stage: 0\n+         },\n+         {\n+           caseIndex: 1,\n+           decision: 2,\n+           firstTry: true,\n+           reqId: 'ФТ-366',\n+           stage: 0\n+         },\n+         {\n+           caseIndex: 2,\n+           decision: 0,\n+           firstTry: true,\n+           reqId: 'ФТ-095',\n+           stage: 1\n+         },\n+         {\n+           caseIndex: 3,\n+           decision: 0,\n+           firstTry: true,\n+           reqId: 'ФТ-085',\n+           stage: 1\n+         }\n+       ],\n+       elapsed: 524.3666666665184,\n+       escorts: [\n+         {\n+           from: 0,\n+           kills: 11,\n+           score: 1922,\n+           survivors: 3\n+         }\n+       ],\n+       rescued: [\n+         'ФТ-368',\n+         'ФТ-366',\n+         'ФТ-408',\n+         'ФТ-095',\n+         'ФТ-222',\n+         'ФТ-085'\n+       ],\n+       schema: 'citadel-review-v3',\n+       score: 43479,\n+       seed: 417147,\n+       stage: 1,\n+       status: 'stageclear',\n+       totalKills: 95,\n+       upgradeChoice: 'weapons',\n+       upgrades: {\n+         analyst280: {\n+           earned: [\n+             'base-0-terminal-1',\n+             'base-0-terminal-3',\n+             'base-1-terminal-1',\n+             'base-1-terminal-3'\n+           ],\n+           points: 4,\n+           ranks: {\n+             observation: 0,\n+             priority: 0,\n+             systems: 0\n+           },\n+           schema: 1\n+         },\n+         armor: 0,\n+         baseKit260: {\n+           achievements: [\n+             'supply-0',\n+             'supply-1'\n+           ],\n+           armor: 2,\n+           capacitor: 2,\n+           collected: [\n+             'base-0-0',\n+             'field-0-0',\n+             'base-0-1',\n+             'field-0-1',\n+             'base-0-2',\n+             'field-0-2',\n+             'base-1-0',\n+             'field-1-0',\n+             'field-1-1',\n+             'base-1-1',\n+             'base-1-2',\n+             'field-1-2'\n+           ],\n+           parts: 2,\n+           schema: 1\n+         },\n+         rockets: 0,\n+         weapons: 2\n+       }\n+     },\n      escorts: [\n        {\n          from: 0,\n          kills: 11,\n          score: 1922,\n",
+      "stack": [
+        "+ actual - expected",
+        "... Skipped lines",
+        ""
+      ]
+    },
+    {
+      "name": "pro-lesson-5-unchanged-case-and-answer-rules",
+      "error": "Pro wrong-answer behavior changed\n+ actual - expected\n... Skipped lines\n\n  {\n    engine: {\n      assist: false,\n      asteroids: [],\n      autopilot: true,\n...\n      escort: null,\n+     escortStart: {\n+       assist: false,\n+       caseBank: 1,\n+       completedRemarks: [\n+         0,\n+         1,\n+         2,\n+         3,\n+         4,\n+         5\n+       ],\n+       decisions: [\n+         {\n+           caseIndex: 0,\n+           decision: 1,\n+           firstTry: true,\n+           reqId: 'ФТ-368',\n+           stage: 0\n+         },\n+         {\n+           caseIndex: 1,\n+           decision: 2,\n+           firstTry: true,\n+           reqId: 'ФТ-366',\n+           stage: 0\n+         },\n+         {\n+           caseIndex: 2,\n+           decision: 0,\n+           firstTry: true,\n+           reqId: 'ФТ-095',\n+           stage: 1\n+         },\n+         {\n+           caseIndex: 3,\n+           decision: 0,\n+           firstTry: true,\n+           reqId: 'ФТ-085',\n+           stage: 1\n+         }\n+       ],\n+       elapsed: 524.3666666665184,\n+       escorts: [\n+         {\n+           from: 0,\n+           kills: 11,\n+           score: 1922,\n+           survivors: 3\n+         }\n+       ],\n+       rescued: [\n+         'ФТ-368',\n+         'ФТ-366',\n+         'ФТ-408',\n+         'ФТ-095',\n+         'ФТ-222',\n+         'ФТ-085'\n+       ],\n+       schema: 'citadel-review-v3',\n+       score: 43479,\n+       seed: 417147,\n+       stage: 1,\n+       status: 'stageclear',\n+       totalKills: 95,\n+       upgradeChoice: 'weapons',\n+       upgrades: {\n+         analyst280: {\n+           earned: [\n+             'base-0-terminal-1',\n+             'base-0-terminal-3',\n+             'base-1-terminal-1',\n+             'base-1-terminal-3'\n+           ],\n+           points: 4,\n+           ranks: {\n+             observation: 0,\n+             priority: 0,\n+             systems: 0\n+           },\n+           schema: 1\n+         },\n+         armor: 0,\n+         baseKit260: {\n+           achievements: [\n+             'supply-0',\n+             'supply-1'\n+           ],\n+           armor: 2,\n+           capacitor: 2,\n+           collected: [\n+             'base-0-0',\n+             'field-0-0',\n+             'base-0-1',\n+             'field-0-1',\n+             'base-0-2',\n+             'field-0-2',\n+             'base-1-0',\n+             'field-1-0',\n+             'field-1-1',\n+             'base-1-1',\n+             'base-1-2',\n+             'field-1-2'\n+           ],\n+           parts: 2,\n+           schema: 1\n+         },\n+         rockets: 0,\n+         weapons: 2\n+       }\n+     },\n      escorts: [\n        {\n          from: 0,\n          kills: 11,\n          score: 1922,\n",
+      "stack": [
+        "+ actual - expected",
+        "... Skipped lines",
+        ""
+      ]
+    },
+    {
+      "name": "pro-remark-6-unchanged-case-and-answer-rules",
+      "error": "Pro wrong-answer behavior changed\n+ actual - expected\n... Skipped lines\n\n  {\n    engine: {\n      assist: false,\n      asteroids: [],\n      autopilot: false,\n...\n      escort: null,\n+     escortStart: {\n+       assist: false,\n+       caseBank: 1,\n+       completedRemarks: [\n+         0,\n+         1,\n+         2,\n+         3,\n+         4,\n+         5\n+       ],\n+       decisions: [\n+         {\n+           caseIndex: 0,\n+           decision: 1,\n+           firstTry: true,\n+           reqId: 'ФТ-368',\n+           stage: 0\n+         },\n+         {\n+           caseIndex: 1,\n+           decision: 2,\n+           firstTry: true,\n+           reqId: 'ФТ-366',\n+           stage: 0\n+         },\n+         {\n+           caseIndex: 2,\n+           decision: 0,\n+           firstTry: true,\n+           reqId: 'ФТ-095',\n+           stage: 1\n+         },\n+         {\n+           caseIndex: 3,\n+           decision: 0,\n+           firstTry: true,\n+           reqId: 'ФТ-085',\n+           stage: 1\n+         }\n+       ],\n+       elapsed: 524.3666666665184,\n+       escorts: [\n+         {\n+           from: 0,\n+           kills: 11,\n+           score: 1922,\n+           survivors: 3\n+         }\n+       ],\n+       rescued: [\n+         'ФТ-368',\n+         'ФТ-366',\n+         'ФТ-408',\n+         'ФТ-095',\n+         'ФТ-222',\n+         'ФТ-085'\n+       ],\n+       schema: 'citadel-review-v3',\n+       score: 43479,\n+       seed: 417147,\n+       stage: 1,\n+       status: 'stageclear',\n+       totalKills: 95,\n+       upgradeChoice: 'weapons',\n+       upgrades: {\n+         analyst280: {\n+           earned: [\n+             'base-0-terminal-1',\n+             'base-0-terminal-3',\n+             'base-1-terminal-1',\n+             'base-1-terminal-3'\n+           ],\n+           points: 4,\n+           ranks: {\n+             observation: 0,\n+             priority: 0,\n+             systems: 0\n+           },\n+           schema: 1\n+         },\n+         armor: 0,\n+         baseKit260: {\n+           achievements: [\n+             'supply-0',\n+             'supply-1'\n+           ],\n+           armor: 2,\n+           capacitor: 2,\n+           collected: [\n+             'base-0-0',\n+             'field-0-0',\n+             'base-0-1',\n+             'field-0-1',\n+             'base-0-2',\n+             'field-0-2',\n+             'base-1-0',\n+             'field-1-0',\n+             'field-1-1',\n+             'base-1-1',\n+             'base-1-2',\n+             'field-1-2'\n+           ],\n+           parts: 2,\n+           schema: 1\n+         },\n+         rockets: 0,\n+         weapons: 2\n+       }\n+     },\n      escorts: [\n        {\n          from: 0,\n          kills: 11,\n          score: 1922,\n",
+      "stack": [
+        "+ actual - expected",
+        "... Skipped lines",
+        ""
+      ]
+    },
+    {
+      "name": "pro-remark-7-unchanged-case-and-answer-rules",
+      "error": "Pro wrong-answer behavior changed\n+ actual - expected\n... Skipped lines\n\n  {\n    engine: {\n      assist: false,\n      asteroids: [],\n      autopilot: false,\n...\n      escort: null,\n+     escortStart: {\n+       assist: false,\n+       caseBank: 1,\n+       completedRemarks: [\n+         0,\n+         1,\n+         2,\n+         3,\n+         4,\n+         5\n+       ],\n+       decisions: [\n+         {\n+           caseIndex: 0,\n+           decision: 1,\n+           firstTry: true,\n+           reqId: 'ФТ-368',\n+           stage: 0\n+         },\n+         {\n+           caseIndex: 1,\n+           decision: 2,\n+           firstTry: true,\n+           reqId: 'ФТ-366',\n+           stage: 0\n+         },\n+         {\n+           caseIndex: 2,\n+           decision: 0,\n+           firstTry: true,\n+           reqId: 'ФТ-095',\n+           stage: 1\n+         },\n+         {\n+           caseIndex: 3,\n+           decision: 0,\n+           firstTry: true,\n+           reqId: 'ФТ-085',\n+           stage: 1\n+         }\n+       ],\n+       elapsed: 524.3666666665184,\n+       escorts: [\n+         {\n+           from: 0,\n+           kills: 11,\n+           score: 1922,\n+           survivors: 3\n+         }\n+       ],\n+       rescued: [\n+         'ФТ-368',\n+         'ФТ-366',\n+         'ФТ-408',\n+         'ФТ-095',\n+         'ФТ-222',\n+         'ФТ-085'\n+       ],\n+       schema: 'citadel-review-v3',\n+       score: 43479,\n+       seed: 417147,\n+       stage: 1,\n+       status: 'stageclear',\n+       totalKills: 95,\n+       upgradeChoice: 'weapons',\n+       upgrades: {\n+         analyst280: {\n+           earned: [\n+             'base-0-terminal-1',\n+             'base-0-terminal-3',\n+             'base-1-terminal-1',\n+             'base-1-terminal-3'\n+           ],\n+           points: 4,\n+           ranks: {\n+             observation: 0,\n+             priority: 0,\n+             systems: 0\n+           },\n+           schema: 1\n+         },\n+         armor: 0,\n+         baseKit260: {\n+           achievements: [\n+             'supply-0',\n+             'supply-1'\n+           ],\n+           armor: 2,\n+           capacitor: 2,\n+           collected: [\n+             'base-0-0',\n+             'field-0-0',\n+             'base-0-1',\n+             'field-0-1',\n+             'base-0-2',\n+             'field-0-2',\n+             'base-1-0',\n+             'field-1-0',\n+             'field-1-1',\n+             'base-1-1',\n+             'base-1-2',\n+             'field-1-2'\n+           ],\n+           parts: 2,\n+           schema: 1\n+         },\n+         rockets: 0,\n+         weapons: 2\n+       }\n+     },\n      escorts: [\n        {\n          from: 0,\n          kills: 11,\n          score: 1922,\n",
+      "stack": [
+        "+ actual - expected",
+        "... Skipped lines",
+        ""
+      ]
+    },
+    {
+      "name": "pro-remark-8-unchanged-case-and-answer-rules",
+      "error": "Pro wrong-answer behavior changed\n+ actual - expected\n... Skipped lines\n\n  {\n    engine: {\n      assist: false,\n      asteroids: [],\n      autopilot: false,\n...\n      escort: null,\n+     escortStart: {\n+       assist: false,\n+       caseBank: 1,\n+       completedRemarks: [\n+         0,\n+         1,\n+         2,\n+         3,\n+         4,\n+         5\n+       ],\n+       decisions: [\n+         {\n+           caseIndex: 0,\n+           decision: 1,\n+           firstTry: true,\n+           reqId: 'ФТ-368',\n+           stage: 0\n+         },\n+         {\n+           caseIndex: 1,\n+           decision: 2,\n+           firstTry: true,\n+           reqId: 'ФТ-366',\n+           stage: 0\n+         },\n+         {\n+           caseIndex: 2,\n+           decision: 0,\n+           firstTry: true,\n+           reqId: 'ФТ-095',\n+           stage: 1\n+         },\n+         {\n+           caseIndex: 3,\n+           decision: 0,\n+           firstTry: true,\n+           reqId: 'ФТ-085',\n+           stage: 1\n+         }\n+       ],\n+       elapsed: 524.3666666665184,\n+       escorts: [\n+         {\n+           from: 0,\n+           kills: 11,\n+           score: 1922,\n+           survivors: 3\n+         }\n+       ],\n+       rescued: [\n+         'ФТ-368',\n+         'ФТ-366',\n+         'ФТ-408',\n+         'ФТ-095',\n+         'ФТ-222',\n+         'ФТ-085'\n+       ],\n+       schema: 'citadel-review-v3',\n+       score: 43479,\n+       seed: 417147,\n+       stage: 1,\n+       status: 'stageclear',\n+       totalKills: 95,\n+       upgradeChoice: 'weapons',\n+       upgrades: {\n+         analyst280: {\n+           earned: [\n+             'base-0-terminal-1',\n+             'base-0-terminal-3',\n+             'base-1-terminal-1',\n+             'base-1-terminal-3'\n+           ],\n+           points: 4,\n+           ranks: {\n+             observation: 0,\n+             priority: 0,\n+             systems: 0\n+           },\n+           schema: 1\n+         },\n+         armor: 0,\n+         baseKit260: {\n+           achievements: [\n+             'supply-0',\n+             'supply-1'\n+           ],\n+           armor: 2,\n+           capacitor: 2,\n+           collected: [\n+             'base-0-0',\n+             'field-0-0',\n+             'base-0-1',\n+             'field-0-1',\n+             'base-0-2',\n+             'field-0-2',\n+             'base-1-0',\n+             'field-1-0',\n+             'field-1-1',\n+             'base-1-1',\n+             'base-1-2',\n+             'field-1-2'\n+           ],\n+           parts: 2,\n+           schema: 1\n+         },\n+         rockets: 0,\n+         weapons: 2\n+       }\n+     },\n      escorts: [\n        {\n          from: 0,\n          kills: 11,\n          score: 1922,\n",
+      "stack": [
+        "+ actual - expected",
+        "... Skipped lines",
+        ""
+      ]
+    },
+    {
+      "name": "pro-lesson-6-unchanged-case-and-answer-rules",
+      "error": "Pro wrong-answer behavior changed\n+ actual - expected\n... Skipped lines\n\n  {\n    engine: {\n      assist: false,\n      asteroids: [\n        {\n...\n      escort: null,\n+     escortStart: {\n+       assist: false,\n+       caseBank: 1,\n+       completedRemarks: [\n+         0,\n+         1,\n+         2,\n+         3,\n+         4,\n+         5,\n+         6,\n+         7,\n+         8\n+       ],\n+       decisions: [\n+         {\n+           caseIndex: 0,\n+           decision: 1,\n+           firstTry: true,\n+           reqId: 'ФТ-368',\n+           stage: 0\n+         },\n+         {\n+           caseIndex: 1,\n+           decision: 2,\n+           firstTry: true,\n+           reqId: 'ФТ-366',\n+           stage: 0\n+         },\n+         {\n+           caseIndex: 2,\n+           decision: 0,\n+           firstTry: true,\n+           reqId: 'ФТ-095',\n+           stage: 1\n+         },\n+         {\n+           caseIndex: 3,\n+           decision: 0,\n+           firstTry: true,\n+           reqId: 'ФТ-085',\n+           stage: 1\n+         },\n+         {\n+           caseIndex: 4,\n+           decision: 0,\n+           firstTry: true,\n+           reqId: 'ФТ-231',\n+           stage: 2\n+         },\n+         {\n+           caseIndex: 5,\n+           decision: 2,\n+           firstTry: true,\n+           reqId: 'ФТ-207',\n+           stage: 2\n+         }\n+       ],\n+       elapsed: 870.9833333328698,\n+       escorts: [\n+         {\n+           from: 0,\n+           kills: 11,\n+           score: 1922,\n+           survivors: 3\n+         },\n+         {\n+           from: 1,\n+           kills: 18,\n+           score: 1894,\n+           survivors: 3\n+         }\n+       ],\n+       rescued: [\n+         'ФТ-368',\n+         'ФТ-366',\n+         'ФТ-408',\n+         'ФТ-095',\n+         'ФТ-222',\n+         'ФТ-085',\n+         'ФТ-231',\n+         'ФТ-202',\n+         'ФТ-207'\n+       ],\n+       schema: 'citadel-review-v3',\n+       score: 73513,\n+       seed: 417147,\n+       stage: 2,\n+       status: 'stageclear',\n+       totalKills: 343,\n+       upgradeChoice: 'armor',\n+       upgrades: {\n+         analyst280: {\n+           earned: [\n+             'base-0-terminal-1',\n+             'base-0-terminal-3',\n+             'base-1-terminal-1',\n+             'base-1-terminal-3',\n+             'base-2-terminal-1',\n+             'base-2-terminal-3'\n+           ],\n+           points: 6,\n+           ranks: {\n+             observation: 0,\n+             priority: 0,\n+             systems: 0\n+           },\n+           schema: 1\n+         },\n+         armor: 1,\n+         baseKit260: {\n+           achievements: [\n+             'supply-0',\n+             'supply-1',\n+             'triad',\n+             'supply-2'\n+           ],\n+           armor: 3,\n+           capacitor: 3,\n+           collected: [\n+             'base-0-0',\n+             'field-0-0',\n+             'base-0-1',\n+             'field-0-1',\n+             'base-0-2',\n+             'field-0-2',\n+             'base-1-0',\n+             'field-1-0',\n+             'field-1-1',\n+             'base-1-1',\n+             'base-1-2',\n+             'field-1-2',\n+             'base-2-0',\n+             'field-2-0',\n+             'field-2-1',\n+             'base-2-1',\n+             'base-2-2',\n+             'field-2-2'\n+           ],\n+           parts: 3,\n+           schema: 1\n+         },\n+         rockets: 0,\n+         weapons: 2\n+       }\n+     },\n      escorts: [\n        {\n          from: 0,\n          kills: 11,\n          score: 1922,\n",
+      "stack": [
+        "+ actual - expected",
+        "... Skipped lines",
+        ""
+      ]
+    },
+    {
+      "name": "pro-lesson-7-unchanged-case-and-answer-rules",
+      "error": "Pro wrong-answer behavior changed\n+ actual - expected\n... Skipped lines\n\n  {\n    engine: {\n      assist: false,\n      asteroids: [\n        {\n...\n      escort: null,\n+     escortStart: {\n+       assist: false,\n+       caseBank: 1,\n+       completedRemarks: [\n+         0,\n+         1,\n+         2,\n+         3,\n+         4,\n+         5,\n+         6,\n+         7,\n+         8\n+       ],\n+       decisions: [\n+         {\n+           caseIndex: 0,\n+           decision: 1,\n+           firstTry: true,\n+           reqId: 'ФТ-368',\n+           stage: 0\n+         },\n+         {\n+           caseIndex: 1,\n+           decision: 2,\n+           firstTry: true,\n+           reqId: 'ФТ-366',\n+           stage: 0\n+         },\n+         {\n+           caseIndex: 2,\n+           decision: 0,\n+           firstTry: true,\n+           reqId: 'ФТ-095',\n+           stage: 1\n+         },\n+         {\n+           caseIndex: 3,\n+           decision: 0,\n+           firstTry: true,\n+           reqId: 'ФТ-085',\n+           stage: 1\n+         },\n+         {\n+           caseIndex: 4,\n+           decision: 0,\n+           firstTry: true,\n+           reqId: 'ФТ-231',\n+           stage: 2\n+         },\n+         {\n+           caseIndex: 5,\n+           decision: 2,\n+           firstTry: true,\n+           reqId: 'ФТ-207',\n+           stage: 2\n+         }\n+       ],\n+       elapsed: 870.9833333328698,\n+       escorts: [\n+         {\n+           from: 0,\n+           kills: 11,\n+           score: 1922,\n+           survivors: 3\n+         },\n+         {\n+           from: 1,\n+           kills: 18,\n+           score: 1894,\n+           survivors: 3\n+         }\n+       ],\n+       rescued: [\n+         'ФТ-368',\n+         'ФТ-366',\n+         'ФТ-408',\n+         'ФТ-095',\n+         'ФТ-222',\n+         'ФТ-085',\n+         'ФТ-231',\n+         'ФТ-202',\n+         'ФТ-207'\n+       ],\n+       schema: 'citadel-review-v3',\n+       score: 73513,\n+       seed: 417147,\n+       stage: 2,\n+       status: 'stageclear',\n+       totalKills: 343,\n+       upgradeChoice: 'armor',\n+       upgrades: {\n+         analyst280: {\n+           earned: [\n+             'base-0-terminal-1',\n+             'base-0-terminal-3',\n+             'base-1-terminal-1',\n+             'base-1-terminal-3',\n+             'base-2-terminal-1',\n+             'base-2-terminal-3'\n+           ],\n+           points: 6,\n+           ranks: {\n+             observation: 0,\n+             priority: 0,\n+             systems: 0\n+           },\n+           schema: 1\n+         },\n+         armor: 1,\n+         baseKit260: {\n+           achievements: [\n+             'supply-0',\n+             'supply-1',\n+             'triad',\n+             'supply-2'\n+           ],\n+           armor: 3,\n+           capacitor: 3,\n+           collected: [\n+             'base-0-0',\n+             'field-0-0',\n+             'base-0-1',\n+             'field-0-1',\n+             'base-0-2',\n+             'field-0-2',\n+             'base-1-0',\n+             'field-1-0',\n+             'field-1-1',\n+             'base-1-1',\n+             'base-1-2',\n+             'field-1-2',\n+             'base-2-0',\n+             'field-2-0',\n+             'field-2-1',\n+             'base-2-1',\n+             'base-2-2',\n+             'field-2-2'\n+           ],\n+           parts: 3,\n+           schema: 1\n+         },\n+         rockets: 0,\n+         weapons: 2\n+       }\n+     },\n      escorts: [\n        {\n          from: 0,\n          kills: 11,\n          score: 1922,\n",
+      "stack": [
+        "+ actual - expected",
+        "... Skipped lines",
+        ""
+      ]
+    },
+    {
+      "name": "pro-remark-9-unchanged-case-and-answer-rules",
+      "error": "Pro wrong-answer behavior changed\n+ actual - expected\n... Skipped lines\n\n  {\n    engine: {\n      assist: false,\n      asteroids: [\n        {\n...\n      escort: null,\n+     escortStart: {\n+       assist: false,\n+       caseBank: 1,\n+       completedRemarks: [\n+         0,\n+         1,\n+         2,\n+         3,\n+         4,\n+         5,\n+         6,\n+         7,\n+         8\n+       ],\n+       decisions: [\n+         {\n+           caseIndex: 0,\n+           decision: 1,\n+           firstTry: true,\n+           reqId: 'ФТ-368',\n+           stage: 0\n+         },\n+         {\n+           caseIndex: 1,\n+           decision: 2,\n+           firstTry: true,\n+           reqId: 'ФТ-366',\n+           stage: 0\n+         },\n+         {\n+           caseIndex: 2,\n+           decision: 0,\n+           firstTry: true,\n+           reqId: 'ФТ-095',\n+           stage: 1\n+         },\n+         {\n+           caseIndex: 3,\n+           decision: 0,\n+           firstTry: true,\n+           reqId: 'ФТ-085',\n+           stage: 1\n+         },\n+         {\n+           caseIndex: 4,\n+           decision: 0,\n+           firstTry: true,\n+           reqId: 'ФТ-231',\n+           stage: 2\n+         },\n+         {\n+           caseIndex: 5,\n+           decision: 2,\n+           firstTry: true,\n+           reqId: 'ФТ-207',\n+           stage: 2\n+         }\n+       ],\n+       elapsed: 870.9833333328698,\n+       escorts: [\n+         {\n+           from: 0,\n+           kills: 11,\n+           score: 1922,\n+           survivors: 3\n+         },\n+         {\n+           from: 1,\n+           kills: 18,\n+           score: 1894,\n+           survivors: 3\n+         }\n+       ],\n+       rescued: [\n+         'ФТ-368',\n+         'ФТ-366',\n+         'ФТ-408',\n+         'ФТ-095',\n+         'ФТ-222',\n+         'ФТ-085',\n+         'ФТ-231',\n+         'ФТ-202',\n+         'ФТ-207'\n+       ],\n+       schema: 'citadel-review-v3',\n+       score: 73513,\n+       seed: 417147,\n+       stage: 2,\n+       status: 'stageclear',\n+       totalKills: 343,\n+       upgradeChoice: 'armor',\n+       upgrades: {\n+         analyst280: {\n+           earned: [\n+             'base-0-terminal-1',\n+             'base-0-terminal-3',\n+             'base-1-terminal-1',\n+             'base-1-terminal-3',\n+             'base-2-terminal-1',\n+             'base-2-terminal-3'\n+           ],\n+           points: 6,\n+           ranks: {\n+             observation: 0,\n+             priority: 0,\n+             systems: 0\n+           },\n+           schema: 1\n+         },\n+         armor: 1,\n+         baseKit260: {\n+           achievements: [\n+             'supply-0',\n+             'supply-1',\n+             'triad',\n+             'supply-2'\n+           ],\n+           armor: 3,\n+           capacitor: 3,\n+           collected: [\n+             'base-0-0',\n+             'field-0-0',\n+             'base-0-1',\n+             'field-0-1',\n+             'base-0-2',\n+             'field-0-2',\n+             'base-1-0',\n+             'field-1-0',\n+             'field-1-1',\n+             'base-1-1',\n+             'base-1-2',\n+             'field-1-2',\n+             'base-2-0',\n+             'field-2-0',\n+             'field-2-1',\n+             'base-2-1',\n+             'base-2-2',\n+             'field-2-2'\n+           ],\n+           parts: 3,\n+           schema: 1\n+         },\n+         rockets: 0,\n+         weapons: 2\n+       }\n+     },\n      escorts: [\n        {\n          from: 0,\n          kills: 11,\n          score: 1922,\n",
+      "stack": [
+        "+ actual - expected",
+        "... Skipped lines",
+        ""
+      ]
+    },
+    {
+      "name": "pro-remark-10-unchanged-case-and-answer-rules",
+      "error": "Pro wrong-answer behavior changed\n+ actual - expected\n... Skipped lines\n\n  {\n    engine: {\n      assist: false,\n      asteroids: [\n        {\n...\n      escort: null,\n+     escortStart: {\n+       assist: false,\n+       caseBank: 1,\n+       completedRemarks: [\n+         0,\n+         1,\n+         2,\n+         3,\n+         4,\n+         5,\n+         6,\n+         7,\n+         8\n+       ],\n+       decisions: [\n+         {\n+           caseIndex: 0,\n+           decision: 1,\n+           firstTry: true,\n+           reqId: 'ФТ-368',\n+           stage: 0\n+         },\n+         {\n+           caseIndex: 1,\n+           decision: 2,\n+           firstTry: true,\n+           reqId: 'ФТ-366',\n+           stage: 0\n+         },\n+         {\n+           caseIndex: 2,\n+           decision: 0,\n+           firstTry: true,\n+           reqId: 'ФТ-095',\n+           stage: 1\n+         },\n+         {\n+           caseIndex: 3,\n+           decision: 0,\n+           firstTry: true,\n+           reqId: 'ФТ-085',\n+           stage: 1\n+         },\n+         {\n+           caseIndex: 4,\n+           decision: 0,\n+           firstTry: true,\n+           reqId: 'ФТ-231',\n+           stage: 2\n+         },\n+         {\n+           caseIndex: 5,\n+           decision: 2,\n+           firstTry: true,\n+           reqId: 'ФТ-207',\n+           stage: 2\n+         }\n+       ],\n+       elapsed: 870.9833333328698,\n+       escorts: [\n+         {\n+           from: 0,\n+           kills: 11,\n+           score: 1922,\n+           survivors: 3\n+         },\n+         {\n+           from: 1,\n+           kills: 18,\n+           score: 1894,\n+           survivors: 3\n+         }\n+       ],\n+       rescued: [\n+         'ФТ-368',\n+         'ФТ-366',\n+         'ФТ-408',\n+         'ФТ-095',\n+         'ФТ-222',\n+         'ФТ-085',\n+         'ФТ-231',\n+         'ФТ-202',\n+         'ФТ-207'\n+       ],\n+       schema: 'citadel-review-v3',\n+       score: 73513,\n+       seed: 417147,\n+       stage: 2,\n+       status: 'stageclear',\n+       totalKills: 343,\n+       upgradeChoice: 'armor',\n+       upgrades: {\n+         analyst280: {\n+           earned: [\n+             'base-0-terminal-1',\n+             'base-0-terminal-3',\n+             'base-1-terminal-1',\n+             'base-1-terminal-3',\n+             'base-2-terminal-1',\n+             'base-2-terminal-3'\n+           ],\n+           points: 6,\n+           ranks: {\n+             observation: 0,\n+             priority: 0,\n+             systems: 0\n+           },\n+           schema: 1\n+         },\n+         armor: 1,\n+         baseKit260: {\n+           achievements: [\n+             'supply-0',\n+             'supply-1',\n+             'triad',\n+             'supply-2'\n+           ],\n+           armor: 3,\n+           capacitor: 3,\n+           collected: [\n+             'base-0-0',\n+             'field-0-0',\n+             'base-0-1',\n+             'field-0-1',\n+             'base-0-2',\n+             'field-0-2',\n+             'base-1-0',\n+             'field-1-0',\n+             'field-1-1',\n+             'base-1-1',\n+             'base-1-2',\n+             'field-1-2',\n+             'base-2-0',\n+             'field-2-0',\n+             'field-2-1',\n+             'base-2-1',\n+             'base-2-2',\n+             'field-2-2'\n+           ],\n+           parts: 3,\n+           schema: 1\n+         },\n+         rockets: 0,\n+         weapons: 2\n+       }\n+     },\n      escorts: [\n        {\n          from: 0,\n          kills: 11,\n          score: 1922,\n",
+      "stack": [
+        "+ actual - expected",
+        "... Skipped lines",
+        ""
+      ]
+    },
+    {
+      "name": "pro-remark-11-unchanged-case-and-answer-rules",
+      "error": "Pro wrong-answer behavior changed\n+ actual - expected\n... Skipped lines\n\n  {\n    engine: {\n      assist: false,\n      asteroids: [\n        {\n...\n      escort: null,\n+     escortStart: {\n+       assist: false,\n+       caseBank: 1,\n+       completedRemarks: [\n+         0,\n+         1,\n+         2,\n+         3,\n+         4,\n+         5,\n+         6,\n+         7,\n+         8\n+       ],\n+       decisions: [\n+         {\n+           caseIndex: 0,\n+           decision: 1,\n+           firstTry: true,\n+           reqId: 'ФТ-368',\n+           stage: 0\n+         },\n+         {\n+           caseIndex: 1,\n+           decision: 2,\n+           firstTry: true,\n+           reqId: 'ФТ-366',\n+           stage: 0\n+         },\n+         {\n+           caseIndex: 2,\n+           decision: 0,\n+           firstTry: true,\n+           reqId: 'ФТ-095',\n+           stage: 1\n+         },\n+         {\n+           caseIndex: 3,\n+           decision: 0,\n+           firstTry: true,\n+           reqId: 'ФТ-085',\n+           stage: 1\n+         },\n+         {\n+           caseIndex: 4,\n+           decision: 0,\n+           firstTry: true,\n+           reqId: 'ФТ-231',\n+           stage: 2\n+         },\n+         {\n+           caseIndex: 5,\n+           decision: 2,\n+           firstTry: true,\n+           reqId: 'ФТ-207',\n+           stage: 2\n+         }\n+       ],\n+       elapsed: 870.9833333328698,\n+       escorts: [\n+         {\n+           from: 0,\n+           kills: 11,\n+           score: 1922,\n+           survivors: 3\n+         },\n+         {\n+           from: 1,\n+           kills: 18,\n+           score: 1894,\n+           survivors: 3\n+         }\n+       ],\n+       rescued: [\n+         'ФТ-368',\n+         'ФТ-366',\n+         'ФТ-408',\n+         'ФТ-095',\n+         'ФТ-222',\n+         'ФТ-085',\n+         'ФТ-231',\n+         'ФТ-202',\n+         'ФТ-207'\n+       ],\n+       schema: 'citadel-review-v3',\n+       score: 73513,\n+       seed: 417147,\n+       stage: 2,\n+       status: 'stageclear',\n+       totalKills: 343,\n+       upgradeChoice: 'armor',\n+       upgrades: {\n+         analyst280: {\n+           earned: [\n+             'base-0-terminal-1',\n+             'base-0-terminal-3',\n+             'base-1-terminal-1',\n+             'base-1-terminal-3',\n+             'base-2-terminal-1',\n+             'base-2-terminal-3'\n+           ],\n+           points: 6,\n+           ranks: {\n+             observation: 0,\n+             priority: 0,\n+             systems: 0\n+           },\n+           schema: 1\n+         },\n+         armor: 1,\n+         baseKit260: {\n+           achievements: [\n+             'supply-0',\n+             'supply-1',\n+             'triad',\n+             'supply-2'\n+           ],\n+           armor: 3,\n+           capacitor: 3,\n+           collected: [\n+             'base-0-0',\n+             'field-0-0',\n+             'base-0-1',\n+             'field-0-1',\n+             'base-0-2',\n+             'field-0-2',\n+             'base-1-0',\n+             'field-1-0',\n+             'field-1-1',\n+             'base-1-1',\n+             'base-1-2',\n+             'field-1-2',\n+             'base-2-0',\n+             'field-2-0',\n+             'field-2-1',\n+             'base-2-1',\n+             'base-2-2',\n+             'field-2-2'\n+           ],\n+           parts: 3,\n+           schema: 1\n+         },\n+         rockets: 0,\n+         weapons: 2\n+       }\n+     },\n      escorts: [\n        {\n          from: 0,\n          kills: 11,\n          score: 1922,\n",
+      "stack": [
+        "+ actual - expected",
+        "... Skipped lines",
+        ""
+      ]
+    },
+    {
+      "name": "pro-final-0-unchanged-case-and-answer-rules",
+      "error": "Pro wrong-answer behavior changed\n+ actual - expected\n... Skipped lines\n\n  {\n    engine: {\n      assist: false,\n      asteroids: [],\n      autopilot: false,\n...\n      escort: null,\n+     escortStart: {\n+       assist: false,\n+       caseBank: 1,\n+       completedRemarks: [\n+         0,\n+         1,\n+         2,\n+         3,\n+         4,\n+         5,\n+         6,\n+         7,\n+         8\n+       ],\n+       decisions: [\n+         {\n+           caseIndex: 0,\n+           decision: 1,\n+           firstTry: true,\n+           reqId: 'ФТ-368',\n+           stage: 0\n+         },\n+         {\n+           caseIndex: 1,\n+           decision: 2,\n+           firstTry: true,\n+           reqId: 'ФТ-366',\n+           stage: 0\n+         },\n+         {\n+           caseIndex: 2,\n+           decision: 0,\n+           firstTry: true,\n+           reqId: 'ФТ-095',\n+           stage: 1\n+         },\n+         {\n+           caseIndex: 3,\n+           decision: 0,\n+           firstTry: true,\n+           reqId: 'ФТ-085',\n+           stage: 1\n+         },\n+         {\n+           caseIndex: 4,\n+           decision: 0,\n+           firstTry: true,\n+           reqId: 'ФТ-231',\n+           stage: 2\n+         },\n+         {\n+           caseIndex: 5,\n+           decision: 2,\n+           firstTry: true,\n+           reqId: 'ФТ-207',\n+           stage: 2\n+         }\n+       ],\n+       elapsed: 870.9833333328698,\n+       escorts: [\n+         {\n+           from: 0,\n+           kills: 11,\n+           score: 1922,\n+           survivors: 3\n+         },\n+         {\n+           from: 1,\n+           kills: 18,\n+           score: 1894,\n+           survivors: 3\n+         }\n+       ],\n+       rescued: [\n+         'ФТ-368',\n+         'ФТ-366',\n+         'ФТ-408',\n+         'ФТ-095',\n+         'ФТ-222',\n+         'ФТ-085',\n+         'ФТ-231',\n+         'ФТ-202',\n+         'ФТ-207'\n+       ],\n+       schema: 'citadel-review-v3',\n+       score: 73513,\n+       seed: 417147,\n+       stage: 2,\n+       status: 'stageclear',\n+       totalKills: 343,\n+       upgradeChoice: 'armor',\n+       upgrades: {\n+         analyst280: {\n+           earned: [\n+             'base-0-terminal-1',\n+             'base-0-terminal-3',\n+             'base-1-terminal-1',\n+             'base-1-terminal-3',\n+             'base-2-terminal-1',\n+             'base-2-terminal-3'\n+           ],\n+           points: 6,\n+           ranks: {\n+             observation: 0,\n+             priority: 0,\n+             systems: 0\n+           },\n+           schema: 1\n+         },\n+         armor: 1,\n+         baseKit260: {\n+           achievements: [\n+             'supply-0',\n+             'supply-1',\n+             'triad',\n+             'supply-2'\n+           ],\n+           armor: 3,\n+           capacitor: 3,\n+           collected: [\n+             'base-0-0',\n+             'field-0-0',\n+             'base-0-1',\n+             'field-0-1',\n+             'base-0-2',\n+             'field-0-2',\n+             'base-1-0',\n+             'field-1-0',\n+             'field-1-1',\n+             'base-1-1',\n+             'base-1-2',\n+             'field-1-2',\n+             'base-2-0',\n+             'field-2-0',\n+             'field-2-1',\n+             'base-2-1',\n+             'base-2-2',\n+             'field-2-2'\n+           ],\n+           parts: 3,\n+           schema: 1\n+         },\n+         rockets: 0,\n+         weapons: 2\n+       }\n+     },\n      escorts: [\n        {\n          from: 0,\n          kills: 11,\n          score: 1922,\n",
+      "stack": [
+        "+ actual - expected",
+        "... Skipped lines",
+        ""
+      ]
+    },
+    {
+      "name": "pro-final-1-unchanged-case-and-answer-rules",
+      "error": "Pro wrong-answer behavior changed\n+ actual - expected\n... Skipped lines\n\n  {\n    engine: {\n      assist: false,\n      asteroids: [],\n      autopilot: false,\n...\n      escort: null,\n+     escortStart: {\n+       assist: false,\n+       caseBank: 1,\n+       completedRemarks: [\n+         0,\n+         1,\n+         2,\n+         3,\n+         4,\n+         5,\n+         6,\n+         7,\n+         8\n+       ],\n+       decisions: [\n+         {\n+           caseIndex: 0,\n+           decision: 1,\n+           firstTry: true,\n+           reqId: 'ФТ-368',\n+           stage: 0\n+         },\n+         {\n+           caseIndex: 1,\n+           decision: 2,\n+           firstTry: true,\n+           reqId: 'ФТ-366',\n+           stage: 0\n+         },\n+         {\n+           caseIndex: 2,\n+           decision: 0,\n+           firstTry: true,\n+           reqId: 'ФТ-095',\n+           stage: 1\n+         },\n+         {\n+           caseIndex: 3,\n+           decision: 0,\n+           firstTry: true,\n+           reqId: 'ФТ-085',\n+           stage: 1\n+         },\n+         {\n+           caseIndex: 4,\n+           decision: 0,\n+           firstTry: true,\n+           reqId: 'ФТ-231',\n+           stage: 2\n+         },\n+         {\n+           caseIndex: 5,\n+           decision: 2,\n+           firstTry: true,\n+           reqId: 'ФТ-207',\n+           stage: 2\n+         }\n+       ],\n+       elapsed: 870.9833333328698,\n+       escorts: [\n+         {\n+           from: 0,\n+           kills: 11,\n+           score: 1922,\n+           survivors: 3\n+         },\n+         {\n+           from: 1,\n+           kills: 18,\n+           score: 1894,\n+           survivors: 3\n+         }\n+       ],\n+       rescued: [\n+         'ФТ-368',\n+         'ФТ-366',\n+         'ФТ-408',\n+         'ФТ-095',\n+         'ФТ-222',\n+         'ФТ-085',\n+         'ФТ-231',\n+         'ФТ-202',\n+         'ФТ-207'\n+       ],\n+       schema: 'citadel-review-v3',\n+       score: 73513,\n+       seed: 417147,\n+       stage: 2,\n+       status: 'stageclear',\n+       totalKills: 343,\n+       upgradeChoice: 'armor',\n+       upgrades: {\n+         analyst280: {\n+           earned: [\n+             'base-0-terminal-1',\n+             'base-0-terminal-3',\n+             'base-1-terminal-1',\n+             'base-1-terminal-3',\n+             'base-2-terminal-1',\n+             'base-2-terminal-3'\n+           ],\n+           points: 6,\n+           ranks: {\n+             observation: 0,\n+             priority: 0,\n+             systems: 0\n+           },\n+           schema: 1\n+         },\n+         armor: 1,\n+         baseKit260: {\n+           achievements: [\n+             'supply-0',\n+             'supply-1',\n+             'triad',\n+             'supply-2'\n+           ],\n+           armor: 3,\n+           capacitor: 3,\n+           collected: [\n+             'base-0-0',\n+             'field-0-0',\n+             'base-0-1',\n+             'field-0-1',\n+             'base-0-2',\n+             'field-0-2',\n+             'base-1-0',\n+             'field-1-0',\n+             'field-1-1',\n+             'base-1-1',\n+             'base-1-2',\n+             'field-1-2',\n+             'base-2-0',\n+             'field-2-0',\n+             'field-2-1',\n+             'base-2-1',\n+             'base-2-2',\n+             'field-2-2'\n+           ],\n+           parts: 3,\n+           schema: 1\n+         },\n+         rockets: 0,\n+         weapons: 2\n+       }\n+     },\n      escorts: [\n        {\n          from: 0,\n          kills: 11,\n          score: 1922,\n",
+      "stack": [
+        "+ actual - expected",
+        "... Skipped lines",
+        ""
+      ]
+    },
+    {
+      "name": "pro-final-2-unchanged-case-and-answer-rules",
+      "error": "Pro wrong-answer behavior changed\n+ actual - expected\n... Skipped lines\n\n  {\n    engine: {\n      assist: false,\n      asteroids: [],\n      autopilot: false,\n...\n      escort: null,\n+     escortStart: {\n+       assist: false,\n+       caseBank: 1,\n+       completedRemarks: [\n+         0,\n+         1,\n+         2,\n+         3,\n+         4,\n+         5,\n+         6,\n+         7,\n+         8\n+       ],\n+       decisions: [\n+         {\n+           caseIndex: 0,\n+           decision: 1,\n+           firstTry: true,\n+           reqId: 'ФТ-368',\n+           stage: 0\n+         },\n+         {\n+           caseIndex: 1,\n+           decision: 2,\n+           firstTry: true,\n+           reqId: 'ФТ-366',\n+           stage: 0\n+         },\n+         {\n+           caseIndex: 2,\n+           decision: 0,\n+           firstTry: true,\n+           reqId: 'ФТ-095',\n+           stage: 1\n+         },\n+         {\n+           caseIndex: 3,\n+           decision: 0,\n+           firstTry: true,\n+           reqId: 'ФТ-085',\n+           stage: 1\n+         },\n+         {\n+           caseIndex: 4,\n+           decision: 0,\n+           firstTry: true,\n+           reqId: 'ФТ-231',\n+           stage: 2\n+         },\n+         {\n+           caseIndex: 5,\n+           decision: 2,\n+           firstTry: true,\n+           reqId: 'ФТ-207',\n+           stage: 2\n+         }\n+       ],\n+       elapsed: 870.9833333328698,\n+       escorts: [\n+         {\n+           from: 0,\n+           kills: 11,\n+           score: 1922,\n+           survivors: 3\n+         },\n+         {\n+           from: 1,\n+           kills: 18,\n+           score: 1894,\n+           survivors: 3\n+         }\n+       ],\n+       rescued: [\n+         'ФТ-368',\n+         'ФТ-366',\n+         'ФТ-408',\n+         'ФТ-095',\n+         'ФТ-222',\n+         'ФТ-085',\n+         'ФТ-231',\n+         'ФТ-202',\n+         'ФТ-207'\n+       ],\n+       schema: 'citadel-review-v3',\n+       score: 73513,\n+       seed: 417147,\n+       stage: 2,\n+       status: 'stageclear',\n+       totalKills: 343,\n+       upgradeChoice: 'armor',\n+       upgrades: {\n+         analyst280: {\n+           earned: [\n+             'base-0-terminal-1',\n+             'base-0-terminal-3',\n+             'base-1-terminal-1',\n+             'base-1-terminal-3',\n+             'base-2-terminal-1',\n+             'base-2-terminal-3'\n+           ],\n+           points: 6,\n+           ranks: {\n+             observation: 0,\n+             priority: 0,\n+             systems: 0\n+           },\n+           schema: 1\n+         },\n+         armor: 1,\n+         baseKit260: {\n+           achievements: [\n+             'supply-0',\n+             'supply-1',\n+             'triad',\n+             'supply-2'\n+           ],\n+           armor: 3,\n+           capacitor: 3,\n+           collected: [\n+             'base-0-0',\n+             'field-0-0',\n+             'base-0-1',\n+             'field-0-1',\n+             'base-0-2',\n+             'field-0-2',\n+             'base-1-0',\n+             'field-1-0',\n+             'field-1-1',\n+             'base-1-1',\n+             'base-1-2',\n+             'field-1-2',\n+             'base-2-0',\n+             'field-2-0',\n+             'field-2-1',\n+             'base-2-1',\n+             'base-2-2',\n+             'field-2-2'\n+           ],\n+           parts: 3,\n+           schema: 1\n+         },\n+         rockets: 0,\n+         weapons: 2\n+       }\n+     },\n      escorts: [\n        {\n          from: 0,\n          kills: 11,\n          score: 1922,\n",
+      "stack": [
+        "+ actual - expected",
+        "... Skipped lines",
+        ""
+      ]
+    }
+  ],
+  "entryFile": "tests/entry-2.8.0.html",
+  "entrySHA256": "20a58b82f4d127085e65a459282c5d98eae7afd15d9a7286537d97f549ceee7f",
+  "scripts": [
+    {
+      "file": "assets/citadel-startup-v2.3.1.js",
+      "sha256": "99e07b3b93f874b4fc7a830ebf0df228532f62ef4dda96c05e78717182af711a"
+    },
+    {
+      "file": "assets/citadel-compat-v1.7.1.js",
+      "sha256": "e5ea0b065568c5ebcddcd01d483375560bae36308871dd62a87e5d8e97a46599"
+    },
+    {
+      "file": "assets/citadel-launch-v2.7.0.js",
+      "sha256": "491278ad4dc8ea9020aa2123b1812db19e1fca4969f195930711f189ca654d96"
+    },
+    {
+      "file": "assets/atlas-v1.3.6.js",
+      "sha256": "9a08d42e08f3bd220a2ace22ae6e9dfff34887268b275aa36a2be4a33965569d"
+    },
+    {
+      "file": "assets/citadel-records-v1.1.1.js",
+      "sha256": "178c584491b2755e93f2e4469a8663db3bb93c8e970f5cc5bcbe75b0e6dc6183"
+    },
+    {
+      "file": "assets/citadel-mrg-v2.6.0.js",
+      "sha256": "79b4bb403207c95752f95d95c308d5be57b4360c5178ce2dab8b676f2fbf2955"
+    },
+    {
+      "file": "assets/citadel-mrg-view-v2.6.0.js",
+      "sha256": "1285c2461e618c466e556c6f51589a3c06dbf5a46ac3ca628d0f81a68588fc7c"
+    },
+    {
+      "file": "assets/citadel-music-v1.4.2.js",
+      "sha256": "f277463e7ac27f43fd46b8a03d7880e2c49474b065f543f6b1f8feae75dd6077"
+    },
+    {
+      "file": "assets/citadel-sfx-pack-v1.9.1.js",
+      "sha256": "8dc8128a72045c4136a3460de8900720813861e1979926bfc0c0c872cdac590e"
+    },
+    {
+      "file": "assets/citadel-sfx-v1.9.3.js",
+      "sha256": "f267691f3606edf751a427153304942d6d7188aeb917210c8e51ace5f44b21af"
+    },
+    {
+      "file": "assets/citadel-voice-pack-v1.8.2.js",
+      "sha256": "e0a0ac89a7ad348a7b107fef9c067b12227d33b7c1427d3eb7cec5472949fbfe"
+    },
+    {
+      "file": "assets/citadel-radio-pack-v2.7.0.js",
+      "sha256": "f9a747059851f8622b89a02e5efc923542d9939dafcdf3ee90f08c4c57d49aad"
+    },
+    {
+      "file": "assets/citadel-field-ui-v1.7.0.js",
+      "sha256": "fb2b2545d45aaad74c1009bf2bd3b775ca6b897c9baf027f2c7cff5de0b02bed"
+    },
+    {
+      "file": "assets/citadel-flight-v1.9.1.js",
+      "sha256": "d8e345e6a7ef05ea3aebcb986042c1c36a809bb6608ccce242d00507178199b7"
+    },
+    {
+      "file": "assets/citadel-aim-v1.7.1.js",
+      "sha256": "6c0251b56e8a798597cc0a3b26bec950739665f4d5fed9980db091ed04b25058"
+    },
+    {
+      "file": "assets/citadel-flight-view-v1.7.1.js",
+      "sha256": "b5e7d58a269a75fb71aba8ccb286e84714e17ef016532086dc8d098443acae91"
+    },
+    {
+      "file": "assets/citadel-pursuit-v2.6.0.js",
+      "sha256": "4942dd93b4744844687569dd3cdae0e947b33123b28486259824ecad05f71358"
+    },
+    {
+      "file": "assets/citadel-swarm-v2.7.0.js",
+      "sha256": "d82335eb55ef3c668f894cf99eed5137e9e83c21350d1004393c2a474f35242a"
+    },
+    {
+      "file": "assets/citadel-parallax-v2.6.0.js",
+      "sha256": "ab29a1603851ad97a437f9dd3d93dcbc4978c6aeb4d5130bed666eb643fe5315"
+    },
+    {
+      "file": "assets/citadel-bases-v2.0.0.js",
+      "sha256": "9f7cd4346e947f13a3e4185d3e7080b69cd489c7dce959e03627b8adb89cba5a"
+    },
+    {
+      "file": "assets/citadel-decks-v2.0.0.js",
+      "sha256": "4b5f02f17b26c8962768132fd1328e7bbd483e2c8b2d7499610e68c6478213f2"
+    },
+    {
+      "file": "assets/citadel-input-v2.6.0.js",
+      "sha256": "c67b470bd2affd3b9f873e5a0fcfe96a69463b83565fac1293fc653ddc2e929c"
+    },
+    {
+      "file": "assets/citadel-convoy-v2.3.0.js",
+      "sha256": "115fb8dd424e76d7ddfea2199395101364b258c22cd243e4c137e9980f006ca6"
+    },
+    {
+      "file": "assets/citadel-voice-v2.7.0.js",
+      "sha256": "a0f53c76589b64e49ee1e44ff8fe999f2dab380cc567a829b7b81284db5ac76a"
+    },
+    {
+      "file": "assets/citadel-comic-v1.9.3.js",
+      "sha256": "ee26d0c120f8b7d912b90d4dcc0bccf4ca8515e816c836e6427a4676ea2f6a44"
+    },
+    {
+      "file": "assets/citadel-interface-v1.9.0.js",
+      "sha256": "1c86ce29791480920e08b5dddc42dadcc1e4bab0916e8da51c16aedb0b1b1291"
+    },
+    {
+      "file": "assets/citadel-story-v1.9.0.js",
+      "sha256": "85f5c018a42f09b20eb7a62a87f4251a02f219027f1f4799e07c774ff43d2c13"
+    },
+    {
+      "file": "assets/atlas-metrics-v0.1.0.js",
+      "sha256": "79700bbff01f5744e1a2eb44a935ed006857eae4e75ce3602aee6cc69d8101e7"
+    },
+    {
+      "file": "assets/atlas-integration-v1.1.4.js",
+      "sha256": "96eaf8cd36e4c9257f0e531d861230f8ca1610973905027ad6f58dc819937220"
+    },
+    {
+      "file": "assets/citadel-academy-bridge-v1.7.0.js",
+      "sha256": "cc33928c4d0b0271bc5205211ee815d56cba9243838053e4d460edee68ba2033"
+    },
+    {
+      "file": "assets/citadel-ui-fixes-v1.9.2.js",
+      "sha256": "364fc8c1e412eb9b73f826845e23646f8906d37c7027aa1f2ae93ba0548cbf16"
+    },
+    {
+      "file": "assets/citadel-bases-view-v2.0.0.js",
+      "sha256": "506e1ebbfa86a42b0f4dc6918ab1917edb3b8018012e15d98a267060c2cdf8c3"
+    },
+    {
+      "file": "assets/citadel-base-rewards-v2.6.0.js",
+      "sha256": "03556357ea6ecdbee4e39a20970b618e41116c9e56c1f97e38880b6471012bac"
+    },
+    {
+      "file": "assets/citadel-pursuit-view-v2.3.0.js",
+      "sha256": "957ed9dc2f26e104a66a4bf26aad5c8bca4c6234aa0b6f8e56a688c93efd46ec"
+    },
+    {
+      "file": "assets/citadel-pursuit-view-v2.6.0.js",
+      "sha256": "6ee3f4a0853a26e850d548f39c2c81ec8a8f59c825eb1c45c21960a2a846ac7a"
+    },
+    {
+      "file": "assets/citadel-convoy-view-v2.3.0.js",
+      "sha256": "7d7d85f90d9082a14bbbb1dff7defd00f5f31bce23f270ae764aed2e98e77783"
+    },
+    {
+      "file": "assets/citadel-convoy-v2.6.0.js",
+      "sha256": "fb80b02ae850f69df1295bac3bbe64f61a18d05cf93d768e6e66dc1c595d44c7"
+    },
+    {
+      "file": "assets/citadel-convoy-view-v2.4.0.js",
+      "sha256": "9a42c7dcde1e21644f10aaa0f848b8bab2c60794e4f5564898a17f48fd5d2965"
+    },
+    {
+      "file": "assets/citadel-convoy-view-v2.6.0.js",
+      "sha256": "a3e9a4cc44b213c72bfe78f70dff5c4ccda64260ea45e03c83b510c7c11faa54"
+    },
+    {
+      "file": "assets/citadel-swarm-view-v2.7.0.js",
+      "sha256": "323dee1225f48962c7866d3e53a2f56a13ee6b7a9759763dcf7b2444dc14d253"
+    },
+    {
+      "file": "assets/citadel-mrg-actors-v2.5.0.js",
+      "sha256": "d0bcec56d741510c8f6e620451ba1681082bfafdec1a1d28a1463dea23442248"
+    },
+    {
+      "file": "assets/citadel-narrative-v2.5.0.js",
+      "sha256": "34232c3f6c16b7f686595ebb8c162f7368e4f12d2e6be1b923cdf2459e85c1fe"
+    },
+    {
+      "file": "assets/citadel-presentation-v2.5.0.js",
+      "sha256": "6e1bef9638c3fefe113ae8cdc1a54883068e38fdc2cf3e1eb9ab7f8cad82327e"
+    },
+    {
+      "file": "assets/citadel-combat-v2.6.0.js",
+      "sha256": "5b55bb15578db6ffac01427245672f46352165790ea617b9d6a42ed075e9edad"
+    },
+    {
+      "file": "assets/citadel-base-missions-v2.7.0.js",
+      "sha256": "1de1ebda0fce1aa209639d00c2e0a0d38ad448fb917b279e8d509dc4f53ec003"
+    },
+    {
+      "file": "assets/citadel-base-missions-view-v2.7.0.js",
+      "sha256": "2fe4ee229e8ba3b93a8121a51dafb56eaa19bd9d0eda778a5cd84273adb1f371"
+    },
+    {
+      "file": "assets/citadel-quiz-bank-v2.7.0.js",
+      "sha256": "9bd8a4302f2e570296d3bd2ae2ded6cb274699b954f0b1c312932103e2cd5004"
+    },
+    {
+      "file": "assets/citadel-learning-modes-v2.7.0.js",
+      "sha256": "e2960804b5b891b54f8a405b8b3302bef9ef4be6d466bda823cea4ff739bfa16"
+    },
+    {
+      "file": "assets/citadel-mobile-v2.7.0.js",
+      "sha256": "72904b7bc4f70b81b23c58bd5f298bb4e9264ce4ff51bbe5267847b4169f5332"
+    },
+    {
+      "file": "assets/citadel-install-v2.7.0.js",
+      "sha256": "42fc03d340739e15b63a719165c3ff294cf287583ab44c50dbfa26ec7959eba5"
+    },
+    {
+      "file": "assets/citadel-skills-v2.8.0.js",
+      "sha256": "c19ed9a02d83167ce43d892f38172e81d2c2a6534885c818696b592ce64d5ced"
+    },
+    {
+      "file": "assets/citadel-runtime-v1.9.3.js",
+      "sha256": "a026d1eb50252a37f01b7ad097e610252bccacc01f078d6ee75a3bf86e029a6e"
+    }
+  ]
+}

@@ -34,10 +34,12 @@ function resourceState(e){
   enemies:e.enemies,hostile:e.hostile,bullets:e.bullets,upgrades:e.upgrades,stationHp:e.stationHp,totalKills:e.totalKills,elapsed:e.elapsed,phase:e.phase,status:e.status});
 }
 function educationalProgress(e){return copy({status:e.status,phase:e.phase,stage:e.stage,completed:e.board?.completed,rescued:e.rescued,completedRemarks:e.completedRemarks,decisions:e.decisions.map(x=>({reqId:x.reqId,caseIndex:x.caseIndex,stage:x.stage})),lessonQueue:e.lessonQueue,finaleTests:e.finale?.tests});}
-// overdriveUntil was an old, real combat field missing from old CUP saves. The
-// new module preserves it. Remove that newly serializable field only when
-// comparing historical pack formats, not when comparing live combat resources.
-function withoutLearning(value){if(Array.isArray(value))return value.map(withoutLearning);if(!value||typeof value!=='object')return value;return Object.fromEntries(Object.entries(value).filter(([key])=>!['educationMode','educationLegacyCases','quiz270','overdriveUntil'].includes(key)).map(([key,v])=>[key,withoutLearning(v)]));}
+// The 2.7 learning module already added overdriveUntil and escortStart to CUP
+// serialization. The synthetic pre-learning chain intentionally omits that
+// module. Normalize those envelope-only additions for its behavior comparison;
+// full candidate and actual 2.7 roundtrips retain all fields. Pro tests below
+// additionally assert that a wrong answer never changes the escort checkpoint.
+function withoutLearning(value){if(Array.isArray(value))return value.map(withoutLearning);if(!value||typeof value!=='object')return value;return Object.fromEntries(Object.entries(value).filter(([key])=>!['educationMode','educationLegacyCases','quiz270','overdriveUntil','escortStart'].includes(key)).map(([key,v])=>[key,withoutLearning(v)]));}
 function legacyEntry(entry){const scripts=entry.scripts.filter(f=>!/citadel-(quiz-bank|learning-modes)-v2\.7\.0\.js$/.test(f));return{html:entry.html,scripts,sources:new Map(scripts.map(f=>[f,entry.sources.get(f)]))};}
 function coreQuestion(h,e){if(e.status==='lesson')return h.lessonCase(e,e.lesson.caseIndex);if(e.status==='remark')return h.run('citadelRemarkCase(ARCADE.engine,ARCADE.engine.board.question)');return h.run('citadelFinalCase(ARCADE.engine.board.completed.length)');}
 
@@ -117,9 +119,9 @@ async function networkContracts(entry){
  });
  return{pass:!failures.length,method:'Node VM with mocked fetch; verifies production launch/API routing and payloads, does not contact the real ranking service.',passed:rows.length,failed:failures.length,rows,failures};
 }
-async function contracts(entry){
- const rows=[],failures=[],h=await lab(entry);
- async function test(name,fn){if(process.env.CITADEL_QA_PROGRESS)console.log('[contract] '+name);try{rows.push({name,pass:true,...await fn()});}catch(err){failures.push({name,error:err.message,stack:err.stack?.split('\n').slice(1,4)});}}
+async function contracts(entry,options={}){
+ const rows=[],failures=[],h=await lab(entry),only=options.only?new Set(options.only):null;let skipped=0;
+ async function test(name,fn){if(only&&!only.has(name)){skipped++;return;}if(process.env.CITADEL_QA_PROGRESS)console.log('[contract] '+name);try{rows.push({name,pass:true,...await fn()});}catch(err){failures.push({name,error:err.message,stack:err.stack?.split('\n').slice(1,4)});}}
  await test('bank-schema',()=>{
   const bank=h.c.CITADEL_QUIZ_BANK;assert(bank&&Array.isArray(bank.entries));const entries=bank.entries,ids=new Set(),questions=new Set(),positions=[0,0,0,0],tiers=new Set();assert(entries.length>=70);
   for(const q of entries){assert(typeof q.id==='string'&&q.id.length);assert(!ids.has(q.id),'Duplicate ID: '+q.id);ids.add(q.id);assert(q.question&&q.question.trim());assert(!questions.has(q.question),'Duplicate question');questions.add(q.question);
@@ -176,13 +178,15 @@ async function contracts(entry){
  const legacy=await lab(legacyEntry(entry));
  for(const point of readEarned('pro').earned)await test('pro-'+point.kind+'-'+point.index+'-unchanged-case-and-answer-rules',()=>{
   const e=restore(h,point.snapshot),other=restore(legacy,withoutLearning(point.snapshot));assert.equal(modeAPI(h).usesQuiz(e),false);assert.equal(modeAPI(h).getMode(e),'pro');
+  const escortCheckpoint=e.escortStart?copy(e.escortStart):null;
+  assert.deepEqual(withoutLearning(state(h,e)),withoutLearning(state(legacy,other)),'Pre-answer states differ beyond documented save-envelope fields');
   const q=coreQuestion(h,e),oldQ=coreQuestion(legacy,other);assert.deepEqual(copy(q),copy(oldQ),'Pro case text/options/key changed');assert.deepEqual(copy(q),point.question,'Pro saved case changed');
   const a=answerAction(e),n=continueAction(e),wrong=(q.correct+1)%q.choices.length;
-  h.action(a,wrong);legacy.action(a,wrong);assert.deepEqual(withoutLearning(state(h,e)),withoutLearning(state(legacy,other)),'Pro wrong-answer behavior changed');
+  h.action(a,wrong);legacy.action(a,wrong);assert.deepEqual(e.escortStart?copy(e.escortStart):null,escortCheckpoint,'Wrong answer changed the retained escort checkpoint');assert.deepEqual(withoutLearning(state(h,e)),withoutLearning(state(legacy,other)),'Pro wrong-answer behavior changed');
   h.action(n);legacy.action(n);assert.equal(e.status,point.snapshot.engine.status,'Pro wrong answer must retain the old blocked-progression rule');assert.deepEqual(withoutLearning(state(h,e)),withoutLearning(state(legacy,other)));
   if(e.status==='lesson'){h.action('citadel-lesson-retry');legacy.action('citadel-lesson-retry');}
   h.action(a,q.correct);legacy.action(a,q.correct);assert.deepEqual(withoutLearning(state(h,e)),withoutLearning(state(legacy,other)),'Pro correct-answer behavior changed');
-  h.action(n);legacy.action(n);assert.deepEqual(withoutLearning(state(h,e)),withoutLearning(state(legacy,other)),'Pro continuation changed');return{level:point.level,caseId:q.caseId};
+  h.action(n);legacy.action(n);assert.deepEqual(withoutLearning(state(h,e)),withoutLearning(state(legacy,other)),'Pro continuation changed');return{level:point.level,caseId:q.caseId,escortCheckpointPreservedByWrongAnswer:!!escortCheckpoint};
  });
  for(const point of readEarned('pro').earned)await test('pre-learning-270-'+point.kind+'-'+point.index+'-legacy-cases',()=>{
   const oldEngine=restore(legacy,withoutLearning(point.snapshot)),snapshot=legacy.pack(oldEngine),e=restore(h,snapshot);assert.equal(modeAPI(h).usesQuiz(e),false);assert.equal(e.educationLegacyCases,true);
@@ -201,14 +205,15 @@ async function contracts(entry){
   const files=entry.scripts.filter(f=>/citadel-(quiz-bank|learning-modes)-v2\.7\.0\.js$/.test(f)),before=listenerState(h),code='[RequirementArcade.prototype.start,RequirementArcade.prototype.answerLesson,RequirementArcade.prototype.answer,RequirementArcade.prototype.answerFinale,cupPack,cupUnpack,arcadeAction,citadelReviewHTML]',methods=h.run(code);
   assert.equal(files.length,2);for(let n=0;n<5;n++)for(const file of files)h.run(entry.sources.get(file));h.run(code).forEach((fn,i)=>assert.equal(fn,methods[i]));assert.deepEqual(listenerState(h),before);return{files,listeners:before};
  });
- return{pass:!failures.length,method:'Node VM; checkpoints earned by independent full campaigns. No browser layout or human learning claim.',passed:rows.length,failed:failures.length,rows,failures};
+ return{pass:!failures.length,method:'Node VM; checkpoints earned by independent full campaigns. No browser layout or human learning claim.',passed:rows.length,failed:failures.length,rows,failures,selection:only?[...only]:null,skipped};
 }
 
 async function main(){
  const arg=name=>process.argv.find(x=>x.startsWith('--'+name+'='))?.slice(name.length+3),entryFile=arg('entry');assert(entryFile,'Use an explicit --entry=tests/entry-2.8.0.html');
  const entry=readEntry(entryFile),kind=arg('kind')||'contracts',mode=arg('mode')||'combat';
  assert(entry.scripts.some(f=>/citadel-learning-modes-v2\.7\.0\.js$/.test(f)),'Learning modes are not integrated in the supplied entry');
- const result=kind==='campaign'?await campaign(entry,mode,{fps:Number(arg('fps'))||60,progress:process.argv.includes('--progress')}):kind==='network'?await networkContracts(entry):await contracts(entry);
+ const onlyFailed=arg('only-failed'),only=onlyFailed?JSON.parse(fs.readFileSync(path.resolve(root,onlyFailed),'utf8')).failures.map(x=>x.name):null;
+ const result=kind==='campaign'?await campaign(entry,mode,{fps:Number(arg('fps'))||60,progress:process.argv.includes('--progress')}):kind==='network'?await networkContracts(entry):await contracts(entry,{only});
  const tag=arg('tag')||kind+(kind==='campaign'?'-'+mode:'');assert(/^[a-z0-9-]+$/i.test(tag));Object.assign(result,{entryFile,...entryEvidence(entry)});
  fs.mkdirSync(out,{recursive:true});const file=path.join(out,'learning-'+tag+'.json');fs.writeFileSync(file,JSON.stringify(result,null,2)+'\n');
  console.log(JSON.stringify({report:file,pass:result.pass,passed:result.passed,failed:result.failed,failures:result.failures,error:result.error,mode:result.educationMode,levels:result.levels?.length,points:result.educationCheckpoints,seconds:result.simulatedSeconds}));if(!result.pass)process.exitCode=1;

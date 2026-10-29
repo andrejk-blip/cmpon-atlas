@@ -1,0 +1,6 @@
+[contract] bank-schema
+[contract] all-84-bank-entries-reachable-and-no-repeat-in-one-run
+[contract] training-all-23-earned-points
+[contract] training-lesson-0-save-roundtrip
+[contract] training-lesson-0-four-options-and-hint
+[contract] training-lesson-0-wrong-score-only-and-duplicate
