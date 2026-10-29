@@ -1,0 +1,35 @@
+{
+  "method": "Node VM with real input handlers and modeled capture/bubble events; not a physical touchscreen test.",
+  "passed": 7,
+  "total": 7,
+  "rows": [
+    {
+      "name": "Rocket fires at contact even when thumb slides outside before release",
+      "pass": true
+    },
+    {
+      "name": "Compatibility click is suppressed; keyboard click is not",
+      "pass": true
+    },
+    {
+      "name": "Fire, joystick and rocket keep three independent fingers",
+      "pass": true
+    },
+    {
+      "name": "Newly inserted convoy cover is bound without another mount",
+      "pass": true
+    },
+    {
+      "name": "Pause, disabled buttons and hidden tab cannot queue actions",
+      "pass": true
+    },
+    {
+      "name": "Blur and orientation release action/fire/steering without stuck controls",
+      "pass": true
+    },
+    {
+      "name": "Rocket hint appears only in live escort with ammunition, and expires",
+      "pass": true
+    }
+  ]
+}

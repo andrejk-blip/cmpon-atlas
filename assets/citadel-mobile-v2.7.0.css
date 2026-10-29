@@ -32,15 +32,21 @@
   padding:0;background:transparent;border:0;pointer-events:none;z-index:5;
 }
 #arcade-layout.citadel-landscape270 .arcade-touch #arcade-stick {
-  position:absolute;left:10px;bottom:54px;width:88px;height:88px;min-width:88px;margin:0;pointer-events:auto;
+  position:absolute;left:14px;bottom:50px;width:108px;height:108px;min-width:108px;margin:0;pointer-events:auto;
   background:#0b233bcc;box-shadow:0 0 18px #0006;align-self:auto;
 }
 #arcade-layout.citadel-landscape270 .arcade-touch-actions {
-  position:absolute;right:10px;bottom:52px;display:grid;grid-template-columns:repeat(2,70px);
-  grid-auto-rows:48px;grid-template-rows:48px 48px;gap:6px;width:146px;max-width:146px;
+  position:absolute;right:14px;bottom:50px;display:grid;grid-template-columns:repeat(2,82px);
+  grid-auto-rows:58px;grid-template-rows:58px 58px;gap:10px;width:174px;max-width:174px;
   min-height:0;margin:0;pointer-events:auto;align-self:auto;flex:none;
 }
-#arcade-layout.citadel-landscape270 .arcade-touch-actions button {min-height:48px;height:48px;font-size:10px;box-shadow:0 2px 10px #0007}
+#arcade-layout.citadel-landscape270 .arcade-touch-actions button {min-height:58px;height:58px;font-size:11px;box-shadow:0 2px 10px #0007}
+.arcade-touch-actions button,#arcade-stick{touch-action:none;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
+.arcade-touch-actions button.is-held{outline:2px solid #b6f5ff;outline-offset:2px;background:#275b73}
+.arcade-touch-actions button.citadel-rocket-hint{border-color:#ffc576;box-shadow:0 0 0 2px #ffc57655}
+.citadel-rocket-tip{position:absolute;top:50px;left:50%;transform:translateX(-50%);width:max-content;max-width:calc(100% - 32px);box-sizing:border-box;z-index:7;pointer-events:none;padding:8px 12px;background:#10202fec;border:1px solid #e8b56c;border-radius:10px;color:#fff0cf;font:600 12px/1.4 system-ui;text-align:center}
+.citadel-rocket-tip[hidden]{display:none}
+@media(pointer:coarse){.arcade-touch-actions button{min-height:58px;min-width:64px}}
 #arcade-layout.citadel-landscape270 .arcade-overlay {inset:0;padding:12px 18px;overflow:auto;max-height:none;overscroll-behavior:contain}
 #arcade-layout.citadel-landscape270.mobile-command-open>.arcade-command {display:block;position:absolute;inset:44px 0 0;z-index:30;overflow:auto;background:#0b1e28}
 #arcade-layout.citadel-landscape270 .arcade-screen:is([data-game-status=playing],[data-game-status=boarding]) [data-citadel-install270]{display:none}

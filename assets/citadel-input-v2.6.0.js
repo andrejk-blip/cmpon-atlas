@@ -4,7 +4,7 @@
  */
 (function () {
   'use strict';
-  const VERSION='2.6.0';
+  const VERSION='2.8.0';
   if(typeof ARCADE==='undefined'||typeof STATE==='undefined'||typeof mountArcade!=='function'||
      typeof arcadeInput!=='function'||typeof citadelBoardAim!=='function')return;
   if(globalThis.CITADEL_INPUT?.version===VERSION)return;
@@ -15,7 +15,15 @@
       ['playing','boarding'].includes(ARCADE.engine?.status)&&!document.getElementById('detail')?.open&&
       !(typeof MOBILE!=='undefined'&&(MOBILE.menu||MOBILE.command));
   }
-  function cancel() {release();ARCADE.missileQueued=false;missileAim=null;}
+  const actionTouches=new Map(),lastTouch=new WeakMap();
+  const touchActions=new Set(['arcade-missile','arcade-pulse','arcade-flip','citadel-target','citadel-convoy-cover','citadel-convoy-target']);
+  function releaseAction(id){const touch=actionTouches.get(id);if(!touch)return;actionTouches.delete(id);touch.button.classList.remove('is-held');try{touch.button.releasePointerCapture?.(id);}catch(_){}}
+  function cancel() {release();for(const id of [...actionTouches.keys()])releaseAction(id);ARCADE.missileQueued=false;missileAim=null;
+    for(const key of Object.keys(ARCADE.touchPointers||{}))ARCADE.keys.delete(key);
+    ARCADE.touchPointers={};ARCADE.drag=null;ARCADE.joystick=null;
+    for(const id of ['arcade-fire-touch','arcade-boost-touch'])document.getElementById(id)?.classList.remove('is-held');
+    const knob=document.getElementById('arcade-stick-knob');if(knob)knob.style.transform='translate(0,0)';
+  }
   function eligible(canvas) {
     return canvas===ARCADE.canvas&&STATE.view==='arcade'&&!document.hidden&&ARCADE.engine?.status==='boarding'&&
       !!ARCADE.engine.board&&!!ARCADE.camera&&!document.getElementById('detail')?.open&&
@@ -105,6 +113,35 @@
   // The document release also covers older browsers without pointer capture.
   for(const type of ['pointerup','pointercancel'])document.addEventListener?.(type,event=>{if(held?.id===event.pointerId)release();},true);
   document.addEventListener?.('visibilitychange',()=>{if(document.hidden)cancel();});
+  // Delegation also covers convoy controls created after mount. Trigger on
+  // contact, not on release: a thumb may drift outside a small button in battle.
+  document.addEventListener?.('pointerdown',event=>{
+    if(event.pointerType!=='touch')return;
+    const button=event.target?.closest?.('.arcade-touch-actions [data-action]');
+    if(!button||!touchActions.has(button.dataset.action))return;
+    consume(event);
+    if(button.disabled||!combatEligible(ARCADE.canvas)||actionTouches.has(event.pointerId))return;
+    if([...actionTouches.values()].some(x=>x.button===button))return;
+    lastTouch.set(button,Date.now());actionTouches.set(event.pointerId,{button});button.classList.add('is-held');
+    try{button.setPointerCapture?.(event.pointerId);}catch(_){}
+    if(typeof spaceAudioUnlock==='function')spaceAudioUnlock();
+    arcadeAction(button.dataset.action,button.dataset.value);
+  },{capture:true,passive:false});
+  document.addEventListener?.('click',event=>{
+    const button=event.target?.closest?.('.arcade-touch-actions [data-action]');
+    if(!button||!touchActions.has(button.dataset.action))return;
+    // detail=0 is a real keyboard/accessibility click and must still work.
+    if(event.pointerType==='touch'||event.sourceCapabilities?.firesTouchEvents||event.detail>0&&Date.now()-(lastTouch.get(button)||0)<1200)consume(event);
+  },{capture:true,passive:false});
+  for(const type of ['pointerup','pointercancel','lostpointercapture'])document.addEventListener?.(type,event=>{
+    releaseAction(event.pointerId);
+    for(const [key,id] of Object.entries(ARCADE.touchPointers||{}))if(id===event.pointerId){delete ARCADE.touchPointers[key];ARCADE.keys.delete(key);document.getElementById(key==='Space'?'arcade-fire-touch':'arcade-boost-touch')?.classList.remove('is-held');}
+  },true);
+  // A second finger cannot steal the joystick while the first one is steering.
+  document.addEventListener?.('pointerdown',event=>{
+    if(event.pointerType==='touch'&&event.target?.closest?.('#arcade-stick')&&ARCADE.drag!=null&&ARCADE.drag!==event.pointerId)consume(event);
+  },{capture:true,passive:false});
+  globalThis.addEventListener?.('orientationchange',cancel);
   for(const type of ['blur','pagehide'])globalThis.addEventListener?.(type,cancel);
   bind();
   globalThis.CITADEL_INPUT=Object.freeze({version:VERSION,reset:cancel,status:()=>({version:VERSION,boundCanvases,rightClicks,
