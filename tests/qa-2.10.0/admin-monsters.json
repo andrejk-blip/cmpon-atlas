@@ -1,0 +1,35 @@
+{
+  "version": "2.10.0",
+  "source_commit": "4d163752ac48c316fb7909d8169d9a6976aebf79",
+  "method": "Actual compiled private lab in Node VM; ordinary pursuit controls. Native Canvas frames from reached encounters, not a physical device.",
+  "bundle_sha256": "60431ddb130249a3b2e23b273e2ad675949196fabfbe6e35d5b6450009b5062c",
+  "rows": [
+    {
+      "mode": "training",
+      "seen": [
+        "hammer",
+        "tentacle",
+        "maw",
+        "mantis",
+        "medusa"
+      ],
+      "hp": 100,
+      "seconds": 125.09999999999418,
+      "status": "lesson"
+    },
+    {
+      "mode": "combat",
+      "seen": [
+        "hammer",
+        "tentacle",
+        "maw",
+        "mantis",
+        "medusa"
+      ],
+      "hp": 100,
+      "seconds": 161.2166666666871,
+      "status": "lesson"
+    }
+  ],
+  "pass": true
+}

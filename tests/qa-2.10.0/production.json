@@ -1,0 +1,587 @@
+{
+  "version": "2.10.0",
+  "verified_at": "2026-10-30T14:19:51.575448+00:00",
+  "release_commit": "4d163752ac48c316fb7909d8169d9a6976aebf79",
+  "public_url": "https://andrejk-blip.github.io/cmpon-atlas/?app=citadel#arcade",
+  "passed": 72,
+  "total": 72,
+  "rows": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/?app=citadel",
+      "sha256": "9180787679c330efda159310f8025dd89965387c6b64256e7f05e7b8386f8a18",
+      "expected_sha256": "9180787679c330efda159310f8025dd89965387c6b64256e7f05e7b8386f8a18",
+      "pass_": true
+    },
+    {
+      "path": "version.json",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/version.json?build=2100r1",
+      "sha256": "4a315e689a61b5f49d7d0a6b87d4f73df1dc998e2194aa2f3fdfe3c464fa73c3",
+      "expected_sha256": "4a315e689a61b5f49d7d0a6b87d4f73df1dc998e2194aa2f3fdfe3c464fa73c3",
+      "pass_": true
+    },
+    {
+      "path": "citadel.webmanifest",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/citadel.webmanifest?build=2100r1",
+      "sha256": "bfcde9f56f0bbd9251a93759c4f33b78e670f89711d3c9a2b735d64413cf504f",
+      "expected_sha256": "bfcde9f56f0bbd9251a93759c4f33b78e670f89711d3c9a2b735d64413cf504f",
+      "pass_": true
+    },
+    {
+      "path": "assets/atlas-v1.3.5.css",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/atlas-v1.3.5.css?build=2100r1",
+      "sha256": "e4e378988c9198e6c53828abbcd11614a24ce399dc1a306e3c18f00b7d8233dd",
+      "expected_sha256": "e4e378988c9198e6c53828abbcd11614a24ce399dc1a306e3c18f00b7d8233dd",
+      "pass_": true
+    },
+    {
+      "path": "assets/atlas-metrics-v0.1.0.css",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/atlas-metrics-v0.1.0.css?build=2100r1",
+      "sha256": "4a15f12b8836f8f25a1a0b99ac1256fecf3ebca63962183cbf557de64bd553b3",
+      "expected_sha256": "4a15f12b8836f8f25a1a0b99ac1256fecf3ebca63962183cbf557de64bd553b3",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-mrg-viewport-v1.6.0.css",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-mrg-viewport-v1.6.0.css?build=2100r1",
+      "sha256": "60426620a6f3e82d0893fd5dbeb3c3f21b1b398f343ed5311566c4fc02a9c367",
+      "expected_sha256": "60426620a6f3e82d0893fd5dbeb3c3f21b1b398f343ed5311566c4fc02a9c367",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-interface-v1.9.0.css",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-interface-v1.9.0.css?build=2100r1",
+      "sha256": "4762f841eb50967fe36b1520eb48896319b49903751c1262a95525552027af9a",
+      "expected_sha256": "4762f841eb50967fe36b1520eb48896319b49903751c1262a95525552027af9a",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-ui-fixes-v1.9.2.css",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-ui-fixes-v1.9.2.css?build=2100r1",
+      "sha256": "70f57cd512d57dcc378b4a44159ce690ae4fa064c9ccb9ba163cd1469f230bbe",
+      "expected_sha256": "70f57cd512d57dcc378b4a44159ce690ae4fa064c9ccb9ba163cd1469f230bbe",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-bases-v2.0.0.css",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-bases-v2.0.0.css?build=2100r1",
+      "sha256": "66eb30d9d14aedd3426559107d21a97fffced94e35e1637d2775b9cc0c33f416",
+      "expected_sha256": "66eb30d9d14aedd3426559107d21a97fffced94e35e1637d2775b9cc0c33f416",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-pursuit-v2.1.0.css",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-pursuit-v2.1.0.css?build=2100r1",
+      "sha256": "dd04f466851b586e1bd160816ceb9a84a9d6d68f6b0b06a93866ef1bb50f6b74",
+      "expected_sha256": "dd04f466851b586e1bd160816ceb9a84a9d6d68f6b0b06a93866ef1bb50f6b74",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-pursuit-view-v2.2.0.css",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-pursuit-view-v2.2.0.css?build=2100r1",
+      "sha256": "135b1a8116fbeb0c7c0f775a26f3b8ed26f1996e79013c4dcbfe315859118d6c",
+      "expected_sha256": "135b1a8116fbeb0c7c0f775a26f3b8ed26f1996e79013c4dcbfe315859118d6c",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-convoy-v2.4.0.css",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-convoy-v2.4.0.css?build=2100r1",
+      "sha256": "c6ca30d3da2304bba7de04df4c63bc2bb223d22b06b62daac21e927479d77495",
+      "expected_sha256": "c6ca30d3da2304bba7de04df4c63bc2bb223d22b06b62daac21e927479d77495",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-presentation-v2.5.0.css",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-presentation-v2.5.0.css?build=2100r1",
+      "sha256": "b34da0436c755d6009097d6f9c2da22d222a37f078d890ff3b44102c926c061d",
+      "expected_sha256": "b34da0436c755d6009097d6f9c2da22d222a37f078d890ff3b44102c926c061d",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-mobile-v2.7.0.css",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-mobile-v2.7.0.css?build=2100r1",
+      "sha256": "e2a7b155ede86f6293f19d5e5414471ddd81d6a8342154a5747203f4ecf43010",
+      "expected_sha256": "e2a7b155ede86f6293f19d5e5414471ddd81d6a8342154a5747203f4ecf43010",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-icon-192.png",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-icon-192.png?build=2100r1",
+      "sha256": "2009b8e7d270257e1b4e76ed007563fb1cefcd42d6ac4a48a1706b692cc3ff12",
+      "expected_sha256": "2009b8e7d270257e1b4e76ed007563fb1cefcd42d6ac4a48a1706b692cc3ff12",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-learning-modes-v2.7.0.css",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-learning-modes-v2.7.0.css?build=2100r1",
+      "sha256": "f80ecbe394e4a42d438ec81963d8fa28eb559be2a1d23e90502008cc0f4415c7",
+      "expected_sha256": "f80ecbe394e4a42d438ec81963d8fa28eb559be2a1d23e90502008cc0f4415c7",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-skills-v2.8.0.css",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-skills-v2.8.0.css?build=2100r1",
+      "sha256": "fb7accdec7496d172a81d5594292721ee6266af6e85ab0394f18c4062c0fcfcc",
+      "expected_sha256": "fb7accdec7496d172a81d5594292721ee6266af6e85ab0394f18c4062c0fcfcc",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-startup-v2.3.1.js",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-startup-v2.3.1.js?build=2100r1",
+      "sha256": "99e07b3b93f874b4fc7a830ebf0df228532f62ef4dda96c05e78717182af711a",
+      "expected_sha256": "99e07b3b93f874b4fc7a830ebf0df228532f62ef4dda96c05e78717182af711a",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-compat-v1.7.1.js",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-compat-v1.7.1.js?build=2100r1",
+      "sha256": "e5ea0b065568c5ebcddcd01d483375560bae36308871dd62a87e5d8e97a46599",
+      "expected_sha256": "e5ea0b065568c5ebcddcd01d483375560bae36308871dd62a87e5d8e97a46599",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-launch-v2.7.0.js",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-launch-v2.7.0.js?build=2100r1",
+      "sha256": "491278ad4dc8ea9020aa2123b1812db19e1fca4969f195930711f189ca654d96",
+      "expected_sha256": "491278ad4dc8ea9020aa2123b1812db19e1fca4969f195930711f189ca654d96",
+      "pass_": true
+    },
+    {
+      "path": "assets/atlas-v1.3.6.js",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/atlas-v1.3.6.js?build=2100r1",
+      "sha256": "9a08d42e08f3bd220a2ace22ae6e9dfff34887268b275aa36a2be4a33965569d",
+      "expected_sha256": "9a08d42e08f3bd220a2ace22ae6e9dfff34887268b275aa36a2be4a33965569d",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-records-v1.1.1.js",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-records-v1.1.1.js?build=2100r1",
+      "sha256": "178c584491b2755e93f2e4469a8663db3bb93c8e970f5cc5bcbe75b0e6dc6183",
+      "expected_sha256": "178c584491b2755e93f2e4469a8663db3bb93c8e970f5cc5bcbe75b0e6dc6183",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-mrg-v2.6.0.js",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-mrg-v2.6.0.js?build=2100r1",
+      "sha256": "79b4bb403207c95752f95d95c308d5be57b4360c5178ce2dab8b676f2fbf2955",
+      "expected_sha256": "79b4bb403207c95752f95d95c308d5be57b4360c5178ce2dab8b676f2fbf2955",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-mrg-view-v2.6.0.js",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-mrg-view-v2.6.0.js?build=2100r1",
+      "sha256": "1285c2461e618c466e556c6f51589a3c06dbf5a46ac3ca628d0f81a68588fc7c",
+      "expected_sha256": "1285c2461e618c466e556c6f51589a3c06dbf5a46ac3ca628d0f81a68588fc7c",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-music-v1.4.2.js",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-music-v1.4.2.js?build=2100r1",
+      "sha256": "f277463e7ac27f43fd46b8a03d7880e2c49474b065f543f6b1f8feae75dd6077",
+      "expected_sha256": "f277463e7ac27f43fd46b8a03d7880e2c49474b065f543f6b1f8feae75dd6077",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-sfx-pack-v1.9.1.js",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-sfx-pack-v1.9.1.js?build=2100r1",
+      "sha256": "8dc8128a72045c4136a3460de8900720813861e1979926bfc0c0c872cdac590e",
+      "expected_sha256": "8dc8128a72045c4136a3460de8900720813861e1979926bfc0c0c872cdac590e",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-sfx-v1.9.3.js",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-sfx-v1.9.3.js?build=2100r1",
+      "sha256": "f267691f3606edf751a427153304942d6d7188aeb917210c8e51ace5f44b21af",
+      "expected_sha256": "f267691f3606edf751a427153304942d6d7188aeb917210c8e51ace5f44b21af",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-voice-pack-v1.8.2.js",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-voice-pack-v1.8.2.js?build=2100r1",
+      "sha256": "e0a0ac89a7ad348a7b107fef9c067b12227d33b7c1427d3eb7cec5472949fbfe",
+      "expected_sha256": "e0a0ac89a7ad348a7b107fef9c067b12227d33b7c1427d3eb7cec5472949fbfe",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-radio-pack-v2.7.0.js",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-radio-pack-v2.7.0.js?build=2100r1",
+      "sha256": "f9a747059851f8622b89a02e5efc923542d9939dafcdf3ee90f08c4c57d49aad",
+      "expected_sha256": "f9a747059851f8622b89a02e5efc923542d9939dafcdf3ee90f08c4c57d49aad",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-field-ui-v1.7.0.js",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-field-ui-v1.7.0.js?build=2100r1",
+      "sha256": "fb2b2545d45aaad74c1009bf2bd3b775ca6b897c9baf027f2c7cff5de0b02bed",
+      "expected_sha256": "fb2b2545d45aaad74c1009bf2bd3b775ca6b897c9baf027f2c7cff5de0b02bed",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-flight-v1.9.1.js",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-flight-v1.9.1.js?build=2100r1",
+      "sha256": "d8e345e6a7ef05ea3aebcb986042c1c36a809bb6608ccce242d00507178199b7",
+      "expected_sha256": "d8e345e6a7ef05ea3aebcb986042c1c36a809bb6608ccce242d00507178199b7",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-aim-v1.7.1.js",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-aim-v1.7.1.js?build=2100r1",
+      "sha256": "6c0251b56e8a798597cc0a3b26bec950739665f4d5fed9980db091ed04b25058",
+      "expected_sha256": "6c0251b56e8a798597cc0a3b26bec950739665f4d5fed9980db091ed04b25058",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-flight-view-v1.7.1.js",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-flight-view-v1.7.1.js?build=2100r1",
+      "sha256": "b5e7d58a269a75fb71aba8ccb286e84714e17ef016532086dc8d098443acae91",
+      "expected_sha256": "b5e7d58a269a75fb71aba8ccb286e84714e17ef016532086dc8d098443acae91",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-pursuit-v2.6.0.js",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-pursuit-v2.6.0.js?build=2100r1",
+      "sha256": "f03dd574633ce3562a6bf3a5068291a17ade76f95c137deeb25e528c0a77bdf5",
+      "expected_sha256": "f03dd574633ce3562a6bf3a5068291a17ade76f95c137deeb25e528c0a77bdf5",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-swarm-v2.7.0.js",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-swarm-v2.7.0.js?build=2100r1",
+      "sha256": "c725b3014428fa7388dd5f1ac1a04adae180f721ccb26160b48def23b8fdc805",
+      "expected_sha256": "c725b3014428fa7388dd5f1ac1a04adae180f721ccb26160b48def23b8fdc805",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-parallax-v2.6.0.js",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-parallax-v2.6.0.js?build=2100r1",
+      "sha256": "ab29a1603851ad97a437f9dd3d93dcbc4978c6aeb4d5130bed666eb643fe5315",
+      "expected_sha256": "ab29a1603851ad97a437f9dd3d93dcbc4978c6aeb4d5130bed666eb643fe5315",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-bases-v2.0.0.js",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-bases-v2.0.0.js?build=2100r1",
+      "sha256": "9f7cd4346e947f13a3e4185d3e7080b69cd489c7dce959e03627b8adb89cba5a",
+      "expected_sha256": "9f7cd4346e947f13a3e4185d3e7080b69cd489c7dce959e03627b8adb89cba5a",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-decks-v2.0.0.js",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-decks-v2.0.0.js?build=2100r1",
+      "sha256": "4b5f02f17b26c8962768132fd1328e7bbd483e2c8b2d7499610e68c6478213f2",
+      "expected_sha256": "4b5f02f17b26c8962768132fd1328e7bbd483e2c8b2d7499610e68c6478213f2",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-input-v2.6.0.js",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-input-v2.6.0.js?build=2100r1",
+      "sha256": "c67b470bd2affd3b9f873e5a0fcfe96a69463b83565fac1293fc653ddc2e929c",
+      "expected_sha256": "c67b470bd2affd3b9f873e5a0fcfe96a69463b83565fac1293fc653ddc2e929c",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-convoy-v2.3.0.js",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-convoy-v2.3.0.js?build=2100r1",
+      "sha256": "115fb8dd424e76d7ddfea2199395101364b258c22cd243e4c137e9980f006ca6",
+      "expected_sha256": "115fb8dd424e76d7ddfea2199395101364b258c22cd243e4c137e9980f006ca6",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-voice-v2.7.0.js",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-voice-v2.7.0.js?build=2100r1",
+      "sha256": "a0f53c76589b64e49ee1e44ff8fe999f2dab380cc567a829b7b81284db5ac76a",
+      "expected_sha256": "a0f53c76589b64e49ee1e44ff8fe999f2dab380cc567a829b7b81284db5ac76a",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-comic-v1.9.3.js",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-comic-v1.9.3.js?build=2100r1",
+      "sha256": "ee26d0c120f8b7d912b90d4dcc0bccf4ca8515e816c836e6427a4676ea2f6a44",
+      "expected_sha256": "ee26d0c120f8b7d912b90d4dcc0bccf4ca8515e816c836e6427a4676ea2f6a44",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-interface-v1.9.0.js",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-interface-v1.9.0.js?build=2100r1",
+      "sha256": "1c86ce29791480920e08b5dddc42dadcc1e4bab0916e8da51c16aedb0b1b1291",
+      "expected_sha256": "1c86ce29791480920e08b5dddc42dadcc1e4bab0916e8da51c16aedb0b1b1291",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-story-v1.9.0.js",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-story-v1.9.0.js?build=2100r1",
+      "sha256": "85f5c018a42f09b20eb7a62a87f4251a02f219027f1f4799e07c774ff43d2c13",
+      "expected_sha256": "85f5c018a42f09b20eb7a62a87f4251a02f219027f1f4799e07c774ff43d2c13",
+      "pass_": true
+    },
+    {
+      "path": "assets/atlas-metrics-v0.1.0.js",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/atlas-metrics-v0.1.0.js?build=2100r1",
+      "sha256": "79700bbff01f5744e1a2eb44a935ed006857eae4e75ce3602aee6cc69d8101e7",
+      "expected_sha256": "79700bbff01f5744e1a2eb44a935ed006857eae4e75ce3602aee6cc69d8101e7",
+      "pass_": true
+    },
+    {
+      "path": "assets/atlas-integration-v1.1.4.js",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/atlas-integration-v1.1.4.js?build=2100r1",
+      "sha256": "96eaf8cd36e4c9257f0e531d861230f8ca1610973905027ad6f58dc819937220",
+      "expected_sha256": "96eaf8cd36e4c9257f0e531d861230f8ca1610973905027ad6f58dc819937220",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-academy-bridge-v1.7.0.js",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-academy-bridge-v1.7.0.js?build=2100r1",
+      "sha256": "cc33928c4d0b0271bc5205211ee815d56cba9243838053e4d460edee68ba2033",
+      "expected_sha256": "cc33928c4d0b0271bc5205211ee815d56cba9243838053e4d460edee68ba2033",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-ui-fixes-v1.9.2.js",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-ui-fixes-v1.9.2.js?build=2100r1",
+      "sha256": "364fc8c1e412eb9b73f826845e23646f8906d37c7027aa1f2ae93ba0548cbf16",
+      "expected_sha256": "364fc8c1e412eb9b73f826845e23646f8906d37c7027aa1f2ae93ba0548cbf16",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-bases-view-v2.0.0.js",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-bases-view-v2.0.0.js?build=2100r1",
+      "sha256": "506e1ebbfa86a42b0f4dc6918ab1917edb3b8018012e15d98a267060c2cdf8c3",
+      "expected_sha256": "506e1ebbfa86a42b0f4dc6918ab1917edb3b8018012e15d98a267060c2cdf8c3",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-base-rewards-v2.6.0.js",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-base-rewards-v2.6.0.js?build=2100r1",
+      "sha256": "03556357ea6ecdbee4e39a20970b618e41116c9e56c1f97e38880b6471012bac",
+      "expected_sha256": "03556357ea6ecdbee4e39a20970b618e41116c9e56c1f97e38880b6471012bac",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-pursuit-view-v2.3.0.js",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-pursuit-view-v2.3.0.js?build=2100r1",
+      "sha256": "957ed9dc2f26e104a66a4bf26aad5c8bca4c6234aa0b6f8e56a688c93efd46ec",
+      "expected_sha256": "957ed9dc2f26e104a66a4bf26aad5c8bca4c6234aa0b6f8e56a688c93efd46ec",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-pursuit-view-v2.6.0.js",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-pursuit-view-v2.6.0.js?build=2100r1",
+      "sha256": "8958a6351fb735d5f72c5768de221a69e65ccddbecb00dc5a9f97b566f44f575",
+      "expected_sha256": "8958a6351fb735d5f72c5768de221a69e65ccddbecb00dc5a9f97b566f44f575",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-convoy-view-v2.3.0.js",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-convoy-view-v2.3.0.js?build=2100r1",
+      "sha256": "7d7d85f90d9082a14bbbb1dff7defd00f5f31bce23f270ae764aed2e98e77783",
+      "expected_sha256": "7d7d85f90d9082a14bbbb1dff7defd00f5f31bce23f270ae764aed2e98e77783",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-convoy-v2.6.0.js",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-convoy-v2.6.0.js?build=2100r1",
+      "sha256": "fb80b02ae850f69df1295bac3bbe64f61a18d05cf93d768e6e66dc1c595d44c7",
+      "expected_sha256": "fb80b02ae850f69df1295bac3bbe64f61a18d05cf93d768e6e66dc1c595d44c7",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-convoy-monsters-v2.9.0.js",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-convoy-monsters-v2.9.0.js?build=2100r1",
+      "sha256": "183edd63c874253d76bb16fa8c9740cdd7c174075aa5f64d0f251d67f50726a0",
+      "expected_sha256": "183edd63c874253d76bb16fa8c9740cdd7c174075aa5f64d0f251d67f50726a0",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-convoy-view-v2.4.0.js",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-convoy-view-v2.4.0.js?build=2100r1",
+      "sha256": "9a42c7dcde1e21644f10aaa0f848b8bab2c60794e4f5564898a17f48fd5d2965",
+      "expected_sha256": "9a42c7dcde1e21644f10aaa0f848b8bab2c60794e4f5564898a17f48fd5d2965",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-convoy-view-v2.6.0.js",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-convoy-view-v2.6.0.js?build=2100r1",
+      "sha256": "a3e9a4cc44b213c72bfe78f70dff5c4ccda64260ea45e03c83b510c7c11faa54",
+      "expected_sha256": "a3e9a4cc44b213c72bfe78f70dff5c4ccda64260ea45e03c83b510c7c11faa54",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-swarm-art-v2.10.0.js",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-swarm-art-v2.10.0.js?build=2100r1",
+      "sha256": "70395ad7dde8d089420d0a3f5651df2d2dbf4ad3fd0f58a80116cc5a3b0ac472",
+      "expected_sha256": "70395ad7dde8d089420d0a3f5651df2d2dbf4ad3fd0f58a80116cc5a3b0ac472",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-swarm-view-v2.7.0.js",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-swarm-view-v2.7.0.js?build=2100r1",
+      "sha256": "6970988b82a9def01bde5976f16962544a4e17806e2b8f4e795e9bc8064cef49",
+      "expected_sha256": "6970988b82a9def01bde5976f16962544a4e17806e2b8f4e795e9bc8064cef49",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-mrg-actors-v2.5.0.js",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-mrg-actors-v2.5.0.js?build=2100r1",
+      "sha256": "d0bcec56d741510c8f6e620451ba1681082bfafdec1a1d28a1463dea23442248",
+      "expected_sha256": "d0bcec56d741510c8f6e620451ba1681082bfafdec1a1d28a1463dea23442248",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-narrative-v2.5.0.js",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-narrative-v2.5.0.js?build=2100r1",
+      "sha256": "34232c3f6c16b7f686595ebb8c162f7368e4f12d2e6be1b923cdf2459e85c1fe",
+      "expected_sha256": "34232c3f6c16b7f686595ebb8c162f7368e4f12d2e6be1b923cdf2459e85c1fe",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-presentation-v2.5.0.js",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-presentation-v2.5.0.js?build=2100r1",
+      "sha256": "6e1bef9638c3fefe113ae8cdc1a54883068e38fdc2cf3e1eb9ab7f8cad82327e",
+      "expected_sha256": "6e1bef9638c3fefe113ae8cdc1a54883068e38fdc2cf3e1eb9ab7f8cad82327e",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-combat-v2.6.0.js",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-combat-v2.6.0.js?build=2100r1",
+      "sha256": "5b55bb15578db6ffac01427245672f46352165790ea617b9d6a42ed075e9edad",
+      "expected_sha256": "5b55bb15578db6ffac01427245672f46352165790ea617b9d6a42ed075e9edad",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-base-missions-v2.7.0.js",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-base-missions-v2.7.0.js?build=2100r1",
+      "sha256": "1de1ebda0fce1aa209639d00c2e0a0d38ad448fb917b279e8d509dc4f53ec003",
+      "expected_sha256": "1de1ebda0fce1aa209639d00c2e0a0d38ad448fb917b279e8d509dc4f53ec003",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-base-missions-view-v2.7.0.js",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-base-missions-view-v2.7.0.js?build=2100r1",
+      "sha256": "2fe4ee229e8ba3b93a8121a51dafb56eaa19bd9d0eda778a5cd84273adb1f371",
+      "expected_sha256": "2fe4ee229e8ba3b93a8121a51dafb56eaa19bd9d0eda778a5cd84273adb1f371",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-quiz-bank-v2.7.0.js",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-quiz-bank-v2.7.0.js?build=2100r1",
+      "sha256": "9bd8a4302f2e570296d3bd2ae2ded6cb274699b954f0b1c312932103e2cd5004",
+      "expected_sha256": "9bd8a4302f2e570296d3bd2ae2ded6cb274699b954f0b1c312932103e2cd5004",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-learning-modes-v2.7.0.js",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-learning-modes-v2.7.0.js?build=2100r1",
+      "sha256": "4fc2a0b6831787f62bec5a9cccefe7ff4e8576cd4c2e558f95f52c296375261c",
+      "expected_sha256": "4fc2a0b6831787f62bec5a9cccefe7ff4e8576cd4c2e558f95f52c296375261c",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-mobile-v2.7.0.js",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-mobile-v2.7.0.js?build=2100r1",
+      "sha256": "72904b7bc4f70b81b23c58bd5f298bb4e9264ce4ff51bbe5267847b4169f5332",
+      "expected_sha256": "72904b7bc4f70b81b23c58bd5f298bb4e9264ce4ff51bbe5267847b4169f5332",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-install-v2.7.0.js",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-install-v2.7.0.js?build=2100r1",
+      "sha256": "42fc03d340739e15b63a719165c3ff294cf287583ab44c50dbfa26ec7959eba5",
+      "expected_sha256": "42fc03d340739e15b63a719165c3ff294cf287583ab44c50dbfa26ec7959eba5",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-skills-v2.8.0.js",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-skills-v2.8.0.js?build=2100r1",
+      "sha256": "c19ed9a02d83167ce43d892f38172e81d2c2a6534885c818696b592ce64d5ced",
+      "expected_sha256": "c19ed9a02d83167ce43d892f38172e81d2c2a6534885c818696b592ce64d5ced",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-detail-v2.9.0.js",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-detail-v2.9.0.js?build=2100r1",
+      "sha256": "52b34e4dd11822262cf75439ef8e558922c6f99854f760bc9b4ccd90391a10c9",
+      "expected_sha256": "52b34e4dd11822262cf75439ef8e558922c6f99854f760bc9b4ccd90391a10c9",
+      "pass_": true
+    },
+    {
+      "path": "assets/citadel-runtime-v1.9.3.js",
+      "status": 200,
+      "url": "https://andrejk-blip.github.io/cmpon-atlas/assets/citadel-runtime-v1.9.3.js?build=2100r1",
+      "sha256": "a026d1eb50252a37f01b7ad097e610252bccacc01f078d6ee75a3bf86e029a6e",
+      "expected_sha256": "a026d1eb50252a37f01b7ad097e610252bccacc01f078d6ee75a3bf86e029a6e",
+      "pass_": true
+    }
+  ],
+  "pass": true
+}

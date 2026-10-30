@@ -1,0 +1,61 @@
+{
+  "version": "2.10.0",
+  "source_commit": "4d163752ac48c316fb7909d8169d9a6976aebf79",
+  "verified_at": "2026-10-30T14:38:20.512Z",
+  "url": "https://cmpon-analytics-admin.carlafloriano1958.chatgpt.site/game-test",
+  "passed": 5,
+  "total": 6,
+  "rows": [
+    {
+      "path": "version.json",
+      "status": 200,
+      "bytes": 2109,
+      "sha256": "ef5cf18bb6c4aa0b96c9d95a231e085dbe8a2660a13cdca82c0f483be35eaf45",
+      "expected_sha256": "ef5cf18bb6c4aa0b96c9d95a231e085dbe8a2660a13cdca82c0f483be35eaf45",
+      "pass": true
+    },
+    {
+      "path": "citadel-test/version.json",
+      "status": 200,
+      "bytes": 1985,
+      "sha256": "760a4d300a95bdf1e0600079ada7ffce0919710587fa9ded86bf1700f1b4faf8",
+      "expected_sha256": "760a4d300a95bdf1e0600079ada7ffce0919710587fa9ded86bf1700f1b4faf8",
+      "pass": true
+    },
+    {
+      "path": "citadel-test/index.html",
+      "status": 200,
+      "bytes": 6447,
+      "sha256": "bd220c0edae7e4db55b443704f12f04b212cb841ccfdb86bbe1723507374aae8",
+      "expected_sha256": "bd220c0edae7e4db55b443704f12f04b212cb841ccfdb86bbe1723507374aae8",
+      "pass": true
+    },
+    {
+      "path": "citadel-test/assets/game-test-v2.10.0.js",
+      "status": 200,
+      "bytes": 4439312,
+      "sha256": "b1128aa73bcf6b084cfefe13ee2eb6a1f296100e85fe235f3b3e9574337a6976",
+      "expected_sha256": "b1128aa73bcf6b084cfefe13ee2eb6a1f296100e85fe235f3b3e9574337a6976",
+      "pass": true
+    },
+    {
+      "path": "citadel-test/assets/game-test-v2.10.0.css",
+      "status": 200,
+      "bytes": 210302,
+      "sha256": "bee30b2216d4a98f1f456b0023db730b6fc29aafbf52017ef484d7c3ca862549",
+      "expected_sha256": "bee30b2216d4a98f1f456b0023db730b6fc29aafbf52017ef484d7c3ca862549",
+      "pass": true
+    },
+    {
+      "path": "game-test",
+      "status": 307,
+      "redirect_path": "/signin-with-chatgpt",
+      "pass": false
+    }
+  ],
+  "access": "owner-private; unchanged",
+  "pass": false,
+  "exact_assets_pass": true,
+  "page_content_verified": false,
+  "note": "Service access verifies deployed static bytes; the application route may additionally require a signed-in visitor identity."
+}

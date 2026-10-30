@@ -1,0 +1,39 @@
+{
+  "version": "2.10.0",
+  "public": {
+    "feature": "fed076ae0b66d7c60af4338ba530131fb9458e78",
+    "qa": "4d163752ac48c316fb7909d8169d9a6976aebf79",
+    "pages": {
+      "id": 41070543210,
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "4d163752ac48c316fb7909d8169d9a6976aebf79",
+      "url": "https://github.com/andrejk-blip/cmpon-atlas/actions/runs/41070543210"
+    }
+  },
+  "admin": {
+    "commit": "a09ceac421e34ada3a8264d879010fabe5867201",
+    "deployment": {
+      "id": "appgdep_6ae4a9cc6dfc81919f4beab3767bb582",
+      "project_id": "appgprj_6ad13ce0edb48191b2a4c6cf8e8dc9eb",
+      "title": "ЦМПОН · статистика посещений",
+      "version_id": "appgprj_6ad13ce0edb48191b2a4c6cf8e8dc9eb~appgver_2eacc6ba353081919a404a5eb0a67404",
+      "type": "publish",
+      "status": "succeeded",
+      "url": "https://cmpon-analytics-admin.carlafloriano1958.chatgpt.site",
+      "has_mcp": false,
+      "screenshot_asset_pointer": null,
+      "provider_deployment_id": "site---6ad13ce0edb48191b2a4c6cf8e8dc9eb",
+      "failure_message": null,
+      "env_set_revision": 2,
+      "updated_at": "2026-10-30T14:29:51.414422+00:00"
+    },
+    "audience": "owner-private; unchanged",
+    "http_verification": {
+      "exact_static_files": 5,
+      "total_static_files": 5,
+      "signed_in_route": "307 redirect to ChatGPT sign-in; visitor session not impersonated",
+      "page_content_verified": false
+    }
+  }
+}

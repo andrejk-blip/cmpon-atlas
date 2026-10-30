@@ -1,0 +1,7 @@
+{
+  "pass": true,
+  "tested_bundle_sha256": "60431ddb130249a3b2e23b273e2ad675949196fabfbe6e35d5b6450009b5062c",
+  "publication_bundle_sha256": "b1128aa73bcf6b084cfefe13ee2eb6a1f296100e85fe235f3b3e9574337a6976",
+  "only_post_suite_change": "Music description now shows actual catalog count; full bundle comparison after reversing this string is byte-identical.",
+  "catalog_count": 21
+}

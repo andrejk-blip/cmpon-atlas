@@ -1,0 +1,1558 @@
+{
+  "game_version": "1.2.1",
+  "lab_version": "2.10.0",
+  "audio_version": "1.9.1",
+  "entries": 22,
+  "modes": [
+    "training",
+    "combat",
+    "pro"
+  ],
+  "mode_runs": 66,
+  "entry_points": [
+    {
+      "id": "orbit-1",
+      "mode": "training",
+      "status": "playing",
+      "geometry": 365
+    },
+    {
+      "id": "orbit-2",
+      "mode": "training",
+      "status": "playing",
+      "geometry": 63
+    },
+    {
+      "id": "orbit-3",
+      "mode": "training",
+      "status": "playing",
+      "geometry": 0
+    },
+    {
+      "id": "orbit-4",
+      "mode": "training",
+      "status": "playing",
+      "geometry": 464
+    },
+    {
+      "id": "dock-1",
+      "mode": "training",
+      "status": "docking",
+      "geometry": 340
+    },
+    {
+      "id": "deck-1",
+      "mode": "training",
+      "status": "boarding",
+      "geometry": 211
+    },
+    {
+      "id": "dock-2",
+      "mode": "training",
+      "status": "docking",
+      "geometry": 285
+    },
+    {
+      "id": "deck-2",
+      "mode": "training",
+      "status": "boarding",
+      "geometry": 153
+    },
+    {
+      "id": "dock-3",
+      "mode": "training",
+      "status": "docking",
+      "geometry": 277
+    },
+    {
+      "id": "deck-3",
+      "mode": "training",
+      "status": "boarding",
+      "geometry": 154
+    },
+    {
+      "id": "dock-4",
+      "mode": "training",
+      "status": "docking",
+      "geometry": 376
+    },
+    {
+      "id": "deck-4",
+      "mode": "training",
+      "status": "boarding",
+      "geometry": 154
+    },
+    {
+      "id": "convoy-1",
+      "mode": "training",
+      "status": "playing",
+      "geometry": 188
+    },
+    {
+      "id": "convoy-2",
+      "mode": "training",
+      "status": "playing",
+      "geometry": 188
+    },
+    {
+      "id": "convoy-3",
+      "mode": "training",
+      "status": "playing",
+      "geometry": 188
+    },
+    {
+      "id": "parallax",
+      "mode": "training",
+      "status": "playing",
+      "geometry": 244
+    },
+    {
+      "id": "breach",
+      "mode": "training",
+      "status": "playing",
+      "geometry": 395
+    },
+    {
+      "id": "landing",
+      "mode": "training",
+      "status": "docking",
+      "geometry": 395
+    },
+    {
+      "id": "maze",
+      "mode": "training",
+      "status": "boarding",
+      "geometry": 173
+    },
+    {
+      "id": "mrg",
+      "mode": "training",
+      "status": "boarding",
+      "geometry": 400
+    },
+    {
+      "id": "upload",
+      "mode": "training",
+      "status": "docking",
+      "geometry": 359
+    },
+    {
+      "id": "victory",
+      "mode": "training",
+      "status": "won",
+      "geometry": 359
+    },
+    {
+      "id": "orbit-1",
+      "mode": "combat",
+      "status": "playing",
+      "geometry": 365
+    },
+    {
+      "id": "orbit-2",
+      "mode": "combat",
+      "status": "playing",
+      "geometry": 63
+    },
+    {
+      "id": "orbit-3",
+      "mode": "combat",
+      "status": "playing",
+      "geometry": 0
+    },
+    {
+      "id": "orbit-4",
+      "mode": "combat",
+      "status": "playing",
+      "geometry": 465
+    },
+    {
+      "id": "dock-1",
+      "mode": "combat",
+      "status": "docking",
+      "geometry": 340
+    },
+    {
+      "id": "deck-1",
+      "mode": "combat",
+      "status": "boarding",
+      "geometry": 231
+    },
+    {
+      "id": "dock-2",
+      "mode": "combat",
+      "status": "docking",
+      "geometry": 285
+    },
+    {
+      "id": "deck-2",
+      "mode": "combat",
+      "status": "boarding",
+      "geometry": 173
+    },
+    {
+      "id": "dock-3",
+      "mode": "combat",
+      "status": "docking",
+      "geometry": 277
+    },
+    {
+      "id": "deck-3",
+      "mode": "combat",
+      "status": "boarding",
+      "geometry": 174
+    },
+    {
+      "id": "dock-4",
+      "mode": "combat",
+      "status": "docking",
+      "geometry": 376
+    },
+    {
+      "id": "deck-4",
+      "mode": "combat",
+      "status": "boarding",
+      "geometry": 174
+    },
+    {
+      "id": "convoy-1",
+      "mode": "combat",
+      "status": "playing",
+      "geometry": 188
+    },
+    {
+      "id": "convoy-2",
+      "mode": "combat",
+      "status": "playing",
+      "geometry": 188
+    },
+    {
+      "id": "convoy-3",
+      "mode": "combat",
+      "status": "playing",
+      "geometry": 188
+    },
+    {
+      "id": "parallax",
+      "mode": "combat",
+      "status": "playing",
+      "geometry": 245
+    },
+    {
+      "id": "breach",
+      "mode": "combat",
+      "status": "playing",
+      "geometry": 395
+    },
+    {
+      "id": "landing",
+      "mode": "combat",
+      "status": "docking",
+      "geometry": 395
+    },
+    {
+      "id": "maze",
+      "mode": "combat",
+      "status": "boarding",
+      "geometry": 193
+    },
+    {
+      "id": "mrg",
+      "mode": "combat",
+      "status": "boarding",
+      "geometry": 411
+    },
+    {
+      "id": "upload",
+      "mode": "combat",
+      "status": "docking",
+      "geometry": 359
+    },
+    {
+      "id": "victory",
+      "mode": "combat",
+      "status": "won",
+      "geometry": 359
+    },
+    {
+      "id": "orbit-1",
+      "mode": "pro",
+      "status": "playing",
+      "geometry": 365
+    },
+    {
+      "id": "orbit-2",
+      "mode": "pro",
+      "status": "playing",
+      "geometry": 63
+    },
+    {
+      "id": "orbit-3",
+      "mode": "pro",
+      "status": "playing",
+      "geometry": 0
+    },
+    {
+      "id": "orbit-4",
+      "mode": "pro",
+      "status": "playing",
+      "geometry": 465
+    },
+    {
+      "id": "dock-1",
+      "mode": "pro",
+      "status": "docking",
+      "geometry": 340
+    },
+    {
+      "id": "deck-1",
+      "mode": "pro",
+      "status": "boarding",
+      "geometry": 231
+    },
+    {
+      "id": "dock-2",
+      "mode": "pro",
+      "status": "docking",
+      "geometry": 285
+    },
+    {
+      "id": "deck-2",
+      "mode": "pro",
+      "status": "boarding",
+      "geometry": 173
+    },
+    {
+      "id": "dock-3",
+      "mode": "pro",
+      "status": "docking",
+      "geometry": 277
+    },
+    {
+      "id": "deck-3",
+      "mode": "pro",
+      "status": "boarding",
+      "geometry": 174
+    },
+    {
+      "id": "dock-4",
+      "mode": "pro",
+      "status": "docking",
+      "geometry": 376
+    },
+    {
+      "id": "deck-4",
+      "mode": "pro",
+      "status": "boarding",
+      "geometry": 174
+    },
+    {
+      "id": "convoy-1",
+      "mode": "pro",
+      "status": "playing",
+      "geometry": 188
+    },
+    {
+      "id": "convoy-2",
+      "mode": "pro",
+      "status": "playing",
+      "geometry": 188
+    },
+    {
+      "id": "convoy-3",
+      "mode": "pro",
+      "status": "playing",
+      "geometry": 188
+    },
+    {
+      "id": "parallax",
+      "mode": "pro",
+      "status": "playing",
+      "geometry": 245
+    },
+    {
+      "id": "breach",
+      "mode": "pro",
+      "status": "playing",
+      "geometry": 395
+    },
+    {
+      "id": "landing",
+      "mode": "pro",
+      "status": "docking",
+      "geometry": 395
+    },
+    {
+      "id": "maze",
+      "mode": "pro",
+      "status": "boarding",
+      "geometry": 193
+    },
+    {
+      "id": "mrg",
+      "mode": "pro",
+      "status": "boarding",
+      "geometry": 411
+    },
+    {
+      "id": "upload",
+      "mode": "pro",
+      "status": "docking",
+      "geometry": 359
+    },
+    {
+      "id": "victory",
+      "mode": "pro",
+      "status": "won",
+      "geometry": 359
+    }
+  ],
+  "independent_boss_victories": true,
+  "deck_exits": 5,
+  "base_mode_playthroughs": 15,
+  "convoy_exits": 3,
+  "cinematic_transitions": true,
+  "manual_ground_start": true,
+  "repeat_same_seed": true,
+  "dialog_pauses_and_blocks_game_input": true,
+  "browser_storage_reads": 0,
+  "browser_storage_writes": 0,
+  "mobile_dimensions": [
+    [
+      390,
+      844
+    ],
+    [
+      844,
+      390
+    ]
+  ],
+  "audio_controls": {
+    "themes": 21,
+    "effects": 21,
+    "automatic_scenes": 15,
+    "shared_audio_contexts": 1,
+    "opening_does_not_activate_audio": true,
+    "music_and_effects_together": true,
+    "preview_on_pause_and_menu": true,
+    "restores_music_preference": true,
+    "owned_and_nested_pause": true,
+    "gameplay_fx_bus_recovery": true,
+    "byte_identical_modules_in_order": true,
+    "locations": [
+      "ground",
+      "deck",
+      "convoy",
+      "space",
+      "mrg"
+    ],
+    "recorded_effects": {
+      "pack_version": "1.9.1",
+      "clips": 42,
+      "loaded_previews": true,
+      "success_requires_decoded_audio_start": true,
+      "close_cancels_pending_recording": true,
+      "no_system_speech": true,
+      "real_engine_event_uses_sample": true,
+      "preload_all_clips": true,
+      "byte_identical_mp3s": true
+    }
+  },
+  "source_commit": "4d163752ac48c316fb7909d8169d9a6976aebf79",
+  "source_candidate": false,
+  "verification": "Release source bundle in Node VM; native canvas rendering, DOM event harness, shared Web Audio context, deferred recorded fetch/decode/start and fallback speech events. No browser or physical-device listening was performed.",
+  "missions": {
+    "pursuit_version": "2.6.0",
+    "swarm_version": "2.7.0",
+    "comic_version": "1.9.3",
+    "real_input_playthroughs": [
+      {
+        "id": "orbit-2",
+        "mode": "combat",
+        "seconds": 178.57,
+        "min_hp": 72,
+        "max_enemies": 9,
+        "packets": 3,
+        "decisions": 2,
+        "real_gate_docking": true
+      },
+      {
+        "id": "orbit-3",
+        "mode": "combat",
+        "seconds": 179.65,
+        "min_hp": 85.57,
+        "max_enemies": 64,
+        "packets": 3,
+        "decisions": 2,
+        "real_gate_docking": true
+      },
+      {
+        "id": "orbit-2",
+        "mode": "training",
+        "seconds": 142.45,
+        "min_hp": 90.1,
+        "max_enemies": 9,
+        "packets": 3,
+        "decisions": 2,
+        "real_gate_docking": true
+      },
+      {
+        "id": "orbit-3",
+        "mode": "training",
+        "seconds": 87.98,
+        "min_hp": 100,
+        "max_enemies": 18,
+        "packets": 3,
+        "decisions": 2,
+        "real_gate_docking": true
+      },
+      {
+        "id": "orbit-2",
+        "mode": "pro",
+        "seconds": 178.57,
+        "min_hp": 72,
+        "max_enemies": 9,
+        "packets": 3,
+        "decisions": 2,
+        "real_gate_docking": true
+      },
+      {
+        "id": "orbit-3",
+        "mode": "pro",
+        "seconds": 179.65,
+        "min_hp": 85.57,
+        "max_enemies": 64,
+        "packets": 3,
+        "decisions": 2,
+        "real_gate_docking": true
+      }
+    ]
+  },
+  "presentation": {
+    "interface_version": "1.9.0",
+    "story_version": "1.9.0",
+    "art_version": "1.9.0",
+    "opening_comic_from_picker": true,
+    "menu_preview_restores_state": true
+  },
+  "decks_version": "2.0.0",
+  "input_version": "2.6.0",
+  "deck_clearance_playthroughs": [
+    {
+      "level": 2,
+      "mode": "combat",
+      "minimumHp": 86,
+      "rooms": [
+        {
+          "room": 1,
+          "kills": 5,
+          "hp": 100,
+          "pending": 0
+        },
+        {
+          "room": 2,
+          "kills": 10,
+          "hp": 86,
+          "pending": 0
+        },
+        {
+          "room": 3,
+          "kills": 15,
+          "hp": 100,
+          "pending": 0
+        }
+      ],
+      "kills": 15,
+      "seconds": 96.067
+    },
+    {
+      "level": 5,
+      "mode": "combat",
+      "minimumHp": 64.83,
+      "rooms": [
+        {
+          "room": 1,
+          "kills": 6,
+          "hp": 100,
+          "pending": 0
+        },
+        {
+          "room": 2,
+          "kills": 12,
+          "hp": 90.19,
+          "pending": 0
+        },
+        {
+          "room": 3,
+          "kills": 19,
+          "hp": 100,
+          "pending": 0
+        }
+      ],
+      "kills": 19,
+      "seconds": 123.2
+    },
+    {
+      "level": 8,
+      "mode": "combat",
+      "minimumHp": 71.36,
+      "rooms": [
+        {
+          "room": 1,
+          "kills": 7,
+          "hp": 100,
+          "pending": 0
+        },
+        {
+          "room": 2,
+          "kills": 14,
+          "hp": 95.28,
+          "pending": 0
+        },
+        {
+          "room": 3,
+          "kills": 22,
+          "hp": 100,
+          "pending": 0
+        }
+      ],
+      "kills": 22,
+      "seconds": 120.533
+    },
+    {
+      "level": 11,
+      "mode": "combat",
+      "minimumHp": 37.496,
+      "rooms": [
+        {
+          "room": 1,
+          "kills": 7,
+          "hp": 97.648,
+          "pending": 0
+        },
+        {
+          "room": 2,
+          "kills": 14,
+          "hp": 94.92,
+          "pending": 0
+        },
+        {
+          "room": 3,
+          "kills": 22,
+          "hp": 82.49600000000001,
+          "pending": 0
+        }
+      ],
+      "kills": 22,
+      "seconds": 95.267
+    },
+    {
+      "level": 2,
+      "mode": "training",
+      "minimumHp": 93.4,
+      "rooms": [
+        {
+          "room": 1,
+          "kills": 5,
+          "hp": 100,
+          "pending": 0
+        },
+        {
+          "room": 2,
+          "kills": 10,
+          "hp": 100,
+          "pending": 0
+        },
+        {
+          "room": 3,
+          "kills": 15,
+          "hp": 100,
+          "pending": 0
+        }
+      ],
+      "kills": 15,
+      "seconds": 99.767
+    },
+    {
+      "level": 5,
+      "mode": "training",
+      "minimumHp": 96.076,
+      "rooms": [
+        {
+          "room": 1,
+          "kills": 5,
+          "hp": 100,
+          "pending": 0
+        },
+        {
+          "room": 2,
+          "kills": 10,
+          "hp": 100,
+          "pending": 0
+        },
+        {
+          "room": 3,
+          "kills": 16,
+          "hp": 100,
+          "pending": 0
+        }
+      ],
+      "kills": 16,
+      "seconds": 126.45
+    },
+    {
+      "level": 8,
+      "mode": "training",
+      "minimumHp": 100,
+      "rooms": [
+        {
+          "room": 1,
+          "kills": 6,
+          "hp": 100,
+          "pending": 0
+        },
+        {
+          "room": 2,
+          "kills": 12,
+          "hp": 100,
+          "pending": 0
+        },
+        {
+          "room": 3,
+          "kills": 19,
+          "hp": 100,
+          "pending": 0
+        }
+      ],
+      "kills": 19,
+      "seconds": 103.483
+    },
+    {
+      "level": 11,
+      "mode": "training",
+      "minimumHp": 88.768,
+      "rooms": [
+        {
+          "room": 1,
+          "kills": 6,
+          "hp": 100,
+          "pending": 0
+        },
+        {
+          "room": 2,
+          "kills": 12,
+          "hp": 100,
+          "pending": 0
+        },
+        {
+          "room": 3,
+          "kills": 19,
+          "hp": 100,
+          "pending": 0
+        }
+      ],
+      "kills": 19,
+      "seconds": 84.983
+    },
+    {
+      "level": 2,
+      "mode": "pro",
+      "minimumHp": 86,
+      "rooms": [
+        {
+          "room": 1,
+          "kills": 5,
+          "hp": 100,
+          "pending": 0
+        },
+        {
+          "room": 2,
+          "kills": 10,
+          "hp": 86,
+          "pending": 0
+        },
+        {
+          "room": 3,
+          "kills": 15,
+          "hp": 100,
+          "pending": 0
+        }
+      ],
+      "kills": 15,
+      "seconds": 96.067
+    },
+    {
+      "level": 5,
+      "mode": "pro",
+      "minimumHp": 64.83,
+      "rooms": [
+        {
+          "room": 1,
+          "kills": 6,
+          "hp": 100,
+          "pending": 0
+        },
+        {
+          "room": 2,
+          "kills": 12,
+          "hp": 90.19,
+          "pending": 0
+        },
+        {
+          "room": 3,
+          "kills": 19,
+          "hp": 100,
+          "pending": 0
+        }
+      ],
+      "kills": 19,
+      "seconds": 123.2
+    },
+    {
+      "level": 8,
+      "mode": "pro",
+      "minimumHp": 71.36,
+      "rooms": [
+        {
+          "room": 1,
+          "kills": 7,
+          "hp": 100,
+          "pending": 0
+        },
+        {
+          "room": 2,
+          "kills": 14,
+          "hp": 95.28,
+          "pending": 0
+        },
+        {
+          "room": 3,
+          "kills": 22,
+          "hp": 100,
+          "pending": 0
+        }
+      ],
+      "kills": 22,
+      "seconds": 120.533
+    },
+    {
+      "level": 11,
+      "mode": "pro",
+      "minimumHp": 37.496,
+      "rooms": [
+        {
+          "room": 1,
+          "kills": 7,
+          "hp": 97.648,
+          "pending": 0
+        },
+        {
+          "room": 2,
+          "kills": 14,
+          "hp": 94.92,
+          "pending": 0
+        },
+        {
+          "room": 3,
+          "kills": 22,
+          "hp": 82.49600000000001,
+          "pending": 0
+        }
+      ],
+      "kills": 22,
+      "seconds": 95.267
+    },
+    {
+      "level": 13,
+      "mode": "combat",
+      "minimumHp": 41.12,
+      "rooms": [
+        {
+          "room": 1,
+          "kills": 8,
+          "hp": 100,
+          "pending": 0
+        },
+        {
+          "room": 2,
+          "kills": 16,
+          "hp": 85.856,
+          "pending": 0
+        },
+        {
+          "room": 3,
+          "kills": 24,
+          "hp": 86.12,
+          "pending": 0
+        }
+      ],
+      "kills": 24,
+      "seconds": 114.733
+    },
+    {
+      "level": 13,
+      "mode": "training",
+      "minimumHp": 100,
+      "rooms": [
+        {
+          "room": 1,
+          "kills": 7,
+          "hp": 100,
+          "pending": 0
+        },
+        {
+          "room": 2,
+          "kills": 14,
+          "hp": 100,
+          "pending": 0
+        },
+        {
+          "room": 3,
+          "kills": 21,
+          "hp": 100,
+          "pending": 0
+        }
+      ],
+      "kills": 21,
+      "seconds": 104.45
+    },
+    {
+      "level": 13,
+      "mode": "pro",
+      "minimumHp": 41.12,
+      "rooms": [
+        {
+          "room": 1,
+          "kills": 8,
+          "hp": 100,
+          "pending": 0
+        },
+        {
+          "room": 2,
+          "kills": 16,
+          "hp": 85.856,
+          "pending": 0
+        },
+        {
+          "room": 3,
+          "kills": 24,
+          "hp": 86.12,
+          "pending": 0
+        }
+      ],
+      "kills": 24,
+      "seconds": 114.733
+    }
+  ],
+  "parallax": {
+    "version": "2.6.0",
+    "real_input_playthroughs": [
+      {
+        "mode": "combat",
+        "seconds": 61.87,
+        "min_hp": 85.6,
+        "tentacle_hits": 0,
+        "evaded": 9,
+        "blocked": 6
+      },
+      {
+        "mode": "training",
+        "seconds": 49.4,
+        "min_hp": 97.36,
+        "tentacle_hits": 0,
+        "evaded": 3,
+        "blocked": 4
+      },
+      {
+        "mode": "pro",
+        "seconds": 61.87,
+        "min_hp": 85.6,
+        "tentacle_hits": 0,
+        "evaded": 9,
+        "blocked": 6
+      }
+    ]
+  },
+  "mrg_version": "2.6.0",
+  "voice_version": "2.7.0",
+  "field_ui_version": "1.7.0",
+  "flight_fixes": {
+    "compat_version": "1.7.1",
+    "flight_version": "1.9.1",
+    "aim_version": "1.7.1",
+    "flight_ui_version": "1.7.1",
+    "visible_gate_docking": true,
+    "byte_identical_modules_in_order": true
+  },
+  "voice_controls": {
+    "pack_version": "1.8.2",
+    "prepared_clips": 110,
+    "radio_prepared_clips": 76,
+    "commander_preview": true,
+    "short_lesson_preview": true,
+    "recorded_without_system_speech": true,
+    "success_requires_decoded_audio_start": true,
+    "fallback_labelled": true,
+    "recorded_radio_without_duplicate_effects": true,
+    "close_cancels_pending_recording": true,
+    "one_shared_context": true,
+    "memory_only_preference": true
+  },
+  "mrg_playthroughs": [
+    {
+      "mode": "combat",
+      "seconds": 51.82,
+      "min_hp": 16.799999999999997,
+      "waves": [
+        {
+          "wave": 1,
+          "soldiers": 3,
+          "packs": 1,
+          "name": "TV",
+          "hp": 144,
+          "damage_multiplier": 1,
+          "beard": false,
+          "soldiers_seen": 3,
+          "packs_seen": 1
+        },
+        {
+          "wave": 2,
+          "soldiers": 4,
+          "packs": 2,
+          "name": "BS",
+          "hp": 288,
+          "damage_multiplier": 2,
+          "beard": false,
+          "soldiers_seen": 4,
+          "packs_seen": 2
+        },
+        {
+          "wave": 3,
+          "soldiers": 6,
+          "packs": 2,
+          "name": "SH",
+          "hp": 576,
+          "damage_multiplier": 4,
+          "beard": true,
+          "soldiers_seen": 6,
+          "packs_seen": 2
+        }
+      ],
+      "manual_aim": true,
+      "guide": false
+    },
+    {
+      "mode": "training",
+      "seconds": 47.98,
+      "min_hp": 100,
+      "waves": [
+        {
+          "wave": 1,
+          "soldiers": 3,
+          "packs": 1,
+          "name": "TV",
+          "hp": 116,
+          "damage_multiplier": 1,
+          "beard": false,
+          "soldiers_seen": 3,
+          "packs_seen": 1
+        },
+        {
+          "wave": 2,
+          "soldiers": 4,
+          "packs": 2,
+          "name": "BS",
+          "hp": 232,
+          "damage_multiplier": 2,
+          "beard": false,
+          "soldiers_seen": 4,
+          "packs_seen": 2
+        },
+        {
+          "wave": 3,
+          "soldiers": 6,
+          "packs": 2,
+          "name": "SH",
+          "hp": 464,
+          "damage_multiplier": 4,
+          "beard": true,
+          "soldiers_seen": 6,
+          "packs_seen": 2
+        }
+      ],
+      "manual_aim": true,
+      "guide": false
+    },
+    {
+      "mode": "pro",
+      "seconds": 51.82,
+      "min_hp": 16.799999999999997,
+      "waves": [
+        {
+          "wave": 1,
+          "soldiers": 3,
+          "packs": 1,
+          "name": "TV",
+          "hp": 144,
+          "damage_multiplier": 1,
+          "beard": false,
+          "soldiers_seen": 3,
+          "packs_seen": 1
+        },
+        {
+          "wave": 2,
+          "soldiers": 4,
+          "packs": 2,
+          "name": "BS",
+          "hp": 288,
+          "damage_multiplier": 2,
+          "beard": false,
+          "soldiers_seen": 4,
+          "packs_seen": 2
+        },
+        {
+          "wave": 3,
+          "soldiers": 6,
+          "packs": 2,
+          "name": "SH",
+          "hp": 576,
+          "damage_multiplier": 4,
+          "beard": true,
+          "soldiers_seen": 6,
+          "packs_seen": 2
+        }
+      ],
+      "manual_aim": true,
+      "guide": false
+    }
+  ],
+  "operator_reaction_seconds": {
+    "base": 0.2,
+    "swarm": 0.2
+  },
+  "learning_modes": {
+    "version": "2.7.0",
+    "quiz_bank_version": "2.7.0",
+    "questions": 84,
+    "contracts": [
+      {
+        "mode": "training",
+        "kind": "lesson",
+        "quiz": true,
+        "right_points": 100,
+        "wrong_points": 0,
+        "wrong_allows_progress": true,
+        "hint": true,
+        "health_untouched_on_answer": true
+      },
+      {
+        "mode": "training",
+        "kind": "remark",
+        "quiz": true,
+        "right_points": 125,
+        "wrong_points": 0,
+        "wrong_allows_progress": true,
+        "hint": true,
+        "health_untouched_on_answer": true
+      },
+      {
+        "mode": "training",
+        "kind": "finalcheck",
+        "quiz": true,
+        "right_points": 400,
+        "wrong_points": 0,
+        "wrong_allows_progress": true,
+        "hint": true,
+        "health_untouched_on_answer": true
+      },
+      {
+        "mode": "combat",
+        "kind": "lesson",
+        "quiz": true,
+        "right_points": 100,
+        "wrong_points": 0,
+        "wrong_allows_progress": true,
+        "hint": false,
+        "health_untouched_on_answer": true
+      },
+      {
+        "mode": "combat",
+        "kind": "remark",
+        "quiz": true,
+        "right_points": 125,
+        "wrong_points": 0,
+        "wrong_allows_progress": true,
+        "hint": false,
+        "health_untouched_on_answer": true
+      },
+      {
+        "mode": "combat",
+        "kind": "finalcheck",
+        "quiz": true,
+        "right_points": 400,
+        "wrong_points": 0,
+        "wrong_allows_progress": true,
+        "hint": false,
+        "health_untouched_on_answer": true
+      },
+      {
+        "mode": "pro",
+        "kind": "lesson",
+        "quiz": false,
+        "right_points": 300,
+        "wrong_points": null,
+        "wrong_allows_progress": false,
+        "hint": false,
+        "health_untouched_on_answer": null
+      },
+      {
+        "mode": "pro",
+        "kind": "remark",
+        "quiz": false,
+        "right_points": 500,
+        "wrong_points": null,
+        "wrong_allows_progress": false,
+        "hint": false,
+        "health_untouched_on_answer": null
+      },
+      {
+        "mode": "pro",
+        "kind": "finalcheck",
+        "quiz": false,
+        "right_points": 700,
+        "wrong_points": null,
+        "wrong_allows_progress": false,
+        "hint": false,
+        "health_untouched_on_answer": null
+      }
+    ]
+  },
+  "tested_bundle_sha256": "60431ddb130249a3b2e23b273e2ad675949196fabfbe6e35d5b6450009b5062c",
+  "tested_source_files": {
+    "citadel-victory-v1.2.0.webp": "2229294f324d17123af7f92ca1f1a84d5e2de138e42b838bb8e8d0a7007d5e26",
+    "engine-v1.2.1.js": "1efb9b96b7373d768fdaf4f5939706eb89721a26cd9fe010ea053be9d30f5f66",
+    "engine-v1.2.1.css": "e4e378988c9198e6c53828abbcd11614a24ce399dc1a306e3c18f00b7d8233dd",
+    "shell.html": "902a192a5baf7d668aa76ceb075990f2b280543db2aabc1b6ac797cb8afaa4a6",
+    "audio/citadel-music-v1.4.2.js": "f277463e7ac27f43fd46b8a03d7880e2c49474b065f543f6b1f8feae75dd6077",
+    "mrg/citadel-mrg-viewport-v1.6.0.css": "60426620a6f3e82d0893fd5dbeb3c3f21b1b398f343ed5311566c4fc02a9c367",
+    "ui/citadel-field-ui-v1.7.0.js": "fb2b2545d45aaad74c1009bf2bd3b775ca6b897c9baf027f2c7cff5de0b02bed",
+    "mrg/citadel-mrg-v1.7.0.js": "1e2decb0c05426cc0989286558d109235e5f35381a153342434f9400b2d16964",
+    "mrg/citadel-mrg-view-v1.7.0.js": "e82fcc77edafcda95364d3851be748c863c23e6677d43f39c75963d265c0797b",
+    "compat/citadel-compat-v1.7.1.js": "e5ea0b065568c5ebcddcd01d483375560bae36308871dd62a87e5d8e97a46599",
+    "compat/citadel-startup-v1.7.1.js": "4d65d9f4456488dd2ea7eeab114ecf8cf4723177b854c0598de70a43b200e7c7",
+    "flight/citadel-aim-v1.7.1.js": "6c0251b56e8a798597cc0a3b26bec950739665f4d5fed9980db091ed04b25058",
+    "flight/citadel-flight-view-v1.7.1.js": "b5e7d58a269a75fb71aba8ccb286e84714e17ef016532086dc8d098443acae91",
+    "missions/citadel-pursuit-v1.8.0.js": "424e1795c595d49a99246f083d7508d10b3b02fa71d709333221799b7937f445",
+    "missions/citadel-swarm-v1.8.0.js": "eeeabd8916a6d6d36b3a64d1286c94910448d8d1aaad3b16a130f1c573a53493",
+    "missions/citadel-parallax-v1.8.0.js": "abbfdb4d46c331cb3c752f27932b2d33349fe6ec761b2e680af5120e0ab34ea8",
+    "ui/citadel-comic-v1.8.0.js": "42d23e80d0fb1707bca6deac9fe4411bb031dde37b86f3a0e251e54d14cf27b3",
+    "flight/citadel-flight-v1.8.1.js": "aa9fe41d2693961d28b81ff15cac5bc1e45b0d3393b2cb4f1edf8329d434aa6a",
+    "audio/citadel-voice-v1.8.2.js": "0092baa5a60687ba2a9e72b42e42bd258961e6ef82b6c2ba03a2d256af6ed963",
+    "audio/citadel-voice-pack-v1.8.2.js": "e0a0ac89a7ad348a7b107fef9c067b12227d33b7c1427d3eb7cec5472949fbfe",
+    "audio/voice-v1.8.2/manifest.json": "0a35e4d9f335b25ce24228a1b7a1015ae6284448881fe7d33838b815438f8a94",
+    "audio/voice-v1.8.2/lesson-1b5de8896c396ddf.mp3": "02fc7a90c034395edaa9f3cdacad87bdbc7835d5bd2cc412cc39401021775810",
+    "audio/voice-v1.8.2/lesson-c1da63da57b90980.mp3": "08c0ed3d9b44e3ec089a67b67b49ff3a98c0d6904b190b0f98f3e0ca37236ce7",
+    "audio/voice-v1.8.2/lesson-320f71b8705af4db.mp3": "92dee639353a9217f714cb85a10bddd86e4468c42d0e2e792b991201053537ff",
+    "audio/voice-v1.8.2/lesson-ab53d0cf556f0182.mp3": "aaebe5b915ba5ec13ac732f0753c719f3bb389186cf42514b09f1b53cc0f646f",
+    "audio/voice-v1.8.2/lesson-f18d1d03b2199bb4.mp3": "31bdc5e9af9c3b22142c124355532930ee282866b332878fac0430dc74b60822",
+    "audio/voice-v1.8.2/lesson-77215a47011807f7.mp3": "60735488e463b3a9cec3b62d8a02ca84648f879df332c0793ea8bba2876e79cf",
+    "audio/voice-v1.8.2/lesson-40f39fff9e1aa05e.mp3": "5829c1a4fb91bdc9a7c990ec641cb67734e4e79098dd3141d33f061066a9c82e",
+    "audio/voice-v1.8.2/lesson-38cca25d101ba74e.mp3": "0c39924e3b1491e3b415e6f0d7069248b257dcc23d34571f1e9c0dee6e62b1c3",
+    "audio/voice-v1.8.2/lesson-85d92c5d31f70f4d.mp3": "49022d92316968d03febaa0f14fd9d9ee4fbf5cb216107fb4978cb1478e21984",
+    "audio/voice-v1.8.2/lesson-e9d1d77b820a448e.mp3": "7876b38034982d4bc16cd7b81e5a9ef952bec316eedd09caf2aba38ddfd7727c",
+    "audio/voice-v1.8.2/lesson-26f090a08ec9b022.mp3": "d90d7ab12d297213eb8b89241c533ffa5605b390f6f54329bfcacab327abb481",
+    "audio/voice-v1.8.2/lesson-f4cb85339edfc781.mp3": "5914715faefccca6c3b3390ab12312e922b3fba4c14e4573ce43341c938ff43a",
+    "audio/voice-v1.8.2/lesson-b4edf9988190c216.mp3": "0d0800c245783b92c8eb1e588c0bef13ec7f2a6db54dffa9c0c4373985497e44",
+    "audio/voice-v1.8.2/lesson-0f729bd55f1fd4d0.mp3": "f8849c5b6d093f9d63f7570ff2fdc9b6495e0407162f7093a90384b58e36345e",
+    "audio/voice-v1.8.2/lesson-f2ea5a160079861f.mp3": "ecb531e6b77e886857ef814d1cbf14e51f9238d487ee27b0d671a02fba2ccc70",
+    "audio/voice-v1.8.2/lesson-8431050952010661.mp3": "c8e9e326ea5c429b1879f65a7c11e8d9248b55c7d5f43da58a66007e6f70f204",
+    "audio/voice-v1.8.2/lesson-f363f789710613df.mp3": "ef7029b3bdc0b96d5a6b5cca519f08860cf5516f226d91e3799e4a69b030ec76",
+    "audio/voice-v1.8.2/lesson-0d4a8b3b1a64edb7.mp3": "b177ec515558fb8fd6b1d5adcffd1588a149f85fa495f9cad371a91b50e28a5b",
+    "audio/voice-v1.8.2/lesson-b0dee9b8a87e7898.mp3": "8b627cc55e518b7fbf6865a60e7f1702bc76a16aa70a21962c2a95744a927637",
+    "audio/voice-v1.8.2/lesson-a7e0ee1bd10314bd.mp3": "78bdbaa9228d1f0ea677526e767c315e98fbd8f516e9562e428ee3ceb70877d8",
+    "audio/voice-v1.8.2/lesson-15104567a68c11ad.mp3": "fbaf1928cb16caae4045987799b8cc526a8f23316e4680efc24cd68c12e878bf",
+    "audio/voice-v1.8.2/lesson-62018743fd856586.mp3": "4415748163e4eef4c1af8ac67c034306d2a7df63c18ac13370cb15ee50423d6b",
+    "audio/voice-v1.8.2/lesson-8720f301d49c6c63.mp3": "1f359924f21072d6f1eef7eab146eed8a0dfc238dfde0001525dcf0d133c6b16",
+    "audio/voice-v1.8.2/lesson-3d7152a309ee7515.mp3": "52a9d11eecbfa42242ae3f03e500de1ea423497903e1e51a082c0b48c713298f",
+    "audio/voice-v1.8.2/lesson-315e143a1ab72350.mp3": "9bfedb9a0a9f822945ba3fe9c86877d8a1a4369aa019b1b5c5ab5af931fa8438",
+    "audio/voice-v1.8.2/lesson-3f49242325525087.mp3": "2505a0b1d751eb0b56a931219b9c6dde3b116d82948e0d42ac5cc42cecd7ba13",
+    "audio/voice-v1.8.2/lesson-e70edbfc24927d7e.mp3": "cb537ddc08a0f61617a1bc0b08b2b0a9c65bdc4b7ee171573fb559941a9833c7",
+    "audio/voice-v1.8.2/lesson-13e3b80af5eade85.mp3": "4cfabc39a7198d7392fcef5e0751da494d573a2008b608229a105bd14688f32d",
+    "audio/voice-v1.8.2/lesson-202ac471ae1ee491.mp3": "a5a201eb77d79e9a3dd77d60feb4b177fe80b18d32c4f13f471307619a227699",
+    "audio/voice-v1.8.2/lesson-11dab8e81d612a76.mp3": "d1bdb9e942f812b0f8b0995fd3be0dc62963253f4f185f535280a50a58dd8c3e",
+    "audio/voice-v1.8.2/lesson-ceb67ce173dd0ca1.mp3": "ffd27ab77f847934a058230f4982ce402e18686fd53a05ae6c9f85a63a84c539",
+    "audio/voice-v1.8.2/lesson-00e4419d32295c15.mp3": "cba153691a785def06134908c22fd1176d3975e10d256c5aec4ec51f02104345",
+    "audio/voice-v1.8.2/lesson-41cca2be73009449.mp3": "a7809003456d07a5137362f6340d6e94424358124e21384fd83fe23d2979019d",
+    "audio/voice-v1.8.2/lesson-3301f4684d66cc57.mp3": "b074702cf6382d6e0dc9ff4cb4191f756a04be4bf6cb89b913be0a2c98f15664",
+    "audio/voice-v1.8.2/lesson-61c57c19a2b85450.mp3": "38125e1c994ef717f14acf2ba47b92f8fb1cf18061701cd91d4c00c0e3b021da",
+    "audio/voice-v1.8.2/lesson-730b9fe6f129af6c.mp3": "0684b1718ba5a66c70245ecd711f272aa696960b18f0225e4b20b45d1f54aec3",
+    "audio/voice-v1.8.2/lesson-48cba06c125b2c61.mp3": "4f44b71be062b286ea53ee44dc0b73d63921ad931c22a7df486d0736d8bbd692",
+    "audio/voice-v1.8.2/lesson-f407a0de4686b33c.mp3": "34629f0212b5a4f1e5173dccb97b71e1a50a2f5ec7b30023a6e4b6732f0270ea",
+    "audio/voice-v1.8.2/lesson-1a2f8f3c357e2987.mp3": "fd86346a7f31e163388587c2a322032d3efa8d74ae36b1a22eef6e0adb63341a",
+    "audio/voice-v1.8.2/lesson-31b31d47eaab2532.mp3": "e38b24e751c6670103c72ec304121a4c308e8fe8128e15964db8c1087e722653",
+    "audio/voice-v1.8.2/lesson-58d6ad22cbc39280.mp3": "d4a0601547d5abbad916daaae7abfa68d1d6dc53860d30d226584e64a8b76ba8",
+    "audio/voice-v1.8.2/lesson-c657a7221ecf859b.mp3": "42d0ea91d28498840a5600260cfcc24b2541481a9ea9ac5bff6218a3e1fce274",
+    "audio/voice-v1.8.2/lesson-7a26027ad94dccca.mp3": "8adbcd2dfe0276df65e53c42dda394001c55cb14e6e6fbc2877926ff37efae00",
+    "audio/voice-v1.8.2/lesson-c059d537544a28d8.mp3": "3242f6d5170673b85bb1e3e9e70b76318615a7bcdeea8cc19d9e040459ddf1bf",
+    "audio/voice-v1.8.2/lesson-37215fbe466a59ea.mp3": "2e8ab6a357b3f775f9c114f1648576fe3960d99afedb7197aaac5d89ea3f76e1",
+    "audio/voice-v1.8.2/lesson-672c5c561a23d7d5.mp3": "3b9f5a4fb521dbedfbf8e90c5a4f23cf5abfbe99e67c5bd7ca66ad435e19c928",
+    "audio/voice-v1.8.2/lesson-4b87da6b79697f94.mp3": "2cf62b6af2fe5258b95a26a36c674001924fdbd898177987890ef58ed1066f26",
+    "audio/voice-v1.8.2/lesson-1b670738a7b61f18.mp3": "a58d9dcfdaf71ea461b19da97ae2b82bda5137be20b6bc1b9a4e9e0ddd5af0fd",
+    "audio/voice-v1.8.2/lesson-329e9daf06ef7346.mp3": "58466059074652a9b558e9f6b58d5f666dba1b818fc3e0f70e6bb0dc4f34d316",
+    "audio/voice-v1.8.2/lesson-b782b1b5dcdb8510.mp3": "2c69a8395874707fae9cdedb4e835fe03cbe676cd1c597edd591bf602d13d87c",
+    "audio/voice-v1.8.2/lesson-bc1dbb94baa64a27.mp3": "1538f77bfd2d394d3380e9db8f2de035d84c3043954e070977fe3597002a8e4c",
+    "audio/voice-v1.8.2/lesson-c332d2cd823597b5.mp3": "760cfc2572ff06ccddb4e0fa44a736006a3a12c9eff1b931dd90e8159e3326e8",
+    "audio/voice-v1.8.2/lesson-965e0c515ed0912c.mp3": "fb377b2e5fd3824bd80922a1d0cfa0bd8636c672a1ef7268639bf37c9212690c",
+    "audio/voice-v1.8.2/lesson-e796d165b223df59.mp3": "93bf2125b9f197674aa65a26331aea8c7425b1704672d8af1dbfa71a8f4a209e",
+    "audio/voice-v1.8.2/lesson-04bc22f5426a4266.mp3": "7221b87584540ab28b46e6653ba32f57c92847b282eeaae77b495eff01c44754",
+    "audio/voice-v1.8.2/lesson-da4b2f587c3c6d3a.mp3": "7b0a4177fcd10ef675d63a292c6aa633f422659555215b5d345ab516e1c3f1b5",
+    "audio/voice-v1.8.2/lesson-e2be5051c2d4cc60.mp3": "7ce2eb00643b9c34be61820638eb1a8f1c994aadc7e1d057724431789e1f2218",
+    "audio/voice-v1.8.2/lesson-f5a8ec27c348aafd.mp3": "e9cbd6a3aebbb4955e5741201424f30318af17e35f8f6382167d9d9996ead651",
+    "audio/voice-v1.8.2/lesson-4edfb9476f06b16d.mp3": "022a68ba96ec5a168afae4965b0b90354d05099b88202b7db0ab55b581a6f69c",
+    "audio/voice-v1.8.2/lesson-1d05f775efc3fe54.mp3": "29c3c4ab6c29817bc9925d3d9efd62e8a507042f43578dcacafb1ca9ce7ededc",
+    "audio/voice-v1.8.2/lesson-416d7d165b616365.mp3": "430d6e09f747c9ee6c14dc71bb9ba1f0c2f623df06c57a487fc9ebc92b2c6f46",
+    "audio/voice-v1.8.2/lesson-1b7334641e3d4594.mp3": "c495de01a41b9205be813f0e960503927cd18f2991ab61145c95f301a21d72c1",
+    "audio/voice-v1.8.2/lesson-4d09b537f9879949.mp3": "de772c5a67eb7f8a46fdcd7e3433f9efba901ae3e76c52c229f9cb39eb6e419f",
+    "audio/voice-v1.8.2/lesson-dd86fb1229f1315a.mp3": "2ad08a592d41d4e5a488cf3c818a766625eb7b2c0db974671ab2ae78d332a521",
+    "audio/voice-v1.8.2/lesson-863069f970997357.mp3": "76981a3ec1b9b93f0a65d5b23fff45f5d5c9439d73775b8a43077625a84212f9",
+    "audio/voice-v1.8.2/lesson-1b79eaefc4266532.mp3": "6168d6d5c6ac0fe4ab20dd7ac125b6256c4b9e5b391ebea59f05ad1df7330a23",
+    "audio/voice-v1.8.2/lesson-4b362f4b1879e44a.mp3": "8d4cd267d83ac07e05ce00072da224db2b70e9928b2ecab3a40efc6fedb73208",
+    "audio/voice-v1.8.2/lesson-7eb720a837c77161.mp3": "8fd1d2172dede0e410a2b6c818c7e7bdf17b7d4ec55308bb2206ecbaf3ab7d12",
+    "audio/voice-v1.8.2/lesson-994dfbe49f0060b5.mp3": "973f0223a9955512dd2cd717029e3495865714c950077e4b50875089eb7acdda",
+    "audio/voice-v1.8.2/lesson-011c2c0a512221f0.mp3": "9deff911321ef7fd979bbfff7185cf5f849004cedd3d9bcea9bf938bfb6a5d04",
+    "audio/voice-v1.8.2/lesson-e5099d71bbea81d3.mp3": "d7c9c668e7e1d032ec338c3ff22c48c2620e4d40677d35d41c20aac7950f0018",
+    "audio/voice-v1.8.2/lesson-78907c82732c72d3.mp3": "c30c3002bbfc0e07db3dad9040d402c935039a719bb3c5f91474492b1e85e78d",
+    "audio/voice-v1.8.2/lesson-16a798ce181bc093.mp3": "2e89cd9b65c1cc36587f3f14fa3a6ffe71bdb9b94679781b3c297b58e003dc9d",
+    "audio/voice-v1.8.2/lesson-4d1a08b7d571118e.mp3": "b42f992d70143a5682d6302a9912ec5e41ccd89af37df2901a192c03f096d603",
+    "audio/voice-v1.8.2/lesson-5fa8000944aa206a.mp3": "8d2a897d533303fc2bd90095be9b675256cb14ccd6c21e866a97f5862e10f1e6",
+    "audio/voice-v1.8.2/lesson-2c0eec2b592a9c81.mp3": "1dd12922165073b7574cf61fd857f8e6f332511f093c18ce4ffb7d105a3c64c5",
+    "audio/voice-v1.8.2/lesson-64c21517d17a1c12.mp3": "6b66f574bcb3d50a8c7b24048d77d6c0b3e15ee5474336298cd97cc4665378fc",
+    "audio/voice-v1.8.2/lesson-3ef62a8b88115f7f.mp3": "0616d794a555109ffbf04b5071446a0fe84db31c2d9acfa4c74003c4a4df195e",
+    "audio/voice-v1.8.2/lesson-1495eef826d3a387.mp3": "2f2b3e7d19ca297708328e8a5f7eea717016f721b60b6d5c33483a75afc08a9e",
+    "audio/voice-v1.8.2/lesson-ff192aa72440553b.mp3": "2b996b6a9834eebb08c335149e8f7fd7109dd8d0ec6879def69ae475e947b70a",
+    "audio/voice-v1.8.2/lesson-f2464792a6fbb87a.mp3": "99232529e975e6de58a577615b72efefac3b419c09b8785aa1346b7cf3c74d90",
+    "audio/voice-v1.8.2/lesson-5a6aae483351a1fb.mp3": "204b9aac9a4a36e0cb6f5588012c66574cad12187881632e284af04bf5378551",
+    "audio/voice-v1.8.2/lesson-0a063d1488b705c9.mp3": "20536104cd5d39b46b074adc05a5a94e6d82acea9df0fcaf104b1a5fc5bf917a",
+    "audio/voice-v1.8.2/lesson-49ba33c3f34c50fe.mp3": "9bab351c99c834b963106ece40c0b71fbf1850df69a71b9b5ce7d1e79c59ec5d",
+    "audio/voice-v1.8.2/lesson-65acf24cdbd96c2d.mp3": "3ed63f955cc041397294efa575c9b7dab90d6ee673f62435cb847bba680945a6",
+    "audio/voice-v1.8.2/lesson-bcb8f27b22ccad19.mp3": "4aeb540f78261826e8765e2e9c3065d8bd92aa483248d84de0a6555a1e42ccfb",
+    "audio/voice-v1.8.2/lesson-f7162364d6b6980b.mp3": "fcae7f2bd012b2d7a190bc9e2d981b197fb342e88ca52e74feee91e6de8aece8",
+    "audio/voice-v1.8.2/lesson-d45995b21a8dbaee.mp3": "6de583ce245e5574fe4b57218ec107360f1ee7526b129650ee2202274ea9daf8",
+    "audio/voice-v1.8.2/lesson-a16427239914a5c5.mp3": "84c16b91e4291e225db6e7589dfc32f70ce9f0476b80ed3611121c5c2c293ada",
+    "audio/voice-v1.8.2/lesson-c101a2d146e45046.mp3": "42deaf7f4200d9d088cd9fa927b476667998aff4dcf8699bdf74aed78711cf8d",
+    "audio/voice-v1.8.2/lesson-f1d4e746c22530d5.mp3": "9ae308d84863261235a662b49a2ae3c04f05ac46ed6be1beef3bf87587a8c425",
+    "audio/voice-v1.8.2/lesson-c952946afaea5f88.mp3": "1e1c9889dc37a52cacdbd3b2dc31296310e80242f61236360fcbdf7ed0a72cb5",
+    "audio/voice-v1.8.2/lesson-6681361a777a00c2.mp3": "bf509156a9e775710b6686806bbc3767b35352e151421d048493b0311f2a651f",
+    "audio/voice-v1.8.2/lesson-8e2249ba0547716b.mp3": "8d745896b74cb63c7e606f74f4bd9ec52656af123a5e580ac139d5fe7f2e86a2",
+    "audio/voice-v1.8.2/lesson-6b4ac28b87ff1990.mp3": "80c4c8f09732aad9fed46f945527130e53ae3adf717103da081844f6558e8a95",
+    "audio/voice-v1.8.2/lesson-4ff1cb28dbefc69c.mp3": "fd38d01da107baca5532c7c2b64c3d20e959c328dafc7d32dc466f1c50a95744",
+    "audio/voice-v1.8.2/lesson-65de1c0df0ac3cfc.mp3": "5bce0d8278314da674d2211306b8f5326079c586655e4243423c22304f3798ad",
+    "audio/voice-v1.8.2/lesson-a7965afabe74ba46.mp3": "1b4afc6df9eeee990be94e132f85879fddee6e751c7534320caf570f92f6ddf9",
+    "audio/voice-v1.8.2/lesson-7b87d095c2187677.mp3": "7ee1092b8f9049c29339cd0803a0781479c293bd1196d8102a545512daea1e84",
+    "audio/voice-v1.8.2/result-correct.mp3": "64dc108df69a5248dda84b1b8fd45cb624d1e990d78b945a6cb867c452592734",
+    "audio/voice-v1.8.2/result-incorrect.mp3": "def2ddf30389337b0d4eac3aaea7d46132c9829caf77e7d1a856579d6d00d68f",
+    "audio/voice-v1.8.2/commander-02.mp3": "cf6ff5a9b6d7e703c843924e5750ea19f5d525e7d70abc441602bf529a49559e",
+    "audio/voice-v1.8.2/commander-01.mp3": "82e83314a43cc96441f27a89c2edb282413487c4ec196670dc8acb1c27906708",
+    "audio/voice-v1.8.2/commander-03.mp3": "0dd2d54fb3cbd8d77012cd87559d51fa9100cea3eb56771411a0da741648c965",
+    "audio/voice-v1.8.2/commander-04.mp3": "bfd68ee67c1a8e960438e3e05eecd9fcba82a15dd8abc8a0797e4edab1e0fe80",
+    "audio/voice-v1.8.2/commander-05.mp3": "6296cbe9b6c5aebb9667154711401d3db39180beaedc6a617c043758348d5d3d",
+    "audio/voice-v1.8.2/commander-08.mp3": "97148443fd2a3a25b9ca179c8ca4b742d8349b62c0dec725099a9e830844df67",
+    "audio/voice-v1.8.2/commander-10.mp3": "8bc8b604fcf1132529597bdd445ec7b9a6e1d83e6136dc08eaa779ec30a71fa2",
+    "audio/voice-v1.8.2/commander-12.mp3": "85b3af050e8d20dde0bef2daf67b56453a19434bdee8802549a900899de37076",
+    "audio/voice-v1.8.2/preview-lesson.mp3": "32b06aa9e2c0c63d36b5ab7658ffc4246576328957c06a6d11ef7357512aa61c",
+    "missions/citadel-pursuit-v1.9.0.js": "7e592675d274bc1569cec4585d7f9cd5f89c0499f28bfea05d97ed856e00eb1f",
+    "missions/citadel-swarm-v1.9.0.js": "f7d4f101894d7d606d839f6d97de309ebbcdd1156129be78f0468732eb629581",
+    "ui/citadel-interface-v1.9.0.js": "1c86ce29791480920e08b5dddc42dadcc1e4bab0916e8da51c16aedb0b1b1291",
+    "ui/citadel-story-v1.9.0.js": "85f5c018a42f09b20eb7a62a87f4251a02f219027f1f4799e07c774ff43d2c13",
+    "ui/citadel-interface-v1.9.0.css": "4762f841eb50967fe36b1520eb48896319b49903751c1262a95525552027af9a",
+    "art/citadel-captain-worried-v1.9.0.webp": "8259e00bbfd989491e98222ec0f048daa467d7978255bb1513b895ad2f164607",
+    "art/citadel-captain-crisis-v1.9.0.webp": "68cc3c120e244ca22d2d8b297976ab77bfdcea58b30e3209c9f57bdc2844f9f1",
+    "art/citadel-prologue-v1.9.0.webp": "bc061c30b797ed46efb76c8aedc82fbee347fd03f880d71991de3d5b9e7a1c7a",
+    "art/citadel-art-v1.9.0.json": "1a86567c5c8c3f163746834ab3fac2615966ab766ef4fc4d04a5b19045a605e7",
+    "audio/citadel-voice-v1.9.0.js": "8cad3194303c1be0f77ad177b8c328e72940a9db23a3e32e5c2912920386d286",
+    "audio/combat-audio-v1.9.1/shot-ground-02.mp3": "0fced2f6bbcb1ffbbfa5e0835def1f539d83f1d13e86635bc3ca27da8acd8e51",
+    "audio/combat-audio-v1.9.1/shot-mrg-02.mp3": "d98d51823f3db9f92484db911d6ed464123486073276ff3261587de1718b1311",
+    "audio/combat-audio-v1.9.1/shot-space-02.mp3": "d75a1f68714646ae7397f991c0f28d62e68c52ec6515e084badd1fda7b70bbc3",
+    "audio/combat-audio-v1.9.1/robot-hit-01.mp3": "6518b166fcae5fbaeda86e0262552d590936f1200be099902c674606fbaa82b6",
+    "audio/combat-audio-v1.9.1/soldier-death-voice-02.mp3": "e9861ce865821e9fd2b7b186c279bb8895ea099ca33beb417d65312908b05ca6",
+    "audio/combat-audio-v1.9.1/robot-death-01.mp3": "b1e7a6c2f36a5b3baabb8016e2f1811899b72d150f400ff26ec4133b53f5e3e9",
+    "audio/combat-audio-v1.9.1/destroy-02.mp3": "4588ac085f896bd38267f09db834ba966fdb9b24f6db7580cdea1cdebbddf24d",
+    "audio/combat-audio-v1.9.1/shot-convoy-02.mp3": "53cd3916b0fc53a4ec9adfbe0a40ea7816f558310f4f3057abb6b478c46ff13b",
+    "audio/combat-audio-v1.9.1/credits.txt": "0c89de3131819500fd0511e9d64a8ffb9cfcce75b0e68102032ad3d3b6cafab6",
+    "audio/combat-audio-v1.9.1/shot-space-01.mp3": "6f78fcb239e3ab9aed83308a3d7792b3ff058899c3cb773bbdee2e81bee45963",
+    "audio/combat-audio-v1.9.1/shot-mrg-03.mp3": "ffd02dfc539564e9cd856cf0b71a49cbe2a525489f10807fac160ccc4458e8b3",
+    "audio/combat-audio-v1.9.1/soldier-death-01.mp3": "943733d77dbad93c31ce8567683c93c84edc5fee9e95ec507a5154f232bedc82",
+    "audio/combat-audio-v1.9.1/soldier-death-voice-03.mp3": "2d9b00e1f89863bc51bcb080512e3889c0944b791fa512e70e7afa33f7136ee0",
+    "audio/combat-audio-v1.9.1/soldier-hit-01.mp3": "5a5d1dba3b1347be90cd3d467df6e90a77119f9d88d9feb56a8e3361fd509d33",
+    "audio/combat-audio-v1.9.1/soldier-death-03.mp3": "76796fc6fc870611b4a903709bb8b534217a80312a0b5c0caf071b0f0040edd8",
+    "audio/combat-audio-v1.9.1/soldier-death-voice-04.mp3": "8f480f3d7ad5e2f7fa6f159df0ffbb165707489706fe52fdd1669843454c567c",
+    "audio/combat-audio-v1.9.1/soldier-hit-02.mp3": "626230ae79c59f5741e8c0e449c600b281790647f254c7b90c86670342aff2d9",
+    "audio/combat-audio-v1.9.1/shot-mrg-01.mp3": "ded514d2d15e03bb13de2509b1f98cf52ea3536fc34fe267079e79a5378d6014",
+    "audio/combat-audio-v1.9.1/shot-convoy-01.mp3": "61dbff074f441748d7b95b37677e07f23690ae570e435807060d5748098ff2c5",
+    "audio/combat-audio-v1.9.1/detonate-02.mp3": "f395a588fd8422d6055a6f5f38c16c1816c9ab76ae66eb1959c12d9b1b8ffe66",
+    "audio/combat-audio-v1.9.1/crash-01.mp3": "da3b175353affd773ba0955d8d025d72454849a3dae1efb30548d42e0f69e1f5",
+    "audio/combat-audio-v1.9.1/armor-hit-01.mp3": "ff6dc02fcb9ebfd6affc2a2ccf9bd6ca8f3f5fa75d19f60af35e092a3ce79c28",
+    "audio/combat-audio-v1.9.1/knife-swing-02.mp3": "5f03a4149f691b0853182579af1f43cd6b4c0e1984b53397edb10e4cac357cf9",
+    "audio/combat-audio-v1.9.1/shot-space-03.mp3": "f91602bbd597506693028310c6a15cef57ea137abeb699cf9cd7189bdc0445de",
+    "audio/combat-audio-v1.9.1/shot-deck-03.mp3": "bb0e0b5c746eecd08d1e4dc682f17eb0468bf3e4722121107c154122af2a9851",
+    "audio/combat-audio-v1.9.1/armor-hit-02.mp3": "49f6bd3c70963090a8e34bc308f3752f99deafe573b409f772bc10c87df35bcb",
+    "audio/combat-audio-v1.9.1/knife-swing-01.mp3": "4e9077ce4c7a3d322e698268707298c3bdc5aeaf96096235b624e6cbb36d077d",
+    "audio/combat-audio-v1.9.1/shot-ground-01.mp3": "bca0d08fca5d53b4107ddd6848561f254df935e286aceca99457ae5d7952c115",
+    "audio/combat-audio-v1.9.1/detonate-01.mp3": "ee67778296d957cebe27bfaa6c199ffd78273676dc9d1d1fde584189d28e16bb",
+    "audio/combat-audio-v1.9.1/missile-02.mp3": "b7183ac96369e54039569fc7c4a28d3723df24c8efdd37d302150d0cd1fa193f",
+    "audio/combat-audio-v1.9.1/soldier-death-voice-01.mp3": "56cf2e0835b9e58635b140c39b3d203f72f67b5bef0da020ea41af87da98f6e1",
+    "audio/combat-audio-v1.9.1/shot-deck-01.mp3": "c17de0bc5975caea9085a8229e079c258a320dbd5ca5c13b06651242802f7b63",
+    "audio/combat-audio-v1.9.1/manifest.json": "c42aecc12e688726468964fa1052ae7473a2b7b1cea7736988bffc2846c53942",
+    "audio/combat-audio-v1.9.1/soldier-death-02.mp3": "052b85dcd14c7bca4e499de7c60acc16d842b75fa7f87762a1bc50ea4789c45f",
+    "audio/combat-audio-v1.9.1/missile-01.mp3": "c6d4a2621ae14f06b632b7e18789b20298fd536b6bd026cb70f7239a6e7db8e7",
+    "audio/combat-audio-v1.9.1/shot-deck-02.mp3": "1ca2e8731f1fad163bb51fa6a730396d12fc0b3c5f391ab62b6fec869492b97f",
+    "audio/combat-audio-v1.9.1/robot-death-02.mp3": "553ad9901f22f9422954c1e6fad5db1c8172e980e40d859140c82963640e8a7a",
+    "audio/combat-audio-v1.9.1/player-damage-01.mp3": "96b287da408f5619ec562969b60c1c53a6d1a4accb2ca75cece6faff814baf89",
+    "audio/combat-audio-v1.9.1/shot-convoy-03.mp3": "51a0eca29903637fe74a4a3592ff5aa35219966ebd95af36822b261c2f527ef7",
+    "audio/combat-audio-v1.9.1/robot-hit-02.mp3": "abb8f28b2ea1c283cde91abd83ae1a26b3b5d0f5c7019bac05628b300233ad82",
+    "audio/combat-audio-v1.9.1/soldier-hit-03.mp3": "96e603de7a6b478aa3a14a859c262b82a35783c75e3e313d810b399d690fa1f2",
+    "audio/combat-audio-v1.9.1/armor-hit-03.mp3": "d2dc6e89ffb62f419b9eee7f2880b4dfbe4b7a153d6cbfedf341a789c6f533a2",
+    "audio/combat-audio-v1.9.1/shot-ground-03.mp3": "cda34135e5f657033b32e28a225fc43f4576ec307bac1a4c9fd13d871f41ee64",
+    "audio/combat-audio-v1.9.1/destroy-01.mp3": "193bcab1abbf26e2e49e98286ea49594e79dd06eb7c018899b732e06cb925f7d",
+    "audio/citadel-sfx-v1.9.1.js": "5835ae456baf68013dd67c1181ba7de3ecc92225a7a99db422cfd3bfc239b848",
+    "audio/citadel-sfx-pack-v1.9.1.js": "8dc8128a72045c4136a3460de8900720813861e1979926bfc0c0c872cdac590e",
+    "missions/citadel-decks-v1.9.1.js": "c71aea261ff4ca22f6748be7bf3a167021cd3702dbe953192e6609eb1622c444",
+    "ui/citadel-comic-v1.9.1.js": "b20d5f7b10e585f114520d47fef58ac6fbb66fc80f6d92861c7dbe0050ce3d56",
+    "ui/citadel-input-v1.9.1.js": "77b4995131a94d0f6091e69b6abe16e18e3b2a1496112ab1ddf11f7eda6bd3af",
+    "flight/citadel-flight-v1.9.1.js": "d8e345e6a7ef05ea3aebcb986042c1c36a809bb6608ccce242d00507178199b7",
+    "audio/citadel-sfx-v1.9.3.js": "f267691f3606edf751a427153304942d6d7188aeb917210c8e51ace5f44b21af",
+    "missions/citadel-pursuit-v2.1.0.js": "5dbdaf1618b355a1dc883a2b2000fd3549cc1f3bd45c8f7bd49200a1daf13645",
+    "missions/citadel-bases-v2.0.0.js": "9f7cd4346e947f13a3e4185d3e7080b69cd489c7dce959e03627b8adb89cba5a",
+    "missions/citadel-decks-v2.0.0.js": "4b5f02f17b26c8962768132fd1328e7bbd483e2c8b2d7499610e68c6478213f2",
+    "ui/citadel-comic-v1.9.3.js": "ee26d0c120f8b7d912b90d4dcc0bccf4ca8515e816c836e6427a4676ea2f6a44",
+    "ui/citadel-ui-fixes-v1.9.2.js": "364fc8c1e412eb9b73f826845e23646f8906d37c7027aa1f2ae93ba0548cbf16",
+    "ui/citadel-bases-view-v2.0.0.js": "506e1ebbfa86a42b0f4dc6918ab1917edb3b8018012e15d98a267060c2cdf8c3",
+    "ui/citadel-pursuit-view-v2.2.0.js": "f2c87806da6bd5e9ec9e92c7cc16e81a656ee2d0937d41e9c99cd840da18ef15",
+    "compat/citadel-runtime-v1.9.3.js": "a026d1eb50252a37f01b7ad097e610252bccacc01f078d6ee75a3bf86e029a6e",
+    "ui/citadel-bases-v2.0.0.css": "66eb30d9d14aedd3426559107d21a97fffced94e35e1637d2775b9cc0c33f416",
+    "ui/citadel-pursuit-v2.1.0.css": "dd04f466851b586e1bd160816ceb9a84a9d6d68f6b0b06a93866ef1bb50f6b74",
+    "ui/citadel-ui-fixes-v1.9.2.css": "70f57cd512d57dcc378b4a44159ce690ae4fa064c9ccb9ba163cd1469f230bbe",
+    "missions/citadel-convoy-v2.3.0.js": "115fb8dd424e76d7ddfea2199395101364b258c22cd243e4c137e9980f006ca6",
+    "ui/citadel-convoy-view-v2.3.0.js": "7d7d85f90d9082a14bbbb1dff7defd00f5f31bce23f270ae764aed2e98e77783",
+    "ui/citadel-pursuit-view-v2.3.0.js": "957ed9dc2f26e104a66a4bf26aad5c8bca4c6234aa0b6f8e56a688c93efd46ec",
+    "missions/citadel-convoy-v2.4.0.js": "8120f00bb2b9903cedd733b1c6162af1aeaf0b615d420f591d2ac3d589853512",
+    "ui/citadel-convoy-view-v2.4.0.js": "9a42c7dcde1e21644f10aaa0f848b8bab2c60794e4f5564898a17f48fd5d2965",
+    "ui/citadel-convoy-v2.4.0.css": "c6ca30d3da2304bba7de04df4c63bc2bb223d22b06b62daac21e927479d77495",
+    "missions/citadel-swarm-v2.5.0.js": "ce838788092a62ee0af53b8d84754b1f705f3d543276e8d6ff7c770a8c72bd01",
+    "audio/citadel-voice-v2.5.0.js": "2868128550afc2ac73eb46bbb5aaaf3d017b6026c596671c76e20340c63ebeb1",
+    "ui/citadel-swarm-view-v2.5.0.js": "b9048623ccc82bff658af932bd27d201237b68d9b560b39575bb4b199065da34",
+    "ui/citadel-mrg-actors-v2.5.0.js": "d0bcec56d741510c8f6e620451ba1681082bfafdec1a1d28a1463dea23442248",
+    "ui/citadel-narrative-v2.5.0.js": "34232c3f6c16b7f686595ebb8c162f7368e4f12d2e6be1b923cdf2459e85c1fe",
+    "ui/citadel-presentation-v2.5.0.js": "6e1bef9638c3fefe113ae8cdc1a54883068e38fdc2cf3e1eb9ab7f8cad82327e",
+    "ui/citadel-presentation-v2.5.0.css": "b34da0436c755d6009097d6f9c2da22d222a37f078d890ff3b44102c926c061d",
+    "mrg/citadel-mrg-v2.6.0.js": "79b4bb403207c95752f95d95c308d5be57b4360c5178ce2dab8b676f2fbf2955",
+    "mrg/citadel-mrg-view-v2.6.0.js": "1285c2461e618c466e556c6f51589a3c06dbf5a46ac3ca628d0f81a68588fc7c",
+    "missions/citadel-pursuit-v2.6.0.js": "f03dd574633ce3562a6bf3a5068291a17ade76f95c137deeb25e528c0a77bdf5",
+    "missions/citadel-swarm-v2.6.0.js": "eefda7b81c696d79d361364b1e8a7623d1399d8eef3c9f679eb7327a9ae1e388",
+    "missions/citadel-parallax-v2.6.0.js": "ab29a1603851ad97a437f9dd3d93dcbc4978c6aeb4d5130bed666eb643fe5315",
+    "missions/citadel-convoy-v2.6.0.js": "fb80b02ae850f69df1295bac3bbe64f61a18d05cf93d768e6e66dc1c595d44c7",
+    "missions/citadel-base-rewards-v2.6.0.js": "03556357ea6ecdbee4e39a20970b618e41116c9e56c1f97e38880b6471012bac",
+    "missions/citadel-combat-v2.6.0.js": "5b55bb15578db6ffac01427245672f46352165790ea617b9d6a42ed075e9edad",
+    "ui/citadel-input-v2.6.0.js": "c67b470bd2affd3b9f873e5a0fcfe96a69463b83565fac1293fc653ddc2e929c",
+    "ui/citadel-pursuit-view-v2.6.0.js": "8958a6351fb735d5f72c5768de221a69e65ccddbecb00dc5a9f97b566f44f575",
+    "ui/citadel-convoy-view-v2.6.0.js": "a3e9a4cc44b213c72bfe78f70dff5c4ccda64260ea45e03c83b510c7c11faa54",
+    "ui/citadel-swarm-view-v2.6.0.js": "a6d4f840839da504332929e7fa19fefc5a318532db4bac76e1a6417f00da6965",
+    "missions/citadel-base-missions-v2.7.0.js": "1de1ebda0fce1aa209639d00c2e0a0d38ad448fb917b279e8d509dc4f53ec003",
+    "missions/citadel-swarm-v2.7.0.js": "c725b3014428fa7388dd5f1ac1a04adae180f721ccb26160b48def23b8fdc805",
+    "ui/citadel-base-missions-view-v2.7.0.js": "2fe4ee229e8ba3b93a8121a51dafb56eaa19bd9d0eda778a5cd84273adb1f371",
+    "ui/citadel-swarm-view-v2.7.0.js": "6970988b82a9def01bde5976f16962544a4e17806e2b8f4e795e9bc8064cef49",
+    "audio/citadel-voice-v2.7.0.js": "a0f53c76589b64e49ee1e44ff8fe999f2dab380cc567a829b7b81284db5ac76a",
+    "audio/citadel-radio-pack-v2.7.0.js": "f9a747059851f8622b89a02e5efc923542d9939dafcdf3ee90f08c4c57d49aad",
+    "ui/citadel-mobile-v2.7.0.js": "72904b7bc4f70b81b23c58bd5f298bb4e9264ce4ff51bbe5267847b4169f5332",
+    "ui/citadel-mobile-v2.7.0.css": "e2a7b155ede86f6293f19d5e5414471ddd81d6a8342154a5747203f4ecf43010",
+    "missions/citadel-quiz-bank-v2.7.0.js": "9bd8a4302f2e570296d3bd2ae2ded6cb274699b954f0b1c312932103e2cd5004",
+    "missions/citadel-learning-modes-v2.7.0.js": "4fc2a0b6831787f62bec5a9cccefe7ff4e8576cd4c2e558f95f52c296375261c",
+    "ui/citadel-learning-modes-v2.7.0.css": "f80ecbe394e4a42d438ec81963d8fa28eb559be2a1d23e90502008cc0f4415c7",
+    "audio/voice-v2.7.0/LICENSE-Silero.txt": "a27fc071e03323fecda8a6ba416109bf36811801fa0c95e4371cf9105848718d",
+    "audio/voice-v2.7.0/README.md": "b6669acfbb657869dfc72cca8b1c4aeb9e27c5fa9ad414cd4a3cb3657028d6fc",
+    "audio/voice-v2.7.0/manifest.json": "98d214e719ef9c6396187f5aefb1257475efef3349e0c5f04645a519b9181f30",
+    "audio/voice-v2.7.0/radio270-base-01.mp3": "54a93b2cb73a573b4bc3ad23a66efca86bd3a482b24261803bde4b5c2c4debaf",
+    "audio/voice-v2.7.0/radio270-base-02.mp3": "a1bd7ca2ce1bb30a595276f519fe454b065a6d0f2da039ab5d0e98affd3ca869",
+    "audio/voice-v2.7.0/radio270-base-03.mp3": "3088ef12c2b3e28f54b3b555063ae772a1be804a68039598c5eb9536b9588205",
+    "audio/voice-v2.7.0/radio270-base-04.mp3": "4a19e42e97c8d2dc6196cb102de36580271d4a673fe105cea2bdb5ab6c9c9a2f",
+    "audio/voice-v2.7.0/radio270-base-05.mp3": "8936f1db7574888b575f9cfca578af33819d724f5bba92d707de50bec6ab273d",
+    "audio/voice-v2.7.0/radio270-base-06.mp3": "3523500c4e21fb78560b2f5a31d7ae8bcb2600e3560f35c0b3a28277437db982",
+    "audio/voice-v2.7.0/radio270-base-07.mp3": "cd1b21ea7dc9389216b2a13319e0ac9b6618f0e9d7703a8402ca16a4c4d64475",
+    "audio/voice-v2.7.0/radio270-base-08.mp3": "8cc80ff64cc6c34e3b0f70e6137476168c414c637cb07aa06aef66e6b71b9b7d",
+    "audio/voice-v2.7.0/radio270-base-academy-1.mp3": "b35007bf51d1bc18879abeab70a01568b4e44d56642340afd6c105c7882dc6d4",
+    "audio/voice-v2.7.0/radio270-base-academy-2.mp3": "a28d090fa3aa284384c6caa6a8f2586688d7e3d4491d45b52ed1870ccefe0cd8",
+    "audio/voice-v2.7.0/radio270-base-academy-3.mp3": "135fd2fcf741a7442df7f14555ae5c610e1638b4661b885eaa13b76419d4c918",
+    "audio/voice-v2.7.0/radio270-base-command-1.mp3": "0fba3c9077bfd2e9a3ddb96e0f4475509bb0589a82decc4803366e65ba81ac4a",
+    "audio/voice-v2.7.0/radio270-base-command-2.mp3": "427fbe2e0c07aac09d147ddf3c6a3723a69f7df15d052e8f91bc0884140e89db",
+    "audio/voice-v2.7.0/radio270-base-command-3.mp3": "6dc58ae6087c5b541e50c7537d3abcbe140cbc85e72ab6d211d64709e003fa4a",
+    "audio/voice-v2.7.0/radio270-base-foundry-1.mp3": "358febb3deee13423f87f2c89b3aa4f42ed96fe81fa661677a3d8b7f4463d72b",
+    "audio/voice-v2.7.0/radio270-base-foundry-2.mp3": "fcc8dbfb992380a1ed91ace27574c60ff688423ea78e2085a3ba432694ad58d8",
+    "audio/voice-v2.7.0/radio270-base-foundry-3.mp3": "b29b4df126450b25d241c9394c9d4f8822ef6864984367e9973c774d810353b6",
+    "audio/voice-v2.7.0/radio270-base-switchyard-1.mp3": "a1f9a94049bccd69f09c8faa4cea505b5323db328a6f9f9c314c7e0e8dbbc1ce",
+    "audio/voice-v2.7.0/radio270-base-switchyard-2.mp3": "97d59709f8a3044cfacebc18a9be4637726ffc3434f012425e9e1a774e866aec",
+    "audio/voice-v2.7.0/radio270-base-switchyard-3.mp3": "f90b883601e46870e3bc0a1abb873419029a700b4082451fc8226a4fa614d2f8",
+    "audio/voice-v2.7.0/radio270-base-wreck-1.mp3": "d19a29c11e241749cb2f4edb59535cf0b3990a0aca546ca275308f932cd800df",
+    "audio/voice-v2.7.0/radio270-base-wreck-2.mp3": "651156b160515fd0b54fd390d854c90a9756e25e109edf3a4811ed7061b81987",
+    "audio/voice-v2.7.0/radio270-base-wreck-3.mp3": "458d5bea15e94e4a185dd4d92a6160370b6a3c255f4932eb9496747d69d5fce0",
+    "audio/voice-v2.7.0/radio270-captain-office.mp3": "48cba482936a6853da9cfc5ffc4304551960cffc1e2f08ee98609dc751fbff6b",
+    "audio/voice-v2.7.0/radio270-convoy-01.mp3": "8cd440b0743a965a49660b368a2aaf4657827519cb6e78012ac49221700fae6d",
+    "audio/voice-v2.7.0/radio270-convoy-02.mp3": "9990610d8bd916cc7ab4f5622eeaa463c73f1ab23b82102e4287d9d32e3b3ff5",
+    "audio/voice-v2.7.0/radio270-convoy-03.mp3": "168abb393d05fae2584f730971e460aef2fc8c33adf34fb8686824fa4399ba33",
+    "audio/voice-v2.7.0/radio270-convoy-04.mp3": "3afdbc4b36869a64681dfc973dc1282bc21816d41f05b0dfb8fdda1251b90b0a",
+    "audio/voice-v2.7.0/radio270-convoy-05.mp3": "96b8576c2f7329b4005ee458614e14cc0faf9cd3fbd38b3d5f455ca3fdf76344",
+    "audio/voice-v2.7.0/radio270-convoy-06.mp3": "254dafd680b7e618d9d9339669726fe8abae9363b6988085da57ece02a67958a",
+    "audio/voice-v2.7.0/radio270-convoy-07.mp3": "ce67e38b1aa6eb74abda039e966cdf6ce941f9043eec9e306ed7bf48b23e2140",
+    "audio/voice-v2.7.0/radio270-convoy-08.mp3": "6c299866fd68222467eadf431fe6b71e2771697f1f875478b9b1cc381746415d",
+    "audio/voice-v2.7.0/radio270-enemy-taunt.mp3": "bec02102bdf2412d8cde642f8d3116f595b2c0a6d307ba18e6388c34060729c8",
+    "audio/voice-v2.7.0/radio270-mrg-01.mp3": "061fa60f24a7365635314c50d9c1303fd7e060a6cd1e41ab94d9d0414d07653b",
+    "audio/voice-v2.7.0/radio270-mrg-02.mp3": "45fd70de804c44ed6586182097bac7acfa816e6d9fba709c3bb73d781f2fd8b5",
+    "audio/voice-v2.7.0/radio270-mrg-03.mp3": "ee481738205ec3a2b0abe35d2684e581f9f9da90245d0711587b749353c3fb36",
+    "audio/voice-v2.7.0/radio270-mrg-04.mp3": "24c36ab959424a834420d4185484a56788826a2ab6d5ecb78b220092f573d280",
+    "audio/voice-v2.7.0/radio270-mrg-05.mp3": "47fa3a241b2161b73544b19d4a2f33224f65a1c2d4a7cfb02d0bed5b69fa37ee",
+    "audio/voice-v2.7.0/radio270-mrg-06.mp3": "c3048a34c23d14d6637795d3fc6f13b6a7a7c176ac8b5edd6cbc3360241686d5",
+    "audio/voice-v2.7.0/radio270-mrg-07.mp3": "70fc955cd13ada9bc02e15024455e9237bdc39b6b697645b54d8919a57d95e33",
+    "audio/voice-v2.7.0/radio270-mrg-08.mp3": "34c468e8a5e4bb85a4fade3c7757270819528dbfb651ddea22c5545b22cd684b",
+    "audio/voice-v2.7.0/radio270-orbit-01.mp3": "6a40fe37a962b8cc1a059a97a92c718700a2ba3c3e70de858be064fbd40d654e",
+    "audio/voice-v2.7.0/radio270-orbit-02.mp3": "add01f8fd1f8ac539a74887f2c0d1fb3162afeb8607875a0fabf425c0a661979",
+    "audio/voice-v2.7.0/radio270-orbit-03.mp3": "4a474f8748922b5298c02c7007111f38603dbe7fde8b27cdd404dbb39aa0c67b",
+    "audio/voice-v2.7.0/radio270-orbit-04.mp3": "862bdf82803c3d2985891e3345c33c5c2a48423fe574b637dac89a6c25adc4d6",
+    "audio/voice-v2.7.0/radio270-orbit-05.mp3": "922d60fd4d2c51b518e61ddfb9e0aae07d153e967a4cbbffa8775a89eaf16677",
+    "audio/voice-v2.7.0/radio270-orbit-06.mp3": "64f71703c75eab35de70a8bd0d310e922b9eb3bb82b7ff7dfd52cab53c3cf972",
+    "audio/voice-v2.7.0/radio270-orbit-07.mp3": "cc212fa753c46ea245d13ee6f9f357783f005b2650492ec8509402d6c3ec9214",
+    "audio/voice-v2.7.0/radio270-orbit-08.mp3": "036a1416477653f776b2b698e9baf4443882ef92e730b6df6750dd44a130ec26",
+    "audio/voice-v2.7.0/radio270-parallax-01.mp3": "e78b2063e13ee4e54fd81ab536b3ed6e4f5e107ca319c694e797e0de146ac0ed",
+    "audio/voice-v2.7.0/radio270-parallax-02.mp3": "692f94656763d1a32e3636b05eea2a2cde3bae5dd761e9b99954207b6035778a",
+    "audio/voice-v2.7.0/radio270-parallax-03.mp3": "4266a1e7eb30f00dc889d611d8e5e0e684669ac7f04c9b65d47ce0a36423d9f3",
+    "audio/voice-v2.7.0/radio270-parallax-04.mp3": "41b54944b23e5ce680a09589f04f1e7a03e47fc755c84dd612ae05d4c4150039",
+    "audio/voice-v2.7.0/radio270-parallax-05.mp3": "a93078e3d74a8b5ce96d4c17b129addfb0528301caa4ff3d8f9e5fc41c7fc6a9",
+    "audio/voice-v2.7.0/radio270-parallax-06.mp3": "1f72369fc82e80e9976b1699fda77afb56811bf41024c28d807a873fec1f68b6",
+    "audio/voice-v2.7.0/radio270-parallax-07.mp3": "09aae2cd91018088e79fca7a10a65b5b273a65608f251b9f473818f861786559",
+    "audio/voice-v2.7.0/radio270-parallax-08.mp3": "3483cac35875a3e83f47042dd07458ce10a12ddab701a71f29400fe070324354",
+    "audio/voice-v2.7.0/radio270-pursuit-01.mp3": "1b3949d01f2de294f3bd784363689068abec530cf05db4fad481739f57cf0de1",
+    "audio/voice-v2.7.0/radio270-pursuit-02.mp3": "614419e28abcdc1eb6927970c8d5afe60bff834b770caee407cfad6699468896",
+    "audio/voice-v2.7.0/radio270-pursuit-03.mp3": "2594dbc9dcb1b0fcdd8335a1545accf39b659d95c11de9422a497bf4c3faff88",
+    "audio/voice-v2.7.0/radio270-pursuit-04.mp3": "99eb570cc7d14f82f3a906377a60eee050a8e318c029eb1b5eb9b94ffd2f0a41",
+    "audio/voice-v2.7.0/radio270-pursuit-05.mp3": "0ab8df2d9c6caf6cbb6fc997bb94435f199002412c8887a226cfb3df4a928d0e",
+    "audio/voice-v2.7.0/radio270-pursuit-06.mp3": "d8f921f29928497933b852d87843bccfc7f6a03cb4bff8374a76370951559f7e",
+    "audio/voice-v2.7.0/radio270-pursuit-07.mp3": "858a5195154e5b9dcec0e48ea80f02216336dca336a604a42bfb9b09c5ed6f7b",
+    "audio/voice-v2.7.0/radio270-pursuit-08.mp3": "b76975eafb149f52062b8e1f7f4ce204c6adb574b3155e6d3e5f6003d857e22b",
+    "audio/voice-v2.7.0/radio270-swarm-01.mp3": "88a87a935dc38186041bf6da8d04468ddf68e66a05c53b3932d1a8c2df95f8a0",
+    "audio/voice-v2.7.0/radio270-swarm-02.mp3": "376efc3fb951966f1dc6e688e766fcc8b0a7f8c96ae1efefe5e2bf65e0811097",
+    "audio/voice-v2.7.0/radio270-swarm-03.mp3": "7895bfb3e790ee94e920682d914aa0fd9e8a9ce4fb6888d9c53f05993ab9c746",
+    "audio/voice-v2.7.0/radio270-swarm-04.mp3": "a0660bfe800392d20ce628d71c7c355f1be3905807fc4077879874747c4ae679",
+    "audio/voice-v2.7.0/radio270-swarm-05.mp3": "7dd023cf00cfaca3b42ef750cae7c1ef3855eb35a611a897de184985caf140e1",
+    "audio/voice-v2.7.0/radio270-swarm-06.mp3": "52380db7dbe056f6a80319900396e42c4abd111ad16cb7d8e1a1b0a26670d6ea",
+    "audio/voice-v2.7.0/radio270-swarm-07.mp3": "9e41de9a5958789d6a4525d55c64180d8fca87d7dbd50cdff211e7db89e3583f",
+    "audio/voice-v2.7.0/radio270-swarm-08.mp3": "a98f13f36ae97245310718957b7cf7e86a35002c1e91c66c3cf183696ccf97bc",
+    "audio/voice-v2.7.0/radio270-swarm-armada-1.mp3": "76d28c60f8a432df4ffcf52e32e90c317d1865f5294e95155b58e8de4d2701f1",
+    "audio/voice-v2.7.0/radio270-swarm-armada-2.mp3": "ed5ede4f0a8ca665abf0416dc73778cf8b89381b6896c336dcc98eeefc278aa7",
+    "audio/voice-v2.7.0/radio270-swarm-armada-3.mp3": "c56154957d358b2e2d3abff9a2b2bf5fe27ebe9ce9810ba0b0225313c063f904",
+    "current/citadel-convoy-monsters-v2.9.0.js": "183edd63c874253d76bb16fa8c9740cdd7c174075aa5f64d0f251d67f50726a0",
+    "current/citadel-swarm-art-v2.10.0.js": "70395ad7dde8d089420d0a3f5651df2d2dbf4ad3fd0f58a80116cc5a3b0ac472",
+    "current/citadel-skills-v2.8.0.js": "c19ed9a02d83167ce43d892f38172e81d2c2a6534885c818696b592ce64d5ced",
+    "current/citadel-detail-v2.9.0.js": "52b34e4dd11822262cf75439ef8e558922c6f99854f760bc9b4ccd90391a10c9",
+    "current/citadel-pursuit-view-v2.2.0.css": "135b1a8116fbeb0c7c0f775a26f3b8ed26f1996e79013c4dcbfe315859118d6c",
+    "current/citadel-skills-v2.8.0.css": "fb7accdec7496d172a81d5594292721ee6266af6e85ab0394f18c4062c0fcfcc"
+  },
+  "tested_styles_sha256": "bee30b2216d4a98f1f456b0023db730b6fc29aafbf52017ef484d7c3ca862549"
+}
