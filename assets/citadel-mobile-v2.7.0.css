@@ -48,6 +48,14 @@
 .citadel-rocket-tip{position:absolute;top:100px;left:50%;transform:translateX(-50%);width:max-content;max-width:calc(100% - 32px);box-sizing:border-box;z-index:7;pointer-events:none;padding:8px 12px;background:#10202fec;border:1px solid #e8b56c;border-radius:10px;color:#fff0cf;font:600 12px/1.4 system-ui;text-align:center}
 #arcade-screen:has(.citadel-toast:not([hidden])) .citadel-rocket-tip{visibility:hidden}
 .citadel-rocket-tip[hidden]{display:none}
+/* Swarm uses four distinct actions. The shared defense rule otherwise puts
+   pulse over dodge in the lower-right cell, making pulse unreachable. */
+#arcade-layout .arcade-screen.swarm270-controls .arcade-touch-actions .citadel-touch-defense {
+ grid-column:1;grid-row:2;touch-action:none;
+}
+#arcade-layout .arcade-screen.swarm270-controls .arcade-touch-actions [data-action="arcade-flip"] {
+ grid-column:2;grid-row:2;
+}
 @media(pointer:coarse){.arcade-touch-actions button{min-height:58px;min-width:64px}}
 #arcade-layout.citadel-landscape270 .arcade-overlay {inset:0;padding:12px 18px;overflow:auto;max-height:none;overscroll-behavior:contain}
 #arcade-layout.citadel-landscape270.mobile-command-open>.arcade-command {display:block;position:absolute;inset:44px 0 0;z-index:30;overflow:auto;background:#0b1e28}

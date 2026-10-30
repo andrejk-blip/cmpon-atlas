@@ -1,12 +1,12 @@
 /* Цитадель ЦСИИ 2.7.0 — four squadrons, distinct combat silhouettes and bounded LOD.
- * Rendering only: no timers, listeners, RNG, simulation state or image cache.
+ * Rendering only: no timers, listeners, RNG or simulation state mutations.
  * Enemy hulls fit existing collision ellipses. The larger arcade player ship
  * has an explicit luminous vulnerable core at the unchanged radius of 1.65.
  * Navigation marks, exhaust and dive warnings are deliberately non-solid.
  */
 (() => {
   'use strict';
-  const VERSION = '2.8.0';
+  const VERSION = '2.10.0';
   if (globalThis.CITADEL_SWARM_VIEW?.version === VERSION || !globalThis.CITADEL_SWARM ||
       typeof drawFlightHUD !== 'function' || typeof drawMobileGameHUD !== 'function') return;
   const originalFlight = drawFlightHUD, originalMobile = drawMobileGameHUD;
@@ -55,6 +55,7 @@
     return {x:q.x,y:q.y,rx:Math.abs(x.x-q.x),ry:Math.abs(y.y-q.y)};
   }
   function ship(c,q,rank,angle,flash,fx,time,boost,role,lod=false) {
+    if(globalThis.CITADEL_SWARM_ART)return CITADEL_SWARM_ART.ship(c,q,rank,angle,flash,fx,time,boost,role,lod);
     const color=palettes[rank],player=rank===3;
     c.save();c.translate(q.x,q.y);c.scale(q.rx,q.ry);c.rotate(angle);c.scale(.97,.97);
     c.lineJoin='round';c.lineWidth=.045;
@@ -228,6 +229,7 @@
     }
     if(fx)for(const x of e.explosions) {
       const q=project(x.pos),u=clamp(1-x.life/x.max,0,1),r=l.sy*(2+u*9);
+      if(globalThis.CITADEL_SWARM_ART){CITADEL_SWARM_ART.explosion(c,q,u,l.sy);continue;}
       c.globalAlpha=(1-u)*.65;c.strokeStyle='#d6c6b0';c.lineWidth=1.2;
       c.beginPath();c.ellipse(q.x,q.y,r*1.25,r,0,0,TAU);c.stroke();
       for(let i=0;i<6;i++){const a=i*TAU/6;line(c,q.x+Math.cos(a)*r*.65,q.y+Math.sin(a)*r*.65,q.x+Math.cos(a)*r,q.y+Math.sin(a)*r,'#e4c4a0',1.5);}
@@ -281,6 +283,7 @@
     }
     for(const pickup of s.pickups||[])if(!pickup.dead) {
       const q=project(pickup.pos),r=l.compact?11:14,angle=fx?pickup.age*1.8:Math.PI/6;
+      if(globalThis.CITADEL_SWARM_ART){CITADEL_SWARM_ART.pickup(c,q,pickup.type,pickup.age,r,fx);continue;}
       const color=pickup.type==='repair'?'#a4e6c7':pickup.type==='missiles'?'#efbd83':'#82e7e5';
       const width=.68+.28*Math.abs(Math.cos(angle));
       c.save();c.translate(q.x,q.y);c.lineWidth=1;
@@ -301,12 +304,15 @@
     }
     // Essential cues remain visible when optional effects are disabled.
     for(const b of e.bullets) {
-      const q=project(b.pos),missile=b.type==='missile';c.fillStyle=missile?'#edf0d5':'#b5f7f5';
+      const q=project(b.pos),missile=b.type==='missile';
+      if(globalThis.CITADEL_SWARM_ART){const v=project([b.pos[0]+b.vel[0],b.pos[1]+b.vel[1],b.pos[2]||0]);CITADEL_SWARM_ART.projectile(c,q,{x:v.x-q.x,y:v.y-q.y},b,false,fx,l.compact);continue;}
+     c.fillStyle=missile?'#edf0d5':'#b5f7f5';
       c.fillRect(q.x-(missile?2:1.2),q.y-(missile?7:5),missile?4:2.4,missile?11:9);
       if(missile&&fx)line(c,q.x,q.y+5,q.x,q.y+10,'#96ecea',2);
     }
     for(const x of e.enemies)if(!x.dead) {
       const q=projectedRadius(project,x.pos,x.r);
+      if(!e.assist&&x.mode==='tell'&&CITADEL_SWARM.balanced?.(e)){c.strokeStyle='#ffc38a';c.lineWidth=1.5;c.beginPath();c.arc(q.x,q.y,Math.max(q.rx,q.ry)+2,0,Math.PI*2*Math.min(1,x.modeTime/.45));c.stroke();}
       if(e.assist&&x.mode==='tell')telegraph(c,e,x,q);
       const cue=x.attackCue||x.fireCue;
       if(e.assist&&cue>0) {
@@ -314,7 +320,9 @@
       }
     }
     for(const b of e.hostile) {
-      const q=project(b.pos);if(fx)line(c,q.x,q.y-8,q.x,q.y,'#a46d3e80',2.5);
+      const q=project(b.pos);
+      if(globalThis.CITADEL_SWARM_ART){const v=project([b.pos[0]+b.vel[0],b.pos[1]+b.vel[1],b.pos[2]||0]);CITADEL_SWARM_ART.projectile(c,q,{x:v.x-q.x,y:v.y-q.y},b,true,fx,l.compact);continue;}
+      if(fx)line(c,q.x,q.y-8,q.x,q.y,'#a46d3e80',2.5);
       if(b.type==='swarm-torpedo'){
         const r=projectedRadius(project,b.pos,b.r),rx=Math.max(3,r.rx),ry=Math.max(3,r.ry);
         c.save();c.translate(q.x,q.y);c.rotate(Math.atan2(b.vel[0],-b.vel[1]));
