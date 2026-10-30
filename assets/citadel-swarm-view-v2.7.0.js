@@ -139,6 +139,23 @@
       }
       if(role==='scout')for(const side of [-1,1])line(c,side*.15,-.57,side*.36,-.33,accent,.08);
     }
+    // 2.9: inset ceramic scales, inspection ports and a separate glass
+    // reflection. Keep every detail inside the established hull silhouette.
+    for(const side of [-1,1]) {
+      for(let row=0;row<3;row++) {
+        const x=side*.39,y=-.20+row*.19;
+        polygon(c,[[x-side*.10,y],[x+side*.11,y-.035],[x+side*.095,y+.11],[x-side*.08,y+.13]],color.low,color.edge);
+        line(c,x-side*.07,y+.015,x+side*.075,y-.015,color.high,.025);
+        ellipse(c,x+side*.055,y+.065,.018,.018,color.trim);
+      }
+      for(let k=0;k<4;k++)line(c,side*.56-.07,.05+k*.065,side*.56+.07,.05+k*.065,color.low,.028);
+      polygon(c,[[side*.11,.32],[side*.22,.39],[side*.21,.53],[side*.10,.46]],color.trim,color.edge);
+      line(c,side*.10,-.34,side*.09,-.09,'#ddfbff',.018);
+    }
+    const glass=c.createLinearGradient(-.1,-.42,.09,.01);
+    glass.addColorStop(0,'#e0fcffb0');glass.addColorStop(.35,'#72c9dc60');glass.addColorStop(1,'#0f243a10');
+    polygon(c,[[0,-.43],[.072,-.27],[.074,-.05],[0,.03],[-.074,-.05],[-.072,-.27]],glass);
+    line(c,-.08,-.18,.08,-.18,color.edge,.024);
     c.restore();
   }
   function backdrop(c,e,l,fx) {
@@ -153,6 +170,19 @@
     const planet=c.createRadialGradient(px-pr*.3,py-pr*.4,pr*.06,px,py,pr);
     planet.addColorStop(0,'#23425a');planet.addColorStop(.55,'#122a40');planet.addColorStop(1,'#060d1a');
     ellipse(c,px,py,pr,pr,planet);
+    // Quiet cloud bands and coastal ridges add depth without competing with
+    // incoming bullets. The planet is clipped once and uses a fixed budget.
+    c.save();c.beginPath();c.arc(px,py,pr,0,TAU);c.clip();
+    c.translate(px,py);c.rotate(-.27);
+    for(let i=-4;i<=4;i++) {
+      c.strokeStyle=i%2?'#82afbd16':'#071b2d42';c.lineWidth=pr*(i%2?.045:.08);
+      c.beginPath();c.ellipse(pr*.12,pr*i*.19,pr*1.02,pr*.10,0,Math.PI,TAU);c.stroke();
+    }
+    for(let i=0;i<6;i++) {
+      const x=Math.sin(i*2.3)*pr*.66,y=Math.cos(i*1.7)*pr*.72;
+      polygon(c,[[x,y],[x+pr*.15,y-pr*.045],[x+pr*.24,y+pr*.08],[x+pr*.09,y+pr*.16],[x-pr*.08,y+pr*.10]],'#4e7a8716');
+    }
+    c.restore();
     c.strokeStyle='#66829323';c.lineWidth=1.3;c.beginPath();c.ellipse(px,py,pr*1.36,pr*.3,-.4,0,TAU);c.stroke();
     c.strokeStyle='#6b8da11a';c.lineWidth=3;c.beginPath();c.arc(px,py,pr,-2.9,-.8);c.stroke();
     // Fixed stars: no allocations retained and no particles spawned by render.

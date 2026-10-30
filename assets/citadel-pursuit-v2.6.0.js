@@ -854,7 +854,7 @@
     };
   }
   globalThis.CITADEL_PURSUIT = Object.freeze({ version: VERSION, active, flight: active, count, linkEligible, carrierMeshes, hudBounds,
-    rules: RULES, rulesRevision:RULES_REVISION, warpKinds:WARP_KINDS, warpNames:WARP_NAMES, stages: STAGES, channel, gateOpening, gateParts, gateHit, warpHit, warpParts, warpEntities:e=>e.pursuit?.warpEntities||[], navigationPoint,
+    rules: RULES, rulesRevision:RULES_REVISION, warpKinds:WARP_KINDS, warpNames:WARP_NAMES, stages: STAGES, channel, gateOpening, gateParts, gateHit, warpHit, warpParts, poseWarp, warpEntities:e=>e.pursuit?.warpEntities||[], navigationPoint,
     carriers: e => loaded(e) ? e.pursuit.carriers.map(c => ({ id: c.id, reqId: c.reqId, profile: c.profile,
       pos: c.pos.slice(), shield: 0, open: true, escaped: false, delivered: c.delivered,
       transfer: c.transfer, transferTime: 1 })) : [],

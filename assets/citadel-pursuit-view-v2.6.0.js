@@ -34,8 +34,8 @@
  spindle('p260_bone',[[-1,.12],[-.7,.7],[0,1],[.7,.76],[1,.12]],8,true);
  spindle('p260_tube_low',[[-1,.8],[0,1],[1,.8]],8,true);
  spindle('p260_horn_low',[[-1,1],[.25,.5],[1,.025]],5,true);
- spindle('p260_muscle_low',[[-1,.15],[-.5,.88],[.5,.9],[1,.15]],6,true);
- spindle('p260_bone_low',[[-1,.12],[0,1],[1,.12]],5,true);
+ spindle('p260_muscle_low',[[-1,.15],[-.8,.62],[-.35,.98],[.35,1],[.8,.62],[1,.15]],8,true);
+ spindle('p260_bone_low',[[-1,.12],[-.55,.78],[.55,.8],[1,.12]],6,true);
  function torus(name,radius,tube,segments,cross=6,start=0,end=TAU){
    const v=[],f=[];for(let i=0;i<=segments;i++){const t=start+(end-start)*i/segments;for(let j=0;j<cross;j++){const u=j/cross*TAU,r=radius+Math.cos(u)*tube;v.push([Math.cos(t)*r,Math.sin(t)*r,Math.sin(u)*tube]);}}
    for(let i=0;i<segments;i++)for(let j=0;j<cross;j++){const k=i*cross,n=(j+1)%cross;f.push([k+j,k+cross+j,k+cross+n,k+n]);}mesh(name,v,f);return name;
