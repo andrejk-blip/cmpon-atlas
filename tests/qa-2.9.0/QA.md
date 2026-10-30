@@ -59,3 +59,12 @@ python scripts/prepare-release-290.py
 
 HTTP-сверка опубликованной версии выполняется отдельно:
 `python tests/verify-production290.py --commit COMMIT_SHA`.
+
+## Публикация
+
+GitHub Pages успешно опубликовал `cf7c7615ea87c4cc0359c9d18233d8cf978eb191`.
+30 октября 2026, 09:52 UTC: **71/71 HTTP-файл совпал по SHA-256** — index,
+version, manifest и 68 активных ресурсов. Полный результат: production.json.
+Публичное меню и футер показывают 2.9.0; снимок: citadel290-live-release.jpg.
+Последующий коммит добавляет только этот отчёт и доказательства публикации,
+не меняя проверенную игровую сборку.
