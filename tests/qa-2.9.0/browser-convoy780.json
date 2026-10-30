@@ -1,0 +1,313 @@
+{
+  "version": "2.9.0",
+  "config": {
+    "freeze": true,
+    "mode": "combat",
+    "scene": "convoy",
+    "accelerated": true,
+    "manual": false,
+    "holdQuestions": false
+  },
+  "education": {
+    "mode": "combat",
+    "quiz": true,
+    "current": null
+  },
+  "renderer": "3D · совместимый режим",
+  "mode": "combat",
+  "accelerated": true,
+  "rafInputCalls": 38,
+  "finished": null,
+  "status": "playing",
+  "level": 3,
+  "levels": [
+    3
+  ],
+  "cards": 0,
+  "wallSeconds": 34,
+  "simulatedSeconds": 8.02,
+  "frameCalls": 481,
+  "emitChanges": 0,
+  "maxInputGapMs": 70,
+  "metrics": {
+    "listeners": 69,
+    "peakListeners": 71,
+    "rafCalls": 42,
+    "rafDone": 39,
+    "rafPending": 1,
+    "rafPeak": 2,
+    "errors": [],
+    "heap": 34059808
+  },
+  "input": {
+    "version": "2.8.0",
+    "boundCanvases": 1,
+    "rightClicks": 0,
+    "active": false,
+    "pointerId": null,
+    "mode": "idle"
+  },
+  "player": {
+    "hp": 92,
+    "missiles": 10
+  },
+  "runtime": {
+    "version": "1.9.3",
+    "build": "193r2",
+    "frames": 38,
+    "updates": 38,
+    "renders": 38,
+    "recoveries": 0,
+    "failures": 0,
+    "stopped": false,
+    "contextLost": false,
+    "pending": true,
+    "stage": "idle",
+    "lastFrameAge": 575,
+    "lastUpdateAge": 575,
+    "lastRenderAge": 561,
+    "recoverySave": "none",
+    "faults": [],
+    "events": [
+      {
+        "at": 298,
+        "kind": "detach",
+        "status": "unknown",
+        "stage": null,
+        "phase": "other",
+        "finale": null,
+        "wave": null,
+        "seconds": null,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "webgl"
+      },
+      {
+        "at": 440,
+        "kind": "engine",
+        "status": "playing",
+        "stage": 0,
+        "phase": "escort",
+        "finale": null,
+        "wave": 0,
+        "seconds": 0,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      },
+      {
+        "at": 501,
+        "kind": "transition",
+        "status": "playing",
+        "stage": 0,
+        "phase": "escort",
+        "finale": null,
+        "wave": 0,
+        "seconds": 8.02,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      }
+    ]
+  },
+  "sound": {
+    "context": "running",
+    "loaded": 16,
+    "active": 0,
+    "cacheBytes": 2184668,
+    "played": {
+      "shot": 1,
+      "robot-hit": 1,
+      "robot-death": 1,
+      "player-damage": 1
+    }
+  },
+  "voice": {
+    "busy": false,
+    "source": null
+  },
+  "swarm": null,
+  "base": {
+    "active": false,
+    "version": "2.7.0",
+    "legacy": false,
+    "tier": null,
+    "theme": null,
+    "stats": null,
+    "hazards": [],
+    "systems": [],
+    "transport": null,
+    "enemies": [],
+    "events": []
+  },
+  "samples": [
+    {
+      "wallSeconds": 10,
+      "gameSeconds": 8,
+      "level": 3,
+      "listeners": 69,
+      "heap": 34490690,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 22,
+      "gameSeconds": 8,
+      "level": 3,
+      "listeners": 69,
+      "heap": 34645073,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 32,
+      "gameSeconds": 8,
+      "level": 3,
+      "listeners": 69,
+      "heap": 34454917,
+      "rafPending": 1
+    }
+  ],
+  "transitions": [
+    {
+      "level": 3,
+      "status": "playing",
+      "phase": "escort",
+      "finale": null,
+      "seconds": 0
+    }
+  ],
+  "presentation": {
+    "number": 3,
+    "name": "Конвой · первый переход",
+    "active": true,
+    "convoy": true,
+    "mrg": false,
+    "inside": false,
+    "guideOn": false,
+    "guideName": "К строю",
+    "guideVisible": true,
+    "pulseName": "ПРИКРЫТИЕ",
+    "cooldown": 12,
+    "boostName": "ФОРСАЖ",
+    "help": "Джойстик — манёвр. Цель — выбрать противника; наведите на него прицел и стреляйте. Прикрытие защищает конвой. К строю — вернуться в центр; корабль не ведётся за вас."
+  },
+  "art": null,
+  "dom": {
+    "viewport": {
+      "w": 780,
+      "h": 430
+    },
+    "layout": {
+      "x": 0,
+      "y": 0,
+      "w": 780,
+      "h": 430,
+      "display": "block",
+      "visible": true,
+      "text": " ЦИТАДЕЛЬ ЦСИИ · БОЕВОЙУправлениеРекорды♫ вкл◖))×ПИЛОТ И ПРИКРЫТИЕГИПЕРПЕРЕХОД12%ЗВЕНЬЯ ПРОТИВНИКА1/4Манёвр · перехват · прикрытиеСохраните 2 / 3 транспортаУРОВЕНЬ 03 / 14Конвой · ",
+      "disabled": false
+    },
+    "canvas": {
+      "x": 0,
+      "y": 44,
+      "w": 780,
+      "h": 386,
+      "display": "block",
+      "visible": true,
+      "text": "",
+      "disabled": false
+    },
+    "header": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "display": "none",
+      "visible": false,
+      "text": "УРОВЕНЬ 03 / 14Конвой · первый переходСохраните 2/3 транспорта · группа 1/4 · совместите прицел с цельюК строю",
+      "disabled": false
+    },
+    "route": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "display": "none",
+      "visible": false,
+      "text": "ПИЛОТ И ПРИКРЫТИЕГИПЕРПЕРЕХОД12%ЗВЕНЬЯ ПРОТИВНИКА1/4Манёвр · перехват · прикрытиеСохраните 2 / 3 транспорта",
+      "disabled": false
+    },
+    "defense": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "display": "none",
+      "visible": false,
+      "text": "ПРИКРЫТИЕ\n12 с",
+      "disabled": true
+    },
+    "cover": {
+      "x": 684,
+      "y": 322,
+      "w": 82,
+      "h": 58,
+      "display": "flex",
+      "visible": true,
+      "text": "ПРИКРЫТИЕ\n12 с",
+      "disabled": true
+    },
+    "boost": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "display": "none",
+      "visible": false,
+      "text": "ФОРСАЖ",
+      "disabled": false
+    },
+    "buttons": [
+      {
+        "x": 592,
+        "y": 254,
+        "w": 82,
+        "h": 58,
+        "display": "flex",
+        "visible": true,
+        "text": "ОГОНЬ",
+        "disabled": false
+      },
+      {
+        "x": 684,
+        "y": 254,
+        "w": 82,
+        "h": 58,
+        "display": "flex",
+        "visible": true,
+        "text": "РАКЕТА",
+        "disabled": false
+      },
+      {
+        "x": 592,
+        "y": 322,
+        "w": 82,
+        "h": 58,
+        "display": "flex",
+        "visible": true,
+        "text": "ЦЕЛЬ",
+        "disabled": false
+      },
+      {
+        "x": 684,
+        "y": 322,
+        "w": 82,
+        "h": 58,
+        "display": "flex",
+        "visible": true,
+        "text": "ПРИКРЫТИЕ\n12 с",
+        "disabled": true
+      }
+    ],
+    "horizontalOverflow": false
+  }
+}

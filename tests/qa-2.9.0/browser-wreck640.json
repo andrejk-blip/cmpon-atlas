@@ -1,0 +1,887 @@
+{
+  "version": "2.9.0",
+  "config": {
+    "freeze": true,
+    "mode": "combat",
+    "scene": "wreck",
+    "accelerated": true,
+    "manual": false,
+    "holdQuestions": false
+  },
+  "education": {
+    "mode": "combat",
+    "quiz": true,
+    "current": null
+  },
+  "renderer": "3D · совместимый режим",
+  "mode": "combat",
+  "accelerated": true,
+  "rafInputCalls": 106,
+  "finished": null,
+  "status": "boarding",
+  "level": 13,
+  "levels": [
+    13
+  ],
+  "cards": 0,
+  "wallSeconds": 42,
+  "simulatedSeconds": 0.22,
+  "frameCalls": 13,
+  "emitChanges": 0,
+  "maxInputGapMs": 197,
+  "metrics": {
+    "listeners": 69,
+    "peakListeners": 71,
+    "rafCalls": 110,
+    "rafDone": 107,
+    "rafPending": 1,
+    "rafPeak": 2,
+    "errors": [],
+    "heap": 30124594
+  },
+  "input": {
+    "version": "2.8.0",
+    "boundCanvases": 1,
+    "rightClicks": 0,
+    "active": false,
+    "pointerId": null,
+    "mode": "idle"
+  },
+  "player": {
+    "hp": 100,
+    "missiles": 8
+  },
+  "runtime": {
+    "version": "1.9.3",
+    "build": "193r2",
+    "frames": 106,
+    "updates": 106,
+    "renders": 106,
+    "recoveries": 0,
+    "failures": 0,
+    "stopped": false,
+    "contextLost": false,
+    "pending": true,
+    "stage": "idle",
+    "lastFrameAge": 890,
+    "lastUpdateAge": 886,
+    "lastRenderAge": 879,
+    "recoverySave": "none",
+    "faults": [],
+    "events": [
+      {
+        "at": 420,
+        "kind": "detach",
+        "status": "unknown",
+        "stage": null,
+        "phase": "other",
+        "finale": null,
+        "wave": null,
+        "seconds": null,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "webgl"
+      },
+      {
+        "at": 797,
+        "kind": "engine",
+        "status": "boarding",
+        "stage": 3,
+        "phase": "boarding",
+        "finale": "maze",
+        "wave": 0,
+        "seconds": 0,
+        "mode": "normal",
+        "enemies": 24,
+        "renderer": "canvas"
+      },
+      {
+        "at": 836,
+        "kind": "transition",
+        "status": "boarding",
+        "stage": 3,
+        "phase": "boarding",
+        "finale": "maze",
+        "wave": 0,
+        "seconds": 0.22,
+        "mode": "normal",
+        "enemies": 24,
+        "renderer": "canvas"
+      }
+    ]
+  },
+  "sound": {
+    "context": "uninitialized",
+    "loaded": 0,
+    "active": 0,
+    "cacheBytes": 0,
+    "played": {}
+  },
+  "voice": {
+    "busy": false,
+    "source": null
+  },
+  "swarm": null,
+  "base": {
+    "active": true,
+    "version": "2.7.0",
+    "legacy": false,
+    "layout": "base270-4",
+    "tier": 4,
+    "theme": "wreck",
+    "stats": {
+      "dogDashes": 0,
+      "dogHits": 0,
+      "beamCycles": 0,
+      "beamHits": 0,
+      "hazardHits": 0,
+      "systemsUsed": 0,
+      "liftTrips": 0
+    },
+    "hazards": [
+      {
+        "id": "breach-0-0",
+        "type": "breach",
+        "room": 0,
+        "pos": [
+          0,
+          0,
+          -16
+        ],
+        "radius": 0,
+        "active": true,
+        "removedCells": [
+          [
+            -2,
+            -5
+          ],
+          [
+            -2,
+            -4
+          ],
+          [
+            -2,
+            -3
+          ],
+          [
+            -1,
+            -5
+          ],
+          [
+            -1,
+            -4
+          ],
+          [
+            -1,
+            -3
+          ],
+          [
+            0,
+            -5
+          ],
+          [
+            0,
+            -4
+          ],
+          [
+            0,
+            -3
+          ],
+          [
+            1,
+            -5
+          ],
+          [
+            1,
+            -4
+          ],
+          [
+            1,
+            -3
+          ],
+          [
+            2,
+            -5
+          ],
+          [
+            2,
+            -4
+          ],
+          [
+            2,
+            -3
+          ]
+        ],
+        "clock": 0.21666666666666665
+      },
+      {
+        "id": "fire-0",
+        "type": "fire",
+        "room": 0,
+        "pos": [
+          -14,
+          0,
+          -13
+        ],
+        "radius": 2.6,
+        "active": true,
+        "phase": "burn",
+        "clock": 0.21666666666666665,
+        "damage": 13,
+        "systemId": "coolant-0"
+      },
+      {
+        "id": "breach-1-2",
+        "type": "breach",
+        "room": 1,
+        "pos": [
+          20,
+          0,
+          -96
+        ],
+        "radius": 0,
+        "active": true,
+        "removedCells": [
+          [
+            3,
+            -25
+          ],
+          [
+            3,
+            -24
+          ],
+          [
+            3,
+            -23
+          ],
+          [
+            4,
+            -25
+          ],
+          [
+            4,
+            -24
+          ],
+          [
+            4,
+            -23
+          ],
+          [
+            5,
+            -25
+          ],
+          [
+            5,
+            -24
+          ],
+          [
+            5,
+            -23
+          ],
+          [
+            6,
+            -25
+          ],
+          [
+            6,
+            -24
+          ],
+          [
+            6,
+            -23
+          ],
+          [
+            7,
+            -25
+          ],
+          [
+            7,
+            -24
+          ],
+          [
+            7,
+            -23
+          ]
+        ],
+        "clock": 0.21666666666666665
+      },
+      {
+        "id": "fire-1",
+        "type": "fire",
+        "room": 1,
+        "pos": [
+          6,
+          0,
+          -93
+        ],
+        "radius": 2.6,
+        "active": true,
+        "phase": "burn",
+        "clock": 0.21666666666666665,
+        "damage": 13,
+        "systemId": "coolant-0"
+      },
+      {
+        "id": "breach-2-4",
+        "type": "breach",
+        "room": 2,
+        "pos": [
+          -16,
+          0,
+          -176
+        ],
+        "radius": 0,
+        "active": true,
+        "removedCells": [
+          [
+            -9,
+            -48
+          ],
+          [
+            -9,
+            -47
+          ],
+          [
+            -8,
+            -48
+          ],
+          [
+            -8,
+            -47
+          ]
+        ],
+        "clock": 0.21666666666666665
+      },
+      {
+        "id": "breach-2-5",
+        "type": "breach",
+        "room": 2,
+        "pos": [
+          -16,
+          0,
+          -176
+        ],
+        "radius": 0,
+        "active": true,
+        "removedCells": [
+          [
+            0,
+            -41
+          ],
+          [
+            0,
+            -40
+          ],
+          [
+            1,
+            -41
+          ],
+          [
+            1,
+            -40
+          ]
+        ],
+        "clock": 0.21666666666666665
+      },
+      {
+        "id": "fire-2",
+        "type": "fire",
+        "room": 2,
+        "pos": [
+          -16,
+          0,
+          -170
+        ],
+        "radius": 2.6,
+        "active": true,
+        "phase": "burn",
+        "clock": 0.21666666666666665,
+        "damage": 13,
+        "systemId": "coolant-0"
+      },
+      {
+        "id": "fire-core",
+        "type": "fire",
+        "room": 2,
+        "pos": [
+          -2,
+          0,
+          -178
+        ],
+        "radius": 2.4,
+        "active": true,
+        "phase": "burn",
+        "clock": 0.21666666666666665,
+        "damage": 13,
+        "systemId": "coolant-0"
+      }
+    ],
+    "systems": [
+      {
+        "id": "lift-0",
+        "type": "lift",
+        "pos": [
+          0,
+          0,
+          -8
+        ],
+        "room": 0,
+        "unlockAfter": 0,
+        "state": "ready",
+        "progress": 0,
+        "cooldown": 0,
+        "target": [
+          0,
+          0,
+          -24
+        ],
+        "halfExtents": [
+          1.65,
+          1.65
+        ]
+      },
+      {
+        "id": "lift-1",
+        "type": "lift",
+        "pos": [
+          20,
+          0,
+          -88
+        ],
+        "room": 1,
+        "unlockAfter": 1,
+        "state": "ready",
+        "progress": 0,
+        "cooldown": 0,
+        "target": [
+          20,
+          0,
+          -104
+        ],
+        "halfExtents": [
+          1.65,
+          1.65
+        ]
+      },
+      {
+        "id": "coolant-0",
+        "type": "coolant",
+        "pos": [
+          17,
+          0,
+          -2
+        ],
+        "room": 0,
+        "unlockAfter": 0,
+        "state": "ready",
+        "progress": 0,
+        "cooldown": 0
+      }
+    ],
+    "transport": null,
+    "enemies": [
+      {
+        "id": 4,
+        "kind": "dog",
+        "room": 0,
+        "hp": 134,
+        "pos": [
+          16,
+          0,
+          -20
+        ],
+        "phase": "hunt",
+        "phaseClock": 0.21666666666666665,
+        "clock": 0.21666666666666665,
+        "heading": [
+          0,
+          0,
+          -1
+        ],
+        "gait": 0,
+        "scale": 0.75,
+        "cooldown": 0,
+        "hit": false,
+        "beams": [],
+        "speed": 0,
+        "stuck": 0,
+        "packSide": -1
+      },
+      {
+        "id": 6,
+        "kind": "dog",
+        "room": 0,
+        "hp": 134,
+        "pos": [
+          4,
+          0,
+          -28
+        ],
+        "phase": "hunt",
+        "phaseClock": 0.21666666666666665,
+        "clock": 0.21666666666666665,
+        "heading": [
+          0,
+          0,
+          -1
+        ],
+        "gait": 0,
+        "scale": 0.75,
+        "cooldown": 0,
+        "hit": false,
+        "beams": [],
+        "speed": 0,
+        "stuck": 0,
+        "packSide": -1
+      },
+      {
+        "id": 8,
+        "kind": "dog",
+        "room": 0,
+        "hp": 134,
+        "pos": [
+          32,
+          0,
+          -14
+        ],
+        "phase": "hunt",
+        "phaseClock": 0.21666666666666665,
+        "clock": 0.21666666666666665,
+        "heading": [
+          0,
+          0,
+          -1
+        ],
+        "gait": 0,
+        "scale": 0.75,
+        "cooldown": 0,
+        "hit": false,
+        "beams": [],
+        "speed": 0,
+        "stuck": 0,
+        "packSide": -1
+      },
+      {
+        "id": 12,
+        "kind": "dog",
+        "room": 1,
+        "hp": 134,
+        "pos": [
+          36,
+          0,
+          -100
+        ],
+        "phase": "hunt",
+        "phaseClock": 0.21666666666666665,
+        "clock": 0.21666666666666665,
+        "heading": [
+          0,
+          0,
+          -1
+        ],
+        "gait": 0,
+        "scale": 0.75,
+        "cooldown": 0,
+        "hit": false,
+        "beams": [],
+        "speed": 0,
+        "stuck": 0,
+        "packSide": -1
+      },
+      {
+        "id": 14,
+        "kind": "dog",
+        "room": 1,
+        "hp": 134,
+        "pos": [
+          24,
+          0,
+          -108
+        ],
+        "phase": "hunt",
+        "phaseClock": 0.21666666666666665,
+        "clock": 0.21666666666666665,
+        "heading": [
+          0,
+          0,
+          -1
+        ],
+        "gait": 0,
+        "scale": 0.75,
+        "cooldown": 0,
+        "hit": false,
+        "beams": [],
+        "speed": 0,
+        "stuck": 0,
+        "packSide": -1
+      },
+      {
+        "id": 16,
+        "kind": "dog",
+        "room": 1,
+        "hp": 134,
+        "pos": [
+          52,
+          0,
+          -94
+        ],
+        "phase": "hunt",
+        "phaseClock": 0.21666666666666665,
+        "clock": 0.21666666666666665,
+        "heading": [
+          0,
+          0,
+          -1
+        ],
+        "gait": 0,
+        "scale": 0.75,
+        "cooldown": 0,
+        "hit": false,
+        "beams": [],
+        "speed": 0,
+        "stuck": 0,
+        "packSide": -1
+      },
+      {
+        "id": 17,
+        "kind": "mech",
+        "room": 2,
+        "hp": 750,
+        "pos": [
+          -16,
+          0,
+          -184
+        ],
+        "phase": "hunt",
+        "phaseClock": 0.21666666666666665,
+        "clock": 0.21666666666666665,
+        "heading": [
+          0,
+          0,
+          -1
+        ],
+        "gait": 0,
+        "scale": 1.9,
+        "cooldown": 0,
+        "hit": false,
+        "beams": [],
+        "speed": 0,
+        "stuck": 0,
+        "packSide": 1
+      },
+      {
+        "id": 22,
+        "kind": "dog",
+        "room": 2,
+        "hp": 134,
+        "pos": [
+          -12,
+          0,
+          -188
+        ],
+        "phase": "hunt",
+        "phaseClock": 0.21666666666666665,
+        "clock": 0.21666666666666665,
+        "heading": [
+          0,
+          0,
+          -1
+        ],
+        "gait": 0,
+        "scale": 0.75,
+        "cooldown": 0,
+        "hit": false,
+        "beams": [],
+        "speed": 0,
+        "stuck": 0,
+        "packSide": -1
+      },
+      {
+        "id": 24,
+        "kind": "dog",
+        "room": 2,
+        "hp": 134,
+        "pos": [
+          16,
+          0,
+          -174
+        ],
+        "phase": "hunt",
+        "phaseClock": 0.21666666666666665,
+        "clock": 0.21666666666666665,
+        "heading": [
+          0,
+          0,
+          -1
+        ],
+        "gait": 0,
+        "scale": 0.75,
+        "cooldown": 0,
+        "hit": false,
+        "beams": [],
+        "speed": 0,
+        "stuck": 0,
+        "packSide": -1
+      }
+    ],
+    "events": [
+      {
+        "at": 0,
+        "kind": "mission-crew",
+        "dogs": 8,
+        "mechs": 1
+      }
+    ]
+  },
+  "samples": [
+    {
+      "wallSeconds": 10,
+      "gameSeconds": 0,
+      "level": 13,
+      "listeners": 69,
+      "heap": 60025959,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 22,
+      "gameSeconds": 0,
+      "level": 13,
+      "listeners": 69,
+      "heap": 49521447,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 34,
+      "gameSeconds": 0,
+      "level": 13,
+      "listeners": 69,
+      "heap": 30456182,
+      "rafPending": 1
+    }
+  ],
+  "transitions": [
+    {
+      "level": 13,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": "maze",
+      "seconds": 0
+    }
+  ],
+  "presentation": {
+    "number": 13,
+    "name": "Логово МРГ",
+    "active": true,
+    "convoy": false,
+    "mrg": false,
+    "inside": true,
+    "guideOn": false,
+    "guideName": "Проводник",
+    "guideVisible": true,
+    "pulseName": "ИМПУЛЬС",
+    "cooldown": 0,
+    "boostName": "РЫВОК",
+    "help": "Джойстик — движение и направление огня. Рывок помогает сменить позицию. Импульс оглушает врагов и сбивает ближайшие снаряды. Проводник ведёт к терминалу только по вашей команде."
+  },
+  "art": null,
+  "dom": {
+    "viewport": {
+      "w": 640,
+      "h": 360
+    },
+    "layout": {
+      "x": 0,
+      "y": 0,
+      "w": 640,
+      "h": 360,
+      "display": "block",
+      "visible": true,
+      "text": " ЦИТАДЕЛЬ ЦСИИ · БОЕВОЙУправлениеРекорды♫ вкл◖))×✓ Параллакс✓ ПрорывЛабиринтМРГИсполнениеУРОВЕНЬ 13 / 14Логово МРГПожар, настоящие проломы и грузовые платформы. Обходите опасные зо",
+      "disabled": false
+    },
+    "canvas": {
+      "x": 0,
+      "y": 44,
+      "w": 640,
+      "h": 316,
+      "display": "block",
+      "visible": true,
+      "text": "",
+      "disabled": false
+    },
+    "header": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "display": "none",
+      "visible": false,
+      "text": "УРОВЕНЬ 13 / 14Логово МРГПожар, настоящие проломы и грузовые платформы. Обходите опасные зоны или отключайте их на пультах. Пульт включается короткой остановкой рядом.СЕКТОР 1 / 3 ",
+      "disabled": false
+    },
+    "route": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "display": "none",
+      "visible": false,
+      "text": "✓ Параллакс✓ ПрорывЛабиринтМРГИсполнение",
+      "disabled": false
+    },
+    "defense": {
+      "x": 544,
+      "y": 252,
+      "w": 82,
+      "h": 58,
+      "display": "flex",
+      "visible": true,
+      "text": "ИМПУЛЬС\nГОТОВ",
+      "disabled": false
+    },
+    "cover": null,
+    "boost": {
+      "x": 452,
+      "y": 252,
+      "w": 82,
+      "h": 48,
+      "display": "flex",
+      "visible": true,
+      "text": "РЫВОК",
+      "disabled": false
+    },
+    "buttons": [
+      {
+        "x": 452,
+        "y": 184,
+        "w": 82,
+        "h": 58,
+        "display": "flex",
+        "visible": true,
+        "text": "ОГОНЬ",
+        "disabled": false
+      },
+      {
+        "x": 452,
+        "y": 252,
+        "w": 82,
+        "h": 48,
+        "display": "flex",
+        "visible": true,
+        "text": "РЫВОК",
+        "disabled": false
+      },
+      {
+        "x": 544,
+        "y": 252,
+        "w": 82,
+        "h": 58,
+        "display": "flex",
+        "visible": true,
+        "text": "ИМПУЛЬС\nГОТОВ",
+        "disabled": false
+      }
+    ],
+    "horizontalOverflow": false
+  }
+}

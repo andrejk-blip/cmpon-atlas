@@ -1,0 +1,534 @@
+{
+  "method": "18 ordinary-input convoy flights: 3 missions × 3 modes × 30/60 Hz. Entry/loadout fixtures only; no player/health/position edits during those flights. Separate explicit collision fixtures above.",
+  "checks": [
+    {
+      "name": "New flights have 3/4/5 bounded encounters separated from circular apertures",
+      "pass": true,
+      "plans": [
+        {
+          "stage": 0,
+          "assist": true,
+          "plan": [
+            {
+              "cross": 11.2,
+              "spawn": 4.799999999999999,
+              "kind": "hammer",
+              "side": 1
+            },
+            {
+              "cross": 27.700000000000003,
+              "spawn": 21.300000000000004,
+              "kind": "tentacle",
+              "side": -1
+            },
+            {
+              "cross": 47.2,
+              "spawn": 40.800000000000004,
+              "kind": "maw",
+              "side": 1
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "assist": true,
+          "plan": [
+            {
+              "cross": 8.2,
+              "spawn": 1.799999999999999,
+              "kind": "maw",
+              "side": 1
+            },
+            {
+              "cross": 23.2,
+              "spawn": 16.799999999999997,
+              "kind": "mantis",
+              "side": -1
+            },
+            {
+              "cross": 39.2,
+              "spawn": 32.800000000000004,
+              "kind": "medusa",
+              "side": 1
+            },
+            {
+              "cross": 55.2,
+              "spawn": 48.800000000000004,
+              "kind": "hammer",
+              "side": -1
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "assist": true,
+          "plan": [
+            {
+              "cross": 20.2,
+              "spawn": 13.799999999999999,
+              "kind": "medusa",
+              "side": 1
+            },
+            {
+              "cross": 32.2,
+              "spawn": 25.800000000000004,
+              "kind": "hammer",
+              "side": -1
+            },
+            {
+              "cross": 44.2,
+              "spawn": 37.800000000000004,
+              "kind": "tentacle",
+              "side": 1
+            },
+            {
+              "cross": 56.2,
+              "spawn": 49.800000000000004,
+              "kind": "maw",
+              "side": -1
+            },
+            {
+              "cross": 68.2,
+              "spawn": 61.800000000000004,
+              "kind": "mantis",
+              "side": 1
+            }
+          ]
+        },
+        {
+          "stage": 0,
+          "assist": false,
+          "plan": [
+            {
+              "cross": 10.399999999999999,
+              "spawn": 3.9999999999999982,
+              "kind": "hammer",
+              "side": 1
+            },
+            {
+              "cross": 26.9,
+              "spawn": 20.5,
+              "kind": "tentacle",
+              "side": -1
+            },
+            {
+              "cross": 46.4,
+              "spawn": 40,
+              "kind": "maw",
+              "side": 1
+            }
+          ]
+        },
+        {
+          "stage": 1,
+          "assist": false,
+          "plan": [
+            {
+              "cross": 7.4,
+              "spawn": 1,
+              "kind": "maw",
+              "side": 1
+            },
+            {
+              "cross": 22.4,
+              "spawn": 15.999999999999998,
+              "kind": "mantis",
+              "side": -1
+            },
+            {
+              "cross": 38.4,
+              "spawn": 32,
+              "kind": "medusa",
+              "side": 1
+            },
+            {
+              "cross": 54.4,
+              "spawn": 48,
+              "kind": "hammer",
+              "side": -1
+            }
+          ]
+        },
+        {
+          "stage": 2,
+          "assist": false,
+          "plan": [
+            {
+              "cross": 19.4,
+              "spawn": 12.999999999999998,
+              "kind": "medusa",
+              "side": 1
+            },
+            {
+              "cross": 31.4,
+              "spawn": 25,
+              "kind": "hammer",
+              "side": -1
+            },
+            {
+              "cross": 43.4,
+              "spawn": 37,
+              "kind": "tentacle",
+              "side": 1
+            },
+            {
+              "cross": 55.4,
+              "spawn": 49,
+              "kind": "maw",
+              "side": -1
+            },
+            {
+              "cross": 67.4,
+              "spawn": 61.00000000000001,
+              "kind": "mantis",
+              "side": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Swept moving-joint collisions detect crossing and preserve open space",
+      "pass": true
+    },
+    {
+      "name": "Actual engine contact removes shield once; pulse retracts the damaging limb",
+      "pass": true,
+      "shieldLoss": 16,
+      "contacts": 1,
+      "repelled": 1
+    },
+    {
+      "name": "Pause and full save roundtrip preserve monster pose and deterministic continuation",
+      "pass": true
+    },
+    {
+      "name": "An already running 2.8 convoy retains its original rules and resources",
+      "pass": true
+    },
+    {
+      "name": "Repeated module load does not stack simulation, actions or listeners",
+      "pass": true
+    },
+    {
+      "name": "New convoy briefing teaches collision and cover; legacy briefing stays unchanged",
+      "pass": true
+    }
+  ],
+  "runs": [
+    {
+      "stage": 0,
+      "mode": "training",
+      "hz": 30,
+      "status": "escortclear",
+      "seconds": 68.03,
+      "shield": 90.1,
+      "transports": [
+        98.8,
+        92.2,
+        98.8
+      ],
+      "monsters": 3,
+      "contacts": 1,
+      "repelled": 1,
+      "peak": 1
+    },
+    {
+      "stage": 1,
+      "mode": "training",
+      "hz": 30,
+      "status": "escortclear",
+      "seconds": 86.17,
+      "shield": 100,
+      "transports": [
+        98.8,
+        97.6,
+        90.39999999999999
+      ],
+      "monsters": 4,
+      "contacts": 0,
+      "repelled": 3,
+      "peak": 1
+    },
+    {
+      "stage": 2,
+      "mode": "training",
+      "hz": 30,
+      "status": "escortclear",
+      "seconds": 108.5,
+      "shield": 95.6,
+      "transports": [
+        82.6,
+        77.8,
+        95.19999999999999
+      ],
+      "monsters": 5,
+      "contacts": 1,
+      "repelled": 2,
+      "peak": 1
+    },
+    {
+      "stage": 0,
+      "mode": "combat",
+      "hz": 30,
+      "status": "escortclear",
+      "seconds": 68.03,
+      "shield": 56,
+      "transports": [
+        58,
+        49,
+        70
+      ],
+      "monsters": 3,
+      "contacts": 1,
+      "repelled": 0,
+      "peak": 1
+    },
+    {
+      "stage": 1,
+      "mode": "combat",
+      "hz": 30,
+      "status": "escortclear",
+      "seconds": 86.17,
+      "shield": 84,
+      "transports": [
+        87,
+        54,
+        0
+      ],
+      "monsters": 4,
+      "contacts": 0,
+      "repelled": 4,
+      "peak": 1
+    },
+    {
+      "stage": 2,
+      "mode": "combat",
+      "hz": 30,
+      "status": "escortclear",
+      "seconds": 108.53,
+      "shield": 58.399999999999984,
+      "transports": [
+        1,
+        54,
+        0
+      ],
+      "monsters": 5,
+      "contacts": 0,
+      "repelled": 3,
+      "peak": 1
+    },
+    {
+      "stage": 0,
+      "mode": "pro",
+      "hz": 30,
+      "status": "escortclear",
+      "seconds": 68.03,
+      "shield": 56,
+      "transports": [
+        58,
+        49,
+        70
+      ],
+      "monsters": 3,
+      "contacts": 1,
+      "repelled": 0,
+      "peak": 1
+    },
+    {
+      "stage": 1,
+      "mode": "pro",
+      "hz": 30,
+      "status": "escortclear",
+      "seconds": 86.17,
+      "shield": 84,
+      "transports": [
+        87,
+        54,
+        0
+      ],
+      "monsters": 4,
+      "contacts": 0,
+      "repelled": 4,
+      "peak": 1
+    },
+    {
+      "stage": 2,
+      "mode": "pro",
+      "hz": 30,
+      "status": "escortclear",
+      "seconds": 108.53,
+      "shield": 58.399999999999984,
+      "transports": [
+        1,
+        54,
+        0
+      ],
+      "monsters": 5,
+      "contacts": 0,
+      "repelled": 3,
+      "peak": 1
+    },
+    {
+      "stage": 0,
+      "mode": "training",
+      "hz": 60,
+      "status": "escortclear",
+      "seconds": 68.02,
+      "shield": 94.5,
+      "transports": [
+        98.8,
+        97,
+        98.8
+      ],
+      "monsters": 3,
+      "contacts": 1,
+      "repelled": 1,
+      "peak": 1
+    },
+    {
+      "stage": 1,
+      "mode": "training",
+      "hz": 60,
+      "status": "escortclear",
+      "seconds": 86.17,
+      "shield": 100,
+      "transports": [
+        98.8,
+        92.8,
+        90.99999999999999
+      ],
+      "monsters": 4,
+      "contacts": 0,
+      "repelled": 3,
+      "peak": 1
+    },
+    {
+      "stage": 2,
+      "mode": "training",
+      "hz": 60,
+      "status": "escortclear",
+      "seconds": 108.45,
+      "shield": 95.6,
+      "transports": [
+        82.6,
+        77.8,
+        95.19999999999999
+      ],
+      "monsters": 5,
+      "contacts": 1,
+      "repelled": 2,
+      "peak": 1
+    },
+    {
+      "stage": 0,
+      "mode": "combat",
+      "hz": 60,
+      "status": "escortclear",
+      "seconds": 68.02,
+      "shield": 76,
+      "transports": [
+        88,
+        57,
+        78
+      ],
+      "monsters": 3,
+      "contacts": 1,
+      "repelled": 0,
+      "peak": 1
+    },
+    {
+      "stage": 1,
+      "mode": "combat",
+      "hz": 60,
+      "status": "escortclear",
+      "seconds": 86.18,
+      "shield": 74.4,
+      "transports": [
+        77,
+        68,
+        0
+      ],
+      "monsters": 4,
+      "contacts": 0,
+      "repelled": 4,
+      "peak": 1
+    },
+    {
+      "stage": 2,
+      "mode": "combat",
+      "hz": 60,
+      "status": "escortclear",
+      "seconds": 108.5,
+      "shield": 55.19999999999999,
+      "transports": [
+        62,
+        0,
+        37
+      ],
+      "monsters": 5,
+      "contacts": 2,
+      "repelled": 2,
+      "peak": 1
+    },
+    {
+      "stage": 0,
+      "mode": "pro",
+      "hz": 60,
+      "status": "escortclear",
+      "seconds": 68.02,
+      "shield": 76,
+      "transports": [
+        88,
+        57,
+        78
+      ],
+      "monsters": 3,
+      "contacts": 1,
+      "repelled": 0,
+      "peak": 1
+    },
+    {
+      "stage": 1,
+      "mode": "pro",
+      "hz": 60,
+      "status": "escortclear",
+      "seconds": 86.18,
+      "shield": 74.4,
+      "transports": [
+        77,
+        68,
+        0
+      ],
+      "monsters": 4,
+      "contacts": 0,
+      "repelled": 4,
+      "peak": 1
+    },
+    {
+      "stage": 2,
+      "mode": "pro",
+      "hz": 60,
+      "status": "escortclear",
+      "seconds": 108.5,
+      "shield": 55.19999999999999,
+      "transports": [
+        62,
+        0,
+        37
+      ],
+      "monsters": 5,
+      "contacts": 2,
+      "repelled": 2,
+      "peak": 1
+    }
+  ],
+  "kinds": [
+    "hammer",
+    "tentacle",
+    "maw",
+    "mantis",
+    "medusa"
+  ],
+  "pass": true
+}

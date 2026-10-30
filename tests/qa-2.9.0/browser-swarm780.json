@@ -1,0 +1,334 @@
+{
+  "version": "2.9.0",
+  "config": {
+    "freeze": true,
+    "mode": "combat",
+    "scene": "swarm",
+    "accelerated": true,
+    "manual": false,
+    "holdQuestions": false
+  },
+  "education": {
+    "mode": "combat",
+    "quiz": true,
+    "current": null
+  },
+  "renderer": "3D · совместимый режим",
+  "mode": "combat",
+  "accelerated": true,
+  "rafInputCalls": 83,
+  "finished": null,
+  "status": "playing",
+  "level": 7,
+  "levels": [
+    7
+  ],
+  "cards": 0,
+  "wallSeconds": 80,
+  "simulatedSeconds": 3.02,
+  "frameCalls": 181,
+  "emitChanges": 0,
+  "maxInputGapMs": 7,
+  "metrics": {
+    "listeners": 69,
+    "peakListeners": 71,
+    "rafCalls": 88,
+    "rafDone": 85,
+    "rafPending": 1,
+    "rafPeak": 2,
+    "errors": [],
+    "heap": 21017644
+  },
+  "input": {
+    "version": "2.8.0",
+    "boundCanvases": 1,
+    "rightClicks": 0,
+    "active": false,
+    "pointerId": null,
+    "mode": "idle"
+  },
+  "player": {
+    "hp": 100,
+    "missiles": 8
+  },
+  "runtime": {
+    "version": "1.9.3",
+    "build": "193r2",
+    "frames": 83,
+    "updates": 83,
+    "renders": 83,
+    "recoveries": 0,
+    "failures": 0,
+    "stopped": false,
+    "contextLost": false,
+    "pending": true,
+    "stage": "idle",
+    "lastFrameAge": 628,
+    "lastUpdateAge": 628,
+    "lastRenderAge": 626,
+    "recoverySave": "none",
+    "faults": [],
+    "events": [
+      {
+        "at": 322,
+        "kind": "detach",
+        "status": "unknown",
+        "stage": null,
+        "phase": "other",
+        "finale": null,
+        "wave": null,
+        "seconds": null,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "webgl"
+      },
+      {
+        "at": 375,
+        "kind": "engine",
+        "status": "playing",
+        "stage": 2,
+        "phase": "swarm",
+        "finale": null,
+        "wave": 0,
+        "seconds": 0,
+        "mode": "normal",
+        "enemies": 8,
+        "renderer": "canvas"
+      },
+      {
+        "at": 393,
+        "kind": "transition",
+        "status": "playing",
+        "stage": 2,
+        "phase": "swarm",
+        "finale": null,
+        "wave": 0,
+        "seconds": 3.02,
+        "mode": "normal",
+        "enemies": 5,
+        "renderer": "canvas"
+      }
+    ]
+  },
+  "sound": {
+    "context": "uninitialized",
+    "loaded": 0,
+    "active": 0,
+    "cacheBytes": 0,
+    "played": {}
+  },
+  "voice": {
+    "busy": false,
+    "source": null
+  },
+  "swarm": {
+    "enemies": 5,
+    "hostile": 4
+  },
+  "base": {
+    "active": false,
+    "version": "2.7.0",
+    "legacy": false,
+    "tier": null,
+    "theme": null,
+    "stats": null,
+    "hazards": [],
+    "systems": [],
+    "transport": null,
+    "enemies": [],
+    "events": []
+  },
+  "samples": [
+    {
+      "wallSeconds": 10,
+      "gameSeconds": 3,
+      "level": 7,
+      "listeners": 69,
+      "heap": 35380161,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 22,
+      "gameSeconds": 3,
+      "level": 7,
+      "listeners": 69,
+      "heap": 20848444,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 34,
+      "gameSeconds": 3,
+      "level": 7,
+      "listeners": 69,
+      "heap": 21025108,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 44,
+      "gameSeconds": 3,
+      "level": 7,
+      "listeners": 69,
+      "heap": 21333296,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 56,
+      "gameSeconds": 3,
+      "level": 7,
+      "listeners": 69,
+      "heap": 21166196,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 68,
+      "gameSeconds": 3,
+      "level": 7,
+      "listeners": 69,
+      "heap": 20933040,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 80,
+      "gameSeconds": 3,
+      "level": 7,
+      "listeners": 69,
+      "heap": 21017644,
+      "rafPending": 1
+    }
+  ],
+  "transitions": [
+    {
+      "level": 7,
+      "status": "playing",
+      "phase": "swarm",
+      "finale": null,
+      "seconds": 0
+    }
+  ],
+  "presentation": {
+    "number": 7,
+    "name": "Рой уточнений",
+    "active": true,
+    "convoy": false,
+    "mrg": false,
+    "inside": false,
+    "guideOn": false,
+    "guideName": "Автокурс",
+    "guideVisible": false,
+    "pulseName": "ИМПУЛЬС",
+    "cooldown": 0,
+    "boostName": "ФОРСАЖ",
+    "help": "Джойстик — движение по арене. Стреляйте в строй и уклоняйтесь от пике. Импульс — в боевой панели справа; он помогает против близких снарядов."
+  },
+  "art": null,
+  "dom": {
+    "viewport": {
+      "w": 780,
+      "h": 430
+    },
+    "layout": {
+      "x": 0,
+      "y": 0,
+      "w": 780,
+      "h": 430,
+      "display": "block",
+      "visible": true,
+      "text": " ЦИТАДЕЛЬ ЦСИИ · БОЕВОЙУправлениеРекорды♫ вкл◖))×УРОВЕНЬ 7 · РОЙ УТОЧНЕНИЙВОЛНА1/6ПРОТИВНИКОВ5ПАКЕТЫ ФТ0/3УРОВЕНЬ 07 / 14Рой уточненийДжойстик — манёвр, «Огонь» — стрелять вверх. П",
+      "disabled": false
+    },
+    "canvas": {
+      "x": 0,
+      "y": 44,
+      "w": 780,
+      "h": 386,
+      "display": "block",
+      "visible": true,
+      "text": "",
+      "disabled": false
+    },
+    "header": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "display": "none",
+      "visible": false,
+      "text": "УРОВЕНЬ 07 / 14Рой уточненийДжойстик — манёвр, «Огонь» — стрелять вверх. ПКМ / Q — ракеты, E — импульс. Подбирайте снабжение и меняйте позицию.ВОЛНА 1/6 · ОСТАЛОСЬ 5 · ФТ 0/3Автоку",
+      "disabled": false
+    },
+    "route": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "display": "none",
+      "visible": false,
+      "text": "УРОВЕНЬ 7 · РОЙ УТОЧНЕНИЙВОЛНА1/6ПРОТИВНИКОВ5ПАКЕТЫ ФТ0/3",
+      "disabled": false
+    },
+    "defense": {
+      "x": 684,
+      "y": 322,
+      "w": 82,
+      "h": 58,
+      "display": "flex",
+      "visible": true,
+      "text": "ИМПУЛЬС\nГОТОВ",
+      "disabled": false
+    },
+    "cover": null,
+    "boost": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "display": "none",
+      "visible": false,
+      "text": "ФОРСАЖ",
+      "disabled": false
+    },
+    "buttons": [
+      {
+        "x": 592,
+        "y": 254,
+        "w": 82,
+        "h": 58,
+        "display": "flex",
+        "visible": true,
+        "text": "ОГОНЬ",
+        "disabled": false
+      },
+      {
+        "x": 684,
+        "y": 254,
+        "w": 82,
+        "h": 58,
+        "display": "flex",
+        "visible": true,
+        "text": "РАКЕТА",
+        "disabled": false
+      },
+      {
+        "x": 684,
+        "y": 322,
+        "w": 82,
+        "h": 58,
+        "display": "flex",
+        "visible": true,
+        "text": "ИМПУЛЬС\nГОТОВ",
+        "disabled": false
+      },
+      {
+        "x": 684,
+        "y": 322,
+        "w": 82,
+        "h": 58,
+        "display": "block",
+        "visible": true,
+        "text": "УВОРОТ",
+        "disabled": false
+      }
+    ],
+    "horizontalOverflow": false
+  }
+}

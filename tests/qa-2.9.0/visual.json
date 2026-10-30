@@ -1,0 +1,74 @@
+{
+  "method": "Production functions in Node VM and native Canvas, explicit scene fixtures. Not a physical device or browser FPS test.",
+  "frames": [
+    {
+      "name": "orbit",
+      "trianglesBefore": 42416,
+      "trianglesAfter": 44400,
+      "detailObjects": 37,
+      "canvasDrawMsBefore": 284.08,
+      "canvasDrawMsAfter": 290.82
+    },
+    {
+      "name": "convoy",
+      "trianglesBefore": 9588,
+      "trianglesAfter": 24350,
+      "detailObjects": 90,
+      "canvasDrawMsBefore": 204.56,
+      "canvasDrawMsAfter": 352.17
+    },
+    {
+      "name": "pursuit",
+      "trianglesBefore": 17880,
+      "trianglesAfter": 22348,
+      "detailObjects": 15,
+      "canvasDrawMsBefore": 768.49,
+      "canvasDrawMsAfter": 881.41
+    },
+    {
+      "name": "base",
+      "trianglesBefore": 12696,
+      "trianglesAfter": 15664,
+      "detailObjects": 34,
+      "canvasDrawMsBefore": 84.7,
+      "canvasDrawMsAfter": 111.69
+    },
+    {
+      "name": "swarm",
+      "trianglesBefore": 0,
+      "trianglesAfter": 0,
+      "detailObjects": 0,
+      "canvasDrawMsBefore": 3.65,
+      "canvasDrawMsAfter": 4.83
+    },
+    {
+      "name": "mrg",
+      "trianglesBefore": 74704,
+      "trianglesAfter": 77428,
+      "detailObjects": 21,
+      "canvasDrawMsBefore": 577.47,
+      "canvasDrawMsAfter": 591.95
+    },
+    {
+      "name": "parallax",
+      "trianglesBefore": 29176,
+      "trianglesAfter": 32700,
+      "detailObjects": 44,
+      "canvasDrawMsBefore": 160.03,
+      "canvasDrawMsAfter": 181.68
+    }
+  ],
+  "checks": [
+    "7 scene fixtures visibly change",
+    "640 landscape, 390 portrait, 780 and 1280 widths; effects off",
+    "render does not mutate saves",
+    "finite transforms",
+    "90 repeated builds per scene without mesh growth",
+    "idempotent graphics module"
+  ],
+  "cache": {
+    "templates": 22,
+    "architecture": 2,
+    "fleets": 1
+  }
+}
