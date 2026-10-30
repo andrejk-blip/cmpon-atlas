@@ -1,0 +1,258 @@
+{
+  "baseline": "2c007716",
+  "pass": true,
+  "checks": [
+    {
+      "level": 1,
+      "mode": "training",
+      "pass": true,
+      "exact": true
+    },
+    {
+      "level": 2,
+      "mode": "training",
+      "pass": true,
+      "exact": true
+    },
+    {
+      "level": 3,
+      "mode": "training",
+      "pass": true,
+      "exact": true
+    },
+    {
+      "level": 4,
+      "mode": "training",
+      "pass": true,
+      "exact": true
+    },
+    {
+      "level": 5,
+      "mode": "training",
+      "pass": true,
+      "exact": true
+    },
+    {
+      "level": 6,
+      "mode": "training",
+      "pass": true,
+      "exact": true
+    },
+    {
+      "level": 7,
+      "mode": "training",
+      "pass": true,
+      "exact": true
+    },
+    {
+      "level": 8,
+      "mode": "training",
+      "pass": true,
+      "exact": true
+    },
+    {
+      "level": 9,
+      "mode": "training",
+      "pass": true,
+      "exact": true
+    },
+    {
+      "level": 10,
+      "mode": "training",
+      "pass": true,
+      "exact": true
+    },
+    {
+      "level": 11,
+      "mode": "training",
+      "pass": true,
+      "exact": true
+    },
+    {
+      "level": 12,
+      "mode": "training",
+      "pass": true,
+      "exact": true
+    },
+    {
+      "level": 13,
+      "mode": "training",
+      "pass": true,
+      "exact": true
+    },
+    {
+      "level": 14,
+      "mode": "training",
+      "pass": true,
+      "exact": true
+    },
+    {
+      "level": 1,
+      "mode": "combat",
+      "pass": true,
+      "exact": true
+    },
+    {
+      "level": 2,
+      "mode": "combat",
+      "pass": true,
+      "exact": true
+    },
+    {
+      "level": 3,
+      "mode": "combat",
+      "pass": true,
+      "exact": true
+    },
+    {
+      "level": 4,
+      "mode": "combat",
+      "pass": true,
+      "exact": true
+    },
+    {
+      "level": 5,
+      "mode": "combat",
+      "pass": true,
+      "exact": true
+    },
+    {
+      "level": 6,
+      "mode": "combat",
+      "pass": true,
+      "exact": true
+    },
+    {
+      "level": 7,
+      "mode": "combat",
+      "pass": true,
+      "migrated": true
+    },
+    {
+      "level": 8,
+      "mode": "combat",
+      "pass": true,
+      "exact": true
+    },
+    {
+      "level": 9,
+      "mode": "combat",
+      "pass": true,
+      "exact": true
+    },
+    {
+      "level": 10,
+      "mode": "combat",
+      "pass": true,
+      "exact": true
+    },
+    {
+      "level": 11,
+      "mode": "combat",
+      "pass": true,
+      "exact": true
+    },
+    {
+      "level": 12,
+      "mode": "combat",
+      "pass": true,
+      "exact": true
+    },
+    {
+      "level": 13,
+      "mode": "combat",
+      "pass": true,
+      "exact": true
+    },
+    {
+      "level": 14,
+      "mode": "combat",
+      "pass": true,
+      "exact": true
+    },
+    {
+      "level": 1,
+      "mode": "pro",
+      "pass": true,
+      "exact": true
+    },
+    {
+      "level": 2,
+      "mode": "pro",
+      "pass": true,
+      "exact": true
+    },
+    {
+      "level": 3,
+      "mode": "pro",
+      "pass": true,
+      "exact": true
+    },
+    {
+      "level": 4,
+      "mode": "pro",
+      "pass": true,
+      "exact": true
+    },
+    {
+      "level": 5,
+      "mode": "pro",
+      "pass": true,
+      "exact": true
+    },
+    {
+      "level": 6,
+      "mode": "pro",
+      "pass": true,
+      "exact": true
+    },
+    {
+      "level": 7,
+      "mode": "pro",
+      "pass": true,
+      "migrated": true
+    },
+    {
+      "level": 8,
+      "mode": "pro",
+      "pass": true,
+      "exact": true
+    },
+    {
+      "level": 9,
+      "mode": "pro",
+      "pass": true,
+      "exact": true
+    },
+    {
+      "level": 10,
+      "mode": "pro",
+      "pass": true,
+      "exact": true
+    },
+    {
+      "level": 11,
+      "mode": "pro",
+      "pass": true,
+      "exact": true
+    },
+    {
+      "level": 12,
+      "mode": "pro",
+      "pass": true,
+      "exact": true
+    },
+    {
+      "level": 13,
+      "mode": "pro",
+      "pass": true,
+      "exact": true
+    },
+    {
+      "level": 14,
+      "mode": "pro",
+      "pass": true,
+      "exact": true
+    }
+  ]
+}

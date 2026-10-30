@@ -1,0 +1,48 @@
+{
+  "method": "Native Canvas production renderer and naturally reached wave 4. Enlarged art contact sheet is an explicit visual fixture, not gameplay. No device FPS claim.",
+  "frames": [
+    {
+      "name": "swarm-1280.png",
+      "w": 1280,
+      "he": 720,
+      "fx": true,
+      "enemies": 62
+    },
+    {
+      "name": "swarm-640.png",
+      "w": 640,
+      "he": 360,
+      "fx": true,
+      "enemies": 62
+    },
+    {
+      "name": "swarm-390.png",
+      "w": 390,
+      "he": 640,
+      "fx": true,
+      "enemies": 62
+    },
+    {
+      "name": "swarm-640-fx-off.png",
+      "w": 640,
+      "he": 360,
+      "fx": false,
+      "enemies": 62
+    }
+  ],
+  "cache": {
+    "tiles": 28,
+    "maxTiles": 28,
+    "bytes": 3325952,
+    "supplies": 3,
+    "retainedEffects": 0
+  },
+  "checks": [
+    "real supply rotation",
+    "read-only rendering",
+    "bounded 28-tile cache",
+    "idempotence",
+    "effects-off ordnance",
+    "portrait and landscape"
+  ]
+}

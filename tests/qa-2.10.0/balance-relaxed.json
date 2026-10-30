@@ -1,0 +1,637 @@
+{
+  "profile": "relaxed",
+  "baseline": "2c007716b5ffc6ba6103bf4e4c7bd99148d6ed2d",
+  "method": "Ordinary joystick input via the current full entry; fixed controller and entry loadouts, no health/ammo/position/victory overrides during flights. Reaction is a model, not a human success probability.",
+  "runs": [
+    {
+      "seed": 417147,
+      "reaction": 0.25,
+      "hz": 60,
+      "mode": "combat",
+      "gear": "standard",
+      "control": "pilot",
+      "complete": true,
+      "status": "lesson",
+      "seconds": 141.8,
+      "wave": 6,
+      "kills": 248,
+      "hp": 100,
+      "minHp": 86.2,
+      "peakHostile": 50,
+      "peakDivers": 4,
+      "maxBurst2s": 13.8,
+      "hits": 1,
+      "damage": 13.8,
+      "waves": [
+        {
+          "wave": 1,
+          "count": 8,
+          "hp": 100,
+          "time": 0
+        },
+        {
+          "wave": 2,
+          "count": 16,
+          "hp": 100,
+          "time": 10
+        },
+        {
+          "wave": 3,
+          "count": 32,
+          "hp": 100,
+          "time": 21.68
+        },
+        {
+          "wave": 4,
+          "count": 64,
+          "hp": 100,
+          "time": 41.22
+        },
+        {
+          "wave": 5,
+          "count": 64,
+          "hp": 100,
+          "time": 72.22
+        },
+        {
+          "wave": 6,
+          "count": 64,
+          "hp": 86.2016,
+          "time": 102.48
+        }
+      ],
+      "drops": {
+        "repair": 4,
+        "missiles": 4,
+        "overdrive": 5
+      }
+    },
+    {
+      "seed": 819337,
+      "reaction": 0.25,
+      "hz": 60,
+      "mode": "combat",
+      "gear": "standard",
+      "control": "pilot",
+      "complete": true,
+      "status": "lesson",
+      "seconds": 141.68,
+      "wave": 6,
+      "kills": 248,
+      "hp": 100,
+      "minHp": 86.2,
+      "peakHostile": 49,
+      "peakDivers": 4,
+      "maxBurst2s": 13.8,
+      "hits": 1,
+      "damage": 13.8,
+      "waves": [
+        {
+          "wave": 1,
+          "count": 8,
+          "hp": 100,
+          "time": 0
+        },
+        {
+          "wave": 2,
+          "count": 16,
+          "hp": 100,
+          "time": 8.5
+        },
+        {
+          "wave": 3,
+          "count": 32,
+          "hp": 100,
+          "time": 20.23
+        },
+        {
+          "wave": 4,
+          "count": 64,
+          "hp": 100,
+          "time": 39.17
+        },
+        {
+          "wave": 5,
+          "count": 64,
+          "hp": 100,
+          "time": 69.97
+        },
+        {
+          "wave": 6,
+          "count": 64,
+          "hp": 100,
+          "time": 105.4
+        }
+      ],
+      "drops": {
+        "repair": 4,
+        "missiles": 5,
+        "overdrive": 3
+      }
+    },
+    {
+      "seed": 260030,
+      "reaction": 0.25,
+      "hz": 60,
+      "mode": "combat",
+      "gear": "standard",
+      "control": "pilot",
+      "complete": true,
+      "status": "lesson",
+      "seconds": 141.48,
+      "wave": 6,
+      "kills": 248,
+      "hp": 76,
+      "minHp": 66,
+      "peakHostile": 50,
+      "peakDivers": 4,
+      "maxBurst2s": 19.2,
+      "hits": 3,
+      "damage": 47.8,
+      "waves": [
+        {
+          "wave": 1,
+          "count": 8,
+          "hp": 100,
+          "time": 0
+        },
+        {
+          "wave": 2,
+          "count": 16,
+          "hp": 100,
+          "time": 9.78
+        },
+        {
+          "wave": 3,
+          "count": 32,
+          "hp": 100,
+          "time": 21.85
+        },
+        {
+          "wave": 4,
+          "count": 64,
+          "hp": 100,
+          "time": 36.6
+        },
+        {
+          "wave": 5,
+          "count": 64,
+          "hp": 100,
+          "time": 67.8
+        },
+        {
+          "wave": 6,
+          "count": 64,
+          "hp": 86.2016,
+          "time": 108.2
+        }
+      ],
+      "drops": {
+        "repair": 2,
+        "missiles": 4,
+        "overdrive": 4
+      }
+    },
+    {
+      "seed": 905117,
+      "reaction": 0.25,
+      "hz": 60,
+      "mode": "combat",
+      "gear": "standard",
+      "control": "pilot",
+      "complete": true,
+      "status": "lesson",
+      "seconds": 135.68,
+      "wave": 6,
+      "kills": 248,
+      "hp": 95.2,
+      "minHp": 85.2,
+      "peakHostile": 53,
+      "peakDivers": 4,
+      "maxBurst2s": 14.8,
+      "hits": 1,
+      "damage": 14.8,
+      "waves": [
+        {
+          "wave": 1,
+          "count": 8,
+          "hp": 100,
+          "time": 0
+        },
+        {
+          "wave": 2,
+          "count": 16,
+          "hp": 100,
+          "time": 9.58
+        },
+        {
+          "wave": 3,
+          "count": 32,
+          "hp": 100,
+          "time": 21.33
+        },
+        {
+          "wave": 4,
+          "count": 64,
+          "hp": 100,
+          "time": 38.23
+        },
+        {
+          "wave": 5,
+          "count": 64,
+          "hp": 100,
+          "time": 67.65
+        },
+        {
+          "wave": 6,
+          "count": 64,
+          "hp": 100,
+          "time": 101.03
+        }
+      ],
+      "drops": {
+        "repair": 4,
+        "missiles": 6,
+        "overdrive": 5
+      }
+    },
+    {
+      "seed": 417147,
+      "reaction": 0.4,
+      "hz": 60,
+      "mode": "combat",
+      "gear": "standard",
+      "control": "pilot",
+      "complete": true,
+      "status": "lesson",
+      "seconds": 148.95,
+      "wave": 6,
+      "kills": 248,
+      "hp": 100,
+      "minHp": 100,
+      "peakHostile": 45,
+      "peakDivers": 4,
+      "maxBurst2s": 0,
+      "hits": 0,
+      "damage": 0,
+      "waves": [
+        {
+          "wave": 1,
+          "count": 8,
+          "hp": 100,
+          "time": 0
+        },
+        {
+          "wave": 2,
+          "count": 16,
+          "hp": 100,
+          "time": 10.22
+        },
+        {
+          "wave": 3,
+          "count": 32,
+          "hp": 100,
+          "time": 21.47
+        },
+        {
+          "wave": 4,
+          "count": 64,
+          "hp": 100,
+          "time": 41.9
+        },
+        {
+          "wave": 5,
+          "count": 64,
+          "hp": 100,
+          "time": 75.88
+        },
+        {
+          "wave": 6,
+          "count": 64,
+          "hp": 100,
+          "time": 110.32
+        }
+      ],
+      "drops": {
+        "repair": 2,
+        "missiles": 4,
+        "overdrive": 3
+      }
+    },
+    {
+      "seed": 819337,
+      "reaction": 0.4,
+      "hz": 60,
+      "mode": "combat",
+      "gear": "standard",
+      "control": "pilot",
+      "complete": true,
+      "status": "lesson",
+      "seconds": 150.22,
+      "wave": 6,
+      "kills": 248,
+      "hp": 100,
+      "minHp": 100,
+      "peakHostile": 52,
+      "peakDivers": 4,
+      "maxBurst2s": 0,
+      "hits": 0,
+      "damage": 0,
+      "waves": [
+        {
+          "wave": 1,
+          "count": 8,
+          "hp": 100,
+          "time": 0
+        },
+        {
+          "wave": 2,
+          "count": 16,
+          "hp": 100,
+          "time": 10.22
+        },
+        {
+          "wave": 3,
+          "count": 32,
+          "hp": 100,
+          "time": 21.53
+        },
+        {
+          "wave": 4,
+          "count": 64,
+          "hp": 100,
+          "time": 40.7
+        },
+        {
+          "wave": 5,
+          "count": 64,
+          "hp": 100,
+          "time": 77.38
+        },
+        {
+          "wave": 6,
+          "count": 64,
+          "hp": 100,
+          "time": 111.48
+        }
+      ],
+      "drops": {
+        "repair": 0,
+        "missiles": 2,
+        "overdrive": 1
+      }
+    },
+    {
+      "seed": 260030,
+      "reaction": 0.4,
+      "hz": 60,
+      "mode": "combat",
+      "gear": "standard",
+      "control": "pilot",
+      "complete": true,
+      "status": "lesson",
+      "seconds": 143.17,
+      "wave": 6,
+      "kills": 248,
+      "hp": 95.2,
+      "minHp": 85.2,
+      "peakHostile": 47,
+      "peakDivers": 4,
+      "maxBurst2s": 14.8,
+      "hits": 2,
+      "damage": 27.6,
+      "waves": [
+        {
+          "wave": 1,
+          "count": 8,
+          "hp": 100,
+          "time": 0
+        },
+        {
+          "wave": 2,
+          "count": 16,
+          "hp": 100,
+          "time": 8.87
+        },
+        {
+          "wave": 3,
+          "count": 32,
+          "hp": 100,
+          "time": 21.05
+        },
+        {
+          "wave": 4,
+          "count": 64,
+          "hp": 100,
+          "time": 38.68
+        },
+        {
+          "wave": 5,
+          "count": 64,
+          "hp": 97.1872,
+          "time": 71.65
+        },
+        {
+          "wave": 6,
+          "count": 64,
+          "hp": 97.1872,
+          "time": 100.82
+        }
+      ],
+      "drops": {
+        "repair": 1,
+        "missiles": 6,
+        "overdrive": 4
+      }
+    },
+    {
+      "seed": 905117,
+      "reaction": 0.4,
+      "hz": 60,
+      "mode": "combat",
+      "gear": "standard",
+      "control": "pilot",
+      "complete": true,
+      "status": "lesson",
+      "seconds": 138.2,
+      "wave": 6,
+      "kills": 248,
+      "hp": 100,
+      "minHp": 100,
+      "peakHostile": 46,
+      "peakDivers": 4,
+      "maxBurst2s": 0,
+      "hits": 0,
+      "damage": 0,
+      "waves": [
+        {
+          "wave": 1,
+          "count": 8,
+          "hp": 100,
+          "time": 0
+        },
+        {
+          "wave": 2,
+          "count": 16,
+          "hp": 100,
+          "time": 9.37
+        },
+        {
+          "wave": 3,
+          "count": 32,
+          "hp": 100,
+          "time": 22.2
+        },
+        {
+          "wave": 4,
+          "count": 64,
+          "hp": 100,
+          "time": 41.1
+        },
+        {
+          "wave": 5,
+          "count": 64,
+          "hp": 100,
+          "time": 73.33
+        },
+        {
+          "wave": 6,
+          "count": 64,
+          "hp": 100,
+          "time": 101.9
+        }
+      ],
+      "drops": {
+        "repair": 1,
+        "missiles": 2,
+        "overdrive": 3
+      }
+    },
+    {
+      "seed": 417147,
+      "reaction": 0.35,
+      "hz": 60,
+      "mode": "combat",
+      "gear": "none",
+      "control": "pilot",
+      "complete": true,
+      "status": "lesson",
+      "seconds": 159.72,
+      "wave": 6,
+      "kills": 248,
+      "hp": 100,
+      "minHp": 100,
+      "peakHostile": 49,
+      "peakDivers": 4,
+      "maxBurst2s": 0,
+      "hits": 0,
+      "damage": 0,
+      "waves": [
+        {
+          "wave": 1,
+          "count": 8,
+          "hp": 100,
+          "time": 0
+        },
+        {
+          "wave": 2,
+          "count": 16,
+          "hp": 100,
+          "time": 9.67
+        },
+        {
+          "wave": 3,
+          "count": 32,
+          "hp": 100,
+          "time": 24.1
+        },
+        {
+          "wave": 4,
+          "count": 64,
+          "hp": 100,
+          "time": 45.92
+        },
+        {
+          "wave": 5,
+          "count": 64,
+          "hp": 100,
+          "time": 90.02
+        },
+        {
+          "wave": 6,
+          "count": 64,
+          "hp": 100,
+          "time": 122.8
+        }
+      ],
+      "drops": {
+        "repair": 0,
+        "missiles": 6,
+        "overdrive": 2
+      }
+    },
+    {
+      "seed": 819337,
+      "reaction": 0.35,
+      "hz": 60,
+      "mode": "combat",
+      "gear": "none",
+      "control": "pilot",
+      "complete": true,
+      "status": "lesson",
+      "seconds": 165.5,
+      "wave": 6,
+      "kills": 248,
+      "hp": 73,
+      "minHp": 63,
+      "peakHostile": 44,
+      "peakDivers": 4,
+      "maxBurst2s": 18.5,
+      "hits": 2,
+      "damage": 37,
+      "waves": [
+        {
+          "wave": 1,
+          "count": 8,
+          "hp": 100,
+          "time": 0
+        },
+        {
+          "wave": 2,
+          "count": 16,
+          "hp": 100,
+          "time": 10.28
+        },
+        {
+          "wave": 3,
+          "count": 32,
+          "hp": 100,
+          "time": 24.88
+        },
+        {
+          "wave": 4,
+          "count": 64,
+          "hp": 100,
+          "time": 45.83
+        },
+        {
+          "wave": 5,
+          "count": 64,
+          "hp": 100,
+          "time": 85.8
+        },
+        {
+          "wave": 6,
+          "count": 64,
+          "hp": 100,
+          "time": 117.25
+        }
+      ],
+      "drops": {
+        "repair": 4,
+        "missiles": 4,
+        "overdrive": 4
+      }
+    }
+  ]
+}

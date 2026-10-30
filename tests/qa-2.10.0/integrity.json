@@ -1,0 +1,522 @@
+{
+  "pass": true,
+  "passed": 51,
+  "failed": 0,
+  "rows": [
+    {
+      "name": "training-local-reload-question-feedback-record-isolation",
+      "pass": true,
+      "quizId": "quiz270-01-goal",
+      "score": 5868,
+      "recordCategory": "training",
+      "postRequests": 0
+    },
+    {
+      "name": "combat-local-reload-question-feedback-record-isolation",
+      "pass": true,
+      "quizId": "quiz270-01-goal",
+      "score": 6443,
+      "recordCategory": "combat",
+      "postRequests": 0
+    },
+    {
+      "name": "leaving-pro-local-session-preserves-its-save",
+      "pass": true,
+      "preservedKey": "cmpon.citadel.local.v1"
+    },
+    {
+      "name": "training-stage-three-retries",
+      "pass": true,
+      "retries": [
+        {
+          "score": 0,
+          "count": 0,
+          "phase": "orientation",
+          "status": "briefing"
+        },
+        {
+          "score": 0,
+          "count": 0,
+          "phase": "orientation",
+          "status": "briefing"
+        },
+        {
+          "score": 0,
+          "count": 0,
+          "phase": "orientation",
+          "status": "briefing"
+        }
+      ],
+      "earnedWalkFrames": 0,
+      "method": "Earned educational checkpoint followed by explicit retry actions; no enemy/player HP writes."
+    },
+    {
+      "name": "training-escort-three-retries",
+      "pass": true,
+      "retries": [
+        {
+          "score": 9840,
+          "count": 5,
+          "phase": "escort",
+          "status": "escortbrief"
+        },
+        {
+          "score": 9840,
+          "count": 5,
+          "phase": "escort",
+          "status": "escortbrief"
+        },
+        {
+          "score": 9840,
+          "count": 5,
+          "phase": "escort",
+          "status": "escortbrief"
+        }
+      ],
+      "earnedWalkFrames": 82,
+      "method": "Earned last base-card snapshot, ordinary answer/exit movement/upgrade then explicit retry actions."
+    },
+    {
+      "name": "training-finale-three-retries",
+      "pass": true,
+      "retries": [
+        {
+          "score": 82382,
+          "count": 20,
+          "phase": "boarding",
+          "status": "boarding"
+        },
+        {
+          "score": 82382,
+          "count": 20,
+          "phase": "boarding",
+          "status": "boarding"
+        },
+        {
+          "score": 82382,
+          "count": 20,
+          "phase": "boarding",
+          "status": "boarding"
+        }
+      ],
+      "earnedWalkFrames": 0,
+      "method": "Earned educational checkpoint followed by explicit retry actions; no enemy/player HP writes."
+    },
+    {
+      "name": "combat-stage-three-retries",
+      "pass": true,
+      "retries": [
+        {
+          "score": 0,
+          "count": 0,
+          "phase": "orientation",
+          "status": "briefing"
+        },
+        {
+          "score": 0,
+          "count": 0,
+          "phase": "orientation",
+          "status": "briefing"
+        },
+        {
+          "score": 0,
+          "count": 0,
+          "phase": "orientation",
+          "status": "briefing"
+        }
+      ],
+      "earnedWalkFrames": 0,
+      "method": "Earned educational checkpoint followed by explicit retry actions; no enemy/player HP writes."
+    },
+    {
+      "name": "combat-escort-three-retries",
+      "pass": true,
+      "retries": [
+        {
+          "score": 10688,
+          "count": 5,
+          "phase": "escort",
+          "status": "escortbrief"
+        },
+        {
+          "score": 10688,
+          "count": 5,
+          "phase": "escort",
+          "status": "escortbrief"
+        },
+        {
+          "score": 10688,
+          "count": 5,
+          "phase": "escort",
+          "status": "escortbrief"
+        }
+      ],
+      "earnedWalkFrames": 87,
+      "method": "Earned last base-card snapshot, ordinary answer/exit movement/upgrade then explicit retry actions."
+    },
+    {
+      "name": "combat-finale-three-retries",
+      "pass": true,
+      "retries": [
+        {
+          "score": 101636,
+          "count": 20,
+          "phase": "boarding",
+          "status": "boarding"
+        },
+        {
+          "score": 101636,
+          "count": 20,
+          "phase": "boarding",
+          "status": "boarding"
+        },
+        {
+          "score": 101636,
+          "count": 20,
+          "phase": "boarding",
+          "status": "boarding"
+        }
+      ],
+      "earnedWalkFrames": 0,
+      "method": "Earned educational checkpoint followed by explicit retry actions; no enemy/player HP writes."
+    },
+    {
+      "name": "training-1-pause-save-continuation",
+      "pass": true,
+      "level": 1,
+      "mode": "training",
+      "continuedSeconds": 1,
+      "method": "Direct level entry fixture, then ordinary inputs; not a campaign."
+    },
+    {
+      "name": "training-2-pause-save-continuation",
+      "pass": true,
+      "level": 2,
+      "mode": "training",
+      "continuedSeconds": 1,
+      "method": "Direct level entry fixture, then ordinary inputs; not a campaign."
+    },
+    {
+      "name": "training-3-pause-save-continuation",
+      "pass": true,
+      "level": 3,
+      "mode": "training",
+      "continuedSeconds": 1,
+      "method": "Direct level entry fixture, then ordinary inputs; not a campaign."
+    },
+    {
+      "name": "training-4-pause-save-continuation",
+      "pass": true,
+      "level": 4,
+      "mode": "training",
+      "continuedSeconds": 1,
+      "method": "Direct level entry fixture, then ordinary inputs; not a campaign."
+    },
+    {
+      "name": "training-5-pause-save-continuation",
+      "pass": true,
+      "level": 5,
+      "mode": "training",
+      "continuedSeconds": 1,
+      "method": "Direct level entry fixture, then ordinary inputs; not a campaign."
+    },
+    {
+      "name": "training-6-pause-save-continuation",
+      "pass": true,
+      "level": 6,
+      "mode": "training",
+      "continuedSeconds": 1,
+      "method": "Direct level entry fixture, then ordinary inputs; not a campaign."
+    },
+    {
+      "name": "training-7-pause-save-continuation",
+      "pass": true,
+      "level": 7,
+      "mode": "training",
+      "continuedSeconds": 1,
+      "method": "Direct level entry fixture, then ordinary inputs; not a campaign."
+    },
+    {
+      "name": "training-8-pause-save-continuation",
+      "pass": true,
+      "level": 8,
+      "mode": "training",
+      "continuedSeconds": 1,
+      "method": "Direct level entry fixture, then ordinary inputs; not a campaign."
+    },
+    {
+      "name": "training-9-pause-save-continuation",
+      "pass": true,
+      "level": 9,
+      "mode": "training",
+      "continuedSeconds": 1,
+      "method": "Direct level entry fixture, then ordinary inputs; not a campaign."
+    },
+    {
+      "name": "training-10-pause-save-continuation",
+      "pass": true,
+      "level": 10,
+      "mode": "training",
+      "continuedSeconds": 1,
+      "method": "Direct level entry fixture, then ordinary inputs; not a campaign."
+    },
+    {
+      "name": "training-11-pause-save-continuation",
+      "pass": true,
+      "level": 11,
+      "mode": "training",
+      "continuedSeconds": 1,
+      "method": "Direct level entry fixture, then ordinary inputs; not a campaign."
+    },
+    {
+      "name": "training-12-pause-save-continuation",
+      "pass": true,
+      "level": 12,
+      "mode": "training",
+      "continuedSeconds": 1,
+      "method": "Direct level entry fixture, then ordinary inputs; not a campaign."
+    },
+    {
+      "name": "training-13-pause-save-continuation",
+      "pass": true,
+      "level": 13,
+      "mode": "training",
+      "continuedSeconds": 1,
+      "method": "Direct level entry fixture, then ordinary inputs; not a campaign."
+    },
+    {
+      "name": "training-14-pause-save-continuation",
+      "pass": true,
+      "level": 14,
+      "mode": "training",
+      "continuedSeconds": 1,
+      "method": "Direct level entry fixture, then ordinary inputs; not a campaign."
+    },
+    {
+      "name": "combat-1-pause-save-continuation",
+      "pass": true,
+      "level": 1,
+      "mode": "combat",
+      "continuedSeconds": 1,
+      "method": "Direct level entry fixture, then ordinary inputs; not a campaign."
+    },
+    {
+      "name": "combat-2-pause-save-continuation",
+      "pass": true,
+      "level": 2,
+      "mode": "combat",
+      "continuedSeconds": 1,
+      "method": "Direct level entry fixture, then ordinary inputs; not a campaign."
+    },
+    {
+      "name": "combat-3-pause-save-continuation",
+      "pass": true,
+      "level": 3,
+      "mode": "combat",
+      "continuedSeconds": 1,
+      "method": "Direct level entry fixture, then ordinary inputs; not a campaign."
+    },
+    {
+      "name": "combat-4-pause-save-continuation",
+      "pass": true,
+      "level": 4,
+      "mode": "combat",
+      "continuedSeconds": 1,
+      "method": "Direct level entry fixture, then ordinary inputs; not a campaign."
+    },
+    {
+      "name": "combat-5-pause-save-continuation",
+      "pass": true,
+      "level": 5,
+      "mode": "combat",
+      "continuedSeconds": 1,
+      "method": "Direct level entry fixture, then ordinary inputs; not a campaign."
+    },
+    {
+      "name": "combat-6-pause-save-continuation",
+      "pass": true,
+      "level": 6,
+      "mode": "combat",
+      "continuedSeconds": 1,
+      "method": "Direct level entry fixture, then ordinary inputs; not a campaign."
+    },
+    {
+      "name": "combat-7-pause-save-continuation",
+      "pass": true,
+      "level": 7,
+      "mode": "combat",
+      "continuedSeconds": 1,
+      "method": "Direct level entry fixture, then ordinary inputs; not a campaign."
+    },
+    {
+      "name": "combat-8-pause-save-continuation",
+      "pass": true,
+      "level": 8,
+      "mode": "combat",
+      "continuedSeconds": 1,
+      "method": "Direct level entry fixture, then ordinary inputs; not a campaign."
+    },
+    {
+      "name": "combat-9-pause-save-continuation",
+      "pass": true,
+      "level": 9,
+      "mode": "combat",
+      "continuedSeconds": 1,
+      "method": "Direct level entry fixture, then ordinary inputs; not a campaign."
+    },
+    {
+      "name": "combat-10-pause-save-continuation",
+      "pass": true,
+      "level": 10,
+      "mode": "combat",
+      "continuedSeconds": 1,
+      "method": "Direct level entry fixture, then ordinary inputs; not a campaign."
+    },
+    {
+      "name": "combat-11-pause-save-continuation",
+      "pass": true,
+      "level": 11,
+      "mode": "combat",
+      "continuedSeconds": 1,
+      "method": "Direct level entry fixture, then ordinary inputs; not a campaign."
+    },
+    {
+      "name": "combat-12-pause-save-continuation",
+      "pass": true,
+      "level": 12,
+      "mode": "combat",
+      "continuedSeconds": 1,
+      "method": "Direct level entry fixture, then ordinary inputs; not a campaign."
+    },
+    {
+      "name": "combat-13-pause-save-continuation",
+      "pass": true,
+      "level": 13,
+      "mode": "combat",
+      "continuedSeconds": 1,
+      "method": "Direct level entry fixture, then ordinary inputs; not a campaign."
+    },
+    {
+      "name": "combat-14-pause-save-continuation",
+      "pass": true,
+      "level": 14,
+      "mode": "combat",
+      "continuedSeconds": 1,
+      "method": "Direct level entry fixture, then ordinary inputs; not a campaign."
+    },
+    {
+      "name": "pro-1-pause-save-continuation",
+      "pass": true,
+      "level": 1,
+      "mode": "pro",
+      "continuedSeconds": 1,
+      "method": "Direct level entry fixture, then ordinary inputs; not a campaign."
+    },
+    {
+      "name": "pro-2-pause-save-continuation",
+      "pass": true,
+      "level": 2,
+      "mode": "pro",
+      "continuedSeconds": 1,
+      "method": "Direct level entry fixture, then ordinary inputs; not a campaign."
+    },
+    {
+      "name": "pro-3-pause-save-continuation",
+      "pass": true,
+      "level": 3,
+      "mode": "pro",
+      "continuedSeconds": 1,
+      "method": "Direct level entry fixture, then ordinary inputs; not a campaign."
+    },
+    {
+      "name": "pro-4-pause-save-continuation",
+      "pass": true,
+      "level": 4,
+      "mode": "pro",
+      "continuedSeconds": 1,
+      "method": "Direct level entry fixture, then ordinary inputs; not a campaign."
+    },
+    {
+      "name": "pro-5-pause-save-continuation",
+      "pass": true,
+      "level": 5,
+      "mode": "pro",
+      "continuedSeconds": 1,
+      "method": "Direct level entry fixture, then ordinary inputs; not a campaign."
+    },
+    {
+      "name": "pro-6-pause-save-continuation",
+      "pass": true,
+      "level": 6,
+      "mode": "pro",
+      "continuedSeconds": 1,
+      "method": "Direct level entry fixture, then ordinary inputs; not a campaign."
+    },
+    {
+      "name": "pro-7-pause-save-continuation",
+      "pass": true,
+      "level": 7,
+      "mode": "pro",
+      "continuedSeconds": 1,
+      "method": "Direct level entry fixture, then ordinary inputs; not a campaign."
+    },
+    {
+      "name": "pro-8-pause-save-continuation",
+      "pass": true,
+      "level": 8,
+      "mode": "pro",
+      "continuedSeconds": 1,
+      "method": "Direct level entry fixture, then ordinary inputs; not a campaign."
+    },
+    {
+      "name": "pro-9-pause-save-continuation",
+      "pass": true,
+      "level": 9,
+      "mode": "pro",
+      "continuedSeconds": 1,
+      "method": "Direct level entry fixture, then ordinary inputs; not a campaign."
+    },
+    {
+      "name": "pro-10-pause-save-continuation",
+      "pass": true,
+      "level": 10,
+      "mode": "pro",
+      "continuedSeconds": 1,
+      "method": "Direct level entry fixture, then ordinary inputs; not a campaign."
+    },
+    {
+      "name": "pro-11-pause-save-continuation",
+      "pass": true,
+      "level": 11,
+      "mode": "pro",
+      "continuedSeconds": 1,
+      "method": "Direct level entry fixture, then ordinary inputs; not a campaign."
+    },
+    {
+      "name": "pro-12-pause-save-continuation",
+      "pass": true,
+      "level": 12,
+      "mode": "pro",
+      "continuedSeconds": 1,
+      "method": "Direct level entry fixture, then ordinary inputs; not a campaign."
+    },
+    {
+      "name": "pro-13-pause-save-continuation",
+      "pass": true,
+      "level": 13,
+      "mode": "pro",
+      "continuedSeconds": 1,
+      "method": "Direct level entry fixture, then ordinary inputs; not a campaign."
+    },
+    {
+      "name": "pro-14-pause-save-continuation",
+      "pass": true,
+      "level": 14,
+      "mode": "pro",
+      "continuedSeconds": 1,
+      "method": "Direct level entry fixture, then ordinary inputs; not a campaign."
+    }
+  ],
+  "failures": [],
+  "method": "Node VM, mock DOM/network, production save/restore and command routing. No browser/device timing claim."
+}

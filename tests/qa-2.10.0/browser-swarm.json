@@ -1,0 +1,355 @@
+{
+  "version": "2.10.0",
+  "config": {
+    "freeze": true,
+    "mode": "combat",
+    "scene": "swarm",
+    "accelerated": true,
+    "manual": false,
+    "holdQuestions": false
+  },
+  "education": {
+    "mode": "combat",
+    "quiz": true,
+    "current": null
+  },
+  "renderer": "3D · совместимый режим",
+  "mode": "combat",
+  "accelerated": true,
+  "rafInputCalls": 97,
+  "finished": null,
+  "status": "playing",
+  "level": 7,
+  "levels": [
+    7
+  ],
+  "cards": 0,
+  "wallSeconds": 90,
+  "simulatedSeconds": 51.17,
+  "frameCalls": 3063,
+  "emitChanges": 0,
+  "maxInputGapMs": 961,
+  "metrics": {
+    "listeners": 82,
+    "peakListeners": 82,
+    "rafCalls": 103,
+    "rafDone": 98,
+    "rafPending": 1,
+    "rafPeak": 2,
+    "errors": [],
+    "heap": 24628176
+  },
+  "input": {
+    "version": "2.8.0",
+    "boundCanvases": 1,
+    "rightClicks": 0,
+    "active": false,
+    "pointerId": null,
+    "mode": "idle"
+  },
+  "player": {
+    "hp": 100,
+    "missiles": 0
+  },
+  "runtime": {
+    "version": "1.9.3",
+    "build": "193r2",
+    "frames": 97,
+    "updates": 97,
+    "renders": 97,
+    "recoveries": 0,
+    "failures": 0,
+    "stopped": false,
+    "contextLost": false,
+    "pending": true,
+    "stage": "idle",
+    "lastFrameAge": 663,
+    "lastUpdateAge": 663,
+    "lastRenderAge": 662,
+    "recoverySave": "none",
+    "faults": [],
+    "events": [
+      {
+        "at": 641,
+        "kind": "detach",
+        "status": "unknown",
+        "stage": null,
+        "phase": "other",
+        "finale": null,
+        "wave": null,
+        "seconds": null,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "webgl"
+      },
+      {
+        "at": 917,
+        "kind": "engine",
+        "status": "playing",
+        "stage": 2,
+        "phase": "swarm",
+        "finale": null,
+        "wave": 0,
+        "seconds": 0,
+        "mode": "normal",
+        "enemies": 8,
+        "renderer": "canvas"
+      },
+      {
+        "at": 964,
+        "kind": "transition",
+        "status": "playing",
+        "stage": 2,
+        "phase": "swarm",
+        "finale": null,
+        "wave": 0,
+        "seconds": 10.02,
+        "mode": "normal",
+        "enemies": 0,
+        "renderer": "canvas"
+      }
+    ]
+  },
+  "sound": {
+    "context": "running",
+    "loaded": 16,
+    "active": 0,
+    "cacheBytes": 2046804,
+    "played": {
+      "missile": 3,
+      "shot": 5,
+      "robot-hit": 6,
+      "robot-death": 5
+    }
+  },
+  "voice": {
+    "busy": false,
+    "source": "recorded"
+  },
+  "swarm": {
+    "wave": 4,
+    "balance": "2.10.0",
+    "enemies": 62,
+    "hostile": 10
+  },
+  "base": {
+    "active": false,
+    "version": "2.7.0",
+    "legacy": false,
+    "tier": null,
+    "theme": null,
+    "stats": null,
+    "hazards": [],
+    "systems": [],
+    "transport": null,
+    "enemies": [],
+    "events": []
+  },
+  "samples": [
+    {
+      "wallSeconds": 10,
+      "gameSeconds": 51,
+      "level": 7,
+      "listeners": 69,
+      "heap": 27897163,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 20,
+      "gameSeconds": 51,
+      "level": 7,
+      "listeners": 69,
+      "heap": 33661710,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 32,
+      "gameSeconds": 51,
+      "level": 7,
+      "listeners": 69,
+      "heap": 23905778,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 44,
+      "gameSeconds": 51,
+      "level": 7,
+      "listeners": 69,
+      "heap": 23680526,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 56,
+      "gameSeconds": 51,
+      "level": 7,
+      "listeners": 69,
+      "heap": 23915866,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 66,
+      "gameSeconds": 51,
+      "level": 7,
+      "listeners": 69,
+      "heap": 24154102,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 78,
+      "gameSeconds": 51,
+      "level": 7,
+      "listeners": 82,
+      "heap": 24178404,
+      "rafPending": 1
+    },
+    {
+      "wallSeconds": 90,
+      "gameSeconds": 51,
+      "level": 7,
+      "listeners": 82,
+      "heap": 24628176,
+      "rafPending": 1
+    }
+  ],
+  "transitions": [
+    {
+      "level": 7,
+      "status": "playing",
+      "phase": "swarm",
+      "finale": null,
+      "seconds": 0
+    }
+  ],
+  "presentation": {
+    "number": 7,
+    "name": "Рой уточнений",
+    "active": true,
+    "convoy": false,
+    "mrg": false,
+    "inside": false,
+    "guideOn": false,
+    "guideName": "Автокурс",
+    "guideVisible": false,
+    "pulseName": "ИМПУЛЬС",
+    "cooldown": 0,
+    "boostName": "ФОРСАЖ",
+    "help": "Джойстик — движение по арене. Стреляйте в строй и уклоняйтесь от пике. Импульс — в боевой панели справа; он помогает против близких снарядов."
+  },
+  "art": {
+    "tiles": 13,
+    "maxTiles": 28,
+    "bytes": 1298432,
+    "supplies": 3,
+    "retainedEffects": 0
+  },
+  "dom": {
+    "viewport": {
+      "w": 640,
+      "h": 360
+    },
+    "layout": {
+      "x": 0,
+      "y": 0,
+      "w": 640,
+      "h": 360,
+      "display": "block",
+      "visible": true,
+      "text": " ЦИТАДЕЛЬ ЦСИИ · БОЕВОЙУправлениеРекорды♫ вкл◖))×УРОВЕНЬ 7 · РОЙ УТОЧНЕНИЙВОЛНА4/6ПРОТИВНИКОВ62ПАКЕТЫ ФТ1/3УРОВЕНЬ 07 / 14Рой уточненийДжойстик — манёвр, «Огонь» — стрелять вверх. ",
+      "disabled": false
+    },
+    "canvas": {
+      "x": 0,
+      "y": 44,
+      "w": 640,
+      "h": 316,
+      "display": "block",
+      "visible": true,
+      "text": "",
+      "disabled": false
+    },
+    "header": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "display": "none",
+      "visible": false,
+      "text": "УРОВЕНЬ 07 / 14Рой уточненийДжойстик — манёвр, «Огонь» — стрелять вверх. ПКМ / Q — ракеты, E — импульс. Подбирайте снабжение и меняйте позицию.ВОЛНА 4/6 · ОСТАЛОСЬ 62 · ФТ 1/3Авток",
+      "disabled": false
+    },
+    "route": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "display": "none",
+      "visible": false,
+      "text": "УРОВЕНЬ 7 · РОЙ УТОЧНЕНИЙВОЛНА4/6ПРОТИВНИКОВ62ПАКЕТЫ ФТ1/3",
+      "disabled": false
+    },
+    "defense": {
+      "x": 452,
+      "y": 252,
+      "w": 82,
+      "h": 58,
+      "display": "flex",
+      "visible": true,
+      "text": "ИМПУЛЬС\nГОТОВ",
+      "disabled": false
+    },
+    "cover": null,
+    "boost": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "display": "none",
+      "visible": false,
+      "text": "ФОРСАЖ",
+      "disabled": false
+    },
+    "buttons": [
+      {
+        "x": 452,
+        "y": 184,
+        "w": 82,
+        "h": 58,
+        "display": "flex",
+        "visible": true,
+        "text": "ОГОНЬ",
+        "disabled": false
+      },
+      {
+        "x": 544,
+        "y": 184,
+        "w": 82,
+        "h": 58,
+        "display": "flex",
+        "visible": true,
+        "text": "РАКЕТА",
+        "disabled": false
+      },
+      {
+        "x": 452,
+        "y": 252,
+        "w": 82,
+        "h": 58,
+        "display": "flex",
+        "visible": true,
+        "text": "ИМПУЛЬС\nГОТОВ",
+        "disabled": false
+      },
+      {
+        "x": 544,
+        "y": 252,
+        "w": 82,
+        "h": 58,
+        "display": "block",
+        "visible": true,
+        "text": "УВОРОТ",
+        "disabled": false
+      }
+    ],
+    "horizontalOverflow": false
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "method": "Node VM. Contracts use explicit fixtures. Four flights use ordinary steering/fire/missile and real card commands, no HP or victory edits. Not device/browser QA.",
+  "checks": [
+    "physical hit/miss",
+    "save + pause",
+    "moving appendage cannot tunnel",
+    "unkillable geometry",
+    "real damage + cooldown at 30/60 Hz",
+    "legacy entity keeps physical size",
+    "hostile projectile removes player shield in moving frame"
+  ],
+  "flights": [
+    {
+      "assist": false,
+      "Hz": 60,
+      "hp": 92.99000000000038,
+      "time": 163.9500000000226,
+      "warpHits": 2,
+      "seen": [
+        "hammer",
+        "tentacle",
+        "maw",
+        "mantis",
+        "medusa"
+      ],
+      "peakSegments": 58,
+      "progress": 100
+    },
+    {
+      "assist": false,
+      "Hz": 30,
+      "hp": 100,
+      "time": 163.23333333332664,
+      "warpHits": 1,
+      "seen": [
+        "hammer",
+        "tentacle",
+        "maw",
+        "mantis",
+        "medusa"
+      ],
+      "peakSegments": 58,
+      "progress": 100
+    },
+    {
+      "assist": true,
+      "Hz": 60,
+      "hp": 100,
+      "time": 124.6999999999942,
+      "warpHits": 1,
+      "seen": [
+        "hammer",
+        "tentacle",
+        "maw",
+        "mantis",
+        "medusa"
+      ],
+      "peakSegments": 58,
+      "progress": 100
+    },
+    {
+      "assist": true,
+      "Hz": 30,
+      "hp": 100,
+      "time": 124.76666666666215,
+      "warpHits": 1,
+      "seen": [
+        "hammer",
+        "tentacle",
+        "maw",
+        "mantis",
+        "medusa"
+      ],
+      "peakSegments": 58,
+      "progress": 100
+    }
+  ],
+  "sha": {
+    "assets/citadel-pursuit-v2.6.0.js": "f03dd574633ce3562a6bf3a5068291a17ade76f95c137deeb25e528c0a77bdf5",
+    "assets/citadel-pursuit-view-v2.6.0.js": "8958a6351fb735d5f72c5768de221a69e65ccddbecb00dc5a9f97b566f44f575"
+  }
+}

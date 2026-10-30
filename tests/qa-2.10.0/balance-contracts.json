@@ -1,0 +1,12 @@
+{
+  "pass": true,
+  "checks": [
+    "paused saves remain byte-identical",
+    "active 2.8/2.9 saves adopt easier attacks once",
+    "in-flight shot damage and speed retained",
+    "no health, kill or score reset",
+    "pre-tactics saves retain their rules",
+    "2-second safe wave entry"
+  ],
+  "inFlightShotsChecked": 5
+}
