@@ -1,7 +1,7 @@
 {
   "product": "ЦМПОН — атлас требований",
-  "version": "2.10.0",
-  "released_on": "2026-10-30",
+  "version": "2.11.0",
+  "released_on": "2026-10-31",
   "requirements_edition": "2.0.2 (ВСТЕ)",
   "requirements_as_of": "2026-10-14",
   "save_schema": "citadel-review-v3",
@@ -10,7 +10,7 @@
   "finale_save_schema": "citadel-finale-v1",
   "analytics_module_version": "0.1.0",
   "tournament_module_version": "1.1.0",
-  "index_sha256": "9180787679c330efda159310f8025dd89965387c6b64256e7f05e7b8386f8a18",
+  "index_sha256": "9d5dce0086f3530ba7a74ca2052243f5f0aa24cbe3f8aa459705e2a023bdeb0b",
   "offline_sha256": "754ccde3777ace0150d9b062461301ea9542f893c4f158ebc0ae7e07a3e8a2c3",
   "core_assets_version": "1.3.6",
   "soundtrack_module_version": "1.4.2",
@@ -326,6 +326,7 @@
     "assets/citadel-install-v2.7.0.js": "42fc03d340739e15b63a719165c3ff294cf287583ab44c50dbfa26ec7959eba5",
     "assets/citadel-skills-v2.8.0.js": "c19ed9a02d83167ce43d892f38172e81d2c2a6534885c818696b592ce64d5ced",
     "assets/citadel-detail-v2.9.0.js": "52b34e4dd11822262cf75439ef8e558922c6f99854f760bc9b4ccd90391a10c9",
+    "assets/citadel-parallax-v2.11.0.js": "7a73fb6e725c05e936cb286ff0dc6ece4fd0feb27e7ca6418461995ebbe46cc9",
     "assets/citadel-runtime-v1.9.3.js": "a026d1eb50252a37f01b7ad097e610252bccacc01f078d6ee75a3bf86e029a6e"
   },
   "base_rewards_sha256": "03556357ea6ecdbee4e39a20970b618e41116c9e56c1f97e38880b6471012bac",
@@ -375,7 +376,7 @@
   "learning_modes_sha256": "4fc2a0b6831787f62bec5a9cccefe7ff4e8576cd4c2e558f95f52c296375261c",
   "learning_modes_style_sha256": "f80ecbe394e4a42d438ec81963d8fa28eb559be2a1d23e90502008cc0f4415c7",
   "quiz_bank_sha256": "9bd8a4302f2e570296d3bd2ae2ded6cb274699b954f0b1c312932103e2cd5004",
-  "asset_build": "2100r1",
+  "asset_build": "2110r1",
   "skills_module_version": "2.8.0",
   "skills_max_ranks": 9,
   "skills_branches": [
@@ -403,5 +404,12 @@
   "swarm_view_build": "2100r1",
   "pursuit_geometry_build": "2100r1",
   "swarm_balance_version": "2.10.0",
-  "swarm_art_version": "2.10.0"
+  "swarm_art_version": "2.10.0",
+  "leviathan_version": "2.11.0",
+  "leviathan_beacons": 4,
+  "leviathan_tentacles": 8,
+  "leviathan_body_to_ship_ratio": 40,
+  "leviathan_save_policy": "existing-boss-saves-retain-their-arena",
+  "leviathan_warnings": "all-modes",
+  "leviathan_sha256": "7a73fb6e725c05e936cb286ff0dc6ece4fd0feb27e7ca6418461995ebbe46cc9"
 }

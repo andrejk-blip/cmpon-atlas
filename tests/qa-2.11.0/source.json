@@ -1,0 +1,7 @@
+{
+  "version": "2.11.0",
+  "entry_sha256": "9d5dce0086f3530ba7a74ca2052243f5f0aa24cbe3f8aa459705e2a023bdeb0b",
+  "parallax_sha256": "7a73fb6e725c05e936cb286ff0dc6ece4fd0feb27e7ca6418461995ebbe46cc9",
+  "baseline": "603789c08cd3ddf03c978d01f57b3c8ec494ea14",
+  "note": "Logic contracts and native rendered frames; final UI labels additionally checked in private exact-bundle frame and browser tests."
+}

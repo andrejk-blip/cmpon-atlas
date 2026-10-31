@@ -1,0 +1,26 @@
+{
+  "method": "Ordinary inputs; 0.55 s response, no missiles or pulse, no weapon upgrades, not human win rate.",
+  "rows": [
+    {
+      "mode": "training",
+      "pass": true,
+      "seconds": 80.48,
+      "hp": 100,
+      "hits": 0
+    },
+    {
+      "mode": "combat",
+      "pass": true,
+      "seconds": 116.15,
+      "hp": 92,
+      "hits": 0
+    },
+    {
+      "mode": "pro",
+      "pass": true,
+      "seconds": 116.15,
+      "hp": 92,
+      "hits": 0
+    }
+  ]
+}

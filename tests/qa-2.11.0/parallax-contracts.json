@@ -1,0 +1,120 @@
+{
+  "pass": true,
+  "checks": [
+    {
+      "brief_matches_arena": true
+    },
+    {
+      "kind": "lunge",
+      "hz": 30,
+      "damage": 18
+    },
+    {
+      "kind": "sweep",
+      "hz": 30,
+      "damage": 18
+    },
+    {
+      "kind": "pincer",
+      "hz": 30,
+      "damage": 18
+    },
+    {
+      "kind": "lunge",
+      "hz": 60,
+      "damage": 18
+    },
+    {
+      "kind": "sweep",
+      "hz": 60,
+      "damage": 18
+    },
+    {
+      "kind": "pincer",
+      "hz": 60,
+      "damage": 18
+    },
+    {
+      "breach_to_landing": true
+    },
+    {
+      "save": "arrival",
+      "pass": true
+    },
+    {
+      "save": "warning",
+      "pass": true
+    },
+    {
+      "save": "half",
+      "pass": true
+    },
+    {
+      "save": "crystal",
+      "pass": true
+    },
+    {
+      "save": "breach",
+      "pass": true
+    },
+    {
+      "legacy_exact_continuations": 42,
+      "baseline": "603789c"
+    },
+    {
+      "shield_blocks_premature_core": true
+    }
+  ],
+  "frames": [
+    {
+      "filename": "parallax-arrival-1280.jpg",
+      "items": 329,
+      "width": 1280,
+      "height": 720,
+      "fx": true
+    },
+    {
+      "filename": "parallax-warning-1280.jpg",
+      "items": 359,
+      "width": 1280,
+      "height": 720,
+      "fx": true
+    },
+    {
+      "filename": "parallax-warning-640-fx-off.jpg",
+      "items": 355,
+      "width": 640,
+      "height": 360,
+      "fx": false
+    },
+    {
+      "filename": "parallax-warning-390.jpg",
+      "items": 359,
+      "width": 390,
+      "height": 640,
+      "fx": true
+    },
+    {
+      "filename": "parallax-half-1280.jpg",
+      "items": 339,
+      "width": 1280,
+      "height": 720,
+      "fx": true
+    },
+    {
+      "filename": "parallax-crystal-1280.jpg",
+      "items": 331,
+      "width": 1280,
+      "height": 720,
+      "fx": true
+    },
+    {
+      "filename": "parallax-breach-1280.jpg",
+      "items": 319,
+      "width": 1280,
+      "height": 720,
+      "fx": true
+    }
+  ],
+  "idempotent": true
+}
