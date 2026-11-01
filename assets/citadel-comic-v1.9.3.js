@@ -12,8 +12,9 @@
     success: { paper: '#fff0b5', accent: '#239caa', ink: '#17232a' },
     warning: { paper: '#ffcc61', accent: '#c9403a', ink: '#271f25' },
     action: { paper: '#f8efd5', accent: '#d8573f', ink: '#202932' },
+    enemy: { paper: '#fff9eb', accent: '#c55079', ink: '#281e35' },
   };
-  const rank = { action: 1, success: 2, warning: 3 };
+  const rank = { action: 1, success: 2, enemy: 2, warning: 3 };
   function wall() { return typeof performance?.now === 'function' ? performance.now() / 1000 : Date.now() / 1000; }
   function tag(e) { return e.stage + '/' + (e.finale?.phase || e.phase); }
   function visible(e) {
@@ -31,7 +32,7 @@
   }
   function clean(value) {
     return String(value || '').replace(/<[^>]*>/g, ' ').replace(/[\\*_`#]/g, '')
-      .replace(/[\u0000-\u001f\u007f]/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 76).toUpperCase();
+      .replace(/[\u0000-\u001f\u007f]/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 150).toUpperCase();
   }
   function clear(e) {
     const s = e && states.get(e);
@@ -42,8 +43,9 @@
   }
   function begin(e, s, item) {
     const now = e.elapsed || 0;
-    s.current = { ...item, start: now, end: now + LIFETIME, wallEnd: wall() + LIFETIME, serial: ++s.serial };
-    s.quietUntil = now + LIFETIME + QUIET;
+    const duration=item.kind==='enemy'?Math.min(7,3+item.text.length/32):LIFETIME;
+    s.current = { ...item, start: now, end: now + duration, wallEnd: wall() + duration, serial: ++s.serial };
+    s.quietUntil = now + duration + QUIET;
     s.lastText = item.text; s.lastTextAt = now; s.bounds = null;
   }
   function post(e, message) {
@@ -55,7 +57,7 @@
     if (s.lastText === text && now >= s.lastTextAt && now - s.lastTextAt < 7) return false;
     const item = { text, kind, label: clean(message?.label || (kind === 'warning' ? 'СРОЧНЫЕ ПРАВКИ' : 'ХРОНИКИ ФТ')),
       anchor: Array.isArray(message?.anchor) && message.anchor.length === 3 && message.anchor.every(Number.isFinite)
-        ? message.anchor.slice() : null, posted: now, expires: now + 2.4 };
+        ? message.anchor.slice() : null, actorId:message?.actorId, posted: now, expires: now + 2.4 };
     if (s.current && now < s.current.end && wall() < s.current.wallEnd) {
       // A warning may replace a reaction, but event bursts never stack panels
       // or extend the currently displayed panel forever.
@@ -139,6 +141,11 @@
     const bottom = mobile ? 45 : H * .16;
     const boxes = [{ x: 0, y: 0, width: W, height: top }, { x: 0, y: H - bottom, width: W, height: bottom },
       { x: W / 2 - 56, y: H * .47 - 45, width: 112, height: 90 }];
+    const canvasRect=ARCADE.canvas?.getBoundingClientRect?.();
+    if(mobile&&canvasRect?.width)for(const el of document.querySelectorAll?.('#arcade-stick, #arcade-touch button')||[]){
+      const r=el.getBoundingClientRect?.();if(!r?.width||!r.height)continue;
+      const k=W/canvasRect.width;boxes.push({x:(r.left-canvasRect.left)*k-8,y:(r.top-canvasRect.top)*k-8,width:r.width*k+16,height:r.height*k+16});
+    }
     const actor = e.board?.pos || e.player?.pos;
     if (actor) {
       const q = spaceProject(actor, cam, W, H);
@@ -193,7 +200,7 @@
     }
     return { boxes, top, bottom };
   }
-  function linesFor(c, text, width) {
+  function linesFor(c, text, width, maxLines=2) {
     const words = text.split(' '), lines = [''];
     for (const word of words) {
       const i = lines.length - 1, candidate = lines[i] ? lines[i] + ' ' + word : word;
@@ -201,7 +208,7 @@
       else if (!lines[i]) lines[i] = word;
       else lines.push(word);
     }
-    if (lines.length > 2) { lines.length = 2; lines[1] += '…'; }
+    if (lines.length > maxLines) { lines.length = maxLines; lines[maxLines-1] += '…'; }
     for (let i = 0; i < lines.length; i++) {
       if (c.measureText(lines[i]).width <= width) continue;
       let t = lines[i].replace(/…$/, '');
@@ -216,18 +223,20 @@
     // banner spanning the crosshair or the player's ship below it.
     const side = Math.max(82, Math.min(112, (W - 112) / 2 - margin * 2 - 8));
     for (const width of mobile ? [Math.min(188, W - 28), Math.min(138, W * .44), side] : [252, 204]) {
-      const font = mobile ? (width < 150 ? 13 : 16) : 21;
+      const font = item.kind==='enemy'?(mobile?12:15):mobile ? (width < 150 ? 13 : 16) : 21;
       c.font = '900 ' + font + 'px Arial, sans-serif';
-      const lines = linesFor(c, item.text, width - 30), height = lines.length === 1 ? font + 34 : font * 2 + 32;
+      const lines = linesFor(c, item.text, width - 30,item.kind==='enemy'?4:2), height = font * lines.length + 34;
       const candidates = [{ x: margin, y: reserve.top + 15 }, { x: W - width - margin, y: reserve.top + 15 },
+        { x: W*.23, y: reserve.top+15 }, { x: W*.62, y: reserve.top+15 },
         { x: margin, y: H * .58 }, { x: W - width - margin, y: H * .58 },
         { x: W / 2 - width / 2, y: H - reserve.bottom - height - 20 }];
       if (item.anchor) {
-        const q = spaceProject(item.anchor, cam, W, H);
+        const actor=(e.board?.enemies||e.enemies||[]).find(x=>x.id===item.actorId&&!x.dead);
+        const q = spaceProject(actor?.pos||item.anchor, cam, W, H);
         if (q.z > 0) candidates.unshift({ x: q.x + 34, y: q.y + 28 }, { x: q.x - width - 34, y: q.y + 28 });
       }
       for (const candidate of candidates) {
-        const box = { x: candidate.x, y: candidate.y, width, height: height + 12 };
+        const box = { x: candidate.x, y: candidate.y, width, height: height + (item.kind==='enemy'?Math.max(12,height*.25):12) };
         const padded = { x: box.x - 7, y: box.y - 7, width: width + 14, height: box.height + 14 };
         if (padded.x < 4 || padded.y < 4 || padded.x + padded.width > W - 4 || padded.y + padded.height > H - 4) continue;
         if (reserve.boxes.some(b => overlap(padded, b))) continue;
@@ -244,6 +253,12 @@
         const x = Math.cos(a) * width / 2 * r, y = Math.sin(a) * height / 2 * r;
         if (i) c.lineTo(x, y); else c.moveTo(x, y);
       }
+    } else if(kind==='enemy') {
+      c.moveTo(-width*.4,-height*.5);c.quadraticCurveTo(-width*.57,-height*.5,-width*.5,0);
+      c.quadraticCurveTo(-width*.54,height*.45,-width*.24,height*.48);
+      c.lineTo(-width*.30,height*.72);c.lineTo(-width*.03,height*.49);
+      c.quadraticCurveTo(width*.54,height*.55,width*.50,0);
+      c.quadraticCurveTo(width*.55,-height*.55,-width*.4,-height*.5);
     } else {
       c.moveTo(-width / 2 + 5, -height / 2); c.lineTo(width / 2 - 5, -height / 2 + 2);
       c.lineTo(width / 2, height / 2 - 3); c.lineTo(-width * .12, height / 2);
@@ -280,7 +295,7 @@
     c.textAlign = 'center'; c.textBaseline = 'middle'; c.font = '900 ' + (mobile ? 8 : 9) + 'px Arial, sans-serif';
     c.fillStyle = '#fff8df'; c.fillText(item.label, 0, -height / 2 + 3, box.width - 34);
     c.font = '900 ' + box.font + 'px Arial, sans-serif'; c.lineJoin = 'round';
-    const firstY = box.lines.length === 1 ? 7 : 7 - box.font * .55;
+    const firstY = 7-(box.lines.length-1)*box.font*.55;
     box.lines.forEach((line, i) => {
       const y = firstY + i * box.font * 1.1;
       c.strokeStyle = '#fff8df'; c.lineWidth = mobile ? 2 : 3; c.strokeText(line, 0, y);

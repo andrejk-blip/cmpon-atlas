@@ -87,7 +87,7 @@
     if(job.radioId){radioRecent.push(job.radioId);if(radioRecent.length>18)radioRecent.shift();}
     // Caption is published only after actual speech/audio starts, with the
     // speaker identity. A rejected autoplay promise never produces fake radio.
-    if(job.caption&&permitted(job)){job.engine.say?.(job.caption,'order',false);showRadioCaption(job.engine,job.caption,Math.max(6,(job.buffers||[]).reduce((n,b)=>n+b.duration,0)));}
+    if(job.caption&&permitted(job)){job.engine.say?.(job.caption,'order',false);showRadioCaption(job.engine,job.caption,Math.max(6,(job.buffers||[]).reduce((n,b)=>n+b.duration,0)),job.speaker);}
   }
   function markFinished(job,reason) {
     if(job.radioEnded||job.kind!=='commander'||job.preview||!job.started)return;
@@ -356,8 +356,13 @@
       recordedRadioStarts:stats.recordedStarts,systemRadioStarts:stats.systemStarts,
       cachedClips:buffers.size,cachedBytes};
   }
-  function showRadioCaption(e,text,seconds=8) {
-    radioCaption={engine:e,text,scene:sceneStamp(e),until:wallNow()+Math.min(18,Math.max(6,seconds))};syncRadioCaption();
+  function showRadioCaption(e,text,seconds=8,speaker='captain') {
+    let comic=false;
+    if(speaker==='enemy'&&globalThis.CITADEL_COMIC){
+      const actor=(e.board?.enemies||e.enemies||[]).filter(x=>!x.dead).sort((a,b)=>V3.len(V3.sub(a.pos,e.board?.pos||e.player.pos))-V3.len(V3.sub(b.pos,e.board?.pos||e.player.pos)))[0];
+      const split=text.indexOf(':');comic=CITADEL_COMIC.post(e,{kind:'enemy',label:split>=0?text.slice(0,split):'ПЕРЕХВАЧЕННЫЙ КАНАЛ',text:split>=0?text.slice(split+1):text,anchor:actor?.pos,actorId:actor?.id});
+    }
+    radioCaption={engine:e,text,comic,scene:sceneStamp(e),until:wallNow()+Math.min(18,Math.max(6,seconds))};syncRadioCaption();
   }
   function syncRadioCaption() {
     if(typeof document==='undefined')return;
@@ -367,7 +372,7 @@
     const valid=radioCaption&&radioCaption.engine===engine()&&radioCaption.scene===sceneStamp(engine())&&
       wallNow()<radioCaption.until&&enabled&&combat(engine());
     const rocket=document.querySelector?.('.citadel-rocket-tip');
-    el.hidden=!valid||!!rocket&&!rocket.hidden;
+    el.hidden=!valid||!!(radioCaption?.comic&&globalThis.CITADEL_COMIC?.status(engine()).bounds)||!!rocket&&!rocket.hidden;
     if(valid&&el.textContent!==radioCaption.text)el.textContent=radioCaption.text;
   }
   function syncControls() {
@@ -641,7 +646,7 @@
     if(radioStyle==='original'&&!originalClip(prepared().commanders.find(c=>c.id===line.id))){
       // Keep every joke and enemy reply visible without mislabelling another
       // voice as the captain. No audio job, fake playback event or TTS fallback.
-      e.say?.(line.caption,'order',false);showRadioCaption(e,line.caption,Math.max(7,line.caption.length/17));stats.textRadioStarts++;clock.turn++;
+      e.say?.(line.caption,'order',false);showRadioCaption(e,line.caption,Math.max(7,line.caption.length/17),line.speaker);stats.textRadioStarts++;clock.turn++;
       clock.next=clock.elapsed+nextInterval();clock.quietUntil=clock.elapsed+SILENCE;
       radioRecent.push(line.id);if(radioRecent.length>18)radioRecent.shift();return;
     }
