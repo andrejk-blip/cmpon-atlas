@@ -1,0 +1,1277 @@
+{
+  "pass": true,
+  "error": null,
+  "mode": "training",
+  "route": "pursuit",
+  "seed": 417147,
+  "frames": 71926,
+  "seconds": 1197.83,
+  "status": "won",
+  "mission": "mrg",
+  "levels": [
+    {
+      "mission": "orbit1",
+      "number": 1,
+      "start": 0,
+      "minHp": 100
+    },
+    {
+      "mission": "base1",
+      "number": 2,
+      "start": 50.98333333333172,
+      "minHp": 93.4
+    },
+    {
+      "mission": "convoy1",
+      "number": 3,
+      "start": 154.20000000001485,
+      "minHp": 94.5
+    },
+    {
+      "mission": "pursuit",
+      "number": 4,
+      "start": 222.21666666673565,
+      "minHp": 100
+    },
+    {
+      "mission": "base2",
+      "number": 5,
+      "start": 334.4166666666912,
+      "minHp": 96.31144
+    },
+    {
+      "mission": "route",
+      "number": 6,
+      "start": 437.0333333332645,
+      "minHp": 100
+    },
+    {
+      "mission": "swarm",
+      "number": 7,
+      "start": 493.79999999987956,
+      "minHp": 100
+    },
+    {
+      "mission": "parallax",
+      "number": 8,
+      "start": 573.6666666664736,
+      "minHp": 96.7
+    },
+    {
+      "mission": "base3",
+      "number": 9,
+      "start": 623.5666666664282,
+      "minHp": 96.26176
+    },
+    {
+      "mission": "convoy3",
+      "number": 10,
+      "start": 722.3999999996716,
+      "minHp": 96.48
+    },
+    {
+      "mission": "orbit4",
+      "number": 11,
+      "start": 830.7499999995731,
+      "minHp": 92.08
+    },
+    {
+      "mission": "base4",
+      "number": 12,
+      "start": 910.1833333328342,
+      "minHp": 97.000768
+    },
+    {
+      "mission": "contradictions",
+      "number": 13,
+      "start": 989.8166666660951,
+      "minHp": 100
+    },
+    {
+      "mission": "lair",
+      "number": 14,
+      "start": 1022.916666666065,
+      "minHp": 93.550336
+    },
+    {
+      "mission": "mrg",
+      "number": 15,
+      "start": 1141.8333333326236,
+      "minHp": 100
+    }
+  ],
+  "cards": [
+    {
+      "mission": "orbit1",
+      "kind": "lesson",
+      "key": 0,
+      "answer": 0
+    },
+    {
+      "mission": "orbit1",
+      "kind": "lesson",
+      "key": 1,
+      "answer": 1
+    },
+    {
+      "mission": "base1",
+      "kind": "remark",
+      "key": 0,
+      "answer": 2
+    },
+    {
+      "mission": "base1",
+      "kind": "remark",
+      "key": 1,
+      "answer": 3
+    },
+    {
+      "mission": "base1",
+      "kind": "remark",
+      "key": 2,
+      "answer": 3
+    },
+    {
+      "mission": "convoy1",
+      "kind": "new",
+      "key": "convoy1",
+      "answer": 1
+    },
+    {
+      "mission": "pursuit",
+      "kind": "lesson",
+      "key": 2,
+      "answer": 2
+    },
+    {
+      "mission": "pursuit",
+      "kind": "lesson",
+      "key": 3,
+      "answer": 2
+    },
+    {
+      "mission": "base2",
+      "kind": "remark",
+      "key": 3,
+      "answer": 3
+    },
+    {
+      "mission": "base2",
+      "kind": "remark",
+      "key": 4,
+      "answer": 2
+    },
+    {
+      "mission": "base2",
+      "kind": "remark",
+      "key": 5,
+      "answer": 2
+    },
+    {
+      "mission": "route",
+      "kind": "new",
+      "key": "route",
+      "answer": 1
+    },
+    {
+      "mission": "swarm",
+      "kind": "lesson",
+      "key": 4,
+      "answer": 1
+    },
+    {
+      "mission": "swarm",
+      "kind": "lesson",
+      "key": 5,
+      "answer": 3
+    },
+    {
+      "mission": "parallax",
+      "kind": "new",
+      "key": "parallax",
+      "answer": 1
+    },
+    {
+      "mission": "base3",
+      "kind": "remark",
+      "key": 6,
+      "answer": 2
+    },
+    {
+      "mission": "base3",
+      "kind": "remark",
+      "key": 7,
+      "answer": 0
+    },
+    {
+      "mission": "base3",
+      "kind": "remark",
+      "key": 8,
+      "answer": 1
+    },
+    {
+      "mission": "convoy3",
+      "kind": "new",
+      "key": "convoy3",
+      "answer": 1
+    },
+    {
+      "mission": "orbit4",
+      "kind": "lesson",
+      "key": 7,
+      "answer": 1
+    },
+    {
+      "mission": "orbit4",
+      "kind": "lesson",
+      "key": 6,
+      "answer": 2
+    },
+    {
+      "mission": "base4",
+      "kind": "remark",
+      "key": 9,
+      "answer": 3
+    },
+    {
+      "mission": "base4",
+      "kind": "remark",
+      "key": 10,
+      "answer": 0
+    },
+    {
+      "mission": "base4",
+      "kind": "remark",
+      "key": 11,
+      "answer": 0
+    },
+    {
+      "mission": "contradictions",
+      "kind": "new",
+      "key": "contradictions",
+      "answer": 0
+    },
+    {
+      "mission": "lair",
+      "kind": "final",
+      "key": 0,
+      "answer": 0
+    },
+    {
+      "mission": "lair",
+      "kind": "final",
+      "key": 1,
+      "answer": 3
+    },
+    {
+      "mission": "lair",
+      "kind": "final",
+      "key": 2,
+      "answer": 0
+    }
+  ],
+  "transitions": [
+    {
+      "mission": "orbit1",
+      "number": 1,
+      "status": "briefing",
+      "phase": "orientation",
+      "finale": null,
+      "completed": null,
+      "seconds": 0,
+      "hp": 100
+    },
+    {
+      "mission": "orbit1",
+      "number": 1,
+      "status": "playing",
+      "phase": "orientation",
+      "finale": null,
+      "completed": null,
+      "seconds": 0,
+      "hp": 100
+    },
+    {
+      "mission": "orbit1",
+      "number": 1,
+      "status": "lesson",
+      "phase": "orientation",
+      "finale": null,
+      "completed": null,
+      "seconds": 1.77,
+      "hp": 100
+    },
+    {
+      "mission": "orbit1",
+      "number": 1,
+      "status": "playing",
+      "phase": "battle",
+      "finale": null,
+      "completed": null,
+      "seconds": 1.77,
+      "hp": 100
+    },
+    {
+      "mission": "orbit1",
+      "number": 1,
+      "status": "playing",
+      "phase": "retrieve",
+      "finale": null,
+      "completed": null,
+      "seconds": 39.62,
+      "hp": 100
+    },
+    {
+      "mission": "orbit1",
+      "number": 1,
+      "status": "lesson",
+      "phase": "retrieve",
+      "finale": null,
+      "completed": null,
+      "seconds": 42.8,
+      "hp": 100
+    },
+    {
+      "mission": "orbit1",
+      "number": 1,
+      "status": "playing",
+      "phase": "dock",
+      "finale": null,
+      "completed": null,
+      "seconds": 42.8,
+      "hp": 100
+    },
+    {
+      "mission": "orbit1",
+      "number": 1,
+      "status": "docking",
+      "phase": "dock",
+      "finale": null,
+      "completed": null,
+      "seconds": 47.17,
+      "hp": 100
+    },
+    {
+      "mission": "orbit1",
+      "number": 1,
+      "status": "campaignsummary",
+      "phase": "dock",
+      "finale": null,
+      "completed": null,
+      "seconds": 50.98,
+      "hp": 100
+    },
+    {
+      "mission": "base1",
+      "number": 2,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "completed": 0,
+      "seconds": 50.98,
+      "hp": 100
+    },
+    {
+      "mission": "base1",
+      "number": 2,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "completed": 0,
+      "seconds": 80.42,
+      "hp": 100
+    },
+    {
+      "mission": "base1",
+      "number": 2,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "completed": 1,
+      "seconds": 80.42,
+      "hp": 100
+    },
+    {
+      "mission": "base1",
+      "number": 2,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "completed": 1,
+      "seconds": 120.3,
+      "hp": 100
+    },
+    {
+      "mission": "base1",
+      "number": 2,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "completed": 2,
+      "seconds": 120.3,
+      "hp": 100
+    },
+    {
+      "mission": "base1",
+      "number": 2,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "completed": 2,
+      "seconds": 152.8,
+      "hp": 100
+    },
+    {
+      "mission": "base1",
+      "number": 2,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "completed": 3,
+      "seconds": 152.8,
+      "hp": 100
+    },
+    {
+      "mission": "base1",
+      "number": 2,
+      "status": "stageclear",
+      "phase": "debrief",
+      "finale": null,
+      "completed": 3,
+      "seconds": 154.2,
+      "hp": 100
+    },
+    {
+      "mission": "convoy1",
+      "number": 3,
+      "status": "escortbrief",
+      "phase": "escort",
+      "finale": null,
+      "completed": null,
+      "seconds": 154.2,
+      "hp": 100
+    },
+    {
+      "mission": "convoy1",
+      "number": 3,
+      "status": "playing",
+      "phase": "escort",
+      "finale": null,
+      "completed": null,
+      "seconds": 154.2,
+      "hp": 100
+    },
+    {
+      "mission": "convoy1",
+      "number": 3,
+      "status": "campaigncard",
+      "phase": "escort",
+      "finale": null,
+      "completed": null,
+      "seconds": 222.22,
+      "hp": 94.5
+    },
+    {
+      "mission": "convoy1",
+      "number": 3,
+      "status": "escortclear",
+      "phase": "escort",
+      "finale": null,
+      "completed": null,
+      "seconds": 222.22,
+      "hp": 94.5
+    },
+    {
+      "mission": "pursuit",
+      "number": 4,
+      "status": "briefing",
+      "phase": "pursuit",
+      "finale": null,
+      "completed": null,
+      "seconds": 222.22,
+      "hp": 100
+    },
+    {
+      "mission": "pursuit",
+      "number": 4,
+      "status": "playing",
+      "phase": "pursuit",
+      "finale": null,
+      "completed": null,
+      "seconds": 222.22,
+      "hp": 100
+    },
+    {
+      "mission": "pursuit",
+      "number": 4,
+      "status": "lesson",
+      "phase": "pursuit",
+      "finale": null,
+      "completed": null,
+      "seconds": 325.48,
+      "hp": 100
+    },
+    {
+      "mission": "pursuit",
+      "number": 4,
+      "status": "playing",
+      "phase": "dock",
+      "finale": null,
+      "completed": null,
+      "seconds": 325.48,
+      "hp": 100
+    },
+    {
+      "mission": "pursuit",
+      "number": 4,
+      "status": "docking",
+      "phase": "dock",
+      "finale": null,
+      "completed": null,
+      "seconds": 330.6,
+      "hp": 100
+    },
+    {
+      "mission": "pursuit",
+      "number": 4,
+      "status": "campaignsummary",
+      "phase": "dock",
+      "finale": null,
+      "completed": null,
+      "seconds": 334.42,
+      "hp": 100
+    },
+    {
+      "mission": "base2",
+      "number": 5,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "completed": 0,
+      "seconds": 334.42,
+      "hp": 100
+    },
+    {
+      "mission": "base2",
+      "number": 5,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "completed": 0,
+      "seconds": 372.47,
+      "hp": 100
+    },
+    {
+      "mission": "base2",
+      "number": 5,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "completed": 1,
+      "seconds": 372.47,
+      "hp": 100
+    },
+    {
+      "mission": "base2",
+      "number": 5,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "completed": 1,
+      "seconds": 394.4,
+      "hp": 100
+    },
+    {
+      "mission": "base2",
+      "number": 5,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "completed": 2,
+      "seconds": 394.4,
+      "hp": 100
+    },
+    {
+      "mission": "base2",
+      "number": 5,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "completed": 2,
+      "seconds": 435.7,
+      "hp": 100
+    },
+    {
+      "mission": "base2",
+      "number": 5,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "completed": 3,
+      "seconds": 435.7,
+      "hp": 100
+    },
+    {
+      "mission": "base2",
+      "number": 5,
+      "status": "stageclear",
+      "phase": "debrief",
+      "finale": null,
+      "completed": 3,
+      "seconds": 437.03,
+      "hp": 100
+    },
+    {
+      "mission": "route",
+      "number": 6,
+      "status": "campaignroute",
+      "phase": "debrief",
+      "finale": null,
+      "completed": 3,
+      "seconds": 437.03,
+      "hp": 100
+    },
+    {
+      "mission": "route",
+      "number": 6,
+      "status": "briefing",
+      "phase": "pursuit",
+      "finale": null,
+      "completed": null,
+      "seconds": 437.03,
+      "hp": 100
+    },
+    {
+      "mission": "route",
+      "number": 6,
+      "status": "playing",
+      "phase": "pursuit",
+      "finale": null,
+      "completed": null,
+      "seconds": 437.03,
+      "hp": 100
+    },
+    {
+      "mission": "route",
+      "number": 6,
+      "status": "campaigncard",
+      "phase": "pursuit",
+      "finale": null,
+      "completed": null,
+      "seconds": 493.8,
+      "hp": 100
+    },
+    {
+      "mission": "route",
+      "number": 6,
+      "status": "escortclear",
+      "phase": "escort",
+      "finale": null,
+      "completed": null,
+      "seconds": 493.8,
+      "hp": 100
+    },
+    {
+      "mission": "swarm",
+      "number": 7,
+      "status": "briefing",
+      "phase": "swarm",
+      "finale": null,
+      "completed": null,
+      "seconds": 493.8,
+      "hp": 100
+    },
+    {
+      "mission": "swarm",
+      "number": 7,
+      "status": "playing",
+      "phase": "swarm",
+      "finale": null,
+      "completed": null,
+      "seconds": 493.8,
+      "hp": 100
+    },
+    {
+      "mission": "swarm",
+      "number": 7,
+      "status": "lesson",
+      "phase": "dock",
+      "finale": null,
+      "completed": null,
+      "seconds": 566.98,
+      "hp": 100
+    },
+    {
+      "mission": "swarm",
+      "number": 7,
+      "status": "playing",
+      "phase": "dock",
+      "finale": null,
+      "completed": null,
+      "seconds": 566.98,
+      "hp": 100
+    },
+    {
+      "mission": "swarm",
+      "number": 7,
+      "status": "docking",
+      "phase": "dock",
+      "finale": null,
+      "completed": null,
+      "seconds": 569.85,
+      "hp": 100
+    },
+    {
+      "mission": "swarm",
+      "number": 7,
+      "status": "campaignsummary",
+      "phase": "dock",
+      "finale": null,
+      "completed": null,
+      "seconds": 573.67,
+      "hp": 100
+    },
+    {
+      "mission": "parallax",
+      "number": 8,
+      "status": "finalebrief",
+      "phase": "finale",
+      "finale": "boss",
+      "completed": null,
+      "seconds": 573.67,
+      "hp": 100
+    },
+    {
+      "mission": "parallax",
+      "number": 8,
+      "status": "playing",
+      "phase": "finale",
+      "finale": "boss",
+      "completed": null,
+      "seconds": 573.67,
+      "hp": 100
+    },
+    {
+      "mission": "parallax",
+      "number": 8,
+      "status": "playing",
+      "phase": "finale",
+      "finale": "breach",
+      "completed": null,
+      "seconds": 619.93,
+      "hp": 100
+    },
+    {
+      "mission": "parallax",
+      "number": 8,
+      "status": "campaigncard",
+      "phase": "finale",
+      "finale": "breach",
+      "completed": null,
+      "seconds": 623.57,
+      "hp": 100
+    },
+    {
+      "mission": "base3",
+      "number": 9,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "completed": 0,
+      "seconds": 623.57,
+      "hp": 100
+    },
+    {
+      "mission": "base3",
+      "number": 9,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "completed": 0,
+      "seconds": 656.87,
+      "hp": 100
+    },
+    {
+      "mission": "base3",
+      "number": 9,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "completed": 1,
+      "seconds": 656.87,
+      "hp": 100
+    },
+    {
+      "mission": "base3",
+      "number": 9,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "completed": 1,
+      "seconds": 691.85,
+      "hp": 96.26
+    },
+    {
+      "mission": "base3",
+      "number": 9,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "completed": 2,
+      "seconds": 691.85,
+      "hp": 100
+    },
+    {
+      "mission": "base3",
+      "number": 9,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "completed": 2,
+      "seconds": 721,
+      "hp": 100
+    },
+    {
+      "mission": "base3",
+      "number": 9,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "completed": 3,
+      "seconds": 721,
+      "hp": 100
+    },
+    {
+      "mission": "base3",
+      "number": 9,
+      "status": "stageclear",
+      "phase": "debrief",
+      "finale": null,
+      "completed": 3,
+      "seconds": 722.4,
+      "hp": 100
+    },
+    {
+      "mission": "convoy3",
+      "number": 10,
+      "status": "escortbrief",
+      "phase": "escort",
+      "finale": null,
+      "completed": null,
+      "seconds": 722.4,
+      "hp": 100
+    },
+    {
+      "mission": "convoy3",
+      "number": 10,
+      "status": "playing",
+      "phase": "escort",
+      "finale": null,
+      "completed": null,
+      "seconds": 722.4,
+      "hp": 100
+    },
+    {
+      "mission": "convoy3",
+      "number": 10,
+      "status": "campaigncard",
+      "phase": "escort",
+      "finale": null,
+      "completed": null,
+      "seconds": 830.75,
+      "hp": 96.48
+    },
+    {
+      "mission": "convoy3",
+      "number": 10,
+      "status": "escortclear",
+      "phase": "escort",
+      "finale": null,
+      "completed": null,
+      "seconds": 830.75,
+      "hp": 96.48
+    },
+    {
+      "mission": "orbit4",
+      "number": 11,
+      "status": "briefing",
+      "phase": "orientation",
+      "finale": null,
+      "completed": null,
+      "seconds": 830.75,
+      "hp": 100
+    },
+    {
+      "mission": "orbit4",
+      "number": 11,
+      "status": "playing",
+      "phase": "battle",
+      "finale": null,
+      "completed": null,
+      "seconds": 830.75,
+      "hp": 100
+    },
+    {
+      "mission": "orbit4",
+      "number": 11,
+      "status": "playing",
+      "phase": "retrieve",
+      "finale": null,
+      "completed": null,
+      "seconds": 895.23,
+      "hp": 92.08
+    },
+    {
+      "mission": "orbit4",
+      "number": 11,
+      "status": "lesson",
+      "phase": "retrieve",
+      "finale": null,
+      "completed": null,
+      "seconds": 896.65,
+      "hp": 100
+    },
+    {
+      "mission": "orbit4",
+      "number": 11,
+      "status": "playing",
+      "phase": "retrieve",
+      "finale": null,
+      "completed": null,
+      "seconds": 896.65,
+      "hp": 100
+    },
+    {
+      "mission": "orbit4",
+      "number": 11,
+      "status": "lesson",
+      "phase": "retrieve",
+      "finale": null,
+      "completed": null,
+      "seconds": 902.7,
+      "hp": 100
+    },
+    {
+      "mission": "orbit4",
+      "number": 11,
+      "status": "playing",
+      "phase": "dock",
+      "finale": null,
+      "completed": null,
+      "seconds": 902.7,
+      "hp": 100
+    },
+    {
+      "mission": "orbit4",
+      "number": 11,
+      "status": "docking",
+      "phase": "dock",
+      "finale": null,
+      "completed": null,
+      "seconds": 906.37,
+      "hp": 100
+    },
+    {
+      "mission": "orbit4",
+      "number": 11,
+      "status": "campaignsummary",
+      "phase": "dock",
+      "finale": null,
+      "completed": null,
+      "seconds": 910.18,
+      "hp": 100
+    },
+    {
+      "mission": "base4",
+      "number": 12,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "completed": 0,
+      "seconds": 910.18,
+      "hp": 100
+    },
+    {
+      "mission": "base4",
+      "number": 12,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "completed": 0,
+      "seconds": 932.7,
+      "hp": 100
+    },
+    {
+      "mission": "base4",
+      "number": 12,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "completed": 1,
+      "seconds": 932.7,
+      "hp": 100
+    },
+    {
+      "mission": "base4",
+      "number": 12,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "completed": 1,
+      "seconds": 959.9,
+      "hp": 100
+    },
+    {
+      "mission": "base4",
+      "number": 12,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "completed": 2,
+      "seconds": 959.9,
+      "hp": 100
+    },
+    {
+      "mission": "base4",
+      "number": 12,
+      "status": "remark",
+      "phase": "boarding",
+      "finale": null,
+      "completed": 2,
+      "seconds": 988.17,
+      "hp": 100
+    },
+    {
+      "mission": "base4",
+      "number": 12,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "completed": 3,
+      "seconds": 988.17,
+      "hp": 100
+    },
+    {
+      "mission": "contradictions",
+      "number": 13,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "completed": 0,
+      "seconds": 989.82,
+      "hp": 100
+    },
+    {
+      "mission": "contradictions",
+      "number": 13,
+      "status": "campaignsource",
+      "phase": "boarding",
+      "finale": null,
+      "completed": 0,
+      "seconds": 997.22,
+      "hp": 100
+    },
+    {
+      "mission": "contradictions",
+      "number": 13,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "completed": 1,
+      "seconds": 997.22,
+      "hp": 100
+    },
+    {
+      "mission": "contradictions",
+      "number": 13,
+      "status": "campaignsource",
+      "phase": "boarding",
+      "finale": null,
+      "completed": 1,
+      "seconds": 1010.47,
+      "hp": 100
+    },
+    {
+      "mission": "contradictions",
+      "number": 13,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "completed": 2,
+      "seconds": 1010.47,
+      "hp": 100
+    },
+    {
+      "mission": "contradictions",
+      "number": 13,
+      "status": "campaigncard",
+      "phase": "boarding",
+      "finale": null,
+      "completed": 2,
+      "seconds": 1020.87,
+      "hp": 100
+    },
+    {
+      "mission": "contradictions",
+      "number": 13,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": null,
+      "completed": 3,
+      "seconds": 1020.87,
+      "hp": 100
+    },
+    {
+      "mission": "lair",
+      "number": 14,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": "maze",
+      "completed": 0,
+      "seconds": 1022.92,
+      "hp": 100
+    },
+    {
+      "mission": "lair",
+      "number": 14,
+      "status": "finalcheck",
+      "phase": "boarding",
+      "finale": "maze",
+      "completed": 0,
+      "seconds": 1066.93,
+      "hp": 100
+    },
+    {
+      "mission": "lair",
+      "number": 14,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": "maze",
+      "completed": 1,
+      "seconds": 1066.93,
+      "hp": 100
+    },
+    {
+      "mission": "lair",
+      "number": 14,
+      "status": "finalcheck",
+      "phase": "boarding",
+      "finale": "maze",
+      "completed": 1,
+      "seconds": 1107.92,
+      "hp": 100
+    },
+    {
+      "mission": "lair",
+      "number": 14,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": "maze",
+      "completed": 2,
+      "seconds": 1107.92,
+      "hp": 100
+    },
+    {
+      "mission": "lair",
+      "number": 14,
+      "status": "finalcheck",
+      "phase": "boarding",
+      "finale": "maze",
+      "completed": 2,
+      "seconds": 1140.35,
+      "hp": 100
+    },
+    {
+      "mission": "lair",
+      "number": 14,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": "maze",
+      "completed": 3,
+      "seconds": 1140.35,
+      "hp": 100
+    },
+    {
+      "mission": "mrg",
+      "number": 15,
+      "status": "boarding",
+      "phase": "boarding",
+      "finale": "mrg",
+      "completed": 3,
+      "seconds": 1141.83,
+      "hp": 100
+    },
+    {
+      "mission": "mrg",
+      "number": 15,
+      "status": "docking",
+      "phase": "boarding",
+      "finale": "upload",
+      "completed": 3,
+      "seconds": 1189.82,
+      "hp": 100
+    },
+    {
+      "mission": "mrg",
+      "number": 15,
+      "status": "won",
+      "phase": "debrief",
+      "finale": "victory",
+      "completed": 3,
+      "seconds": 1197.83,
+      "hp": 100
+    }
+  ],
+  "inspection": {
+    "mission": "mrg",
+    "number": 15,
+    "completed": [
+      "orbit1",
+      "base1",
+      "convoy1",
+      "pursuit",
+      "base2",
+      "route",
+      "swarm",
+      "parallax",
+      "base3",
+      "convoy3",
+      "orbit4",
+      "base4",
+      "contradictions",
+      "lair",
+      "mrg"
+    ],
+    "route": "pursuit",
+    "cards": [
+      "convoy1",
+      "route",
+      "parallax",
+      "convoy3",
+      "contradictions"
+    ],
+    "encounters": [
+      "hammer",
+      "tentacle",
+      "maw",
+      "mantis",
+      "medusa"
+    ],
+    "document": {
+      "goal": "Цель уточнена: назначение результата подтверждено по каналу ФЗ.",
+      "scope": "Границы: новые идеи отделены от состава согласованной версии.",
+      "links": "Передача: итоговый комплект доставлен через блокаду.",
+      "acceptance": "Приёмка: проверенный комплект передан на исполнение.",
+      "terms": "Термины: заявка на обследование и задание исполнителю явно различены."
+    }
+  },
+  "listenersStable": true,
+  "entrySha256": "6f9a372ef8389df26a17fd60ac4519f9c94ea4932244414a288b9e28b035763f",
+  "moduleSha256": "cf07807aae0dc33f33994ae5aa857ab9f4bf448cc4e52b9641322254573b9fae",
+  "experienceSha256": "79d6c09b4bc32f4ff72498c2ee797a899ac471ecaad2cd7e72655e564ac885cf",
+  "method": "Fresh continuous ordinary-input campaign with exact-state and answer-key QA operators. No health/resources/score/progression writes after e.start.",
+  "limitations": [
+    "Not a human playthrough or a physical-phone test.",
+    "Reading time is not simulated."
+  ]
+}

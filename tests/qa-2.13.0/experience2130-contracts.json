@@ -1,0 +1,98 @@
+{
+  "pass": true,
+  "passed": 14,
+  "failed": 0,
+  "rows": [
+    {
+      "name": "new-ui-start-training",
+      "pass": true,
+      "mode": "training"
+    },
+    {
+      "name": "new-ui-start-combat",
+      "pass": true,
+      "mode": "combat"
+    },
+    {
+      "name": "new-ui-start-pro",
+      "pass": true,
+      "mode": "pro"
+    },
+    {
+      "name": "comic-starts-after-parallax-with-no-extra-rewards",
+      "pass": true,
+      "nextMission": "base3",
+      "cardReward": 100,
+      "comicReward": 0
+    },
+    {
+      "name": "comic-pauses-combat-and-render-is-readonly",
+      "pass": true,
+      "simulatedSeconds": 2
+    },
+    {
+      "name": "comic-next-back-skip-and-reload-preserve-state",
+      "pass": true,
+      "reloadPage": 2,
+      "skipPreserved": true,
+      "duplicateOpenRejected": true
+    },
+    {
+      "name": "comic-last-page-resumes-and-checkpoints-completion",
+      "pass": true,
+      "checkpointSkipsWatchedComic": true
+    },
+    {
+      "name": "skills-six-cards-and-real-upgrade-choices",
+      "pass": true,
+      "cards": 6,
+      "skillPointsConsumed": 1,
+      "shipSelectionsAccepted": 1
+    },
+    {
+      "name": "skills-paused-upgrades-freeze-and-reject-unearned-points",
+      "pass": true,
+      "noFreePoints": true
+    },
+    {
+      "name": "document-shows-all-live-sections-and-preserves-state",
+      "pass": true,
+      "sections": 5,
+      "comicPanels": 3,
+      "readonly": true
+    },
+    {
+      "name": "document-station-choice-is-not-lost-in-visual-summary",
+      "pass": true,
+      "validDocuments": 2
+    },
+    {
+      "name": "voluntary-pursuit-transfers-new-packets-and-reloads-progress",
+      "pass": true,
+      "previousRequirements": 3,
+      "initialPackets": [
+        0,
+        0,
+        0
+      ],
+      "completedBranchPackets": 1,
+      "reloadPreserved": true
+    },
+    {
+      "name": "legacy-cloud-launch-keeps-14-mission-rules",
+      "pass": true,
+      "route": "legacy14"
+    },
+    {
+      "name": "legacy-2110-snapshots-42-boundaries-preserved",
+      "pass": true,
+      "cases": 42
+    }
+  ],
+  "failures": [],
+  "entrySha256": "6f9a372ef8389df26a17fd60ac4519f9c94ea4932244414a288b9e28b035763f",
+  "campaignSha256": "b072b53cb7bbacb887652dbec188372e7938d25f74158d10609e9ebd414620b4",
+  "experienceSha256": "a480096df6d0a3f40c917608ef487835c82a30348cbe0a7da97aba0bd460f327",
+  "pursuitSha256": "c31c32bca30b2a8bb1caa0b37d6accda91af8f0aa0bc9b1c5408ff45aac806e2",
+  "method": "Node VM contracts with earned previous-build snapshots and explicit scene-boundary fixtures. No human or physical-device claims."
+}

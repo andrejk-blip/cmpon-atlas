@@ -1,0 +1,22 @@
+{
+  "pass": false,
+  "passed": 0,
+  "failed": 1,
+  "rows": [],
+  "failures": [
+    {
+      "name": "voluntary-pursuit-transfers-new-packets-and-reloads-progress",
+      "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n... Skipped lines\n\n  {\n    engine: {\n      assist: true,\n      asteroids: [\n        {\n...\n        {\n+         dead: true,\n-         dead: false,\n          number: 1,\n          pos: [\n            42.36422138565897,\n            -0.848752297366391,\n            -1902.801324220431\n",
+      "stack": [
+        "+ actual - expected",
+        "... Skipped lines",
+        ""
+      ]
+    }
+  ],
+  "entrySha256": "6f9a372ef8389df26a17fd60ac4519f9c94ea4932244414a288b9e28b035763f",
+  "campaignSha256": "cf07807aae0dc33f33994ae5aa857ab9f4bf448cc4e52b9641322254573b9fae",
+  "experienceSha256": "79d6c09b4bc32f4ff72498c2ee797a899ac471ecaad2cd7e72655e564ac885cf",
+  "pursuitSha256": "402a4faf0b26750be4bab5352c0f9607fe66ec7ed175f069501f3b9591dbfdcd",
+  "method": "Node VM contracts with earned previous-build snapshots and explicit scene-boundary fixtures. No human or physical-device claims."
+}

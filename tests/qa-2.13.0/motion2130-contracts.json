@@ -1,0 +1,97 @@
+{
+  "pass": true,
+  "method": "Node VM direct fixtures; no human/device trial. Tests include deliberate geometric contacts and normal simulation steps, not a full campaign.",
+  "passed": 12,
+  "failed": 0,
+  "rows": [
+    {
+      "name": "central-aperture-all-five-kinds-and-phases",
+      "pass": true,
+      "cases": 160,
+      "minClearRadius": 28.3,
+      "maxParts": 99
+    },
+    {
+      "name": "visible-body-has-physical-contact",
+      "pass": true,
+      "from": [
+        -20,
+        52,
+        -20
+      ],
+      "to": [
+        -20,
+        52,
+        20
+      ],
+      "part": "body"
+    },
+    {
+      "name": "swept-rim-and-moving-limb-contact",
+      "pass": true,
+      "cases": 10
+    },
+    {
+      "name": "pursuit-time-and-centred-spawn",
+      "pass": true,
+      "requiredLinkSeconds": 120,
+      "firstKind": "hammer",
+      "spawnAt": 9.783333333333399
+    },
+    {
+      "name": "warp-motion-pauses-and-has-fixed-budget",
+      "pass": true,
+      "items": 41,
+      "pausedSeconds": 2
+    },
+    {
+      "name": "centred-monster-save-continuation",
+      "pass": true,
+      "continuationSeconds": 1.5
+    },
+    {
+      "name": "convoy-portal-spawn-pause-save",
+      "pass": true,
+      "kind": "hammer",
+      "pausedSeconds": 2,
+      "continuationSeconds": 1
+    },
+    {
+      "name": "selective-projectile-velocity-and-sniper-tell",
+      "pass": true,
+      "sniper": 83.99999999999999,
+      "calmSniper": 66.00000000000001,
+      "legacySniper": 30,
+      "scout": 22.95,
+      "other": 17,
+      "telegraphSeconds": 0.5666666666666667
+    },
+    {
+      "name": "sniper-visible-aim-in-combat",
+      "pass": true,
+      "aimItems": 2
+    },
+    {
+      "name": "fast-projectile-does-not-tunnel-through-player",
+      "pass": true,
+      "damage": 13,
+      "dt": 0.03333333333333333
+    },
+    {
+      "name": "dock-opens-before-hull-crossing-and-pauses",
+      "pass": true,
+      "crossing": {
+        "t": 0.594632768361582,
+        "open": 1
+      }
+    },
+    {
+      "name": "base-route-stays-walkable-and-removes-cell-zigzags",
+      "pass": true,
+      "pairs": 188,
+      "reduced": 177,
+      "maxReduction": 25
+    }
+  ],
+  "failures": []
+}

@@ -1,0 +1,867 @@
+{
+  "pass": true,
+  "fullCampaignsPassed": 6,
+  "seed": 417147,
+  "comparisonBaseline": "Earned 2.12 campaign2120 runs, same seed/mode/route and input-only operators.",
+  "method": "60 Hz simulated gameplay; exact-state and answer-key operators; no reading time or physical phone.",
+  "rows": [
+    {
+      "mode": "training",
+      "route": "convoy",
+      "pass": true,
+      "cards": 28,
+      "missionsCompleted": 15,
+      "listenersStable": true,
+      "oldSeconds": 1376.33,
+      "newSeconds": 1226.45,
+      "deltaSeconds": -149.88,
+      "deltaPercent": -10.89,
+      "missions": [
+        {
+          "mission": "orbit1",
+          "oldSeconds": 50.98,
+          "newSeconds": 50.98,
+          "deltaSeconds": 0.0,
+          "oldMinHp": 100,
+          "newMinHp": 100
+        },
+        {
+          "mission": "base1",
+          "oldSeconds": 103.22,
+          "newSeconds": 103.22,
+          "deltaSeconds": 0.0,
+          "oldMinHp": 93.4,
+          "newMinHp": 93.4
+        },
+        {
+          "mission": "convoy1",
+          "oldSeconds": 68.02,
+          "newSeconds": 68.02,
+          "deltaSeconds": 0.0,
+          "oldMinHp": 94.5,
+          "newMinHp": 94.5
+        },
+        {
+          "mission": "pursuit",
+          "oldSeconds": 134.03,
+          "newSeconds": 112.2,
+          "deltaSeconds": -21.83,
+          "oldMinHp": 90.1,
+          "newMinHp": 100
+        },
+        {
+          "mission": "base2",
+          "oldSeconds": 127.68,
+          "newSeconds": 102.62,
+          "deltaSeconds": -25.06,
+          "oldMinHp": 100,
+          "newMinHp": 96.31
+        },
+        {
+          "mission": "route",
+          "oldSeconds": 86.17,
+          "newSeconds": 86.17,
+          "deltaSeconds": 0.0,
+          "oldMinHp": 94.5,
+          "newMinHp": 100
+        },
+        {
+          "mission": "swarm",
+          "oldSeconds": 79.87,
+          "newSeconds": 79.87,
+          "deltaSeconds": 0.0,
+          "oldMinHp": 100,
+          "newMinHp": 100
+        },
+        {
+          "mission": "parallax",
+          "oldSeconds": 49.9,
+          "newSeconds": 49.9,
+          "deltaSeconds": 0.0,
+          "oldMinHp": 96.7,
+          "newMinHp": 96.7
+        },
+        {
+          "mission": "base3",
+          "oldSeconds": 189.35,
+          "newSeconds": 101.4,
+          "deltaSeconds": -87.95,
+          "oldMinHp": 89.02,
+          "newMinHp": 89.02
+        },
+        {
+          "mission": "convoy3",
+          "oldSeconds": 108.35,
+          "newSeconds": 108.35,
+          "deltaSeconds": 0.0,
+          "oldMinHp": 92.08,
+          "newMinHp": 96.48
+        },
+        {
+          "mission": "orbit4",
+          "oldSeconds": 95.75,
+          "newSeconds": 88.6,
+          "deltaSeconds": -7.15,
+          "oldMinHp": 92.08,
+          "newMinHp": 94.72
+        },
+        {
+          "mission": "base4",
+          "oldSeconds": 81.45,
+          "newSeconds": 79.3,
+          "deltaSeconds": -2.15,
+          "oldMinHp": 100,
+          "newMinHp": 100
+        },
+        {
+          "mission": "contradictions",
+          "oldSeconds": 32.47,
+          "newSeconds": 32.17,
+          "deltaSeconds": -0.3,
+          "oldMinHp": 100,
+          "newMinHp": 100
+        },
+        {
+          "mission": "lair",
+          "oldSeconds": 113.1,
+          "newSeconds": 107.67,
+          "deltaSeconds": -5.43,
+          "oldMinHp": 90.52,
+          "newMinHp": 90.52
+        },
+        {
+          "mission": "mrg",
+          "oldSeconds": 56.0,
+          "newSeconds": 56.0,
+          "deltaSeconds": 0.0,
+          "oldMinHp": 100,
+          "newMinHp": 100
+        }
+      ],
+      "evidence": "campaign2130-training-convoy.json",
+      "testedHashes": {
+        "entrySha256": "6f9a372ef8389df26a17fd60ac4519f9c94ea4932244414a288b9e28b035763f",
+        "moduleSha256": "cf07807aae0dc33f33994ae5aa857ab9f4bf448cc4e52b9641322254573b9fae",
+        "experienceSha256": "79d6c09b4bc32f4ff72498c2ee797a899ac471ecaad2cd7e72655e564ac885cf"
+      }
+    },
+    {
+      "mode": "training",
+      "route": "pursuit",
+      "pass": true,
+      "cards": 28,
+      "missionsCompleted": 15,
+      "listenersStable": true,
+      "oldSeconds": 1337.25,
+      "newSeconds": 1236.05,
+      "deltaSeconds": -101.2,
+      "deltaPercent": -7.57,
+      "missions": [
+        {
+          "mission": "orbit1",
+          "oldSeconds": 50.98,
+          "newSeconds": 50.98,
+          "deltaSeconds": 0.0,
+          "oldMinHp": 100,
+          "newMinHp": 100
+        },
+        {
+          "mission": "base1",
+          "oldSeconds": 103.22,
+          "newSeconds": 103.22,
+          "deltaSeconds": 0.0,
+          "oldMinHp": 93.4,
+          "newMinHp": 93.4
+        },
+        {
+          "mission": "convoy1",
+          "oldSeconds": 68.02,
+          "newSeconds": 68.02,
+          "deltaSeconds": 0.0,
+          "oldMinHp": 94.5,
+          "newMinHp": 94.5
+        },
+        {
+          "mission": "pursuit",
+          "oldSeconds": 134.03,
+          "newSeconds": 112.2,
+          "deltaSeconds": -21.83,
+          "oldMinHp": 90.1,
+          "newMinHp": 100
+        },
+        {
+          "mission": "base2",
+          "oldSeconds": 127.68,
+          "newSeconds": 102.62,
+          "deltaSeconds": -25.06,
+          "oldMinHp": 100,
+          "newMinHp": 96.31
+        },
+        {
+          "mission": "route",
+          "oldSeconds": 56.77,
+          "newSeconds": 69.32,
+          "deltaSeconds": 12.55,
+          "oldMinHp": 100,
+          "newMinHp": 100
+        },
+        {
+          "mission": "swarm",
+          "oldSeconds": 79.87,
+          "newSeconds": 79.87,
+          "deltaSeconds": 0.0,
+          "oldMinHp": 100,
+          "newMinHp": 100
+        },
+        {
+          "mission": "parallax",
+          "oldSeconds": 49.9,
+          "newSeconds": 49.9,
+          "deltaSeconds": 0.0,
+          "oldMinHp": 96.7,
+          "newMinHp": 96.7
+        },
+        {
+          "mission": "base3",
+          "oldSeconds": 184.68,
+          "newSeconds": 104.23,
+          "deltaSeconds": -80.45,
+          "oldMinHp": 100,
+          "newMinHp": 89.02
+        },
+        {
+          "mission": "convoy3",
+          "oldSeconds": 108.35,
+          "newSeconds": 108.35,
+          "deltaSeconds": 0.0,
+          "oldMinHp": 92.08,
+          "newMinHp": 96.48
+        },
+        {
+          "mission": "orbit4",
+          "oldSeconds": 100.45,
+          "newSeconds": 108.15,
+          "deltaSeconds": 7.7,
+          "oldMinHp": 84.16,
+          "newMinHp": 92.08
+        },
+        {
+          "mission": "base4",
+          "oldSeconds": 81.98,
+          "newSeconds": 83.23,
+          "deltaSeconds": 1.25,
+          "oldMinHp": 100,
+          "newMinHp": 100
+        },
+        {
+          "mission": "contradictions",
+          "oldSeconds": 32.83,
+          "newSeconds": 33.42,
+          "deltaSeconds": 0.59,
+          "oldMinHp": 100,
+          "newMinHp": 100
+        },
+        {
+          "mission": "lair",
+          "oldSeconds": 102.48,
+          "newSeconds": 106.55,
+          "deltaSeconds": 4.07,
+          "oldMinHp": 90.52,
+          "newMinHp": 90.52
+        },
+        {
+          "mission": "mrg",
+          "oldSeconds": 56.0,
+          "newSeconds": 56.0,
+          "deltaSeconds": 0.0,
+          "oldMinHp": 100,
+          "newMinHp": 100
+        }
+      ],
+      "evidence": "campaign2130-training-pursuit.json",
+      "testedHashes": {
+        "entrySha256": "6f9a372ef8389df26a17fd60ac4519f9c94ea4932244414a288b9e28b035763f",
+        "moduleSha256": "cf07807aae0dc33f33994ae5aa857ab9f4bf448cc4e52b9641322254573b9fae",
+        "experienceSha256": "79d6c09b4bc32f4ff72498c2ee797a899ac471ecaad2cd7e72655e564ac885cf",
+        "pursuitSha256": "402a4faf0b26750be4bab5352c0f9607fe66ec7ed175f069501f3b9591dbfdcd"
+      }
+    },
+    {
+      "mode": "combat",
+      "route": "convoy",
+      "pass": true,
+      "cards": 28,
+      "missionsCompleted": 15,
+      "listenersStable": true,
+      "oldSeconds": 1369.83,
+      "newSeconds": 1371.77,
+      "deltaSeconds": 1.94,
+      "deltaPercent": 0.14,
+      "missions": [
+        {
+          "mission": "orbit1",
+          "oldSeconds": 55.67,
+          "newSeconds": 55.67,
+          "deltaSeconds": 0.0,
+          "oldMinHp": 76,
+          "newMinHp": 76
+        },
+        {
+          "mission": "base1",
+          "oldSeconds": 97.77,
+          "newSeconds": 96.28,
+          "deltaSeconds": -1.49,
+          "oldMinHp": 82,
+          "newMinHp": 81
+        },
+        {
+          "mission": "convoy1",
+          "oldSeconds": 68.02,
+          "newSeconds": 68.02,
+          "deltaSeconds": 0.0,
+          "oldMinHp": 60,
+          "newMinHp": 76
+        },
+        {
+          "mission": "pursuit",
+          "oldSeconds": 170.15,
+          "newSeconds": 141.77,
+          "deltaSeconds": -28.38,
+          "oldMinHp": 72,
+          "newMinHp": 58
+        },
+        {
+          "mission": "base2",
+          "oldSeconds": 123.15,
+          "newSeconds": 122.03,
+          "deltaSeconds": -1.12,
+          "oldMinHp": 80.53,
+          "newMinHp": 75.41
+        },
+        {
+          "mission": "route",
+          "oldSeconds": 86.18,
+          "newSeconds": 86.18,
+          "deltaSeconds": 0.0,
+          "oldMinHp": 76,
+          "newMinHp": 76
+        },
+        {
+          "mission": "swarm",
+          "oldSeconds": 128.97,
+          "newSeconds": 128.97,
+          "deltaSeconds": 0.0,
+          "oldMinHp": 84.88,
+          "newMinHp": 84.88
+        },
+        {
+          "mission": "parallax",
+          "oldSeconds": 61.27,
+          "newSeconds": 61.27,
+          "deltaSeconds": 0.0,
+          "oldMinHp": 91,
+          "newMinHp": 91
+        },
+        {
+          "mission": "base3",
+          "oldSeconds": 106.03,
+          "newSeconds": 107.77,
+          "deltaSeconds": 1.74,
+          "oldMinHp": 73.69,
+          "newMinHp": 79.23
+        },
+        {
+          "mission": "convoy3",
+          "oldSeconds": 108.45,
+          "newSeconds": 108.45,
+          "deltaSeconds": 0.0,
+          "oldMinHp": 90.4,
+          "newMinHp": 90.4
+        },
+        {
+          "mission": "orbit4",
+          "oldSeconds": 72.27,
+          "newSeconds": 81.32,
+          "deltaSeconds": 9.05,
+          "oldMinHp": 34.6,
+          "newMinHp": 21.46
+        },
+        {
+          "mission": "base4",
+          "oldSeconds": 88.53,
+          "newSeconds": 91.98,
+          "deltaSeconds": 3.45,
+          "oldMinHp": 81.67,
+          "newMinHp": 82.29
+        },
+        {
+          "mission": "contradictions",
+          "oldSeconds": 32.78,
+          "newSeconds": 32.47,
+          "deltaSeconds": -0.31,
+          "oldMinHp": 100,
+          "newMinHp": 100
+        },
+        {
+          "mission": "lair",
+          "oldSeconds": 110.77,
+          "newSeconds": 129.77,
+          "deltaSeconds": 19.0,
+          "oldMinHp": 32.93,
+          "newMinHp": 55.25
+        },
+        {
+          "mission": "mrg",
+          "oldSeconds": 59.83,
+          "newSeconds": 59.84,
+          "deltaSeconds": 0.01,
+          "oldMinHp": 16.8,
+          "newMinHp": 16.8
+        }
+      ],
+      "evidence": "campaign2130-combat-convoy.json",
+      "testedHashes": {
+        "entrySha256": "6f9a372ef8389df26a17fd60ac4519f9c94ea4932244414a288b9e28b035763f",
+        "moduleSha256": "cf07807aae0dc33f33994ae5aa857ab9f4bf448cc4e52b9641322254573b9fae",
+        "experienceSha256": "79d6c09b4bc32f4ff72498c2ee797a899ac471ecaad2cd7e72655e564ac885cf"
+      }
+    },
+    {
+      "mode": "combat",
+      "route": "pursuit",
+      "pass": true,
+      "cards": 28,
+      "missionsCompleted": 15,
+      "listenersStable": true,
+      "oldSeconds": 1332.18,
+      "newSeconds": 1333.48,
+      "deltaSeconds": 1.3,
+      "deltaPercent": 0.1,
+      "missions": [
+        {
+          "mission": "orbit1",
+          "oldSeconds": 55.67,
+          "newSeconds": 55.67,
+          "deltaSeconds": 0.0,
+          "oldMinHp": 76,
+          "newMinHp": 76
+        },
+        {
+          "mission": "base1",
+          "oldSeconds": 97.77,
+          "newSeconds": 96.28,
+          "deltaSeconds": -1.49,
+          "oldMinHp": 82,
+          "newMinHp": 81
+        },
+        {
+          "mission": "convoy1",
+          "oldSeconds": 68.02,
+          "newSeconds": 68.02,
+          "deltaSeconds": 0.0,
+          "oldMinHp": 60,
+          "newMinHp": 76
+        },
+        {
+          "mission": "pursuit",
+          "oldSeconds": 170.15,
+          "newSeconds": 141.77,
+          "deltaSeconds": -28.38,
+          "oldMinHp": 72,
+          "newMinHp": 58
+        },
+        {
+          "mission": "base2",
+          "oldSeconds": 123.15,
+          "newSeconds": 122.03,
+          "deltaSeconds": -1.12,
+          "oldMinHp": 80.53,
+          "newMinHp": 75.41
+        },
+        {
+          "mission": "route",
+          "oldSeconds": 50.87,
+          "newSeconds": 79.25,
+          "deltaSeconds": 28.38,
+          "oldMinHp": 75,
+          "newMinHp": 33
+        },
+        {
+          "mission": "swarm",
+          "oldSeconds": 128.97,
+          "newSeconds": 128.97,
+          "deltaSeconds": 0.0,
+          "oldMinHp": 84.88,
+          "newMinHp": 84.88
+        },
+        {
+          "mission": "parallax",
+          "oldSeconds": 61.27,
+          "newSeconds": 61.27,
+          "deltaSeconds": 0.0,
+          "oldMinHp": 91,
+          "newMinHp": 91
+        },
+        {
+          "mission": "base3",
+          "oldSeconds": 113.52,
+          "newSeconds": 102.45,
+          "deltaSeconds": -11.07,
+          "oldMinHp": 73.69,
+          "newMinHp": 49.8
+        },
+        {
+          "mission": "convoy3",
+          "oldSeconds": 108.45,
+          "newSeconds": 108.45,
+          "deltaSeconds": 0.0,
+          "oldMinHp": 90.4,
+          "newMinHp": 90.4
+        },
+        {
+          "mission": "orbit4",
+          "oldSeconds": 62.23,
+          "newSeconds": 72.07,
+          "deltaSeconds": 9.84,
+          "oldMinHp": 48.7,
+          "newMinHp": 32.8
+        },
+        {
+          "mission": "base4",
+          "oldSeconds": 87.03,
+          "newSeconds": 95.02,
+          "deltaSeconds": 7.99,
+          "oldMinHp": 71.46,
+          "newMinHp": 82.29
+        },
+        {
+          "mission": "contradictions",
+          "oldSeconds": 33.42,
+          "newSeconds": 32.17,
+          "deltaSeconds": -1.25,
+          "oldMinHp": 100,
+          "newMinHp": 100
+        },
+        {
+          "mission": "lair",
+          "oldSeconds": 111.85,
+          "newSeconds": 110.25,
+          "deltaSeconds": -1.6,
+          "oldMinHp": 78.5,
+          "newMinHp": 33.7
+        },
+        {
+          "mission": "mrg",
+          "oldSeconds": 59.83,
+          "newSeconds": 59.83,
+          "deltaSeconds": 0.0,
+          "oldMinHp": 16.8,
+          "newMinHp": 16.8
+        }
+      ],
+      "evidence": "campaign2130-combat-pursuit.json",
+      "testedHashes": {
+        "entrySha256": "6f9a372ef8389df26a17fd60ac4519f9c94ea4932244414a288b9e28b035763f",
+        "moduleSha256": "cf07807aae0dc33f33994ae5aa857ab9f4bf448cc4e52b9641322254573b9fae",
+        "experienceSha256": "79d6c09b4bc32f4ff72498c2ee797a899ac471ecaad2cd7e72655e564ac885cf",
+        "pursuitSha256": "402a4faf0b26750be4bab5352c0f9607fe66ec7ed175f069501f3b9591dbfdcd"
+      }
+    },
+    {
+      "mode": "pro",
+      "route": "convoy",
+      "pass": true,
+      "cards": 28,
+      "missionsCompleted": 15,
+      "listenersStable": true,
+      "oldSeconds": 1369.83,
+      "newSeconds": 1371.77,
+      "deltaSeconds": 1.94,
+      "deltaPercent": 0.14,
+      "missions": [
+        {
+          "mission": "orbit1",
+          "oldSeconds": 55.67,
+          "newSeconds": 55.67,
+          "deltaSeconds": 0.0,
+          "oldMinHp": 76,
+          "newMinHp": 76
+        },
+        {
+          "mission": "base1",
+          "oldSeconds": 97.77,
+          "newSeconds": 96.28,
+          "deltaSeconds": -1.49,
+          "oldMinHp": 82,
+          "newMinHp": 81
+        },
+        {
+          "mission": "convoy1",
+          "oldSeconds": 68.02,
+          "newSeconds": 68.02,
+          "deltaSeconds": 0.0,
+          "oldMinHp": 60,
+          "newMinHp": 76
+        },
+        {
+          "mission": "pursuit",
+          "oldSeconds": 170.15,
+          "newSeconds": 141.77,
+          "deltaSeconds": -28.38,
+          "oldMinHp": 72,
+          "newMinHp": 58
+        },
+        {
+          "mission": "base2",
+          "oldSeconds": 123.15,
+          "newSeconds": 122.03,
+          "deltaSeconds": -1.12,
+          "oldMinHp": 80.53,
+          "newMinHp": 75.41
+        },
+        {
+          "mission": "route",
+          "oldSeconds": 86.18,
+          "newSeconds": 86.18,
+          "deltaSeconds": 0.0,
+          "oldMinHp": 76,
+          "newMinHp": 76
+        },
+        {
+          "mission": "swarm",
+          "oldSeconds": 128.97,
+          "newSeconds": 128.97,
+          "deltaSeconds": 0.0,
+          "oldMinHp": 84.88,
+          "newMinHp": 84.88
+        },
+        {
+          "mission": "parallax",
+          "oldSeconds": 61.27,
+          "newSeconds": 61.27,
+          "deltaSeconds": 0.0,
+          "oldMinHp": 91,
+          "newMinHp": 91
+        },
+        {
+          "mission": "base3",
+          "oldSeconds": 106.03,
+          "newSeconds": 107.77,
+          "deltaSeconds": 1.74,
+          "oldMinHp": 73.69,
+          "newMinHp": 79.23
+        },
+        {
+          "mission": "convoy3",
+          "oldSeconds": 108.45,
+          "newSeconds": 108.45,
+          "deltaSeconds": 0.0,
+          "oldMinHp": 90.4,
+          "newMinHp": 90.4
+        },
+        {
+          "mission": "orbit4",
+          "oldSeconds": 72.27,
+          "newSeconds": 81.32,
+          "deltaSeconds": 9.05,
+          "oldMinHp": 34.6,
+          "newMinHp": 21.46
+        },
+        {
+          "mission": "base4",
+          "oldSeconds": 88.53,
+          "newSeconds": 91.98,
+          "deltaSeconds": 3.45,
+          "oldMinHp": 81.67,
+          "newMinHp": 82.29
+        },
+        {
+          "mission": "contradictions",
+          "oldSeconds": 32.78,
+          "newSeconds": 32.47,
+          "deltaSeconds": -0.31,
+          "oldMinHp": 100,
+          "newMinHp": 100
+        },
+        {
+          "mission": "lair",
+          "oldSeconds": 110.77,
+          "newSeconds": 129.77,
+          "deltaSeconds": 19.0,
+          "oldMinHp": 32.93,
+          "newMinHp": 55.25
+        },
+        {
+          "mission": "mrg",
+          "oldSeconds": 59.83,
+          "newSeconds": 59.84,
+          "deltaSeconds": 0.01,
+          "oldMinHp": 16.8,
+          "newMinHp": 16.8
+        }
+      ],
+      "evidence": "campaign2130-pro-convoy.json",
+      "testedHashes": {
+        "entrySha256": "6f9a372ef8389df26a17fd60ac4519f9c94ea4932244414a288b9e28b035763f",
+        "moduleSha256": "cf07807aae0dc33f33994ae5aa857ab9f4bf448cc4e52b9641322254573b9fae",
+        "experienceSha256": "79d6c09b4bc32f4ff72498c2ee797a899ac471ecaad2cd7e72655e564ac885cf"
+      }
+    },
+    {
+      "mode": "pro",
+      "route": "pursuit",
+      "pass": true,
+      "cards": 28,
+      "missionsCompleted": 15,
+      "listenersStable": true,
+      "oldSeconds": 1332.18,
+      "newSeconds": 1333.48,
+      "deltaSeconds": 1.3,
+      "deltaPercent": 0.1,
+      "missions": [
+        {
+          "mission": "orbit1",
+          "oldSeconds": 55.67,
+          "newSeconds": 55.67,
+          "deltaSeconds": 0.0,
+          "oldMinHp": 76,
+          "newMinHp": 76
+        },
+        {
+          "mission": "base1",
+          "oldSeconds": 97.77,
+          "newSeconds": 96.28,
+          "deltaSeconds": -1.49,
+          "oldMinHp": 82,
+          "newMinHp": 81
+        },
+        {
+          "mission": "convoy1",
+          "oldSeconds": 68.02,
+          "newSeconds": 68.02,
+          "deltaSeconds": 0.0,
+          "oldMinHp": 60,
+          "newMinHp": 76
+        },
+        {
+          "mission": "pursuit",
+          "oldSeconds": 170.15,
+          "newSeconds": 141.77,
+          "deltaSeconds": -28.38,
+          "oldMinHp": 72,
+          "newMinHp": 58
+        },
+        {
+          "mission": "base2",
+          "oldSeconds": 123.15,
+          "newSeconds": 122.03,
+          "deltaSeconds": -1.12,
+          "oldMinHp": 80.53,
+          "newMinHp": 75.41
+        },
+        {
+          "mission": "route",
+          "oldSeconds": 50.87,
+          "newSeconds": 79.25,
+          "deltaSeconds": 28.38,
+          "oldMinHp": 75,
+          "newMinHp": 33
+        },
+        {
+          "mission": "swarm",
+          "oldSeconds": 128.97,
+          "newSeconds": 128.97,
+          "deltaSeconds": 0.0,
+          "oldMinHp": 84.88,
+          "newMinHp": 84.88
+        },
+        {
+          "mission": "parallax",
+          "oldSeconds": 61.27,
+          "newSeconds": 61.27,
+          "deltaSeconds": 0.0,
+          "oldMinHp": 91,
+          "newMinHp": 91
+        },
+        {
+          "mission": "base3",
+          "oldSeconds": 113.52,
+          "newSeconds": 102.45,
+          "deltaSeconds": -11.07,
+          "oldMinHp": 73.69,
+          "newMinHp": 49.8
+        },
+        {
+          "mission": "convoy3",
+          "oldSeconds": 108.45,
+          "newSeconds": 108.45,
+          "deltaSeconds": 0.0,
+          "oldMinHp": 90.4,
+          "newMinHp": 90.4
+        },
+        {
+          "mission": "orbit4",
+          "oldSeconds": 62.23,
+          "newSeconds": 72.07,
+          "deltaSeconds": 9.84,
+          "oldMinHp": 48.7,
+          "newMinHp": 32.8
+        },
+        {
+          "mission": "base4",
+          "oldSeconds": 87.03,
+          "newSeconds": 95.02,
+          "deltaSeconds": 7.99,
+          "oldMinHp": 71.46,
+          "newMinHp": 82.29
+        },
+        {
+          "mission": "contradictions",
+          "oldSeconds": 33.42,
+          "newSeconds": 32.17,
+          "deltaSeconds": -1.25,
+          "oldMinHp": 100,
+          "newMinHp": 100
+        },
+        {
+          "mission": "lair",
+          "oldSeconds": 111.85,
+          "newSeconds": 110.25,
+          "deltaSeconds": -1.6,
+          "oldMinHp": 78.5,
+          "newMinHp": 33.7
+        },
+        {
+          "mission": "mrg",
+          "oldSeconds": 59.83,
+          "newSeconds": 59.83,
+          "deltaSeconds": 0.0,
+          "oldMinHp": 16.8,
+          "newMinHp": 16.8
+        }
+      ],
+      "evidence": "campaign2130-pro-pursuit.json",
+      "testedHashes": {
+        "entrySha256": "6f9a372ef8389df26a17fd60ac4519f9c94ea4932244414a288b9e28b035763f",
+        "moduleSha256": "cf07807aae0dc33f33994ae5aa857ab9f4bf448cc4e52b9641322254573b9fae",
+        "experienceSha256": "79d6c09b4bc32f4ff72498c2ee797a899ac471ecaad2cd7e72655e564ac885cf",
+        "pursuitSha256": "402a4faf0b26750be4bab5352c0f9607fe66ec7ed175f069501f3b9591dbfdcd"
+      }
+    }
+  ],
+  "resolvedFindings": [
+    {
+      "id": "branch-rescued-sync",
+      "description": "Previously rescued main-pursuit requirements incorrectly prefilled voluntary-pursuit packets and skipped actual transmission. Fresh branch now uses branchPackets.",
+      "severity": "functional",
+      "verification": "3 affected full campaigns and voluntary-pursuit contract"
+    },
+    {
+      "id": "branch-pickup-reload",
+      "description": "Branch acquire left delivered pickup.dead false until reload. Acquire now synchronizes it immediately.",
+      "severity": "state consistency",
+      "verification": "Exact pack/unpack branch contract on final source"
+    }
+  ],
+  "scopeNote": "Convoy runs predate branch-only correction; the three pursuit runs were rerun after packetDelivered fix. Final acquire pickup.dead consistency is tested by the reload contract; it does not alter flight transitions, damage, or rewards."
+}

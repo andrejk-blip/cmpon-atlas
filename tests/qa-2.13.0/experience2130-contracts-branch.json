@@ -1,0 +1,25 @@
+{
+  "pass": true,
+  "passed": 1,
+  "failed": 0,
+  "rows": [
+    {
+      "name": "voluntary-pursuit-transfers-new-packets-and-reloads-progress",
+      "pass": true,
+      "previousRequirements": 3,
+      "initialPackets": [
+        0,
+        0,
+        0
+      ],
+      "completedBranchPackets": 1,
+      "reloadPreserved": true
+    }
+  ],
+  "failures": [],
+  "entrySha256": "6f9a372ef8389df26a17fd60ac4519f9c94ea4932244414a288b9e28b035763f",
+  "campaignSha256": "cf07807aae0dc33f33994ae5aa857ab9f4bf448cc4e52b9641322254573b9fae",
+  "experienceSha256": "d70588eee22c38069cd12277f89f6db6681d3091334b671c6db4b4cdc4b4f04b",
+  "pursuitSha256": "cb19348f1452c7522cc82f7a22bdd03b25ae6b48a9ffc301394b9d40ddb7a2a5",
+  "method": "Node VM contracts with earned previous-build snapshots and explicit scene-boundary fixtures. No human or physical-device claims."
+}

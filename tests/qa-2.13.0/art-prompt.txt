@@ -1,0 +1,34 @@
+Generation: built-in image_gen.imagegen; 2026-11-02 (Europe/Moscow).
+Reference: assets/citadel-prologue-v1.9.0.webp, style and character reference only.
+Output: assets/citadel-after-parallax-v2.13.0.webp
+Encoding: original pixel dimensions retained, RGB WebP quality 88 method 6; no cropping or repainting after generation.
+
+Use case: illustration-story
+Asset type: production sprite sheet of four comic panels for the browser science-fiction game Citadel.
+Input image 1: STYLE AND CHARACTER REFERENCE ONLY, not an edit target. Create a new sequel page matching its bold black ink, crosshatching, subtle halftone printing, richly detailed retro science-fiction illustration, navy uniforms with ochre-gold trim, teal spacecraft, warm orange engine glow and cyan light.
+Composition: a perfectly square sheet, EXACTLY FOUR equal square panels in a strict 2 by 2 grid. One narrow straight black vertical divider at the exact center and one narrow straight black horizontal divider at the exact center. No outer margin. All four scenes readable individually when cropped to one quadrant; do not let subjects cross the panel borders.
+Top-left panel: the colossal defeated Parallax, a living jellyfish-octopus megabase floating in deep space. Its immense blue-violet dome and mechanical-organic tentacles curl around an enormous cracked orange central crystal. A tiny detailed teal spacecraft with two cyan engine trails escapes through the shattered crystal opening toward the viewer. Clear gigantic scale, triumphant after-battle mood, beautiful luminous fragments, no gore.
+Top-right panel: medium close-up of the SAME young adult male pilot from the reference lower-right panel, short tousled dark-brown hair, navy-and-gold flight suit and headset, inside his cockpit, reaching with a gloved hand toward floating gold-cyan holographic document fragments. Concentrated, relieved expression. Detailed cockpit, reflected light; no readable text on fragments or screens.
+Bottom-left panel: the same diverse navy-and-gold analyst crew from the reference upper-left panel, including brunette woman with hair in a bun, dark-skinned man with glasses and blonde woman. They collaborate at a worktable aboard the Citadel, joining glowing document fragments into ONE luminous golden-cyan rectangular holographic dossier above the table. Show purposeful gestures, simple geometric connected sections on the dossier, no readable words. The dossier is a strong central visual symbol.
+Bottom-right panel: the same small teal spacecraft arriving toward a beautifully detailed immense gothic orbital integration Citadel, navy space, golden rim light, a welcoming illuminated hangar. A subtle distant violet split signal or fractured spatial glow suggests unresolved contradictions ahead. Hopeful forward movement and clean readable silhouette. Keep the spaceship clearly separated from the citadel.
+Text: NONE. No titles, letters, numbers, captions, speech balloons, logos or watermark. No blank caption boxes. Not photorealistic and not generic smooth 3D. Match the reference print-comic style and character continuity.
+
+
+PERK SHEET
+Generation: built-in image_gen.imagegen; 2026-11-02 (Europe/Moscow).
+Output: assets/citadel-perks-v2.13.0.webp (1536 x 1024, RGB WebP quality 90 method 6).
+Encoding: original pixel dimensions retained; no cropping or repainting after generation.
+
+Use case: illustration-story
+Asset type: production game perk illustration sprite sheet, six equal square cells in a strict 3 columns by 2 rows grid. Landscape 3:2 canvas. No outer margin, no cell borders, no gutters; every cell has exactly the same plain warm cream paper background. The six cells must line up on an exact regular grid so they can be cropped as CSS backgrounds.
+Primary request: six lively visual perk emblems, each starring the SAME ORIGINAL cheerful dark-haired adult analyst mechanic mascot, dark navy jumpsuit with ochre-gold trim, expressive eyebrows, compact sturdy silhouette. Retro 1950s technical instruction-book cartoon rendered in thick black ink, flat warm gold, muted teal, dark navy and cream, sparse halftone shadows. Playful theatrical poses, high contrast. Original character, NOT Vault Boy, not blonde, no recognizable franchise character or logos.
+Top-left cell (observation): mascot crouches with an oversized magnifying glass held to one eye, enlarged eye visible through lens, examining a little glowing geometric clue. Clear observation silhouette.
+Top-middle cell (priority): mascot actively flips a large lightning-shaped switch on a small control panel, three stacked priority arrows nearby, decisive movement lines. Clear prioritization/fast decisions silhouette.
+Top-right cell (systems thinking): mascot assembles three interlocking puzzle pieces into a sturdy teal shield, knowing smile. Clear systems and connections silhouette.
+Bottom-left cell (weapons): mascot braces a compact futuristic triple-barrel blaster, pointing diagonally outward, three simple muzzle stars. No realistic blood or violence, friendly engineering caricature.
+Bottom-middle cell (armor): mascot proudly wears a huge plated protective navy-gold vest, hands on hips, tiny impact marks harmlessly bounce off the shoulder plates. Clear defense silhouette.
+Bottom-right cell (rockets): mascot hugs or presents a rack holding THREE small gold-tipped teal science-fiction rockets, pleased grin, a few energy spark marks. Clear rocket ammo silhouette, no reactor.
+Composition: each figure and prop completely contained within its own equal square cell, centered and with generous cream safety space around all sides, no crop at cell boundaries. Emblems should be readable even at 80 pixels. Limit small details. Six distinct poses, consistent head/face/uniform design. Background stays plain cream.
+Text: NONE. No lettering, labels, captions, numbers, speech bubbles, logos or watermark. No photo, no glossy 3D, no gradients, no grid lines.
+
+
