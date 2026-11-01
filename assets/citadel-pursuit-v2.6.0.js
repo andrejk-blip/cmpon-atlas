@@ -29,13 +29,14 @@
   ]);
   const stageOf = e => STAGES[e.pursuit.chapter];
   const branch=e=>!!e.campaign2120?.branchActive;
-  const packetSeconds = (e, i) => branch(e)?(e.assist?[20,24,28]:[22,26,32])[i]:e.assist ? STAGES[i].calm : STAGES[i].seconds;
+  const packetSeconds = (e, i) => e.campaign2120 ? (branch(e)?(e.assist?[17,20,24]:[19,22,27]):(e.assist?[26,32,39]:[32,39,49]))[i] : branch(e)?(e.assist?[20,24,28]:[22,26,32])[i]:e.assist ? STAGES[i].calm : STAGES[i].seconds;
   const linkRadius = e => stageOf(e).radius + (e.assist ? 4 : 0);
   const granting = new WeakSet();
   const loaded = e => !!e && e.stage === 1 && !e.finale && e.pursuit?.version === VERSION;
   const active = e => loaded(e) && e.phase === 'pursuit' && !e.crash;
   const distance = (a, b) => V3.len(V3.sub(a, b));
   const count = e => branch(e)?e.campaign2120.branchPackets||0:e.plan[1].filter(id => e.rescued.includes(id)).length;
+  const packetDelivered = (e, i, reqId) => branch(e) ? i < (e.campaign2120.branchPackets || 0) : e.rescued.includes(reqId);
   const casesDone = e => branch(e)||[2, 3].every(n => e.decisions.some(d => d.stage === 1 && d.caseIndex === n));
   const comic = (e, text, kind, pos) => e.emit('comic', { text, kind, anchor: pos.slice() });
   const smooth = n => { const t = arcadeClamp(n, 0, 1); return t * t * (3 - 2 * t); };
@@ -120,6 +121,30 @@
   function poseWarp(e,w,dt){
     const previous=new Map((w.segments||[]).map((x,i)=>[x.key||String(i),x.pos]));
     const c=w.center,side=w.side||1,phase=w.phase;
+    if(w.portal2130){
+      // The creature surrounds a real aperture. Rendering and swept collision
+      // share these joints; its central opening is never a hidden solid body.
+      const add=(key,pos,r,part,chain=0)=>({key,pos,r,part,chain,previous:dt>0?(previous.get(key)||pos).slice():pos.slice()});
+      const n=28,R=w.portalRadius||43,shift=Math.sin(phase*.45)*5;
+      w.aperture=[c[0]+shift,c[1]+Math.cos(phase*.4)*3,c[2]];
+      w.segments=[];
+      for(let i=0;i<n;i++){const a=i/n*Math.PI*2;
+        w.segments.push(add('rim'+i,V3.add(w.aperture,[Math.cos(a)*R,Math.sin(a)*R,Math.sin(a*3+phase)*2]),7.2,'rim'));
+      }
+      const top=V3.add(w.aperture,[0,R,0]);
+      if(w.kind==='medusa')for(let i=-2;i<=2;i++)w.segments.push(add('bell'+i,V3.add(top,[i*9,5,-4]),8.5,'body'));
+      else for(let i=-1;i<=1;i++)for(const y of [-3,3])w.segments.push(add('head'+i+'y'+y,V3.add(top,[i*6,2+y,0]),6.8,'body'));
+      if(w.kind==='maw')for(let i=0;i<n;i+=2){const j=w.segments[i];w.segments.push(add('tooth'+i,V3.lerp(j.pos,w.aperture,.16),2.5,'body'));}
+      // Four distinct articulated limbs. Keep a generous inner flight lane;
+      // tips sweep the rim rather than forcing unavoidable centre collisions.
+      const arms=w.kind==='medusa'?6:4;
+      for(let arm=0;arm<arms;arm++)for(let j=0;j<=10;j++){
+        const t=j/10,a=arm/arms*Math.PI*2+Math.sin(phase+arm)*.18+t*.26;
+        const r=R+11-t*(18+5*Math.sin(phase*1.2+arm));
+        w.segments.push(add('portal'+arm+'j'+j,V3.add(w.aperture,[Math.cos(a)*r,Math.sin(a)*r,Math.sin(t*Math.PI)*14]),3.7-t,'tentacle',arm));
+      }
+      w.pos=c.slice();w.head=w.segments.at(-1).pos.slice();return;
+    }
     if(w.schema!==280){
       // Keep an already encountered 2.6 apparition at its original size.
       const head=[c[0]+side*(25+5*Math.sin(phase)),c[1]+Math.cos(phase*.83)*13,c[2]+Math.sin(phase)*8];
@@ -183,7 +208,8 @@
       s.nextWarpDistance=d+[1200,1000,820][s.chapter];
       const center=route(e,d),side=index%2?-1:1,kind=WARP_KINDS[index%WARP_KINDS.length];
       s.warpEntities.push({id:++e.entityId,schema:280,kind,name:WARP_NAMES[kind],scale:3.4,
-        pos:[center[0]+side*87,center[1]+(index%3-1)*8,center[2]],center,distance:d,side,
+        portal2130:!!e.campaign2120,portalRadius:e.assist?46:43,
+        pos:e.campaign2120?center.slice():[center[0]+side*87,center[1]+(index%3-1)*8,center[2]],center,distance:d,side,
         phase:index*1.73,age:0,reach:100,bodyRadius:34,segments:[],contactUntil:0});s.warpSpawned++;
     }
     s.warpEntities=s.warpEntities.slice(-RULES.maxWarp);
@@ -236,18 +262,18 @@
     point[1]+=weave*2.2*Math.sin(s.clock*.51+1.4);
     const offset=evasion(e,dt,gate);point[0]+=offset[0];point[1]+=offset[1];
     s.leader.pos=point;s.leader.vel=dt>0?V3.scale(V3.sub(point,old),1/dt):[0,0,-s.leadSpeed];
-    for(const c of s.carriers){c.pos=point.slice();c.vel=s.leader.vel.slice();c.delivered=e.rescued.includes(c.reqId);c.dead=c.delivered;c.transfer=c.delivered?1:s.packets[c.index]/packetSeconds(e,c.index);}
+    for(const c of s.carriers){c.pos=point.slice();c.vel=s.leader.vel.slice();c.delivered=packetDelivered(e,c.index,c.reqId);c.dead=c.delivered;c.transfer=c.delivered?1:s.packets[c.index]/packetSeconds(e,c.index);}
     for(const item of e.pickups)if(item.type==='requirement')item.pos=point.slice();
   }
   function sync(e) {
     const s=e.pursuit;e.boss=null;e.lock=null;
     e.enemies=e.enemies.filter(x=>x.pursuitEnemy&&!x.dead).slice(0,RULES.maxEnemies);
     e.hostile=e.hostile.filter(x=>x.pursuitShot).slice(-RULES.maxHostile);
-    e.pickups=e.pickups.filter(p=>p.type!=='requirement').concat(e.plan[1].map(reqId=>{
+    e.pickups=e.pickups.filter(p=>p.type!=='requirement').concat(e.plan[1].map((reqId,i)=>{
       const item=e.pickups.find(p=>p.type==='requirement'&&p.reqId===reqId)||{type:'requirement',reqId,r:2};
-      item.pos=s.leader.pos.slice();item.dead=e.rescued.includes(reqId);item.pursuitCarrier=s.leader.id;return item;
+      item.pos=s.leader.pos.slice();item.dead=packetDelivered(e,i,reqId);item.pursuitCarrier=s.leader.id;return item;
     }));
-    s.carriers.forEach((c,i)=>{if(e.rescued.includes(c.reqId)){c.delivered=true;c.dead=true;s.packets[i]=packetSeconds(e,i);}});
+    s.carriers.forEach((c,i)=>{c.delivered=c.dead=packetDelivered(e,i,c.reqId);if(c.delivered)s.packets[i]=packetSeconds(e,i);});
     updateProgress(e);
   }
   function updateProgress(e) {
@@ -280,7 +306,7 @@
     s.gates=s.gates.slice(-RULES.maxGates);
   }
   function initialize(e, migrating = false) {
-    const previous=e.pursuit,rescued=count(e),seconds=branch(e)?[0,1,2].reduce((n,i)=>n+packetSeconds(e,i),0):e.assist?RULES.calmSeconds:RULES.seconds;
+    const previous=e.pursuit,rescued=count(e),seconds=[0,1,2].reduce((n,i)=>n+packetSeconds(e,i),0);
     let fraction=rescued/3;
     if(migrating&&previous?.version==='1.9.0')fraction=Math.max(fraction,arcadeClamp(finite(previous.progress)/100,0,1));
     if(migrating&&previous?.version==='1.8.0')fraction=Math.max(fraction,(rescued+Math.max(0,...previous.carriers.filter(c=>!e.rescued.includes(c.reqId)).map(c=>Math.min(.99,finite(c.transfer)/Math.max(.1,finite(c.transferTime,3))))))/3);
@@ -373,7 +399,7 @@
     e.emit('phase', 'dock');
   }
   function acquire(e, c) {
-    if(branch(e)){if(!c.delivered){c.delivered=c.dead=true;c.transfer=1;e.campaign2120.branchPackets=(e.campaign2120.branchPackets||0)+1;}return;}
+    if(branch(e)){if(!c.delivered){c.delivered=c.dead=true;c.transfer=1;e.campaign2120.branchPackets=(e.campaign2120.branchPackets||0)+1;for(const p of e.pickups)if(p.type==='requirement'&&p.reqId===c.reqId)p.dead=true;}return;}
     if (c.delivered || e.rescued.includes(c.reqId)) return;
     const item = e.pickups.find(p => p.type === 'requirement' && p.reqId === c.reqId);
     if (!item) return;
@@ -549,7 +575,7 @@
       this.pursuit.announced = true;
       comic(this, 'ФЗ УХОДИТ СО СВЯЗИ!', 'action', this.pursuit.leader.pos);
     }
-    this.say('Вижу ФЗ. Голубой канал появится после захвата связи. Пролетай внутри колец; пробел или кнопка огня — по эскадрильям, правая кнопка мыши — ракета. Сущности Варпа обходи: оружие их не берёт.', 'order', true);
+    this.say(this.campaign2120?'Вижу ФЗ. Держи голубой канал, пролетай внутри колец. Гиганты прямо по курсу: лети через свободный центр, избегая тела и щупалец. По перехватчикам — огонь и ракеты.':'Вижу ФЗ. Голубой канал появится после захвата связи. Пролетай внутри колец; пробел или кнопка огня — по эскадрильям, правая кнопка мыши — ракета. Сущности Варпа обходи: оружие их не берёт.', 'order', true);
     this.emit('state', 'playing'); return true;
   };
   proto.collect = function (item, ...args) {
@@ -812,7 +838,7 @@
     if (!active(e)) return result;
     const set = (id, text) => { const node = document.getElementById(id); if (node) node.textContent = text; };
     set('arcade-mission-title', 'ФЗ уходит со связи');
-    set('arcade-mission-brief', 'Три пакета · круглые пролёты · эскадрильи и сущности Варпа. Огонь по кораблям, обход монстров.');
+    set('arcade-mission-brief', e.campaign2120?'Три пакета · круглые пролёты · пять гигантов. Пролетайте через их свободный центр; избегайте щупалец.':'Три пакета · круглые пролёты · эскадрильи и сущности Варпа. Огонь по кораблям, обход монстров.');
     set('citadel-objective-phase', 'ПОГОНЯ · ЭТАП '+(e.pursuit.chapter+1)+'/3');
     set('citadel-primary', e.autopilot ? 'Ручное управление' : 'Помощь в погоне');
     set('mobile-crystal', 'Следовать за ФЗ');
@@ -827,7 +853,7 @@
     const controls = isMobileLayout() ? 'Обычный джойстик: в стороны, вверх и вниз.' : 'Обычное управление: WASD, стрелки или мышь.';
     return '<div class="arcade-state-card briefing simple-brief"><span class="arcade-serial">УРОВЕНЬ 04 · ПОГОНЯ</span>' +
       '<h3>ФЗ уходит со связи</h3><p>ФЗ уносит три пакета требований. Пройдите <b>три этапа</b>: захват сигнала, канал под огнём и последний рывок до <b>100%</b>.</p>' +
-      '<div class="brief-command"><span class="crystal-symbol">↗</span><div><b>Пролетайте внутри колец и обходите Варп</b><small>' + controls + ' ФЗ ускоряется и резко меняет курс. Молоты и щупальца Варпа неуязвимы: обходите их. Тяга подстраивается сама.</small></div></div>' +
+      '<div class="brief-command"><span class="crystal-symbol">↗</span><div><b>'+(e.campaign2120?'Пролетайте через кольца и центр гигантов':'Пролетайте внутри колец и обходите Варп')+'</b><small>' + controls + ' ФЗ ускоряется и резко меняет курс. Молоты и щупальца Варпа неуязвимы: обходите их. Тяга подстраивается сама.</small></div></div>' +
       '<div class="brief-command"><span class="crystal-symbol">◉</span><div><b>Голубой канал — передача данных</b><small>После захвата связи между кораблями виден поток пакетов. Канал исчез — передача остановилась. Полученные данные сохраняются.</small></div></div>' +
       '<div class="brief-command"><span class="crystal-symbol">✦</span><div><b>Перехватчиков нужно сбивать</b><small>Пробел, левая кнопка мыши или кнопка огня. Правая кнопка мыши — ракеты. Перехватчики стреляют по вашему кораблю и снимают щит. ФЗ не получает урон. Фиолетовый глушитель мешает связи.</small></div></div>' +
       '<p>После полной загрузки спокойно сверим решения и вернёмся в Цитадель.</p>' +

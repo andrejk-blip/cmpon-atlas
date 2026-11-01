@@ -16,13 +16,13 @@
  }
  proto.beginEscort=function(...args){const ok=old.begin.apply(this,args);if(!ok||!CITADEL_CONVOY.active(this))return ok;
   this.escort.warp290={version:1,next:0,entities:[],contacts:0,repelled:0,spawned:0};
-  this.escort.definition.brief=(this.escort.definition.brief||'')+' Существа у края коридора бьют щупальцами. Уклоняйтесь в свободную половину; E / «Прикрытие» отталкивает их.';
+  this.escort.definition.brief=(this.escort.definition.brief||'')+(this.campaign2120?' Гиганты прямо по курсу: пролетайте через свободный центр, избегая щупалец. E / «Прикрытие» отталкивает их.':' Существа у края коридора бьют щупальцами. Уклоняйтесь в свободную половину; E / «Прикрытие» отталкивает их.');
   return ok;
  };
  function pose(e,w,dt){
   const t=e.escort.time,z=(t-w.cross)*36;
   w.age=t-w.born;w.phase=w.age*({hammer:1.05,tentacle:1.1,maw:.8,mantis:1.25,medusa:.85}[w.kind])+w.index*.7;
-  w.center=[0,w.laneY,z];w.pos=[w.side*69,w.laneY,z];
+  w.center=[0,w.laneY,z];w.pos=w.portal2130?w.center.slice():[w.side*69,w.laneY,z];
   P.poseWarp(e,w,dt);
   // A real pulse folds the whole limb back toward its body. The same pose
   // is used for collision, rendering and saved continuation.
@@ -47,10 +47,11 @@
   const plan=plans[state.next];
   if(plan&&t>=plan.spawn){
    const index=state.next++,w={id:this.entityId++,schema:280,kind:plan.kind,name:P.warpNames[plan.kind],index,side:plan.side,
+    portal2130:!!this.campaign2120,portalRadius:this.assist?47:44,
     scale:2.6,bodyRadius:26,age:0,phase:0,cross:plan.cross,born:plan.spawn,laneY:(index%3-1)*3,
     center:[0,0,0],pos:[0,0,0],segments:[],contactUntil:0,repelledUntil:0};
    pose(this,w,0);state.entities.push(w);state.spawned++;
-   this.say(w.name+' у '+(w.side>0?'правого':'левого')+' борта. Обходите конечности; прикрытие отталкивает их.','alert',true);
+   this.say(w.name+(w.portal2130?' прямо по курсу. Пролетайте через свободный центр; не касайтесь щупалец.':' у '+(w.side>0?'правого':'левого')+' борта. Обходите конечности; прикрытие отталкивает их.'),'alert',true);
   }
   state.entities=state.entities.filter(w=>t<w.cross+3.5).slice(-2);
   for(const w of state.entities){

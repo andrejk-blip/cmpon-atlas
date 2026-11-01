@@ -144,12 +144,14 @@
       if(x.shot>0)x.shot=Math.max(0,x.shot-dt*(pressure-1));
       // The sniper fires a real projectile immediately on sight. Rocket
       // travel and the physical melee motion remain avoidable by movement.
-      if(x.charge>0)x.charge=Math.min(x.charge,dt);
+      if(x.charge>0&&!this.campaign2120)x.charge=Math.min(x.charge,dt);
       if(x.decksAttack?.phase==='windup')x.decksAttack.windup=x.decksAttack.kind==='rocket'?0:.34;
     }
     const shotStart=b.hostile.length,rocketStart=b.decks?.rockets.length||0;
     const result=old.enemy.call(this,x,dt);
-    if(combat && x.charge>dt)x.charge=dt;
+    if(combat && x.charge>dt&&!this.campaign2120)x.charge=dt;
+    if(this.campaign2120&&x.archetype==='sniper'&&x.charge>0&&!x.sniper2130Charging){x.charge=Math.min(x.charge,this.assist?.8:.55);x.sniper2130Charging=true;}
+    if(!x.charge)x.sniper2130Charging=false;
     if(combat && x.decksAttack) {
       if(x.decksAttack.phase==='windup')x.decksAttack.windup=x.decksAttack.kind==='rocket'?0:.34;
       x.decksAttack.recovery=Math.min(x.decksAttack.recovery,.58);
@@ -157,6 +159,10 @@
     const protection=(1-k.armor*.06)*(globalThis.CITADEL_SKILLS?.protection(this)||1);
     for(let i=shotStart;i<b.hostile.length;i++) {
       const shot=b.hostile[i];shot.damage*=protection;shot.baseKitScaled=true;s.shotsFired++;
+      if(this.campaign2120){const factor=x.archetype==='sniper'?(this.assist?2.2:2.8):x.archetype==='scout'?1.35:1;
+        shot.vel=V3.scale(shot.vel,factor);shot.sniper2130=x.archetype==='sniper';shot.owner=x.id;
+        if(shot.sniper2130){shot.color='#ffce81';shot.r=Math.min(shot.r||.35,.35);}
+      }
     }
     for(let i=rocketStart;i<(b.decks?.rockets.length||0);i++) {
       b.decks.rockets[i].damage*=protection;b.decks.rockets[i].baseKitScaled=true;s.shotsFired++;

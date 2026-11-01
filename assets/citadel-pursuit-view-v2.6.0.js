@@ -205,6 +205,7 @@
  });}
  function warp(a,e,w,lod){
    const tag={pursuit260:true,warpEntity:w.id,warpKind:w.kind},parts=(P.warpParts?.(e,w)||w.segments||[]).filter(x=>x.pos?.every(Number.isFinite));
+   if(w.portal2130){portalMonster(a,e,w,parts,lod,tag);return;}
    const root=w.pos,phase=w.phase||0,age=w.age||0,scale=w.scale||.94;a.compact=lod>0;
    if(!root?.every(Number.isFinite))return;
    const breath=1+Math.sin(age*2.1)*.018;
@@ -288,6 +289,26 @@
      // Preserve its physical form until passed; new gates are all circles.
      for(const p of P.gateParts(e,g))Object.assign(part(a,'p220_armour',p.pos,p.size,C.steel),{pursuit260:true,legacyGate:g.id});
    }
+ }
+ function portalMonster(a,e,w,parts,lod,tag){
+   const colors={hammer:['#526372','#caa56c'],tentacle:['#68435d','#df94bc'],maw:['#8d3f4d','#edbd8c'],mantis:['#416557','#b2ed9c'],medusa:['#625b90','#b6cbff']},[skin,glow]=colors[w.kind],rim=parts.filter(j=>j.part==='rim');
+   const put=(mesh,pos,size,color,em=0)=>Object.assign(part(a,mesh,pos,size,color,em),tag,{portal2130:true});
+   for(let i=0;i<rim.length;i++){
+     const j= rim[i],next=rim[(i+1)%rim.length];Object.assign(beam(a,j.pos,next.pos,j.r,skin),tag,{portal2130:true});
+     if(i%2===0){put(w.kind==='hammer'?'armor':'sphere',j.pos,[j.r*1.05,j.r*.8,j.r*.85],skin);const inner=V3.lerp(j.pos,w.aperture,.10);put('octa',V3.add(inner,[0,0,6]),[1.3,2,1.4],glow,.85);}
+     if(w.kind==='maw'&&i%2===0){const to=V3.lerp(j.pos,w.aperture,.20);Object.assign(taper(a,j.pos,to,2.4,'#e8cda7'),tag);}
+   }
+   const limbs=parts.filter(j=>j.part==='tentacle');
+   for(const chain of [...new Set(limbs.map(j=>j.chain))]){const joints=limbs.filter(j=>j.chain===chain);for(let i=1;i<joints.length;i++){
+     const j=joints[i];Object.assign(beam(a,joints[i-1].pos,j.pos,j.r,skin),tag,{portal2130:true});
+     if(i%3===0)put('sphere',V3.add(j.pos,[0,0,j.r*.6]),[j.r*.6,j.r*.6,.6],glow,.2);
+   }const tip=joints.at(-1);if(w.kind==='hammer')put('armor',tip.pos,[tip.r*2,tip.r*2,tip.r*1.7],'#8c9ca0');
+    if(w.kind==='mantis')Object.assign(taper(a,tip.pos,V3.add(tip.pos,[0,7,0]),tip.r,'#badcc7'),tag);
+   }
+   const top=V3.add(w.aperture,[0,w.portalRadius||43,0]);
+   if(w.kind==='medusa'){put('sphere',V3.add(top,[0,5,-4]),[24,12,8],skin);for(let i=-2;i<=2;i++)put('octa',V3.add(top,[i*8,4+Math.cos(i)*5,3]),[1,4,1],glow,.8);}
+   else put(w.kind==='mantis'?'octa':'armor',V3.add(top,[0,2,0]),[12,9,7],skin);
+   for(const sign of [-1,1]){put('sphere',V3.add(top,[sign*5,1,7]),[3,2.1,1.2],'#181022');put('sphere',V3.add(top,[sign*5,1,8]),[1.5,1,.7],glow,1);}
  }
  function scene(e,time,fx){
    if(!active(e))return old.scene(e,time,fx);
