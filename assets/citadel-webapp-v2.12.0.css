@@ -1,0 +1,5 @@
+html:has(body.citadel-webapp),body.citadel-webapp{background:#07151e;margin:0;overscroll-behavior:none}
+.citadel-webapp #site-rail,.citadel-webapp .topbar,.citadel-webapp .heading,.citadel-webapp .scope-bar,.citadel-webapp #metrics,.citadel-webapp .summary-caption,.citadel-webapp .footer,.citadel-webapp .arcade-page-header,.citadel-webapp #arcade-expand,.citadel-webapp #mobile-game-menu{display:none!important}
+.citadel-webapp #workspace,.citadel-webapp #main,.citadel-webapp #content{margin:0;padding:0;max-width:none}
+.citadel-webapp #arcade-screen.expanded{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);box-sizing:border-box}
+.citadel-webapp .campaign-panel button:focus-visible{outline:3px solid #efd391;outline-offset:3px}
