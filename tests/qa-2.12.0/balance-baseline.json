@@ -1,0 +1,8559 @@
+{
+  "createdAt": "2026-11-01T13:56:12.259Z",
+  "version": "2.11.0",
+  "baselineRef": "f4afdf8758f1fe186b8f69e8332782fb0548be4e",
+  "method": "Node VM exact entry chain; ordinary inputs after direct-entry prerequisites; fixed controller cadence is not a human skill category; no browser FPS or phone-comfort claims.",
+  "entrySha256": "9d5dce0086f3530ba7a74ca2052243f5f0aa24cbe3f8aa459705e2a023bdeb0b",
+  "results": [
+    {
+      "key": "swarm:2:combat:417147:0.25:rockets:reactive",
+      "kind": "swarm",
+      "stage": 2,
+      "mode": "combat",
+      "seed": 417147,
+      "reaction": 0.25,
+      "fixture": "direct encounter with standard gear; no traversal or resource edits after launch",
+      "startHp": 100,
+      "startGear": {
+        "weapons": 1,
+        "armor": 1,
+        "rockets": 0
+      },
+      "startMissiles": 8,
+      "waves": [
+        {
+          "wave": 1,
+          "at": 0.017,
+          "hp": 100,
+          "enemies": 8
+        },
+        {
+          "wave": 2,
+          "at": 10,
+          "hp": 100,
+          "enemies": 16
+        },
+        {
+          "wave": 3,
+          "at": 21.033,
+          "hp": 100,
+          "enemies": 32
+        },
+        {
+          "wave": 4,
+          "at": 41.333,
+          "hp": 100,
+          "enemies": 64
+        },
+        {
+          "wave": 5,
+          "at": 74.717,
+          "hp": 100,
+          "enemies": 64
+        },
+        {
+          "wave": 6,
+          "at": 110.133,
+          "hp": 100,
+          "enemies": 64
+        }
+      ],
+      "enemySamples": [],
+      "repairs": [
+        {
+          "at": 84.833,
+          "playerBefore": 85.574,
+          "playerAfter": 99.574
+        },
+        {
+          "at": 88.683,
+          "playerBefore": 99.574,
+          "playerAfter": 100
+        }
+      ],
+      "damage": [
+        {
+          "at": 84.533,
+          "amount": 14.426,
+          "hp": 85.574,
+          "wave": 5
+        }
+      ],
+      "cards": [],
+      "transitions": [
+        {
+          "at": 0,
+          "state": "playing/swarm"
+        },
+        {
+          "at": 152.55,
+          "state": "lesson/dock"
+        }
+      ],
+      "errors": [],
+      "minHp": 85.574,
+      "missilesFired": 19,
+      "pulses": 7,
+      "peakHostile": 64,
+      "peakEnemies": 64,
+      "complete": true,
+      "status": "lesson",
+      "phase": "dock",
+      "capReached": false,
+      "seconds": 152.55,
+      "hp": 100,
+      "kills": 248,
+      "lossReason": null,
+      "damageTaken": 14.426,
+      "swarm": {
+        "wave": 6,
+        "complete": true,
+        "balanceVersion": "2.10.0",
+        "wavesCleared": 6,
+        "events": [
+          {
+            "type": "drop",
+            "supply": "overdrive",
+            "wave": 4,
+            "time": 43.07
+          },
+          {
+            "type": "drop",
+            "supply": "repair",
+            "wave": 4,
+            "time": 43.07
+          },
+          {
+            "type": "drop",
+            "supply": "missiles",
+            "wave": 4,
+            "time": 43.07
+          },
+          {
+            "type": "drop",
+            "supply": "overdrive",
+            "wave": 4,
+            "time": 43.12
+          },
+          {
+            "type": "pickup",
+            "supply": "missiles",
+            "wave": 4,
+            "time": 47.95
+          },
+          {
+            "type": "pickup",
+            "supply": "overdrive",
+            "wave": 4,
+            "time": 49.18
+          },
+          {
+            "type": "pickup",
+            "supply": "repair",
+            "wave": 4,
+            "time": 51.1
+          },
+          {
+            "type": "pickup",
+            "supply": "overdrive",
+            "wave": 4,
+            "time": 51.28
+          },
+          {
+            "type": "wave-cleared",
+            "wave": 4,
+            "time": 71.5,
+            "hp": 100
+          },
+          {
+            "type": "drop",
+            "supply": "repair",
+            "wave": 5,
+            "time": 76.03
+          },
+          {
+            "type": "drop",
+            "supply": "missiles",
+            "wave": 5,
+            "time": 77.48
+          },
+          {
+            "type": "drop",
+            "supply": "overdrive",
+            "wave": 5,
+            "time": 77.9
+          },
+          {
+            "type": "drop",
+            "supply": "repair",
+            "wave": 5,
+            "time": 77.9
+          },
+          {
+            "type": "pickup",
+            "supply": "repair",
+            "wave": 5,
+            "time": 84.83
+          },
+          {
+            "type": "pickup",
+            "supply": "missiles",
+            "wave": 5,
+            "time": 88
+          },
+          {
+            "type": "pickup",
+            "supply": "overdrive",
+            "wave": 5,
+            "time": 88.43
+          },
+          {
+            "type": "pickup",
+            "supply": "repair",
+            "wave": 5,
+            "time": 88.68
+          },
+          {
+            "type": "wave-cleared",
+            "wave": 5,
+            "time": 107.52,
+            "hp": 100
+          },
+          {
+            "type": "drop",
+            "supply": "missiles",
+            "wave": 6,
+            "time": 112.82
+          },
+          {
+            "type": "drop",
+            "supply": "overdrive",
+            "wave": 6,
+            "time": 113.13
+          },
+          {
+            "type": "drop",
+            "supply": "repair",
+            "wave": 6,
+            "time": 113.4
+          },
+          {
+            "type": "drop",
+            "supply": "missiles",
+            "wave": 6,
+            "time": 113.87
+          },
+          {
+            "type": "drop",
+            "supply": "missiles",
+            "wave": 6,
+            "time": 124.23
+          },
+          {
+            "type": "wave-cleared",
+            "wave": 6,
+            "time": 149.33,
+            "hp": 100
+          }
+        ],
+        "drops": {
+          "repair": 3,
+          "missiles": 4,
+          "overdrive": 4
+        }
+      },
+      "stateEvents": [
+        {
+          "kind": "state",
+          "data": "briefing",
+          "time": 0
+        },
+        {
+          "kind": "state",
+          "data": "playing",
+          "time": 0
+        },
+        {
+          "kind": "phase",
+          "data": "dock",
+          "time": 152.55
+        },
+        {
+          "kind": "state",
+          "data": "lesson",
+          "time": 152.55
+        }
+      ]
+    },
+    {
+      "key": "swarm:2:combat:417147:0.55:rockets:reactive",
+      "kind": "swarm",
+      "stage": 2,
+      "mode": "combat",
+      "seed": 417147,
+      "reaction": 0.55,
+      "fixture": "direct encounter with standard gear; no traversal or resource edits after launch",
+      "startHp": 100,
+      "startGear": {
+        "weapons": 1,
+        "armor": 1,
+        "rockets": 0
+      },
+      "startMissiles": 8,
+      "waves": [
+        {
+          "wave": 1,
+          "at": 0.017,
+          "hp": 100,
+          "enemies": 8
+        },
+        {
+          "wave": 2,
+          "at": 11.517,
+          "hp": 100,
+          "enemies": 16
+        },
+        {
+          "wave": 3,
+          "at": 26.383,
+          "hp": 100,
+          "enemies": 32
+        },
+        {
+          "wave": 4,
+          "at": 49.917,
+          "hp": 80.8,
+          "enemies": 64
+        },
+        {
+          "wave": 5,
+          "at": 80.683,
+          "hp": 78.01,
+          "enemies": 64
+        },
+        {
+          "wave": 6,
+          "at": 123,
+          "hp": 34.733,
+          "enemies": 64
+        }
+      ],
+      "enemySamples": [],
+      "repairs": [
+        {
+          "at": 64.1,
+          "playerBefore": 67.405,
+          "playerAfter": 81.405
+        },
+        {
+          "at": 77.467,
+          "playerBefore": 68.01,
+          "playerAfter": 78.01
+        },
+        {
+          "at": 159.533,
+          "playerBefore": 19.277,
+          "playerAfter": 29.277
+        }
+      ],
+      "damage": [
+        {
+          "at": 36.383,
+          "amount": 19.2,
+          "hp": 80.8,
+          "wave": 3
+        },
+        {
+          "at": 61.517,
+          "amount": 13.395,
+          "hp": 67.405,
+          "wave": 4
+        },
+        {
+          "at": 76.217,
+          "amount": 13.395,
+          "hp": 68.01,
+          "wave": 4
+        },
+        {
+          "at": 97.233,
+          "amount": 14.426,
+          "hp": 63.584,
+          "wave": 5
+        },
+        {
+          "at": 98.317,
+          "amount": 14.426,
+          "hp": 49.158,
+          "wave": 5
+        },
+        {
+          "at": 111.383,
+          "amount": 14.426,
+          "hp": 34.733,
+          "wave": 5
+        },
+        {
+          "at": 152.567,
+          "amount": 15.456,
+          "hp": 19.277,
+          "wave": 6
+        }
+      ],
+      "cards": [],
+      "transitions": [
+        {
+          "at": 0,
+          "state": "playing/swarm"
+        },
+        {
+          "at": 162.75,
+          "state": "lesson/dock"
+        }
+      ],
+      "errors": [],
+      "minHp": 19.277,
+      "missilesFired": 17,
+      "pulses": 9,
+      "peakHostile": 64,
+      "peakEnemies": 64,
+      "complete": true,
+      "status": "lesson",
+      "phase": "dock",
+      "capReached": false,
+      "seconds": 162.75,
+      "hp": 29.277,
+      "kills": 248,
+      "lossReason": null,
+      "damageTaken": 104.724,
+      "swarm": {
+        "wave": 6,
+        "complete": true,
+        "balanceVersion": "2.10.0",
+        "wavesCleared": 6,
+        "events": [
+          {
+            "type": "pickup",
+            "supply": "repair",
+            "wave": 3,
+            "time": 36.1
+          },
+          {
+            "type": "pickup",
+            "supply": "missiles",
+            "wave": 3,
+            "time": 37.93
+          },
+          {
+            "type": "wave-cleared",
+            "wave": 3,
+            "time": 47.3,
+            "hp": 80.8
+          },
+          {
+            "type": "drop",
+            "supply": "repair",
+            "wave": 4,
+            "time": 51.72
+          },
+          {
+            "type": "drop",
+            "supply": "missiles",
+            "wave": 4,
+            "time": 52.3
+          },
+          {
+            "type": "drop",
+            "supply": "overdrive",
+            "wave": 4,
+            "time": 52.78
+          },
+          {
+            "type": "drop",
+            "supply": "repair",
+            "wave": 4,
+            "time": 53.07
+          },
+          {
+            "type": "pickup",
+            "supply": "missiles",
+            "wave": 4,
+            "time": 61.38
+          },
+          {
+            "type": "pickup",
+            "supply": "overdrive",
+            "wave": 4,
+            "time": 61.83
+          },
+          {
+            "type": "pickup",
+            "supply": "repair",
+            "wave": 4,
+            "time": 64.1
+          },
+          {
+            "type": "wave-cleared",
+            "wave": 4,
+            "time": 77.47,
+            "hp": 68.01
+          },
+          {
+            "type": "drop",
+            "supply": "missiles",
+            "wave": 5,
+            "time": 82.05
+          },
+          {
+            "type": "drop",
+            "supply": "overdrive",
+            "wave": 5,
+            "time": 82.5
+          },
+          {
+            "type": "drop",
+            "supply": "repair",
+            "wave": 5,
+            "time": 82.5
+          },
+          {
+            "type": "drop",
+            "supply": "missiles",
+            "wave": 5,
+            "time": 82.5
+          },
+          {
+            "type": "wave-cleared",
+            "wave": 5,
+            "time": 120.38,
+            "hp": 34.73
+          },
+          {
+            "type": "drop",
+            "supply": "overdrive",
+            "wave": 6,
+            "time": 125.6
+          },
+          {
+            "type": "drop",
+            "supply": "repair",
+            "wave": 6,
+            "time": 126.33
+          },
+          {
+            "type": "drop",
+            "supply": "missiles",
+            "wave": 6,
+            "time": 126.5
+          },
+          {
+            "type": "drop",
+            "supply": "missiles",
+            "wave": 6,
+            "time": 127.02
+          },
+          {
+            "type": "pickup",
+            "supply": "overdrive",
+            "wave": 6,
+            "time": 133.92
+          },
+          {
+            "type": "drop",
+            "supply": "missiles",
+            "wave": 6,
+            "time": 134.63
+          },
+          {
+            "type": "pickup",
+            "supply": "missiles",
+            "wave": 6,
+            "time": 140.87
+          },
+          {
+            "type": "wave-cleared",
+            "wave": 6,
+            "time": 159.53,
+            "hp": 19.28
+          }
+        ],
+        "drops": {
+          "repair": 2,
+          "missiles": 3,
+          "overdrive": 2
+        }
+      },
+      "stateEvents": [
+        {
+          "kind": "state",
+          "data": "briefing",
+          "time": 0
+        },
+        {
+          "kind": "state",
+          "data": "playing",
+          "time": 0
+        },
+        {
+          "kind": "phase",
+          "data": "dock",
+          "time": 162.75
+        },
+        {
+          "kind": "state",
+          "data": "lesson",
+          "time": 162.75
+        }
+      ]
+    },
+    {
+      "key": "swarm:2:combat:819337:0.25:rockets:reactive",
+      "kind": "swarm",
+      "stage": 2,
+      "mode": "combat",
+      "seed": 819337,
+      "reaction": 0.25,
+      "fixture": "direct encounter with standard gear; no traversal or resource edits after launch",
+      "startHp": 100,
+      "startGear": {
+        "weapons": 1,
+        "armor": 1,
+        "rockets": 0
+      },
+      "startMissiles": 8,
+      "waves": [
+        {
+          "wave": 1,
+          "at": 0.017,
+          "hp": 100,
+          "enemies": 8
+        },
+        {
+          "wave": 2,
+          "at": 10.867,
+          "hp": 100,
+          "enemies": 16
+        },
+        {
+          "wave": 3,
+          "at": 24.033,
+          "hp": 100,
+          "enemies": 32
+        },
+        {
+          "wave": 4,
+          "at": 42.783,
+          "hp": 100,
+          "enemies": 64
+        },
+        {
+          "wave": 5,
+          "at": 79.817,
+          "hp": 100,
+          "enemies": 64
+        },
+        {
+          "wave": 6,
+          "at": 127.967,
+          "hp": 85.574,
+          "enemies": 64
+        }
+      ],
+      "enemySamples": [],
+      "repairs": [
+        {
+          "at": 156.817,
+          "playerBefore": 70.118,
+          "playerAfter": 80.118
+        }
+      ],
+      "damage": [
+        {
+          "at": 96.133,
+          "amount": 14.426,
+          "hp": 85.574,
+          "wave": 5
+        },
+        {
+          "at": 150.383,
+          "amount": 15.456,
+          "hp": 70.118,
+          "wave": 6
+        }
+      ],
+      "cards": [],
+      "transitions": [
+        {
+          "at": 0,
+          "state": "playing/swarm"
+        },
+        {
+          "at": 160.033,
+          "state": "lesson/dock"
+        }
+      ],
+      "errors": [],
+      "minHp": 70.118,
+      "missilesFired": 19,
+      "pulses": 9,
+      "peakHostile": 64,
+      "peakEnemies": 64,
+      "complete": true,
+      "status": "lesson",
+      "phase": "dock",
+      "capReached": false,
+      "seconds": 160.033,
+      "hp": 80.118,
+      "kills": 248,
+      "lossReason": null,
+      "damageTaken": 29.882,
+      "swarm": {
+        "wave": 6,
+        "complete": true,
+        "balanceVersion": "2.10.0",
+        "wavesCleared": 6,
+        "events": [
+          {
+            "type": "wave-cleared",
+            "wave": 3,
+            "time": 40.17,
+            "hp": 100
+          },
+          {
+            "type": "drop",
+            "supply": "repair",
+            "wave": 4,
+            "time": 44.12
+          },
+          {
+            "type": "drop",
+            "supply": "missiles",
+            "wave": 4,
+            "time": 44.42
+          },
+          {
+            "type": "drop",
+            "supply": "overdrive",
+            "wave": 4,
+            "time": 44.42
+          },
+          {
+            "type": "drop",
+            "supply": "repair",
+            "wave": 4,
+            "time": 44.98
+          },
+          {
+            "type": "pickup",
+            "supply": "missiles",
+            "wave": 4,
+            "time": 49.53
+          },
+          {
+            "type": "pickup",
+            "supply": "overdrive",
+            "wave": 4,
+            "time": 49.58
+          },
+          {
+            "type": "pickup",
+            "supply": "repair",
+            "wave": 4,
+            "time": 49.78
+          },
+          {
+            "type": "wave-cleared",
+            "wave": 4,
+            "time": 76.6,
+            "hp": 100
+          },
+          {
+            "type": "drop",
+            "supply": "missiles",
+            "wave": 5,
+            "time": 81.12
+          },
+          {
+            "type": "drop",
+            "supply": "overdrive",
+            "wave": 5,
+            "time": 81.83
+          },
+          {
+            "type": "drop",
+            "supply": "repair",
+            "wave": 5,
+            "time": 81.83
+          },
+          {
+            "type": "drop",
+            "supply": "missiles",
+            "wave": 5,
+            "time": 82.97
+          },
+          {
+            "type": "pickup",
+            "supply": "repair",
+            "wave": 5,
+            "time": 86.77
+          },
+          {
+            "type": "pickup",
+            "supply": "missiles",
+            "wave": 5,
+            "time": 86.78
+          },
+          {
+            "type": "pickup",
+            "supply": "overdrive",
+            "wave": 5,
+            "time": 87.05
+          },
+          {
+            "type": "pickup",
+            "supply": "missiles",
+            "wave": 5,
+            "time": 87.25
+          },
+          {
+            "type": "wave-cleared",
+            "wave": 5,
+            "time": 125.35,
+            "hp": 85.57
+          },
+          {
+            "type": "drop",
+            "supply": "overdrive",
+            "wave": 6,
+            "time": 129.05
+          },
+          {
+            "type": "drop",
+            "supply": "repair",
+            "wave": 6,
+            "time": 129.45
+          },
+          {
+            "type": "drop",
+            "supply": "missiles",
+            "wave": 6,
+            "time": 129.62
+          },
+          {
+            "type": "drop",
+            "supply": "missiles",
+            "wave": 6,
+            "time": 130.38
+          },
+          {
+            "type": "drop",
+            "supply": "missiles",
+            "wave": 6,
+            "time": 139.12
+          },
+          {
+            "type": "wave-cleared",
+            "wave": 6,
+            "time": 156.82,
+            "hp": 70.12
+          }
+        ],
+        "drops": {
+          "repair": 3,
+          "missiles": 4,
+          "overdrive": 2
+        }
+      },
+      "stateEvents": [
+        {
+          "kind": "state",
+          "data": "briefing",
+          "time": 0
+        },
+        {
+          "kind": "state",
+          "data": "playing",
+          "time": 0
+        },
+        {
+          "kind": "phase",
+          "data": "dock",
+          "time": 160.033
+        },
+        {
+          "kind": "state",
+          "data": "lesson",
+          "time": 160.033
+        }
+      ]
+    },
+    {
+      "key": "swarm:2:combat:819337:0.55:rockets:reactive",
+      "kind": "swarm",
+      "stage": 2,
+      "mode": "combat",
+      "seed": 819337,
+      "reaction": 0.55,
+      "fixture": "direct encounter with standard gear; no traversal or resource edits after launch",
+      "startHp": 100,
+      "startGear": {
+        "weapons": 1,
+        "armor": 1,
+        "rockets": 0
+      },
+      "startMissiles": 8,
+      "waves": [
+        {
+          "wave": 1,
+          "at": 0.017,
+          "hp": 100,
+          "enemies": 8
+        },
+        {
+          "wave": 2,
+          "at": 8.5,
+          "hp": 100,
+          "enemies": 16
+        },
+        {
+          "wave": 3,
+          "at": 24.383,
+          "hp": 100,
+          "enemies": 32
+        },
+        {
+          "wave": 4,
+          "at": 46.733,
+          "hp": 100,
+          "enemies": 64
+        },
+        {
+          "wave": 5,
+          "at": 79.467,
+          "hp": 83.21,
+          "enemies": 64
+        },
+        {
+          "wave": 6,
+          "at": 124.717,
+          "hp": 6.307,
+          "enemies": 64
+        }
+      ],
+      "enemySamples": [],
+      "repairs": [
+        {
+          "at": 76.25,
+          "playerBefore": 73.21,
+          "playerAfter": 83.21
+        },
+        {
+          "at": 133.867,
+          "playerBefore": 6.307,
+          "playerAfter": 20.307
+        }
+      ],
+      "damage": [
+        {
+          "at": 60.133,
+          "amount": 13.395,
+          "hp": 86.605,
+          "wave": 4
+        },
+        {
+          "at": 71.133,
+          "amount": 13.395,
+          "hp": 73.21,
+          "wave": 4
+        },
+        {
+          "at": 87.65,
+          "amount": 14.426,
+          "hp": 68.784,
+          "wave": 5
+        },
+        {
+          "at": 88.5,
+          "amount": 14.426,
+          "hp": 54.358,
+          "wave": 5
+        },
+        {
+          "at": 92.517,
+          "amount": 19.2,
+          "hp": 35.158,
+          "wave": 5
+        },
+        {
+          "at": 100.983,
+          "amount": 14.426,
+          "hp": 20.733,
+          "wave": 5
+        },
+        {
+          "at": 105.133,
+          "amount": 14.426,
+          "hp": 6.307,
+          "wave": 5
+        },
+        {
+          "at": 151.05,
+          "amount": 15.456,
+          "hp": 4.851,
+          "wave": 6
+        },
+        {
+          "at": 152.567,
+          "amount": 4.851,
+          "hp": 0,
+          "wave": 6
+        }
+      ],
+      "cards": [],
+      "transitions": [
+        {
+          "at": 0,
+          "state": "playing/swarm"
+        },
+        {
+          "at": 152.567,
+          "state": "crashing/swarm"
+        }
+      ],
+      "errors": [],
+      "minHp": 0,
+      "missilesFired": 15,
+      "pulses": 9,
+      "peakHostile": 64,
+      "peakEnemies": 64,
+      "complete": false,
+      "status": "crashing",
+      "phase": "swarm",
+      "capReached": false,
+      "seconds": 152.567,
+      "hp": 0,
+      "kills": 245,
+      "lossReason": "Корабль подбит. Перехватывайте угрозы и используйте E для прикрытия.",
+      "damageTaken": 124.001,
+      "swarm": {
+        "wave": 6,
+        "complete": false,
+        "balanceVersion": "2.10.0",
+        "wavesCleared": 5,
+        "events": [
+          {
+            "type": "drop",
+            "supply": "missiles",
+            "wave": 3,
+            "time": 26.78
+          },
+          {
+            "type": "drop",
+            "supply": "overdrive",
+            "wave": 3,
+            "time": 28.3
+          },
+          {
+            "type": "wave-cleared",
+            "wave": 3,
+            "time": 44.12,
+            "hp": 100
+          },
+          {
+            "type": "drop",
+            "supply": "repair",
+            "wave": 4,
+            "time": 48.12
+          },
+          {
+            "type": "drop",
+            "supply": "missiles",
+            "wave": 4,
+            "time": 48.5
+          },
+          {
+            "type": "drop",
+            "supply": "overdrive",
+            "wave": 4,
+            "time": 48.5
+          },
+          {
+            "type": "drop",
+            "supply": "repair",
+            "wave": 4,
+            "time": 48.5
+          },
+          {
+            "type": "pickup",
+            "supply": "repair",
+            "wave": 4,
+            "time": 55.02
+          },
+          {
+            "type": "pickup",
+            "supply": "missiles",
+            "wave": 4,
+            "time": 55.25
+          },
+          {
+            "type": "pickup",
+            "supply": "overdrive",
+            "wave": 4,
+            "time": 55.72
+          },
+          {
+            "type": "pickup",
+            "supply": "repair",
+            "wave": 4,
+            "time": 56.13
+          },
+          {
+            "type": "wave-cleared",
+            "wave": 4,
+            "time": 76.25,
+            "hp": 73.21
+          },
+          {
+            "type": "drop",
+            "supply": "missiles",
+            "wave": 5,
+            "time": 81.17
+          },
+          {
+            "type": "drop",
+            "supply": "overdrive",
+            "wave": 5,
+            "time": 81.58
+          },
+          {
+            "type": "drop",
+            "supply": "repair",
+            "wave": 5,
+            "time": 81.95
+          },
+          {
+            "type": "drop",
+            "supply": "missiles",
+            "wave": 5,
+            "time": 81.95
+          },
+          {
+            "type": "wave-cleared",
+            "wave": 5,
+            "time": 122.1,
+            "hp": 6.31
+          },
+          {
+            "type": "drop",
+            "supply": "overdrive",
+            "wave": 6,
+            "time": 126.78
+          },
+          {
+            "type": "drop",
+            "supply": "repair",
+            "wave": 6,
+            "time": 127.52
+          },
+          {
+            "type": "drop",
+            "supply": "missiles",
+            "wave": 6,
+            "time": 128.02
+          },
+          {
+            "type": "drop",
+            "supply": "missiles",
+            "wave": 6,
+            "time": 128.75
+          },
+          {
+            "type": "pickup",
+            "supply": "repair",
+            "wave": 6,
+            "time": 133.87
+          },
+          {
+            "type": "drop",
+            "supply": "missiles",
+            "wave": 6,
+            "time": 134
+          },
+          {
+            "type": "pickup",
+            "supply": "missiles",
+            "wave": 6,
+            "time": 134.83
+          }
+        ],
+        "drops": {
+          "repair": 3,
+          "missiles": 2,
+          "overdrive": 2
+        }
+      },
+      "stateEvents": [
+        {
+          "kind": "state",
+          "data": "briefing",
+          "time": 0
+        },
+        {
+          "kind": "state",
+          "data": "playing",
+          "time": 0
+        },
+        {
+          "kind": "state",
+          "data": "crashing",
+          "time": 152.567
+        }
+      ]
+    },
+    {
+      "key": "swarm:2:training:417147:0.55:rockets:reactive",
+      "kind": "swarm",
+      "stage": 2,
+      "mode": "training",
+      "seed": 417147,
+      "reaction": 0.55,
+      "fixture": "direct encounter with standard gear; no traversal or resource edits after launch",
+      "startHp": 100,
+      "startGear": {
+        "weapons": 1,
+        "armor": 1,
+        "rockets": 0
+      },
+      "startMissiles": 8,
+      "waves": [
+        {
+          "wave": 1,
+          "at": 0.017,
+          "hp": 100,
+          "enemies": 8
+        },
+        {
+          "wave": 2,
+          "at": 10.25,
+          "hp": 100,
+          "enemies": 10
+        },
+        {
+          "wave": 3,
+          "at": 22.35,
+          "hp": 100,
+          "enemies": 12
+        },
+        {
+          "wave": 4,
+          "at": 36.183,
+          "hp": 100,
+          "enemies": 14
+        },
+        {
+          "wave": 5,
+          "at": 50.7,
+          "hp": 100,
+          "enemies": 16
+        },
+        {
+          "wave": 6,
+          "at": 63.767,
+          "hp": 100,
+          "enemies": 18
+        }
+      ],
+      "enemySamples": [],
+      "repairs": [],
+      "damage": [],
+      "cards": [],
+      "transitions": [
+        {
+          "at": 0,
+          "state": "playing/swarm"
+        },
+        {
+          "at": 79.517,
+          "state": "lesson/dock"
+        }
+      ],
+      "errors": [],
+      "minHp": 100,
+      "missilesFired": 4,
+      "pulses": 0,
+      "peakHostile": 3,
+      "peakEnemies": 18,
+      "complete": true,
+      "status": "lesson",
+      "phase": "dock",
+      "capReached": false,
+      "seconds": 79.517,
+      "hp": 100,
+      "kills": 78,
+      "lossReason": null,
+      "damageTaken": 0,
+      "swarm": {
+        "wave": 6,
+        "complete": true,
+        "balanceVersion": "2.10.0",
+        "wavesCleared": 6,
+        "events": [
+          {
+            "type": "wave-cleared",
+            "wave": 1,
+            "time": 7.63,
+            "hp": 100
+          },
+          {
+            "type": "wave-cleared",
+            "wave": 2,
+            "time": 19.13,
+            "hp": 100
+          },
+          {
+            "type": "drop",
+            "supply": "repair",
+            "wave": 3,
+            "time": 27.53
+          },
+          {
+            "type": "drop",
+            "supply": "missiles",
+            "wave": 3,
+            "time": 27.85
+          },
+          {
+            "type": "wave-cleared",
+            "wave": 3,
+            "time": 33.57,
+            "hp": 100
+          },
+          {
+            "type": "drop",
+            "supply": "overdrive",
+            "wave": 4,
+            "time": 38.07
+          },
+          {
+            "type": "pickup",
+            "supply": "missiles",
+            "wave": 4,
+            "time": 38.68
+          },
+          {
+            "type": "drop",
+            "supply": "repair",
+            "wave": 4,
+            "time": 40.13
+          },
+          {
+            "type": "pickup",
+            "supply": "overdrive",
+            "wave": 4,
+            "time": 46.13
+          },
+          {
+            "type": "wave-cleared",
+            "wave": 4,
+            "time": 47.48,
+            "hp": 100
+          },
+          {
+            "type": "drop",
+            "supply": "missiles",
+            "wave": 5,
+            "time": 57.67
+          },
+          {
+            "type": "drop",
+            "supply": "overdrive",
+            "wave": 5,
+            "time": 57.67
+          },
+          {
+            "type": "wave-cleared",
+            "wave": 5,
+            "time": 61.15,
+            "hp": 100
+          },
+          {
+            "type": "drop",
+            "supply": "repair",
+            "wave": 6,
+            "time": 71.27
+          },
+          {
+            "type": "drop",
+            "supply": "missiles",
+            "wave": 6,
+            "time": 71.38
+          },
+          {
+            "type": "wave-cleared",
+            "wave": 6,
+            "time": 76.3,
+            "hp": 100
+          }
+        ],
+        "drops": {
+          "repair": 0,
+          "missiles": 1,
+          "overdrive": 1
+        }
+      },
+      "stateEvents": [
+        {
+          "kind": "state",
+          "data": "briefing",
+          "time": 0
+        },
+        {
+          "kind": "state",
+          "data": "playing",
+          "time": 0
+        },
+        {
+          "kind": "phase",
+          "data": "dock",
+          "time": 79.517
+        },
+        {
+          "kind": "state",
+          "data": "lesson",
+          "time": 79.517
+        }
+      ]
+    },
+    {
+      "key": "swarm:2:pro:819337:0.55:rockets:reactive",
+      "kind": "swarm",
+      "stage": 2,
+      "mode": "pro",
+      "seed": 819337,
+      "reaction": 0.55,
+      "fixture": "direct encounter with standard gear; no traversal or resource edits after launch",
+      "startHp": 100,
+      "startGear": {
+        "weapons": 1,
+        "armor": 1,
+        "rockets": 0
+      },
+      "startMissiles": 8,
+      "waves": [
+        {
+          "wave": 1,
+          "at": 0.017,
+          "hp": 100,
+          "enemies": 8
+        },
+        {
+          "wave": 2,
+          "at": 8.5,
+          "hp": 100,
+          "enemies": 16
+        },
+        {
+          "wave": 3,
+          "at": 24.383,
+          "hp": 100,
+          "enemies": 32
+        },
+        {
+          "wave": 4,
+          "at": 46.733,
+          "hp": 100,
+          "enemies": 64
+        },
+        {
+          "wave": 5,
+          "at": 79.467,
+          "hp": 83.21,
+          "enemies": 64
+        },
+        {
+          "wave": 6,
+          "at": 124.717,
+          "hp": 6.307,
+          "enemies": 64
+        }
+      ],
+      "enemySamples": [],
+      "repairs": [
+        {
+          "at": 76.25,
+          "playerBefore": 73.21,
+          "playerAfter": 83.21
+        },
+        {
+          "at": 133.867,
+          "playerBefore": 6.307,
+          "playerAfter": 20.307
+        }
+      ],
+      "damage": [
+        {
+          "at": 60.133,
+          "amount": 13.395,
+          "hp": 86.605,
+          "wave": 4
+        },
+        {
+          "at": 71.133,
+          "amount": 13.395,
+          "hp": 73.21,
+          "wave": 4
+        },
+        {
+          "at": 87.65,
+          "amount": 14.426,
+          "hp": 68.784,
+          "wave": 5
+        },
+        {
+          "at": 88.5,
+          "amount": 14.426,
+          "hp": 54.358,
+          "wave": 5
+        },
+        {
+          "at": 92.517,
+          "amount": 19.2,
+          "hp": 35.158,
+          "wave": 5
+        },
+        {
+          "at": 100.983,
+          "amount": 14.426,
+          "hp": 20.733,
+          "wave": 5
+        },
+        {
+          "at": 105.133,
+          "amount": 14.426,
+          "hp": 6.307,
+          "wave": 5
+        },
+        {
+          "at": 151.05,
+          "amount": 15.456,
+          "hp": 4.851,
+          "wave": 6
+        },
+        {
+          "at": 152.567,
+          "amount": 4.851,
+          "hp": 0,
+          "wave": 6
+        }
+      ],
+      "cards": [],
+      "transitions": [
+        {
+          "at": 0,
+          "state": "playing/swarm"
+        },
+        {
+          "at": 152.567,
+          "state": "crashing/swarm"
+        }
+      ],
+      "errors": [],
+      "minHp": 0,
+      "missilesFired": 15,
+      "pulses": 9,
+      "peakHostile": 64,
+      "peakEnemies": 64,
+      "complete": false,
+      "status": "crashing",
+      "phase": "swarm",
+      "capReached": false,
+      "seconds": 152.567,
+      "hp": 0,
+      "kills": 245,
+      "lossReason": "Корабль подбит. Перехватывайте угрозы и используйте E для прикрытия.",
+      "damageTaken": 124.001,
+      "swarm": {
+        "wave": 6,
+        "complete": false,
+        "balanceVersion": "2.10.0",
+        "wavesCleared": 5,
+        "events": [
+          {
+            "type": "drop",
+            "supply": "missiles",
+            "wave": 3,
+            "time": 26.78
+          },
+          {
+            "type": "drop",
+            "supply": "overdrive",
+            "wave": 3,
+            "time": 28.3
+          },
+          {
+            "type": "wave-cleared",
+            "wave": 3,
+            "time": 44.12,
+            "hp": 100
+          },
+          {
+            "type": "drop",
+            "supply": "repair",
+            "wave": 4,
+            "time": 48.12
+          },
+          {
+            "type": "drop",
+            "supply": "missiles",
+            "wave": 4,
+            "time": 48.5
+          },
+          {
+            "type": "drop",
+            "supply": "overdrive",
+            "wave": 4,
+            "time": 48.5
+          },
+          {
+            "type": "drop",
+            "supply": "repair",
+            "wave": 4,
+            "time": 48.5
+          },
+          {
+            "type": "pickup",
+            "supply": "repair",
+            "wave": 4,
+            "time": 55.02
+          },
+          {
+            "type": "pickup",
+            "supply": "missiles",
+            "wave": 4,
+            "time": 55.25
+          },
+          {
+            "type": "pickup",
+            "supply": "overdrive",
+            "wave": 4,
+            "time": 55.72
+          },
+          {
+            "type": "pickup",
+            "supply": "repair",
+            "wave": 4,
+            "time": 56.13
+          },
+          {
+            "type": "wave-cleared",
+            "wave": 4,
+            "time": 76.25,
+            "hp": 73.21
+          },
+          {
+            "type": "drop",
+            "supply": "missiles",
+            "wave": 5,
+            "time": 81.17
+          },
+          {
+            "type": "drop",
+            "supply": "overdrive",
+            "wave": 5,
+            "time": 81.58
+          },
+          {
+            "type": "drop",
+            "supply": "repair",
+            "wave": 5,
+            "time": 81.95
+          },
+          {
+            "type": "drop",
+            "supply": "missiles",
+            "wave": 5,
+            "time": 81.95
+          },
+          {
+            "type": "wave-cleared",
+            "wave": 5,
+            "time": 122.1,
+            "hp": 6.31
+          },
+          {
+            "type": "drop",
+            "supply": "overdrive",
+            "wave": 6,
+            "time": 126.78
+          },
+          {
+            "type": "drop",
+            "supply": "repair",
+            "wave": 6,
+            "time": 127.52
+          },
+          {
+            "type": "drop",
+            "supply": "missiles",
+            "wave": 6,
+            "time": 128.02
+          },
+          {
+            "type": "drop",
+            "supply": "missiles",
+            "wave": 6,
+            "time": 128.75
+          },
+          {
+            "type": "pickup",
+            "supply": "repair",
+            "wave": 6,
+            "time": 133.87
+          },
+          {
+            "type": "drop",
+            "supply": "missiles",
+            "wave": 6,
+            "time": 134
+          },
+          {
+            "type": "pickup",
+            "supply": "missiles",
+            "wave": 6,
+            "time": 134.83
+          }
+        ],
+        "drops": {
+          "repair": 3,
+          "missiles": 2,
+          "overdrive": 2
+        }
+      },
+      "stateEvents": [
+        {
+          "kind": "state",
+          "data": "briefing",
+          "time": 0
+        },
+        {
+          "kind": "state",
+          "data": "playing",
+          "time": 0
+        },
+        {
+          "kind": "state",
+          "data": "crashing",
+          "time": 152.567
+        }
+      ]
+    },
+    {
+      "key": "convoy:2:combat:417147:0.4:rockets:reactive",
+      "kind": "convoy",
+      "stage": 2,
+      "mode": "combat",
+      "seed": 417147,
+      "reaction": 0.4,
+      "noMissiles": false,
+      "fixture": "direct encounter with standard gear; no traversal or resource edits after launch",
+      "startHp": 100,
+      "startGear": {
+        "weapons": 2,
+        "armor": 1,
+        "rockets": 0
+      },
+      "startMissiles": 10,
+      "waves": [
+        {
+          "wave": 1,
+          "at": 0.017,
+          "hp": 100,
+          "enemies": 0
+        }
+      ],
+      "enemySamples": [
+        {
+          "at": 3.017,
+          "id": 8,
+          "role": "commander",
+          "maxHp": 300,
+          "hp": 300
+        },
+        {
+          "at": 3.017,
+          "id": 9,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 3.017,
+          "id": 10,
+          "role": "scout",
+          "maxHp": 150,
+          "hp": 150
+        },
+        {
+          "at": 3.017,
+          "id": 11,
+          "role": "raider",
+          "maxHp": 240,
+          "hp": 240
+        },
+        {
+          "at": 16,
+          "id": 13,
+          "role": "shield",
+          "maxHp": 300,
+          "hp": 300
+        },
+        {
+          "at": 16,
+          "id": 14,
+          "role": "bomber",
+          "maxHp": 260,
+          "hp": 260
+        },
+        {
+          "at": 16,
+          "id": 15,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 16,
+          "id": 16,
+          "role": "scout",
+          "maxHp": 150,
+          "hp": 150
+        },
+        {
+          "at": 29.017,
+          "id": 23,
+          "role": "jammer",
+          "maxHp": 230,
+          "hp": 230
+        },
+        {
+          "at": 29.017,
+          "id": 24,
+          "role": "raider",
+          "maxHp": 240,
+          "hp": 240
+        },
+        {
+          "at": 29.017,
+          "id": 25,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 29.017,
+          "id": 26,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 42.017,
+          "id": 28,
+          "role": "bomber",
+          "maxHp": 260,
+          "hp": 260
+        },
+        {
+          "at": 42.017,
+          "id": 29,
+          "role": "bomber",
+          "maxHp": 260,
+          "hp": 260
+        },
+        {
+          "at": 42.017,
+          "id": 30,
+          "role": "shield",
+          "maxHp": 300,
+          "hp": 300
+        },
+        {
+          "at": 42.017,
+          "id": 31,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 56.017,
+          "id": 48,
+          "role": "commander",
+          "maxHp": 300,
+          "hp": 300
+        },
+        {
+          "at": 56.017,
+          "id": 49,
+          "role": "shield",
+          "maxHp": 300,
+          "hp": 300
+        },
+        {
+          "at": 56.017,
+          "id": 50,
+          "role": "raider",
+          "maxHp": 240,
+          "hp": 240
+        },
+        {
+          "at": 56.017,
+          "id": 51,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 70.017,
+          "id": 53,
+          "role": "jammer",
+          "maxHp": 230,
+          "hp": 230
+        },
+        {
+          "at": 70.017,
+          "id": 54,
+          "role": "bomber",
+          "maxHp": 260,
+          "hp": 260
+        },
+        {
+          "at": 70.017,
+          "id": 55,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 70.017,
+          "id": 56,
+          "role": "raider",
+          "maxHp": 240,
+          "hp": 240
+        },
+        {
+          "at": 85.017,
+          "id": 61,
+          "role": "commander",
+          "maxHp": 300,
+          "hp": 300
+        },
+        {
+          "at": 85.017,
+          "id": 62,
+          "role": "shield",
+          "maxHp": 300,
+          "hp": 300
+        },
+        {
+          "at": 85.017,
+          "id": 63,
+          "role": "bomber",
+          "maxHp": 260,
+          "hp": 260
+        },
+        {
+          "at": 85.017,
+          "id": 64,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 85.017,
+          "id": 65,
+          "role": "raider",
+          "maxHp": 240,
+          "hp": 240
+        }
+      ],
+      "repairs": [],
+      "damage": [
+        {
+          "at": 6.567,
+          "amount": 6.4,
+          "hp": 93.6,
+          "wave": 1
+        },
+        {
+          "at": 31.1,
+          "amount": 12.8,
+          "hp": 80.8,
+          "wave": 1
+        },
+        {
+          "at": 59.267,
+          "amount": 6.4,
+          "hp": 74.4,
+          "wave": 1
+        },
+        {
+          "at": 60.183,
+          "amount": 6.4,
+          "hp": 68,
+          "wave": 1
+        },
+        {
+          "at": 67.35,
+          "amount": 12.8,
+          "hp": 55.2,
+          "wave": 1
+        }
+      ],
+      "cards": [],
+      "transitions": [
+        {
+          "at": 0,
+          "state": "playing/escort"
+        },
+        {
+          "at": 93.733,
+          "state": "lost/escort"
+        }
+      ],
+      "errors": [],
+      "minHp": 55.2,
+      "missilesFired": 10,
+      "pulses": 6,
+      "peakHostile": 28,
+      "peakEnemies": 10,
+      "complete": false,
+      "status": "lost",
+      "phase": "escort",
+      "capReached": false,
+      "seconds": 93.733,
+      "hp": 55.2,
+      "kills": 30,
+      "lossReason": "Конвой потерял два транспорта. Снимайте щиты, перехватывайте торпеды и применяйте E перед попаданием залпа.",
+      "damageTaken": 44.8,
+      "swarm": {
+        "wave": 1,
+        "complete": false,
+        "balanceVersion": "2.10.0",
+        "wavesCleared": 0,
+        "events": [],
+        "drops": {
+          "repair": 0,
+          "missiles": 0,
+          "overdrive": 0
+        }
+      },
+      "allies": [
+        {
+          "name": "Архив ФТ",
+          "hp": 0,
+          "dead": true,
+          "maxHp": 100
+        },
+        {
+          "name": "Матрица связей",
+          "hp": 48,
+          "dead": false,
+          "maxHp": 100
+        },
+        {
+          "name": "Реестр решений",
+          "hp": 0,
+          "dead": true,
+          "maxHp": 100
+        }
+      ],
+      "convoy": {
+        "version": "2.6.0",
+        "stage": 2,
+        "time": 93.73,
+        "wave": 7,
+        "total": 7,
+        "distance": 0.8629259259259814,
+        "formation": 2,
+        "allies": [
+          {
+            "hp": 0,
+            "dead": true
+          },
+          {
+            "hp": 48,
+            "dead": false
+          },
+          {
+            "hp": 0,
+            "dead": true
+          }
+        ],
+        "groups": [
+          {
+            "id": 7,
+            "kind": "command",
+            "state": "regroup",
+            "time": 0.15,
+            "target": 0,
+            "members": 2
+          }
+        ],
+        "fields": [
+          {
+            "id": 8,
+            "z": -139.33333333333414,
+            "gapX": -22,
+            "gapY": -8,
+            "shape": "ring",
+            "radius": 7.1,
+            "halfW": 7.1,
+            "halfH": 7.1,
+            "speed": 38,
+            "warning": 3.666666666666688,
+            "passed": false,
+            "hit": false
+          }
+        ],
+        "aim": {
+          "locked": true,
+          "targetId": 64,
+          "cone": 0.19
+        },
+        "stats": {
+          "spawned": 29,
+          "volleys": 192,
+          "torpedoes": 29,
+          "intercepts": 29,
+          "shieldHits": 39,
+          "disruptions": 3,
+          "fieldsPassed": 7,
+          "fieldsHit": 0,
+          "peakEnemies": 10,
+          "peakHostile": 28,
+          "forwardRecoveries": 0
+        },
+        "events": [
+          {
+            "at": 33.22,
+            "kind": "cover"
+          },
+          {
+            "at": 36.02,
+            "kind": "formation",
+            "pattern": 2
+          },
+          {
+            "at": 37.42,
+            "kind": "field-pass",
+            "id": 3
+          },
+          {
+            "at": 42.02,
+            "kind": "torpedo",
+            "id": 4,
+            "count": 4
+          },
+          {
+            "at": 42.02,
+            "kind": "attack",
+            "squad": 4,
+            "target": 1,
+            "cycle": 1
+          },
+          {
+            "at": 42.02,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 42.02,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 42.97,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 42.97,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 44.02,
+            "kind": "field",
+            "id": 4
+          },
+          {
+            "at": 45.42,
+            "kind": "attack",
+            "squad": 4,
+            "target": 1,
+            "cycle": 2
+          },
+          {
+            "at": 45.42,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 45.42,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 46.37,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 46.37,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 47.62,
+            "kind": "cover"
+          },
+          {
+            "at": 48.83,
+            "kind": "attack",
+            "squad": 4,
+            "target": 1,
+            "cycle": 3
+          },
+          {
+            "at": 48.83,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 48.83,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 49.42,
+            "kind": "field-pass",
+            "id": 4
+          },
+          {
+            "at": 49.78,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 49.78,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 52.25,
+            "kind": "attack",
+            "squad": 4,
+            "target": 1,
+            "cycle": 4
+          },
+          {
+            "at": 52.25,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 53.2,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 54.02,
+            "kind": "formation",
+            "pattern": 0
+          },
+          {
+            "at": 55.67,
+            "kind": "attack",
+            "squad": 4,
+            "target": 1,
+            "cycle": 5
+          },
+          {
+            "at": 55.67,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 56.02,
+            "kind": "field",
+            "id": 5
+          },
+          {
+            "at": 56.02,
+            "kind": "command",
+            "id": 5,
+            "count": 4
+          },
+          {
+            "at": 56.02,
+            "kind": "attack",
+            "squad": 5,
+            "target": 2,
+            "cycle": 1
+          },
+          {
+            "at": 59.42,
+            "kind": "attack",
+            "squad": 5,
+            "target": 2,
+            "cycle": 2
+          },
+          {
+            "at": 61.13,
+            "kind": "leader-down",
+            "squad": 5
+          },
+          {
+            "at": 61.42,
+            "kind": "field-pass",
+            "id": 5
+          },
+          {
+            "at": 64.15,
+            "kind": "attack",
+            "squad": 5,
+            "target": 2,
+            "cycle": 3
+          },
+          {
+            "at": 66,
+            "kind": "transport-lost",
+            "target": 2
+          },
+          {
+            "at": 68.02,
+            "kind": "field",
+            "id": 6
+          },
+          {
+            "at": 70.02,
+            "kind": "jam",
+            "id": 6,
+            "count": 4
+          },
+          {
+            "at": 70.02,
+            "kind": "attack",
+            "squad": 6,
+            "target": 0,
+            "cycle": 1
+          },
+          {
+            "at": 70.02,
+            "kind": "torpedo",
+            "squad": 6,
+            "target": 0
+          },
+          {
+            "at": 70.97,
+            "kind": "torpedo",
+            "squad": 6,
+            "target": 0
+          },
+          {
+            "at": 72.02,
+            "kind": "formation",
+            "pattern": 1
+          },
+          {
+            "at": 72.42,
+            "kind": "cover"
+          },
+          {
+            "at": 73.42,
+            "kind": "field-pass",
+            "id": 6
+          },
+          {
+            "at": 73.42,
+            "kind": "attack",
+            "squad": 6,
+            "target": 0,
+            "cycle": 2
+          },
+          {
+            "at": 73.42,
+            "kind": "torpedo",
+            "squad": 6,
+            "target": 0
+          },
+          {
+            "at": 74.37,
+            "kind": "torpedo",
+            "squad": 6,
+            "target": 0
+          },
+          {
+            "at": 76.83,
+            "kind": "attack",
+            "squad": 6,
+            "target": 0,
+            "cycle": 3
+          },
+          {
+            "at": 80.02,
+            "kind": "field",
+            "id": 7
+          },
+          {
+            "at": 85.02,
+            "kind": "command",
+            "id": 7,
+            "count": 5
+          },
+          {
+            "at": 85.02,
+            "kind": "attack",
+            "squad": 7,
+            "target": 1,
+            "cycle": 1
+          },
+          {
+            "at": 85.02,
+            "kind": "torpedo",
+            "squad": 7,
+            "target": 1
+          },
+          {
+            "at": 85.42,
+            "kind": "field-pass",
+            "id": 7
+          },
+          {
+            "at": 85.97,
+            "kind": "torpedo",
+            "squad": 7,
+            "target": 1
+          },
+          {
+            "at": 87.22,
+            "kind": "cover"
+          },
+          {
+            "at": 88.42,
+            "kind": "attack",
+            "squad": 7,
+            "target": 0,
+            "cycle": 2
+          },
+          {
+            "at": 88.42,
+            "kind": "torpedo",
+            "squad": 7,
+            "target": 0
+          },
+          {
+            "at": 89.37,
+            "kind": "torpedo",
+            "squad": 7,
+            "target": 0
+          },
+          {
+            "at": 90.02,
+            "kind": "formation",
+            "pattern": 2
+          },
+          {
+            "at": 91.83,
+            "kind": "attack",
+            "squad": 7,
+            "target": 0,
+            "cycle": 3
+          },
+          {
+            "at": 91.83,
+            "kind": "torpedo",
+            "squad": 7,
+            "target": 0
+          },
+          {
+            "at": 92.02,
+            "kind": "field",
+            "id": 8
+          },
+          {
+            "at": 93.58,
+            "kind": "leader-down",
+            "squad": 7
+          },
+          {
+            "at": 93.73,
+            "kind": "transport-lost",
+            "target": 0
+          }
+        ]
+      },
+      "operator": {
+        "reaction": 0.4,
+        "device": "joystick",
+        "strategy": "reactive",
+        "decisions": 235,
+        "tabs": 69,
+        "missiles": 10,
+        "pulses": 6
+      },
+      "stateEvents": [
+        {
+          "kind": "state",
+          "data": "briefing",
+          "time": 0
+        },
+        {
+          "kind": "state",
+          "data": "escortbrief",
+          "time": 0
+        },
+        {
+          "kind": "state",
+          "data": "playing",
+          "time": 0
+        },
+        {
+          "kind": "state",
+          "data": "lost",
+          "time": 93.733
+        }
+      ]
+    },
+    {
+      "key": "convoy:2:combat:417147:0.4:no-rockets:reactive",
+      "kind": "convoy",
+      "stage": 2,
+      "mode": "combat",
+      "seed": 417147,
+      "reaction": 0.4,
+      "noMissiles": true,
+      "fixture": "direct encounter with standard gear; no traversal or resource edits after launch",
+      "startHp": 100,
+      "startGear": {
+        "weapons": 2,
+        "armor": 1,
+        "rockets": 0
+      },
+      "startMissiles": 10,
+      "waves": [
+        {
+          "wave": 1,
+          "at": 0.017,
+          "hp": 100,
+          "enemies": 0
+        }
+      ],
+      "enemySamples": [
+        {
+          "at": 3.017,
+          "id": 8,
+          "role": "commander",
+          "maxHp": 300,
+          "hp": 300
+        },
+        {
+          "at": 3.017,
+          "id": 9,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 3.017,
+          "id": 10,
+          "role": "scout",
+          "maxHp": 150,
+          "hp": 150
+        },
+        {
+          "at": 3.017,
+          "id": 11,
+          "role": "raider",
+          "maxHp": 240,
+          "hp": 240
+        },
+        {
+          "at": 16,
+          "id": 13,
+          "role": "shield",
+          "maxHp": 300,
+          "hp": 300
+        },
+        {
+          "at": 16,
+          "id": 14,
+          "role": "bomber",
+          "maxHp": 260,
+          "hp": 260
+        },
+        {
+          "at": 16,
+          "id": 15,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 16,
+          "id": 16,
+          "role": "scout",
+          "maxHp": 150,
+          "hp": 150
+        },
+        {
+          "at": 29.017,
+          "id": 22,
+          "role": "jammer",
+          "maxHp": 230,
+          "hp": 230
+        },
+        {
+          "at": 29.017,
+          "id": 23,
+          "role": "raider",
+          "maxHp": 240,
+          "hp": 240
+        },
+        {
+          "at": 29.017,
+          "id": 24,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 29.017,
+          "id": 25,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 42.017,
+          "id": 27,
+          "role": "bomber",
+          "maxHp": 260,
+          "hp": 260
+        },
+        {
+          "at": 42.017,
+          "id": 28,
+          "role": "bomber",
+          "maxHp": 260,
+          "hp": 260
+        },
+        {
+          "at": 42.017,
+          "id": 29,
+          "role": "shield",
+          "maxHp": 300,
+          "hp": 300
+        },
+        {
+          "at": 42.017,
+          "id": 30,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 56.017,
+          "id": 47,
+          "role": "commander",
+          "maxHp": 300,
+          "hp": 300
+        },
+        {
+          "at": 56.017,
+          "id": 48,
+          "role": "shield",
+          "maxHp": 300,
+          "hp": 300
+        },
+        {
+          "at": 56.017,
+          "id": 49,
+          "role": "raider",
+          "maxHp": 240,
+          "hp": 240
+        },
+        {
+          "at": 56.017,
+          "id": 50,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 70.017,
+          "id": 52,
+          "role": "jammer",
+          "maxHp": 230,
+          "hp": 230
+        },
+        {
+          "at": 70.017,
+          "id": 53,
+          "role": "bomber",
+          "maxHp": 260,
+          "hp": 260
+        },
+        {
+          "at": 70.017,
+          "id": 54,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 70.017,
+          "id": 55,
+          "role": "raider",
+          "maxHp": 240,
+          "hp": 240
+        },
+        {
+          "at": 85.017,
+          "id": 59,
+          "role": "commander",
+          "maxHp": 300,
+          "hp": 300
+        },
+        {
+          "at": 85.017,
+          "id": 60,
+          "role": "shield",
+          "maxHp": 300,
+          "hp": 300
+        },
+        {
+          "at": 85.017,
+          "id": 61,
+          "role": "bomber",
+          "maxHp": 260,
+          "hp": 260
+        },
+        {
+          "at": 85.017,
+          "id": 62,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 85.017,
+          "id": 63,
+          "role": "raider",
+          "maxHp": 240,
+          "hp": 240
+        }
+      ],
+      "repairs": [],
+      "damage": [
+        {
+          "at": 6.517,
+          "amount": 6.4,
+          "hp": 93.6,
+          "wave": 1
+        },
+        {
+          "at": 22.067,
+          "amount": 6.4,
+          "hp": 87.2,
+          "wave": 1
+        },
+        {
+          "at": 31.1,
+          "amount": 12.8,
+          "hp": 74.4,
+          "wave": 1
+        },
+        {
+          "at": 57.95,
+          "amount": 6.4,
+          "hp": 68,
+          "wave": 1
+        },
+        {
+          "at": 59.3,
+          "amount": 6.4,
+          "hp": 61.6,
+          "wave": 1
+        }
+      ],
+      "cards": [],
+      "transitions": [
+        {
+          "at": 0,
+          "state": "playing/escort"
+        },
+        {
+          "at": 94.183,
+          "state": "lost/escort"
+        }
+      ],
+      "errors": [],
+      "minHp": 61.6,
+      "missilesFired": 0,
+      "pulses": 6,
+      "peakHostile": 28,
+      "peakEnemies": 8,
+      "complete": false,
+      "status": "lost",
+      "phase": "escort",
+      "capReached": false,
+      "seconds": 94.183,
+      "hp": 61.6,
+      "kills": 30,
+      "lossReason": "Конвой потерял два транспорта. Снимайте щиты, перехватывайте торпеды и применяйте E перед попаданием залпа.",
+      "damageTaken": 38.4,
+      "swarm": {
+        "wave": 1,
+        "complete": false,
+        "balanceVersion": "2.10.0",
+        "wavesCleared": 0,
+        "events": [],
+        "drops": {
+          "repair": 0,
+          "missiles": 0,
+          "overdrive": 0
+        }
+      },
+      "allies": [
+        {
+          "name": "Архив ФТ",
+          "hp": 0,
+          "dead": true,
+          "maxHp": 100
+        },
+        {
+          "name": "Матрица связей",
+          "hp": 40,
+          "dead": false,
+          "maxHp": 100
+        },
+        {
+          "name": "Реестр решений",
+          "hp": 0,
+          "dead": true,
+          "maxHp": 100
+        }
+      ],
+      "convoy": {
+        "version": "2.6.0",
+        "stage": 2,
+        "time": 94.18,
+        "wave": 7,
+        "total": 7,
+        "distance": 0.8670925925926484,
+        "formation": 2,
+        "allies": [
+          {
+            "hp": 0,
+            "dead": true
+          },
+          {
+            "hp": 40,
+            "dead": false
+          },
+          {
+            "hp": 0,
+            "dead": true
+          }
+        ],
+        "groups": [
+          {
+            "id": 7,
+            "kind": "command",
+            "state": "regroup",
+            "time": 0.6000000000000002,
+            "target": 0,
+            "members": 2
+          }
+        ],
+        "fields": [
+          {
+            "id": 8,
+            "z": -122.2333333333342,
+            "gapX": -22,
+            "gapY": -8,
+            "shape": "ring",
+            "radius": 7.1,
+            "halfW": 7.1,
+            "halfH": 7.1,
+            "speed": 38,
+            "warning": 3.2166666666666894,
+            "passed": false,
+            "hit": false
+          }
+        ],
+        "aim": {
+          "locked": true,
+          "targetId": 63,
+          "cone": 0.19
+        },
+        "stats": {
+          "spawned": 29,
+          "volleys": 197,
+          "torpedoes": 27,
+          "intercepts": 27,
+          "shieldHits": 50,
+          "disruptions": 3,
+          "fieldsPassed": 7,
+          "fieldsHit": 0,
+          "peakEnemies": 8,
+          "peakHostile": 28,
+          "forwardRecoveries": 0
+        },
+        "events": [
+          {
+            "at": 32.02,
+            "kind": "field",
+            "id": 3
+          },
+          {
+            "at": 32.42,
+            "kind": "attack",
+            "squad": 3,
+            "target": 0,
+            "cycle": 2
+          },
+          {
+            "at": 33.22,
+            "kind": "cover"
+          },
+          {
+            "at": 36.02,
+            "kind": "formation",
+            "pattern": 2
+          },
+          {
+            "at": 37.42,
+            "kind": "field-pass",
+            "id": 3
+          },
+          {
+            "at": 42.02,
+            "kind": "torpedo",
+            "id": 4,
+            "count": 4
+          },
+          {
+            "at": 42.02,
+            "kind": "attack",
+            "squad": 4,
+            "target": 1,
+            "cycle": 1
+          },
+          {
+            "at": 42.02,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 42.02,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 42.97,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 42.97,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 44.02,
+            "kind": "field",
+            "id": 4
+          },
+          {
+            "at": 45.42,
+            "kind": "attack",
+            "squad": 4,
+            "target": 1,
+            "cycle": 2
+          },
+          {
+            "at": 45.42,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 45.42,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 46.37,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 46.37,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 47.62,
+            "kind": "cover"
+          },
+          {
+            "at": 48.83,
+            "kind": "attack",
+            "squad": 4,
+            "target": 1,
+            "cycle": 3
+          },
+          {
+            "at": 48.83,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 48.83,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 49.42,
+            "kind": "field-pass",
+            "id": 4
+          },
+          {
+            "at": 49.78,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 49.78,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 52.25,
+            "kind": "attack",
+            "squad": 4,
+            "target": 1,
+            "cycle": 4
+          },
+          {
+            "at": 52.25,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 53.2,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 54.02,
+            "kind": "formation",
+            "pattern": 0
+          },
+          {
+            "at": 55.67,
+            "kind": "attack",
+            "squad": 4,
+            "target": 1,
+            "cycle": 5
+          },
+          {
+            "at": 55.67,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 56.02,
+            "kind": "field",
+            "id": 5
+          },
+          {
+            "at": 56.02,
+            "kind": "command",
+            "id": 5,
+            "count": 4
+          },
+          {
+            "at": 56.02,
+            "kind": "attack",
+            "squad": 5,
+            "target": 2,
+            "cycle": 1
+          },
+          {
+            "at": 59.42,
+            "kind": "attack",
+            "squad": 5,
+            "target": 2,
+            "cycle": 2
+          },
+          {
+            "at": 61.42,
+            "kind": "field-pass",
+            "id": 5
+          },
+          {
+            "at": 61.57,
+            "kind": "transport-lost",
+            "target": 2
+          },
+          {
+            "at": 62.48,
+            "kind": "leader-down",
+            "squad": 5
+          },
+          {
+            "at": 65.5,
+            "kind": "attack",
+            "squad": 5,
+            "target": 0,
+            "cycle": 3
+          },
+          {
+            "at": 68.02,
+            "kind": "field",
+            "id": 6
+          },
+          {
+            "at": 70.02,
+            "kind": "jam",
+            "id": 6,
+            "count": 4
+          },
+          {
+            "at": 70.02,
+            "kind": "attack",
+            "squad": 6,
+            "target": 0,
+            "cycle": 1
+          },
+          {
+            "at": 70.02,
+            "kind": "torpedo",
+            "squad": 6,
+            "target": 0
+          },
+          {
+            "at": 70.97,
+            "kind": "torpedo",
+            "squad": 6,
+            "target": 0
+          },
+          {
+            "at": 72.02,
+            "kind": "formation",
+            "pattern": 1
+          },
+          {
+            "at": 72.42,
+            "kind": "cover"
+          },
+          {
+            "at": 73.42,
+            "kind": "field-pass",
+            "id": 6
+          },
+          {
+            "at": 73.42,
+            "kind": "attack",
+            "squad": 6,
+            "target": 0,
+            "cycle": 2
+          },
+          {
+            "at": 73.42,
+            "kind": "torpedo",
+            "squad": 6,
+            "target": 0
+          },
+          {
+            "at": 80.02,
+            "kind": "field",
+            "id": 7
+          },
+          {
+            "at": 85.02,
+            "kind": "command",
+            "id": 7,
+            "count": 5
+          },
+          {
+            "at": 85.02,
+            "kind": "attack",
+            "squad": 7,
+            "target": 1,
+            "cycle": 1
+          },
+          {
+            "at": 85.02,
+            "kind": "torpedo",
+            "squad": 7,
+            "target": 1
+          },
+          {
+            "at": 85.42,
+            "kind": "field-pass",
+            "id": 7
+          },
+          {
+            "at": 85.97,
+            "kind": "torpedo",
+            "squad": 7,
+            "target": 1
+          },
+          {
+            "at": 87.22,
+            "kind": "cover"
+          },
+          {
+            "at": 88.42,
+            "kind": "attack",
+            "squad": 7,
+            "target": 0,
+            "cycle": 2
+          },
+          {
+            "at": 88.42,
+            "kind": "torpedo",
+            "squad": 7,
+            "target": 0
+          },
+          {
+            "at": 89.37,
+            "kind": "torpedo",
+            "squad": 7,
+            "target": 0
+          },
+          {
+            "at": 90.02,
+            "kind": "formation",
+            "pattern": 2
+          },
+          {
+            "at": 91.83,
+            "kind": "attack",
+            "squad": 7,
+            "target": 0,
+            "cycle": 3
+          },
+          {
+            "at": 91.83,
+            "kind": "torpedo",
+            "squad": 7,
+            "target": 0
+          },
+          {
+            "at": 92.02,
+            "kind": "field",
+            "id": 8
+          },
+          {
+            "at": 93.58,
+            "kind": "leader-down",
+            "squad": 7
+          },
+          {
+            "at": 94.18,
+            "kind": "transport-lost",
+            "target": 0
+          }
+        ]
+      },
+      "operator": {
+        "reaction": 0.4,
+        "device": "joystick",
+        "strategy": "reactive",
+        "decisions": 236,
+        "tabs": 66,
+        "missiles": 64,
+        "pulses": 6
+      },
+      "stateEvents": [
+        {
+          "kind": "state",
+          "data": "briefing",
+          "time": 0
+        },
+        {
+          "kind": "state",
+          "data": "escortbrief",
+          "time": 0
+        },
+        {
+          "kind": "state",
+          "data": "playing",
+          "time": 0
+        },
+        {
+          "kind": "state",
+          "data": "lost",
+          "time": 94.183
+        }
+      ]
+    },
+    {
+      "key": "convoy:2:combat:819337:0.4:rockets:reactive",
+      "kind": "convoy",
+      "stage": 2,
+      "mode": "combat",
+      "seed": 819337,
+      "reaction": 0.4,
+      "noMissiles": false,
+      "fixture": "direct encounter with standard gear; no traversal or resource edits after launch",
+      "startHp": 100,
+      "startGear": {
+        "weapons": 2,
+        "armor": 1,
+        "rockets": 0
+      },
+      "startMissiles": 10,
+      "waves": [
+        {
+          "wave": 1,
+          "at": 0.017,
+          "hp": 100,
+          "enemies": 0
+        }
+      ],
+      "enemySamples": [
+        {
+          "at": 3.017,
+          "id": 8,
+          "role": "commander",
+          "maxHp": 300,
+          "hp": 300
+        },
+        {
+          "at": 3.017,
+          "id": 9,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 3.017,
+          "id": 10,
+          "role": "scout",
+          "maxHp": 150,
+          "hp": 150
+        },
+        {
+          "at": 3.017,
+          "id": 11,
+          "role": "raider",
+          "maxHp": 240,
+          "hp": 240
+        },
+        {
+          "at": 16,
+          "id": 13,
+          "role": "shield",
+          "maxHp": 300,
+          "hp": 300
+        },
+        {
+          "at": 16,
+          "id": 14,
+          "role": "bomber",
+          "maxHp": 260,
+          "hp": 260
+        },
+        {
+          "at": 16,
+          "id": 15,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 16,
+          "id": 16,
+          "role": "scout",
+          "maxHp": 150,
+          "hp": 150
+        },
+        {
+          "at": 29.017,
+          "id": 23,
+          "role": "jammer",
+          "maxHp": 230,
+          "hp": 230
+        },
+        {
+          "at": 29.017,
+          "id": 24,
+          "role": "raider",
+          "maxHp": 240,
+          "hp": 240
+        },
+        {
+          "at": 29.017,
+          "id": 25,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 29.017,
+          "id": 26,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 42.017,
+          "id": 28,
+          "role": "bomber",
+          "maxHp": 260,
+          "hp": 260
+        },
+        {
+          "at": 42.017,
+          "id": 29,
+          "role": "bomber",
+          "maxHp": 260,
+          "hp": 260
+        },
+        {
+          "at": 42.017,
+          "id": 30,
+          "role": "shield",
+          "maxHp": 300,
+          "hp": 300
+        },
+        {
+          "at": 42.017,
+          "id": 31,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 56.017,
+          "id": 48,
+          "role": "commander",
+          "maxHp": 300,
+          "hp": 300
+        },
+        {
+          "at": 56.017,
+          "id": 49,
+          "role": "shield",
+          "maxHp": 300,
+          "hp": 300
+        },
+        {
+          "at": 56.017,
+          "id": 50,
+          "role": "raider",
+          "maxHp": 240,
+          "hp": 240
+        },
+        {
+          "at": 56.017,
+          "id": 51,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 70.017,
+          "id": 53,
+          "role": "jammer",
+          "maxHp": 230,
+          "hp": 230
+        },
+        {
+          "at": 70.017,
+          "id": 54,
+          "role": "bomber",
+          "maxHp": 260,
+          "hp": 260
+        },
+        {
+          "at": 70.017,
+          "id": 55,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 70.017,
+          "id": 56,
+          "role": "raider",
+          "maxHp": 240,
+          "hp": 240
+        },
+        {
+          "at": 85.017,
+          "id": 61,
+          "role": "commander",
+          "maxHp": 300,
+          "hp": 300
+        },
+        {
+          "at": 85.017,
+          "id": 62,
+          "role": "shield",
+          "maxHp": 300,
+          "hp": 300
+        },
+        {
+          "at": 85.017,
+          "id": 63,
+          "role": "bomber",
+          "maxHp": 260,
+          "hp": 260
+        },
+        {
+          "at": 85.017,
+          "id": 64,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 85.017,
+          "id": 65,
+          "role": "raider",
+          "maxHp": 240,
+          "hp": 240
+        }
+      ],
+      "repairs": [],
+      "damage": [
+        {
+          "at": 6.567,
+          "amount": 6.4,
+          "hp": 93.6,
+          "wave": 1
+        },
+        {
+          "at": 31.1,
+          "amount": 12.8,
+          "hp": 80.8,
+          "wave": 1
+        },
+        {
+          "at": 59.267,
+          "amount": 6.4,
+          "hp": 74.4,
+          "wave": 1
+        },
+        {
+          "at": 60.183,
+          "amount": 6.4,
+          "hp": 68,
+          "wave": 1
+        },
+        {
+          "at": 67.35,
+          "amount": 12.8,
+          "hp": 55.2,
+          "wave": 1
+        }
+      ],
+      "cards": [],
+      "transitions": [
+        {
+          "at": 0,
+          "state": "playing/escort"
+        },
+        {
+          "at": 93.733,
+          "state": "lost/escort"
+        }
+      ],
+      "errors": [],
+      "minHp": 55.2,
+      "missilesFired": 10,
+      "pulses": 6,
+      "peakHostile": 28,
+      "peakEnemies": 10,
+      "complete": false,
+      "status": "lost",
+      "phase": "escort",
+      "capReached": false,
+      "seconds": 93.733,
+      "hp": 55.2,
+      "kills": 30,
+      "lossReason": "Конвой потерял два транспорта. Снимайте щиты, перехватывайте торпеды и применяйте E перед попаданием залпа.",
+      "damageTaken": 44.8,
+      "swarm": {
+        "wave": 1,
+        "complete": false,
+        "balanceVersion": "2.10.0",
+        "wavesCleared": 0,
+        "events": [],
+        "drops": {
+          "repair": 0,
+          "missiles": 0,
+          "overdrive": 0
+        }
+      },
+      "allies": [
+        {
+          "name": "Архив ФТ",
+          "hp": 0,
+          "dead": true,
+          "maxHp": 100
+        },
+        {
+          "name": "Матрица связей",
+          "hp": 48,
+          "dead": false,
+          "maxHp": 100
+        },
+        {
+          "name": "Реестр решений",
+          "hp": 0,
+          "dead": true,
+          "maxHp": 100
+        }
+      ],
+      "convoy": {
+        "version": "2.6.0",
+        "stage": 2,
+        "time": 93.73,
+        "wave": 7,
+        "total": 7,
+        "distance": 0.8629259259259814,
+        "formation": 2,
+        "allies": [
+          {
+            "hp": 0,
+            "dead": true
+          },
+          {
+            "hp": 48,
+            "dead": false
+          },
+          {
+            "hp": 0,
+            "dead": true
+          }
+        ],
+        "groups": [
+          {
+            "id": 7,
+            "kind": "command",
+            "state": "regroup",
+            "time": 0.15,
+            "target": 0,
+            "members": 2
+          }
+        ],
+        "fields": [
+          {
+            "id": 8,
+            "z": -139.33333333333414,
+            "gapX": -22,
+            "gapY": -8,
+            "shape": "ring",
+            "radius": 7.1,
+            "halfW": 7.1,
+            "halfH": 7.1,
+            "speed": 38,
+            "warning": 3.666666666666688,
+            "passed": false,
+            "hit": false
+          }
+        ],
+        "aim": {
+          "locked": true,
+          "targetId": 64,
+          "cone": 0.19
+        },
+        "stats": {
+          "spawned": 29,
+          "volleys": 192,
+          "torpedoes": 29,
+          "intercepts": 29,
+          "shieldHits": 39,
+          "disruptions": 3,
+          "fieldsPassed": 7,
+          "fieldsHit": 0,
+          "peakEnemies": 10,
+          "peakHostile": 28,
+          "forwardRecoveries": 0
+        },
+        "events": [
+          {
+            "at": 33.22,
+            "kind": "cover"
+          },
+          {
+            "at": 36.02,
+            "kind": "formation",
+            "pattern": 2
+          },
+          {
+            "at": 37.42,
+            "kind": "field-pass",
+            "id": 3
+          },
+          {
+            "at": 42.02,
+            "kind": "torpedo",
+            "id": 4,
+            "count": 4
+          },
+          {
+            "at": 42.02,
+            "kind": "attack",
+            "squad": 4,
+            "target": 1,
+            "cycle": 1
+          },
+          {
+            "at": 42.02,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 42.02,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 42.97,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 42.97,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 44.02,
+            "kind": "field",
+            "id": 4
+          },
+          {
+            "at": 45.42,
+            "kind": "attack",
+            "squad": 4,
+            "target": 1,
+            "cycle": 2
+          },
+          {
+            "at": 45.42,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 45.42,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 46.37,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 46.37,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 47.62,
+            "kind": "cover"
+          },
+          {
+            "at": 48.83,
+            "kind": "attack",
+            "squad": 4,
+            "target": 1,
+            "cycle": 3
+          },
+          {
+            "at": 48.83,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 48.83,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 49.42,
+            "kind": "field-pass",
+            "id": 4
+          },
+          {
+            "at": 49.78,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 49.78,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 52.25,
+            "kind": "attack",
+            "squad": 4,
+            "target": 1,
+            "cycle": 4
+          },
+          {
+            "at": 52.25,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 53.2,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 54.02,
+            "kind": "formation",
+            "pattern": 0
+          },
+          {
+            "at": 55.67,
+            "kind": "attack",
+            "squad": 4,
+            "target": 1,
+            "cycle": 5
+          },
+          {
+            "at": 55.67,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 56.02,
+            "kind": "field",
+            "id": 5
+          },
+          {
+            "at": 56.02,
+            "kind": "command",
+            "id": 5,
+            "count": 4
+          },
+          {
+            "at": 56.02,
+            "kind": "attack",
+            "squad": 5,
+            "target": 2,
+            "cycle": 1
+          },
+          {
+            "at": 59.42,
+            "kind": "attack",
+            "squad": 5,
+            "target": 2,
+            "cycle": 2
+          },
+          {
+            "at": 61.13,
+            "kind": "leader-down",
+            "squad": 5
+          },
+          {
+            "at": 61.42,
+            "kind": "field-pass",
+            "id": 5
+          },
+          {
+            "at": 64.15,
+            "kind": "attack",
+            "squad": 5,
+            "target": 2,
+            "cycle": 3
+          },
+          {
+            "at": 66,
+            "kind": "transport-lost",
+            "target": 2
+          },
+          {
+            "at": 68.02,
+            "kind": "field",
+            "id": 6
+          },
+          {
+            "at": 70.02,
+            "kind": "jam",
+            "id": 6,
+            "count": 4
+          },
+          {
+            "at": 70.02,
+            "kind": "attack",
+            "squad": 6,
+            "target": 0,
+            "cycle": 1
+          },
+          {
+            "at": 70.02,
+            "kind": "torpedo",
+            "squad": 6,
+            "target": 0
+          },
+          {
+            "at": 70.97,
+            "kind": "torpedo",
+            "squad": 6,
+            "target": 0
+          },
+          {
+            "at": 72.02,
+            "kind": "formation",
+            "pattern": 1
+          },
+          {
+            "at": 72.42,
+            "kind": "cover"
+          },
+          {
+            "at": 73.42,
+            "kind": "field-pass",
+            "id": 6
+          },
+          {
+            "at": 73.42,
+            "kind": "attack",
+            "squad": 6,
+            "target": 0,
+            "cycle": 2
+          },
+          {
+            "at": 73.42,
+            "kind": "torpedo",
+            "squad": 6,
+            "target": 0
+          },
+          {
+            "at": 74.37,
+            "kind": "torpedo",
+            "squad": 6,
+            "target": 0
+          },
+          {
+            "at": 76.83,
+            "kind": "attack",
+            "squad": 6,
+            "target": 0,
+            "cycle": 3
+          },
+          {
+            "at": 80.02,
+            "kind": "field",
+            "id": 7
+          },
+          {
+            "at": 85.02,
+            "kind": "command",
+            "id": 7,
+            "count": 5
+          },
+          {
+            "at": 85.02,
+            "kind": "attack",
+            "squad": 7,
+            "target": 1,
+            "cycle": 1
+          },
+          {
+            "at": 85.02,
+            "kind": "torpedo",
+            "squad": 7,
+            "target": 1
+          },
+          {
+            "at": 85.42,
+            "kind": "field-pass",
+            "id": 7
+          },
+          {
+            "at": 85.97,
+            "kind": "torpedo",
+            "squad": 7,
+            "target": 1
+          },
+          {
+            "at": 87.22,
+            "kind": "cover"
+          },
+          {
+            "at": 88.42,
+            "kind": "attack",
+            "squad": 7,
+            "target": 0,
+            "cycle": 2
+          },
+          {
+            "at": 88.42,
+            "kind": "torpedo",
+            "squad": 7,
+            "target": 0
+          },
+          {
+            "at": 89.37,
+            "kind": "torpedo",
+            "squad": 7,
+            "target": 0
+          },
+          {
+            "at": 90.02,
+            "kind": "formation",
+            "pattern": 2
+          },
+          {
+            "at": 91.83,
+            "kind": "attack",
+            "squad": 7,
+            "target": 0,
+            "cycle": 3
+          },
+          {
+            "at": 91.83,
+            "kind": "torpedo",
+            "squad": 7,
+            "target": 0
+          },
+          {
+            "at": 92.02,
+            "kind": "field",
+            "id": 8
+          },
+          {
+            "at": 93.58,
+            "kind": "leader-down",
+            "squad": 7
+          },
+          {
+            "at": 93.73,
+            "kind": "transport-lost",
+            "target": 0
+          }
+        ]
+      },
+      "operator": {
+        "reaction": 0.4,
+        "device": "joystick",
+        "strategy": "reactive",
+        "decisions": 235,
+        "tabs": 69,
+        "missiles": 10,
+        "pulses": 6
+      },
+      "stateEvents": [
+        {
+          "kind": "state",
+          "data": "briefing",
+          "time": 0
+        },
+        {
+          "kind": "state",
+          "data": "escortbrief",
+          "time": 0
+        },
+        {
+          "kind": "state",
+          "data": "playing",
+          "time": 0
+        },
+        {
+          "kind": "state",
+          "data": "lost",
+          "time": 93.733
+        }
+      ]
+    },
+    {
+      "key": "convoy:2:combat:819337:0.4:no-rockets:reactive",
+      "kind": "convoy",
+      "stage": 2,
+      "mode": "combat",
+      "seed": 819337,
+      "reaction": 0.4,
+      "noMissiles": true,
+      "fixture": "direct encounter with standard gear; no traversal or resource edits after launch",
+      "startHp": 100,
+      "startGear": {
+        "weapons": 2,
+        "armor": 1,
+        "rockets": 0
+      },
+      "startMissiles": 10,
+      "waves": [
+        {
+          "wave": 1,
+          "at": 0.017,
+          "hp": 100,
+          "enemies": 0
+        }
+      ],
+      "enemySamples": [
+        {
+          "at": 3.017,
+          "id": 8,
+          "role": "commander",
+          "maxHp": 300,
+          "hp": 300
+        },
+        {
+          "at": 3.017,
+          "id": 9,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 3.017,
+          "id": 10,
+          "role": "scout",
+          "maxHp": 150,
+          "hp": 150
+        },
+        {
+          "at": 3.017,
+          "id": 11,
+          "role": "raider",
+          "maxHp": 240,
+          "hp": 240
+        },
+        {
+          "at": 16,
+          "id": 13,
+          "role": "shield",
+          "maxHp": 300,
+          "hp": 300
+        },
+        {
+          "at": 16,
+          "id": 14,
+          "role": "bomber",
+          "maxHp": 260,
+          "hp": 260
+        },
+        {
+          "at": 16,
+          "id": 15,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 16,
+          "id": 16,
+          "role": "scout",
+          "maxHp": 150,
+          "hp": 150
+        },
+        {
+          "at": 29.017,
+          "id": 22,
+          "role": "jammer",
+          "maxHp": 230,
+          "hp": 230
+        },
+        {
+          "at": 29.017,
+          "id": 23,
+          "role": "raider",
+          "maxHp": 240,
+          "hp": 240
+        },
+        {
+          "at": 29.017,
+          "id": 24,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 29.017,
+          "id": 25,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 42.017,
+          "id": 27,
+          "role": "bomber",
+          "maxHp": 260,
+          "hp": 260
+        },
+        {
+          "at": 42.017,
+          "id": 28,
+          "role": "bomber",
+          "maxHp": 260,
+          "hp": 260
+        },
+        {
+          "at": 42.017,
+          "id": 29,
+          "role": "shield",
+          "maxHp": 300,
+          "hp": 300
+        },
+        {
+          "at": 42.017,
+          "id": 30,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 56.017,
+          "id": 47,
+          "role": "commander",
+          "maxHp": 300,
+          "hp": 300
+        },
+        {
+          "at": 56.017,
+          "id": 48,
+          "role": "shield",
+          "maxHp": 300,
+          "hp": 300
+        },
+        {
+          "at": 56.017,
+          "id": 49,
+          "role": "raider",
+          "maxHp": 240,
+          "hp": 240
+        },
+        {
+          "at": 56.017,
+          "id": 50,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 70.017,
+          "id": 52,
+          "role": "jammer",
+          "maxHp": 230,
+          "hp": 230
+        },
+        {
+          "at": 70.017,
+          "id": 53,
+          "role": "bomber",
+          "maxHp": 260,
+          "hp": 260
+        },
+        {
+          "at": 70.017,
+          "id": 54,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 70.017,
+          "id": 55,
+          "role": "raider",
+          "maxHp": 240,
+          "hp": 240
+        },
+        {
+          "at": 85.017,
+          "id": 59,
+          "role": "commander",
+          "maxHp": 300,
+          "hp": 300
+        },
+        {
+          "at": 85.017,
+          "id": 60,
+          "role": "shield",
+          "maxHp": 300,
+          "hp": 300
+        },
+        {
+          "at": 85.017,
+          "id": 61,
+          "role": "bomber",
+          "maxHp": 260,
+          "hp": 260
+        },
+        {
+          "at": 85.017,
+          "id": 62,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 85.017,
+          "id": 63,
+          "role": "raider",
+          "maxHp": 240,
+          "hp": 240
+        }
+      ],
+      "repairs": [],
+      "damage": [
+        {
+          "at": 6.517,
+          "amount": 6.4,
+          "hp": 93.6,
+          "wave": 1
+        },
+        {
+          "at": 22.067,
+          "amount": 6.4,
+          "hp": 87.2,
+          "wave": 1
+        },
+        {
+          "at": 31.1,
+          "amount": 12.8,
+          "hp": 74.4,
+          "wave": 1
+        },
+        {
+          "at": 57.95,
+          "amount": 6.4,
+          "hp": 68,
+          "wave": 1
+        },
+        {
+          "at": 59.3,
+          "amount": 6.4,
+          "hp": 61.6,
+          "wave": 1
+        }
+      ],
+      "cards": [],
+      "transitions": [
+        {
+          "at": 0,
+          "state": "playing/escort"
+        },
+        {
+          "at": 94.183,
+          "state": "lost/escort"
+        }
+      ],
+      "errors": [],
+      "minHp": 61.6,
+      "missilesFired": 0,
+      "pulses": 6,
+      "peakHostile": 28,
+      "peakEnemies": 8,
+      "complete": false,
+      "status": "lost",
+      "phase": "escort",
+      "capReached": false,
+      "seconds": 94.183,
+      "hp": 61.6,
+      "kills": 30,
+      "lossReason": "Конвой потерял два транспорта. Снимайте щиты, перехватывайте торпеды и применяйте E перед попаданием залпа.",
+      "damageTaken": 38.4,
+      "swarm": {
+        "wave": 1,
+        "complete": false,
+        "balanceVersion": "2.10.0",
+        "wavesCleared": 0,
+        "events": [],
+        "drops": {
+          "repair": 0,
+          "missiles": 0,
+          "overdrive": 0
+        }
+      },
+      "allies": [
+        {
+          "name": "Архив ФТ",
+          "hp": 0,
+          "dead": true,
+          "maxHp": 100
+        },
+        {
+          "name": "Матрица связей",
+          "hp": 40,
+          "dead": false,
+          "maxHp": 100
+        },
+        {
+          "name": "Реестр решений",
+          "hp": 0,
+          "dead": true,
+          "maxHp": 100
+        }
+      ],
+      "convoy": {
+        "version": "2.6.0",
+        "stage": 2,
+        "time": 94.18,
+        "wave": 7,
+        "total": 7,
+        "distance": 0.8670925925926484,
+        "formation": 2,
+        "allies": [
+          {
+            "hp": 0,
+            "dead": true
+          },
+          {
+            "hp": 40,
+            "dead": false
+          },
+          {
+            "hp": 0,
+            "dead": true
+          }
+        ],
+        "groups": [
+          {
+            "id": 7,
+            "kind": "command",
+            "state": "regroup",
+            "time": 0.6000000000000002,
+            "target": 0,
+            "members": 2
+          }
+        ],
+        "fields": [
+          {
+            "id": 8,
+            "z": -122.2333333333342,
+            "gapX": -22,
+            "gapY": -8,
+            "shape": "ring",
+            "radius": 7.1,
+            "halfW": 7.1,
+            "halfH": 7.1,
+            "speed": 38,
+            "warning": 3.2166666666666894,
+            "passed": false,
+            "hit": false
+          }
+        ],
+        "aim": {
+          "locked": true,
+          "targetId": 63,
+          "cone": 0.19
+        },
+        "stats": {
+          "spawned": 29,
+          "volleys": 197,
+          "torpedoes": 27,
+          "intercepts": 27,
+          "shieldHits": 50,
+          "disruptions": 3,
+          "fieldsPassed": 7,
+          "fieldsHit": 0,
+          "peakEnemies": 8,
+          "peakHostile": 28,
+          "forwardRecoveries": 0
+        },
+        "events": [
+          {
+            "at": 32.02,
+            "kind": "field",
+            "id": 3
+          },
+          {
+            "at": 32.42,
+            "kind": "attack",
+            "squad": 3,
+            "target": 0,
+            "cycle": 2
+          },
+          {
+            "at": 33.22,
+            "kind": "cover"
+          },
+          {
+            "at": 36.02,
+            "kind": "formation",
+            "pattern": 2
+          },
+          {
+            "at": 37.42,
+            "kind": "field-pass",
+            "id": 3
+          },
+          {
+            "at": 42.02,
+            "kind": "torpedo",
+            "id": 4,
+            "count": 4
+          },
+          {
+            "at": 42.02,
+            "kind": "attack",
+            "squad": 4,
+            "target": 1,
+            "cycle": 1
+          },
+          {
+            "at": 42.02,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 42.02,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 42.97,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 42.97,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 44.02,
+            "kind": "field",
+            "id": 4
+          },
+          {
+            "at": 45.42,
+            "kind": "attack",
+            "squad": 4,
+            "target": 1,
+            "cycle": 2
+          },
+          {
+            "at": 45.42,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 45.42,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 46.37,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 46.37,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 47.62,
+            "kind": "cover"
+          },
+          {
+            "at": 48.83,
+            "kind": "attack",
+            "squad": 4,
+            "target": 1,
+            "cycle": 3
+          },
+          {
+            "at": 48.83,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 48.83,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 49.42,
+            "kind": "field-pass",
+            "id": 4
+          },
+          {
+            "at": 49.78,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 49.78,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 52.25,
+            "kind": "attack",
+            "squad": 4,
+            "target": 1,
+            "cycle": 4
+          },
+          {
+            "at": 52.25,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 53.2,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 54.02,
+            "kind": "formation",
+            "pattern": 0
+          },
+          {
+            "at": 55.67,
+            "kind": "attack",
+            "squad": 4,
+            "target": 1,
+            "cycle": 5
+          },
+          {
+            "at": 55.67,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 56.02,
+            "kind": "field",
+            "id": 5
+          },
+          {
+            "at": 56.02,
+            "kind": "command",
+            "id": 5,
+            "count": 4
+          },
+          {
+            "at": 56.02,
+            "kind": "attack",
+            "squad": 5,
+            "target": 2,
+            "cycle": 1
+          },
+          {
+            "at": 59.42,
+            "kind": "attack",
+            "squad": 5,
+            "target": 2,
+            "cycle": 2
+          },
+          {
+            "at": 61.42,
+            "kind": "field-pass",
+            "id": 5
+          },
+          {
+            "at": 61.57,
+            "kind": "transport-lost",
+            "target": 2
+          },
+          {
+            "at": 62.48,
+            "kind": "leader-down",
+            "squad": 5
+          },
+          {
+            "at": 65.5,
+            "kind": "attack",
+            "squad": 5,
+            "target": 0,
+            "cycle": 3
+          },
+          {
+            "at": 68.02,
+            "kind": "field",
+            "id": 6
+          },
+          {
+            "at": 70.02,
+            "kind": "jam",
+            "id": 6,
+            "count": 4
+          },
+          {
+            "at": 70.02,
+            "kind": "attack",
+            "squad": 6,
+            "target": 0,
+            "cycle": 1
+          },
+          {
+            "at": 70.02,
+            "kind": "torpedo",
+            "squad": 6,
+            "target": 0
+          },
+          {
+            "at": 70.97,
+            "kind": "torpedo",
+            "squad": 6,
+            "target": 0
+          },
+          {
+            "at": 72.02,
+            "kind": "formation",
+            "pattern": 1
+          },
+          {
+            "at": 72.42,
+            "kind": "cover"
+          },
+          {
+            "at": 73.42,
+            "kind": "field-pass",
+            "id": 6
+          },
+          {
+            "at": 73.42,
+            "kind": "attack",
+            "squad": 6,
+            "target": 0,
+            "cycle": 2
+          },
+          {
+            "at": 73.42,
+            "kind": "torpedo",
+            "squad": 6,
+            "target": 0
+          },
+          {
+            "at": 80.02,
+            "kind": "field",
+            "id": 7
+          },
+          {
+            "at": 85.02,
+            "kind": "command",
+            "id": 7,
+            "count": 5
+          },
+          {
+            "at": 85.02,
+            "kind": "attack",
+            "squad": 7,
+            "target": 1,
+            "cycle": 1
+          },
+          {
+            "at": 85.02,
+            "kind": "torpedo",
+            "squad": 7,
+            "target": 1
+          },
+          {
+            "at": 85.42,
+            "kind": "field-pass",
+            "id": 7
+          },
+          {
+            "at": 85.97,
+            "kind": "torpedo",
+            "squad": 7,
+            "target": 1
+          },
+          {
+            "at": 87.22,
+            "kind": "cover"
+          },
+          {
+            "at": 88.42,
+            "kind": "attack",
+            "squad": 7,
+            "target": 0,
+            "cycle": 2
+          },
+          {
+            "at": 88.42,
+            "kind": "torpedo",
+            "squad": 7,
+            "target": 0
+          },
+          {
+            "at": 89.37,
+            "kind": "torpedo",
+            "squad": 7,
+            "target": 0
+          },
+          {
+            "at": 90.02,
+            "kind": "formation",
+            "pattern": 2
+          },
+          {
+            "at": 91.83,
+            "kind": "attack",
+            "squad": 7,
+            "target": 0,
+            "cycle": 3
+          },
+          {
+            "at": 91.83,
+            "kind": "torpedo",
+            "squad": 7,
+            "target": 0
+          },
+          {
+            "at": 92.02,
+            "kind": "field",
+            "id": 8
+          },
+          {
+            "at": 93.58,
+            "kind": "leader-down",
+            "squad": 7
+          },
+          {
+            "at": 94.18,
+            "kind": "transport-lost",
+            "target": 0
+          }
+        ]
+      },
+      "operator": {
+        "reaction": 0.4,
+        "device": "joystick",
+        "strategy": "reactive",
+        "decisions": 236,
+        "tabs": 66,
+        "missiles": 64,
+        "pulses": 6
+      },
+      "stateEvents": [
+        {
+          "kind": "state",
+          "data": "briefing",
+          "time": 0
+        },
+        {
+          "kind": "state",
+          "data": "escortbrief",
+          "time": 0
+        },
+        {
+          "kind": "state",
+          "data": "playing",
+          "time": 0
+        },
+        {
+          "kind": "state",
+          "data": "lost",
+          "time": 94.183
+        }
+      ]
+    },
+    {
+      "key": "convoy:2:combat:417147:0.55:rockets:reactive",
+      "kind": "convoy",
+      "stage": 2,
+      "mode": "combat",
+      "seed": 417147,
+      "reaction": 0.55,
+      "fixture": "direct encounter with standard gear; no traversal or resource edits after launch",
+      "startHp": 100,
+      "startGear": {
+        "weapons": 2,
+        "armor": 1,
+        "rockets": 0
+      },
+      "startMissiles": 10,
+      "waves": [
+        {
+          "wave": 1,
+          "at": 0.017,
+          "hp": 100,
+          "enemies": 0
+        }
+      ],
+      "enemySamples": [
+        {
+          "at": 3.017,
+          "id": 8,
+          "role": "commander",
+          "maxHp": 300,
+          "hp": 300
+        },
+        {
+          "at": 3.017,
+          "id": 9,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 3.017,
+          "id": 10,
+          "role": "scout",
+          "maxHp": 150,
+          "hp": 150
+        },
+        {
+          "at": 3.017,
+          "id": 11,
+          "role": "raider",
+          "maxHp": 240,
+          "hp": 240
+        },
+        {
+          "at": 16,
+          "id": 13,
+          "role": "shield",
+          "maxHp": 300,
+          "hp": 300
+        },
+        {
+          "at": 16,
+          "id": 14,
+          "role": "bomber",
+          "maxHp": 260,
+          "hp": 260
+        },
+        {
+          "at": 16,
+          "id": 15,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 16,
+          "id": 16,
+          "role": "scout",
+          "maxHp": 150,
+          "hp": 150
+        },
+        {
+          "at": 29.017,
+          "id": 24,
+          "role": "jammer",
+          "maxHp": 230,
+          "hp": 230
+        },
+        {
+          "at": 29.017,
+          "id": 25,
+          "role": "raider",
+          "maxHp": 240,
+          "hp": 240
+        },
+        {
+          "at": 29.017,
+          "id": 26,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 29.017,
+          "id": 27,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 42.017,
+          "id": 29,
+          "role": "bomber",
+          "maxHp": 260,
+          "hp": 260
+        },
+        {
+          "at": 42.017,
+          "id": 30,
+          "role": "bomber",
+          "maxHp": 260,
+          "hp": 260
+        },
+        {
+          "at": 42.017,
+          "id": 31,
+          "role": "shield",
+          "maxHp": 300,
+          "hp": 300
+        },
+        {
+          "at": 42.017,
+          "id": 32,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 56.017,
+          "id": 47,
+          "role": "commander",
+          "maxHp": 300,
+          "hp": 300
+        },
+        {
+          "at": 56.017,
+          "id": 48,
+          "role": "shield",
+          "maxHp": 300,
+          "hp": 300
+        },
+        {
+          "at": 56.017,
+          "id": 49,
+          "role": "raider",
+          "maxHp": 240,
+          "hp": 240
+        },
+        {
+          "at": 56.017,
+          "id": 50,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 70.017,
+          "id": 52,
+          "role": "jammer",
+          "maxHp": 230,
+          "hp": 230
+        },
+        {
+          "at": 70.017,
+          "id": 53,
+          "role": "bomber",
+          "maxHp": 260,
+          "hp": 260
+        },
+        {
+          "at": 70.017,
+          "id": 54,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 70.017,
+          "id": 55,
+          "role": "raider",
+          "maxHp": 240,
+          "hp": 240
+        },
+        {
+          "at": 85.017,
+          "id": 59,
+          "role": "commander",
+          "maxHp": 300,
+          "hp": 300
+        },
+        {
+          "at": 85.017,
+          "id": 60,
+          "role": "shield",
+          "maxHp": 300,
+          "hp": 300
+        },
+        {
+          "at": 85.017,
+          "id": 61,
+          "role": "bomber",
+          "maxHp": 260,
+          "hp": 260
+        },
+        {
+          "at": 85.017,
+          "id": 62,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 85.017,
+          "id": 63,
+          "role": "raider",
+          "maxHp": 240,
+          "hp": 240
+        }
+      ],
+      "repairs": [],
+      "damage": [
+        {
+          "at": 31.05,
+          "amount": 12.8,
+          "hp": 87.2,
+          "wave": 1
+        },
+        {
+          "at": 35.817,
+          "amount": 9.6,
+          "hp": 77.6,
+          "wave": 1
+        },
+        {
+          "at": 60.8,
+          "amount": 9.6,
+          "hp": 68,
+          "wave": 1
+        },
+        {
+          "at": 75.85,
+          "amount": 6.4,
+          "hp": 61.6,
+          "wave": 1
+        }
+      ],
+      "cards": [],
+      "transitions": [
+        {
+          "at": 0,
+          "state": "playing/escort"
+        },
+        {
+          "at": 108.483,
+          "state": "escortclear/escort"
+        }
+      ],
+      "errors": [],
+      "minHp": 61.6,
+      "missilesFired": 10,
+      "pulses": 6,
+      "peakHostile": 24,
+      "peakEnemies": 9,
+      "complete": true,
+      "status": "escortclear",
+      "phase": "escort",
+      "capReached": false,
+      "seconds": 108.483,
+      "hp": 61.6,
+      "kills": 30,
+      "lossReason": null,
+      "damageTaken": 38.4,
+      "swarm": {
+        "wave": 1,
+        "complete": false,
+        "balanceVersion": "2.10.0",
+        "wavesCleared": 0,
+        "events": [],
+        "drops": {
+          "repair": 0,
+          "missiles": 0,
+          "overdrive": 0
+        }
+      },
+      "allies": [
+        {
+          "name": "Архив ФТ",
+          "hp": 62,
+          "dead": false,
+          "maxHp": 100
+        },
+        {
+          "name": "Матрица связей",
+          "hp": 30,
+          "dead": false,
+          "maxHp": 100
+        },
+        {
+          "name": "Реестр решений",
+          "hp": 0,
+          "dead": true,
+          "maxHp": 100
+        }
+      ],
+      "convoy": {
+        "version": "2.6.0",
+        "stage": 2,
+        "time": 108.48,
+        "wave": 7,
+        "total": 7,
+        "distance": 1,
+        "formation": 0,
+        "allies": [
+          {
+            "hp": 62,
+            "dead": false
+          },
+          {
+            "hp": 30,
+            "dead": false
+          },
+          {
+            "hp": 0,
+            "dead": true
+          }
+        ],
+        "groups": [],
+        "fields": [],
+        "aim": {
+          "locked": false,
+          "targetId": null,
+          "cone": 0.19
+        },
+        "stats": {
+          "spawned": 29,
+          "volleys": 184,
+          "torpedoes": 27,
+          "intercepts": 27,
+          "shieldHits": 53,
+          "disruptions": 3,
+          "fieldsPassed": 8,
+          "fieldsHit": 0,
+          "peakEnemies": 9,
+          "peakHostile": 24,
+          "forwardRecoveries": 0
+        },
+        "events": [
+          {
+            "at": 29.02,
+            "kind": "crossfire",
+            "id": 3,
+            "count": 4
+          },
+          {
+            "at": 29.02,
+            "kind": "attack",
+            "squad": 3,
+            "target": 0,
+            "cycle": 1
+          },
+          {
+            "at": 32.02,
+            "kind": "field",
+            "id": 3
+          },
+          {
+            "at": 32.42,
+            "kind": "attack",
+            "squad": 3,
+            "target": 0,
+            "cycle": 2
+          },
+          {
+            "at": 33.02,
+            "kind": "cover"
+          },
+          {
+            "at": 36.02,
+            "kind": "formation",
+            "pattern": 2
+          },
+          {
+            "at": 37.42,
+            "kind": "field-pass",
+            "id": 3
+          },
+          {
+            "at": 42.02,
+            "kind": "torpedo",
+            "id": 4,
+            "count": 4
+          },
+          {
+            "at": 42.02,
+            "kind": "attack",
+            "squad": 4,
+            "target": 1,
+            "cycle": 1
+          },
+          {
+            "at": 42.02,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 42.02,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 42.97,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 42.97,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 44.02,
+            "kind": "field",
+            "id": 4
+          },
+          {
+            "at": 45.42,
+            "kind": "attack",
+            "squad": 4,
+            "target": 1,
+            "cycle": 2
+          },
+          {
+            "at": 45.42,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 45.42,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 46.37,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 46.37,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 47.87,
+            "kind": "cover"
+          },
+          {
+            "at": 48.83,
+            "kind": "attack",
+            "squad": 4,
+            "target": 1,
+            "cycle": 3
+          },
+          {
+            "at": 48.83,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 48.83,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 49.42,
+            "kind": "field-pass",
+            "id": 4
+          },
+          {
+            "at": 49.78,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 49.78,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 52.25,
+            "kind": "attack",
+            "squad": 4,
+            "target": 1,
+            "cycle": 4
+          },
+          {
+            "at": 52.25,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 54.02,
+            "kind": "formation",
+            "pattern": 0
+          },
+          {
+            "at": 56.02,
+            "kind": "field",
+            "id": 5
+          },
+          {
+            "at": 56.02,
+            "kind": "command",
+            "id": 5,
+            "count": 4
+          },
+          {
+            "at": 56.02,
+            "kind": "attack",
+            "squad": 5,
+            "target": 2,
+            "cycle": 1
+          },
+          {
+            "at": 59.42,
+            "kind": "attack",
+            "squad": 5,
+            "target": 2,
+            "cycle": 2
+          },
+          {
+            "at": 60.93,
+            "kind": "leader-down",
+            "squad": 5
+          },
+          {
+            "at": 61.42,
+            "kind": "field-pass",
+            "id": 5
+          },
+          {
+            "at": 61.57,
+            "kind": "transport-lost",
+            "target": 2
+          },
+          {
+            "at": 68.02,
+            "kind": "field",
+            "id": 6
+          },
+          {
+            "at": 70.02,
+            "kind": "jam",
+            "id": 6,
+            "count": 4
+          },
+          {
+            "at": 70.02,
+            "kind": "attack",
+            "squad": 6,
+            "target": 0,
+            "cycle": 1
+          },
+          {
+            "at": 70.02,
+            "kind": "torpedo",
+            "squad": 6,
+            "target": 0
+          },
+          {
+            "at": 70.97,
+            "kind": "torpedo",
+            "squad": 6,
+            "target": 0
+          },
+          {
+            "at": 72.02,
+            "kind": "formation",
+            "pattern": 1
+          },
+          {
+            "at": 72.62,
+            "kind": "cover"
+          },
+          {
+            "at": 73.42,
+            "kind": "field-pass",
+            "id": 6
+          },
+          {
+            "at": 73.42,
+            "kind": "attack",
+            "squad": 6,
+            "target": 0,
+            "cycle": 2
+          },
+          {
+            "at": 73.42,
+            "kind": "torpedo",
+            "squad": 6,
+            "target": 0
+          },
+          {
+            "at": 80.02,
+            "kind": "field",
+            "id": 7
+          },
+          {
+            "at": 85.02,
+            "kind": "command",
+            "id": 7,
+            "count": 5
+          },
+          {
+            "at": 85.02,
+            "kind": "attack",
+            "squad": 7,
+            "target": 1,
+            "cycle": 1
+          },
+          {
+            "at": 85.02,
+            "kind": "torpedo",
+            "squad": 7,
+            "target": 1
+          },
+          {
+            "at": 85.42,
+            "kind": "field-pass",
+            "id": 7
+          },
+          {
+            "at": 85.97,
+            "kind": "torpedo",
+            "squad": 7,
+            "target": 1
+          },
+          {
+            "at": 86.92,
+            "kind": "cover"
+          },
+          {
+            "at": 88.42,
+            "kind": "attack",
+            "squad": 7,
+            "target": 0,
+            "cycle": 2
+          },
+          {
+            "at": 88.42,
+            "kind": "torpedo",
+            "squad": 7,
+            "target": 0
+          },
+          {
+            "at": 89.37,
+            "kind": "torpedo",
+            "squad": 7,
+            "target": 0
+          },
+          {
+            "at": 90.02,
+            "kind": "formation",
+            "pattern": 2
+          },
+          {
+            "at": 91.83,
+            "kind": "attack",
+            "squad": 7,
+            "target": 1,
+            "cycle": 3
+          },
+          {
+            "at": 91.83,
+            "kind": "torpedo",
+            "squad": 7,
+            "target": 1
+          },
+          {
+            "at": 92.02,
+            "kind": "field",
+            "id": 8
+          },
+          {
+            "at": 92.02,
+            "kind": "leader-down",
+            "squad": 7
+          },
+          {
+            "at": 95.03,
+            "kind": "attack",
+            "squad": 7,
+            "target": 1,
+            "cycle": 4
+          },
+          {
+            "at": 97.42,
+            "kind": "field-pass",
+            "id": 8
+          },
+          {
+            "at": 108.02,
+            "kind": "formation",
+            "pattern": 0
+          }
+        ]
+      },
+      "operator": {
+        "reaction": 0.55,
+        "device": "joystick",
+        "strategy": "reactive",
+        "decisions": 198,
+        "tabs": 63,
+        "missiles": 10,
+        "pulses": 6
+      },
+      "stateEvents": [
+        {
+          "kind": "state",
+          "data": "briefing",
+          "time": 0
+        },
+        {
+          "kind": "state",
+          "data": "escortbrief",
+          "time": 0
+        },
+        {
+          "kind": "state",
+          "data": "playing",
+          "time": 0
+        },
+        {
+          "kind": "state",
+          "data": "escortclear",
+          "time": 108.483
+        }
+      ]
+    },
+    {
+      "key": "convoy:2:training:417147:0.55:rockets:reactive",
+      "kind": "convoy",
+      "stage": 2,
+      "mode": "training",
+      "seed": 417147,
+      "reaction": 0.55,
+      "fixture": "direct encounter with standard gear; no traversal or resource edits after launch",
+      "startHp": 100,
+      "startGear": {
+        "weapons": 2,
+        "armor": 1,
+        "rockets": 0
+      },
+      "startMissiles": 10,
+      "waves": [
+        {
+          "wave": 1,
+          "at": 0.017,
+          "hp": 100,
+          "enemies": 0
+        }
+      ],
+      "enemySamples": [
+        {
+          "at": 3.017,
+          "id": 8,
+          "role": "commander",
+          "maxHp": 300,
+          "hp": 300
+        },
+        {
+          "at": 3.017,
+          "id": 9,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 3.017,
+          "id": 10,
+          "role": "scout",
+          "maxHp": 150,
+          "hp": 150
+        },
+        {
+          "at": 3.017,
+          "id": 11,
+          "role": "raider",
+          "maxHp": 240,
+          "hp": 240
+        },
+        {
+          "at": 16,
+          "id": 13,
+          "role": "shield",
+          "maxHp": 300,
+          "hp": 300
+        },
+        {
+          "at": 16,
+          "id": 14,
+          "role": "bomber",
+          "maxHp": 260,
+          "hp": 260
+        },
+        {
+          "at": 16,
+          "id": 15,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 16,
+          "id": 16,
+          "role": "scout",
+          "maxHp": 150,
+          "hp": 150
+        },
+        {
+          "at": 29.017,
+          "id": 20,
+          "role": "jammer",
+          "maxHp": 230,
+          "hp": 230
+        },
+        {
+          "at": 29.017,
+          "id": 21,
+          "role": "raider",
+          "maxHp": 240,
+          "hp": 240
+        },
+        {
+          "at": 29.017,
+          "id": 22,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 29.017,
+          "id": 23,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 42.017,
+          "id": 25,
+          "role": "bomber",
+          "maxHp": 260,
+          "hp": 260
+        },
+        {
+          "at": 42.017,
+          "id": 26,
+          "role": "bomber",
+          "maxHp": 260,
+          "hp": 260
+        },
+        {
+          "at": 42.017,
+          "id": 27,
+          "role": "shield",
+          "maxHp": 300,
+          "hp": 300
+        },
+        {
+          "at": 42.017,
+          "id": 28,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 56.017,
+          "id": 34,
+          "role": "commander",
+          "maxHp": 300,
+          "hp": 300
+        },
+        {
+          "at": 56.017,
+          "id": 35,
+          "role": "shield",
+          "maxHp": 300,
+          "hp": 300
+        },
+        {
+          "at": 56.017,
+          "id": 36,
+          "role": "raider",
+          "maxHp": 240,
+          "hp": 240
+        },
+        {
+          "at": 56.017,
+          "id": 37,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 70.017,
+          "id": 39,
+          "role": "jammer",
+          "maxHp": 230,
+          "hp": 230
+        },
+        {
+          "at": 70.017,
+          "id": 40,
+          "role": "bomber",
+          "maxHp": 260,
+          "hp": 260
+        },
+        {
+          "at": 70.017,
+          "id": 41,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 70.017,
+          "id": 42,
+          "role": "raider",
+          "maxHp": 240,
+          "hp": 240
+        },
+        {
+          "at": 85.017,
+          "id": 44,
+          "role": "commander",
+          "maxHp": 300,
+          "hp": 300
+        },
+        {
+          "at": 85.017,
+          "id": 45,
+          "role": "shield",
+          "maxHp": 300,
+          "hp": 300
+        },
+        {
+          "at": 85.017,
+          "id": 46,
+          "role": "bomber",
+          "maxHp": 260,
+          "hp": 260
+        },
+        {
+          "at": 85.017,
+          "id": 47,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 85.017,
+          "id": 48,
+          "role": "raider",
+          "maxHp": 240,
+          "hp": 240
+        }
+      ],
+      "repairs": [],
+      "damage": [
+        {
+          "at": 31.867,
+          "amount": 4.4,
+          "hp": 95.6,
+          "wave": 1
+        }
+      ],
+      "cards": [],
+      "transitions": [
+        {
+          "at": 0,
+          "state": "playing/escort"
+        },
+        {
+          "at": 108.5,
+          "state": "escortclear/escort"
+        }
+      ],
+      "errors": [],
+      "minHp": 95.6,
+      "missilesFired": 10,
+      "pulses": 5,
+      "peakHostile": 8,
+      "peakEnemies": 6,
+      "complete": true,
+      "status": "escortclear",
+      "phase": "escort",
+      "capReached": false,
+      "seconds": 108.5,
+      "hp": 95.6,
+      "kills": 30,
+      "lossReason": null,
+      "damageTaken": 4.4,
+      "swarm": {
+        "wave": 1,
+        "complete": false,
+        "balanceVersion": "2.10.0",
+        "wavesCleared": 0,
+        "events": [],
+        "drops": {
+          "repair": 0,
+          "missiles": 0,
+          "overdrive": 0
+        }
+      },
+      "allies": [
+        {
+          "name": "Архив ФТ",
+          "hp": 34.6,
+          "dead": false,
+          "maxHp": 100
+        },
+        {
+          "name": "Матрица связей",
+          "hp": 90.4,
+          "dead": false,
+          "maxHp": 100
+        },
+        {
+          "name": "Реестр решений",
+          "hp": 96.4,
+          "dead": false,
+          "maxHp": 100
+        }
+      ],
+      "convoy": {
+        "version": "2.6.0",
+        "stage": 2,
+        "time": 108.5,
+        "wave": 7,
+        "total": 7,
+        "distance": 1,
+        "formation": 0,
+        "allies": [
+          {
+            "hp": 34.599999999999994,
+            "dead": false
+          },
+          {
+            "hp": 90.4,
+            "dead": false
+          },
+          {
+            "hp": 96.39999999999999,
+            "dead": false
+          }
+        ],
+        "groups": [],
+        "fields": [],
+        "aim": {
+          "locked": false,
+          "targetId": null,
+          "cone": 0.24
+        },
+        "stats": {
+          "spawned": 29,
+          "volleys": 42,
+          "torpedoes": 9,
+          "intercepts": 9,
+          "shieldHits": 51,
+          "disruptions": 3,
+          "fieldsPassed": 8,
+          "fieldsHit": 0,
+          "peakEnemies": 6,
+          "peakHostile": 8,
+          "forwardRecoveries": 0
+        },
+        "events": [
+          {
+            "at": 3.02,
+            "kind": "command",
+            "id": 1,
+            "count": 4
+          },
+          {
+            "at": 3.8,
+            "kind": "mark",
+            "squad": 1,
+            "target": 0,
+            "coordinated": true
+          },
+          {
+            "at": 5.97,
+            "kind": "leader-down",
+            "squad": 1
+          },
+          {
+            "at": 8.02,
+            "kind": "field-warning",
+            "id": 1
+          },
+          {
+            "at": 8.98,
+            "kind": "mark",
+            "squad": 1,
+            "target": 0,
+            "coordinated": false
+          },
+          {
+            "at": 14.22,
+            "kind": "field-pass",
+            "id": 1
+          },
+          {
+            "at": 16,
+            "kind": "shield",
+            "id": 2,
+            "count": 4
+          },
+          {
+            "at": 16.78,
+            "kind": "mark",
+            "squad": 2,
+            "target": 2,
+            "coordinated": false
+          },
+          {
+            "at": 18,
+            "kind": "formation",
+            "pattern": 1
+          },
+          {
+            "at": 19.6,
+            "kind": "attack",
+            "squad": 2,
+            "target": 2,
+            "cycle": 1
+          },
+          {
+            "at": 19.9,
+            "kind": "torpedo",
+            "squad": 2,
+            "target": 2
+          },
+          {
+            "at": 20,
+            "kind": "field-warning",
+            "id": 2
+          },
+          {
+            "at": 20.92,
+            "kind": "cover"
+          },
+          {
+            "at": 21,
+            "kind": "torpedo",
+            "squad": 2,
+            "target": 2
+          },
+          {
+            "at": 26.2,
+            "kind": "field-pass",
+            "id": 2
+          },
+          {
+            "at": 29.02,
+            "kind": "crossfire",
+            "id": 3,
+            "count": 4
+          },
+          {
+            "at": 29.8,
+            "kind": "mark",
+            "squad": 3,
+            "target": 0,
+            "coordinated": false
+          },
+          {
+            "at": 32.02,
+            "kind": "field-warning",
+            "id": 3
+          },
+          {
+            "at": 32.62,
+            "kind": "attack",
+            "squad": 3,
+            "target": 0,
+            "cycle": 1
+          },
+          {
+            "at": 35.22,
+            "kind": "cover"
+          },
+          {
+            "at": 36.02,
+            "kind": "formation",
+            "pattern": 2
+          },
+          {
+            "at": 38.22,
+            "kind": "field-pass",
+            "id": 3
+          },
+          {
+            "at": 42.02,
+            "kind": "torpedo",
+            "id": 4,
+            "count": 4
+          },
+          {
+            "at": 42.8,
+            "kind": "mark",
+            "squad": 4,
+            "target": 1,
+            "coordinated": false
+          },
+          {
+            "at": 44.02,
+            "kind": "field-warning",
+            "id": 4
+          },
+          {
+            "at": 45.62,
+            "kind": "attack",
+            "squad": 4,
+            "target": 1,
+            "cycle": 1
+          },
+          {
+            "at": 45.62,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 45.92,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 46.72,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 47.02,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 49.52,
+            "kind": "cover"
+          },
+          {
+            "at": 50.22,
+            "kind": "field-pass",
+            "id": 4
+          },
+          {
+            "at": 54.02,
+            "kind": "formation",
+            "pattern": 0
+          },
+          {
+            "at": 56.02,
+            "kind": "field-warning",
+            "id": 5
+          },
+          {
+            "at": 56.02,
+            "kind": "command",
+            "id": 5,
+            "count": 4
+          },
+          {
+            "at": 56.8,
+            "kind": "mark",
+            "squad": 5,
+            "target": 0,
+            "coordinated": true
+          },
+          {
+            "at": 59.62,
+            "kind": "attack",
+            "squad": 5,
+            "target": 0,
+            "cycle": 1
+          },
+          {
+            "at": 62.22,
+            "kind": "field-pass",
+            "id": 5
+          },
+          {
+            "at": 62.57,
+            "kind": "leader-down",
+            "squad": 5
+          },
+          {
+            "at": 68.02,
+            "kind": "field-warning",
+            "id": 6
+          },
+          {
+            "at": 70.02,
+            "kind": "jam",
+            "id": 6,
+            "count": 4
+          },
+          {
+            "at": 70.8,
+            "kind": "mark",
+            "squad": 6,
+            "target": 0,
+            "coordinated": false
+          },
+          {
+            "at": 72.02,
+            "kind": "formation",
+            "pattern": 1
+          },
+          {
+            "at": 73.62,
+            "kind": "attack",
+            "squad": 6,
+            "target": 0,
+            "cycle": 1
+          },
+          {
+            "at": 73.92,
+            "kind": "torpedo",
+            "squad": 6,
+            "target": 0
+          },
+          {
+            "at": 74.22,
+            "kind": "field-pass",
+            "id": 6
+          },
+          {
+            "at": 74.82,
+            "kind": "cover"
+          },
+          {
+            "at": 80.02,
+            "kind": "field-warning",
+            "id": 7
+          },
+          {
+            "at": 85.02,
+            "kind": "command",
+            "id": 7,
+            "count": 5
+          },
+          {
+            "at": 85.8,
+            "kind": "mark",
+            "squad": 7,
+            "target": 0,
+            "coordinated": true
+          },
+          {
+            "at": 86.22,
+            "kind": "field-pass",
+            "id": 7
+          },
+          {
+            "at": 88.62,
+            "kind": "attack",
+            "squad": 7,
+            "target": 0,
+            "cycle": 1
+          },
+          {
+            "at": 89.22,
+            "kind": "torpedo",
+            "squad": 7,
+            "target": 0
+          },
+          {
+            "at": 89.67,
+            "kind": "cover"
+          },
+          {
+            "at": 90.02,
+            "kind": "formation",
+            "pattern": 2
+          },
+          {
+            "at": 90.32,
+            "kind": "torpedo",
+            "squad": 7,
+            "target": 0
+          },
+          {
+            "at": 92.02,
+            "kind": "field-warning",
+            "id": 8
+          },
+          {
+            "at": 93.95,
+            "kind": "mark",
+            "squad": 7,
+            "target": 0,
+            "coordinated": true
+          },
+          {
+            "at": 94.23,
+            "kind": "leader-down",
+            "squad": 7
+          },
+          {
+            "at": 98.22,
+            "kind": "field-pass",
+            "id": 8
+          },
+          {
+            "at": 108.02,
+            "kind": "formation",
+            "pattern": 0
+          }
+        ]
+      },
+      "operator": {
+        "reaction": 0.55,
+        "device": "joystick",
+        "strategy": "reactive",
+        "decisions": 198,
+        "tabs": 42,
+        "missiles": 10,
+        "pulses": 5
+      },
+      "stateEvents": [
+        {
+          "kind": "state",
+          "data": "briefing",
+          "time": 0
+        },
+        {
+          "kind": "state",
+          "data": "escortbrief",
+          "time": 0
+        },
+        {
+          "kind": "state",
+          "data": "playing",
+          "time": 0
+        },
+        {
+          "kind": "state",
+          "data": "escortclear",
+          "time": 108.5
+        }
+      ]
+    },
+    {
+      "key": "convoy:2:pro:417147:0.4:rockets:reactive",
+      "kind": "convoy",
+      "stage": 2,
+      "mode": "pro",
+      "seed": 417147,
+      "reaction": 0.4,
+      "fixture": "direct encounter with standard gear; no traversal or resource edits after launch",
+      "startHp": 100,
+      "startGear": {
+        "weapons": 2,
+        "armor": 1,
+        "rockets": 0
+      },
+      "startMissiles": 10,
+      "waves": [
+        {
+          "wave": 1,
+          "at": 0.017,
+          "hp": 100,
+          "enemies": 0
+        }
+      ],
+      "enemySamples": [
+        {
+          "at": 3.017,
+          "id": 8,
+          "role": "commander",
+          "maxHp": 300,
+          "hp": 300
+        },
+        {
+          "at": 3.017,
+          "id": 9,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 3.017,
+          "id": 10,
+          "role": "scout",
+          "maxHp": 150,
+          "hp": 150
+        },
+        {
+          "at": 3.017,
+          "id": 11,
+          "role": "raider",
+          "maxHp": 240,
+          "hp": 240
+        },
+        {
+          "at": 16,
+          "id": 13,
+          "role": "shield",
+          "maxHp": 300,
+          "hp": 300
+        },
+        {
+          "at": 16,
+          "id": 14,
+          "role": "bomber",
+          "maxHp": 260,
+          "hp": 260
+        },
+        {
+          "at": 16,
+          "id": 15,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 16,
+          "id": 16,
+          "role": "scout",
+          "maxHp": 150,
+          "hp": 150
+        },
+        {
+          "at": 29.017,
+          "id": 23,
+          "role": "jammer",
+          "maxHp": 230,
+          "hp": 230
+        },
+        {
+          "at": 29.017,
+          "id": 24,
+          "role": "raider",
+          "maxHp": 240,
+          "hp": 240
+        },
+        {
+          "at": 29.017,
+          "id": 25,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 29.017,
+          "id": 26,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 42.017,
+          "id": 28,
+          "role": "bomber",
+          "maxHp": 260,
+          "hp": 260
+        },
+        {
+          "at": 42.017,
+          "id": 29,
+          "role": "bomber",
+          "maxHp": 260,
+          "hp": 260
+        },
+        {
+          "at": 42.017,
+          "id": 30,
+          "role": "shield",
+          "maxHp": 300,
+          "hp": 300
+        },
+        {
+          "at": 42.017,
+          "id": 31,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 56.017,
+          "id": 48,
+          "role": "commander",
+          "maxHp": 300,
+          "hp": 300
+        },
+        {
+          "at": 56.017,
+          "id": 49,
+          "role": "shield",
+          "maxHp": 300,
+          "hp": 300
+        },
+        {
+          "at": 56.017,
+          "id": 50,
+          "role": "raider",
+          "maxHp": 240,
+          "hp": 240
+        },
+        {
+          "at": 56.017,
+          "id": 51,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 70.017,
+          "id": 53,
+          "role": "jammer",
+          "maxHp": 230,
+          "hp": 230
+        },
+        {
+          "at": 70.017,
+          "id": 54,
+          "role": "bomber",
+          "maxHp": 260,
+          "hp": 260
+        },
+        {
+          "at": 70.017,
+          "id": 55,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 70.017,
+          "id": 56,
+          "role": "raider",
+          "maxHp": 240,
+          "hp": 240
+        },
+        {
+          "at": 85.017,
+          "id": 61,
+          "role": "commander",
+          "maxHp": 300,
+          "hp": 300
+        },
+        {
+          "at": 85.017,
+          "id": 62,
+          "role": "shield",
+          "maxHp": 300,
+          "hp": 300
+        },
+        {
+          "at": 85.017,
+          "id": 63,
+          "role": "bomber",
+          "maxHp": 260,
+          "hp": 260
+        },
+        {
+          "at": 85.017,
+          "id": 64,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 85.017,
+          "id": 65,
+          "role": "raider",
+          "maxHp": 240,
+          "hp": 240
+        }
+      ],
+      "repairs": [],
+      "damage": [
+        {
+          "at": 6.567,
+          "amount": 6.4,
+          "hp": 93.6,
+          "wave": 1
+        },
+        {
+          "at": 31.1,
+          "amount": 12.8,
+          "hp": 80.8,
+          "wave": 1
+        },
+        {
+          "at": 59.267,
+          "amount": 6.4,
+          "hp": 74.4,
+          "wave": 1
+        },
+        {
+          "at": 60.183,
+          "amount": 6.4,
+          "hp": 68,
+          "wave": 1
+        },
+        {
+          "at": 67.35,
+          "amount": 12.8,
+          "hp": 55.2,
+          "wave": 1
+        }
+      ],
+      "cards": [],
+      "transitions": [
+        {
+          "at": 0,
+          "state": "playing/escort"
+        },
+        {
+          "at": 93.733,
+          "state": "lost/escort"
+        }
+      ],
+      "errors": [],
+      "minHp": 55.2,
+      "missilesFired": 10,
+      "pulses": 6,
+      "peakHostile": 28,
+      "peakEnemies": 10,
+      "complete": false,
+      "status": "lost",
+      "phase": "escort",
+      "capReached": false,
+      "seconds": 93.733,
+      "hp": 55.2,
+      "kills": 30,
+      "lossReason": "Конвой потерял два транспорта. Снимайте щиты, перехватывайте торпеды и применяйте E перед попаданием залпа.",
+      "damageTaken": 44.8,
+      "swarm": {
+        "wave": 1,
+        "complete": false,
+        "balanceVersion": "2.10.0",
+        "wavesCleared": 0,
+        "events": [],
+        "drops": {
+          "repair": 0,
+          "missiles": 0,
+          "overdrive": 0
+        }
+      },
+      "allies": [
+        {
+          "name": "Архив ФТ",
+          "hp": 0,
+          "dead": true,
+          "maxHp": 100
+        },
+        {
+          "name": "Матрица связей",
+          "hp": 48,
+          "dead": false,
+          "maxHp": 100
+        },
+        {
+          "name": "Реестр решений",
+          "hp": 0,
+          "dead": true,
+          "maxHp": 100
+        }
+      ],
+      "convoy": {
+        "version": "2.6.0",
+        "stage": 2,
+        "time": 93.73,
+        "wave": 7,
+        "total": 7,
+        "distance": 0.8629259259259814,
+        "formation": 2,
+        "allies": [
+          {
+            "hp": 0,
+            "dead": true
+          },
+          {
+            "hp": 48,
+            "dead": false
+          },
+          {
+            "hp": 0,
+            "dead": true
+          }
+        ],
+        "groups": [
+          {
+            "id": 7,
+            "kind": "command",
+            "state": "regroup",
+            "time": 0.15,
+            "target": 0,
+            "members": 2
+          }
+        ],
+        "fields": [
+          {
+            "id": 8,
+            "z": -139.33333333333414,
+            "gapX": -22,
+            "gapY": -8,
+            "shape": "ring",
+            "radius": 7.1,
+            "halfW": 7.1,
+            "halfH": 7.1,
+            "speed": 38,
+            "warning": 3.666666666666688,
+            "passed": false,
+            "hit": false
+          }
+        ],
+        "aim": {
+          "locked": true,
+          "targetId": 64,
+          "cone": 0.19
+        },
+        "stats": {
+          "spawned": 29,
+          "volleys": 192,
+          "torpedoes": 29,
+          "intercepts": 29,
+          "shieldHits": 39,
+          "disruptions": 3,
+          "fieldsPassed": 7,
+          "fieldsHit": 0,
+          "peakEnemies": 10,
+          "peakHostile": 28,
+          "forwardRecoveries": 0
+        },
+        "events": [
+          {
+            "at": 33.22,
+            "kind": "cover"
+          },
+          {
+            "at": 36.02,
+            "kind": "formation",
+            "pattern": 2
+          },
+          {
+            "at": 37.42,
+            "kind": "field-pass",
+            "id": 3
+          },
+          {
+            "at": 42.02,
+            "kind": "torpedo",
+            "id": 4,
+            "count": 4
+          },
+          {
+            "at": 42.02,
+            "kind": "attack",
+            "squad": 4,
+            "target": 1,
+            "cycle": 1
+          },
+          {
+            "at": 42.02,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 42.02,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 42.97,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 42.97,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 44.02,
+            "kind": "field",
+            "id": 4
+          },
+          {
+            "at": 45.42,
+            "kind": "attack",
+            "squad": 4,
+            "target": 1,
+            "cycle": 2
+          },
+          {
+            "at": 45.42,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 45.42,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 46.37,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 46.37,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 47.62,
+            "kind": "cover"
+          },
+          {
+            "at": 48.83,
+            "kind": "attack",
+            "squad": 4,
+            "target": 1,
+            "cycle": 3
+          },
+          {
+            "at": 48.83,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 48.83,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 49.42,
+            "kind": "field-pass",
+            "id": 4
+          },
+          {
+            "at": 49.78,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 49.78,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 52.25,
+            "kind": "attack",
+            "squad": 4,
+            "target": 1,
+            "cycle": 4
+          },
+          {
+            "at": 52.25,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 53.2,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 54.02,
+            "kind": "formation",
+            "pattern": 0
+          },
+          {
+            "at": 55.67,
+            "kind": "attack",
+            "squad": 4,
+            "target": 1,
+            "cycle": 5
+          },
+          {
+            "at": 55.67,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 56.02,
+            "kind": "field",
+            "id": 5
+          },
+          {
+            "at": 56.02,
+            "kind": "command",
+            "id": 5,
+            "count": 4
+          },
+          {
+            "at": 56.02,
+            "kind": "attack",
+            "squad": 5,
+            "target": 2,
+            "cycle": 1
+          },
+          {
+            "at": 59.42,
+            "kind": "attack",
+            "squad": 5,
+            "target": 2,
+            "cycle": 2
+          },
+          {
+            "at": 61.13,
+            "kind": "leader-down",
+            "squad": 5
+          },
+          {
+            "at": 61.42,
+            "kind": "field-pass",
+            "id": 5
+          },
+          {
+            "at": 64.15,
+            "kind": "attack",
+            "squad": 5,
+            "target": 2,
+            "cycle": 3
+          },
+          {
+            "at": 66,
+            "kind": "transport-lost",
+            "target": 2
+          },
+          {
+            "at": 68.02,
+            "kind": "field",
+            "id": 6
+          },
+          {
+            "at": 70.02,
+            "kind": "jam",
+            "id": 6,
+            "count": 4
+          },
+          {
+            "at": 70.02,
+            "kind": "attack",
+            "squad": 6,
+            "target": 0,
+            "cycle": 1
+          },
+          {
+            "at": 70.02,
+            "kind": "torpedo",
+            "squad": 6,
+            "target": 0
+          },
+          {
+            "at": 70.97,
+            "kind": "torpedo",
+            "squad": 6,
+            "target": 0
+          },
+          {
+            "at": 72.02,
+            "kind": "formation",
+            "pattern": 1
+          },
+          {
+            "at": 72.42,
+            "kind": "cover"
+          },
+          {
+            "at": 73.42,
+            "kind": "field-pass",
+            "id": 6
+          },
+          {
+            "at": 73.42,
+            "kind": "attack",
+            "squad": 6,
+            "target": 0,
+            "cycle": 2
+          },
+          {
+            "at": 73.42,
+            "kind": "torpedo",
+            "squad": 6,
+            "target": 0
+          },
+          {
+            "at": 74.37,
+            "kind": "torpedo",
+            "squad": 6,
+            "target": 0
+          },
+          {
+            "at": 76.83,
+            "kind": "attack",
+            "squad": 6,
+            "target": 0,
+            "cycle": 3
+          },
+          {
+            "at": 80.02,
+            "kind": "field",
+            "id": 7
+          },
+          {
+            "at": 85.02,
+            "kind": "command",
+            "id": 7,
+            "count": 5
+          },
+          {
+            "at": 85.02,
+            "kind": "attack",
+            "squad": 7,
+            "target": 1,
+            "cycle": 1
+          },
+          {
+            "at": 85.02,
+            "kind": "torpedo",
+            "squad": 7,
+            "target": 1
+          },
+          {
+            "at": 85.42,
+            "kind": "field-pass",
+            "id": 7
+          },
+          {
+            "at": 85.97,
+            "kind": "torpedo",
+            "squad": 7,
+            "target": 1
+          },
+          {
+            "at": 87.22,
+            "kind": "cover"
+          },
+          {
+            "at": 88.42,
+            "kind": "attack",
+            "squad": 7,
+            "target": 0,
+            "cycle": 2
+          },
+          {
+            "at": 88.42,
+            "kind": "torpedo",
+            "squad": 7,
+            "target": 0
+          },
+          {
+            "at": 89.37,
+            "kind": "torpedo",
+            "squad": 7,
+            "target": 0
+          },
+          {
+            "at": 90.02,
+            "kind": "formation",
+            "pattern": 2
+          },
+          {
+            "at": 91.83,
+            "kind": "attack",
+            "squad": 7,
+            "target": 0,
+            "cycle": 3
+          },
+          {
+            "at": 91.83,
+            "kind": "torpedo",
+            "squad": 7,
+            "target": 0
+          },
+          {
+            "at": 92.02,
+            "kind": "field",
+            "id": 8
+          },
+          {
+            "at": 93.58,
+            "kind": "leader-down",
+            "squad": 7
+          },
+          {
+            "at": 93.73,
+            "kind": "transport-lost",
+            "target": 0
+          }
+        ]
+      },
+      "operator": {
+        "reaction": 0.4,
+        "device": "joystick",
+        "strategy": "reactive",
+        "decisions": 235,
+        "tabs": 69,
+        "missiles": 10,
+        "pulses": 6
+      },
+      "stateEvents": [
+        {
+          "kind": "state",
+          "data": "briefing",
+          "time": 0
+        },
+        {
+          "kind": "state",
+          "data": "escortbrief",
+          "time": 0
+        },
+        {
+          "kind": "state",
+          "data": "playing",
+          "time": 0
+        },
+        {
+          "kind": "state",
+          "data": "lost",
+          "time": 93.733
+        }
+      ]
+    },
+    {
+      "key": "convoy:0:combat:417147:0.4:rockets:reactive",
+      "kind": "convoy",
+      "stage": 0,
+      "mode": "combat",
+      "seed": 417147,
+      "reaction": 0.4,
+      "fixture": "direct encounter with standard gear; no traversal or resource edits after launch",
+      "startHp": 100,
+      "startGear": {
+        "weapons": 1,
+        "armor": 0,
+        "rockets": 0
+      },
+      "startMissiles": 10,
+      "waves": [],
+      "enemySamples": [
+        {
+          "at": 4.017,
+          "id": 0,
+          "role": "scout",
+          "maxHp": 150,
+          "hp": 150
+        },
+        {
+          "at": 4.017,
+          "id": 1,
+          "role": "scout",
+          "maxHp": 150,
+          "hp": 150
+        },
+        {
+          "at": 21,
+          "id": 4,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 21,
+          "id": 5,
+          "role": "scout",
+          "maxHp": 150,
+          "hp": 150
+        },
+        {
+          "at": 21,
+          "id": 6,
+          "role": "scout",
+          "maxHp": 150,
+          "hp": 150
+        },
+        {
+          "at": 37.017,
+          "id": 7,
+          "role": "raider",
+          "maxHp": 240,
+          "hp": 240
+        },
+        {
+          "at": 37.017,
+          "id": 8,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 37.017,
+          "id": 9,
+          "role": "scout",
+          "maxHp": 150,
+          "hp": 150
+        },
+        {
+          "at": 53.017,
+          "id": 11,
+          "role": "raider",
+          "maxHp": 240,
+          "hp": 240
+        },
+        {
+          "at": 53.017,
+          "id": 12,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 53.017,
+          "id": 13,
+          "role": "scout",
+          "maxHp": 150,
+          "hp": 150
+        }
+      ],
+      "repairs": [],
+      "damage": [
+        {
+          "at": 10.233,
+          "amount": 16,
+          "hp": 84,
+          "wave": null
+        },
+        {
+          "at": 57.183,
+          "amount": 12,
+          "hp": 72,
+          "wave": null
+        }
+      ],
+      "cards": [],
+      "transitions": [
+        {
+          "at": 0,
+          "state": "playing/escort"
+        },
+        {
+          "at": 68.017,
+          "state": "escortclear/escort"
+        }
+      ],
+      "errors": [],
+      "minHp": 72,
+      "missilesFired": 0,
+      "pulses": 4,
+      "peakHostile": 15,
+      "peakEnemies": 3,
+      "complete": true,
+      "status": "escortclear",
+      "phase": "escort",
+      "capReached": false,
+      "seconds": 68.017,
+      "hp": 72,
+      "kills": 20,
+      "lossReason": null,
+      "damageTaken": 28,
+      "allies": [
+        {
+          "name": "Архив ФТ",
+          "hp": 87,
+          "dead": false,
+          "maxHp": 100
+        },
+        {
+          "name": "Матрица связей",
+          "hp": 59,
+          "dead": false,
+          "maxHp": 100
+        },
+        {
+          "name": "Реестр решений",
+          "hp": 78,
+          "dead": false,
+          "maxHp": 100
+        }
+      ],
+      "convoy": {
+        "version": "2.6.0",
+        "stage": 0,
+        "time": 68.02,
+        "wave": 4,
+        "total": 4,
+        "distance": 1,
+        "formation": 0,
+        "allies": [
+          {
+            "hp": 87,
+            "dead": false
+          },
+          {
+            "hp": 59,
+            "dead": false
+          },
+          {
+            "hp": 78,
+            "dead": false
+          }
+        ],
+        "groups": [],
+        "fields": [],
+        "aim": {
+          "locked": false,
+          "targetId": null,
+          "cone": 0.19
+        },
+        "stats": {
+          "spawned": 11,
+          "volleys": 67,
+          "torpedoes": 0,
+          "intercepts": 0,
+          "shieldHits": 0,
+          "disruptions": 0,
+          "fieldsPassed": 3,
+          "fieldsHit": 0,
+          "peakEnemies": 3,
+          "peakHostile": 15,
+          "forwardRecoveries": 0
+        },
+        "events": [
+          {
+            "at": 4.02,
+            "kind": "flank",
+            "id": 1,
+            "count": 2
+          },
+          {
+            "at": 4.02,
+            "kind": "attack",
+            "squad": 1,
+            "target": 1,
+            "cycle": 1
+          },
+          {
+            "at": 5.62,
+            "kind": "cover"
+          },
+          {
+            "at": 12,
+            "kind": "field",
+            "id": 1
+          },
+          {
+            "at": 17.4,
+            "kind": "field-pass",
+            "id": 1
+          },
+          {
+            "at": 21,
+            "kind": "crossfire",
+            "id": 2,
+            "count": 3
+          },
+          {
+            "at": 21,
+            "kind": "attack",
+            "squad": 2,
+            "target": 2,
+            "cycle": 1
+          },
+          {
+            "at": 22.02,
+            "kind": "cover"
+          },
+          {
+            "at": 24.4,
+            "kind": "attack",
+            "squad": 2,
+            "target": 2,
+            "cycle": 2
+          },
+          {
+            "at": 31.02,
+            "kind": "field",
+            "id": 2
+          },
+          {
+            "at": 36.42,
+            "kind": "field-pass",
+            "id": 2
+          },
+          {
+            "at": 37.02,
+            "kind": "crossfire",
+            "id": 3,
+            "count": 3
+          },
+          {
+            "at": 37.02,
+            "kind": "attack",
+            "squad": 3,
+            "target": 0,
+            "cycle": 1
+          },
+          {
+            "at": 39.22,
+            "kind": "cover"
+          },
+          {
+            "at": 40.42,
+            "kind": "attack",
+            "squad": 3,
+            "target": 0,
+            "cycle": 2
+          },
+          {
+            "at": 51.02,
+            "kind": "field",
+            "id": 3
+          },
+          {
+            "at": 53.02,
+            "kind": "flank",
+            "id": 4,
+            "count": 3
+          },
+          {
+            "at": 53.02,
+            "kind": "attack",
+            "squad": 4,
+            "target": 1,
+            "cycle": 1
+          },
+          {
+            "at": 54.82,
+            "kind": "cover"
+          },
+          {
+            "at": 56.42,
+            "kind": "field-pass",
+            "id": 3
+          },
+          {
+            "at": 56.42,
+            "kind": "attack",
+            "squad": 4,
+            "target": 1,
+            "cycle": 2
+          }
+        ]
+      },
+      "operator": {
+        "reaction": 0.4,
+        "device": "joystick",
+        "strategy": "reactive",
+        "decisions": 171,
+        "tabs": 26,
+        "missiles": 0,
+        "pulses": 4
+      },
+      "stateEvents": [
+        {
+          "kind": "state",
+          "data": "briefing",
+          "time": 0
+        },
+        {
+          "kind": "state",
+          "data": "escortbrief",
+          "time": 0
+        },
+        {
+          "kind": "state",
+          "data": "playing",
+          "time": 0
+        },
+        {
+          "kind": "state",
+          "data": "escortclear",
+          "time": 68.017
+        }
+      ]
+    },
+    {
+      "key": "convoy:1:combat:417147:0.4:rockets:reactive",
+      "kind": "convoy",
+      "stage": 1,
+      "mode": "combat",
+      "seed": 417147,
+      "reaction": 0.4,
+      "fixture": "direct encounter with standard gear; no traversal or resource edits after launch",
+      "startHp": 100,
+      "startGear": {
+        "weapons": 1,
+        "armor": 1,
+        "rockets": 0
+      },
+      "startMissiles": 10,
+      "waves": [],
+      "enemySamples": [
+        {
+          "at": 4.017,
+          "id": 11,
+          "role": "shield",
+          "maxHp": 300,
+          "hp": 300
+        },
+        {
+          "at": 4.017,
+          "id": 12,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 4.017,
+          "id": 13,
+          "role": "scout",
+          "maxHp": 150,
+          "hp": 150
+        },
+        {
+          "at": 18,
+          "id": 15,
+          "role": "bomber",
+          "maxHp": 260,
+          "hp": 260
+        },
+        {
+          "at": 18,
+          "id": 16,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 18,
+          "id": 17,
+          "role": "scout",
+          "maxHp": 150,
+          "hp": 150
+        },
+        {
+          "at": 33.017,
+          "id": 21,
+          "role": "jammer",
+          "maxHp": 230,
+          "hp": 230
+        },
+        {
+          "at": 33.017,
+          "id": 22,
+          "role": "raider",
+          "maxHp": 240,
+          "hp": 240
+        },
+        {
+          "at": 33.017,
+          "id": 23,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 33.017,
+          "id": 24,
+          "role": "scout",
+          "maxHp": 150,
+          "hp": 150
+        },
+        {
+          "at": 49.017,
+          "id": 26,
+          "role": "shield",
+          "maxHp": 300,
+          "hp": 300
+        },
+        {
+          "at": 49.017,
+          "id": 27,
+          "role": "bomber",
+          "maxHp": 260,
+          "hp": 260
+        },
+        {
+          "at": 49.017,
+          "id": 28,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 49.017,
+          "id": 29,
+          "role": "scout",
+          "maxHp": 150,
+          "hp": 150
+        },
+        {
+          "at": 66.017,
+          "id": 34,
+          "role": "bomber",
+          "maxHp": 260,
+          "hp": 260
+        },
+        {
+          "at": 66.017,
+          "id": 35,
+          "role": "raider",
+          "maxHp": 240,
+          "hp": 240
+        },
+        {
+          "at": 66.017,
+          "id": 36,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 66.017,
+          "id": 37,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        }
+      ],
+      "repairs": [],
+      "damage": [
+        {
+          "at": 25.017,
+          "amount": 6.4,
+          "hp": 93.6,
+          "wave": null
+        },
+        {
+          "at": 59.05,
+          "amount": 6.4,
+          "hp": 87.2,
+          "wave": null
+        }
+      ],
+      "cards": [],
+      "transitions": [
+        {
+          "at": 0,
+          "state": "playing/escort"
+        },
+        {
+          "at": 86.183,
+          "state": "escortclear/escort"
+        }
+      ],
+      "errors": [],
+      "minHp": 87.2,
+      "missilesFired": 8,
+      "pulses": 5,
+      "peakHostile": 18,
+      "peakEnemies": 6,
+      "complete": true,
+      "status": "escortclear",
+      "phase": "escort",
+      "capReached": false,
+      "seconds": 86.183,
+      "hp": 87.2,
+      "kills": 26,
+      "lossReason": null,
+      "damageTaken": 12.8,
+      "allies": [
+        {
+          "name": "Архив ФТ",
+          "hp": 58,
+          "dead": false,
+          "maxHp": 100
+        },
+        {
+          "name": "Матрица связей",
+          "hp": 54,
+          "dead": false,
+          "maxHp": 100
+        },
+        {
+          "name": "Реестр решений",
+          "hp": 8,
+          "dead": false,
+          "maxHp": 100
+        }
+      ],
+      "convoy": {
+        "version": "2.6.0",
+        "stage": 1,
+        "time": 86.18,
+        "wave": 5,
+        "total": 5,
+        "distance": 1,
+        "formation": 1,
+        "allies": [
+          {
+            "hp": 58,
+            "dead": false
+          },
+          {
+            "hp": 54,
+            "dead": false
+          },
+          {
+            "hp": 8,
+            "dead": false
+          }
+        ],
+        "groups": [],
+        "fields": [],
+        "aim": {
+          "locked": false,
+          "targetId": null,
+          "cone": 0.19
+        },
+        "stats": {
+          "spawned": 18,
+          "volleys": 119,
+          "torpedoes": 8,
+          "intercepts": 8,
+          "shieldHits": 10,
+          "disruptions": 0,
+          "fieldsPassed": 5,
+          "fieldsHit": 0,
+          "peakEnemies": 6,
+          "peakHostile": 18,
+          "forwardRecoveries": 0
+        },
+        "events": [
+          {
+            "at": 4.02,
+            "kind": "shield",
+            "id": 1,
+            "count": 3
+          },
+          {
+            "at": 4.02,
+            "kind": "attack",
+            "squad": 1,
+            "target": 1,
+            "cycle": 1
+          },
+          {
+            "at": 5.62,
+            "kind": "cover"
+          },
+          {
+            "at": 7.42,
+            "kind": "attack",
+            "squad": 1,
+            "target": 1,
+            "cycle": 2
+          },
+          {
+            "at": 9,
+            "kind": "field",
+            "id": 1
+          },
+          {
+            "at": 14.4,
+            "kind": "field-pass",
+            "id": 1
+          },
+          {
+            "at": 18,
+            "kind": "torpedo",
+            "id": 2,
+            "count": 3
+          },
+          {
+            "at": 18,
+            "kind": "attack",
+            "squad": 2,
+            "target": 2,
+            "cycle": 1
+          },
+          {
+            "at": 18,
+            "kind": "torpedo",
+            "squad": 2,
+            "target": 2
+          },
+          {
+            "at": 18.95,
+            "kind": "torpedo",
+            "squad": 2,
+            "target": 2
+          },
+          {
+            "at": 20.02,
+            "kind": "cover"
+          },
+          {
+            "at": 21.4,
+            "kind": "attack",
+            "squad": 2,
+            "target": 2,
+            "cycle": 2
+          },
+          {
+            "at": 22,
+            "kind": "formation",
+            "pattern": 1
+          },
+          {
+            "at": 25.02,
+            "kind": "field",
+            "id": 2
+          },
+          {
+            "at": 30.42,
+            "kind": "field-pass",
+            "id": 2
+          },
+          {
+            "at": 33.02,
+            "kind": "jam",
+            "id": 3,
+            "count": 4
+          },
+          {
+            "at": 33.02,
+            "kind": "attack",
+            "squad": 3,
+            "target": 0,
+            "cycle": 1
+          },
+          {
+            "at": 35.22,
+            "kind": "cover"
+          },
+          {
+            "at": 36.42,
+            "kind": "attack",
+            "squad": 3,
+            "target": 0,
+            "cycle": 2
+          },
+          {
+            "at": 41.02,
+            "kind": "field",
+            "id": 3
+          },
+          {
+            "at": 44.02,
+            "kind": "formation",
+            "pattern": 0
+          },
+          {
+            "at": 46.42,
+            "kind": "field-pass",
+            "id": 3
+          },
+          {
+            "at": 49.02,
+            "kind": "shield",
+            "id": 4,
+            "count": 4
+          },
+          {
+            "at": 49.02,
+            "kind": "attack",
+            "squad": 4,
+            "target": 1,
+            "cycle": 1
+          },
+          {
+            "at": 49.02,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 49.97,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 51.22,
+            "kind": "cover"
+          },
+          {
+            "at": 52.42,
+            "kind": "attack",
+            "squad": 4,
+            "target": 1,
+            "cycle": 2
+          },
+          {
+            "at": 52.42,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 53.37,
+            "kind": "torpedo",
+            "squad": 4,
+            "target": 1
+          },
+          {
+            "at": 55.83,
+            "kind": "attack",
+            "squad": 4,
+            "target": 1,
+            "cycle": 3
+          },
+          {
+            "at": 57.02,
+            "kind": "field",
+            "id": 4
+          },
+          {
+            "at": 62.42,
+            "kind": "field-pass",
+            "id": 4
+          },
+          {
+            "at": 66.02,
+            "kind": "formation",
+            "pattern": 1
+          },
+          {
+            "at": 66.02,
+            "kind": "crossfire",
+            "id": 5,
+            "count": 4
+          },
+          {
+            "at": 66.02,
+            "kind": "attack",
+            "squad": 5,
+            "target": 2,
+            "cycle": 1
+          },
+          {
+            "at": 66.02,
+            "kind": "torpedo",
+            "squad": 5,
+            "target": 2
+          },
+          {
+            "at": 66.97,
+            "kind": "torpedo",
+            "squad": 5,
+            "target": 2
+          },
+          {
+            "at": 67.22,
+            "kind": "cover"
+          },
+          {
+            "at": 69.42,
+            "kind": "attack",
+            "squad": 5,
+            "target": 2,
+            "cycle": 2
+          },
+          {
+            "at": 72.83,
+            "kind": "attack",
+            "squad": 5,
+            "target": 2,
+            "cycle": 3
+          },
+          {
+            "at": 73.02,
+            "kind": "field",
+            "id": 5
+          },
+          {
+            "at": 76.25,
+            "kind": "attack",
+            "squad": 5,
+            "target": 2,
+            "cycle": 4
+          },
+          {
+            "at": 78.42,
+            "kind": "field-pass",
+            "id": 5
+          }
+        ]
+      },
+      "operator": {
+        "reaction": 0.4,
+        "device": "joystick",
+        "strategy": "reactive",
+        "decisions": 216,
+        "tabs": 37,
+        "missiles": 8,
+        "pulses": 5
+      },
+      "stateEvents": [
+        {
+          "kind": "state",
+          "data": "briefing",
+          "time": 0
+        },
+        {
+          "kind": "state",
+          "data": "briefing",
+          "time": 0
+        },
+        {
+          "kind": "state",
+          "data": "escortbrief",
+          "time": 0
+        },
+        {
+          "kind": "state",
+          "data": "playing",
+          "time": 0
+        },
+        {
+          "kind": "state",
+          "data": "escortclear",
+          "time": 86.183
+        }
+      ]
+    },
+    {
+      "key": "swarm:2:combat:417147:0.55:rockets:idle",
+      "kind": "swarm",
+      "stage": 2,
+      "mode": "combat",
+      "seed": 417147,
+      "reaction": 0.55,
+      "idle": true,
+      "fixture": "direct encounter with standard gear; no traversal or resource edits after launch",
+      "startHp": 100,
+      "startGear": {
+        "weapons": 1,
+        "armor": 1,
+        "rockets": 0
+      },
+      "startMissiles": 8,
+      "waves": [
+        {
+          "wave": 1,
+          "at": 0.017,
+          "hp": 100,
+          "enemies": 8
+        }
+      ],
+      "enemySamples": [],
+      "repairs": [],
+      "damage": [
+        {
+          "at": 5.2,
+          "amount": 10.304,
+          "hp": 89.696,
+          "wave": 1
+        },
+        {
+          "at": 6.1,
+          "amount": 10.304,
+          "hp": 79.392,
+          "wave": 1
+        },
+        {
+          "at": 6.817,
+          "amount": 10.304,
+          "hp": 69.088,
+          "wave": 1
+        },
+        {
+          "at": 8.167,
+          "amount": 10.304,
+          "hp": 58.784,
+          "wave": 1
+        },
+        {
+          "at": 9.8,
+          "amount": 10.304,
+          "hp": 48.48,
+          "wave": 1
+        },
+        {
+          "at": 11.05,
+          "amount": 10.304,
+          "hp": 38.176,
+          "wave": 1
+        },
+        {
+          "at": 11.967,
+          "amount": 10.304,
+          "hp": 27.872,
+          "wave": 1
+        },
+        {
+          "at": 12.833,
+          "amount": 10.304,
+          "hp": 17.568,
+          "wave": 1
+        },
+        {
+          "at": 13.983,
+          "amount": 10.304,
+          "hp": 7.264,
+          "wave": 1
+        },
+        {
+          "at": 15.067,
+          "amount": 7.264,
+          "hp": 0,
+          "wave": 1
+        }
+      ],
+      "cards": [],
+      "transitions": [
+        {
+          "at": 0,
+          "state": "playing/swarm"
+        },
+        {
+          "at": 15.067,
+          "state": "crashing/swarm"
+        }
+      ],
+      "errors": [],
+      "minHp": 0,
+      "missilesFired": 0,
+      "pulses": 0,
+      "peakHostile": 4,
+      "peakEnemies": 8,
+      "complete": false,
+      "status": "crashing",
+      "phase": "swarm",
+      "capReached": false,
+      "seconds": 15.067,
+      "hp": 0,
+      "kills": 0,
+      "lossReason": "Корабль подбит. Перехватывайте угрозы и используйте E для прикрытия.",
+      "damageTaken": 100,
+      "swarm": {
+        "wave": 1,
+        "complete": false,
+        "balanceVersion": "2.10.0",
+        "wavesCleared": 0,
+        "events": [],
+        "drops": {
+          "repair": 0,
+          "missiles": 0,
+          "overdrive": 0
+        }
+      },
+      "stateEvents": [
+        {
+          "kind": "state",
+          "data": "briefing",
+          "time": 0
+        },
+        {
+          "kind": "state",
+          "data": "playing",
+          "time": 0
+        },
+        {
+          "kind": "state",
+          "data": "crashing",
+          "time": 15.067
+        }
+      ]
+    },
+    {
+      "key": "convoy:2:combat:417147:0.4:rockets:idle",
+      "kind": "convoy",
+      "stage": 2,
+      "mode": "combat",
+      "seed": 417147,
+      "reaction": 0.4,
+      "idle": true,
+      "fixture": "direct encounter with standard gear; no traversal or resource edits after launch",
+      "startHp": 100,
+      "startGear": {
+        "weapons": 2,
+        "armor": 1,
+        "rockets": 0
+      },
+      "startMissiles": 10,
+      "waves": [
+        {
+          "wave": 1,
+          "at": 0.017,
+          "hp": 100,
+          "enemies": 0
+        }
+      ],
+      "enemySamples": [
+        {
+          "at": 3.017,
+          "id": 8,
+          "role": "commander",
+          "maxHp": 300,
+          "hp": 300
+        },
+        {
+          "at": 3.017,
+          "id": 9,
+          "role": "interceptor",
+          "maxHp": 180,
+          "hp": 180
+        },
+        {
+          "at": 3.017,
+          "id": 10,
+          "role": "scout",
+          "maxHp": 150,
+          "hp": 150
+        },
+        {
+          "at": 3.017,
+          "id": 11,
+          "role": "raider",
+          "maxHp": 240,
+          "hp": 240
+        }
+      ],
+      "repairs": [],
+      "damage": [
+        {
+          "at": 5.967,
+          "amount": 6.4,
+          "hp": 93.6,
+          "wave": 1
+        },
+        {
+          "at": 6.733,
+          "amount": 6.4,
+          "hp": 87.2,
+          "wave": 1
+        },
+        {
+          "at": 7.383,
+          "amount": 9.6,
+          "hp": 77.6,
+          "wave": 1
+        },
+        {
+          "at": 8.517,
+          "amount": 6.4,
+          "hp": 71.2,
+          "wave": 1
+        },
+        {
+          "at": 9.167,
+          "amount": 6.4,
+          "hp": 64.8,
+          "wave": 1
+        },
+        {
+          "at": 10.133,
+          "amount": 6.4,
+          "hp": 58.4,
+          "wave": 1
+        },
+        {
+          "at": 10.883,
+          "amount": 9.6,
+          "hp": 48.8,
+          "wave": 1
+        },
+        {
+          "at": 11.95,
+          "amount": 6.4,
+          "hp": 42.4,
+          "wave": 1
+        },
+        {
+          "at": 12.6,
+          "amount": 6.4,
+          "hp": 36,
+          "wave": 1
+        },
+        {
+          "at": 13.417,
+          "amount": 30.4,
+          "hp": 5.6,
+          "wave": 1
+        },
+        {
+          "at": 14.15,
+          "amount": 5.6,
+          "hp": 0,
+          "wave": 1
+        }
+      ],
+      "cards": [],
+      "transitions": [
+        {
+          "at": 0,
+          "state": "playing/escort"
+        },
+        {
+          "at": 14.15,
+          "state": "crashing/escort"
+        }
+      ],
+      "errors": [],
+      "minHp": 0,
+      "missilesFired": 0,
+      "pulses": 0,
+      "peakHostile": 18,
+      "peakEnemies": 4,
+      "complete": false,
+      "status": "crashing",
+      "phase": "escort",
+      "capReached": false,
+      "seconds": 14.15,
+      "hp": 0,
+      "kills": 30,
+      "lossReason": "Корабль подбит. Перехватывайте угрозы и используйте E для прикрытия.",
+      "damageTaken": 100,
+      "swarm": {
+        "wave": 1,
+        "complete": false,
+        "balanceVersion": "2.10.0",
+        "wavesCleared": 0,
+        "events": [],
+        "drops": {
+          "repair": 0,
+          "missiles": 0,
+          "overdrive": 0
+        }
+      },
+      "allies": [
+        {
+          "name": "Архив ФТ",
+          "hp": 100,
+          "dead": false,
+          "maxHp": 100
+        },
+        {
+          "name": "Матрица связей",
+          "hp": 0,
+          "dead": true,
+          "maxHp": 100
+        },
+        {
+          "name": "Реестр решений",
+          "hp": 100,
+          "dead": false,
+          "maxHp": 100
+        }
+      ],
+      "convoy": {
+        "version": "2.6.0",
+        "stage": 2,
+        "time": 14.15,
+        "wave": 1,
+        "total": 7,
+        "distance": 0.13086419753086348,
+        "formation": 0,
+        "allies": [
+          {
+            "hp": 100,
+            "dead": false
+          },
+          {
+            "hp": 0,
+            "dead": true
+          },
+          {
+            "hp": 100,
+            "dead": false
+          }
+        ],
+        "groups": [
+          {
+            "id": 1,
+            "kind": "command",
+            "state": "attack",
+            "time": 0.9000000000000011,
+            "target": 0,
+            "members": 4
+          }
+        ],
+        "fields": [
+          {
+            "id": 1,
+            "z": 28.499999999999673,
+            "gapX": 24,
+            "gapY": 9,
+            "shape": "ring",
+            "radius": 7.1,
+            "halfW": 7.1,
+            "halfH": 7.1,
+            "speed": 38,
+            "warning": 0,
+            "passed": true,
+            "hit": true
+          }
+        ],
+        "aim": {
+          "locked": true,
+          "targetId": 9,
+          "cone": 0.19
+        },
+        "stats": {
+          "spawned": 4,
+          "volleys": 65,
+          "torpedoes": 0,
+          "intercepts": 0,
+          "shieldHits": 0,
+          "disruptions": 0,
+          "fieldsPassed": 0,
+          "fieldsHit": 1,
+          "peakEnemies": 4,
+          "peakHostile": 18,
+          "forwardRecoveries": 0
+        },
+        "events": [
+          {
+            "at": 3.02,
+            "kind": "command",
+            "id": 1,
+            "count": 4
+          },
+          {
+            "at": 3.02,
+            "kind": "attack",
+            "squad": 1,
+            "target": 1,
+            "cycle": 1
+          },
+          {
+            "at": 6.42,
+            "kind": "attack",
+            "squad": 1,
+            "target": 1,
+            "cycle": 2
+          },
+          {
+            "at": 8.02,
+            "kind": "field",
+            "id": 1
+          },
+          {
+            "at": 9.83,
+            "kind": "attack",
+            "squad": 1,
+            "target": 1,
+            "cycle": 3
+          },
+          {
+            "at": 11.3,
+            "kind": "transport-lost",
+            "target": 1
+          },
+          {
+            "at": 13.25,
+            "kind": "attack",
+            "squad": 1,
+            "target": 0,
+            "cycle": 4
+          },
+          {
+            "at": 13.42,
+            "kind": "field-hit",
+            "id": 1
+          }
+        ]
+      },
+      "operator": {
+        "reaction": 0.4,
+        "device": "joystick",
+        "strategy": "idle",
+        "decisions": 36,
+        "tabs": 0,
+        "missiles": 0,
+        "pulses": 0
+      },
+      "stateEvents": [
+        {
+          "kind": "state",
+          "data": "briefing",
+          "time": 0
+        },
+        {
+          "kind": "state",
+          "data": "escortbrief",
+          "time": 0
+        },
+        {
+          "kind": "state",
+          "data": "playing",
+          "time": 0
+        },
+        {
+          "kind": "state",
+          "data": "crashing",
+          "time": 14.15
+        }
+      ]
+    }
+  ]
+}

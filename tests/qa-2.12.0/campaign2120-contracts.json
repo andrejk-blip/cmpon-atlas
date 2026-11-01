@@ -1,0 +1,160 @@
+{
+  "pass": true,
+  "passed": 25,
+  "failed": 0,
+  "rows": [
+    {
+      "name": "new-local-training",
+      "pass": true,
+      "mode": "training"
+    },
+    {
+      "name": "new-local-combat",
+      "pass": true,
+      "mode": "combat"
+    },
+    {
+      "name": "new-local-pro",
+      "pass": true,
+      "mode": "pro"
+    },
+    {
+      "name": "public-ui-start-training",
+      "pass": true,
+      "mode": "training",
+      "entryAction": "learning-start"
+    },
+    {
+      "name": "public-ui-start-combat",
+      "pass": true,
+      "mode": "combat",
+      "entryAction": "learning-start"
+    },
+    {
+      "name": "public-ui-start-pro",
+      "pass": true,
+      "mode": "pro",
+      "entryAction": "launch-new"
+    },
+    {
+      "name": "fresh-cloud-launch-keeps-legacy-route",
+      "pass": true,
+      "route": "legacy14",
+      "cloudAttached": true
+    },
+    {
+      "name": "early-answer-delayed-echo-correct-and-wrong",
+      "pass": true,
+      "cases": 6,
+      "method": "First-terminal and delayed-route boundary fixtures, not six continuous campaigns"
+    },
+    {
+      "name": "legacy-2110-save-resources-and-route",
+      "pass": true,
+      "cases": 42,
+      "method": "Direct scene-boundary fixtures; no claim of continuous completion"
+    },
+    {
+      "name": "new-pause-save-training",
+      "pass": true,
+      "pausedSeconds": 2
+    },
+    {
+      "name": "new-pause-save-combat",
+      "pass": true,
+      "pausedSeconds": 2
+    },
+    {
+      "name": "new-pause-save-pro",
+      "pass": true,
+      "pausedSeconds": 2
+    },
+    {
+      "name": "earned-boundary-roundtrips",
+      "pass": true,
+      "boundaries": 20
+    },
+    {
+      "name": "victory-count-survives-restoration-all-modes-and-routes",
+      "pass": true,
+      "checked": [
+        "training-convoy",
+        "training-pursuit",
+        "combat-convoy",
+        "combat-pursuit",
+        "pro-convoy",
+        "pro-pursuit"
+      ],
+      "cards": 28
+    },
+    {
+      "name": "one-card-convoy1",
+      "pass": true,
+      "mission": "convoy1",
+      "points": 100
+    },
+    {
+      "name": "one-card-route",
+      "pass": true,
+      "mission": "route",
+      "points": 100
+    },
+    {
+      "name": "one-card-parallax",
+      "pass": true,
+      "mission": "parallax",
+      "points": 100
+    },
+    {
+      "name": "one-card-convoy3",
+      "pass": true,
+      "mission": "convoy3",
+      "points": 100
+    },
+    {
+      "name": "one-card-contradictions",
+      "pass": true,
+      "mission": "contradictions",
+      "points": 100
+    },
+    {
+      "name": "station-two-solutions-and-correction",
+      "pass": true,
+      "validSolutions": 2,
+      "correctionAllowed": true
+    },
+    {
+      "name": "station-definition-isolation",
+      "pass": true,
+      "definitionUnchanged": true
+    },
+    {
+      "name": "bestiary-actual-encounter-and-readonly-render",
+      "pass": true,
+      "species": [
+        "medusa"
+      ],
+      "readOnly": true
+    },
+    {
+      "name": "convoy-safe-practice-return-and-save-isolation",
+      "pass": true,
+      "duration": 25,
+      "savePreserved": true
+    },
+    {
+      "name": "optional-route-preserves-victory-save",
+      "pass": true,
+      "victoryPreserved": true
+    },
+    {
+      "name": "route-choice-and-retry-are-single",
+      "pass": true,
+      "routes": 2
+    }
+  ],
+  "failures": [],
+  "entrySha256": "f3cad121d848a3c58423099dd6701ecabe18292fd263538aced005ca52ff1945",
+  "moduleSha256": "559eb725b8c7cc7ea8b2dca8a61402eb60b3024e3c682f6fc8ac8953e920e833",
+  "method": "Node VM boundary contracts plus snapshots earned by a fresh full campaign. Not physical-phone or human-play evidence."
+}

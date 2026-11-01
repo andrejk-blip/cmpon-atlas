@@ -1,0 +1,627 @@
+{
+  "pass": true,
+  "passed": 78,
+  "failed": 0,
+  "rows": [
+    {
+      "name": "version-and-memory-only",
+      "pass": true,
+      "levels": 25
+    },
+    {
+      "name": "private-training-campaign",
+      "pass": true,
+      "mode": "training",
+      "id": "campaign",
+      "mission": "orbit1",
+      "status": "briefing"
+    },
+    {
+      "name": "private-training-route-choice",
+      "pass": true,
+      "mode": "training",
+      "id": "route-choice",
+      "mission": "route",
+      "status": "campaignroute"
+    },
+    {
+      "name": "private-training-contradictions",
+      "pass": true,
+      "mode": "training",
+      "id": "contradictions",
+      "mission": "contradictions",
+      "status": "boarding"
+    },
+    {
+      "name": "private-training-orbit-1",
+      "pass": true,
+      "mode": "training",
+      "id": "orbit-1",
+      "mission": "orbit1",
+      "status": "playing"
+    },
+    {
+      "name": "private-training-orbit-2",
+      "pass": true,
+      "mode": "training",
+      "id": "orbit-2",
+      "mission": "pursuit",
+      "status": "playing"
+    },
+    {
+      "name": "private-training-orbit-3",
+      "pass": true,
+      "mode": "training",
+      "id": "orbit-3",
+      "mission": "swarm",
+      "status": "playing"
+    },
+    {
+      "name": "private-training-orbit-4",
+      "pass": true,
+      "mode": "training",
+      "id": "orbit-4",
+      "mission": "orbit4",
+      "status": "playing"
+    },
+    {
+      "name": "private-training-dock-1",
+      "pass": true,
+      "mode": "training",
+      "id": "dock-1",
+      "mission": "orbit1",
+      "status": "docking"
+    },
+    {
+      "name": "private-training-deck-1",
+      "pass": true,
+      "mode": "training",
+      "id": "deck-1",
+      "mission": "base1",
+      "status": "boarding"
+    },
+    {
+      "name": "private-training-dock-2",
+      "pass": true,
+      "mode": "training",
+      "id": "dock-2",
+      "mission": "pursuit",
+      "status": "docking"
+    },
+    {
+      "name": "private-training-deck-2",
+      "pass": true,
+      "mode": "training",
+      "id": "deck-2",
+      "mission": "base2",
+      "status": "boarding"
+    },
+    {
+      "name": "private-training-dock-3",
+      "pass": true,
+      "mode": "training",
+      "id": "dock-3",
+      "mission": "swarm",
+      "status": "docking"
+    },
+    {
+      "name": "private-training-deck-3",
+      "pass": true,
+      "mode": "training",
+      "id": "deck-3",
+      "mission": "base3",
+      "status": "boarding"
+    },
+    {
+      "name": "private-training-dock-4",
+      "pass": true,
+      "mode": "training",
+      "id": "dock-4",
+      "mission": "orbit4",
+      "status": "docking"
+    },
+    {
+      "name": "private-training-deck-4",
+      "pass": true,
+      "mode": "training",
+      "id": "deck-4",
+      "mission": "base4",
+      "status": "boarding"
+    },
+    {
+      "name": "private-training-convoy-1",
+      "pass": true,
+      "mode": "training",
+      "id": "convoy-1",
+      "mission": "convoy1",
+      "status": "playing"
+    },
+    {
+      "name": "private-training-convoy-2",
+      "pass": true,
+      "mode": "training",
+      "id": "convoy-2",
+      "mission": "route",
+      "status": "playing"
+    },
+    {
+      "name": "private-training-convoy-3",
+      "pass": true,
+      "mode": "training",
+      "id": "convoy-3",
+      "mission": "convoy3",
+      "status": "playing"
+    },
+    {
+      "name": "private-training-parallax",
+      "pass": true,
+      "mode": "training",
+      "id": "parallax",
+      "mission": "parallax",
+      "status": "playing"
+    },
+    {
+      "name": "private-training-breach",
+      "pass": true,
+      "mode": "training",
+      "id": "breach",
+      "mission": "parallax",
+      "status": "playing"
+    },
+    {
+      "name": "private-training-landing",
+      "pass": true,
+      "mode": "training",
+      "id": "landing",
+      "mission": "parallax",
+      "status": "docking"
+    },
+    {
+      "name": "private-training-maze",
+      "pass": true,
+      "mode": "training",
+      "id": "maze",
+      "mission": "lair",
+      "status": "boarding"
+    },
+    {
+      "name": "private-training-mrg",
+      "pass": true,
+      "mode": "training",
+      "id": "mrg",
+      "mission": "mrg",
+      "status": "boarding"
+    },
+    {
+      "name": "private-training-upload",
+      "pass": true,
+      "mode": "training",
+      "id": "upload",
+      "mission": "mrg",
+      "status": "docking"
+    },
+    {
+      "name": "private-training-victory",
+      "pass": true,
+      "mode": "training",
+      "id": "victory",
+      "mission": "mrg",
+      "status": "won"
+    },
+    {
+      "name": "private-combat-campaign",
+      "pass": true,
+      "mode": "combat",
+      "id": "campaign",
+      "mission": "orbit1",
+      "status": "briefing"
+    },
+    {
+      "name": "private-combat-route-choice",
+      "pass": true,
+      "mode": "combat",
+      "id": "route-choice",
+      "mission": "route",
+      "status": "campaignroute"
+    },
+    {
+      "name": "private-combat-contradictions",
+      "pass": true,
+      "mode": "combat",
+      "id": "contradictions",
+      "mission": "contradictions",
+      "status": "boarding"
+    },
+    {
+      "name": "private-combat-orbit-1",
+      "pass": true,
+      "mode": "combat",
+      "id": "orbit-1",
+      "mission": "orbit1",
+      "status": "playing"
+    },
+    {
+      "name": "private-combat-orbit-2",
+      "pass": true,
+      "mode": "combat",
+      "id": "orbit-2",
+      "mission": "pursuit",
+      "status": "playing"
+    },
+    {
+      "name": "private-combat-orbit-3",
+      "pass": true,
+      "mode": "combat",
+      "id": "orbit-3",
+      "mission": "swarm",
+      "status": "playing"
+    },
+    {
+      "name": "private-combat-orbit-4",
+      "pass": true,
+      "mode": "combat",
+      "id": "orbit-4",
+      "mission": "orbit4",
+      "status": "playing"
+    },
+    {
+      "name": "private-combat-dock-1",
+      "pass": true,
+      "mode": "combat",
+      "id": "dock-1",
+      "mission": "orbit1",
+      "status": "docking"
+    },
+    {
+      "name": "private-combat-deck-1",
+      "pass": true,
+      "mode": "combat",
+      "id": "deck-1",
+      "mission": "base1",
+      "status": "boarding"
+    },
+    {
+      "name": "private-combat-dock-2",
+      "pass": true,
+      "mode": "combat",
+      "id": "dock-2",
+      "mission": "pursuit",
+      "status": "docking"
+    },
+    {
+      "name": "private-combat-deck-2",
+      "pass": true,
+      "mode": "combat",
+      "id": "deck-2",
+      "mission": "base2",
+      "status": "boarding"
+    },
+    {
+      "name": "private-combat-dock-3",
+      "pass": true,
+      "mode": "combat",
+      "id": "dock-3",
+      "mission": "swarm",
+      "status": "docking"
+    },
+    {
+      "name": "private-combat-deck-3",
+      "pass": true,
+      "mode": "combat",
+      "id": "deck-3",
+      "mission": "base3",
+      "status": "boarding"
+    },
+    {
+      "name": "private-combat-dock-4",
+      "pass": true,
+      "mode": "combat",
+      "id": "dock-4",
+      "mission": "orbit4",
+      "status": "docking"
+    },
+    {
+      "name": "private-combat-deck-4",
+      "pass": true,
+      "mode": "combat",
+      "id": "deck-4",
+      "mission": "base4",
+      "status": "boarding"
+    },
+    {
+      "name": "private-combat-convoy-1",
+      "pass": true,
+      "mode": "combat",
+      "id": "convoy-1",
+      "mission": "convoy1",
+      "status": "playing"
+    },
+    {
+      "name": "private-combat-convoy-2",
+      "pass": true,
+      "mode": "combat",
+      "id": "convoy-2",
+      "mission": "route",
+      "status": "playing"
+    },
+    {
+      "name": "private-combat-convoy-3",
+      "pass": true,
+      "mode": "combat",
+      "id": "convoy-3",
+      "mission": "convoy3",
+      "status": "playing"
+    },
+    {
+      "name": "private-combat-parallax",
+      "pass": true,
+      "mode": "combat",
+      "id": "parallax",
+      "mission": "parallax",
+      "status": "playing"
+    },
+    {
+      "name": "private-combat-breach",
+      "pass": true,
+      "mode": "combat",
+      "id": "breach",
+      "mission": "parallax",
+      "status": "playing"
+    },
+    {
+      "name": "private-combat-landing",
+      "pass": true,
+      "mode": "combat",
+      "id": "landing",
+      "mission": "parallax",
+      "status": "docking"
+    },
+    {
+      "name": "private-combat-maze",
+      "pass": true,
+      "mode": "combat",
+      "id": "maze",
+      "mission": "lair",
+      "status": "boarding"
+    },
+    {
+      "name": "private-combat-mrg",
+      "pass": true,
+      "mode": "combat",
+      "id": "mrg",
+      "mission": "mrg",
+      "status": "boarding"
+    },
+    {
+      "name": "private-combat-upload",
+      "pass": true,
+      "mode": "combat",
+      "id": "upload",
+      "mission": "mrg",
+      "status": "docking"
+    },
+    {
+      "name": "private-combat-victory",
+      "pass": true,
+      "mode": "combat",
+      "id": "victory",
+      "mission": "mrg",
+      "status": "won"
+    },
+    {
+      "name": "private-pro-campaign",
+      "pass": true,
+      "mode": "pro",
+      "id": "campaign",
+      "mission": "orbit1",
+      "status": "briefing"
+    },
+    {
+      "name": "private-pro-route-choice",
+      "pass": true,
+      "mode": "pro",
+      "id": "route-choice",
+      "mission": "route",
+      "status": "campaignroute"
+    },
+    {
+      "name": "private-pro-contradictions",
+      "pass": true,
+      "mode": "pro",
+      "id": "contradictions",
+      "mission": "contradictions",
+      "status": "boarding"
+    },
+    {
+      "name": "private-pro-orbit-1",
+      "pass": true,
+      "mode": "pro",
+      "id": "orbit-1",
+      "mission": "orbit1",
+      "status": "playing"
+    },
+    {
+      "name": "private-pro-orbit-2",
+      "pass": true,
+      "mode": "pro",
+      "id": "orbit-2",
+      "mission": "pursuit",
+      "status": "playing"
+    },
+    {
+      "name": "private-pro-orbit-3",
+      "pass": true,
+      "mode": "pro",
+      "id": "orbit-3",
+      "mission": "swarm",
+      "status": "playing"
+    },
+    {
+      "name": "private-pro-orbit-4",
+      "pass": true,
+      "mode": "pro",
+      "id": "orbit-4",
+      "mission": "orbit4",
+      "status": "playing"
+    },
+    {
+      "name": "private-pro-dock-1",
+      "pass": true,
+      "mode": "pro",
+      "id": "dock-1",
+      "mission": "orbit1",
+      "status": "docking"
+    },
+    {
+      "name": "private-pro-deck-1",
+      "pass": true,
+      "mode": "pro",
+      "id": "deck-1",
+      "mission": "base1",
+      "status": "boarding"
+    },
+    {
+      "name": "private-pro-dock-2",
+      "pass": true,
+      "mode": "pro",
+      "id": "dock-2",
+      "mission": "pursuit",
+      "status": "docking"
+    },
+    {
+      "name": "private-pro-deck-2",
+      "pass": true,
+      "mode": "pro",
+      "id": "deck-2",
+      "mission": "base2",
+      "status": "boarding"
+    },
+    {
+      "name": "private-pro-dock-3",
+      "pass": true,
+      "mode": "pro",
+      "id": "dock-3",
+      "mission": "swarm",
+      "status": "docking"
+    },
+    {
+      "name": "private-pro-deck-3",
+      "pass": true,
+      "mode": "pro",
+      "id": "deck-3",
+      "mission": "base3",
+      "status": "boarding"
+    },
+    {
+      "name": "private-pro-dock-4",
+      "pass": true,
+      "mode": "pro",
+      "id": "dock-4",
+      "mission": "orbit4",
+      "status": "docking"
+    },
+    {
+      "name": "private-pro-deck-4",
+      "pass": true,
+      "mode": "pro",
+      "id": "deck-4",
+      "mission": "base4",
+      "status": "boarding"
+    },
+    {
+      "name": "private-pro-convoy-1",
+      "pass": true,
+      "mode": "pro",
+      "id": "convoy-1",
+      "mission": "convoy1",
+      "status": "playing"
+    },
+    {
+      "name": "private-pro-convoy-2",
+      "pass": true,
+      "mode": "pro",
+      "id": "convoy-2",
+      "mission": "route",
+      "status": "playing"
+    },
+    {
+      "name": "private-pro-convoy-3",
+      "pass": true,
+      "mode": "pro",
+      "id": "convoy-3",
+      "mission": "convoy3",
+      "status": "playing"
+    },
+    {
+      "name": "private-pro-parallax",
+      "pass": true,
+      "mode": "pro",
+      "id": "parallax",
+      "mission": "parallax",
+      "status": "playing"
+    },
+    {
+      "name": "private-pro-breach",
+      "pass": true,
+      "mode": "pro",
+      "id": "breach",
+      "mission": "parallax",
+      "status": "playing"
+    },
+    {
+      "name": "private-pro-landing",
+      "pass": true,
+      "mode": "pro",
+      "id": "landing",
+      "mission": "parallax",
+      "status": "docking"
+    },
+    {
+      "name": "private-pro-maze",
+      "pass": true,
+      "mode": "pro",
+      "id": "maze",
+      "mission": "lair",
+      "status": "boarding"
+    },
+    {
+      "name": "private-pro-mrg",
+      "pass": true,
+      "mode": "pro",
+      "id": "mrg",
+      "mission": "mrg",
+      "status": "boarding"
+    },
+    {
+      "name": "private-pro-upload",
+      "pass": true,
+      "mode": "pro",
+      "id": "upload",
+      "mission": "mrg",
+      "status": "docking"
+    },
+    {
+      "name": "private-pro-victory",
+      "pass": true,
+      "mode": "pro",
+      "id": "victory",
+      "mission": "mrg",
+      "status": "won"
+    },
+    {
+      "name": "picker-close-without-launch",
+      "pass": true,
+      "closed": true
+    },
+    {
+      "name": "no-browser-persistence-or-tournament-requests",
+      "pass": true,
+      "browserStorageWrites": 0,
+      "tournamentRequests": 0
+    }
+  ],
+  "failures": [],
+  "bundleSha256": "2aa4b4cbe2804c0472a4126e73f7917cafe9daa34a43047d2ce39eed2d8f2bd6",
+  "entrySha256": "71bd4c6d088a425dcda43de9797a53055501dcf0a6471af1f60048b29fbebde4",
+  "method": "Exact prepared private artifact in Node VM; only closure references exposed to harness in memory. Synthetic fixture launches, no human/phone claim."
+}

@@ -1,0 +1,485 @@
+{
+  "schema": "citadel-profile-comparison-expert-v1",
+  "role": "Независимый тестировщик баланса",
+  "scenario": "Боевой режим; первое прохождение с базовым аркадным опытом; основной новый маршрут через конвой",
+  "before_version": "2.11.0",
+  "after_version": "2.12.0",
+  "numeric_observations": [
+    {
+      "measure": "active_model_trials",
+      "before": {
+        "passed": 8,
+        "total": 15
+      },
+      "after": {
+        "passed": 15,
+        "total": 15
+      },
+      "qualification": "Повторенные подобранные сценарии; не доля побед в популяции игроков."
+    },
+    {
+      "measure": "swarm_819337_reaction055",
+      "before": {
+        "completed": false,
+        "min_hp": 0,
+        "seconds": 152.567
+      },
+      "after": {
+        "completed": true,
+        "min_hp": 69.51,
+        "seconds": 177.217
+      },
+      "qualification": "Время после — до завершения боя, до — до поражения; разность не сокращение длительности."
+    },
+    {
+      "measure": "swarm_417147_reaction025",
+      "before": {
+        "completed": true,
+        "seconds": 152.55
+      },
+      "after": {
+        "completed": true,
+        "seconds": 127.633
+      },
+      "qualification": "Эта модель быстрее примерно на25сек; другие модели дают иное время."
+    },
+    {
+      "measure": "convoy3_reaction040_with_rockets",
+      "before": {
+        "completed": false,
+        "allies_hp": [
+          0,
+          48,
+          0
+        ]
+      },
+      "after": {
+        "completed": true,
+        "allies_hp": [
+          74,
+          84,
+          60
+        ]
+      },
+      "qualification": "У исхода значительно больше запаса."
+    },
+    {
+      "measure": "convoy3_reaction040_without_rockets",
+      "before": {
+        "completed": false,
+        "allies_hp": [
+          0,
+          40,
+          0
+        ]
+      },
+      "after": {
+        "completed": true,
+        "allies_hp": [
+          76,
+          84,
+          1
+        ]
+      },
+      "qualification": "Третий транспорт остаётся хрупким; ракеты полезны, хотя не требуются этому оператору."
+    },
+    {
+      "measure": "early_swarm_and_convoys12",
+      "unchanged": true,
+      "qualification": "Рой: первые3 входа в волну совпали по времени/HP/числу врагов; конвоиI/II — по длительности, ресурсам и HP врагов."
+    },
+    {
+      "measure": "save_contracts",
+      "passed": 7,
+      "total": 7,
+      "qualification": "Два граничных сценария синтетические и явно выделены в тестах."
+    }
+  ],
+  "expert_only": true,
+  "scale": "Экспертная порядковая шкала1–10, не телеметрия эмоций",
+  "anchors": {
+    "interest": "1: мало различимых решений;5: рабочее знакомое действие;10: выразительная новизна и выбор",
+    "difficulty": "1: почти нет требований;5: несколько освоенных действий;10: высокая нагрузка и малая терпимость к ошибкам",
+    "engagement": "1: цель и обратная связь не удерживают внимание;5: понятно, но мало поводов продолжать;10: ясная цель, отдача и сильное ожидание следующего шага"
+  },
+  "before": [
+    {
+      "level": 1,
+      "interest": 6,
+      "difficulty": 4,
+      "engagement": 6,
+      "mission_id": "orbit1"
+    },
+    {
+      "level": 2,
+      "interest": 7,
+      "difficulty": 5,
+      "engagement": 7,
+      "mission_id": "base1"
+    },
+    {
+      "level": 3,
+      "interest": 7,
+      "difficulty": 6,
+      "engagement": 7,
+      "mission_id": "convoy1"
+    },
+    {
+      "level": 4,
+      "interest": 9,
+      "difficulty": 7,
+      "engagement": 9,
+      "mission_id": "pursuit"
+    },
+    {
+      "level": 5,
+      "interest": 8,
+      "difficulty": 6,
+      "engagement": 8,
+      "mission_id": "base2"
+    },
+    {
+      "level": 6,
+      "interest": 7,
+      "difficulty": 7,
+      "engagement": 7,
+      "mission_id": "route"
+    },
+    {
+      "level": 7,
+      "interest": 8,
+      "difficulty": 8,
+      "engagement": 8,
+      "mission_id": "swarm"
+    },
+    {
+      "level": 8,
+      "interest": 7,
+      "difficulty": 7,
+      "engagement": 6,
+      "mission_id": "base3"
+    },
+    {
+      "level": 9,
+      "interest": 7,
+      "difficulty": 8,
+      "engagement": 7,
+      "mission_id": "convoy3"
+    },
+    {
+      "level": 10,
+      "interest": 7,
+      "difficulty": 8,
+      "engagement": 8,
+      "mission_id": "orbit4"
+    },
+    {
+      "level": 11,
+      "interest": 6,
+      "difficulty": 6,
+      "engagement": 6,
+      "mission_id": "base4"
+    },
+    {
+      "level": 12,
+      "interest": 9,
+      "difficulty": 6,
+      "engagement": 9,
+      "mission_id": "parallax"
+    },
+    {
+      "level": 13,
+      "interest": 7,
+      "difficulty": 8,
+      "engagement": 7,
+      "mission_id": "lair"
+    },
+    {
+      "level": 14,
+      "interest": 8,
+      "difficulty": 9,
+      "engagement": 8,
+      "mission_id": "mrg"
+    }
+  ],
+  "after": [
+    {
+      "level": 1,
+      "mission_id": "orbit1",
+      "name": "Орбита Цитадели",
+      "interest": 6,
+      "difficulty": 4,
+      "engagement": 6,
+      "baseline_level": 1,
+      "baseline_scores": {
+        "interest": 6,
+        "difficulty": 4,
+        "engagement": 6
+      },
+      "basis": "Бой и учебные действия прежние; документ добавляет связность, но рост интереса не измерен.",
+      "assessment_type": "expert_ordinal_forecast",
+      "runtime_measured_by_this_agent": false
+    },
+    {
+      "level": 2,
+      "mission_id": "base1",
+      "name": "Палуба требований",
+      "interest": 7,
+      "difficulty": 5,
+      "engagement": 7,
+      "baseline_level": 2,
+      "baseline_scores": {
+        "interest": 7,
+        "difficulty": 5,
+        "engagement": 7
+      },
+      "basis": "Основной цикл прежний. Раннее решение теперь имеет отложенный отклик; оценку до его появления не повышаем.",
+      "assessment_type": "expert_ordinal_forecast",
+      "runtime_measured_by_this_agent": false
+    },
+    {
+      "level": 3,
+      "mission_id": "convoy1",
+      "name": "Первый конвой",
+      "interest": 7,
+      "difficulty": 6,
+      "engagement": 7,
+      "baseline_level": 3,
+      "baseline_scores": {
+        "interest": 7,
+        "difficulty": 6,
+        "engagement": 7
+      },
+      "basis": "Боевой контроль совпал с2.11. Добавленная одна карточка может прояснить передачу или замедлить темп.",
+      "assessment_type": "expert_ordinal_forecast",
+      "runtime_measured_by_this_agent": true
+    },
+    {
+      "level": 4,
+      "mission_id": "pursuit",
+      "name": "Погоня за ФЗ",
+      "interest": 9,
+      "difficulty": 7,
+      "engagement": 9,
+      "baseline_level": 4,
+      "baseline_scores": {
+        "interest": 9,
+        "difficulty": 7,
+        "engagement": 9
+      },
+      "basis": "Сохраняется сильная смена ощущения полёта и монстры. Бестиарий добровольный, прирост в баллах не предполагается.",
+      "assessment_type": "expert_ordinal_forecast",
+      "runtime_measured_by_this_agent": false
+    },
+    {
+      "level": 5,
+      "mission_id": "base2",
+      "name": "Палуба согласования",
+      "interest": 8,
+      "difficulty": 6,
+      "engagement": 8,
+      "baseline_level": 5,
+      "baseline_scores": {
+        "interest": 8,
+        "difficulty": 6,
+        "engagement": 8
+      },
+      "basis": "Прежние задачи. Выбор следующего маршрута начинает работать на границе главы, а не меняет её бой.",
+      "assessment_type": "expert_ordinal_forecast",
+      "runtime_measured_by_this_agent": false
+    },
+    {
+      "level": 6,
+      "mission_id": "route",
+      "name": "Маршрут смежников · конвой",
+      "interest": 8,
+      "difficulty": 7,
+      "engagement": 8,
+      "baseline_level": 6,
+      "baseline_scores": {
+        "interest": 7,
+        "difficulty": 7,
+        "engagement": 7
+      },
+      "basis": "Свободный выбор одного маршрута и узнаваемый отклик раннего решения повышают ожидаемое чувство авторства; это экспертная гипотеза. Бой конвояII неизменен.",
+      "assessment_type": "expert_ordinal_forecast",
+      "runtime_measured_by_this_agent": true
+    },
+    {
+      "level": 7,
+      "mission_id": "swarm",
+      "name": "Рой уточнений",
+      "interest": 8,
+      "difficulty": 6,
+      "engagement": 8,
+      "baseline_level": 7,
+      "baseline_scores": {
+        "interest": 8,
+        "difficulty": 8,
+        "engagement": 8
+      },
+      "basis": "Поздние волны получили больше запаса ошибок: прежние проигрыши устранены, но248 врагов и6 волн сохранены. Визуальная насыщенность и целеуказание остаются нагрузкой.",
+      "assessment_type": "expert_ordinal_forecast",
+      "runtime_measured_by_this_agent": true
+    },
+    {
+      "level": 8,
+      "mission_id": "parallax",
+      "name": "Параллакс",
+      "interest": 9,
+      "difficulty": 6,
+      "engagement": 9,
+      "baseline_level": 12,
+      "baseline_scores": {
+        "interest": 9,
+        "difficulty": 6,
+        "engagement": 9
+      },
+      "basis": "Перенесён с12 на8. В полном боевом прогоне minHP91 против92.8 у прежнего оператора: данных недостаточно для повышения балла сложности. Сохраняем6; риск меньшей прокачки проверяется живыми игроками.",
+      "assessment_type": "expert_ordinal_forecast",
+      "runtime_measured_by_this_agent": false
+    },
+    {
+      "level": 9,
+      "mission_id": "base3",
+      "name": "Палуба интеграции",
+      "interest": 7,
+      "difficulty": 7,
+      "engagement": 7,
+      "baseline_level": 8,
+      "baseline_scores": {
+        "interest": 7,
+        "difficulty": 7,
+        "engagement": 6
+      },
+      "basis": "После босса возвращение к знакомому управлению и обновлённому ФТ может восприниматься как осмысленное продолжение. Бой базы не облегчен.",
+      "assessment_type": "expert_ordinal_forecast",
+      "runtime_measured_by_this_agent": false
+    },
+    {
+      "level": 10,
+      "mission_id": "convoy3",
+      "name": "Последний конвой",
+      "interest": 7,
+      "difficulty": 6,
+      "engagement": 7,
+      "baseline_level": 9,
+      "baseline_scores": {
+        "interest": 7,
+        "difficulty": 8,
+        "engagement": 7
+      },
+      "basis": "Ремонт и68%HP противников заметно снижают хрупкость исхода. Интерес автоматически не повышаем: это третья доставка, с дополнительной карточкой.",
+      "assessment_type": "expert_ordinal_forecast",
+      "runtime_measured_by_this_agent": true
+    },
+    {
+      "level": 11,
+      "mission_id": "orbit4",
+      "name": "Последняя орбита",
+      "interest": 7,
+      "difficulty": 8,
+      "engagement": 8,
+      "baseline_level": 10,
+      "baseline_scores": {
+        "interest": 7,
+        "difficulty": 8,
+        "engagement": 8
+      },
+      "basis": "Баланс прежний. Теперь возникает выраженный подъём трудности после облегчённого конвоя; это новый относительный риск.",
+      "assessment_type": "expert_ordinal_forecast",
+      "runtime_measured_by_this_agent": false
+    },
+    {
+      "level": 12,
+      "mission_id": "base4",
+      "name": "Палуба выпуска",
+      "interest": 6,
+      "difficulty": 6,
+      "engagement": 6,
+      "baseline_level": 11,
+      "baseline_scores": {
+        "interest": 6,
+        "difficulty": 6,
+        "engagement": 6
+      },
+      "basis": "Повтор знакомого терминального цикла остаётся; один документ не доказывает устранение усталости от четвёртой базы.",
+      "assessment_type": "expert_ordinal_forecast",
+      "runtime_measured_by_this_agent": false
+    },
+    {
+      "level": 13,
+      "mission_id": "contradictions",
+      "name": "Станция противоречий",
+      "interest": 7,
+      "difficulty": 4,
+      "engagement": 7,
+      "baseline_level": null,
+      "baseline_scores": null,
+      "basis": "Новая спокойная проверка смысла через две записи и два допустимых решения. Низкий боевой нажим, остаётся навигационная/предметная нагрузка. Оценка по сценарию, без человеческого плейтеста.",
+      "assessment_type": "expert_ordinal_forecast",
+      "runtime_measured_by_this_agent": false
+    },
+    {
+      "level": 14,
+      "mission_id": "lair",
+      "name": "Логово МРГ",
+      "interest": 7,
+      "difficulty": 8,
+      "engagement": 7,
+      "baseline_level": 13,
+      "baseline_scores": {
+        "interest": 7,
+        "difficulty": 8,
+        "engagement": 7
+      },
+      "basis": "Бой и устройство прежние. После тихой станции контраст нагрузки резче; сохранена предпоследняя глава.",
+      "assessment_type": "expert_ordinal_forecast",
+      "runtime_measured_by_this_agent": false
+    },
+    {
+      "level": 15,
+      "mission_id": "mrg",
+      "name": "МРГ · последний рубеж",
+      "interest": 8,
+      "difficulty": 9,
+      "engagement": 8,
+      "baseline_level": 14,
+      "baseline_scores": {
+        "interest": 8,
+        "difficulty": 9,
+        "engagement": 8
+      },
+      "basis": "Финальная механика и баланс не менялись. Разбор поражения помогает повторной попытке, но не снижает входную моторную сложность.",
+      "assessment_type": "expert_ordinal_forecast",
+      "runtime_measured_by_this_agent": false
+    }
+  ],
+  "alternative_route": {
+    "level": 6,
+    "route": "pursuit",
+    "interest": 8,
+    "difficulty": 7,
+    "engagement": 8,
+    "qualification": "Вторая погоня получает меньшую новизну, чем первая; отдельная альтернативная точка, не обязательный шестнадцатый уровень. Не испытана этим агентом."
+  },
+  "graph_guidance": "Две панели с собственными порядками14и15 глав. Не накладывать одинаковые номера как одинаковые встречи; при сравнении использовать mission_id и стрелку12→8 для Параллакса. Не строить статистические интервалы и не усреднять порядковые оценки в проценты качества.",
+  "risks": [
+    "Опытному игроку поздний рой может показаться слишком безопасным; в отдельных моделях часть длины уходит вместе с нажимом.",
+    "Третий конвой стал ощутимо менее хрупким; потеря напряжения возможна, а без ракет третий транспорт всё ещё висит на1HP у проверенной модели.",
+    "Дополнительные обязательные карточки создают паузы; ясность результата следует сравнить с раздражением от очередной остановки.",
+    "Параллакс теперь встречается раньше с потенциально меньшей прокачкой; перенос сам по себе не сохраняет сложность боя.",
+    "После облегчённого конвоя Последняя орбита сложнее относительно соседнего эпизода.",
+    "Тихая станция перед логовом/МРГ может быть отдыхом либо прерыванием финального разгона; оценка4→8→9 — гипотеза риска.",
+    "15глав вместо14 и дополнительные карточки могут удлинить человеческое прохождение, хотя отдельные боевые модели быстрее.",
+    "Документ, эхо и бестиарий не гарантируют удержание; нужны новые люди, физический телефон и повторное возвращение."
+  ],
+  "sources": [
+    "balance-baseline.json",
+    "balance-current.json",
+    "balance-contracts.json",
+    "assets/citadel-campaign-v2.12.0.js",
+    "audit-2110/reviews/chart_spec.json"
+  ],
+  "reviewer_note": "Параллакс оставлен6/10: гипотеза7/10 не подтверждена полными прогонами. Повышение вовлечения базы3 — слабая экспертная гипотеза связности после босса, не измерение."
+}

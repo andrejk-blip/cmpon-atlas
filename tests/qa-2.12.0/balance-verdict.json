@@ -1,0 +1,377 @@
+{
+  "status": "accepted_for_tested_models",
+  "active_runs": 15,
+  "idle_controls": 2,
+  "baseline_active_defeats": 7,
+  "current_active_defeats": 0,
+  "contracts_passed": 7,
+  "first_three_swarm_waves_unchanged": true,
+  "convoys_I_II_unchanged": true,
+  "convoy_III_enemy_hp_multiplier": 0.68,
+  "repairs_exactly_once_per_completed_third_convoy": true,
+  "human_balance_optimality_established": false,
+  "comparisons": [
+    {
+      "key": "swarm:2:combat:417147:0.25:rockets:reactive",
+      "before_complete": true,
+      "after_complete": true,
+      "before_min_hp": 85.574,
+      "after_min_hp": 80.8,
+      "before_seconds": 152.55,
+      "after_seconds": 127.633,
+      "after_allies": null
+    },
+    {
+      "key": "swarm:2:combat:417147:0.55:rockets:reactive",
+      "before_complete": true,
+      "after_complete": true,
+      "before_min_hp": 19.277,
+      "after_min_hp": 80.8,
+      "before_seconds": 162.75,
+      "after_seconds": 152.917,
+      "after_allies": null
+    },
+    {
+      "key": "swarm:2:combat:819337:0.25:rockets:reactive",
+      "before_complete": true,
+      "after_complete": true,
+      "before_min_hp": 70.118,
+      "after_min_hp": 89.517,
+      "before_seconds": 160.033,
+      "after_seconds": 131.833,
+      "after_allies": null
+    },
+    {
+      "key": "swarm:2:combat:819337:0.55:rockets:reactive",
+      "before_complete": false,
+      "after_complete": true,
+      "before_min_hp": 0,
+      "after_min_hp": 69.51,
+      "before_seconds": 152.567,
+      "after_seconds": 177.217,
+      "after_allies": null
+    },
+    {
+      "key": "swarm:2:training:417147:0.55:rockets:reactive",
+      "before_complete": true,
+      "after_complete": true,
+      "before_min_hp": 100,
+      "after_min_hp": 100,
+      "before_seconds": 79.517,
+      "after_seconds": 79.517,
+      "after_allies": null
+    },
+    {
+      "key": "swarm:2:pro:819337:0.55:rockets:reactive",
+      "before_complete": false,
+      "after_complete": true,
+      "before_min_hp": 0,
+      "after_min_hp": 69.51,
+      "before_seconds": 152.567,
+      "after_seconds": 177.217,
+      "after_allies": null
+    },
+    {
+      "key": "convoy:2:combat:417147:0.4:rockets:reactive",
+      "before_complete": false,
+      "after_complete": true,
+      "before_min_hp": 55.2,
+      "after_min_hp": 80.8,
+      "before_seconds": 93.733,
+      "after_seconds": 108.4,
+      "after_allies": [
+        {
+          "name": "Архив ФТ",
+          "hp": 74,
+          "dead": false,
+          "maxHp": 100
+        },
+        {
+          "name": "Матрица связей",
+          "hp": 84,
+          "dead": false,
+          "maxHp": 100
+        },
+        {
+          "name": "Реестр решений",
+          "hp": 60,
+          "dead": false,
+          "maxHp": 100
+        }
+      ]
+    },
+    {
+      "key": "convoy:2:combat:417147:0.4:no-rockets:reactive",
+      "before_complete": false,
+      "after_complete": true,
+      "before_min_hp": 61.6,
+      "after_min_hp": 87.2,
+      "before_seconds": 94.183,
+      "after_seconds": 108.4,
+      "after_allies": [
+        {
+          "name": "Архив ФТ",
+          "hp": 76,
+          "dead": false,
+          "maxHp": 100
+        },
+        {
+          "name": "Матрица связей",
+          "hp": 84,
+          "dead": false,
+          "maxHp": 100
+        },
+        {
+          "name": "Реестр решений",
+          "hp": 1,
+          "dead": false,
+          "maxHp": 100
+        }
+      ]
+    },
+    {
+      "key": "convoy:2:combat:819337:0.4:rockets:reactive",
+      "before_complete": false,
+      "after_complete": true,
+      "before_min_hp": 55.2,
+      "after_min_hp": 80.8,
+      "before_seconds": 93.733,
+      "after_seconds": 108.4,
+      "after_allies": [
+        {
+          "name": "Архив ФТ",
+          "hp": 74,
+          "dead": false,
+          "maxHp": 100
+        },
+        {
+          "name": "Матрица связей",
+          "hp": 84,
+          "dead": false,
+          "maxHp": 100
+        },
+        {
+          "name": "Реестр решений",
+          "hp": 60,
+          "dead": false,
+          "maxHp": 100
+        }
+      ]
+    },
+    {
+      "key": "convoy:2:combat:819337:0.4:no-rockets:reactive",
+      "before_complete": false,
+      "after_complete": true,
+      "before_min_hp": 61.6,
+      "after_min_hp": 87.2,
+      "before_seconds": 94.183,
+      "after_seconds": 108.4,
+      "after_allies": [
+        {
+          "name": "Архив ФТ",
+          "hp": 76,
+          "dead": false,
+          "maxHp": 100
+        },
+        {
+          "name": "Матрица связей",
+          "hp": 84,
+          "dead": false,
+          "maxHp": 100
+        },
+        {
+          "name": "Реестр решений",
+          "hp": 1,
+          "dead": false,
+          "maxHp": 100
+        }
+      ]
+    },
+    {
+      "key": "convoy:2:combat:417147:0.55:rockets:reactive",
+      "before_complete": true,
+      "after_complete": true,
+      "before_min_hp": 61.6,
+      "after_min_hp": 80.8,
+      "before_seconds": 108.483,
+      "after_seconds": 108.383,
+      "after_allies": [
+        {
+          "name": "Архив ФТ",
+          "hp": 74,
+          "dead": false,
+          "maxHp": 100
+        },
+        {
+          "name": "Матрица связей",
+          "hp": 92,
+          "dead": false,
+          "maxHp": 100
+        },
+        {
+          "name": "Реестр решений",
+          "hp": 0,
+          "dead": true,
+          "maxHp": 100
+        }
+      ]
+    },
+    {
+      "key": "convoy:2:training:417147:0.55:rockets:reactive",
+      "before_complete": true,
+      "after_complete": true,
+      "before_min_hp": 95.6,
+      "after_min_hp": 95.6,
+      "before_seconds": 108.5,
+      "after_seconds": 108.333,
+      "after_allies": [
+        {
+          "name": "Архив ФТ",
+          "hp": 68.8,
+          "dead": false,
+          "maxHp": 100
+        },
+        {
+          "name": "Матрица связей",
+          "hp": 100,
+          "dead": false,
+          "maxHp": 100
+        },
+        {
+          "name": "Реестр решений",
+          "hp": 100,
+          "dead": false,
+          "maxHp": 100
+        }
+      ]
+    },
+    {
+      "key": "convoy:2:pro:417147:0.4:rockets:reactive",
+      "before_complete": false,
+      "after_complete": true,
+      "before_min_hp": 55.2,
+      "after_min_hp": 80.8,
+      "before_seconds": 93.733,
+      "after_seconds": 108.4,
+      "after_allies": [
+        {
+          "name": "Архив ФТ",
+          "hp": 74,
+          "dead": false,
+          "maxHp": 100
+        },
+        {
+          "name": "Матрица связей",
+          "hp": 84,
+          "dead": false,
+          "maxHp": 100
+        },
+        {
+          "name": "Реестр решений",
+          "hp": 60,
+          "dead": false,
+          "maxHp": 100
+        }
+      ]
+    },
+    {
+      "key": "convoy:0:combat:417147:0.4:rockets:reactive",
+      "before_complete": true,
+      "after_complete": true,
+      "before_min_hp": 72,
+      "after_min_hp": 72,
+      "before_seconds": 68.017,
+      "after_seconds": 68.017,
+      "after_allies": [
+        {
+          "name": "Архив ФТ",
+          "hp": 87,
+          "dead": false,
+          "maxHp": 100
+        },
+        {
+          "name": "Матрица связей",
+          "hp": 59,
+          "dead": false,
+          "maxHp": 100
+        },
+        {
+          "name": "Реестр решений",
+          "hp": 78,
+          "dead": false,
+          "maxHp": 100
+        }
+      ]
+    },
+    {
+      "key": "convoy:1:combat:417147:0.4:rockets:reactive",
+      "before_complete": true,
+      "after_complete": true,
+      "before_min_hp": 87.2,
+      "after_min_hp": 87.2,
+      "before_seconds": 86.183,
+      "after_seconds": 86.183,
+      "after_allies": [
+        {
+          "name": "Архив ФТ",
+          "hp": 58,
+          "dead": false,
+          "maxHp": 100
+        },
+        {
+          "name": "Матрица связей",
+          "hp": 54,
+          "dead": false,
+          "maxHp": 100
+        },
+        {
+          "name": "Реестр решений",
+          "hp": 8,
+          "dead": false,
+          "maxHp": 100
+        }
+      ]
+    },
+    {
+      "key": "swarm:2:combat:417147:0.55:rockets:idle",
+      "before_complete": false,
+      "after_complete": false,
+      "before_min_hp": 0,
+      "after_min_hp": 0,
+      "before_seconds": 15.067,
+      "after_seconds": 15.067,
+      "after_allies": null
+    },
+    {
+      "key": "convoy:2:combat:417147:0.4:rockets:idle",
+      "before_complete": false,
+      "after_complete": false,
+      "before_min_hp": 0,
+      "after_min_hp": 0,
+      "before_seconds": 14.15,
+      "after_seconds": 14.15,
+      "after_allies": [
+        {
+          "name": "Архив ФТ",
+          "hp": 100,
+          "dead": false,
+          "maxHp": 100
+        },
+        {
+          "name": "Матрица связей",
+          "hp": 0,
+          "dead": true,
+          "maxHp": 100
+        },
+        {
+          "name": "Реестр решений",
+          "hp": 100,
+          "dead": false,
+          "maxHp": 100
+        }
+      ]
+    }
+  ],
+  "contracts_failed": 0,
+  "supply_boundary_issue_resolved": true
+}

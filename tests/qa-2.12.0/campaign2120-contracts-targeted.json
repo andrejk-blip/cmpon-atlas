@@ -1,0 +1,19 @@
+{
+  "pass": true,
+  "passed": 1,
+  "failed": 0,
+  "rows": [
+    {
+      "name": "bestiary-actual-encounter-and-readonly-render",
+      "pass": true,
+      "species": [
+        "medusa"
+      ],
+      "readOnly": true
+    }
+  ],
+  "failures": [],
+  "entrySha256": "f3cad121d848a3c58423099dd6701ecabe18292fd263538aced005ca52ff1945",
+  "moduleSha256": "559eb725b8c7cc7ea8b2dca8a61402eb60b3024e3c682f6fc8ac8953e920e833",
+  "method": "Node VM boundary contracts plus snapshots earned by a fresh full campaign. Not physical-phone or human-play evidence."
+}

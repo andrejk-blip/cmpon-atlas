@@ -1,0 +1,61 @@
+{
+  "method": "Save/reload contracts on reached encounter states; explicitly labelled synthetic boundary fixture for destroyed ally. No game source edits.",
+  "pass": true,
+  "rows": [
+    {
+      "name": "swarm-new-late-wave-repair-survives-save",
+      "pass": true,
+      "wave": 4,
+      "continuedSeconds": 1,
+      "hp": 100,
+      "repairFlags": [
+        3
+      ]
+    },
+    {
+      "name": "swarm-synthetic-existing-large-ammo-reserve-not-reduced-by-reward",
+      "pass": true,
+      "method": "Synthetic supply-boundary fixture",
+      "beforeMissiles": 20,
+      "afterMissiles": 20
+    },
+    {
+      "name": "convoy-save-before-midpoint-identical-one-repair",
+      "pass": true,
+      "distance": 0.5135293209876829,
+      "repairEvents": 1,
+      "allies": [
+        100,
+        92,
+        100
+      ]
+    },
+    {
+      "name": "convoy-repeat-load-after-midpoint-does-not-heal-again",
+      "pass": true,
+      "reloads": 5,
+      "repairEvents": 1
+    },
+    {
+      "name": "convoy-synthetic-dead-ally-is-not-revived-by-repair",
+      "pass": true,
+      "method": "Synthetic boundary fixture, not a campaign run",
+      "deadUnchanged": true,
+      "survivorHp": 80,
+      "playerHp": 75
+    },
+    {
+      "name": "legacy-2110-swarm-keeps-rules-and-resources",
+      "pass": true,
+      "campaignUpgrade": false,
+      "continuedSeconds": 2
+    },
+    {
+      "name": "legacy-2110-convoy-keeps-rules-and-resources",
+      "pass": true,
+      "campaignUpgrade": false,
+      "continuedSeconds": 2
+    }
+  ],
+  "failures": []
+}
