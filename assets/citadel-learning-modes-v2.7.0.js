@@ -66,9 +66,10 @@
  if(old.unpack)cupUnpack=function(snapshot,...rest){return migrate(old.unpack.call(this,snapshot,...rest),snapshot?.engine);};
  p.checkpoint=function(){return{...old.checkpoint.apply(this,arguments),educationMode:getMode(this),educationLegacyCases:!!this.educationLegacyCases,...(usesQuiz(this)?{quiz270:clone(state(this))}:{})};};
  p.beginStage=function(){const result=old.beginStage.apply(this,arguments);if(usesQuiz(this)&&this.stageStart)this.stageStart.learning270=clone(state(this));return result;};
- function count(e){return usesQuiz(e)?Object.keys(state(e).answers).length:citadelResolvedCases(e).length;}
- function localRecord(e){if(!usesQuiz(e))return;const mode=getMode(e),score=Math.floor(e.score);if(!Number.isFinite(score)||score<=(histories[mode]||0))return;histories[mode]=score;write(RECORDS,histories);}
+ function count(e){return(usesQuiz(e)?Object.keys(state(e).answers).length:citadelResolvedCases(e).length)+Object.keys(e?.campaign2120?.answers||{}).length;}
+ function localRecord(e){if(!usesQuiz(e)||e.campaign2120?.practice)return;const mode=getMode(e),score=Math.floor(e.score);if(!Number.isFinite(score)||score<=(histories[mode]||0))return;histories[mode]=score;write(RECORDS,histories);}
  function saveLocal(e,force=false){if(!usesQuiz(e)||typeof ARCADE==='undefined'||ARCADE.engine!==e||!storage()||e.status==='menu')return false;
+  if(e.campaign2120?.practice)return false;
   const key=[e.status,e.phase,e.stage,e.board?.completed.length,e.lesson?.caseIndex,count(e)].join('|'),mark=saveMarks.get(e);
   if(!force&&mark?.key===key&&Math.abs((e.elapsed||0)-mark.elapsed)<5)return false;
   const saved={schema:1,mode:getMode(e),snapshot:cupPack(e)};const ok=write(SAVE+saved.mode,saved);if(ok)saveMarks.set(e,{key,elapsed:e.elapsed||0});return ok;

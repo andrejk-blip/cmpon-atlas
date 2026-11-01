@@ -28,14 +28,15 @@
     Object.freeze({ name: 'Последняя редакция', packet: 'Подтверждённая версия', seconds: 58, calm: 46, speed: 124, surge: 35, period: 13, radius: 14, gates: 4, gap: 490, halfX: 12, halfY: 12, wave: 14 }),
   ]);
   const stageOf = e => STAGES[e.pursuit.chapter];
-  const packetSeconds = (e, i) => e.assist ? STAGES[i].calm : STAGES[i].seconds;
+  const branch=e=>!!e.campaign2120?.branchActive;
+  const packetSeconds = (e, i) => branch(e)?(e.assist?[20,24,28]:[22,26,32])[i]:e.assist ? STAGES[i].calm : STAGES[i].seconds;
   const linkRadius = e => stageOf(e).radius + (e.assist ? 4 : 0);
   const granting = new WeakSet();
   const loaded = e => !!e && e.stage === 1 && !e.finale && e.pursuit?.version === VERSION;
   const active = e => loaded(e) && e.phase === 'pursuit' && !e.crash;
   const distance = (a, b) => V3.len(V3.sub(a, b));
-  const count = e => e.plan[1].filter(id => e.rescued.includes(id)).length;
-  const casesDone = e => [2, 3].every(n => e.decisions.some(d => d.stage === 1 && d.caseIndex === n));
+  const count = e => branch(e)?e.campaign2120.branchPackets||0:e.plan[1].filter(id => e.rescued.includes(id)).length;
+  const casesDone = e => branch(e)||[2, 3].every(n => e.decisions.some(d => d.stage === 1 && d.caseIndex === n));
   const comic = (e, text, kind, pos) => e.emit('comic', { text, kind, anchor: pos.slice() });
   const smooth = n => { const t = arcadeClamp(n, 0, 1); return t * t * (3 - 2 * t); };
   const finite = (n, fallback = 0) => Number.isFinite(n) ? n : fallback;
@@ -279,12 +280,12 @@
     s.gates=s.gates.slice(-RULES.maxGates);
   }
   function initialize(e, migrating = false) {
-    const previous=e.pursuit,rescued=count(e),seconds=e.assist?RULES.calmSeconds:RULES.seconds;
+    const previous=e.pursuit,rescued=count(e),seconds=branch(e)?[0,1,2].reduce((n,i)=>n+packetSeconds(e,i),0):e.assist?RULES.calmSeconds:RULES.seconds;
     let fraction=rescued/3;
     if(migrating&&previous?.version==='1.9.0')fraction=Math.max(fraction,arcadeClamp(finite(previous.progress)/100,0,1));
     if(migrating&&previous?.version==='1.8.0')fraction=Math.max(fraction,(rescued+Math.max(0,...previous.carriers.filter(c=>!e.rescued.includes(c.reqId)).map(c=>Math.min(.99,finite(c.transfer)/Math.max(.1,finite(c.transferTime,3))))))/3);
     const origin=e.player.pos.slice(),leaderId=++e.entityId,chapter=Math.min(2,rescued);
-    const packets=STAGES.map((x,i)=>arcadeClamp(fraction*3-i,0,1)*(e.assist?x.calm:x.seconds));
+    const packets=STAGES.map((x,i)=>arcadeClamp(fraction*3-i,0,1)*packetSeconds(e,i));
     e.pursuit={version:VERSION,rulesRevision:RULES_REVISION,clock:0,state:'chase',migrated:!!migrating,origin,returnStation:previous?.returnStation?.slice()||e.station.pos.slice(),
       speed:(STAGES[chapter].speed)*(e.assist?.9:1),travel:0,leadTravel:84,leadSpeed:82,burst:0,
       routePhase:arcadeSeed((e.seed+91047)>>>0)()*Math.PI*2,requiredSeconds:seconds,packets,uploaded:0,progress:0,
@@ -298,7 +299,7 @@
       leader:{id:leaderId,name:'ФЗ',pos:V3.add(origin,[0,0,-84]),vel:[0,0,-82],color:'#ffcc88',r:5.6,pursuitCarrier:true,profile:'lead',open:true,delivered:false},
       carriers:e.plan[1].map((reqId,index)=>({id:++e.entityId,index,reqId,name:STAGES[index].packet,profile:'radio',
         pos:V3.add(origin,[0,0,-84]),vel:[0,0,-82],open:true,hp:0,maxHp:0,transfer:0,transferTime:1,escaped:false,
-        delivered:e.rescued.includes(reqId),dead:e.rescued.includes(reqId)}))};
+        delivered:!branch(e)&&e.rescued.includes(reqId),dead:!branch(e)&&e.rescued.includes(reqId)}))};
     e.phase='pursuit';e.location='ФЗ уходит со связи';e.wave=0;e.waveSpawned=0;e.waveClock=0;e.spawnClock=999;
     e.enemies=[];e.hostile=[];e.bullets=[];e.asteroids=[];e.particles=[];e.trails=[];e.explosions=[];e.boss=null;
     e.selectedTarget=null;e.navMode='objective';e.autopilot=false;e.detour=null;e.navWatch=null;e.hullCache=null;e.warning='';
@@ -334,6 +335,7 @@
       (!carrier || !carrier.delivered) && linkState(e).connected;
   }
   function queueReviews(e) {
+    if(branch(e))return;
     const current = e.status === 'lesson' ? e.lesson?.caseIndex : null;
     const done = new Set(e.decisions.filter(d => d.stage === 1).map(d => d.caseIndex)), seen = new Set();
     e.lessonQueue = e.lessonQueue.filter(l => {
@@ -346,6 +348,7 @@
     }
   }
   function review(e) {
+    if(branch(e)){CITADEL_CAMPAIGN.completeBranch(e);return;}
     const s = e.pursuit;
     if (s.state !== 'review') {
       s.state = 'review'; s.completedAt = s.clock; s.progress = 100; s.uploaded = s.requiredSeconds;
@@ -370,6 +373,7 @@
     e.emit('phase', 'dock');
   }
   function acquire(e, c) {
+    if(branch(e)){if(!c.delivered){c.delivered=c.dead=true;c.transfer=1;e.campaign2120.branchPackets=(e.campaign2120.branchPackets||0)+1;}return;}
     if (c.delivered || e.rescued.includes(c.reqId)) return;
     const item = e.pickups.find(p => p.type === 'requirement' && p.reqId === c.reqId);
     if (!item) return;
@@ -853,7 +857,7 @@
       return e;
     };
   }
-  globalThis.CITADEL_PURSUIT = Object.freeze({ version: VERSION, active, flight: active, count, linkEligible, carrierMeshes, hudBounds,
+  globalThis.CITADEL_PURSUIT = Object.freeze({ version: VERSION, startBranch:initialize, active, flight: active, count, linkEligible, carrierMeshes, hudBounds,
     rules: RULES, rulesRevision:RULES_REVISION, warpKinds:WARP_KINDS, warpNames:WARP_NAMES, stages: STAGES, channel, gateOpening, gateParts, gateHit, warpHit, warpParts, poseWarp, warpEntities:e=>e.pursuit?.warpEntities||[], navigationPoint,
     carriers: e => loaded(e) ? e.pursuit.carriers.map(c => ({ id: c.id, reqId: c.reqId, profile: c.profile,
       pos: c.pos.slice(), shield: 0, open: true, escaped: false, delivered: c.delivered,

@@ -36,6 +36,12 @@
   });
   function chapter(e) {
     if (!e) return chapters[0];
+    const campaign=globalThis.CITADEL_CAMPAIGN;
+    if(campaign?.active(e)){
+      const id=campaign.mission(e),map={orbit1:0,base1:1,convoy1:2,pursuit:3,base2:4,route:5,swarm:6,base3:7,convoy3:8,orbit4:9,base4:10,lair:12,mrg:13};
+      const context=id==='parallax'?'Рой рассеян. Параллакс перекрыл путь к палубе интеграций: четыре маяка и центральный кристалл.':id==='contradictions'?'Две службы используют одно слово в разных смыслах. Сопоставь записи и согласуй определение.':id==='route'&&e.campaign2120.route==='pursuit'?'Ты выбрал уточнение по связи. Получи три пакета и передай их смежникам.':chapters[map[id]??0].context;
+      return {level:campaign.number(e),title:campaign.title(id),context};
+    }
     const f = e.finale;
     if (f) return chapters[['mrg', 'upload', 'victory'].includes(f.phase) ? 13 : ['maze', 'landing'].includes(f.phase) ? 12 : 11];
     const stage = Math.max(0, Math.min(3, Number(e.stage) || 0));

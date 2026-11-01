@@ -8,7 +8,7 @@
   const VERSION = '1.9.3', BUILD = '193r2', LOG_KEY = 'cmpon.citadel.diagnostics.v1';
   const RECOVERY_KEY = 'cmpon.citadel.recovery.v1', LIMIT = 64, GAP = 4000;
   const active = new Set(['playing', 'boarding', 'docking', 'lesson', 'crashing']);
-  const statuses = new Set(['menu','briefing','playing','boarding','docking','lesson','crashing','paused','remark','finalcheck','stageclear','escortbrief','escortclear','finalebrief','won','lost']);
+  const statuses = new Set(['menu','briefing','playing','boarding','docking','lesson','crashing','paused','remark','finalcheck','stageclear','escortbrief','escortclear','finalebrief','won','lost','campaigncard','campaignsummary','campaignsource','campaignroute','campaignpractice']);
   const phases = new Set(['battle','collect','orientation','retrieve','brief','debrief','boarding','finale','dock','escort','pursuit','swarm','boss','breach','landing','maze','mrg','upload','victory']);
   const events = [], faults = [], canvases = new WeakSet();
   let pending = null, epoch = 0, busy = false, stopped = false, contextLost = false;
@@ -133,6 +133,7 @@
     stage = 'scene'; const items = spaceScene(e,time,ARCADE.fx);
     stage = 'renderer'; ARCADE.renderer.render(items,cam);
     stage = 'hud'; const c=ARCADE.ctx,w=ARCADE.hud.width,h=ARCADE.hud.height;
+    if(e.campaign2120?.modal?.type==='bestiary'){c.clearRect(0,0,w,h);return;}
     // A throwing Canvas painter must not leave save()/clip()/transform state
     // on the context used by a later frame. The native frame boundary resets it.
     if (e.finale && e.status!=='crashing' && !(e.status==='paused'&&e.resumeStatus==='crashing')) drawFinaleHUD(c,e,cam,w,h);

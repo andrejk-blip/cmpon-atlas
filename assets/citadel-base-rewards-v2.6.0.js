@@ -257,7 +257,7 @@
     };
     if(name==='hud')drawBoardHUD=wrapped;else if(name==='mobile')drawMobileGameHUD=wrapped;else drawFinaleHUD=wrapped;
   }
-  globalThis.CITADEL_BASE_REWARDS=Object.freeze({version:VERSION,definitions,
+  globalThis.CITADEL_BASE_REWARDS=Object.freeze({version:VERSION,definitions,ensure,
     status(e){const s=e?.board?.armory260,k=e?.upgrades?.baseKit260;return {active:active(e),modern:modern(e),
       equipment:k?JSON.parse(JSON.stringify(k)):null,pickups:(s?.pickups||[]).map(x=>({...x,pos:x.pos.slice()})),
       pressure:e?.assist?1:2.4+tier(e)*.15,shots:s?.shotsFired||0,events:(s?.events||[]).map(x=>({...x}))};}});

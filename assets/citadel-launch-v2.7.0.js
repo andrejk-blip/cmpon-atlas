@@ -77,7 +77,7 @@
     readLocal();
     function saveLocal() {
       const e = ARCADE.engine;
-      if (!local || !e || e.status === 'menu') return false;
+      if (!local || !e || e.status === 'menu' || e.campaign2120?.practice) return false;
       try {
         const snapshot = cupPack(e);
         if (!valid(snapshot)) return false;
