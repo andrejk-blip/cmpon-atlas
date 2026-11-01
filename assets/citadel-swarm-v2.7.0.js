@@ -42,6 +42,8 @@
   // 2.10 softens overlapping attacks while preserving all six large waves.
   // Existing tactical sorties adopt this once; in-flight shots keep their data.
   const BALANCE_2100 = Object.freeze({cadence:1.18,shooters:4,hostile:64,speed:.94,damage:.92,divers:5,diveEvery:1.08,diveTell:.45,shotGap:1.15,homing:.8,pickupReach:2.5});
+  const BALANCE_2120 = Object.freeze({...BALANCE_2100,cadence:1.52,shooters:3,hostile:48,speed:.86,damage:.72,divers:3,diveEvery:1.25,diveTell:.75,shotGap:1.6,homing:.55,pickupReach:3});
+  const balance=e=>e.campaign2120?.schema===1&&waveIndex(e)>=3?BALANCE_2120:BALANCE_2100;
   const TACTIC_TIPS=Object.freeze([
     'Перехватчики режут курс. Стреляй и меняй полосу.',
     'Бомбардировщики заходят по дуге. Сбей их до следующего веера.',
@@ -133,6 +135,7 @@
       ({ index, id: null, paid: index < credit, dead: index < credit, credited: index < credit }));
     s.transfer[s.packet] = credit; s.cleared[s.packet] = credit;
     if(modern(e)) {s.waveKills=credit;s.droppedThisWave=0;s.fireClock=e.assist?4.6:classic(e)?3.4:0;s.diveClock=e.assist?5.8:classic(e)?4.5:1.2;}
+    if(e.campaign2120?.schema===1&&waveIndex(e)>=3&&!credit){s.repairedWaves=s.repairedWaves||[];if(!s.repairedWaves.includes(waveIndex(e))){s.repairedWaves.push(waveIndex(e));e.player.hp=Math.min(100,e.player.hp+14);e.player.missiles=Math.max(e.player.missiles,Math.min(16,e.player.missiles+2));}}
     if(challenge(e)){s.squads=waveDef(e).groups;s.squadSerial=0;s.patternCounts=s.patternCounts||{};s.peakHostile=s.peakHostile||0;}
     e.enemies = []; e.bullets = []; e.hostile = []; e.selectedTarget = null; e.lock = null;
     for (let i = credit; i < count; i++) spawn(e, i);
@@ -254,25 +257,25 @@
     const s=e.swarm,p=e.player,n=waveIndex(e);
     // Muzzle separation and finite homing give time to react to the projectile
     // itself. No hidden region damage or advance targeting markers are used.
-    const soft=balanced(e),cap=soft?BALANCE_2100.hostile:LIMITS.hostile;
-    if(e.hostile.length>=cap||x.pos[1]<p.pos[1]+30||soft&&s.time-(x.lastShot??-100)<BALANCE_2100.shotGap)return;
+    const soft=balanced(e),cap=soft?balance(e).hostile:LIMITS.hostile;
+    if(e.hostile.length>=cap||x.pos[1]<p.pos[1]+30||soft&&s.time-(x.lastShot??-100)<balance(e).shotGap)return;
     const tactical=tactics(e),lead=x.role==='interceptor'?(tactical?.42:.25):0,target=p.pos[0]+clamp((s.playerVelocity?.[0]||0)*lead,-12,12);
     const dx=clamp(target-x.pos[0],-65,65),dy=Math.min(-28,p.pos[1]-x.pos[1]),angle=Math.atan2(dx,-dy);
-    const torpedo=x.role==='torpedo',speed=(torpedo?26+n:35+n*(tactical?1.9:1.4))*(soft?BALANCE_2100.speed:1);
+    const torpedo=x.role==='torpedo',speed=(torpedo?26+n:35+n*(tactical?1.9:1.4))*(soft?balance(e).speed:1);
     const angles=x.role==='commander'?[-.32,-.16,0,.16,.32]:x.role==='bomber'?(tactical?[-.34,0,.34]:[-.24,0,.24]):x.role==='shield'?[-.105,.105]:tactical&&torpedo&&n>3?[-.15,.15]:[0];
     const pattern=torpedo?'torpedo':x.role==='commander'?'crown':x.role==='bomber'?'fan':x.role==='shield'?'pair':x.role==='interceptor'?'lead':'aimed';
     for(const offset of angles){
       if(e.hostile.length>=cap)break;const a=angle+offset;
       e.hostile.push({pos:[x.pos[0],x.pos[1]-4,0],vel:[Math.sin(a)*speed,-Math.cos(a)*speed,0],
-        life:6.5,r:torpedo?1.35:.8,damage:(torpedo?22:14+n*1.4)*(soft?BALANCE_2100.damage:1),type:torpedo?'swarm-torpedo':'swarm-bolt',
-        color:torpedo?'#ee897c':'#ffb765',owner:x.id,pattern,age:0,homing:torpedo?(soft?BALANCE_2100.homing:tactical?1.05:.75):0,speed});
+        life:6.5,r:torpedo?1.35:.8,damage:(torpedo?22:14+n*1.4)*(soft?balance(e).damage:1),type:torpedo?'swarm-torpedo':'swarm-bolt',
+        color:torpedo?'#ee897c':'#ffb765',owner:x.id,pattern,age:0,homing:torpedo?(soft?balance(e).homing:tactical?1.05:.75):0,speed});
     }
     if(tactical){x.lastShot=s.time;x.attackSerial++;x.thruster=.18;}
     s.patternCounts[pattern]=(s.patternCounts[pattern]||0)+1;x.cueAim=null;x.fireCue=x.attackCue=0;e.emit('shot',{swarmEnemy:true});
   }
   function modernDivers(e){
     const s=e.swarm,def=waveDef(e),available=living(e).filter(x=>x.mode==='formation'),busy=living(e).filter(x=>['tell','dive'].includes(x.mode)).length;
-    const max=challenge(e)?Math.min(def.divers,balanced(e)?BALANCE_2100.divers:6):e.assist?2:3,count=Math.min(available.length,max-busy,e.assist?Math.max(1,def.divers-1):def.divers);
+    const max=challenge(e)?Math.min(def.divers,balanced(e)?balance(e).divers:6):e.assist?2:3,count=Math.min(available.length,max-busy,e.assist?Math.max(1,def.divers-1):def.divers);
     if(count<=0)return;
     // Alternate opposite wings. The left/right staging is observable, and the
     // target position freezes when each highlighted ship commits to its dive.
@@ -303,7 +306,7 @@
     if(!modern(e))return;const s=e.swarm,p=e.player;
     for(const item of s.pickups){
       const old=item.pos.slice();item.age+=dt;item.life-=dt;item.pos[1]-=8.5*dt;
-      if(flightSegment(V3.sub(old,oldPlayer),V3.sub(item.pos,p.pos),[0,0,0],item.r+(balanced(e)?BALANCE_2100.pickupReach:1.65))!==null){
+      if(flightSegment(V3.sub(old,oldPlayer),V3.sub(item.pos,p.pos),[0,0,0],item.r+(balanced(e)?balance(e).pickupReach:1.65))!==null){
         item.dead=true;s.dropsCollected[item.type]++;
         const text=item.type==='repair'?'Щит +'+(e.assist?20:14):item.type==='missiles'?'Ракеты +2':'Усиление огня · 7 секунд';
         if(item.type==='repair')p.hp=Math.min(100,p.hp+(e.assist?20:14));
@@ -333,7 +336,7 @@
       if (t >= 1) { x.mode = 'formation'; x.modeTime = 0; }
     } else if (x.mode === 'formation' || x.mode === 'tell') {
       x.pos = home;
-      if (x.mode === 'tell' && x.modeTime >= (e.assist ? (modern(e)?1.45:1.35) : classic(e)?1.05:balanced(e)?BALANCE_2100.diveTell:0)) {
+      if (x.mode === 'tell' && x.modeTime >= (e.assist ? (modern(e)?1.45:1.35) : classic(e)?1.05:balanced(e)?balance(e).diveTell:0)) {
         x.mode = 'dive'; x.modeTime = 0; x.route.from = x.pos.slice();
         x.route.targetX = clamp(e.player.pos[0] + x.route.side * (modern(e)?9:5), -44, 44);
       }
@@ -405,11 +408,11 @@
     } else {
       if (s.phase === 'battle' || !e.assist && !classic(e) && !balanced(e) && s.phase === 'entry') {
         s.diveClock -= dt; s.fireClock -= dt;
-        if (s.diveClock <= 0) { chooseDivers(e); s.diveClock = modern(e)?(e.assist?waveDef(e).diveEvery+1.4:challenge(e)||classic(e)?waveDef(e).diveEvery:waveDef(e).diveEvery*.65):e.assist ? 5.5 : 4.4 - s.packet * .25; if(balanced(e))s.diveClock*=BALANCE_2100.diveEvery; }
+        if (s.diveClock <= 0) { chooseDivers(e); s.diveClock = modern(e)?(e.assist?waveDef(e).diveEvery+1.4:challenge(e)||classic(e)?waveDef(e).diveEvery:waveDef(e).diveEvery*.65):e.assist ? 5.5 : 4.4 - s.packet * .25; if(balanced(e))s.diveClock*=balance(e).diveEvery; }
         if (s.fireClock <= 0) {
           const ready = living(e).filter(x => (x.mode === 'formation'||!e.assist&&!classic(e)&&x.mode==='enter') && !x.fireCue);
           if(modern(e)){
-            const def=waveDef(e),many=challenge(e)?Math.min(def.shooters,balanced(e)?BALANCE_2100.shooters:5):!e.assist&&['pair','mixed'].includes(def.volley)?2:1;
+            const def=waveDef(e),many=challenge(e)?Math.min(def.shooters,balanced(e)?balance(e).shooters:5):!e.assist&&['pair','mixed'].includes(def.volley)?2:1;
             if(challenge(e)){
               // Rotate real squadrons, rather than letting all 64 fire in the
               // same frame. Depleted groups hand their turn to the next group.
@@ -422,7 +425,7 @@
             }
             s.fireSerial++;s.fireClock=e.assist?def.fire+.85:challenge(e)||classic(e)?def.fire:def.fire/3;
             if(tactics(e))s.fireClock*=1-waveIndex(e)*.035;
-            if(balanced(e))s.fireClock*=BALANCE_2100.cadence;
+            if(balanced(e))s.fireClock*=balance(e).cadence;
           }else{
             if (ready.length) { ready[s.fireSerial++ % ready.length].fireCue = e.assist ? .95 : .7; }
             s.fireClock = e.assist ? 2.5 - s.packet * .15 : 1.75 - s.packet * .12;
@@ -806,7 +809,7 @@
   }
   // Older diagnostics may still ask about the retired communication window or
   // hazard rectangles. Keep those query names harmless, but expose real waves.
-  globalThis.CITADEL_SWARM = Object.freeze({ version: VERSION, tacticsVersion:'2.8.0',balanceVersion:'2.10.0',balance:BALANCE_2100,balanced,active, completed, modern, challenge, tactics,waveIndex, waveTotal, waveDefinition:waveDef, waves:CHALLENGE,trainingWaves:WAVES,limits:LIMITS,
+  globalThis.CITADEL_SWARM = Object.freeze({ version: VERSION, tacticsVersion:'2.8.0',balanceVersion:'2.10.0',balance:BALANCE_2100,lateBalance:BALANCE_2120,balanceFor:balance,balanced,active, completed, modern, challenge, tactics,waveIndex, waveTotal, waveDefinition:waveDef, waves:CHALLENGE,trainingWaves:WAVES,limits:LIMITS,
     insideWindow: () => false, windowAt: () => null, formationPoint, secondsNeeded: waveCount,
     arena: ARENA, formations: FORMS, liveRegions: () => [], regionContains: () => false,
     regionPoint: (a, u, v, z = 0) => [a.u[0] * u + a.v[0] * v, a.u[1] * u + a.v[1] * v, z],

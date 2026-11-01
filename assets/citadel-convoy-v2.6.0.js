@@ -41,6 +41,7 @@
    {at:70,name:'Глушение и удар',kind:'jam',roles:['jammer','bomber','interceptor','raider']},
    {at:85,name:'Последний рубеж',kind:'command',roles:['commander','shield','bomber','interceptor','raider']}]}
  ];
+ const softened=e=>e.stage===2&&e.campaign2120?.schema===1;
  const stats=()=>({spawned:0,volleys:0,torpedoes:0,intercepts:0,shieldHits:0,disruptions:0,fieldsPassed:0,fieldsHit:0,peakEnemies:0,peakHostile:0,forwardRecoveries:0});
  const allies=e=>e.escort.allies.filter(a=>!a.dead),members=(e,g)=>e.enemies.filter(x=>!x.dead&&x.squad===g.id&&!x.torpedo);
  function log(e,kind,data={}){const o=e.escort.ops240;o.events.push({at:+e.escort.time.toFixed(2),kind,...data});if(o.events.length>64)o.events.shift();}
@@ -62,7 +63,7 @@
  function targetAlly(e,g){let a=e.escort.allies[g.target];if(!a||a.dead){a=allies(e)[0];if(a)g.target=e.escort.allies.indexOf(a);}return a;}
  function spawnGroup(e,plan){const c=e.escort,o=c.ops240,id=++o.serial,available=allies(e),a=available[id%available.length];if(!a)return;
   const g={id,kind:plan.kind,name:plan.name,target:c.allies.indexOf(a),state:e.assist?'assemble':'attack',time:0,cycle:e.assist?0:1,disrupt:0,flank:id%2?1:-1,originAt:c.time};o.groups.push(g);
-  plan.roles.forEach((role,i)=>{const d=roles[role],side=plan.kind==='crossfire'?(i%2?1:-1):g.flank;e.enemies.push({id:e.entityId++,type:role==='scout'||role==='interceptor'?'scout':'heavy',role,convoy240:true,squad:id,slot:i,ally:g.target,name:d.name,pos:[side*(28+i*2),10-i*5,-145-i*5],vel:[0,0,0],hp:d.hp,maxHp:d.hp,r:d.r,color:d.color,dead:false,warp:e.assist?.8:0,age:0,hit:0,phase:i*1.7,channel:false,shot:0,order:e.assist?'assemble':'attack',attackCount:-1,burst:0,shielded:false});});
+  plan.roles.forEach((role,i)=>{const d=roles[role],side=plan.kind==='crossfire'?(i%2?1:-1):g.flank;e.enemies.push({id:e.entityId++,type:role==='scout'||role==='interceptor'?'scout':'heavy',role,convoy240:true,squad:id,slot:i,ally:g.target,name:d.name,pos:[side*(28+i*2),10-i*5,-145-i*5],vel:[0,0,0],hp:d.hp*(softened(e)?.68:1),maxHp:d.hp*(softened(e)?.68:1),r:d.r,color:d.color,dead:false,warp:e.assist?.8:0,age:0,hit:0,phase:i*1.7,channel:false,shot:0,order:e.assist?'assemble':'attack',attackCount:-1,burst:0,shielded:false});});
   o.stats.spawned+=plan.roles.length;log(e,'group',{id,kind:plan.kind,count:plan.roles.length});e.emit('warp');if(e.assist)e.say(plan.name+'. Цель противника: '+a.name+'.','alert',true);else log(e,'attack',{squad:g.id,target:g.target,cycle:g.cycle});
  }
  function transition(e,g,state){g.state=state;g.time=0;for(const x of members(e,g)){x.order=state;x.burst=0;}
@@ -138,6 +139,7 @@
  }
  proto.stepEscort=function(dt,input={}){migrate(this);if(!active(this))return old.step.call(this,dt,input);
   const c=this.escort,o=c.ops240,p=this.player,m=missions[this.stage];c.time+=dt;this.elapsed+=dt;o.cover=Math.max(0,(o.cover||0)-dt);
+  if(softened(this)&&c.distance>=.5&&!o.midpointRepair2120){o.midpointRepair2120=true;const before=c.allies.map(a=>a.hp);for(const a of c.allies)if(!a.dead)a.hp=Math.min(100,a.hp+60);p.hp=Math.min(100,p.hp+45);p.invulnerable=Math.max(2,p.invulnerable);o.cover=Math.max(o.cover,4);log(this,'midpoint-repair',{before,after:c.allies.map(a=>a.hp)});this.notify('РЕМОНТНЫЙ МАЯК','Щиты живых транспортов +60 · корабль +45');}
   for(const key of ['shotCooldown','missileCooldown','invulnerable','pulseCooldown','flipCooldown'])p[key]=Math.max(0,(p[key]||0)-dt);
   for(const key of ['captainClock','flash','shake','pulseWave'])this[key]=Math.max(0,(this[key]||0)-dt);
   // Autocourse centres the escort only; it never solves fields or acquires a firing lane.
