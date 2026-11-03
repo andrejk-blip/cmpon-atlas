@@ -335,7 +335,7 @@
     if(s.phase==='entry'&&s.waveAge<1.2||s.phase==='cleared') {
       c.font='700 '+(l.compact?17:25)+'px '+FONT;c.textAlign='center';c.fillStyle=s.phase==='cleared'?'#a7ffe0':'#d2e7ff';
       const wave=(s.waveIndex??s.packet)+1;
-      c.fillText(s.phase==='cleared'?'ВОЛНА '+wave+' · ПРОЙДЕНА':'ВОЛНА '+wave,W/2,l.cy+8,l.width);
+      if(globalThis.CITADEL_MOBILE_CLEAN2160?.mobile())CITADEL_MOBILE_CLEAN2160.sideText(c,s.phase==='cleared'?'Волна '+wave+' пройдена':'Волна '+wave,W,H,'#a7ffe0');else c.fillText(s.phase==='cleared'?'ВОЛНА '+wave+' · ПРОЙДЕНА':'ВОЛНА '+wave,W/2,l.cy+8,l.width);
     }
     c.restore();return l;
   }
@@ -344,6 +344,12 @@
     const y=l.landscape?17:l.compact?18:H-29,titleY=l.landscape?15:l.compact?51:25;
     const titleX=l.landscape?W-12:W/2,maxTitle=l.landscape?Math.max(200,W-334):W-18;
     const count=e.enemies.reduce((n,x)=>n+!x.dead,0),total=CITADEL_SWARM.secondsNeeded(e);
+    if(globalThis.CITADEL_MOBILE_CLEAN2160?.mobile()){
+      c.save();c.textAlign='left';c.textBaseline='middle';c.font='bold 11px Arial';c.fillStyle='#c4f4dd';c.shadowColor='#071424';c.shadowBlur=4;
+      c.fillText('ЩИТ '+Math.ceil(p.hp)+'%',8,16);c.font='10px Arial';c.fillStyle='#efd49e';c.fillText('РАКЕТЫ '+p.missiles,8,31);
+      c.fillStyle='#c3d9e1';c.fillText('ВОЛНА '+Math.min(s.waveTotal||3,(s.waveIndex??s.packet)+1)+'/'+(s.waveTotal||3)+' · ЦЕЛИ '+count,8,47);c.restore();return;
+    }
+
     c.save();c.textBaseline='middle';c.textAlign='left';c.font='700 '+(l.compact?11:13)+'px '+FONT;
     c.fillStyle=p.hp<30?'#ffb19a':'#b5ffe2';c.fillText('ЩИТ '+Math.ceil(p.hp)+'%',pad,y);
     c.fillStyle='#ffe1a0';c.fillText('РАКЕТЫ '+p.missiles,pad+91,y);

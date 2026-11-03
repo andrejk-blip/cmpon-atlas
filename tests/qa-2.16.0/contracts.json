@@ -1,0 +1,25 @@
+{
+  "pass": true,
+  "rows": [
+    {
+      "name": "Resonator has no deck; three solvable circuits use ordinary controls and pause/save correctly",
+      "pass": true
+    },
+    {
+      "name": "Old station save upgrades without erasing campaign answers or progress",
+      "pass": true
+    },
+    {
+      "name": "New floor plans have distinct topology, reachable objectives and gated future wings",
+      "pass": true
+    },
+    {
+      "name": "Rear reserves wait for a warning and walk through a real hatch without teleporting",
+      "pass": true
+    },
+    {
+      "name": "Production station painter is read-only and fits portrait and landscape frames",
+      "pass": true
+    }
+  ]
+}

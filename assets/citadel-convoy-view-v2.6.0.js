@@ -246,11 +246,16 @@
  function hud(c,e,cam,w,h){
   const mobile=w/h<.9||typeof isMobileLayout==='function'&&isMobileLayout(),cssW=ARCADE.canvas?.getBoundingClientRect?.().width||390,W=mobile?clamp(cssW,300,960):1280,H=h/w*W,short=H<450,pad=mobile?12:26,cq=e.escort,o=cq.ops240||cq.ops230,m=api.mission(e),top=short?6:12,bar=short?45:mobile?62:70;
   c.clearRect(0,0,w,h);c.save();c.scale(w/W,h/H);c.textBaseline='middle';c.textAlign='left';
+  if(mobile){
+   text(c,'КОНВОЙ '+Math.round(cq.distance*100)+'%',8,16,11,C.cyan,true);
+   text(c,'СОЮЗНИКИ '+cq.allies.filter(a=>!a.dead).length+'/3',8,31,10,'#e3eef4');
+  }else{
   c.fillStyle='#060e1de8';c.fillRect(pad,top,W-pad*2,bar);c.fillStyle='#78dcf0';c.fillRect(pad,top,2,bar);
   text(c,'КОНВОЙ '+(e.stage+1)+' / 3',pad+12,top+(short?13:18),mobile?11:14,C.cyan,true);
   c.textAlign='right';text(c,Math.round(cq.distance*100)+'% ПУТИ',W-pad-12,top+(short?13:18),mobile?11:14,'#e3eef4',true);c.textAlign='left';
   text(c,m.subtitle.toUpperCase(),pad+12,top+(short?31:41),mobile?10:14,'#c7d5e4');
   c.fillStyle='#1c2c40';c.fillRect(pad+12,top+bar-7,W-pad*2-24,2);c.fillStyle=C.cyan;c.fillRect(pad+12,top+bar-7,(W-pad*2-24)*cq.distance,2);
+  }
   const target=e.enemies.find(x=>!x.dead&&x.id===e.selectedTarget),aim=o.aim;
   if(target){const q=spaceProject(target.pos,cam,W,H);if(q.z>0&&q.x>18&&q.x<W-18&&q.y>top+bar+20&&q.y<H-(short?56:105)){
    const r=mobile?17:24;c.strokeStyle=aim?.locked?C.cyan:'#dfb382';c.lineWidth=1.4;
@@ -263,7 +268,7 @@
    else if(group)text(c,'ЗАХОД: '+group.name.toUpperCase(),W/2,top+bar+18,mobile?10:13,C.amber,true);
   }
   const by=H-(short?49:mobile?77:86),bw=(W-pad*2-12)/3;
-  cq.allies.forEach((ally,i)=>{const x=pad+i*(bw+6);c.fillStyle='#060e1de8';c.fillRect(x,by,bw,short?28:39);c.textAlign='left';text(c,ally.name,x+6,by+(short?8:12),mobile?9:11,ally.dead?'#b68493':'#b9cadb');c.textAlign='right';text(c,ally.dead?'ПОТЕРЯН':Math.ceil(ally.hp)+'%',x+bw-6,by+(short?18:27),mobile?9:11,ally.hp<40?'#ffae88':C.cyan,true);c.fillStyle=ally.hp<40?'#e79078':C.cyan;c.fillRect(x+6,by+(short?25:35),(bw-12)*clamp(ally.hp/100),2);});
+  cq.allies.forEach((ally,i)=>{const x=pad+i*(bw+6);if(!mobile){c.fillStyle='#060e1de8';c.fillRect(x,by,bw,short?28:39);}c.textAlign='left';text(c,ally.name,x+6,by+(short?8:12),mobile?9:11,ally.dead?'#b68493':'#b9cadb');c.textAlign='right';text(c,ally.dead?'ПОТЕРЯН':Math.ceil(ally.hp)+'%',x+bw-6,by+(short?18:27),mobile?9:11,ally.hp<40?'#ffae88':C.cyan,true);c.fillStyle=ally.hp<40?'#e79078':C.cyan;c.fillRect(x+6,by+(short?25:35),(bw-12)*clamp(ally.hp/100),2);});
   c.textAlign='left';text(c,'ЩИТ '+Math.ceil(e.player.hp)+' · РАКЕТЫ '+e.player.missiles+' · '+(mobile?'ПРИКРЫТИЕ ':'E ')+(e.player.pulseCooldown>0?Math.ceil(e.player.pulseCooldown)+'с':'ГОТОВО'),pad,H-(short?10:18),mobile?10:11,'#b7cadb');
   if(!mobile){c.textAlign='right';text(c,'WASD — МАНЁВР · TAB — ЦЕЛЬ · ЛКМ — ОГОНЬ · ПРОБЕЛ — ФОРСАЖ · ПКМ / Q — РАКЕТА',W-pad,H-18,11,'#9bb1c7');}
   c.restore();

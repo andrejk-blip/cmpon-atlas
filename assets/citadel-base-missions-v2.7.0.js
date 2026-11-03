@@ -33,7 +33,7 @@
   }
   function make(t) {
     const b=base.make(t);if(!b)return b;const d=b.definition,m=modes[t];
-    Object.assign(d,{missions270Version:VERSION,layoutId:'base270-'+t,missionTheme:m.theme,missionName:m.name});
+    Object.assign(d,{missions270Version:VERSION,layoutId:d.variant2160?'base2160-'+t:'base270-'+t,missionTheme:m.theme,missionName:d.variant2160?d.name:m.name});
     const hazards=[],systems=[];d.rooms.forEach((r,i)=>r.plan=m.plans[i]);
     if(!t){d.mission270={schema:1,tier:t,theme:m.theme,hazards,systems};return b;}
     b.crates=[];b.props=[];

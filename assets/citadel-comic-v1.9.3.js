@@ -282,6 +282,10 @@
     const cssWidth = ARCADE.canvas?.getBoundingClientRect().width || w, scale = w / cssWidth;
     const W = w / scale, H = h / scale, mobile = typeof isMobileLayout === 'function' && isMobileLayout();
     c.save(); c.scale(scale, scale);
+    if(mobile&&globalThis.CITADEL_MOBILE_CLEAN2160){
+      if(!e.toast||e.toast.until<e.elapsed)s.bounds={...CITADEL_MOBILE_CLEAN2160.sideText(c,item.text,W,H,palette[item.kind].accent),text:item.text,kind:item.kind};
+      c.restore();return;
+    }
     const box = placement(c, e, item, cam, W, H, mobile);
     if (!box) { c.restore(); return; }
     if(box.radio){

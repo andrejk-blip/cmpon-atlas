@@ -19,6 +19,7 @@
     { centers: [[0,-4],[5,-24],[-4,-44]], names: ['ДОКАЗАТЕЛЬСТВА','ИСПЫТАНИЯ','СОГЛАСОВАНИЕ'], annex: 'ОХРАНА ЯДРА' },
   ];
   function make(stage) {
+    if(globalThis.CITADEL_LEVELS2160&&[1,3].includes(stage))return CITADEL_LEVELS2160.makeBase(stage);
     const t = templates[stage]; if (!t) return null;
     const old = CITADEL_DECKS[stage], cells = new Map(), crates = [], props = [], doors = [], rooms = [], rects = [];
     function rect(x0,x1,z0,z1,zone) {

@@ -857,6 +857,13 @@
     const rect=ARCADE.canvas?.getBoundingClientRect?.(),scale=rect?.width?w/rect.width:1,W=w/scale,H=h/scale,s=e.pursuit,stage=stageOf(e);
     const connected=s.link.connected,color=connected?'#a5f6dc':s.linkJammed?'#d9b1ff':'#ffd299',width=Math.min(480,W-20),x=(W-width)/2,top=10;
     ctx.save();ctx.scale(scale,scale);ctx.textBaseline='middle';drawChannel(ctx,e,cam,W,H);
+    if(globalThis.CITADEL_MOBILE_CLEAN2160?.mobile()){
+      ctx.textAlign='left';ctx.font='bold 11px Arial';ctx.fillStyle='#d7f5e6';ctx.shadowColor='#061320';ctx.shadowBlur=4;
+      ctx.fillText('ЩИТ '+Math.ceil(e.player.hp)+'%',8,16);ctx.fillStyle=color;ctx.font='10px Arial';
+      ctx.fillText('ПАКЕТ '+(s.chapter+1)+'/3 · '+Math.floor(s.packets[s.chapter]/packetSeconds(e,s.chapter)*100)+'%',8,32);
+      ctx.fillText('ВОРОТА '+Math.min(stage.gates,s.stageGates[s.chapter])+'/'+stage.gates,8,47);ctx.shadowBlur=0;
+      if(!connected){const messages={acquiring:'Захват канала',jammed:'Помеха · сбей глушитель',obstructed:'Канал перекрыт',occluded:'Обойди астероид',recovering:'Восстановление',range:'Приблизься к ФЗ','off-course':'Следуй за ФЗ'};CITADEL_MOBILE_CLEAN2160.sideText(ctx,messages[s.link.reason]||'Приблизься к ФЗ',W,H,color);}
+    }else{
     ctx.fillStyle='#071624ef';ctx.fillRect(x,top,width,94);ctx.strokeStyle='#7aacbc66';ctx.lineWidth=1;ctx.strokeRect(x+.5,top+.5,width-1,93);
     ctx.font='bold 12px Arial';ctx.textAlign='left';ctx.fillStyle='#e7f5f4';ctx.fillText((s.chapter+1)+'/3 · '+stage.name.toUpperCase(),x+10,top+15,width-110);
     ctx.textAlign='right';ctx.font='11px Arial';ctx.fillStyle='#bcd0d8';ctx.fillText('Щит '+Math.ceil(e.player.hp)+' · '+Math.round(s.speed)+' м/с',x+width-10,top+15);
@@ -870,6 +877,7 @@
     ctx.fillText(connected?'КАНАЛ УСТАНОВЛЕН · передача '+Math.floor(s.progress)+'%':messages[s.link.reason]||'Приблизьтесь к ФЗ',x+10,top+54,width-20);
     const completed=Math.min(stage.gates,s.stageGates[s.chapter]),waiting=s.packets[s.chapter]>=packetSeconds(e,s.chapter)&&completed<stage.gates;
     ctx.fillStyle='#b7cbd7';ctx.fillText('Ворота '+completed+'/'+stage.gates+' · '+(waiting?'Завершите пролёт':s.burst>.3?'ФЗ УСКОРЯЕТСЯ':e.enemies.length?'По вам стреляют · ОГОНЬ / РАКЕТА':'Следуйте через светящиеся проёмы'),x+10,top+78,width-20);
+    }
     const q=spaceProject(s.leader.pos,cam,W,H),aim=spaceProject([e.player.pos[0],e.player.pos[1],s.leader.pos[2]],cam,W,H);
     if(aim.z>0){ctx.strokeStyle=color+'66';ctx.lineWidth=1.1;ctx.setLineDash([4,7]);ctx.beginPath();ctx.arc(aim.x,aim.y,Math.min(86,linkRadius(e)*aim.scale),0,Math.PI*2);ctx.stroke();ctx.setLineDash([]);}
     if(q.z>0){ctx.textAlign='center';ctx.font='bold 12px Arial';ctx.fillStyle='#ffe4b5';ctx.strokeStyle='#071624';ctx.lineWidth=4;

@@ -1,0 +1,30 @@
+{
+  "pass": true,
+  "method": "Staged viewpoints, production geometry and native Canvas rendering. Browser screenshots are separate.",
+  "rows": [
+    {
+      "name": "deck-1-1280.png",
+      "items": 637,
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "name": "deck-1-390.png",
+      "items": 637,
+      "width": 390,
+      "height": 580
+    },
+    {
+      "name": "deck-3-1280.png",
+      "items": 670,
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "name": "deck-3-390.png",
+      "items": 670,
+      "width": 390,
+      "height": 580
+    }
+  ]
+}

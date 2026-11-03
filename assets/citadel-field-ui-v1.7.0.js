@@ -153,6 +153,10 @@
     const cssWidth = ARCADE.canvas?.getBoundingClientRect().width || w;
     const scale = w / cssWidth, W = w / scale, H = h / scale;
     if (!(W > 80 && H > 100 && scale > 0)) return;
+    if(mobile&&globalThis.CITADEL_MOBILE_CLEAN2160){
+      if(globalThis.CITADEL_COMIC?.status(e).active||e.toast?.until>=e.elapsed)return;
+      c.save();c.scale(scale,scale);s.bounds={...CITADEL_MOBILE_CLEAN2160.sideText(c,textFor(s),W,H,'#c0f2d9'),text:textFor(s),mobile:true};c.restore();return;
+    }
     const foot = spaceProject(e.board.pos, cam, W, H);
     if (foot.z <= 0 || foot.x < 0 || foot.x > W || foot.y < 0 || foot.y > H) return;
     const margin = 8, height = mobile ? 22 : 24, fontSize = mobile ? 11 : 12;

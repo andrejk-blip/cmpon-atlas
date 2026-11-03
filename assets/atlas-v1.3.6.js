@@ -1648,7 +1648,7 @@ function updateMobileArcade(){
   const title=document.getElementById('citadel-objective-title');if(title)title.textContent=mobileFriendlyText(title.textContent).replace('Перехватите отмеченное замечание: «Огонь»','Перехватите замечание').replace('Соберите зелёный кристалл впереди','Соберите зелёный кристалл');
   const captain=document.getElementById('captain-message');if(captain)captain.textContent=mobileFriendlyText(captain.textContent);
   const detail=document.getElementById('citadel-objective-detail');if(detail)detail.textContent=mobileFriendlyText(detail.textContent);
-  ARCADE.canvas?.setAttribute('aria-label','Игровое поле. Управление вынесено за его пределы: джойстик слева, огонь и ракеты справа.');
+  ARCADE.canvas?.setAttribute('aria-label',globalThis.CITADEL_RESONATOR?.active(ARCADE.engine)?'Орбитальный резонатор. Тяните кольца к светлым меткам. A/D — вращение, W/S — выбор кольца.':'Игровое поле. Управление вынесено за его пределы: джойстик слева, огонь и ракеты справа.');
  }
 }
 function drawMobileGameHUD(c,e,cam,w,h){
@@ -1656,7 +1656,8 @@ function drawMobileGameHUD(c,e,cam,w,h){
  c.save();c.scale(scale,scale);c.textBaseline='middle';c.font='12px Arial';
  if(['menu','briefing','lesson','remark','paused','stageclear','won','lost','escortclear'].includes(e.status)){c.restore();return}
  const inside=citadelInside(e),hp=inside?(e.board.hp??p.hp):p.hp;
- c.fillStyle='#061727ce';c.fillRect(6,6,Math.min(228,W-12),30);c.fillStyle=hp<30?'#ff9d8d':'#d0fff0';c.font='bold 11px Arial';c.fillText('ЩИТ '+Math.ceil(hp)+'%',13,17);c.fillStyle='#ffe0a4';c.fillText('РАКЕТЫ '+p.missiles,94,17);c.fillStyle='#9bb9c9';c.font='10px Arial';c.fillText('ЭН '+Math.ceil(p.energy)+'%',172,17);c.fillStyle='#37596a';c.fillRect(13,28,206,2);c.fillStyle=hp<30?'#ff9d8d':'#8ee1c4';c.fillRect(13,28,206*Math.max(0,hp)/100,2);
+ c.fillStyle=hp<30?'#ff9d8d':'#d0fff0';c.font='bold 11px Arial';c.shadowColor='#061727';c.shadowBlur=4;c.fillText('ЩИТ '+Math.ceil(hp)+'%',8,16);c.fillStyle='#ffe0a4';c.font='10px Arial';c.fillText('РАКЕТЫ '+p.missiles+' · ЭН '+Math.ceil(p.energy)+'%',8,31);c.shadowBlur=0;
+
  function mark(pos,label,color,offscreen=false){
   const q=spaceProject(pos,cam,W,H),margin=20,top=48,bottom=Math.max(top,H-24);let px=q.x,py=q.y;
   const edge=q.z<=0||px<margin||px>W-margin||py<top||py>bottom;
@@ -1671,7 +1672,7 @@ function drawMobileGameHUD(c,e,cam,w,h){
   const target=e.enemies.find(x=>!x.dead&&(x.id===e.selectedTarget||x.id===e.lock))||e.boss;if(target)mark(target.pos,'ЦЕЛЬ','#ffbfad',true);
  }
  if(e.phase==='escort'&&e.escort){const escort=e.escort;c.fillStyle='#091b2bea';c.fillRect(6,39,Math.min(264,W-12),24);c.fillStyle='#caeee5';c.font='bold 11px Arial';c.fillText('КОНВОЙ '+Math.round(escort.distance*100)+'%  ·  СОЮЗНИКИ '+escort.allies.filter(a=>!a.dead).length+'/3',13,51)}
- if(e.status==='crashing'||e.status==='docking'){c.fillStyle='#061727bb';c.fillRect(0,H*.36,W,62);c.fillStyle=e.status==='crashing'?'#ffb9a6':'#caedf0';c.font='bold 20px Arial';c.textAlign='center';c.fillText(e.status==='crashing'?'АВАРИЙНАЯ ЭВАКУАЦИЯ':'ЗАХОД В ЦИТАДЕЛЬ',W/2,H*.36+31)}
+ if(e.status==='crashing'||e.status==='docking')globalThis.CITADEL_MOBILE_CLEAN2160?.sideText(c,e.status==='crashing'?'Аварийная эвакуация':'Заход в Цитадель',W,H,'#caedf0');
  c.restore();
 }
 

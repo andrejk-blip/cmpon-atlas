@@ -9,7 +9,7 @@
   const RECOVERY_KEY = 'cmpon.citadel.recovery.v1', LIMIT = 64, GAP = 4000;
   const active = new Set(['playing', 'boarding', 'docking', 'lesson', 'crashing']);
   const statuses = new Set(['menu','briefing','playing','boarding','docking','lesson','crashing','paused','remark','finalcheck','stageclear','escortbrief','escortclear','finalebrief','won','lost','campaigncard','campaignsummary','campaignsource','campaignroute','campaignpractice']);
-  const phases = new Set(['battle','collect','orientation','retrieve','brief','debrief','boarding','finale','dock','escort','pursuit','swarm','boss','breach','landing','maze','mrg','upload','victory']);
+  const phases = new Set(['battle','collect','orientation','retrieve','brief','debrief','boarding','resonance','finale','dock','escort','pursuit','swarm','boss','breach','landing','maze','mrg','upload','victory']);
   const events = [], faults = [], canvases = new WeakSet();
   let pending = null, epoch = 0, busy = false, stopped = false, contextLost = false;
   let lastFrame = performance.now(), lastUpdate = lastFrame, lastRender = lastFrame;
@@ -218,8 +218,11 @@
     // Never log action values, answers, player names or DOM text.
     if (['arcade-pause','arcade-resume','citadel-launch','citadel-lesson-next','citadel-remark-next','citadel-escort-continue','finale-launch','finale-check-next'].includes(action)) record(action);
     if (stopped && ['arcade-resume','arcade-pause'].includes(action)) { showNotice(); return true; }
-    const before=ARCADE.engine;
+    const before=ARCADE.engine, beforeStatus=before?.status;
     const result=previousAction.call(this,action,...args);
+    // Reading a briefing can take arbitrarily long. The first playable frame
+    // gets a fresh watchdog window, including custom mission start actions.
+    if(active.has(ARCADE.engine?.status)&&!active.has(beforeStatus))lastUpdate=now();
     if (before!==ARCADE.engine) { stopped=false; renderRetries=0; notice=''; restart(); }
     if (ARCADE.engine?.status!=='paused' && ['arcade-pause','arcade-resume'].includes(action)) lastUpdate=now();
     if (notice && !stopped && ARCADE.engine?.status!=='paused') {

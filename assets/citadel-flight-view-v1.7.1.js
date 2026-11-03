@@ -163,9 +163,9 @@
     const cssW = ARCADE.canvas?.getBoundingClientRect().width || w, scale = w / cssW;
     const W = w / scale, H = h / scale;
     c.save(); c.scale(scale, scale); c.textBaseline = 'middle';
-    c.fillStyle = '#061727df'; c.fillRect(6, 40, Math.min(298, W - 12), 23);
+
     c.fillStyle = '#b5ffe0'; c.font = 'bold 11px Arial'; c.textAlign = 'left';
-    c.fillText('ТРЕБОВАНИЯ ' + count(e) + '/3 · ДЛЯ ВХОДА В ЦИТАДЕЛЬ', 13, 52, W - 26);
+    c.fillText('ПАКЕТЫ ФТ ' + count(e) + '/3', 8, 49, 130);
     if (e.phase === 'dock') gateMarker(c, e, cam, W, H);
     c.restore(); nearbySupplies(c, e, cam, w, h, true);
   };

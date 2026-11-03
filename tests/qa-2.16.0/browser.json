@@ -1,0 +1,25 @@
+{
+  "pass": true,
+  "browser": "Cloud Chromium, managed Sites preview",
+  "viewports": [
+    [
+      390,
+      844
+    ],
+    [
+      844,
+      390
+    ]
+  ],
+  "checks": [
+    "New station starts after reading briefing for over 40 seconds without a watchdog pause; 15 ordinary updates, no runtime failures or recoveries.",
+    "Ring selection and rotation exercised through visible buttons; keyboard input also exercised.",
+    "Mobile pursuit objective plaque has computed display:none; screen height is 798 within 844px lab viewport.",
+    "Base and pursuit screenshots show unobstructed center and borderless side text."
+  ],
+  "limitations": [
+    "Viewport simulation, not a physical phone test.",
+    "Private lab prerequisites are synthetic.",
+    "The base screenshot predates removal of the small minimap border; the final map renderer removes it on mobile."
+  ]
+}

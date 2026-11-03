@@ -836,6 +836,7 @@
     if (!active(e) || e.status !== 'boarding' || e.board.completed.length >= 3 || e.finale) return;
     const width = ARCADE.canvas?.getBoundingClientRect?.().width || w, scale = w / width;
     const box = hudBounds(e, width, h / scale)[0], gate = clearance(e);
+    if(globalThis.CITADEL_MOBILE_CLEAN2160){c.save();c.scale(scale,scale);CITADEL_MOBILE_CLEAN2160.sideText(c,gate.ready?'Терминал '+(gate.room+1)+' готов':'Врагов: '+gate.remaining+(gate.pending?' · резерв '+gate.pending:''),width,h/scale,'#e7cf9f','objective');c.restore();return;}
     c.save(); c.scale(scale, scale); c.textAlign = 'left'; c.textBaseline = 'middle';
     c.fillStyle = '#061320dc'; c.fillRect(box.x, box.y, box.width, box.height);
     c.fillStyle = gate.ready ? '#b1f0d6' : '#ffd09b'; c.font = 'bold 11px Arial';

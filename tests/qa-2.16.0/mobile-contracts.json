@@ -1,0 +1,54 @@
+{
+  "pass": true,
+  "method": "Production HUD draw calls, edge bounds and no full-width status backgrounds; DOM layout verified separately in browser.",
+  "rows": [
+    {
+      "viewport": [
+        390,
+        580
+      ],
+      "notice": {
+        "x": 8,
+        "y": 134,
+        "width": 120.9,
+        "height": 30,
+        "lines": [
+          "Резерв выходит",
+          "через тыловой…"
+        ],
+        "viewportWidth": 390,
+        "viewportHeight": 580
+      }
+    },
+    {
+      "viewport": [
+        844,
+        286
+      ],
+      "notice": {
+        "x": 8,
+        "y": 82.94,
+        "width": 130,
+        "height": 30,
+        "lines": [
+          "Резерв выходит через",
+          "тыловой шлюз.…"
+        ],
+        "viewportWidth": 844,
+        "viewportHeight": 286
+      }
+    },
+    {
+      "kind": "base",
+      "widePanels": 0
+    },
+    {
+      "kind": "pursuit",
+      "widePanels": 0
+    },
+    {
+      "kind": "convoy",
+      "widePanels": 0
+    }
+  ]
+}
