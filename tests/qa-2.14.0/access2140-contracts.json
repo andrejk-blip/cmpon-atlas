@@ -1,0 +1,119 @@
+{
+  "pass": true,
+  "rows": [
+    {
+      "name": "three-failures-persist-through-retry-reload-and-skip",
+      "pass": true,
+      "failures": 3,
+      "skipStatus": "boarding"
+    },
+    {
+      "name": "skip-each-combat-family-without-awarding-victory-points",
+      "pass": true,
+      "result": [
+        {
+          "mission": "base1",
+          "status": "stageclear"
+        },
+        {
+          "mission": "convoy1",
+          "status": "briefing"
+        },
+        {
+          "mission": "pursuit",
+          "status": "campaignsummary"
+        },
+        {
+          "mission": "base2",
+          "status": "stageclear"
+        },
+        {
+          "mission": "route",
+          "status": "briefing"
+        },
+        {
+          "mission": "swarm",
+          "status": "campaignsummary"
+        },
+        {
+          "mission": "base3",
+          "status": "stageclear"
+        },
+        {
+          "mission": "convoy3",
+          "status": "briefing"
+        },
+        {
+          "mission": "orbit4",
+          "status": "campaignsummary"
+        },
+        {
+          "mission": "base4",
+          "status": "boarding"
+        },
+        {
+          "mission": "parallax",
+          "status": "boarding"
+        },
+        {
+          "mission": "lair",
+          "status": "boarding"
+        },
+        {
+          "mission": "mrg",
+          "status": "docking"
+        }
+      ]
+    },
+    {
+      "name": "practice-does-not-count-and-mission-counters-independent",
+      "pass": true
+    },
+    {
+      "name": "forced-encounter-pauses-and-is-shown-once",
+      "pass": true
+    },
+    {
+      "name": "document-updates-open-once-and-have-real-state",
+      "pass": true
+    },
+    {
+      "name": "shared-skills-apply-to-flight-and-ground",
+      "pass": true,
+      "flightDamage": 15.135999999999996,
+      "groundDamage": 12.400000000000006
+    },
+    {
+      "name": "tactics-progress-with-walkable-destinations-and-save",
+      "pass": true,
+      "result": [
+        {
+          "tier": 0,
+          "role": "guard"
+        },
+        {
+          "tier": 1,
+          "role": "flank"
+        },
+        {
+          "tier": 2,
+          "role": "crossfire"
+        },
+        {
+          "tier": 3,
+          "role": "crossfire"
+        },
+        {
+          "tier": 4,
+          "role": "crossfire"
+        }
+      ]
+    },
+    {
+      "name": "art-effects-bounded-distinct-and-frozen-on-pause",
+      "pass": true,
+      "exhaustItems": 20,
+      "weaponFamilies": 5
+    }
+  ]
+}

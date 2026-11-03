@@ -117,14 +117,33 @@
  p.spawnBoardWave=function(...args){if(active(this)&&state(this).station)return;return old.spawnBoardWave.apply(this,args);};
  p.boardInteract=function(...args){return active(this)&&state(this).station?stationInteract(this):old.boardInteract.apply(this,args);};
  p.answer=function(index){const watch=active(this)&&this.status==='remark'&&!this.board?.answered&&this.stage===0&&this.board?.question===0&&!state(this).echo;const q=watch?citadelRemarkCase(this,0):null,r=old.answer.apply(this,arguments);if(watch&&this.remarkFeedback)state(this).echo={correct:index===q.correct,delivered:false,answer:index,question:q.q,resolution:q.choices[q.correct],chosen:q.choices[index]};return r;};
- function retry(){const e=ARCADE.engine;if(!active(e)||!state(e).retry)return false;const snapshot=state(e).retry;const next=restore(snapshot);state(next).retry=clone(snapshot);save(next,true);return true;}
+ function retry(){const e=ARCADE.engine;if(!active(e)||!state(e).retry)return false;const snapshot=state(e).retry,failures=clone(state(e).failures2140||{}),shown=clone(state(e).shownBeasts2140||{}),encounters=clone(state(e).encounters||{}),documentSeen=state(e).documentSeen2140||0;const next=restore(snapshot);state(next).retry=clone(snapshot);state(next).failures2140=failures;state(next).shownBeasts2140=shown;state(next).encounters={...state(next).encounters,...encounters};state(next).documentSeen2140=Math.max(state(next).documentSeen2140||0,documentSeen);state(next).lossTracked2140=false;save(next,true);return true;}
+ function skipChapter(){
+  const e=ARCADE.engine;if(!active(e)||e.status!=='lost')return false;const s=state(e),id=mission(e),key=id==='route'?id+':'+s.route:id;
+  if(s.practice||(s.failures2140?.[key]||0)<3)return false;
+  s.skipped2140={...s.skipped2140,[id]:{attempts:s.failures2140[key],route:s.route,at:e.elapsed}};
+  s.lossTracked2140=false;s.modal=null;s.card=null;s.next=null;e.crash=null;e.hostile=[];e.bullets=[];e.enemies=[];e.player.hp=100;e.player.invulnerable=3;
+  complete(e,id);const field=updates[id][0];s.document[field]='Переход с пропуском: '+title(id)+'. Раздел требует отдельной проверки.';s.changed=field;
+  if(['orbit1','pursuit','swarm','orbit4'].includes(id)){
+   e.board=null;e.status='campaignsummary';s.next=id==='swarm'&&!s.parallaxDone?'boss':'boarding';
+  }else if(id.startsWith('base')){
+   if(id==='base4')startStation(e);else{e.status='stageclear';e.phase='debrief';e.upgradeChoice='';}
+  }else if(id==='convoy1'||id==='convoy3'||id==='route'){
+   s.branchActive=false;e.escort=null;e.board=null;e.beginStage(e.stage+1);
+  }else if(id==='parallax'){transition(e,'afterboss');}
+  else if(id==='contradictions'){s.station=null;e.finale={phase:'maze',checkpoint:'maze',time:0,tests:[],answer:null};old.beginLair.call(e);}
+  else if(id==='lair'){old.beginMRG.call(e);}
+  else if(id==='mrg'){old.beginUpload.call(e,false);}
+  e.notify('ГЛАВА ПРОПУЩЕНА','Продолжаем путешествие. Пропуск отмечен в карте; очки за победу не начислены.');
+  checkpoint(e);save(e,true);refresh();return true;
+ }
  citadelRetry=function(...args){return active(ARCADE.engine)?retry():old.retry.apply(this,args);};
  p.retryFinale=function(...args){return active(this)?retry():old.finalRetry.apply(this,args);};
  function practice(e){if(!active(e)||e.status!=='lost'||!state(e).retry)return false;const returnTo=old.pack(e),snapshot=state(e).retry,next=restore(snapshot);state(next).retry=clone(snapshot);state(next).practice={returnTo,seconds:0,contacts:0};if(next.status==='paused')next.resume();if(['briefing','escortbrief'].includes(next.status))next.launch();if(next.status==='finalebrief')next.launchFinale();refresh();return true;}
  function exitPractice(e){const snapshot=state(e)?.practice?.returnTo;if(!snapshot)return false;restore(snapshot);return true;}
  for(const key of ['damage','mrgDamage'])p[key]=function(...args){if(active(this)&&state(this).practice){state(this).practice.contacts++;log(this,'Учебное попадание: щит сохранён.','practice');return false;}const before=key==='mrgDamage'?this.board?.hp:this.player.hp,r=old[key].apply(this,args),after=key==='mrgDamage'?this.board?.hp:this.player.hp;if(active(this)&&Number.isFinite(before)&&after<before)log(this,'Щит '+(key==='mrgDamage'?'персонажа':'корабля')+' −'+Math.round(before-after),'damage');return r;};
  for(const key of ['pulse','boardPulse'])p[key]=function(...args){const before=key==='pulse'?this.player.pulseCooldown:this.board?.pulseCooldown,r=old[key].apply(this,args),after=key==='pulse'?this.player.pulseCooldown:this.board?.pulseCooldown;if(active(this)&&after>before)log(this,'Защитный импульс использован.','pulse');return r;};
- const traits={hammer:'Гигант окружает проход. Летите через центр, избегая молотов на краях.',tentacle:'Щупальца обвивают проход. Держитесь свободного центра и следите за взмахами.',maw:'Зубы опасны у кромки пасти. Пролетайте через открытый центр.',mantis:'Серпы движутся вокруг прохода. Не прижимайтесь к его краям.',medusa:'Купол над проходом, шесть щупалец вокруг. Свободный центр безопаснее кромки.'};
+ const traits={hammer:'Обходите бронированное тело. Золотой молот светится перед замахом.',tentacle:'Летите между щупальцами или с открытой стороны. Перед ударом отросток отводится назад.',maw:'Держитесь сбоку от челюстей. Раскрытая пасть — опасность, а не ворота.',mantis:'Обходите корпус с открытой стороны. Следите за поднятым серпом.',medusa:'Пролетайте рядом с куполом, оставляя место для движения щупалец.'};
  function encounters(e){const s=state(e),entities=[...(e.pursuit?.warpEntities||[]),...(e.escort?.warp290?.entities||[])];for(const w of entities){if(!traits[w.kind]||s.encounters[w.kind]||!w.pos)continue;const d=V3.sub(w.pos,e.player.pos);if(d[2]>55||d[2]<-360||Math.hypot(d[0],d[1])>220)continue;s.encounters[w.kind]={at:e.elapsed,mission:mission(e)};}}
  p.step=function(dt,input={}){if(!active(this))return old.step.apply(this,arguments);const s=state(this);if(s.modal||this.status.startsWith('campaign'))return;
   const hp=this.board?.hp,transport=(this.escort?.allies||[]).map(x=>({hp:x.hp,dead:x.dead}));const r=old.step.apply(this,arguments);
@@ -177,6 +196,7 @@
    if(action==='campaign-modal-close'){state(e).modal=null;refresh();return true;}
    if(action==='campaign-beast'){if(state(e).modal&&state(e).encounters[value]){state(e).modal.kind=value;refresh();}return true;}
    if(action==='campaign-retry'){retry();return true;}
+   if(action==='campaign-skip'){skipChapter();return true;}
    if(action==='campaign-practice'){practice(e);return true;}
    if(action==='campaign-practice-exit'){exitPractice(e);return true;}
    if(action==='campaign-other-route'&&e.status==='won'){const saved=old.pack(e),route=state(e).route==='convoy'?'pursuit':'convoy';state(e).practice={returnTo:saved,seconds:-1e9,contacts:0,optional:true};e.stage=1;e.finale=null;e.board=null;e.status='campaignroute';state(e).route=null;delete state(e).answers.route;selectRoute(e,route);return true;}
@@ -193,6 +213,6 @@
  arcadeOverlayHTML=function(...args){let html=wrappedOverlay.apply(this,args);const e=ARCADE.engine;if(e?.status==='menu'){const mode=CITADEL_LEARNING_MODES.preferred,s=read(mode);if(s&&s.engine.status!=='won')html=button('campaign-continue','Продолжить новую кампанию',mode)+html;html=html.replace(/14 МИССИЙ/g,'15 ГЛАВ').replace('Начать игру →','Начать кампанию →').replace('Начать заново','Новая кампания');html+='<p class="campaign-save-note">Новая кампания — 15 глав с облегчённым роем и конвоем. Старые сохранения и облачный турнир продолжают прежний маршрут и баланс.</p>';}return html;};
  spaceScene=function(e,time,...args){if(active(e)&&state(e).modal?.type==='bestiary'&&state(e).modal.kind){time=(globalThis.performance?.now?.()||Date.now())/1000;const kind=state(e).modal.kind,w={schema:280,kind,scale:1,side:1,center:[0,0,0],pos:[0,0,0],phase:time*.55,segments:[],age:time};CITADEL_PURSUIT.poseWarp(e,w,0);const items=[];CITADEL_PURSUIT_VIEW.renderWarp(items,{...e,player:{...e.player,pos:[0,0,80]},pursuit:{clock:time}},w,1);return items;}return old.scene.call(this,e,time,...args);};
  spaceCamera=function(e,time,...args){if(active(e)&&state(e).modal?.type==='bestiary'&&state(e).modal.kind){time=(globalThis.performance?.now?.()||Date.now())/1000;const angle=time*.22;return stationLook([Math.sin(angle)*82,20,Math.cos(angle)*82],[0,0,0],1.1,{near:1,far:800});}return old.camera.call(this,e,time,...args);};
- globalThis.CITADEL_CAMPAIGN=Object.freeze({version:VERSION,ids:ids.slice(),names:names.slice(),active,enable,state,mission,number,title,checkpoint,save,read,questions,answer,nextCard,selectRoute,completeBranch,startStation,stationInteract,documentHTML,defeat,practice,exitPractice,openModal,encounters,complete,
+ globalThis.CITADEL_CAMPAIGN=Object.freeze({version:VERSION,ids:ids.slice(),names:names.slice(),active,enable,state,mission,number,title,checkpoint,save,read,questions,answer,nextCard,selectRoute,completeBranch,startStation,stationInteract,documentHTML,defeat,practice,exitPractice,openModal,encounters,complete,skipChapter,
   inspection:e=>active(e)?{mission:mission(e),number:number(e),completed:state(e).completed.slice(),route:state(e).route,cards:Object.keys(state(e).answers),encounters:Object.keys(state(e).encounters),document:{...state(e).document}}:null});
 })();

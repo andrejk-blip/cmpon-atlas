@@ -147,7 +147,7 @@
   for(const ally of e.escort.allies)if(!ally.dead){const b=flightBasis(0,0,Math.sin(time*.7+ally.id)*.012);instance(a,fleetModel('transport'),ally.pos,b,[1,1,1],ally.hit>0,'transport');engines(a,ally.pos,b,'transport',time+ally.id,fx);}
   for(const x of e.enemies)if(!x.dead)vessel(a,e,x,time,fx);
   for(const f of fields(e))field(a,f,time,fx);
-  if(!hidePlayer){const b=flightBasis(e.player.yaw,e.player.pitch,e.player.bank);instance(a,fleetModel('player'),e.player.pos,b,[1,1,1],e.player.hit>0,'player');engines(a,e.player.pos,b,'player',time,fx);}
+  if(!hidePlayer){const b=flightBasis(e.player.yaw,e.player.pitch,e.player.bank);instance(a,fleetModel('player'),e.player.pos,b,[1,1,1],e.player.hit>0,'player');if(!e.campaign2120)engines(a,e.player.pos,b,'player',time,fx);}
   for(const b of e.bullets)part(a,'box',b.pos,[b.type==='missile'?.18:.065,.08,b.type==='missile'?1.9:1.25],b.color||C.cyan,1,spaceBasisDir(b.vel),1,L);
   for(const b of e.hostile){part(a,'octa',b.pos,[.36,.32,1.35],b.color||C.amber,1,spaceBasisDir(b.vel),1,L);if(fx)part(a,'box',b.pos,[.08,.08,2.5],C.white,1,spaceBasisDir(b.vel),1,L);}
   for(const x of e.explosions){const age=clamp(1-x.life/x.max);part(a,'octa',x.pos,Array(3).fill(1+age*7),C.amber,1,SPACE_IDENTITY,1-age,L);if(fx)part(a,'ring',x.pos,Array(3).fill(2+age*13),x.color,1,SPACE_IDENTITY,1-age,L);}
@@ -185,7 +185,7 @@
  const SKY_FRAGMENT=`precision highp float;varying vec2 uv;uniform vec3 uForward;uniform vec3 uRight;uniform vec3 uUp;uniform float uAspect;uniform float uTan;uniform float uClock;uniform float uChapter;
  float hash(vec3 p){return fract(sin(dot(p,vec3(127.1,311.7,74.7)))*43758.5453);}
  float noise(vec3 p){vec3 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(mix(hash(i),hash(i+vec3(1,0,0)),f.x),mix(hash(i+vec3(0,1,0)),hash(i+vec3(1,1,0)),f.x),f.y),mix(mix(hash(i+vec3(0,0,1)),hash(i+vec3(1,0,1)),f.x),mix(hash(i+vec3(0,1,1)),hash(i+vec3(1,1,1)),f.x),f.y),f.z);}
- void main(){vec3 ray=normalize(uForward+uRight*uv.x*uAspect*uTan+uUp*uv.y*uTan);float z=max(.08,-ray.z),r=length(ray.xy)/z,a=atan(ray.y,ray.x),turn=a+log(max(r,.015))*.32+uClock*.012;vec3 p=vec3(cos(turn)*3.,sin(turn)*3.,log(max(r,.025))*1.5+uChapter*3.);
+ void main(){vec3 ray=normalize(uForward+uRight*uv.x*uAspect*uTan+uUp*uv.y*uTan);float z=max(.08,-ray.z),r=length(ray.xy)/z,a=atan(ray.y,ray.x),turn=a+log(max(r,.015))*.32+uClock*.14;vec3 p=vec3(cos(turn)*3.,sin(turn)*3.,log(max(r,.025))*1.5+uChapter*3.-uClock*.46);
  float n=noise(p)*.64+noise(p*2.07)*.25+noise(p*4.03)*.11;float vein=pow(max(0.,sin(turn*4.+n*7.)),3.);float haze=exp(-r*.72)*(.26+vein*.65)*smoothstep(.015,.14,r);vec3 col=mix(vec3(.009,.014,.036),vec3(.035,.095,.17),exp(-r*1.4));col+=mix(vec3(.075,.055,.16),vec3(.06,.24,.36),n)*haze*(.45+n);col+=vec3(.18,.25,.32)*exp(-r*12.)*.36;
  vec3 cell=floor(ray*650.);float star=step(.9985,hash(cell));col+=vec3(.40,.52,.64)*star*.38;gl_FragColor=vec4(col,1.);}`;
  // The shared 2.3 shader tone-maps dark navy toward grey and clamps engine
@@ -222,7 +222,13 @@
  spaceDrawCPU=function(c,items,cam,w,h){
   if(!cam.convoy260)return old.draw(c,items,cam,w,h);const started=performance.now(),factor=h/(2*Math.tan(cam.fov/2));let s=surfaces.get(c);
   if(!s||s.w!==w||s.h!==h||s.chapter!==cam.chapter){sky(c,cam,w,h);s={w,h,chapter:cam.chapter,image:c.getImageData(0,0,w,h),background:c.getImageData(0,0,w,h).data,depth:new Float32Array(w*h)};surfaces.set(c,s);surfaceBuilds++;}
-  s.image.data.set(s.background);s.depth.fill(0);const translucent=[];let triangles=0,visible=0;
+  // Advect the cached nebula before depth rasterization. This moves behind
+  // every hull in the CPU fallback too; it is not painted over the ships.
+  const flow=cam.fx?cam.clock:0;
+  if(flow){const src=s.background,dst=s.image.data,t=flow*.8,cx=w*.5,cy=h*.43;
+   for(let y=0;y<h;y++){const shiftX=Math.sin(y/h*6+t)*w*.035,shiftY=Math.cos(y/h*4+t*.7)*h*.025;
+    for(let x=0;x<w;x++){const sx=((Math.floor(x+shiftX+(x-cx)*Math.sin(t*.6)*.06)%w)+w)%w,sy=((Math.floor(y+shiftY+(y-cy)*Math.cos(t*.5)*.05)%h)+h)%h,a=(sy*w+sx)*4,o=(y*w+x)*4;dst[o]=src[a];dst[o+1]=src[a+1];dst[o+2]=src[a+2];dst[o+3]=255;}}
+  }else s.image.data.set(s.background);s.depth.fill(0);const translucent=[];let triangles=0,visible=0;
   for(const it of items){if(!inView(it,cam,w,h))continue;const mesh=SPACE_MESH[it.mesh],m=it.model,p=mesh.p,nn=mesh.n,sx=m[0]**2+m[1]**2+m[2]**2,sy=m[4]**2+m[5]**2+m[6]**2,sz=m[8]**2+m[9]**2+m[10]**2;
    for(let i=0;i<p.length;i+=9){triangles++;const v=[];for(let j=0;j<9;j+=3)v.push([m[0]*p[i+j]+m[4]*p[i+j+1]+m[8]*p[i+j+2]+m[12],m[1]*p[i+j]+m[5]*p[i+j+1]+m[9]*p[i+j+2]+m[13],m[2]*p[i+j]+m[6]*p[i+j+1]+m[10]*p[i+j+2]+m[14]]);
     const nx=nn[i]/sx,ny=nn[i+1]/sy,nz=nn[i+2]/sz,n=V3.norm([m[0]*nx+m[4]*ny+m[8]*nz,m[1]*nx+m[5]*ny+m[9]*nz,m[2]*nx+m[6]*ny+m[10]*nz]),mid=V3.scale(V3.add(V3.add(v[0],v[1]),v[2]),1/3);
@@ -251,8 +257,8 @@
    for(const s of [-1,1])for(const t of [-1,1]){c.beginPath();c.moveTo(q.x+s*(r-6),q.y+t*r);c.lineTo(q.x+s*r,q.y+t*r);c.lineTo(q.x+s*r,q.y+t*(r-6));c.stroke();}
    c.textAlign='center';text(c,target.torpedo?'ТОРПЕДА':target.name||'ЦЕЛЬ',q.x,q.y-r-9,mobile?9:11,'#f2d6b4');c.fillStyle='#203247';c.fillRect(q.x-r,q.y+r+6,r*2,3);c.fillStyle=target.color||C.amber;c.fillRect(q.x-r,q.y+r+6,r*2*clamp(target.hp/target.maxHp),3);
   }}
-  // Training alone explains forthcoming attacks and shows the safe-centre aid.
-  if(e.assist){const field=fields(e).find(f=>!f.passed),group=o.groups?.find(g=>g.state==='telegraph');c.textAlign='center';
+  // Personal campaigns keep the approaching field and attack readable on touch.
+  if(api.warnings(e)){const field=fields(e).find(f=>!f.passed),group=o.groups?.find(g=>g.state==='telegraph');c.textAlign='center';
    if(field){text(c,'ПРОЙДИТЕ В СВЕТЛЫЙ ПРОСВЕТ · '+Math.max(0,field.warning||0).toFixed(1)+' с',W/2,top+bar+18,mobile?10:13,C.amber,true);const q=spaceProject([field.gapX,field.gapY,field.z],cam,W,H);if(q.z>0){c.strokeStyle='#c9ffff';c.setLineDash([3,4]);c.lineWidth=1;c.beginPath();c.arc(q.x,q.y,Math.max(5,q.scale*(field.radius||Math.min(field.halfW,field.halfH)-2.8)),0,TAU);c.stroke();c.setLineDash([]);}}
    else if(group)text(c,'ЗАХОД: '+group.name.toUpperCase(),W/2,top+bar+18,mobile?10:13,C.amber,true);
   }

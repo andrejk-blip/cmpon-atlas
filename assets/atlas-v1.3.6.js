@@ -1101,7 +1101,8 @@ vec3 lamp(vec3 p,vec3 color,vec3 n){vec3 d=p-vWorld;float r=length(d);return col
 float hash(vec3 p){return fract(sin(dot(p,vec3(127.1,311.7,74.7)))*43758.5453);}float noise(vec3 p){vec3 i=floor(p),f=fract(p);f=f*f*(3.0-2.0*f);return mix(mix(mix(hash(i),hash(i+vec3(1,0,0)),f.x),mix(hash(i+vec3(0,1,0)),hash(i+vec3(1,1,0)),f.x),f.y),mix(mix(hash(i+vec3(0,0,1)),hash(i+vec3(1,0,1)),f.x),mix(hash(i+vec3(0,1,1)),hash(i+vec3(1,1,1)),f.x),f.y),f.z);}
 vec3 tonemap(vec3 x){return clamp((x*(2.51*x+.03))/(x*(2.43*x+.59)+.14),0.,1.);}
 void main(){vec3 n=normalize(vNormal),eye=normalize(uEye-vWorld),sun=normalize(vec3(-.7,.9,.6)),halfway=normalize(sun+eye);float ndl=max(0.,dot(n,sun)),sky=.5+.5*n.y;float fres=pow(1.-max(0.,dot(n,eye)),5.);float shine=pow(max(0.,dot(n,halfway)),72.);vec3 env=mix(vec3(.055,.10,.18),vec3(.17,.28,.39),sky);vec3 col=uColor*(env+vec3(1.0,.88,.72)*ndl*.95)+vec3(.8,.91,1.)*shine*.45+vec3(.12,.27,.38)*fres;float alpha=uAlpha;
-if(uKind>4.5){vec2 grid=abs(fract(vWorld.xz*.25+.5)-.5);float seam=smoothstep(.465,.495,max(grid.x,grid.y));col*=mix(1.,.35,seam);float brushed=noise(vWorld*vec3(1.,1.,18.));col*=.85+.22*brushed;col+=vec3(.07,.14,.18)*shine;}
+if(uKind>=19.5){float metalGrain=noise(vLocal*vec3(3.,18.,3.));col*=.96+.06*metalGrain;col=mix(col,uColor*1.25,clamp(uEmissive,0.,1.));}
+else if(uKind>4.5){vec2 grid=abs(fract(vWorld.xz*.25+.5)-.5);float seam=smoothstep(.465,.495,max(grid.x,grid.y));col*=mix(1.,.35,seam);float brushed=noise(vWorld*vec3(1.,1.,18.));col*=.85+.22*brushed;col+=vec3(.07,.14,.18)*shine;}
 else if(uKind>3.5){float brushed=noise(vWorld*vec3(2.,20.,2.));col*=.8+.25*brushed;}
 else if(uKind>2.5){col=uColor*.2+vec3(.10,.25,.37)*sky+vec3(.35,.78,1.)*fres+vec3(1.)*pow(max(0.,dot(n,halfway)),180.);}
 else if(uKind>1.5){col=uColor*1.3;alpha*=pow(1.-abs(dot(n,eye)),2.7);}

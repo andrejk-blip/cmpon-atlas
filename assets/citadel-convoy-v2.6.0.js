@@ -41,7 +41,11 @@
    {at:70,name:'Глушение и удар',kind:'jam',roles:['jammer','bomber','interceptor','raider']},
    {at:85,name:'Последний рубеж',kind:'command',roles:['commander','shield','bomber','interceptor','raider']}]}
  ];
- const softened=e=>e.stage===2&&e.campaign2120?.schema===1;
+ const gentle=e=>e.campaign2120?.schema===1;
+ const warned=e=>e.assist||gentle(e);
+ const healthScale=e=>gentle(e)?[.60,.60,.50][e.stage]:1;
+ const fieldRadius=e=>[16.5,15.5,14.5][e.stage]+(e.assist?2.3:0);
+ function missionFor(e){const m=missions[e.stage];return gentle(e)?{...m,fields:m.fields.map(f=>({...f,gapX:f.gapX*.72,gapY:f.gapY*.72,radius:fieldRadius(e),halfW:fieldRadius(e),halfH:fieldRadius(e)}))}:m;}
  const stats=()=>({spawned:0,volleys:0,torpedoes:0,intercepts:0,shieldHits:0,disruptions:0,fieldsPassed:0,fieldsHit:0,peakEnemies:0,peakHostile:0,forwardRecoveries:0});
  const allies=e=>e.escort.allies.filter(a=>!a.dead),members=(e,g)=>e.enemies.filter(x=>!x.dead&&x.squad===g.id&&!x.torpedo);
  function log(e,kind,data={}){const o=e.escort.ops240;o.events.push({at:+e.escort.time.toFixed(2),kind,...data});if(o.events.length>64)o.events.shift();}
@@ -50,7 +54,8 @@
  proto.beginEscort=function(...args){const ok=RequirementExpeditionBase.prototype.beginEscort.apply(this,args);if(!ok)return ok;const c=this.escort,m=missions[this.stage];
   c.definition={...c.definition,name:m.name,duration:m.duration,color:m.color};this.autopilot=false;
   c.ops240={version:VERSION,groups:[],next:0,serial:0,formation:0,fields:[],nextField:0,events:[],aim:{locked:false,targetId:null,cone:0},stats:stats()};
-  this.say(m.subtitle+'. '+m.brief,'alert',true);return ok;
+  if(gentle(this)){c.ops240.mobileBalance2140=true;c.definition.brief='Держите транспорт под прикрытием. Светлый проход в поле достаточно широк для манёвра; его касание снимает часть щита. На половине пути ремонтный маяк восстановит корабль и живые транспорты. Ракета — ПКМ / Q, прикрытие — E.';}
+  this.say(m.subtitle+'. '+(c.definition.brief||m.brief),'alert',true);return ok;
  };
  // Preserve a saved fight rather than beginning it again. In particular a field
  // already visible keeps its original aperture until it has passed the hull.
@@ -62,24 +67,24 @@
  }
  function targetAlly(e,g){let a=e.escort.allies[g.target];if(!a||a.dead){a=allies(e)[0];if(a)g.target=e.escort.allies.indexOf(a);}return a;}
  function spawnGroup(e,plan){const c=e.escort,o=c.ops240,id=++o.serial,available=allies(e),a=available[id%available.length];if(!a)return;
-  const g={id,kind:plan.kind,name:plan.name,target:c.allies.indexOf(a),state:e.assist?'assemble':'attack',time:0,cycle:e.assist?0:1,disrupt:0,flank:id%2?1:-1,originAt:c.time};o.groups.push(g);
-  plan.roles.forEach((role,i)=>{const d=roles[role],side=plan.kind==='crossfire'?(i%2?1:-1):g.flank;e.enemies.push({id:e.entityId++,type:role==='scout'||role==='interceptor'?'scout':'heavy',role,convoy240:true,squad:id,slot:i,ally:g.target,name:d.name,pos:[side*(28+i*2),10-i*5,-145-i*5],vel:[0,0,0],hp:d.hp*(softened(e)?.68:1),maxHp:d.hp*(softened(e)?.68:1),r:d.r,color:d.color,dead:false,warp:e.assist?.8:0,age:0,hit:0,phase:i*1.7,channel:false,shot:0,order:e.assist?'assemble':'attack',attackCount:-1,burst:0,shielded:false});});
-  o.stats.spawned+=plan.roles.length;log(e,'group',{id,kind:plan.kind,count:plan.roles.length});e.emit('warp');if(e.assist)e.say(plan.name+'. Цель противника: '+a.name+'.','alert',true);else log(e,'attack',{squad:g.id,target:g.target,cycle:g.cycle});
+  const g={id,kind:plan.kind,name:plan.name,target:c.allies.indexOf(a),state:warned(e)?'assemble':'attack',time:0,cycle:warned(e)?0:1,disrupt:0,flank:id%2?1:-1,originAt:c.time};o.groups.push(g);
+  plan.roles.forEach((role,i)=>{const d=roles[role],side=plan.kind==='crossfire'?(i%2?1:-1):g.flank;e.enemies.push({id:e.entityId++,type:role==='scout'||role==='interceptor'?'scout':'heavy',role,convoy240:true,...(gentle(e)?{mobile2140:true}:{}),squad:id,slot:i,ally:g.target,name:d.name,pos:[side*(28+i*2),10-i*5,-145-i*5],vel:[0,0,0],hp:d.hp*healthScale(e),maxHp:d.hp*healthScale(e),r:d.r,color:d.color,dead:false,warp:warned(e)?.8:0,age:0,hit:0,phase:i*1.7,channel:false,shot:0,order:warned(e)?'assemble':'attack',attackCount:-1,burst:0,shielded:false});});
+  o.stats.spawned+=plan.roles.length;log(e,'group',{id,kind:plan.kind,count:plan.roles.length});e.emit('warp');if(warned(e))e.say(plan.name+'. Цель противника: '+a.name+'.','alert',true);else log(e,'attack',{squad:g.id,target:g.target,cycle:g.cycle});
  }
  function transition(e,g,state){g.state=state;g.time=0;for(const x of members(e,g)){x.order=state;x.burst=0;}
-  if(state==='telegraph'||state==='attack'){const live=members(e,g),leader=live.some(x=>x.role==='commander');if(leader){const weakest=allies(e).sort((a,b)=>a.hp-b.hp)[0];g.target=e.escort.allies.indexOf(weakest);}for(const x of live)x.ally=g.target;if(state==='telegraph'&&e.assist)log(e,'mark',{squad:g.id,target:g.target,coordinated:leader});}
+  if(state==='telegraph'||state==='attack'){const live=members(e,g),leader=live.some(x=>x.role==='commander');if(leader){const weakest=allies(e).sort((a,b)=>a.hp-b.hp)[0];g.target=e.escort.allies.indexOf(weakest);}for(const x of live)x.ally=g.target;if(state==='telegraph'&&warned(e))log(e,'mark',{squad:g.id,target:g.target,coordinated:leader});}
   if(state==='attack'){g.cycle++;log(e,'attack',{squad:g.id,target:g.target,cycle:g.cycle});}
  }
  function torpedo(e,x,a){if(e.enemies.filter(n=>!n.dead&&n.torpedo).length>=6)return;const p=x.pos.slice(),speed=13;
   e.enemies.push({id:e.entityId++,name:'Торпеда → '+a.name,role:'torpedo',torpedo:true,convoy240:true,squad:x.squad,ally:x.ally,pos:p,vel:V3.scale(V3.norm(V3.sub(a.pos,p)),speed),hp:30,maxHp:30,r:2,color:'#ffe5a3',warp:0,hit:0,age:0,life:14,dead:false});e.escort.ops240.stats.torpedoes++;log(e,'torpedo',{squad:x.squad,target:x.ally});
  }
- function shot(e,x,a,player=false){if(e.hostile.length>=64)return;const speed=player?(e.assist?43:49):26,aim=(player?e.player.pos:a.pos).slice();
+ function shot(e,x,a,player=false){if(e.hostile.length>=64)return;const speed=player?(gentle(e)?40:e.assist?43:49):26,aim=(player?e.player.pos:a.pos).slice();
   // A small finite lead punishes a held strafe while still allowing a change of
   // direction to evade. No random screen-wide fire or hidden target teleport.
   if(player&&!e.assist){const lead=Math.min(.55,dist(x.pos,aim)/speed*.22),v=e.escort.ops240.playerVelocity||[0,0];aim[0]+=v[0]*lead;aim[1]+=v[1]*lead;}
-  e.hostile.push({pos:x.pos.slice(),vel:V3.scale(V3.norm(V3.sub(aim,x.pos)),speed),life:6,damage:x.role==='raider'?12:8,r:1,color:x.color,ally:player?-1:x.ally});e.escort.ops240.stats.volleys++;
+  e.hostile.push({pos:x.pos.slice(),vel:V3.scale(V3.norm(V3.sub(aim,x.pos)),speed),life:6,damage:(x.role==='raider'?12:8)*(gentle(e)?.68:1),...(gentle(e)?{mobile2140:true}:{}),r:1,color:x.color,ally:player?-1:x.ally});e.escort.ops240.stats.volleys++;
  }
- function hurtAlly(e,a,amount){if(!a||a.dead)return;a.hp=Math.max(0,a.hp-amount*(e.assist?.6:1)*(e.escort.ops240.cover>0?.25:1));a.hit=.35;if(a.hp<=0){a.dead=true;e.explosions.push({pos:a.pos.slice(),life:1.5,max:1.5,color:'#a8e5d0'});e.notify('ПОТЕРЯ ТРАНСПОРТА',a.name);log(e,'transport-lost',{target:e.escort.allies.indexOf(a)});}}
+ function hurtAlly(e,a,amount){if(!a||a.dead)return;a.hp=Math.max(0,a.hp-amount*(gentle(e)?.8:1)*(e.assist?.6:1)*(e.escort.ops240.cover>0?.25:1));a.hit=.35;if(a.hp<=0){a.dead=true;e.explosions.push({pos:a.pos.slice(),life:1.5,max:1.5,color:'#a8e5d0'});e.notify('ПОТЕРЯ ТРАНСПОРТА',a.name);log(e,'transport-lost',{target:e.escort.allies.indexOf(a)});}}
  function move(x,goal,speed,dt){const d=V3.sub(goal,x.pos),desired=V3.scale(V3.norm(d),Math.min(speed,V3.len(d)*2));x.vel=V3.lerp(x.vel,desired,Math.min(1,dt*3.5));x.pos=V3.add(x.pos,V3.scale(x.vel,dt));}
  function stepUnit(e,x,g,dt){x.age+=dt;x.warp=Math.max(0,x.warp-dt);x.hit=Math.max(0,x.hit-dt);if(x.warp>0)return;const a=targetAlly(e,g);if(!a)return;
   const side=g.kind==='crossfire'?(x.slot%2?1:-1):g.flank,inter=x.role==='interceptor',p=e.player;
@@ -93,10 +98,10 @@
   if(recovering&&!x.forwardRecovery){x.forwardRecovery=true;e.escort.ops240.stats.forwardRecoveries++;log(e,'forward-recovery',{id:x.id,role:x.role});}
   if(!recovering)x.forwardRecovery=false;
   x.channel=x.role==='jammer'&&g.state!=='assemble'&&g.disrupt<=0&&!recovering;
-  if(g.state==='attack'&&g.disrupt<=0&&!recovering){const delay=e.assist?x.slot*.3:0,t=g.time-delay;
+  if(g.state==='attack'&&g.disrupt<=0&&!recovering){const delay=warned(e)?x.slot*.3:0,t=g.time-delay;
    if(t>=0&&x.attackCount!==g.cycle){x.attackCount=g.cycle;x.burst=0;x.shot=0;}
-   if(t>=0){x.shot-=dt;const maximum=e.assist?(x.role==='bomber'?(e.stage===2?2:1):x.role==='raider'?3:2):(x.role==='bomber'?2:x.role==='raider'?5:x.role==='commander'?4:x.role==='shield'?1:x.role==='jammer'?2:3);
-    if(x.shot<=0&&x.burst<maximum&&(!e.assist||!['shield','jammer'].includes(x.role))){x.burst++;x.shot=x.role==='bomber'?(e.assist?1.1:.95):(e.assist?.8:.55);
+   if(t>=0){x.shot-=dt;const maximum=gentle(e)?(x.role==='bomber'?1:x.role==='raider'?3:2):e.assist?(x.role==='bomber'?(e.stage===2?2:1):x.role==='raider'?3:2):(x.role==='bomber'?2:x.role==='raider'?5:x.role==='commander'?4:x.role==='shield'?1:x.role==='jammer'?2:3);
+    if(x.shot<=0&&x.burst<maximum&&(!e.assist||!['shield','jammer'].includes(x.role))){x.burst++;x.shot=x.role==='bomber'?(warned(e)?1.1:.95):(warned(e)?.8:.55);
      if(x.role==='bomber'){torpedo(e,x,a);if(!e.assist&&x.burst===1)shot(e,x,a,true);}
      else if(x.role==='jammer'||x.role==='shield')shot(e,x,a,true);
      else{const coverFire=!e.assist&&x.burst>(x.role==='raider'?2:1);if(!coverFire)shot(e,x,a);if(inter||x.role==='scout'||(!e.assist&&(x.role==='commander'||coverFire)))shot(e,x,a,true);}
@@ -105,7 +110,7 @@
   }
   move(x,goal,(roles[x.role]||roles.raider).speed*(inter&&!e.assist?1.15:1),dt);
  }
- function aimState(e){const t=e.target(),p=e.player,cone=e.assist?.24:.19,d=t?V3.sub(t.pos,p.pos):[0,0,-1];return {locked:!!t&&t.warp<=0&&d[2]<-4&&Math.hypot(d[0],d[1])<=-d[2]*cone+t.r,targetId:t?.id||null,cone};}
+ function aimState(e){const t=e.target(),p=e.player,cone=gentle(e)?.28:e.assist?.24:.19,d=t?V3.sub(t.pos,p.pos):[0,0,-1];return {locked:!!t&&t.warp<=0&&d[2]<-4&&Math.hypot(d[0],d[1])<=-d[2]*cone+t.r,targetId:t?.id||null,cone};}
  proto.fire=function(){if(!active(this))return old.fire.call(this);const p=this.player;if(this.status!=='playing'||p.shotCooldown>0)return false;
   const state=aimState(this),t=this.target(),direction=state.locked?V3.norm(V3.sub(V3.add(t.pos,V3.scale(t.vel||[0,0,0],dist(p.pos,t.pos)/210)),p.pos)):[0,0,-1];
   // The convoy's minimum gun package rises with the sector. Earned weapon
@@ -120,7 +125,7 @@
   if(x.dead&&x.role==='commander'){const g=this.escort.ops240.groups.find(g=>g.id===x.squad);if(g){g.disrupt=3;transition(this,g,'regroup');this.escort.ops240.stats.disruptions++;log(this,'leader-down',{squad:g.id});this.notify('АТАКА СОРВАНА','Командир уничтожен · три секунды на перехват');}}
  };
  proto.pulse=function(){if(!active(this))return old.pulse.call(this);const p=this.player;if(this.status!=='playing'||p.pulseCooldown>0)return false;
-  p.pulseCooldown=14;p.invulnerable=Math.max(p.invulnerable,1);this.pulseWave=1;this.escort.ops240.cover=2.8;
+  p.pulseCooldown=gentle(this)?11:14;p.invulnerable=Math.max(p.invulnerable,1);this.pulseWave=1;this.escort.ops240.cover=2.8;
   this.hostile=this.hostile.filter(b=>dist(b.pos,p.pos)>105);for(const x of this.enemies)if(x.torpedo&&!x.dead&&dist(x.pos,p.pos)<115)this.hit(x,75);
   this.emit('pulse');this.notify('КОНВОЙ ПРИКРЫТ','2,8 с защиты · ближайшие торпеды перехвачены');log(this,'cover');return true;
  };
@@ -128,18 +133,26 @@
   const rank=x=>x.torpedo?0:x.role==='shield'?1:x.role==='commander'?2:x.role==='bomber'?3:x.role==='jammer'?4:5;
   const best=this.enemies.filter(x=>!x.dead&&x.warp<=0).sort((a,b)=>rank(a)-rank(b)||dist(a.pos,this.player.pos)-dist(b.pos,this.player.pos))[0];if(best){this.selectedTarget=best.id;return best;}return{pos:[0,0,-70],name:'Держите строй конвоя'};
  };
- function stepFields(e,dt){const c=e.escort,o=c.ops240,m=missions[e.stage],plan=m.fields[o.nextField];
-  if(plan&&c.time>=plan.at){const lead=e.assist?6.2:5.4,speed=38,radius=plan.radius+(e.assist?2.3:0);const f={id:++o.nextField,z:-lead*speed,gapX:plan.gapX,gapY:plan.gapY,shape:'ring',radius,halfW:radius,halfH:radius,speed,warning:lead,passed:false,hit:false};o.fields.push(f);log(e,e.assist?'field-warning':'field',{id:f.id});if(e.assist)e.say('Энергетическое поле! Пройдите целиком внутри светлого кольца.','danger',true);}
+ function stepFields(e,dt){const c=e.escort,o=c.ops240,m=missionFor(e),plan=m.fields[o.nextField];
+  if(plan&&c.time>=plan.at){const lead=e.assist?6.2:5.4,speed=38,radius=gentle(e)?plan.radius:plan.radius+(e.assist?2.3:0);const f={id:++o.nextField,z:-lead*speed,gapX:plan.gapX,gapY:plan.gapY,shape:'ring',radius,halfW:radius,halfH:radius,speed,warning:lead,passed:false,hit:false,mobile2140:gentle(e)};o.fields.push(f);log(e,warned(e)?'field-warning':'field',{id:f.id});if(warned(e))e.say('Энергетическое поле! Пройдите целиком внутри светлого кольца.','danger',true);}
   for(const f of o.fields){const previous=f.z;f.z+=f.speed*dt;f.warning=Math.max(0,-f.z/f.speed);
    if(!f.passed&&previous<0&&f.z>=0){f.passed=true;const dx=e.player.pos[0]-f.gapX,dy=e.player.pos[1]-f.gapY;
     f.hit=f.shape==='ring'?Math.hypot(dx,dy)+2.8>f.radius:Math.abs(dx)>f.halfW-2.8||Math.abs(dy)>f.halfH-2.8;
-    if(f.hit){o.stats.fieldsHit++;e.damage(38);log(e,'field-hit',{id:f.id});e.notify('УДАР ПОЛЯ','Корпус задел энергетическую кромку');}else{o.stats.fieldsPassed++;log(e,'field-pass',{id:f.id});}
+    if(f.hit){o.stats.fieldsHit++;e.damage(gentle(e)?16:38);log(e,'field-hit',{id:f.id});e.notify('УДАР ПОЛЯ','Корпус задел энергетическую кромку');}else{o.stats.fieldsPassed++;log(e,'field-pass',{id:f.id});}
    }
   }o.fields=o.fields.filter(f=>f.z<60);
  }
- proto.stepEscort=function(dt,input={}){migrate(this);if(!active(this))return old.step.call(this,dt,input);
+ function easeResumedConvoy(e){const o=e.escort.ops240;if(!gentle(e)||o.mobileBalance2140)return;
+  // One migration per trip. Keep fractional damage and do not revive ships.
+  const previous=e.stage===2?.68:1,factor=healthScale(e)/previous;
+  for(const x of e.enemies)if(x.convoy240&&!x.torpedo&&!x.mobile2140){x.hp*=factor;x.maxHp*=factor;x.mobile2140=true;}
+  for(const b of e.hostile)if(!b.mobile2140){b.damage*=.68;b.mobile2140=true;}
+  for(const f of o.fields)if(f.shape==='ring'&&!f.mobile2140){f.radius=Math.max(f.radius,fieldRadius(e));f.halfW=f.halfH=f.radius;f.mobile2140=true;}
+  o.mobileBalance2140=true;
+ }
+ proto.stepEscort=function(dt,input={}){migrate(this);if(!active(this))return old.step.call(this,dt,input);easeResumedConvoy(this);
   const c=this.escort,o=c.ops240,p=this.player,m=missions[this.stage];c.time+=dt;this.elapsed+=dt;o.cover=Math.max(0,(o.cover||0)-dt);
-  if(softened(this)&&c.distance>=.5&&!o.midpointRepair2120){o.midpointRepair2120=true;const before=c.allies.map(a=>a.hp);for(const a of c.allies)if(!a.dead)a.hp=Math.min(100,a.hp+60);p.hp=Math.min(100,p.hp+45);p.invulnerable=Math.max(2,p.invulnerable);o.cover=Math.max(o.cover,4);log(this,'midpoint-repair',{before,after:c.allies.map(a=>a.hp)});this.notify('РЕМОНТНЫЙ МАЯК','Щиты живых транспортов +60 · корабль +45');}
+  if(gentle(this)&&c.distance>=.5&&!o.midpointRepair2120){o.midpointRepair2120=true;const before=c.allies.map(a=>a.hp);for(const a of c.allies)if(!a.dead)a.hp=Math.min(100,a.hp+60);p.hp=Math.min(100,p.hp+45);p.invulnerable=Math.max(2,p.invulnerable);o.cover=Math.max(o.cover,4);log(this,'midpoint-repair',{before,after:c.allies.map(a=>a.hp)});this.notify('РЕМОНТНЫЙ МАЯК','Щиты живых транспортов +60 · корабль +45');}
   for(const key of ['shotCooldown','missileCooldown','invulnerable','pulseCooldown','flipCooldown'])p[key]=Math.max(0,(p[key]||0)-dt);
   for(const key of ['captainClock','flash','shake','pulseWave'])this[key]=Math.max(0,(this[key]||0)-dt);
   // Autocourse centres the escort only; it never solves fields or acquires a firing lane.
@@ -148,9 +161,9 @@
   stepFields(this,dt);if(this.status!=='playing')return;
   const pattern=formation(this);if(pattern!==o.formation){o.formation=pattern;log(this,'formation',{pattern});}
   c.allies.forEach((a,i)=>{if(a.dead)return;a.pos=V3.lerp(a.pos,goalForAlly(this,i),Math.min(1,dt*.8));a.hit=Math.max(0,a.hit-dt);a.shot-=dt;if(a.shot<=0){const t=this.enemies.find(x=>!x.dead&&x.warp<=0);if(t)this.bullets.push({pos:a.pos.slice(),vel:V3.scale(V3.norm(V3.sub(t.pos,a.pos)),170),life:1.5,damage:5,r:.4,type:'ally',color:'#a8ffe4'});a.shot=2.2;}});
-  const plan=m.groups[o.next];if(plan&&c.time>=plan.at&&this.enemies.filter(x=>!x.dead&&!x.torpedo).length+plan.roles.length<=12){spawnGroup(this,plan);o.next++;c.wave=o.next;}
-  for(const g of o.groups){const crew=members(this,g);if(!crew.length)continue;g.time+=dt;g.disrupt=Math.max(0,g.disrupt-dt);const limit=this.assist?(g.state==='assemble'?.8:g.state==='telegraph'?2.8:g.state==='attack'?3.3:2.0):(g.state==='attack'?2.4:g.state==='regroup'?1:0);
-   if(g.time>=limit&&g.disrupt<=0)transition(this,g,({assemble:this.assist?'telegraph':'attack',telegraph:'attack',attack:'regroup',regroup:this.assist?'telegraph':'attack'})[g.state]);for(const x of crew)stepUnit(this,x,g,dt);
+  const plan=m.groups[o.next];if(plan&&c.time>=plan.at+(gentle(this)?3:0)&&this.enemies.filter(x=>!x.dead&&!x.torpedo).length+plan.roles.length<=12){spawnGroup(this,plan);o.next++;c.wave=o.next;}
+  for(const g of o.groups){const crew=members(this,g);if(!crew.length)continue;g.time+=dt;g.disrupt=Math.max(0,g.disrupt-dt);const limit=warned(this)?(g.state==='assemble'?.8:g.state==='telegraph'?(this.assist?2.8:1.4):g.state==='attack'?3.3:2.0):(g.state==='attack'?2.4:g.state==='regroup'?1:0);
+   if(g.time>=limit&&g.disrupt<=0)transition(this,g,({assemble:warned(this)?'telegraph':'attack',telegraph:'attack',attack:'regroup',regroup:warned(this)?'telegraph':'attack'})[g.state]);for(const x of crew)stepUnit(this,x,g,dt);
   }o.groups=o.groups.filter(g=>members(this,g).length||this.enemies.some(x=>!x.dead&&x.torpedo&&x.squad===g.id));
   for(const x of this.enemies){if(x.torpedo){const a=c.allies[x.ally];x.age+=dt;x.life-=dt;if(!a||a.dead){x.dead=true;continue;}x.vel=V3.lerp(x.vel,V3.scale(V3.norm(V3.sub(a.pos,x.pos)),13),Math.min(1,dt*.7));const prev=x.pos.slice();x.pos=V3.add(x.pos,V3.scale(x.vel,dt));if(flightSegment(prev,x.pos,a.pos,6)!==null){hurtAlly(this,a,24);x.dead=true;this.explosions.push({pos:x.pos.slice(),life:.7,max:.7,color:x.color});}if(x.life<=0)x.dead=true;}else x.shielded=x.role!=='shield'&&this.enemies.some(n=>!n.dead&&n.role==='shield'&&n.squad===x.squad&&n.warp<=0&&dist(n.pos,x.pos)<55);}
   o.aim=aimState(this);if(input.fire)this.fire();if(input.missile)this.missile();if(input.pulse)this.pulse();
@@ -161,7 +174,7 @@
   if(allies(this).length<2){this.status='lost';this.lossReason='Конвой потерял два транспорта. Снимайте щиты, перехватывайте торпеды и применяйте E перед попаданием залпа.';this.emit('state','lost');return;}
   const jammers=this.enemies.filter(x=>x.channel&&!x.dead).length;c.distance=clamp(c.distance+dt/m.duration*(1-Math.min(.22,jammers*.11)),0,1);if(c.distance>=1&&o.next===m.groups.length)this.finishEscort();this.target();
  };
- proto.objective=function(...args){if(!active(this))return old.objective.apply(this,args);const m=missions[this.stage],o=this.escort.ops240,f=o.fields.find(f=>!f.passed),g=o.groups.find(g=>g.state==='telegraph');return{title:m.subtitle,detail:this.assist&&f?'Поле через '+f.warning.toFixed(1)+' с · корабль целиком внутри кольца':this.assist&&g?'Готовится '+g.name.toLowerCase()+' → '+this.escort.allies[g.target].name:'Сохраните 2/3 транспорта · группа '+o.next+'/'+m.groups.length+' · совместите прицел с целью'};};
- globalThis.CITADEL_CONVOY=Object.freeze({version:VERSION,active,warnings:e=>!!e.assist,legacyActive:e=>legacy.active(e)||e?.escort?.ops240?.version==='2.4.0',mission:e=>legacy.active(e)?legacy.mission(e):missions[e.stage],roles,formation,
+ proto.objective=function(...args){if(!active(this))return old.objective.apply(this,args);const m=missions[this.stage],o=this.escort.ops240,f=o.fields.find(f=>!f.passed),g=o.groups.find(g=>g.state==='telegraph');return{title:m.subtitle,detail:warned(this)&&f?'Поле через '+f.warning.toFixed(1)+' с · корабль целиком внутри кольца':warned(this)&&g?'Готовится '+g.name.toLowerCase()+' → '+this.escort.allies[g.target].name:'Сохраните 2/3 транспорта · группа '+o.next+'/'+m.groups.length+' · совместите прицел с целью'};};
+ globalThis.CITADEL_CONVOY=Object.freeze({version:VERSION,active,warnings:e=>!!warned(e),legacyActive:e=>legacy.active(e)||e?.escort?.ops240?.version==='2.4.0',mission:e=>legacy.active(e)?legacy.mission(e):missionFor(e),roles,formation,
   inspection:e=>active(e)?{version:VERSION,stage:e.stage,time:+e.escort.time.toFixed(2),wave:e.escort.wave,total:missions[e.stage].groups.length,distance:e.escort.distance,formation:formation(e),allies:e.escort.allies.map(a=>({hp:a.hp,dead:a.dead})),groups:e.escort.ops240.groups.map(g=>({id:g.id,kind:g.kind,state:g.state,time:g.time,target:g.target,members:members(e,g).length})),fields:e.escort.ops240.fields.map(f=>({...f})),aim:{...e.escort.ops240.aim},stats:{...e.escort.ops240.stats},events:e.escort.ops240.events.map(x=>({...x}))}:legacy.inspection(e)});
 })();

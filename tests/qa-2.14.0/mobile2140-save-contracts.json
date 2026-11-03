@@ -1,0 +1,61 @@
+{
+  "pass": true,
+  "checks": [
+    {
+      "name": "resumed-pursuit-retains-packet-fractions",
+      "pass": true,
+      "beforeSeconds": 120,
+      "afterSeconds": 90
+    },
+    {
+      "name": "older-2120-packet-duration-compatibility",
+      "pass": true,
+      "cases": [
+        {
+          "mode": "combat",
+          "branch": false,
+          "before": 142,
+          "after": 90
+        },
+        {
+          "mode": "combat",
+          "branch": true,
+          "before": 80,
+          "after": 54
+        },
+        {
+          "mode": "training",
+          "branch": false,
+          "before": 114,
+          "after": 72
+        },
+        {
+          "mode": "training",
+          "branch": true,
+          "before": 72,
+          "after": 46
+        }
+      ]
+    },
+    {
+      "name": "convoy-1-repair-once-across-save",
+      "pass": true,
+      "hpAtRepair": 100
+    },
+    {
+      "name": "convoy-2-repair-once-across-save",
+      "pass": true,
+      "hpAtRepair": 100
+    },
+    {
+      "name": "convoy-3-repair-once-across-save",
+      "pass": true,
+      "hpAtRepair": 100
+    },
+    {
+      "name": "legacy-rules-unchanged",
+      "pass": true,
+      "seconds": 35
+    }
+  ]
+}

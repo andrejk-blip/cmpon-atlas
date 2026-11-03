@@ -274,12 +274,12 @@
    const player=type==='player',b=player?flightBasis(x.yaw,x.pitch,x.bank):spaceBasisDir(x.vel||[0,0,-1]),scale=player?1:type==='fz'?1.2:.85;
    instance(a,player||type==='fz'?base.model(type):escortFighter(type,lod),x.pos,b,[scale,scale,scale],{pursuit260:true,shipRole:type},x.hit>0);
    const m=spaceModel(x.pos,[scale,scale,scale],b),color=player?C.cyan:type==='fz'?C.warm:'#eb8165';
-   for(const side of [-1,1]){
+   if(!(player&&e.campaign2120))for(const side of [-1,1]){
      const pos=spacePoint(m,[side*(player||type==='fz'?3.57:2),.12,player||type==='fz'?-6.0:-4.0]);
      part(a,'p260_horn',pos,[.48,.4,1.9+Math.sin(time*22+(x.id||0))*.12],color,1,b,1,L);
    }
    if(x.muzzleFlash>0)for(const side of [-1,1])Object.assign(part(a,'octa',V3.add(x.pos,[side*2,.15,4.5]),[.6,.6,1.4],C.warm,1,SPACE_IDENTITY,1,L),{pursuit260:true,muzzleFlash:true});
-   if(e.assist&&x.telegraph>0)Object.assign(part(a,'octa',V3.add(x.pos,[0,0,4]),[.75,.75,.75],C.warm,1,SPACE_IDENTITY,1,L),{trainingCue:true});
+   if((e.assist||e.campaign2120)&&x.telegraph>0)Object.assign(part(a,'octa',V3.add(x.pos,[0,0,4]),[.75,.75,.75],C.warm,1,SPACE_IDENTITY,1,L),{trainingCue:true});
  }
  function gate(a,e,g,lod){
    const o=P.gateOpening(e,g),circle=o.shape==='circle'||Number.isFinite(g.gapRadius);
@@ -291,24 +291,62 @@
    }
  }
  function portalMonster(a,e,w,parts,lod,tag){
-   const colors={hammer:['#526372','#caa56c'],tentacle:['#68435d','#df94bc'],maw:['#8d3f4d','#edbd8c'],mantis:['#416557','#b2ed9c'],medusa:['#625b90','#b6cbff']},[skin,glow]=colors[w.kind],rim=parts.filter(j=>j.part==='rim');
-   const put=(mesh,pos,size,color,em=0)=>Object.assign(part(a,mesh,pos,size,color,em),tag,{portal2130:true});
-   for(let i=0;i<rim.length;i++){
-     const j= rim[i],next=rim[(i+1)%rim.length];Object.assign(beam(a,j.pos,next.pos,j.r,skin),tag,{portal2130:true});
-     if(i%2===0){put(w.kind==='hammer'?'armor':'sphere',j.pos,[j.r*1.05,j.r*.8,j.r*.85],skin);const inner=V3.lerp(j.pos,w.aperture,.10);put('octa',V3.add(inner,[0,0,6]),[1.3,2,1.4],glow,.85);}
-     if(w.kind==='maw'&&i%2===0){const to=V3.lerp(j.pos,w.aperture,.20);Object.assign(taper(a,j.pos,to,2.4,'#e8cda7'),tag);}
+   // Reuse the sculpted skulls, layered armour and real articulated weapons.
+   // The modern pose places this anatomy close to the flight path, rather
+   // than replacing every species by the same circular portal.
+   const first=a.length,view={...e,assist:false,pursuit:e.pursuit||{clock:e.escort?.time||0}};
+   warp(a,view,{...w,portal2130:false},lod);
+   if(w.kind==='tentacle'){
+     // A squid has a long mantle and one large eye, not the forge creature's
+     // humanoid chest. Keep its moving tentacles from the shared pose.
+     const tail=a.splice(first).filter(x=>!['body','eye','rib-light','vein'].includes(x.warpPart));a.push(...tail);
+     const mantle=compile('mantle2140_'+lod,b=>{
+       part(b,'p260_muscle',[0,3,0],[5.8,10.2,4.4],'#634665');
+       part(b,'p260_muscle',[0,7,-.3],[4.6,6.3,3.5],'#825e87');
+       part(b,'p260_muscle',[0,-2,2.4],[4.4,4.7,2.6],'#35283f');
+       for(const s of [-1,1]){
+         horn(b,[[s*3.2,9,0],[s*6.4,5,-.4],[s*5.4,-1,1.2]],1.1,'#a66b93');
+         for(let j=0;j<(lod===2?2:4);j++)beam(b,[s*3.3,5.8-j*1.6,3.1],[s*4.5,5-j*1.5,2.2],.16,'#dc9ecb',.6,L);
+       }
+       part(b,'p260_muscle',[0,3.5,4.1],[3.2,3.1,1.1],'#e7c7ae');
+       part(b,'p260_muscle',[0,3.5,5],[2.1,2.2,.45],'#c986d4',.45,SPACE_IDENTITY,1,L);
+       part(b,'p260_bone',[0,3.5,5.45],[.42,1.75,.16],C.void);
+       part(b,'p260_bone',[-.55,4.5,5.6],[.35,.4,.08],'#fff1dd',.9,SPACE_IDENTITY,1,L);
+       horn(b,[[-3.4,5.8,3.4],[0,6.4,4.2],[3.4,5.8,3.4]],.55,'#3e2c4c');
+       for(const s of [-1,1])horn(b,[[s*1.4,-3.2,3],[s*2.1,-5,4.4],[s*.6,-5.8,4.9]],.75,C.bone);
+     });
+     instance(a,mantle,w.pos,SPACE_IDENTITY,[w.scale,w.scale,w.scale],{...tag,warpPart:'body',anatomy2140:true});
    }
-   const limbs=parts.filter(j=>j.part==='tentacle');
-   for(const chain of [...new Set(limbs.map(j=>j.chain))]){const joints=limbs.filter(j=>j.chain===chain);for(let i=1;i<joints.length;i++){
-     const j=joints[i];Object.assign(beam(a,joints[i-1].pos,j.pos,j.r,skin),tag,{portal2130:true});
-     if(i%3===0)put('sphere',V3.add(j.pos,[0,0,j.r*.6]),[j.r*.6,j.r*.6,.6],glow,.2);
-   }const tip=joints.at(-1);if(w.kind==='hammer')put('armor',tip.pos,[tip.r*2,tip.r*2,tip.r*1.7],'#8c9ca0');
-    if(w.kind==='mantis')Object.assign(taper(a,tip.pos,V3.add(tip.pos,[0,7,0]),tip.r,'#badcc7'),tag);
+   if(w.kind==='maw'){
+     const face=compile('mawFace2140_'+lod,b=>{
+       part(b,'p260_muscle',[0,.8,6.2],[3.8,5.4,.32],'#50243e',.18);
+       part(b,'p260_muscle',[0,.8,6.57],[1.3,4.5,.16],'#9b4d62',.3);
+       for(const s of [-1,1]){
+         part(b,'p260_bone',[s*2.9,6.3,6.65],[1.05,.52,.2],'#ffd392',.9,SPACE_IDENTITY,1,L);
+         part(b,'p260_bone',[s*2.9,6.3,6.87],[.18,.48,.06],C.void);
+         for(let j=0;j<(lod===2?4:6);j++){
+           const y=-3.5+j*(lod===2?2.5:1.65),x=s*(3.2+Math.cos(y*.35)*.35);
+           taper(b,[x,y,6.8],[x-s*(j%2?1.8:1.3),y-.7,7.1],.38,C.bone);
+         }
+       }
+     });
+     instance(a,face,w.pos,SPACE_IDENTITY,[w.scale,w.scale,w.scale],{...tag,warpPart:'face',anatomy2140:true});
    }
-   const top=V3.add(w.aperture,[0,w.portalRadius||43,0]);
-   if(w.kind==='medusa'){put('sphere',V3.add(top,[0,5,-4]),[24,12,8],skin);for(let i=-2;i<=2;i++)put('octa',V3.add(top,[i*8,4+Math.cos(i)*5,3]),[1,4,1],glow,.8);}
-   else put(w.kind==='mantis'?'octa':'armor',V3.add(top,[0,2,0]),[12,9,7],skin);
-   for(const sign of [-1,1]){put('sphere',V3.add(top,[sign*5,1,7]),[3,2.1,1.2],'#181022');put('sphere',V3.add(top,[sign*5,1,8]),[1.5,1,.7],glow,1);}
+   const strike=w.strike2140||{},warn=strike.windup||0;
+   for(let i=first;i<a.length;i++)Object.assign(a[i],{anatomy2140:true});
+   // Warm veins brighten along the actual striking limb for a 1.5 second
+   // wind-up. This cue is visible in every mode and remains with FX disabled.
+   if(warn>0||strike.active){
+     const limbs=parts.filter(j=>!['body','hammer','blade'].includes(j.part)),color=strike.active?'#fff2bd':'#ffb65c';
+     for(const chain of [...new Set(limbs.map(j=>j.chain))]){
+       const joints=limbs.filter(j=>j.chain===chain),tail=joints.slice(-5);
+       for(let i=1;i<tail.length;i++){
+         const p=V3.add(tail[i-1].pos,[0,0,tail[i-1].r*.83]),q=V3.add(tail[i].pos,[0,0,tail[i].r*.83]);
+         Object.assign(beam(a,p,q,.13+.16*warn,color,.65+.35*warn,L),tag,{anatomy2140:true,monsterWindup2140:true});
+       }
+       const tip=joints.at(-1);if(tip)Object.assign(part(a,'octa',V3.add(tip.pos,[0,0,tip.r+.4]),[.7+warn,.7+warn,.4],color,1,SPACE_IDENTITY,.95,L),tag,{anatomy2140:true,monsterWindup2140:true});
+     }
+   }
  }
  function scene(e,time,fx){
    if(!active(e))return old.scene(e,time,fx);

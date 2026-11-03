@@ -1,0 +1,8 @@
+{
+  "pass": true,
+  "backgroundChangedPixels": 103595,
+  "totalPixels": 249600,
+  "pausedSkyFrozen": true,
+  "weaponFamilies": 5,
+  "method": "Native production CPU rendering of explicitly staged fixtures; no physical device performance claim."
+}

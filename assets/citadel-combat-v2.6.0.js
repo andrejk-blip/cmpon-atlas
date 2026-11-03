@@ -7,7 +7,7 @@
   const VERSION='2.6.0';
   if(typeof RequirementArcade!=='function'||globalThis.CITADEL_COMBAT?.version===VERSION)return;
   const proto=RequirementArcade.prototype;
-  const orbital=e=>!e.assist&&!e.finale&&e.status==='playing'&&e.phase==='battle'&&![1,2].includes(e.stage);
+  const orbital=e=>!e.assist&&!e.finale&&e.status==='playing'&&e.phase==='battle'&&![1,2].includes(e.stage)&&!(e.campaign2120&&e.stage===0);
   const spawn=proto.spawnEnemy,step=proto.enemyStep,shot=proto.hostileShot;
   proto.spawnEnemy=function(...args){
     const before=this.enemies?.length||0,result=spawn.apply(this,args);

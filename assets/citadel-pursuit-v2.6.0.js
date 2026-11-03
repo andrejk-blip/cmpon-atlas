@@ -28,9 +28,12 @@
     Object.freeze({ name: 'Последняя редакция', packet: 'Подтверждённая версия', seconds: 58, calm: 46, speed: 124, surge: 35, period: 13, radius: 14, gates: 4, gap: 490, halfX: 12, halfY: 12, wave: 14 }),
   ]);
   const stageOf = e => STAGES[e.pursuit.chapter];
+  // Personal campaigns use the mobile-friendly rules. Cloud/legacy runs retain
+  // their original rules and record comparability.
+  const gentle = e => e.campaign2120?.schema === 1;
   const branch=e=>!!e.campaign2120?.branchActive;
-  const packetSeconds = (e, i) => e.campaign2120 ? (branch(e)?(e.assist?[17,20,24]:[19,22,27]):(e.assist?[26,32,39]:[32,39,49]))[i] : branch(e)?(e.assist?[20,24,28]:[22,26,32])[i]:e.assist ? STAGES[i].calm : STAGES[i].seconds;
-  const linkRadius = e => stageOf(e).radius + (e.assist ? 4 : 0);
+  const packetSeconds = (e, i) => gentle(e) ? (branch(e)?(e.assist?[13,15,18]:[16,18,20]):(e.assist?[21,24,27]:[26,30,34]))[i] : branch(e)?(e.assist?[20,24,28]:[22,26,32])[i]:e.assist ? STAGES[i].calm : STAGES[i].seconds;
+  const linkRadius = e => (gentle(e) ? [28,27,26][e.pursuit.chapter] : stageOf(e).radius) + (e.assist ? 4 : 0);
   const granting = new WeakSet();
   const loaded = e => !!e && e.stage === 1 && !e.finale && e.pursuit?.version === VERSION;
   const active = e => loaded(e) && e.phase === 'pursuit' && !e.crash;
@@ -122,28 +125,70 @@
     const previous=new Map((w.segments||[]).map((x,i)=>[x.key||String(i),x.pos]));
     const c=w.center,side=w.side||1,phase=w.phase;
     if(w.portal2130){
-      // The creature surrounds a real aperture. Rendering and swept collision
-      // share these joints; its central opening is never a hidden solid body.
+      // 2.14: a creature has a body and articulated limbs, never an organic
+      // hoop. The passage goes beside its anatomy, with the same moving
+      // joints used by rendering and swept collision.
       const add=(key,pos,r,part,chain=0)=>({key,pos,r,part,chain,previous:dt>0?(previous.get(key)||pos).slice():pos.slice()});
-      const n=28,R=w.portalRadius||43,shift=Math.sin(phase*.45)*5;
-      w.aperture=[c[0]+shift,c[1]+Math.cos(phase*.4)*3,c[2]];
+      const scale=arcadeClamp(w.scale||3.4,2.6,3.4),lift={hammer:-2,tentacle:-4,maw:1,mantis:-5,medusa:0}[w.kind]||0;
+      w.anatomy2140=true;w.scale=scale;
+      w.pos=V3.add(c,[side*(40+Math.sin(phase*.4)*1.2),lift+Math.sin(phase*.63)*1.8,0]);
+      w.safeRoute2140=V3.add(c,[-side*18,-5,0]);w.aperture=w.safeRoute2140.slice();
+      const cycle=((w.age||0)+(w.index||0)*.63)%7.2;
+      const windup=cycle>=3.8&&cycle<5.3?(cycle-3.8)/1.5:0;
+      const strike=cycle>=5.3&&cycle<5.9?smooth((cycle-5.3)/.6):cycle>=5.9?1-smooth((cycle-5.9)/1.3):0;
+      w.strike2140={cycle,windup,active:cycle>=5.3&&cycle<5.9,reach:strike};
       w.segments=[];
-      for(let i=0;i<n;i++){const a=i/n*Math.PI*2;
-        w.segments.push(add('rim'+i,V3.add(w.aperture,[Math.cos(a)*R,Math.sin(a)*R,Math.sin(a*3+phase)*2]),7.2,'rim'));
+      const body=(key,off,r)=>w.segments.push(add(key,V3.add(w.pos,V3.scale(off,scale)),r*scale,'body'));
+      if(w.kind==='tentacle'){
+        body('mantle-low',[0,-3,0],4.7);body('mantle',[0,2,0],5.5);body('mantle-high',[0,7,0],4.5);body('mantle-tip',[0,10.2,0],2.6);body('eye',[0,3.5,4],3.2);
+      }else{
+        body('torso',[0,0,0],4.8);body('chest',[0,3,1],4.6);body('pelvis',[0,-4,1],2.9);
+        if(w.kind==='medusa'){
+          body('bell',[0,5,0],4.8);body('eye',[0,1.8,5],4.1);
+          for(const s of [-1,1])body('bell'+s,[s*6,5,0],3.7);
+        }else if(w.kind==='mantis'){
+          body('head',[0,6.5,3.7],3.6);for(const s of [-1,1])body('shoulder'+s,[s*5.5,3,0],3.3);
+        }else if(w.kind==='maw'){
+          body('skull',[0,6,2],4.0);body('mouth',[0,1.5,4.8],3.6);for(const s of [-1,1]){body('rib'+s,[s*4,0,2],2.7);body('cheek'+s,[s*3.8,4,3],2.7);}
+        }else{
+          body('head',[0,5.6,3.2],3.2);for(const s of [-1,1])body('shoulder'+s,[s*4.8,3,1],3.2);
+        }
       }
-      const top=V3.add(w.aperture,[0,R,0]);
-      if(w.kind==='medusa')for(let i=-2;i<=2;i++)w.segments.push(add('bell'+i,V3.add(top,[i*9,5,-4]),8.5,'body'));
-      else for(let i=-1;i<=1;i++)for(const y of [-3,3])w.segments.push(add('head'+i+'y'+y,V3.add(top,[i*6,2+y,0]),6.8,'body'));
-      if(w.kind==='maw')for(let i=0;i<n;i+=2){const j=w.segments[i];w.segments.push(add('tooth'+i,V3.lerp(j.pos,w.aperture,.16),2.5,'body'));}
-      // Four distinct articulated limbs. Keep a generous inner flight lane;
-      // tips sweep the rim rather than forcing unavoidable centre collisions.
-      const arms=w.kind==='medusa'?6:4;
-      for(let arm=0;arm<arms;arm++)for(let j=0;j<=10;j++){
-        const t=j/10,a=arm/arms*Math.PI*2+Math.sin(phase+arm)*.18+t*.26;
-        const r=R+11-t*(18+5*Math.sin(phase*1.2+arm));
-        w.segments.push(add('portal'+arm+'j'+j,V3.add(w.aperture,[Math.cos(a)*r,Math.sin(a)*r,Math.sin(t*Math.PI)*14]),3.7-t,'tentacle',arm));
+      const arms={hammer:1,tentacle:4,maw:2,mantis:2,medusa:5}[w.kind]||2;
+      for(let arm=0;arm<arms;arm++){
+        const spread=arm-(arms-1)/2,ph=phase+arm*1.1;
+        let part='tentacle',radius=3.8,start,end;
+        if(w.kind==='hammer'){
+          part='arm';radius=4.8;start=V3.add(w.pos,[-side*4*scale,3*scale,3]);
+          end=V3.add(c,[side*(43-32*strike+12*windup),14-18*strike+12*windup,10+Math.sin(ph)*3]);
+        }else if(w.kind==='tentacle'){
+          start=V3.add(w.pos,[side*(arm%2?1:-1)*3*scale,-4*scale,2]);
+          end=V3.add(c,[side*(24+arm*3-16*strike+6*windup),spread*17+Math.sin(ph)*5,10+Math.cos(ph)*8]);
+        }else if(w.kind==='maw'){
+          part='jaw';radius=5.1;start=V3.add(w.pos,[-side*2*scale,spread*6*scale,4*scale]);
+          end=V3.add(c,[side*(29-17*strike+6*windup),spread*(39-13*strike)+Math.sin(ph)*3,12]);
+        }else if(w.kind==='mantis'){
+          part='scythe';radius=4.3;start=V3.add(w.pos,[-side*4*scale,spread*5*scale,2]);
+          end=V3.add(c,[side*(34-23*strike+8*windup),spread*40+Math.sin(ph)*5,9+Math.cos(ph)*6]);
+        }else{
+          start=V3.add(w.pos,[(arm-2)*4*scale,0,2]);
+          end=V3.add(c,[side*(23+arm*3-9*strike+3*windup),-29+arm*12+Math.sin(ph)*8,12+Math.cos(ph)*7]);
+        }
+        const joints=14;
+        for(let j=0;j<=joints;j++){
+          const t=j/joints,pos=V3.lerp(start,end,t),r=radius*(1-t*.28);
+          pos[1]+=Math.sin(ph+t*4)*5*Math.sin(t*Math.PI);pos[2]+=Math.sin(ph*.7+t*3)*5*Math.sin(t*Math.PI);
+          // Preserve an 18 m corridor even at maximum limb extension.
+          const dx=pos[0]-w.safeRoute2140[0],dy=pos[1]-w.safeRoute2140[1],len=Math.hypot(dx,dy),min=18+r;
+          if(len<min){pos[0]=w.safeRoute2140[0]+dx/Math.max(.001,len)*min;pos[1]=w.safeRoute2140[1]+dy/Math.max(.001,len)*min;}
+          w.segments.push(add('limb'+arm+'j'+j,pos,r,part,arm));
+        }
+        const tip=w.segments.at(-1).pos.slice();
+        if(arm===0)w.head=tip.slice();
+        if(w.kind==='hammer')w.segments.push(add('hammer',tip,9.4,'hammer',arm));
+        if(w.kind==='mantis')w.segments.push(add('blade'+arm,tip,6.8,'blade',arm));
       }
-      w.pos=c.slice();w.head=w.segments.at(-1).pos.slice();return;
+      return;
     }
     if(w.schema!==280){
       // Keep an already encountered 2.6 apparition at its original size.
@@ -205,7 +250,7 @@
       const index=s.nextWarp++;let d=s.nextWarpDistance;
       const nearby=s.gates.find(g=>Math.abs(g.distance-d)<180);
       if(nearby)d=nearby.distance+stageOf(e).gap*.5;
-      s.nextWarpDistance=d+[1200,1000,820][s.chapter];
+      s.nextWarpDistance=d+(gentle(e)?[1550,1450,1350]:[1200,1000,820])[s.chapter];
       const center=route(e,d),side=index%2?-1:1,kind=WARP_KINDS[index%WARP_KINDS.length];
       s.warpEntities.push({id:++e.entityId,schema:280,kind,name:WARP_NAMES[kind],scale:3.4,
         portal2130:!!e.campaign2120,portalRadius:e.assist?46:43,
@@ -238,23 +283,23 @@
   function evasion(e,dt,nearGate){
     const s=e.pursuit,m=s.evasion;
     if(s.clock>=m.next){
-      m.index++;m.until=s.clock+(e.assist?3.2:4.2)+s.chapter*.55;m.next=s.clock+17-s.chapter*2-(s.chapter===2?2:0);
+      m.index++;m.until=s.clock+(gentle(e)?2.4:(e.assist?3.2:4.2))+s.chapter*(gentle(e)?.2:.55);m.next=s.clock+(gentle(e)?21-s.chapter:17-s.chapter*2-(s.chapter===2?2:0));
       m.phase=arcadeSeed((e.seed+26061+m.index*7919)>>>0)()*Math.PI*2;s.maneuvers++;
       e.say('ФЗ: «'+TAUNTS[(m.index-1)%TAUNTS.length]+'»','enemy',true);s.lastTaunt=TAUNTS[(m.index-1)%TAUNTS.length];
       e.emit('pursuit-evasion',{stage:s.chapter+1,index:m.index});
     }
-    const enabled=s.clock<m.until&&!nearGate&&s.clock>7,amp=(e.assist?7:12)+s.chapter*2+(s.chapter===2&&!e.assist?3:0);
+    const enabled=s.clock<m.until&&!nearGate&&s.clock>7,amp=gentle(e)?(e.assist?4:6)+s.chapter:(e.assist?7:12)+s.chapter*2+(s.chapter===2&&!e.assist?3:0);
     const tx=enabled?amp*(.7*Math.sin(s.clock*1.7+m.phase)+.3*Math.sin(s.clock*3.2+m.phase*2)):0;
     const ty=enabled?amp*.65*Math.sin(s.clock*2.15+m.phase*.8):0;
     // Slew limit bounds apparent lateral speed; no teleport, impossible corner or RNG per frame.
-    for(let i=0;i<2;i++){const goal=i?ty:tx,limit=(e.assist?15:s.chapter===2?31:24)*dt;m.offset[i]+=arcadeClamp(goal-m.offset[i],-limit,limit);}
+    for(let i=0;i<2;i++){const goal=i?ty:tx,limit=(gentle(e)?12:(e.assist?15:s.chapter===2?31:24))*dt;m.offset[i]+=arcadeClamp(goal-m.offset[i],-limit,limit);}
     m.active=enabled;return m.offset;
   }
   function moveLead(e, dt) {
     const s=e.pursuit,stage=stageOf(e),old=s.leader.pos;
     const cycle=s.chapterClock%stage.period;
     s.burst = cycle>stage.period-6 ? Math.sin((cycle-(stage.period-6))/6*Math.PI) : 0;
-    s.leadSpeed=(stage.speed+stage.surge*s.burst)*(e.assist?.9:1);
+    s.leadSpeed=(stage.speed+stage.surge*s.burst*(gentle(e)?.55:1))*(e.assist?.9:1);
     if(dt>0)s.leadTravel+=s.leadSpeed*dt;
     const point=coursePoint(e,s.leadTravel), gate=s.gates.some(g=>Math.abs(g.distance-s.leadTravel)<180);
     const weave=s.chapter*(gate?.12:1)*smooth(s.clock/8);
@@ -266,6 +311,7 @@
     for(const item of e.pickups)if(item.type==='requirement')item.pos=point.slice();
   }
   function sync(e) {
+    easeResumedPursuit(e);
     const s=e.pursuit;e.boss=null;e.lock=null;
     e.enemies=e.enemies.filter(x=>x.pursuitEnemy&&!x.dead).slice(0,RULES.maxEnemies);
     e.hostile=e.hostile.filter(x=>x.pursuitShot).slice(-RULES.maxHostile);
@@ -285,7 +331,7 @@
     const s=e.pursuit,stage=stageOf(e);
     e.asteroids=e.asteroids.filter(a=>!a.dead&&a.distance>s.travel-45);
     while(s.nextRockDistance<s.travel+RULES.lookAhead){
-      const d=s.nextRockDistance,index=s.nextRock++;s.nextRockDistance+=s.chapter===2?150:190;
+      const d=s.nextRockDistance,index=s.nextRock++;s.nextRockDistance+=gentle(e)?270:(s.chapter===2?150:190);
       const rnd=arcadeSeed((e.seed+2100417+index*7919)>>>0),point=route(e,d);
       const add=(x,y,r,wall=false)=>e.asteroids.push({id:++e.entityId,pursuitRock:true,pos:[x,y,point[2]],r,variant:index%3,
         phase:rnd()*Math.PI*2,distance:d,passAt:s.clock+(d-s.travel)/s.speed,spawnedAt:s.clock,hp:wall?null:52,wall,hit:0,contact:false,dead:false});
@@ -299,8 +345,8 @@
     while(s.nextGateDistance<s.travel+RULES.lookAhead){
       const index=s.nextGate++,d=s.nextGateDistance;
       s.nextGateDistance+=stage.gap+(s.chapter===2&&index%3===1?-140:0);
-      const kind='circle',gapRadius=stage.halfX+(e.assist?4:0);
-      s.gates.push({id:++e.entityId,index,distance:d,pos:route(e,d),kind,chapter:s.chapter,
+      const kind='circle',gapRadius=stage.halfX+(gentle(e)?8:0)+(e.assist?4:0);
+      s.gates.push({id:++e.entityId,index,distance:d,pos:route(e,d),kind,chapter:s.chapter,mobile2140:gentle(e),
         hx:gapRadius,hy:gapRadius,gapRadius,ringThickness:4.5,crossed:false,passed:false,hit:false});
     }
     s.gates=s.gates.slice(-RULES.maxGates);
@@ -312,7 +358,7 @@
     if(migrating&&previous?.version==='1.8.0')fraction=Math.max(fraction,(rescued+Math.max(0,...previous.carriers.filter(c=>!e.rescued.includes(c.reqId)).map(c=>Math.min(.99,finite(c.transfer)/Math.max(.1,finite(c.transferTime,3))))))/3);
     const origin=e.player.pos.slice(),leaderId=++e.entityId,chapter=Math.min(2,rescued);
     const packets=STAGES.map((x,i)=>arcadeClamp(fraction*3-i,0,1)*packetSeconds(e,i));
-    e.pursuit={version:VERSION,rulesRevision:RULES_REVISION,clock:0,state:'chase',migrated:!!migrating,origin,returnStation:previous?.returnStation?.slice()||e.station.pos.slice(),
+    e.pursuit={version:VERSION,rulesRevision:RULES_REVISION,mobileBalance2140:gentle(e),clock:0,state:'chase',migrated:!!migrating,origin,returnStation:previous?.returnStation?.slice()||e.station.pos.slice(),
       speed:(STAGES[chapter].speed)*(e.assist?.9:1),travel:0,leadTravel:84,leadSpeed:82,burst:0,
       routePhase:arcadeSeed((e.seed+91047)>>>0)()*Math.PI*2,requiredSeconds:seconds,packets,uploaded:0,progress:0,
       chapter,chapterClock:0,stageHistory:[{stage:chapter+1,at:0}],stageGates:[0,0,0],gates:[],nextGate:0,nextGateDistance:950,
@@ -349,7 +395,7 @@
       if(wall){reason='obstructed';blockedId=wall.gate.id;}
     }
     if (reason === 'connected') {
-      const jammer=e.enemies.find(x=>x.pursuitEnemy&&x.role==='jammer'&&!x.dead&&x.age>(e.assist?2:0)&&x.age<17&&distance(x.pos,from)<132);
+      const jammer=e.enemies.find(x=>x.pursuitEnemy&&x.role==='jammer'&&!x.dead&&x.age>(gentle(e)?3:(e.assist?2:0))&&x.age<(gentle(e)?8:17)&&distance(x.pos,from)<(gentle(e)?105:132));
       if(jammer){reason='jammed';blockedId=jammer.id;}
     }
     if(reason==='connected'&&warpHit(e,from,to,.2)){reason='obstructed';blockedId='warp';}
@@ -413,26 +459,26 @@
   function encounters(e,dt) {
     const s=e.pursuit,p=e.player,stage=stageOf(e);
     if(s.clock>=s.nextEncounter){
-      s.nextEncounter=s.clock+stage.wave+(e.assist?4:0);s.encounter++;
+      s.nextEncounter=s.clock+stage.wave+(gentle(e)?9:0)+(e.assist?4:0);s.encounter++;
       // Three times the former 2 / 2 / 3 formation. Keep every craft in the firing hemisphere.
-      const count=s.chapter===2?9:6;
+      const count=gentle(e)?[3,4,5][s.chapter]:(s.chapter===2?9:6);
       for(let i=0;i<count&&e.enemies.length<RULES.maxEnemies;i++){
         const side=(s.encounter+i)%2?1:-1,role=s.chapter>0&&i%3===0?'jammer':i%3===2?'heavy':'interceptor';
         const pos=V3.add(p.pos,[side*(24+i%3*9),(i%3-1)*14,-175-i*6]);
-        const hp=(role==='jammer'?78:role==='heavy'?96:58)*(e.assist?.78:1);
+        const hp=(role==='jammer'?78:role==='heavy'?96:58)*(gentle(e)?.64:1)*(e.assist?.78:1);
         e.enemies.push({id:++e.entityId,pursuitEnemy:true,type:'fighter',role,pos,vel:[0,0,-s.speed],
           r:role==='heavy'?5:4.1,hp,maxHp:hp,color:role==='jammer'?'#d4a6ff':role==='heavy'?'#dba766':'#ff826d',points:role==='jammer'?180:role==='heavy'?180:120,
-          age:0,side,slot:i,shot:e.assist?2.4+i*.3:0,telegraph:0,aim:null,warp:0,hit:0,dead:false,volleys:0});s.enemiesSpawned++;
+          age:0,side,slot:i,...(gentle(e)?{mobile2140:true}:{}),shot:gentle(e)?2.5+i*.4:e.assist?2.4+i*.3:0,telegraph:0,aim:null,warp:0,hit:0,dead:false,volleys:0});s.enemiesSpawned++;
       }
       if(e.assist)e.say(s.chapter?'Глушители впереди. Сбивай их, чтобы восстановить канал.':'Перехватчики на курсе. Стреляй и меняй позицию.','alert');
     }
     const shoot=x=>{
-      const lead=e.assist?.20:.32;
+      const lead=gentle(e)?.12:e.assist?.20:.32;
       // Aim at the current moving flight frame; a maneuver can evade the shot.
       const aim=x.aim||[p.pos[0]+s.velocity[0]*lead,p.pos[1]+s.velocity[1]*lead,p.pos[2]];
-      const velocity=V3.add(V3.scale(V3.norm(V3.sub(aim,x.pos)),e.assist?96:112),[0,0,-s.speed]);
-      e.hostile.push({pursuitShot:true,pos:x.pos.slice(),vel:velocity,life:2.8,r:.8,damage:x.role==='heavy'?14:x.role==='jammer'?9:11,color:x.color});
-      x.volleys++;x.muzzleFlash=.12;s.shotsOpened++;x.aim=null;x.shot=(e.assist?4.4:3.3)-s.chapter*.2+x.slot%3*.18;
+      const velocity=V3.add(V3.scale(V3.norm(V3.sub(aim,x.pos)),gentle(e)?84:e.assist?96:112),[0,0,-s.speed]);
+      e.hostile.push({pursuitShot:true,...(gentle(e)?{mobile2140:true}:{}),pos:x.pos.slice(),vel:velocity,life:2.8,r:.8,damage:(x.role==='heavy'?14:x.role==='jammer'?9:11)*(gentle(e)?.55:1),color:x.color});
+      x.volleys++;x.muzzleFlash=.12;s.shotsOpened++;x.aim=null;x.shot=(gentle(e)?5.2:e.assist?4.4:3.3)-s.chapter*.2+x.slot%3*.18;
     };
     for(const x of e.enemies){
       if(x.dead)continue;const old=x.pos.slice();x.age+=dt;x.hit=Math.max(0,x.hit-dt);x.muzzleFlash=Math.max(0,(x.muzzleFlash||0)-dt);
@@ -446,9 +492,9 @@
       x.pos[2]=Math.min(x.pos[2],p.pos[2]-48);x.vel=V3.scale(V3.sub(x.pos,old),1/dt);
       if(departing){x.telegraph=0;continue;}
       x.shot-=dt;
-      if(e.assist){
-        if(e.assist&&x.telegraph>0){x.telegraph=Math.max(0,x.telegraph-dt);if(x.telegraph===0)shoot(x);}
-        else if(x.age>2&&x.shot<=0){x.telegraph=1.25;x.aim=[p.pos[0]+s.velocity[0]*.2,p.pos[1]+s.velocity[1]*.2,p.pos[2]];}
+      if(e.assist||gentle(e)){
+        if(x.telegraph>0){x.telegraph=Math.max(0,x.telegraph-dt);if(x.telegraph===0)shoot(x);}
+        else if(x.age>2&&x.shot<=0){const lead=gentle(e)?.12:.2;x.telegraph=e.assist?1.25:.9;x.aim=[p.pos[0]+s.velocity[0]*lead,p.pos[1]+s.velocity[1]*lead,p.pos[2]];}
       }else {x.telegraph=0;if(x.shot<=0)shoot(x);}
     }
     e.enemies=e.enemies.filter(x=>!x.dead&&x.age<23);
@@ -472,7 +518,7 @@
     for(const rock of e.asteroids){
       rock.hit=Math.max(0,finite(rock.hit)-dt);rock.passAt=s.clock+(rock.distance-s.travel)/s.speed;
       if(rock.dead||rock.contact||flightSegment(old,p.pos,rock.pos,rock.r+1.8)===null)continue;
-      rock.contact=true;if(e.damage(17)){s.collisions++;s.linkRecovery=.9;e.burst(rock.pos,'#ffc096',9);}
+      rock.contact=true;if(e.damage(gentle(e)?9:17)){s.collisions++;s.linkRecovery=gentle(e)?.35:.9;e.burst(rock.pos,'#ffc096',9);}
       if(e.status!=='playing')return;
     }
     for(const gate of s.gates){
@@ -480,15 +526,15 @@
       gate.crossed=true;const t=(gate.pos[2]-old[2])/(p.pos[2]-old[2]),at=V3.lerp(old,p.pos,t),o=gateOpening(e,gate);
       gate.passed=o.shape==='circle'?Math.hypot(at[0]-o.x,at[1]-o.y)<o.radius-2.2:Math.abs(at[0]-o.x)<o.hx-2.2&&Math.abs(at[1]-o.y)<o.hy-2.2;
       if(gate.passed){s.gatesPassed++;s.stageGates[s.chapter]++;e.emit('pursuit-gate',{stage:s.chapter+1,passed:true});}
-      else {s.gatesMissed++;s.linkRecovery=1.1;
-        if((gate.kind==='circle'?ringSegment(e,gate,old,p.pos,2.2)!==null:gateParts(e,gate).some(box=>boxSegment(old,p.pos,box,2.2)!==null))&&e.damage(e.assist?20:28)){s.gateCollisions++;gate.hit=true;}
+      else {s.gatesMissed++;s.linkRecovery=gentle(e)?.4:1.1;
+        if((gate.kind==='circle'?ringSegment(e,gate,old,p.pos,2.2)!==null:gateParts(e,gate).some(box=>boxSegment(old,p.pos,box,2.2)!==null))&&e.damage(gentle(e)?12:e.assist?20:28)){s.gateCollisions++;gate.hit=true;}
         e.notify('ПРОЛЁТ ПРОПУЩЕН','Следующие ворота впереди. Принятые данные сохранены.');}
       if(e.status!=='playing')return;
     }
     const contact=warpHit(e,old,p.pos,1.8,true);
     if(contact&&s.clock>=contact.entity.contactUntil){
-      contact.entity.contactUntil=s.clock+1.4;
-      if(e.damage(e.assist?18:24)){s.warpContacts++;s.linkRecovery=1.1;e.burst(p.pos,'#b8a0ff',8);e.notify('УДАР ВАРПА',contact.entity.name||'Обходите движущиеся щупальца и оружие');}
+      contact.entity.contactUntil=s.clock+(gentle(e)?2:1.4);
+      if(e.damage(gentle(e)?10:e.assist?18:24)){s.warpContacts++;s.linkRecovery=gentle(e)?.35:1.1;e.burst(p.pos,'#b8a0ff',8);e.notify('УДАР ВАРПА',contact.entity.name||'Обходите движущиеся щупальца и оружие');}
     }
   }
   function projectiles(e, dt, input, playerOld) {
@@ -545,6 +591,7 @@
       if(!s.carriers[s.chapter].delivered)return;
       s.packets[s.chapter]=packetSeconds(e,s.chapter);updateProgress(e);
       if(s.chapter===2){review(e);return;}
+      if(gentle(e)){e.player.hp=Math.min(100,e.player.hp+18);e.player.invulnerable=Math.max(1,e.player.invulnerable);e.notify('ПАКЕТ ПРИНЯТ','Щит восстановлен на 18');}
       s.chapter++;s.chapterClock=0;s.lockTime=0;s.link.connected=false;s.link.reason='acquiring';s.linkId=null;
       s.stageHistory.push({stage:s.chapter+1,at:s.clock});s.nextEncounter=Math.min(s.nextEncounter,s.clock+6);
       e.say('Пакет принят. Этап '+(s.chapter+1)+': '+stageOf(e).name+'. ФЗ наращивает скорость.','order',true);
@@ -575,7 +622,7 @@
       this.pursuit.announced = true;
       comic(this, 'ФЗ УХОДИТ СО СВЯЗИ!', 'action', this.pursuit.leader.pos);
     }
-    this.say(this.campaign2120?'Вижу ФЗ. Держи голубой канал, пролетай внутри колец. Гиганты прямо по курсу: лети через свободный центр, избегая тела и щупалец. По перехватчикам — огонь и ракеты.':'Вижу ФЗ. Голубой канал появится после захвата связи. Пролетай внутри колец; пробел или кнопка огня — по эскадрильям, правая кнопка мыши — ракета. Сущности Варпа обходи: оружие их не берёт.', 'order', true);
+    this.say(this.campaign2120?'Вижу ФЗ. Держи голубой канал, пролетай внутри колец. Гиганты рядом с курсом: лети мимо тела и между щупальцами. Перед ударом они светятся. По перехватчикам — огонь и ракеты.':'Вижу ФЗ. Голубой канал появится после захвата связи. Пролетай внутри колец; пробел или кнопка огня — по эскадрильям, правая кнопка мыши — ракета. Сущности Варпа обходи: оружие их не берёт.', 'order', true);
     this.emit('state', 'playing'); return true;
   };
   proto.collect = function (item, ...args) {
@@ -612,10 +659,25 @@
     const d = V3.sub(navigationPoint(this), this.player.pos);
     return { ...input, turn: arcadeClamp(d[0] * .075, -1, 1), pitch: arcadeClamp(d[1] * .085, -1, 1) };
   };
+  function easeResumedPursuit(e){
+    const s=e.pursuit;if(!gentle(e)||s.mobileBalance2140)return;
+    const prior2130=branch(e)?(e.assist?[17,20,24]:[19,22,27]):(e.assist?[26,32,39]:[32,39,49]);
+    const prior2120=branch(e)?(e.assist?[20,24,28]:[22,26,32]):(e.assist?[30,38,46]:[38,46,58]);
+    const previous=prior2120.reduce((n,x)=>n+x,0)===s.requiredSeconds?prior2120:prior2130;
+    // Preserve the fraction of each packet already transmitted. No replay,
+    // lost progress or instant grant of the next requirement on an update.
+    s.packets=s.packets.map((n,i)=>Math.min(1,n/previous[i])*packetSeconds(e,i));
+    s.requiredSeconds=[0,1,2].reduce((n,i)=>n+packetSeconds(e,i),0);
+    for(const g of s.gates)if(g.kind==='circle'&&!g.mobile2140){g.gapRadius+=8;g.hx=g.hy=g.gapRadius;g.mobile2140=true;}
+    for(const x of e.enemies)if(x.pursuitEnemy&&!x.mobile2140){x.hp*=.64;x.maxHp*=.64;x.mobile2140=true;x.shot=Math.max(x.shot,1.5);}
+    for(const b of e.hostile)if(b.pursuitShot&&!b.mobile2140){b.damage*=.55;b.mobile2140=true;}
+    s.mobileBalance2140=true;updateProgress(e);
+  }
   proto.step = function (delta, input = {}) {
     if (!active(this)) return before.step.call(this, delta, input);
     if (this.status === 'lesson') return before.step.call(this, delta, input);
     if (this.status !== 'playing') return;
+    easeResumedPursuit(this);
     if (count(this) === 3 || this.pursuit.state === 'review') { review(this); return; }
     const dt = arcadeClamp(finite(delta), 0, .04);
     if (!dt) return;
@@ -838,7 +900,7 @@
     if (!active(e)) return result;
     const set = (id, text) => { const node = document.getElementById(id); if (node) node.textContent = text; };
     set('arcade-mission-title', 'ФЗ уходит со связи');
-    set('arcade-mission-brief', e.campaign2120?'Три пакета · круглые пролёты · пять гигантов. Пролетайте через их свободный центр; избегайте щупалец.':'Три пакета · круглые пролёты · эскадрильи и сущности Варпа. Огонь по кораблям, обход монстров.');
+    set('arcade-mission-brief', e.campaign2120?'Три пакета · круглые пролёты · пять гигантов. Пролетайте мимо тела и между щупальцами; следите за замахом.':'Три пакета · круглые пролёты · эскадрильи и сущности Варпа. Огонь по кораблям, обход монстров.');
     set('citadel-objective-phase', 'ПОГОНЯ · ЭТАП '+(e.pursuit.chapter+1)+'/3');
     set('citadel-primary', e.autopilot ? 'Ручное управление' : 'Помощь в погоне');
     set('mobile-crystal', 'Следовать за ФЗ');

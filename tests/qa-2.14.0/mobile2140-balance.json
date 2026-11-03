@@ -1,0 +1,561 @@
+{
+  "pass": true,
+  "method": "Direct encounter fixtures with real controls at 30/60 Hz; decisions held for .60/.75 seconds; exact-state operators, not humans or physical phones.",
+  "baseline": "b6776acd8d64c8d52e26d6dd1b7516da1fa90c3b",
+  "sourceSHA256": {
+    "assets/citadel-pursuit-v2.6.0.js": "e47d191db1c1ba5698d9025af4bd5a108111d868e740de09043639d5e7ef72cf",
+    "assets/citadel-convoy-v2.6.0.js": "2461cea2e5de764361007b72cfaa12f339d531ded7180454cc3c810414631f45",
+    "assets/citadel-convoy-monsters-v2.9.0.js": "1f28f706dfefa03e70ca25d51cf76c95831fd80a69834fc5233174c2033feb38",
+    "assets/citadel-campaign-v2.12.0.js": "f55f2013627e5591f8209969c066fcd42c9e87837d733b9c8723744797ed4754"
+  },
+  "activePassed": 10,
+  "activeTotal": 10,
+  "checks": [
+    {
+      "name": "resumed-pursuit-retains-packet-fractions",
+      "pass": true,
+      "beforeSeconds": 120,
+      "afterSeconds": 90
+    },
+    {
+      "name": "convoy-1-repair-once-across-save",
+      "pass": true,
+      "hpAtRepair": 100
+    },
+    {
+      "name": "convoy-2-repair-once-across-save",
+      "pass": true,
+      "hpAtRepair": 100
+    },
+    {
+      "name": "convoy-3-repair-once-across-save",
+      "pass": true,
+      "hpAtRepair": 100
+    },
+    {
+      "name": "legacy-rules-unchanged",
+      "pass": true,
+      "seconds": 35
+    }
+  ],
+  "rows": [
+    {
+      "candidate": {
+        "kind": "pursuit",
+        "mode": "combat",
+        "seed": 417147,
+        "reaction": 0.6,
+        "fps": 60,
+        "complete": true,
+        "status": "lesson",
+        "seconds": 95.28,
+        "hp": 100,
+        "minHp": 100,
+        "damage": 0,
+        "modals": 5,
+        "packets": [
+          26,
+          30,
+          34
+        ],
+        "progress": 100,
+        "gateHits": 0,
+        "monsterHits": 0,
+        "enemiesSpawned": 17
+      },
+      "baseline": {
+        "kind": "pursuit",
+        "mode": "combat",
+        "seed": 417147,
+        "reaction": 0.6,
+        "fps": 60,
+        "complete": true,
+        "status": "lesson",
+        "seconds": 148.93,
+        "hp": 91.6,
+        "minHp": 80,
+        "damage": 38.4,
+        "modals": 0,
+        "packets": [
+          32,
+          39,
+          49
+        ],
+        "progress": 100,
+        "gateHits": 0,
+        "monsterHits": 0,
+        "enemiesSpawned": 75
+      }
+    },
+    {
+      "candidate": {
+        "kind": "convoy",
+        "stage": 0,
+        "mode": "combat",
+        "seed": 417147,
+        "reaction": 0.6,
+        "fps": 60,
+        "complete": true,
+        "status": "campaigncard",
+        "seconds": 68.02,
+        "hp": 100,
+        "minHp": 90,
+        "damage": 10,
+        "modals": 3,
+        "survivors": 3,
+        "allies": [
+          100,
+          98.91,
+          100
+        ],
+        "repair": true,
+        "fieldHits": 0
+      },
+      "baseline": {
+        "kind": "convoy",
+        "stage": 0,
+        "mode": "combat",
+        "seed": 417147,
+        "reaction": 0.6,
+        "fps": 60,
+        "complete": true,
+        "status": "campaigncard",
+        "seconds": 68.02,
+        "hp": 76,
+        "minHp": 76,
+        "damage": 24,
+        "modals": 0,
+        "survivors": 3,
+        "allies": [
+          82,
+          71,
+          78
+        ],
+        "repair": false,
+        "fieldHits": 0
+      }
+    },
+    {
+      "candidate": {
+        "kind": "convoy",
+        "stage": 1,
+        "mode": "combat",
+        "seed": 417147,
+        "reaction": 0.6,
+        "fps": 60,
+        "complete": true,
+        "status": "campaigncard",
+        "seconds": 86.18,
+        "hp": 87.65,
+        "minHp": 87.65,
+        "damage": 20.35,
+        "modals": 4,
+        "packets": [
+          26,
+          30,
+          34
+        ],
+        "progress": 100,
+        "gateHits": 0,
+        "monsterHits": 0,
+        "enemiesSpawned": 0,
+        "survivors": 3,
+        "allies": [
+          100,
+          100,
+          94.56
+        ],
+        "repair": true,
+        "fieldHits": 0
+      },
+      "baseline": {
+        "kind": "convoy",
+        "stage": 1,
+        "mode": "combat",
+        "seed": 417147,
+        "reaction": 0.6,
+        "fps": 60,
+        "complete": true,
+        "status": "campaigncard",
+        "seconds": 86.22,
+        "hp": 93.6,
+        "minHp": 93.6,
+        "damage": 6.4,
+        "modals": 0,
+        "packets": [
+          32,
+          39,
+          49
+        ],
+        "progress": 100,
+        "gateHits": 0,
+        "monsterHits": 0,
+        "enemiesSpawned": 0,
+        "survivors": 3,
+        "allies": [
+          75,
+          72,
+          30
+        ],
+        "repair": false,
+        "fieldHits": 0
+      }
+    },
+    {
+      "candidate": {
+        "kind": "convoy",
+        "stage": 2,
+        "mode": "combat",
+        "seed": 417147,
+        "reaction": 0.6,
+        "fps": 60,
+        "complete": true,
+        "status": "campaigncard",
+        "seconds": 108.35,
+        "hp": 100,
+        "minHp": 95.65,
+        "damage": 4.35,
+        "modals": 5,
+        "survivors": 3,
+        "allies": [
+          96.74,
+          100,
+          100
+        ],
+        "repair": true,
+        "fieldHits": 0
+      },
+      "baseline": {
+        "kind": "convoy",
+        "stage": 2,
+        "mode": "combat",
+        "seed": 417147,
+        "reaction": 0.6,
+        "fps": 60,
+        "complete": true,
+        "status": "campaigncard",
+        "seconds": 108.38,
+        "hp": 100,
+        "minHp": 100,
+        "damage": 0,
+        "modals": 0,
+        "survivors": 3,
+        "allies": [
+          88,
+          92,
+          20
+        ],
+        "repair": true,
+        "fieldHits": 0
+      }
+    },
+    {
+      "candidate": {
+        "kind": "pursuit",
+        "mode": "combat",
+        "seed": 819337,
+        "reaction": 0.75,
+        "fps": 30,
+        "complete": true,
+        "status": "lesson",
+        "seconds": 95.47,
+        "hp": 100,
+        "minHp": 100,
+        "damage": 0,
+        "modals": 5,
+        "packets": [
+          26,
+          30,
+          34
+        ],
+        "progress": 100,
+        "gateHits": 0,
+        "monsterHits": 0,
+        "enemiesSpawned": 17
+      },
+      "baseline": {
+        "kind": "pursuit",
+        "mode": "combat",
+        "seed": 819337,
+        "reaction": 0.75,
+        "fps": 30,
+        "complete": true,
+        "status": "lesson",
+        "seconds": 152.27,
+        "hp": 95.2,
+        "minHp": 85.2,
+        "damage": 43.2,
+        "modals": 0,
+        "packets": [
+          32,
+          39,
+          49
+        ],
+        "progress": 100,
+        "gateHits": 0,
+        "monsterHits": 0,
+        "enemiesSpawned": 75
+      }
+    },
+    {
+      "candidate": {
+        "kind": "convoy",
+        "stage": 0,
+        "mode": "combat",
+        "seed": 819337,
+        "reaction": 0.75,
+        "fps": 30,
+        "complete": true,
+        "status": "campaigncard",
+        "seconds": 68.03,
+        "hp": 100,
+        "minHp": 84.56,
+        "damage": 15.44,
+        "modals": 3,
+        "survivors": 3,
+        "allies": [
+          100,
+          100,
+          100
+        ],
+        "repair": true,
+        "fieldHits": 0
+      },
+      "baseline": {
+        "kind": "convoy",
+        "stage": 0,
+        "mode": "combat",
+        "seed": 819337,
+        "reaction": 0.75,
+        "fps": 30,
+        "complete": true,
+        "status": "campaigncard",
+        "seconds": 68.03,
+        "hp": 72,
+        "minHp": 72,
+        "damage": 28,
+        "modals": 0,
+        "survivors": 3,
+        "allies": [
+          79,
+          65,
+          70
+        ],
+        "repair": false,
+        "fieldHits": 0
+      }
+    },
+    {
+      "candidate": {
+        "kind": "convoy",
+        "stage": 1,
+        "mode": "combat",
+        "seed": 819337,
+        "reaction": 0.75,
+        "fps": 30,
+        "complete": true,
+        "status": "campaigncard",
+        "seconds": 86.17,
+        "hp": 92,
+        "minHp": 92,
+        "damage": 16,
+        "modals": 4,
+        "packets": [
+          26,
+          30,
+          34
+        ],
+        "progress": 100,
+        "gateHits": 0,
+        "monsterHits": 0,
+        "enemiesSpawned": 0,
+        "survivors": 3,
+        "allies": [
+          100,
+          100,
+          98.91
+        ],
+        "repair": true,
+        "fieldHits": 0
+      },
+      "baseline": {
+        "kind": "convoy",
+        "stage": 1,
+        "mode": "combat",
+        "seed": 819337,
+        "reaction": 0.75,
+        "fps": 30,
+        "complete": true,
+        "status": "campaigncard",
+        "seconds": 86.23,
+        "hp": 63.2,
+        "minHp": 63.2,
+        "damage": 36.8,
+        "modals": 0,
+        "packets": [
+          32,
+          39,
+          49
+        ],
+        "progress": 100,
+        "gateHits": 0,
+        "monsterHits": 0,
+        "enemiesSpawned": 0,
+        "survivors": 2,
+        "allies": [
+          82,
+          64,
+          0
+        ],
+        "repair": false,
+        "fieldHits": 1
+      }
+    },
+    {
+      "candidate": {
+        "kind": "convoy",
+        "stage": 2,
+        "mode": "combat",
+        "seed": 819337,
+        "reaction": 0.75,
+        "fps": 30,
+        "complete": true,
+        "status": "campaigncard",
+        "seconds": 108.3,
+        "hp": 100,
+        "minHp": 100,
+        "damage": 0,
+        "modals": 5,
+        "survivors": 3,
+        "allies": [
+          95.65,
+          100,
+          100
+        ],
+        "repair": true,
+        "fieldHits": 0
+      },
+      "baseline": {
+        "kind": "convoy",
+        "stage": 2,
+        "mode": "combat",
+        "seed": 819337,
+        "reaction": 0.75,
+        "fps": 30,
+        "complete": true,
+        "status": "campaigncard",
+        "seconds": 108.37,
+        "hp": 100,
+        "minHp": 90.4,
+        "damage": 9.6,
+        "modals": 0,
+        "survivors": 3,
+        "allies": [
+          80,
+          10,
+          58
+        ],
+        "repair": true,
+        "fieldHits": 0
+      }
+    },
+    {
+      "candidate": {
+        "kind": "pursuit",
+        "stage": 2,
+        "mode": "training",
+        "seed": 417147,
+        "reaction": 0.75,
+        "fps": 30,
+        "complete": true,
+        "status": "lesson",
+        "seconds": 75.73,
+        "hp": 100,
+        "minHp": 100,
+        "damage": 0,
+        "modals": 4,
+        "packets": [
+          21,
+          24,
+          27
+        ],
+        "progress": 100,
+        "gateHits": 0,
+        "monsterHits": 0,
+        "enemiesSpawned": 12
+      },
+      "baseline": {
+        "kind": "pursuit",
+        "stage": 2,
+        "mode": "training",
+        "seed": 417147,
+        "reaction": 0.75,
+        "fps": 30,
+        "complete": true,
+        "status": "lesson",
+        "seconds": 105.87,
+        "hp": 100,
+        "minHp": 100,
+        "damage": 0,
+        "modals": 0,
+        "packets": [
+          26,
+          32,
+          39
+        ],
+        "progress": 100,
+        "gateHits": 0,
+        "monsterHits": 0,
+        "enemiesSpawned": 45
+      }
+    },
+    {
+      "candidate": {
+        "kind": "convoy",
+        "stage": 2,
+        "mode": "training",
+        "seed": 417147,
+        "reaction": 0.75,
+        "fps": 30,
+        "complete": true,
+        "status": "campaigncard",
+        "seconds": 108.3,
+        "hp": 100,
+        "minHp": 100,
+        "damage": 0,
+        "modals": 5,
+        "survivors": 3,
+        "allies": [
+          97.39,
+          100,
+          100
+        ],
+        "repair": true,
+        "fieldHits": 0
+      },
+      "baseline": {
+        "kind": "convoy",
+        "stage": 2,
+        "mode": "training",
+        "seed": 417147,
+        "reaction": 0.75,
+        "fps": 30,
+        "complete": true,
+        "status": "campaigncard",
+        "seconds": 108.37,
+        "hp": 100,
+        "minHp": 100,
+        "damage": 0,
+        "modals": 0,
+        "survivors": 3,
+        "allies": [
+          76,
+          100,
+          100
+        ],
+        "repair": true,
+        "fieldHits": 0
+      }
+    }
+  ]
+}

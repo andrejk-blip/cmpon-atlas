@@ -16,7 +16,7 @@
  }
  proto.beginEscort=function(...args){const ok=old.begin.apply(this,args);if(!ok||!CITADEL_CONVOY.active(this))return ok;
   this.escort.warp290={version:1,next:0,entities:[],contacts:0,repelled:0,spawned:0};
-  this.escort.definition.brief=(this.escort.definition.brief||'')+(this.campaign2120?' Гиганты прямо по курсу: пролетайте через свободный центр, избегая щупалец. E / «Прикрытие» отталкивает их.':' Существа у края коридора бьют щупальцами. Уклоняйтесь в свободную половину; E / «Прикрытие» отталкивает их.');
+  this.escort.definition.brief=(this.escort.definition.brief||'')+(this.campaign2120?' Гиганты рядом с курсом: пролетайте мимо тела или между конечностями. Перед ударом конечность светится. E / «Прикрытие» отталкивает её.':' Существа у края коридора бьют щупальцами. Уклоняйтесь в свободную половину; E / «Прикрытие» отталкивает их.');
   return ok;
  };
  function pose(e,w,dt){
@@ -51,7 +51,7 @@
     scale:2.6,bodyRadius:26,age:0,phase:0,cross:plan.cross,born:plan.spawn,laneY:(index%3-1)*3,
     center:[0,0,0],pos:[0,0,0],segments:[],contactUntil:0,repelledUntil:0};
    pose(this,w,0);state.entities.push(w);state.spawned++;
-   this.say(w.name+(w.portal2130?' прямо по курсу. Пролетайте через свободный центр; не касайтесь щупалец.':' у '+(w.side>0?'правого':'левого')+' борта. Обходите конечности; прикрытие отталкивает их.'),'alert',true);
+   this.say(w.name+(w.portal2130?' прямо по курсу. Обходите тело с '+(w.side>0?'левой':'правой')+' стороны или летите между конечностями. Светящийся замах предупреждает об ударе.':' у '+(w.side>0?'правого':'левого')+' борта. Обходите конечности; прикрытие отталкивает их.'),'alert',true);
   }
   state.entities=state.entities.filter(w=>t<w.cross+3.5).slice(-2);
   for(const w of state.entities){
@@ -59,7 +59,7 @@
    if(t<w.contactUntil||t<w.repelledUntil||this.player.invulnerable>0)continue;
    const contact=hit(this,before,this.player.pos,w);
    if(contact){
-    w.contactUntil=t+1.4;state.contacts++;this.damage(this.assist?10:16);
+    w.contactUntil=t+(this.campaign2120?2:1.4);state.contacts++;this.damage(this.campaign2120?10:this.assist?10:16);
     this.notify('УДАР СУЩЕСТВА','Уклоняйтесь от '+(w.kind==='hammer'?'молота':'конечностей')+' · E / Прикрытие');
     this.emit('impact');
    }

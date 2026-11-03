@@ -50,21 +50,21 @@
   if(!x?.pos)return;const b=basis||(type==='player'?flightBasis(x.yaw||0,x.pitch||0,x.bank||0):spaceBasisDir(x.vel&&V3.len(x.vel)>1?x.vel:[0,0,-1]));
   instance(a,serviceHull(type,lod),x.pos,b,scale,'ship-machinery');
  }
- function fullShip(a,x,type,lod,scale){
+ function fullShip(a,x,type,lod,scale,customExhaust=false){
   if(!fleet.has(type))fleet.set(type,CITADEL_CONVOY_VIEW.testVessel(type));
   const start=a.length;
   const b=type==='player'?flightBasis(x.yaw||0,x.pitch||0,x.bank||0):spaceBasisDir(x.vel&&V3.len(x.vel)>1?x.vel:[0,0,-1]);
   instance(a,fleet.get(type),x.pos,b,scale,'flight-hull');shipDetails(a,x,type,lod,b,scale);
   if(x.hit>0)for(let i=start;i<a.length;i++)a[i].color=[1,.96,.85];
   const m=spaceModel(x.pos,[scale,scale,scale],b);
-  for(const s of [-1,1])part(a,'p260_horn',spacePoint(m,[s*3.05,.2,-4.1]),[.32*scale,.32*scale,(x.boosting?2.7:1.3)*scale],type==='player'?C.cyan:C.warm,1,b);
+  if(!customExhaust)for(const s of [-1,1])part(a,'p260_horn',spacePoint(m,[s*3.05,.2,-4.1]),[.32*scale,.32*scale,(x.boosting?2.7:1.3)*scale],type==='player'?C.cyan:C.warm,1,b);
  }
  spaceSceneBase=function(e,time,fx=true){
   // The core exposes a local ship closure. Hide only that closure's actors in
   // a read-only projection; retain original asteroids, boss, cargo and trails.
   const a=old.base({...e,enemies:[],status:'lost'},time,fx),lod=quality(fx);
   for(const x of e.enemies||[])if(!x.dead&&near(x.pos,e.player.pos,600))fullShip(a,x,x.type==='heavy'?'raider':x.type==='hunter'?'interceptor':'scout',lod,x.type==='heavy'?.86:.63);
-  if(e.status!=='lost')fullShip(a,e.player,'player',lod,.68);
+  if(e.status!=='lost')fullShip(a,e.player,'player',lod,.68,!!e.campaign2120);
   return a;
  };
  function anatomy(kind,lod){return compile('anatomy_'+kind+'_'+lod,a=>{
@@ -89,7 +89,7 @@
   }
   for(let i=0;i<4;i++)part(a,'p260_bone',[0,4-i*1.8,3.9],[.35,.48,.35],skin);
  });}
- function alienDetails(a,w,lod){instance(a,anatomy(w.kind,lod),w.pos,SPACE_IDENTITY,w.scale||.94,'alien-anatomy');}
+ function alienDetails(a,w,lod){if(w.anatomy2140)return;instance(a,anatomy(w.kind,lod),w.pos,SPACE_IDENTITY,w.scale||.94,'alien-anatomy');}
  expeditionHyperScene=function(e,time,fx,hidePlayer=false){
   const a=old.hyper(e,time,fx,hidePlayer);if(!e.escort||!CITADEL_CONVOY.active(e))return a;
   const lod=quality(fx);
@@ -275,7 +275,7 @@
  drawMobileGameHUD=function(c,e,cam,w,h){const r=old.mobile.apply(this,arguments);warning(c,e,cam,w,h);return r;};
  expeditionOverlay=function(e){
   const html=old.brief(e);if(e.status!=='escortbrief'||!CITADEL_CONVOY_MONSTERS.active(e))return html;
-  return html.replace('<button class="arcade-play"','<div class="brief-command"><span class="hostile-symbol">!</span><div><b>Существа у края коридора</b><small>Обходите движущиеся конечности: столкновение снимает щит. E / «Прикрытие» отталкивает существо на несколько секунд.</small></div></div><button class="arcade-play"');
+  return html.replace('<button class="arcade-play"','<div class="brief-command"><span class="hostile-symbol">!</span><div><b>Живые гиганты на пути</b><small>Летите мимо тела или между конечностями: столкновение снимает щит. E / «Прикрытие» отталкивает существо на несколько секунд.</small></div></div><button class="arcade-play"');
  };
  globalThis.CITADEL_DETAIL=Object.freeze({version:'2.9.0',quality,stats:()=>({templates:templates.size,architecture:architecture.size,fleets:fleet.size})});
 })();
