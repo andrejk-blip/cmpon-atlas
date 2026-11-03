@@ -1,0 +1,9 @@
+{
+  "new_release_pass": false,
+  "previous_release_pass": false,
+  "same_simulated_time": true,
+  "same_failure": true,
+  "seconds": 921.58,
+  "failure": "Pilot failed at orbit4: lost; Редакцию замотали изменениями. Перехватывайте существенные замечания и защищайте готовность к принятию.",
+  "note": "The existing exact-state input pilot loses at orbit4 identically in 2.16 and 2.17. This is not evidence of a UI regression. Both complete route checks use training; all professional question/retry paths have separate state fixtures."
+}

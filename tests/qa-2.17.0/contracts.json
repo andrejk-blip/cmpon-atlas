@@ -1,0 +1,83 @@
+{
+  "version": "2.17.0",
+  "pass": true,
+  "method": "Isolated state fixtures, not campaign completion or browser layout",
+  "rows": [
+    {
+      "name": "training lesson preserves answer and continuation rules",
+      "pass": true
+    },
+    {
+      "name": "training remark preserves answer and continuation rules",
+      "pass": true
+    },
+    {
+      "name": "training final preserves answer and continuation rules",
+      "pass": true
+    },
+    {
+      "name": "combat lesson preserves answer and continuation rules",
+      "pass": true
+    },
+    {
+      "name": "combat remark preserves answer and continuation rules",
+      "pass": true
+    },
+    {
+      "name": "combat final preserves answer and continuation rules",
+      "pass": true
+    },
+    {
+      "name": "pro lesson preserves answer and continuation rules",
+      "pass": true
+    },
+    {
+      "name": "pro remark preserves answer and continuation rules",
+      "pass": true
+    },
+    {
+      "name": "pro final preserves answer and continuation rules",
+      "pass": true
+    },
+    {
+      "name": "campaign convoy1 uses exact choices and valid answers",
+      "pass": true
+    },
+    {
+      "name": "campaign route uses exact choices and valid answers",
+      "pass": true
+    },
+    {
+      "name": "campaign convoy3 uses exact choices and valid answers",
+      "pass": true
+    },
+    {
+      "name": "campaign parallax uses exact choices and valid answers",
+      "pass": true
+    },
+    {
+      "name": "campaign contradictions uses exact choices and valid answers",
+      "pass": true
+    },
+    {
+      "name": "new campaign opens comic; closing keeps stage frozen and allows launch",
+      "pass": true
+    },
+    {
+      "name": "awards persist across campaigns; practice earns nothing; skip earns no victory",
+      "pass": true
+    },
+    {
+      "name": "older snapshots backfill rewards without replaying every past scene",
+      "pass": true
+    },
+    {
+      "name": "all cards and all story milestones are reachable; replay cannot move gameplay",
+      "pass": true
+    },
+    {
+      "name": "keyboard selects one exact choice, blocks repeat and respects modal",
+      "pass": true
+    }
+  ]
+}

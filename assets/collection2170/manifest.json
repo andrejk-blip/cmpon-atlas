@@ -1,0 +1,160 @@
+{
+  "version": "2.17.0",
+  "generator": "image_gen",
+  "operation": "Original approved images encoded as WebP without compositional edits",
+  "cards": [
+    {
+      "id": "hammer",
+      "file": "assets/collection2170/hammer.webp",
+      "source": "exec-4824b7e6-204c-4d32-8299-0cc4147d26de.png",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "c0902cc32c5e647eac136762cd3def855ac5bc3decf1df4fb786823a52bb4820",
+      "bytes": 478296
+    },
+    {
+      "id": "tentacle",
+      "file": "assets/collection2170/tentacle.webp",
+      "source": "exec-fff5c3f0-88b8-413d-ad39-65c45e783950.png",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "f4e1168e2017bf828dad1c75e338ba89dc32a1b9837ab0aba5f4e727b156c01f",
+      "bytes": 391586
+    },
+    {
+      "id": "maw",
+      "file": "assets/collection2170/maw.webp",
+      "source": "exec-d64d55ad-bd9a-4339-9770-2a5ff581696e.png",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "b364fadbb2f5d7a75dc3d660a66302477ffbea69a5dbb8e639561b5a89089d33",
+      "bytes": 493348
+    },
+    {
+      "id": "mantis",
+      "file": "assets/collection2170/mantis.webp",
+      "source": "exec-fbfdb401-ffc2-4047-b5a8-5d10931e59df.png",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "9491af274deba1e933d3e4d7fc9bcc51a227b004116526856e2930ac6a2f4e47",
+      "bytes": 394698
+    },
+    {
+      "id": "medusa",
+      "file": "assets/collection2170/medusa.webp",
+      "source": "exec-7957912b-e91d-4b3a-8a16-ffcc6f602f7d.png",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "a6a56359868140fb66791caa37a8cc4342fcb896ebd53f6c349bb0f3ad1d20d6",
+      "bytes": 407728
+    },
+    {
+      "id": "hero",
+      "file": "assets/collection2170/hero.webp",
+      "source": "exec-c91daa3f-c17d-4419-830f-cbd9b407dcc0.png",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "3600a5af7d40de082e8cd30f72cd9a1c2331fc67e364f8bb0c2923d94789c4ea",
+      "bytes": 457688
+    },
+    {
+      "id": "robodog",
+      "file": "assets/collection2170/robodog.webp",
+      "source": "exec-cb4bef6b-722d-458f-a6ef-aa6562aeaa1b.png",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "f520073ca079e5c0411ade36ee2dfa18edbe7e86e9021cb190f73557100c3d09",
+      "bytes": 427328
+    },
+    {
+      "id": "scout",
+      "file": "assets/collection2170/scout.webp",
+      "source": "exec-3bd1920c-b7c1-4c11-887b-b974c8c4987b.png",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "1b15a2527577571d233a3f67c3833b6ac86e061b07bdc9736dd408b529c9fa94",
+      "bytes": 341902
+    },
+    {
+      "id": "shield",
+      "file": "assets/collection2170/shield.webp",
+      "source": "exec-6576a8b9-855c-426a-8c02-e02cd0874873.png",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "0f2987d91e87d22b8800c90f37d50d0e0d5a8b5497ea25aa9d76e7b02bd839eb",
+      "bytes": 464348
+    },
+    {
+      "id": "sniper",
+      "file": "assets/collection2170/sniper.webp",
+      "source": "exec-d8a23ea2-6a45-48bc-94cb-475fd63420e0.png",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "0f3d2dd43497b207d0161233368360ecea9a6ccb1016e888a77a886c4b3ac3a5",
+      "bytes": 356278
+    },
+    {
+      "id": "hunter",
+      "file": "assets/collection2170/hunter.webp",
+      "source": "exec-e91b5fc7-5f6a-46ee-8589-b00096c608c6.png",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "9a0dd6a4c5308f9268f68ba0be8f3294ab877f3606c6da1e5f5bdf8432c05322",
+      "bytes": 380900
+    },
+    {
+      "id": "relay",
+      "file": "assets/collection2170/relay.webp",
+      "source": "exec-41aac9fd-9f5b-4da5-8978-83e9d5bc0f2a.png",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "110d915ad017b67065764e9905b8a4dc5ff04c257c0317f9bf22d368f8562ac0",
+      "bytes": 377040
+    },
+    {
+      "id": "rocketeer",
+      "file": "assets/collection2170/rocketeer.webp",
+      "source": "exec-9741e740-bd3c-44e0-b1b9-8fd231c86413.png",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "c9f392d5a608933674761bfe8dfcfd717e08d94179c0361e1e7481ef40d99ecf",
+      "bytes": 409140
+    },
+    {
+      "id": "ninja",
+      "file": "assets/collection2170/ninja.webp",
+      "source": "exec-6122c99c-7e52-4a45-9e89-9ae00103f654.png",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "7d3612d22a591268c86381d1550750b598093c52188577137acdaa18d9c192c8",
+      "bytes": 302380
+    },
+    {
+      "id": "mech",
+      "file": "assets/collection2170/mech.webp",
+      "source": "exec-4e1263b2-2878-45c0-87cc-1af71f9b5a52.png",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "c0b6030e48685514231c1cffd45b6f9d98034cc3253c8c5b082d22796ab103b5",
+      "bytes": 519314
+    },
+    {
+      "id": "mrg",
+      "file": "assets/collection2170/mrg.webp",
+      "source": "exec-fa1a0d15-be46-457b-9185-bc79aeb56fbd.png",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "f59687e92a852ccef586a7d8447e4ebbad85dbffb64a548cbb1d7702c28dd80c",
+      "bytes": 491648
+    },
+    {
+      "id": "parallax",
+      "file": "assets/collection2170/parallax.webp",
+      "source": "exec-c2e34c45-be49-4396-beb6-f10ead4e489a.png",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "b03f414f55829902bdba013a279ee81dd5bbf3604774b1588e5c695f0c5bff64",
+      "bytes": 436380
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "version": "2.17.0",
+  "pass": true,
+  "method": "Cloud Chrome, production markup and styles inside explicit viewport fixtures. Not a physical-phone test.",
+  "checks": [
+    {
+      "viewport": [
+        360,
+        640
+      ],
+      "scene": "355-character professional case",
+      "overlay": [
+        333,
+        628
+      ],
+      "scrollWidth": 333,
+      "scrollHeight": 922,
+      "result": "All choices reachable by vertical scroll; no horizontal overflow."
+    },
+    {
+      "viewport": [
+        360,
+        640
+      ],
+      "scene": "Same case at 28px font",
+      "scrollWidth": 333,
+      "scrollHeight": 1953,
+      "result": "Answer and continuation operated successfully; no horizontal overflow."
+    },
+    {
+      "viewport": [
+        844,
+        390
+      ],
+      "scene": "Contradictions question",
+      "result": "All three choices visible; wrong answer and retry reachable; both valid choices visibly marked."
+    },
+    {
+      "viewport": [
+        844,
+        390
+      ],
+      "scene": "Comic reader",
+      "overlay": [
+        844,
+        390
+      ],
+      "scrollWidth": 844,
+      "scrollHeight": 390
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "scene": "Parallax collector art",
+      "overlay": [
+        390,
+        844
+      ],
+      "scrollWidth": 390,
+      "scrollHeight": 844
+    },
+    {
+      "viewport": [
+        1280,
+        720
+      ],
+      "scene": "Desktop contradictions question",
+      "overlay": [
+        971,
+        555
+      ],
+      "scrollWidth": 971,
+      "scrollHeight": 557,
+      "result": "Question, all choices and surrounding game context visible."
+    }
+  ],
+  "sourceSha256": {
+    "assets/citadel-collection-v2.17.0.js": "3893049bdc34c6c3f6b65c45dfd87404d32a8b9ba751e38acb137237ac86b82f",
+    "assets/citadel-quiz-v2.17.0.js": "6e41ffc80c034c6f1ee9a5f464379d42cf33d6c25d6606ff53645b0a380e40ed",
+    "assets/citadel-ui-v2.17.0.css": "ce5fed8a7846f7e87a8602612011ce66bad7406fd6a8264db88bb848081f4021"
+  },
+  "proof": "tests/qa-2.17.0/question-desktop-2170.jpg"
+}
