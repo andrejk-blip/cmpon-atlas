@@ -1,0 +1,89 @@
+{
+  "pass": true,
+  "method": "Node VM staged physical poses and native CPU drawing of production scene. No human or phone-performance claim.",
+  "samples": 720,
+  "minClearRadius": 17.999999999999993,
+  "maximumCollisionParts": 82,
+  "rows": [
+    {
+      "kind": "hammer",
+      "width": 780,
+      "height": 390,
+      "image": "monster2150-hammer-780.png",
+      "items": 220,
+      "triangles": 22700
+    },
+    {
+      "kind": "hammer",
+      "width": 390,
+      "height": 640,
+      "image": "monster2150-hammer-390.png",
+      "items": 220,
+      "triangles": 22700
+    },
+    {
+      "kind": "tentacle",
+      "width": 780,
+      "height": 390,
+      "image": "monster2150-tentacle-780.png",
+      "items": 180,
+      "triangles": 15812
+    },
+    {
+      "kind": "tentacle",
+      "width": 390,
+      "height": 640,
+      "image": "monster2150-tentacle-390.png",
+      "items": 180,
+      "triangles": 15812
+    },
+    {
+      "kind": "maw",
+      "width": 780,
+      "height": 390,
+      "image": "monster2150-maw-780.png",
+      "items": 214,
+      "triangles": 17932
+    },
+    {
+      "kind": "maw",
+      "width": 390,
+      "height": 640,
+      "image": "monster2150-maw-390.png",
+      "items": 214,
+      "triangles": 17932
+    },
+    {
+      "kind": "mantis",
+      "width": 780,
+      "height": 390,
+      "image": "monster2150-mantis-780.png",
+      "items": 233,
+      "triangles": 20296
+    },
+    {
+      "kind": "mantis",
+      "width": 390,
+      "height": 640,
+      "image": "monster2150-mantis-390.png",
+      "items": 233,
+      "triangles": 20296
+    },
+    {
+      "kind": "medusa",
+      "width": 780,
+      "height": 390,
+      "image": "monster2150-medusa-780.png",
+      "items": 241,
+      "triangles": 19454
+    },
+    {
+      "kind": "medusa",
+      "width": 390,
+      "height": 640,
+      "image": "monster2150-medusa-390.png",
+      "items": 241,
+      "triangles": 19454
+    }
+  ]
+}

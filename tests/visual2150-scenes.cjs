@@ -1,0 +1,13 @@
+'use strict';
+const fs=require('node:fs'),assert=require('node:assert/strict'),{createCanvas}=require('@napi-rs/canvas');
+const {readEntry,lab,fixture}=require('./release260-verifier.cjs');const {capture}=require('./pursuit260-art.cjs');
+(async()=>{const h=await lab(readEntry('index.html')),dir='tests/qa-2.15.0/';const modern=id=>{const e=fixture(h,id);h.arcade.engine=e;h.c.CITADEL_CAMPAIGN.enable(e);return e;};
+const flight=modern(1);flight.elapsed=3;const ship=capture(h,flight,null,780,390,true,false);fs.writeFileSync(dir+'effects-ship.png',ship.canvas.toBuffer('image/png'));
+const convoy=modern(3);convoy.escort.time=2;const cam=h.run('spaceCamera')(convoy,2),canvas=createCanvas(390,640),c=canvas.getContext('2d');
+h.run('spaceDrawCPU')(c,[],cam,390,640);const a=Buffer.from(c.getImageData(0,0,390,640).data);fs.writeFileSync(dir+'convoy-background-a.png',canvas.toBuffer('image/png'));
+h.run('spaceDrawCPU')(c,[],{...cam,clock:3.5},390,640);const b=Buffer.from(c.getImageData(0,0,390,640).data);fs.writeFileSync(dir+'convoy-background-b.png',canvas.toBuffer('image/png'));let changed=0;for(let i=0;i<a.length;i+=4)if(Math.abs(a[i]-b[i])+Math.abs(a[i+1]-b[i+1])+Math.abs(a[i+2]-b[i+2])>3)changed++;assert(changed/(390*640)>.05,'CPU nebula must visibly move');
+h.run('spaceDrawCPU')(c,[],{...cam,clock:3.5},390,640);assert.deepEqual(Buffer.from(c.getImageData(0,0,390,640).data),b,'Paused clock must freeze sky');
+const base=modern(2),items=[];for(const [i,kind]of ['scout','sniper','shield','relay','hunter'].entries())h.c.CITADEL_EFFECTS.shotArt(items,{pos:[(i-2)*1.9,0,0],vel:[0,0,30],art2140:kind},{enemies:[],time:1});
+const view=h.run('stationLook')([0,5,11],[0,2,0],.65,{near:.1,far:100}),plate=capture(h,base,null,900,440,true,false,items,view);fs.writeFileSync(dir+'effects-weapon-families.png',plate.canvas.toBuffer('image/png'));
+fs.writeFileSync(dir+'visual2150-scenes.json',JSON.stringify({pass:true,backgroundChangedPixels:changed,totalPixels:390*640,pausedSkyFrozen:true,weaponFamilies:5,method:'Native production CPU rendering of explicitly staged fixtures; no physical device performance claim.'},null,2));console.log('PASS animated CPU sky, paused sky, actual ship and five weapon-family renders');
+})().catch(e=>{console.error(e);process.exitCode=1});

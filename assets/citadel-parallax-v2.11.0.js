@@ -206,8 +206,8 @@
  spaceScene=function(e,time,fx=true){
   if(!arena(e)||e.crash)return old.scene(e,time,fx);const items=[];body(items,e,time,fx);
   part(items,'planet',[-650,-420,-1600],[800,800,800],'#324c69');part(items,'ring',[-650,-420,-1590],[980,980,980],'#546f86',.3,flightBasis(.8,.4),.3);
-  expeditionShip(items,e.player.pos,flightBasis(0,0,e.player.bank),1.25);
-  for(const side of [-1,1]){part(items,'armor',V3.add(e.player.pos,[side*1.7,.3,0]),[.4,.35,1.7],'#8ca6b7',0,flightBasis(0,0,e.player.bank));part(items,'octa',V3.add(e.player.pos,[side*1.8,0,5]),[.2,.18,2],'#8affea',1);}
+  const firstShip2150=items.length;expeditionShip(items,e.player.pos,flightBasis(0,0,e.player.bank),1.25,'#a8c5d2','#79eaff',false,true);for(let i=firstShip2150;i<items.length;i++)items[i].ship2150='player';
+  for(const side of [-1,1]){part(items,'armor',V3.add(e.player.pos,[side*1.7,.3,0]),[.4,.35,1.7],'#8ca6b7',0,flightBasis(0,0,e.player.bank));}
   for(const x of state(e).drones){expeditionShip(items,x.pos,flightBasis(Math.PI,0,Math.sin(x.age)*.25),1.6,x.hit?'#fff1cf':'#ad7772','#ffc48b');if(x.telegraph>0)part(items,'lightRing',x.pos,[5,5,.4],'#ff987c',1,SPACE_IDENTITY,.75);}
   for(const x of e.bullets)if(x.type==='missile')finaleMissile(items,x,time,fx);else part(items,'box',x.pos,[.15,.15,2.8],x.color,1,spaceBasisDir(x.vel));
   for(const x of e.hostile)part(items,'octa',x.pos,[.65,.65,2.5],x.color,1,spaceBasisDir(x.vel));

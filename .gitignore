@@ -4,3 +4,4 @@ tests/qa-2.13.0/*-earned.json.gz
 tests/qa-2.13.0/*.log
 tests/qa-2.14.0/*-earned.json.gz
 tests/qa-2.14.0/*.log
+/tests/qa-2.15.0/*-earned.json.gz

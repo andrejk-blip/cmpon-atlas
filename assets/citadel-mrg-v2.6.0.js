@@ -218,7 +218,7 @@
     const f=e.finale,b=e.board,platforms=f.arenaPlatforms;
     b.previous=b.pos.slice();const support=carryPlayer(b,platforms);
     let dx=defeated?0:clamp(input.moveX||0,-1,1);
-    let jump=!defeated&&(!!input.jump||(input.moveZ||0)<-.4||!!input.boost);
+    let jump=!defeated&&(!!input.jump||(input.moveZ||0)<-.4 );
     let drop=!defeated&&(input.moveZ||0)>.5;
     if(b.guide&&!defeated) {
       const retreat=['telegraph','active'].includes(f.tentacle.phase);
@@ -231,7 +231,7 @@
       jump=(!retreat||f.tentacle.kind==='sweep')&&b.time<(b.guideJumpUntil||0);
     }
     b.knockbackX=(b.knockbackX||0)*Math.exp(-dt*8);
-    b.vx=dx*10+b.knockbackX;b.pos[0]=clamp(b.pos[0]+b.vx*dt,-32,20);
+    b.vx=dx*(input.boost?15:10)+b.knockbackX;b.pos[0]=clamp(b.pos[0]+b.vx*dt,-32,20);
     if(Math.abs(dx)>.05)b.facing=dx>0?1:-1;
     b.jumpBuffer=jump&&!b.jumpHeld?.16:Math.max(0,(b.jumpBuffer||0)-dt);
     b.coyote=b.grounded?.12:Math.max(0,(b.coyote||0)-dt);

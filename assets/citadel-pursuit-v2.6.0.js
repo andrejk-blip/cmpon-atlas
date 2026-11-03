@@ -154,16 +154,16 @@
           body('head',[0,5.6,3.2],3.2);for(const s of [-1,1])body('shoulder'+s,[s*4.8,3,1],3.2);
         }
       }
-      const arms={hammer:1,tentacle:4,maw:2,mantis:2,medusa:5}[w.kind]||2;
+      const arms={hammer:2,tentacle:2,maw:2,mantis:2,medusa:5}[w.kind]||2;
       for(let arm=0;arm<arms;arm++){
         const spread=arm-(arms-1)/2,ph=phase+arm*1.1;
         let part='tentacle',radius=3.8,start,end;
         if(w.kind==='hammer'){
-          part='arm';radius=4.8;start=V3.add(w.pos,[-side*4*scale,3*scale,3]);
-          end=V3.add(c,[side*(43-32*strike+12*windup),14-18*strike+12*windup,10+Math.sin(ph)*3]);
+          part='arm';radius=4.8;start=V3.add(w.pos,[(arm?side:-side)*4.8*scale,3*scale,3]);
+          end=arm?V3.add(w.pos,[side*(10+Math.sin(ph))*scale,-4*scale,5*scale]):V3.add(c,[side*(9-16*strike+8*windup),-3-10*strike+12*windup,10+Math.sin(ph)*3]);
         }else if(w.kind==='tentacle'){
           start=V3.add(w.pos,[side*(arm%2?1:-1)*3*scale,-4*scale,2]);
-          end=V3.add(c,[side*(24+arm*3-16*strike+6*windup),spread*17+Math.sin(ph)*5,10+Math.cos(ph)*8]);
+          end=arm?V3.add(w.pos,[side*13*scale,-9*scale+Math.sin(ph)*4,8+Math.cos(ph)*8]):V3.add(c,[side*(16-16*strike+6*windup),-24+Math.sin(ph)*5,10+Math.cos(ph)*8]);
         }else if(w.kind==='maw'){
           part='jaw';radius=5.1;start=V3.add(w.pos,[-side*2*scale,spread*6*scale,4*scale]);
           end=V3.add(c,[side*(29-17*strike+6*windup),spread*(39-13*strike)+Math.sin(ph)*3,12]);
@@ -179,14 +179,18 @@
           const t=j/joints,pos=V3.lerp(start,end,t),r=radius*(1-t*.28);
           pos[1]+=Math.sin(ph+t*4)*5*Math.sin(t*Math.PI);pos[2]+=Math.sin(ph*.7+t*3)*5*Math.sin(t*Math.PI);
           // Preserve an 18 m corridor even at maximum limb extension.
-          const dx=pos[0]-w.safeRoute2140[0],dy=pos[1]-w.safeRoute2140[1],len=Math.hypot(dx,dy),min=18+r;
+          const dx=pos[0]-w.safeRoute2140[0],dy=pos[1]-w.safeRoute2140[1],len=Math.hypot(dx,dy),tipRadius=j===joints?(w.kind==='hammer'&&arm===0?9.4:w.kind==='mantis'?6.8:r):r,min=18+tipRadius;
           if(len<min){pos[0]=w.safeRoute2140[0]+dx/Math.max(.001,len)*min;pos[1]=w.safeRoute2140[1]+dy/Math.max(.001,len)*min;}
           w.segments.push(add('limb'+arm+'j'+j,pos,r,part,arm));
         }
         const tip=w.segments.at(-1).pos.slice();
         if(arm===0)w.head=tip.slice();
-        if(w.kind==='hammer')w.segments.push(add('hammer',tip,9.4,'hammer',arm));
+        if(w.kind==='hammer'&&arm===0)w.segments.push(add('hammer',tip,9.4,'hammer',arm));
         if(w.kind==='mantis')w.segments.push(add('blade'+arm,tip,6.8,'blade',arm));
+      }
+      if(['hammer','mantis','maw'].includes(w.kind))for(const foot of [-1,1]){
+        const points=[[foot*2.4,-3.8,0],[foot*4,-8,1],[foot*3.5,-12.5,3],[foot*3.5,-13.5,5.5]];
+        points.forEach((q,j)=>w.segments.push(add('leg'+foot+'j'+j,V3.add(w.pos,V3.scale(q,scale)),(j===3?1.9:2.2)*scale,'leg',foot<0?20:21)));
       }
       return;
     }

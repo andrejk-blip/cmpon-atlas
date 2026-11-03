@@ -55,6 +55,7 @@
   const start=a.length;
   const b=type==='player'?flightBasis(x.yaw||0,x.pitch||0,x.bank||0):spaceBasisDir(x.vel&&V3.len(x.vel)>1?x.vel:[0,0,-1]);
   instance(a,fleet.get(type),x.pos,b,scale,'flight-hull');shipDetails(a,x,type,lod,b,scale);
+  for(let i=start;i<a.length;i++)a[i].ship2150=type;
   if(x.hit>0)for(let i=start;i<a.length;i++)a[i].color=[1,.96,.85];
   const m=spaceModel(x.pos,[scale,scale,scale],b);
   if(!customExhaust)for(const s of [-1,1])part(a,'p260_horn',spacePoint(m,[s*3.05,.2,-4.1]),[.32*scale,.32*scale,(x.boosting?2.7:1.3)*scale],type==='player'?C.cyan:C.warm,1,b);

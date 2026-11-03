@@ -218,6 +218,13 @@
     return lines;
   }
   function placement(c, e, item, cam, W, H, mobile) {
+    // A fixed radio strip on decks; never chase an actor's moving projection.
+    if(e.board){
+      const width=Math.min(350,W-24),font=mobile?12:14,height=58;
+      c.font='600 '+font+'px Arial';
+      return {x:(W-width)/2,y:H<420?6:Math.min(108,H*.15),width,height,paperHeight:height,
+        lines:linesFor(c,item.text,width-24,2),font,protected:[],radio:true};
+    }
     const reserve = protectedAreas(e, cam, W, H, mobile), margin = 12;
     // A narrow side column is essential in portrait: there is deliberately no
     // banner spanning the crosshair or the player's ship below it.
@@ -277,6 +284,15 @@
     c.save(); c.scale(scale, scale);
     const box = placement(c, e, item, cam, W, H, mobile);
     if (!box) { c.restore(); return; }
+    if(box.radio){
+      c.fillStyle='#091f2be8';c.fillRect(box.x,box.y,box.width,box.height);
+      c.fillStyle=palette[item.kind].accent;c.fillRect(box.x,box.y,3,box.height);
+      c.textAlign='left';c.textBaseline='middle';c.font='bold 9px Arial';c.fillStyle='#e5bf85';
+      c.fillText(item.label,box.x+12,box.y+12,box.width-24);
+      c.font=box.font+'px Arial';c.fillStyle='#f0eadb';
+      box.lines.forEach((line,i)=>c.fillText(line,box.x+12,box.y+29+i*16,box.width-24));
+      s.bounds={...box,viewportWidth:W,viewportHeight:H,text:item.text,kind:item.kind};c.restore();return;
+    }
     const age = (e.elapsed || 0) - item.start, remaining = Math.min(item.end - (e.elapsed || 0), item.wallEnd - wall());
     const animated = ARCADE.fx && !(typeof matchMedia === 'function' && matchMedia('(prefers-reduced-motion: reduce)').matches);
     const pop = animated ? .86 + .14 * Math.min(1, age / .14) : 1;

@@ -60,6 +60,6 @@
    const it=add(a,'lightRing',V3.add(origin,[Math.sin(t*.3+i)*9,Math.cos(t*.2+i)*6,z]),[105,80,2.5],i%2?'#8267a9':'#408b9e',.65,flightBasis(0,0,roll),.35);it.warpMotion2130=true;
   }
  }
- spaceScene=function(e,time,fx){const a=old.scene.apply(this,arguments);if(modern(e)&&['playing','paused'].includes(e.status)&&!e.finale)warpDepth(a,e);return a;};
+ spaceScene=function(e,time,fx){const a=old.scene.apply(this,arguments);if(modern(e)&&!e.campaign2120.modal&&['playing','paused'].includes(e.status)&&!e.finale)warpDepth(a,e);return a;};
  globalThis.CITADEL_MOTION=Object.freeze({version:'2.13.0',gateState,route,warpDepth});
 })();

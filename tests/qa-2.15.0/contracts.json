@@ -1,0 +1,29 @@
+{
+  "pass": true,
+  "rows": [
+    {
+      "name": "Space boosts without shooting; independent LMB/RMB and touch fire",
+      "pass": true
+    },
+    {
+      "name": "Deck rocket spends one round, respects cooldown, saves in flight and hits",
+      "pass": true
+    },
+    {
+      "name": "Wall blocks both rocket flight and splash; pause consumes nothing",
+      "pass": true
+    },
+    {
+      "name": "Shadows require a real caster in the light direction; exhaust freezes",
+      "pass": true
+    },
+    {
+      "name": "Deck radio keeps one position as enemies and camera move",
+      "pass": true
+    },
+    {
+      "name": "Both Kузнец arms and both Спрут tentacles exist; legs are collidable",
+      "pass": true
+    }
+  ]
+}

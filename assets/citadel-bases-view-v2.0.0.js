@@ -419,7 +419,7 @@
   spaceCamera=camera;spaceDrawCPU=drawCPU;
   drawBoardHUD=function(c,e,cam,w,h){const result=previous.hud.apply(this,arguments);labels(c,e,cam,w,h);return result;};
   drawFinaleHUD=function(c,e,cam,w,h){const result=previous.finalHUD.apply(this,arguments);if(e.finale?.phase==='maze')labels(c,e,cam,w,h);return result;};
-  const canvasLabels=new WeakMap(),baseLabel='3D-база: WASD — движение, мышь — прицел, пробел — огонь, Shift — бег, E — импульс, G — проводник, P — пауза.';
+  const canvasLabels=new WeakMap(),baseLabel='3D-база: WASD — движение, мышь — прицел, ЛКМ — огонь, Shift — бег, E — импульс, G — проводник, P — пауза.';
   updateArcadeHUD=function(){
     const result=previous.update.apply(this,arguments),base=inside(ARCADE.engine),screen=document.getElementById('arcade-screen');
     screen?.closest?.('.arcade-layout')?.classList.toggle('bases-layout',base);

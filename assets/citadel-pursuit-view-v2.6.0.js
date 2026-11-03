@@ -127,7 +127,7 @@
      horn(a,[[side*5.7,5.1,.3],[side*7.5,6.4,.5],[side*7.7,7.3,2.1]],.85,C.bone);
      horn(a,[[side*3.5,-2.8,1.1],[side*5.6,-5.3,1.5],[side*4.5,-7.3,3.0]],1.4,skin);
      // The small folded lower claws remain inside the body's contact sphere.
-     for(let i=0;i<(lod===2?1:3);i++)horn(a,[[side*(2+i*.6),-4.5,2.4],[side*(2.5+i*.65),-6.5,3.9],[side*(1.8+i*.6),-7.3,4.2]],.38,C.bone);
+     if(!hammer)for(let i=0;i<(lod===2?1:3);i++)horn(a,[[side*(2+i*.6),-4.5,2.4],[side*(2.5+i*.65),-6.5,3.9],[side*(1.8+i*.6),-7.3,4.2]],.38,C.bone);
    }
    part(a,'p220_armour',[0,-3.8,2.5],[2.9,1.4,.8],C.gold);
    part(a,'p220_armour',[0,-4.9,2.4],[1.8,1.6,.65],C.black);
@@ -216,10 +216,10 @@
      let last=w.schema===280?joints[0]?.pos:V3.add(root,[-(w.side||1)*4,-2,2]);
      if(!last)continue;
      // The phone joins alternate physical samples into a continuous tube.
-     const stride=lod?2:1;
+     const stride=joints[0]?.part==='leg'?1:lod?2:1;
      for(let i=w.schema===280?stride:0;i<joints.length;i+=stride){
        const j=joints[Math.min(i,joints.length-1)],r=j.r*.82,b=spaceBasisDir(V3.sub(j.pos,last));
-       if(w.kind==='hammer'||w.kind==='mantis')arm(a,last,j.pos,r,lod,{...tag,warpPart:j.part});
+       if(j.part==='leg'||w.kind==='hammer'||w.kind==='mantis')arm(a,last,j.pos,r,lod,{...tag,warpPart:j.part});
        else Object.assign(beam(a,last,j.pos,r,i%2?C.skin:C.flesh,0,S),{...tag,warpPart:j.part});
        if(w.kind==='maw'&&i%4===0){const tooth=V3.add(j.pos,[0,chain%2?2.4:-2.4,2.5]);Object.assign(taper(a,j.pos,tooth,1.1,C.bone),{...tag,warpPart:'jaw-tooth'});}
        if(i%4===0){
@@ -232,7 +232,14 @@
        last=j.pos;
      }
      const tip=joints.at(-1);
-     if(tip&&w.kind!=='hammer'){
+     if(tip&&w.kind==='hammer'&&joints[0]?.part==='arm'&&chain===1){
+       Object.assign(part(a,'p260_muscle',tip.pos,[3.1,2.7,2.2],C.skin),{...tag,warpPart:'hand'});
+       for(const finger of [-1,0,1])Object.assign(taper(a,V3.add(tip.pos,[finger*1.5,0,1]),V3.add(tip.pos,[finger*1.7,-4,3]),.7,C.bone),{...tag,warpPart:'finger'});
+     }
+     if(tip&&joints[0]?.part==='leg'){
+       for(const claw of [-1,0,1])Object.assign(taper(a,V3.add(tip.pos,[claw*w.scale*.7,0,0]),V3.add(tip.pos,[claw*w.scale*.9,-w.scale*.5,w.scale*2]),w.scale*.45,C.bone),{...tag,warpPart:'foot'});
+     }
+     if(tip&&w.kind!=='hammer'&&joints[0]?.part!=='leg'){
        const prev=joints.at(-2)?.pos||root,dir=V3.norm(V3.sub(tip.pos,prev));
        Object.assign(taper(a,tip.pos,V3.add(tip.pos,V3.scale(dir,2.5)),Math.min(tip.r,3),C.bone),{...tag,warpPart:'tip'});
      }
@@ -337,7 +344,7 @@
    // Warm veins brighten along the actual striking limb for a 1.5 second
    // wind-up. This cue is visible in every mode and remains with FX disabled.
    if(warn>0||strike.active){
-     const limbs=parts.filter(j=>!['body','hammer','blade'].includes(j.part)),color=strike.active?'#fff2bd':'#ffb65c';
+     const limbs=parts.filter(j=>!['body','hammer','blade','leg'].includes(j.part)),color=strike.active?'#fff2bd':'#ffb65c';
      for(const chain of [...new Set(limbs.map(j=>j.chain))]){
        const joints=limbs.filter(j=>j.chain===chain),tail=joints.slice(-5);
        for(let i=1;i<tail.length;i++){

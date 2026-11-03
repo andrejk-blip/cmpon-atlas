@@ -4,7 +4,7 @@
  */
 (function () {
   'use strict';
-  const VERSION='2.8.0';
+  const VERSION='2.15.0';
   if(typeof ARCADE==='undefined'||typeof STATE==='undefined'||typeof mountArcade!=='function'||
      typeof arcadeInput!=='function'||typeof citadelBoardAim!=='function')return;
   if(globalThis.CITADEL_INPUT?.version===VERSION)return;
@@ -135,7 +135,7 @@
   },{capture:true,passive:false});
   for(const type of ['pointerup','pointercancel','lostpointercapture'])document.addEventListener?.(type,event=>{
     releaseAction(event.pointerId);
-    for(const [key,id] of Object.entries(ARCADE.touchPointers||{}))if(id===event.pointerId){delete ARCADE.touchPointers[key];ARCADE.keys.delete(key);document.getElementById(key==='Space'?'arcade-fire-touch':'arcade-boost-touch')?.classList.remove('is-held');}
+    for(const [key,id] of Object.entries(ARCADE.touchPointers||{}))if(id===event.pointerId){delete ARCADE.touchPointers[key];ARCADE.keys.delete(key);document.getElementById(key==='TouchFire'?'arcade-fire-touch':'arcade-boost-touch')?.classList.remove('is-held');}
   },true);
   // A second finger cannot steal the joystick while the first one is steering.
   document.addEventListener?.('pointerdown',event=>{

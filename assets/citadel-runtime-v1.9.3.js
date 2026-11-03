@@ -133,7 +133,7 @@
     stage = 'scene'; const items = spaceScene(e,time,ARCADE.fx);
     stage = 'renderer'; ARCADE.renderer.render(items,cam);
     stage = 'hud'; const c=ARCADE.ctx,w=ARCADE.hud.width,h=ARCADE.hud.height;
-    if(e.campaign2120?.modal?.type==='bestiary'){c.clearRect(0,0,w,h);return;}
+    if(e.campaign2120?.modal?.type==='bestiary'){c.clearRect(0,0,w,h);globalThis.CITADEL_RECORDER?.captureFrame();return;}
     // A throwing Canvas painter must not leave save()/clip()/transform state
     // on the context used by a later frame. The native frame boundary resets it.
     if (e.finale && e.status!=='crashing' && !(e.status==='paused'&&e.resumeStatus==='crashing')) drawFinaleHUD(c,e,cam,w,h);
@@ -146,6 +146,7 @@
       else { drawFlightHUD(c,e,cam,w,h); drawCampaignFlightHUD(c,e,cam,w,h); }
       drawClarityHUD(c,e,cam,w,h);
     }
+    globalThis.CITADEL_RECORDER?.captureFrame();
   }
   function frame(time) {
     if (!ready() || busy) return;
@@ -154,6 +155,7 @@
       const e = ARCADE.engine;
       if (e !== observedEngine) {
         observedEngine=e; checkpoint=null; checkpointEngine=null; checkpointAt=-Infinity;
+        notice='';document.getElementById('citadel-runtime-notice')?.remove?.();
         transition=''; renderRetries=0; record('engine');
       }
       stage='checkpoint'; capture();
@@ -189,6 +191,9 @@
     }
     if (!ready() || busy || contextLost) return;
     if (now()-lastFrame<GAP && (!active.has(ARCADE.engine?.status)||now()-lastUpdate<GAP)) return;
+    // Campaign cards already suspend gameplay. A throttled browser must not
+    // add a second pause/banner that shrinks their fixed-height layout.
+    if(ARCADE.engine?.campaign2120?.modal){restart();return;}
     record('frame-gap'); saveRecovery(); pause(); recoveries++;
     notice='Обновление кадра прерывалось. Игра на паузе; нажмите «Продолжить».';
     restart(); persistLog(); showNotice();
