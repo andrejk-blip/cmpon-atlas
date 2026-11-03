@@ -359,7 +359,7 @@
     c.fillText(state+' · ФТ '+CITADEL_SWARM.completed(e)+' / 3'+(overdrive>0?' · УСИЛЕНИЕ '+Math.ceil(overdrive)+'с':''),titleX,titleY+(l.compact?19:25),maxTitle);
     if(!l.compact){c.textAlign='center';c.font='11px '+FONT;c.fillStyle='#8fa8ba';c.fillText(e.assist?'Уязвимо светящееся ядро · Кольцо и стрелка — пике · Контейнеры — снабжение':CITADEL_SWARM.tactics?.(e)?'Перехватчики заходят наперерез · Бомбардировщики ведут огонь с флангов · Торпеды можно сбить':'Уязвимо светящееся ядро · Голубая броня — щитоносец · Контейнеры — снабжение',W/2,71,W-30);}
     c.textAlign='center';c.font=(l.compact?10:12)+'px '+FONT;c.fillStyle='#9eb4c4';
-    c.fillText(l.compact?'ДЖОЙСТИК — МАНЁВР · УВОРОТ '+(p.flipCooldown>0?Math.ceil(p.flipCooldown)+'с':'ГОТОВ'):'WASD — МАНЁВР · ПРОБЕЛ — ОГОНЬ · ПКМ / Q — РАКЕТА · E — ИМПУЛЬС · R — УВОРОТ',W/2,H-(l.compact?10:13),W-20);c.restore();
+    c.fillText(l.compact?'ДЖОЙСТИК — МАНЁВР · УВОРОТ '+(p.flipCooldown>0?Math.ceil(p.flipCooldown)+'с':'ГОТОВ'):'WASD — МАНЁВР · ЛКМ — ОГОНЬ · ПКМ / Q — РАКЕТА · E — ИМПУЛЬС · R — УВОРОТ',W/2,H-(l.compact?10:13),W-20);c.restore();
   }
   function draw(c,e,cam,w,h,options={}) {
     const mobile=typeof isMobileLayout==='function'&&isMobileLayout();

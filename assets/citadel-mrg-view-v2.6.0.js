@@ -560,7 +560,7 @@ function renderArena(e,time,fx){const items=[],add=(...x)=>items.push(citadelIte
     const y=H-bottom-(tight?5:8);
     c.fillStyle='#061525e8';c.fillRect(margin,y,W-margin*2,bottom);
     c.textAlign='left';c.fillStyle='#d7e5dc';
-    const help=tentacleWarning||tentacleActive?tentacle.hint||'Отступите в зелёное укрытие':W>=800?'МЫШЬ / КАСАНИЕ — ПРИЦЕЛ · ПРОБЕЛ — ОГОНЬ · ПКМ / Q — ГРАНАТА':'ПРОБЕЛ / «ОГОНЬ» — СТРЕЛЯТЬ';
+    const help=tentacleWarning||tentacleActive?tentacle.hint||'Отступите в зелёное укрытие':W>=800?'МЫШЬ / КАСАНИЕ — ПРИЦЕЛ · ЛКМ — ОГОНЬ · ПКМ / Q — ГРАНАТА':'ЛКМ / «ОГОНЬ» — СТРЕЛЯТЬ';
     fitText(c,help,margin+8,y+bottom/2,W-margin*2-121,tight?10:11,9);
     c.textAlign='right';c.fillStyle='#ffe1a6';
     fitText(c,'ГРАНАТЫ '+e.player.missiles,W-margin-8,y+bottom/2,105,tight?10:11,10,'bold');
@@ -612,8 +612,8 @@ function renderArena(e,time,fx){const items=[],add=(...x)=>items.push(citadelIte
     if(!currentArena(e)||e.finale.phase!=='mrg')return originalHUD(c,e,cam,w,h);
     return renderHUD(c,e,cam,w,h);
   };
-  const aimHelp='Мышь или касание поля — прицел. Пробел / «Огонь» — стрелять; ПКМ / Q / «Граната» — граната. Без прицела огонь идёт по направлению взгляда.';
-  const pauseHelp=aimHelp+' A/D — бег; W / Shift — прыжок; S — спуск с платформы. Прямой размах — в глубокое левое укрытие. Верхние и боковые щупальца — на пол в зелёный просвет.';
+  const aimHelp='Мышь или касание поля — прицел. ЛКМ / «Огонь» — стрелять; Пробел — бег; ПКМ / Q / «Граната» — граната. Без прицела огонь идёт по направлению взгляда.';
+  const pauseHelp=aimHelp+' A/D — бег; W / ↑ — прыжок; S — спуск с платформы. Прямой размах — в глубокое левое укрытие. Верхние и боковые щупальца — на пол в зелёный просвет.';
   if(typeof updateFinaleHUD==='function') {
     const update=updateFinaleHUD;
     updateFinaleHUD=function(...args) {
@@ -633,7 +633,7 @@ function renderArena(e,time,fx){const items=[],add=(...x)=>items.push(citadelIte
       const html=overlay.call(this,e,...args);
       if(!currentArena(e)||e.finale.phase!=='mrg'||e.status!=='paused'||typeof html!=='string')return html;
       // Replace only the existing paused help paragraph, preserving the card/actions.
-      return html.replace(/<p>[\s\S]*?<\/p>/,'<p>'+(e.assist?pauseHelp:aimHelp+' A/D — бег; W / Shift — прыжок; S — спуск. В боевом режиме подсветка будущих атак отключена.')+'</p>');
+      return html.replace(/<p>[\s\S]*?<\/p>/,'<p>'+(e.assist?pauseHelp:aimHelp+' A/D — бег; W / ↑ — прыжок; S — спуск. В боевом режиме подсветка будущих атак отключена.')+'</p>');
     };
   }
   globalThis.CITADEL_MRG_VIEW=Object.freeze({

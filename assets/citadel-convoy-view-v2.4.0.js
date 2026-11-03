@@ -204,7 +204,7 @@
   if(aim&&selected&&!f){c.textAlign='center';c.fillStyle=aim.locked?C.cyan:C.amber;c.font='bold '+(mobile?10:12)+'px sans-serif';c.fillText(aim.locked?'ЦЕЛЬ В ПРИЦЕЛЕ · ОГОНЬ':'СМЕЩАЙТЕСЬ К ЦЕЛИ ДЛЯ ЗАХВАТА',W/2,H-(compact?70:mobile?106:121));}
   const bw=(W-pad*2-16)/3,by=H-(compact?56:mobile?79:92);cq.allies.forEach((a,i)=>{const x=pad+i*(bw+8);c.fillStyle='#081524e8';c.fillRect(x,by,bw,compact?29:42);c.fillStyle=a.dead?'#b28286':a.hp<40?'#ffae88':'#9ee5d0';c.font=(mobile?9:12)+'px sans-serif';c.textAlign='left';c.fillText(a.name,x+6,by+(compact?9:12));c.textAlign='right';c.fillText(a.dead?'ПОТЕРЯН':Math.ceil(a.hp)+'%',x+bw-6,by+(compact?19:27));c.fillRect(x+6,by+(compact?25:35),(bw-12)*a.hp/100,3);});
   c.textAlign='left';c.fillStyle='#b4d5e0';c.font=(mobile?10:11)+'px sans-serif';c.fillText('ЩИТ '+Math.ceil(e.player.hp)+' · РАКЕТЫ '+e.player.missiles+' · '+(mobile?'ПРИКРЫТИЕ ':'E ')+(e.player.pulseCooldown>0?Math.ceil(e.player.pulseCooldown)+'с':'ГОТОВО'),pad,H-(compact?12:22));
-  if(!mobile){c.textAlign='right';c.fillText('WASD — МАНЁВР · TAB — ЦЕЛЬ · ПРОБЕЛ — ОГОНЬ · Q — РАКЕТА · E — ПРИКРЫТИЕ',W-pad,H-22);}
+  if(!mobile){c.textAlign='right';c.fillText('WASD — МАНЁВР · TAB — ЦЕЛЬ · ЛКМ — ОГОНЬ · Q — РАКЕТА · E — ПРИКРЫТИЕ',W-pad,H-22);}
   c.restore();
  }
  drawEscortHUD=function(c,e,cam,w,h){return active(e)?hud(c,e,cam,w,h):old.hud(c,e,cam,w,h);};

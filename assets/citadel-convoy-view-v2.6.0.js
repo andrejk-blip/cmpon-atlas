@@ -265,7 +265,7 @@
   const by=H-(short?49:mobile?77:86),bw=(W-pad*2-12)/3;
   cq.allies.forEach((ally,i)=>{const x=pad+i*(bw+6);c.fillStyle='#060e1de8';c.fillRect(x,by,bw,short?28:39);c.textAlign='left';text(c,ally.name,x+6,by+(short?8:12),mobile?9:11,ally.dead?'#b68493':'#b9cadb');c.textAlign='right';text(c,ally.dead?'ПОТЕРЯН':Math.ceil(ally.hp)+'%',x+bw-6,by+(short?18:27),mobile?9:11,ally.hp<40?'#ffae88':C.cyan,true);c.fillStyle=ally.hp<40?'#e79078':C.cyan;c.fillRect(x+6,by+(short?25:35),(bw-12)*clamp(ally.hp/100),2);});
   c.textAlign='left';text(c,'ЩИТ '+Math.ceil(e.player.hp)+' · РАКЕТЫ '+e.player.missiles+' · '+(mobile?'ПРИКРЫТИЕ ':'E ')+(e.player.pulseCooldown>0?Math.ceil(e.player.pulseCooldown)+'с':'ГОТОВО'),pad,H-(short?10:18),mobile?10:11,'#b7cadb');
-  if(!mobile){c.textAlign='right';text(c,'WASD — МАНЁВР · TAB — ЦЕЛЬ · ЛКМ / ПРОБЕЛ — ОГОНЬ · ПКМ / Q — РАКЕТА',W-pad,H-18,11,'#9bb1c7');}
+  if(!mobile){c.textAlign='right';text(c,'WASD — МАНЁВР · TAB — ЦЕЛЬ · ЛКМ — ОГОНЬ · ПРОБЕЛ — ФОРСАЖ · ПКМ / Q — РАКЕТА',W-pad,H-18,11,'#9bb1c7');}
   c.restore();
  }
  drawEscortHUD=function(c,e,cam,w,h){return active(e)?hud(c,e,cam,w,h):old.hud(c,e,cam,w,h);};

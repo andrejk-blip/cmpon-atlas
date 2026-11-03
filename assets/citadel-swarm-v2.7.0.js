@@ -565,7 +565,7 @@
     if (!active(this)) return previous.objective.apply(this, args);
     const s = this.swarm;
     return { title: s.phase === 'cleared' ? modern(this)&&s.waveIndex%2===0?'Звено разбито · подберите снабжение':'Пакет требований на борту' : modern(this)?waveName(this):'Разбейте три волны роя',
-      detail: (mobile() ? 'Джойстик — манёвр, «Огонь» — стрелять вверх. ' : 'WASD — манёвр, пробел — стрелять вверх. ') +
+      detail: (mobile() ? 'Джойстик — манёвр, «Огонь» — стрелять вверх. ' : 'WASD — манёвр, ЛКМ — стрелять вверх. ') +
         (this.assist?(modern(this)?waveDef(this).lesson+' Снабжение подбирается кораблём.':'Подсвеченные корабли пикируют. Уклоняйтесь от янтарных снарядов; импульс их рассеивает.'):'ПКМ / Q — ракеты, E — импульс. Подбирайте снабжение и меняйте позицию.'),
       progress: 'ВОЛНА ' + (waveIndex(this)+1) + '/'+waveTotal(this)+' · ОСТАЛОСЬ ' + living(this).length + ' · ФТ ' + completed(this) + '/3' };
   };
@@ -703,7 +703,7 @@
     c.fillText(hint, titleX, titleY + (l.compact ? 19 : 25), maxTitle);
     if (!l.landscape && !l.compact) { c.fillStyle = '#829db8'; c.font = '11px Arial'; c.fillText('Строй подсветился → враги пикируют. Янтарные точки — вражеские снаряды.', W / 2, 71, W - 30); }
     c.textAlign = 'center'; c.font = (l.compact ? 10 : 12) + 'px Arial'; c.fillStyle = '#a9c6dc';
-    c.fillText(l.compact ? 'ДЖОЙСТИК — МАНЁВР  ·  ОГОНЬ — ВВЕРХ' : 'WASD — МАНЁВР  ·  ПРОБЕЛ — ОГОНЬ ВВЕРХ  ·  Q — РАКЕТА  ·  E — ИМПУЛЬС', W / 2, H - (l.compact ? 10 : 13), W - 20);
+    c.fillText(l.compact ? 'ДЖОЙСТИК — МАНЁВР  ·  ОГОНЬ — ВВЕРХ' : 'WASD — МАНЁВР  ·  ЛКМ — ОГОНЬ ВВЕРХ  ·  Q — РАКЕТА  ·  E — ИМПУЛЬС', W / 2, H - (l.compact ? 10 : 13), W - 20);
     if (s.phase === 'entry' && s.waveAge < 1.2 || s.phase === 'cleared') {
       c.font = 'bold ' + (l.compact ? 18 : 27) + 'px Arial'; c.fillStyle = s.phase === 'cleared' ? '#a7ffe0' : '#d2e7ff';
       c.fillText(s.phase === 'cleared' ? modern(e)&&s.waveIndex%2===0?'ЗВЕНО РАЗБИТО!':'ФТ ' + completed(e) + ' / 3 · ПРИНЯТО!' : 'ВОЛНА ' + (waveIndex(e)+1), W / 2, l.cy + 8, l.width);
