@@ -4,14 +4,14 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>ЦМПОН — атлас требований · ФТТ 02.11.2026</title>
 <meta name="application-version" content="atlas-2026.11">
-<meta name="description" content="Новый ФТТ ГИС ЦАП: сопоставление требований ЦМПОН и остальных направлений с ФТ сервиса 39, ФТТ 57.1 и ДТ 2.5. Цитаты, различия и вопросы для согласования.">
+<meta name="description" content="Новый ФТТ ГИС ЦАП: сопоставление требований всех направлений ГИС ЦАП, включая ЦМПОН с ФТ сервиса 39, ФТТ 57.1 и ДТ 2.5. Цитаты, различия и вопросы для согласования.">
 <link rel="canonical" href="https://andrejk-blip.github.io/cmpon-atlas/atlas.html">
 <meta property="og:title" content="ЦМПОН · Атлас требований ФТТ 02.11.2026">
-<meta property="og:description" content="Проверяемые связи требований, сохранность ДТ 2.5 и отдельная карта остальных направлений ГИС ЦАП.">
+<meta property="og:description" content="Проверяемые связи требований, сохранность ДТ 2.5 и общая топография всех направлений ГИС ЦАП.">
 <meta property="og:type" content="website"><meta property="og:locale" content="ru_RU">
 <meta property="og:image" content="https://andrejk-blip.github.io/cmpon-atlas/assets/og-atlas-2026.png">
 <meta name="theme-color" content="#102c3a"><link rel="icon" href="./assets/atlas-icon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="./assets/atlas-2026.css?v=20261104"><script defer src="./assets/atlas-2026.js?v=20261104"></script>
+<link rel="stylesheet" href="./assets/atlas-2026.css?v=20261104.3"><script defer src="./assets/atlas-directions.js?v=20261104.3"></script><script defer src="./assets/atlas-2026.js?v=20261104.3"></script>
 </head>
 <body>
 <a class="skip" href="#content">Перейти к содержимому</a>
@@ -24,7 +24,7 @@
 <div class="workspace">
  <header class="topbar"><div class="breadcrumb">ГИС ЦАП <span>/</span> <b id="crumb">ЦМПОН</b></div><div class="top-actions"><a class="button quiet desktop" href="./play.html">Цитадель ↗</a><a class="button quiet desktop" href="./academy.html">Академия ФТ ↗</a><button class="button" id="top-export" data-action="export">↓ Экспорт CSV</button></div></header>
  <main>
-  <div class="workspace-switch" aria-label="Область анализа"><button data-action="workspace" data-value="cmpon" class="active" aria-pressed="true">ЦМПОН</button><button data-action="workspace" data-value="other" aria-pressed="false">Другие направления ГИС ЦАП</button></div>
+  <div class="workspace-switch" aria-label="Область анализа"><button data-action="workspace" data-value="cmpon" class="active" aria-pressed="true">ЦМПОН</button><button data-action="workspace" data-value="all" aria-pressed="false">Все направления ГИС ЦАП</button></div>
   <div class="heading"><div><p class="eyebrow" id="eyebrow">ФТТ 02.11.2026 · С39 · ФТТ 57.1 · ДТ 2.5</p><h1 id="title">Основания требований<span>.</span></h1><p class="intro" id="intro">Новый ФТТ в основе карты. Для каждого требования: точный текст, предшествующие основания и смысловые различия.</p></div><button class="edition-tag" data-action="view" data-value="methods">Источники и правила<br><strong>Как читать эту карту ↗</strong></button></div>
   <div class="scope-bar" id="scope-bar"><label class="search"><span aria-hidden="true">⌕</span><input type="search" id="search" placeholder="Текст, номер требования, раздел или термин…" aria-label="Поиск требований"><kbd>/</kbd></label><label class="select-label">Сравниваемый документ<select id="scope"></select></label></div>
   <div class="metrics" id="metrics"></div><div class="summary-caption" id="summary-caption"></div>
