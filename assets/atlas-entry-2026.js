@@ -19,15 +19,21 @@
   }, true);
   // The standalone game hides the old Atlas sidebar. Keep a return link in
   // its existing supplementary menu without altering the game renderer.
-  document.addEventListener('toggle', event => {
-    const menu = event.target;
-    if (!(menu instanceof HTMLDetailsElement) || !menu.open) return;
-    const academy = menu.querySelector('a[href="./academy.html"]');
-    if (!academy || menu.querySelector('[data-atlas-return]')) return;
-    const link = document.createElement('a');
-    link.href = './atlas.html';
-    link.textContent = 'Атлас требований ↗';
-    link.dataset.atlasReturn = 'true';
-    academy.before(link);
-  }, true);
+  function connectGameMenu() {
+    function addReturnLinks() {
+      document.querySelectorAll('details a[href="./academy.html"]').forEach(academy => {
+        if (academy.parentElement.querySelector('[data-atlas-return]')) return;
+        const link = document.createElement('a');
+        link.href = './atlas.html';
+        link.textContent = 'Атлас требований ↗';
+        link.dataset.atlasReturn = 'true';
+        academy.before(link);
+      });
+    }
+    addReturnLinks();
+    // The game recreates its menu; reconnect the link after each render.
+    new MutationObserver(addReturnLinks).observe(document.body, {childList:true, subtree:true});
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', connectGameMenu, {once:true});
+  else connectGameMenu();
 })();
