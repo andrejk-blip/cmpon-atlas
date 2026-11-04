@@ -38,13 +38,17 @@ function fixture({saveData = false} = {}) {
 }
 
 const cases = [
-  ['ordinary Atlas does not preload the game; the lobby warms only the first sheet and hero thumbnail',()=>{
+  ['ordinary Atlas does not preload the game; the lobby warms only the first sheet and renders a responsive character scene',()=>{
     const h=fixture();assert.equal(h.requests.length,0);
-    h.render();assert.deepEqual(h.requests.map(x=>x.src),['./assets/comics2170/departure.webp','./assets/collection2170/thumbs/hero.webp']);
+    h.render();assert.deepEqual(h.requests.map(x=>x.src),['./assets/comics2170/departure.webp']);
     assert.equal(h.requests[0].fetchPriority,'high');
-    h.render();assert.equal(h.requests.length,2,'Repeated menu renders must not repeat requests');
+    assert(h.html.includes('srcset="./assets/scene2173/characters-small.webp 640w, ./assets/scene2173/characters.webp 1280w"'));
+    assert(h.html.includes('sizes="(max-width: 700px) 100vw, 65vw"'));
+    assert(h.html.includes('class="menu2173-scene"'));
+    assert(!h.html.includes('menu2173-portrait'));
+    h.render();assert.equal(h.requests.length,1,'Repeated menu renders must not repeat requests');
   }],
-  ['save-data mode skips speculative hero loading',()=>{
+  ['save-data mode does not prefetch additional character artwork',()=>{
     const h=fixture({saveData:true});h.render();assert.equal(h.requests.length,1);
     assert.equal(h.requests[0].src,'./assets/comics2170/departure.webp');
   }],

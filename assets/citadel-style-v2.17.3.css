@@ -1,0 +1,144 @@
+/* Citadel 2.17.3 — orbital brass, character posters, Cyrillic typography. */
+@font-face{font-family:'Citadel Display';src:url('./fonts/RussoOne-Regular.woff') format('woff');font-style:normal;font-weight:400;font-display:swap}
+@font-face{font-family:'Citadel UI';src:url('./fonts/Exo2-Variable.woff') format('woff');font-style:normal;font-weight:100 900;font-display:swap}
+#arcade-layout,.record-dialog2150{--citadel-ui:'Citadel UI','Trebuchet MS',sans-serif;--citadel-display:'Citadel Display','Arial Black',sans-serif;--citadel-gold:#ddb773;--citadel-ink:#07151f;font-family:var(--citadel-ui)!important}
+#arcade-layout :where(button,a,p,span,small,strong,b,label,summary,select,input,textarea,div,nav,section,aside,header,footer,li),.record-dialog2150 :where(button,a,p,small,textarea){font-family:var(--citadel-ui)!important}
+#arcade-layout :where(h2,h3,h4),.record-dialog2150 h3{font-family:var(--citadel-display)!important;font-weight:400!important}
+#arcade-layout .quiz2170 h3,#arcade-layout .mission-check h3,#arcade-layout .review-card h3{font-family:var(--citadel-ui)!important;font-weight:600!important}
+#arcade-layout :where(button,a,summary):focus-visible{outline:3px solid #f8d99d!important;outline-offset:3px}
+#arcade-layout :where(button,summary){touch-action:manipulation}
+
+/* Layered orbit and hangar geometry are CSS; no extra backdrop download. */
+#arcade-overlay.menu2170-open:has(.menu2173){isolation:isolate;overflow-x:hidden!important;padding:68px clamp(18px,4vw,64px) 24px!important;background:radial-gradient(circle at 104% 30%,transparent 0 43%,#b5cbbd18 43.1% 46%,transparent 46.1% 48%,#d0b67944 48.1% 48.2%,transparent 48.3%),radial-gradient(ellipse at 78% 28%,#275c6940,transparent 52%),radial-gradient(ellipse at 14% 95%,#55422545,transparent 45%),linear-gradient(125deg,#07131e 10%,#0b2530 65%,#09131e)!important}
+#arcade-overlay:has(.menu2173)::before{content:'';position:absolute;z-index:0;inset:0;pointer-events:none;background:radial-gradient(circle at 62% 19%,#dbeaf7 0 1px,transparent 1.5px),radial-gradient(circle at 17% 28%,#d8ba79 0 1px,transparent 1.5px),radial-gradient(circle at 90% 55%,#90b5ce 0 .8px,transparent 1.5px),radial-gradient(circle at 35% 75%,#839bab 0 .6px,transparent 1.4px);background-size:241px 193px,367px 307px,179px 269px,283px 157px;opacity:.55}
+#arcade-overlay:has(.menu2173)::after{display:none}
+#arcade-layout:has(.menu2173) .arcade-command{display:none!important}
+#arcade-layout:has(.menu2173){grid-template-columns:minmax(0,1fr)!important}
+#arcade-layout:has(.menu2173) .arcade-screen{grid-column:1/-1;width:100%;min-width:0}
+#arcade-layout:has(.menu2173) .arcade-topline{position:absolute;top:12px;right:12px;left:auto;width:auto;min-height:0;height:auto;padding:0;border:0;background:none;box-shadow:none}
+#arcade-layout:has(.menu2173) .arcade-topline>span{display:none!important}
+#arcade-layout:has(.menu2173) :is(.citadel-objective,.arcade-flightbar){display:none!important}
+.citadel-webapp #arcade-layout:has(.menu2173) .arcade-field,#arcade-layout:has(.menu2173) #arcade-screen.expanded .arcade-field{flex:1 1 auto!important;height:auto!important;min-height:0!important;aspect-ratio:auto!important}
+#arcade-overlay .menu2173{position:relative;z-index:1;display:grid;grid-template-columns:minmax(310px,.95fr) minmax(300px,1.05fr);align-items:center;gap:clamp(24px,5vw,74px);width:100%;max-width:1120px;margin:auto;text-align:left;background:none;border:0;box-shadow:none;padding:0;overflow:visible}
+.menu2173-copy{min-width:0}
+#arcade-overlay .menu2173-kicker{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#99c6c7;display:flex;align-items:center;gap:10px;margin:0 0 19px}
+.menu2173-kicker::before{content:'';width:24px;height:2px;background:#ddb773;box-shadow:0 0 14px #e3b87466}
+#arcade-overlay .menu2173 h3{font-family:var(--citadel-display)!important;font-size:clamp(35px,4.8vw,66px)!important;font-weight:400!important;line-height:1.03!important;letter-spacing:.015em!important;margin:0!important;color:#f2dfb1!important;text-shadow:0 3px 0 #6a583644,0 8px 30px #0005}
+#arcade-overlay .menu2173 h3 span{font-family:var(--citadel-display)!important;display:block;font-size:.44em;letter-spacing:.28em;color:#aecbc8;margin:12px 0 0 3px}
+#arcade-overlay .menu2173-tagline{font-size:18px;line-height:1.5;color:#c1cfcc;margin:22px 0 30px;max-width:340px}
+.menu2173-controls{max-width:450px}
+#arcade-overlay .menu2173 .menu2170-modes{gap:0;border:1px solid #66817d70;border-radius:6px;background:#06131c88;padding:4px}
+#arcade-overlay .menu2173 .menu2170-modes button{position:relative;border:0;border-radius:3px;background:transparent;color:#a8bdc2;font-size:16px;font-weight:500;min-height:44px;padding:10px 8px;box-shadow:none;clip-path:none}
+#arcade-overlay .menu2173 .menu2170-modes button[aria-pressed=true]{background:linear-gradient(#33545766,#263b3d88);color:#ffe0a4;box-shadow:inset 0 -2px #ddb773}
+#arcade-overlay .menu2173 .menu2170-modes button:hover{color:#fff2d4;background:#3d605b66}
+#arcade-overlay .menu2173-mode-description{font-size:15px;line-height:1.4;color:#a9bdc2;margin:12px 0 0;min-height:21px}
+#arcade-overlay .menu2173 .menu2170-play{display:flex;flex-direction:column;gap:8px;margin:21px 0 14px}
+#arcade-overlay .menu2173 button,#arcade-overlay .menu2173 a{border-radius:5px;transition:background-color .16s,border-color .16s;letter-spacing:.015em}
+#arcade-overlay .menu2173 .menu2170-play>button{margin:0;width:100%;min-height:46px;border-color:#6e827d;background:#0b202a;color:#cfdbd8;padding:12px 18px}
+#arcade-overlay .menu2173 .menu2170-play>.menu2170-primary{position:relative;background:linear-gradient(115deg,#f2d49b,#c99b56)!important;border:1px solid #f6deb0;color:#172027!important;font-size:19px;font-weight:750;min-height:56px;box-shadow:inset 0 1px #fff6dd,0 5px 0 #645031,0 10px 30px #d8a95a17;clip-path:none}
+#arcade-overlay .menu2173 .menu2170-play>.menu2170-primary:hover{background:linear-gradient(115deg,#ffe7b5,#ddb773)!important}
+#arcade-overlay .menu2173 .menu2170-play>.menu2170-primary:active{box-shadow:inset 0 2px 5px #6e512a66,0 2px 0 #645031}
+#arcade-overlay .menu2173 .menu2170-nav{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}
+#arcade-overlay .menu2173 .menu2170-nav button{background:#122d3699;border:1px solid #526c6c;color:#d6e0dc;font-size:16px;padding:10px;min-height:44px;box-shadow:inset 0 1px #c1d8cc0e}
+#arcade-overlay .menu2173 .menu2170-nav button:hover{background:#28454a;border-color:#b29e72}
+#arcade-overlay .menu2173 details{margin:10px 0 0;text-align:left}
+#arcade-overlay .menu2173 summary{display:list-item;list-style:disclosure-closed;width:fit-content;min-height:44px;padding:12px 4px;margin-left:16px;color:#aabbbd;font-size:14px}
+#arcade-overlay .menu2173 details[open]>summary{list-style:disclosure-open}
+#arcade-overlay .menu2173 details>div{justify-content:flex-start;padding:4px 0 0;gap:8px}
+#arcade-overlay .menu2173 details :is(button,a){font-size:14px;padding:10px;background:#10232d;border-color:#536e71}
+/* Characters live in front of the interface, without collectible-card frames. */
+.menu2173-art{position:relative;z-index:4;min-width:0;width:calc(100% + 180px);margin-left:-138px;pointer-events:none;transform:perspective(1000px) rotateY(-5deg);transform-origin:40% 50%;filter:drop-shadow(-12px 20px 18px #0008)}
+.menu2173-scene{position:relative;z-index:2;display:block;width:100%;height:auto;max-width:none!important;aspect-ratio:1280/853;object-fit:contain;filter:drop-shadow(0 6px 10px #030d1799)}
+.menu2173-art::before{content:'';position:absolute;z-index:0;inset:14% 3% 6% 9%;border:1px solid #b8cba530;border-radius:50%;transform:rotate(-18deg);box-shadow:0 0 0 16px #80acac08,0 0 90px #66acaa25;background:radial-gradient(ellipse,#34778066,transparent 65%)}
+.menu2173-art::after{content:'';position:absolute;z-index:3;bottom:1%;left:20%;right:2%;height:12%;background:linear-gradient(transparent,#07182144);transform:perspective(110px) rotateX(35deg);filter:blur(10px)}
+.menu2173-rift{position:absolute;z-index:1;left:3%;top:47%;width:75%;height:15%;border-top:1px solid #b5fff3aa;transform:rotate(-16deg);box-shadow:0 -5px 25px #60d4d32a;background:linear-gradient(180deg,#4edbd82a,transparent);clip-path:polygon(2% 0,95% 0,100% 35%,90% 100%,0 100%)}
+.menu2173-copy{position:relative;z-index:2}
+.menu2173-controls{position:relative}
+.menu2173-controls::before{content:'';position:absolute;z-index:-1;inset:-14px -16px -10px;border:1px solid #93b7ae21;border-radius:8px;background:linear-gradient(120deg,#102b3499,#07192366);box-shadow:0 20px 35px #0003;transform:perspective(900px) rotateY(2deg);pointer-events:none}
+
+/* Audio switches: stable geometry, tactile rims and explicit state labels. */
+#arcade-layout .arcade-topline{z-index:40!important}
+#arcade-layout .arcade-topline>div:has(#arcade-pause){gap:5px!important;align-items:center;padding:4px!important;border:1px solid #536b6e!important;border-radius:9px!important;background:linear-gradient(145deg,#203b43ed,#091923f5)!important;box-shadow:0 4px 16px #0005,inset 0 1px #c8daca1c}
+#arcade-layout .arcade-topline button{border:1px solid #5d7779!important;border-radius:6px!important;background:linear-gradient(#284750,#10262f)!important;color:#dbe7df!important;min-width:44px;min-height:44px;font-size:20px;box-shadow:inset 0 1px #c5dfd01c,0 2px 2px #0004}
+#arcade-layout .arcade-topline #arcade-music,#arcade-layout .arcade-topline #arcade-sound{position:relative;display:flex!important;flex-direction:column;align-items:center;justify-content:center;gap:2px;width:72px!important;min-width:72px!important;min-height:48px!important;height:48px!important;padding:3px!important;font-size:0!important;line-height:1!important;overflow:hidden}
+#arcade-layout .arcade-topline #arcade-music::before,#arcade-layout .arcade-topline #arcade-sound::before{content:'';display:block;width:20px;height:20px;background:currentColor;mask:center/contain no-repeat}
+#arcade-layout .arcade-topline #arcade-music::before{mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M9 4v12.2a3.4 3.4 0 1 0 2 3.1V7l8-2v9.2a3.4 3.4 0 1 0 2 3.1V1L9 4Z'/%3E%3C/svg%3E")}
+#arcade-layout .arcade-topline #arcade-sound::before{mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='m3 8 5 0 5-5v18l-5-5H3z'/%3E%3Cpath fill='none' stroke='black' stroke-width='2' d='M16 7q5 5 0 10M19 4q8 8 0 16'/%3E%3C/svg%3E")}
+#arcade-layout .arcade-topline #arcade-music::after,#arcade-layout .arcade-topline #arcade-sound::after{font:600 10px/1 var(--citadel-ui);letter-spacing:.01em;white-space:nowrap}
+#arcade-layout .arcade-topline #arcade-music::after{content:'Музыка · выкл'}
+#arcade-layout .arcade-topline #arcade-music[data-audio-state=locked]::after{content:'Включить'}
+#arcade-layout .arcade-topline #arcade-music[aria-pressed=true]::after{content:'Музыка · вкл'}
+#arcade-layout .arcade-topline #arcade-sound::after{content:'Звуки · выкл'}
+#arcade-layout .arcade-topline #arcade-sound[aria-pressed=true]::after{content:'Звуки · вкл'}
+#arcade-layout .arcade-topline :is(#arcade-music,#arcade-sound)[aria-pressed=true]{color:#bce5cf!important;border-color:#8aae96!important;background:linear-gradient(#32554f,#173b37)!important;box-shadow:inset 0 -2px #a6d7b7,0 2px 2px #0004}
+#arcade-layout .arcade-topline #arcade-music[data-audio-state=locked]{color:#f3d59a!important;border-color:#b89b63!important}
+#arcade-layout.mobile2160 .arcade-topline{top:max(8px,env(safe-area-inset-top));right:max(8px,env(safe-area-inset-right));height:auto!important}
+#arcade-layout:has(.quiz2170) .arcade-topline{position:fixed!important;top:max(8px,env(safe-area-inset-top))!important;right:max(8px,env(safe-area-inset-right))!important;left:auto!important;width:auto!important;height:auto!important;padding:0!important;border:0!important;background:none!important;z-index:5200!important}
+#arcade-layout:has(.quiz2170) .arcade-topline>span{display:none!important}
+#arcade-layout #arcade-screen #arcade-overlay.quiz2170-open{padding:76px 16px 16px!important;background:radial-gradient(ellipse at 80% 0,#234b4b66,transparent 65%),linear-gradient(135deg,#081722,#102b33)!important}
+#arcade-layout .space-audio button,#arcade-layout .space-controls button,#arcade-layout .citadel-music-actions button{border-radius:5px;min-height:40px;font-family:var(--citadel-ui)!important}
+
+/* Collection, comics, questions, mission cards: one family, readable hierarchy. */
+#arcade-overlay.collection2170-open,#arcade-overlay.quiz2170-open{padding-top:76px!important;background:radial-gradient(ellipse at 80% 0,#234b4b66,transparent 65%),linear-gradient(135deg,#081722,#102b33)!important}
+#arcade-layout .collection2170-tabs button[aria-pressed=true]{background:#294644;border-color:#bba06a;color:#f6dba7}
+#arcade-layout .collection2170-grid button{border-radius:5px;border-color:#516f71;background:#0c242e}
+#arcade-layout .collection2170-grid span{font-size:15px}
+#arcade-layout .collection2170-grid .collection2170-lock{background:radial-gradient(ellipse,#25464a,#0c202c);color:#769598}
+#arcade-layout .comic2170-picture,#arcade-layout .collection2170-art img{border-radius:5px}
+#arcade-layout .quiz2170-prompt{border-radius:6px;background:linear-gradient(125deg,#1c3b45,#102731);border-color:#a28c60}
+#arcade-layout .quiz2170-choices button{border-radius:6px;font-size:18px;background:linear-gradient(110deg,#1c3d47,#122a36);border-color:#607b80}
+#arcade-layout .quiz2170-choices button.is-correct{background:#123e37;border-color:#6bd7af}
+#arcade-layout .quiz2170-choices button.is-wrong{background:#512837;border-color:#ef8e9c}
+
+@media(max-width:700px){
+ #arcade-overlay.menu2170-open:has(.menu2173){padding:76px 20px 20px!important;justify-content:flex-start!important}
+ #arcade-overlay .menu2173{display:flex;flex-direction:column;gap:0;max-width:480px;text-align:center;margin:auto}
+ .menu2173-copy{display:contents}
+ #arcade-overlay .menu2173-kicker{order:0;justify-content:center;font-size:10px;letter-spacing:.11em;margin-bottom:12px}
+ #arcade-overlay .menu2173 h3{order:1;font-size:clamp(30px,8.5vw,43px)!important}
+ #arcade-overlay .menu2173 h3 span{font-size:.43em;margin-top:8px}
+ #arcade-overlay .menu2173-tagline{order:2;font-size:15px;max-width:300px;margin:10px auto 0}
+ .menu2173-art{order:3;width:calc(100% + 40px);height:clamp(186px,27dvh,230px);padding:0;margin:0 -20px -9px;flex:none;transform:none;filter:drop-shadow(0 12px 12px #0007)}
+ .menu2173-scene{width:100%;height:100%;object-fit:contain}
+ .menu2173-rift{top:62%;left:8%}
+ .menu2173-controls::before{inset:-8px -10px -6px}
+ .menu2173-controls{order:4;width:100%;max-width:400px}
+ #arcade-overlay .menu2173-mode-description{font-size:14px;margin:10px 0 0}
+ #arcade-overlay .menu2173 .menu2170-play{margin:14px 0 10px}
+ #arcade-overlay .menu2173 .menu2170-play>.menu2170-primary{min-height:50px;font-size:18px}
+ #arcade-overlay .menu2173 .menu2170-nav{margin-top:15px}
+ #arcade-overlay .menu2173 details{text-align:center;margin:5px 0 0}
+ #arcade-overlay .menu2173 summary{margin:auto}
+ #arcade-overlay .menu2173 details>div{justify-content:center}
+ #arcade-overlay:has(.menu2173)::after{width:120%;right:-65%;top:-10%}
+}
+@media(max-height:500px) and (min-width:701px){
+ #arcade-overlay.menu2170-open:has(.menu2173){padding:64px 24px 14px!important;justify-content:flex-start!important}
+ #arcade-overlay .menu2173{grid-template-columns:minmax(320px,1.15fr) minmax(160px,.85fr);gap:32px;max-width:950px;margin:auto}
+ #arcade-overlay .menu2173-kicker{font-size:10px;margin-bottom:9px}
+ #arcade-overlay .menu2173 h3{font-size:32px!important;white-space:nowrap}
+ #arcade-overlay .menu2173 h3 span{display:inline;margin-left:14px;font-size:.47em;letter-spacing:.14em}
+ #arcade-overlay .menu2173-tagline{font-size:14px;margin:9px 0 13px;max-width:none}
+ #arcade-overlay .menu2173 .menu2170-modes button{min-height:44px;padding:8px;font-size:14px}
+ #arcade-overlay .menu2173-mode-description{font-size:13px;margin:7px 0 0;min-height:18px}
+ #arcade-overlay .menu2173 .menu2170-play{flex-direction:row;margin:10px 0 8px}
+ #arcade-overlay .menu2173 .menu2170-play>button{min-height:44px;padding:8px 10px;font-size:14px;width:auto;flex:1}
+ #arcade-overlay .menu2173 .menu2170-play>.menu2170-primary{min-height:44px;font-size:16px;min-width:170px;flex:2}
+ #arcade-overlay .menu2173 .menu2170-nav{display:inline-flex;margin-top:8px;gap:8px}
+ #arcade-overlay .menu2173 .menu2170-nav button{font-size:14px;min-height:44px;padding:8px 14px}
+ #arcade-overlay .menu2173 details{display:inline-block;vertical-align:top;margin:8px 0 0 8px}
+ #arcade-overlay .menu2173 summary{font-size:13px;padding:12px 4px}
+ #arcade-overlay .menu2173 details[open]{display:block;margin:8px 0 0}
+ .menu2173-art{width:calc(100% + 80px);margin-left:-44px;max-height:280px;transform:perspective(800px) rotateY(-4deg)}
+ .menu2173-scene{max-height:280px;object-fit:contain}
+ #arcade-overlay.quiz2170-open,#arcade-overlay.collection2170-open{padding:65px 20px 12px!important}
+ #arcade-layout .comic2170-picture{height:calc(100dvh - 145px);max-height:calc(100dvh - 145px)}
+ #arcade-layout .collection2170-art img{max-height:calc(100dvh - 145px)}
+}
+@media(max-width:370px) and (min-height:501px){
+ #arcade-overlay.menu2170-open:has(.menu2173){padding-left:14px!important;padding-right:14px!important}
+ #arcade-overlay .menu2173-kicker{font-size:9px}
+ #arcade-overlay .menu2173 .menu2170-modes button{font-size:14px}
+ .menu2173-art{height:170px;margin-bottom:-4px}
+}
+@media(prefers-reduced-motion:reduce){#arcade-layout .menu2173 *{animation:none!important;transition:none!important}}

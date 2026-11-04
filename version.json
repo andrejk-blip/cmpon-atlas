@@ -1,6 +1,6 @@
 {
   "product": "ЦМПОН — атлас требований",
-  "version": "2.17.2",
+  "version": "2.17.3",
   "released_on": "2026-11-04",
   "requirements_edition": "2.0.2 (ВСТЕ)",
   "requirements_as_of": "2026-10-14",
@@ -10,7 +10,7 @@
   "finale_save_schema": "citadel-finale-v1",
   "analytics_module_version": "0.1.0",
   "tournament_module_version": "1.1.0",
-  "index_sha256": "f927b451819f79e90ef23fbdf695866d27f806235e5bd03bac2fb58512b93fd1",
+  "index_sha256": "0da93f7eb5f90dce50e42405a2dd182fb86f8b60780f65db7e48f6ad9c75ce15",
   "offline_sha256": "754ccde3777ace0150d9b062461301ea9542f893c4f158ebc0ae7e07a3e8a2c3",
   "core_assets_version": "1.3.6",
   "soundtrack_module_version": "2.17.2",
@@ -345,10 +345,15 @@
     "assets/citadel-levels-v2.16.0.js": "5b7dbdcaf00f973b8251b198cf00e7020a3c3ada8c841b70f36fe9d302a9e74b",
     "assets/citadel-mobile-clean-v2.16.0.js": "c468cf43e977181105ab17a9af496c38f811c9d5eae2bb5110d3bde4550a7e99",
     "assets/citadel-resonator-v2.16.0.js": "95e3a20243db7e9d20086054ee7225ab430caaae88ebeb7e001836970e792bc4",
-    "assets/citadel-collection-v2.17.0.js": "df991e5496f00f7de932f778eb8862d1ae9c77661413794270466dc7c1fac8a1",
+    "assets/citadel-collection-v2.17.0.js": "dc59074b6197f64692da46bd7cf42a5244793f788a9fb5723c00d046c9a9cd1a",
     "assets/citadel-quiz-v2.17.0.js": "6e41ffc80c034c6f1ee9a5f464379d42cf33d6c25d6606ff53645b0a380e40ed",
     "assets/citadel-runtime-v1.9.3.js": "7eb21172c947844424577b7268f676f400fb9282d1175c266d826ac440e2258f",
-    "assets/citadel-audio-controls-v2.17.2.css": "ca6f40991af5db24a63ffe1885da77f6e85056796a32ca87ff5fc043101f6fc0"
+    "assets/citadel-audio-controls-v2.17.2.css": "ca6f40991af5db24a63ffe1885da77f6e85056796a32ca87ff5fc043101f6fc0",
+    "assets/citadel-style-v2.17.3.css": "08678715c9f2eea81beeda67ab261df5299377807e8c41e99c71781b30dfbff5",
+    "assets/fonts/RussoOne-Regular.woff": "59cdcdbd81ebd90c25d647db40f20602360eb726d41712e59df2843efd3cd537",
+    "assets/fonts/Exo2-Variable.woff": "c5bdf7ff68a94171a0f43197ed87bc6b9b09dac0feb4f8f380e17e613a635553",
+    "assets/scene2173/characters.webp": "8915bf1e67a1ed69525dd395f671b1074049b988941527e28321d51843315e40",
+    "assets/scene2173/characters-small.webp": "c29b8f561533650c598d0364f6799bfbca01aa09297893772844cf26cbdbb86c"
   },
   "base_rewards_sha256": "1bce49f58ff775c09248e9c82643bf00bc03857e8729bbf8bab7bef0456369ef",
   "combat_sha256": "153aa7c503ddb04936a76a44c14a767ee892878217f5f123a5a01994a46de955",
@@ -442,7 +447,7 @@
   "legacy_campaign_chapters": 14,
   "legacy_campaign_cards": 23,
   "online_app_entry": "play.html",
-  "webapp_sha256": "3667f5ba38ea701b28ef11074f9dd5a6362e0573c3d27888ccd204d050372d02",
+  "webapp_sha256": "c9977ffdb6f275652f3ca7b31f28b96b75e5b372ef47e3067a7c03f94c62bee9",
   "manifest_sha256": "4daba5602fded15a1f2f0cb3e189ed7bba9660da257525ec746a03459326ad39",
   "campaign_sha256": "c233f107ae7460ec1a5b75c8e4077169e3e73f63232cdec69879f055411a0dcb",
   "experience_version": "2.13.0",
@@ -459,7 +464,7 @@
   "recording_version": "2.17.1",
   "station_mechanic_version": "2.16.0",
   "deck_layouts_version": "2.16.0",
-  "collection_version": "2.17.2",
+  "collection_version": "2.17.3",
   "comic_episodes": 7,
   "collector_cards": 17,
   "quiz_ui_version": "2.17.0",
@@ -517,5 +522,7 @@
     "assets/comics2170/thumbs/final.webp": "b37cc7db4038720c7c734adaaf6b72391275ef59dcb284f90c4bc3cac117e611",
     "assets/comics2170/thumbs/first_archive.webp": "b30afabcc1f49f26160f2e2c2bc429448fd906fe4258fcce38afd80e81d86cd7",
     "assets/comics2170/thumbs/rift.webp": "38ba6d23837fc6646b1dfd09a57c2b835efe82d3f2c8ab23cc755a179587c259"
-  }
+  },
+  "visual_style_version": "2.17.3",
+  "visual_style_build": "2173r1"
 }

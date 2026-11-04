@@ -1,0 +1,35 @@
+{
+  "version": "2.17.3",
+  "generator": "built-in image_gen",
+  "source": "Composite from prepared characters; revised to remove protruding mech claw and add original robodog and space fighter. Original collection cards untouched.",
+  "references": [
+    "assets/collection2170/hero.webp",
+    "assets/collection2170/mech.webp",
+    "assets/collection2170/ninja.webp",
+    "assets/collection2170/robodog.webp"
+  ],
+  "assets": [
+    {
+      "path": "assets/scene2173/characters.webp",
+      "width": 1280,
+      "height": 853,
+      "bytes": 341764,
+      "sha256": "8915bf1e67a1ed69525dd395f671b1074049b988941527e28321d51843315e40",
+      "alpha": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/scene2173/characters-small.webp",
+      "width": 640,
+      "height": 427,
+      "bytes": 110214,
+      "sha256": "c29b8f561533650c598d0364f6799bfbca01aa09297893772844cf26cbdbb86c",
+      "alpha": [
+        0,
+        255
+      ]
+    }
+  ]
+}
