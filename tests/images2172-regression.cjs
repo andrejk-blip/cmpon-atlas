@@ -42,7 +42,7 @@ const cases = [
     const h=fixture();assert.equal(h.requests.length,0);
     h.render();assert.deepEqual(h.requests.map(x=>x.src),['./assets/comics2170/departure.webp']);
     assert.equal(h.requests[0].fetchPriority,'high');
-    assert(h.html.includes('srcset="./assets/scene2173/characters-small.webp 640w, ./assets/scene2173/characters.webp 1280w"'));
+    assert(h.html.includes('srcset="./assets/scene2173/characters-small-r2.webp 640w, ./assets/scene2173/characters-r2.webp 1280w"'));
     assert(h.html.includes('sizes="(max-width: 700px) 100vw, 65vw"'));
     assert(h.html.includes('class="menu2173-scene"'));
     assert(!h.html.includes('menu2173-portrait'));

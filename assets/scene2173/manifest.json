@@ -1,7 +1,8 @@
 {
   "version": "2.17.3",
+  "revision": 2,
   "generator": "built-in image_gen",
-  "source": "Composite from prepared characters; revised to remove protruding mech claw and add original robodog and space fighter. Original collection cards untouched.",
+  "source": "Approved character composition revised to use a structurally symmetric twin-engine fighter and a slender horror-style cybernetic Doberman. The protruding mech claw remains removed. Original collection cards untouched.",
   "references": [
     "assets/collection2170/hero.webp",
     "assets/collection2170/mech.webp",
@@ -10,22 +11,22 @@
   ],
   "assets": [
     {
-      "path": "assets/scene2173/characters.webp",
+      "path": "assets/scene2173/characters-r2.webp",
       "width": 1280,
       "height": 853,
-      "bytes": 341764,
-      "sha256": "8915bf1e67a1ed69525dd395f671b1074049b988941527e28321d51843315e40",
+      "bytes": 314950,
+      "sha256": "a91f72188e7024001ea59ec502f972b3f7d2e401cdec43035802a9a2fd30e9b6",
       "alpha": [
         0,
         255
       ]
     },
     {
-      "path": "assets/scene2173/characters-small.webp",
+      "path": "assets/scene2173/characters-small-r2.webp",
       "width": 640,
       "height": 427,
-      "bytes": 110214,
-      "sha256": "c29b8f561533650c598d0364f6799bfbca01aa09297893772844cf26cbdbb86c",
+      "bytes": 106282,
+      "sha256": "3aa9d31f22f397b493eb430f02fd4ffd8daaf89b29d04aa43560de702121f765",
       "alpha": [
         0,
         255
