@@ -1,4 +1,4 @@
-/* «Цитадель ЦСИИ» · music 1.4.2
+/* «Цитадель ЦСИИ» · music 2.17.2
    One catalogue and the original genre-aware 1.3.6 composer.
    Synthesized locally with Web Audio; no recordings or external dependencies.
    Load after the game core, instead of both previous 1.3.6 music patches. */
@@ -6,9 +6,9 @@
   'use strict';
   if (typeof SPACE_THEMES === 'undefined' || typeof SPACE_AUDIO === 'undefined' ||
       typeof spaceAudioTrack !== 'function' || typeof spaceAudioScene !== 'function' ||
-      globalThis.CITADEL_MUSIC_VERSION === '1.4.2') return;
+      globalThis.CITADEL_MUSIC_VERSION === '2.17.2') return;
 
-  const VERSION = '1.4.2';
+  const VERSION = '2.17.2';
   const catalogue = Object.freeze([
     ['port', 'Нулевая гравитация', 'Космический эмбиент', 72, 'ambient'],
     ['orbit0', 'Первая редакция', 'Техно', 126, 'techno'],
@@ -393,7 +393,7 @@
     else if (!SPACE_AUDIO.track) reason = 'idle';
     const activeKey = !reason ? SPACE_AUDIO.track.key : null;
     return {
-      version: VERSION, build: '280r1', mode: playback.mode, selectedKey: key, activeKey,
+      version: VERSION, build: '2172r1', mode: playback.mode, selectedKey: key, activeKey,
       sceneKey: sceneKey(), selected: byKey.get(key), active: byKey.get(activeKey) || null,
       enabled: SPACE_AUDIO.music, autoEnabled: playback.savedEnabled ?? SPACE_AUDIO.music,
       volume: SPACE_AUDIO.volume, contextState: ctx?.state || 'unavailable',
@@ -402,8 +402,11 @@
   }
   function result(ok, reason = null) { return {ok, reason, status: status()}; }
   async function startAudio(serial) {
-    const ctx = spaceAudioUnlock() || ARCADE.audio;
+    let ctx;
+    try { ctx = spaceAudioUnlock() || ARCADE.audio; }
+    catch (_) { return result(false, 'audio-unavailable'); }
     if (!ctx) return result(false, 'audio-unavailable');
+    if (ctx.state === 'closed') return result(false, 'audio-unavailable');
     if (ctx.state !== 'running') {
       // A browser may keep resume pending without user activation (e.g. a hidden
       // iframe). Return a truthful status instead of leaving the UI waiting forever.
@@ -479,12 +482,36 @@
     try { return original.save(); }
     finally { SPACE_AUDIO.music = enabled; }
   };
+  function needsActivation(current = status()) {
+    return current.enabled && ['audio-unavailable', 'audio-suspended'].includes(current.reason);
+  }
+  async function toggleMusic() {
+    if (playback.disposed) return result(false, 'disposed');
+    // A saved "on" setting does not mean that Safari has allowed playback.
+    // The first tap on a locked context must start it, not switch the setting off.
+    const enabled = needsActivation() || !SPACE_AUDIO.music;
+    restoreAuto();
+    const serial = ++playback.serial;
+    SPACE_AUDIO.music = enabled;
+    notice = '';
+    spaceAudioSave();
+    if (!enabled) {
+      silenceMusic(); spaceAudioControls();
+      return result(true);
+    }
+    // Call unlock/resume synchronously in the click stack, before the first await.
+    const operation = startAudio(serial);
+    spaceAudioControls();
+    const answer = await operation;
+    if (serial === playback.serial && !answer.ok && answer.reason !== 'superseded') {
+      notice = 'Нажмите кнопку музыки ещё раз, чтобы включить звук.';
+    }
+    spaceAudioControls();
+    return answer;
+  }
   spaceAudioAction = function (action) {
     if (action === 'arcade-music') {
-      const enabled = !SPACE_AUDIO.music;
-      restoreAuto(); playback.serial++;
-      SPACE_AUDIO.music = enabled;
-      spaceAudioSave(); spaceAudioUnlock(); spaceAudioSync(); spaceAudioControls();
+      void toggleMusic();
       return true;
     }
     return original.action(action);
@@ -528,6 +555,17 @@
     if (STATE.view !== 'arcade') return;
     makeControls();
     const current = status(), cue = current.active || current.selected;
+    for (const id of ['arcade-music', 'space-music-toggle', 'mobile-music']) {
+      const button = document.getElementById(id);
+      if (!button) continue;
+      const locked = needsActivation(current);
+      button.dataset.audioState = locked ? 'locked' : current.enabled ? 'on' : 'off';
+      button.setAttribute('aria-pressed', String(current.enabled && !locked));
+      button.setAttribute('aria-label', locked ? 'Включить музыку' :
+        'Музыка: ' + (current.enabled ? 'включена' : 'выключена'));
+      button.title = locked ? 'Включить музыку' : current.enabled ? 'Выключить музыку' : 'Включить музыку';
+      if (locked) button.textContent = id === 'arcade-music' ? '♫ вкл' : 'Включить музыку';
+    }
     const label = document.getElementById('space-track-name');
     if (label) label.textContent = current.playing ? cueLabel(cue) :
       current.mode === 'stopped' ? 'Музыка остановлена' : !current.enabled ? 'Музыка выключена' :
@@ -586,7 +624,7 @@
   document.addEventListener('keydown', handleControlKey, true);
   document.addEventListener('visibilitychange', onHidden);
   globalThis.addEventListener?.('pagehide', onPageHide);
-  globalThis.citadelMusic = Object.freeze({version: VERSION, catalog: catalogue, preview, stop, resumeAuto, status, next, dispose, score:(key,index)=>byKey.has(key)?compose(SPACE_THEMES[key],Math.max(0,Math.floor(index))):null});
+  globalThis.citadelMusic = Object.freeze({version: VERSION, catalog: catalogue, preview, stop, resumeAuto, status, next, toggle:toggleMusic, dispose, score:(key,index)=>byKey.has(key)?compose(SPACE_THEMES[key],Math.max(0,Math.floor(index))):null});
   // Compatibility for callers of the old button/API, now with a real track change.
   globalThis.citadelSoundtrack = Object.freeze({version: VERSION, cues: catalogue.map(cue => cue.key), next});
   globalThis.CITADEL_MUSIC_VERSION = VERSION;

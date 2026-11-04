@@ -1,0 +1,35 @@
+/* Keep the existing audio switches reachable on phones and in menu overlays. */
+#arcade-layout.mobile2160 .arcade-topline #arcade-music {
+  display:inline-flex!important;
+  align-items:center;
+  justify-content:center;
+}
+#arcade-layout:has(.quiz2170,.collection2170,.comic2170,.menu2170) .arcade-topline>div:has(#arcade-pause) {
+  display:flex!important;
+  align-items:center;
+  gap:4px;
+}
+#arcade-layout:has(.quiz2170,.collection2170,.comic2170,.menu2170) .arcade-topline>div:has(#arcade-pause)>button:not(#arcade-music):not(#arcade-sound) {
+  display:none!important;
+}
+#arcade-layout .arcade-topline {
+  z-index:40;
+}
+#arcade-layout .arcade-topline #arcade-music,
+#arcade-layout .arcade-topline #arcade-sound {
+  min-width:44px;
+  min-height:44px;
+  height:44px;
+  padding:4px 8px;
+  touch-action:manipulation;
+  pointer-events:auto;
+}
+#arcade-layout .arcade-topline #arcade-music[data-audio-state="locked"] {
+  border:1px solid #d9bb7d;
+  color:#f2dca5;
+}
+#arcade-layout .arcade-topline #arcade-music:focus-visible,
+#arcade-layout .arcade-topline #arcade-sound:focus-visible {
+  outline:2px solid #f2dca5;
+  outline-offset:2px;
+}

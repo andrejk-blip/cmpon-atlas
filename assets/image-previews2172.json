@@ -1,0 +1,223 @@
+{
+  "version": "2.17.2",
+  "source_bytes": 11411358,
+  "preview_bytes": 1135222,
+  "images": [
+    {
+      "source": "assets/collection2170/hammer.webp",
+      "preview": "assets/collection2170/thumbs/hammer.webp",
+      "width": 320,
+      "height": 480,
+      "source_bytes": 478296,
+      "preview_bytes": 53028,
+      "sha256": "eda95b534353acd5d5e3f28e3d81b7e4649ef2c6178694cb6dfa050bf00bc072"
+    },
+    {
+      "source": "assets/collection2170/hero.webp",
+      "preview": "assets/collection2170/thumbs/hero.webp",
+      "width": 320,
+      "height": 480,
+      "source_bytes": 457688,
+      "preview_bytes": 54024,
+      "sha256": "5e33a43c4e9341501132437f25e8370e1f153f2545d052aa0bce3f7dd0a851d5"
+    },
+    {
+      "source": "assets/collection2170/hunter.webp",
+      "preview": "assets/collection2170/thumbs/hunter.webp",
+      "width": 320,
+      "height": 480,
+      "source_bytes": 380900,
+      "preview_bytes": 49138,
+      "sha256": "e1debb4894238c156c79a8205cbf1d05ad2c173e38dfb267ad9cd2b67b4e7cb8"
+    },
+    {
+      "source": "assets/collection2170/mantis.webp",
+      "preview": "assets/collection2170/thumbs/mantis.webp",
+      "width": 320,
+      "height": 480,
+      "source_bytes": 394698,
+      "preview_bytes": 46356,
+      "sha256": "e006bce157a002063c0f7c1977ea8dc4b21b947432140e0475a7854c0e9d13f1"
+    },
+    {
+      "source": "assets/collection2170/maw.webp",
+      "preview": "assets/collection2170/thumbs/maw.webp",
+      "width": 320,
+      "height": 480,
+      "source_bytes": 493348,
+      "preview_bytes": 53890,
+      "sha256": "14fcc0a9e674a7f7ec333b2af21cdab37b4f9157727e2a87d148eb9db2ab2582"
+    },
+    {
+      "source": "assets/collection2170/mech.webp",
+      "preview": "assets/collection2170/thumbs/mech.webp",
+      "width": 320,
+      "height": 480,
+      "source_bytes": 519314,
+      "preview_bytes": 55420,
+      "sha256": "1ea1b8be90208bdd295adc9ea1cad895b652d55e643326ddedb5fb12445a7d55"
+    },
+    {
+      "source": "assets/collection2170/medusa.webp",
+      "preview": "assets/collection2170/thumbs/medusa.webp",
+      "width": 320,
+      "height": 480,
+      "source_bytes": 407728,
+      "preview_bytes": 49104,
+      "sha256": "4ce64652bfc2213cefa183d2ab5361501efe6fbc755c82d7be88aaa22dae6b35"
+    },
+    {
+      "source": "assets/collection2170/mrg.webp",
+      "preview": "assets/collection2170/thumbs/mrg.webp",
+      "width": 320,
+      "height": 480,
+      "source_bytes": 491648,
+      "preview_bytes": 53424,
+      "sha256": "71c693422a314acbed91a817c56f5d283fc134a9aed77d3c6b65374769711dc9"
+    },
+    {
+      "source": "assets/collection2170/ninja.webp",
+      "preview": "assets/collection2170/thumbs/ninja.webp",
+      "width": 320,
+      "height": 480,
+      "source_bytes": 302380,
+      "preview_bytes": 37340,
+      "sha256": "630278d7ca42a7636352ff9c1bb5645a3f067fe25a0cdedb2286283b55631d00"
+    },
+    {
+      "source": "assets/collection2170/parallax.webp",
+      "preview": "assets/collection2170/thumbs/parallax.webp",
+      "width": 320,
+      "height": 480,
+      "source_bytes": 436380,
+      "preview_bytes": 52056,
+      "sha256": "4f9edd1102527c9da3b7ef6bd2482da2162f934f68ad0f441daa671f449f9d00"
+    },
+    {
+      "source": "assets/collection2170/relay.webp",
+      "preview": "assets/collection2170/thumbs/relay.webp",
+      "width": 320,
+      "height": 480,
+      "source_bytes": 377040,
+      "preview_bytes": 49640,
+      "sha256": "8d7b43d50da30f363957d08d2232182b885355ac80b471cc8f9a9e6fdafa052b"
+    },
+    {
+      "source": "assets/collection2170/robodog.webp",
+      "preview": "assets/collection2170/thumbs/robodog.webp",
+      "width": 320,
+      "height": 480,
+      "source_bytes": 427328,
+      "preview_bytes": 52622,
+      "sha256": "c6819a77c9bb2f7919400812b4d101a0d8bebc1336d4711712acee3162c73fde"
+    },
+    {
+      "source": "assets/collection2170/rocketeer.webp",
+      "preview": "assets/collection2170/thumbs/rocketeer.webp",
+      "width": 320,
+      "height": 480,
+      "source_bytes": 409140,
+      "preview_bytes": 47994,
+      "sha256": "8d5213e7abf63b2034422cf340b8a42f99a0b34e07e993714112603940ab46f4"
+    },
+    {
+      "source": "assets/collection2170/scout.webp",
+      "preview": "assets/collection2170/thumbs/scout.webp",
+      "width": 320,
+      "height": 480,
+      "source_bytes": 341902,
+      "preview_bytes": 42990,
+      "sha256": "56887ab28ec1acf4b58946a666701f3ee3135393534ff08a15367ae81c6a048f"
+    },
+    {
+      "source": "assets/collection2170/shield.webp",
+      "preview": "assets/collection2170/thumbs/shield.webp",
+      "width": 320,
+      "height": 480,
+      "source_bytes": 464348,
+      "preview_bytes": 53822,
+      "sha256": "417af0bb52a8c9249bfd24fb9d74eeb6322be0f0f85a8c749befdcdd0a02e955"
+    },
+    {
+      "source": "assets/collection2170/sniper.webp",
+      "preview": "assets/collection2170/thumbs/sniper.webp",
+      "width": 320,
+      "height": 480,
+      "source_bytes": 356278,
+      "preview_bytes": 41946,
+      "sha256": "a1319733e4f09930d35074978522fc974cd0bddf5b2377c05c239b1acc41afb5"
+    },
+    {
+      "source": "assets/collection2170/tentacle.webp",
+      "preview": "assets/collection2170/thumbs/tentacle.webp",
+      "width": 320,
+      "height": 480,
+      "source_bytes": 391586,
+      "preview_bytes": 43774,
+      "sha256": "093f8486090541d188e2f640cf9cfcc3d85664eb43edca2ea3d5f965bbc06b1a"
+    },
+    {
+      "source": "assets/comics2170/accord.webp",
+      "preview": "assets/comics2170/thumbs/accord.webp",
+      "width": 320,
+      "height": 320,
+      "source_bytes": 623880,
+      "preview_bytes": 43786,
+      "sha256": "e14e67edf199d125a0b4e31f6c8d7689b9740300ab865edef4f2bd37066698f1"
+    },
+    {
+      "source": "assets/comics2170/beacons.webp",
+      "preview": "assets/comics2170/thumbs/beacons.webp",
+      "width": 320,
+      "height": 320,
+      "source_bytes": 598108,
+      "preview_bytes": 41544,
+      "sha256": "9d907743016044b73cb8b0cc9748636688bfed77129d5bf63044119a29c7fd8d"
+    },
+    {
+      "source": "assets/comics2170/breakthrough.webp",
+      "preview": "assets/comics2170/thumbs/breakthrough.webp",
+      "width": 320,
+      "height": 320,
+      "source_bytes": 629442,
+      "preview_bytes": 44060,
+      "sha256": "bc864e08fe7510e7679d13aee9821338ae48fd27570a1447982db01e23caeeee"
+    },
+    {
+      "source": "assets/comics2170/departure.webp",
+      "preview": "assets/comics2170/thumbs/departure.webp",
+      "width": 320,
+      "height": 320,
+      "source_bytes": 592020,
+      "preview_bytes": 41256,
+      "sha256": "63b958b731a3528836eed7df2a4c73e52dbc9d67de1ce24cb1fe05169c7d32c2"
+    },
+    {
+      "source": "assets/comics2170/final.webp",
+      "preview": "assets/comics2170/thumbs/final.webp",
+      "width": 320,
+      "height": 320,
+      "source_bytes": 603774,
+      "preview_bytes": 40788,
+      "sha256": "b37cc7db4038720c7c734adaaf6b72391275ef59dcb284f90c4bc3cac117e611"
+    },
+    {
+      "source": "assets/comics2170/first_archive.webp",
+      "preview": "assets/comics2170/thumbs/first_archive.webp",
+      "width": 320,
+      "height": 320,
+      "source_bytes": 615202,
+      "preview_bytes": 43970,
+      "sha256": "b30afabcc1f49f26160f2e2c2bc429448fd906fe4258fcce38afd80e81d86cd7"
+    },
+    {
+      "source": "assets/comics2170/rift.webp",
+      "preview": "assets/comics2170/thumbs/rift.webp",
+      "width": 320,
+      "height": 320,
+      "source_bytes": 618930,
+      "preview_bytes": 43250,
+      "sha256": "38ba6d23837fc6646b1dfd09a57c2b835efe82d3f2c8ab23cc755a179587c259"
+    }
+  ]
+}
