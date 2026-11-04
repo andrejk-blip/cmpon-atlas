@@ -1,0 +1,14 @@
+#atlas-metrics-consent{position:fixed;right:16px;bottom:62px;z-index:14000;width:min(370px,calc(100vw - 32px));max-height:calc(100dvh - 100px);overflow:auto;color:#243c33;background:#fff;border:1px solid #cad5cc;border-radius:12px;box-shadow:0 10px 44px #132d382b;font:13px/1.5 system-ui,sans-serif;text-align:left}
+#atlas-metrics-consent[hidden]{display:none!important}
+#atlas-metrics-consent .metrics-privacy{display:block;margin:0;padding:20px;background:none;border:0;border-radius:0;color:inherit}
+#atlas-metrics-consent strong{display:block;padding-right:24px;font-size:15px;color:inherit}
+#atlas-metrics-consent p{margin:9px 0;font:inherit;color:#4a6256}
+#atlas-metrics-consent .metrics-privacy-status{display:block;margin:10px 0;font-size:12px;color:#4a6256}
+#atlas-metrics-consent .metrics-privacy>div{display:flex;flex-wrap:wrap;gap:8px}
+#atlas-metrics-consent button,#atlas-metrics-settings{appearance:none;cursor:pointer;border:1px solid #b9c8bd;border-radius:6px;font:500 12px/1.4 system-ui,sans-serif;letter-spacing:normal;text-transform:none;background:#fff;color:#243c33;padding:9px 12px;min-height:36px;box-sizing:border-box}
+#atlas-metrics-consent button:first-child:not(.metrics-close){background:#2c513e;color:#fff}
+#atlas-metrics-consent button:disabled{opacity:.5;cursor:default}
+#atlas-metrics-consent .metrics-close{position:absolute;right:8px;top:8px;padding:3px;width:30px;min-height:30px;border:0;background:transparent;font-size:22px}
+#atlas-metrics-settings{position:fixed;right:16px;bottom:max(12px,env(safe-area-inset-bottom));z-index:13999;box-shadow:0 2px 8px #132d3814;font-size:11px;min-height:34px;padding:7px 11px;opacity:.94}
+#atlas-metrics-settings:focus-visible,#atlas-metrics-consent button:focus-visible{outline:3px solid #749d83;outline-offset:3px}
+@media(max-width:600px){#atlas-metrics-settings{right:10px}#atlas-metrics-consent{right:10px;bottom:58px;width:calc(100vw - 20px)}}
