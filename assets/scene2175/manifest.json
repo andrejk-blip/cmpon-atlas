@@ -1,0 +1,30 @@
+{
+  "version": "2.17.5",
+  "generator": "built-in image_gen",
+  "reference": "assets/scene2173/characters-r2.webp",
+  "purpose": "Portrait opening-screen composition, preserving established hero, mech, ninja, cyber Doberman and symmetric fighter. Original landscape artwork preserved.",
+  "assets": [
+    {
+      "path": "assets/scene2175/portrait-small.webp",
+      "width": 400,
+      "height": 600,
+      "bytes": 107856,
+      "sha256": "b44f196cf883e841ef78092dbc4711b5bfbb224b9f4c9bd951020b772f5cfd85",
+      "alpha": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/scene2175/portrait.webp",
+      "width": 640,
+      "height": 960,
+      "bytes": 247838,
+      "sha256": "b2ff22bf38de2f45033c458cff27649a5dd502ebe0f440da3ca93e1ffdc034d5",
+      "alpha": [
+        0,
+        255
+      ]
+    }
+  ]
+}

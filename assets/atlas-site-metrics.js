@@ -17,19 +17,24 @@ function connect(){
   routes:ROUTES.map(r=>r.id),route:initial,
   events:['page_view','engagement','export_csv','open_requirement','open_concept','game_launch','export_decisions','open_question','select_direction']});
  window.CMPON_METRICS=metrics;
+ document.body.setAttribute('data-metrics-ready','');
  const panel=document.createElement('div');panel.id='atlas-metrics-consent';panel.hidden=true;
  const close=document.createElement('button');close.type='button';close.className='metrics-close';close.textContent='×';close.setAttribute('aria-label','Закрыть настройки статистики');
  const box=metrics.mountPrivacy(panel);box.prepend(close);document.body.append(panel);
- const toggle=document.createElement('button');toggle.type='button';toggle.id='atlas-metrics-settings';toggle.textContent='Статистика';toggle.setAttribute('aria-controls',panel.id);toggle.setAttribute('aria-expanded','false');toggle.title='Настройки статистики посещений';
- // Keep a small, accessible control separate from the application's rerendered content.
- document.body.append(toggle);
- let manual=false,dismissed=false,lastRoute=initial;
- function visibility(){const s=metrics.status();panel.hidden=!manual&&(dismissed||s.choice!=='unset'||s.blocked);toggle.setAttribute('aria-expanded',String(!panel.hidden));}
- function hide(){manual=false;dismissed=true;visibility();toggle.focus({preventScroll:true});}
+ // The invitation is shown once. Revisiting privacy settings is an ordinary
+ // menu action, never a floating button covering the game or touch controls.
+ const seenKey='cmpon.metrics.prompt-seen.cmpon-atlas';
+ const readSeen=()=>{for(const kind of ['localStorage','sessionStorage'])try{if(window[kind].getItem(seenKey)==='1')return true;}catch{}return false;};
+ const rememberSeen=()=>{for(const kind of ['localStorage','sessionStorage'])try{window[kind].setItem(seenKey,'1');}catch{}};
+ let manual=false,dismissed=readSeen(),lastRoute=initial,opener=null;
+ const rail=document.querySelector('#site-rail .rail-bottom');
+ if(rail){const toggle=document.createElement('button');toggle.type='button';toggle.id='atlas-metrics-settings';toggle.setAttribute('data-metrics-settings','');toggle.textContent='Статистика посещений';toggle.setAttribute('aria-controls',panel.id);toggle.setAttribute('aria-expanded','false');rail.append(toggle);}
+ function visibility(){const s=metrics.status();panel.hidden=!manual&&(dismissed||s.choice!=='unset'||s.blocked);for(const toggle of document.querySelectorAll('[data-metrics-settings]'))toggle.setAttribute('aria-expanded',String(!panel.hidden));if(!panel.hidden)rememberSeen();}
+ function hide(){manual=false;dismissed=true;rememberSeen();visibility();if(opener?.isConnected)opener.focus({preventScroll:true});opener=null;}
  close.addEventListener('click',hide);
- toggle.addEventListener('click',()=>{if(!panel.hidden){hide();return;}manual=true;visibility();close.focus({preventScroll:true});});
- panel.addEventListener('click',e=>{if(e.target.closest('.metrics-privacy > div > button')){manual=false;visibility();}});
- document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!panel.hidden)hide();});
+ document.addEventListener('click',e=>{const toggle=e.target.closest('[data-metrics-settings]');if(!toggle)return;if(!panel.hidden){hide();return;}opener=toggle;manual=true;visibility();close.focus({preventScroll:true});});
+ panel.addEventListener('click',e=>{if(e.target.closest('.metrics-privacy > div > button'))hide();});
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!panel.hidden){e.preventDefault();e.stopImmediatePropagation();hide();}},true);
  function sync(){const route=currentRoute();if(route&&route!==lastRoute){lastRoute=route;metrics.page(route);}visibility();}
  const observer=new MutationObserver(sync);
  for(const el of [document.getElementById('nav'),document.querySelector('.controlbar')])if(el)observer.observe(el,{childList:true,subtree:true,attributes:true,attributeFilter:['aria-current','aria-selected']});
@@ -43,3 +48,4 @@ function connect(){
  visibility();
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',connect,{once:true});else connect();
+

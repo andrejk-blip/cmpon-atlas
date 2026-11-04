@@ -1,0 +1,149 @@
+/* Every intermission stays inside the actual game viewport. Long material is
+   paginated by fit2175, never clipped or reduced with a scale transform. */
+#arcade-layout #arcade-screen #arcade-overlay.fit2175-open{display:flex!important;align-items:center!important;justify-content:center!important;overflow:hidden!important;inset:0!important;padding:max(8px,env(safe-area-inset-top)) max(8px,env(safe-area-inset-right)) max(8px,env(safe-area-inset-bottom)) max(8px,env(safe-area-inset-left))!important;gap:0!important;box-sizing:border-box!important;min-height:0!important}
+#arcade-overlay.fit2175-open[hidden]{display:none!important}
+#arcade-layout:has(.fit2175-shell) .arcade-topline,#arcade-layout:has(.fit2175-shell) #record-controls2150{display:none!important}
+#arcade-overlay .fit2175-shell{display:flex;flex-direction:column;width:min(100%,1040px);height:100%;max-height:100%;min-height:0;min-width:0;gap:8px;margin:0 auto;color:#e5eee6}
+#arcade-overlay .fit2175-content{display:flex;flex-direction:column;justify-content:safe center;align-items:stretch;flex:1 1 0;min-height:0;min-width:0;overflow:hidden;gap:8px}
+#arcade-overlay .fit2175-content>*{flex:0 0 auto;box-sizing:border-box;max-width:100%!important;min-width:0!important;margin:0 auto!important}
+#arcade-overlay .fit2175-content :is(.campaign-panel,.arcade-state-card,.xp-desk,.review-card,.mission-check,.resonator-intro2160,.citadel-prologue){max-height:none!important;overflow:visible!important;width:100%;min-height:0!important;padding:14px!important}
+#arcade-overlay .fit2175-content :is(p,li){font-size:15px!important;line-height:1.4!important}
+#arcade-overlay .fit2175-content :is(h3,h4){line-height:1.15!important;margin:6px 0 10px!important}
+#arcade-overlay .fit2175-content h3{font-size:clamp(20px,2.8vw,30px)!important}
+#arcade-overlay .fit2175-content p{margin:8px 0!important;max-width:none!important}
+#arcade-overlay .fit2175-content button{min-height:44px!important;height:auto;max-width:100%;white-space:normal;overflow-wrap:anywhere}
+#arcade-overlay .fit2175-content :is(.campaign-intermission,.skip-offer){padding:8px!important;width:100%;gap:6px!important}
+#arcade-overlay .fit2175-content :is(.campaign-intermission,.skip-offer) button{font-size:14px!important;padding:8px 10px!important;margin:2px!important}
+#arcade-overlay .fit2175-content .arcade-serial{font-size:11px!important;line-height:1.3!important}
+#arcade-overlay .fit2175-content .brief-command{padding:8px!important;margin:7px 0!important;gap:10px!important}
+#arcade-overlay .fit2175-content .brief-command b{font-size:15px!important}
+#arcade-overlay .fit2175-content .brief-command small{font-size:12px!important;line-height:1.35!important}
+#arcade-overlay .fit2175-content .arcade-play{margin:10px 0 4px!important;padding:10px 16px!important;font-size:16px!important}
+#arcade-overlay .fit2175-content .quiz2170 header{margin-bottom:8px;font-size:13px}
+#arcade-overlay .fit2175-content .quiz2170-prompt{padding:13px!important}
+#arcade-overlay .fit2175-content .quiz2170 h3{font-size:clamp(17px,2vw,23px)!important;line-height:1.3!important;margin:0!important}
+#arcade-overlay .fit2175-content .quiz2170-choices{gap:7px;margin-top:10px}
+#arcade-overlay .fit2175-content .quiz2170-choices button{font-size:15px!important;line-height:1.3!important;padding:10px 12px!important;gap:9px}
+#arcade-overlay .fit2175-content .quiz2170-result{margin-top:10px;font-size:15px;line-height:1.4}
+#arcade-overlay .fit2175-content .quiz2170-result p{margin:6px 0!important}
+#arcade-overlay .fit2175-content .quiz2170 details{margin:8px 0;font-size:14px}
+#arcade-overlay .fit2175-content .quiz2170 summary{min-height:40px}
+#arcade-overlay .fit2175-content .quiz2170-next{min-width:0!important;padding:9px 16px!important;margin:4px 0 0!important;font-size:15px!important}
+#arcade-overlay .fit2175-content :is(.xp-desk,.map2174-composition){gap:8px!important}
+#arcade-overlay .fit2175-content .xp-grid{gap:7px!important}
+#arcade-overlay .fit2175-content .xp-perk{padding:8px!important;gap:5px!important;min-height:0!important}
+#arcade-overlay .fit2175-content .xp-perk-art{height:62px!important;min-height:0!important}
+#arcade-overlay .fit2175-content .xp-perk :is(span,b){font-size:12px!important;line-height:1.3!important}
+#arcade-overlay .fit2175-content .xp-hint{font-size:12px!important;line-height:1.3!important}
+#arcade-overlay .fit2175-content .xp-equipment{font-size:12px!important;gap:6px!important}
+#arcade-overlay .fit2175-content .xp-desk>footer{margin:0!important;gap:6px!important}
+#arcade-overlay .fit2175-content .xp-desk:has(>.xp-grid)>header>div>small{display:none!important}
+#arcade-overlay .fit2175-content .xp-desk:has(>.xp-grid)>header h3{margin:0!important;font-size:22px!important;line-height:1.1!important}
+#arcade-overlay .fit2175-content .xp-desk:has(>.xp-grid)>header>strong{font-size:22px!important;line-height:1.1!important}
+#arcade-overlay .fit2175-content .xp-desk:has(>.xp-grid)>header>strong small{font-size:10px!important;line-height:1.1!important}
+#arcade-overlay .fit2175-content .xp-desk:has(>.xp-grid)>.xp-hint{margin:0!important;font-size:12px!important;line-height:1.3!important}
+#arcade-overlay .fit2175-content .map2174-screen{width:100%!important;max-width:980px!important;padding:10px!important;gap:7px!important}
+#arcade-overlay .fit2175-content .map2174-screen>header h3{font-size:20px!important;margin:3px 0!important}
+#arcade-overlay .fit2175-content .map2174-map{width:min(100%,810px,calc((var(--fit2175-height,100dvh) - 265px)*1.5))!important;min-width:0!important}
+#arcade-overlay .fit2175-content .map2174-screen .map2174-regions{display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:4px!important}
+#arcade-overlay .fit2175-content .map2174-select{min-width:0;font-size:12px!important;min-height:44px!important;padding:5px 3px!important;gap:3px}
+#arcade-overlay .fit2175-content .map2174-detail{min-height:0!important;padding:7px!important;gap:8px!important;align-items:center}
+#arcade-overlay .fit2175-content .map2174-detail p{font-size:12px!important;line-height:1.3!important;margin:3px 0!important}
+#arcade-overlay .fit2175-content .map2174-detail strong{font-size:13px}
+#arcade-overlay .fit2175-content .map2174-motion{font-size:11px!important;min-width:70px;padding:6px!important;max-width:80px;white-space:normal}
+#arcade-overlay .fit2175-content .chapter-stamps{gap:3px;flex-wrap:nowrap;justify-content:center}
+#arcade-overlay .fit2175-content .chapter-stamps span{width:16px;height:17px;font-size:9px}
+#arcade-overlay .fit2175-content .map2174-screen>footer .xp-hint{font-size:10px!important;max-width:48%}
+#arcade-overlay .fit2175-content .map2174-screen>footer button{font-size:13px;padding:8px}
+#arcade-overlay .fit2175-content .collection2170-grid img,#arcade-overlay .fit2175-content .collection2170-lock{max-height:150px;object-fit:contain}
+#arcade-overlay .fit2175-content .collection2170-art img{max-height:calc(var(--fit2175-height,100dvh) - 185px)}
+#arcade-overlay .fit2175-content .collection2170 :is(header,.collection2170-tabs){margin-bottom:8px}
+#arcade-overlay .fit2175-content .collection2170-grid span{padding:5px;font-size:12px!important}
+#arcade-overlay .fit2175-content .collection2170-grid small{font-size:10px}
+#arcade-overlay .fit2175-content .collection2170-pager{margin-top:8px}
+#arcade-overlay .fit2175-content .comic2170-picture{height:min(35dvh,300px);max-height:35dvh;width:auto;max-width:100%;justify-self:center}
+#arcade-overlay .fit2175-content .comic2170-copy{font-size:16px;line-height:1.4}
+#arcade-overlay .fit2175-content .prologue-art{min-height:0;max-height:calc(var(--fit2175-height,100dvh) - 32px)}
+#arcade-overlay .fit2175-content .prologue-copy{padding:14px!important;gap:9px!important}
+#arcade-overlay .fit2175-content .prologue-copy p{font-size:14px!important;line-height:1.4!important}
+#arcade-overlay .fit2175-content .prologue-copy>strong{font-size:13px!important}
+#arcade-overlay .fit2175-content .citadel-prologue{padding:0!important}
+#arcade-overlay .fit2175-content .prologue-nav{padding-top:2px!important}
+#arcade-overlay .fit2175-pager{display:flex;align-items:center;justify-content:space-between;gap:12px;flex:none;height:44px;margin:0;min-width:0}
+#arcade-overlay .fit2175-pager[hidden]{display:none!important}
+#arcade-overlay .fit2175-pager button{min-height:44px;min-width:92px;padding:7px 13px;margin:0;border:1px solid #79978e;border-radius:6px;background:#163b43;color:#eed9ad;font-size:14px;font-weight:600;cursor:pointer}
+#arcade-overlay .fit2175-pager button:disabled{opacity:.35;cursor:default}
+#arcade-overlay .fit2175-pager span{font-size:13px;color:#b2cbc7;white-space:nowrap}
+#arcade-overlay .fit2175-paginated .fit2175-content{justify-content:center}
+#arcade-overlay .fit2175-shell [data-fit2175-hidden]{display:none!important}
+/* A defeat is a decision screen, not three tall stacked link buttons. */
+#arcade-overlay .fit2175-content .campaign-panel:has(>[data-action="campaign-retry"]){display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px!important}
+#arcade-overlay .fit2175-content .campaign-panel:has(>[data-action="campaign-retry"])>:not(button){grid-column:1/-1;margin:3px 0!important}
+#arcade-overlay .fit2175-content .campaign-panel:has(>[data-action="campaign-retry"])>.arcade-serial{display:none!important}
+#arcade-overlay .fit2175-content .campaign-panel:has(>[data-action="campaign-retry"])>h3{font-size:23px!important}
+#arcade-overlay .fit2175-content .campaign-panel:has(>[data-action="campaign-retry"])>p{font-size:14px!important;line-height:1.35!important}
+#arcade-overlay .fit2175-content .campaign-panel:has(>[data-action="campaign-retry"])>ol{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:3px 16px;padding-left:20px}
+#arcade-overlay .fit2175-content .campaign-panel:has(>[data-action="campaign-retry"])>ol>li{font-size:12px!important;line-height:1.35!important;margin:0!important;padding:0!important}
+#arcade-overlay .fit2175-content .campaign-panel:has(>[data-action="campaign-retry"])>button{width:100%!important;min-width:0!important;margin:0!important;padding:8px!important;font-size:14px!important;line-height:1.25!important;text-align:center!important}
+#arcade-overlay .fit2175-content .campaign-panel>[data-action="campaign-retry"]{grid-column:1/-1}
+#arcade-overlay .fit2175-content .skip-offer{display:flex;align-items:center;flex-wrap:wrap;gap:9px!important}
+#arcade-overlay .fit2175-content .skip-offer>b{flex:none;max-width:66px;font-size:13px}
+#arcade-overlay .fit2175-content .skip-offer>p{flex:1;min-width:140px;font-size:12px!important;line-height:1.3!important;margin:0!important}
+#arcade-overlay .fit2175-content .skip-offer>button{flex:1 0 100%;margin:0!important}
+.fit2175-brief{width:min(100%,900px);padding:18px;display:flex;flex-direction:column;gap:12px;background:linear-gradient(135deg,#193b44,#0b232f);border:1px solid #849b86;border-radius:12px;text-align:left}
+.fit2175-brief>small{font-size:11px;letter-spacing:.06em;color:#bad3c5}
+#arcade-overlay .fit2175-content .fit2175-brief h3{margin:0!important;font-size:clamp(22px,3vw,31px)!important;color:#f3dca6}
+#arcade-overlay .fit2175-content .fit2175-brief-goal{margin:0!important;font-size:16px!important;line-height:1.4!important;color:#e3eee8}
+.fit2175-brief-rules{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.fit2175-brief-rules>div{padding:10px;border-left:2px solid #c7a872;background:#071a2480;display:flex;flex-direction:column;gap:5px}
+.fit2175-brief-rules b{font-size:14px;color:#ecd9b3;line-height:1.3}
+.fit2175-brief-rules span{font-size:13px;color:#bed1cc;line-height:1.35}
+#arcade-overlay .fit2175-content .fit2175-launch{margin:0!important;min-height:48px!important;width:100%;font-size:16px!important;padding:10px!important;white-space:normal!important}
+#arcade-overlay .fit2175-brief-links{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+#arcade-overlay .fit2175-brief-links button,#arcade-overlay .fit2175-helpbar button{width:100%;min-width:0;margin:0!important;min-height:44px!important;padding:7px!important;border:1px solid #6d8b84;border-radius:6px;background:#183c44;color:#cce1d5;font-size:13px!important;line-height:1.2!important;text-align:center!important}
+#arcade-overlay .fit2175-helpbar{display:flex;align-items:center;gap:14px;flex:none;min-height:44px;font-size:13px;color:#bdd2c8}
+#arcade-overlay .fit2175-helpbar button{width:auto;min-width:120px}
+@media(max-width:600px){
+ .fit2175-brief{padding:13px;gap:10px}
+ #arcade-overlay .fit2175-content .fit2175-brief-goal{font-size:14px!important}
+ .fit2175-brief-rules{gap:6px}.fit2175-brief-rules>div{padding:8px}.fit2175-brief-rules b{font-size:13px}.fit2175-brief-rules span{font-size:12px}
+ #arcade-overlay .fit2175-brief-links{grid-template-columns:repeat(2,minmax(0,1fr))}
+ #arcade-overlay .fit2175-content :is(.campaign-panel,.arcade-state-card,.xp-desk,.resonator-intro2160){padding:10px!important}
+ #arcade-overlay .fit2175-content .quiz2170-choices{grid-template-columns:1fr}
+ #arcade-overlay .fit2175-content .map2174-map{width:min(100%,calc((var(--fit2175-height,100dvh) - 290px)*1.5))!important}
+ #arcade-overlay .fit2175-content .map2174-screen .map2174-regions{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+ #arcade-overlay .fit2175-content .map2174-screen{gap:5px!important}
+ #arcade-overlay .fit2175-content .map2174-select{min-height:40px!important}
+ #arcade-overlay .fit2175-content .map2174-detail small{font-size:10px}
+ #arcade-overlay .fit2175-content .collection2170-grid{gap:6px}
+ #arcade-overlay .fit2175-content .collection2170-grid img,#arcade-overlay .fit2175-content .collection2170-lock{max-height:110px}
+ #arcade-overlay .fit2175-content .comic2170-body{gap:10px}
+ #arcade-overlay .fit2175-content .prologue-art{height:clamp(100px,25dvh,200px);aspect-ratio:auto}
+}
+@media(max-height:500px) and (min-width:601px){
+ #arcade-overlay .fit2175-content :is(.campaign-panel,.arcade-state-card,.xp-desk){padding:9px 13px!important}
+ #arcade-overlay .fit2175-content h3{font-size:22px!important}
+ #arcade-overlay .fit2175-content :is(p,li){font-size:14px!important}
+ #arcade-overlay .fit2175-content .map2174-composition{grid-template-columns:minmax(230px,1fr) minmax(260px,1fr)!important;gap:7px!important}
+ #arcade-overlay .fit2175-content .map2174-map{width:min(100%,calc((var(--fit2175-height,100dvh) - 170px)*1.5))!important;grid-row:1/3}
+ #arcade-overlay .fit2175-content .map2174-screen .map2174-regions{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+ #arcade-overlay .fit2175-content .map2174-detail{min-height:0!important}
+ #arcade-overlay .fit2175-content .xp-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;grid-template-rows:repeat(2,auto)!important;flex:none!important}
+ #arcade-overlay .fit2175-content .xp-desk:has(>.xp-grid){gap:5px!important}
+ #arcade-overlay .fit2175-content .xp-grid{gap:4px!important}
+ #arcade-overlay .fit2175-content .xp-perk{padding:6px!important;gap:3px 7px!important}
+ #arcade-overlay .fit2175-content .xp-perk-art{height:45px!important}
+ #arcade-overlay .fit2175-content .quiz2170-choices{grid-template-columns:1fr 1fr}
+ #arcade-overlay .fit2175-content .quiz2170-prompt{padding:9px 12px!important}
+ #arcade-overlay .fit2175-content .quiz2170 h3{font-size:17px!important}
+ #arcade-overlay .fit2175-content .collection2170-grid img,#arcade-overlay .fit2175-content .collection2170-lock{max-height:120px}
+ #arcade-overlay .fit2175-content .collection2170-art img{max-height:calc(var(--fit2175-height,100dvh) - 100px)}
+ .fit2175-brief{display:grid;grid-template-columns:1.1fr 1fr;gap:9px 18px;padding:14px}
+ .fit2175-brief>small,.fit2175-brief>h3{grid-column:1/-1}
+ .fit2175-brief-goal{grid-column:1;grid-row:3}
+ .fit2175-brief-rules{grid-column:1;grid-row:4}
+ #arcade-overlay .fit2175-content .fit2175-launch{grid-column:2;grid-row:3;align-self:center}
+ #arcade-overlay .fit2175-brief-links{grid-column:2;grid-row:4;grid-template-columns:repeat(2,minmax(0,1fr));align-self:center}
+ #arcade-overlay .fit2175-content .fit2175-brief-goal{font-size:14px!important}
+ .fit2175-brief-rules>div{padding:8px}.fit2175-brief-rules b{font-size:13px}.fit2175-brief-rules span{font-size:12px}
+}
