@@ -20,7 +20,7 @@ function fixture({saveData = false} = {}) {
     fail() {this.onerror();}
   }
   const c = {
-    Image, navigator:{connection:{saveData}},
+    Image, navigator:{connection:{saveData}},setTimeout:()=>1,clearTimeout(){},
     RequirementArcade:Engine, ARCADE:{engine,canvas:{focus(){}}},
     CITADEL_CAMPAIGN:{active:e=>!!e.campaign2120,state:e=>e.campaign2120,read:()=>null,save:()=>saves++,title:id=>id},
     CITADEL_LEARNING_MODES:{preferred:'combat',modes:['training','combat','pro'],labels:{training:'Учебный',combat:'Боевой',pro:'Кейсы'}},

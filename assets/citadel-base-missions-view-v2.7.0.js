@@ -6,7 +6,7 @@
 (() => {
  'use strict';
  if(globalThis.CITADEL_BASE_MISSIONS_VIEW?.version==='2.8.0'||!globalThis.CITADEL_BASE_VIEW)return;
- const VERSION='2.8.0',TAU=Math.PI*2,old={interior:citadelInterior,camera:spaceCamera,draw:spaceDrawCPU,hud:drawBoardHUD,mobile:drawMobileGameHUD,final:drawFinaleHUD};
+ const VERSION='2.8.0',TAU=Math.PI*2,old={interior:citadelInterior,camera:spaceCamera,draw:spaceDrawCPU,hud:drawBoardHUD,mobile:drawMobileGameHUD,final:drawFinaleHUD,agent:stationAgent};
  const templates=new Map(),architecture=new Map(),EMPTY_CELLS=new Map();
  const C={black:'#13232d',dark:'#263b49',steel:'#6c8591',edge:'#c3d1cf',ivory:'#ddd8be',gold:'#c3a065',red:'#943d43',orange:'#f5a751',cyan:'#88e9e2',blue:'#6dafe0',purple:'#ac8ec8'};
  const clamp=(v,a=0,b=1)=>Math.max(a,Math.min(b,v)),distance=(a,b)=>Math.hypot(a[0]-b[0],a[2]-b[2]);
@@ -64,13 +64,13 @@
    if(high)part(a,'box',[side*.24,1.66,.94],[.045,.10,.09],C.gold,'brow-rivet');
   }
  });}
- function dog(a,x,time,high,fx){const m=x.missions270,duty=x.duty||{},gait=fx===false?0:m.gait??duty.gait??0,speed=clamp((m.speed??duty.speed??0)/7),dash=m.phase==='dash',yaw=Number.isFinite(x.yaw)?x.yaw:Math.atan2(m.heading?.[0]||0,m.heading?.[2]||1),b=stationYaw(yaw),origin=V3.add(x.pos,[0,dash?-.13:Math.cos(gait*2)*.025*speed,0]),matrix=spaceModel(origin,[1,1,1],b),local=p=>spacePoint(matrix,p),tag={id:x.id,kind:'grounddog',lod:high?'detail':'compatible'};
-  instance(a,dogBody(high),origin,b,[1,1,1],tag);instance(a,dogHead(high),origin,b,[1,1,1],tag);
+ function dog(a,x,time,high,fx){const m=x.missions270,duty=x.duty||{},gait=m.gait??duty.gait??0,speed=clamp((m.speed??duty.speed??0)/7),dash=m.phase==='dash',yaw=Number.isFinite(x.yaw)?x.yaw:Math.atan2(m.heading?.[0]||0,m.heading?.[2]||1),b=stationYaw(yaw),origin=V3.add(x.pos,[0,dash?-.09:Math.cos(gait*2)*.09*speed,0]),matrix=spaceModel(origin,[1,1,1],b),local=p=>spacePoint(matrix,p),tag={id:x.id,kind:'grounddog',lod:high?'detail':'compatible'};
+  instance(a,dogBody(high),origin,b,[1,1,1],tag);instance(a,dogHead(high),V3.add(origin,[0,Math.sin(gait*2+.5)*.07*speed,0]),b,[1,1,1],tag);
   const limb=(from,to,r,c,feature)=>{const it=beam(a,local(from),local(to),r,c,feature,0,1,high);Object.assign(it,{baseActor:true,base270EntityId:x.id,base270Lod:tag.lod});};
   for(const side of [-1,1])for(const front of [-1,1]){
-   const phase=gait+(side===front?0:Math.PI),stride=Math.sin(phase)*(dash?.52:.38)*speed,lift=Math.max(0,Math.cos(phase))*.24*speed;
-   const hip=[side*.43,1.02,front*.68],knee=[side*.65,.57+lift*.15,front*.72+(front===1?-.22:.25)+stride*.38],foot=[side*.62,.105+lift,front*.79+stride];
-   limb(hip,knee,.125,C.steel,'dog-upper-leg');limb(knee,foot,.09,C.gold,'dog-lower-leg');
+   const phase=gait+(side===front?0:Math.PI),stride=Math.sin(phase)*(dash?.88:.65)*speed,lift=Math.max(0,Math.cos(phase))*.43*speed;
+   const hip=[side*.53,1.15,front*.68],knee=[side*.82,.61+lift*.25,front*.72+(front===1?-.28:.33)+stride*.5],foot=[side*.88,.105+lift,front*.79+stride];
+   limb(hip,knee,.16,C.edge,'dog-upper-leg');limb(knee,foot,.12,C.gold,'dog-lower-leg');
    part(a,'b270_plate',local(knee),[.17,.16,.19],C.dark,'dog-knee',0,b).baseActor=true;
    part(a,'b270_plate',local([foot[0],foot[1],foot[2]+.12]),[.19,.105,.27],C.black,'dog-foot',0,b).baseActor=true;
    part(a,'box',local([foot[0],foot[1]+.10,foot[2]+.21]),[.14,.022,.11],C.ivory,'dog-toes',0,b).baseActor=true;
@@ -233,6 +233,13 @@
   if(type==='coolant'){for(const side of [-1,1])part(a,'b270_tube',V3.add(pos,[side*.62,.65,-.25]),[.20,.20,.55],C.ivory,'coolant-tank',0,flightBasis(0,Math.PI/2));}
   else {for(const side of [-1,1])part(a,'box',V3.add(pos,[side*.27,.57,.56]),[.10,.25,.035],C.gold,'power-contact');}
  }
+ // The introductory deck still uses stationAgent. Give its original robodogs
+ // the same visible four-leg gait without changing their AI or hitboxes.
+ stationAgent=function(items,pos,yaw,time,kind='player',hit=false,state={}){
+  if(kind!=='robodog')return old.agent.apply(this,arguments);
+  const duty=state.duty||{},motion=state.missions270||{kind:'dog',gait:duty.gait??time*11,speed:duty.speed??(state.moving?7:0),phase:'hunt'};
+  dog(items,{...state,pos,yaw,hit,missions270:motion},time,detail(ARCADE.fx),ARCADE.fx);
+ };
  citadelInterior=function(e,time=0,fx=true){
   if(!advanced(e))return old.interior.apply(this,arguments);const b=e.board,s=b.missions270,high=detail(fx),center=b.camera||b.pos;
   // Private render projection prevents old cached ring-room architecture and
@@ -329,3 +336,4 @@
   actor(kind,subject,high=false,time=0,fx=true){const a=[];if(kind==='dog')dog(a,subject,time,high,fx);else mech(a,subject,time,high,fx);return a;},
   dimensions:Object.freeze({humanHeight:3.5,dogHeight:1.96,mechHeight:6.44,liftHalfExtents:[1.65,1.65]}),architecture:buildArchitecture});
 })();
+

@@ -1,0 +1,16 @@
+/* Portraits retain their real aspect ratio on desktop; previews remain visible
+   while the full painting decodes. The artwork and its controls stay together. */
+#arcade-layout #arcade-screen #arcade-overlay.fit2175-open[hidden]{display:none!important}
+#arcade-overlay .fit2175-content .collection2170-art{display:grid;grid-template-columns:minmax(0,1fr) minmax(180px,250px);align-items:center;justify-content:center;gap:20px;width:100%;max-height:100%}
+#arcade-overlay .fit2175-content .collection2170-art>img{width:auto!important;height:min(65dvh,calc(var(--fit2175-height,100dvh) - 100px))!important;max-width:100%;max-height:100%;aspect-ratio:2/3;justify-self:center;box-shadow:0 10px 35px #0006}
+#arcade-overlay .collection2170-art nav{flex-wrap:wrap;gap:8px}
+#arcade-overlay .collection2170-art aside{min-width:0;display:flex;flex-direction:column;gap:14px}
+#arcade-layout :is(select,option,svg text,svg tspan){font-family:var(--citadel-ui)!important}
+#arcade-layout :is(.campaign-choices,.route-choices) button>strong,#arcade-layout .map2174-detail strong,#arcade-layout .map2174-select b{font-family:var(--citadel-display)!important;font-weight:400!important;letter-spacing:.025em}
+#arcade-layout .fit2175-brief :is(h3,.fit2175-launch){font-family:var(--citadel-display)!important;font-weight:400!important}
+@media(max-width:650px) and (min-height:501px){
+ #arcade-overlay .fit2175-content .collection2170-art{display:flex;flex-direction:column;gap:8px}
+ #arcade-overlay .fit2175-content .collection2170-art>img{height:min(60dvh,calc(var(--fit2175-height,100dvh) - 180px))!important}
+ #arcade-overlay .collection2170-art aside{gap:7px}
+}
+.living2176-layer{contain:strict}

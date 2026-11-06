@@ -35,15 +35,16 @@
     {name:'ДВОЙНОЕ ОКРУЖЕНИЕ',normal:16,groups:4,divers:2,dive:'cross',diveEvery:3.7,fire:.74,shooters:2},
     {name:'ЧЕТЫРЕ ФЛОТИЛИИ',normal:32,groups:4,divers:3,dive:'pincer',diveEvery:3.3,fire:.68,shooters:3},
     {name:'ШЕСТЬДЕСЯТ ЧЕТЫРЕ',normal:64,groups:4,divers:4,dive:'mixed',diveEvery:3.05,fire:.62,shooters:4},
-    {name:'ОСАДНЫЙ ПОРЯДОК',normal:64,groups:4,divers:5,dive:'flank',diveEvery:2.9,fire:.57,shooters:4},
-    {name:'ПОСЛЕДНИЙ КОНТРАРГУМЕНТ',normal:64,groups:4,divers:6,dive:'mixed',diveEvery:2.75,fire:.52,shooters:5}
+    {name:'ДВОЙНАЯ ОРБИТА',normal:32,groups:2,divers:2,dive:'flank',diveEvery:4.8,fire:.95,shooters:2},
+    {name:'КОРОНА ФЛАГМАНА',normal:24,groups:2,divers:2,dive:'mixed',diveEvery:5.2,fire:1.05,shooters:2}
   ].map(Object.freeze));
   const LIMITS = Object.freeze({enemies:64,hostile:80,playerShots:36,pickups:4,divers:6});
   // 2.10 softens overlapping attacks while preserving all six large waves.
   // Existing tactical sorties adopt this once; in-flight shots keep their data.
   const BALANCE_2100 = Object.freeze({cadence:1.18,shooters:4,hostile:64,speed:.94,damage:.92,divers:5,diveEvery:1.08,diveTell:.45,shotGap:1.15,homing:.8,pickupReach:2.5});
   const BALANCE_2120 = Object.freeze({...BALANCE_2100,cadence:1.52,shooters:3,hostile:48,speed:.86,damage:.72,divers:3,diveEvery:1.25,diveTell:.75,shotGap:1.6,homing:.55,pickupReach:3});
-  const balance=e=>e.campaign2120?.schema===1&&waveIndex(e)>=3?BALANCE_2120:BALANCE_2100;
+  const BALANCE_2176=Object.freeze({...BALANCE_2120,cadence:1.65,shooters:2,hostile:28,divers:2,diveTell:1.1,diveEvery:1.4,shotGap:2});
+  const balance=e=>e.campaign2120?.schema===1&&waveIndex(e)>=4?BALANCE_2176:e.campaign2120?.schema===1&&waveIndex(e)>=3?BALANCE_2120:BALANCE_2100;
   const TACTIC_TIPS=Object.freeze([
     'Перехватчики режут курс. Стреляй и меняй полосу.',
     'Бомбардировщики заходят по дуге. Сбей их до следующего веера.',
@@ -61,7 +62,10 @@
   // 2.7 save. State, schedules and route choice remain deterministic on reload.
   const tactics = e => challenge(e) && e.swarm.tacticsVersion === '2.8.0';
   const balanced = e => tactics(e) && e.swarm.balanceVersion === '2.10.0';
-  function adoptBalance(e){if(tactics(e)&&!e.swarm.balanceVersion){e.swarm.balanceVersion='2.10.0';e.swarm.fireClock=Math.max(e.swarm.fireClock,.65);e.swarm.diveClock=Math.max(e.swarm.diveClock,1);}}
+  function adoptBalance(e){if(tactics(e)&&!e.swarm.balanceVersion){e.swarm.balanceVersion='2.10.0';e.swarm.fireClock=Math.max(e.swarm.fireClock,.65);e.swarm.diveClock=Math.max(e.swarm.diveClock,1);}
+    // Keep earned kills/rewards on older saves; surplus opponents withdraw.
+    if(challenge(e)&&waveIndex(e)>=4&&e.swarm.slots.length>waveCount(e)&&!['cleared','complete'].includes(e.swarm.phase))formSwarm(e,false,Math.min(waveCount(e),e.swarm.waveKills||0));
+  }
   const classic = e => e?.swarm?.rulesVersion==='2.5.0';
   const configured = e => !!e && e.stage === 2 && !e.finale && [VERSION,'2.6.0','2.5.0',LEGACY].includes(e.swarm?.version);
   const inArena = e => configured(e) && e.phase === 'swarm' && !e.swarm.complete;
@@ -79,24 +83,11 @@
     const s = e.swarm, count = waveCount(e), columns = count === 10 || count === 15 ? 5 : 6;
     const row = Math.floor(index / columns), col = index % columns;
     if(challenge(e)){
-      const n=waveIndex(e),groups=waveDef(e).groups,size=count/groups,group=Math.floor(index/size),slot=index%size;
-      const cols=size>=8?4:2,rows=Math.ceil(size/cols),r=Math.floor(slot/cols),c=slot%cols;
-      const side=group%2?-1:1,upper=group<2,cx=side*27,cy=groups===2?43:upper?51:15;
-      // Four separated squadrons occupy a 2×2 grid. Each has its own small
-      // motion and silhouette; 64 ships never expand outside the arena.
-      const swing=Math.sin(time*(.36+n*.025)+group*1.7+s.seedPhase),shape=(n+group)%3;
-      let x=(c-(cols-1)/2)*9.2,y=(rows-1)/2*8.4-r*8.4;
-      if(shape===1)y-=Math.abs(c-(cols-1)/2)*1.3;
-      if(shape===2)x+=Math.sin((r+1)*1.3)*1.2;
-      if(tactics(e)){
-        // Squadrons breathe, wheel and change altitude independently. There is
-        // always a corridor between groups; even 64 hulls remain in bounds.
-        const bank=Math.sin(time*(.34+n*.035)+group*1.4)*(.12+n*.018);
-        const turnX=x*Math.cos(bank)-y*Math.sin(bank),turnY=x*Math.sin(bank)+y*Math.cos(bank);
-        const drift=Math.sin(time*.59+group*2.1)*(2.3+n*.45);
-        return [clamp(cx+turnX+swing*3.5,-50,50),cy+turnY+drift,0];
-      }
-      return [cx+x+swing*2.8,cy+y+Math.cos(time*.48+group)*1.1,0];
+      const n=waveIndex(e),count=waveCount(e),drift=Math.sin(time*.34+s.seedPhase)*2;
+      if(n<2){const group=n?Math.floor(index/8):0,k=index%8,side=k%2?1:-1,rank=Math.floor(k/2);return [side*(5+rank*9)+drift,59-group*29-rank*6+Math.sin(time*.6+group),0];}
+      if(n===2||n===3){const groups=n===2?2:4,size=count/groups,g=Math.floor(index/size),a=index%size/size*Math.PI*2+time*(g%2?-.12:.12);return [(g%2?27:-27)+Math.cos(a)*18+drift,(g<2?48:7)+Math.sin(a)*18,0];}
+      if(n===4){const g=Math.floor(index/16),a=index%16/16*Math.PI*2+time*(g?-.16:.16);return [(g?24:-24)+Math.cos(a)*21+drift,32+Math.sin(a)*27,0];}
+      const g=Math.floor(index/12),a=.15+index%12/11*(Math.PI-.3);return [Math.cos(a)*(g?36:48)+drift,12+g*19+Math.sin(a)*28,0];
     }
     if(modern(e)){
       const n=waveIndex(e),def=waveDef(e),cols=count<=12?Math.ceil(count/2):Math.ceil(count/3),r=Math.floor(index/cols),c=index%cols,mid=(cols-1)/2;
@@ -820,3 +811,4 @@
       divers: living(e).filter(x => ['tell', 'dive'].includes(x.mode)).length, hazards: e.hostile.length, complete: e.swarm.complete,
       pickups:modern(e)?e.swarm.pickups.length:0,overdrive:modern(e)?Math.max(0,e.swarm.overdriveUntil-e.swarm.time):0 }) });
 })();
+

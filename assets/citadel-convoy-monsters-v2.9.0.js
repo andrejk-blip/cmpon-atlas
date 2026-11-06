@@ -8,6 +8,7 @@
  const P=CITADEL_PURSUIT,clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
  const active=e=>e?.phase==='escort'&&e.escort?.warp290?.version===1;
  function schedule(e){
+  if(e.campaign2120?.schema===1&&globalThis.CITADEL_LIVING2176)return [];
   const m=CITADEL_CONVOY.mission(e),lead=e.assist?6.2:5.4,fields=m.fields.map(f=>f.at+lead);
   // The full physical sweep stays at least five seconds from a ring crossing.
   const times=e.stage===2?[]:[fields[0]-7];
@@ -72,3 +73,4 @@
  }return ok;};
  globalThis.CITADEL_CONVOY_MONSTERS=Object.freeze({version:'2.9.0',active,schedule,pose,hit,entities:e=>active(e)?e.escort.warp290.entities:[]});
 })();
+

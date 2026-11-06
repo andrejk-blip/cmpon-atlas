@@ -210,14 +210,14 @@
       kind.startsWith('shot')?'shot':['armor-hit','robot-hit','player-damage'].includes(kind)?'impact':
       ['destroy','detonate','crash','robot-death'].includes(kind)?'blast':kind==='knife-swing'?'knife':'missile';
     if (buffers.has(family)) return buffers.get(family);
-    const duration = {bark:.38,shot:.075,impact:.085,blast:.26,knife:.12,missile:.23,'radio-in':.065,'radio-out':.04}[family];
+    const duration = {bark:.38,shot:.075,impact:.19,blast:1.05,knife:.12,missile:.23,'radio-in':.065,'radio-out':.04}[family];
     const buffer = ctx.createBuffer(1,Math.ceil(ctx.sampleRate*duration),ctx.sampleRate), data=buffer.getChannelData(0);
     let random = 927170, filtered = 0;
     for (let i=0;i<data.length;i++) {
       const t=i/ctx.sampleRate, x=t/duration; random=(Math.imul(random,1664525)+1013904223)>>>0;
       const noise=random/2147483648-1; filtered += (noise-filtered)*(family==='blast'?.12:.5);
       const attack=Math.min(1,t/(family==='knife'?.015:.002)), decay=Math.pow(1-x,family==='blast'?2:3);
-      const body=family==='impact'?Math.sin(t*6900)*Math.exp(-t*60):Math.sin(t*(family==='blast'?410:870))*Math.exp(-t*28);
+      const body=family==='impact'?(Math.sin(t*6900)*Math.exp(-t*45)+.65*Math.sin(t*1700)*Math.exp(-t*22)):family==='blast'?(Math.sin(2*Math.PI*(90*t-22*t*t))*.9*Math.exp(-t*5)+noise*.8*Math.exp(-t*13)):Math.sin(t*870)*Math.exp(-t*28);
       if(family==='bark'){
         // Two guttural syllables with a metallic servo tail. Fixed PCM means
         // no extra oscillator graph, timer or runtime allocation per bark.
@@ -538,7 +538,7 @@
     return effect(kind,info);
   }
   globalThis.CITADEL_SFX=Object.freeze({
-    version:VERSION,play,preview:play,preload,get ready(){return warmPromise;},
+    version:VERSION,play,preview:play,effect,preload,get ready(){return warmPromise;},
     stop:()=>stopEffects(),stopRadio:()=>stopEffects(true),
     catalog:()=>Object.entries(definitions).map(([kind,item])=>({kind,title:item.title,group:item.group,...(item.location?{location:item.location}:{})})),
     locations:()=>locations.map(item=>({...item})),
@@ -553,3 +553,4 @@
       lastPlayed:lastPlayed?{...lastPlayed}:null,lastError,played:{...played},clipsPlayed:{...clipsPlayed},blocked:{...blocked}})
   });
 }());
+

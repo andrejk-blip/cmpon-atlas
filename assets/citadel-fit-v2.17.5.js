@@ -44,7 +44,7 @@
     groups.push(el);Array.from(el.children).forEach(child=>units.push(child));return;
    }
    // Map, illustrated page and indivisible controls keep their own layout.
-   if(el.matches('.map2174-screen,.prologue-art,button,a,input,select,textarea,svg,img,figure,details:not([open])')){units.push(el);return;}
+   if(el.matches('.map2174-screen,.collection2170-art,.prologue-art,button,a,input,select,textarea,svg,img,figure,details:not([open])')){units.push(el);return;}
    if(el.matches(containers)&&el.children.length){groups.push(el);Array.from(el.children).forEach(visit);}else units.push(el);
   }
   Array.from(content.children).forEach(visit);return{units,groups};

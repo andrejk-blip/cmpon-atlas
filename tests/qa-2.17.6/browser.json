@@ -1,0 +1,46 @@
+{
+  "version": "2.17.6",
+  "renderer": "Canvas compatibility mode in Chrome",
+  "scenes": [
+    "painted titan and ship explosion in pursuit",
+    "painted titan and broad limb in convoy",
+    "wave 6: 24 ships in double crown formation",
+    "introductory deck robodog in two running poses"
+  ],
+  "cards": [
+    {
+      "viewport": [
+        1000,
+        700
+      ],
+      "image_natural_width": 1024,
+      "pages": 1
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "image_natural_width": 1024,
+      "pages": 1
+    },
+    {
+      "viewport": [
+        320,
+        568
+      ],
+      "image_natural_width": 1024,
+      "pages": 1
+    }
+  ],
+  "audio_preview": {
+    "armor_hit": "fallback started",
+    "destroy": "fallback started"
+  },
+  "proof": "living-titan.png",
+  "limitations": [
+    "Synthetic engine fixtures, not a full campaign playthrough",
+    "Mobile viewport checks, not physical-device testing",
+    "WebGL rendering not available in test browser"
+  ]
+}

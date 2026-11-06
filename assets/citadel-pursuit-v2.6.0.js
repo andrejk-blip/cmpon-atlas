@@ -249,6 +249,8 @@
   }
   function updateWarp(e,dt){
     const s=e.pursuit;
+    // Authored chapter encounters replace the old procession in personal campaigns.
+    if(e.campaign2120?.schema===1&&globalThis.CITADEL_LIVING2176){s.warpEntities=[];return;}
     s.warpEntities=s.warpEntities.filter(w=>w.distance>s.travel-100);
     while(s.nextWarpDistance<s.travel+RULES.lookAhead){
       const index=s.nextWarp++;let d=s.nextWarpDistance;
@@ -912,7 +914,7 @@
     if (!active(e)) return result;
     const set = (id, text) => { const node = document.getElementById(id); if (node) node.textContent = text; };
     set('arcade-mission-title', 'ФЗ уходит со связи');
-    set('arcade-mission-brief', e.campaign2120?'Три пакета · круглые пролёты · пять гигантов. Пролетайте мимо тела и между щупальцами; следите за замахом.':'Три пакета · круглые пролёты · эскадрильи и сущности Варпа. Огонь по кораблям, обход монстров.');
+    set('arcade-mission-brief', e.campaign2120?'Три пакета · круглые пролёты · титан из разлома. Перед ударом смените высоту или примените импульс.':'Три пакета · круглые пролёты · эскадрильи и сущности Варпа. Огонь по кораблям, обход монстров.');
     set('citadel-objective-phase', 'ПОГОНЯ · ЭТАП '+(e.pursuit.chapter+1)+'/3');
     set('citadel-primary', e.autopilot ? 'Ручное управление' : 'Помощь в погоне');
     set('mobile-crystal', 'Следовать за ФЗ');
@@ -972,3 +974,4 @@
         eta: a.passAt - e.pursuit.clock, spawnedAt: a.spawnedAt, contact: a.contact, dead: a.dead })) } : null,
   });
 })();
+

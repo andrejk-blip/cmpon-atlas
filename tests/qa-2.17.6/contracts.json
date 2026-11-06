@@ -1,0 +1,55 @@
+{
+  "version": "2.17.6",
+  "method": "Actual engine fixtures, not a full campaign playthrough",
+  "pass": true,
+  "rows": [
+    {
+      "name": "five debuts in consecutive chapters 2–6; none in chapter one",
+      "pass": true
+    },
+    {
+      "name": "actual pursuit schedules exactly one encounter and no legacy parade",
+      "pass": true
+    },
+    {
+      "name": "left and right attacks hit their painted lane; vertical dodge escapes",
+      "pass": true
+    },
+    {
+      "name": "real damage, one contact per swing, successful pulse repels only once",
+      "pass": true
+    },
+    {
+      "name": "ground encounters use actual board health and preserve player ship health",
+      "pass": true
+    },
+    {
+      "name": "pause and save restore retain the exact encounter",
+      "pass": true
+    },
+    {
+      "name": "safe rehearsal retains the titan without awarding cards or repeated contact counts",
+      "pass": true
+    },
+    {
+      "name": "final two live waves contain 32 and 24 ships; no square grid",
+      "pass": true
+    },
+    {
+      "name": "in-flight old final wave retains credited kills without extra score",
+      "pass": true
+    },
+    {
+      "name": "dog legs move with effects off and retain four articulated feet",
+      "pass": true
+    },
+    {
+      "name": "introductory deck routes its original robodog through the running rig",
+      "pass": true
+    },
+    {
+      "name": "painting and explosion rendering never mutate gameplay state",
+      "pass": true
+    }
+  ]
+}
