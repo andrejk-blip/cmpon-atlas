@@ -1,0 +1,117 @@
+{
+  "method": "14 direct mission fixtures, combat configuration; 2s paused inputs + exact save/load + 2s deterministic continuation. Not full playthrough.",
+  "rows": [
+    {
+      "id": 1,
+      "mission": "orbit1",
+      "status": "paused",
+      "pause": true,
+      "restore": true,
+      "continuation": true
+    },
+    {
+      "id": 2,
+      "mission": "base1",
+      "status": "paused",
+      "pause": true,
+      "restore": true,
+      "continuation": true
+    },
+    {
+      "id": 3,
+      "mission": "convoy1",
+      "status": "paused",
+      "pause": true,
+      "restore": true,
+      "continuation": true
+    },
+    {
+      "id": 4,
+      "mission": "pursuit",
+      "status": "paused",
+      "pause": true,
+      "restore": true,
+      "continuation": true
+    },
+    {
+      "id": 5,
+      "mission": "base2",
+      "status": "paused",
+      "pause": true,
+      "restore": true,
+      "continuation": true
+    },
+    {
+      "id": 6,
+      "mission": "route",
+      "status": "paused",
+      "pause": true,
+      "restore": true,
+      "continuation": true
+    },
+    {
+      "id": 7,
+      "mission": "swarm",
+      "status": "paused",
+      "pause": true,
+      "restore": true,
+      "continuation": true
+    },
+    {
+      "id": 8,
+      "mission": "base3",
+      "status": "paused",
+      "pause": true,
+      "restore": true,
+      "continuation": true
+    },
+    {
+      "id": 9,
+      "mission": "convoy3",
+      "status": "paused",
+      "pause": true,
+      "restore": true,
+      "continuation": true
+    },
+    {
+      "id": 10,
+      "mission": "orbit4",
+      "status": "paused",
+      "pause": true,
+      "restore": true,
+      "continuation": true
+    },
+    {
+      "id": 11,
+      "mission": "base4",
+      "status": "paused",
+      "pause": true,
+      "restore": true,
+      "continuation": true
+    },
+    {
+      "id": 12,
+      "mission": "parallax",
+      "status": "paused",
+      "pause": true,
+      "restore": true,
+      "continuation": true
+    },
+    {
+      "id": 13,
+      "mission": "lair",
+      "status": "paused",
+      "pause": true,
+      "restore": true,
+      "continuation": true
+    },
+    {
+      "id": 14,
+      "mission": "mrg",
+      "status": "paused",
+      "pause": true,
+      "restore": true,
+      "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n... Skipped lines\n\n  {\n    engine: {\n      assist: false,\n      asteroids: [\n        {\n...\n        bankVersion: '2.7.0',\n+       cards: {\n+         'final:0': {\n+           correct: 0,\n+           explanation: 'Назначение источника и правил синхронизации снимает неопределённость при расхождениях.',\n+           hint: 'Нужно заранее определить, какое состояние считается основанием для решения.',\n+           id: 'quiz270-13-sourceoftruth',\n+           level: 13,\n+           options: [\n+             'Авторитетный источник и правила согласования копий.',\n+             'Безусловный приоритет последнего полученного ответа.',\n+             'Одинаковое отображение названий статусов.',\n+             'Независимое редактирование обеих копи"
+    }
+  ]
+}

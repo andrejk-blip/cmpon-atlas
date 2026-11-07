@@ -1,0 +1,43 @@
+{
+  "kind": "resonator-unavoidable-titan",
+  "before": {
+    "hp": 10,
+    "pos": [
+      0,
+      0,
+      0
+    ],
+    "status": "playing",
+    "objective": {
+      "title": "Орбитальный резонатор",
+      "detail": "Разделить два источника. Тяните кольца к светлым меткам. A/D — вращение, W/S — выбор кольца.",
+      "progress": "0 / 3 КОНТУРА"
+    }
+  },
+  "after": {
+    "hp": 0,
+    "pos": [
+      0,
+      0,
+      0
+    ],
+    "status": "crashing",
+    "rift": {
+      "mission": "contradictions",
+      "kind": "tentacle",
+      "age": 4.7499999999999885,
+      "done": false,
+      "contacts": 1,
+      "phase": "strike",
+      "ready": false
+    },
+    "phase": 0,
+    "lossReason": "Корабль подбит. Перехватывайте угрозы и используйте E для прикрытия."
+  }
+}
+{"kind":"campaign-quiz","id":"convoy1","correct":1,"lengths":[17,48,22],"choices":["Обе без пояснений","Одну согласованную редакцию с датой и владельцем","Самую длинную редакцию"]}
+{"kind":"campaign-quiz","id":"route","correct":1,"lengths":[25,70,33],"choices":["Да, формат определяет всё","Нет: нужны состав данных, владелец, момент передачи и обработка ошибок","Да, остальное решится при запуске"]}
+{"kind":"campaign-quiz","id":"convoy3","correct":1,"lengths":[43,72,35],"choices":["Незаметно добавить её в согласованный пакет","Сохранить согласованную версию, оформить изменение и оценить его влияние","Остановить доставку всех требований"]}
+{"kind":"campaign-quiz","id":"parallax","correct":1,"lengths":[24,55,28],"choices":["Яркое сообщение о победе","Подтверждённые критерии и проверяемые основания решения","Количество потраченных ракет"]}
+{"kind":"campaign-quiz","id":"contradictions","correct":[0,1],"lengths":[95,70,35],"choices":["Разделить объекты: «заявка на обследование» и «задание исполнителю», связать их идентификатором","Ввести общий объект с явным видом, владельцем и отдельными состояниями","Оставить одно слово без определения"]}
+{"kind":"identical-monster-mechanics","uniqueGeometry":1,"uniqueTiming":1,"contacts":[["hammer",true],["tentacle",true],["maw",true],["mantis",true],["medusa",true]]}

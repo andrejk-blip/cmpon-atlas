@@ -1,0 +1,101 @@
+#!/usr/bin/env python3
+from pathlib import Path
+import json, csv, math
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+from reportlab.pdfgen import canvas
+from reportlab.lib.colors import HexColor
+from reportlab.pdfbase import pdfmetrics
+from reportlab.pdfbase.ttfonts import TTFont
+from reportlab.platypus import Paragraph, Table, TableStyle
+from reportlab.lib.styles import ParagraphStyle
+from reportlab.lib.enums import TA_LEFT
+R=Path(__file__).resolve().parent.parent;Q=R/'tests/qa-2.17.7';O=R/'output/pdf';O.mkdir(parents=True,exist_ok=True)
+read=lambda n:json.loads((Q/n).read_text())
+ids=['orbit1','base1','convoy1','pursuit','base2','route','swarm','parallax','base3','convoy3','orbit4','base4','contradictions','lair','mrg']
+names=['Орбита Цитадели','Палуба требований','Первый конвой','Погоня за ФЗ','Палуба согласования','Маршрут смежников','Рой уточнений','Параллакс','Палуба интеграции','Последний конвой','Последняя орбита','Палуба выпуска','Станция противоречий','Логово МРГ','МРГ: последний рубеж']
+expert=[[3,6,6],[4,7,7],[5,7,7],[5,6,6],[6,6,6],[5,6,6],[8,6,6],[7,8,8],[7,7,7],[7,6,6],[6,5,5],[7,6,6],[None,7,3],[7,7,7],[8,8,8]]
+meta={'date':'2026-11-07','baseline':'25e2fdaf7c4ecdea8a85857a260901793e89bc0b','rubric':'Expert editorial estimates from source review; not player telemetry. No invented post-fix engagement scores.','chapters':[{'id':i,'name':n,'difficulty':v[0],'interest':v[1],'engagement':v[2]} for i,n,v in zip(ids,names,expert)]}
+(Q/'editorial-scores.json').write_text(json.dumps(meta,ensure_ascii=False,indent=2))
+plt.rcParams.update({'font.family':'DejaVu Sans','font.size':10,'axes.spines.top':False,'axes.spines.right':False,'axes.edgecolor':'#aaa69f','axes.labelcolor':'#3d3a35','text.color':'#242420','xtick.color':'#55534c','ytick.color':'#55534c','savefig.facecolor':'#faf9f6','axes.facecolor':'#faf9f6','figure.facecolor':'#faf9f6'})
+colors=['#b85b36','#4d775e','#80637c'];xs=list(range(1,16))
+fig,ax=plt.subplots(figsize=(10.4,4.5));fig.subplots_adjust(left=.07,right=.98,bottom=.18,top=.85)
+for j,label in enumerate(['Сложность','Интерес','Вовлечённость']):ax.plot(xs,[math.nan if v[j] is None else v[j] for v in expert],marker='o',markersize=4,lw=2,color=colors[j],label=label)
+ax.axvspan(12.7,13.3,color='#b85b36',alpha=.12);ax.annotate('13: дефект, а не честная сложность',xy=(13,3),xytext=(8,1.05),fontsize=9,arrowprops={'arrowstyle':'->','color':'#8b6555'})
+ax.set(ylim=(0,10),yticks=range(0,11,2),xticks=xs,xlabel='Номер главы');ax.grid(axis='y',alpha=.25);ax.legend(ncol=3,frameon=False,loc='upper left');fig.suptitle('Кривая кампании до исправлений',fontsize=16,x=.07,ha='left');fig.text(.07,.90,'Экспертная оценка 0-10. Это не статистика живых игроков.',fontsize=10,color='#666258');fig.savefig(Q/'expert-curves.png',dpi=180);plt.close(fig)
+before=read('before-combat-pursuit.json');after=read('release-combat-pursuit.json')
+fig,axes=plt.subplots(2,1,figsize=(10.4,6.5),sharex=True);fig.subplots_adjust(left=.08,right=.98,bottom=.12,top=.86,hspace=.36)
+for d,label,col in [(before,'2.17.6',colors[0]),(after,'2.17.7',colors[1])]:
+ m={x['mission']:x for x in d['levels']};xx=[i+1 for i,id in enumerate(ids) if id in m];axes[0].plot(xx,[m[ids[i-1]]['minHp'] for i in xx],marker='o',ms=4,lw=1.8,color=col,label=label);axes[1].plot(xx,[m[ids[i-1]]['duration'] for i in xx],marker='o',ms=4,lw=1.8,color=col,label=label)
+axes[0].set(ylabel='Минимум HP',ylim=(0,105));axes[1].set(ylabel='Секунды симуляции',xlabel='Номер главы',xticks=xs);axes[0].legend(ncol=2,frameon=False)
+for a in axes:a.grid(axis='y',alpha=.25)
+fig.suptitle('До / после: один и тот же боевой пилот',fontsize=16,x=.08,ha='left');fig.text(.08,.92,'Маршрут через погоню, seed 417147. Обычные команды после старта.',fontsize=10,color='#666258');fig.savefig(Q/'campaign-measured.png',dpi=180);plt.close(fig)
+B=read('balance-before.json')['results'];A=read('balance-after.json')['results'];rows=[x for x in A if x['kind']=='swarm' and not x.get('idle')]
+fig,axes=plt.subplots(1,2,figsize=(10.4,3.5));fig.subplots_adjust(left=.07,right=.98,bottom=.23,top=.8,wspace=.25)
+labels=[str(x['seed'])+'\n'+str(x['reaction'])+' с' for x in rows];axes[0].bar(range(4),[x['seconds'] for x in rows],color=colors[1],width=.55)
+for i,x in enumerate(rows):axes[0].text(i,x['seconds']+3,f"{x['seconds']:.1f}",ha='center',fontsize=9)
+axes[0].set(xticks=range(4),xticklabels=labels,ylim=(0,170),ylabel='Секунды',title='Рой: 4 из 4 активных проб пройдены')
+counts=[8,16,32,64,32,24];axes[1].bar(range(1,7),counts,color=[colors[1]]*3+[colors[0]]+[colors[1]]*2,width=.65)
+for i,n in enumerate(counts,1):axes[1].text(i,n+1,str(n),ha='center',fontsize=9)
+axes[1].set(xticks=range(1,7),xlabel='Волна',ylabel='Корабли',ylim=(0,75),title='Главный пик плотности остаётся в волне 4')
+for a in axes:a.grid(axis='y',alpha=.18);a.set_axisbelow(True)
+fig.savefig(Q/'swarm-measured.png',dpi=180);plt.close(fig)
+with (Q/'chapter-metrics.csv').open('w',newline='') as f:
+ w=csv.writer(f);w.writerow(['version','mode','route','mission','duration_seconds','min_hp','damage','peak_enemies'])
+ for version,file in [('2.17.6','before-combat-pursuit.json'),('2.17.7','release-combat-pursuit.json')]:
+  for x in read(file)['levels']:w.writerow([version,'combat','pursuit',x['mission'],x['duration'],x['minHp'],x['damage'],x['peakEnemies']])
+font='/usr/share/fonts/truetype/liberation';pdfmetrics.registerFont(TTFont('Report',font+'/LiberationSerif-Regular.ttf'));pdfmetrics.registerFont(TTFont('ReportB',font+'/LiberationSerif-Bold.ttf'))
+pdfmetrics.registerFontFamily('Report',normal='Report',bold='ReportB',italic='Report',boldItalic='ReportB')
+W,H=595.276,841.89;M=42;cw=W-M*2
+c=canvas.Canvas(str(O/'Citadel_Audit_2026-11-07.pdf'),pagesize=(W,H));c.setTitle('Цитадель ЦСИИ: аудит 2.17.7');c.setAuthor('Андрей Костюк / проверка проекта')
+styles={k:ParagraphStyle(k,fontName='ReportB' if k in ['h','b'] else 'Report',fontSize=size,leading=lead,textColor=HexColor('#25241f'),spaceAfter=5) for k,size,lead in [('p',12,15),('s',10,12.5),('h',17,20),('b',12,15)]}
+page=0;y=0
+def start(title,sub=''):
+ global page,y
+ if page:c.showPage()
+ page+=1;c.setFillColor(HexColor('#777064'));c.setFont('Report',9);c.drawString(M,H-25,'ЦИТАДЕЛЬ ЦСИИ  /  ПОВТОРНАЯ ПРОВЕРКА');c.drawRightString(W-M,H-25,'07.11.2026  /  2.17.7');c.setStrokeColor(HexColor('#ccc6bb'));c.line(M,H-33,W-M,H-33);c.setFont('Report',9);c.drawRightString(W-M,25,str(page));y=H-56;para(title,'h');
+ if sub:para(sub,'s')
+def para(text,style='p',gap=6):
+ global y
+ p=Paragraph(text,styles[style]);_,h=p.wrap(cw,1000);p.drawOn(c,M,y-h);y-=h+gap
+ if y<35:raise RuntimeError('Page overflow '+str(page))
+def img(path,h):
+ global y
+ c.drawImage(str(path),M,y-h,width=cw,height=h,preserveAspectRatio=True,anchor='c');y-=h+7
+def table(rows,widths,fontsize=10.5):
+ global y
+ style=ParagraphStyle('cell',fontName='Report',fontSize=fontsize,leading=fontsize+2)
+ cells=[[Paragraph(str(v),style) for v in row] for row in rows]
+ t=Table(cells,colWidths=widths,hAlign='LEFT');t.setStyle(TableStyle([('BACKGROUND',(0,0),(-1,0),HexColor('#eeece6')),('VALIGN',(0,0),(-1,-1),'TOP'),('LINEBELOW',(0,0),(-1,0),.6,HexColor('#969081')),('LINEBELOW',(0,1),(-1,-1),.3,HexColor('#d8d3c8')),('TOPPADDING',(0,0),(-1,-1),6),('BOTTOMPADDING',(0,0),(-1,-1),6)]));_,hh=t.wrap(cw,1000);t.drawOn(c,M,y-hh);y-=hh+9
+ if y<35:raise RuntimeError('Table overflow '+str(page))
+contracts=read('contracts.json');runs=[read('release-'+k+'.json') for k in ['training-convoy','combat-pursuit','pro-convoy']]
+start('Шесть исправлений по итогам проверки','База сравнения: опубликованная 2.17.6. Проверка исходников, воспроизведение дефектов, автоматические прохождения и просмотр в Chrome.')
+para('Главный сбой найден в мирной головоломке: боевой титан мог убить игрока и оставить игру в состоянии падения. Также устранены невидимые удары после разворота и изменения игры за открытым окном.')
+table([['Приоритет / задача','До','В версии 2.17.7'],['T1 · высокий<br/>Модальное окно','Щит 40 → 55 за 10 с при замороженном времени. F открывает терминал за карточкой.','Симуляция и игровые действия полностью заморожены. Закрытие и навигация работают.'],['T2 · высокий<br/>Невидимый удар','После разворота тело за камерой скрывало всю атаку; щит 100 → 76.','Тело, предупреждение и оружие рисуются независимо.'],['T3 · средний<br/>Запись эпизода','В запись попадали только сцена и HUD; титаны и новые взрывы пропадали.','Композиция: сцена → слой титанов/эффектов → HUD.'],['G1 · критический<br/>Мирный резонатор','При 10 HP: смерть и бесконечное crashing; уклонение недоступно.','Нет боевых атак. Старое повреждённое сохранение восстанавливается с сохранением колец.'],['G2 · высокий<br/>Одинаковые монстры','Пять изображений, одна геометрия и один ритм ударов.','Пять схем атак с честными зонами предупреждения. На последней орбите один заход.'],['G3 · высокий<br/>Угадываемые разборы','Все четыре обычных новых вопроса: правильный B и самый длинный текст.','Сопоставимая длина вариантов, устойчивое перемешивание. Старые ответы сохраняют смысл.']],[102,198,cw-300])
+para(f"Целевая проверка: {sum(x['pass'] for x in contracts['rows'])}/{len(contracts['rows'])} блоков. Финальные непрерывные кампании: {sum(x['pass'] for x in runs)}/3. В каждой успешной кампании - 15 глав и 28 разборов.",'b')
+para('Пропуски глав, бессмертие, выдача ресурсов и принудительное завершение целей в полных прохождениях не использовались.','s')
+start('Кривые сложности, интереса и вовлечённости','Редакционная оценка версии до исправлений. Шкала 0-10, не результат опроса и не аналитика посещений.')
+img(Q/'expert-curves.png',224)
+para('<b>Сложность:</b> плотность угроз, цена ошибки, число одновременных решений. <b>Интерес:</b> новизна и вариативность. <b>Вовлечённость:</b> ясность цели, отклик действий и справедливость. Нечестный урон в главе 13 обозначен разрывом, а не «10 из 10».','s')
+table([['Главы 1-5','Главы 6-10','Главы 11-15']]+[[f'{i+1}. {names[i]}',f'{i+6}. {names[i+5]}',f'{i+11}. {names[i+10]}'] for i in range(5)],[cw/3]*3,10)
+para('Что показала кривая','b')
+para('Рой и финальный рубеж дают основные пики давления. Повторы орбитальных и конвойных задач снижают новизну. Самый резкий провал вовлечённости связан с дефектом резонатора, а не с его головоломкой.')
+para('Разные атаки добавляют выбор способа уклонения; исправленные разборы требуют чтения. Численный рост интереса и удержания после правок не заявляется: для него нужны живые игроки и отдельное наблюдение.','s')
+start('Измерения: одинаковый боевой маршрут','Один пилот, seed 417147, путь через погоню. Ключи ответов известны оператору; время чтения не моделируется.')
+img(Q/'campaign-measured.png',315)
+para('HP - минимум здоровья персонажа или корабля в главе, включая входной переход. Внутренние ремонты и лечение за успешные решения могут поднять здоровье. Время - секунды симуляции, не продолжительность человеческой игровой сессии.','s')
+para('Адресная настройка последней орбиты','b')
+para('Первый вариант новых челюстей ухудшил одну фиксированную стратегию: после двух попаданий пилот ушёл за ремонтом и потерял станцию. Неуспешные прогоны сохранены. Для главы 11 оставлен один полноценный заход титана: защиту станции больше не сопровождают три повторных замаха.')
+paired=read('orbit4-paired-review.json');pdata=paired if isinstance(paired,list) else paired.get('results',paired.get('rows',[]))
+para('Парное продолжение одного заработанного сохранения: 2.17.6 - станция 31 HP, 80,08 с; исправленный вариант - 28,5 HP, 76,9 с, один контакт с титаном. Обе пробы завершили главу. Это проверка конкретной стратегии, не доказательство идеального баланса.','s')
+start('Рой, новые атаки и границы проверки')
+img(Q/'swarm-measured.png',180)
+para('Рой: 4/4 активных пробы пройдены при задержках решений 0,25 и 0,55 с, на двух наборах случайных событий. Третий конвой: 3/3 активных пробы пройдены. Два бездействующих контроля проиграли. Состав волн в этом выпуске не менялся.','s')
+table([['Монстр','Рисунок атаки','Ответ игрока'],['Кузнец','Широкий молот','Уйти вбок из всей полосы головки'],['Спрут','Хлыст с борта','Сменить полосу / высоту'],['Пожиратель','Сходящиеся челюсти','Покинуть дугу и центр смыкания'],['Косарь','Диагональная коса','Уйти с диагонали до взмаха'],['Медуза','Три узких луча','Занять промежуток между лучами']],[100,160,cw-260],10.5)
+para('Каждая атака может попасть в неподвижную цель и имеет безопасное положение. Это проверено для полёта и палубы. Предупреждение покрывает всю траекторию, включая движущуюся головку молота. Начатые старые встречи сохраняют прежний рисунок до окончания.','s')
+para('Проверки и остаток','b')
+para('Кроме целевых контрактов: 12 проверок живых монстров/робособак, 7 загрузки изображений, 6 размещения окон. При первичном аудите 14/14 состояний сохранялись на паузе и точно восстанавливались. Chrome проверен в совместимом Canvas-режиме; создано видео 960×540 со слоем атак. Физические телефоны, WebGL и субъективное качество звука не проверялись.','s')
+para('Вне шести выбранных задач: комикс после главы 4 преждевременно упоминает будущие встречи; пропуск босса всё ещё открывает победный комикс; в компактном инструктаже 568×320 есть небольшой выход нижнего блока за границу при доступной кнопке запуска. Это отдельные последующие правки.','s')
+para('Источники проверки: tests/qa-2.17.7, audit2177-contracts.cjs, audit2177-campaign.cjs, audit2177-balance.cjs. База: 25e2fda. Точные хеши опубликованных ресурсов закреплены в version.json.','s',0)
+c.save();print(O/'Citadel_Audit_2026-11-07.pdf')

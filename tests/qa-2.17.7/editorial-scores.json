@@ -1,0 +1,112 @@
+{
+  "date": "2026-11-07",
+  "baseline": "25e2fdaf7c4ecdea8a85857a260901793e89bc0b",
+  "rubric": "Expert editorial estimates from source review; not player telemetry. No invented post-fix engagement scores.",
+  "chapters": [
+    {
+      "id": "orbit1",
+      "name": "Орбита Цитадели",
+      "difficulty": 3,
+      "interest": 6,
+      "engagement": 6
+    },
+    {
+      "id": "base1",
+      "name": "Палуба требований",
+      "difficulty": 4,
+      "interest": 7,
+      "engagement": 7
+    },
+    {
+      "id": "convoy1",
+      "name": "Первый конвой",
+      "difficulty": 5,
+      "interest": 7,
+      "engagement": 7
+    },
+    {
+      "id": "pursuit",
+      "name": "Погоня за ФЗ",
+      "difficulty": 5,
+      "interest": 6,
+      "engagement": 6
+    },
+    {
+      "id": "base2",
+      "name": "Палуба согласования",
+      "difficulty": 6,
+      "interest": 6,
+      "engagement": 6
+    },
+    {
+      "id": "route",
+      "name": "Маршрут смежников",
+      "difficulty": 5,
+      "interest": 6,
+      "engagement": 6
+    },
+    {
+      "id": "swarm",
+      "name": "Рой уточнений",
+      "difficulty": 8,
+      "interest": 6,
+      "engagement": 6
+    },
+    {
+      "id": "parallax",
+      "name": "Параллакс",
+      "difficulty": 7,
+      "interest": 8,
+      "engagement": 8
+    },
+    {
+      "id": "base3",
+      "name": "Палуба интеграции",
+      "difficulty": 7,
+      "interest": 7,
+      "engagement": 7
+    },
+    {
+      "id": "convoy3",
+      "name": "Последний конвой",
+      "difficulty": 7,
+      "interest": 6,
+      "engagement": 6
+    },
+    {
+      "id": "orbit4",
+      "name": "Последняя орбита",
+      "difficulty": 6,
+      "interest": 5,
+      "engagement": 5
+    },
+    {
+      "id": "base4",
+      "name": "Палуба выпуска",
+      "difficulty": 7,
+      "interest": 6,
+      "engagement": 6
+    },
+    {
+      "id": "contradictions",
+      "name": "Станция противоречий",
+      "difficulty": null,
+      "interest": 7,
+      "engagement": 3
+    },
+    {
+      "id": "lair",
+      "name": "Логово МРГ",
+      "difficulty": 7,
+      "interest": 7,
+      "engagement": 7
+    },
+    {
+      "id": "mrg",
+      "name": "МРГ: последний рубеж",
+      "difficulty": 8,
+      "interest": 8,
+      "engagement": 8
+    }
+  ]
+}

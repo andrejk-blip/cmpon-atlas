@@ -3,8 +3,17 @@
 (()=>{
  'use strict';if(globalThis.CITADEL_RESONATOR)return;
  const C=CITADEL_CAMPAIGN,p=RequirementArcade.prototype,TAU=Math.PI*2,STEP=Math.PI/4;
- const old={step:p.step,objective:p.objective,launch:p.launch,scene:spaceScene,camera:spaceCamera,flight:drawFlightHUD,mobile:drawMobileGameHUD,clarity:drawClarityHUD,campaign:drawCampaignFlightHUD,hud:updateArcadeHUD,overlay:arcadeOverlayHTML,action:arcadeAction,unpack:cupUnpack};
+ const old={damage:p.damage,step:p.step,objective:p.objective,launch:p.launch,scene:spaceScene,camera:spaceCamera,flight:drawFlightHUD,mobile:drawMobileGameHUD,clarity:drawClarityHUD,campaign:drawCampaignFlightHUD,hud:updateArcadeHUD,overlay:arcadeOverlayHTML,action:arcadeAction,unpack:cupUnpack};
  const active=e=>C.active(e)&&e.campaign2120.station?.kind==='resonator2160';
+ function repairRift(e){
+  if(!active(e)||e.campaign2120.rift2176?.mission!=='contradictions')return;
+  const invalid=e.campaign2120.rift2176;
+  if(invalid.contacts>0){const saved=e.campaign2120.retry?.engine;const hp=saved?.campaign2120?.station?.kind==='resonator2160'?saved.player?.hp:null;e.player.hp=Math.max(e.player.hp,Number.isFinite(hp)&&hp>0?hp:100);
+   if(['crashing','lost'].includes(e.status)){e.status='playing';e.crash=null;e.lossReason='';}
+  }
+  delete e.campaign2120.rift2176;e.campaign2120.station.riftRepaired2177=true;
+ }
+ p.damage=function(){if(active(this))return false;return old.damage.apply(this,arguments);};
  const state=e=>e.campaign2120.station,wrap=n=>(n%8+8)%8,angle=x=>Math.atan2(Math.sin(x),Math.cos(x));
  const titles=['Разделить два источника','Связать владельцев','Собрать одну версию'];
  const notes=['Запрос описывает обследование. Задание назначает работу исполнителю.','Внешнее кольцо поворачивает соседнее в обратную сторону.','Два внешних кольца связаны с соседями. Настраивайте их снаружи внутрь.'];
@@ -25,7 +34,7 @@
  function select(e,i){if(!active(e)||!state(e).rings[i])return;state(e).selected=i;}
  function afterCard(e){const s=state(e);s.solution=e.campaign2120.answers.contradictions.index;s.mode='release';s.countdown=2.5;e.status='playing';C.save(e,true);}
  p.launch=function(){if(active(this)&&this.status==='briefing'){this.status='playing';clearArcadeInput();C.checkpoint(this);C.save(this,true);this.emit('state','playing');return true;}return old.launch.apply(this,arguments);};
- p.step=function(delta,input={}){if(!active(this))return old.step.apply(this,arguments);if(this.status!=='playing'||this.campaign2120.modal)return;
+ p.step=function(delta,input={}){if(!active(this))return old.step.apply(this,arguments);repairRift(this);if(this.status!=='playing'||this.campaign2120.modal)return;
   const dt=Math.min(.04,Math.max(0,Number(delta)||0)),s=state(this);this.elapsed+=dt;this.stageTime+=dt;s.clock+=dt;s.phaseTime+=dt;s.repeat=Math.max(0,s.repeat-dt);
   for(const r of s.rings)r.angle+=angle(r.step*STEP-r.angle)*Math.min(1,dt*12);
   if(s.mode==='release'){s.countdown-=dt;if(s.countdown<=0)C.finishStation(this);return;}
@@ -122,7 +131,8 @@
   if(bar){bar.hidden=!on||e.status!=='playing'||!!e.campaign2120.modal;if(on){const s=state(e);for(const b of bar.querySelectorAll('[data-action="resonator-select"]')){b.hidden=!s.rings[Number(b.dataset.value)];b.setAttribute('aria-pressed',String(Number(b.dataset.value)===s.selected));}for(const b of bar.querySelectorAll('[data-action="resonator-turn"]')){b.disabled=s.mode!=='align';b.setAttribute('aria-label',b.dataset.value==='-1'?'Повернуть кольцо против часовой стрелки':'Повернуть кольцо по часовой стрелке');}}}
   bind();if(on){ARCADE.canvas.setAttribute?.('aria-label','Орбитальный резонатор. Тяните кольца к светлым меткам. A/D — вращение, W/S — выбор кольца.');}return result;
  };
- cupUnpack=function(){const e=old.unpack.apply(this,arguments);if(C.active(e)&&e.campaign2120.station&&!active(e))start(e,e.campaign2120.station);return e;};
+ cupUnpack=function(){const e=old.unpack.apply(this,arguments);if(C.active(e)&&e.campaign2120.station&&!active(e))start(e,e.campaign2120.station);repairRift(e);return e;};
  bind();
  globalThis.CITADEL_RESONATOR=Object.freeze({version:'2.16.0',active,state,start,rotate,select,afterCard,layout,draw});
 })();
+

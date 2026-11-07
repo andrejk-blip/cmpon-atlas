@@ -26,7 +26,7 @@
   }catch(error){release();show('Не удалось начать запись: '+String(error.message||error));}
  }
  function captureFrame(force=false){if(!rec||!ctx||!ARCADE.canvas)return;const now=clock();if(!force&&now-lastFrame<1000/24)return;lastFrame=now;
-  try{ctx.fillStyle='#071722';ctx.fillRect(0,0,canvas.width,canvas.height);ctx.drawImage(ARCADE.canvas,0,0,canvas.width,canvas.height);if(ARCADE.hud)ctx.drawImage(ARCADE.hud,0,0,canvas.width,canvas.height);
+  try{ctx.fillStyle='#071722';ctx.fillRect(0,0,canvas.width,canvas.height);ctx.drawImage(ARCADE.canvas,0,0,canvas.width,canvas.height);const living=globalThis.CITADEL_LIVING2176?.canvasForScene?.(ARCADE.canvas);if(living?.width&&living?.height)ctx.drawImage(living,0,0,canvas.width,canvas.height);if(ARCADE.hud)ctx.drawImage(ARCADE.hud,0,0,canvas.width,canvas.height);
    const e=ARCADE.engine,caption=e.campaign2120?.modal?.type==='document'?'Карта документа':e.campaign2120?.modal?.type==='bestiary'?'Бестиарий':e.status==='paused'?'Пауза':'';
    ctx.fillStyle='#061320df';ctx.fillRect(0,canvas.height-24,canvas.width,24);ctx.fillStyle='#ebd3a2';ctx.font='12px sans-serif';ctx.fillText('ЦИТАДЕЛЬ · '+(caption||e.phase)+' · '+Math.floor((now-startAt)/1000)+'с · v'+(globalThis.CITADEL_RELEASE?.version||'2.17.1'),10,canvas.height-8);
   }catch(_){stop(false);}

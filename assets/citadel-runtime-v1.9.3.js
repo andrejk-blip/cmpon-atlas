@@ -213,8 +213,22 @@
   };
   detachArcade=function(...args) { cancel(); record('detach'); return previousDetach.apply(this,args); };
   arcadeFrame=function(time) { cancel(); frame(time); };
+  // A modal freezes the whole wrapper chain, including regeneration and discovery.
+  const engineStep=RequirementArcade.prototype.step;
+  const modalOpen=e=>!!e?.campaign2120?.modal;
+  RequirementArcade.prototype.step=function(){if(modalOpen(this))return;return engineStep.apply(this,arguments);};
+  const modalKeys=new Set(['KeyW','KeyA','KeyS','KeyD','ArrowUp','ArrowDown','ArrowLeft','ArrowRight','Space','ShiftLeft','ShiftRight','KeyQ','KeyE','KeyR','KeyX','KeyF','KeyG','KeyC','Tab']);
+  globalThis.addEventListener?.('keydown',event=>{if(!modalOpen(ARCADE.engine)||!modalKeys.has(event.code)||['INPUT','TEXTAREA','SELECT'].includes(event.target?.tagName)||event.target?.isContentEditable)return;
+    event.stopImmediatePropagation();if(event.code!=='Tab'&&!(event.code==='Space'&&['BUTTON','SUMMARY'].includes(event.target?.tagName)))event.preventDefault();clearArcadeInput();
+  },true);
+  if(typeof mobileAction==='function'){const previousMobileAction=mobileAction;mobileAction=function(action){
+    if(modalOpen(ARCADE.engine)&&['mobile-guide','mobile-autofire','mobile-flight-command'].includes(action)){clearArcadeInput();return true;}
+    return previousMobileAction.apply(this,arguments);
+  };}
+  const modalGameplay=new Set(['citadel-interact','citadel-target','citadel-guidance','citadel-primary','citadel-crystal','arcade-guidance','arcade-fire','arcade-missile','arcade-pulse','arcade-boost','arcade-flip','resonator-select','resonator-turn','analyst-skill']);
   const previousAction=arcadeAction;
   arcadeAction=function(action,...args) {
+    if(modalOpen(ARCADE.engine)&&modalGameplay.has(action)){clearArcadeInput();return true;}
     // Never log action values, answers, player names or DOM text.
     if (['arcade-pause','arcade-resume','citadel-launch','citadel-lesson-next','citadel-remark-next','citadel-escort-continue','finale-launch','finale-check-next'].includes(action)) record(action);
     if (stopped && ['arcade-resume','arcade-pause'].includes(action)) { showNotice(); return true; }
@@ -248,3 +262,4 @@
   globalThis.CITADEL_RUNTIME=Object.freeze({version:VERSION,diagnostic});
   bindCanvas(); restart();
 })();
+
