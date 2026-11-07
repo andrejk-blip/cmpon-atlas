@@ -38,3 +38,21 @@ To repeat the paired orbital review, prepare a complete checkout of baseline com
 The last change after final campaigns only moved the attack caption above the weapon drawing on a dark strip. All 15 contracts were repeated afterward. Six production modules, both entry points and their cache keys are included in the release; exact active hashes are in `version.json`.
 
 The report can be regenerated with `python3 scripts/report-audit2177.py` (Matplotlib, ReportLab and Liberation Serif fonts). Browser QA used actual Chrome compatibility rendering. The native recording preview reported 960×540, readyState 4 and no media error; its frame contained the painted medusa, three attack rays and HUD. No physical-device or WebGL performance claim is made.
+
+## Extended curve analysis — 2026-11-07
+
+The expanded report has eight pages. Pages 5–8 distinguish design hypotheses from observable game events and future human-player measurements. This is an analysis-only update; it does not alter gameplay or claim a new playthrough.
+
+| Files | Meaning |
+| --- | --- |
+| `target-pacing.png` | Proposed interest and combat-intensity rhythm across 15 chapters; illustrative values, not measured emotions or a universal optimum |
+| `challenge-learning.png` | Conceptual challenge/skill progression for one recurring mechanic across eight encounters, not a single skill score for the entire campaign |
+| `measured-pressure.png`, `pressure-metrics.csv` | Positive HP decreases per active minute and titan contacts in the existing final combat run |
+| `novelty-payoff-cadence.png` | Configured titan debuts, comic beats, manually classified main formats, and observed review counts |
+| `curves-analysis.json` | Source hashes, graph values, provenance, caveats, unavailable metrics, and primary references |
+
+Run `python3 scripts/audit2177-curves.py` to regenerate these figures and data, or `python3 scripts/report-audit2177.py` to regenerate the full report. The curve generator checks 15 chapters, 28 reviews, the five configured titan debuts, and the comic sequence.
+
+The highest positive HP decrease rate in this one scripted combat run is chapter 11, at approximately 96.9 HP/min, versus 67.4 in the finale. This prioritizes investigation; it does not establish human difficulty. HP deltas can hide same-step healing, and `hitCount` counts decreasing simulation steps rather than distinct projectile hits. Enemy-array peaks are not comparable across phases; the transition log also omits two same-status review entries, so neither is used to fabricate a threat curve or exact review-spacing curve. Retry cost, willingness to continue, subjective interest, and human learning remain unmeasured.
+
+Primary design references: [Valve / Michael Booth, The AI Systems of Left 4 Dead (2009), slides 78–80](https://cdn.fastly.steamstatic.com/apps/valve/2009/ai_systems_of_l4d_mike_booth.pdf), [Jenova Chen, Design Flow in Games](https://jenovachen.info/design-flow), and [Sweetser & Wyeth, GameFlow (2005)](https://doi.org/10.1145/1077246.1077253). Their principles motivate the questions; they do not prescribe the numerical values in the design sketches.

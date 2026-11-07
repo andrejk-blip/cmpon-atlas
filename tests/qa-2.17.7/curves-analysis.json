@@ -1,0 +1,389 @@
+{
+  "analysis_revision": 2,
+  "date": "2026-11-07",
+  "game_version": "2.17.7",
+  "source_commit": "e5ac6e48f9dcd979681621d31f3865f5fe711b80",
+  "source_sha256": {
+    "release-combat-pursuit.json": "b6b9eaa44f2f3c546363ea3dfb82034ed04725d341b8432553ba333b3c1af79b",
+    "contracts.json": "fdc9a4a368c5e53edf33f53a2e910caefbe8c893d4101e52b25df8902b2f4522"
+  },
+  "target_pacing": {
+    "kind": "design_hypothesis",
+    "scale": "Illustrative 0-10, not empirical or a universal optimum",
+    "chapter_axis": "Ordinal chapters, not equal elapsed time",
+    "interest": [
+      7,
+      6,
+      7,
+      8,
+      7,
+      7.5,
+      8.2,
+      9,
+      7.7,
+      8.4,
+      8,
+      8.4,
+      9,
+      9.2,
+      10
+    ],
+    "tension": [
+      5,
+      3,
+      5,
+      7,
+      4,
+      5,
+      8,
+      9,
+      3,
+      7,
+      5,
+      4,
+      2,
+      7,
+      10
+    ],
+    "key_beats": {
+      "4": "First climax",
+      "8": "Major midpoint climax",
+      "9": "Recovery",
+      "13": "Low combat pressure with a narrative reveal",
+      "15": "Final climax; an epilogue should release tension"
+    }
+  },
+  "learning_sketch": {
+    "kind": "conceptual_learning_sketch",
+    "unit": "one recurring mechanic, eight encounters; not campaign chapters",
+    "skill": [
+      2,
+      2.6,
+      3.3,
+      4,
+      4.6,
+      5.4,
+      6.1,
+      6.8
+    ],
+    "challenge": [
+      2.4,
+      3.1,
+      2.9,
+      4.5,
+      4.1,
+      6,
+      5.7,
+      7.3
+    ],
+    "calibrated": false
+  },
+  "measured_pressure": [
+    {
+      "chapter": 1,
+      "mission": "orbit1",
+      "active_seconds": 44.78,
+      "duration_seconds": 48.6,
+      "positive_hp_decrease": 0,
+      "hp_decrease_per_active_minute": 0.0,
+      "hp_decrease_steps": 0,
+      "rift_contacts": 0,
+      "reviews": 2
+    },
+    {
+      "chapter": 2,
+      "mission": "base1",
+      "active_seconds": 96.28,
+      "duration_seconds": 96.28,
+      "positive_hp_decrease": 25,
+      "hp_decrease_per_active_minute": 15.58,
+      "hp_decrease_steps": 3,
+      "rift_contacts": 0,
+      "reviews": 3
+    },
+    {
+      "chapter": 3,
+      "mission": "convoy1",
+      "active_seconds": 68.02,
+      "duration_seconds": 68.02,
+      "positive_hp_decrease": 67.68,
+      "hp_decrease_per_active_minute": 59.7,
+      "hp_decrease_steps": 3,
+      "rift_contacts": 3,
+      "reviews": 1
+    },
+    {
+      "chapter": 4,
+      "mission": "pursuit",
+      "active_seconds": 99.92,
+      "duration_seconds": 103.73,
+      "positive_hp_decrease": 45.12,
+      "hp_decrease_per_active_minute": 27.094,
+      "hp_decrease_steps": 2,
+      "rift_contacts": 2,
+      "reviews": 2
+    },
+    {
+      "chapter": 5,
+      "mission": "base2",
+      "active_seconds": 84.98,
+      "duration_seconds": 84.98,
+      "positive_hp_decrease": 55.87,
+      "hp_decrease_per_active_minute": 39.447,
+      "hp_decrease_steps": 5,
+      "rift_contacts": 0,
+      "reviews": 3
+    },
+    {
+      "chapter": 6,
+      "mission": "route",
+      "active_seconds": 60.02,
+      "duration_seconds": 60.02,
+      "positive_hp_decrease": 21.12,
+      "hp_decrease_per_active_minute": 21.113,
+      "hp_decrease_steps": 1,
+      "rift_contacts": 1,
+      "reviews": 1
+    },
+    {
+      "chapter": 7,
+      "mission": "swarm",
+      "active_seconds": 104.92,
+      "duration_seconds": 108.73,
+      "positive_hp_decrease": 42.24,
+      "hp_decrease_per_active_minute": 24.156,
+      "hp_decrease_steps": 2,
+      "rift_contacts": 2,
+      "reviews": 2
+    },
+    {
+      "chapter": 8,
+      "mission": "parallax",
+      "active_seconds": 61.27,
+      "duration_seconds": 61.27,
+      "positive_hp_decrease": 7.92,
+      "hp_decrease_per_active_minute": 7.756,
+      "hp_decrease_steps": 1,
+      "rift_contacts": 0,
+      "reviews": 1
+    },
+    {
+      "chapter": 9,
+      "mission": "base3",
+      "active_seconds": 112.15,
+      "duration_seconds": 112.15,
+      "positive_hp_decrease": 39.46,
+      "hp_decrease_per_active_minute": 21.111,
+      "hp_decrease_steps": 6,
+      "rift_contacts": 0,
+      "reviews": 3
+    },
+    {
+      "chapter": 10,
+      "mission": "convoy3",
+      "active_seconds": 108.35,
+      "duration_seconds": 108.35,
+      "positive_hp_decrease": 50.8,
+      "hp_decrease_per_active_minute": 28.131,
+      "hp_decrease_steps": 4,
+      "rift_contacts": 3,
+      "reviews": 1
+    },
+    {
+      "chapter": 11,
+      "mission": "orbit4",
+      "active_seconds": 73.08,
+      "duration_seconds": 76.9,
+      "positive_hp_decrease": 118.08,
+      "hp_decrease_per_active_minute": 96.946,
+      "hp_decrease_steps": 13,
+      "rift_contacts": 1,
+      "reviews": 2
+    },
+    {
+      "chapter": 12,
+      "mission": "base4",
+      "active_seconds": 105.85,
+      "duration_seconds": 105.85,
+      "positive_hp_decrease": 67.3,
+      "hp_decrease_per_active_minute": 38.148,
+      "hp_decrease_steps": 6,
+      "rift_contacts": 0,
+      "reviews": 3
+    },
+    {
+      "chapter": 13,
+      "mission": "contradictions",
+      "active_seconds": 13.37,
+      "duration_seconds": 13.37,
+      "positive_hp_decrease": 0,
+      "hp_decrease_per_active_minute": 0.0,
+      "hp_decrease_steps": 0,
+      "rift_contacts": 0,
+      "reviews": 1
+    },
+    {
+      "chapter": 14,
+      "mission": "lair",
+      "active_seconds": 108.72,
+      "duration_seconds": 108.72,
+      "positive_hp_decrease": 57.15,
+      "hp_decrease_per_active_minute": 31.54,
+      "hp_decrease_steps": 5,
+      "rift_contacts": 0,
+      "reviews": 3
+    },
+    {
+      "chapter": 15,
+      "mission": "mrg",
+      "active_seconds": 51.82,
+      "duration_seconds": 59.83,
+      "positive_hp_decrease": 58.24,
+      "hp_decrease_per_active_minute": 67.433,
+      "hp_decrease_steps": 2,
+      "rift_contacts": 0,
+      "reviews": 0
+    }
+  ],
+  "cadence": {
+    "debut_source": "CAST in assets/citadel-living-v2.17.6.js",
+    "first_titan_types": [
+      {
+        "chapter": 2,
+        "kind": "hammer"
+      },
+      {
+        "chapter": 3,
+        "kind": "tentacle"
+      },
+      {
+        "chapter": 4,
+        "kind": "maw"
+      },
+      {
+        "chapter": 5,
+        "kind": "mantis"
+      },
+      {
+        "chapter": 6,
+        "kind": "medusa"
+      }
+    ],
+    "comic_source": "COMICS.after in assets/citadel-collection-v2.17.0.js",
+    "comics_after_chapter": [
+      {
+        "chapter": 2,
+        "id": "first_archive"
+      },
+      {
+        "chapter": 4,
+        "id": "rift"
+      },
+      {
+        "chapter": 7,
+        "id": "beacons"
+      },
+      {
+        "chapter": 8,
+        "id": "breakthrough"
+      },
+      {
+        "chapter": 13,
+        "id": "accord"
+      },
+      {
+        "chapter": 15,
+        "id": "final"
+      }
+    ],
+    "major_formats": [
+      {
+        "chapter": 1,
+        "label": "Полёт"
+      },
+      {
+        "chapter": 2,
+        "label": "Палуба"
+      },
+      {
+        "chapter": 3,
+        "label": "Конвой"
+      },
+      {
+        "chapter": 4,
+        "label": "Погоня"
+      },
+      {
+        "chapter": 7,
+        "label": "Рой"
+      },
+      {
+        "chapter": 8,
+        "label": "Параллакс"
+      },
+      {
+        "chapter": 13,
+        "label": "Резонатор"
+      },
+      {
+        "chapter": 15,
+        "label": "МРГ"
+      }
+    ],
+    "major_formats_kind": "Manual classification of distinct main mechanics, not an exhaustive count of novelty",
+    "reviews_by_chapter": [
+      2,
+      3,
+      1,
+      2,
+      3,
+      1,
+      2,
+      1,
+      3,
+      1,
+      2,
+      3,
+      1,
+      3,
+      0
+    ],
+    "prologue_comic": true,
+    "all_chapters_update_document": true
+  },
+  "not_measured": [
+    "human enjoyment",
+    "human engagement",
+    "player skill distribution",
+    "retry cost",
+    "abandonment or retention",
+    "reading time",
+    "time between all 28 reviews"
+  ],
+  "measurement_cautions": [
+    "Positive HP decreases are a proxy; healing and reductions within the same step can offset each other.",
+    "Peak enemy count uses incompatible or stale phase-specific arrays; it is not used as a common threat curve.",
+    "The transition log captures 26 question-screen entries for 28 answers; exact review spacing cannot be reconstructed.",
+    "Zero damage on the fast resonator solve does not rule out the independently reproduced old low-health bug."
+  ],
+  "references": [
+    {
+      "title": "The AI Systems of Left 4 Dead",
+      "author": "Michael Booth / Valve",
+      "year": 2009,
+      "url": "https://cdn.fastly.steamstatic.com/apps/valve/2009/ai_systems_of_l4d_mike_booth.pdf",
+      "pages": "78-80"
+    },
+    {
+      "title": "Design Flow in Games",
+      "author": "Jenova Chen",
+      "url": "https://jenovachen.info/design-flow"
+    },
+    {
+      "title": "GameFlow: a model for evaluating player enjoyment in games",
+      "author": "Penelope Sweetser, Peta Wyeth",
+      "year": 2005,
+      "url": "https://doi.org/10.1145/1077246.1077253"
+    }
+  ]
+}
