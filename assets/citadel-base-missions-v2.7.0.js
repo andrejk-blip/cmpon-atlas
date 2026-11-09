@@ -192,6 +192,7 @@
     const n=amount*(e.assist?.52:1)*Math.pow(.8,e.upgrades.armor||0)*kit*(globalThis.CITADEL_SKILLS?.protection(e)||1);
     b.hp=Math.max(0,b.hp-n);b.invulnerable=.68;e.flash=.2;e.emit('damage');
     log(b,{kind:'hit',source:kind,damage:+n.toFixed(3)});
+    if(['fire','grid'].includes(kind)){b.hazardNotice2178={kind,until:b.time+2};if((s.hazardHint2178||0)<=b.time){s.hazardHint2178=b.time+5;e.say(kind==='fire'?'Огонь обжигает! Обойди оранжевую границу или включи охлаждение.':'Силовое поле бьёт током! Обойди фиолетовую границу или отключи питание.','alert',true);}}
     if(b.hp<=0){e.status='lost';e.lossReason='Щит исчерпан. Используйте внешние проходы, пульты и укрытия; после рывка или лазера машины делают паузу.';e.emit('state','lost');}return true;
   }
   function move(e,x,goal,dt,speed,radius=.8) {
@@ -341,3 +342,4 @@
       tier:s?.tier??null,theme:s?.theme??null,stats:s?{...s.stats}:null,hazards:clone(s?.hazards||[]),systems:clone(s?.systems||[]),transport:s?.transport?clone(s.transport):null,
       enemies:(b?.enemies||[]).filter(x=>x.missions270).map(x=>({id:x.id,kind:x.missions270.kind,room:x.duty.room,hp:x.hp,pos:x.pos.slice(),...clone(x.missions270)})),events:clone(s?.events||[])};}});
 })();
+

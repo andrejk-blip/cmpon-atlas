@@ -107,7 +107,25 @@
   if(!this.finale&&!this.board){const id=['orbit1','pursuit','swarm','orbit4'][this.stage];if(this.stage===2&&!s.parallaxDone)return summary(this,id,'boss');if(!s.completed.includes(id))return summary(this,id,'boarding');}
   const r=old.beginBoarding.apply(this,args);checkpoint(this);return r;
  };
- p.finishBoarding=function(...args){if(active(this)&&state(this).station)return stationInteract(this);const id=active(this)?mission(this):null,r=old.finishBoarding.apply(this,args);if(r&&active(this)&&id?.startsWith('base'))complete(this,id);return r;};
+ p.finishBoarding=function(...args){
+  if(!active(this))return old.finishBoarding.apply(this,args);
+  if(this.status!=='boarding'||state(this).modal||!this.board)return false;
+  if(state(this).station)return stationInteract(this);
+  if(this.finale)return old.finishBoarding.apply(this,args);
+  const b=this.board;
+  // The campaign's three terminal answers are authoritative. The old twelve-
+  // mission gate also required exactly two flight decisions from this stage;
+  // alternate routes and restored campaigns do not always have that history.
+  // Never invent answers, replay a reward, or advance an unfinished deck.
+  if(this.status!=='boarding'||state(this).modal||!b||b.completed.length!==3||new Set(b.completed).size!==3||b.enemies.some(x=>!x.dead&&x.hp>0))return false;
+  const id=mission(this);if(!id?.startsWith('base'))return false;
+  complete(this,id);
+  this.score+=Math.round(this.stationHp*8+this.nodes.reduce((sum,n)=>sum+n.integrity,0)*3);
+  b.hostile=[];b.bullets=[];
+  if(this.stage===3)this.beginFinale();
+  else{this.status='stageclear';this.phase='debrief';this.upgradeChoice='';this.say('Палуба пройдена. Три разбора сохранены. Выбери улучшение перед следующим вылетом.','success',true);this.emit('state',this.status);}
+  save(this,true);return true;
+ };
  p.beginFinale=function(...args){if(active(this)&&!state(this).earlyBoss)return startStation(this);return old.beginFinale.apply(this,args);};
  p.beginFinalLanding=function(...args){if(active(this)&&state(this).earlyBoss)return openCard(this,'parallax','afterboss');return old.beginFinalLanding.apply(this,args);};
  p.beginMRG=function(...args){if(active(this))complete(this,'lair');const r=old.beginMRG.apply(this,args);if(active(this))checkpoint(this);return r;};
@@ -117,7 +135,14 @@
  p.finishEscort=function(...args){const r=old.finishEscort.apply(this,args);if(active(this)&&this.status==='escortclear'){const id=this.stage===0?'convoy1':this.stage===1?'route':'convoy3';openCard(this,id,'escortclear');}return r;};
  p.completeEscort=function(...args){if(active(this)&&this.stage===1&&state(this).route==='pursuit'&&this.status==='escortclear')return this.beginStage(2);return old.completeEscort.apply(this,args);};
  p.spawnBoardWave=function(...args){if(active(this)&&state(this).station)return;return old.spawnBoardWave.apply(this,args);};
- p.boardInteract=function(...args){return active(this)&&state(this).station?stationInteract(this):old.boardInteract.apply(this,args);};
+ p.boardInteract=function(...args){
+  if(active(this)&&state(this).station)return stationInteract(this);
+  if(active(this)&&!this.finale&&this.board?.completed.length===3){
+   if(this.status!=='boarding'||state(this).modal||V3.len(V3.sub(this.board.pos,this.board.exit))>=3.2)return false;
+   return this.finishBoarding();
+  }
+  return old.boardInteract.apply(this,args);
+ };
  p.answer=function(index){const watch=active(this)&&this.status==='remark'&&!this.board?.answered&&this.stage===0&&this.board?.question===0&&!state(this).echo;const q=watch?citadelRemarkCase(this,0):null,r=old.answer.apply(this,arguments);if(watch&&this.remarkFeedback)state(this).echo={correct:index===q.correct,delivered:false,answer:index,question:q.q,resolution:q.choices[q.correct],chosen:q.choices[index]};return r;};
  function retry(){const e=ARCADE.engine;if(!active(e)||!state(e).retry)return false;const snapshot=state(e).retry,failures=clone(state(e).failures2140||{}),shown=clone(state(e).shownBeasts2140||{}),encounters=clone(state(e).encounters||{}),documentSeen=state(e).documentSeen2140||0;const next=restore(snapshot);state(next).retry=clone(snapshot);state(next).failures2140=failures;state(next).shownBeasts2140=shown;state(next).encounters={...state(next).encounters,...encounters};state(next).documentSeen2140=Math.max(state(next).documentSeen2140||0,documentSeen);state(next).lossTracked2140=false;save(next,true);return true;}
  function skipChapter(){

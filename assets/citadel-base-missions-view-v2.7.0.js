@@ -32,7 +32,7 @@
  }
  {const v=[[0,0,0]],f=[];for(let i=0;i<32;i++){const a=i/32*TAU;v.push([Math.cos(a),0,Math.sin(a)]);}for(let i=1;i<=32;i++)f.push([0,i%32+1,i]);mesh('b270_disc',v,f);}
  mesh('b270_floor',[[-1,0,-1],[1,0,-1],[1,0,1],[-1,0,1]],[[3,2,1,0]]);
- {const v=[],f=[];for(const [y,r,drift]of [[0,1,0],[.65,.78,-.20],[1.15,.38,.10]])for(let i=0;i<5;i++){const a=i/5*TAU;v.push([Math.cos(a)*r+drift,y,Math.sin(a)*r]);}v.push([-.28,1.9,.06]);for(let ring=0;ring<2;ring++)for(let i=0;i<5;i++)f.push([ring*5+i,ring*5+(i+1)%5,(ring+1)*5+(i+1)%5,(ring+1)*5+i]);for(let i=0;i<5;i++)f.push([10+i,10+(i+1)%5,15]);mesh('b270_flame',v,f);}
+ {const v=[],f=[];for(const [y,r,drift]of [[0,1,0],[.65,.78,-.20],[1.15,.38,.10]])for(let i=0;i<5;i++){const a=i/5*TAU;v.push([Math.cos(a)*r+drift,y,Math.sin(a)*r]);}v.push([-.28,1.9,.06]);for(let ring=0;ring<2;ring++)for(let i=0;i<5;i++)f.push([ring*5+i,ring*5+(i+1)%5,(ring+1)*5+(i+1)%5,(ring+1)*5+i]);for(let i=0;i<5;i++)f.push([10+i,10+(i+1)%5,15]);mesh('b270_flame',v,f.map(face=>face.reverse()));}
  {const v=[[0,0,0]],f=[];for(let i=0;i<24;i++){const a=i/24*TAU,r=.86+(i%3)*.07;v.push([Math.cos(a)*r,0,Math.sin(a)*r]);}for(let i=1;i<=24;i++)f.push([0,i%24+1,i]);mesh('b270_scorch',v,f);}
  const part=(a,name,p,s,col,feature,em=0,b=SPACE_IDENTITY,alpha=1)=>{const it=citadelItem(name,p,s,col,em,b,alpha);it.base270=feature;it.baseFeature='base270-'+feature;a.push(it);return it;};
  function beam(a,p,q,r,color,feature,em=0,alpha=1,detailed=false){return part(a,detailed?'b270_tube_detail':'b270_tube',V3.lerp(p,q,.5),[r,r,V3.len(V3.sub(q,p))*.5],color,feature,em,spaceBasisDir(V3.sub(q,p)),alpha);}
@@ -211,10 +211,25 @@
   for(const p of b.terminals){const q=V3.add(p,[0,0,-1.8]);add('b270_plate',V3.add(q,[0,.70,0]),[1.3,.70,.9],C.steel,'terminal');add('b270_plate',V3.add(q,[0,1.7,-.4]),[1.15,.70,.12],C.dark,'terminal-frame');add('box',V3.add(q,[0,1.43,.55]),[1,.035,.28],C.black,'terminal-keyboard');}
   const result=[];let index=0;for(const chunk of chunks.values()){const merged=stationMerge(chunk.items,'base270_arch_'+key+'_'+index++).map(it=>({...it,baseStatic:true,baseChunk:chunk.center,base270:'architecture',baseFeature:'base270-architecture'}));result.push({center:chunk.center,items:merged});}architecture.set(key,result);return result;
  }
- function fire(a,h,time,high,fx){const p=h.pos,r=h.radius||1.5;part(a,'b270_scorch',V3.add(p,[0,.022,0]),[r,1,r],'#20262b','fire-scorch');
-  if(!h.active)return;const n=high?9:5,clock=fx===false?0:h.clock??time;
-  for(let i=0;i<n;i++){const t=i*2.399963,rad=r*(.15+(i%3)*.24),at=V3.add(p,[Math.cos(t)*rad,.04,Math.sin(t)*rad]),height=(.65+r*.30)*(1+.14*Math.sin(clock*8+i));part(a,'b270_flame',at,[r*.22,height,r*.22],i%2?'#ef6d2d':'#ffac44','active-fire',1,stationYaw(t),.87);part(a,'b270_flame',at,[r*.11,height*.62,r*.11],'#ffe8a0','fire-core',1,stationYaw(t));beam(a,V3.add(p,[Math.cos(t)*rad,.035,Math.sin(t)*rad]),V3.add(p,[Math.cos(t+.2)*r*.83,.035,Math.sin(t+.2)*r*.83]),.035,C.orange,'floor-heat',.8);}
-  if(fx)for(let i=0;i<(high?10:4);i++){const age=(clock*.7+i*.21)%1,t=i*2.399963;part(a,'box',V3.add(p,[Math.cos(t)*r*.5,age*2.5+.3,Math.sin(t)*r*.5]),[.025,.045,.025],C.orange,'ember',1,SPACE_IDENTITY,1-age);}
+ function fire(a,h,time,high,fx){const p=h.pos,r=h.radius||1.5;part(a,'b270_scorch',V3.add(p,[0,.025,0]),[r,1,r],'#20262b','fire-scorch');
+  if(!h.active)return;const n=high?9:7,clock=fx===false?0:h.clock??time;
+  part(a,'b270_disc',V3.add(p,[0,.04,0]),[r+.42,1,r+.42],'#e64f20','fire-danger',.8,SPACE_IDENTITY,.42);
+  for(let i=0;i<20;i++){const t=i/20*TAU,next=(i+.65)/20*TAU,reach=r+.42;beam(a,V3.add(p,[Math.cos(t)*reach,.07,Math.sin(t)*reach]),V3.add(p,[Math.cos(next)*reach,.07,Math.sin(next)*reach]),.075,'#ffd887','fire-boundary',1);}
+  for(let i=0;i<n;i++){const t=i*2.399963,rad=r*(.12+(i%3)*.27),at=V3.add(p,[Math.cos(t)*rad,.08,Math.sin(t)*rad]),height=(1+r*.38)*(1+.2*Math.sin(clock*7+i));part(a,'b270_flame',at,[r*.30,height,r*.30],i%2?'#f45b21':'#ff9e27','active-fire',1,stationYaw(t),.96);part(a,'b270_flame',V3.add(at,[0,.05,0]),[r*.16,height*.65,r*.16],'#fff3b0','fire-core',1,stationYaw(t));}
+  for(let i=0;i<3;i++){const age=(clock*.22+i/3)%1;part(a,'octa',V3.add(p,[Math.sin(clock+i)*.3,2.7+age*2,Math.cos(i)*.35]),[.6+age*.6,.45+age*.4,.6+age*.6],'#47505a','fire-smoke',0,SPACE_IDENTITY,.28*(1-age));}
+  if(fx)for(let i=0;i<(high?10:5);i++){const age=(clock*.7+i*.21)%1,t=i*2.399963;part(a,'octa',V3.add(p,[Math.cos(t)*r*.5,age*3+.3,Math.sin(t)*r*.5]),[.055,.12,.055],'#ffdf78','ember',1,SPACE_IDENTITY,1-age);}
+ }
+ function grid(a,h,time,high,fx){
+  const col=h.active?'#dd8eff':'#536574';
+  for(const end of [h.from,h.to]){part(a,'b270_plate',V3.add(end,[0,.75,0]),[.30,.75,.30],C.dark,'grid-emitter');part(a,'octa',V3.add(end,[0,1.55,0]),[.23,.20,.23],col,'grid-status',h.active?1:0);}
+  if(!h.active)return;
+  // Original beam lay at y=0 and was half buried in the deck. Draw an upright
+  // barrier; its floor footprint is the same segment used by hazard contact.
+  for(const y of [.28,.9,1.55])laser(a,V3.add(h.from,[0,y,0]),V3.add(h.to,[0,y,0]),y===.9?.16:.07,'active-grid',col,high);
+  const delta=V3.sub(h.to,h.from),normal=V3.norm([-delta[2],0,delta[0]]),reach=(h.width||.6)+.6;
+  for(const side of [-1,1])beam(a,V3.add(h.from,V3.add(V3.scale(normal,side*reach),[0,.06,0])),V3.add(h.to,V3.add(V3.scale(normal,side*reach),[0,.06,0])),.055,col,'grid-boundary',1);
+  for(const end of [h.from,h.to])for(let i=0;i<16;i++){const a0=i/16*TAU,a1=(i+1)/16*TAU;beam(a,V3.add(end,[Math.cos(a0)*reach,.06,Math.sin(a0)*reach]),V3.add(end,[Math.cos(a1)*reach,.06,Math.sin(a1)*reach]),.04,col,'grid-boundary',1);}
+  for(let i=1;i<7;i++){const p=V3.lerp(h.from,h.to,i/7),t=fx===false?0:time;beam(a,V3.add(p,[0,.25,0]),V3.add(p,[Math.sin(t*8+i)*.22,1.5,Math.cos(t*9+i)*.12]),.028,'#f8e4ff','grid-spark',1);}
  }
  function systemModel(a,s,b,time,high){const state=b.missions270,moving=state.transport?.id===s.id?state.transport:null,type=s.type,used=s.state==='used';
   if(type==='lift'){
@@ -252,7 +267,7 @@
    for(const shot of x.missions270.beams||[])if(shot.active)laser(a,shot.origin,shot.to,shot.width||.45,'mech-laser',C.cyan,high);
    if(e.assist&&x.missions270.phase==='charge'){const heading=x.missions270.heading||[Math.sin(x.yaw),0,Math.cos(x.yaw)];beam(a,V3.add(x.pos,[0,.06,0]),V3.add(x.pos,V3.add(V3.scale(heading,6),[0,.06,0])),.025,C.gold,'training-aim',.5,.7);}
   }
-  for(const h of s.hazards||[]){if(h.type==='fire'&&distance(h.pos,center)<36)fire(a,h,time,high,fx);if(h.type==='laser-grid'&&h.active)laser(a,h.from,h.to,h.width||.30,'active-grid',C.purple,high);}
+  for(const h of s.hazards||[]){if(h.type==='fire'&&distance(h.pos,center)<36)fire(a,h,time,high,fx);if(h.type==='laser-grid'&&distance(V3.lerp(h.from,h.to,.5),center)<36)grid(a,h,time,high,fx);}
   for(const system of s.systems||[])if(distance(system.pos,center)<38||s.transport?.id===system.id)systemModel(a,system,b,time,high);
   return a;
  };
@@ -330,6 +345,13 @@
  function labels(c,e,cam,w,h){if(!advanced(e)||e.status!=='boarding')return;const b=e.board,cssW=ARCADE.canvas?.getBoundingClientRect?.().width||w,scale=w/cssW,H=h/scale;c.save();c.scale(scale,scale);c.textAlign='center';c.textBaseline='middle';c.font='600 '+(cssW<600?9:11)+'px sans-serif';c.lineWidth=3;c.strokeStyle='#11222e';
   for(const s of b.missions270.systems||[]){if(distance(s.dockPos||s.pos,b.pos)>17)continue;const moving=b.missions270.transport?.id===s.id?b.missions270.transport:null,p=spaceProject(V3.add(moving?.pos||s.dockPos||s.pos,[0,s.type==='lift'?2.45:1.85,0]),cam,cssW,H);if(p.z<=0||p.x<55||p.x>cssW-55||p.y<105||p.y>H-90)continue;
    const title=s.type==='lift'?(moving?'ЛИФТ · '+Math.round(moving.progress*100)+'%':(s.unlockAfter??0)>b.completed.length?'ЛИФТ · ЗАБЛОКИРОВАН':'ЛИФТ · ГОТОВ'):s.state==='used'?'СИСТЕМА ОТКЛЮЧЕНА':s.type==='coolant'?'ОХЛАЖДЕНИЕ':'ПИТАНИЕ';c.fillStyle=s.state==='used'?'#9aaeb9':s.type==='coolant'?C.cyan:C.ivory;c.strokeText(title,p.x,p.y);c.fillText(title,p.x,p.y);
+  }
+  for(const hazard of b.missions270.hazards||[]){
+   if(!hazard.active||!['fire','laser-grid'].includes(hazard.type)||hazard.room>b.completed.length)continue;
+   const point=hazard.pos||V3.lerp(hazard.from,hazard.to,.5);if(distance(point,b.pos)>22)continue;
+   const p=spaceProject(V3.add(point,[0,hazard.type==='fire'?4.5:2.2,0]),cam,cssW,H);if(p.z<=0||p.x<58||p.x>cssW-58||p.y<140||p.y>H-60)continue;
+   const title=hazard.type==='fire'?'ОГОНЬ · УРОН':'СИЛОВОЕ ПОЛЕ';c.font='900 11px sans-serif';const tw=c.measureText(title).width;
+   c.fillStyle='#10151feb';c.fillRect(p.x-tw/2-7,p.y-10,tw+14,20);c.strokeStyle=hazard.type==='fire'?'#ffb258':'#dfadff';c.lineWidth=1.5;c.strokeRect(p.x-tw/2-7,p.y-10,tw+14,20);c.fillStyle=hazard.type==='fire'?'#ffd296':'#ead0ff';c.fillText(title,p.x,p.y);
   }c.restore();}
  for(const [name,fn]of [['hud',old.hud],['mobile',old.mobile],['final',old.final]]){const wrapper=function(c,e,cam,w,h){const result=fn.apply(this,arguments);labels(c,e,cam,w,h);return result;};if(name==='hud')drawBoardHUD=wrapper;else if(name==='mobile')drawMobileGameHUD=wrapper;else drawFinaleHUD=wrapper;}
  globalThis.CITADEL_BASE_MISSIONS_VIEW=Object.freeze({version:VERSION,active,detail,stats:()=>({templates:templates.size,architectureLayouts:architecture.size}),rasterStats:()=>({...lastRaster270}),
