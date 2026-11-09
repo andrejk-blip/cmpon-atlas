@@ -1,0 +1,152 @@
+{
+  "version": "2.17.7",
+  "method": "Targeted actual-engine contracts; explicitly synthetic boundary fixtures, not human trials",
+  "pass": true,
+  "rows": [
+    {
+      "name": "T1 document freezes complete simulation, regeneration and resources",
+      "pass": true,
+      "seconds": 10,
+      "hp": 40
+    },
+    {
+      "name": "T1 terminal cannot open behind bestiary; close still works",
+      "pass": true
+    },
+    {
+      "name": "T1 movement key is stopped before it changes the guide behind a modal",
+      "pass": true
+    },
+    {
+      "name": "T2 turn-away camera still draws a live attack with body behind camera",
+      "pass": true,
+      "bodyBehind": true,
+      "visibleAttack": true
+    },
+    {
+      "name": "T3 recording composites scene, its living layer, then HUD",
+      "pass": true,
+      "layers": [
+        "scene",
+        "living",
+        "hud"
+      ]
+    },
+    {
+      "name": "G1 peaceful resonator retains low health for 60 seconds",
+      "pass": true,
+      "seconds": 60,
+      "hp": 10
+    },
+    {
+      "name": "G1 legacy crashing save recovers health and keeps every ring/phase",
+      "pass": true,
+      "restoredHp": 40,
+      "ringsPreserved": true
+    },
+    {
+      "name": "G2 five geometries and timings; each can hit and has reachable safe lanes",
+      "pass": true,
+      "patterns": 5,
+      "checks": [
+        {
+          "kind": "hammer",
+          "ground": false,
+          "centreHit": true,
+          "safeHit": false
+        },
+        {
+          "kind": "hammer",
+          "ground": true,
+          "centreHit": true,
+          "safeHit": false
+        },
+        {
+          "kind": "tentacle",
+          "ground": false,
+          "centreHit": true,
+          "safeHit": false
+        },
+        {
+          "kind": "tentacle",
+          "ground": true,
+          "centreHit": true,
+          "safeHit": false
+        },
+        {
+          "kind": "maw",
+          "ground": false,
+          "centreHit": true,
+          "safeHit": false
+        },
+        {
+          "kind": "maw",
+          "ground": true,
+          "centreHit": true,
+          "safeHit": false
+        },
+        {
+          "kind": "mantis",
+          "ground": false,
+          "centreHit": true,
+          "safeHit": false
+        },
+        {
+          "kind": "mantis",
+          "ground": true,
+          "centreHit": true,
+          "safeHit": false
+        },
+        {
+          "kind": "medusa",
+          "ground": false,
+          "centreHit": true,
+          "safeHit": false
+        },
+        {
+          "kind": "medusa",
+          "ground": true,
+          "centreHit": true,
+          "safeHit": false
+        }
+      ]
+    },
+    {
+      "name": "G2 new encounters pause, save and reload exact geometry",
+      "pass": true,
+      "types": 5
+    },
+    {
+      "name": "G3 canonical answers retain meaning; displayed correct positions vary",
+      "pass": true,
+      "displayedCorrectPositions": [
+        1,
+        3,
+        3,
+        1
+      ]
+    },
+    {
+      "name": "G3 number key maps to same canonical answer as button",
+      "pass": true
+    },
+    {
+      "name": "G2 warning contains the full weapon sweep, including the hammer head",
+      "pass": true
+    },
+    {
+      "name": "T1 mobile guide and button Space respect modal navigation",
+      "pass": true
+    },
+    {
+      "name": "G2 orbital defence has one swing; other chapters keep three",
+      "pass": true,
+      "orbit4Swings": 1,
+      "otherSwings": 3
+    },
+    {
+      "name": "G2 old in-flight save keeps its original whip until the encounter ends",
+      "pass": true
+    }
+  ]
+}

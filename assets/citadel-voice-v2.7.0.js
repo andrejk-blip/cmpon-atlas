@@ -514,7 +514,7 @@
       if(current!==job||job.prefixDone)return;job.prefixDone=true;clearTimeout(timeout);job.timers.delete(timeout);startSpeech(job);
     });}catch{job.prefixDone=true;clearTimeout(timeout);job.timers.delete(timeout);startSpeech(job);}
   }
-  function request(kind,text,{preview=false,speaker='captain',radioId=null,caption=null,contextKey=null}={}) {
+  function request(kind,text,{preview=false,speaker='captain',radioId=null,caption=null,contextKey=null,allowSystem=false}={}) {
     const clean=sanitizeText(text);
     const reason=disposed?'disposed':!supported()?'unsupported':!enabled?'disabled':!soundOn()?'muted':!visible()?'hidden':!inView()?'outside-game':!clean?'empty':null;
     if(reason)return Promise.resolve({ok:false,kind,reason});
@@ -523,8 +523,9 @@
     if(current&&kind==='commander'&&!preview)return Promise.resolve({ok:false,kind,reason:'busy'});
     if(current)stop(kind==='lesson'?'lesson-priority':'replaced');
     else if(synth()?.speaking||synth()?.pending)return Promise.resolve({ok:false,kind,reason:'busy'});
-    const clips=recordingSupported()?playlist(kind,clean):null;
-    if(!clips&&radioStyle==='original')return Promise.resolve({ok:false,kind,reason:'original-recording-unavailable',source:'text'});
+    const scripted=allowSystem&&speaker==='enemy'?prepared().byText.get(clean):null;
+    const clips=recordingSupported()?(scripted?[scripted]:playlist(kind,clean)):null;
+    if(!clips&&radioStyle==='original'&&!allowSystem)return Promise.resolve({ok:false,kind,reason:'original-recording-unavailable',source:'text'});
     if(!clips&&!speechSupported())return Promise.resolve({ok:false,kind,reason:'recording-unavailable'});
     lastError='';lastReason='';
     return new Promise(resolve=>{
@@ -722,6 +723,18 @@
   globalThis.CITADEL_VOICE=Object.freeze({
     version:VERSION,get enabled(){return enabled;},get radioStyle(){return radioStyle;},setRadioStyle,setEnabled,speakLesson,previewLesson,previewCommander,stop,status,sanitizeText,voices,
     tacticalWarning,
+    async enemyLine(text,{label='ВРАЖЕСКИЙ КАНАЛ',anchor=null}={}){
+      const e=engine();if(!e||!combat(e))return {ok:false,reason:'inactive'};
+      const alternatives=['Хе-хе! Не отдам тебе требование. У меня ещё не согласовано, хочу ли я его отдавать!','У меня нет противоречий. У меня несколько одинаково правильных позиций!','Вы всё поняли верно. Но с неправильной точки зрения.','Наша встреча состоялась. В другой версии протокола!','Решение окончательное. До следующего окончательного решения!'];
+      const index=text.includes('Мои маяки')?1:text.includes('Хватит')?2:text.includes('последний маяк')?3:text.includes('Только не в глаз')?4:0;
+      const fallback=label==='ОСАДНЫЙ МЕХ'?'Состояние объекта удовлетворительное. Кто это написал? Дайте сюда протокол!':alternatives[index];
+      let spoken=ruVoices().length?sanitizeText(text):fallback;
+      const post=message=>globalThis.CITADEL_COMIC?.post?.(e,{kind:'enemy',label,text:message,anchor});
+      post(spoken);
+      const options={speaker:'enemy',allowSystem:true,contextKey:radioContext(e)},result=await request('commander',spoken,options);
+      if(spoken!==fallback&&['synthesis-failed','recording-unavailable','unsupported','language-unavailable','no-russian-voice'].includes(result?.reason)&&engine()===e&&combat(e)){post(fallback);return request('commander',fallback,options);}
+      return result;
+    },
     get jokes(){return Object.freeze(radioLines().map(x=>x.caption||x.text));},
     dispose(){if(disposed)return;disposed=true;stop('disposed');buffers.clear();cachedBytes=0;
       if(typeof document!=='undefined'){document.removeEventListener?.('visibilitychange',hidden);document.removeEventListener?.('keydown',keyboard,true);}
@@ -737,3 +750,4 @@
   }
   syncControls();
 })();
+

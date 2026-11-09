@@ -354,7 +354,7 @@
   // Only board humanoids can speak. Spaceships, drones, turrets and robodogs
   // remain mechanical even if an old save happens to give them a human name.
   function isHuman(enemy, board) {
-    return !!board&&!enemy?.swarmDrone&&!/robo|robot|dog|drone|droid|turret|machine|робо|дрон|турел/i.test(
+    return !!board&&!enemy?.swarmDrone&&!['mech','dog'].includes(enemy?.missions270?.kind)&&!/mech|robo|robot|dog|drone|droid|turret|machine|мех|робо|дрон|турел/i.test(
       [enemy?.archetype,enemy?.role,enemy?.type,enemy?.kind].join(' '));
   }
   function changed(entry, current) {
@@ -538,7 +538,7 @@
     return effect(kind,info);
   }
   globalThis.CITADEL_SFX=Object.freeze({
-    version:VERSION,play,preview:play,effect,preload,get ready(){return warmPromise;},
+    version:VERSION,isHuman,play,preview:play,effect,preload,get ready(){return warmPromise;},
     stop:()=>stopEffects(),stopRadio:()=>stopEffects(true),
     catalog:()=>Object.entries(definitions).map(([kind,item])=>({kind,title:item.title,group:item.group,...(item.location?{location:item.location}:{})})),
     locations:()=>locations.map(item=>({...item})),

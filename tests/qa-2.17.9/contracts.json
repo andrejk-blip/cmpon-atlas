@@ -1,0 +1,71 @@
+{
+  "version": "2.17.9",
+  "method": "Synthetic boundary fixtures in the actual engine, not human playtesting.",
+  "pass": true,
+  "rows": [
+    {
+      "name": "ordinary flight lethal projectile destroys the actual asteroid",
+      "pass": true
+    },
+    {
+      "name": "rock absorbs nonlethal damage without disappearing; hostiles do not mine it",
+      "pass": true
+    },
+    {
+      "name": "near enemy remains eligible before a farther asteroid",
+      "pass": true
+    },
+    {
+      "name": "five mineral geometries have different fracture trajectories",
+      "pass": true
+    },
+    {
+      "name": "a travelling asteroid keeps its mineral form and color",
+      "pass": true
+    },
+    {
+      "name": "rock breakup is emitted once and bounded under repeated destruction",
+      "pass": true
+    },
+    {
+      "name": "nearest Parallax projectile target wins, independent of array order",
+      "pass": true
+    },
+    {
+      "name": "humanoid mech uses robot sound; human guard remains human",
+      "pass": true
+    },
+    {
+      "name": "mech death emits head, torso, weapons and legs once",
+      "pass": true
+    },
+    {
+      "name": "death animation freezes on pause and expires after resuming",
+      "pass": true
+    },
+    {
+      "name": "new boss is ten times wider; existing unmarked saves retain coordinates",
+      "pass": true
+    },
+    {
+      "name": "scaled boss survives save/load with coordinates and resources intact",
+      "pass": true
+    },
+    {
+      "name": "drawing and geometry caches never change progress or gameplay RNG",
+      "pass": true
+    },
+    {
+      "name": "death pieces move over simulation time and stay finite",
+      "pass": true
+    },
+    {
+      "name": "five explosion styles retain a bounded detail budget",
+      "pass": true
+    },
+    {
+      "name": "reinstalling visual modules does not stack wrappers",
+      "pass": true
+    }
+  ]
+}

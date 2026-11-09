@@ -5,11 +5,13 @@
 (()=>{
  'use strict';
  if(globalThis.CITADEL_LEVIATHAN||typeof RequirementArcade!=='function')return;
- const VERSION='2.11.0',P=RequirementArcade.prototype,TAU=Math.PI*2;
+ const VERSION='2.17.9',P=RequirementArcade.prototype,TAU=Math.PI*2;
  const old={launch:P.launchFinale,step:P.stepFinalSpace,hit:P.hit,fire:P.fire,missile:P.missile,target:P.target,nav:P.navTarget,guidance:P.guidance,objective:P.objective,scene:spaceScene,camera:spaceCamera,hud:drawFinaleHUD,overlay:finaleOverlay,update:updateArcadeHUD,action:arcadeAction,mobile:mobileAction};
  const clamp=(n,a=-1,b=1)=>Math.max(a,Math.min(b,n)),smooth=n=>{n=clamp(n,0,1);return n*n*(3-2*n);};
  const state=e=>e?.finale?.leviathan,arena=e=>!!state(e)&&['boss','breach'].includes(e.finale.phase),active=e=>arena(e)&&e.finale.phase==='boss';
  const live=e=>e.enemies.filter(x=>x.beacon2110&&!x.dead&&x.hp>0);
+ const worldScale=e=>state(e)?.worldScale2179||1;
+ const world=(e,p)=>[p[0]*worldScale(e),p[1]*worldScale(e),-116+(p[2]+116)*worldScale(e)];
  const ports=[[-78,42,-116],[78,42,-116],[78,-42,-116],[-78,-42,-116]];
  const approaches=[[-15,10],[15,10],[15,-10],[-15,-10],[0,0]];
  const names=['СЕВЕРО-ЗАПАД','СЕВЕРО-ВОСТОК','ЮГО-ВОСТОК','ЮГО-ЗАПАД'];
@@ -27,11 +29,11 @@
   const allowed=this.status==='finalebrief',r=old.launch.apply(this,args);
   if(!allowed||this.status!=='playing'||this.finale?.phase!=='boss')return r;
   const hp=this.assist?900:1350;
-  this.enemies=ports.map((pos,slot)=>({id:++this.entityId,pos:pos.slice(),vel:[0,0,0],r:6.4,hp,maxHp:hp,core:true,beacon2110:true,slot,name:'Маяк '+(slot+1)+' · '+names[slot],hit:0,dead:false,color:'#ffd48e'}));
+  this.enemies=ports.map((pos,slot)=>({id:++this.entityId,pos:[pos[0]*10,pos[1]*10,pos[2]],vel:[0,0,0],r:6.4,hp,maxHp:hp,core:true,beacon2110:true,slot,name:'Маяк '+(slot+1)+' · '+names[slot],hit:0,dead:false,color:'#ffd48e'}));
   const life=this.assist?2400:3300;
-  Object.assign(this.boss,{pos:[0,0,-119],r:9,hp:life,maxHp:life,name:'Параллакс · кристалл-вход',crystal2110:true});
-  this.finale.leviathan={version:VERSION,clock:0,center:[0,0,95],offset:[0,0],velocity:[0,0],sector:0,focus:this.enemies[0].id,transit:0,from:[0,0,95],to:[0,0,0],attack:null,serial:Math.abs(this.seed||0)%3,nextAttack:7,droneClock:7,drones:[],droneSerial:0,beacons:0,hits:0,evaded:0,blocked:0,contacts:0,events:[]};
-  this.player.pos=[0,0,95];this.player.yaw=0;this.player.pitch=0;this.autopilot=false;
+  Object.assign(this.boss,{pos:[0,0,-119],r:9,hp:life,maxHp:life,name:'Параллакс · глаз-ядро',crystal2110:true});
+  this.finale.leviathan={version:VERSION,worldScale2179:10,clock:0,center:[0,0,1700],offset:[0,0],velocity:[0,0],sector:0,focus:this.enemies[0].id,transit:0,from:[0,0,95],to:[0,0,0],attack:null,serial:Math.abs(this.seed||0)%3,nextAttack:7,droneClock:7,drones:[],droneSerial:0,beacons:0,hits:0,evaded:0,blocked:0,contacts:0,events:[]};
+  this.player.pos=[0,0,1700];this.player.yaw=0;this.player.pitch=0;this.autopilot=false;
   route(this);this.notify('ПАРАЛЛАКС · ЖИВАЯ КРЕПОСТЬ','Четыре маяка на корпусе → центральный кристалл');
   this.say('Держим курс вдоль корпуса. Джойстиком или WASD совмещай прицел с маяком, стреляй и уходи из зоны замаха. Ракеты ускорят разрушение.','order',true);
   return r;
@@ -79,8 +81,8 @@
   }else{record(this,'crystal');s.attack=null;s.drones=[];this.beginBreach();}
  };
  function powered(e,arm){return live(e).some(x=>x.slot===Math.floor(arm/2));}
- function rootAt(arm){const a=[Math.PI*.75,Math.PI*.25,-Math.PI*.25,-Math.PI*.75][Math.floor(arm/2)]+(arm%2?.19:-.19);return [Math.cos(a)*91,Math.sin(a)*62,-153];}
- function idleTip(e,arm){const a=[Math.PI*.75,Math.PI*.25,-Math.PI*.25,-Math.PI*.75][Math.floor(arm/2)]+(arm%2?.19:-.19),t=state(e).clock,cut=!powered(e,arm);return [Math.cos(a)*(134+Math.sin(t*.6+arm)*10),Math.sin(a)*91+Math.sin(t*.9+arm)*7,-98+(cut?-31:Math.sin(t*.5+arm)*12)];}
+ function rootAt(e,arm){const a=[Math.PI*.75,Math.PI*.25,-Math.PI*.25,-Math.PI*.75][Math.floor(arm/2)]+(arm%2?.19:-.19);return world(e,[Math.cos(a)*91,Math.sin(a)*62,-153]);}
+ function idleTip(e,arm){const a=[Math.PI*.75,Math.PI*.25,-Math.PI*.25,-Math.PI*.75][Math.floor(arm/2)]+(arm%2?.19:-.19),t=state(e).clock,cut=!powered(e,arm);return world(e,[Math.cos(a)*(134+Math.sin(t*.6+arm)*10),Math.sin(a)*91+Math.sin(t*.9+arm)*7,-98+(cut?-31:Math.sin(t*.5+arm)*12)]);}
  function tip(e,arm,a,index=0){
   const idle=idleTip(e,arm);if(!a)return idle;
   const start=V3.add(a.aim,a.kind==='sweep'?[-45,0,-32]:a.kind==='pincer'?[0,index?38:-38,-30]:[index?-26:26,25,-40]);
@@ -90,10 +92,10 @@
   return V3.lerp(a.end||strike(1),idle,smooth(a.time/a.recovery));
  }
  function limb(e,arm,a=null,index=0){
-  const root=rootAt(arm),end=tip(e,arm,a,index),side=root[0]<0?-1:1;
+  const root=rootAt(e,arm),end=tip(e,arm,a,index),side=root[0]<0?-1:1;
   const b=V3.add(root,[side*26,Math.sin(state(e).clock*.55+arm)*11,19]);
   const c=V3.add(end,[side*16,index?-17:17,-28]),points=[],radii=[];
-  for(let i=0;i<=16;i++){const u=i/16,v=1-u;points.push([0,1,2].map(k=>v*v*v*root[k]+3*v*v*u*b[k]+3*v*u*u*c[k]+u*u*u*end[k]));if(i)radii.push(5.6-u*3.5);}
+  for(let i=0;i<=16;i++){const u=i/16,v=1-u;points.push([0,1,2].map(k=>v*v*v*root[k]+3*v*v*u*b[k]+3*v*u*u*c[k]+u*u*u*end[k]));if(i)radii.push((5.6*Math.pow(worldScale(e),.65))*(1-u)+2.1*u);}
   return {arm,points,radii};
  }
  function attackGeometry(e,attack=state(e)?.attack){return active(e)&&attack?attack.arms.map((arm,i)=>limb(e,arm,attack,i)):[];}
@@ -136,7 +138,7 @@
   for(const x of e.bullets){const before=x.pos;
    if(x.type==='missile'){const t=targets(e).find(t=>t.id===x.target);if(t)x.vel=V3.scale(V3.norm(V3.lerp(V3.norm(x.vel),V3.norm(V3.sub(t.pos,x.pos)),Math.min(1,dt*6))),110);}
    x.pos=V3.add(x.pos,V3.scale(x.vel,dt));x.life-=dt;
-   for(const t of targets(e)){if(flightSegment(before,x.pos,t.pos,t.r)===null)continue;x.life=0;e.hit(t,x.damage);break;}
+   let impact=null,nearest=2;for(const t of targets(e)){const at=flightSegment(before,x.pos,t.pos,t.r+(x.r||0));if(at!==null&&at<nearest){nearest=at;impact=t;}}if(impact){x.life=0;e.hit(impact,x.damage);}
    if(!active(e))return;
   }
   for(const x of e.hostile){const before=x.pos;x.pos=V3.add(x.pos,V3.scale(x.vel,dt));x.life-=dt;if(flightSegment(V3.sub(before,previous),V3.sub(x.pos,e.player.pos),[0,0,0],2.4)!==null){x.life=0;e.damage(x.damage);}}
@@ -160,15 +162,20 @@
  };
  P.objective=function(...args){
   if(!active(this))return old.objective.apply(this,args);const s=state(this),g=goal(this),a=s.attack;
-  return {title:live(this).length?'Параллакс · маяк '+(s.sector+1)+'/4':'Параллакс · кристалл-вход',detail:'Курс вдоль корпуса автоматический. WASD / джойстик — сместить корабль; совместите прицел с маяком и стреляйте. Ракеты ускоряют разрушение, импульс отбивает щупальца.',progress:a&&a.phase!=='recover'?pattern(a).label+' · '+(a.phase==='windup'?'УДАР ЧЕРЕЗ '+Math.max(0,a.windup-a.time).toFixed(1)+' С':'УКЛОНЯЙСЯ'):s.transit<s.transitDuration?'ПЕРЕЛЁТ · ЩИТ ЦЕЛИ ЗАКРЫТ · МАЯКИ '+s.beacons+'/4':g?.beacon2110?names[s.sector]+' · МАЯКИ '+s.beacons+'/4':'ЩИТ СНЯТ · УНИЧТОЖЬТЕ КРИСТАЛЛ'};
+  return {title:live(this).length?'Параллакс · маяк '+(s.sector+1)+'/4':'Параллакс · глаз-ядро',detail:'Курс вдоль корпуса автоматический. WASD / джойстик — сместить корабль; совместите прицел с маяком и стреляйте. Ракеты ускоряют разрушение, импульс отбивает щупальца.',progress:a&&a.phase!=='recover'?pattern(a).label+' · '+(a.phase==='windup'?'УДАР ЧЕРЕЗ '+Math.max(0,a.windup-a.time).toFixed(1)+' С':'УКЛОНЯЙСЯ'):s.transit<s.transitDuration?'ПЕРЕЛЁТ · ЩИТ ЦЕЛИ ЗАКРЫТ · МАЯКИ '+s.beacons+'/4':g?.beacon2110?names[s.sector]+' · МАЯКИ '+s.beacons+'/4':'ЩИТ СНЯТ · БЕЙТЕ В ЗРАЧОК'};
  };
  const part=(a,mesh,pos,size,color,em=0,b=SPACE_IDENTITY,alpha=1)=>{const q=citadelItem(mesh,pos,size,color,em,b,alpha);a.push(q);return q;};
  function tube(a,p,q,r,color,em=0){return part(a,'parallaxTendon',V3.lerp(p,q,.5),[r,r,V3.len(V3.sub(q,p))*.5+.1],color,em,spaceBasisDir(V3.sub(q,p)));}
  function body(items,e,time,fx){
   const s=state(e),lod=isMobileLayout()||!fx?1:0;
   const breath=1+Math.sin(s.clock*1.1)*.018;
-  const model=spaceModel([0,-19.8,-182],[12*breath,11*breath,9],SPACE_IDENTITY);
-  for(const p of CITADEL_PURSUIT_VIEW.warpModel('medusa',lod))items.push({...p,pos:[0,-19.8,-182],model,leviathanFeature:'bell'});
+  const model=spaceModel(world(e,[0,-19.8,-182]),[12*breath,11*breath,9].map(n=>n*worldScale(e)),SPACE_IDENTITY);
+  for(const p of CITADEL_PURSUIT_VIEW.warpModel('medusa',lod)){
+   const oldEye=['#93d3c4','#160e24'].some(color=>spaceColor(color).every((v,i)=>Math.abs(v-p.color[i])<.001));
+   if(worldScale(e)===10&&oldEye)continue;
+   items.push({...p,pos:world(e,[0,-19.8,-182]),model,leviathanFeature:'bell'});
+  }
+  const shellStart=items.length;
   for(let i=0;i<12;i++){
    const angle=i/12*TAU,pulse=.2+.2*(1+Math.sin(s.clock*2-i*.6));
    const vein=[.47,.65,.82,.97].map((r,j)=>[Math.cos(angle+j*.04)*105*r,Math.sin(angle+j*.04)*72*r-8,-132-j*2]);
@@ -179,6 +186,7 @@
    part(items,'armor',p,[7,3.4,4.5],i%4?'#344659':'#8f775c',0,b);part(items,'box',V3.add(p,[0,0,4.6]),[3.8,.22,.12],'#9adbd0',.6,b);
    if(i%2===0){part(items,'box',V3.add(p,[0,4,-2]),[1.1,5.8,2.5],'#627181');part(items,'octa',V3.add(p,[0,10,-2]),[1.9,3,2],'#c2ae87');}
   }
+  for(let i=shellStart;i<items.length;i++){const q=items[i],k=worldScale(e);q.pos=world(e,q.pos);q.model=new Float32Array(q.model);for(let j=0;j<12;j++)q.model[j]*=k;q.model[12]=q.pos[0];q.model[13]=q.pos[1];q.model[14]=q.pos[2];q.fortress2179=true;}
   for(let arm=0;arm<8;arm++){
    const attack=s.attack,ix=attack?attack.arms.indexOf(arm):-1,a=ix>=0?attack:null,l=limb(e,arm,a,Math.max(0,ix));
    const color=a&&a.phase!=='recover'?pattern(a).color:powered(e,arm)?'#785c79':'#343b4d';
@@ -186,16 +194,17 @@
     if(i%3===0){part(items,'p260_sucker',V3.add(l.points[i],[0,0,l.radii[i-1]]),[l.radii[i-1]*.72,l.radii[i-1]*.72,.65],'#c0a9a1',.1);}
    }
   }
-  for(let i=0;i<4;i++){const beacon=e.enemies.find(x=>x.beacon2110&&x.slot===i),p=ports[i],alive=beacon&&!beacon.dead;
+  for(let i=0;i<4;i++){const beacon=e.enemies.find(x=>x.beacon2110&&x.slot===i),p=world(e,ports[i]),alive=beacon&&!beacon.dead;
    part(items,'torus',p,[8,8,2.2],alive?'#9a8262':'#343344');part(items,'armor',V3.add(p,[0,0,-7]),[10,11,6],'#364457');
    if(alive&&s.transit<s.transitDuration)part(items,'sphere',p,[8,10,6],'#9a91dd',.25,SPACE_IDENTITY,.2);
    if(alive){const selected=beacon.id===s.focus,color=beacon.hit?'#fff7d9':selected?'#ffd68f':'#93b6ed';part(items,'octa',p,[4.3,8,4.3],color,.7,stationZBasis(time*.35));part(items,'lightRing',V3.add(p,[0,0,2]),[9.4,9.4,.4],color,.85,SPACE_IDENTITY,.8);tube(items,p,[0,0,-126],.3,'#9d79cd',.55);}
    else part(items,'octa',p,[2.5,3,2],'#7f5266',.15);
   }
+  globalThis.CITADEL_PARALLAX2179?.decorate(items,e,time,fx);
   const shield=live(e).length>0,breach=e.finale.phase==='breach';
   part(items,'torus',[0,0,-117],[13,13,2.7],shield?'#9277b0':'#d4aa70');
-  if(!breach)part(items,'octa',[0,0,-115],[6.7,12,6],e.boss?.hit?'#fff6d8':shield?'#b493d1':'#ffc78b',.8,stationZBasis(time*.18));
-  else{part(items,'box',[0,0,-118],[9.7,8.7,1],'#050a17');part(items,'lightRing',[0,0,-116],[10,9,1],'#ffe3a4',1);}
+  if(!breach&&worldScale(e)===1)part(items,'octa',[0,0,-115],[6.7,12,6],e.boss?.hit?'#fff6d8':shield?'#b493d1':'#ffc78b',.8,stationZBasis(time*.18));
+  else if(breach){part(items,'box',[0,0,-118],[9.7,8.7,1],'#050a17');part(items,'lightRing',[0,0,-116],[10,9,1],'#ffe3a4',1);}
   if(shield)part(items,'sphere',[0,0,-119],[16,16,9],'#9f8cdd',.3,SPACE_IDENTITY,.14);
   if(s.attack&&s.attack.phase==='windup'){
    const a=s.attack,col=pattern(a).color;part(items,'lightRing',a.aim,[8.5,8.5,.3],col,1,SPACE_IDENTITY,.7);
@@ -221,13 +230,13 @@
  drawFinaleHUD=function(c,e,cam,w,h){
   if(!active(e))return old.hud(c,e,cam,w,h);c.clearRect(0,0,w,h);if(e.status!=='playing')return;
   const W=Math.max(320,ARCADE.canvas?.getBoundingClientRect?.().width||w),H=h/w*W,s=state(e),g=goal(e),mobile=W<700,a=s.attack;
-  c.save();c.scale(w/W,w/W);c.textBaseline='middle';c.textAlign='center';const bw=Math.min(W-24,580),left=(W-bw)/2;
-  c.fillStyle='#071524e8';c.fillRect(left,10,bw,68);c.fillStyle='#e8edf0';c.font='bold '+(mobile?13:17)+'px Arial';c.fillText(e.objective().title,W/2,29,bw-16);
-  c.fillStyle=a&&a.phase!=='recover'?pattern(a).color:'#accdcf';c.font=(mobile?10:12)+'px Arial';c.fillText(e.objective().progress,W/2,51,bw-16);
-  for(let i=0;i<4;i++){c.fillStyle=e.enemies.some(x=>x.slot===i&&!x.dead)?i===s.sector?'#ffd18b':'#74688f':'#83d6b3';c.fillRect(W/2-40+i*22,66,15,4);}
+  c.save();c.scale(w/W,w/W);c.textBaseline='middle';c.textAlign='center';const bw=Math.min(W-24,580),left=(W-bw)/2,top=mobile?72:0;
+  c.fillStyle='#071524e8';c.fillRect(left,top+10,bw,68);c.fillStyle='#e8edf0';c.font='bold '+(mobile?13:17)+'px Arial';c.fillText(e.objective().title,W/2,top+29,bw-16);
+  c.fillStyle=a&&a.phase!=='recover'?pattern(a).color:'#accdcf';c.font=(mobile?10:12)+'px Arial';c.fillText(e.objective().progress,W/2,top+51,bw-16);
+  for(let i=0;i<4;i++){c.fillStyle=e.enemies.some(x=>x.slot===i&&!x.dead)?i===s.sector?'#ffd18b':'#74688f':'#83d6b3';c.fillRect(W/2-40+i*22,top+66,15,4);}
   const aim=spaceProject(V3.add(e.player.pos,[0,0,-82]),cam,W,H);c.strokeStyle=e.lock?'#ffdb99':'#c4f7ef';c.lineWidth=1.6;
   for(const sign of [-1,1]){arcadeLine(c,aim.x+sign*8,aim.y,aim.x+sign*19,aim.y);arcadeLine(c,aim.x,aim.y+sign*8,aim.x,aim.y+sign*19);}
-  if(g){const q=spaceProject(g.pos,cam,W,H),x=clamp(q.x,25,W-25),y=clamp(q.y,105,H-88),radius=clamp(g.r*q.scale+6,15,48);c.strokeStyle='#ffd18b';c.setLineDash([5,4]);c.strokeRect(x-radius,y-radius,radius*2,radius*2);c.setLineDash([]);c.fillStyle='#ffdda7';c.font='bold '+(mobile?10:12)+'px Arial';c.fillText(g.beacon2110?'МАЯК '+(g.slot+1):'КРИСТАЛЛ',x,Math.max(93,y-radius-12));c.fillStyle='#344455';c.fillRect(x-28,y+radius+7,56,4);c.fillStyle='#ffd18b';c.fillRect(x-28,y+radius+7,56*g.hp/g.maxHp,4);}
+  if(g){const q=spaceProject(g.pos,cam,W,H),x=clamp(q.x,25,W-25),y=clamp(q.y,105,H-88),radius=clamp(g.r*q.scale+6,15,48);c.strokeStyle='#ffd18b';c.setLineDash([5,4]);c.strokeRect(x-radius,y-radius,radius*2,radius*2);c.setLineDash([]);c.fillStyle='#ffdda7';c.font='bold '+(mobile?10:12)+'px Arial';c.fillText(g.beacon2110?'МАЯК '+(g.slot+1):'ГЛАЗ · ЯДРО',x,Math.max(93,y-radius-12));c.fillStyle='#344455';c.fillRect(x-28,y+radius+7,56,4);c.fillStyle='#ffd18b';c.fillRect(x-28,y+radius+7,56*g.hp/g.maxHp,4);}
   const by=H-49;c.fillStyle='#061725e5';c.fillRect(10,by-16,W-20,56);c.fillStyle=e.player.hp<30?'#ff9d87':'#bff7eb';c.textAlign='left';c.font='bold '+(mobile?12:15)+'px Arial';c.fillText('ЩИТ '+Math.ceil(e.player.hp),22,by);c.textAlign='right';c.fillStyle='#ffdda4';c.fillText('РАКЕТЫ '+e.player.missiles,W-22,by);
   c.textAlign='center';c.fillStyle='#a3c8cd';c.font=(mobile?9:11)+'px Arial';c.fillText(e.lock?'ЦЕЛЬ ЗАХВАЧЕНА · ОГОНЬ / РАКЕТА':'WASD / ДЖОЙСТИК — СМЕЩЕНИЕ · СОВМЕСТИТЕ ПРИЦЕЛ',W/2,H-25,W-36);
   c.restore();
@@ -253,5 +262,6 @@
   for(const el of document.querySelectorAll('#citadel-quickbar [data-action="citadel-guidance"]'))el.textContent='G · Управление';
   return r;
  };
- globalThis.CITADEL_LEVIATHAN=Object.freeze({version:VERSION,active,arena,goal,targets,attackGeometry,limb,bodyWidth:240,shipWidth:6,patterns});
+ globalThis.CITADEL_LEVIATHAN=Object.freeze({version:VERSION,active,arena,goal,targets,attackGeometry,limb,bodyWidth:2400,legacyBodyWidth:240,worldScale,world,shipWidth:6,patterns});
 })();
+

@@ -149,7 +149,8 @@
  }
  function draw(ctx,e,cam,W,H){ctx.clearRect(0,0,W,H);if(!['playing','boarding','paused','crashing'].includes(e.status)||e.campaign2120?.modal)return;
   const s=e.campaign2120?.rift2176;monster(ctx,e,s,cam,W,H);
-  for(const x of (e.explosions||[]).slice(-14))if(x.life>0&&!x.warp)blast(ctx,x,cam,W,H);
+  for(const x of (e.explosions||[]).slice(-8))if(x.life>0&&!x.warp){if(globalThis.CITADEL_CINEMA2179)CITADEL_CINEMA2179.blast(ctx,x,cam,W,H,ARCADE.fx);else blast(ctx,x,cam,W,H);}
+  globalThis.CITADEL_CINEMA2179?.draw(ctx,e,cam,W,H,ARCADE.fx);
   for(const x of (fxStates.get(e)||[]))if(x.life>0)blast(ctx,x,cam,W,H);
  }
  SpaceRenderer.prototype.render=function(items,cam){const result=old.render.call(this,items,cam),info=items.living2176;if(!info)return result;const c=canvasFor(this.canvas);if(!c)return result;
