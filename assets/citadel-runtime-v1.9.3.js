@@ -5,7 +5,7 @@
 (function () {
   'use strict';
   if (globalThis.CITADEL_RUNTIME || typeof ARCADE === 'undefined') return;
-  const VERSION = '1.9.3', BUILD = '193r2', LOG_KEY = 'cmpon.citadel.diagnostics.v1';
+  const VERSION = '2.18.1', BUILD = '2181r1', LOG_KEY = 'cmpon.citadel.diagnostics.v1';
   const RECOVERY_KEY = 'cmpon.citadel.recovery.v1', LIMIT = 64, GAP = 4000;
   const active = new Set(['playing', 'boarding', 'docking', 'lesson', 'crashing']);
   const statuses = new Set(['menu','briefing','playing','boarding','docking','lesson','crashing','paused','remark','finalcheck','stageclear','escortbrief','escortclear','finalebrief','won','lost','campaigncard','campaignsummary','campaignsource','campaignroute','campaignpractice']);
@@ -14,7 +14,8 @@
   let pending = null, epoch = 0, busy = false, stopped = false, contextLost = false;
   let lastFrame = performance.now(), lastUpdate = lastFrame, lastRender = lastFrame;
   let frameCount = 0, updateCount = 0, renderCount = 0, recoveries = 0, failures = 0;
-  let renderRetries = 0;
+  let renderRetries = 0, healthyFrames = 0;
+  const renderStages = new Set(['camera','scene','renderer','hud','ui']);
   let stage = 'idle', checkpoint = null, checkpointEngine = null, checkpointAt = -Infinity;
   let observedEngine = null, transition = '', notice = '', saveResult = 'none';
   const now = () => performance.now();
@@ -94,9 +95,15 @@
       box = document.createElement('div'); box.id = 'citadel-runtime-notice';
       box.setAttribute('role','status');
       box.style.cssText = 'position:relative;z-index:30;padding:10px 14px;background:#152b3b;color:#fff;font:14px/1.4 Arial';
-      host.appendChild(box);
+      // Pause/upgrade panels are fixed at z-index 6500; their recovery control
+      // must live outside the playfield's stacking context.
+      document.body.appendChild(box);
     }
     box.textContent = notice;
+    if (stopped && (renderStages.has(faults[faults.length-1]?.stage) || checkpoint && checkpointEngine===ARCADE.engine && !CUP?.run)) {
+      const resumeButton=document.createElement('button');resumeButton.textContent='Восстановить игру';
+      resumeButton.onclick=recover;box.appendChild(resumeButton);
+    }
     const diagnosticButton=document.createElement('button');
     diagnosticButton.textContent='Скачать диагностику';
     diagnosticButton.onclick=()=>downloadFile(JSON.stringify(diagnostic(),null,2),'citadel-diagnostics-1.9.3.json','application/json');
@@ -114,19 +121,42 @@
     try { spaceAudioStop(); } catch (_) { /* Simulation is already stopped. */ }
   }
   function fail(error, location) {
+    healthyFrames=0;
     failures++;
     faults.push(details(error, location)); if (faults.length > 3) faults.shift();
     record('fault'); cancel(); saveRecovery(); pause();
     // Only rendering is retryable; an interrupted update might have emitted or
     // credited an event. Never replay it or reload/recreate the engine silently.
-    const retry = ['camera','scene','renderer','hud','ui'].includes(location) && renderRetries === 0;
+    const retry = renderStages.has(location) && renderRetries === 0;
     stopped = !retry;
     notice = retry ? 'Отрисовка прервалась. Игра на паузе; можно продолжить после восстановления кадра.' :
-      'Игра остановлена из-за ошибки. '+(saveResult==='local'?'Резервная копия сохранена в этом браузере.':saveResult==='memory'?'Резервная копия доступна в памяти вкладки.':'Резервная копия пока недоступна.');
+      'Игра остановлена из-за ошибки. '+(checkpoint&&checkpointEngine===ARCADE.engine&&!CUP?.run?'Можно восстановить игру. Последние несколько секунд могут повториться.':saveResult==='local'?'Резервная копия сохранена в этом браузере.':'Сохраните диагностику ошибки.');
     if (retry) { recoveries++; renderRetries++; }
     persistLog();
     console.error('[Citadel runtime]', faults[faults.length-1]);
     try { updateArcadeOverlay(); showNotice(); } catch (_) { /* Keep diagnostic available even if UI failed. */ }
+  }
+  function recover() {
+    if (!stopped || contextLost) return false;
+    if(renderStages.has(faults[faults.length-1]?.stage)) {
+      try {
+        ARCADE.hud.width=ARCADE.hud.width;
+        updateArcadeHUD();render(ARCADE.engine,ARCADE.engine.elapsed);
+        stopped=false;renderRetries=0;healthyFrames=0;notice='';recoveries++;
+        ARCADE.engine.resume();ARCADE.overlayToken='';updateArcadeOverlay();
+        document.getElementById('citadel-runtime-notice')?.remove?.();restart();record('render-restored');return true;
+      } catch(error) {fail(error,'hud');return false;}
+    }
+    if(!checkpoint || checkpointEngine!==ARCADE.engine || CUP?.run)return false;
+    // Recreate only from a fully completed checkpoint. Never replay a failed step.
+    try {
+      const snapshot=JSON.parse(checkpoint),saved=snapshot.engine;
+      const restored=cupUnpack(snapshot,{seed:saved.seed,mode:saved.assist?'calm':'normal'},arcadeEvent);
+      ARCADE.engine=restored;clearArcadeInput();ARCADE.camera=null;ARCADE.overlayToken='';
+      stopped=false;renderRetries=0;healthyFrames=0;notice='';recoveries++;
+      document.getElementById('citadel-runtime-notice')?.remove?.();
+      updateArcadeHUD();updateArcadeOverlay();restart();record('checkpoint-restored');persistLog();return true;
+    } catch(error) { fail(error,'recovery');return false; }
   }
   function render(e, time) {
     stage = 'camera'; const cam = spaceCamera(e,time,e.status==='menu'); ARCADE.camera = cam;
@@ -173,7 +203,10 @@
         stage='audio'; spaceAudioSync(e);
         stage='ui'; updateArcadeHUD(); updateArcadeOverlay(); ARCADE.hudTime=time;
       }
-      frameCount++; stage='idle';
+      frameCount++;healthyFrames++;
+      // Separate transient interruptions must not consume a lifetime retry limit.
+      if(healthyFrames>=60)renderRetries=0;
+      stage='idle';
     } catch (error) {
       const failedStage=stage;
       if (failedStage==='hud') { try { ARCADE.hud.width=ARCADE.hud.width; } catch (_) {} }
@@ -202,8 +235,8 @@
     const canvas=ARCADE.canvas;
     if (!canvas || canvases.has(canvas)) return;
     canvases.add(canvas); contextLost=false;
-    canvas.addEventListener('webglcontextlost',()=>{if(canvas!==ARCADE.canvas)return;contextLost=true;record('context-lost');saveRecovery();persistLog();});
-    canvas.addEventListener('webglcontextrestored',()=>{if(canvas!==ARCADE.canvas)return;contextLost=false;record('context-restored');restart();});
+    canvas.addEventListener('webglcontextlost',event=>{if(canvas!==ARCADE.canvas)return;event.preventDefault?.();contextLost=true;record('context-lost');saveRecovery();pause();notice='Графика восстанавливается. Игра на паузе.';updateArcadeOverlay();showNotice();persistLog();});
+    canvas.addEventListener('webglcontextrestored',()=>{if(canvas!==ARCADE.canvas)return;contextLost=false;record('context-restored');notice='Графика восстановлена. Нажмите «Продолжить».';showNotice();restart();});
   }
   const previousMount=mountArcade, previousDetach=detachArcade;
   mountArcade=function(...args) {
@@ -231,16 +264,19 @@
     if(modalOpen(ARCADE.engine)&&modalGameplay.has(action)){clearArcadeInput();return true;}
     // Never log action values, answers, player names or DOM text.
     if (['arcade-pause','arcade-resume','citadel-launch','citadel-lesson-next','citadel-remark-next','citadel-escort-continue','finale-launch','finale-check-next'].includes(action)) record(action);
-    if (stopped && ['arcade-resume','arcade-pause'].includes(action)) { showNotice(); return true; }
+    if (['arcade-resume','arcade-pause'].includes(action)) {
+      if(stopped){recover();showNotice();return true;}
+      if(contextLost){showNotice();return true;}
+    }
     const before=ARCADE.engine, beforeStatus=before?.status;
     const result=previousAction.call(this,action,...args);
     // Reading a briefing can take arbitrarily long. The first playable frame
     // gets a fresh watchdog window, including custom mission start actions.
     if(active.has(ARCADE.engine?.status)&&!active.has(beforeStatus))lastUpdate=now();
     if (before!==ARCADE.engine) { stopped=false; renderRetries=0; notice=''; restart(); }
-    if (ARCADE.engine?.status!=='paused' && ['arcade-pause','arcade-resume'].includes(action)) lastUpdate=now();
+    if (ARCADE.engine?.status!=='paused' && ['arcade-pause','arcade-resume'].includes(action)) {lastUpdate=now();restart();}
     if (notice && !stopped && ARCADE.engine?.status!=='paused') {
-      notice=''; const el=document.getElementById('citadel-runtime-notice'); if(el)el.textContent='';
+      notice='';document.getElementById('citadel-runtime-notice')?.remove?.();
     }
     return result;
   };

@@ -4,8 +4,8 @@
  */
 (function () {
   'use strict';
-  if (globalThis.CITADEL_COMIC?.version === '1.9.3' || typeof RequirementArcade !== 'function') return;
-  const VERSION = '1.9.3', LIFETIME = 1.85, QUIET = 1.1;
+  if (globalThis.CITADEL_COMIC || typeof RequirementArcade !== 'function') return;
+  const VERSION = '2.18.1', LIFETIME = 2.8, QUIET = 1.1;
   const states = new WeakMap();
   const allowed = new Set(['playing', 'boarding']);
   const palette = {
@@ -57,7 +57,7 @@
     if (s.lastText === text && now >= s.lastTextAt && now - s.lastTextAt < 7) return false;
     const item = { text, kind, label: clean(message?.label || (kind === 'warning' ? 'СРОЧНЫЕ ПРАВКИ' : 'ХРОНИКИ ФТ')),
       anchor: Array.isArray(message?.anchor) && message.anchor.length === 3 && message.anchor.every(Number.isFinite)
-        ? message.anchor.slice() : null, actorId:message?.actorId, posted: now, expires: now + 2.4 };
+        ? message.anchor.slice() : null, actorId:message?.actorId, posted: now, expires: now + 6 };
     if (s.current && now < s.current.end && wall() < s.current.wallEnd) {
       // A warning may replace a reaction, but event bursts never stack panels
       // or extend the currently displayed panel forever.
@@ -137,12 +137,12 @@
   }
   function protectedAreas(e, cam, W, H, mobile) {
     const parallax = e.finale?.phase === 'boss' && !!globalThis.CITADEL_PARALLAX;
-    const top = mobile ? (parallax ? 116 : Math.min(94, H * .32)) : Math.max(96, H * .18);
+    const top = mobile ? (globalThis.CITADEL_HUD2178 ? 112 : parallax ? 116 : Math.min(94, H * .32)) : Math.max(96, H * .18);
     const bottom = mobile ? 45 : H * .16;
     const boxes = [{ x: 0, y: 0, width: W, height: top }, { x: 0, y: H - bottom, width: W, height: bottom },
       { x: W / 2 - 56, y: H * .47 - 45, width: 112, height: 90 }];
     const canvasRect=ARCADE.canvas?.getBoundingClientRect?.();
-    if(mobile&&canvasRect?.width)for(const el of document.querySelectorAll?.('#arcade-stick, #arcade-touch button')||[]){
+    if(mobile&&canvasRect?.width)for(const el of document.querySelectorAll?.('#arcade-stick, #arcade-touch button, .arcade-topline, #citadel-primary')||[]){
       const r=el.getBoundingClientRect?.();if(!r?.width||!r.height)continue;
       const k=W/canvasRect.width;boxes.push({x:(r.left-canvasRect.left)*k-8,y:(r.top-canvasRect.top)*k-8,width:r.width*k+16,height:r.height*k+16});
     }
@@ -219,7 +219,7 @@
   }
   function placement(c, e, item, cam, W, H, mobile) {
     // A fixed radio strip on decks; never chase an actor's moving projection.
-    if(e.board){
+    if(e.board&&!mobile){
       const width=Math.min(350,W-24),font=mobile?12:14,height=58;
       c.font='600 '+font+'px Arial';
       return {x:(W-width)/2,y:H<420?6:Math.min(108,H*.15),width,height,paperHeight:height,
@@ -231,7 +231,7 @@
     const side = Math.max(82, Math.min(112, (W - 112) / 2 - margin * 2 - 8));
     for (const width of mobile ? [Math.min(188, W - 28), Math.min(138, W * .44), side] : [252, 204]) {
       const font = item.kind==='enemy'?(mobile?12:15):mobile ? (width < 150 ? 13 : 16) : 21;
-      c.font = '900 ' + font + 'px Arial, sans-serif';
+      c.font = '400 ' + font + 'px "Citadel Display", sans-serif';
       const lines = linesFor(c, item.text, width - 30,item.kind==='enemy'?4:2), height = font * lines.length + 34;
       const candidates = [{ x: margin, y: reserve.top + 15 }, { x: W - width - margin, y: reserve.top + 15 },
         { x: W*.23, y: reserve.top+15 }, { x: W*.62, y: reserve.top+15 },
@@ -282,10 +282,6 @@
     const cssWidth = ARCADE.canvas?.getBoundingClientRect().width || w, scale = w / cssWidth;
     const W = w / scale, H = h / scale, mobile = typeof isMobileLayout === 'function' && isMobileLayout();
     c.save(); c.scale(scale, scale);
-    if(mobile&&globalThis.CITADEL_MOBILE_CLEAN2160){
-      if(!e.toast||e.toast.until<e.elapsed)s.bounds={...CITADEL_MOBILE_CLEAN2160.sideText(c,item.text,W,H,palette[item.kind].accent),text:item.text,kind:item.kind};
-      c.restore();return;
-    }
     const box = placement(c, e, item, cam, W, H, mobile);
     if (!box) { c.restore(); return; }
     if(box.radio){
@@ -314,7 +310,7 @@
     c.fillStyle = colors.accent; c.fillRect(-box.width / 2 + 10, -height / 2 - 4, box.width - 20, 15);
     c.textAlign = 'center'; c.textBaseline = 'middle'; c.font = '900 ' + (mobile ? 8 : 9) + 'px Arial, sans-serif';
     c.fillStyle = '#fff8df'; c.fillText(item.label, 0, -height / 2 + 3, box.width - 34);
-    c.font = '900 ' + box.font + 'px Arial, sans-serif'; c.lineJoin = 'round';
+    c.font = '400 ' + box.font + 'px "Citadel Display", sans-serif'; c.lineJoin = 'round';
     const firstY = 7-(box.lines.length-1)*box.font*.55;
     box.lines.forEach((line, i) => {
       const y = firstY + i * box.font * 1.1;
@@ -347,7 +343,7 @@
       tick(e); const s = states.get(e);
       return { version: VERSION, active: !!s?.current, pending: !!s?.pending, serial: s?.serial || 0,
         text: s?.current?.text || '', remaining: s?.current ? Math.max(0, s.current.end - (e.elapsed || 0)) : 0,
-        bounds: s?.bounds ? { ...s.bounds, lines: s.bounds.lines.slice(), protected: s.bounds.protected.map(x => ({ ...x })) } : null };
+        bounds: s?.bounds ? { ...s.bounds, lines: (s.bounds.lines||[]).slice(), protected: (s.bounds.protected||[]).map(x => ({ ...x })) } : null };
     },
   });
 })();

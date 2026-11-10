@@ -1,0 +1,43 @@
+{
+  "version": "2.18.1",
+  "method": "Engine boundary fixtures, controlled image decode promises and deterministic RAF fault injection. Not a physical iPhone test.",
+  "pass": true,
+  "rows": [
+    {
+      "name": "guidance toggles the actual orbit and deck controllers, and clears pending joystick restore",
+      "pass": true
+    },
+    {
+      "name": "progress reads all mission families, does not mutate saves, and remains bounded",
+      "pass": true
+    },
+    {
+      "name": "comic reactions retain printable panels on mobile and safe geometry metadata",
+      "pass": true
+    },
+    {
+      "name": "four decoded crew layers appear together; errors and retries cannot block navigation",
+      "pass": true
+    },
+    {
+      "name": "separate transient render faults each resume after a healthy frame window",
+      "pass": true
+    },
+    {
+      "name": "interrupted simulation restores a completed checkpoint without reloading the page",
+      "pass": true
+    },
+    {
+      "name": "resume schedules a fresh frame even if a browser discarded the pending callback",
+      "pass": true
+    },
+    {
+      "name": "two consecutive render failures recover the same paused engine without rolling back score",
+      "pass": true
+    },
+    {
+      "name": "background and return preserve a resumable pause",
+      "pass": true
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+/* Crew images decode off screen, then appear as one group. */
+.home2180-crew{transition:opacity .28s ease-out}
+.home2180:not(.home2181-ready) .home2180-crew[data-crew-ready=false]{opacity:0}
+.home2180:not(.home2181-ready) .home2180-crew[data-crew-ready=false] .home2180-actor{animation-play-state:paused}
+.home2181-loading{position:absolute;left:53%;top:47%;width:42%;z-index:4;box-sizing:border-box;text-align:center;color:#e3eae2;font:500 14px/1.5 var(--citadel-ui);text-shadow:0 2px 4px #00151c}
+.home2181-loading span{display:inline-block;padding:10px 15px;border:1px solid #74a6a776;border-radius:5px;background:#08232fe8}
+#arcade-overlay .home2181-loading button{display:block;margin:8px auto;min-height:44px;padding:8px 18px;border:1px solid #bfa36c;background:#173b43;color:#ffdf9e}
+.home2181-loading[hidden],#arcade-overlay .home2181-loading button[hidden]{display:none!important}
+@media(max-width:700px) and (orientation:portrait){.home2181-loading{left:6%;top:43%;width:88%;font-size:12px}}
+@media(prefers-reduced-motion:reduce){.home2180-crew{transition:none}}
+/* The toolbar and guidance use their own lane, in canvas CSS pixels. */
+#arcade-layout.hud2178-active.hud2181-mobile .arcade-topline{top:112px!important;right:8px!important}
+#arcade-layout.hud2178-active.hud2181-mobile.hud2181-wide .arcade-topline{top:8px!important}
+#arcade-layout.hud2178-active.hud2181-mobile.hud2178-settings-open .arcade-topline{top:112px!important}
+#arcade-layout.hud2178-settings-open #citadel-primary.guidance2181{visibility:hidden}
+#arcade-layout.hud2181-mobile #arcade-screen>#citadel-primary.guidance2181{position:absolute;left:8px;top:112px;z-index:20;display:inline-flex;align-items:center;justify-content:center;min-width:128px;max-width:176px;min-height:44px;padding:8px 12px;margin:0;border:2px solid #10262e;border-radius:7px;background:#213c45;color:#cce4df;box-shadow:2px 3px 0 #020c14;font:650 12px/1.2 var(--citadel-ui);touch-action:manipulation}
+#arcade-layout.hud2181-mobile.hud2181-wide #arcade-screen>#citadel-primary.guidance2181{left:auto;right:8px;top:66px}
+#arcade-layout.hud2181-mobile #arcade-screen>#citadel-primary.guidance2181[aria-pressed=true]{background:#e6d094;color:#18373a;border-color:#f4dda3}
+#arcade-layout.hud2181-mobile #arcade-screen>#citadel-primary.guidance2181[hidden]{display:none!important}
+#arcade-layout.hud2181-mobile #arcade-screen>#citadel-primary.guidance2181:focus-visible{outline:3px solid #fff1b7;outline-offset:3px}
+#arcade-layout.guidance2181-visible.hud2181-mobile .citadel-toast{top:max(164px,29%)}
+#citadel-runtime-notice{position:fixed!important;z-index:20050!important;left:max(12px,env(safe-area-inset-left));right:max(12px,env(safe-area-inset-right));bottom:max(12px,env(safe-area-inset-bottom));max-width:660px;margin:0 auto;border:2px solid #f2d69a;border-radius:8px;box-shadow:3px 4px 0 #020b13;font:14px/1.4 var(--citadel-ui)!important}
+#citadel-runtime-notice button{min-height:44px;margin:8px 8px 0 0;padding:8px 14px;border:2px solid #0b2830;background:#f2d69a;color:#102c33;font:650 14px/1.2 var(--citadel-ui);cursor:pointer}
