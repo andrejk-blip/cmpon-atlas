@@ -1,0 +1,29 @@
+{
+  "revision": "2.18.0",
+  "source": "Original imagegen artwork, based on scene2173/characters-r2.webp",
+  "direction": "Orbital citadel hangar; a practical cyan and brass command console; separate analyst, mech, ninja and robotic Doberman; navy, gold and cyan comic illustration.",
+  "icon": "Cartoon portrait of the established curly-haired, clean-shaven analyst with headset and gold collar. No lettering or baked corner mask.",
+  "packaging": "Resize and lossless alpha crop only. Character shapes and colors are not repainted.",
+  "sprites": [
+    {
+      "name": "analyst",
+      "width": 343,
+      "height": 717
+    },
+    {
+      "name": "mech",
+      "width": 516,
+      "height": 717
+    },
+    {
+      "name": "ninja",
+      "width": 404,
+      "height": 716
+    },
+    {
+      "name": "doberman",
+      "width": 446,
+      "height": 701
+    }
+  ]
+}

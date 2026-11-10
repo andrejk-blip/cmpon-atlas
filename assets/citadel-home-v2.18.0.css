@@ -1,0 +1,129 @@
+/* Full viewport scene. The console and all four characters are independent layers. */
+#arcade-overlay.menu2170-open:has(.home2180){padding:0!important;overflow:hidden!important;background:#071820!important;display:block!important}
+#arcade-overlay .home2180{position:relative;isolation:isolate;overflow:hidden;width:100%;height:100%;min-height:0;max-width:none;margin:0;padding:0;display:block;gap:0;color:#eef7f3;text-align:left;background:#071820;container-type:size}
+.home2180 *{box-sizing:border-box}
+.home2180-environment,.home2180-atmosphere,.home2180-glints,.home2180-crew{position:absolute;inset:0;pointer-events:none}
+.home2180-environment img{display:block;width:100%;height:100%;object-fit:fill}
+.home2180-atmosphere{background:linear-gradient(90deg,#04111b3b,transparent 55%),linear-gradient(180deg,#04111b65,transparent 20%,transparent 85%,#02151b40)}
+.home2180-title{position:absolute;z-index:2;left:7.4%;top:17%;width:43%;filter:drop-shadow(0 5px 16px #00131cee)}
+#arcade-overlay .home2180 .home2180-eyebrow{display:flex;align-items:center;gap:9px;color:#a1d5d9;font-size:clamp(9px,1cqw,14px);letter-spacing:.17em;font-weight:650;margin:0 0 15px}
+.home2180-eyebrow i{width:5px;height:5px;border-radius:50%;background:#9ffff2;box-shadow:0 0 10px #77e9f9}
+#arcade-overlay .home2180 h3{font-size:clamp(38px,6.3cqw,104px)!important;line-height:.94!important;letter-spacing:.015em!important;color:#fae4ad!important;margin:0!important;text-shadow:0 2px 0 #80623c,0 6px 24px #00131b}
+#arcade-overlay .home2180 h3 span{display:block;font-family:var(--citadel-display)!important;font-size:.47em;letter-spacing:.16em;line-height:1.2;margin-top:8px;color:#c5dedb}
+#arcade-overlay .home2180 .home2180-story{font-size:clamp(13px,1.3cqw,20px);line-height:1.4;letter-spacing:.03em;color:#d3e4e3;margin:18px 0 0;text-shadow:0 2px 5px #001019}
+.home2180-crew{z-index:3}
+.home2180-actor{position:absolute;bottom:11%;transform-origin:50% 95%;filter:drop-shadow(0 12px 6px #00121cb0)}
+.home2180-actor::after{content:'';position:absolute;z-index:-1;bottom:0;left:7%;width:86%;height:3%;border-radius:50%;background:#00101ddb;filter:blur(5px)}
+.home2180-actor img{width:100%;height:100%;object-fit:contain;display:block;filter:drop-shadow(1px -1px 1px #77d6e855)}
+.home2180-mech{left:49%;height:62%;width:29%;bottom:13%;animation:home2180-mech 8s ease-in-out infinite}
+.home2180-ninja{left:76%;height:59%;width:24%;bottom:13%;animation:home2180-breathe 7s ease-in-out -2s infinite}
+.home2180-analyst{left:58%;height:69%;width:28%;bottom:7%;animation:home2180-breathe 6s ease-in-out infinite}
+.home2180-doberman{left:78%;height:32%;width:22%;bottom:5%;animation:home2180-dog 4s ease-in-out infinite}
+.home2180-console{position:absolute;z-index:4;left:8.2%;top:47.8%;width:34.7%;height:24.3%;display:flex;flex-direction:column;justify-content:center;gap:5px}
+#arcade-overlay .home2180 button,#arcade-overlay .home2180 summary,#arcade-overlay .home2180 a{font-family:var(--citadel-ui)!important;font-weight:550;letter-spacing:.025em;border-radius:3px;cursor:pointer;transition:color .16s,background .16s,box-shadow .16s;touch-action:manipulation}
+#arcade-overlay .home2180 button:focus-visible,#arcade-overlay .home2180 summary:focus-visible,#arcade-overlay .home2180 a:focus-visible{outline:3px solid #fff0ad;outline-offset:3px}
+.home2180-console-label{display:flex;align-items:center;gap:5px;font-size:clamp(8px,.68cqw,11px);font-weight:650;color:#90e8df;letter-spacing:.09em;white-space:nowrap}
+.home2180-console-label>span{margin-right:auto}
+.home2180-console-label i{width:4px;height:4px;border-radius:50%;background:#93ffe3;box-shadow:0 0 9px #5bffc9}
+.home2180-modes{display:flex;border-bottom:1px solid #8fd4d447}
+#arcade-overlay .home2180-modes button{flex:1;min-width:0;min-height:38px;padding:5px;color:#b2d6d8;font-size:clamp(12px,1.1cqw,17px);background:#02293290;border:0;border-bottom:2px solid transparent;box-shadow:none}
+#arcade-overlay .home2180-modes button[aria-pressed=true]{color:#d7ffff;background:#2c879157;border-bottom-color:#a4ffec;box-shadow:inset 0 -5px 16px #73fff00b}
+#arcade-overlay .home2180 .home2180-description{color:#b9dcdf;font-size:clamp(11px,.93cqw,15px);line-height:1.2;margin:0;text-align:center}
+.home2180-play{display:flex;gap:8px;margin-top:3px}
+#arcade-overlay .home2180-play button{min-height:46px;flex:1;padding:8px 15px;display:flex;align-items:center;justify-content:center;gap:10px;font-size:clamp(14px,1.45cqw,22px);border:1px solid #e4bd75;color:#17252a;background:linear-gradient(115deg,#fae8b1,#d7ad66);box-shadow:inset 0 1px #fff9d8,0 3px 0 #715632,0 0 24px #ffd38522;text-shadow:0 1px #ffffff66}
+#arcade-overlay .home2180-play button>span{font-size:1.25em;margin-left:auto}
+#arcade-overlay .home2180-play .home2180-restart{flex:0 0 25%;font-size:13px;padding:8px 3px;background:#03212bd9;color:#c5dddd;border-color:#8ebfc477;box-shadow:none;text-shadow:none}
+#arcade-overlay .home2180-play .home2180-primary:hover{background:linear-gradient(115deg,#fff4d1,#ebc684);box-shadow:inset 0 1px #fff,0 3px 0 #715632,0 0 28px #ffd38555}
+.home2180-nav{display:grid;grid-template-columns:1fr 1fr .7fr;gap:4px;position:relative}
+#arcade-overlay .home2180-nav>button,#arcade-overlay .home2180-nav summary{display:block;text-align:center;min-height:36px;margin:0;padding:7px 3px;background:transparent;border:0;box-shadow:none;font-size:clamp(12px,1cqw,16px);color:#c5e3e5;white-space:nowrap;list-style:none}
+#arcade-overlay .home2180-nav summary::-webkit-details-marker{display:none}
+#arcade-overlay .home2180-nav>button:hover,#arcade-overlay .home2180-nav summary:hover{color:#ffdf9e;background:#65d6e01b}
+.home2180-nav details{position:static;margin:0}
+.home2180-more{position:absolute;bottom:calc(100% + 6px);inset-inline:0;z-index:10;padding:9px;display:grid;gap:3px;border:1px solid #b99b63;background:#071d29fa;box-shadow:0 12px 40px #000b;border-radius:5px}
+#arcade-overlay .home2180-more :is(button,a){display:flex;align-items:center;min-height:44px;padding:9px 14px;font-size:14px;line-height:1.2;color:#dae8df;background:#12343b;border:1px solid #769fa433;text-decoration:none;text-align:left}
+#arcade-overlay .home2180-more :is(button,a):hover{background:#214b51;color:#ffe1a8}
+.home2180-coordinate{position:absolute;right:3%;bottom:2.2%;color:#a7d5d2;letter-spacing:.13em;font-size:9px;text-shadow:0 2px 5px #001015}
+.home2180-coordinate b{color:#e4c590;margin-left:14px;font-weight:500}
+.home2180-glints{z-index:4;opacity:.7}
+.home2180-glints i{position:absolute;left:calc(51% + var(--i)*7%);top:calc(9% + var(--i)*4%);width:3px;height:3px;background:#bffffb;box-shadow:0 0 9px 2px #8de8ff88;animation:home2180-glint 6s ease-in-out calc(var(--i)*-.8s) infinite;transform:rotate(45deg)}
+.home2180-glints i:nth-child(2n){top:61%;left:calc(8% + var(--i)*10%);background:#ffe4ab;box-shadow:0 0 9px #ffcb79}
+@keyframes home2180-breathe{0%,100%{transform:translateY(0) rotate(-.13deg)}50%{transform:translateY(-2px) rotate(.13deg)}}
+@keyframes home2180-mech{0%,100%{transform:rotate(-.15deg)}50%{transform:rotate(.15deg) translateY(-1px)}}
+@keyframes home2180-dog{0%,100%{transform:scaleY(1) rotate(-.1deg)}50%{transform:scaleY(1.009) rotate(.1deg)}}
+@keyframes home2180-glint{0%,65%,100%{opacity:.1;transform:scale(.5) rotate(45deg)}75%{opacity:1;transform:scale(1.4) rotate(45deg)}}
+/* At compact ratios the physical console receives a matching foreground bezel.
+   Control targets retain their size instead of shrinking with the painting. */
+@media(max-height:620px){
+ .home2180-console{left:5%;top:auto;bottom:13%;width:40%;height:auto;min-height:205px;padding:13px 16px;background:linear-gradient(120deg,#042b35f5,#092d38f5);border:2px solid #b68e55;border-radius:12px 4px 17px 4px;box-shadow:0 0 0 4px #071a22,0 0 0 6px #517774,inset 0 0 28px #35b6c529,0 12px 30px #0006}
+ .home2180-title{top:15%;left:6%}
+ .home2180-console-label{font-size:8px}
+ #arcade-overlay .home2180 .home2180-story{font-size:14px;margin-top:12px}
+}
+@media(max-width:700px) and (orientation:portrait){
+ .home2180-environment img{object-fit:cover;object-position:77% 50%}
+ .home2180-atmosphere{background:linear-gradient(180deg,#04111bd9 0%,#061a2a44 28%,transparent 42%,#041b2499 83%,#04111bbd)}
+ .home2180-title{top:max(73px,10%);left:6%;width:88%;text-align:center}
+ #arcade-overlay .home2180 .home2180-eyebrow{font-size:8px;justify-content:center;letter-spacing:.17em;margin-bottom:10px}
+ #arcade-overlay .home2180 h3{font-size:clamp(32px,10.8cqw,62px)!important}
+ #arcade-overlay .home2180 h3 span{font-size:.44em;letter-spacing:.22em;margin-top:7px}
+ #arcade-overlay .home2180 .home2180-story{font-size:12px;line-height:1.3;margin-top:10px}
+ .home2180-story br{display:none}
+ .home2180-crew{bottom:28%;top:25%}
+ .home2180-mech{left:2%;width:56%;height:95%;bottom:3%}
+ .home2180-ninja{left:57%;width:43%;height:88%;bottom:4%}
+ .home2180-analyst{left:24%;width:52%;height:100%;bottom:-1%}
+ .home2180-doberman{left:60%;width:39%;height:45%;bottom:-2%}
+ .home2180-console{left:6%;top:auto;bottom:max(22px,4%);width:88%;height:auto;min-height:0;padding:12px 14px;gap:6px;border:2px solid #b68e55;border-radius:14px 4px 18px 4px;background:linear-gradient(120deg,#042b35f5,#092d38f5);box-shadow:0 0 0 4px #071a22,0 0 0 6px #517774,inset 0 0 28px #35b6c529,0 12px 30px #0006}
+ .home2180-console-label{font-size:8px}
+ #arcade-overlay .home2180-modes button{min-height:44px;font-size:14px}
+ #arcade-overlay .home2180 .home2180-description{font-size:12px}
+ #arcade-overlay .home2180-play button{min-height:48px;font-size:18px}
+ #arcade-overlay .home2180-play .home2180-restart{font-size:13px}
+ #arcade-overlay .home2180-nav>button,#arcade-overlay .home2180-nav summary{min-height:44px;font-size:14px;padding:11px 3px}
+ .home2180-coordinate{left:6%;right:6%;bottom:1.2%;font-size:7px;display:flex;justify-content:space-between}
+}
+@media(max-width:700px) and (orientation:portrait) and (max-height:700px){
+ .home2180-title{top:67px}
+ #arcade-overlay .home2180 .home2180-eyebrow{font-size:7px;margin-bottom:7px}
+ #arcade-overlay .home2180 h3{font-size:34px!important}
+ #arcade-overlay .home2180 .home2180-story{display:none}
+ .home2180-crew{top:23%;bottom:35%}
+ .home2180-console{bottom:17px;padding:8px 12px;gap:3px}
+ .home2180-coordinate{display:none}
+}
+@media(orientation:landscape) and (max-height:620px){
+ .home2180-title{top:19%;left:6%;width:43%}
+ #arcade-overlay .home2180 .home2180-eyebrow{font-size:7px;letter-spacing:.1em;margin-bottom:6px}
+ #arcade-overlay .home2180 h3{font-size:clamp(28px,4.3cqw,46px)!important}
+ #arcade-overlay .home2180 h3 span{display:inline;font-size:.34em;letter-spacing:.09em;margin-left:9px}
+ #arcade-overlay .home2180 .home2180-story{display:none}
+ .home2180-console{left:5.5%;bottom:6%;width:43%;padding:9px 13px;gap:4px;min-height:0}
+ .home2180-console-label{display:none}
+ #arcade-overlay .home2180-modes button{min-height:44px;font-size:13px}
+ #arcade-overlay .home2180 .home2180-description{font-size:11px}
+ #arcade-overlay .home2180-play button{min-height:44px;font-size:16px}
+ #arcade-overlay .home2180-nav>button,#arcade-overlay .home2180-nav summary{min-height:44px;font-size:12px}
+ .home2180-actor{filter:drop-shadow(0 4px 4px #00121cb0)}
+ .home2180-coordinate{display:none}
+}
+@media(prefers-reduced-motion:reduce){.home2180-actor,.home2180-glints i{animation:none!important}.home2180-glints{opacity:.3}#arcade-overlay .home2180 :is(button,a,summary){transition:none}}
+
+/* Keep both words above the console on compact landscape phones. */
+@media(orientation:landscape) and (max-height:620px) and (max-width:650px){
+ .home2180-title{width:48%}
+ #arcade-overlay .home2180 h3{font-size:clamp(22px,4.3cqw,28px)!important;white-space:nowrap}
+ #arcade-overlay .home2180 h3 span{font-size:.3em;letter-spacing:.05em;margin-left:6px}
+}
+
+.citadel-webapp #arcade-layout:has(.home2180){inset:0!important;width:100%;height:100dvh}
+.citadel-webapp #arcade-layout:has(.home2180) .arcade-screen{border:0;border-radius:0}
+#arcade-overlay:has(.home2180)::before,#arcade-overlay:has(.home2180)::after{display:none!important}
+
+#arcade-overlay .home2180 details{margin:0;text-align:center}
+#arcade-overlay .home2180 summary{width:100%;margin:0}
+#arcade-overlay .home2180 details>div{padding:9px;gap:3px}
+
+#arcade-layout:has(.home2180) .arcade-field{width:100%!important;max-width:none!important}
+
+#arcade-overlay .home2180 details>div{display:grid;grid-template-columns:minmax(0,1fr)}
+#arcade-overlay .home2180-more :is(button,a){width:100%;justify-content:flex-start;margin:0}

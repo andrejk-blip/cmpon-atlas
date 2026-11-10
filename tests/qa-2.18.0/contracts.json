@@ -1,0 +1,59 @@
+{
+  "version": "2.18.0",
+  "method": "Actual engine boundary fixtures: scenario mapping, formations, rewards, pause and save/load continuation.",
+  "pass": true,
+  "rows": [
+    {
+      "name": "all six combat scenarios move with their formations and attacks",
+      "pass": true
+    },
+    {
+      "name": "all six training scenarios move with their formations and attacks",
+      "pass": true
+    },
+    {
+      "name": "legacy active sorties retain 8,16,32,64,32,24",
+      "pass": true
+    },
+    {
+      "name": "new wave 4 survives pause, save, reload and deterministic continuation",
+      "pass": true
+    },
+    {
+      "name": "new wave 5 survives pause, save, reload and deterministic continuation",
+      "pass": true
+    },
+    {
+      "name": "new wave 6 survives pause, save, reload and deterministic continuation",
+      "pass": true
+    },
+    {
+      "name": "legacy wave 4 survives pause, save, reload and deterministic continuation",
+      "pass": true
+    },
+    {
+      "name": "legacy wave 5 survives pause, save, reload and deterministic continuation",
+      "pass": true
+    },
+    {
+      "name": "legacy wave 6 survives pause, save, reload and deterministic continuation",
+      "pass": true
+    },
+    {
+      "name": "support still arrives once before chronological waves four to six",
+      "pass": true
+    },
+    {
+      "name": "one requirement is awarded only after waves two, four and six",
+      "pass": true
+    },
+    {
+      "name": "home controls preserve all three education mode actions and optional continue",
+      "pass": true
+    },
+    {
+      "name": "game naming and manifest keep the installed app identity",
+      "pass": true
+    }
+  ]
+}

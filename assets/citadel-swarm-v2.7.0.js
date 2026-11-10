@@ -44,7 +44,7 @@
   const BALANCE_2100 = Object.freeze({cadence:1.18,shooters:4,hostile:64,speed:.94,damage:.92,divers:5,diveEvery:1.08,diveTell:.45,shotGap:1.15,homing:.8,pickupReach:2.5});
   const BALANCE_2120 = Object.freeze({...BALANCE_2100,cadence:1.52,shooters:3,hostile:48,speed:.86,damage:.72,divers:3,diveEvery:1.25,diveTell:.75,shotGap:1.6,homing:.55,pickupReach:3});
   const BALANCE_2176=Object.freeze({...BALANCE_2120,cadence:1.65,shooters:2,hostile:28,divers:2,diveTell:1.1,diveEvery:1.4,shotGap:2});
-  const balance=e=>e.campaign2120?.schema===1&&waveIndex(e)>=4?BALANCE_2176:e.campaign2120?.schema===1&&waveIndex(e)>=3?BALANCE_2120:BALANCE_2100;
+  const balance=e=>e.campaign2120?.schema===1&&scenarioIndex(e)>=4?BALANCE_2176:e.campaign2120?.schema===1&&scenarioIndex(e)>=3?BALANCE_2120:BALANCE_2100;
   const TACTIC_TIPS=Object.freeze([
     'Перехватчики режут курс. Стреляй и меняй полосу.',
     'Бомбардировщики заходят по дуге. Сбей их до следующего веера.',
@@ -64,7 +64,7 @@
   const balanced = e => tactics(e) && e.swarm.balanceVersion === '2.10.0';
   function adoptBalance(e){if(tactics(e)&&!e.swarm.balanceVersion){e.swarm.balanceVersion='2.10.0';e.swarm.fireClock=Math.max(e.swarm.fireClock,.65);e.swarm.diveClock=Math.max(e.swarm.diveClock,1);}
     // Keep earned kills/rewards on older saves; surplus opponents withdraw.
-    if(challenge(e)&&waveIndex(e)>=4&&e.swarm.slots.length>waveCount(e)&&!['cleared','complete'].includes(e.swarm.phase))formSwarm(e,false,Math.min(waveCount(e),e.swarm.waveKills||0));
+    if(challenge(e)&&scenarioIndex(e)>=4&&e.swarm.slots.length>waveCount(e)&&!['cleared','complete'].includes(e.swarm.phase))formSwarm(e,false,Math.min(waveCount(e),e.swarm.waveKills||0));
   }
   const classic = e => e?.swarm?.rulesVersion==='2.5.0';
   const configured = e => !!e && e.stage === 2 && !e.finale && [VERSION,'2.6.0','2.5.0',LEGACY].includes(e.swarm?.version);
@@ -72,9 +72,11 @@
   const active = e => inArena(e) && !e.crash;
   const living = e => e.enemies.filter(x => x.swarmDrone && !x.dead && x.hp > 0);
   const waveIndex = e => modern(e) ? Math.min(5,e.swarm.waveIndex||0) : Math.min(2,e.swarm.packet);
+  const SCENARIO_ORDER2180=Object.freeze([0,1,2,4,5,3]);
+  const scenarioIndex=(e,n=waveIndex(e))=>modern(e)&&e.swarm.orderVersion==='2.18.0'?SCENARIO_ORDER2180[Math.min(5,n)]:Math.min(5,n);
   const waveTotal = e => modern(e) ? 6 : 3;
-  const waveDef = e => (challenge(e)?CHALLENGE:WAVES)[waveIndex(e)];
-  const waveCount = (e, n = waveIndex(e)) => modern(e) ? (challenge(e)?CHALLENGE:WAVES)[Math.min(5,n)][e.assist?'calm':'normal'] : WAVE_COUNTS[e.assist ? 'calm' : 'normal'][Math.min(2,n)];
+  const waveDef = e => (challenge(e)?CHALLENGE:WAVES)[scenarioIndex(e)];
+  const waveCount = (e, n = waveIndex(e)) => modern(e) ? (challenge(e)?CHALLENGE:WAVES)[scenarioIndex(e,n)][e.assist?'calm':'normal'] : WAVE_COUNTS[e.assist ? 'calm' : 'normal'][Math.min(2,n)];
   const waveName = e => modern(e) ? waveDef(e).name : FORMS[Math.min(2,e.swarm.packet)];
   const mix = (a, b, t) => a + (b - a) * t;
   const smooth = t => t * t * (3 - 2 * t);
@@ -83,14 +85,14 @@
     const s = e.swarm, count = waveCount(e), columns = count === 10 || count === 15 ? 5 : 6;
     const row = Math.floor(index / columns), col = index % columns;
     if(challenge(e)){
-      const n=waveIndex(e),count=waveCount(e),drift=Math.sin(time*.34+s.seedPhase)*2;
+      const n=scenarioIndex(e),count=waveCount(e),drift=Math.sin(time*.34+s.seedPhase)*2;
       if(n<2){const group=n?Math.floor(index/8):0,k=index%8,side=k%2?1:-1,rank=Math.floor(k/2);return [side*(5+rank*9)+drift,59-group*29-rank*6+Math.sin(time*.6+group),0];}
       if(n===2||n===3){const groups=n===2?2:4,size=count/groups,g=Math.floor(index/size),a=index%size/size*Math.PI*2+time*(g%2?-.12:.12);return [(g%2?27:-27)+Math.cos(a)*18+drift,(g<2?48:7)+Math.sin(a)*18,0];}
       if(n===4){const g=Math.floor(index/16),a=index%16/16*Math.PI*2+time*(g?-.16:.16);return [(g?24:-24)+Math.cos(a)*21+drift,32+Math.sin(a)*27,0];}
       const g=Math.floor(index/12),a=.15+index%12/11*(Math.PI-.3);return [Math.cos(a)*(g?36:48)+drift,12+g*19+Math.sin(a)*28,0];
     }
     if(modern(e)){
-      const n=waveIndex(e),def=waveDef(e),cols=count<=12?Math.ceil(count/2):Math.ceil(count/3),r=Math.floor(index/cols),c=index%cols,mid=(cols-1)/2;
+      const n=scenarioIndex(e),def=waveDef(e),cols=count<=12?Math.ceil(count/2):Math.ceil(count/3),r=Math.floor(index/cols),c=index%cols,mid=(cols-1)/2;
       let x=(c-mid)*12,y=51-r*12;
       if(def.form==='wings'){x=(c-mid)*13.5+(c<mid?-3:3);y=49-r*12-Math.abs(c-mid)*3;}
       else if(def.form==='diamond'){x=(c-mid)*13*(r===1?1:.8);y=53-r*12-Math.abs(c-mid)*2;}
@@ -103,7 +105,7 @@
   }
   function spawn(e, index) {
     const s = e.swarm, count = waveCount(e), columns = count === 10 || count === 15 ? 5 : 6;
-    const row = Math.floor(index / columns),n=waveIndex(e);
+    const row = Math.floor(index / columns),n=scenarioIndex(e);
     let role=modern(e)?n===5&&index<2?'commander':n>=2&&index%6===2?'bomber':n>=1&&index%3===1?'interceptor':'scout':'fighter';
     if(challenge(e))role=n>=3&&index%16===0?'commander':n>=3&&index%8===5?'torpedo':n>=2&&index%8===0?'shield':n>=1&&index%4===2?'bomber':index%4===1?'interceptor':'scout';
     const rank = modern(e)?role==='commander'?2:['bomber','shield','torpedo'].includes(role)?1:0:s.packet === 2 && row === 0 ? 2 : row === 0 && s.packet > 0 ? 1 : 0;
@@ -131,7 +133,7 @@
     e.enemies = []; e.bullets = []; e.hostile = []; e.selectedTarget = null; e.lock = null;
     for (let i = credit; i < count; i++) spawn(e, i);
     if (announce) {
-      e.notify('ВОЛНА ' + (waveIndex(e)+1) + ' / '+waveTotal(e)+' · ' + waveName(e), e.assist?(modern(e)?waveDef(e).lesson:'Подсвеченные корабли готовятся пикировать.'):tactics(e)?TACTIC_TIPS[waveIndex(e)]:'Разбей звено. Ракеты — ПКМ / Q. Снабжение подбирается кораблём.');
+      e.notify('ВОЛНА ' + (waveIndex(e)+1) + ' / '+waveTotal(e)+' · ' + waveName(e), e.assist?(modern(e)?waveDef(e).lesson:'Подсвеченные корабли готовятся пикировать.'):tactics(e)?TACTIC_TIPS[scenarioIndex(e)]:'Разбей звено. Ракеты — ПКМ / Q. Снабжение подбирается кораблём.');
       e.emit('wave', waveIndex(e)+1);
     }
   }
@@ -166,7 +168,7 @@
       window: null, radius: 0, inside: false, blocked: false, attack: null, slots: [],
       formationStart: 0, waveAge: 0, transition: 2.3, diveSerial: 0, fireSerial: 0,
       shotsCleared: 0, damageTaken: 0, hitsTaken: 0, dodgedDives: 0, warnedManual: false };
-    if(!migration)Object.assign(s,{rulesVersion:VERSION,tacticsVersion:'2.8.0',balanceVersion:'2.10.0',waveIndex:0,waveTotal:6,wavesCleared:0,waveKills:0,pickups:[],dropSerial:0,droppedThisWave:0,
+    if(!migration)Object.assign(s,{rulesVersion:VERSION,tacticsVersion:'2.8.0',balanceVersion:'2.10.0',orderVersion:'2.18.0',waveIndex:0,waveTotal:6,wavesCleared:0,waveKills:0,pickups:[],dropSerial:0,droppedThisWave:0,
       dropsSpawned:{repair:0,missiles:0,overdrive:0},dropsCollected:{repair:0,missiles:0,overdrive:0},overdriveUntil:0,events:[]});
     s.packet = e.plan[2].findIndex(id => !e.rescued.includes(id)); if (s.packet < 0) s.packet = 3;
     if(modern(e))s.waveIndex=Math.min(5,s.packet*2);
@@ -232,7 +234,7 @@
   }
   function modernShot(e,x){
     if(challenge(e))return challengeShot(e,x);
-    const s=e.swarm,p=e.player,n=waveIndex(e),cap=e.assist?24:32;
+    const s=e.swarm,p=e.player,n=scenarioIndex(e),cap=e.assist?24:32;
     // No point-blank bullets: even the fastest shot starts at least 24 units
     // above the player after its muzzle offset (>0.5 seconds of travel).
     if(e.hostile.length>=cap||x.pos[1]<p.pos[1]+30)return;
@@ -245,7 +247,7 @@
     x.cueAim=null;x.attackCue=0;e.emit('shot',{swarmEnemy:true});
   }
   function challengeShot(e,x){
-    const s=e.swarm,p=e.player,n=waveIndex(e);
+    const s=e.swarm,p=e.player,n=scenarioIndex(e);
     // Muzzle separation and finite homing give time to react to the projectile
     // itself. No hidden region damage or advance targeting markers are used.
     const soft=balanced(e),cap=soft?balance(e).hostile:LIMITS.hostile;
@@ -275,7 +277,7 @@
       const fromLeft=(s.diveSerial+i)%2===0,x=fromLeft?available.shift():available.pop();if(!x)break;
       const kind=tactics(e)?({scout:'serpent',interceptor:'intercept',bomber:'siege',shield:'bulwark',torpedo:'flank',commander:'orbit'}[x.role]):def.dive==='mixed'?(challenge(e)?['hook','cross','pincer','flank']:['hook','cross','pincer'])[(s.diveSerial+i)%(challenge(e)?4:3)]:def.dive;
       x.mode='tell';x.modeTime=0;x.fireCue=0;x.attackCue=0;
-      x.route={kind,side:fromLeft?1:-1,duration:e.assist?5.05:challenge(e)?4.1-waveIndex(e)*.13:4.15-waveIndex(e)*.07,fired:false,firedAgain:false,hit:false};
+      x.route={kind,side:fromLeft?1:-1,duration:e.assist?5.05:challenge(e)?4.1-scenarioIndex(e)*.13:4.15-scenarioIndex(e)*.07,fired:false,firedAgain:false,hit:false};
       if(tactics(e)){
         x.route.duration*=({serpent:1.0,intercept:.81,siege:1.85,bulwark:1.6,flank:1.3,orbit:1.75}[kind]||1);
         s.routeCounts=s.routeCounts||{};s.routeCounts[kind]=(s.routeCounts[kind]||0)+1;
@@ -285,7 +287,7 @@
     s.diveSerial++;
   }
   function dropSupply(e,enemy){
-    const s=e.swarm;if(!modern(e)||s.droppedThisWave>=(challenge(e)?[1,2,3,4,4,5][waveIndex(e)]:(waveIndex(e)?2:1))||s.pickups.length>=(challenge(e)?4:3))return;
+    const s=e.swarm;if(!modern(e)||s.droppedThisWave>=(challenge(e)?[1,2,3,4,4,5][scenarioIndex(e)]:(waveIndex(e)?2:1))||s.pickups.length>=(challenge(e)?4:3))return;
     if(enemy.mode!=='dive'&&!['bomber','commander','shield','torpedo'].includes(enemy.role))return;
     const cycle=['repair','missiles','overdrive'],limits=challenge(e)?{repair:6,missiles:8,overdrive:5}:{repair:3,missiles:4,overdrive:3};let type=null;
     for(let i=0;i<3;i++){const candidate=cycle[s.dropSerial++%3];if(s.dropsSpawned[candidate]<limits[candidate]){type=candidate;break;}}
@@ -415,7 +417,7 @@
               const x=challenge(e)?ready[(s.fireSerial%Math.max(1,Math.min(4,ready.length))+i)%ready.length]:ready[(s.fireSerial+(i?Math.floor(ready.length/2):0))%ready.length];x.cueAim=p.pos.slice();if(e.assist||classic(e))x.fireCue=x.attackCue=e.assist?1.15:.85;else enemyShot(e,x);
             }
             s.fireSerial++;s.fireClock=e.assist?def.fire+.85:challenge(e)||classic(e)?def.fire:def.fire/3;
-            if(tactics(e))s.fireClock*=1-waveIndex(e)*.035;
+            if(tactics(e))s.fireClock*=1-scenarioIndex(e)*.035;
             if(balanced(e))s.fireClock*=balance(e).cadence;
           }else{
             if (ready.length) { ready[s.fireSerial++ % ready.length].fireCue = e.assist ? .95 : .7; }
@@ -800,7 +802,7 @@
   }
   // Older diagnostics may still ask about the retired communication window or
   // hazard rectangles. Keep those query names harmless, but expose real waves.
-  globalThis.CITADEL_SWARM = Object.freeze({ version: VERSION, tacticsVersion:'2.8.0',balanceVersion:'2.10.0',balance:BALANCE_2100,lateBalance:BALANCE_2120,balanceFor:balance,balanced,active, completed, modern, challenge, tactics,waveIndex, waveTotal, waveDefinition:waveDef, waves:CHALLENGE,trainingWaves:WAVES,limits:LIMITS,
+  globalThis.CITADEL_SWARM = Object.freeze({ version: VERSION, tacticsVersion:'2.8.0',balanceVersion:'2.10.0',balance:BALANCE_2100,lateBalance:BALANCE_2120,balanceFor:balance,balanced,active, completed, modern, challenge, tactics,waveIndex,scenarioIndex,scenarioOrder:SCENARIO_ORDER2180, waveTotal, waveDefinition:waveDef, waves:CHALLENGE,trainingWaves:WAVES,limits:LIMITS,
     insideWindow: () => false, windowAt: () => null, formationPoint, secondsNeeded: waveCount,
     arena: ARENA, formations: FORMS, liveRegions: () => [], regionContains: () => false,
     regionPoint: (a, u, v, z = 0) => [a.u[0] * u + a.v[0] * v, a.u[1] * u + a.v[1] * v, z],
