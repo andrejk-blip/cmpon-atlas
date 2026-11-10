@@ -188,7 +188,7 @@
     cupLobbyHTML = function () {
       const saved = readLocal() || ARCADE.checkpoint || ARCADE.finaleCheckpoint;
       const offline = connection === 'unavailable', run = cupPlayableRun();
-      return `<div class="arcade-menu campaign-menu cup-lobby"><div class="cup-lobby-heading"><span class="arcade-serial">РЕДАКЦИЯ ПОД ЗАЩИТОЙ</span><h3>ЦИТАДЕЛЬ <span>ЦСИИ</span></h3><p>Защитите ФТ от лишних замечаний и доведите документ до согласования.</p></div>
+      return `<div class="arcade-menu campaign-menu cup-lobby"><div class="cup-lobby-heading"><span class="arcade-serial">РЕДАКЦИЯ ПОД ЗАЩИТОЙ</span><h3>ЦИТАДЕЛЬ <span>ТРЕБОВАНИЙ</span></h3><p>Защитите ФТ от лишних замечаний и доведите документ до согласования.</p></div>
         <div class="cup-notice" id="cup-notice" role="status">${cupNotice()}</div>
         <div class="cup-entry">
         ${(offline || saved) ? `<button class="arcade-play" data-action="launch-local">${saved ? 'Продолжить на устройстве' : 'Начать игру без рейтинга'} →</button>` : ''}

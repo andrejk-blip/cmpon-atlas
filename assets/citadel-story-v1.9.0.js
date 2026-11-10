@@ -7,7 +7,7 @@
   const VERSION = '1.9.0', prologues = new WeakMap();
   const escape = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const pages = Object.freeze([
-    Object.freeze({tag:'ФТ ГОТОВЫ!',title:'Всё начинается в Цитадели',text:'Команда ЦСИИ подготовила функциональные требования. Проверила формулировки, собрала пакет и уже видит, как всё заработает.',accent:'Осталось только согласовать. Казалось бы…',box:'0 0 627 573',alt:'Аналитики завершают пакет требований на фоне орбитальной Цитадели.'}),
+    Object.freeze({tag:'ФТ ГОТОВЫ!',title:'Всё начинается в Цитадели',text:'Команда космических аналитиков подготовила функциональные требования на своей орбитальной базе — в Цитадели. Проверила формулировки, собрала пакет и уже видит, как всё заработает.',accent:'Осталось только согласовать. Казалось бы…',box:'0 0 627 573',alt:'Аналитики завершают пакет требований на фоне орбитальной Цитадели.'}),
     Object.freeze({tag:'ФЗ УХОДИТ СО СВЯЗИ!',title:'Но согласование — отдельная миссия',text:'Функциональный заказчик — ФЗ — уходит от связи. Нужно догнать его, собрать уточнения и довести требования до согласования.',accent:'Держи связь. Требования сами себя не соберут.',box:'627 0 627 573',alt:'Корабль ФЗ уходит между астероидами, аналитик следует за ним.'}),
     Object.freeze({tag:'МРГ УЖЕ ЖДЁТ!',title:'Запустить пакет будет непросто',text:'МРГ не даст так просто передать ФТ в работу. Его солдаты уже вышли из логова: впереди засады, ракетчики, ниндзя и робособаки.',accent:'На поздних палубах жди подкрепления. Даже за спиной.',box:'0 574 627 680',alt:'Живой компьютер МРГ отправляет солдат, ниндзя и робособак остановить аналитика.'}),
     Object.freeze({tag:'ТВОЯ ОЧЕРЕДЬ, АНАЛИТИК!',title:'Вся надежда на тебя',text:'Сможешь ли ты собрать уточнения, защитить решения и запустить функциональные требования в работу? Капитан на связи. Цитадель рассчитывает на тебя.',accent:'Пора вылетать. Без ТЗ — и результат ХЗ.',box:'627 574 627 680',alt:'Аналитик берётся за штурвал корабля и готовится выполнить миссию.'}),
@@ -76,7 +76,7 @@
     const next = last ? (s.preview ? 'Вернуться' : 'Начать операцию') : 'Дальше';
     return '<section class="citadel-prologue" role="dialog" aria-modal="true" aria-labelledby="prologue-title">'+
       '<div class="prologue-art"><svg viewBox="'+page.box+'" preserveAspectRatio="xMidYMid slice" role="img" aria-label="'+escape(page.alt)+'"><image href="./assets/citadel-prologue-v1.9.0.webp" x="0" y="0" width="1254" height="1254"/></svg><span>'+escape(page.tag)+'</span></div>'+
-      '<div class="prologue-copy"><header class="prologue-topline"><span>ЦИТАДЕЛЬ ЦСИИ · ПРОЛОГ '+(s.page+1)+' / 4</span><button type="button" data-action="story-skip">'+skip+'</button></header>'+
+      '<div class="prologue-copy"><header class="prologue-topline"><span>ЦИТАДЕЛЬ ТРЕБОВАНИЙ · ПРОЛОГ '+(s.page+1)+' / 4</span><button type="button" data-action="story-skip">'+skip+'</button></header>'+
       '<h3 id="prologue-title">'+escape(page.title)+'</h3><p>'+escape(page.text)+'</p><strong>'+escape(page.accent)+'</strong>'+
       '<nav class="prologue-nav" aria-label="Страницы вступления"><button type="button" data-action="story-back"'+(s.page===0?' disabled':'')+' aria-label="Предыдущая страница">←</button><div class="prologue-dots" aria-hidden="true">'+pages.map((_,i)=>'<i'+(i===s.page?' class="active"':'')+'></i>').join('')+'</div><button type="button" data-action="story-next">'+next+' →</button></nav></div></section>';
   }

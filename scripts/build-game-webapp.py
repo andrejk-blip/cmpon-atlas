@@ -5,10 +5,10 @@ import re
 root=Path(__file__).resolve().parent.parent
 s=(root/'index.html').read_text()
 s=s.replace('<body>','<body class="citadel-webapp">')
-s=re.sub(r'<title>.*?</title>','<title>Цитадель ЦСИИ — игра</title>',s)
+s=re.sub(r'<title>.*?</title>','<title>Цитадель требований — игра</title>',s)
 s=re.sub(r'<link rel="canonical"[^>]+>','<link rel="canonical" href="https://andrejk-blip.github.io/cmpon-atlas/play.html">',s)
 s=re.sub(r'<meta (?:property="og:[^"]+"|name="twitter:[^"]+")[^>]+>\n?','',s)
-s=re.sub(r'(<meta name="description" content=")[^"]+',r'\g<1>15 глав космического приключения: полёты, живые монстры, базы и решения аналитика.',s)
+s=re.sub(r'(<meta name="description" content=")[^"]+',r'\g<1>Цитадель требований — история космических аналитиков и их базы. 15 глав: полёты, бои, исследования и решения.',s)
 s=re.sub(r'<link rel="icon"[^>]+>','<link rel="icon" href="./assets/home2180/analyst-32.png" type="image/png" sizes="32x32">',s)
 s=re.sub(r'<link rel="apple-touch-icon"[^>]+>','<link rel="apple-touch-icon" href="./assets/home2180/analyst-180.png">',s)
 s=re.sub(r'<(?:script defer src|link rel="stylesheet" href)="\./assets/atlas-(?:metrics|integration)[^>]+>(?:</script>)?\n?','',s)
