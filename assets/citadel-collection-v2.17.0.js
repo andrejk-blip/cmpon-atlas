@@ -28,9 +28,9 @@
   ['accord','Общий язык','Пройти Станцию противоречий'],['citadel','Сигнал принят','Победить МРГ'],
   ['collector','Полная колода','Открыть все 17 персонажей'],['reader','Вся история','Открыть семь комиксов']
  ].map(([id,title,hint])=>({id,title,hint}));
- const empty=()=>({schema:1,cards:{},comics:{},achievements:{}});
- let profile=empty(),menuView=null;
- try{const saved=JSON.parse(localStorage.getItem(KEY)||'null');if(saved?.schema===1)for(const k of ['cards','comics','achievements'])profile[k]=saved[k]&&typeof saved[k]==='object'?saved[k]:{};}catch{}
+ const empty=()=>({schema:1,cards:{},comics:{},achievements:{},unseen:{}});
+ let profile=empty(),menuView=null,silentAwards=0;
+ try{const saved=JSON.parse(localStorage.getItem(KEY)||'null');if(saved?.schema===1)for(const k of ['cards','comics','achievements','unseen'])profile[k]=saved[k]&&typeof saved[k]==='object'?saved[k]:{};}catch{}
  const old={start:p.start,step:p.step,action:arcadeAction,overlay:arcadeOverlayHTML,update:updateArcadeOverlay,unpack:cupUnpack};
  const btn=(a,t,v='',extra='')=>'<button type="button" data-action="'+a+'" data-value="'+esc(String(v))+'" '+extra+'>'+t+'</button>';
  const view=e=>C.active(e)?e.campaign2120.modal:menuView;
@@ -52,7 +52,9 @@
  function warmNextArt(card){if(saveData()||imageLoads.get(card.src)?.status!=='ready')return;const unlocked=CARDS.filter(c=>profile.cards[c.id]),i=unlocked.findIndex(c=>c.id===card.id);if(unlocked.length>1)warmImage(unlocked[(i+1)%unlocked.length].src);}
 
  function persist(){try{if(!globalThis.CITADEL_TEST_MEMORY_ONLY)localStorage.setItem(KEY,JSON.stringify(profile));}catch{if(typeof ARCADE!=='undefined')ARCADE.storage=false;}}
- function grant(group,id){if(profile[group][id])return false;profile[group][id]=true;persist();return true;}
+ function grant(group,id){if(profile[group][id])return false;profile[group][id]=true;if(group==='achievements'&&!silentAwards)profile.unseen[id]=Date.now();persist();return true;}
+ function pending(){return ACHIEVEMENTS.filter(a=>profile.achievements[a.id]&&profile.unseen[a.id]);}
+ function acknowledge(ids=pending().map(a=>a.id)){for(const id of ids)delete profile.unseen[id];persist();}
  function campaign(e,fresh=false){const s=C.state(e);if(!s.story2170){s.story2170={seen:{}};if(!fresh)for(const c of COMICS)if(!c.after||s.completed.includes(c.after))s.story2170.seen[c.id]=true;}s.comic2130Seen=true;return s;}
  function setView(e,v){if(C.active(e))C.state(e).modal=v;else menuView=v;warmImage(sourceFor(v),'high');clearArcadeInput();}
  function refresh(e=ARCADE.engine,save=true){ARCADE.overlayToken='';if(save&&C.active(e))C.save(e,true);updateArcadeHUD();updateArcadeOverlay();}
@@ -84,7 +86,7 @@
  }
  p.start=function(){const r=old.start.apply(this,arguments);menuView=null;if(C.active(this)){campaign(this,true);CITADEL_STORY.close(this,false);observe(this);}return r;};
  p.step=function(){if(owned(view(this)))return;const r=old.step.apply(this,arguments);observe(this);return r;};
- cupUnpack=function(){const e=old.unpack.apply(this,arguments);if(C.active(e)){campaign(e);unlock(e);}return e;};
+ cupUnpack=function(){silentAwards++;try{const e=old.unpack.apply(this,arguments);if(C.active(e)){campaign(e);unlock(e);}return e;}finally{silentAwards--;}};
  function nav(){return '<nav class="nav2170">'+btn('campaign-document','Документ')+btn('collection2170-open','Коллекция','cards')+btn('collection2170-open','Комиксы','comics')+'</nav>';}
  function lobby(){const mode=L.preferred,saved=C.read(mode),canContinue=saved&&saved.engine.status!=='won';
   if(globalThis.CITADEL_HOME2180)return CITADEL_HOME2180.lobby({mode,canContinue,button:btn});
@@ -97,12 +99,12 @@
   const visible=items.slice(page*6,page*6+6),firstVisible=visible.find(x=>profile[tab]?.[x.id]);
   const header='<header><div><h3>'+(tab==='comics'?'Комиксы':tab==='achievements'?'Достижения':'Коллекция')+'</h3>'+(tab!=='achievements'?'<p>'+open+' / '+items.length+' открыто</p>':'')+'</div>'+btn('collection2170-close','Закрыть')+'</header>';
   const tabs='<nav class="collection2170-tabs" aria-label="Раздел коллекции">'+[['cards','Персонажи'],['comics','Комиксы'],['achievements','Достижения']].map(([id,t])=>btn('collection2170-tab',t,id,'aria-pressed="'+(tab===id)+'"')).join('')+'</nav>';
-  if(tab==='achievements')return '<section class="collection2170">'+header+tabs+'<div class="collection2170-achievements">'+ACHIEVEMENTS.map(a=>'<article class="'+(profile.achievements[a.id]?'earned':'')+'"><h4>'+(profile.achievements[a.id]?'✓ ':'◇ ')+a.title+'</h4><p>'+a.hint+'</p></article>').join('')+'</div></section>';
+  if(tab==='achievements')return '<section class="collection2170">'+header+tabs+'<div class="collection2170-achievements">'+ACHIEVEMENTS.map(a=>'<article class="'+(profile.achievements[a.id]?'earned':'')+'"><h4>'+(profile.achievements[a.id]?'✓ ':'◇ ')+a.title+(profile.unseen[a.id]?'<small class="award2182-new">НОВОЕ</small>':'')+'</h4><p>'+a.hint+'</p></article>').join('')+'</div></section>';
   return '<section class="collection2170">'+header+tabs+'<div class="collection2170-grid '+(tab==='comics'?'collection2170-comics':'')+'">'+visible.map(x=>btn(tab==='comics'?'collection2170-comic':'collection2170-art',(profile[tab][x.id]?'<img src="'+x.thumb+'" alt="'+x.title+'" decoding="async" loading="'+(x===firstVisible?'eager':'lazy')+'"'+(x===firstVisible?' fetchpriority="high"':'')+(tab==='cards'?' width="1024" height="1536"':'')+'>':'<div class="collection2170-lock" aria-hidden="true">◇</div>')+'<span>'+x.title+(!profile[tab][x.id]?'<small>'+(tab==='comics'?(x.after?'После главы «'+C.title(x.after)+'»':'Начать кампанию'):x.hint)+'</small>':'')+'</span>',x.id,profile[tab][x.id]?'':'disabled')).join('')+'</div><nav class="collection2170-pager">'+btn('collection2170-page','←',page-1,page===0?'disabled aria-label="Предыдущая страница"':'aria-label="Предыдущая страница"')+'<span>'+(page+1)+' / '+Math.ceil(items.length/6)+'</span>'+btn('collection2170-page','→',page+1,page>=Math.ceil(items.length/6)-1?'disabled aria-label="Следующая страница"':'aria-label="Следующая страница"')+'</nav></section>';
  }
  function art(v){const card=CARDS.find(c=>c.id===(v.id||v.kind))||CARDS[0],known=profile.cards[card.id]||!!(C.active(ARCADE.engine)&&C.state(ARCADE.engine).encounters?.[card.id]);if(known){warmImage(card.src,'high');warmNextArt(card);}return '<section class="collection2170"><header><h3>'+card.title+'</h3>'+btn('collection2170-close','Закрыть')+'</header><div class="collection2170-art">'+(known?'<img src="'+(imageLoads.get(card.src)?.status==='ready'?card.src:card.thumb)+'" alt="'+card.title+' — коллекционная карточка" width="1024" height="1536" loading="eager" decoding="async" fetchpriority="high">':'')+'<aside><p class="collection2170-notice">'+(v.automatic2140?'Открыт новый персонаж':known?'Карточка открыта':card.hint)+'</p>'+(known?imageNotice(card.src):'')+'<nav>'+btn('collection2170-art-prev','←',card.id,'aria-label="Предыдущий персонаж"')+btn('collection2170-tab','В коллекцию','cards')+btn('collection2170-art-next','→',card.id,'aria-label="Следующий персонаж"')+'</nav></aside></div></section>';}
  function comic(v){const c=COMICS.find(c=>c.id===v.id)||COMICS[0],page=Math.max(0,Math.min(3,v.page||0));warmImage(c.src,'high');return '<section class="comic2170" role="dialog" aria-modal="true" aria-labelledby="comic2170-title"><header><h3 id="comic2170-title">'+c.title+'</h3>'+btn('collection2170-close',v.replay?'Закрыть':'Пропустить')+'</header><div class="comic2170-body"><div class="comic2170-picture" role="img" aria-label="'+esc(c.captions[page])+'" style="position:relative;display:grid;place-items:center;background-image:url('+c.src+');background-position:'+(page%2*100)+'% '+(Math.floor(page/2)*100)+'%">'+imageNotice(c.src)+'</div><div class="comic2170-copy"><p>'+esc(c.captions[page])+'</p><nav>'+btn('collection2170-comic-back','←','',page===0?'disabled aria-label="Предыдущий кадр"':'aria-label="Предыдущий кадр"')+'<span>'+(page+1)+' / 4</span>'+btn('collection2170-comic-next',page===3?(v.replay?'В комиксы':'Продолжить'):'Дальше →')+'</nav></div></div></section>';}
- function close(e){const v=view(e);if(!owned(v))return;
+ function close(e){const v=view(e);if(!owned(v))return;if(v.type==='collection2170'&&v.tab==='achievements')acknowledge();
   if(v.type==='comic2170'&&!v.replay&&C.active(e))campaign(e).story2170.seen[v.id]=true;
   setView(e,v.type==='comic2170'&&v.replay?{type:'collection2170',tab:'comics',page:v.galleryPage||0}:null);observe(e);refresh(e);ARCADE.canvas?.focus?.({preventScroll:true});
  }
@@ -129,7 +131,7 @@
   if(owned(v)){
    if(action==='collection2172-retry'&&value===sourceFor(v)){warmImage(value,'high',true);refresh(e,false);return true;}
    if(action==='collection2170-close'||action==='campaign-modal-close'){close(e);return true;}
-   if(action==='collection2170-tab'){setView(e,{type:'collection2170',tab:['cards','comics','achievements'].includes(value)?value:'cards',page:0});refresh(e);return true;}
+   if(action==='collection2170-tab'){if(v.tab==='achievements')acknowledge();setView(e,{type:'collection2170',tab:['cards','comics','achievements'].includes(value)?value:'cards',page:0});refresh(e);return true;}
    if(action==='collection2170-page'&&v.type==='collection2170'){const count=v.tab==='comics'?COMICS.length:CARDS.length;v.page=Math.max(0,Math.min(Math.ceil(count/6)-1,Number(value)||0));refresh(e);return true;}
    if(action==='collection2170-art'&&profile.cards[value]){setView(e,{type:'art2170',id:value});refresh(e);return true;}
    if(action==='collection2170-art-prev'||action==='collection2170-art-next'){const unlocked=CARDS.filter(c=>profile.cards[c.id]),index=unlocked.findIndex(c=>c.id===value);if(unlocked.length)setView(e,{type:'art2170',id:unlocked[(index+(action.endsWith('prev')?-1:1)+unlocked.length)%unlocked.length].id});refresh(e);return true;}
@@ -145,5 +147,5 @@
   if(event.key==='Escape'){event.preventDefault();event.stopImmediatePropagation();close(e);}
   else if(v.type==='comic2170'&&['ArrowLeft','ArrowRight'].includes(event.key)){event.preventDefault();event.stopImmediatePropagation();arcadeAction(event.key==='ArrowRight'?'collection2170-comic-next':'collection2170-comic-back');}
  },true);
- globalThis.CITADEL_COLLECTION=Object.freeze({version:'2.17.3',cards:CARDS,comics:COMICS,achievements:ACHIEVEMENTS,view,observe,unlock,profile:()=>JSON.parse(JSON.stringify(profile)),storageKey:KEY});
+ globalThis.CITADEL_COLLECTION=Object.freeze({version:'2.18.2',pending,acknowledge,cards:CARDS,comics:COMICS,achievements:ACHIEVEMENTS,view,observe,unlock,profile:()=>JSON.parse(JSON.stringify(profile)),storageKey:KEY});
 })();

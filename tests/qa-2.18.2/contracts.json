@@ -1,0 +1,30 @@
+{
+  "version": "2.18.2",
+  "pass": true,
+  "rows": [
+    {
+      "name": "anonymous start and continue require a name in all three modes, then restore intended action",
+      "pass": true
+    },
+    {
+      "name": "rating is visible, no cup menu; leader uses returned results and escapes names",
+      "pass": true
+    },
+    {
+      "name": "document pieces derive from actual rewards, display actual text and ignore skipped parts",
+      "pass": true
+    },
+    {
+      "name": "achievement unlocks persist once, survive unread, and practice cannot earn them",
+      "pass": true
+    },
+    {
+      "name": "old profiles remain owned without being announced again on restore",
+      "pass": true
+    },
+    {
+      "name": "completed chapters queue safely, retry offline, preserve player ownership and never send practice",
+      "pass": true
+    }
+  ]
+}

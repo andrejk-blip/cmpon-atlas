@@ -1,0 +1,23 @@
+/* Five actual requirement sections assembled from existing campaign rewards.
+ * Presentation only: no invented progress, grants, answers or save writes. */
+(()=>{
+ 'use strict';if(globalThis.CITADEL_DOSSIER)return;
+ const C=CITADEL_CAMPAIGN,old={overlay:arcadeOverlayHTML,action:arcadeAction},views=new WeakMap();
+ const parts=[
+  {id:'goal',title:'Цель',question:'Какой результат нужен?',chapter:'orbit1',icon:'◎'},
+  {id:'scope',title:'Границы',question:'Что входит в работу?',chapter:'base1',icon:'⬡'},
+  {id:'terms',title:'Термины',question:'Что означают слова?',chapter:'contradictions',icon:'≡'},
+  {id:'links',title:'Связи',question:'Кто и что передаёт?',chapter:'convoy1',icon:'⇄'},
+  {id:'acceptance',title:'Приёмка',question:'Как проверить результат?',chapter:'base2',icon:'✓'}
+ ];
+ const isOpen=e=>C.active(e)&&(C.state(e).modal?.type==='document'||!C.state(e).modal&&e.status==='campaignsummary');
+ function model(e){const s=C.state(e);return parts.map(p=>{const text=String(s.document[p.id]||''),review=text.startsWith('Переход с пропуском:');return {...p,text,ready:!!text&&!review,review,changed:s.changed===p.id};});}
+ function state(e){const s=C.state(e),revision=s.completed.length;let v=views.get(e);if(!v||v.revision!==revision){v={selected:parts.some(p=>p.id===s.changed)?s.changed:'goal',revision};views.set(e,v);}return v;}
+ function render(e){const s=C.state(e),v=state(e),items=model(e),n=items.filter(p=>p.ready).length,selected=items.find(p=>p.id===v.selected),summary=!s.modal&&e.status==='campaignsummary',last=s.completed.at(-1),skipped=!!s.skipped2140?.[last];
+  const tiles=items.map((p,i)=>'<button type="button" data-action="dossier2182-select" data-value="'+p.id+'" aria-pressed="'+(v.selected===p.id)+'" aria-controls="dossier2182-detail" class="dossier2182-part '+(p.ready?'is-collected':'is-missing')+(p.review?' needs-review':'')+(p.changed?' is-new':'')+'" style="--part:'+i+'"><span class="dossier2182-number">ФТ · 0'+(i+1)+'</span><span class="dossier2182-symbol" aria-hidden="true">'+p.icon+'</span><b>'+p.title+'</b><span class="dossier2182-question">'+p.question+'</span><em>'+(p.review?'Нужно проверить':p.ready?(p.changed?'Обновлено ✦':'Собрано ✓'):'Ещё не найдено')+'</em></button>').join('');
+  return '<section class="xp-desk dossier2182" aria-label="Собираемый документ требований"><header><div><small>ПАКЕТ ТРЕБОВАНИЙ · РЕДАКЦИЯ '+s.completed.length+'</small><h3>'+(n===5?'Документ собран!':'Собери целый документ')+'</h3></div><strong>'+n+'<small>из 5 частей</small></strong></header><div class="dossier2182-progress" role="progressbar" aria-label="Собрано частей документа" aria-valuemin="0" aria-valuemax="5" aria-valuenow="'+n+'">'+items.map(p=>'<i class="'+(p.ready?'filled':'')+'"></i>').join('')+'</div><div class="dossier2182-workspace"><div class="dossier2182-pieces">'+tiles+'</div><article id="dossier2182-detail" class="dossier2182-detail '+(selected.ready?'is-collected':'')+'" aria-live="polite"><small>'+(selected.review?'ТРЕБУЕТ ПРОВЕРКИ':selected.ready?'ФРАГМЕНТ ДОКУМЕНТА':'МЕСТО ДЛЯ БУДУЩЕГО ТРЕБОВАНИЯ')+'</small><h4>'+selected.title+'</h4><p>'+esc(selected.text||selected.question+' Этот раздел появится после главы «'+C.title(selected.chapter)+'».')+'</p><span>'+(selected.ready?(selected.changed?'✦ Последнее изменение':'✓ Включено в пакет'):selected.review?'↪ Пропущенная глава не даёт готового раздела':'◇ Пройди главу, чтобы получить фрагмент')+'</span></article></div><div class="dossier2182-chapters" aria-label="Главы: '+s.completed.length+' из 15">'+C.ids.map((id,i)=>'<span title="'+esc(C.title(id))+'" class="'+(s.completed.includes(id)?'done':'')+(s.skipped2140?.[id]?' skipped':'')+'">'+(s.skipped2140?.[id]?'↪':s.completed.includes(id)?'✓':i+1)+'</span>').join('')+'</div><footer><p>'+(skipped?'Глава пропущена — раздел требует проверки.':n===5?'Все части на месте. В следующих главах уточняем требования.':'Нажми на часть — прочитай собранное требование.')+'</p><button type="button" data-action="'+(summary?'campaign-summary-next':'campaign-modal-close')+'">'+(summary?'Дальше →':'В игру →')+'</button></footer></section>';
+ }
+ arcadeOverlayHTML=function(){const e=ARCADE.engine;return !CUP.panel&&isOpen(e)?render(e):old.overlay.apply(this,arguments);};
+ arcadeAction=function(action,value){const e=ARCADE.engine;if(action==='dossier2182-select'&&isOpen(e)&&parts.some(p=>p.id===value)){state(e).selected=value;ARCADE.overlayToken='';updateArcadeOverlay();document.querySelector?.('[data-action="dossier2182-select"][data-value="'+value+'"]')?.focus({preventScroll:true});return true;}return old.action.apply(this,arguments);};
+ globalThis.CITADEL_DOSSIER=Object.freeze({version:'2.18.2',parts,model,render});
+})();

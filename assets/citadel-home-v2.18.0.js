@@ -56,11 +56,11 @@
    '<header class="home2180-title"><p class="home2180-eyebrow"><i aria-hidden="true"></i> БАЗА КОСМИЧЕСКИХ АНАЛИТИКОВ</p><h3>ЦИТАДЕЛЬ <span>ТРЕБОВАНИЙ</span></h3><p class="home2180-story">Собери требования. <br>Защити свою цитадель.</p></header>'+
    '<div class="home2180-crew" data-crew-ready="'+crewReady+'" role="img" aria-label="Команда цитадели: аналитик, мех, ниндзя и кибердоберман в орбитальном ангаре">'+crew+'</div>'+
    '<div class="home2181-loading" role="status"'+(crewReady?' hidden':'')+'><span>Загружаем экипаж · 0 / 4</span><button type="button" hidden>Повторить</button></div>'+
-   '<div class="home2180-console"><div class="home2180-console-label" aria-hidden="true"><span>ЭКСПЕДИЦИЯ · 15 ГЛАВ</span><i></i> СВЯЗЬ ЕСТЬ</div>'+
+   '<div class="home2180-console">'+(globalThis.CITADEL_SOCIAL?.homebar()||'')+'<div class="home2180-console-label" aria-hidden="true"><span>ЭКСПЕДИЦИЯ · 15 ГЛАВ</span><i></i> СВЯЗЬ ЕСТЬ</div>'+
    '<div class="home2180-modes" role="group" aria-label="Режим игры">'+L.modes.map(m=>b('learning-mode',m==='pro'?'Кейсы':L.labels[m],m,'aria-pressed="'+(m===mode)+'"')).join('')+'</div>'+
    '<p class="home2180-description">'+({training:'Спокойный бой. Подсказки рядом.',combat:'Полный бой. Короткие вопросы.',pro:'Полный бой. Задачи аналитика.'}[mode])+'</p>'+
    '<div class="home2180-play">'+(canContinue?b('campaign-continue','Продолжить <span aria-hidden="true">↗</span>',mode,'class="home2180-primary"'):'')+b(mode==='pro'?'launch-new':'learning-start',canContinue?'Сначала':'Начать игру <span aria-hidden="true">↗</span>','','class="'+(canContinue?'home2180-restart':'home2180-primary')+'"')+'</div>'+
-   '<nav class="home2180-nav" aria-label="Коллекция и дополнительные возможности">'+b('collection2170-open','Коллекция','cards')+b('collection2170-open','Комиксы','comics')+'<details><summary>Ещё <span aria-hidden="true">···</span></summary><div class="home2180-more">'+b('collection2170-open','Достижения','achievements')+b('collection2170-legacy','Рекорды и сохранения')+'<a href="./academy.html" target="_blank" rel="noopener">Академия ↗</a><button type="button" data-metrics-settings aria-controls="atlas-metrics-consent" aria-expanded="false">Статистика посещений</button></div></details></nav></div>'+
+   '<nav class="home2180-nav" aria-label="Коллекция и дополнительные возможности">'+b('collection2170-open','Коллекция','cards')+b('collection2170-open','Комиксы','comics')+(globalThis.CITADEL_SOCIAL?.awardsButton(b)||b('collection2170-open','Достижения','achievements'))+'<details><summary>Ещё <span aria-hidden="true">···</span></summary><div class="home2180-more">'+'<a href="./academy.html" target="_blank" rel="noopener">Академия ↗</a><button type="button" data-metrics-settings aria-controls="atlas-metrics-consent" aria-expanded="false">Статистика посещений</button></div></details></nav></div>'+
    '<div class="home2180-coordinate" aria-hidden="true">ОРБИТАЛЬНАЯ СТАНЦИЯ <b>01 / ДОМ</b></div></section>';
  }
  // The shared Atlas entry gets the game icon only while its game route is open.
@@ -69,5 +69,5 @@
  function brand(){if(!icon)return;const game=typeof STATE!=='undefined'&&STATE.view==='arcade';document.title=game?'Цитадель требований — игра':atlasTitle;icon.setAttribute('href',game?ART+'analyst-32.png':originalIcon.href);if(game)icon.setAttribute('type','image/png');else if(originalIcon.type)icon.setAttribute('type',originalIcon.type);else icon.removeAttribute('type');}
  if(typeof setView==='function'){const oldView=setView;setView=function(){const result=oldView.apply(this,arguments);brand();return result;};}
  brand();
- globalThis.CITADEL_HOME2180=Object.freeze({version:'2.18.1',lobby,prepare});
+ globalThis.CITADEL_HOME2180=Object.freeze({version:'2.18.2',lobby,prepare});
 })();

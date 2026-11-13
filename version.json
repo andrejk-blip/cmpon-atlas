@@ -1,7 +1,7 @@
 {
   "product": "ЦМПОН — атлас требований",
-  "version": "2.18.1",
-  "released_on": "2026-11-10",
+  "version": "2.18.2",
+  "released_on": "2026-11-13",
   "requirements_edition": "2.0.2 (ВСТЕ)",
   "requirements_as_of": "2026-10-14",
   "save_schema": "citadel-review-v3",
@@ -10,7 +10,7 @@
   "finale_save_schema": "citadel-finale-v1",
   "analytics_module_version": "0.1.0",
   "tournament_module_version": "1.1.0",
-  "index_sha256": "9879bcbae4af61f56f3b7d2fed9bc4cc727c17b007cffbf31d7f4c8877d975cf",
+  "index_sha256": "3bc1cbdd63eedc9b689f04bf6ce9fbc31309161dc7b64753e82a7d15258d5c5b",
   "offline_sha256": "754ccde3777ace0150d9b062461301ea9542f893c4f158ebc0ae7e07a3e8a2c3",
   "core_assets_version": "1.3.6",
   "soundtrack_module_version": "2.17.2",
@@ -345,7 +345,7 @@
     "assets/citadel-levels-v2.16.0.js": "5b7dbdcaf00f973b8251b198cf00e7020a3c3ada8c841b70f36fe9d302a9e74b",
     "assets/citadel-mobile-clean-v2.16.0.js": "c468cf43e977181105ab17a9af496c38f811c9d5eae2bb5110d3bde4550a7e99",
     "assets/citadel-resonator-v2.16.0.js": "8b24e2d0cebd85998bc1d72b28d49b2c8334043c086ca813ebee02c802b587d6",
-    "assets/citadel-collection-v2.17.0.js": "a1c3b716bffa755a5579ff82b3ecc5be93f6601e7b88863411a2e53c13fb2563",
+    "assets/citadel-collection-v2.17.0.js": "bcb48b5fea0cb59551774568d6256e012670b062aa6ac696733fb794e64768f1",
     "assets/citadel-quiz-v2.17.0.js": "b5f772e40e21290e0d98cc3b66deddd9c769b51a6010145ef9dd6937008743db",
     "assets/citadel-runtime-v1.9.3.js": "c2ae7f6723005c31ec4b3ba54d3c1a42eacb20686fd5c6e6bfc4dc200199fbd0",
     "assets/citadel-audio-controls-v2.17.2.css": "ca6f40991af5db24a63ffe1885da77f6e85056796a32ca87ff5fc043101f6fc0",
@@ -373,7 +373,7 @@
     "assets/citadel-cinema-v2.17.9.js": "a29e9985c60f97e27f72ca3a287be03e76068b2a97846e449f9204bfdadac0d9",
     "assets/citadel-parallax-v2.17.9.js": "44ce908e1f338471d37fcbdc616845c3e89b8cc0aa8ee4101d3fa1018c292171",
     "citadel.webmanifest": "971e7c434b4fcf4d9f0c579b1d1b7d42d73e476567aed03d178672e8cca8f889",
-    "assets/citadel-home-v2.18.0.js": "9eea2eaede50b618cd785e8348e620270c6da4f955a23b4981784299fac72c43",
+    "assets/citadel-home-v2.18.0.js": "2490a0fdb80653c5422c8dcb61744ceabd98434147709c195e0545d39f805187",
     "assets/citadel-home-v2.18.0.css": "d695d27b3570c8ac088b5cb0ba5c080f723e9c7a63aa81c5182002637c19e5f3",
     "assets/home2180/analyst-512.png": "aea8e521a1df12d270487b5de5e39cb423d84b199b235b205668e802c8c537c2",
     "assets/home2180/analyst.webp": "87f480a19d15aaebd58bdce8c6dcb6af116e0b0cd876f7b11d3dabfae505d2a2",
@@ -387,7 +387,11 @@
     "assets/home2180/analyst-192.png": "a645da5578786f8a59820f275d591c6c2bc47765a884ea11b6fda9def6183f9d",
     "assets/home2180/hangar-small.webp": "9b1b7d35f0fb3fdb8935e23262a071b89be4ff9094550a3ac0abe017fde34435",
     "assets/citadel-guidance-v2.18.1.js": "e7f19dbc11db3392aaf5c56200ec34e7eda1814405c37c2c627486a914175741",
-    "assets/citadel-loading-guidance-v2.18.1.css": "a02d7dea1ba5c6b1f4cbde4942d5411fd24d2922538137bd71c0bc4381b5ac9a"
+    "assets/citadel-loading-guidance-v2.18.1.css": "a02d7dea1ba5c6b1f4cbde4942d5411fd24d2922538137bd71c0bc4381b5ac9a",
+    "assets/citadel-social-v2.18.2.js": "28de0ae5d3ddc8ce47f0cbdfd09bdcdb6b49b0d66992f8c73522c6f6453880f9",
+    "assets/citadel-dossier-v2.18.2.js": "5283c5d576735f9227a90c595d52b1e6055f557cf464a5a8c669cd74e491e051",
+    "assets/citadel-ranking-v2.18.2.js": "a8a2862ab9cec11f3b11f605483b41ae002bef370796f7d4326df0ad6e706ae3",
+    "assets/citadel-progress-v2.18.2.css": "1c0d0c8957841419f33dbd4b4c2e4f91024c3c7edf405079badf40daf96c7824"
   },
   "base_rewards_sha256": "1bce49f58ff775c09248e9c82643bf00bc03857e8729bbf8bab7bef0456369ef",
   "combat_sha256": "153aa7c503ddb04936a76a44c14a767ee892878217f5f123a5a01994a46de955",
@@ -481,7 +485,7 @@
   "legacy_campaign_chapters": 14,
   "legacy_campaign_cards": 23,
   "online_app_entry": "play.html",
-  "webapp_sha256": "e31a2cad42b76b4aa78032ddbab5e1d3a957a8afb4bbc8a221cfcc7196325bc3",
+  "webapp_sha256": "cb71cf2027d1bb28ebfbcb511c665b1c1eb7701cf6543f551de5507e99adc29f",
   "manifest_sha256": "4daba5602fded15a1f2f0cb3e189ed7bba9660da257525ec746a03459326ad39",
   "campaign_sha256": "7899f96aeef2301e709aab2a4758c79b4bb385e6b7be8a32569d21071d173a50",
   "experience_version": "2.13.0",
@@ -498,7 +502,7 @@
   "recording_version": "2.17.7",
   "station_mechanic_version": "2.16.0",
   "deck_layouts_version": "2.16.0",
-  "collection_version": "2.17.6",
+  "collection_version": "2.18.2",
   "comic_episodes": 7,
   "collector_cards": 17,
   "quiz_ui_version": "2.17.0",
@@ -587,7 +591,7 @@
   "robot_death_revision": "2.17.9",
   "game_title": "Цитадель требований",
   "game_brand_revision": "2180n1",
-  "home_scene_version": "2.18.1",
+  "home_scene_version": "2.18.2",
   "game_icons_version": "2.18.0",
   "swarm_order_version": "2.18.0",
   "swarm_scenario_order": [
@@ -598,5 +602,7 @@
     6,
     4
   ],
-  "mobile_guidance_version": "2.18.1"
+  "mobile_guidance_version": "2.18.1",
+  "ranking_version": "2.18.2",
+  "document_ui_version": "2.18.2"
 }
