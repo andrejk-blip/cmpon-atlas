@@ -1,0 +1,1 @@
+{"name":"perepiska","version":"0.1.0","private":true,"type":"module","description":"Переписка — история одного района","scripts":{"test":"node --test tests/*.test.js","build":"node scripts/build.mjs"},"engines":{"node":">=20"}}
