@@ -190,3 +190,32 @@ test('repeated transmission/check/finish commands do not duplicate accepted resu
   assert.deepEqual(getView(state).summary, original);
   assert.deepEqual(state.completedCampaigns, ['courtyard']);
 });
+
+test('scoped synchronization and checking process only the carried task and remain idempotent', () => {
+  let state = answerTask(act(createGame(), 'START'), 'yuri');
+  state = answerTask(state, 'marina');
+  const task = id => state.tasks.find(item => item.id === id);
+  assert.equal(task('yuri').transmission, 'local');
+  assert.equal(task('marina').transmission, 'local');
+  const marinaBefore = JSON.stringify(task('marina'));
+
+  state = act(state, 'SYNC', { taskId: 'yuri' });
+  assert.equal(task('yuri').status, 'sent');
+  assert.equal(JSON.stringify(task('marina')), marinaBefore);
+  state = act(state, 'CHECK', { taskId: 'yuri' });
+  assert.equal(task('yuri').status, 'accepted');
+  assert.equal(JSON.stringify(task('marina')), marinaBefore);
+
+  const yuriBefore = JSON.stringify(task('yuri'));
+  const messageCount = state.messages.length;
+  state = act(act(state, 'SYNC', { taskId: 'yuri' }), 'CHECK', { taskId: 'yuri' });
+  assert.equal(JSON.stringify(task('yuri')), yuriBefore);
+  assert.equal(JSON.stringify(task('marina')), marinaBefore);
+  assert.equal(state.messages.length, messageCount);
+
+  state = act(state, 'SYNC', { taskId: 'marina' });
+  state = act(state, 'CHECK', { taskId: 'yuri' });
+  assert.equal(task('marina').status, 'sent', 'checking another task must not accept this one');
+  state = act(state, 'CHECK', { taskId: 'marina' });
+  assert.equal(task('marina').status, 'accepted');
+});

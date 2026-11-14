@@ -10,7 +10,19 @@ Approved direction: the second hand-drawn 2D variation chosen by the user on 202
 
 The original PNGs are retained in `assets/source/` for future editing; runtime uses WebP. Image assets generated with the built-in OpenAI image generation tool from the user's approved concept reference, not downloaded stock art. WebP conversion is a format/compression operation only. Character motion in this first version is implemented by the game renderer; these sprites do not contain pre-rendered animation frames.
 
+## Residents walk sheet
+
+`assets/residents-walk.webp`: 1448 × 1086, 350,470 bytes, true alpha. Same four-column × three-row layout as staff walk sprites, equal 362 × 362 cells and approximately 96% foot baseline. Row 0: older gray-haired man in mustard vest. Row 1: younger bearded man in teal sweater. Row 2: mother with dark tied-back hair in coral sweater. Four opposing contact/passing walk phases facing right; mirror in the renderer for leftward movement. All twelve figures are fully contained in their cells.
+
+Source retained at `assets/source/residents-walk.png`. Generated with built-in image generation using `assets/source/world-walk.png` as layout, gait and drawing-style reference, replacing only character identities/outfits. Requested true alpha, no backgrounds, labels or shadows, identical scale and baseline. WebP conversion only used ImageMagick.
+
 ## Generation prompts
+
+### Full-body walk sheet
+
+`assets/world-walk.webp` is a transparent 1448 × 1086 sheet: four columns, three rows, equal cells 362 × 362. Rows: Nina, Lena, Vera. Columns: contact, passing, opposite contact, opposite passing. Characters face right; mirror the runtime sprite for leftward travel. Source: `assets/source/world-walk.png`. A second image-generation pass corrected repeated gait poses in columns three and four. Heads and feet remain contained in their respective cells; vertical padding is smaller than the requested 15–20%, so use whole-cell slicing and avoid aggressive trimming. Foot baseline is approximately 96% of each cell's height, with slight drawn-frame variation. Four frames support a lightweight stepped animation, not skeletal animation.
+
+Generation: built-in image generation, using `assets/source/team.png` as identity/style reference. Requested full-body right-facing walking, exact 4 × 3 equal cells, true alpha, unchanged character identities and outfits, alternating opposing limbs. No text, labels, backdrop or baked shadows. WebP conversion only used ImageMagick.
 
 ### courtyard
 

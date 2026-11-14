@@ -1,48 +1,521 @@
-import {createGame,dispatch,getView,validateSave} from './engine.js';
-import {CAMPAIGNS} from './campaign.js';
-import {platform} from './platform.js';
-const app=document.querySelector('#app');
-const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-let state=createGame();let saved=platform.load();try{if(saved){const valid=validateSave(saved);if(valid&&valid.tasks)state=valid;else if(valid?.state)state=valid.state;}}catch{}
-let screen='district',pane='chat',settings=false,resetConfirm=false;let prefs={motion:true,sound:false,...platform.preferences()};
-const icons={chat:'M5 4h14v11H9l-4 5V4Z',map:'m3 5 6-2 6 2 6-2v16l-6 2-6-2-6 2V5Zm6-2v16m6-14v16',team:'M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm-6 9v-3a6 6 0 0 1 12 0v3m2-17a4 4 0 0 1 0 8m1 3a5 5 0 0 1 5 5',report:'M5 3h14v18H5V3Zm4 5h6m-6 4h6m-6 4h4',gear:'M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm0-6v3m0 14v3M2 12h3m14 0h3M5 5l2 2m10 10 2 2M5 19l2-2M17 7l2-2',arrow:'M5 12h14m-6-6 6 6-6 6',check:'m4 12 5 5L20 6',clock:'M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Zm0 4v5l3 2',close:'m6 6 12 12M6 18 18 6'};
-const icon=k=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${icons[k]||icons.chat}"/></svg>`;
-const labels={new:'Новый адрес',assigned:'В расписании',visiting:'Идёт беседа',saved:'На устройстве',sent:'На проверке',accepted:'Принято',refusal:'Неответ учтён'};
-const clock=n=>`${Math.floor(n/60).toString().padStart(2,'0')}:${(n%60).toString().padStart(2,'0')}`;
-const portrait=(i,extra='')=>`<span class="portrait p${i} ${extra}" aria-hidden="true"></span>`;
-function btn(label,action,cls='',attrs=''){return `<button class="${cls}" data-action="${action}" ${attrs}>${label}</button>`}
-function notify(text){const el=document.querySelector('#toast');el.textContent=text;el.classList.add('show');clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>el.classList.remove('show'),4200)}
-function sound(){if(!prefs.sound)return;try{const a=new(window.AudioContext||window.webkitAudioContext)();const o=a.createOscillator(),g=a.createGain();o.type='sine';o.frequency.setValueAtTime(570,a.currentTime);o.frequency.exponentialRampToValueAtTime(850,a.currentTime+.08);g.gain.setValueAtTime(.035,a.currentTime);g.gain.exponentialRampToValueAtTime(.001,a.currentTime+.12);o.connect(g).connect(a.destination);o.start();o.stop(a.currentTime+.13);setTimeout(()=>a.close(),300)}catch{}}
-function act(action){const before=state;state=dispatch(state,action);if(state.notice)notify(state.notice);if(!platform.save(state))notify('Не удалось сохранить в браузере. Выгрузите сохранение в настройках.');sound();render();if(action.type==='ASK'&&innerWidth>=800){const el=document.querySelector('#phone-body');if(el)el.scrollTop=el.scrollHeight;}return state!==before;}
-function selected(){return getView(state).selectedTask||state.tasks.find(t=>t.id===state.selectedTaskId)||state.tasks[0]}
-function render(){const v=getView(state),t=selected(),summary=v.summary;document.body.classList.toggle('reduced',!prefs.motion);const total=summary.total||state.tasks.length;
-app.innerHTML=`<header class="topbar"><a class="brand" href="#" data-action="district">${icon('chat')}<span>Переписка<span class="brand-dot">.</span></span></a><div class="chapter-tag">${state.campaignId==='courtyard'?'Глава 01 · Лесная улица':'Глава 02 · Выборка'}</div><div class="top-right"><span class="clock">${icon('clock')} ${v.clock||clock(state.time)} <small>день ${state.day}</small></span>${btn(icon('gear'),'settings','icon-button','aria-label="Настройки и сохранение"')}</div></header>
-<main class="shell"><nav class="rail" aria-label="Разделы игры">${[['district','map','Район'],['chat','chat','Переписка'],['team','team','Команда'],['report','report','Итоги']].map(([s,i,l])=>btn(icon(i)+`<span>${l}</span>`,s,`nav-button ${screen===s?'active':''}`)).join('')}<span class="edition">ПЕРВЫЙ<br>ДЕНЬ</span></nav>
-<section class="world"><div class="world-heading"><div><span class="eyebrow">${state.campaignId==='courtyard'?'ПЕРЕПИСЬ НАСЕЛЕНИЯ':'ВЫБОРОЧНОЕ ОБСЛЕДОВАНИЕ'}</span><h1>${state.campaignId==='courtyard'?'Знакомый двор. Новые истории.':'У каждого выбранного адреса — своё место.'}</h1></div><span class="weather">☀ <small>Тёплый сентябрь</small></span></div>
-<div class="scene"><img class="courtyard" src="./assets/courtyard.webp" alt="Рисованный двор на Лесной улице" fetchpriority="high"><div class="scene-wash"></div><span class="street-label">Лесная улица</span>${state.tasks.map((task,i)=>`<button class="house-pin pin-${i} ${task.id===t?.id?'selected':''} ${task.status==='accepted'||task.status==='refusal'?'done':''}" data-action="select" data-id="${esc(task.id)}" aria-label="${esc(task.name)} — ${esc(labels[task.status])}"><span>${task.status==='accepted'?icon('check'):String(i+1).padStart(2,'0')}</span><b>${esc(task.name)}</b><small>${esc(labels[task.status])}</small></button>`).join('')}<div class="hero-walk">${portrait(0,'hero')}<span class="speech">${state.phase==='visit'?'Сейчас разберёмся…':'На связи!'} </span></div><div class="scene-footer"><span class="live-dot"></span> ${state.phase==='visit'?'Встреча с жителями':'Ваш район живёт своим днём'}<span>${summary.processed} / ${total} адресов завершено</span></div></div>
-<div class="objective"><span class="objective-icon">${icon('arrow')}</span><div><small>БЛИЖАЙШИЙ ШАГ</small><p>${esc(v.nextObjective||'Выберите адрес и договоритесь о встрече.')}</p></div>${state.time>=1260?btn('Следующий день','next-day','small-button'):btn('+30 мин','advance','small-button','title="Продвинуть игровое время на полчаса"')}</div>
-<div class="team-heading"><h2>Сегодня с вами</h2><span>3 сотрудницы · одна команда</span></div><div class="team-row">${state.staff.map((s,i)=>`<button class="team-card ${s.available===false||s.sick?'unavailable':''}" data-action="team"><div class="portrait-wrap">${portrait(i)}</div><div><h3>${esc(s.name)}</h3><span>${s.available===false||s.sick?'На больничном':esc(s.role||['Спокойно разберётся','Найдёт общий язык','Замечает детали'][i])}</span><small>${state.tasks.filter(t=>t.assignedTo===s.id&&!['accepted','refusal'].includes(t.status)).length} заданий</small></div></button>`).join('')}</div>
-<footer class="world-footer"><span>✦ Лесная улица · вымышленный район</span><span id="save-status">Прогресс сохраняется на устройстве</span></footer></section>
-<aside class="phone-panel" aria-label="Рабочий телефон">${screen==='report'||state.phase==='summary'?report(v):screen==='team'?teamPanel():phone(t,v)}</aside></main>
-${state.phase==='intro'?intro():''}${settings?settingsPanel():''}`;
-if(state.phase==='intro'||settings){document.querySelector('.shell').inert=true;document.querySelector('.topbar').inert=true;}
+import { createGame, dispatch, getView, validateSave } from './engine.js';
+import { platform } from './platform.js';
+import { createWorld, commandMove, stepWorld, TASK_NODES, NODES } from './world.js';
+import { createScene } from './scene.js';
+const $ = s => document.querySelector(s),
+  escape = s => String(s).replace(/[&<>"']/g, c => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;'
+  })[c]);
+let state = validateSave(platform.load()),
+  fresh = !state;
+if (!state) {
+  state = createGame();
+  state.time = 1080;
 }
-function intro(){return `<div class="overlay"><section class="welcome" role="dialog" aria-modal="true" aria-labelledby="intro-title"><div class="welcome-art"><img src="./assets/courtyard.webp" alt="Двор, с которого начинается история"><div class="welcome-team">${portrait(0)}${portrait(1)}${portrait(2)}</div><span class="chapter-stamp">${state.campaignId==='courtyard'?'ПЕРВАЯ ГЛАВА':'ВТОРАЯ ГЛАВА'}</span></div><div class="welcome-copy"><span class="eyebrow">ИСТОРИЯ О ЛЮДЯХ И ВАШЕЙ КОМАНДЕ</span><h1 id="intro-title">${state.campaignId==='courtyard'?'Первый день<br>на Лесной':'Смотрим<br>внимательнее'}</h1><p>${state.campaignId==='courtyard'?'Четыре адреса, три коллеги и сообщение: «Будем дома после шести».':'Два выбранных адреса. У каждого — своя история. Состав выборки уже определён программой.'}</p><p class="muted">Договоритесь о встречах, помогите команде и узнайте, кто живёт за знакомыми дверями.</p><div class="welcome-pills"><span>Без спешки</span><span>Можно продолжить позже</span></div>${btn('Открыть переписку '+icon('arrow'),'start','primary large')}<small>Время движется только по вашим действиям.</small></div></section></div>`}
-function phone(t,v){if(!t)return '';const idx=state.staff.findIndex(s=>s.id===t.assignedTo),pidx=idx<0?0:idx;const questions=t.questions||[];const asked=t.clues||[];
-return `<div class="phone-top"><div><span class="eyebrow">РАБОЧИЙ ТЕЛЕФОН</span><h2>На связи</h2></div><span class="connection">● офлайн-сбор</span></div><div class="phone-tabs">${btn('Переписка','pane-chat',pane==='chat'?'active':'')}${btn('Анкета','pane-form',pane==='form'?'active':'')}</div><div class="contact"><div class="contact-avatar">${icon('chat')}</div><div><h3>${esc(t.name)}</h3><small>${esc(t.address)}</small></div><span class="status-chip">${esc(labels[t.status])}</span></div><div class="phone-body" id="phone-body">${pane==='form'?form(t):`<div class="date-line">СЕГОДНЯ · ${clock(state.time)}</div><div class="bubble incoming">${esc(t.description)}<small>Жители · ${esc(t.name)}</small></div>${t.contacted?`<div class="bubble incoming">${esc(t.opening)}</div>`:''}${t.appointment?`<div class="bubble outgoing">Договорились на ${clock(t.appointment)}.<small>Вы · встреча в расписании</small></div>`:''}${t.assignedTo?`<div class="system-note">${portrait(pidx)}<span>${esc(state.staff[pidx]?.name)} ${t.status==='visiting'?'на встрече':'назначена на этот адрес'}</span></div>`:''}${questions.filter(q=>asked.includes(q.id)).map(q=>`<div class="bubble outgoing">${esc(q.label)}</div><div class="bubble incoming">${esc(q.reply)}</div>`).join('')}${['saved','sent','accepted','refusal'].includes(t.status)?`<div class="result-note">${icon('check')}<div><b>${esc(labels[t.status])}</b><p>${t.status==='saved'?'Анкета сохранена. Отправьте её на проверку в «Итогах».':t.status==='sent'?'Данные переданы. Остался контроль.':t.status==='refusal'?`Неответ ${t.transmission==='accepted'?'проверен':t.transmission==='sent'?'передан, ожидает проверки':'сохранён на устройстве; его ещё нужно передать и проверить'}. Ответы анкеты не создавались.`:'Работа по адресу завершена.'}</p></div></div>`:''}${taskControls(t,v)}`}</div><div class="phone-bottom"><span>${icon('chat')} Договорённости становятся действиями</span></div>`;
+let world = createWorld(),
+  selected = 'anna',
+  paused = false,
+  speed = 1,
+  dialog = null,
+  clock = 0,
+  last = 0,
+  toastTimer,
+  saveFailed = false;
+let prefs = {
+    ...platform.preferences()
+  },
+  answer = {
+    households: 1,
+    persons: 1
+  };
+if (prefs.reducedMotion === undefined) prefs.reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+document.documentElement.classList.toggle('reduce-motion', prefs.reducedMotion);
+$('#app').innerHTML = `<main class="game"><div id="viewport" aria-label="Двор. Выберите героиню, затем дом. Перетаскивайте карту для обзора."></div>
+<header class="hud"><div class="brand"><b>Переписка<span>✳︎</span></b><small id="chapter"></small></div><div class="progress"><span class="progress-icon">⌂</span><strong id="count">0 / 4</strong><span class="progress-caption">адреса</span><div class="progress-track"><i id="progress-fill"></i></div></div><div class="time-controls"><span id="clock"></span><button id="pause" class="icon-button" aria-label="Пауза">II</button><button id="speed" aria-label="Изменить скорость">1×</button><button id="settings" class="icon-button" aria-label="Настройки">⚙︎</button></div></header>
+<div class="world-title"><span id="district">Лесная улица</span><small>Счётный участок 04</small></div>
+<div class="camera-controls"><button id="zoom-in" aria-label="Приблизить">+</button><button id="zoom-out" aria-label="Отдалить">−</button><button id="center" aria-label="Найти выбранную героиню">⌖</button></div>
+<nav id="mini-map" class="mini-map" aria-label="Карта адресов участка"></nav>
+<div id="waiting" class="waiting"></div><div id="hint" class="hint">Выберите героиню и нажмите на дом</div>
+<footer class="team-bar"><div id="team" class="team"></div><button id="finish" class="finish-button" hidden>Двор готов! →</button><button id="help" class="help-button" aria-label="Как играть">?</button></footer>
+<div id="modal-root"></div></main>`;
+let scene = createScene($('#viewport'), world, {
+  onGround: moveGround,
+  onActor: choose,
+  onHouse: visitHouse
+});
+function toast(text) {
+  $('#toast').textContent = text;
+  $('#toast').classList.add('visible');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => $('#toast').classList.remove('visible'), 3300);
 }
-function taskControls(t,v){if(['accepted','refusal','saved','sent'].includes(t.status))return btn('Открыть итоги '+icon('arrow'),'report','primary full');
-let out='';const current=state.staff.find(s=>s.id===t.assignedTo);
-if(t.status!=='visiting'||current?.available===false)out+=`<div class="action-card"><label for="staff-choice">Кто пойдёт на встречу?</label><select id="staff-choice">${state.staff.filter(s=>s.available!==false&&!s.sick).map(s=>`<option value="${esc(s.id)}" ${t.assignedTo===s.id?'selected':''}>${esc(s.name)}</option>`).join('')}</select>${btn(t.assignedTo?'Передать задание':'Поручить встречу','assign','secondary full')}<label for="visit-time">Время встречи <small>жители доступны с ${clock(t.availableFrom||0)}</small></label><input id="visit-time" type="time" value="${clock(t.appointment||Math.max(state.time,t.availableFrom||state.time))}" step="1800">${btn('Договориться о времени','appoint','secondary full')}</div>`;
-if(t.status!=='visiting')out+=btn('Начать встречу '+icon('arrow'),'visit','primary full');
-if(t.status==='visiting')out+=`<div class="choices"><small>ЧТО УТОЧНИМ?</small>${(t.questions||[]).filter(q=>!(t.clues||[]).includes(q.id)).map(q=>btn(esc(q.label),'ask','choice',`data-id="${esc(q.id)}"`)).join('')}${t.kind==='interview'?btn('Перейти к анкете '+icon('arrow'),'pane-form','primary full'):''}${t.kind==='refusal'?btn('Зафиксировать неответ','refusal','secondary full'):''}</div>`;
-return out;
+function save() {
+  if (platform.save(state)) return;
+  if (platform.lastSaveError === 'conflict') {
+    paused = true;
+    dialog = {type: 'conflict'};
+    modal(`<h2>Игра продолжена в другой вкладке</h2><p>Там уже есть более свежее сохранение.</p><button id="reload-save" class="primary">Продолжить оттуда →</button>`, 'settings');
+    $('#reload-save').onclick = () => location.reload();
+  } else if (!saveFailed) {
+    saveFailed = true;
+    toast('Не удалось сохранить игру на устройстве. Экспорт доступен в настройках.');
+  }
 }
-function form(t){if(t.kind==='refusal')return `<div class="fact"><b>Решение об участии</b><p>Ответы не получены. Обсудите цель опроса и зафиксируйте решение человека в беседе.</p></div>${btn('К разговору','pane-chat','primary full')}`;const asked=t.clues||[];return `<div class="form-intro"><span class="eyebrow">ЭЛЕКТРОННАЯ АНКЕТА</span><h3>Кто живёт по адресу?</h3><p>Записывайте сведения из ответов жителей. В одной квартире может быть несколько домохозяйств.</p></div>${(t.questions||[]).filter(q=>asked.includes(q.id)).map(q=>`<div class="fact"><b>Из беседы</b><p>${esc(q.reply)}</p></div>`).join('')}${['saved','sent','accepted'].includes(t.status)?`<div class="fact"><b>${esc(labels[t.status])}</b><p>Домохозяйств: ${esc(t.answers?.households)} · человек: ${esc(t.answers?.persons)}</p></div>${btn('Посмотреть итоги','report','primary full')}`:t.status==='refusal'?`<p>Ответы не получены. Неответ учтён.</p>`:`<label for="households">Число домохозяйств</label><input id="households" type="number" inputmode="numeric" min="1" max="30" placeholder="По ответам жителей" value="${esc(t.answers?.households||'')}"><label for="persons">Сколько человек проживает?</label><input id="persons" type="number" inputmode="numeric" min="1" max="100" placeholder="Всего по адресу" value="${esc(t.answers?.persons||'')}">${btn('Сохранить на устройстве','save-form','primary full')}${btn('Вернуться к разговору','pane-chat','secondary full')}<p class="form-hint">Сначала уточните состав и совместное ведение хозяйства. Сохранение и передача — отдельные шаги.</p>`}`}
-function teamPanel(){return `<div class="phone-top"><div><span class="eyebrow">КОМАНДНЫЙ ЧАТ</span><h2>Наши на Лесной</h2></div>${icon('team')}</div><div class="phone-body">${state.staff.map((s,i)=>`<div class="staff-detail">${portrait(i)}<div><h3>${esc(s.name)}</h3><p>${esc(s.description||s.trait||s.skill||['Задаёт вопросы спокойно и по делу.','Легко знакомится с жителями.','Помогает разобраться в деталях.'][i])}</p><b>${s.available===false||s.sick?'Сегодня на больничном':'Готова к работе'}</b></div></div>`).join('')}<div class="date-line">СООБЩЕНИЯ КОМАНДЫ</div>${(state.messages||[]).filter(m=>m.channel==='team').slice(-7).map(m=>`<div class="bubble incoming"><b>${esc(m.author||m.from||'Команда')}</b><p>${esc(m.text||m.message||m)}</p></div>`).join('')}<div class="fact"><b>Передача задания</b><p>Выберите адрес на карте и назначьте другую сотрудницу. Договорённость о времени и записи беседы сохранятся.</p></div></div>`}
-function report(v){let s=v.summary;return `<div class="phone-top"><div><span class="eyebrow">ХОД ОБСЛЕДОВАНИЯ</span><h2>${state.phase==='summary'?'День получился!':'Собирается картина'}</h2></div>${icon('report')}</div><div class="phone-body"><p class="report-lead">Каждый статус — отдельный шаг работы.</p><div class="metrics">${[['Принято',s.accepted],['На устройстве',s.saved],['На проверке',s.sent],['Неответы',s.refusal]].map(([k,n])=>`<div><strong>${n||0}</strong><span>${k}</span></div>`).join('')}</div><div class="progress-track"><i style="width:${(s.processed/(s.total||1))*100}%"></i></div><p class="muted">Завершено адресов: ${s.processed} из ${s.total}. Неответы не считаются заполненными анкетами.</p><div class="report-actions">${btn('Передать сохранённые анкеты','sync','primary full',s.saved?'':'disabled')}${btn('Проверить переданные анкеты','check','secondary full',s.sent?'':'disabled')}</div><div class="address-list">${state.tasks.map(t=>`<button data-action="select" data-id="${esc(t.id)}"><span><b>${esc(t.name)}</b><small>${esc(t.address)}</small></span><em>${esc(labels[t.status])}</em></button>`).join('')}</div>${state.phase==='summary'?`<div class="completion"><span>✦</span><h3>Все адреса разобраны.</h3><p>${state.campaignId==='courtyard'?'Теперь попробуйте выборочное обследование: адресов меньше, но заменить их удобными соседями нельзя.':'Две кампании пройдены. Можно вернуться к началу и распределить работу иначе.'}</p>${state.campaignId==='courtyard'?btn('Следующая глава '+icon('arrow'),'next-campaign','primary full'):btn('Сыграть ещё раз','restart-prompt','primary full')}</div>`:btn('Завершить главу '+icon('arrow'),'finish','primary full',v.canFinish?'':'disabled')}<div class="fact"><b>Что мы видим?</b><p>Это ход сбора по адресам. Статистические оценки населения рассчитываются отдельно; число анкет не заменяет такие оценки.</p></div></div>`}
-function settingsPanel(){return `<div class="overlay"><section class="settings" role="dialog" aria-modal="true" aria-labelledby="settings-title"><div class="settings-heading"><h2 id="settings-title">Устроиться поудобнее</h2>${btn(icon('close'),'settings','icon-button','aria-label="Закрыть настройки"')}</div><label class="switch"><input type="checkbox" id="motion" ${prefs.motion?'checked':''}> Небольшие анимации</label><label class="switch"><input type="checkbox" id="sound" ${prefs.sound?'checked':''}> Звуки действий</label><hr><h3>Ваша история</h3><p>Прогресс хранится в этом браузере. Файл сохранения можно перенести на другое устройство.</p>${btn('Скачать сохранение','export','secondary full')}<label class="import-button">Загрузить сохранение<input id="import-save" type="file" accept="application/json,.json"></label>${resetConfirm?`<p>Начать заново? Текущий прогресс будет заменён.</p>${btn('Да, начать новую историю','restart','danger full')}${btn('Оставить текущую историю','cancel-reset','secondary full')}`:btn('Начать заново','restart-prompt','text-button full')}<small>Переписка · версия 0.1 · первая игровая версия</small></section></div>`}
-app.addEventListener('click',e=>{const b=e.target.closest('[data-action]');if(!b)return;e.preventDefault();const a=b.dataset.action,t=selected();if(['district','chat','team','report'].includes(a)){screen=a;if(a==='chat')pane='chat';render();if(innerWidth<800)document.querySelector(a==='district'?'.world':'.phone-panel').scrollIntoView({behavior:prefs.motion?'smooth':'instant'});return;}if(a==='settings'){settings=!settings;resetConfirm=false;render();return;}if(a==='pane-chat'||a==='pane-form'){pane=a.slice(5);render();return;}if(a==='start'){act({type:'START'});return;}if(a==='select'){screen='chat';pane='chat';act({type:'SELECT_TASK',taskId:b.dataset.id});if(innerWidth<800)document.querySelector('.phone-panel').scrollIntoView({behavior:prefs.motion?'smooth':'instant'});return;}if(a==='assign')act({type:'ASSIGN',taskId:t.id,staffId:document.querySelector('#staff-choice').value});if(a==='appoint'){const val=document.querySelector('#visit-time').value;if(!val){notify('Выберите время встречи');return;}const [h,m]=val.split(':').map(Number);act({type:'APPOINT',taskId:t.id,time:h*60+m});}if(a==='visit')act({type:'VISIT',taskId:t.id});if(a==='ask')act({type:'ASK',taskId:t.id,questionId:b.dataset.id});if(a==='save-form'){const households=Number(document.querySelector('#households').value),persons=Number(document.querySelector('#persons').value);act({type:'SAVE_FORM',taskId:t.id,answers:{households,persons}});}if(a==='refusal')act({type:'RECORD_REFUSAL',taskId:t.id});if(a==='advance')act({type:'ADVANCE'});if(a==='next-day')act({type:'NEXT_DAY'});if(a==='sync')act({type:'SYNC'});if(a==='check')act({type:'CHECK'});if(a==='finish')act({type:'FINISH'});if(a==='next-campaign'){screen='district';pane='chat';act({type:'NEXT_CAMPAIGN'});}if(a==='export')platform.export(state);if(a==='restart-prompt'){settings=true;resetConfirm=true;render();}if(a==='cancel-reset'){resetConfirm=false;render();}if(a==='restart'){state=createGame();platform.save(state);settings=false;screen='district';pane='chat';render();}});
-app.addEventListener('change',async e=>{if(['motion','sound'].includes(e.target.id)){prefs[e.target.id]=e.target.checked;platform.setPreferences(prefs);render();return;}if(e.target.id==='import-save'){try{const file=e.target.files[0];if(!file)return;if(file.size>1e6)throw Error('Слишком большой файл');const data=validateSave(JSON.parse(await file.text()));const restored=data?.tasks?data:data?.state;if(!restored)throw Error('Это не сохранение Переписки');state=restored;platform.save(state);settings=false;screen='district';pane='chat';render();notify('История восстановлена')}catch{notify('Не удалось прочитать сохранение. Текущая история осталась на месте.')}}});
-document.addEventListener('keydown',e=>{if(e.key==='Escape'&&settings){settings=false;render()}});
-render();platform.offline();
+
+function act(action) {
+  state = dispatch(state, action);
+  save();
+  refresh();
+  return state;
+}
+function currentTask(id) {
+  return state.tasks.find(t => t.id === id);
+}
+function actor(id) {
+  return world.actors.find(a => a.id === id);
+}
+function finished(t) {
+  return t.status === 'accepted' || t.transmission === 'accepted';
+}
+function taskForActor(id) {
+  return state.tasks.find(t => t.assignedTo === id && t.status === 'visiting');
+}
+function labelFor(s) {
+  const a = actor(s.id);
+  if (!s.available) return 'Отдыхает';
+  if (a.moving) return a.destination === 'base' ? 'В штаб' : 'В пути';
+  if (taskForActor(s.id)) return 'У двери';
+  if (a.taskId && currentTask(a.taskId) && !finished(currentTask(a.taskId))) return 'Ждёт встречи';
+  return s.role;
+}
+function refresh() {
+  const v = getView(state);
+  $('#chapter').textContent = v.campaign.mode === 'sample' ? 'Выборочное обследование' : 'Перепись населения';
+  $('#count').textContent = `${v.summary.processed} / ${v.summary.total}`;
+  $('#progress-fill').style.width = 100 * v.summary.processed / v.summary.total + '%';
+  $('#clock').textContent = v.clock;
+  $('#finish').hidden = !v.canFinish;
+  $('#team').innerHTML = state.staff.map(s => `<button class="staff-card ${s.id === selected ? 'selected' : ''} ${!s.available ? 'unavailable' : ''}" data-staff="${s.id}" aria-pressed="${s.id === selected}"><span class="portrait p${s.portraitIndex}"></span><span><b>${s.name}</b><small>${labelFor(s)}</small></span>${s.id === selected ? '<i>✓</i>' : ''}</button>`).join('');
+  $('#team').querySelectorAll('[data-staff]').forEach(b => b.onclick = () => choose(b.dataset.staff));
+  $('#pause').textContent = paused ? '▶' : 'II';
+  $('#pause').setAttribute('aria-label', paused ? 'Продолжить' : 'Пауза');
+  $('#speed').textContent = speed + '×';
+  scene.update({
+    selected,
+    tasks: state.tasks,
+    staff: state.staff,
+    reduced: prefs.reducedMotion
+  });
+  const a = actor(selected),
+    person = state.staff.find(s => s.id === selected);
+  $('#hint').textContent = !person.available ? 'Выберите коллегу, чтобы передать ей встречу' : a.moving ? a.destination === 'base' ? 'Результат на планшете. Героиня идёт к штабу' : `${person.name} идёт к подъезду` : a.status === 'waiting' ? 'Ждём назначенного времени. Можно заняться другим адресом' : taskForActor(selected) ? 'Нажмите на героиню, чтобы продолжить разговор' : 'Нажмите на дом или на дорожку';
+  $('#mini-map').innerHTML = state.tasks.map((task, i) => {
+    const point = NODES[TASK_NODES[task.id]];
+    return `<button data-mini-house="${task.id}" class="${finished(task) ? 'done' : ''}" style="left:${point.x / 10}%;top:${point.y / 7}%" aria-label="На карте: ${escape(task.name)}">${finished(task) ? '✓' : i + 1}</button>`;
+  }).join('');
+  $('#mini-map').querySelectorAll('button').forEach(button => button.onclick = () => {
+    visitHouse(button.dataset.miniHouse);
+    scene.center();
+  });
+  renderWaiting();
+  scene.draw();
+}
+function choose(id) {
+  if (dialog) return;
+  selected = id;
+  refresh();
+  scene.center();
+  const t = taskForActor(id);
+  if (t && actor(id).node === TASK_NODES[t.id] && !actor(id).moving) openConversation(t.id);else if (!state.staff.find(s => s.id === id).available) toast('Лена заболела. Выберите коллегу и её адрес — задание перейдёт ей.');
+}
+function ensureFree() {
+  const s = state.staff.find(s => s.id === selected);
+  if (!s.available) {
+    toast(`${s.name} сегодня отдыхает. Выберите другую героиню.`);
+    return false;
+  }
+  const t = taskForActor(selected);
+  if (t) {
+    const a = actor(selected);
+    if (!a.moving && a.node === TASK_NODES[t.id]) openConversation(t.id);else toast('Сначала дождитесь прибытия к подъезду.');
+    return false;
+  }
+  const carried = state.tasks.find(t => t.assignedTo === selected && t.transmission === 'local');
+  if (carried) {
+    toast('Сначала героиня передаст результат в штабе.');
+    return false;
+  }
+  return true;
+}
+function moveGround(node) {
+  if (dialog || !ensureFree()) return;
+  commandMove(world, selected, node);
+  $('#hint').textContent = 'Нажмите на дом, чтобы назначить встречу';
+  refresh();
+}
+function visitHouse(id) {
+  if (dialog) return;
+  const t = currentTask(id);
+  if (finished(t)) {
+    toast('Этот адрес уже обработан');
+    return;
+  }
+  const at = actor(t.assignedTo);
+  if (t.status === 'visiting' && at && !at.moving && at.node === TASK_NODES[id] && state.staff.find(s => s.id === t.assignedTo)?.available) {
+    selected = t.assignedTo;
+    openConversation(id);
+    return;
+  }
+  if (!ensureFree()) return;
+  if (t.transmission === 'local' || t.transmission === 'sent') {
+    toast('Результат уже собран и направляется в штаб');
+    return;
+  }
+  const old = t.assignedTo;
+  act({
+    type: 'ASSIGN',
+    taskId: id,
+    staffId: selected
+  });
+  if (currentTask(id).assignedTo !== selected) {
+    toast(state.notice);
+    return;
+  }
+  if (old && old !== selected && actor(old)?.taskId === id) commandMove(world, old, 'base');
+  commandMove(world, selected, TASK_NODES[id], {
+    taskId: id
+  });
+  $('#hint').textContent = `${state.staff.find(s => s.id === selected).name} идёт к подъезду`;
+  refresh();
+}
+function arrive(event) {
+  const a = actor(event.actorId);
+  if (a.type !== 'staff') return;
+  const t = currentTask(event.taskId);
+  if (!t) {
+    refresh();
+    return;
+  }
+  if (t.assignedTo !== a.id) return;
+  if (event.nodeId === 'base' && ['local', 'sent'].includes(t.transmission)) {
+    act({
+      type: 'SYNC',
+      taskId: t.id
+    });
+    act({
+      type: 'CHECK',
+      taskId: t.id
+    });
+    a.taskId = null;
+    const next = state.tasks.find(item => item.assignedTo === a.id && ['local', 'sent'].includes(item.transmission));
+    if (next) commandMove(world, a.id, 'base', {
+      taskId: next.id
+    });
+    toast('Результат передан и проверен ✓');
+    if (getView(state).canFinish) showResult();
+    return;
+  }
+  if (event.nodeId === TASK_NODES[t.id]) attemptEncounter(t, a);
+  refresh();
+}
+function attemptEncounter(t, a) {
+  if (!state.staff.find(s => s.id === a.id).available) {
+    commandMove(world, a.id, 'base');
+    return;
+  }
+  if (state.time < Math.max(t.availableFrom, t.appointment || 0)) {
+    a.status = 'waiting';
+    if (a.id === selected) toast(`Встреча в ${formatTime(Math.max(t.availableFrom, t.appointment || 0))}. Можно заняться другим адресом.`);
+    return;
+  }
+  act({
+    type: 'VISIT',
+    taskId: t.id
+  });
+  if (currentTask(t.id).status === 'visiting') {
+    a.status = 'conversation';
+    if (a.id === selected && !dialog) openConversation(t.id);else toast(`${state.staff.find(s => s.id === a.id).name} ждёт вас у двери`);
+  }
+}
+function renderWaiting() {
+  const waiting = world.actors.filter(a => a.type === 'staff' && !a.moving && a.taskId && currentTask(a.taskId)?.status === 'visiting');
+  $('#waiting').innerHTML = waiting.filter(a => a.id !== selected).map(a => `<button data-wait="${a.id}"><span>···</span>${state.staff.find(s => s.id === a.id).name}</button>`).join('');
+  $('#waiting').querySelectorAll('button').forEach(b => b.onclick = () => choose(b.dataset.wait));
+}
+function formatTime(t) {
+  return `${Math.floor(t / 60)}:${String(t % 60).padStart(2, '0')}`;
+}
+function modal(html, kind = '') {
+  const root = $('#modal-root');
+  root.innerHTML = `<div class="scrim ${kind}"><section class="modal ${kind}" role="dialog" aria-modal="true" tabindex="-1">${html}</section></div>`;
+  root.querySelector('.modal').focus();
+}
+function closeModal() {
+  if (dialog?.type === 'conflict') return;
+  dialog = null;
+  $('#modal-root').replaceChildren();
+  refresh();
+  $('#pause').focus();
+}
+function openConversation(id) {
+  if (dialog?.type === 'conflict') return;
+  const t = currentTask(id);
+  if (t.status !== 'visiting') return;
+  selected = t.assignedTo;
+  dialog = {
+    type: 'conversation',
+    taskId: id,
+    screen: 'chat'
+  };
+  answer = {
+    households: 1,
+    persons: 1
+  };
+  refresh();
+  renderConversation();
+}
+function renderConversation() {
+  if (dialog?.type !== 'conversation') return;
+  const t = currentTask(dialog.taskId),
+    s = state.staff.find(s => s.id === t.assignedTo),
+    lastQuestion = t.questions.find(q => q.id === t.clues.at(-1)),
+    remaining = t.questions.filter(q => !t.clues.includes(q.id));
+  const ready = !remaining.some(q => q.required),
+    reply = lastQuestion?.reply || t.opening;
+  modal(`<div class="conversation-head"><span class="resident-avatar">${t.name.charAt(0)}</span><div><b>${escape(t.name)}</b><small>${escape(t.address)}</small></div><button data-action="close" class="icon-button" aria-label="Вернуться во двор">×</button></div><div class="conversation-body"><span class="conversation-kicker">${dialog.screen === 'form' ? 'Электронная анкета' : 'У двери · ' + s.name}</span>${dialog.screen === 'form' ? `<h2>Кто живёт вместе?</h2><div class="form-counters">${[['households', 'Домохозяйства'], ['persons', 'Человек']].map(([key, label]) => `<div class="counter"><label for="${key}">${label}</label><div><button data-counter="${key}" data-step="-1" aria-label="Уменьшить: ${label}">−</button><input id="${key}" type="number" min="1" max="12" value="${answer[key]}" inputmode="numeric"><button data-counter="${key}" data-step="1" aria-label="Увеличить: ${label}">+</button></div></div>`).join('')}</div><p class="form-hint">${escape(reply)}</p><p id="form-error" role="status"></p><button class="primary" data-action="save">Сохранить на планшет →</button><button class="text-button" data-action="back">Вернуться к разговору</button>` : `<div class="speech-bubble">${escape(reply)}</div><div class="questions">${remaining.map(q => `<button class="question" data-question="${q.id}">${escape(q.label)} <span>↗</span></button>`).join('')}${ready ? `<button class="primary" data-action="${t.kind === 'refusal' ? 'refusal' : 'form'}">${t.kind === 'refusal' ? 'Принять решение и завершить' : 'Заполнить анкету'} →</button>` : ''}</div>`}</div><div class="conversation-footer"><span class="portrait p${s.portraitIndex}"></span><span>${s.name}</span><small>${t.clues.length} / ${t.questions.length} тем</small></div>`, 'conversation');
+  $('[data-action="close"]').onclick = closeModal;
+  document.querySelectorAll('[data-question]').forEach(b => b.onclick = () => {
+    act({
+      type: 'ASK',
+      taskId: t.id,
+      questionId: b.dataset.question
+    });
+    renderConversation();
+  });
+  document.querySelectorAll('[data-counter]').forEach(b => b.onclick = () => {
+    const input = $('#' + b.dataset.counter);
+    input.value = Math.max(1, Math.min(12, Number(input.value) + Number(b.dataset.step)));
+  });
+  const form = $('[data-action="form"]');
+  if (form) form.onclick = () => {
+    dialog.screen = 'form';
+    renderConversation();
+  };
+  const back = $('[data-action="back"]');
+  if (back) back.onclick = () => {
+    answer = {
+      households: Number($('#households').value),
+      persons: Number($('#persons').value)
+    };
+    dialog.screen = 'chat';
+    renderConversation();
+  };
+  const saveButton = $('[data-action="save"]');
+  if (saveButton) saveButton.onclick = () => {
+    act({
+      type: 'SAVE_FORM',
+      taskId: t.id,
+      answers: {
+        households: Number($('#households').value),
+        persons: Number($('#persons').value)
+      }
+    });
+    if (currentTask(t.id).status !== 'saved') {
+      $('#form-error').textContent = state.notice;
+      return;
+    }
+    finishEncounter(t.id);
+  };
+  const refusal = $('[data-action="refusal"]');
+  if (refusal) refusal.onclick = () => {
+    act({
+      type: 'RECORD_REFUSAL',
+      taskId: t.id
+    });
+    finishEncounter(t.id);
+  };
+}
+function finishEncounter(id) {
+  const t = currentTask(id);
+  commandMove(world, t.assignedTo, 'base', {
+    taskId: id
+  });
+  closeModal();
+  $('#hint').textContent = 'Результат на планшете. Героиня идёт к штабу';
+  for (const s of state.staff.filter(s => !s.available)) {
+    if (s.id !== t.assignedTo) commandMove(world, s.id, 'base');
+  }
+  if (state.flags.illness && !prefs.illnessSeen) {
+    prefs.illnessSeen = true;
+    platform.setPreferences(prefs);
+    toast('Лена приболела. Её встречу может провести Нина или Вера.');
+  }
+  refresh();
+}
+function showIntro() {
+  dialog = {
+    type: 'intro'
+  };
+  modal(`<span class="eyebrow">Ваш первый вечер на участке</span><h1>Здесь все<br>куда-то идут.</h1><p>А вы решаете, кто к кому.</p><div class="intro-steps"><span>① Выберите героиню</span><span>② Нажмите на дом</span><span>③ Поговорите с жителями</span></div><button id="play" class="primary">Пойти во двор →</button><small class="intro-note">Двигайте карту пальцем или мышью</small>`, 'intro');
+  $('#play').onclick = () => {
+    act({
+      type: 'START'
+    });
+    closeModal();
+  };
+}
+function showResult() {
+  if (dialog?.type === 'conflict') return;
+  if (state.phase !== 'summary') act({
+    type: 'FINISH'
+  });
+  const v = getView(state);
+  dialog = {
+    type: 'result'
+  };
+  modal(`<span class="result-star">✳︎</span><span class="eyebrow">${v.campaign.mode === 'census' ? 'Перепись участка' : 'Выборочное обследование'}</span><h1>Двор готов!</h1><div class="result-stats"><div><b>${v.summary.processed}</b><span>адреса</span></div><div><b>${v.summary.households}</b><span>домохозяйства</span></div><div><b>${v.summary.persons}</b><span>человек</span></div></div>${v.summary.refusal ? '<p>Один отказ учтён отдельно. Ответы не придуманы.</p>' : '<p>Оба адреса выборки обработаны.</p>'}<button id="next" class="primary">${state.campaignId === 'courtyard' ? 'Следующая смена →' : 'Сыграть ещё раз →'}</button><button id="back-world" class="text-button">Побыть во дворе</button>`, 'result');
+  $('#next').onclick = () => resetWorld(state.campaignId === 'courtyard' ? 'NEXT_CAMPAIGN' : 'RESTART');
+  $('#back-world').onclick = closeModal;
+}
+function resetWorld(type) {
+  platform.acceptCurrentSave();
+  act({
+    type
+  });
+  state.time = 1080;
+  state = dispatch(state, {
+    type: 'START'
+  });
+  world = createWorld();
+  scene.destroy();
+  scene = createScene($('#viewport'), world, {
+    onGround: moveGround,
+    onActor: choose,
+    onHouse: visitHouse
+  });
+  selected = 'anna';
+  paused = false;
+  clock = 0;
+  prefs.illnessSeen = false;
+  platform.setPreferences(prefs);
+  closeModal();
+  save();
+  toast(state.campaignId === 'sample' ? 'Сегодня отмечены только два адреса выборки' : 'Новая смена началась');
+}
+function settings() {
+  dialog = {
+    type: 'settings'
+  };
+  modal(`<div class="settings-head"><h2>Передышка</h2><button id="close-settings" class="icon-button" aria-label="Закрыть настройки">×</button></div><label class="setting-row"><span>Меньше декоративных движений</span><input id="motion" type="checkbox" ${prefs.reducedMotion ? 'checked' : ''}></label><button id="export" class="secondary">Скачать сохранение</button><label class="secondary import-label">Загрузить сохранение<input id="import" type="file" accept=".json,application/json"></label><button id="restart" class="text-button">Начать заново</button><small>Прогресс сохраняется на этом устройстве.</small>`, 'settings');
+  $('#close-settings').onclick = closeModal;
+  $('#motion').onchange = e => {
+    prefs.reducedMotion = e.target.checked;
+    platform.setPreferences(prefs);
+    document.documentElement.classList.toggle('reduce-motion', prefs.reducedMotion);
+  };
+  $('#export').onclick = () => platform.export(state);
+  $('#restart').onclick = () => {
+    modal('<h2>Начать новую смену?</h2><p>Текущий прогресс будет заменён.</p><button id="confirm-restart" class="primary">Начать заново</button><button id="cancel-restart" class="text-button">Продолжить текущую</button>', 'settings');
+    $('#confirm-restart').onclick = () => resetWorld('RESTART');
+    $('#cancel-restart').onclick = settings;
+  };
+  $('#import').onchange = async e => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const loaded = validateSave(await file.text());
+    if (!loaded) {
+      toast('Это сохранение не подходит или повреждено');
+      return;
+    }
+    platform.acceptCurrentSave();
+    state = loaded;
+    save();
+    world = createWorld();
+    scene.destroy();
+    scene = createScene($('#viewport'), world, {
+      onGround: moveGround,
+      onActor: choose,
+      onHouse: visitHouse
+    });
+    closeModal();
+    resumeRoutes();
+  };
+}
+function resumeRoutes() {
+  for (const s of state.staff) {
+    const t = state.tasks.find(t => t.assignedTo === s.id && ['local', 'sent'].includes(t.transmission)) || state.tasks.find(t => t.assignedTo === s.id && t.status === 'visiting');
+    if (t) commandMove(world, s.id, t.transmission === 'local' || t.transmission === 'sent' ? 'base' : TASK_NODES[t.id], {
+      taskId: t.id
+    });
+  }
+  refresh();
+}
+$('#pause').onclick = () => {
+  paused = !paused;
+  refresh();
+};
+$('#speed').onclick = () => {
+  speed = speed === 1 ? 2 : 1;
+  refresh();
+};
+$('#settings').onclick = settings;
+$('#help').onclick = showIntro;
+$('#finish').onclick = showResult;
+$('#zoom-in').onclick = () => scene.zoomBy(1.2);
+$('#zoom-out').onclick = () => scene.zoomBy(1 / 1.2);
+$('#center').onclick = () => scene.center();
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && dialog && !['intro', 'conflict'].includes(dialog.type)) closeModal();
+  if (e.code === 'Space' && !dialog && !['INPUT', 'BUTTON'].includes(document.activeElement.tagName)) {
+    e.preventDefault();
+    paused = !paused;
+    refresh();
+  }
+  if (dialog && e.key === 'Tab') {
+    const nodes = [...$('#modal-root').querySelectorAll('button,input,[tabindex="0"]')].filter(n => !n.disabled),
+      first = nodes[0],
+      last = nodes.at(-1);
+    if (e.shiftKey && (document.activeElement === first || document.activeElement.classList.contains('modal'))) {
+      e.preventDefault();
+      last?.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first?.focus();
+    }
+  }
+});
+document.addEventListener('visibilitychange', () => {
+  last = 0;
+  if (document.hidden) save();
+});
+function frame(now) {
+  const dt = last ? Math.min((now - last) / 1000, .05) : 0;
+  last = now;
+  if (!document.hidden && !paused && !dialog) {
+    for (const event of stepWorld(world, dt * speed)) arrive(event);
+    clock += dt * speed;
+    if (clock >= 1) {
+      clock -= 1;
+      if (state.time < 1260) {
+        state.time++;
+      }
+      $('#clock').textContent = formatTime(state.time);
+      for (const a of world.actors.filter(a => a.status === 'waiting' && a.taskId)) {
+        const t = currentTask(a.taskId);
+        if (t && state.time >= Math.max(t.availableFrom, t.appointment || 0)) attemptEncounter(t, a);
+      }
+      if (state.time % 10 === 0) save();
+    }
+  }
+  if (!document.hidden && !paused && !dialog) scene.draw();
+  requestAnimationFrame(frame);
+}
+refresh();
+resumeRoutes();
+if (fresh || state.phase === 'intro') showIntro();else if (state.phase === 'summary') showResult();
+requestAnimationFrame(frame);
+platform.offline();

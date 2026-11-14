@@ -129,6 +129,7 @@ export function dispatch(current, action) {
     case 'SYNC': {
       let count = 0;
       for (const item of state.tasks) {
+        if (action.taskId != null && item.id !== action.taskId) continue;
         if (item.status === 'saved' || (item.status === 'refusal' && item.transmission === 'local')) {
           if (item.status === 'saved') item.status = 'sent';
           item.transmission = 'sent'; count++;
@@ -142,6 +143,7 @@ export function dispatch(current, action) {
     case 'CHECK': {
       let count = 0;
       for (const item of state.tasks) {
+        if (action.taskId != null && item.id !== action.taskId) continue;
         if (item.status === 'sent' || (item.status === 'refusal' && item.transmission === 'sent')) {
           if (item.status === 'sent') item.status = 'accepted';
           item.transmission = 'accepted'; count++;
