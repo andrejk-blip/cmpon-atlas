@@ -8,7 +8,7 @@ const DETAILS = [
 ];
 
 export function titleScreenMarkup({started=false,complete=false,audioEnabled=true,clock='07:30'}={}) {
-  return `<div class="title-art-region" aria-hidden="true"><div class="title-art-stage"><img class="title-keyart" src="./assets/title-cover06.webp" alt="" width="1672" height="941" fetchpriority="high"><div class="title-sunlight"></div><span class="title-mote mote-one"></span><span class="title-mote mote-two"></span><span class="title-mote mote-three"></span></div></div>
+  return `<div class="title-art-region" aria-hidden="true"><div class="title-art-stage"><img class="title-keyart" src="./assets/title-cover06-vera.webp" alt="" width="1672" height="941" fetchpriority="high"><div class="title-sunlight"></div><span class="title-mote mote-one"></span><span class="title-mote mote-two"></span><span class="title-mote mote-three"></span></div></div>
   <div class="title-shade" aria-hidden="true"></div>
   <div class="title-story">
     <div class="title-edition"><span></span> ИСТОРИЯ О РАБОТЕ И НЕ ТОЛЬКО</div>

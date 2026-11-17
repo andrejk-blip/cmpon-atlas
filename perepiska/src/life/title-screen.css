@@ -1,5 +1,5 @@
 /* The title is a scene, with its menu printed on a little route card. */
-#modal-root.title-context>.scrim{background:#f6e7ce url('../../assets/title-cover06.webp') center/cover no-repeat;backdrop-filter:none}
+#modal-root.title-context>.scrim{background:#f6e7ce url('../../assets/title-cover06-vera.webp') center/cover no-repeat;backdrop-filter:none}
 #modal-root.title-context>.scrim:has(.title-screen){padding:0;display:block;background:#f6e7ce}
 .modal.title-screen{position:relative;isolation:isolate;display:block;width:100%;max-width:none;height:100%;max-height:none;margin:0;padding:0;border:0;border-radius:0;box-shadow:none;background:#f6e7ce;overflow:hidden;animation:none;color:#443324;font-family:var(--font-ui,'Onest',sans-serif)}
 .title-art-region{position:absolute;inset:0;z-index:-3;overflow:hidden;pointer-events:none}

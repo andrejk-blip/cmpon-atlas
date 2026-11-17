@@ -7,13 +7,20 @@
 ## Файлы и проверка
 
 - `assets/source/title-cover06.png` — исходная генерация, 1672 × 941 px, RGB.
-- `assets/title-cover06.webp` — рабочая версия того же размера, WebP без потерь. Декодированные RGB-пиксели побайтно совпадают с исходником.
+- `assets/source/title-cover06-vera.png` — уточнённая генерация: Вера смотрит прямо на игрока.
+- `assets/title-cover06-vera.webp` — текущая рабочая версия, 1672 × 941 px, WebP без потерь. Декодированные RGB-пиксели побайтно совпадают с уточнённым исходником.
 - Апскейл, повышение резкости и перерисовка кодом не применялись.
 - Название и управление не встроены в растр: они реализуются доступными HTML-элементами поверх обложки.
 
 ## Композиция
 
-Аня держит телефон, Макс предлагает кофе, Вера стоит рядом с планшетом. Персонажи образуют сюжетную группу справа. Слева — спокойная освещённая стена, место для названия и реальных кнопок. Основная область текста: примерно x8–34%, y14–64%. Все лица сохранены внутри кадра.
+Аня держит телефон, Макс предлагает кофе, Вера стоит между ними с планшетом и смотрит прямо на игрока. Аня и Макс переглядываются. Персонажи образуют сюжетную группу справа. Слева — спокойная освещённая стена, место для названия и реальных кнопок. Основная область текста: примерно x8–34%, y14–64%. Все лица сохранены внутри кадра.
+
+## Уточнение взгляда Веры
+
+По просьбе пользователя изменены направление взгляда и минимально необходимый поворот лица Веры. Редактирование выполнено встроенным генератором изображений. Файл получил новое имя, чтобы браузеры загрузили обновлённую обложку. Компоновка меню и игровая логика не менялись.
+
+Промпт правки: «Make ONE precise local change to Vera, the older plump smiling curly blonde woman in the lilac/pink blouse, holding a tablet, standing in the middle between Anya and Max. Turn ONLY Vera's face and eyes to look straight out of the image directly at the viewer/player, with natural direct eye contact and the same warm knowing smile. Preserve her head location, age, hair, earrings, body pose, clothing, hands, tablet and scale. Preserve Anya and Max, their mutual gaze, all props, background, lighting, flowers, door 12, plant, rocket sticker, linework, colors, sharp detail, framing and left empty wall for the interface. No new text or UI. Keep the original wide aspect ratio and resolution.»
 
 Пасхалки: табличка «12» у подъезда, два стаканчика кофе, растение на скамейке и ракета на сумке Ани. Нормализованные центры: номер (39%,27%), растение (41%,70%), ракета (47%,81%), кофе (70%,52%)/(87%,56%). При `object-fit:cover` координаты нужно пересчитать относительно видимой композиции.
 
