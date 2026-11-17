@@ -1,0 +1,312 @@
+{
+  "anna": {
+    "voice": "perepiska-anna-qwen-01",
+    "referenceId": "anna-synthetic-01",
+    "referenceSha256": "6d14158f2adc07e6a644e3bf48e2180244cac5cfd57cd1f10efd9bbd5fc81145",
+    "referenceSpeechId": "date.honest.anna",
+    "reference": {
+      "file": "scripts/voice-references/anna.wav",
+      "text": "Если честно, день был очень волнительным. Я рада, что мы встретились.",
+      "model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+      "modelRevision": "5ecdb67327fd37bb2e042aab12ff7391903235d3",
+      "sha256": "6d14158f2adc07e6a644e3bf48e2180244cac5cfd57cd1f10efd9bbd5fc81145",
+      "license": "Apache-2.0",
+      "seed": 32117,
+      "voiceDescription": "A young adult woman, about 25, native Russian with clear standard Moscow pronunciation and no foreign accent. A warm, pleasant and natural mid-range female voice. She is speaking personally to a young man she likes after her first day at work. She starts slightly tired and nervous but sincere, then sounds quietly and warmly happy to see him. A small meaningful pause between the sentences. Subtle natural emotional shift, unforced warm smile in the second phrase. Conversational pace, natural adult acting, no dramatic exaggeration, never a narrator or advertisement.",
+      "duration": 5.2,
+      "generation": {
+        "max_new_tokens": 400,
+        "do_sample": true,
+        "top_p": 0.9,
+        "temperature": 0.8
+      },
+      "approved": true,
+      "externalReferenceAudio": false
+    }
+  },
+  "vera": {
+    "voice": "perepiska-vera-qwen-01",
+    "referenceId": "vera-synthetic-01",
+    "referenceSha256": "49b743d3d2fb46c21e22703b876514724becf844fd3e1d147a8b35ffed08f937",
+    "referenceSpeechId": "chat.team.question.reply",
+    "reference": {
+      "file": "scripts/voice-references/vera.wav",
+      "text": "Начнём со знакомства и одного адреса. Твоя задача — внимательно слушать людей. Со всем остальным помогу.",
+      "model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+      "modelRevision": "5ecdb67327fd37bb2e042aab12ff7391903235d3",
+      "sha256": "49b743d3d2fb46c21e22703b876514724becf844fd3e1d147a8b35ffed08f937",
+      "license": "Apache-2.0",
+      "seed": 32118,
+      "voiceDescription": "A mature adult woman about 52, native Russian with clear standard Russian pronunciation and no foreign accent. Warm, grounded mid-low female voice, calm confidence, reassuring and friendly. She is talking personally to a nervous young colleague, with a little smile, never lecturing and never sounding like a newsreader. Natural pauses between thoughts. Emphasize the final promise to help with warm reassurance. Natural conversational pace.",
+      "duration": 7.76,
+      "generation": {
+        "max_new_tokens": 400,
+        "do_sample": true,
+        "top_p": 0.9,
+        "temperature": 0.8
+      },
+      "approved": true,
+      "externalReferenceAudio": false
+    }
+  },
+  "max": {
+    "voice": "perepiska-max-qwen-01",
+    "referenceId": "max-synthetic-01",
+    "referenceSha256": "e52e4a21c1d336186a2ebec846dac091b474431d588b6b229c6085a35356ebca",
+    "referenceSpeechId": "date.opening",
+    "reference": {
+      "file": "scripts/voice-references/max.wav",
+      "text": "Ну как ты? Можно начать с первого дня, а можно просто посидеть рядом. Я никуда не тороплюсь.",
+      "model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+      "modelRevision": "5ecdb67327fd37bb2e042aab12ff7391903235d3",
+      "sha256": "e52e4a21c1d336186a2ebec846dac091b474431d588b6b229c6085a35356ebca",
+      "license": "Apache-2.0",
+      "seed": 32119,
+      "voiceDescription": "A young adult man about 27, native Russian with clear standard Russian pronunciation and no foreign accent. A pleasant warm medium-pitched male voice, not exaggeratedly deep. Calm, kind, casually interested in the woman he is speaking to. Gentle smile, genuine attention and subtle warmth. Give the opening question room with a short natural pause. Reassuring final phrase. Conversational intimate acting without whispering and without announcer style.",
+      "duration": 6.4,
+      "generation": {
+        "max_new_tokens": 400,
+        "do_sample": true,
+        "top_p": 0.9,
+        "temperature": 0.8
+      },
+      "approved": true,
+      "externalReferenceAudio": false
+    }
+  },
+  "kira": {
+    "voice": "perepiska-kira-qwen-01",
+    "referenceId": "kira-synthetic-01",
+    "referenceSha256": "f10f17623962f0240aaf128ddb0e7a1afb33459d9035d904b320be4f30d459e3",
+    "referenceSpeechId": "npc.kira.evening-reaction.share-evening.reply",
+    "reference": {
+      "file": "scripts/voice-references/kira.wav",
+      "text": "Хорошо, что день не заканчивается только работой. Дом, люди рядом, свои планы — всё это тоже твоя жизнь.",
+      "model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+      "modelRevision": "5ecdb67327fd37bb2e042aab12ff7391903235d3",
+      "sha256": "f10f17623962f0240aaf128ddb0e7a1afb33459d9035d904b320be4f30d459e3",
+      "license": "Apache-2.0",
+      "seed": 32120,
+      "voiceDescription": "A woman in her mid twenties, native Russian, clear standard Russian pronunciation with no foreign accent. A warm, bright middle-to-upper female register with a lightly smiling tone. Friendly, lively and attentive, speaking naturally to a close friend. Small expressive pitch changes and meaningful pauses, never shrill, childish or theatrical. Easy conversational pace; no advertisement or announcer delivery.",
+      "directionRu": "Близкая подруга: светлый, подвижный, взрослый голос. Тёплая улыбка; поддержка без восторженного переигрывания.",
+      "duration": 7.04,
+      "generation": {
+        "max_new_tokens": 480,
+        "do_sample": true,
+        "top_p": 0.9,
+        "temperature": 0.8
+      },
+      "approved": false,
+      "authorization": "User authorized all cast as working version",
+      "externalReferenceAudio": false,
+      "render_seconds": 151.70021439799893
+    }
+  },
+  "resident-1": {
+    "voice": "perepiska-resident-1-qwen-01",
+    "referenceId": "resident-1-synthetic-01",
+    "referenceSha256": "88dbb3c0306377a08213e63a10101b4a66581b6e8b07f9b9d856b55f57c2aaed",
+    "referenceSpeechId": "npc.resident-1.courtyard-hello.notice-courtyard.reply",
+    "reference": {
+      "file": "scripts/voice-references/resident-1.wav",
+      "text": "Он особенно хорош, когда деревья дают тень. Осваивайтесь. А я пойду — чай сам себя не выпьет.",
+      "model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+      "modelRevision": "5ecdb67327fd37bb2e042aab12ff7391903235d3",
+      "sha256": "88dbb3c0306377a08213e63a10101b4a66581b6e8b07f9b9d856b55f57c2aaed",
+      "license": "Apache-2.0",
+      "seed": 1697894038,
+      "voiceDescription": "A mature man around sixty, native Russian with clear standard Russian pronunciation and no foreign accent. A rounded lower-middle male voice with a little natural grain, steady breath and relaxed articulation. Warm, observant and quietly amused, having a brief courteous conversation with a new neighbor. Unhurried natural pauses, a small smile in the final thought. No exaggerated old-man voice, tremor or announcer style.",
+      "directionRu": "Зрелый сосед: округлый невысокий тембр, лёгкая естественная шероховатость, спокойная улыбка. Без карикатурной старческой манеры.",
+      "duration": 7.52,
+      "generation": {
+        "max_new_tokens": 480,
+        "do_sample": true,
+        "top_p": 0.9,
+        "temperature": 0.8,
+        "batchIds": [
+          "resident-1"
+        ],
+        "batchSeed": 1697894038
+      },
+      "approved": false,
+      "authorization": "User authorized all cast as working version",
+      "externalReferenceAudio": false,
+      "batchRenderSeconds": 156.61006534900662,
+      "peakRssKiB": 4955356
+    }
+  },
+  "resident-2": {
+    "voice": "perepiska-resident-2-qwen-01",
+    "referenceId": "resident-2-synthetic-01",
+    "referenceSha256": "adc657bf60d4838f00de95c60af7cd84b72b261c459550aac85a2691dfaccfdb",
+    "referenceSpeechId": "npc.resident-2.after-work.ask-neighbor-life.reply",
+    "reference": {
+      "file": "scripts/voice-references/resident-2.wav",
+      "text": "Кто-то гуляет, кто-то выносит книгу на скамейку. Можно просто начать здороваться — дальше разговоры находятся сами.",
+      "model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+      "modelRevision": "5ecdb67327fd37bb2e042aab12ff7391903235d3",
+      "sha256": "adc657bf60d4838f00de95c60af7cd84b72b261c459550aac85a2691dfaccfdb",
+      "license": "Apache-2.0",
+      "seed": 3892940024,
+      "voiceDescription": "A man in his early thirties, native Russian with clear standard Russian pronunciation and no foreign accent. A clear, slightly bright middle male register with firm but easy articulation. Casual, open and grounded, sharing an everyday observation with a neighbor. Friendly interest and a modest smile, gently varying emphasis across the sentence. Natural conversational pauses, neither romantic nor promotional.",
+      "directionRu": "Сосед: открытый средний мужской голос, чуть светлее и собраннее Макса, бытовая непринуждённость.",
+      "duration": 9.44,
+      "generation": {
+        "max_new_tokens": 480,
+        "do_sample": true,
+        "top_p": 0.9,
+        "temperature": 0.8,
+        "batchIds": [
+          "resident-2",
+          "ilya",
+          "anton"
+        ],
+        "batchSeed": 3892940024
+      },
+      "approved": false,
+      "authorization": "User authorized all cast as working version",
+      "externalReferenceAudio": false,
+      "batchRenderSeconds": 118.08315141600178,
+      "peakRssKiB": 5635692
+    }
+  },
+  "ilya": {
+    "voice": "perepiska-ilya-qwen-01",
+    "referenceId": "ilya-synthetic-01",
+    "referenceSha256": "86ead20d0a34e051b04f93f0950ec5f9e2773c49d6490fa6977e59db8897f488",
+    "referenceSpeechId": "interview.budget.reply",
+    "reference": {
+      "file": "scripts/voice-references/ilya.wav",
+      "text": "Нет. Каждый ведёт отдельное хозяйство и сам оплачивает повседневные расходы. Даже полки в холодильнике подписаны.",
+      "model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+      "modelRevision": "5ecdb67327fd37bb2e042aab12ff7391903235d3",
+      "sha256": "86ead20d0a34e051b04f93f0950ec5f9e2773c49d6490fa6977e59db8897f488",
+      "license": "Apache-2.0",
+      "seed": 3892940024,
+      "voiceDescription": "An adult man in his early thirties, native Russian with clear standard Russian pronunciation and no foreign accent. A rounded lower-middle male register, smooth and grounded, with measured natural articulation. He is explaining an ordinary household arrangement to a visitor, straightforward and cooperative with mild dry amusement at the final detail. Calm conversational pauses; no formal lecture, narrator delivery or exaggerated bass.",
+      "directionRu": "Первый брат: более округлый и низкий голос, спокойно объясняет бытовой факт. В конце лёгкая усмешка про полки.",
+      "duration": 9.04,
+      "generation": {
+        "max_new_tokens": 480,
+        "do_sample": true,
+        "top_p": 0.9,
+        "temperature": 0.8,
+        "batchIds": [
+          "resident-2",
+          "ilya",
+          "anton"
+        ],
+        "batchSeed": 3892940024
+      },
+      "approved": false,
+      "authorization": "User authorized all cast as working version",
+      "externalReferenceAudio": false,
+      "batchRenderSeconds": 118.08315141600178,
+      "peakRssKiB": 5635692
+    }
+  },
+  "anton": {
+    "voice": "perepiska-anton-qwen-01",
+    "referenceId": "anton-synthetic-01",
+    "referenceSha256": "38d3f744b221dc30a43304b2d9d13ddf0ae15621d2977bd2e178218153c249e6",
+    "referenceSpeechId": "npc.anton.anton-smalltalk.anton-stickers.reply",
+    "reference": {
+      "file": "scripts/voice-references/anton.wav",
+      "text": "Моя. Я люблю, когда бытовые мелочи решаются один раз, а потом можно о них не думать.",
+      "model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+      "modelRevision": "5ecdb67327fd37bb2e042aab12ff7391903235d3",
+      "sha256": "38d3f744b221dc30a43304b2d9d13ddf0ae15621d2977bd2e178218153c249e6",
+      "license": "Apache-2.0",
+      "seed": 3892940024,
+      "voiceDescription": "An adult man around thirty, native Russian with clear standard Russian pronunciation and no foreign accent. A light middle male register, a little higher and drier than a deep male voice, with crisp precise consonants. Practical, relaxed and mildly amused while explaining his own household habit. Natural emphasis on the simple reason, short thoughtful pauses, an easy conversational pace. No caricature, accent, sales pitch or announcer style.",
+      "directionRu": "Второй брат: тембр немного выше и суше Ильи, ясная артикуляция, практичность с лёгкой иронией.",
+      "duration": 6.88,
+      "generation": {
+        "max_new_tokens": 480,
+        "do_sample": true,
+        "top_p": 0.9,
+        "temperature": 0.8,
+        "batchIds": [
+          "resident-2",
+          "ilya",
+          "anton"
+        ],
+        "batchSeed": 3892940024
+      },
+      "approved": false,
+      "authorization": "User authorized all cast as working version",
+      "externalReferenceAudio": false,
+      "batchRenderSeconds": 118.08315141600178,
+      "peakRssKiB": 5635692
+    }
+  },
+  "dima": {
+    "voice": "perepiska-dima-qwen-01",
+    "referenceId": "dima-synthetic-01",
+    "referenceSha256": "2c449ae8fdd53818aef7375bae2d7194c9a246be1d168d7c8b42e2b66928d5b4",
+    "referenceSpeechId": "npc.dima.guest-goodbye.dima-goodbye.reply",
+    "reference": {
+      "file": "scripts/voice-references/dima.wav",
+      "text": "Спасибо, и тебе удачного первого дня. Всё, допиваю кофе и ухожу. Не буду мешать вашему разговору.",
+      "model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+      "modelRevision": "5ecdb67327fd37bb2e042aab12ff7391903235d3",
+      "sha256": "2c449ae8fdd53818aef7375bae2d7194c9a246be1d168d7c8b42e2b66928d5b4",
+      "license": "Apache-2.0",
+      "seed": 3021732063,
+      "voiceDescription": "An adult man around thirty, native Russian with clear standard Russian pronunciation and no foreign accent. A warm middle male voice with a lightly airy onset and a lively, open resonance. Sociable and courteous, saying goodbye after coffee with friends. A relaxed smile, flowing phrasing with distinct natural pauses between thoughts. Conversational and energetic without rushing, exaggerated charm or announcer delivery.",
+      "directionRu": "Гость: общительный, живой, чуть воздушный мужской голос. Дружелюбное прощание, не торопливая скороговорка.",
+      "duration": 6.56,
+      "generation": {
+        "max_new_tokens": 480,
+        "do_sample": true,
+        "top_p": 0.9,
+        "temperature": 0.8,
+        "batchIds": [
+          "dima",
+          "narrator"
+        ],
+        "batchSeed": 3021732063
+      },
+      "approved": false,
+      "authorization": "User authorized all cast as working version",
+      "externalReferenceAudio": false,
+      "batchRenderSeconds": 91.12622500200087,
+      "peakRssKiB": 5635692
+    }
+  },
+  "narrator": {
+    "voice": "perepiska-narrator-qwen-01",
+    "referenceId": "narrator-synthetic-01",
+    "referenceSha256": "af19e1d1ac74536e611964aa833e7792df78a46bc99b67e5c429dd79dd4b26a5",
+    "referenceSpeechId": "pilot.welcome",
+    "reference": {
+      "file": "scripts/voice-references/narrator.wav",
+      "text": "Первый день Ани. Собраться на новую работу. Познакомиться с соседями. И оставить время для себя.",
+      "model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+      "modelRevision": "5ecdb67327fd37bb2e042aab12ff7391903235d3",
+      "sha256": "af19e1d1ac74536e611964aa833e7792df78a46bc99b67e5c429dd79dd4b26a5",
+      "license": "Apache-2.0",
+      "seed": 2291355665,
+      "voiceDescription": "An adult woman in her thirties, native Russian with clear standard Russian pronunciation and no foreign accent. A pleasant rounded middle-to-low female register, clear and soft without whispering. An intimate, gently curious storyteller who leaves the listener room to imagine the day. Warm understated expression, slight changes of intonation and meaningful pauses between short thoughts. Unhurried but not slow, no advertising, newsreader tone or childish excitement. In Russian names Аня and Ани, stress the first A: AH-nya and AH-nee, not the final syllable. Articulate the name Ани clearly in the opening, while keeping the warm natural delivery.",
+      "directionRu": "Взрослая рассказчица: мягкий округлый голос, интерес к истории, короткие смысловые паузы. Без рекламного зазывания и дикторского официоза.",
+      "duration": 7.36,
+      "generation": {
+        "max_new_tokens": 480,
+        "do_sample": true,
+        "top_p": 0.9,
+        "temperature": 0.8,
+        "batchIds": [
+          "narrator"
+        ],
+        "batchSeed": 2291355665
+      },
+      "approved": false,
+      "authorization": "User authorized all cast as working version",
+      "externalReferenceAudio": false,
+      "batchRenderSeconds": 94.71440901299502,
+      "peakRssKiB": 4850252,
+      "qaNote": "ASR ambiguity on proper name Ани; reference used for timbre only. pilot.welcome must be regenerated and checked independently."
+    },
+    "reuseReferenceForSpeech": false
+  }
+}

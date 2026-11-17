@@ -1,0 +1,33 @@
+{
+  "voice": "perepiska-resident-1-qwen-01",
+  "referenceId": "resident-1-synthetic-01",
+  "referenceSha256": "88dbb3c0306377a08213e63a10101b4a66581b6e8b07f9b9d856b55f57c2aaed",
+  "referenceSpeechId": "npc.resident-1.courtyard-hello.notice-courtyard.reply",
+  "reference": {
+    "file": "scripts/voice-references/resident-1.wav",
+    "text": "Он особенно хорош, когда деревья дают тень. Осваивайтесь. А я пойду — чай сам себя не выпьет.",
+    "model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+    "modelRevision": "5ecdb67327fd37bb2e042aab12ff7391903235d3",
+    "sha256": "88dbb3c0306377a08213e63a10101b4a66581b6e8b07f9b9d856b55f57c2aaed",
+    "license": "Apache-2.0",
+    "seed": 1697894038,
+    "voiceDescription": "A mature man around sixty, native Russian with clear standard Russian pronunciation and no foreign accent. A rounded lower-middle male voice with a little natural grain, steady breath and relaxed articulation. Warm, observant and quietly amused, having a brief courteous conversation with a new neighbor. Unhurried natural pauses, a small smile in the final thought. No exaggerated old-man voice, tremor or announcer style.",
+    "directionRu": "Зрелый сосед: округлый невысокий тембр, лёгкая естественная шероховатость, спокойная улыбка. Без карикатурной старческой манеры.",
+    "duration": 7.52,
+    "generation": {
+      "max_new_tokens": 480,
+      "do_sample": true,
+      "top_p": 0.9,
+      "temperature": 0.8,
+      "batchIds": [
+        "resident-1"
+      ],
+      "batchSeed": 1697894038
+    },
+    "approved": false,
+    "authorization": "User authorized all cast as working version",
+    "externalReferenceAudio": false,
+    "batchRenderSeconds": 156.61006534900662,
+    "peakRssKiB": 4955356
+  }
+}

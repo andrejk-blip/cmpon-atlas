@@ -1,0 +1,20 @@
+{
+  "id": "chat.friend.calm.anna",
+  "speakerId": "anna",
+  "text": "Сегодня хочу спокойный образ и уютный вечер.",
+  "displayText": "Сегодня хочу спокойный образ и уютный вечер.",
+  "group": "chat",
+  "synthesisText": "Сегодня хочу спокойный образ и уютный вечер.",
+  "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+  "referenceId": "anna-synthetic-01",
+  "referenceSha256": "6d14158f2adc07e6a644e3bf48e2180244cac5cfd57cd1f10efd9bbd5fc81145",
+  "seed": 32117002,
+  "batchIds": [
+    "chat.friend.bright.anna",
+    "chat.friend.calm.anna"
+  ],
+  "batchRenderSeconds": 47.66446724299749,
+  "duration": 2.8,
+  "peak_rss_kib": 5264744,
+  "sha256": "d33225d89f3bb291d24ba6f1a3fd5bb8a9a56c8fb70599e5301d69eb0b49ea88"
+}

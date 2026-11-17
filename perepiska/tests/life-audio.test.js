@@ -270,10 +270,45 @@ test('closing a dialogue before voices load permanently cancels its pending auto
 });
 
 const recordings = Object.fromEntries(['record-a', 'record-b', 'record-c'].map(id => [id, {
-  url: `assets/audio/voices/${id}.mp3`, speakerId: 'anna', duration: 2, provider: 'silero-v5-cis-base',
+  url: `assets/audio/voices/${id}.mp3`, speakerId: 'anna', duration: 2, provider: 'qwen3-tts-local',
 }]));
 const recordedAudio = h => h.audios.filter(audio => audio.src?.startsWith('assets/audio/voices/'));
 function endRecording(audio) { audio.paused = true; audio.dispatch('ended'); }
+
+test('replaced recordings get a new cache URL while the authored manifest path stays stable', async () => {
+  const original = recordings['record-a'];
+  const sourceFor = async (sha256, url = original.url) => {
+    const h = harness({speechAvailable: false});
+    const manifest = {'record-a': {...original, url, sha256}};
+    const director = createAudioDirector({env: h.env, recordings: manifest});
+    await director.unlock(); director.playLines([line('record-a')]);
+    const source = recordedAudio(h)[0].src;
+    assert.equal(manifest['record-a'].url, url, 'playback must not mutate the source manifest');
+    director.destroy();
+    return source;
+  };
+  assert.equal(await sourceFor('1'.repeat(64)), `${original.url}?v=${'1'.repeat(16)}`);
+  assert.equal(await sourceFor('2'.repeat(64)), `${original.url}?v=${'2'.repeat(16)}`);
+  assert.equal(await sourceFor('a'.repeat(64), `${original.url}?language=ru`), `${original.url}?language=ru&v=${'a'.repeat(16)}`);
+  assert.equal(await sourceFor(undefined), original.url, 'legacy recordings remain compatible');
+  assert.equal(await sourceFor('not-a-file-hash'), original.url, 'only a full content digest becomes a cache key');
+});
+
+test('recorded pacing uses the measured duration and keeps music ducked through long spoken pauses', async () => {
+  const h = harness(), director = createAudioDirector({env: h.env, recordings: {
+    ...recordings, 'record-a': {...recordings['record-a'], duration: 24},
+  }});
+  await director.unlock(); director.playLines([line('record-a')]);
+  const clip = recordedAudio(h)[0];
+  h.clock.advance(25000);
+  assert.equal(director.getStatus().currentLineId, 'record-a');
+  assert.equal(clip.paused, false); assert.equal(h.spoken.length, 0, 'short display text must not cause premature browser fallback');
+  assert.equal(h.contexts[0].gains[0].gain.value, .35 * .24);
+  endRecording(clip); h.clock.advance(10000);
+  assert.equal(director.getStatus().speaking, false); assert.equal(h.spoken.length, 0);
+  assert.equal(h.contexts[0].gains[0].gain.value, .35);
+  director.destroy();
+});
 
 test('recorded speech works without browser voices and preloads only the current and next clip', async () => {
   const h = harness({speechAvailable: false}), director = createAudioDirector({env: h.env, recordings});

@@ -83,10 +83,63 @@ test('all recorded files match their hashes, sizes, measured duration and audio 
   }
 });
 
-test('recordings remain tied to the current authored text and checked pronunciation input', () => {
-  const bytes = readFileSync(new URL('scripts/voice-stress.json', root));
-  assert.equal(sha256(bytes), RECORDING_META.stressSha256, 'pronunciation input changed without regenerating recordings');
-  const stress = JSON.parse(bytes).lines;
-  assert.deepEqual(Object.keys(stress).sort(), SPEECH_LINES.map(line => line.id).sort());
-  for (const line of SPEECH_LINES) assert.equal(stress[line.id].source, line.text, `${line.id}: recording uses stale authored dialogue`);
+test('recordings remain tied to the current authored text and exact synthesis input', () => {
+  assert.equal(RECORDING_META.renderInputPath, 'scripts/voice-qwen.json');
+  const bytes = readFileSync(new URL(RECORDING_META.renderInputPath, root));
+  assert.equal(sha256(bytes), RECORDING_META.renderInputSha256, 'synthesis input changed without regenerating recordings');
+  const inputs = JSON.parse(bytes).lines;
+  assert.deepEqual(Object.keys(inputs).sort(), SPEECH_LINES.map(line => line.id).sort());
+  for (const line of SPEECH_LINES) {
+    const input = inputs[line.id], clip = RECORDINGS[line.id];
+    assert.equal(input.sourceText, line.text, `${line.id}: recording uses stale authored dialogue`);
+    // This corpus has two numeric expressions; preserve every word and stage
+    // direction decision already authored by the speech catalog.
+    assert.equal(input.synthesisText, line.text.replace(/\b300\b/g, 'триста').replace(/\b12\b/g, 'двенадцать'), `${line.id}: unintended spoken-text edit`);
+    assert.equal(clip.textSha256, sha256(Buffer.from(line.text)), `${line.id}: authored text hash mismatch`);
+    assert.equal(clip.renderInputSha256, sha256(Buffer.from(input.synthesisText)), `${line.id}: synthesis text hash mismatch`);
+    assert.equal(input.referenceId, clip.referenceId, `${line.id}: wrong synthesis reference`);
+    assert.equal(input.referenceSha256, clip.referenceSha256, `${line.id}: reference content changed`);
+  }
+});
+
+test('Qwen recordings identify the actual model and each fixed synthetic character reference', () => {
+  assert.equal(RECORDING_META.version, 2);
+  assert.equal(RECORDING_META.provider, 'qwen3-tts-local');
+  assert.equal(RECORDING_META.license, 'Apache-2.0');
+  assert.equal(RECORDING_META.sampleRate, 24000);
+  assert.equal(RECORDING_META.channels, 1);
+  assert.equal(RECORDING_META.bitrate, 128000);
+  const models = Object.values(RECORDING_META.models);
+  assert.equal(models.length, 2);
+  for (const model of models) {
+    assert.match(model.id, /^Qwen\/Qwen3-TTS-12Hz-(?:0\.6B|1\.7B)-(?:Base|VoiceDesign)$/);
+    assert.match(model.revision, /^[a-f0-9]{40}$/);
+    assert.match(model.sha256, /^[a-f0-9]{64}$/);
+  }
+  const speakers = [...new Set(SPEECH_LINES.map(line => line.speakerId))].sort();
+  assert.equal(speakers.length, 10);
+  assert.deepEqual(Object.keys(RECORDING_META.profiles).sort(), speakers);
+  const voicesUsed = new Set(), referencesUsed = new Set();
+  for (const speakerId of speakers) {
+    const profile = RECORDING_META.profiles[speakerId], reference = profile.reference;
+    assert.ok(typeof profile.voice === 'string' && profile.voice.length > 0);
+    assert.ok(typeof profile.referenceId === 'string' && profile.referenceId.length > 0);
+    assert.match(profile.referenceSha256, /^[a-f0-9]{64}$/);
+    assert.equal(reference.sha256, profile.referenceSha256);
+    assert.match(reference.file, /^scripts\/voice-references\/[a-z0-9-]+\.wav$/);
+    assert.equal(sha256(readFileSync(new URL(reference.file, root))), reference.sha256, `${speakerId}: synthetic reference content changed`);
+    assert.ok(typeof reference.text === 'string' && reference.text.trim());
+    voicesUsed.add(profile.voice); referencesUsed.add(reference.sha256);
+  }
+  assert.equal(voicesUsed.size, speakers.length, 'each character must have its own stable voice identity');
+  assert.equal(referencesUsed.size, speakers.length, 'characters must not share the same synthetic reference file');
+  for (const [id, clip] of Object.entries(RECORDINGS)) {
+    const profile = RECORDING_META.profiles[clip.speakerId];
+    assert.equal(clip.provider, RECORDING_META.provider, `${id}: mixed speech providers`);
+    assert.equal(clip.license, RECORDING_META.license, `${id}: wrong model license`);
+    assert.equal(clip.referenceId, profile.referenceId, `${id}: voice reference differs from character casting`);
+    assert.equal(clip.referenceSha256, profile.referenceSha256, `${id}: voice reference differs from character casting`);
+    assert.ok(models.some(model => model.id === clip.model && model.revision === clip.modelRevision), `${id}: unpinned synthesis model`);
+  }
+  assert.match(readFileSync(new URL('LICENSE-QWEN3-TTS.txt', voices), 'utf8'), /Apache License[\s\S]*Version 2\.0, January 2004/);
 });

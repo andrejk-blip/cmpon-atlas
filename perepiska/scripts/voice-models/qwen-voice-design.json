@@ -1,0 +1,18 @@
+{
+  "id": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+  "sha": "5ecdb67327fd37bb2e042aab12ff7391903235d3",
+  "lastModified": "2026-01-29T08:04:19.000Z",
+  "gated": false,
+  "private": false,
+  "cardData": {
+    "license": "apache-2.0",
+    "pipeline_tag": "text-to-speech",
+    "library_name": "qwen-tts",
+    "tags": [
+      "audio",
+      "tts",
+      "qwen",
+      "multilingual"
+    ]
+  }
+}

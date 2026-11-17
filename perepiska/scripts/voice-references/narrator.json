@@ -1,0 +1,35 @@
+{
+  "voice": "perepiska-narrator-qwen-01",
+  "referenceId": "narrator-synthetic-01",
+  "referenceSha256": "af19e1d1ac74536e611964aa833e7792df78a46bc99b67e5c429dd79dd4b26a5",
+  "referenceSpeechId": "pilot.welcome",
+  "reference": {
+    "file": "scripts/voice-references/narrator.wav",
+    "text": "Первый день Ани. Собраться на новую работу. Познакомиться с соседями. И оставить время для себя.",
+    "model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+    "modelRevision": "5ecdb67327fd37bb2e042aab12ff7391903235d3",
+    "sha256": "af19e1d1ac74536e611964aa833e7792df78a46bc99b67e5c429dd79dd4b26a5",
+    "license": "Apache-2.0",
+    "seed": 2291355665,
+    "voiceDescription": "An adult woman in her thirties, native Russian with clear standard Russian pronunciation and no foreign accent. A pleasant rounded middle-to-low female register, clear and soft without whispering. An intimate, gently curious storyteller who leaves the listener room to imagine the day. Warm understated expression, slight changes of intonation and meaningful pauses between short thoughts. Unhurried but not slow, no advertising, newsreader tone or childish excitement. In Russian names Аня and Ани, stress the first A: AH-nya and AH-nee, not the final syllable. Articulate the name Ани clearly in the opening, while keeping the warm natural delivery.",
+    "directionRu": "Взрослая рассказчица: мягкий округлый голос, интерес к истории, короткие смысловые паузы. Без рекламного зазывания и дикторского официоза.",
+    "duration": 7.36,
+    "generation": {
+      "max_new_tokens": 480,
+      "do_sample": true,
+      "top_p": 0.9,
+      "temperature": 0.8,
+      "batchIds": [
+        "narrator"
+      ],
+      "batchSeed": 2291355665
+    },
+    "approved": false,
+    "authorization": "User authorized all cast as working version",
+    "externalReferenceAudio": false,
+    "batchRenderSeconds": 94.71440901299502,
+    "peakRssKiB": 4850252,
+    "qaNote": "ASR ambiguity on proper name Ани; reference used for timbre only. pilot.welcome must be regenerated and checked independently."
+  },
+  "reuseReferenceForSpeech": false
+}

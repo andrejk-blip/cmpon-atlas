@@ -1,0 +1,25 @@
+{
+  "voice": "perepiska-max-qwen-01",
+  "referenceId": "max-synthetic-01",
+  "referenceSha256": "e52e4a21c1d336186a2ebec846dac091b474431d588b6b229c6085a35356ebca",
+  "referenceSpeechId": "date.opening",
+  "reference": {
+    "file": "scripts/voice-references/max.wav",
+    "text": "Ну как ты? Можно начать с первого дня, а можно просто посидеть рядом. Я никуда не тороплюсь.",
+    "model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+    "modelRevision": "5ecdb67327fd37bb2e042aab12ff7391903235d3",
+    "sha256": "e52e4a21c1d336186a2ebec846dac091b474431d588b6b229c6085a35356ebca",
+    "license": "Apache-2.0",
+    "seed": 32119,
+    "voiceDescription": "A young adult man about 27, native Russian with clear standard Russian pronunciation and no foreign accent. A pleasant warm medium-pitched male voice, not exaggeratedly deep. Calm, kind, casually interested in the woman he is speaking to. Gentle smile, genuine attention and subtle warmth. Give the opening question room with a short natural pause. Reassuring final phrase. Conversational intimate acting without whispering and without announcer style.",
+    "duration": 6.4,
+    "generation": {
+      "max_new_tokens": 400,
+      "do_sample": true,
+      "top_p": 0.9,
+      "temperature": 0.8
+    },
+    "approved": true,
+    "externalReferenceAudio": false
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "voice": "perepiska-kira-qwen-01",
+  "referenceId": "kira-synthetic-01",
+  "referenceSha256": "f10f17623962f0240aaf128ddb0e7a1afb33459d9035d904b320be4f30d459e3",
+  "referenceSpeechId": "npc.kira.evening-reaction.share-evening.reply",
+  "reference": {
+    "file": "scripts/voice-references/kira.wav",
+    "text": "Хорошо, что день не заканчивается только работой. Дом, люди рядом, свои планы — всё это тоже твоя жизнь.",
+    "model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+    "modelRevision": "5ecdb67327fd37bb2e042aab12ff7391903235d3",
+    "sha256": "f10f17623962f0240aaf128ddb0e7a1afb33459d9035d904b320be4f30d459e3",
+    "license": "Apache-2.0",
+    "seed": 32120,
+    "voiceDescription": "A woman in her mid twenties, native Russian, clear standard Russian pronunciation with no foreign accent. A warm, bright middle-to-upper female register with a lightly smiling tone. Friendly, lively and attentive, speaking naturally to a close friend. Small expressive pitch changes and meaningful pauses, never shrill, childish or theatrical. Easy conversational pace; no advertisement or announcer delivery.",
+    "directionRu": "Близкая подруга: светлый, подвижный, взрослый голос. Тёплая улыбка; поддержка без восторженного переигрывания.",
+    "duration": 7.04,
+    "generation": {
+      "max_new_tokens": 480,
+      "do_sample": true,
+      "top_p": 0.9,
+      "temperature": 0.8
+    },
+    "approved": false,
+    "authorization": "User authorized all cast as working version",
+    "externalReferenceAudio": false,
+    "render_seconds": 151.70021439799893
+  }
+}

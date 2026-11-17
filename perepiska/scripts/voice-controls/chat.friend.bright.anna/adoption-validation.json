@@ -1,0 +1,18 @@
+{
+  "controlMetadataSha256": "dd81a66c87c901ce55d5b60737ca54e04a0819040fa83860053f0d3cdc740b4b",
+  "sourceScriptSha256": "94700c33174db08d3d0bbe645eae1796a4166358cdb5499d71611ce4f3f3ec4f",
+  "pinnedModel": {
+    "id": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+    "revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+    "sha256": "38fc7fc51c5e776e840414b6fd443962e9411b9654888fd7913e4da643cb857c",
+    "bytes": 3857413744
+  },
+  "pinnedProvenanceSha256": "878cc0b51fe0bebc37820ce2600fec7430b00e3676bc61c0773ceded4fd2ba7e",
+  "validatedAtUnix": 1794942812.587128,
+  "historicalMetadataMissing": [
+    "modelRevision",
+    "modelSha256",
+    "generation"
+  ],
+  "provenanceNote": "The original preflight sidecar is preserved unchanged. Its model ID, seed, batch, text and reference SHA are original recorded evidence. Revision/weight SHA are validated against the same pinned local model used throughout this run, rather than retroactively inserted into the original sidecar."
+}

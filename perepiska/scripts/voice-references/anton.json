@@ -1,0 +1,35 @@
+{
+  "voice": "perepiska-anton-qwen-01",
+  "referenceId": "anton-synthetic-01",
+  "referenceSha256": "38d3f744b221dc30a43304b2d9d13ddf0ae15621d2977bd2e178218153c249e6",
+  "referenceSpeechId": "npc.anton.anton-smalltalk.anton-stickers.reply",
+  "reference": {
+    "file": "scripts/voice-references/anton.wav",
+    "text": "Моя. Я люблю, когда бытовые мелочи решаются один раз, а потом можно о них не думать.",
+    "model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+    "modelRevision": "5ecdb67327fd37bb2e042aab12ff7391903235d3",
+    "sha256": "38d3f744b221dc30a43304b2d9d13ddf0ae15621d2977bd2e178218153c249e6",
+    "license": "Apache-2.0",
+    "seed": 3892940024,
+    "voiceDescription": "An adult man around thirty, native Russian with clear standard Russian pronunciation and no foreign accent. A light middle male register, a little higher and drier than a deep male voice, with crisp precise consonants. Practical, relaxed and mildly amused while explaining his own household habit. Natural emphasis on the simple reason, short thoughtful pauses, an easy conversational pace. No caricature, accent, sales pitch or announcer style.",
+    "directionRu": "Второй брат: тембр немного выше и суше Ильи, ясная артикуляция, практичность с лёгкой иронией.",
+    "duration": 6.88,
+    "generation": {
+      "max_new_tokens": 480,
+      "do_sample": true,
+      "top_p": 0.9,
+      "temperature": 0.8,
+      "batchIds": [
+        "resident-2",
+        "ilya",
+        "anton"
+      ],
+      "batchSeed": 3892940024
+    },
+    "approved": false,
+    "authorization": "User authorized all cast as working version",
+    "externalReferenceAudio": false,
+    "batchRenderSeconds": 118.08315141600178,
+    "peakRssKiB": 5635692
+  }
+}

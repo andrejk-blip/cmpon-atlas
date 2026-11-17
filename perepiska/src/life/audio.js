@@ -24,6 +24,12 @@ const profiles = {
   'resident-2': [4, 1.02, .98], denis: [4, 1.02, .98],
 };
 const hash = value => [...String(value)].reduce((sum, char) => (sum * 31 + char.charCodeAt(0)) >>> 0, 0);
+// A still-active older service worker may cache the previous performance at
+// this same filename. Key playback by the verified file content, while keeping
+// manifest URLs as ordinary paths for builds and offline asset validation.
+const recordingSource = recording => /^[a-f0-9]{64}$/i.test(recording.sha256 || '')
+  ? `${recording.url}${recording.url.includes('?') ? '&' : '?'}v=${recording.sha256.slice(0, 16)}`
+  : recording.url;
 
 /**
  * env is an optional browser dependency injection seam for tests/native shells:
@@ -231,7 +237,7 @@ export function createAudioDirector({preferences, onPreferencesChange, onStateCh
     if (!recording) return null;
     try {
       const audio = new Audio();
-      audio.preload = 'auto'; audio.volume = prefs.voices; audio.src = recording.url;
+      audio.preload = 'auto'; audio.volume = prefs.voices; audio.src = recordingSource(recording);
       const clip = {audio, recording, source: null, onEnd: null, onError: null};
       clips.set(entry.id, clip);
       safely(() => audio.load?.());

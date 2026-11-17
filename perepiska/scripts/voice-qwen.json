@@ -1,0 +1,1474 @@
+{
+  "version": 1,
+  "batches": {
+    "anna-1": {
+      "ids": [
+        "date.hello",
+        "npc.dima.guest-goodbye.dima-goodbye.anna",
+        "date.done",
+        "chat.max.accept.anna"
+      ],
+      "seed": 3079864787,
+      "texts": [
+        "Привет, Макс.",
+        "Хорошего дня, Дима!",
+        "Мне тоже было хорошо.",
+        "Давай. После смены напишу."
+      ]
+    },
+    "anna-2": {
+      "ids": [
+        "interview.budget.anna",
+        "npc.anton.anton-smalltalk.anton-stickers.anna",
+        "npc.resident-2.after-work.share-day.anna",
+        "chat.team.ready.anna"
+      ],
+      "seed": 3347760641,
+      "texts": [
+        "Вы ведёте общее хозяйство?",
+        "А чья была идея с наклейками?",
+        "Моя первая анкета уже принята.",
+        "Привет! Собираюсь и скоро буду."
+      ]
+    },
+    "anna-3": {
+      "ids": [
+        "interview.who.anna",
+        "chat.team.question.anna",
+        "npc.resident-2.neighbor-intro.new-neighbor.anna",
+        "npc.vera.mentorship.own-pace.anna"
+      ],
+      "seed": 259927046,
+      "texts": [
+        "Кто постоянно живёт в квартире?",
+        "Немного волнуюсь. С чего начнём?",
+        "Я Анна. Ещё привыкаю к этому району.",
+        "Хочу попробовать сама, но без спешки."
+      ]
+    },
+    "anna-4": {
+      "ids": [
+        "chat.max.cancel.anna",
+        "npc.resident-2.after-work.ask-neighbor-life.anna",
+        "chat.friend.bright.anna",
+        "npc.max.next-plan.next-walk.anna"
+      ],
+      "seed": 2135230962,
+      "texts": [
+        "Я всё-таки устала. Перенесём прогулку?",
+        "Чем соседи обычно занимаются вечерами?",
+        "Хочу яркий образ. Пусть день запомнится.",
+        "Ещё одна прогулка, только новым маршрутом."
+      ]
+    },
+    "anna-5": {
+      "ids": [
+        "npc.resident-2.neighbor-intro.on-the-job.anna",
+        "npc.vera.mentorship.ask-help.anna",
+        "chat.friend.calm.anna",
+        "npc.max.pace.keep-easy.anna"
+      ],
+      "seed": 2457148537,
+      "texts": [
+        "Сегодня я здесь на первом рабочем задании.",
+        "Что делать, если ответ человека непонятен?",
+        "Сегодня хочу спокойный образ и уютный вечер.",
+        "Давай пока без точной даты. Мне хорошо и так."
+      ]
+    },
+    "anna-6": {
+      "ids": [
+        "npc.resident-1.courtyard-hello.notice-courtyard.anna",
+        "npc.ilya.ilya-smalltalk.ilya-labels.anna",
+        "npc.resident-1.courtyard-hello.say-first-day.anna",
+        "chat.max.later.anna"
+      ],
+      "seed": 1594990580,
+      "texts": [
+        "У вас уютный двор. Уже хочется запомнить его.",
+        "Я заметила, у вас вещи и даже полки подписаны.",
+        "Я Анна. Сегодня мой первый рабочий день здесь.",
+        "Сегодня хочу вечер для себя. Давай в другой раз?"
+      ]
+    },
+    "anna-7": {
+      "ids": [
+        "npc.vera.reflection.ask-surveys.anna",
+        "npc.max.pace.make-time.anna",
+        "npc.max.next-plan.home-coffee.anna",
+        "npc.kira.evening-reaction.share-evening.anna"
+      ],
+      "seed": 1275437510,
+      "texts": [
+        "Мне интересно попробовать и другие обследования.",
+        "Я сама напишу, когда пойму, какой вечер свободен.",
+        "Когда обустроюсь, можно устроить спокойный вечер с кофе.",
+        "Сегодня оставляю немного времени для себя и своих планов."
+      ]
+    },
+    "anna-8": {
+      "ids": [
+        "npc.vera.reflection.remember-clarity.anna",
+        "npc.kira.evening-reaction.share-work.anna",
+        "date.warm.anna"
+      ],
+      "seed": 2049230419,
+      "texts": [
+        "Одного адреса недостаточно, чтобы понять состав хозяйств.",
+        "Первая анкета принята! Представляешь, два брата живут в одной квартире, а хозяйства ведут отдельно.",
+        "Сегодня я познакомилась с двумя братьями. Живут вместе, а хозяйства ведут отдельно. Даже полки в холодильнике подписали."
+      ]
+    },
+    "vera-1": {
+      "ids": [
+        "npc.vera.mentorship.opening.after-work",
+        "chat.team.ready.reply",
+        "npc.vera.reflection.opening",
+        "npc.vera.mentorship.opening.before-work"
+      ],
+      "seed": 3118746650,
+      "texts": [
+        "Первый адрес уже позади. Что тебе особенно хочется обсудить?",
+        "Буду ждать у скамейки. Если что-то непонятно, спокойно спрашивай.",
+        "Анкета принята. Теперь можно выдохнуть. Что заберёшь из этого дня с собой?",
+        "Перед первым адресом можно спокойно задать любой вопрос. Что сейчас волнует?"
+      ]
+    },
+    "vera-2": {
+      "ids": [
+        "chat.team.accepted",
+        "npc.vera.mentorship.ask-help.reply",
+        "npc.vera.mentorship.own-pace.reply",
+        "npc.vera.reflection.remember-clarity.reply"
+      ],
+      "seed": 1133458098,
+      "texts": [
+        "Анкета первого адреса принята. За неё начислено триста монет. На сегодня всё, Анна!",
+        "Уточни своими словами и дай человеку договорить. Лучше переспросить, чем додумать за него.",
+        "Так и сделаем. Я рядом. Спокойный разговор важнее попытки выглядеть опытнее, чем ты сейчас есть.",
+        "Да. Даже братья в одной квартире могут вести разные хозяйства. Ты не стала делать вывод по первому впечатлению."
+      ]
+    },
+    "vera-3": {
+      "ids": [
+        "npc.vera.reflection.ask-surveys.reply",
+        "mentor.meeting",
+        "chat.team.opening",
+        "mentor.handoff"
+      ],
+      "seed": 146321339,
+      "texts": [
+        "У них будут свои вопросы и правила отбора. Хороший интерес. А сегодня ты уже сделала первый шаг — остальное разберём по мере работы.",
+        "Привет, Анна! Рада познакомиться уже не в чате. Первый адрес — квартира двенадцать. Ты задаёшь вопросы, а я рядом, если понадобится помощь.",
+        "Анна, привет! Я Вера, твоя наставница. Сегодня твой первый день. Встречаемся во дворе на Лесной. Возьми планшет и удостоверение — первый адрес пройдём вместе.",
+        "Я проверила анкету по первому адресу — всё сходится. Передай её, и за принятую работу получишь триста монет. Остальную часть учебной смены пройдём вместе, а вечер будет твой."
+      ]
+    },
+    "max-1": {
+      "ids": [
+        "chat.max.cancel.reply",
+        "chat.max.later.reply",
+        "chat.max.after-date.honest",
+        "chat.max.after-date.warm"
+      ],
+      "seed": 2074105199,
+      "texts": [
+        "Без проблем. Отдыхай, встретимся в другой день.",
+        "Конечно. Осваивайся спокойно. Напишемся завтра.",
+        "Спасибо за вечер. Рад, что можно просто быть собой.",
+        "Мне понравился наш вечер. Повторим прогулку на неделе?"
+      ]
+    },
+    "max-2": {
+      "ids": [
+        "npc.max.pace.keep-easy.reply",
+        "npc.max.pace.make-time.reply",
+        "date.honest.reply",
+        "chat.max.accept.reply"
+      ],
+      "seed": 1638611195,
+      "texts": [
+        "Конечно. Можно не торопиться. Я рад, что мы поговорили.",
+        "Хорошо. Тогда жду твоего сообщения. Сегодня уже было здорово.",
+        "Тогда сегодня без больших планов. Просто пройдёмся. Хорошо, что ты пришла",
+        "Договорились. Буду у скамейки. И без отчёта о достижениях — просто погуляем."
+      ]
+    },
+    "max-3": {
+      "ids": [
+        "npc.max.next-plan.home-coffee.reply",
+        "npc.max.next-plan.next-walk.reply",
+        "date.warm.reply",
+        "npc.max.next-plan.opening"
+      ],
+      "seed": 11813841,
+      "texts": [
+        "Мне нравится эта идея. Без большой подготовки и попытки всё сделать идеально.",
+        "Тогда я посмотрю, куда можно свернуть с нашей улицы. А маршрут выберем вместе.",
+        "Теперь мне тоже хочется подписать свою полку. Расскажешь ещё что-нибудь по дороге?",
+        "Мне нравится, что мы наконец выбрались вместе. Какой следующий вечер тебе был бы по душе?"
+      ]
+    },
+    "max-4": {
+      "ids": [
+        "npc.max.pace.opening",
+        "chat.max.opening"
+      ],
+      "seed": 3301970974,
+      "texts": [
+        "Договорились. Только не хочу превратить приятную идею в ещё один пункт твоего расписания.",
+        "Помню, у тебя сегодня первый день. Удачи! Если вечером останутся силы, погуляем во дворе? После шести я свободен."
+      ]
+    },
+    "kira-1": {
+      "ids": [
+        "chat.friend.calm.reply",
+        "npc.kira.evening-reaction.opening",
+        "chat.friend.bright.reply",
+        "chat.friend.opening"
+      ],
+      "seed": 2838318145,
+      "texts": [
+        "Звучит хорошо. Можно начать с маленькой лампы. Дом постепенно станет совсем твоим.",
+        "Ну что, первый день позади? Я помню, как ты утром собиралась. Что хочется рассказать первым?",
+        "Тогда коралловый жакет! Только сначала позавтракай, звезда. Вечером расскажешь, как всё прошло.",
+        "Первый рабочий день! Ты уже выбрала, в чём пойдёшь? И да, пустой угол у окна всё ещё просит растение."
+      ]
+    },
+    "kira-2": {
+      "ids": [
+        "npc.kira.evening-reaction.share-work.reply"
+      ],
+      "seed": 498910689,
+      "texts": [
+        "Вот это уже настоящая история первого дня. Сохрани её в памяти — потом будет с чем сравнить свой опыт."
+      ]
+    },
+    "resident-1-1": {
+      "ids": [
+        "npc.resident-1.courtyard-hello.opening",
+        "npc.resident-1.courtyard-hello.say-first-day.reply"
+      ],
+      "seed": 2623621237,
+      "texts": [
+        "Здравствуйте! Новое лицо во дворе. Я Николай. Обычно делаю здесь круг перед чаем.",
+        "Тогда хорошего начала, Анна. Не буду задерживать — у вас свой маршрут, у меня свой круг."
+      ]
+    },
+    "resident-2-1": {
+      "ids": [
+        "npc.resident-2.after-work.opening.work",
+        "npc.resident-2.after-work.opening.neighbor",
+        "npc.resident-2.neighbor-intro.opening",
+        "npc.resident-2.neighbor-intro.on-the-job.reply"
+      ],
+      "seed": 1576386119,
+      "texts": [
+        "Анна, привет ещё раз. Как первое рабочее задание?",
+        "Снова привет, Анна. За день район стал хоть немного знакомее?",
+        "Привет. Кажется, мы раньше не встречались. Я Денис, живу в соседнем подъезде.",
+        "Удачи. Я сначала тоже всё путал между подъездами. Теперь ноги сами знают дорогу."
+      ]
+    },
+    "resident-2-2": {
+      "ids": [
+        "npc.resident-2.neighbor-intro.new-neighbor.reply",
+        "npc.resident-2.after-work.share-day.reply"
+      ],
+      "seed": 2346316336,
+      "texts": [
+        "Тогда добро пожаловать. Здесь люди быстро становятся знакомыми лицами — даже без общего чата.",
+        "Значит, у этого двора для тебя теперь есть первая история. В следующий раз будет проще начинать разговор."
+      ]
+    },
+    "ilya-1": {
+      "ids": [
+        "npc.ilya.ilya-smalltalk.opening",
+        "interview.who.reply",
+        "npc.ilya.ilya-smalltalk.ilya-labels.reply",
+        "interview.opening"
+      ],
+      "seed": 1057607636,
+      "texts": [
+        "Пока Антон ищет зарядку, можно пару слов не про анкету.",
+        "Постоянно живём только мы с Антоном. Дима — гость, он живёт по другому адресу.",
+        "Это у нас способ не тратить утро на спор «чья зарядка». Смешно выглядит, зато работает.",
+        "Привет! Я Илья, это мой брат Антон. А Дима к нам только на кофе заглянул. Проходи, мы готовы."
+      ]
+    },
+    "anton-1": {
+      "ids": [
+        "npc.anton.anton-smalltalk.opening"
+      ],
+      "seed": 449141788,
+      "texts": [
+        "Зарядка нашлась. И да, на ней действительно моя наклейка."
+      ]
+    },
+    "dima-1": {
+      "ids": [
+        "npc.dima.guest-goodbye.opening"
+      ],
+      "seed": 2018614372,
+      "texts": [
+        "Я тут только в гостях: кофе, разговор — и дальше по своим делам."
+      ]
+    },
+    "narrator-1": {
+      "ids": [
+        "pilot.bed.other",
+        "interview.instruction",
+        "pilot.alarm",
+        "pilot.welcome"
+      ],
+      "seed": 2290637926,
+      "texts": [
+        "Оставим остальное на завтра? Первый день уже стал частью твоей истории.",
+        "Размести постоянных жителей по домохозяйствам. Гостя здесь не учитываем.",
+        "Доброе утро, Аня. Новая работа. Новые люди. И твой обычный, необычный день.",
+        "Первый день Ани. Собраться на новую работу. Познакомиться с соседями. И оставить время для себя."
+      ]
+    },
+    "narrator-2": {
+      "ids": [
+        "interview.accepted",
+        "pilot.bed.accepted",
+        "pilot.ending"
+      ],
+      "seed": 2552391491,
+      "texts": [
+        "Верно: два постоянных жителя и два отдельных домохозяйства. Дима пришёл в гости и по этому адресу не учитывается.",
+        "Оставим остальное на завтра? Максу можно написать, что прогулку перенесём. Или просто закончить день — он останется на завтра.",
+        "Твой первый день завершён. Сегодня ты познакомилась с работой, получила деньги за первую анкету и выбрала свой вечер. Спасибо за игру! Эту историю можно пройти ещё раз с другими решениями."
+      ]
+    },
+    "resume-1-resident-1-1": {
+      "ids": [
+        "npc.resident-1.courtyard-hello.opening",
+        "npc.resident-1.courtyard-hello.say-first-day.reply"
+      ],
+      "seed": 322051058,
+      "texts": [
+        "Здравствуйте! Новое лицо во дворе. Я Николай. Обычно делаю здесь круг перед чаем.",
+        "Тогда хорошего начала, Анна. Не буду задерживать — у вас свой маршрут, у меня свой круг."
+      ]
+    },
+    "resume-1-anna-1": {
+      "ids": [
+        "date.hello",
+        "npc.dima.guest-goodbye.dima-goodbye.anna",
+        "date.done",
+        "npc.resident-2.after-work.ask-neighbor-life.anna"
+      ],
+      "seed": 2129785482,
+      "texts": [
+        "Привет, Макс.",
+        "Хорошего дня, Дима!",
+        "Мне тоже было хорошо.",
+        "Чем соседи обычно занимаются вечерами?"
+      ]
+    },
+    "resume-1-anna-2": {
+      "ids": [
+        "npc.resident-2.neighbor-intro.on-the-job.anna",
+        "npc.resident-1.courtyard-hello.notice-courtyard.anna",
+        "npc.ilya.ilya-smalltalk.ilya-labels.anna",
+        "npc.resident-1.courtyard-hello.say-first-day.anna"
+      ],
+      "seed": 1373958456,
+      "texts": [
+        "Сегодня я здесь на первом рабочем задании.",
+        "У вас уютный двор. Уже хочется запомнить его.",
+        "Я заметила, у вас вещи и даже полки подписаны.",
+        "Я Анна. Сегодня мой первый рабочий день здесь."
+      ]
+    },
+    "resume-1-anna-3": {
+      "ids": [
+        "npc.kira.evening-reaction.share-evening.anna",
+        "npc.kira.evening-reaction.share-work.anna",
+        "date.warm.anna"
+      ],
+      "seed": 853999403,
+      "texts": [
+        "Сегодня оставляю немного времени для себя и своих планов.",
+        "Первая анкета принята! Представляешь, два брата живут в одной квартире, а хозяйства ведут отдельно.",
+        "Сегодня я познакомилась с двумя братьями. Живут вместе, а хозяйства ведут отдельно. Даже полки в холодильнике подписали."
+      ]
+    },
+    "resume-1-resident-2-1": {
+      "ids": [
+        "npc.resident-2.after-work.opening.work",
+        "npc.resident-2.after-work.opening.neighbor",
+        "npc.resident-2.neighbor-intro.opening",
+        "npc.resident-2.neighbor-intro.on-the-job.reply"
+      ],
+      "seed": 693621659,
+      "texts": [
+        "Анна, привет ещё раз. Как первое рабочее задание?",
+        "Снова привет, Анна. За день район стал хоть немного знакомее?",
+        "Привет. Кажется, мы раньше не встречались. Я Денис, живу в соседнем подъезде.",
+        "Удачи. Я сначала тоже всё путал между подъездами. Теперь ноги сами знают дорогу."
+      ]
+    },
+    "resume-1-resident-2-2": {
+      "ids": [
+        "npc.resident-2.neighbor-intro.new-neighbor.reply",
+        "npc.resident-2.after-work.share-day.reply"
+      ],
+      "seed": 2232339374,
+      "texts": [
+        "Тогда добро пожаловать. Здесь люди быстро становятся знакомыми лицами — даже без общего чата.",
+        "Значит, у этого двора для тебя теперь есть первая история. В следующий раз будет проще начинать разговор."
+      ]
+    },
+    "resume-1-kira-1": {
+      "ids": [
+        "npc.kira.evening-reaction.opening",
+        "npc.kira.evening-reaction.share-work.reply"
+      ],
+      "seed": 3113278509,
+      "texts": [
+        "Ну что, первый день позади? Я помню, как ты утром собиралась. Что хочется рассказать первым?",
+        "Вот это уже настоящая история первого дня. Сохрани её в памяти — потом будет с чем сравнить свой опыт."
+      ]
+    },
+    "resume-1-ilya-1": {
+      "ids": [
+        "npc.ilya.ilya-smalltalk.opening",
+        "interview.who.reply",
+        "npc.ilya.ilya-smalltalk.ilya-labels.reply",
+        "interview.opening"
+      ],
+      "seed": 439633344,
+      "texts": [
+        "Пока Антон ищет зарядку, можно пару слов не про анкету.",
+        "Постоянно живём только мы с Антоном. Дима — гость, он живёт по другому адресу.",
+        "Это у нас способ не тратить утро на спор «чья зарядка». Смешно выглядит, зато работает.",
+        "Привет! Я Илья, это мой брат Антон. А Дима к нам только на кофе заглянул. Проходи, мы готовы."
+      ]
+    },
+    "resume-1-anton-1": {
+      "ids": [
+        "npc.anton.anton-smalltalk.opening"
+      ],
+      "seed": 718496730,
+      "texts": [
+        "Зарядка нашлась. И да, на ней действительно моя наклейка."
+      ]
+    },
+    "resume-1-dima-1": {
+      "ids": [
+        "npc.dima.guest-goodbye.opening"
+      ],
+      "seed": 718848625,
+      "texts": [
+        "Я тут только в гостях: кофе, разговор — и дальше по своим делам."
+      ]
+    },
+    "resume-1-max-1": {
+      "ids": [
+        "date.honest.reply",
+        "date.warm.reply"
+      ],
+      "seed": 2141416977,
+      "texts": [
+        "Тогда сегодня без больших планов. Просто пройдёмся. Хорошо, что ты пришла",
+        "Теперь мне тоже хочется подписать свою полку. Расскажешь ещё что-нибудь по дороге?"
+      ]
+    },
+    "resume-1-narrator-1": {
+      "ids": [
+        "pilot.bed.other",
+        "interview.instruction",
+        "pilot.alarm",
+        "pilot.welcome"
+      ],
+      "seed": 167350637,
+      "texts": [
+        "Оставим остальное на завтра? Первый день уже стал частью твоей истории.",
+        "Размести постоянных жителей по домохозяйствам. Гостя здесь не учитываем.",
+        "Доброе утро, Аня. Новая работа. Новые люди. И твой обычный, необычный день.",
+        "Первый день Ани. Собраться на новую работу. Познакомиться с соседями. И оставить время для себя."
+      ]
+    },
+    "resume-1-narrator-2": {
+      "ids": [
+        "interview.accepted",
+        "pilot.bed.accepted",
+        "pilot.ending"
+      ],
+      "seed": 2047846933,
+      "texts": [
+        "Верно: два постоянных жителя и два отдельных домохозяйства. Дима пришёл в гости и по этому адресу не учитывается.",
+        "Оставим остальное на завтра? Максу можно написать, что прогулку перенесём. Или просто закончить день — он останется на завтра.",
+        "Твой первый день завершён. Сегодня ты познакомилась с работой, получила деньги за первую анкету и выбрала свой вечер. Спасибо за игру! Эту историю можно пройти ещё раз с другими решениями."
+      ]
+    },
+    "verified-control-chat.friend.bright.anna": {
+      "ids": [
+        "chat.friend.bright.anna",
+        "chat.friend.calm.anna"
+      ],
+      "seed": 32117002,
+      "texts": [
+        "Хочу яркий образ. Пусть день запомнится.",
+        "Сегодня хочу спокойный образ и уютный вечер."
+      ]
+    }
+  },
+  "batching": "Up to four similar-length lines of one speaker; ordered IDs and common seed are fixed",
+  "catalog": "src/life/speech-catalog.js getSpeech(id).text",
+  "normalization": {
+    "numerals": {
+      "300": "триста",
+      "12": "двенадцать"
+    },
+    "sileroStressMarkersUsed": false,
+    "wordingChanged": false
+  },
+  "lines": {
+    "chat.team.opening": {
+      "sourceText": "Анна, привет! Я Вера, твоя наставница. Сегодня твой первый день. Встречаемся во дворе на Лесной. Возьми планшет и удостоверение — первый адрес пройдём вместе.",
+      "synthesisText": "Анна, привет! Я Вера, твоя наставница. Сегодня твой первый день. Встречаемся во дворе на Лесной. Возьми планшет и удостоверение — первый адрес пройдём вместе.",
+      "speakerId": "vera",
+      "referenceId": "vera-synthetic-01",
+      "referenceSha256": "49b743d3d2fb46c21e22703b876514724becf844fd3e1d147a8b35ffed08f937",
+      "seed": 146321339,
+      "batchId": "vera-3"
+    },
+    "chat.team.ready.anna": {
+      "sourceText": "Привет! Собираюсь и скоро буду.",
+      "synthesisText": "Привет! Собираюсь и скоро буду.",
+      "speakerId": "anna",
+      "referenceId": "anna-synthetic-01",
+      "referenceSha256": "6d14158f2adc07e6a644e3bf48e2180244cac5cfd57cd1f10efd9bbd5fc81145",
+      "seed": 3347760641,
+      "batchId": "anna-2"
+    },
+    "chat.team.ready.reply": {
+      "sourceText": "Буду ждать у скамейки. Если что-то непонятно, спокойно спрашивай.",
+      "synthesisText": "Буду ждать у скамейки. Если что-то непонятно, спокойно спрашивай.",
+      "speakerId": "vera",
+      "referenceId": "vera-synthetic-01",
+      "referenceSha256": "49b743d3d2fb46c21e22703b876514724becf844fd3e1d147a8b35ffed08f937",
+      "seed": 3118746650,
+      "batchId": "vera-1"
+    },
+    "chat.team.question.anna": {
+      "sourceText": "Немного волнуюсь. С чего начнём?",
+      "synthesisText": "Немного волнуюсь. С чего начнём?",
+      "speakerId": "anna",
+      "referenceId": "anna-synthetic-01",
+      "referenceSha256": "6d14158f2adc07e6a644e3bf48e2180244cac5cfd57cd1f10efd9bbd5fc81145",
+      "seed": 259927046,
+      "batchId": "anna-3"
+    },
+    "chat.team.question.reply": {
+      "sourceText": "Начнём со знакомства и одного адреса. Твоя задача — внимательно слушать людей. Со всем остальным помогу.",
+      "synthesisText": "Начнём со знакомства и одного адреса. Твоя задача — внимательно слушать людей. Со всем остальным помогу.",
+      "speakerId": "vera",
+      "referenceId": "vera-synthetic-01",
+      "referenceSha256": "49b743d3d2fb46c21e22703b876514724becf844fd3e1d147a8b35ffed08f937",
+      "seed": 32118
+    },
+    "chat.friend.opening": {
+      "sourceText": "Первый рабочий день! Ты уже выбрала, в чём пойдёшь? И да, пустой угол у окна всё ещё просит растение.",
+      "synthesisText": "Первый рабочий день! Ты уже выбрала, в чём пойдёшь? И да, пустой угол у окна всё ещё просит растение.",
+      "speakerId": "kira",
+      "referenceId": "kira-synthetic-01",
+      "referenceSha256": "f10f17623962f0240aaf128ddb0e7a1afb33459d9035d904b320be4f30d459e3",
+      "seed": 2838318145,
+      "batchId": "kira-1"
+    },
+    "chat.friend.bright.anna": {
+      "sourceText": "Хочу яркий образ. Пусть день запомнится.",
+      "synthesisText": "Хочу яркий образ. Пусть день запомнится.",
+      "speakerId": "anna",
+      "referenceId": "anna-synthetic-01",
+      "referenceSha256": "6d14158f2adc07e6a644e3bf48e2180244cac5cfd57cd1f10efd9bbd5fc81145",
+      "seed": 32117002,
+      "batchId": "verified-control-chat.friend.bright.anna",
+      "previousAttempts": [
+        {
+          "batchId": "anna-4",
+          "seed": 2135230962,
+          "attempt": 0
+        }
+      ],
+      "attempt": 1
+    },
+    "chat.friend.bright.reply": {
+      "sourceText": "Тогда коралловый жакет! Только сначала позавтракай, звезда. Вечером расскажешь, как всё прошло.",
+      "synthesisText": "Тогда коралловый жакет! Только сначала позавтракай, звезда. Вечером расскажешь, как всё прошло.",
+      "speakerId": "kira",
+      "referenceId": "kira-synthetic-01",
+      "referenceSha256": "f10f17623962f0240aaf128ddb0e7a1afb33459d9035d904b320be4f30d459e3",
+      "seed": 2838318145,
+      "batchId": "kira-1"
+    },
+    "chat.friend.calm.anna": {
+      "sourceText": "Сегодня хочу спокойный образ и уютный вечер.",
+      "synthesisText": "Сегодня хочу спокойный образ и уютный вечер.",
+      "speakerId": "anna",
+      "referenceId": "anna-synthetic-01",
+      "referenceSha256": "6d14158f2adc07e6a644e3bf48e2180244cac5cfd57cd1f10efd9bbd5fc81145",
+      "seed": 2457148537,
+      "batchId": "anna-5"
+    },
+    "chat.friend.calm.reply": {
+      "sourceText": "Звучит хорошо. Можно начать с маленькой лампы. Дом постепенно станет совсем твоим.",
+      "synthesisText": "Звучит хорошо. Можно начать с маленькой лампы. Дом постепенно станет совсем твоим.",
+      "speakerId": "kira",
+      "referenceId": "kira-synthetic-01",
+      "referenceSha256": "f10f17623962f0240aaf128ddb0e7a1afb33459d9035d904b320be4f30d459e3",
+      "seed": 2838318145,
+      "batchId": "kira-1"
+    },
+    "chat.max.opening": {
+      "sourceText": "Помню, у тебя сегодня первый день. Удачи! Если вечером останутся силы, погуляем во дворе? После шести я свободен.",
+      "synthesisText": "Помню, у тебя сегодня первый день. Удачи! Если вечером останутся силы, погуляем во дворе? После шести я свободен.",
+      "speakerId": "max",
+      "referenceId": "max-synthetic-01",
+      "referenceSha256": "e52e4a21c1d336186a2ebec846dac091b474431d588b6b229c6085a35356ebca",
+      "seed": 3301970974,
+      "batchId": "max-4"
+    },
+    "chat.max.accept.anna": {
+      "sourceText": "Давай. После смены напишу.",
+      "synthesisText": "Давай. После смены напишу.",
+      "speakerId": "anna",
+      "referenceId": "anna-synthetic-01",
+      "referenceSha256": "6d14158f2adc07e6a644e3bf48e2180244cac5cfd57cd1f10efd9bbd5fc81145",
+      "seed": 3079864787,
+      "batchId": "anna-1"
+    },
+    "chat.max.accept.reply": {
+      "sourceText": "Договорились. Буду у скамейки. И без отчёта о достижениях — просто погуляем.",
+      "synthesisText": "Договорились. Буду у скамейки. И без отчёта о достижениях — просто погуляем.",
+      "speakerId": "max",
+      "referenceId": "max-synthetic-01",
+      "referenceSha256": "e52e4a21c1d336186a2ebec846dac091b474431d588b6b229c6085a35356ebca",
+      "seed": 1638611195,
+      "batchId": "max-2"
+    },
+    "chat.max.later.anna": {
+      "sourceText": "Сегодня хочу вечер для себя. Давай в другой раз?",
+      "synthesisText": "Сегодня хочу вечер для себя. Давай в другой раз?",
+      "speakerId": "anna",
+      "referenceId": "anna-synthetic-01",
+      "referenceSha256": "6d14158f2adc07e6a644e3bf48e2180244cac5cfd57cd1f10efd9bbd5fc81145",
+      "seed": 1594990580,
+      "batchId": "anna-6"
+    },
+    "chat.max.later.reply": {
+      "sourceText": "Конечно. Осваивайся спокойно. Напишемся завтра.",
+      "synthesisText": "Конечно. Осваивайся спокойно. Напишемся завтра.",
+      "speakerId": "max",
+      "referenceId": "max-synthetic-01",
+      "referenceSha256": "e52e4a21c1d336186a2ebec846dac091b474431d588b6b229c6085a35356ebca",
+      "seed": 2074105199,
+      "batchId": "max-1"
+    },
+    "chat.max.cancel.anna": {
+      "sourceText": "Я всё-таки устала. Перенесём прогулку?",
+      "synthesisText": "Я всё-таки устала. Перенесём прогулку?",
+      "speakerId": "anna",
+      "referenceId": "anna-synthetic-01",
+      "referenceSha256": "6d14158f2adc07e6a644e3bf48e2180244cac5cfd57cd1f10efd9bbd5fc81145",
+      "seed": 2135230962,
+      "batchId": "anna-4"
+    },
+    "chat.max.cancel.reply": {
+      "sourceText": "Без проблем. Отдыхай, встретимся в другой день.",
+      "synthesisText": "Без проблем. Отдыхай, встретимся в другой день.",
+      "speakerId": "max",
+      "referenceId": "max-synthetic-01",
+      "referenceSha256": "e52e4a21c1d336186a2ebec846dac091b474431d588b6b229c6085a35356ebca",
+      "seed": 2074105199,
+      "batchId": "max-1"
+    },
+    "chat.team.accepted": {
+      "sourceText": "Анкета первого адреса принята. За неё начислено 300 монет. На сегодня всё, Анна!",
+      "synthesisText": "Анкета первого адреса принята. За неё начислено триста монет. На сегодня всё, Анна!",
+      "speakerId": "vera",
+      "referenceId": "vera-synthetic-01",
+      "referenceSha256": "49b743d3d2fb46c21e22703b876514724becf844fd3e1d147a8b35ffed08f937",
+      "seed": 1133458098,
+      "batchId": "vera-2"
+    },
+    "chat.max.after-date.warm": {
+      "sourceText": "Мне понравился наш вечер. Повторим прогулку на неделе?",
+      "synthesisText": "Мне понравился наш вечер. Повторим прогулку на неделе?",
+      "speakerId": "max",
+      "referenceId": "max-synthetic-01",
+      "referenceSha256": "e52e4a21c1d336186a2ebec846dac091b474431d588b6b229c6085a35356ebca",
+      "seed": 2074105199,
+      "batchId": "max-1"
+    },
+    "chat.max.after-date.honest": {
+      "sourceText": "Спасибо за вечер. Рад, что можно просто быть собой.",
+      "synthesisText": "Спасибо за вечер. Рад, что можно просто быть собой.",
+      "speakerId": "max",
+      "referenceId": "max-synthetic-01",
+      "referenceSha256": "e52e4a21c1d336186a2ebec846dac091b474431d588b6b229c6085a35356ebca",
+      "seed": 2074105199,
+      "batchId": "max-1"
+    },
+    "npc.vera.mentorship.opening.before-work": {
+      "sourceText": "Перед первым адресом можно спокойно задать любой вопрос. Что сейчас волнует?",
+      "synthesisText": "Перед первым адресом можно спокойно задать любой вопрос. Что сейчас волнует?",
+      "speakerId": "vera",
+      "referenceId": "vera-synthetic-01",
+      "referenceSha256": "49b743d3d2fb46c21e22703b876514724becf844fd3e1d147a8b35ffed08f937",
+      "seed": 3118746650,
+      "batchId": "vera-1"
+    },
+    "npc.vera.mentorship.opening.after-work": {
+      "sourceText": "Первый адрес уже позади. Что тебе особенно хочется обсудить?",
+      "synthesisText": "Первый адрес уже позади. Что тебе особенно хочется обсудить?",
+      "speakerId": "vera",
+      "referenceId": "vera-synthetic-01",
+      "referenceSha256": "49b743d3d2fb46c21e22703b876514724becf844fd3e1d147a8b35ffed08f937",
+      "seed": 3118746650,
+      "batchId": "vera-1"
+    },
+    "npc.vera.mentorship.ask-help.anna": {
+      "sourceText": "Что делать, если ответ человека непонятен?",
+      "synthesisText": "Что делать, если ответ человека непонятен?",
+      "speakerId": "anna",
+      "referenceId": "anna-synthetic-01",
+      "referenceSha256": "6d14158f2adc07e6a644e3bf48e2180244cac5cfd57cd1f10efd9bbd5fc81145",
+      "seed": 2457148537,
+      "batchId": "anna-5"
+    },
+    "npc.vera.mentorship.ask-help.reply": {
+      "sourceText": "Уточни своими словами и дай человеку договорить. Лучше переспросить, чем додумать за него.",
+      "synthesisText": "Уточни своими словами и дай человеку договорить. Лучше переспросить, чем додумать за него.",
+      "speakerId": "vera",
+      "referenceId": "vera-synthetic-01",
+      "referenceSha256": "49b743d3d2fb46c21e22703b876514724becf844fd3e1d147a8b35ffed08f937",
+      "seed": 1133458098,
+      "batchId": "vera-2"
+    },
+    "npc.vera.mentorship.own-pace.anna": {
+      "sourceText": "Хочу попробовать сама, но без спешки.",
+      "synthesisText": "Хочу попробовать сама, но без спешки.",
+      "speakerId": "anna",
+      "referenceId": "anna-synthetic-01",
+      "referenceSha256": "6d14158f2adc07e6a644e3bf48e2180244cac5cfd57cd1f10efd9bbd5fc81145",
+      "seed": 259927046,
+      "batchId": "anna-3"
+    },
+    "npc.vera.mentorship.own-pace.reply": {
+      "sourceText": "Так и сделаем. Я рядом. Спокойный разговор важнее попытки выглядеть опытнее, чем ты сейчас есть.",
+      "synthesisText": "Так и сделаем. Я рядом. Спокойный разговор важнее попытки выглядеть опытнее, чем ты сейчас есть.",
+      "speakerId": "vera",
+      "referenceId": "vera-synthetic-01",
+      "referenceSha256": "49b743d3d2fb46c21e22703b876514724becf844fd3e1d147a8b35ffed08f937",
+      "seed": 1133458098,
+      "batchId": "vera-2"
+    },
+    "npc.vera.reflection.opening": {
+      "sourceText": "Анкета принята. Теперь можно выдохнуть. Что заберёшь из этого дня с собой?",
+      "synthesisText": "Анкета принята. Теперь можно выдохнуть. Что заберёшь из этого дня с собой?",
+      "speakerId": "vera",
+      "referenceId": "vera-synthetic-01",
+      "referenceSha256": "49b743d3d2fb46c21e22703b876514724becf844fd3e1d147a8b35ffed08f937",
+      "seed": 3118746650,
+      "batchId": "vera-1"
+    },
+    "npc.vera.reflection.remember-clarity.anna": {
+      "sourceText": "Одного адреса недостаточно, чтобы понять состав хозяйств.",
+      "synthesisText": "Одного адреса недостаточно, чтобы понять состав хозяйств.",
+      "speakerId": "anna",
+      "referenceId": "anna-synthetic-01",
+      "referenceSha256": "6d14158f2adc07e6a644e3bf48e2180244cac5cfd57cd1f10efd9bbd5fc81145",
+      "seed": 2049230419,
+      "batchId": "anna-8"
+    },
+    "npc.vera.reflection.remember-clarity.reply": {
+      "sourceText": "Да. Даже братья в одной квартире могут вести разные хозяйства. Ты не стала делать вывод по первому впечатлению.",
+      "synthesisText": "Да. Даже братья в одной квартире могут вести разные хозяйства. Ты не стала делать вывод по первому впечатлению.",
+      "speakerId": "vera",
+      "referenceId": "vera-synthetic-01",
+      "referenceSha256": "49b743d3d2fb46c21e22703b876514724becf844fd3e1d147a8b35ffed08f937",
+      "seed": 1133458098,
+      "batchId": "vera-2"
+    },
+    "npc.vera.reflection.ask-surveys.anna": {
+      "sourceText": "Мне интересно попробовать и другие обследования.",
+      "synthesisText": "Мне интересно попробовать и другие обследования.",
+      "speakerId": "anna",
+      "referenceId": "anna-synthetic-01",
+      "referenceSha256": "6d14158f2adc07e6a644e3bf48e2180244cac5cfd57cd1f10efd9bbd5fc81145",
+      "seed": 1275437510,
+      "batchId": "anna-7"
+    },
+    "npc.vera.reflection.ask-surveys.reply": {
+      "sourceText": "У них будут свои вопросы и правила отбора. Хороший интерес. А сегодня ты уже сделала первый шаг — остальное разберём по мере работы.",
+      "synthesisText": "У них будут свои вопросы и правила отбора. Хороший интерес. А сегодня ты уже сделала первый шаг — остальное разберём по мере работы.",
+      "speakerId": "vera",
+      "referenceId": "vera-synthetic-01",
+      "referenceSha256": "49b743d3d2fb46c21e22703b876514724becf844fd3e1d147a8b35ffed08f937",
+      "seed": 146321339,
+      "batchId": "vera-3"
+    },
+    "npc.max.next-plan.opening": {
+      "sourceText": "Мне нравится, что мы наконец выбрались вместе. Какой следующий вечер тебе был бы по душе?",
+      "synthesisText": "Мне нравится, что мы наконец выбрались вместе. Какой следующий вечер тебе был бы по душе?",
+      "speakerId": "max",
+      "referenceId": "max-synthetic-01",
+      "referenceSha256": "e52e4a21c1d336186a2ebec846dac091b474431d588b6b229c6085a35356ebca",
+      "seed": 11813841,
+      "batchId": "max-3"
+    },
+    "npc.max.next-plan.next-walk.anna": {
+      "sourceText": "Ещё одна прогулка, только новым маршрутом.",
+      "synthesisText": "Ещё одна прогулка, только новым маршрутом.",
+      "speakerId": "anna",
+      "referenceId": "anna-synthetic-01",
+      "referenceSha256": "6d14158f2adc07e6a644e3bf48e2180244cac5cfd57cd1f10efd9bbd5fc81145",
+      "seed": 2135230962,
+      "batchId": "anna-4"
+    },
+    "npc.max.next-plan.next-walk.reply": {
+      "sourceText": "Тогда я посмотрю, куда можно свернуть с нашей улицы. А маршрут выберем вместе.",
+      "synthesisText": "Тогда я посмотрю, куда можно свернуть с нашей улицы. А маршрут выберем вместе.",
+      "speakerId": "max",
+      "referenceId": "max-synthetic-01",
+      "referenceSha256": "e52e4a21c1d336186a2ebec846dac091b474431d588b6b229c6085a35356ebca",
+      "seed": 11813841,
+      "batchId": "max-3"
+    },
+    "npc.max.next-plan.home-coffee.anna": {
+      "sourceText": "Когда обустроюсь, можно устроить спокойный вечер с кофе.",
+      "synthesisText": "Когда обустроюсь, можно устроить спокойный вечер с кофе.",
+      "speakerId": "anna",
+      "referenceId": "anna-synthetic-01",
+      "referenceSha256": "6d14158f2adc07e6a644e3bf48e2180244cac5cfd57cd1f10efd9bbd5fc81145",
+      "seed": 1275437510,
+      "batchId": "anna-7"
+    },
+    "npc.max.next-plan.home-coffee.reply": {
+      "sourceText": "Мне нравится эта идея. Без большой подготовки и попытки всё сделать идеально.",
+      "synthesisText": "Мне нравится эта идея. Без большой подготовки и попытки всё сделать идеально.",
+      "speakerId": "max",
+      "referenceId": "max-synthetic-01",
+      "referenceSha256": "e52e4a21c1d336186a2ebec846dac091b474431d588b6b229c6085a35356ebca",
+      "seed": 11813841,
+      "batchId": "max-3"
+    },
+    "npc.max.pace.opening": {
+      "sourceText": "Договорились. Только не хочу превратить приятную идею в ещё один пункт твоего расписания.",
+      "synthesisText": "Договорились. Только не хочу превратить приятную идею в ещё один пункт твоего расписания.",
+      "speakerId": "max",
+      "referenceId": "max-synthetic-01",
+      "referenceSha256": "e52e4a21c1d336186a2ebec846dac091b474431d588b6b229c6085a35356ebca",
+      "seed": 3301970974,
+      "batchId": "max-4"
+    },
+    "npc.max.pace.make-time.anna": {
+      "sourceText": "Я сама напишу, когда пойму, какой вечер свободен.",
+      "synthesisText": "Я сама напишу, когда пойму, какой вечер свободен.",
+      "speakerId": "anna",
+      "referenceId": "anna-synthetic-01",
+      "referenceSha256": "6d14158f2adc07e6a644e3bf48e2180244cac5cfd57cd1f10efd9bbd5fc81145",
+      "seed": 1275437510,
+      "batchId": "anna-7"
+    },
+    "npc.max.pace.make-time.reply": {
+      "sourceText": "Хорошо. Тогда жду твоего сообщения. Сегодня уже было здорово.",
+      "synthesisText": "Хорошо. Тогда жду твоего сообщения. Сегодня уже было здорово.",
+      "speakerId": "max",
+      "referenceId": "max-synthetic-01",
+      "referenceSha256": "e52e4a21c1d336186a2ebec846dac091b474431d588b6b229c6085a35356ebca",
+      "seed": 1638611195,
+      "batchId": "max-2"
+    },
+    "npc.max.pace.keep-easy.anna": {
+      "sourceText": "Давай пока без точной даты. Мне хорошо и так.",
+      "synthesisText": "Давай пока без точной даты. Мне хорошо и так.",
+      "speakerId": "anna",
+      "referenceId": "anna-synthetic-01",
+      "referenceSha256": "6d14158f2adc07e6a644e3bf48e2180244cac5cfd57cd1f10efd9bbd5fc81145",
+      "seed": 2457148537,
+      "batchId": "anna-5"
+    },
+    "npc.max.pace.keep-easy.reply": {
+      "sourceText": "Конечно. Можно не торопиться. Я рад, что мы поговорили.",
+      "synthesisText": "Конечно. Можно не торопиться. Я рад, что мы поговорили.",
+      "speakerId": "max",
+      "referenceId": "max-synthetic-01",
+      "referenceSha256": "e52e4a21c1d336186a2ebec846dac091b474431d588b6b229c6085a35356ebca",
+      "seed": 1638611195,
+      "batchId": "max-2"
+    },
+    "npc.resident-1.courtyard-hello.opening": {
+      "sourceText": "Здравствуйте! Новое лицо во дворе. Я Николай. Обычно делаю здесь круг перед чаем.",
+      "synthesisText": "Здравствуйте! Новое лицо во дворе. Я Николай. Обычно делаю здесь круг перед чаем.",
+      "speakerId": "resident-1",
+      "referenceId": "resident-1-synthetic-01",
+      "referenceSha256": "88dbb3c0306377a08213e63a10101b4a66581b6e8b07f9b9d856b55f57c2aaed",
+      "seed": 322051058,
+      "batchId": "resume-1-resident-1-1"
+    },
+    "npc.resident-1.courtyard-hello.say-first-day.anna": {
+      "sourceText": "Я Анна. Сегодня мой первый рабочий день здесь.",
+      "synthesisText": "Я Анна. Сегодня мой первый рабочий день здесь.",
+      "speakerId": "anna",
+      "referenceId": "anna-synthetic-01",
+      "referenceSha256": "6d14158f2adc07e6a644e3bf48e2180244cac5cfd57cd1f10efd9bbd5fc81145",
+      "seed": 1373958456,
+      "batchId": "resume-1-anna-2"
+    },
+    "npc.resident-1.courtyard-hello.say-first-day.reply": {
+      "sourceText": "Тогда хорошего начала, Анна. Не буду задерживать — у вас свой маршрут, у меня свой круг.",
+      "synthesisText": "Тогда хорошего начала, Анна. Не буду задерживать — у вас свой маршрут, у меня свой круг.",
+      "speakerId": "resident-1",
+      "referenceId": "resident-1-synthetic-01",
+      "referenceSha256": "88dbb3c0306377a08213e63a10101b4a66581b6e8b07f9b9d856b55f57c2aaed",
+      "seed": 322051058,
+      "batchId": "resume-1-resident-1-1"
+    },
+    "npc.resident-1.courtyard-hello.notice-courtyard.anna": {
+      "sourceText": "У вас уютный двор. Уже хочется запомнить его.",
+      "synthesisText": "У вас уютный двор. Уже хочется запомнить его.",
+      "speakerId": "anna",
+      "referenceId": "anna-synthetic-01",
+      "referenceSha256": "6d14158f2adc07e6a644e3bf48e2180244cac5cfd57cd1f10efd9bbd5fc81145",
+      "seed": 1373958456,
+      "batchId": "resume-1-anna-2"
+    },
+    "npc.resident-1.courtyard-hello.notice-courtyard.reply": {
+      "sourceText": "Он особенно хорош, когда деревья дают тень. Осваивайтесь. А я пойду — чай сам себя не выпьет.",
+      "synthesisText": "Он особенно хорош, когда деревья дают тень. Осваивайтесь. А я пойду — чай сам себя не выпьет.",
+      "speakerId": "resident-1",
+      "referenceId": "resident-1-synthetic-01",
+      "referenceSha256": "88dbb3c0306377a08213e63a10101b4a66581b6e8b07f9b9d856b55f57c2aaed",
+      "seed": 1697894038
+    },
+    "npc.resident-2.neighbor-intro.opening": {
+      "sourceText": "Привет. Кажется, мы раньше не встречались. Я Денис, живу в соседнем подъезде.",
+      "synthesisText": "Привет. Кажется, мы раньше не встречались. Я Денис, живу в соседнем подъезде.",
+      "speakerId": "resident-2",
+      "referenceId": "resident-2-synthetic-01",
+      "referenceSha256": "adc657bf60d4838f00de95c60af7cd84b72b261c459550aac85a2691dfaccfdb",
+      "seed": 693621659,
+      "batchId": "resume-1-resident-2-1"
+    },
+    "npc.resident-2.neighbor-intro.new-neighbor.anna": {
+      "sourceText": "Я Анна. Ещё привыкаю к этому району.",
+      "synthesisText": "Я Анна. Ещё привыкаю к этому району.",
+      "speakerId": "anna",
+      "referenceId": "anna-synthetic-01",
+      "referenceSha256": "6d14158f2adc07e6a644e3bf48e2180244cac5cfd57cd1f10efd9bbd5fc81145",
+      "seed": 259927046,
+      "batchId": "anna-3"
+    },
+    "npc.resident-2.neighbor-intro.new-neighbor.reply": {
+      "sourceText": "Тогда добро пожаловать. Здесь люди быстро становятся знакомыми лицами — даже без общего чата.",
+      "synthesisText": "Тогда добро пожаловать. Здесь люди быстро становятся знакомыми лицами — даже без общего чата.",
+      "speakerId": "resident-2",
+      "referenceId": "resident-2-synthetic-01",
+      "referenceSha256": "adc657bf60d4838f00de95c60af7cd84b72b261c459550aac85a2691dfaccfdb",
+      "seed": 2232339374,
+      "batchId": "resume-1-resident-2-2"
+    },
+    "npc.resident-2.neighbor-intro.on-the-job.anna": {
+      "sourceText": "Сегодня я здесь на первом рабочем задании.",
+      "synthesisText": "Сегодня я здесь на первом рабочем задании.",
+      "speakerId": "anna",
+      "referenceId": "anna-synthetic-01",
+      "referenceSha256": "6d14158f2adc07e6a644e3bf48e2180244cac5cfd57cd1f10efd9bbd5fc81145",
+      "seed": 1373958456,
+      "batchId": "resume-1-anna-2"
+    },
+    "npc.resident-2.neighbor-intro.on-the-job.reply": {
+      "sourceText": "Удачи. Я сначала тоже всё путал между подъездами. Теперь ноги сами знают дорогу.",
+      "synthesisText": "Удачи. Я сначала тоже всё путал между подъездами. Теперь ноги сами знают дорогу.",
+      "speakerId": "resident-2",
+      "referenceId": "resident-2-synthetic-01",
+      "referenceSha256": "adc657bf60d4838f00de95c60af7cd84b72b261c459550aac85a2691dfaccfdb",
+      "seed": 693621659,
+      "batchId": "resume-1-resident-2-1"
+    },
+    "npc.resident-2.after-work.opening.neighbor": {
+      "sourceText": "Снова привет, Анна. За день район стал хоть немного знакомее?",
+      "synthesisText": "Снова привет, Анна. За день район стал хоть немного знакомее?",
+      "speakerId": "resident-2",
+      "referenceId": "resident-2-synthetic-01",
+      "referenceSha256": "adc657bf60d4838f00de95c60af7cd84b72b261c459550aac85a2691dfaccfdb",
+      "seed": 693621659,
+      "batchId": "resume-1-resident-2-1"
+    },
+    "npc.resident-2.after-work.opening.work": {
+      "sourceText": "Анна, привет ещё раз. Как первое рабочее задание?",
+      "synthesisText": "Анна, привет ещё раз. Как первое рабочее задание?",
+      "speakerId": "resident-2",
+      "referenceId": "resident-2-synthetic-01",
+      "referenceSha256": "adc657bf60d4838f00de95c60af7cd84b72b261c459550aac85a2691dfaccfdb",
+      "seed": 693621659,
+      "batchId": "resume-1-resident-2-1"
+    },
+    "npc.resident-2.after-work.share-day.anna": {
+      "sourceText": "Моя первая анкета уже принята.",
+      "synthesisText": "Моя первая анкета уже принята.",
+      "speakerId": "anna",
+      "referenceId": "anna-synthetic-01",
+      "referenceSha256": "6d14158f2adc07e6a644e3bf48e2180244cac5cfd57cd1f10efd9bbd5fc81145",
+      "seed": 3347760641,
+      "batchId": "anna-2"
+    },
+    "npc.resident-2.after-work.share-day.reply": {
+      "sourceText": "Значит, у этого двора для тебя теперь есть первая история. В следующий раз будет проще начинать разговор.",
+      "synthesisText": "Значит, у этого двора для тебя теперь есть первая история. В следующий раз будет проще начинать разговор.",
+      "speakerId": "resident-2",
+      "referenceId": "resident-2-synthetic-01",
+      "referenceSha256": "adc657bf60d4838f00de95c60af7cd84b72b261c459550aac85a2691dfaccfdb",
+      "seed": 2232339374,
+      "batchId": "resume-1-resident-2-2"
+    },
+    "npc.resident-2.after-work.ask-neighbor-life.anna": {
+      "sourceText": "Чем соседи обычно занимаются вечерами?",
+      "synthesisText": "Чем соседи обычно занимаются вечерами?",
+      "speakerId": "anna",
+      "referenceId": "anna-synthetic-01",
+      "referenceSha256": "6d14158f2adc07e6a644e3bf48e2180244cac5cfd57cd1f10efd9bbd5fc81145",
+      "seed": 2129785482,
+      "batchId": "resume-1-anna-1"
+    },
+    "npc.resident-2.after-work.ask-neighbor-life.reply": {
+      "sourceText": "Кто-то гуляет, кто-то выносит книгу на скамейку. Можно просто начать здороваться — дальше разговоры находятся сами.",
+      "synthesisText": "Кто-то гуляет, кто-то выносит книгу на скамейку. Можно просто начать здороваться — дальше разговоры находятся сами.",
+      "speakerId": "resident-2",
+      "referenceId": "resident-2-synthetic-01",
+      "referenceSha256": "adc657bf60d4838f00de95c60af7cd84b72b261c459550aac85a2691dfaccfdb",
+      "seed": 3892940024
+    },
+    "npc.kira.evening-reaction.opening": {
+      "sourceText": "Ну что, первый день позади? Я помню, как ты утром собиралась. Что хочется рассказать первым?",
+      "synthesisText": "Ну что, первый день позади? Я помню, как ты утром собиралась. Что хочется рассказать первым?",
+      "speakerId": "kira",
+      "referenceId": "kira-synthetic-01",
+      "referenceSha256": "f10f17623962f0240aaf128ddb0e7a1afb33459d9035d904b320be4f30d459e3",
+      "seed": 3113278509,
+      "batchId": "resume-1-kira-1"
+    },
+    "npc.kira.evening-reaction.share-work.anna": {
+      "sourceText": "Первая анкета принята! Представляешь, два брата живут в одной квартире, а хозяйства ведут отдельно.",
+      "synthesisText": "Первая анкета принята! Представляешь, два брата живут в одной квартире, а хозяйства ведут отдельно.",
+      "speakerId": "anna",
+      "referenceId": "anna-synthetic-01",
+      "referenceSha256": "6d14158f2adc07e6a644e3bf48e2180244cac5cfd57cd1f10efd9bbd5fc81145",
+      "seed": 853999403,
+      "batchId": "resume-1-anna-3"
+    },
+    "npc.kira.evening-reaction.share-work.reply": {
+      "sourceText": "Вот это уже настоящая история первого дня. Сохрани её в памяти — потом будет с чем сравнить свой опыт.",
+      "synthesisText": "Вот это уже настоящая история первого дня. Сохрани её в памяти — потом будет с чем сравнить свой опыт.",
+      "speakerId": "kira",
+      "referenceId": "kira-synthetic-01",
+      "referenceSha256": "f10f17623962f0240aaf128ddb0e7a1afb33459d9035d904b320be4f30d459e3",
+      "seed": 3113278509,
+      "batchId": "resume-1-kira-1"
+    },
+    "npc.kira.evening-reaction.share-evening.anna": {
+      "sourceText": "Сегодня оставляю немного времени для себя и своих планов.",
+      "synthesisText": "Сегодня оставляю немного времени для себя и своих планов.",
+      "speakerId": "anna",
+      "referenceId": "anna-synthetic-01",
+      "referenceSha256": "6d14158f2adc07e6a644e3bf48e2180244cac5cfd57cd1f10efd9bbd5fc81145",
+      "seed": 853999403,
+      "batchId": "resume-1-anna-3"
+    },
+    "npc.kira.evening-reaction.share-evening.reply": {
+      "sourceText": "Хорошо, что день не заканчивается только работой. Дом, люди рядом, свои планы — всё это тоже твоя жизнь.",
+      "synthesisText": "Хорошо, что день не заканчивается только работой. Дом, люди рядом, свои планы — всё это тоже твоя жизнь.",
+      "speakerId": "kira",
+      "referenceId": "kira-synthetic-01",
+      "referenceSha256": "f10f17623962f0240aaf128ddb0e7a1afb33459d9035d904b320be4f30d459e3",
+      "seed": 32120
+    },
+    "npc.ilya.ilya-smalltalk.opening": {
+      "sourceText": "Пока Антон ищет зарядку, можно пару слов не про анкету.",
+      "synthesisText": "Пока Антон ищет зарядку, можно пару слов не про анкету.",
+      "speakerId": "ilya",
+      "referenceId": "ilya-synthetic-01",
+      "referenceSha256": "86ead20d0a34e051b04f93f0950ec5f9e2773c49d6490fa6977e59db8897f488",
+      "seed": 439633344,
+      "batchId": "resume-1-ilya-1"
+    },
+    "npc.ilya.ilya-smalltalk.ilya-labels.anna": {
+      "sourceText": "Я заметила, у вас вещи и даже полки подписаны.",
+      "synthesisText": "Я заметила, у вас вещи и даже полки подписаны.",
+      "speakerId": "anna",
+      "referenceId": "anna-synthetic-01",
+      "referenceSha256": "6d14158f2adc07e6a644e3bf48e2180244cac5cfd57cd1f10efd9bbd5fc81145",
+      "seed": 1373958456,
+      "batchId": "resume-1-anna-2"
+    },
+    "npc.ilya.ilya-smalltalk.ilya-labels.reply": {
+      "sourceText": "Это у нас способ не тратить утро на спор «чья зарядка». Смешно выглядит, зато работает.",
+      "synthesisText": "Это у нас способ не тратить утро на спор «чья зарядка». Смешно выглядит, зато работает.",
+      "speakerId": "ilya",
+      "referenceId": "ilya-synthetic-01",
+      "referenceSha256": "86ead20d0a34e051b04f93f0950ec5f9e2773c49d6490fa6977e59db8897f488",
+      "seed": 439633344,
+      "batchId": "resume-1-ilya-1"
+    },
+    "npc.anton.anton-smalltalk.opening": {
+      "sourceText": "Зарядка нашлась. И да, на ней действительно моя наклейка.",
+      "synthesisText": "Зарядка нашлась. И да, на ней действительно моя наклейка.",
+      "speakerId": "anton",
+      "referenceId": "anton-synthetic-01",
+      "referenceSha256": "38d3f744b221dc30a43304b2d9d13ddf0ae15621d2977bd2e178218153c249e6",
+      "seed": 718496730,
+      "batchId": "resume-1-anton-1"
+    },
+    "npc.anton.anton-smalltalk.anton-stickers.anna": {
+      "sourceText": "А чья была идея с наклейками?",
+      "synthesisText": "А чья была идея с наклейками?",
+      "speakerId": "anna",
+      "referenceId": "anna-synthetic-01",
+      "referenceSha256": "6d14158f2adc07e6a644e3bf48e2180244cac5cfd57cd1f10efd9bbd5fc81145",
+      "seed": 3347760641,
+      "batchId": "anna-2"
+    },
+    "npc.anton.anton-smalltalk.anton-stickers.reply": {
+      "sourceText": "Моя. Я люблю, когда бытовые мелочи решаются один раз, а потом можно о них не думать.",
+      "synthesisText": "Моя. Я люблю, когда бытовые мелочи решаются один раз, а потом можно о них не думать.",
+      "speakerId": "anton",
+      "referenceId": "anton-synthetic-01",
+      "referenceSha256": "38d3f744b221dc30a43304b2d9d13ddf0ae15621d2977bd2e178218153c249e6",
+      "seed": 3892940024
+    },
+    "npc.dima.guest-goodbye.opening": {
+      "sourceText": "Я тут только в гостях: кофе, разговор — и дальше по своим делам.",
+      "synthesisText": "Я тут только в гостях: кофе, разговор — и дальше по своим делам.",
+      "speakerId": "dima",
+      "referenceId": "dima-synthetic-01",
+      "referenceSha256": "2c449ae8fdd53818aef7375bae2d7194c9a246be1d168d7c8b42e2b66928d5b4",
+      "seed": 718848625,
+      "batchId": "resume-1-dima-1"
+    },
+    "npc.dima.guest-goodbye.dima-goodbye.anna": {
+      "sourceText": "Хорошего дня, Дима!",
+      "synthesisText": "Хорошего дня, Дима!",
+      "speakerId": "anna",
+      "referenceId": "anna-synthetic-01",
+      "referenceSha256": "6d14158f2adc07e6a644e3bf48e2180244cac5cfd57cd1f10efd9bbd5fc81145",
+      "seed": 2129785482,
+      "batchId": "resume-1-anna-1"
+    },
+    "npc.dima.guest-goodbye.dima-goodbye.reply": {
+      "sourceText": "Спасибо, и тебе удачного первого дня. Всё, допиваю кофе и ухожу. Не буду мешать вашему разговору.",
+      "synthesisText": "Спасибо, и тебе удачного первого дня. Всё, допиваю кофе и ухожу. Не буду мешать вашему разговору.",
+      "speakerId": "dima",
+      "referenceId": "dima-synthetic-01",
+      "referenceSha256": "2c449ae8fdd53818aef7375bae2d7194c9a246be1d168d7c8b42e2b66928d5b4",
+      "seed": 3021732063
+    },
+    "interview.opening": {
+      "sourceText": "Привет! Я Илья, это мой брат Антон. А Дима к нам только на кофе заглянул. Проходи, мы готовы.",
+      "synthesisText": "Привет! Я Илья, это мой брат Антон. А Дима к нам только на кофе заглянул. Проходи, мы готовы.",
+      "speakerId": "ilya",
+      "referenceId": "ilya-synthetic-01",
+      "referenceSha256": "86ead20d0a34e051b04f93f0950ec5f9e2773c49d6490fa6977e59db8897f488",
+      "seed": 439633344,
+      "batchId": "resume-1-ilya-1"
+    },
+    "interview.who.anna": {
+      "sourceText": "Кто постоянно живёт в квартире?",
+      "synthesisText": "Кто постоянно живёт в квартире?",
+      "speakerId": "anna",
+      "referenceId": "anna-synthetic-01",
+      "referenceSha256": "6d14158f2adc07e6a644e3bf48e2180244cac5cfd57cd1f10efd9bbd5fc81145",
+      "seed": 259927046,
+      "batchId": "anna-3"
+    },
+    "interview.who.reply": {
+      "sourceText": "Постоянно живём только мы с Антоном. Дима — гость, он живёт по другому адресу.",
+      "synthesisText": "Постоянно живём только мы с Антоном. Дима — гость, он живёт по другому адресу.",
+      "speakerId": "ilya",
+      "referenceId": "ilya-synthetic-01",
+      "referenceSha256": "86ead20d0a34e051b04f93f0950ec5f9e2773c49d6490fa6977e59db8897f488",
+      "seed": 439633344,
+      "batchId": "resume-1-ilya-1"
+    },
+    "interview.budget.anna": {
+      "sourceText": "Вы ведёте общее хозяйство?",
+      "synthesisText": "Вы ведёте общее хозяйство?",
+      "speakerId": "anna",
+      "referenceId": "anna-synthetic-01",
+      "referenceSha256": "6d14158f2adc07e6a644e3bf48e2180244cac5cfd57cd1f10efd9bbd5fc81145",
+      "seed": 3347760641,
+      "batchId": "anna-2"
+    },
+    "interview.budget.reply": {
+      "sourceText": "Нет. Каждый ведёт отдельное хозяйство и сам оплачивает повседневные расходы. Даже полки в холодильнике подписаны.",
+      "synthesisText": "Нет. Каждый ведёт отдельное хозяйство и сам оплачивает повседневные расходы. Даже полки в холодильнике подписаны.",
+      "speakerId": "ilya",
+      "referenceId": "ilya-synthetic-01",
+      "referenceSha256": "86ead20d0a34e051b04f93f0950ec5f9e2773c49d6490fa6977e59db8897f488",
+      "seed": 3892940024
+    },
+    "mentor.meeting": {
+      "sourceText": "Привет, Анна! Рада познакомиться уже не в чате. Первый адрес — квартира 12. Ты задаёшь вопросы, а я рядом, если понадобится помощь.",
+      "synthesisText": "Привет, Анна! Рада познакомиться уже не в чате. Первый адрес — квартира двенадцать. Ты задаёшь вопросы, а я рядом, если понадобится помощь.",
+      "speakerId": "vera",
+      "referenceId": "vera-synthetic-01",
+      "referenceSha256": "49b743d3d2fb46c21e22703b876514724becf844fd3e1d147a8b35ffed08f937",
+      "seed": 146321339,
+      "batchId": "vera-3"
+    },
+    "mentor.handoff": {
+      "sourceText": "Я проверила анкету по первому адресу — всё сходится. Передай её, и за принятую работу получишь 300 монет. Остальную часть учебной смены пройдём вместе, а вечер будет твой.",
+      "synthesisText": "Я проверила анкету по первому адресу — всё сходится. Передай её, и за принятую работу получишь триста монет. Остальную часть учебной смены пройдём вместе, а вечер будет твой.",
+      "speakerId": "vera",
+      "referenceId": "vera-synthetic-01",
+      "referenceSha256": "49b743d3d2fb46c21e22703b876514724becf844fd3e1d147a8b35ffed08f937",
+      "seed": 146321339,
+      "batchId": "vera-3"
+    },
+    "date.opening": {
+      "sourceText": "Ну как ты? Можно начать с первого дня, а можно просто посидеть рядом. Я никуда не тороплюсь.",
+      "synthesisText": "Ну как ты? Можно начать с первого дня, а можно просто посидеть рядом. Я никуда не тороплюсь.",
+      "speakerId": "max",
+      "referenceId": "max-synthetic-01",
+      "referenceSha256": "e52e4a21c1d336186a2ebec846dac091b474431d588b6b229c6085a35356ebca",
+      "seed": 32119
+    },
+    "date.warm.anna": {
+      "sourceText": "Сегодня я познакомилась с двумя братьями. Живут вместе, а хозяйства ведут отдельно. Даже полки в холодильнике подписали.",
+      "synthesisText": "Сегодня я познакомилась с двумя братьями. Живут вместе, а хозяйства ведут отдельно. Даже полки в холодильнике подписали.",
+      "speakerId": "anna",
+      "referenceId": "anna-synthetic-01",
+      "referenceSha256": "6d14158f2adc07e6a644e3bf48e2180244cac5cfd57cd1f10efd9bbd5fc81145",
+      "seed": 853999403,
+      "batchId": "resume-1-anna-3"
+    },
+    "date.warm.reply": {
+      "sourceText": "Теперь мне тоже хочется подписать свою полку. Расскажешь ещё что-нибудь по дороге?",
+      "synthesisText": "Теперь мне тоже хочется подписать свою полку. Расскажешь ещё что-нибудь по дороге?",
+      "speakerId": "max",
+      "referenceId": "max-synthetic-01",
+      "referenceSha256": "e52e4a21c1d336186a2ebec846dac091b474431d588b6b229c6085a35356ebca",
+      "seed": 2141416977,
+      "batchId": "resume-1-max-1"
+    },
+    "date.honest.anna": {
+      "sourceText": "Если честно, день был очень волнительным. Я рада, что мы встретились.",
+      "synthesisText": "Если честно, день был очень волнительным. Я рада, что мы встретились.",
+      "speakerId": "anna",
+      "referenceId": "anna-synthetic-01",
+      "referenceSha256": "6d14158f2adc07e6a644e3bf48e2180244cac5cfd57cd1f10efd9bbd5fc81145",
+      "seed": 32117
+    },
+    "date.honest.reply": {
+      "sourceText": "Тогда сегодня без больших планов. Просто пройдёмся. Хорошо, что ты пришла",
+      "synthesisText": "Тогда сегодня без больших планов. Просто пройдёмся. Хорошо, что ты пришла",
+      "speakerId": "max",
+      "referenceId": "max-synthetic-01",
+      "referenceSha256": "e52e4a21c1d336186a2ebec846dac091b474431d588b6b229c6085a35356ebca",
+      "seed": 2141416977,
+      "batchId": "resume-1-max-1"
+    },
+    "date.hello": {
+      "sourceText": "Привет, Макс.",
+      "synthesisText": "Привет, Макс.",
+      "speakerId": "anna",
+      "referenceId": "anna-synthetic-01",
+      "referenceSha256": "6d14158f2adc07e6a644e3bf48e2180244cac5cfd57cd1f10efd9bbd5fc81145",
+      "seed": 2129785482,
+      "batchId": "resume-1-anna-1"
+    },
+    "date.done": {
+      "sourceText": "Мне тоже было хорошо.",
+      "synthesisText": "Мне тоже было хорошо.",
+      "speakerId": "anna",
+      "referenceId": "anna-synthetic-01",
+      "referenceSha256": "6d14158f2adc07e6a644e3bf48e2180244cac5cfd57cd1f10efd9bbd5fc81145",
+      "seed": 2129785482,
+      "batchId": "resume-1-anna-1"
+    },
+    "pilot.welcome": {
+      "sourceText": "Первый день Ани. Собраться на новую работу. Познакомиться с соседями. И оставить время для себя.",
+      "synthesisText": "Первый день Ани. Собраться на новую работу. Познакомиться с соседями. И оставить время для себя.",
+      "speakerId": "narrator",
+      "referenceId": "narrator-synthetic-01",
+      "referenceSha256": "af19e1d1ac74536e611964aa833e7792df78a46bc99b67e5c429dd79dd4b26a5",
+      "seed": 167350637,
+      "batchId": "resume-1-narrator-1"
+    },
+    "pilot.alarm": {
+      "sourceText": "Доброе утро, Аня. Новая работа. Новые люди. И твой обычный, необычный день.",
+      "synthesisText": "Доброе утро, Аня. Новая работа. Новые люди. И твой обычный, необычный день.",
+      "speakerId": "narrator",
+      "referenceId": "narrator-synthetic-01",
+      "referenceSha256": "af19e1d1ac74536e611964aa833e7792df78a46bc99b67e5c429dd79dd4b26a5",
+      "seed": 167350637,
+      "batchId": "resume-1-narrator-1"
+    },
+    "pilot.ending": {
+      "sourceText": "Твой первый день завершён. Сегодня ты познакомилась с работой, получила деньги за первую анкету и выбрала свой вечер. Спасибо за игру! Эту историю можно пройти ещё раз с другими решениями.",
+      "synthesisText": "Твой первый день завершён. Сегодня ты познакомилась с работой, получила деньги за первую анкету и выбрала свой вечер. Спасибо за игру! Эту историю можно пройти ещё раз с другими решениями.",
+      "speakerId": "narrator",
+      "referenceId": "narrator-synthetic-01",
+      "referenceSha256": "af19e1d1ac74536e611964aa833e7792df78a46bc99b67e5c429dd79dd4b26a5",
+      "seed": 2047846933,
+      "batchId": "resume-1-narrator-2",
+      "encodingOverrides": {
+        "leadingSilenceKeepMs": 80
+      },
+      "postprocessingNote": "Retain a short lead-in to preserve the initial consonant. Original synthesized WAV, text, model, reference and seed are unchanged."
+    },
+    "interview.instruction": {
+      "sourceText": "Размести постоянных жителей по домохозяйствам. Гостя здесь не учитываем.",
+      "synthesisText": "Размести постоянных жителей по домохозяйствам. Гостя здесь не учитываем.",
+      "speakerId": "narrator",
+      "referenceId": "narrator-synthetic-01",
+      "referenceSha256": "af19e1d1ac74536e611964aa833e7792df78a46bc99b67e5c429dd79dd4b26a5",
+      "seed": 167350637,
+      "batchId": "resume-1-narrator-1"
+    },
+    "interview.accepted": {
+      "sourceText": "Верно: два постоянных жителя и два отдельных домохозяйства. Дима пришёл в гости и по этому адресу не учитывается.",
+      "synthesisText": "Верно: два постоянных жителя и два отдельных домохозяйства. Дима пришёл в гости и по этому адресу не учитывается.",
+      "speakerId": "narrator",
+      "referenceId": "narrator-synthetic-01",
+      "referenceSha256": "af19e1d1ac74536e611964aa833e7792df78a46bc99b67e5c429dd79dd4b26a5",
+      "seed": 2047846933,
+      "batchId": "resume-1-narrator-2"
+    },
+    "pilot.bed.accepted": {
+      "sourceText": "Оставим остальное на завтра? Максу можно написать, что прогулку перенесём. Или просто закончить день — он останется на завтра.",
+      "synthesisText": "Оставим остальное на завтра? Максу можно написать, что прогулку перенесём. Или просто закончить день — он останется на завтра.",
+      "speakerId": "narrator",
+      "referenceId": "narrator-synthetic-01",
+      "referenceSha256": "af19e1d1ac74536e611964aa833e7792df78a46bc99b67e5c429dd79dd4b26a5",
+      "seed": 2047846933,
+      "batchId": "resume-1-narrator-2"
+    },
+    "pilot.bed.other": {
+      "sourceText": "Оставим остальное на завтра? Первый день уже стал частью твоей истории.",
+      "synthesisText": "Оставим остальное на завтра? Первый день уже стал частью твоей истории.",
+      "speakerId": "narrator",
+      "referenceId": "narrator-synthetic-01",
+      "referenceSha256": "af19e1d1ac74536e611964aa833e7792df78a46bc99b67e5c429dd79dd4b26a5",
+      "seed": 167350637,
+      "batchId": "resume-1-narrator-1"
+    }
+  },
+  "replans": [
+    {
+      "id": "resume-1",
+      "reason": "Process interrupted; regroup only uncommitted lines to avoid synthesizing already completed batch peers. Voice references and text unchanged.",
+      "previousInputSha256": "82cd7fd8aa4f0cb1fa95a183bc18b5130c17900bab6f3be392f74ce17e813a56",
+      "createdAtUnix": 1794941263.0784938,
+      "completedIds": [
+        "chat.friend.bright.anna",
+        "chat.friend.bright.reply",
+        "chat.friend.calm.anna",
+        "chat.friend.calm.reply",
+        "chat.friend.opening",
+        "chat.max.accept.anna",
+        "chat.max.accept.reply",
+        "chat.max.after-date.honest",
+        "chat.max.after-date.warm",
+        "chat.max.cancel.anna",
+        "chat.max.cancel.reply",
+        "chat.max.later.anna",
+        "chat.max.later.reply",
+        "chat.max.opening",
+        "chat.team.accepted",
+        "chat.team.opening",
+        "chat.team.question.anna",
+        "chat.team.question.reply",
+        "chat.team.ready.anna",
+        "chat.team.ready.reply",
+        "interview.budget.anna",
+        "interview.who.anna",
+        "mentor.handoff",
+        "mentor.meeting",
+        "npc.anton.anton-smalltalk.anton-stickers.anna",
+        "npc.max.next-plan.home-coffee.anna",
+        "npc.max.next-plan.home-coffee.reply",
+        "npc.max.next-plan.next-walk.anna",
+        "npc.max.next-plan.next-walk.reply",
+        "npc.max.next-plan.opening",
+        "npc.max.pace.keep-easy.anna",
+        "npc.max.pace.keep-easy.reply",
+        "npc.max.pace.make-time.anna",
+        "npc.max.pace.make-time.reply",
+        "npc.max.pace.opening",
+        "npc.resident-2.after-work.share-day.anna",
+        "npc.resident-2.neighbor-intro.new-neighbor.anna",
+        "npc.vera.mentorship.ask-help.anna",
+        "npc.vera.mentorship.ask-help.reply",
+        "npc.vera.mentorship.opening.after-work",
+        "npc.vera.mentorship.opening.before-work",
+        "npc.vera.mentorship.own-pace.anna",
+        "npc.vera.mentorship.own-pace.reply",
+        "npc.vera.reflection.ask-surveys.anna",
+        "npc.vera.reflection.ask-surveys.reply",
+        "npc.vera.reflection.opening",
+        "npc.vera.reflection.remember-clarity.anna",
+        "npc.vera.reflection.remember-clarity.reply"
+      ],
+      "changedIds": [
+        "npc.resident-1.courtyard-hello.opening",
+        "npc.resident-1.courtyard-hello.say-first-day.reply",
+        "date.hello",
+        "npc.dima.guest-goodbye.dima-goodbye.anna",
+        "date.done",
+        "npc.resident-2.after-work.ask-neighbor-life.anna",
+        "npc.resident-2.neighbor-intro.on-the-job.anna",
+        "npc.resident-1.courtyard-hello.notice-courtyard.anna",
+        "npc.ilya.ilya-smalltalk.ilya-labels.anna",
+        "npc.resident-1.courtyard-hello.say-first-day.anna",
+        "npc.kira.evening-reaction.share-evening.anna",
+        "npc.kira.evening-reaction.share-work.anna",
+        "date.warm.anna",
+        "npc.resident-2.after-work.opening.work",
+        "npc.resident-2.after-work.opening.neighbor",
+        "npc.resident-2.neighbor-intro.opening",
+        "npc.resident-2.neighbor-intro.on-the-job.reply",
+        "npc.resident-2.neighbor-intro.new-neighbor.reply",
+        "npc.resident-2.after-work.share-day.reply",
+        "npc.kira.evening-reaction.opening",
+        "npc.kira.evening-reaction.share-work.reply",
+        "npc.ilya.ilya-smalltalk.opening",
+        "interview.who.reply",
+        "npc.ilya.ilya-smalltalk.ilya-labels.reply",
+        "interview.opening",
+        "npc.anton.anton-smalltalk.opening",
+        "npc.dima.guest-goodbye.opening",
+        "date.honest.reply",
+        "date.warm.reply",
+        "pilot.bed.other",
+        "interview.instruction",
+        "pilot.alarm",
+        "pilot.welcome",
+        "interview.accepted",
+        "pilot.bed.accepted",
+        "pilot.ending"
+      ],
+      "newBatchIds": [
+        "resume-1-resident-1-1",
+        "resume-1-anna-1",
+        "resume-1-anna-2",
+        "resume-1-anna-3",
+        "resume-1-resident-2-1",
+        "resume-1-resident-2-2",
+        "resume-1-kira-1",
+        "resume-1-ilya-1",
+        "resume-1-anton-1",
+        "resume-1-dima-1",
+        "resume-1-max-1",
+        "resume-1-narrator-1",
+        "resume-1-narrator-2"
+      ]
+    }
+  ]
+}

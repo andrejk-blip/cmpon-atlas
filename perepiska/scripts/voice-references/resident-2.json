@@ -1,0 +1,35 @@
+{
+  "voice": "perepiska-resident-2-qwen-01",
+  "referenceId": "resident-2-synthetic-01",
+  "referenceSha256": "adc657bf60d4838f00de95c60af7cd84b72b261c459550aac85a2691dfaccfdb",
+  "referenceSpeechId": "npc.resident-2.after-work.ask-neighbor-life.reply",
+  "reference": {
+    "file": "scripts/voice-references/resident-2.wav",
+    "text": "Кто-то гуляет, кто-то выносит книгу на скамейку. Можно просто начать здороваться — дальше разговоры находятся сами.",
+    "model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+    "modelRevision": "5ecdb67327fd37bb2e042aab12ff7391903235d3",
+    "sha256": "adc657bf60d4838f00de95c60af7cd84b72b261c459550aac85a2691dfaccfdb",
+    "license": "Apache-2.0",
+    "seed": 3892940024,
+    "voiceDescription": "A man in his early thirties, native Russian with clear standard Russian pronunciation and no foreign accent. A clear, slightly bright middle male register with firm but easy articulation. Casual, open and grounded, sharing an everyday observation with a neighbor. Friendly interest and a modest smile, gently varying emphasis across the sentence. Natural conversational pauses, neither romantic nor promotional.",
+    "directionRu": "Сосед: открытый средний мужской голос, чуть светлее и собраннее Макса, бытовая непринуждённость.",
+    "duration": 9.44,
+    "generation": {
+      "max_new_tokens": 480,
+      "do_sample": true,
+      "top_p": 0.9,
+      "temperature": 0.8,
+      "batchIds": [
+        "resident-2",
+        "ilya",
+        "anton"
+      ],
+      "batchSeed": 3892940024
+    },
+    "approved": false,
+    "authorization": "User authorized all cast as working version",
+    "externalReferenceAudio": false,
+    "batchRenderSeconds": 118.08315141600178,
+    "peakRssKiB": 5635692
+  }
+}

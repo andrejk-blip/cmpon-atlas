@@ -1,0 +1,20 @@
+{
+  "id": "chat.friend.bright.anna",
+  "speakerId": "anna",
+  "text": "Хочу яркий образ. Пусть день запомнится.",
+  "displayText": "Хочу яркий образ. Пусть день запомнится.",
+  "group": "chat",
+  "synthesisText": "Хочу яркий образ. Пусть день запомнится.",
+  "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+  "referenceId": "anna-synthetic-01",
+  "referenceSha256": "6d14158f2adc07e6a644e3bf48e2180244cac5cfd57cd1f10efd9bbd5fc81145",
+  "seed": 32117002,
+  "batchIds": [
+    "chat.friend.bright.anna",
+    "chat.friend.calm.anna"
+  ],
+  "batchRenderSeconds": 47.66446724299749,
+  "duration": 3.52,
+  "peak_rss_kib": 5264744,
+  "sha256": "4dcaf7c5c08724181a03b0aec49bb8335a21a8475c30e0fe2b69d3b9f3fb43de"
+}

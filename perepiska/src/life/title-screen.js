@@ -25,7 +25,7 @@ export function titleScreenMarkup({started=false,complete=false,audioEnabled=tru
   </div>
   <div class="title-top-tools"><button id="welcome-audio" class="title-sound" aria-label="${audioEnabled?'Выключить':'Включить'} музыку и голоса" aria-pressed="${audioEnabled}"><span class="title-sound-icon" aria-hidden="true">${audioEnabled?'♫':'♪'}</span><span data-title-sound>${audioEnabled?'Звук включён':'Звук выключен'}</span></button></div>
   <div class="title-view-tools" role="group" aria-label="Масштаб обложки"><button data-cover-zoom="out" aria-label="Отдалить обложку" title="Отдалить" disabled>−</button><button data-cover-zoom="fit" aria-label="Показать всю обложку" title="Показать всю обложку">Весь вид</button><button data-cover-zoom="in" aria-label="Приблизить обложку" title="Приблизить">+</button></div>
-  <div class="title-credits"><span>Один день. Твоя история.</span><span>Пилот 0.6.1</span></div>
+  <div class="title-credits"><span>Один день. Твоя история.</span><span>Пилот 0.7</span></div>
   <div class="title-secrets"><button id="welcome-secrets" aria-expanded="false" aria-controls="title-detail-list">${icon('star')}<span>Найди 4 детали</span></button><div id="title-detail-list" hidden>${DETAILS.map(d=>`<button data-cover-detail="${d.id}" aria-label="${d.label}" title="${d.label}">${icon(d.icon)}</button>`).join('')}</div></div>
   <aside class="title-detail-note" hidden aria-label="Деталь обложки"><button data-close-cover-note aria-label="Закрыть подсказку">${icon('close')}</button><small data-cover-detail-count></small><h3></h3><p></p></aside></div>`;
 }

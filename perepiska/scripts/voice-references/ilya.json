@@ -1,0 +1,35 @@
+{
+  "voice": "perepiska-ilya-qwen-01",
+  "referenceId": "ilya-synthetic-01",
+  "referenceSha256": "86ead20d0a34e051b04f93f0950ec5f9e2773c49d6490fa6977e59db8897f488",
+  "referenceSpeechId": "interview.budget.reply",
+  "reference": {
+    "file": "scripts/voice-references/ilya.wav",
+    "text": "Нет. Каждый ведёт отдельное хозяйство и сам оплачивает повседневные расходы. Даже полки в холодильнике подписаны.",
+    "model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+    "modelRevision": "5ecdb67327fd37bb2e042aab12ff7391903235d3",
+    "sha256": "86ead20d0a34e051b04f93f0950ec5f9e2773c49d6490fa6977e59db8897f488",
+    "license": "Apache-2.0",
+    "seed": 3892940024,
+    "voiceDescription": "An adult man in his early thirties, native Russian with clear standard Russian pronunciation and no foreign accent. A rounded lower-middle male register, smooth and grounded, with measured natural articulation. He is explaining an ordinary household arrangement to a visitor, straightforward and cooperative with mild dry amusement at the final detail. Calm conversational pauses; no formal lecture, narrator delivery or exaggerated bass.",
+    "directionRu": "Первый брат: более округлый и низкий голос, спокойно объясняет бытовой факт. В конце лёгкая усмешка про полки.",
+    "duration": 9.04,
+    "generation": {
+      "max_new_tokens": 480,
+      "do_sample": true,
+      "top_p": 0.9,
+      "temperature": 0.8,
+      "batchIds": [
+        "resident-2",
+        "ilya",
+        "anton"
+      ],
+      "batchSeed": 3892940024
+    },
+    "approved": false,
+    "authorization": "User authorized all cast as working version",
+    "externalReferenceAudio": false,
+    "batchRenderSeconds": 118.08315141600178,
+    "peakRssKiB": 5635692
+  }
+}

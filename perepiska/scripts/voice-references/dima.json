@@ -1,0 +1,34 @@
+{
+  "voice": "perepiska-dima-qwen-01",
+  "referenceId": "dima-synthetic-01",
+  "referenceSha256": "2c449ae8fdd53818aef7375bae2d7194c9a246be1d168d7c8b42e2b66928d5b4",
+  "referenceSpeechId": "npc.dima.guest-goodbye.dima-goodbye.reply",
+  "reference": {
+    "file": "scripts/voice-references/dima.wav",
+    "text": "Спасибо, и тебе удачного первого дня. Всё, допиваю кофе и ухожу. Не буду мешать вашему разговору.",
+    "model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+    "modelRevision": "5ecdb67327fd37bb2e042aab12ff7391903235d3",
+    "sha256": "2c449ae8fdd53818aef7375bae2d7194c9a246be1d168d7c8b42e2b66928d5b4",
+    "license": "Apache-2.0",
+    "seed": 3021732063,
+    "voiceDescription": "An adult man around thirty, native Russian with clear standard Russian pronunciation and no foreign accent. A warm middle male voice with a lightly airy onset and a lively, open resonance. Sociable and courteous, saying goodbye after coffee with friends. A relaxed smile, flowing phrasing with distinct natural pauses between thoughts. Conversational and energetic without rushing, exaggerated charm or announcer delivery.",
+    "directionRu": "Гость: общительный, живой, чуть воздушный мужской голос. Дружелюбное прощание, не торопливая скороговорка.",
+    "duration": 6.56,
+    "generation": {
+      "max_new_tokens": 480,
+      "do_sample": true,
+      "top_p": 0.9,
+      "temperature": 0.8,
+      "batchIds": [
+        "dima",
+        "narrator"
+      ],
+      "batchSeed": 3021732063
+    },
+    "approved": false,
+    "authorization": "User authorized all cast as working version",
+    "externalReferenceAudio": false,
+    "batchRenderSeconds": 91.12622500200087,
+    "peakRssKiB": 5635692
+  }
+}

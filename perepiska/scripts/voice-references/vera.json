@@ -1,0 +1,25 @@
+{
+  "voice": "perepiska-vera-qwen-01",
+  "referenceId": "vera-synthetic-01",
+  "referenceSha256": "49b743d3d2fb46c21e22703b876514724becf844fd3e1d147a8b35ffed08f937",
+  "referenceSpeechId": "chat.team.question.reply",
+  "reference": {
+    "file": "scripts/voice-references/vera.wav",
+    "text": "Начнём со знакомства и одного адреса. Твоя задача — внимательно слушать людей. Со всем остальным помогу.",
+    "model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+    "modelRevision": "5ecdb67327fd37bb2e042aab12ff7391903235d3",
+    "sha256": "49b743d3d2fb46c21e22703b876514724becf844fd3e1d147a8b35ffed08f937",
+    "license": "Apache-2.0",
+    "seed": 32118,
+    "voiceDescription": "A mature adult woman about 52, native Russian with clear standard Russian pronunciation and no foreign accent. Warm, grounded mid-low female voice, calm confidence, reassuring and friendly. She is talking personally to a nervous young colleague, with a little smile, never lecturing and never sounding like a newsreader. Natural pauses between thoughts. Emphasize the final promise to help with warm reassurance. Natural conversational pace.",
+    "duration": 7.76,
+    "generation": {
+      "max_new_tokens": 400,
+      "do_sample": true,
+      "top_p": 0.9,
+      "temperature": 0.8
+    },
+    "approved": true,
+    "externalReferenceAudio": false
+  }
+}

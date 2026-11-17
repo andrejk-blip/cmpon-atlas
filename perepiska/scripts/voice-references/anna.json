@@ -1,0 +1,25 @@
+{
+  "voice": "perepiska-anna-qwen-01",
+  "referenceId": "anna-synthetic-01",
+  "referenceSha256": "6d14158f2adc07e6a644e3bf48e2180244cac5cfd57cd1f10efd9bbd5fc81145",
+  "referenceSpeechId": "date.honest.anna",
+  "reference": {
+    "file": "scripts/voice-references/anna.wav",
+    "text": "Если честно, день был очень волнительным. Я рада, что мы встретились.",
+    "model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+    "modelRevision": "5ecdb67327fd37bb2e042aab12ff7391903235d3",
+    "sha256": "6d14158f2adc07e6a644e3bf48e2180244cac5cfd57cd1f10efd9bbd5fc81145",
+    "license": "Apache-2.0",
+    "seed": 32117,
+    "voiceDescription": "A young adult woman, about 25, native Russian with clear standard Moscow pronunciation and no foreign accent. A warm, pleasant and natural mid-range female voice. She is speaking personally to a young man she likes after her first day at work. She starts slightly tired and nervous but sincere, then sounds quietly and warmly happy to see him. A small meaningful pause between the sentences. Subtle natural emotional shift, unforced warm smile in the second phrase. Conversational pace, natural adult acting, no dramatic exaggeration, never a narrator or advertisement.",
+    "duration": 5.2,
+    "generation": {
+      "max_new_tokens": 400,
+      "do_sample": true,
+      "top_p": 0.9,
+      "temperature": 0.8
+    },
+    "approved": true,
+    "externalReferenceAudio": false
+  }
+}
