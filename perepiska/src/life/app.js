@@ -9,6 +9,7 @@ import { portrait, syncPortraits, animatePortraits, setSpeakingCharacter } from 
 import { createAudioDirector } from './audio.js';
 import { getSpeech, findSpeech } from './speech-catalog.js';
 import { createTutorial } from './tutorial.js';
+import { titleScreenMarkup, bindTitleScreen } from './title-screen.js';
 const $ = s => document.querySelector(s);
 const esc = s => String(s).replace(/[&<>"']/g, c => ({
   '&': '&amp;',
@@ -44,6 +45,7 @@ let preferences = platform.preferences();
 if (preferences.reducedMotion === undefined) preferences.reducedMotion = matchMedia('(prefers-reduced-motion:reduce)').matches;
 document.documentElement.classList.toggle('reduce-motion', preferences.reducedMotion);
 let activeVoiceLines=[];
+let titleCleanup=null;
 let sound;
 sound=createAudioDirector({preferences:preferences.audio,onPreferencesChange:audio=>{preferences.audio=audio;platform.setPreferences(preferences);},onStateChange:updateSoundStatus});
 $('#app').innerHTML = `<main class="life-game"><div id="life-stage" aria-label="Мир Ани. Нажмите на предмет или место, чтобы подойти. Карту можно перетаскивать."></div>
@@ -56,7 +58,7 @@ $('#app').innerHTML = `<main class="life-game"><div id="life-stage" aria-label="
 let scene = makeScene();
 const tutorial=createTutorial({preferences:preferences.tutorial,onPreferencesChange:value=>{preferences.tutorial=value;platform.setPreferences(preferences);}});
 function updateTutorial(){tutorial.update({state,modalState,moving:world.player.moving,paused});}
-function startTutorial(){closeModal();paused=false;tutorial.start();refresh();if(!state.flags.awake)showAlarm();}
+function startTutorial(){if(modalState)modalState.returnToWelcome=false;closeModal();paused=false;tutorial.start();refresh();if(!state.flags.awake)showAlarm();}
 function makeScene() {
   return createLifeScene($('#life-stage'), world, {
     onGround: walkGround,
@@ -284,7 +286,11 @@ function arrive(event) {
   else interact(interaction);
 }
 function showModal(html, kind = 'card') {
+  titleCleanup?.();titleCleanup=null;
   sound.stopSpeech();activeVoiceLines=[];
+  const titleContext=kind==='title-screen'||modalState?.returnToWelcome;
+  $('#modal-root').classList.toggle('title-context',Boolean(titleContext));
+  for(const child of $('.life-game').children)if(child.id!=='modal-root')child.inert=Boolean(titleContext);
   $('#modal-root').innerHTML = `<div class="scrim"><section class="modal ${kind}" role="dialog" aria-modal="true" tabindex="-1">${html}</section></div>`;
   $('#modal-root .modal').focus();
   syncPortraits();
@@ -292,10 +298,14 @@ function showModal(html, kind = 'card') {
 }
 function closeModal() {
   if (modalState?.type === 'conflict') return;
+  if(modalState?.returnToWelcome){showWelcome();return;}
+  titleCleanup?.();titleCleanup=null;
   sound.stopSpeech();activeVoiceLines=[];
   modalState = null;
   releaseInteraction(world);
   $('#modal-root').replaceChildren();
+  $('#modal-root').classList.remove('title-context');
+  for(const child of $('.life-game').children)child.inert=false;
   refresh();
 }
 function closeButton() {
@@ -309,15 +319,18 @@ function showWelcome() {
   releaseInteraction(world);
   modalState={type:'welcome'};
   const started=state.flags.awake;
-  showModal(`<div class="welcome-copy"><span class="eyebrow">ПИЛОТ · ОДНА ЗАКОНЧЕННАЯ ИСТОРИЯ</span><h1>Переписка<span>♡</span></h1><h2>Первый день Ани</h2><p>Собраться на новую работу.<br>Познакомиться с соседями.<br>И оставить время для себя.</p><button id="start-pilot" class="primary">${started?'Продолжить мою историю':'Начать первый день'} ${icon('arrow')}</button><button id="welcome-help" class="text-button">Как играть</button>${started?'<button id="welcome-new" class="text-button">Начать заново</button>':''}<label class="welcome-sound"><input id="welcome-audio" type="checkbox" ${sound.getPreferences().enabled?'checked':''}> Музыка и голоса</label><small class="pilot-note">Мышь или касание · Сохранение на этом устройстве</small><span class="pilot-version">Пилот 0.5 · Первые шаги</span></div><div class="welcome-character">${portrait('anna-'+(state.outfit||'home'),'Аня',true)}<span>Новая работа.<br>Свои планы.</span></div>`,'welcome');
-  $('#welcome-audio').onchange=e=>sound.updatePreferences({enabled:e.target.checked});
+  showModal(titleScreenMarkup({started,complete:state.phase==='complete',clock:viewLife(state).clock,audioEnabled:sound.getPreferences().enabled}),'title-screen');
+  $('#modal-root .title-screen').setAttribute('aria-labelledby','title-wordmark');
+  titleCleanup=bindTitleScreen($('#modal-root .title-screen'),{onAudio:()=>{sound.unlock();sound.updatePreferences({enabled:!sound.getPreferences().enabled});},getAudioEnabled:()=>sound.getPreferences().enabled});
   $('#start-pilot').onclick=()=>{sound.unlock();closeModal();paused=false;refresh();if(!state.flags.awake)showAlarm();else if(state.phase==='complete')showEnding();};
   $('#welcome-help').onclick=()=>showHelp(showWelcome);
+  $('#welcome-settings').onclick=showSettings;
   if($('#welcome-new'))$('#welcome-new').onclick=confirmRestart;
-  playDialogue([getSpeech('pilot.welcome')],sound.getStatus().unlocked);
+  if(sound.getStatus().unlocked)sound.playLines([getSpeech('pilot.welcome')]);
 }
 function showHelp(back=closeModal) {
-  modalState={type:'help'};
+  const returnToWelcome=modalState?.type==='welcome'||modalState?.returnToWelcome;
+  modalState={type:'help',returnToWelcome};
   showModal(`${closeButton()}<span class="eyebrow">ВСЁ ПОД РУКОЙ</span><h2>Управляй своим днём</h2><ul class="help-list"><li>${icon('pin')} Нажми на предмет или человека — Аня подойдёт сама.</li><li>${icon('chat')} Нажми на жителя, чтобы познакомиться. Не каждый разговор станет большой историей.</li><li>${icon('phone')} Телефон хранит чаты и покупки для дома.</li><li>${icon('map')} Перетаскивай сцену для обзора. Кнопки + и − меняют масштаб.</li><li>${icon('pause')} Пробел — пауза, Esc — закрыть окно. Кнопка «Сейчас» подсказывает следующий шаг.</li></ul><p class="muted">История заканчивается вечером дома после принятия первой анкеты. Чтение не расходует игровое время.</p><button id="help-tour" class="primary">Показать прямо в игре</button><button id="help-back" class="secondary">Понятно ${icon('check')}</button>`,'help');
   bindClose();$('#help-back').onclick=back;$('#help-tour').onclick=startTutorial;
 }
@@ -726,8 +739,9 @@ function showEnding() {
   $('#end-menu').onclick=showWelcome;
 }
 function confirmRestart() {
+  const returnToWelcome=modalState?.type==='welcome'||modalState?.returnToWelcome;
   modalState = {
-    type: 'restart'
+    type: 'restart',returnToWelcome
   };
   showModal('<h2>Прожить первый день заново?</h2><p>Текущая история Ани будет заменена.</p><button id="reset-confirm" class="primary">Начать новое утро</button><button id="reset-cancel" class="text-button">Оставить мою историю</button>', 'card');
   $('#reset-cancel').onclick = closeModal;
@@ -754,8 +768,9 @@ function audioSettingsMarkup(){
   return `<fieldset class="audio-settings"><legend>Звуки твоего дня</legend><label class="setting-row"><span>Музыка и голоса</span><input id="audio-enabled" type="checkbox" ${p.enabled?'checked':''}></label>${[['music','Музыка'],['voices','Голоса'],['effects','Звуки действий']].map(([key,label])=>`<label class="audio-level"><span>${label}</span><input type="range" min="0" max="100" step="1" value="${Math.round(p[key]*100)}" data-audio-level="${key}" aria-label="Громкость: ${label}"><output>${Math.round(p[key]*100)}%</output></label>`).join('')}<p class="audio-status" data-voice-status></p><button id="voice-test" class="text-button">Послушать голос</button><small>Реплики озвучены заранее. Музыка становится тише, когда говорят персонажи.</small></fieldset>`;
 }
 function showSettings() {
+  const returnToWelcome=modalState?.type==='welcome'||modalState?.returnToWelcome;
   modalState = {
-    type: 'settings'
+    type: 'settings',returnToWelcome
   };
   showModal(`${closeButton()}<h2>Передышка</h2>${audioSettingsMarkup()}<label class="setting-row"><span>Меньше декоративных движений</span><input id="motion" type="checkbox" ${preferences.reducedMotion ? 'checked' : ''}></label><button id="export" class="secondary">Скачать мою историю</button><label class="secondary file-label">Загрузить историю<input id="import" type="file" accept=".json,application/json"></label><button id="tutorial-repeat" class="secondary">Показать, куда нажимать</button><button id="help" class="secondary">Как играть</button><button id="main-menu" class="secondary">Главное меню</button><button id="restart" class="text-button">Новое прохождение</button><small class="muted">История сохраняется на этом устройстве.</small>`, 'card');
   bindClose();

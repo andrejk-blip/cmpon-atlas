@@ -118,6 +118,15 @@ export function createLifeScene(host, world, events) {
   }
   const observer = new ResizeObserver(resize);
   observer.observe(host);
+  document.fonts?.ready.then(()=>{
+    if(disposed)return;
+    for(const entry of [...placeButtons.values(),...npcButtons.values()]){
+      const hidden=entry.label.hidden;entry.label.hidden=false;
+      entry.width=entry.label.offsetWidth;entry.height=entry.label.offsetHeight;
+      entry.label.hidden=hidden;
+    }
+    previousLabels=new Map();layoutLabels();
+  });
   globalThis.addEventListener('resize',resize,{signal:abort.signal});
   host.addEventListener('pointerdown', e => {
     if (e.target.closest('button')) return;

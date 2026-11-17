@@ -1,0 +1,165 @@
+/* Local typography and a single material language for the playable interface. */
+@font-face {
+  font-family: Onest;
+  src: url('../../assets/fonts/onest-variable.woff') format('woff');
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+:root {
+  --font-ui: 'Onest', 'Trebuchet MS', Arial, sans-serif;
+  --font-hand: 'Caveat', cursive;
+  --ui-ink: #3e4034;
+  --ui-muted: #756857;
+  --ui-coral: #a95045;
+  --ui-coral-dark: #773e36;
+  --ui-sage: #566c54;
+  --ui-edge: #b9a48a;
+}
+body {font-family:var(--font-ui);font-synthesis:none;-webkit-font-smoothing:antialiased}
+button,input {font-family:inherit}
+button:focus-visible,input:focus-visible {outline-color:#46634d;outline-offset:4px}
+.life-hud,.life-footer,.quick-actions,.camera-controls,.location-tag {color:var(--ui-ink)}
+.life-hud>* {
+  background:linear-gradient(145deg,#fffaf0f7,#f7eddbf2);
+  border-color:var(--ui-edge);
+  box-shadow:0 3px 0 #65533e25,0 7px 18px #43362914,inset 0 1px #fffdf7;
+}
+.brand {border-radius:19px 8px 19px 8px}
+.brand small {color:#716451;font-size:10px;letter-spacing:.035em;font-weight:500}
+.day-clock {border-radius:18px 18px 10px 10px}
+.day-clock small {font-size:9px;letter-spacing:.1em;font-weight:600;color:#806b52}
+.day-clock strong {font-family:var(--font-ui);font-size:29px;line-height:1.25;font-weight:650;letter-spacing:-.055em;font-variant-numeric:tabular-nums}
+.resources {gap:12px;border-radius:10px 18px 10px 18px}
+.resources b {font-weight:650;font-variant-numeric:tabular-nums;letter-spacing:-.035em}
+.resources .icon-button {
+  min-width:44px;height:44px;border:1px solid #c4b19880;
+  border-radius:12px;background:#f9f1e2;box-shadow:inset 0 1px #fffefa;
+}
+.resources .icon-button:hover {background:#eee3ce;border-color:#9a8568}
+.location-tag {background:#fff7e6e6;border-left:3px solid #9b694f;border-radius:2px 12px 12px 2px}
+.location-tag small {color:#6f6252;font-size:10px;letter-spacing:0}
+.camera-controls button {
+  width:44px;height:44px;border-radius:12px;border-color:#b69a7b;
+  background:linear-gradient(#fffaf0,#f1e4cd);color:#5b5443;
+  box-shadow:0 3px 0 #8d74543b,inset 0 1px #fffdf8;
+  font-weight:450;transition:background .14s,box-shadow .14s;
+}
+.camera-controls button:hover {background:#fff7e5;box-shadow:0 3px 0 #8d745453,0 0 0 3px #fff9e66b}
+.camera-controls button:active {box-shadow:0 1px 0 #8d74543b,inset 0 2px 4px #8d74541f}
+.camera-controls #speed {font-size:12px;font-weight:650}
+.quick-actions button {
+  min-height:42px;border-radius:13px;border-color:#b79f7f;
+  background:linear-gradient(#fffaf0,#f5ead5);font-size:12px;font-weight:550;
+  box-shadow:0 3px 0 #7560472e,inset 0 1px #fffef8;
+}
+.quick-actions button.next {background:linear-gradient(#f4c9b7,#e9af9b);border-color:#ac7762;color:#613b30}
+.quick-actions button.done {background:linear-gradient(#edf0dc,#e0e7ca);border-color:#a3ae85;color:#546346}
+.quick-actions button:hover {border-color:#82694b;box-shadow:0 3px 0 #75604740,0 0 0 3px #fff9e65c}
+.hero-card {border-color:#aa9174;border-radius:17px;background:linear-gradient(120deg,#fff9eb,#f2e5cf);box-shadow:0 4px 0 #69533a2b,inset 0 1px #fffdf4}
+.hero-card b {font-family:var(--font-ui);font-size:17px;font-weight:650;letter-spacing:-.045em;line-height:1.15}
+.hero-card small {font-size:10px;line-height:1.45;color:#79654f}
+.objective {background:linear-gradient(120deg,#fffaf0f8,#f5e9d4f5);border-color:#af9574;border-radius:15px;box-shadow:0 3px 0 #6b543923,inset 0 1px #fffefa}
+.objective small {font-size:9px;font-weight:700;letter-spacing:.12em;color:#955647}
+.objective span {font-size:13px;font-weight:550;line-height:1.45;letter-spacing:-.01em}
+.objective>svg {color:#945847}
+.pocket>button {border-radius:18px;border-color:#af9474;background:linear-gradient(145deg,#fffaf0,#f0e2c9);box-shadow:0 4px 0 #6b543938,inset 0 1px #fffdfa}
+.pocket small {font-size:10px;font-weight:600;letter-spacing:-.01em}
+.pocket #phone {background:linear-gradient(145deg,#f0b6a6,#d99182);border-color:#9a5c4e;color:#5b322b}
+.pocket>button i {background:#864c43;font-weight:650;font-variant-numeric:tabular-nums}
+.pocket>button:hover,.hero-card:hover,.objective:hover {border-color:#886a48;filter:brightness(1.025)}
+.scene-label-layer .scene-label {font-family:var(--font-ui);font-size:12px;font-weight:550;letter-spacing:-.015em;box-shadow:0 2px 0 #82644727,inset 0 1px #fffdf7}
+.scene-label-layer .scene-label.primary-spot {background:#f3cfbb;color:#663f2e;border-color:#af7b5e}
+
+/* Dialogues use calm readable type; handwritten names keep their personality. */
+.modal:not(.welcome):not(.title-screen) {color:var(--ui-ink);border-color:#aa9073;box-shadow:0 7px 0 #58453325,0 20px 70px #31291c35}
+.modal:not(.welcome):not(.title-screen) h2 {font-family:var(--font-ui);font-size:26px;line-height:1.14;font-weight:650;letter-spacing:-.045em}
+.modal:not(.welcome):not(.title-screen) p {font-size:14px;line-height:1.65}
+.modal:not(.welcome):not(.title-screen) .eyebrow {font-size:9px;letter-spacing:.11em;font-weight:650;color:#926953}
+.modal:not(.welcome):not(.title-screen) .primary {
+  background:linear-gradient(150deg,#b65d50,#a34c41);border:1px solid #8e443a;
+  color:#fffaf0;box-shadow:0 4px 0 var(--ui-coral-dark),inset 0 1px #db8d78;
+  border-radius:13px;font-size:14px;font-weight:650;letter-spacing:-.015em;min-height:52px;
+}
+.modal:not(.welcome):not(.title-screen) .primary:hover {background:linear-gradient(150deg,#bd6557,#a84f44)}
+.modal:not(.welcome):not(.title-screen) .primary:active {box-shadow:0 2px 0 var(--ui-coral-dark),inset 0 1px #db8d78}
+.modal:not(.welcome):not(.title-screen) .secondary {background:#f2e9d7;border-color:#c7b193;min-height:44px;font-size:13px;font-weight:550;border-radius:12px;box-shadow:inset 0 1px #fff9e9}
+.modal:not(.welcome):not(.title-screen) .secondary:hover {background:#eadcc4;border-color:#aa8d66}
+.modal:not(.welcome):not(.title-screen) .text-button {color:#7a6049;font-size:12px;min-height:38px;font-weight:500;text-decoration-thickness:1px}
+.modal:not(.welcome):not(.title-screen) .modal-close {min-width:40px;height:40px;background:#f0e4cf;color:#765f46;border:1px solid #dac5a4}
+.modal:not(.welcome):not(.title-screen) .modal-close:hover {background:#e5d2b3}
+.modal:not(.welcome):not(.title-screen) .npc-heading h2 {font-family:var(--font-hand);font-size:37px;letter-spacing:0}
+.speech {font-size:15px;line-height:1.65;color:#4c463a;background:#fffdf5;border-color:#dfccb0}
+.npc-options .secondary,.interview-options>button:not(.primary),.date-options>button:not(.primary) {font-size:13px;line-height:1.5;min-height:46px}
+.pack-items button {font-weight:550}
+.pack-items .picked {background:#e3e9d4;border-color:#8b9c72;color:#526346;box-shadow:inset 0 0 0 1px #8b9c7250}
+.outfit-options b {font-size:13px;font-weight:650}
+.outfit-options small {font-size:10px;line-height:1.4;color:#79634e}
+.resident-card small {font-size:9px;color:#725f4a}
+.audio-settings {background:#f4ead8;border-color:#c8b294}
+.audio-settings legend {font-weight:650}
+.audio-level {font-size:12px;font-weight:500}
+.audio-level input {accent-color:#a65448}
+.audio-level output {font-size:11px;font-variant-numeric:tabular-nums}
+.audio-settings input[type=checkbox] {accent-color:#a65448}
+.modal:not(.welcome):not(.title-screen) .dialogue-audio {border-top-color:#cdb99b66;color:#77614b}
+.modal:not(.welcome):not(.title-screen) .dialogue-audio button {font-size:11px;min-height:36px;background:#f1e5ce;border-color:#c7ad88;box-shadow:inset 0 1px #fff7e5}
+.modal:not(.welcome):not(.title-screen) .dialogue-audio small {font-size:10px;line-height:1.4}
+.modal.phone {border-color:#986258;box-shadow:0 9px 0 #67433942,0 22px 60px #31291c4a}
+.phone-top .icon-button {min-width:32px;width:32px;height:32px}
+.phone-thread-head .icon-button {min-width:36px;width:36px;height:36px}
+.phone-page-title h2 {font-size:27px!important}
+.chat-list b {font-size:14px;font-weight:650;letter-spacing:-.02em}
+.chat-list small {font-size:11px;color:#89715a}
+.phone-thread-head b {font-size:14px;font-weight:650}
+.phone-thread-head small {font-size:10px;color:#80674e}
+.message {font-size:13px;line-height:1.55;border-color:#e0ceb3}
+.message.mine {background:#ead1c0;border-color:#d8b49c}
+.message time {font-size:9px;color:#8d745d}
+.reply-options button {font-size:12px;line-height:1.45;min-height:44px;border-color:#cbb08d;background:#fffaf0;box-shadow:inset 0 1px #fffdf6}
+.reply-options button:hover {background:#f6e7d1;border-color:#b18c63}
+.phone-tabs button {font-size:10px;font-weight:600}
+.phone-tabs button.active {background:#e7c5b5;color:#7c4439}
+.tutorial-card {border-color:#a98b66;box-shadow:0 4px 0 #6d533821,0 12px 28px #3d2c1d21;border-radius:17px;background:#fff8e9}
+.tutorial-card strong {font-weight:650;letter-spacing:-.025em}
+.tutorial-top span {font-weight:650}
+.tutorial-card--inline {box-shadow:none}
+
+@media(max-width:600px) {
+  .brand small {font-size:8px;letter-spacing:0}
+  .day-clock strong {font-size:25px}
+  .day-clock small {font-size:7px;letter-spacing:.045em}
+  .resources {gap:8px;height:44px;padding:4px 7px}
+  .resources .icon-button {min-width:32px;height:32px;border-radius:10px}
+  .location-tag small {font-size:8px}
+  .hero-card b {font-size:14px}
+  .hero-card small {font-size:8px;line-height:1.4}
+  .pocket small {font-size:9px}
+  .objective small {font-size:8px}
+  .objective span {font-size:11px}
+  .quick-actions button {font-size:10px;min-height:44px;padding:8px 10px}
+  .camera-controls button {width:38px;height:38px}
+  .scene-label-layer .scene-label {font-size:11px}
+  .modal:not(.welcome):not(.title-screen) h2 {font-size:24px}
+  .modal:not(.welcome):not(.title-screen) p {font-size:13px}
+  .modal:not(.welcome):not(.title-screen) .primary {font-size:13px;min-height:48px}
+  .modal:not(.welcome):not(.title-screen) .secondary {font-size:12px}
+  .modal:not(.welcome):not(.title-screen) .npc-heading h2 {font-size:32px}
+  .message {font-size:12px}
+  .reply-options button {font-size:11px}
+  .resident-card small {font-size:8px;white-space:normal}
+}
+@media(max-height:520px) and (min-width:601px) {
+  .day-clock strong {font-size:23px}
+  .resources .icon-button {height:32px;min-width:32px}
+  .hero-card b {font-size:14px}
+  .hero-card small {font-size:8px}
+  .objective span {font-size:11px}
+  .pocket small {font-size:9px}
+  .quick-actions button {font-size:10px;min-height:36px;padding:6px 10px}
+  .camera-controls button {width:34px;height:34px}
+  .modal:not(.welcome):not(.title-screen) h2 {font-size:23px}
+  .modal:not(.welcome):not(.title-screen) p {font-size:12px}
+  .modal:not(.welcome):not(.title-screen) .primary {min-height:44px;padding:10px 14px}
+  .message {font-size:11px}
+}
