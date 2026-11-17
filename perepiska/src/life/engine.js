@@ -292,7 +292,7 @@ export function reduceLife(input, action) {
 export function viewLife(state) {
   let objective;
   if (state.phase === 'morning') {
-    objective = !state.flags.awake ? 'Проснуться в первый рабочий день' : !state.outfit ? 'Выбрать образ у шкафа' : !state.flags.packed ? 'Взять планшет и удостоверение' : !state.flags.briefed ? 'Ответить Вере в чате' : 'Выйти из дома — Вера ждёт во дворе';
+    objective = !state.flags.awake ? 'Проснуться в первый рабочий день' : !state.outfit ? 'Выбрать образ у шкафа' : !state.flags.briefed ? 'Ответить Вере в чате' : !state.flags.packed ? 'Взять планшет и удостоверение' : 'Выйти из дома — Вера ждёт во дворе';
   } else if (state.phase === 'shift') {
     objective = !state.flags.mentorMet ? 'Познакомиться с Верой' : state.interview.status === 'ready' ? 'Дойти до квартиры 12' : state.interview.status === 'talking' ? 'Разобраться, кто живёт и ведёт хозяйство вместе' : 'Вернуться к Вере с результатом';
   } else if (state.phase === 'evening') {

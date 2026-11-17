@@ -1,0 +1,14 @@
+/* World interaction labels remain in screen pixels instead of scaling artwork. */
+.scene-label-layer {position:absolute;inset:0;z-index:4;pointer-events:none;overflow:hidden}
+.scene-label-lines {position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
+.scene-label-lines line {stroke:#806b52;stroke-width:1.25;stroke-linecap:round;opacity:.65}
+.scene-label-layer .scene-label {position:absolute;left:0;top:0;display:flex;flex-direction:row;align-items:center;justify-content:center;gap:6px;min-width:0;min-height:32px;padding:5px 10px;border:1px solid #a78c6d;border-radius:14px;background:#fff8eb;color:#4e4239;box-shadow:0 2px 3px #493e3725;font:500 13px/1.15 Arial,sans-serif;white-space:nowrap;pointer-events:auto;filter:none;transform:none;z-index:1;touch-action:manipulation}
+.scene-label-layer .scene-label>svg {flex:none;width:17px;height:17px;padding:0;border:0;border-radius:0;background:none;color:inherit}
+.scene-label-layer .scene-label>small {margin:0;padding:0;border:0;background:none;color:inherit;font:inherit}
+.scene-label-layer .scene-label.primary-spot {background:#f4d5c7;border-color:#a66d60;box-shadow:0 2px 4px #7c48382b}
+.scene-label-layer .scene-label.done {background:#eef1df;border-color:#84936b;color:#4f6140}
+.scene-label-layer .scene-label:hover,.scene-label-layer .scene-label:focus-visible {background:#ffe4cd;border-color:#8d6158;outline:2px solid #fff7e8;outline-offset:2px;filter:none}
+.scene-label-layer .scene-label[hidden],.scene-label-lines line[hidden] {display:none}
+.life-world .npc-hit {background:transparent;border:0;box-shadow:none;padding:0;min-height:0}
+.life-world .npc-hit:focus-visible {outline:2px solid #fff6db;outline-offset:2px}
+.life-world canvas {image-rendering:auto}

@@ -55,6 +55,7 @@ export function loadCharacter(id) {
   if(!spec) return Promise.reject(new Error('Unknown character '+id));
   const pending=new Promise(resolve=>{
     const img=new Image();
+    img.decoding='async';
     img.onload=()=>resolve(prepareAtlas(img,spec,false));
     img.onerror=()=>{
       const old=new Image();old.onload=()=>resolve(prepareAtlas(old,spec,true));
@@ -93,7 +94,7 @@ export function drawCharacter(ctx,atlas,pose,x,y,height,options={}) {
   const sample=samplePose(pose,options);
   const index=atlas.legacy?(atlas.spec.single?0:atlas.spec.fallbackRow*4+(sample.walking?Math.floor(sample.frame/2):0)):sample.frame;
   const f=atlas.frames[index]||atlas.frames[0],scale=height/atlas.height;
-  ctx.save();ctx.translate(x,y+sample.bob);ctx.scale(sample.flip*sample.scaleX,sample.scaleY);ctx.rotate(sample.lean);
+  ctx.save();ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';ctx.translate(x,y+sample.bob);ctx.scale(sample.flip*sample.scaleX,sample.scaleY);ctx.rotate(sample.lean);
   ctx.drawImage(atlas.img,f.x,f.y,f.w,f.h,-f.pivotX*scale,-f.pivotY*scale,f.w*scale,f.h*scale);
   ctx.restore();
 }

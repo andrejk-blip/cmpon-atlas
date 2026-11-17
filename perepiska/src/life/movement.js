@@ -139,6 +139,7 @@ function createActor(map, id, node, speed, portraitIndex = 0) {
     status: 'idle', portraitIndex, blockedBy: null,
     heldForInteraction: false, holdRemaining: null,
     yieldingTo: null, yieldResumeDestination: null, pendingYieldTo: null,
+    yieldUntilArrival: false,
     yieldStopRemaining: null, approachTargetId: null, stalledTime: 0, trafficHold: false,
   };
 }
@@ -579,6 +580,7 @@ function chooseYieldRoute(world, npc, priority) {
 function beginYield(world, npc, priority, brakeFirst = true) {
   const map = MAPS[world.location], choice = chooseYieldRoute(world, npc, priority);
   if (!choice) return false;
+  if(npc.yieldingTo!==priority.id)npc.yieldUntilArrival=false;
   if (!npc.yieldResumeDestination) npc.yieldResumeDestination = npc.destination;
   const newFirst = choice.route.find(id => distance(npc, map.nodes[id]) > EPSILON);
   const oldDirection = forward(npc, map);
@@ -604,6 +606,7 @@ function resumeWander(world, npc, priority) {
     npc.routeIndex = (npc.routeIndex + 1) % npc.route.length;
   }
   npc.yieldingTo = null;
+  npc.yieldUntilArrival = false;
   npc.yieldResumeDestination = null;
   npc.pendingYieldTo = null;
   npc.yieldStopRemaining = null;
@@ -634,10 +637,13 @@ function updateTraffic(world) {
     }
     if (npc.yieldingTo) {
       const priority = findActor(world, npc.yieldingTo);
+      if(npc.yieldUntilArrival&&(!priority||!priority.moving))npc.yieldUntilArrival=false;
       const stillBlocking = priority && priority.moving && circleEntry(map, priority, npc, clearanceRadius(npc, priority)) < 85;
       if (priority && npc.currentSpeed <= EPSILON && (npc.blockedBy === priority.id || (!npc.moving && stillBlocking))) {
         beginYield(world, npc, priority, false);
-      } else if (!npc.moving && (!priority || distance(npc, priority) > 90 || !priority.moving)) resumeWander(world, npc, priority);
+      // After a reserved backoff, returning too soon from the refuge can put
+      // the passer-by back across the exact route and repeat the manoeuvre.
+      } else if (!npc.moving && (!priority || !priority.moving || (!npc.yieldUntilArrival && distance(npc, priority) > 90))) resumeWander(world, npc, priority);
       continue;
     }
     for (const priority of [world.player, ...ordered.slice(0, index)]) {
@@ -663,7 +669,7 @@ function routeOptions(world, actor, destination) {
 
 function captureIntent(actor) {
   return {destination: actor.destination, interaction: actor.interaction, approachTargetId: actor.approachTargetId,
-    yieldingTo: actor.yieldingTo, yieldResumeDestination: actor.yieldResumeDestination};
+    yieldingTo: actor.yieldingTo, yieldResumeDestination: actor.yieldResumeDestination, yieldUntilArrival: actor.yieldUntilArrival};
 }
 
 function restoreIntent(world, actor, intent) {
@@ -678,6 +684,7 @@ function restoreIntent(world, actor, intent) {
   }
   actor.yieldingTo = intent.yieldingTo;
   actor.yieldResumeDestination = intent.yieldResumeDestination;
+  actor.yieldUntilArrival = Boolean(intent.yieldUntilArrival);
 }
 
 /**
@@ -754,6 +761,7 @@ function finishTrafficStep(world, events) {
     for (const actor of [world.player, ...world.npcs]) actor.trafficHold = false;
     restoreIntent(world, priority, maneuver.priorityIntent);
     blocker.yieldingTo = priority.id;
+    blocker.yieldUntilArrival = true;
     blocker.yieldResumeDestination = maneuver.blockerIntent.yieldResumeDestination || maneuver.blockerIntent.destination;
     blocker.status = 'yielding';
   }

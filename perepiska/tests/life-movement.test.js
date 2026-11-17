@@ -384,3 +384,48 @@ test('repeated district journeys recover narrow-path traffic without overlap or 
   }
   assert.ok(manoeuvred, 'this regression must exercise a physical backoff and resume');
 });
+
+function addressRouteAfterBusyMeeting() {
+  const world=createMovement('district'),dt=1/120;
+  syncCompanions(world,{mentor:true});
+  for(let i=0;i<547;i++)stepMovement(world,dt);
+  assert.equal(moveToActor(world,'vera'),true);
+  let meeting;
+  for(let i=0;i<60*120&&!meeting;i++)meeting=stepMovement(world,dt).find(e=>e.actorId==='vera');
+  assert.equal(meeting?.interaction,'npc:vera');
+  releaseInteraction(world);
+  for(let i=0;i<1420;i++)stepMovement(world,dt);
+  assert.equal(moveTo(world,'respondent',{interaction:'respondent'}),true);
+  return world;
+}
+
+test('a passer-by stays in the refuge until the post-meeting address route finishes once',()=>{
+  const world=addressRouteAfterBusyMeeting(),events=[];let reserved=false,refuge=false;
+  for(let i=0;i<30*120&&!events.length;i++){
+    events.push(...stepMovement(world,1/120));
+    reserved||=Boolean(world.trafficManeuver);
+    refuge||=world.npcs.some(npc=>npc.yieldUntilArrival);
+    assertPersonalSpace(world);assert.ok(onGraph(world));
+  }
+  assert.ok(reserved&&refuge,'reproduce the crowded branch and its reserved refuge');
+  assert.deepEqual(events,[{type:'arrival',nodeId:'respondent',interaction:'respondent'}]);
+  assert.deepEqual({x:world.player.x,y:world.player.y},MAPS.district.nodes.respondent);
+  const before=new Map(world.npcs.map(npc=>[npc.id,npc.travelled]));
+  for(let i=0;i<5*120;i++){assert.deepEqual(stepMovement(world,1/120),[]);assertPersonalSpace(world);}
+  assert.ok(world.npcs.every(npc=>!npc.yieldUntilArrival),'refuge ends after the player arrives');
+  assert.ok(world.npcs.some(npc=>npc.travelled>before.get(npc.id)),'passers-by resume walking');
+});
+
+test('redirecting while a passer-by waits in a reserved refuge preserves the new interaction',()=>{
+  const original=addressRouteAfterBusyMeeting();
+  for(let i=0;i<30*120&&!original.npcs.some(npc=>npc.yieldUntilArrival);i++)stepMovement(original,1/120);
+  assert.ok(original.npcs.some(npc=>npc.yieldUntilArrival));
+  for(const target of ['base','north','corner']){
+    const world=structuredClone(original),events=[];
+    assert.equal(moveTo(world,target,{interaction:'new-'+target}),true);
+    for(let i=0;i<40*120&&!events.length;i++){events.push(...stepMovement(world,1/120));assertPersonalSpace(world);}
+    assert.deepEqual(events,[{type:'arrival',nodeId:target,interaction:'new-'+target}]);
+    for(let i=0;i<120;i++)stepMovement(world,1/120);
+    assert.ok(world.npcs.every(npc=>!npc.yieldUntilArrival));
+  }
+});

@@ -1,0 +1,31 @@
+/* Short actionable hints. Nothing overlays the target or intercepts world input. */
+.life-tutorial {position:fixed;inset:0;z-index:35;pointer-events:none}
+.life-tutorial[hidden],.tutorial-card[hidden],.tutorial-card [hidden] {display:none!important}
+.tutorial-card {position:fixed;width:min(300px,calc(100vw - 24px));padding:14px 16px;background:#fff9ed;border:1.5px solid #9a7057;border-radius:17px 10px 16px 11px;box-shadow:0 5px 18px #3c2f2b28;pointer-events:auto;color:#514339;font-family:inherit;text-align:left;line-height:1.35;z-index:35}
+.tutorial-top {display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:6px}
+.tutorial-top span {font-size:10px;letter-spacing:.04em;color:#896d58;text-transform:uppercase;font-weight:700}
+.tutorial-card button[data-tutorial-skip] {border:0;background:transparent;box-shadow:none;padding:4px 0 4px 7px;min-height:26px;color:#776657;font:inherit;font-size:11px;text-decoration:underline;text-underline-offset:3px;flex:none;cursor:pointer}
+.tutorial-card strong {display:block;font-size:16px;font-weight:700;color:#5d493b}
+.tutorial-card p {margin:5px 0 0!important;font-family:inherit!important;font-size:13px!important;line-height:1.4!important;color:#65564a}
+.tutorial-card button[data-tutorial-finish] {margin-top:10px;padding:8px 12px;border:1px solid #8f9d75;border-radius:10px;background:#e8eedb;color:#425234;font:inherit;font-size:12px;cursor:pointer}
+.tutorial-card button:focus-visible {outline:3px solid #b16c48;outline-offset:2px}
+.tutorial-card--inline {position:relative;width:auto;max-width:none;margin:0 0 16px;padding:10px 12px;background:#fff4db;border-color:#c5a16c;box-shadow:none;z-index:3}
+.modal.phone .tutorial-card--inline {margin:9px 12px 6px;padding:9px 11px;flex-shrink:0}
+.tutorial-card--inline strong {font-size:14px}
+.tutorial-card--inline p {font-size:12px!important}
+.tutorial-target {outline:3px solid #c37d41!important;outline-offset:4px;box-shadow:0 0 0 7px #fff3cfb8!important;position:relative}
+@media (prefers-reduced-motion:no-preference) {
+  .tutorial-target {animation:tutorial-glow 1.6s ease-in-out infinite}
+}
+@keyframes tutorial-glow {0%,100%{outline-color:#a45f30;box-shadow:0 0 0 6px #fff3cfb8}50%{outline-color:#dfad58;box-shadow:0 0 0 9px #fff3cf65}}
+.reduce-motion .tutorial-target {animation:none}
+@media(max-width:600px) {
+  .tutorial-card {width:min(278px,calc(100vw - 24px));padding:11px 13px}
+  .tutorial-card strong {font-size:14px}
+  .tutorial-card p {font-size:12px!important}
+  .tutorial-card--inline {width:auto;margin-bottom:12px}
+  .tutorial-target {outline-width:2px;outline-offset:3px;box-shadow:0 0 0 5px #fff3cfb8!important}
+}
+.modal.phone:has(.tutorial-card--inline) .chat-list {min-height:0;overflow-y:auto;flex:1}
+.modal.phone:has(.tutorial-card--inline) .phone-small-note {margin:9px 15px}
+.modal.phone:has(.tutorial-card--inline) .phone-page-title {padding-top:10px}

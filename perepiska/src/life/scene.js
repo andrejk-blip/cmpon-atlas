@@ -1,30 +1,33 @@
 import { MAPS, nearestNode } from './movement.js';
 import { icon } from './icons.js';
 import { CHARACTER_ART, createPose, stepPose, loadCharacter, drawCharacter } from './animation.js';
+import { canvasBackingSize, splitSceneSpots, placeSceneLabels } from './scene-layout.js';
 export function createLifeScene(host, world, events) {
   const map = MAPS[world.location],
     abort = new AbortController();
-  host.innerHTML = `<div class="life-world ${world.location}"><canvas aria-hidden="true"></canvas><div class="hotspots"></div><div class="npc-targets"></div><button class="hero-hit" aria-label="Аня — мой персонаж"></button></div>`;
+  host.innerHTML = `<div class="life-world ${world.location}"><canvas aria-hidden="true"></canvas><div class="npc-targets"></div><button class="hero-hit" aria-label="Аня — мой персонаж"></button></div><div class="scene-label-layer"><svg class="scene-label-lines" aria-hidden="true"></svg><div class="hotspots"></div><div class="npc-labels"></div></div>`;
   const surface = host.querySelector('.life-world'),
     canvas = host.querySelector('canvas'),
     ctx = canvas.getContext('2d');
-  const ratio = Math.min(devicePixelRatio || 1, 1.5);
-  canvas.width = 1000 * ratio;
-  canvas.height = 700 * ratio;
-  ctx.scale(ratio, ratio);
-  const atlases = {}, poses = new Map();
+  const atlases = {}, poses = new Map(), requestedArt = new Set();
   let disposed = false, animationClock = 0, reducedMotion = false;
-  for (const id of Object.keys(CHARACTER_ART)) loadCharacter(id).then(atlas => {
-    if (disposed) return;
-    atlases[id] = atlas;
-    draw();
-  });
+  function ensureArt(id) {
+    if(requestedArt.has(id)||!CHARACTER_ART[id])return;
+    requestedArt.add(id);
+    loadCharacter(id).then(atlas=>{
+      if(disposed)return;
+      atlases[id]=atlas;draw();
+    });
+  }
   function poseFor(id) {
     if (!poses.has(id)) poses.set(id, createPose([...id].reduce((n,c)=>n+c.charCodeAt(0),0)%51/10));
     return poses.get(id);
   }
   const npcLayer = host.querySelector('.npc-targets');
+  const npcLabelLayer = host.querySelector('.npc-labels'), lineLayer = host.querySelector('.scene-label-lines');
   const npcButtons = new Map();
+  const placeButtons = new Map();
+  let actorSpots = new Map(), previousLabels = new Map(), viewWidth = host.clientWidth, viewHeight = host.clientHeight, backingDpr = 0;
   const labels = {'resident-1':'Николай','resident-2':'Денис',vera:'Вера',max:'Макс'};
   let state = null,
     zoom = 1,
@@ -37,6 +40,58 @@ export function createLifeScene(host, world, events) {
     effect = null;
   const heroHit = host.querySelector('.hero-hit');
   heroHit.onclick = events.onHero;
+  function refreshCanvas() {
+    backingDpr = globalThis.devicePixelRatio || 1;
+    const size = canvasBackingSize(zoom, backingDpr);
+    if (canvas.width === size.width && canvas.height === size.height) return;
+    canvas.width = size.width;canvas.height = size.height;
+    ctx.setTransform(size.scaleX,0,0,size.scaleY,0,0);
+    ctx.imageSmoothingEnabled = true;ctx.imageSmoothingQuality = 'high';
+  }
+  function newLabelLine() {
+    const line = document.createElementNS('http://www.w3.org/2000/svg','line');
+    lineLayer.append(line);return line;
+  }
+  function actorArt(actor) {return actor.id === 'anna' ? 'anna-'+(state?.outfit || 'home') : actor.id;}
+  function actorHeight(actor) {return (CHARACTER_ART[actorArt(actor)]?.height || 110) * (.8 + actor.y / 1600) * (actor.id === 'anna' && world.location !== 'home' ? .88 : 1);}
+  function placeAnchor(spot) {
+    // The address belongs to the entrance, not to the resident's approach point.
+    if(world.location==='district'&&spot.id==='respondent')return {x:615,y:234,offsetX:84*zoom,offsetY:-8*zoom};
+    return {...map.nodes[spot.node],offsetX:0,offsetY:0};
+  }
+  function layoutLabels() {
+    if(!state||!viewWidth||!viewHeight)return;
+    const actors=[...world.npcs,...(world.companions||[]),world.player];
+    const obstacles=actors.map(actor=>{
+      const height=actorHeight(actor)*zoom;
+      return {x:pan.x+actor.x*zoom-height*.23,y:pan.y+actor.y*zoom-height,width:height*.46,height:height+5};
+    });
+    const items=[], records=new Map();
+    const add=(id,entry,x,y,priority,offsetX=0,offsetY=0)=>{
+      const visible=x>-80&&x<viewWidth+80&&y>-50&&y<viewHeight+80;
+      entry.label.hidden=!visible;entry.line.toggleAttribute('hidden',!visible);
+      if(!visible)return;
+      items.push({id,x,y,width:entry.width,height:entry.height,priority,offsetX,offsetY});records.set(id,entry);
+    };
+    for(const [id,entry] of placeButtons){const anchor=placeAnchor(entry.spot);add('place:'+id,entry,pan.x+anchor.x*zoom,pan.y+anchor.y*zoom,entry.spot.primary?3:1,anchor.offsetX,anchor.offsetY);}
+    for(const actor of actors){
+      const entry=npcButtons.get(actor.id);if(!entry)continue;
+      add('actor:'+actor.id,entry,pan.x+actor.x*zoom,pan.y+(actor.y-actorHeight(actor))*zoom-5,actorSpots.get(actor.id)?.primary?4:2);
+    }
+    const bounds={left:12,top:Math.min(108,viewHeight*.18),right:viewWidth-12,bottom:viewHeight-Math.min(118,viewHeight*.2)};
+    const arranged=placeSceneLabels(items,obstacles,bounds,previousLabels);
+    for(const [id,box] of arranged){
+      const entry=records.get(id);
+      entry.label.style.transform=`translate(${Math.round(box.x)}px,${Math.round(box.y)}px)`;
+      const x=Math.max(box.x+7,Math.min(box.x+box.width-7,box.anchorX));
+      const y=Math.max(box.y,Math.min(box.y+box.height,box.anchorY));
+      const distance=Math.hypot(x-box.anchorX,y-box.anchorY);
+      entry.line.toggleAttribute('hidden',distance<18);
+      entry.line.setAttribute('x1',String(box.anchorX));entry.line.setAttribute('y1',String(box.anchorY));
+      entry.line.setAttribute('x2',String(x));entry.line.setAttribute('y2',String(y));
+    }
+    previousLabels=arranged;
+  }
   function clamp() {
     const w = host.clientWidth,
       h = host.clientHeight;
@@ -46,6 +101,7 @@ export function createLifeScene(host, world, events) {
   function transform() {
     clamp();
     surface.style.transform = `translate(${pan.x}px,${pan.y}px) scale(${zoom})`;
+    layoutLabels();
   }
   function center() {
     pan.x = host.clientWidth / 2 - world.player.x * zoom;
@@ -54,12 +110,15 @@ export function createLifeScene(host, world, events) {
     transform();
   }
   function resize() {
-    zoom = Math.max(host.clientWidth / 1000, host.clientHeight / 700);
+    viewWidth=host.clientWidth;viewHeight=host.clientHeight;
+    zoom = Math.max(viewWidth / 1000, viewHeight / 700);
+    refreshCanvas();
     center();
     draw();
   }
   const observer = new ResizeObserver(resize);
   observer.observe(host);
+  globalThis.addEventListener('resize',resize,{signal:abort.signal});
   host.addEventListener('pointerdown', e => {
     if (e.target.closest('button')) return;
     drag = {
@@ -103,11 +162,18 @@ export function createLifeScene(host, world, events) {
   function update(nextState, spots) {
     state = nextState;
     surface.classList.toggle('evening', state.phase === 'evening' || state.phase === 'complete');
-    host.querySelector('.hotspots').innerHTML = spots.map(s => {
-      const p = map.nodes[s.node];
-      return `<button data-spot="${s.id}" class="world-spot ${s.done ? 'done' : ''} ${s.primary ? 'primary-spot' : ''}" style="left:${p.x}px;top:${p.y - 8}px" aria-label="${s.label}">${icon(s.done ? 'check' : s.icon)}<small>${s.short || s.label}</small></button>`;
+    const split=splitSceneSpots(spots,[...world.npcs,...(world.companions||[])].map(a=>a.id));
+    actorSpots=split.actors;
+    for(const entry of placeButtons.values())entry.line.remove();
+    placeButtons.clear();
+    host.querySelector('.hotspots').innerHTML = split.places.map(s => {
+      return `<button data-spot="${s.id}" class="world-spot scene-label ${s.done ? 'done' : ''} ${s.primary ? 'primary-spot' : ''}" aria-label="${s.label}">${icon(s.done ? 'check' : s.icon)}<small>${s.short || s.label}</small></button>`;
     }).join('');
-    host.querySelectorAll('[data-spot]').forEach(b => b.onclick = () => events.onSpot(b.dataset.spot));
+    host.querySelectorAll('.hotspots [data-spot]').forEach(label => {
+      const spot=split.places.find(s=>s.id===label.dataset.spot);
+      placeButtons.set(spot.id,{label,spot,line:newLabelLine(),width:label.offsetWidth,height:label.offsetHeight});
+      label.onclick=()=>events.onSpot(spot.id);
+    });
     draw();
   }
   function plant() {
@@ -175,6 +241,7 @@ export function createLifeScene(host, world, events) {
   }
   function draw(dt = 0, options = {}) {
     if (!state || disposed) return;
+    if(backingDpr!==(globalThis.devicePixelRatio||1))refreshCanvas();
     reducedMotion = options.reducedMotion ?? reducedMotion;
     animationClock += Math.max(0, dt);
 
@@ -203,28 +270,40 @@ export function createLifeScene(host, world, events) {
       ctx.restore();
     }
     const actors = [...world.npcs, ...(world.companions || [])];
-    const artFor = actor => actor.id === 'anna' ? 'anna-'+(state.outfit || 'home') : actor.id;
-    const heightFor = actor => (CHARACTER_ART[artFor(actor)]?.height || 110) * (.8 + actor.y / 1600) * (actor.id === 'anna' && world.location !== 'home' ? .88 : 1);
+    const artFor = actorArt, heightFor = actorHeight;
     const activeIds = new Set(actors.map(a => a.id));
-    for (const [id,button] of npcButtons) if (!activeIds.has(id)) {button.remove();npcButtons.delete(id);}
+    for (const [id,entry] of npcButtons) if (!activeIds.has(id)) {entry.hit.remove();entry.label.remove();entry.line.remove();npcButtons.delete(id);}
     for (const actor of actors) {
-      let button = npcButtons.get(actor.id);
-      if (!button) {
-        button = document.createElement('button');
-        button.className = 'npc-hit';
-        button.setAttribute('aria-label','Поговорить: '+labels[actor.id]);
-        button.innerHTML = '<span>'+labels[actor.id]+' '+icon('chat')+'</span>';
-        button.onclick=()=>events.onNpc?.(actor.id);
-        npcLayer.append(button);npcButtons.set(actor.id,button);
+      let entry = npcButtons.get(actor.id);
+      if (!entry) {
+        const hit=document.createElement('button'),label=document.createElement('button');
+        hit.className='npc-hit';hit.dataset.actor=actor.id;hit.tabIndex=-1;
+        hit.setAttribute('aria-label',labels[actor.id]+' — персонаж');
+        hit.onclick=()=>events.onNpc?.(actor.id);
+        label.dataset.npc=actor.id;
+        label.onclick=()=>{const task=actorSpots.get(actor.id);if(task)events.onSpot(task.id);else events.onNpc?.(actor.id);};
+        npcLayer.append(hit);npcLabelLayer.append(label);
+        entry={hit,label,line:newLabelLine(),contentKey:null};npcButtons.set(actor.id,entry);
+      }
+      const task=actorSpots.get(actor.id),contentKey=task?`${task.id}:${task.primary}:${task.done}:${task.label}`:'chat';
+      if(entry.contentKey!==contentKey){
+        entry.contentKey=contentKey;
+        entry.label.className=`scene-label npc-label ${task?.primary?'primary-spot':''} ${task?.done?'done':''}`;
+        entry.label.setAttribute('aria-label',task?.label||'Поговорить: '+labels[actor.id]);
+        if(task)entry.label.dataset.spot=task.id;else delete entry.label.dataset.spot;
+        entry.label.innerHTML=`<small>${labels[actor.id]}</small>${icon(task?.done?'check':task?.primary?'pin':'chat')}`;
+        entry.label.hidden=false;
+        entry.width=entry.label.offsetWidth;entry.height=entry.label.offsetHeight;
       }
       const height=heightFor(actor);
-      button.style.height=height+'px';
-      button.style.transform = `translate(${actor.x-24}px,${actor.y-height}px)`;
+      entry.hit.style.height=height+'px';
+      entry.hit.style.transform = `translate(${actor.x-24}px,${actor.y-height}px)`;
     }
     actors.push(p);
     for (const actor of actors.sort((a,b)=>a.y-b.y)) {
       const isHero = actor.id === 'anna';
       const artId = artFor(actor);
+      ensureArt(artId);
       const height = heightFor(actor);
       const pose = poseFor(actor.id);
       stepPose(pose,actor,dt,{reducedMotion});
@@ -239,6 +318,7 @@ export function createLifeScene(host, world, events) {
     }
     heroHit.style.height=heightFor(p)+'px';
     heroHit.style.transform = `translate(${p.x - 24}px,${p.y - heightFor(p)}px)`;
+    layoutLabels();
     if (effect && animationClock - effect.start < 1.5) {
       const t = (animationClock - effect.start) / 1.5;
       ctx.save();
@@ -275,7 +355,9 @@ export function createLifeScene(host, world, events) {
       pan.x = host.clientWidth / 2 - (host.clientWidth / 2 - pan.x) * zoom / old;
       pan.y = host.clientHeight / 2 - (host.clientHeight / 2 - pan.y) * zoom / old;
       follow = false;
+      refreshCanvas();
       transform();
+      draw();
     },
     destroy() {
       disposed = true;

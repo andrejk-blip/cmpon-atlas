@@ -8,6 +8,7 @@ import { getNpcConversation } from './relationships.js';
 import { portrait, syncPortraits, animatePortraits, setSpeakingCharacter } from './portraits.js';
 import { createAudioDirector } from './audio.js';
 import { getSpeech, findSpeech } from './speech-catalog.js';
+import { createTutorial } from './tutorial.js';
 const $ = s => document.querySelector(s);
 const esc = s => String(s).replace(/[&<>"']/g, c => ({
   '&': '&amp;',
@@ -53,6 +54,9 @@ $('#app').innerHTML = `<main class="life-game"><div id="life-stage" aria-label="
 <footer class="life-footer"><button id="profile" class="hero-card" aria-label="Аня — мой персонаж"><span id="hero-portrait" class="hero-portrait">${portrait('anna-'+(state.outfit||'home'),'Аня')}</span><span><b>Аня, 25</b><small id="hero-role">Первый день</small></span></button><button id="objective" class="objective"><small>СЕЙЧАС</small><span></span>${icon('arrow')}</button><nav class="pocket"><button id="phone" aria-label="Телефон и чаты">${icon('phone')}<i id="unread">3</i><small>Телефон</small></button><button id="world-map" aria-label="Карта моей жизни">${icon('map')}<small>Карта</small></button><button id="bag" aria-label="Моя сумка">${icon('bag')}<small>Сумка</small></button></nav></footer>
 <div id="modal-root"></div></main>`;
 let scene = makeScene();
+const tutorial=createTutorial({preferences:preferences.tutorial,onPreferencesChange:value=>{preferences.tutorial=value;platform.setPreferences(preferences);}});
+function updateTutorial(){tutorial.update({state,modalState,moving:world.player.moving,paused});}
+function startTutorial(){closeModal();paused=false;tutorial.start();refresh();if(!state.flags.awake)showAlarm();}
 function makeScene() {
   return createLifeScene($('#life-stage'), world, {
     onGround: walkGround,
@@ -236,6 +240,7 @@ function refresh() {
   syncPortraits();
   document.documentElement.classList.toggle('scene-paused',paused);
   sound.setWorld({scene:state.scene,phase:state.phase});sound.setSuspended('pause',paused);updateSoundStatus(sound.getStatus());
+  updateTutorial();
 }
 function walkGround(node) {
   if (modalState || !state.flags.awake || state.phase === 'complete') return;
@@ -264,7 +269,7 @@ function objectiveAction() {
     return;
   }
   if (state.phase === 'morning') {
-    if (!state.outfit) go('wardrobe');else if (!state.flags.packed) go('bag');else if (!state.flags.briefed) openPhone('team');else go('door');
+    if (!state.outfit) go('wardrobe');else if (!state.flags.briefed) openPhone('team');else if (!state.flags.packed) go('bag');else go('door');
   } else if (state.phase === 'shift') go(!state.flags.mentorMet || state.interview.status === 'local' ? 'mentor' : 'respondent');else if (state.phase === 'evening') go(state.scene === 'home' ? 'bed' : ['accepted', 'talking'].includes(state.date.status) ? 'bench' : 'entrance');else showEnding();
 }
 function arrive(event) {
@@ -283,6 +288,7 @@ function showModal(html, kind = 'card') {
   $('#modal-root').innerHTML = `<div class="scrim"><section class="modal ${kind}" role="dialog" aria-modal="true" tabindex="-1">${html}</section></div>`;
   $('#modal-root .modal').focus();
   syncPortraits();
+  updateTutorial();
 }
 function closeModal() {
   if (modalState?.type === 'conflict') return;
@@ -303,7 +309,7 @@ function showWelcome() {
   releaseInteraction(world);
   modalState={type:'welcome'};
   const started=state.flags.awake;
-  showModal(`<div class="welcome-copy"><span class="eyebrow">ПИЛОТ · ОДНА ЗАКОНЧЕННАЯ ИСТОРИЯ</span><h1>Переписка<span>♡</span></h1><h2>Первый день Ани</h2><p>Собраться на новую работу.<br>Познакомиться с соседями.<br>И оставить время для себя.</p><button id="start-pilot" class="primary">${started?'Продолжить мою историю':'Начать первый день'} ${icon('arrow')}</button><button id="welcome-help" class="text-button">Как играть</button>${started?'<button id="welcome-new" class="text-button">Начать заново</button>':''}<label class="welcome-sound"><input id="welcome-audio" type="checkbox" ${sound.getPreferences().enabled?'checked':''}> Музыка и голоса</label><small class="pilot-note">Мышь или касание · Сохранение на этом устройстве</small><span class="pilot-version">Пилот 0.4 · Музыка и озвучка</span></div><div class="welcome-character">${portrait('anna-'+(state.outfit||'home'),'Аня',true)}<span>Новая работа.<br>Свои планы.</span></div>`,'welcome');
+  showModal(`<div class="welcome-copy"><span class="eyebrow">ПИЛОТ · ОДНА ЗАКОНЧЕННАЯ ИСТОРИЯ</span><h1>Переписка<span>♡</span></h1><h2>Первый день Ани</h2><p>Собраться на новую работу.<br>Познакомиться с соседями.<br>И оставить время для себя.</p><button id="start-pilot" class="primary">${started?'Продолжить мою историю':'Начать первый день'} ${icon('arrow')}</button><button id="welcome-help" class="text-button">Как играть</button>${started?'<button id="welcome-new" class="text-button">Начать заново</button>':''}<label class="welcome-sound"><input id="welcome-audio" type="checkbox" ${sound.getPreferences().enabled?'checked':''}> Музыка и голоса</label><small class="pilot-note">Мышь или касание · Сохранение на этом устройстве</small><span class="pilot-version">Пилот 0.5 · Первые шаги</span></div><div class="welcome-character">${portrait('anna-'+(state.outfit||'home'),'Аня',true)}<span>Новая работа.<br>Свои планы.</span></div>`,'welcome');
   $('#welcome-audio').onchange=e=>sound.updatePreferences({enabled:e.target.checked});
   $('#start-pilot').onclick=()=>{sound.unlock();closeModal();paused=false;refresh();if(!state.flags.awake)showAlarm();else if(state.phase==='complete')showEnding();};
   $('#welcome-help').onclick=()=>showHelp(showWelcome);
@@ -312,8 +318,8 @@ function showWelcome() {
 }
 function showHelp(back=closeModal) {
   modalState={type:'help'};
-  showModal(`${closeButton()}<span class="eyebrow">ВСЁ ПОД РУКОЙ</span><h2>Управляй своим днём</h2><ul class="help-list"><li>${icon('pin')} Нажми на предмет или человека — Аня подойдёт сама.</li><li>${icon('chat')} Нажми на жителя, чтобы познакомиться. Не каждый разговор станет большой историей.</li><li>${icon('phone')} Телефон хранит чаты и покупки для дома.</li><li>${icon('map')} Перетаскивай сцену для обзора. Кнопки + и − меняют масштаб.</li><li>${icon('pause')} Пробел — пауза, Esc — закрыть окно. Кнопка «Сейчас» подсказывает следующий шаг.</li></ul><p class="muted">История заканчивается вечером дома после принятия первой анкеты. Чтение не расходует игровое время.</p><button id="help-back" class="primary">Понятно ${icon('check')}</button>`,'help');
-  bindClose();$('#help-back').onclick=back;
+  showModal(`${closeButton()}<span class="eyebrow">ВСЁ ПОД РУКОЙ</span><h2>Управляй своим днём</h2><ul class="help-list"><li>${icon('pin')} Нажми на предмет или человека — Аня подойдёт сама.</li><li>${icon('chat')} Нажми на жителя, чтобы познакомиться. Не каждый разговор станет большой историей.</li><li>${icon('phone')} Телефон хранит чаты и покупки для дома.</li><li>${icon('map')} Перетаскивай сцену для обзора. Кнопки + и − меняют масштаб.</li><li>${icon('pause')} Пробел — пауза, Esc — закрыть окно. Кнопка «Сейчас» подсказывает следующий шаг.</li></ul><p class="muted">История заканчивается вечером дома после принятия первой анкеты. Чтение не расходует игровое время.</p><button id="help-tour" class="primary">Показать прямо в игре</button><button id="help-back" class="secondary">Понятно ${icon('check')}</button>`,'help');
+  bindClose();$('#help-back').onclick=back;$('#help-tour').onclick=startTutorial;
 }
 function showAlarm() {
   modalState = {
@@ -728,6 +734,7 @@ function confirmRestart() {
   $('#reset-confirm').onclick = () => {
     platform.acceptCurrentSave();
     state = createLife();
+    tutorial.reset();
     save();
     scene.destroy();
     world = createMovement('home');
@@ -750,7 +757,7 @@ function showSettings() {
   modalState = {
     type: 'settings'
   };
-  showModal(`${closeButton()}<h2>Передышка</h2>${audioSettingsMarkup()}<label class="setting-row"><span>Меньше декоративных движений</span><input id="motion" type="checkbox" ${preferences.reducedMotion ? 'checked' : ''}></label><button id="export" class="secondary">Скачать мою историю</button><label class="secondary file-label">Загрузить историю<input id="import" type="file" accept=".json,application/json"></label><button id="help" class="secondary">Как играть</button><button id="main-menu" class="secondary">Главное меню</button><button id="restart" class="text-button">Новое прохождение</button><small class="muted">История сохраняется на этом устройстве.</small>`, 'card');
+  showModal(`${closeButton()}<h2>Передышка</h2>${audioSettingsMarkup()}<label class="setting-row"><span>Меньше декоративных движений</span><input id="motion" type="checkbox" ${preferences.reducedMotion ? 'checked' : ''}></label><button id="export" class="secondary">Скачать мою историю</button><label class="secondary file-label">Загрузить историю<input id="import" type="file" accept=".json,application/json"></label><button id="tutorial-repeat" class="secondary">Показать, куда нажимать</button><button id="help" class="secondary">Как играть</button><button id="main-menu" class="secondary">Главное меню</button><button id="restart" class="text-button">Новое прохождение</button><small class="muted">История сохраняется на этом устройстве.</small>`, 'card');
   bindClose();
   $('#audio-enabled').onchange=e=>sound.updatePreferences({enabled:e.target.checked});
   document.querySelectorAll('[data-audio-level]').forEach(input=>input.oninput=()=>{sound.updatePreferences({[input.dataset.audioLevel]:Number(input.value)/100});input.nextElementSibling.textContent=input.value+'%';});
@@ -764,6 +771,7 @@ function showSettings() {
   $('#export').onclick = () => platform.export(state);
   $('#restart').onclick = confirmRestart;
   $('#help').onclick=()=>showHelp(showSettings);
+  $('#tutorial-repeat').onclick=startTutorial;
   $('#main-menu').onclick=showWelcome;
   $('#import').onchange = async e => {
     const file = e.target.files[0];
@@ -810,7 +818,7 @@ document.addEventListener('keydown', e => {
     refresh();
   }
   if (e.key === 'Tab' && modalState) {
-    const buttons = [...$('#modal-root').querySelectorAll('button,input')].filter(b => !b.disabled),
+    const buttons = [...$('#modal-root').querySelectorAll('button,input')].filter(b => !b.disabled && !b.hidden && b.getClientRects().length),
       first = buttons[0],
       lastButton = buttons.at(-1);
     if (e.shiftKey && (document.activeElement === first || document.activeElement.classList.contains('modal'))) {
