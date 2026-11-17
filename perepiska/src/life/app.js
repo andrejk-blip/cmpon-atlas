@@ -1,9 +1,11 @@
 import { createLife, reduceLife, viewLife, validateLife } from './engine.js';
 import { HERO, OUTFITS, SHOP, INTERVIEW, DATE_SCENE, TEAM_MEETING, TEAM_HANDOFF } from './content.js';
-import { createMovement, moveTo, stepMovement, MAPS } from './movement.js';
+import { createMovement, moveTo, moveToActor, releaseInteraction, syncCompanions, stepMovement, MAPS } from './movement.js';
 import { createLifeScene } from './scene.js';
 import { platform } from './platform.js';
 import { icon } from './icons.js';
+import { getNpcConversation } from './relationships.js';
+import { portrait, syncPortraits, animatePortraits } from './portraits.js';
 const $ = s => document.querySelector(s);
 const esc = s => String(s).replace(/[&<>"']/g, c => ({
   '&': '&amp;',
@@ -43,14 +45,15 @@ $('#app').innerHTML = `<main class="life-game"><div id="life-stage" aria-label="
 <div class="location-tag"><span id="location-name">Моя квартира</span><small id="location-detail">День 1 · Новая работа</small></div>
 <div class="camera-controls"><button id="zoom-in" aria-label="Приблизить">+</button><button id="zoom-out" aria-label="Отдалить">−</button><button id="pause" aria-label="Пауза">${icon('pause')}</button><button id="speed" aria-label="Изменить скорость">1×</button></div>
 <div id="quick-actions" class="quick-actions" aria-label="Места поблизости"></div>
-<footer class="life-footer"><button id="profile" class="hero-card" aria-label="Аня — мой персонаж"><span id="hero-portrait" class="hero-portrait"><img src="./assets/anna-life-walk.webp" alt=""></span><span><b>Аня, 25</b><small id="hero-role">Первый день</small></span></button><button id="objective" class="objective"><small>СЕЙЧАС</small><span></span>${icon('arrow')}</button><nav class="pocket"><button id="phone" aria-label="Телефон и чаты">${icon('phone')}<i id="unread">3</i><small>Телефон</small></button><button id="world-map" aria-label="Карта моей жизни">${icon('map')}<small>Карта</small></button><button id="bag" aria-label="Моя сумка">${icon('bag')}<small>Сумка</small></button></nav></footer>
+<footer class="life-footer"><button id="profile" class="hero-card" aria-label="Аня — мой персонаж"><span id="hero-portrait" class="hero-portrait">${portrait('anna-'+(state.outfit||'home'),'Аня')}</span><span><b>Аня, 25</b><small id="hero-role">Первый день</small></span></button><button id="objective" class="objective"><small>СЕЙЧАС</small><span></span>${icon('arrow')}</button><nav class="pocket"><button id="phone" aria-label="Телефон и чаты">${icon('phone')}<i id="unread">3</i><small>Телефон</small></button><button id="world-map" aria-label="Карта моей жизни">${icon('map')}<small>Карта</small></button><button id="bag" aria-label="Моя сумка">${icon('bag')}<small>Сумка</small></button></nav></footer>
 <div id="modal-root"></div></main>`;
 let scene = makeScene();
 function makeScene() {
   return createLifeScene($('#life-stage'), world, {
     onGround: walkGround,
     onSpot: go,
-    onHero: showProfile
+    onHero: showProfile,
+    onNpc: goNpc
   });
 }
 function notify(text) {
@@ -87,6 +90,7 @@ function act(action, showNotice = false) {
   return accepted;
 }
 function spots() {
+  if(state.phase==='complete')return [];
   if (state.scene === 'home') {
     if (!state.flags.awake) return [{
       id: 'bed',
@@ -184,8 +188,8 @@ function refresh() {
   $('#location-name').textContent = state.scene === 'home' ? 'Моя квартира' : 'Лесная улица';
   $('#location-detail').textContent = state.scene === 'home' ? state.phase === 'morning' ? 'Первое утро на новой работе' : 'Мой вечер' : state.phase === 'shift' ? 'Первый адрес · Счётный участок 04' : 'После смены';
   $('#hero-role').textContent = state.xp ? 'Первый адрес пройден' : 'Начинающая переписчица';
-  const row = state.outfit === 'coral' ? 1 : state.outfit === 'sage' ? 2 : 0;
-  $('#hero-portrait img').style.top = -13 - row * 150 + 'px';
+  const artId='anna-'+(state.outfit||'home');
+  if($('#hero-portrait canvas')?.dataset.character!==artId) $('#hero-portrait').innerHTML=portrait(artId,'Аня');
   $('#objective span').textContent = world.player.moving ? 'Иду…' : v.objective;
   const unread = v.availableChats.filter(c => c.unread).length;
   $('#unread').textContent = unread;
@@ -196,10 +200,14 @@ function refresh() {
   const available = spots();
   $('#quick-actions').innerHTML = available.map(s => `<button data-go="${s.id}" class="${s.done ? 'done' : ''} ${s.primary ? 'next' : ''}" aria-label="Быстрый переход: ${s.label}">${icon(s.done ? 'check' : s.icon)}<span>${s.short}</span></button>`).join('');
   $('#quick-actions').querySelectorAll('[data-go]').forEach(b => b.onclick = () => go(b.dataset.go));
+  syncCompanions(world,{mentor:['shift','evening'].includes(state.phase),max:state.phase==='evening'&&['accepted','talking','met'].includes(state.date.status)});
   scene.update(state, available);
+  syncPortraits();
+  document.documentElement.classList.toggle('scene-paused',paused);
 }
 function walkGround(node) {
   if (modalState || !state.flags.awake || state.phase === 'complete') return;
+  releaseInteraction(world);
   moveTo(world, node);
   refresh();
 }
@@ -209,10 +217,12 @@ function go(spot) {
     showAlarm();
     return;
   }
-  moveTo(world, nodeFor[spot], {
-    interaction: spot
-  });
-  scene.center();
+  releaseInteraction(world);
+  const companion=spot==='mentor'?'vera':spot==='bench'?'max':null;
+  if(!companion||!world.companions?.some(actor=>actor.id===companion)||!moveToActor(world,companion)){
+    moveTo(world, nodeFor[spot], {interaction: spot});
+  }
+  scene.follow();
   refresh();
 }
 function objectiveAction() {
@@ -227,20 +237,24 @@ function objectiveAction() {
 }
 function arrive(event) {
   if (!event.interaction) return;
+  const interaction=event.interaction==='npc:vera'?'mentor':event.interaction==='npc:max'?'bench':event.interaction;
   act({
     type: 'ARRIVE',
-    spotId: event.interaction
+    spotId: interaction
   });
   if (modalState?.type === 'conflict') return;
-  interact(event.interaction);
+  if(interaction.startsWith('npc:')) showNpc(interaction.slice(4));
+  else interact(interaction);
 }
 function showModal(html, kind = 'card') {
   $('#modal-root').innerHTML = `<div class="scrim"><section class="modal ${kind}" role="dialog" aria-modal="true" tabindex="-1">${html}</section></div>`;
   $('#modal-root .modal').focus();
+  syncPortraits();
 }
 function closeModal() {
   if (modalState?.type === 'conflict') return;
   modalState = null;
+  releaseInteraction(world);
   $('#modal-root').replaceChildren();
   refresh();
 }
@@ -249,6 +263,21 @@ function closeButton() {
 }
 function bindClose() {
   document.querySelectorAll('[data-close]').forEach(b => b.onclick = closeModal);
+}
+function showWelcome() {
+  if(modalState?.type==='conflict')return;
+  releaseInteraction(world);
+  modalState={type:'welcome'};
+  const started=state.flags.awake;
+  showModal(`<div class="welcome-copy"><span class="eyebrow">ПИЛОТ · ОДНА ЗАКОНЧЕННАЯ ИСТОРИЯ</span><h1>Переписка<span>♡</span></h1><h2>Первый день Ани</h2><p>Собраться на новую работу.<br>Познакомиться с соседями.<br>И оставить время для себя.</p><button id="start-pilot" class="primary">${started?'Продолжить мою историю':'Начать первый день'} ${icon('arrow')}</button><button id="welcome-help" class="text-button">Как играть</button>${started?'<button id="welcome-new" class="text-button">Начать заново</button>':''}<small class="pilot-note">Мышь или касание · Сохранение на этом устройстве</small><span class="pilot-version">Пилот 0.3 · Можно пройти от начала до конца</span></div><div class="welcome-character">${portrait('anna-'+(state.outfit||'home'),'Аня',true)}<span>Новая работа.<br>Свои планы.</span></div>`,'welcome');
+  $('#start-pilot').onclick=()=>{closeModal();paused=false;refresh();if(!state.flags.awake)showAlarm();else if(state.phase==='complete')showEnding();};
+  $('#welcome-help').onclick=()=>showHelp(showWelcome);
+  if($('#welcome-new'))$('#welcome-new').onclick=confirmRestart;
+}
+function showHelp(back=closeModal) {
+  modalState={type:'help'};
+  showModal(`${closeButton()}<span class="eyebrow">ВСЁ ПОД РУКОЙ</span><h2>Управляй своим днём</h2><ul class="help-list"><li>${icon('pin')} Нажми на предмет или человека — Аня подойдёт сама.</li><li>${icon('chat')} Нажми на жителя, чтобы познакомиться. Не каждый разговор станет большой историей.</li><li>${icon('phone')} Телефон хранит чаты и покупки для дома.</li><li>${icon('map')} Перетаскивай сцену для обзора. Кнопки + и − меняют масштаб.</li><li>${icon('pause')} Пробел — пауза, Esc — закрыть окно. Кнопка «Сейчас» подсказывает следующий шаг.</li></ul><p class="muted">История заканчивается вечером дома после принятия первой анкеты. Чтение не расходует игровое время.</p><button id="help-back" class="primary">Понятно ${icon('check')}</button>`,'help');
+  bindClose();$('#help-back').onclick=back;
 }
 function showAlarm() {
   modalState = {
@@ -329,7 +358,7 @@ function interact(spot) {
         act({
           type: 'MEET_TEAM'
         });
-        closeModal();
+        showNpc('vera');
       });
       return;
     }
@@ -338,12 +367,12 @@ function interact(spot) {
         act({
           type: 'HAND_IN'
         });
-        closeModal();
-        notify('18:00. Смена позади — теперь твои планы.');
+        showNpc('vera');
+        notify('Анкета принята. Можно обсудить первый день с Верой.');
       });
       return;
     }
-    showMeeting('Вера', 'Твой адрес — квартира 12. Сначала выясни, кто постоянно живёт здесь, затем — как люди ведут хозяйство.', 'Поняла', closeModal);
+    showNpc('vera');
     return;
   }
   if (spot === 'respondent') {
@@ -354,14 +383,14 @@ function interact(spot) {
     if (state.interview.status === 'ready') act({
       type: 'VISIT'
     });
-    if (state.interview.status === 'talking') showInterview();else notify('Ответы уже на планшете. Вера ждёт результат.');
+    if (state.interview.status === 'talking') showInterview();else showResidents();
     return;
   }
   if (spot === 'bench') {
     if (state.date.status === 'accepted') act({
       type: 'DATE'
     });
-    if (state.date.status === 'talking' || state.date.status === 'met') showDate();else openPhone('max');
+    if (state.date.status === 'talking') showDate();else if(state.date.status==='met') showNpc('max');else openPhone('max');
     return;
   }
   if (spot === 'entrance') {
@@ -399,7 +428,7 @@ function showWardrobe() {
   modalState = {
     type: 'wardrobe'
   };
-  showModal(`${closeButton()}<span class="eyebrow">МОЙ ГАРДЕРОБ</span><h2>Какой сегодня настрой?</h2><div class="outfit-options">${OUTFITS.map(o => `<button data-outfit="${o.id}" class="${state.outfit === o.id ? 'selected' : ''}" style="--outfit:${o.color}"><span class="outfit-doll" style="background-position:0 ${o.spriteRow === 1 ? '50' : '100'}%"></span><b>${esc(o.name)}</b><small>В моём гардеробе</small></button>`).join('')}</div>`, 'wardrobe');
+  showModal(`${closeButton()}<span class="eyebrow">МОЙ ГАРДЕРОБ</span><h2>Какой сегодня настрой?</h2><div class="outfit-options">${OUTFITS.map(o => `<button data-outfit="${o.id}" class="${state.outfit === o.id ? 'selected' : ''}" style="--outfit:${o.color}">${portrait('anna-'+o.id,o.name,true,'outfit-doll')}<b>${esc(o.name)}</b><small>В моём гардеробе</small></button>`).join('')}</div>`, 'wardrobe');
   bindClose();
   document.querySelectorAll('[data-outfit]').forEach(b => b.onclick = () => {
     act({
@@ -414,7 +443,7 @@ function showMeeting(name, text, label, action) {
   modalState = {
     type: 'meeting'
   };
-  showModal(`${closeButton()}<div class="speaker"><span class="mentor-portrait"></span><span><small>ПЕРВАЯ СМЕНА</small><b>${name}</b></span></div><div class="speech">${esc(text)}</div><button id="meeting-confirm" class="primary">${esc(label)} ${icon('arrow')}</button>`, 'card');
+  showModal(`${closeButton()}<div class="speaker">${portrait('vera','Вера')}<span><small>ПЕРВАЯ СМЕНА</small><b>${name}</b></span></div><div class="speech">${esc(text)}</div><button id="meeting-confirm" class="primary">${esc(label)} ${icon('arrow')}</button>`, 'card');
   bindClose();
   $('#meeting-confirm').onclick = action;
 }
@@ -440,7 +469,7 @@ function renderPhone() {
     thread = v.availableChats.find(c => c.id === modalState.thread);
   let content = '';
   if (thread) {
-    content = `<div class="phone-thread-head"><button id="thread-back" class="icon-button" aria-label="Назад к чатам">${icon('back')}</button>${chatAvatar(thread)}<div><b>${esc(thread.shortName)}</b><small>${thread.id === 'max' ? 'Знакомый · 27' : thread.id === 'friend' ? 'Подруга' : 'Наставница'}</small></div></div><div class="messages">${thread.messages.slice(-5).map(m => `<div class="message ${m.speaker === HERO.name ? 'mine' : ''}">${esc(m.text)}<time>${Math.floor(m.time / 60)}:${String(m.time % 60).padStart(2, '0')}</time></div>`).join('')}</div><div class="reply-options">${thread.choices.map(c => `<button data-reply="${c.id}">${esc(c.label)} ${icon('arrow')}</button>`).join('')}${!thread.choices.length ? '<span class="caught-up">Пока всё. Жизнь — за экраном.</span>' : ''}</div>`;
+    content = `<div class="phone-thread-head"><button id="thread-back" class="icon-button" aria-label="Назад к чатам">${icon('back')}</button>${chatAvatar(thread)}<div><b>${esc(thread.shortName)}</b><small>${thread.id === 'max' ? 'Знакомый · 27' : thread.id === 'friend' ? 'Подруга' : 'Наставница'}</small></div></div><div class="messages">${thread.messages.slice(-5).map(m => `<div class="message ${m.speaker === HERO.name ? 'mine' : ''}">${esc(m.text)}<time>${Math.floor(m.time / 60)}:${String(m.time % 60).padStart(2, '0')}</time></div>`).join('')}</div><div class="reply-options">${thread.choices.map(c => `<button data-reply="${c.id}">${esc(c.label)} ${icon('arrow')}</button>`).join('')}${!thread.choices.length ? (thread.id==='friend'&&state.interview.status==='accepted'?'<button id="kira-more">Рассказать Кире про свой день</button>':'<span class="caught-up">Пока всё. Жизнь — за экраном.</span>') : ''}</div>`;
   } else if (modalState.tab === 'shop') {
     content = `<div class="phone-page-title"><small>ДЛЯ СВОЕГО УГОЛКА</small><h2>Маленькие радости</h2><p>Сегодня можно начать с одной вещи.</p></div><div class="shop-items">${v.shop.map(item => `<article class="shop-item"><div class="product-art ${item.id}">${icon(item.id)}</div><div><b>${esc(item.name)}</b><small>${esc(item.description)}</small><button data-buy="${item.id}" ${item.owned || !item.affordable || !['morning', 'evening'].includes(state.phase) ? 'disabled' : ''}>${item.owned ? 'Уже дома' : icon('coin') + item.price}</button></div></article>`).join('')}</div><div class="shop-balance">Осталось ${icon('coin')} <b>${state.coins}</b></div><p class="shop-note">Это игровые монеты. Купленное остаётся в квартире.</p>`;
   } else {
@@ -453,7 +482,8 @@ function renderPhone() {
       modalState.thread = null;
       renderPhone();
     };
-    document.querySelectorAll('[data-reply]').forEach(b => b.onclick = () => {
+    if($('#kira-more'))$('#kira-more').onclick=()=>showNpc('kira',()=>openPhone('friend'));
+  document.querySelectorAll('[data-reply]').forEach(b => b.onclick = () => {
       act({
         type: 'CHAT',
         channelId: thread.id,
@@ -485,7 +515,32 @@ function renderPhone() {
   }
 }
 function chatAvatar(c) {
-  return c.id === 'max' ? '<span class="chat-avatar max-avatar"><img src="./assets/max-life.webp" alt="Макс"></span>' : c.id === 'team' ? '<span class="chat-avatar mentor-portrait"></span>' : `<span class="chat-avatar" style="background:${c.color}">${c.avatar}</span>`;
+  const id=c.id==='team'?'vera':c.id==='friend'?'kira':'max';
+  return `<span class="chat-avatar">${portrait(id,c.shortName)}</span>`;
+}
+function goNpc(id) {
+  if(modalState||!state.flags.awake||state.phase==='complete')return;
+  if(id==='vera'){go('mentor');return;}
+  if(id==='max'){go('bench');return;}
+  if(moveToActor(world,id)){scene.follow();refresh();}
+}
+function showNpc(id,back=null,justReplied=false) {
+  if(modalState?.type==='conflict')return;
+  const conversation=getNpcConversation(state,id);
+  if(!conversation?.reachable){notify(conversation?.reason||'Сейчас не поговорить.');return;}
+  modalState={type:'npc',id,back};
+  showModal(`${closeButton()}<div class="npc-heading">${portrait(id,conversation.name)}<div><span class="eyebrow">${esc(conversation.role)}</span><h2>${esc(conversation.name)}</h2></div></div><div class="speech">${justReplied&&conversation.lastReply&&conversation.lastReply!==conversation.opening?`<p>${esc(conversation.lastReply)}</p>`:''}${esc(conversation.opening)}</div><div class="npc-options">${conversation.choices.map(c=>`<button class="secondary" data-npc-choice="${c.id}">${esc(c.label)} ${icon('chat')}</button>`).join('')}</div>${conversation.nextHint?`<p class="conversation-hint">${esc(conversation.nextHint)}</p>`:''}<button id="npc-back" class="text-button">${back?'Вернуться к разговору':'До встречи'}</button>`,'npc-dialog');
+  bindClose();
+  document.querySelectorAll('[data-npc-choice]').forEach(button=>button.onclick=()=>{
+    if(act({type:'NPC_TALK',npcId:id,choiceId:button.dataset.npcChoice},true))showNpc(id,back,true);
+  });
+  $('#npc-back').onclick=back||closeModal;
+}
+function showResidents() {
+  if(modalState?.type==='conflict')return;
+  modalState={type:'residents'};
+  showModal(`${closeButton()}<span class="eyebrow">ЛЕСНАЯ, 8 · КВАРТИРА 12</span><h2>Знакомые лица</h2><div class="people-choices">${INTERVIEW.roster.map(p=>`<button data-neighbor="${p.id}">${portrait(p.id,p.name)}<b>${p.name}</b></button>`).join('')}</div><p>Рабочие ответы сохранены. Можно немного поговорить.</p>`,'card');
+  bindClose();document.querySelectorAll('[data-neighbor]').forEach(button=>button.onclick=()=>showNpc(button.dataset.neighbor,showResidents));
 }
 function showInterview() {
   if (modalState?.type === 'conflict') return;
@@ -496,12 +551,14 @@ function showInterview() {
   renderInterview();
 }
 function renderInterview() {
+  if(modalState?.type==='npc')modalState={type:'interview',screen:'talk'};
   if (modalState?.type !== 'interview') return;
   const v = viewLife(state),
     form = modalState.screen === 'roster';
-  const body = form ? `<h2>Кто ведёт хозяйство вместе?</h2><p class="form-instruction">Нажми на карточку, чтобы выбрать группу. Гостя оставь отдельно.</p><div class="resident-cards">${INTERVIEW.roster.map(p => `<button data-person="${p.id}" class="resident-card group-${allocation[p.id]}" aria-label="${p.name}: ${allocation[p.id] ? 'домохозяйство ' + allocation[p.id] : 'не включён'}"><span class="resident-head" style="--person:${p.color}">${icon('person')}</span><b>${p.name}</b><small>${allocation[p.id] ? 'Домохозяйство ' + allocation[p.id] : 'Не включён'}</small></button>`).join('')}</div><div class="household-groups"><div><span>1</span><b>Домохозяйство</b><small>${groupNames(1)}</small></div><div><span>2</span><b>Домохозяйство</b><small>${groupNames(2)}</small></div></div><p id="roster-error" class="form-error" role="status"></p><button id="submit-roster" class="primary">Сохранить на планшет ${icon('check')}</button><button id="back-interview" class="text-button">Ещё раз посмотреть ответы</button>` : `<div class="speech">${esc(state.interview.lastReply)}</div><div class="interview-options">${v.interviewQuestions.map(q => `<button data-question="${q.id}">${esc(q.label)} ${icon('arrow')}</button>`).join('')}${v.canSubmit ? `<button id="open-roster" class="primary">Собрать домохозяйства ${icon('arrow')}</button>` : ''}</div>`;
-  showModal(`${closeButton()}<span class="eyebrow">ПЕРВЫЙ АДРЕС · ЭЛЕКТРОННАЯ АНКЕТА</span><div class="interview-heading"><div class="tiny-people">${icon('person')}${icon('person')}</div><span><b>${INTERVIEW.name}</b><small>${INTERVIEW.address}</small></span></div>${body}`, 'interview');
+  const body = form ? `<h2>Кто ведёт хозяйство вместе?</h2><p class="form-instruction">Нажми на карточку, чтобы выбрать группу. Гостя оставь отдельно.</p><div class="resident-cards">${INTERVIEW.roster.map(p => `<button data-person="${p.id}" class="resident-card group-${allocation[p.id]}" aria-label="${p.name}: ${allocation[p.id] ? 'домохозяйство ' + allocation[p.id] : 'не включён'}"><span class="resident-head" style="--person:${p.color}">${portrait(p.id,p.name)}</span><b>${p.name}</b><small>${allocation[p.id] ? 'Домохозяйство ' + allocation[p.id] : 'Не включён'}</small></button>`).join('')}</div><div class="household-groups"><div><span>1</span><b>Домохозяйство</b><small>${groupNames(1)}</small></div><div><span>2</span><b>Домохозяйство</b><small>${groupNames(2)}</small></div></div><p id="roster-error" class="form-error" role="status"></p><button id="submit-roster" class="primary">Сохранить на планшет ${icon('check')}</button><button id="back-interview" class="text-button">Ещё раз посмотреть ответы</button>` : `<div class="speech">${esc(state.interview.lastReply)}</div><div class="interview-options">${v.interviewQuestions.map(q => `<button data-question="${q.id}">${esc(q.label)} ${icon('arrow')}</button>`).join('')}${v.canSubmit ? `<button id="open-roster" class="primary">Собрать домохозяйства ${icon('arrow')}</button>` : ''}</div>`;
+  showModal(`${closeButton()}<span class="eyebrow">ПЕРВЫЙ АДРЕС · ЭЛЕКТРОННАЯ АНКЕТА</span><div class="interview-heading"><div class="tiny-people">${portrait('ilya','Илья')}${portrait('anton','Антон')}</div><span><b>${INTERVIEW.name}</b><small>${INTERVIEW.address}</small></span></div>${body}<div class="resident-greetings">${INTERVIEW.roster.map(p=>`<button data-greeting="${p.id}" class="text-button">Поговорить: ${p.name}</button>`).join('')}</div>`, 'interview');
   bindClose();
+  document.querySelectorAll('[data-greeting]').forEach(b=>b.onclick=()=>showNpc(b.dataset.greeting,renderInterview));
   document.querySelectorAll('[data-question]').forEach(b => b.onclick = () => {
     act({
       type: 'ASK',
@@ -548,7 +605,7 @@ function showDate() {
   modalState = {
     type: 'date'
   };
-  showModal(`${closeButton()}<div class="date-scene"><img src="./assets/max-life.webp" alt="Макс, 27 лет"><div><span class="eyebrow">ВЕЧЕР БЕЗ СПЕШКИ</span><h2>Привет, Макс.</h2><div class="speech">${esc(state.date.status === 'met' ? state.date.lastReply : DATE_SCENE.opening)}</div></div></div><div class="date-options">${state.date.status === 'talking' ? DATE_SCENE.choices.map(c => `<button data-date="${c.id}">${esc(c.label)} ${icon('heart')}</button>`).join('') : '<button id="date-done" class="primary">Мне тоже было хорошо ♡</button>'}</div>`, 'date');
+  showModal(`${closeButton()}<div class="date-scene">${portrait('max','Макс, 27 лет',true)}<div><span class="eyebrow">ВЕЧЕР БЕЗ СПЕШКИ</span><h2>Привет, Макс.</h2><div class="speech">${esc(state.date.status === 'met' ? state.date.lastReply : DATE_SCENE.opening)}</div></div></div><div class="date-options">${state.date.status === 'talking' ? DATE_SCENE.choices.map(c => `<button data-date="${c.id}">${esc(c.label)} ${icon('heart')}</button>`).join('') : '<button id="date-done" class="primary">Мне тоже было хорошо ♡</button>'}</div>`, 'date');
   bindClose();
   document.querySelectorAll('[data-date]').forEach(b => b.onclick = () => {
     act({
@@ -557,7 +614,7 @@ function showDate() {
     });
     showDate();
   });
-  if ($('#date-done')) $('#date-done').onclick = closeModal;
+  if ($('#date-done')) $('#date-done').onclick = ()=>showNpc('max');
 }
 function showMap() {
   if (!state.flags.awake) {
@@ -605,9 +662,10 @@ function showEnding() {
     type: 'ending'
   };
   const v = viewLife(state);
-  showModal(`<span class="eyebrow">ДЕНЬ 1 · ТЫ СПРАВИЛАСЬ</span><h1>Маленькое<br>большое начало.</h1><div class="day-outcomes"><div>${icon('star')}<span>${esc(v.outcome.work)}</span></div><div>${icon('home')}<span>${esc(v.outcome.home)}</span></div><div>${icon('heart')}<span>${esc(v.outcome.romance)}</span></div></div><div class="day-wallet">На свои планы осталось ${icon('coin')} <b>${state.coins}</b></div><p class="next-chapter">Дальше — самостоятельный маршрут, новые соседи и продолжение личной истории. Следующая глава пока не открыта.</p><button id="end-home" class="primary">Посмотреть мой дом ${icon('home')}</button><button id="end-restart" class="text-button">Прожить день по-другому</button>`, 'ending');
+  showModal(`<span class="eyebrow">ПИЛОТ ПРОЙДЕН · ДЕНЬ 1</span><h1>Твой первый<br>день завершён.</h1><div class="day-outcomes"><div>${icon('star')}<span>${esc(v.outcome.work)}</span></div><div>${icon('home')}<span>${esc(v.outcome.home)}</span></div><div>${icon('heart')}<span>${esc(v.outcome.romance)}</span></div></div><div class="day-wallet">На свои планы осталось ${icon('coin')} <b>${state.coins}</b></div><p class="next-chapter">Сегодня ты познакомилась с работой, получила деньги за первую анкету и выбрала свой вечер. Спасибо за игру! Эту историю можно пройти ещё раз с другими решениями.</p><button id="end-home" class="primary">Посмотреть мой дом ${icon('home')}</button><button id="end-menu" class="secondary">На главный экран</button><button id="end-restart" class="text-button">Прожить день по-другому</button>`, 'ending');
   $('#end-home').onclick = closeModal;
   $('#end-restart').onclick = confirmRestart;
+  $('#end-menu').onclick=showWelcome;
 }
 function confirmRestart() {
   modalState = {
@@ -636,7 +694,7 @@ function showSettings() {
   modalState = {
     type: 'settings'
   };
-  showModal(`${closeButton()}<h2>Передышка</h2><label class="setting-row"><span>Меньше декоративных движений</span><input id="motion" type="checkbox" ${preferences.reducedMotion ? 'checked' : ''}></label><button id="export" class="secondary">Скачать мою историю</button><label class="secondary file-label">Загрузить историю<input id="import" type="file" accept=".json,application/json"></label><button id="restart" class="text-button">Новое прохождение</button><small class="muted">История сохраняется на этом устройстве.</small>`, 'card');
+  showModal(`${closeButton()}<h2>Передышка</h2><label class="setting-row"><span>Меньше декоративных движений</span><input id="motion" type="checkbox" ${preferences.reducedMotion ? 'checked' : ''}></label><button id="export" class="secondary">Скачать мою историю</button><label class="secondary file-label">Загрузить историю<input id="import" type="file" accept=".json,application/json"></label><button id="help" class="secondary">Как играть</button><button id="main-menu" class="secondary">Главное меню</button><button id="restart" class="text-button">Новое прохождение</button><small class="muted">История сохраняется на этом устройстве.</small>`, 'card');
   bindClose();
   $('#motion').onchange = e => {
     preferences.reducedMotion = e.target.checked;
@@ -645,6 +703,8 @@ function showSettings() {
   };
   $('#export').onclick = () => platform.export(state);
   $('#restart').onclick = confirmRestart;
+  $('#help').onclick=()=>showHelp(showSettings);
+  $('#main-menu').onclick=showWelcome;
   $('#import').onchange = async e => {
     const file = e.target.files[0];
     if (!file) return;
@@ -680,7 +740,7 @@ $('#speed').onclick = () => {
   refresh();
 };
 document.addEventListener('keydown', e => {
-  if (e.key === 'Escape' && modalState && !['alarm', 'conflict'].includes(modalState.type)) closeModal();
+  if (e.key === 'Escape' && modalState && !['alarm', 'conflict','welcome','ending'].includes(modalState.type)) closeModal();
   if (e.code === 'Space' && !modalState && !['BUTTON', 'INPUT'].includes(document.activeElement.tagName)) {
     e.preventDefault();
     paused = !paused;
@@ -708,11 +768,12 @@ function frame(now) {
   last = now;
   if (!document.hidden && !modalState && !paused) {
     for (const event of stepMovement(world, dt * speed)) arrive(event);
-    scene.draw();
+    scene.draw(dt * speed,{reducedMotion:preferences.reducedMotion});
   }
+  if(!document.hidden)animatePortraits(dt,{reducedMotion:preferences.reducedMotion,paused});
   requestAnimationFrame(frame);
 }
 refresh();
-if (!state.flags.awake) showAlarm();else if (state.phase === 'complete') showEnding();
+showWelcome();
 requestAnimationFrame(frame);
 platform.offline();

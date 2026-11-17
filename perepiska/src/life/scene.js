@@ -1,9 +1,10 @@
 import { MAPS, nearestNode } from './movement.js';
 import { icon } from './icons.js';
+import { CHARACTER_ART, createPose, stepPose, loadCharacter, drawCharacter } from './animation.js';
 export function createLifeScene(host, world, events) {
   const map = MAPS[world.location],
     abort = new AbortController();
-  host.innerHTML = `<div class="life-world ${world.location}"><canvas aria-hidden="true"></canvas><div class="hotspots"></div><button class="hero-hit" aria-label="Аня — мой персонаж"></button></div>`;
+  host.innerHTML = `<div class="life-world ${world.location}"><canvas aria-hidden="true"></canvas><div class="hotspots"></div><div class="npc-targets"></div><button class="hero-hit" aria-label="Аня — мой персонаж"></button></div>`;
   const surface = host.querySelector('.life-world'),
     canvas = host.querySelector('canvas'),
     ctx = canvas.getContext('2d');
@@ -11,18 +12,20 @@ export function createLifeScene(host, world, events) {
   canvas.width = 1000 * ratio;
   canvas.height = 700 * ratio;
   ctx.scale(ratio, ratio);
-  const pictures = {};
-  for (const [id, file] of Object.entries({
-    anna: 'anna-life-walk.webp',
-    residents: 'residents-walk.webp',
-    mentor: 'world-walk.webp',
-    max: 'max-life.webp'
-  })) {
-    const img = new Image();
-    img.src = './assets/' + file;
-    img.onload = () => draw();
-    pictures[id] = img;
+  const atlases = {}, poses = new Map();
+  let disposed = false, animationClock = 0, reducedMotion = false;
+  for (const id of Object.keys(CHARACTER_ART)) loadCharacter(id).then(atlas => {
+    if (disposed) return;
+    atlases[id] = atlas;
+    draw();
+  });
+  function poseFor(id) {
+    if (!poses.has(id)) poses.set(id, createPose([...id].reduce((n,c)=>n+c.charCodeAt(0),0)%51/10));
+    return poses.get(id);
   }
+  const npcLayer = host.querySelector('.npc-targets');
+  const npcButtons = new Map();
+  const labels = {'resident-1':'Николай','resident-2':'Денис',vera:'Вера',max:'Макс'};
   let state = null,
     zoom = 1,
     pan = {
@@ -107,22 +110,6 @@ export function createLifeScene(host, world, events) {
     host.querySelectorAll('[data-spot]').forEach(b => b.onclick = () => events.onSpot(b.dataset.spot));
     draw();
   }
-  function sprite(img, a, row = 0, baseSize = 130) {
-    if (!img.complete || !img.naturalWidth) return;
-    const size = baseSize * (.8 + a.y / 1600),
-      frame = a.moving ? Math.floor(a.walkCycle * 4) % 4 : 1;
-    ctx.save();
-    ctx.translate(a.x, a.y);
-    ctx.fillStyle = '#392b3226';
-    ctx.beginPath();
-    ctx.ellipse(0, 0, size * .16, size * .04, 0, 0, 7);
-    ctx.fill();
-    if (a.dir === 'left') ctx.scale(-1, 1);
-    const cw = img.naturalWidth / 4,
-      ch = img.naturalHeight / 3;
-    ctx.drawImage(img, frame * cw, row * ch, cw, ch, -size / 2, -size * .975, size, size);
-    ctx.restore();
-  }
   function plant() {
     ctx.save();
     ctx.translate(150, 300);
@@ -186,11 +173,15 @@ export function createLifeScene(host, world, events) {
     ctx.stroke();
     ctx.restore();
   }
-  function draw() {
-    if (!state) return;
+  function draw(dt = 0, options = {}) {
+    if (!state || disposed) return;
+    reducedMotion = options.reducedMotion ?? reducedMotion;
+    animationClock += Math.max(0, dt);
+
     if (follow && host.clientWidth < 650 && world.player.moving) {
-      pan.x += (host.clientWidth / 2 - world.player.x * zoom - pan.x) * .09;
-      pan.y += (host.clientHeight * .58 - world.player.y * zoom - pan.y) * .09;
+      const ease = reducedMotion ? 1 : 1 - Math.exp(-8 * Math.max(0, dt));
+      pan.x += (host.clientWidth / 2 - world.player.x * zoom - pan.x) * ease;
+      pan.y += (host.clientHeight * .58 - world.player.y * zoom - pan.y) * ease;
       transform();
     }
     ctx.clearRect(0, 0, 1000, 700);
@@ -211,46 +202,45 @@ export function createLifeScene(host, world, events) {
       ctx.stroke();
       ctx.restore();
     }
-    const actors = world.npcs.map(a => ({
-      ...a,
-      kind: 'resident'
-    }));
-    if (world.location === 'district' && state.phase === 'shift') actors.push({
-      x: 600,
-      y: 420,
-      dir: 'left',
-      kind: 'mentor'
-    });
-    if (world.location === 'district' && state.phase === 'evening' && ['accepted', 'talking', 'met'].includes(state.date?.status)) actors.push({
-      x: 605,
-      y: 415,
-      dir: 'left',
-      kind: 'max'
-    });
-    actors.push({
-      ...p,
-      kind: 'hero'
-    });
-    for (const a of actors.sort((a, b) => a.y - b.y)) {
-      if (a.kind === 'hero') {
-        ctx.fillStyle = '#c76c6580';
-        ctx.strokeStyle = '#fff8eb';
-        ctx.lineWidth = 2;
-        ctx.beginPath();
-        ctx.ellipse(a.x, a.y, 22, 7, 0, 0, 7);
-        ctx.fill();
-        ctx.stroke();
-        const row = state.outfit === 'coral' ? 1 : state.outfit === 'sage' ? 2 : 0;
-        sprite(pictures.anna, a, row, world.location === 'home' ? 142 : 125);
-      } else if (a.kind === 'resident') sprite(pictures.residents, a, a.portraitIndex, 105);else if (a.kind === 'mentor') sprite(pictures.mentor, a, 2, 115);else if (a.kind === 'max' && pictures.max.complete && pictures.max.naturalWidth) {
-        const h = 142,
-          w = h * pictures.max.naturalWidth / pictures.max.naturalHeight;
-        ctx.drawImage(pictures.max, a.x - w / 2, a.y - h * .98, w, h);
+    const actors = [...world.npcs, ...(world.companions || [])];
+    const artFor = actor => actor.id === 'anna' ? 'anna-'+(state.outfit || 'home') : actor.id;
+    const heightFor = actor => (CHARACTER_ART[artFor(actor)]?.height || 110) * (.8 + actor.y / 1600) * (actor.id === 'anna' && world.location !== 'home' ? .88 : 1);
+    const activeIds = new Set(actors.map(a => a.id));
+    for (const [id,button] of npcButtons) if (!activeIds.has(id)) {button.remove();npcButtons.delete(id);}
+    for (const actor of actors) {
+      let button = npcButtons.get(actor.id);
+      if (!button) {
+        button = document.createElement('button');
+        button.className = 'npc-hit';
+        button.setAttribute('aria-label','Поговорить: '+labels[actor.id]);
+        button.innerHTML = '<span>'+labels[actor.id]+' '+icon('chat')+'</span>';
+        button.onclick=()=>events.onNpc?.(actor.id);
+        npcLayer.append(button);npcButtons.set(actor.id,button);
       }
+      const height=heightFor(actor);
+      button.style.height=height+'px';
+      button.style.transform = `translate(${actor.x-24}px,${actor.y-height}px)`;
     }
-    heroHit.style.transform = `translate(${p.x - 24}px,${p.y - 115}px)`;
-    if (effect && performance.now() - effect.start < 1500) {
-      const t = (performance.now() - effect.start) / 1500;
+    actors.push(p);
+    for (const actor of actors.sort((a,b)=>a.y-b.y)) {
+      const isHero = actor.id === 'anna';
+      const artId = artFor(actor);
+      const height = heightFor(actor);
+      const pose = poseFor(actor.id);
+      stepPose(pose,actor,dt,{reducedMotion});
+      ctx.save();
+      ctx.fillStyle = '#392b3226';
+      ctx.beginPath();ctx.ellipse(actor.x,actor.y,height*.14,height*.035,0,0,Math.PI*2);ctx.fill();
+      if (isHero) {
+        ctx.strokeStyle='#fff8eb';ctx.lineWidth=1.8;ctx.beginPath();ctx.ellipse(actor.x,actor.y,22,7,0,0,Math.PI*2);ctx.stroke();
+      }
+      ctx.restore();
+      drawCharacter(ctx,atlases[artId],pose,actor.x,actor.y,height,{reducedMotion});
+    }
+    heroHit.style.height=heightFor(p)+'px';
+    heroHit.style.transform = `translate(${p.x - 24}px,${p.y - heightFor(p)}px)`;
+    if (effect && animationClock - effect.start < 1.5) {
+      const t = (animationClock - effect.start) / 1.5;
       ctx.save();
       ctx.globalAlpha = 1 - t;
       ctx.fillStyle = '#fff8e7';
@@ -271,10 +261,11 @@ export function createLifeScene(host, world, events) {
     update,
     draw,
     center,
+    follow() { follow = true; },
     celebrate(text) {
       effect = {
         text,
-        start: performance.now()
+        start: animationClock
       };
       draw();
     },
@@ -287,6 +278,7 @@ export function createLifeScene(host, world, events) {
       transform();
     },
     destroy() {
+      disposed = true;
       abort.abort();
       observer.disconnect();
     }

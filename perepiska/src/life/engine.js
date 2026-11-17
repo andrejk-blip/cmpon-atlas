@@ -1,4 +1,6 @@
 import {HERO, ECONOMY, OUTFITS, SHOP, SPOTS, CHAT_THREADS, INTERVIEW, DATE_SCENE} from './content.js';
+import {NPC_IDS, NPC_EXTRA_SPOTS, createSocial, getNpcConversation, applyNpcTalk} from './relationships.js';
+export {getNpcConversation} from './relationships.js';
 
 const VERSION = 2;
 const MAX_EVENTS = 500;
@@ -29,6 +31,7 @@ export function createLife() {
     }])),
     interview: {status: 'locked', clues: [], answers: null, lastReply: INTERVIEW.opening},
     date: {status: 'invited', choiceId: null, bond: 'unfamiliar', lastReply: DATE_SCENE.opening},
+    social: createSocial(),
     events: [],
     notice: '',
   };
@@ -49,6 +52,7 @@ function chatChoices(state, id) {
 function canonicalAction(action) {
   if (!action || typeof action !== 'object' || Array.isArray(action) || typeof action.type !== 'string') return null;
   switch (action.type) {
+    case 'NPC_TALK': return typeof action.npcId === 'string' && typeof action.choiceId === 'string' ? {type: action.type, npcId: action.npcId, choiceId: action.choiceId} : null;
     case 'ARRIVE': return typeof action.spotId === 'string' ? {type: action.type, spotId: action.spotId} : null;
     case 'WAKE': return action.snooze === undefined || typeof action.snooze === 'boolean' ? {type: action.type, snooze: action.snooze === true} : null;
     case 'OUTFIT': return typeof action.outfitId === 'string' ? {type: action.type, outfitId: action.outfitId} : null;
@@ -72,6 +76,7 @@ function canonicalAction(action) {
 /** Pure rules for one personal first day. Arrival is emitted by the movement layer. */
 export function reduceLife(input, action) {
   const state = clone(input);
+  if (state.social === undefined) state.social = createSocial();
   state.notice = '';
   const a = canonicalAction(action);
   const fail = message => {state.notice = message; return state;};
@@ -99,11 +104,19 @@ export function reduceLife(input, action) {
       return commit(a.snooze ? 'Ещё пять минут — и начинаем день.' : 'Первое утро на новой работе.');
 
     case 'ARRIVE':
-      if (!SPOTS[state.scene]?.includes(a.spotId)) return fail('Сюда пока не пройти.');
+      if (!SPOTS[state.scene]?.includes(a.spotId) && !(state.scene === 'district' && NPC_EXTRA_SPOTS.includes(a.spotId))) return fail('Сюда пока не пройти.');
       if (state.currentSpot === a.spotId) return fail('Анна уже здесь.');
       state.currentSpot = a.spotId;
       advance(2);
       return commit();
+
+    case 'NPC_TALK': {
+      const result = applyNpcTalk(state, a);
+      if (!result.ok) return fail(result.notice);
+      state.social = result.social;
+      advance(2);
+      return commit();
+    }
 
     case 'BREAKFAST':
       if (state.phase !== 'morning' || !at('home', 'kitchen')) return fail('Завтрак можно приготовить на кухне утром.');
@@ -287,6 +300,7 @@ export function viewLife(state) {
   } else objective = 'Первый день завершён';
   return {
     hero: HERO,
+    socialConversations: NPC_IDS.map(id => getNpcConversation(state, id)),
     objective,
     clock: clock(state.time),
     period: state.phase === 'morning' ? 'Утро' : state.phase === 'shift' ? 'Первая смена' : state.phase === 'evening' ? 'Вечер для себя' : 'Первый день позади',
@@ -344,6 +358,10 @@ export function validateLife(raw) {
     for (const thread of CHAT_THREADS) {
       if (!sameFields(value.chats?.[thread.id], safe.chats[thread.id], ['choiceId', 'unread'])) return null;
     }
+    if (value.social === undefined) {
+      // Older v2 saves predate NPC branches; only an untouched social history may be absent.
+      if (value.events.some(event => event?.type === 'NPC_TALK')) return null;
+    } else if (JSON.stringify(value.social) !== JSON.stringify(safe.social)) return null;
     safe.notice = '';
     return safe;
   } catch {

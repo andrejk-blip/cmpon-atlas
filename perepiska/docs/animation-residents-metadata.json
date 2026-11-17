@@ -1,0 +1,300 @@
+[
+  {
+    "name": "resident-1-motion",
+    "width": 1448,
+    "height": 1086,
+    "cols": 4,
+    "rows": 3,
+    "cellWidth": 362,
+    "cellHeight": 362,
+    "webpBytes": 295200,
+    "pngBytes": 1163745,
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "cells": [
+      {
+        "index": 0,
+        "alphaBox": [
+          96,
+          10,
+          286,
+          351
+        ],
+        "footY": 351,
+        "headCenterX": 183.0
+      },
+      {
+        "index": 1,
+        "alphaBox": [
+          95,
+          11,
+          265,
+          350
+        ],
+        "footY": 350,
+        "headCenterX": 167.5
+      },
+      {
+        "index": 2,
+        "alphaBox": [
+          99,
+          10,
+          245,
+          351
+        ],
+        "footY": 351,
+        "headCenterX": 159.5
+      },
+      {
+        "index": 3,
+        "alphaBox": [
+          83,
+          10,
+          254,
+          349
+        ],
+        "footY": 349,
+        "headCenterX": 148.5
+      },
+      {
+        "index": 4,
+        "alphaBox": [
+          93,
+          10,
+          296,
+          349
+        ],
+        "footY": 349,
+        "headCenterX": 183.5
+      },
+      {
+        "index": 5,
+        "alphaBox": [
+          92,
+          11,
+          239,
+          351
+        ],
+        "footY": 351,
+        "headCenterX": 168.0
+      },
+      {
+        "index": 6,
+        "alphaBox": [
+          99,
+          13,
+          225,
+          352
+        ],
+        "footY": 352,
+        "headCenterX": 160.5
+      },
+      {
+        "index": 7,
+        "alphaBox": [
+          81,
+          11,
+          263,
+          351
+        ],
+        "footY": 351,
+        "headCenterX": 149.0
+      },
+      {
+        "index": 8,
+        "alphaBox": [
+          119,
+          9,
+          259,
+          352
+        ],
+        "footY": 352,
+        "headCenterX": 180.0
+      },
+      {
+        "index": 9,
+        "alphaBox": [
+          114,
+          9,
+          261,
+          352
+        ],
+        "footY": 352,
+        "headCenterX": 175.5
+      },
+      {
+        "index": 10,
+        "alphaBox": [
+          110,
+          9,
+          259,
+          352
+        ],
+        "footY": 352,
+        "headCenterX": 171.5
+      },
+      {
+        "index": 11,
+        "alphaBox": [
+          110,
+          9,
+          255,
+          352
+        ],
+        "footY": 352,
+        "headCenterX": 171.5
+      }
+    ]
+  },
+  {
+    "name": "resident-2-motion",
+    "width": 1448,
+    "height": 1086,
+    "cols": 4,
+    "rows": 3,
+    "cellWidth": 362,
+    "cellHeight": 362,
+    "webpBytes": 262610,
+    "pngBytes": 981846,
+    "alphaExtrema": [
+      0,
+      255
+    ],
+    "cells": [
+      {
+        "index": 0,
+        "alphaBox": [
+          109,
+          7,
+          266,
+          352
+        ],
+        "footY": 352,
+        "headCenterX": 186.5
+      },
+      {
+        "index": 1,
+        "alphaBox": [
+          128,
+          8,
+          261,
+          354
+        ],
+        "footY": 354,
+        "headCenterX": 186.0
+      },
+      {
+        "index": 2,
+        "alphaBox": [
+          127,
+          7,
+          247,
+          354
+        ],
+        "footY": 354,
+        "headCenterX": 186.5
+      },
+      {
+        "index": 3,
+        "alphaBox": [
+          129,
+          8,
+          269,
+          353
+        ],
+        "footY": 353,
+        "headCenterX": 186.0
+      },
+      {
+        "index": 4,
+        "alphaBox": [
+          108,
+          8,
+          269,
+          350
+        ],
+        "footY": 350,
+        "headCenterX": 186.0
+      },
+      {
+        "index": 5,
+        "alphaBox": [
+          121,
+          8,
+          261,
+          353
+        ],
+        "footY": 353,
+        "headCenterX": 185.5
+      },
+      {
+        "index": 6,
+        "alphaBox": [
+          127,
+          8,
+          258,
+          353
+        ],
+        "footY": 353,
+        "headCenterX": 186.0
+      },
+      {
+        "index": 7,
+        "alphaBox": [
+          120,
+          8,
+          274,
+          353
+        ],
+        "footY": 353,
+        "headCenterX": 186.0
+      },
+      {
+        "index": 8,
+        "alphaBox": [
+          130,
+          8,
+          247,
+          354
+        ],
+        "footY": 354,
+        "headCenterX": 185.5
+      },
+      {
+        "index": 9,
+        "alphaBox": [
+          131,
+          9,
+          247,
+          354
+        ],
+        "footY": 354,
+        "headCenterX": 185.5
+      },
+      {
+        "index": 10,
+        "alphaBox": [
+          131,
+          9,
+          247,
+          354
+        ],
+        "footY": 354,
+        "headCenterX": 185.5
+      },
+      {
+        "index": 11,
+        "alphaBox": [
+          131,
+          8,
+          247,
+          354
+        ],
+        "footY": 354,
+        "headCenterX": 185.5
+      }
+    ]
+  }
+]

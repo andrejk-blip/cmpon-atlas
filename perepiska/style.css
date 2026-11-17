@@ -2139,3 +2139,78 @@ button svg {
     margin:13px 0!important
   }
 }
+
+/* Character animation and complete desktop pilot. */
+.character-portrait {display:block;width:100%;height:100%;object-fit:contain}
+.hero-portrait canvas {width:100%;height:100%;position:static}
+.hero-portrait {overflow:hidden}
+.outfit-doll.character-portrait {background:none;width:100%;height:215px}
+.chat-avatar canvas {width:100%;height:100%}
+.speaker>.character-portrait {width:62px;height:62px;border-radius:50%;background:#ece4d5}
+.tiny-people {display:flex;width:96px;padding:0;overflow:hidden;flex-shrink:0;align-items:center}
+.tiny-people canvas {width:48px;height:52px;flex-shrink:0}
+.resident-head {overflow:hidden}
+.resident-head canvas {height:100%;width:100%}
+.date-scene>.character-portrait {width:135px;height:230px;flex-shrink:0}
+.npc-hit {position:absolute;left:0;top:0;width:48px;height:105px;background:transparent;z-index:4;border-radius:40%}
+.npc-hit>span {position:absolute;bottom:100%;left:50%;transform:translateX(-50%);background:#fff8ec;border:1px solid #b69a7c;border-radius:10px;padding:4px 7px;white-space:nowrap;font-size:10px;box-shadow:0 2px 2px #493e3722}
+.npc-hit svg {width:13px;height:13px}
+.npc-hit:hover>span,.npc-hit:focus-visible>span {background:#f5d4c5;border-color:#8d6158}
+.hero-hit {z-index:3}
+.world-spot {transform:translate(-50%,5px);z-index:6}
+.world-spot>svg {width:30px;height:30px;padding:6px}
+.world-spot small {font-size:9px;padding:2px 5px}
+.npc-heading {display:flex;align-items:center;gap:18px}
+.npc-heading>.character-portrait {width:92px;height:98px;flex-shrink:0;background:#ede5d5;border-radius:45% 45% 35% 35%;overflow:hidden}
+.npc-heading h2 {margin:6px 0 0}
+.npc-heading .eyebrow {font-size:9px}
+.npc-options {display:flex;flex-direction:column;gap:10px}
+.npc-options .secondary {margin:0;display:flex;justify-content:space-between;text-align:left;line-height:1.5}
+.conversation-hint {font-size:11px!important;color:#8e7966;border-top:1px solid #d9cbb7;padding-top:12px}
+.people-choices {display:flex;gap:10px;margin:20px 0}
+.people-choices button {flex:1;min-width:0;background:#eee4d5;border-radius:13px;padding:8px;color:var(--ink)}
+.people-choices canvas {width:100%;height:100px}
+.people-choices b {font-family:Caveat;font-size:26px}
+.resident-greetings {display:flex;justify-content:space-around;border-top:1px solid #ded1bd;margin-top:12px;padding-top:5px;gap:6px}
+.resident-greetings button {font-size:10px;padding:8px 2px;margin:0}
+.modal.welcome {width:820px;display:grid;grid-template-columns:1.2fr .8fr;gap:0;padding:38px 42px;background:linear-gradient(120deg,#fff9ed 50%,#f1e5d2);overflow:hidden}
+.welcome .eyebrow {font-size:9px;letter-spacing:1.5px}
+.welcome h1 {font-family:Caveat;font-size:82px;line-height:1;margin:20px 0 5px;font-weight:600}
+.welcome h1 span {color:var(--rose);font-size:52px;margin-left:8px}
+.welcome h2 {font-family:inherit;font-size:15px;font-weight:normal;letter-spacing:.3px;margin:12px 0 24px;color:#8a6f5a}
+.welcome p {font-size:15px;line-height:1.8;margin:0 0 25px}
+.welcome .primary {max-width:335px}
+.welcome .text-button {display:inline-block;margin:12px 18px 0 0;font-size:12px}
+.pilot-note {display:block;font-size:10px;color:#876f5b;line-height:1.6;margin-top:22px}
+.pilot-version {display:block;font-size:9px;color:#a88f79;margin-top:8px}
+.welcome-character {position:relative;align-self:end;min-width:0}
+.welcome-character canvas {width:100%;height:380px;filter:drop-shadow(0 5px 0 #8e6e4820)}
+.welcome-character>span {display:block;font-family:Caveat;font-size:27px;color:#9d7061;transform:rotate(-5deg);text-align:center;line-height:1.1;margin-top:10px}
+.help-list {padding:0;margin:22px 0;list-style:none;display:flex;flex-direction:column;gap:17px}
+.help-list li {display:flex;gap:12px;align-items:flex-start;font-size:12px;line-height:1.6}
+.help-list svg {color:#aa7764;flex-shrink:0;width:23px;height:23px}
+.ending .secondary {margin-top:12px}
+@media(max-width:600px){
+  .modal.welcome {grid-template-columns:1fr;padding:25px}
+  .welcome-character {display:none}
+  .welcome h1 {font-size:66px}
+  .welcome h2 {font-size:14px}
+  .welcome p {font-size:13px}
+  .welcome .eyebrow {font-size:7px;letter-spacing:1px}
+  .date-scene>.character-portrait {width:95px;height:190px}
+  .npc-heading>.character-portrait {width:75px;height:80px}
+  .npc-heading .eyebrow {font-size:8px}
+  .outfit-doll.character-portrait {height:180px}
+  .resident-greetings {flex-wrap:wrap;gap:0}
+  .people-choices canvas {height:80px}
+}
+@media(max-height:520px) and (min-width:601px){
+  .modal.welcome {padding:22px 32px}
+  .welcome h1 {font-size:57px;margin-top:10px}
+  .welcome h2 {margin:8px 0 10px}
+  .welcome p {font-size:12px;line-height:1.5;margin-bottom:12px}
+  .welcome-character canvas {height:250px}
+  .welcome-character>span {font-size:22px;margin:0}
+  .pilot-note {margin-top:10px}
+  .date-scene>.character-portrait {height:180px}
+}
