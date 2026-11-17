@@ -8,7 +8,7 @@ const DETAILS = [
 ];
 
 export function titleScreenMarkup({started=false,complete=false,audioEnabled=true,clock='07:30'}={}) {
-  return `<div class="title-art-region" aria-hidden="true"><div class="title-art-stage"><img class="title-keyart" src="./assets/title-cover06-vera.webp" alt="" width="1672" height="941" fetchpriority="high"><div class="title-sunlight"></div><span class="title-mote mote-one"></span><span class="title-mote mote-two"></span><span class="title-mote mote-three"></span></div></div>
+  return `<div class="title-frame"><div class="title-art-region" aria-hidden="true"><div class="title-art-stage"><img class="title-keyart" draggable="false" src="./assets/title-cover06-vera.webp" alt="" width="1672" height="941" fetchpriority="high"><div class="title-sunlight"></div><span class="title-mote mote-one"></span><span class="title-mote mote-two"></span><span class="title-mote mote-three"></span></div></div>
   <div class="title-shade" aria-hidden="true"></div>
   <div class="title-story">
     <div class="title-edition"><span></span> ИСТОРИЯ О РАБОТЕ И НЕ ТОЛЬКО</div>
@@ -24,9 +24,10 @@ export function titleScreenMarkup({started=false,complete=false,audioEnabled=tru
     <nav class="title-menu" aria-label="Меню игры"><button id="welcome-help">${icon('map')}<span>Как играть</span></button><button id="welcome-settings">${icon('settings')}<span>Настройки</span></button>${started?'<button id="welcome-new" class="title-restart">'+icon('sun')+'<span>Сначала</span></button>':''}</nav>
   </div>
   <div class="title-top-tools"><button id="welcome-audio" class="title-sound" aria-label="${audioEnabled?'Выключить':'Включить'} музыку и голоса" aria-pressed="${audioEnabled}"><span class="title-sound-icon" aria-hidden="true">${audioEnabled?'♫':'♪'}</span><span data-title-sound>${audioEnabled?'Звук включён':'Звук выключен'}</span></button></div>
-  <div class="title-credits"><span>Один день. Твоя история.</span><span>Пилот 0.6</span></div>
+  <div class="title-view-tools" role="group" aria-label="Масштаб обложки"><button data-cover-zoom="out" aria-label="Отдалить обложку" title="Отдалить" disabled>−</button><button data-cover-zoom="fit" aria-label="Показать всю обложку" title="Показать всю обложку">Весь вид</button><button data-cover-zoom="in" aria-label="Приблизить обложку" title="Приблизить">+</button></div>
+  <div class="title-credits"><span>Один день. Твоя история.</span><span>Пилот 0.6.1</span></div>
   <div class="title-secrets"><button id="welcome-secrets" aria-expanded="false" aria-controls="title-detail-list">${icon('star')}<span>Найди 4 детали</span></button><div id="title-detail-list" hidden>${DETAILS.map(d=>`<button data-cover-detail="${d.id}" aria-label="${d.label}" title="${d.label}">${icon(d.icon)}</button>`).join('')}</div></div>
-  <aside class="title-detail-note" hidden aria-label="Деталь обложки"><button data-close-cover-note aria-label="Закрыть подсказку">${icon('close')}</button><small data-cover-detail-count></small><h3></h3><p></p></aside>`;
+  <aside class="title-detail-note" hidden aria-label="Деталь обложки"><button data-close-cover-note aria-label="Закрыть подсказку">${icon('close')}</button><small data-cover-detail-count></small><h3></h3><p></p></aside></div>`;
 }
 
 /** Decorative cover interactions do not alter the player's saved story. */
@@ -58,5 +59,35 @@ export function bindTitleScreen(root,{onAudio,getAudioEnabled}={}) {
   },{signal:abort.signal}));
   note.querySelector('button').addEventListener('click',closeNote,{signal:abort.signal});
   root.addEventListener('keydown',e=>{if(e.key==='Escape'&&!note.hidden){e.preventDefault();closeNote();}},{signal:abort.signal});
-  return ()=>abort.abort();
+  // Fit is the starting view. Zoom is deliberate and never changes the menu scale.
+  const region=root.querySelector('.title-art-region'), stage=root.querySelector('.title-art-stage');
+  const zoomButtons=root.querySelectorAll('[data-cover-zoom]');
+  let zoom=1, pan={x:0,y:0}, drag=null;
+  const renderView=()=>{
+    const maxX=region.clientWidth*(zoom-1)/2, maxY=region.clientHeight*(zoom-1)/2;
+    pan.x=Math.max(-maxX,Math.min(maxX,pan.x));pan.y=Math.max(-maxY,Math.min(maxY,pan.y));
+    stage.style.transform=`translate(calc(-50% + ${pan.x}px),calc(-50% + ${pan.y}px)) scale(${zoom})`;
+    region.classList.toggle('is-zoomed',zoom>1);
+    root.querySelector('[data-cover-zoom="out"]').disabled=zoom<=1;
+    root.querySelector('[data-cover-zoom="in"]').disabled=zoom>=2.5;
+  };
+  zoomButtons.forEach(button=>button.addEventListener('click',()=>{
+    zoom=button.dataset.coverZoom==='fit'?1:Math.max(1,Math.min(2.5,zoom*(button.dataset.coverZoom==='in'?1.25:.8)));
+    if(zoom===1)pan={x:0,y:0};
+    renderView();
+  },{signal:abort.signal}));
+  region.addEventListener('pointerdown',e=>{
+    if(zoom<=1||e.button!==0)return;
+    drag={x:e.clientX,y:e.clientY,panX:pan.x,panY:pan.y,id:e.pointerId};
+    region.setPointerCapture(e.pointerId);
+  },{signal:abort.signal});
+  region.addEventListener('pointermove',e=>{
+    if(!drag||drag.id!==e.pointerId)return;
+    pan={x:drag.panX+e.clientX-drag.x,y:drag.panY+e.clientY-drag.y};renderView();
+  },{signal:abort.signal});
+  const stopDrag=()=>{drag=null;};
+  region.addEventListener('pointerup',stopDrag,{signal:abort.signal});
+  region.addEventListener('pointercancel',stopDrag,{signal:abort.signal});
+  const observer=new ResizeObserver(renderView);observer.observe(region);renderView();
+  return ()=>{abort.abort();observer.disconnect();};
 }

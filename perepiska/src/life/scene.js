@@ -2,6 +2,7 @@ import { MAPS, nearestNode } from './movement.js';
 import { icon } from './icons.js';
 import { CHARACTER_ART, createPose, stepPose, loadCharacter, drawCharacter } from './animation.js';
 import { canvasBackingSize, splitSceneSpots, placeSceneLabels } from './scene-layout.js';
+import { cameraViewport, cameraFitZoom, avoidCameraOccluder, clampCameraPan, fitCamera, resizeCamera, zoomCamera } from './camera.js';
 export function createLifeScene(host, world, events) {
   const map = MAPS[world.location],
     abort = new AbortController();
@@ -28,6 +29,7 @@ export function createLifeScene(host, world, events) {
   const npcButtons = new Map();
   const placeButtons = new Map();
   let actorSpots = new Map(), previousLabels = new Map(), viewWidth = host.clientWidth, viewHeight = host.clientHeight, backingDpr = 0;
+  let viewport=cameraViewport(viewWidth,viewHeight), cameraReady=false;
   const labels = {'resident-1':'Николай','resident-2':'Денис',vera:'Вера',max:'Макс'};
   let state = null,
     zoom = 1,
@@ -78,7 +80,7 @@ export function createLifeScene(host, world, events) {
       const entry=npcButtons.get(actor.id);if(!entry)continue;
       add('actor:'+actor.id,entry,pan.x+actor.x*zoom,pan.y+(actor.y-actorHeight(actor))*zoom-5,actorSpots.get(actor.id)?.primary?4:2);
     }
-    const bounds={left:12,top:Math.min(108,viewHeight*.18),right:viewWidth-12,bottom:viewHeight-Math.min(118,viewHeight*.2)};
+    const bounds={left:viewport.left,top:viewport.top,right:viewport.left+viewport.width,bottom:viewport.top+viewport.height};
     const arranged=placeSceneLabels(items,obstacles,bounds,previousLabels);
     for(const [id,box] of arranged){
       const entry=records.get(id);
@@ -93,10 +95,7 @@ export function createLifeScene(host, world, events) {
     previousLabels=arranged;
   }
   function clamp() {
-    const w = host.clientWidth,
-      h = host.clientHeight;
-    pan.x = 1000 * zoom < w ? (w - 1000 * zoom) / 2 : Math.min(0, Math.max(w - 1000 * zoom, pan.x));
-    pan.y = 700 * zoom < h ? (h - 700 * zoom) / 2 : Math.min(0, Math.max(h - 700 * zoom, pan.y));
+    pan=clampCameraPan(pan,zoom,viewport);
   }
   function transform() {
     clamp();
@@ -104,20 +103,54 @@ export function createLifeScene(host, world, events) {
     layoutLabels();
   }
   function center() {
-    pan.x = host.clientWidth / 2 - world.player.x * zoom;
-    pan.y = host.clientHeight * .58 - world.player.y * zoom;
+    pan.x = viewport.left+viewport.width/2-world.player.x*zoom;
+    pan.y = viewport.top+viewport.height*.58-world.player.y*zoom;
     follow = true;
     transform();
   }
   function resize() {
+    if(disposed)return;
+    const previous=cameraReady?{viewport,zoom,pan}:null;
     viewWidth=host.clientWidth;viewHeight=host.clientHeight;
-    zoom = Math.max(viewWidth / 1000, viewHeight / 700);
+    const next=resizeCamera(previous,measureViewport());
+    viewport=next.viewport;zoom=next.zoom;pan=next.pan;cameraReady=true;
     refreshCanvas();
-    center();
+    transform();
     draw();
+  }
+  const game=host.closest('.life-game');
+  const topControls=[...game.querySelectorAll('.life-hud > *')];
+  const floatingControls=[...game.querySelectorAll('.location-tag')];
+  const bottomControls=[...game.querySelectorAll('.life-footer > *, .quick-actions')];
+  const sideControls=game.querySelector('.camera-controls');
+  function measureViewport() {
+    const box=host.getBoundingClientRect(),insets={left:12,right:12,top:12,bottom:12};
+    const visibleRect=element=>{
+      const rect=element.getBoundingClientRect();
+      return rect.width>0&&rect.height>0?rect:null;
+    };
+    for(const element of topControls){const rect=visibleRect(element);if(rect)insets.top=Math.max(insets.top,rect.bottom-box.top+8);}
+    for(const element of bottomControls){const rect=visibleRect(element);if(rect)insets.bottom=Math.max(insets.bottom,box.bottom-rect.top+8);}
+    if(sideControls){
+      const rect=visibleRect(sideControls);
+      if(rect&&rect.top<box.bottom-insets.bottom&&rect.bottom>box.top+insets.top)insets.right=Math.max(insets.right,box.right-rect.left+8);
+    }
+    let safe=cameraViewport(viewWidth,viewHeight,insets);
+    for(const element of floatingControls){
+      const rect=visibleRect(element);
+      if(rect)safe=avoidCameraOccluder(safe,{left:rect.left-box.left-8,right:rect.right-box.left+8,top:rect.top-box.top-8,bottom:rect.bottom-box.top+8});
+    }
+    return safe;
+  }
+  function fit() {
+    const next=fitCamera(measureViewport());
+    viewport=next.viewport;zoom=next.zoom;pan=next.pan;cameraReady=true;follow=true;
+    refreshCanvas();transform();draw();
   }
   const observer = new ResizeObserver(resize);
   observer.observe(host);
+  for(const control of [...topControls,...floatingControls,...bottomControls,...(sideControls?[sideControls]:[])])observer.observe(control);
+  resize();
   document.fonts?.ready.then(()=>{
     if(disposed)return;
     for(const entry of [...placeButtons.values(),...npcButtons.values()]){
@@ -125,7 +158,7 @@ export function createLifeScene(host, world, events) {
       entry.width=entry.label.offsetWidth;entry.height=entry.label.offsetHeight;
       entry.label.hidden=hidden;
     }
-    previousLabels=new Map();layoutLabels();
+    previousLabels=new Map();resize();
   });
   globalThis.addEventListener('resize',resize,{signal:abort.signal});
   host.addEventListener('pointerdown', e => {
@@ -254,10 +287,10 @@ export function createLifeScene(host, world, events) {
     reducedMotion = options.reducedMotion ?? reducedMotion;
     animationClock += Math.max(0, dt);
 
-    if (follow && host.clientWidth < 650 && world.player.moving) {
+    if (follow && zoom>cameraFitZoom(viewport)*(1+1e-7) && host.clientWidth < 650 && world.player.moving) {
       const ease = reducedMotion ? 1 : 1 - Math.exp(-8 * Math.max(0, dt));
-      pan.x += (host.clientWidth / 2 - world.player.x * zoom - pan.x) * ease;
-      pan.y += (host.clientHeight * .58 - world.player.y * zoom - pan.y) * ease;
+      pan.x += (viewport.left+viewport.width/2-world.player.x*zoom-pan.x)*ease;
+      pan.y += (viewport.top+viewport.height*.58-world.player.y*zoom-pan.y)*ease;
       transform();
     }
     ctx.clearRect(0, 0, 1000, 700);
@@ -350,6 +383,7 @@ export function createLifeScene(host, world, events) {
     update,
     draw,
     center,
+    fit,
     follow() { follow = true; },
     celebrate(text) {
       effect = {
@@ -359,10 +393,8 @@ export function createLifeScene(host, world, events) {
       draw();
     },
     zoomBy(factor) {
-      const old = zoom;
-      zoom = Math.max(.5, Math.min(2, zoom * factor));
-      pan.x = host.clientWidth / 2 - (host.clientWidth / 2 - pan.x) * zoom / old;
-      pan.y = host.clientHeight / 2 - (host.clientHeight / 2 - pan.y) * zoom / old;
+      const next=zoomCamera({viewport,zoom,pan},factor);
+      zoom=next.zoom;pan=next.pan;
       follow = false;
       refreshCanvas();
       transform();

@@ -51,7 +51,7 @@ sound=createAudioDirector({preferences:preferences.audio,onPreferencesChange:aud
 $('#app').innerHTML = `<main class="life-game"><div id="life-stage" aria-label="Мир Ани. Нажмите на предмет или место, чтобы подойти. Карту можно перетаскивать."></div>
 <header class="life-hud"><div class="brand"><b>Переписка<span>♡</span></b><small>Один день. Твоя история.</small></div><div class="day-clock"><small id="period">ПЕРВОЕ УТРО</small><strong id="clock">07:30</strong></div><div class="resources"><span class="wallet">${icon('coin')}<b id="coins">600</b></span><span class="energy">${icon('energy')}<b id="energy">65</b></span><button id="sound-toggle" class="icon-button sound-toggle" aria-label="Выключить звук" title="Звук">♫</button><button id="settings" class="icon-button" aria-label="Настройки">${icon('settings')}</button></div></header>
 <div class="location-tag"><span id="location-name">Моя квартира</span><small id="location-detail">День 1 · Новая работа</small></div>
-<div class="camera-controls"><button id="zoom-in" aria-label="Приблизить">+</button><button id="zoom-out" aria-label="Отдалить">−</button><button id="pause" aria-label="Пауза">${icon('pause')}</button><button id="speed" aria-label="Изменить скорость">1×</button></div>
+<div class="camera-controls"><button id="zoom-in" aria-label="Приблизить">+</button><button id="zoom-out" aria-label="Отдалить">−</button><button id="zoom-fit" aria-label="Показать всю сцену" title="Весь вид">⛶</button><button id="pause" aria-label="Пауза">${icon('pause')}</button><button id="speed" aria-label="Изменить скорость">1×</button></div>
 <div id="quick-actions" class="quick-actions" aria-label="Места поблизости"></div>
 <footer class="life-footer"><button id="profile" class="hero-card" aria-label="Аня — мой персонаж"><span id="hero-portrait" class="hero-portrait">${portrait('anna-'+(state.outfit||'home'),'Аня')}</span><span><b>Аня, 25</b><small id="hero-role">Первый день</small></span></button><button id="objective" class="objective"><small>СЕЙЧАС</small><span></span>${icon('arrow')}</button><nav class="pocket"><button id="phone" aria-label="Телефон и чаты">${icon('phone')}<i id="unread">3</i><small>Телефон</small></button><button id="world-map" aria-label="Карта моей жизни">${icon('map')}<small>Карта</small></button><button id="bag" aria-label="Моя сумка">${icon('bag')}<small>Сумка</small></button></nav></footer>
 <div id="modal-root"></div></main>`;
@@ -331,7 +331,7 @@ function showWelcome() {
 function showHelp(back=closeModal) {
   const returnToWelcome=modalState?.type==='welcome'||modalState?.returnToWelcome;
   modalState={type:'help',returnToWelcome};
-  showModal(`${closeButton()}<span class="eyebrow">ВСЁ ПОД РУКОЙ</span><h2>Управляй своим днём</h2><ul class="help-list"><li>${icon('pin')} Нажми на предмет или человека — Аня подойдёт сама.</li><li>${icon('chat')} Нажми на жителя, чтобы познакомиться. Не каждый разговор станет большой историей.</li><li>${icon('phone')} Телефон хранит чаты и покупки для дома.</li><li>${icon('map')} Перетаскивай сцену для обзора. Кнопки + и − меняют масштаб.</li><li>${icon('pause')} Пробел — пауза, Esc — закрыть окно. Кнопка «Сейчас» подсказывает следующий шаг.</li></ul><p class="muted">История заканчивается вечером дома после принятия первой анкеты. Чтение не расходует игровое время.</p><button id="help-tour" class="primary">Показать прямо в игре</button><button id="help-back" class="secondary">Понятно ${icon('check')}</button>`,'help');
+  showModal(`${closeButton()}<span class="eyebrow">ВСЁ ПОД РУКОЙ</span><h2>Управляй своим днём</h2><ul class="help-list"><li>${icon('pin')} Нажми на предмет или человека — Аня подойдёт сама.</li><li>${icon('chat')} Нажми на жителя, чтобы познакомиться. Не каждый разговор станет большой историей.</li><li>${icon('phone')} Телефон хранит чаты и покупки для дома.</li><li>${icon('map')} Перетаскивай сцену для обзора. Кнопки + и − меняют масштаб, ⛶ возвращает весь вид.</li><li>${icon('pause')} Пробел — пауза, Esc — закрыть окно. Кнопка «Сейчас» подсказывает следующий шаг.</li></ul><p class="muted">История заканчивается вечером дома после принятия первой анкеты. Чтение не расходует игровое время.</p><button id="help-tour" class="primary">Показать прямо в игре</button><button id="help-back" class="secondary">Понятно ${icon('check')}</button>`,'help');
   bindClose();$('#help-back').onclick=back;$('#help-tour').onclick=startTutorial;
 }
 function showAlarm() {
@@ -817,6 +817,7 @@ document.addEventListener('pointerdown',()=>sound.unlock(),{capture:true});
 document.addEventListener('keydown',e=>{if(!e.repeat)sound.unlock();},{capture:true});
 $('#zoom-in').onclick = () => scene.zoomBy(1.2);
 $('#zoom-out').onclick = () => scene.zoomBy(1 / 1.2);
+$('#zoom-fit').onclick = () => scene.fit();
 $('#pause').onclick = () => {
   paused = !paused;
   refresh();
