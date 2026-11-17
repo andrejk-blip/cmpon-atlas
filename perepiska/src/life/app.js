@@ -5,7 +5,9 @@ import { createLifeScene } from './scene.js';
 import { platform } from './platform.js';
 import { icon } from './icons.js';
 import { getNpcConversation } from './relationships.js';
-import { portrait, syncPortraits, animatePortraits } from './portraits.js';
+import { portrait, syncPortraits, animatePortraits, setSpeakingCharacter } from './portraits.js';
+import { createAudioDirector } from './audio.js';
+import { getSpeech, findSpeech } from './speech-catalog.js';
 const $ = s => document.querySelector(s);
 const esc = s => String(s).replace(/[&<>"']/g, c => ({
   '&': '&amp;',
@@ -40,8 +42,11 @@ let modalState = null,
 let preferences = platform.preferences();
 if (preferences.reducedMotion === undefined) preferences.reducedMotion = matchMedia('(prefers-reduced-motion:reduce)').matches;
 document.documentElement.classList.toggle('reduce-motion', preferences.reducedMotion);
+let activeVoiceLines=[];
+let sound;
+sound=createAudioDirector({preferences:preferences.audio,onPreferencesChange:audio=>{preferences.audio=audio;platform.setPreferences(preferences);},onStateChange:updateSoundStatus});
 $('#app').innerHTML = `<main class="life-game"><div id="life-stage" aria-label="Мир Ани. Нажмите на предмет или место, чтобы подойти. Карту можно перетаскивать."></div>
-<header class="life-hud"><div class="brand"><b>Переписка<span>♡</span></b><small>Один день. Твоя история.</small></div><div class="day-clock"><small id="period">ПЕРВОЕ УТРО</small><strong id="clock">07:30</strong></div><div class="resources"><span class="wallet">${icon('coin')}<b id="coins">600</b></span><span class="energy">${icon('energy')}<b id="energy">65</b></span><button id="settings" class="icon-button" aria-label="Настройки">${icon('settings')}</button></div></header>
+<header class="life-hud"><div class="brand"><b>Переписка<span>♡</span></b><small>Один день. Твоя история.</small></div><div class="day-clock"><small id="period">ПЕРВОЕ УТРО</small><strong id="clock">07:30</strong></div><div class="resources"><span class="wallet">${icon('coin')}<b id="coins">600</b></span><span class="energy">${icon('energy')}<b id="energy">65</b></span><button id="sound-toggle" class="icon-button sound-toggle" aria-label="Выключить звук" title="Звук">♫</button><button id="settings" class="icon-button" aria-label="Настройки">${icon('settings')}</button></div></header>
 <div class="location-tag"><span id="location-name">Моя квартира</span><small id="location-detail">День 1 · Новая работа</small></div>
 <div class="camera-controls"><button id="zoom-in" aria-label="Приблизить">+</button><button id="zoom-out" aria-label="Отдалить">−</button><button id="pause" aria-label="Пауза">${icon('pause')}</button><button id="speed" aria-label="Изменить скорость">1×</button></div>
 <div id="quick-actions" class="quick-actions" aria-label="Места поблизости"></div>
@@ -55,6 +60,32 @@ function makeScene() {
     onHero: showProfile,
     onNpc: goNpc
   });
+}
+const speakerNames={anna:'Аня',vera:'Вера',max:'Макс',kira:'Кира',ilya:'Илья',anton:'Антон',dima:'Дима','resident-1':'Николай','resident-2':'Денис',narrator:'Рассказчица'};
+function updateSoundStatus(status) {
+  if(!sound)return;
+  const audio=sound.getPreferences(), enabled=audio.enabled;
+  const toggle=$('#sound-toggle');
+  if(toggle){toggle.textContent=enabled?'♫':'♪';toggle.classList.toggle('muted',!enabled);toggle.setAttribute('aria-label',enabled?'Выключить звук':'Включить звук');toggle.setAttribute('aria-pressed',String(enabled));}
+  const line=getSpeech(status.currentLineId);
+  setSpeakingCharacter(status.speaking?line?.speakerId:null);
+  const description=!enabled?'Звук выключен':status.error||status.degradedText||(status.speechProvider==='recorded'?'Русская озвучка персонажей':status.voiceStatus==='loading'?'Проверяем русские голоса…':`${status.voiceCount} русских голосов устройства`);
+  document.querySelectorAll('[data-voice-status]').forEach(el=>el.textContent=description);
+  document.querySelectorAll('[data-speaking]').forEach(el=>el.textContent=status.speaking&&line?`Говорит ${speakerNames[line.speakerId]||''}`:(!enabled?'Звук выключен':['error','missing','unavailable','loading'].includes(status.voiceStatus)?description:'Можно прослушать ещё раз'));
+  document.querySelectorAll('[data-replay-voice]').forEach(el=>el.disabled=!enabled||audio.voices===0||!status.canSpeak);
+  document.querySelectorAll('[data-stop-voice]').forEach(el=>el.disabled=!status.speaking);
+}
+function playDialogue(lines,autoplay=true) {
+  activeVoiceLines=lines.filter(Boolean).filter((line,index,array)=>index===0||line.id!==array[index-1].id);
+  const modal=$('#modal-root .modal');
+  if(!modal||!activeVoiceLines.length)return;
+  modal.querySelector('.dialogue-audio')?.remove();
+  const controls=document.createElement('div');controls.className='dialogue-audio';
+  controls.innerHTML='<button type="button" data-replay-voice aria-label="Повторить реплику">↻ <span>Прослушать</span></button><button type="button" data-stop-voice aria-label="Остановить озвучку">■</button><small data-speaking></small>';
+  modal.append(controls);
+  controls.querySelector('[data-replay-voice]').onclick=()=>{sound.unlock();sound.playLines(activeVoiceLines);};
+  controls.querySelector('[data-stop-voice]').onclick=()=>sound.stopSpeech();
+  if(autoplay)sound.playLines(activeVoiceLines);updateSoundStatus(sound.getStatus());
 }
 function notify(text) {
   $('#toast').textContent = text;
@@ -79,7 +110,7 @@ function act(action, showNotice = false) {
     previousScene = state.scene;
   state = reduceLife(state, action);
   const accepted = state.events.length > before;
-  if (accepted) save();
+  if (accepted) {save();const cues={WAKE:'success',CHAT:'message',NPC_TALK:'click',SUBMIT:'paper',HAND_IN:'coins',BUY:'coins',LEAVE:'door',RETURN_HOME:'door',FINISH:'success'};if(cues[action.type])sound.cue(cues[action.type]);}
   if (state.scene !== previousScene) {
     scene.destroy();
     world = createMovement(state.scene, nodeFor[state.currentSpot]);
@@ -204,6 +235,7 @@ function refresh() {
   scene.update(state, available);
   syncPortraits();
   document.documentElement.classList.toggle('scene-paused',paused);
+  sound.setWorld({scene:state.scene,phase:state.phase});sound.setSuspended('pause',paused);updateSoundStatus(sound.getStatus());
 }
 function walkGround(node) {
   if (modalState || !state.flags.awake || state.phase === 'complete') return;
@@ -247,12 +279,14 @@ function arrive(event) {
   else interact(interaction);
 }
 function showModal(html, kind = 'card') {
+  sound.stopSpeech();activeVoiceLines=[];
   $('#modal-root').innerHTML = `<div class="scrim"><section class="modal ${kind}" role="dialog" aria-modal="true" tabindex="-1">${html}</section></div>`;
   $('#modal-root .modal').focus();
   syncPortraits();
 }
 function closeModal() {
   if (modalState?.type === 'conflict') return;
+  sound.stopSpeech();activeVoiceLines=[];
   modalState = null;
   releaseInteraction(world);
   $('#modal-root').replaceChildren();
@@ -269,10 +303,12 @@ function showWelcome() {
   releaseInteraction(world);
   modalState={type:'welcome'};
   const started=state.flags.awake;
-  showModal(`<div class="welcome-copy"><span class="eyebrow">ПИЛОТ · ОДНА ЗАКОНЧЕННАЯ ИСТОРИЯ</span><h1>Переписка<span>♡</span></h1><h2>Первый день Ани</h2><p>Собраться на новую работу.<br>Познакомиться с соседями.<br>И оставить время для себя.</p><button id="start-pilot" class="primary">${started?'Продолжить мою историю':'Начать первый день'} ${icon('arrow')}</button><button id="welcome-help" class="text-button">Как играть</button>${started?'<button id="welcome-new" class="text-button">Начать заново</button>':''}<small class="pilot-note">Мышь или касание · Сохранение на этом устройстве</small><span class="pilot-version">Пилот 0.3 · Можно пройти от начала до конца</span></div><div class="welcome-character">${portrait('anna-'+(state.outfit||'home'),'Аня',true)}<span>Новая работа.<br>Свои планы.</span></div>`,'welcome');
-  $('#start-pilot').onclick=()=>{closeModal();paused=false;refresh();if(!state.flags.awake)showAlarm();else if(state.phase==='complete')showEnding();};
+  showModal(`<div class="welcome-copy"><span class="eyebrow">ПИЛОТ · ОДНА ЗАКОНЧЕННАЯ ИСТОРИЯ</span><h1>Переписка<span>♡</span></h1><h2>Первый день Ани</h2><p>Собраться на новую работу.<br>Познакомиться с соседями.<br>И оставить время для себя.</p><button id="start-pilot" class="primary">${started?'Продолжить мою историю':'Начать первый день'} ${icon('arrow')}</button><button id="welcome-help" class="text-button">Как играть</button>${started?'<button id="welcome-new" class="text-button">Начать заново</button>':''}<label class="welcome-sound"><input id="welcome-audio" type="checkbox" ${sound.getPreferences().enabled?'checked':''}> Музыка и голоса</label><small class="pilot-note">Мышь или касание · Сохранение на этом устройстве</small><span class="pilot-version">Пилот 0.4 · Музыка и озвучка</span></div><div class="welcome-character">${portrait('anna-'+(state.outfit||'home'),'Аня',true)}<span>Новая работа.<br>Свои планы.</span></div>`,'welcome');
+  $('#welcome-audio').onchange=e=>sound.updatePreferences({enabled:e.target.checked});
+  $('#start-pilot').onclick=()=>{sound.unlock();closeModal();paused=false;refresh();if(!state.flags.awake)showAlarm();else if(state.phase==='complete')showEnding();};
   $('#welcome-help').onclick=()=>showHelp(showWelcome);
   if($('#welcome-new'))$('#welcome-new').onclick=confirmRestart;
+  playDialogue([getSpeech('pilot.welcome')],sound.getStatus().unlocked);
 }
 function showHelp(back=closeModal) {
   modalState={type:'help'};
@@ -284,6 +320,7 @@ function showAlarm() {
     type: 'alarm'
   };
   showModal(`<span class="eyebrow">ПОНЕДЕЛЬНИК · ПЕРВЫЙ РАБОЧИЙ ДЕНЬ</span><div class="alarm-time">07:30</div><h1>Доброе утро,<br>Аня.</h1><p>Новая работа. Новые люди.<br>И твой обычный, необычный день.</p><button id="wake" class="primary">Встать ${icon('sun')}</button><button id="snooze" class="text-button">Ещё пять минут</button>`, 'alarm');
+  playDialogue([getSpeech('pilot.alarm')]);
   $('#wake').onclick = () => {
     act({
       type: 'WAKE'
@@ -423,6 +460,7 @@ function showAction(title, text, label, symbol, action) {
   showModal(`${closeButton()}<div class="action-icon">${icon(symbol)}</div><h2>${esc(title)}</h2><p>${esc(text)}</p><button id="action-confirm" class="primary">${esc(label)} ${icon('arrow')}</button>`, 'card');
   bindClose();
   $('#action-confirm').onclick = action;
+  if(title==='Оставим остальное на завтра?')playDialogue([getSpeech(state.date.status==='accepted'?'pilot.bed.accepted':'pilot.bed.other')]);
 }
 function showWardrobe() {
   modalState = {
@@ -446,6 +484,7 @@ function showMeeting(name, text, label, action) {
   showModal(`${closeButton()}<div class="speaker">${portrait('vera','Вера')}<span><small>ПЕРВАЯ СМЕНА</small><b>${name}</b></span></div><div class="speech">${esc(text)}</div><button id="meeting-confirm" class="primary">${esc(label)} ${icon('arrow')}</button>`, 'card');
   bindClose();
   $('#meeting-confirm').onclick = action;
+  playDialogue([findSpeech('vera',text)]);
 }
 function openPhone(thread = null, tab = 'chats') {
   if (!state.flags.awake) {
@@ -463,13 +502,13 @@ function openPhone(thread = null, tab = 'chats') {
   });
   renderPhone();
 }
-function renderPhone() {
+function renderPhone(autoplay=true) {
   if (modalState?.type !== 'phone') return;
   const v = viewLife(state),
     thread = v.availableChats.find(c => c.id === modalState.thread);
   let content = '';
   if (thread) {
-    content = `<div class="phone-thread-head"><button id="thread-back" class="icon-button" aria-label="Назад к чатам">${icon('back')}</button>${chatAvatar(thread)}<div><b>${esc(thread.shortName)}</b><small>${thread.id === 'max' ? 'Знакомый · 27' : thread.id === 'friend' ? 'Подруга' : 'Наставница'}</small></div></div><div class="messages">${thread.messages.slice(-5).map(m => `<div class="message ${m.speaker === HERO.name ? 'mine' : ''}">${esc(m.text)}<time>${Math.floor(m.time / 60)}:${String(m.time % 60).padStart(2, '0')}</time></div>`).join('')}</div><div class="reply-options">${thread.choices.map(c => `<button data-reply="${c.id}">${esc(c.label)} ${icon('arrow')}</button>`).join('')}${!thread.choices.length ? (thread.id==='friend'&&state.interview.status==='accepted'?'<button id="kira-more">Рассказать Кире про свой день</button>':'<span class="caught-up">Пока всё. Жизнь — за экраном.</span>') : ''}</div>`;
+    content = `<div class="phone-thread-head"><button id="thread-back" class="icon-button" aria-label="Назад к чатам">${icon('back')}</button>${chatAvatar(thread)}<div><b>${esc(thread.shortName)}</b><small>${thread.id === 'max' ? 'Знакомый · 27' : thread.id === 'friend' ? 'Подруга' : 'Наставница'}</small></div></div><div class="messages">${thread.messages.slice(-5).map((m,index) => `<div class="message ${m.speaker === HERO.name ? 'mine' : ''}">${esc(m.text)}<button class="message-voice" data-message-voice="${index}" aria-label="Прослушать сообщение ${index+1}">♫</button><time>${Math.floor(m.time / 60)}:${String(m.time % 60).padStart(2, '0')}</time></div>`).join('')}</div><div class="reply-options">${thread.choices.map(c => `<button data-reply="${c.id}">${esc(c.label)} ${icon('arrow')}</button>`).join('')}${!thread.choices.length ? (thread.id==='friend'&&state.interview.status==='accepted'?'<button id="kira-more">Рассказать Кире про свой день</button>':'<span class="caught-up">Пока всё. Жизнь — за экраном.</span>') : ''}</div>`;
   } else if (modalState.tab === 'shop') {
     content = `<div class="phone-page-title"><small>ДЛЯ СВОЕГО УГОЛКА</small><h2>Маленькие радости</h2><p>Сегодня можно начать с одной вещи.</p></div><div class="shop-items">${v.shop.map(item => `<article class="shop-item"><div class="product-art ${item.id}">${icon(item.id)}</div><div><b>${esc(item.name)}</b><small>${esc(item.description)}</small><button data-buy="${item.id}" ${item.owned || !item.affordable || !['morning', 'evening'].includes(state.phase) ? 'disabled' : ''}>${item.owned ? 'Уже дома' : icon('coin') + item.price}</button></div></article>`).join('')}</div><div class="shop-balance">Осталось ${icon('coin')} <b>${state.coins}</b></div><p class="shop-note">Это игровые монеты. Купленное остаётся в квартире.</p>`;
   } else {
@@ -478,18 +517,24 @@ function renderPhone() {
   showModal(`<div class="phone-top"><span>${v.clock}</span><span class="phone-notch"></span><button data-close class="icon-button" aria-label="Убрать телефон">${icon('close')}</button></div>${content}${!thread ? `<nav class="phone-tabs"><button id="chats-tab" class="${modalState.tab === 'chats' ? 'active' : ''}">${icon('chat')}Чаты</button><button id="shop-tab" class="${modalState.tab === 'shop' ? 'active' : ''}">${icon('plant')}Для дома</button></nav>` : ''}`, 'phone');
   bindClose();
   if (thread) {
+    const voiceFor=m=>findSpeech(m.speaker===HERO.name?'anna':({team:'vera',friend:'kira',max:'max'}[thread.id]),m.text);
+    document.querySelectorAll('[data-message-voice]').forEach(button=>button.onclick=()=>playDialogue([voiceFor(thread.messages.slice(-5)[Number(button.dataset.messageVoice)])]));
+    if(autoplay)playDialogue([voiceFor(thread.messages.at(-1))]);
     $('#thread-back').onclick = () => {
       modalState.thread = null;
       renderPhone();
     };
     if($('#kira-more'))$('#kira-more').onclick=()=>showNpc('kira',()=>openPhone('friend'));
   document.querySelectorAll('[data-reply]').forEach(b => b.onclick = () => {
+      const beforeCount=thread.messages.length;
       act({
         type: 'CHAT',
         channelId: thread.id,
         choiceId: b.dataset.reply
       });
-      renderPhone();
+      renderPhone(false);
+      const updated=viewLife(state).availableChats.find(chat=>chat.id===thread.id);
+      playDialogue(updated.messages.slice(beforeCount).map(voiceFor));
     });
   } else {
     const ct = $('#chats-tab'),
@@ -524,17 +569,19 @@ function goNpc(id) {
   if(id==='max'){go('bench');return;}
   if(moveToActor(world,id)){scene.follow();refresh();}
 }
-function showNpc(id,back=null,justReplied=false) {
+function showNpc(id,back=null,justReplied=false,outgoing=null) {
   if(modalState?.type==='conflict')return;
   const conversation=getNpcConversation(state,id);
   if(!conversation?.reachable){notify(conversation?.reason||'Сейчас не поговорить.');return;}
   modalState={type:'npc',id,back};
   showModal(`${closeButton()}<div class="npc-heading">${portrait(id,conversation.name)}<div><span class="eyebrow">${esc(conversation.role)}</span><h2>${esc(conversation.name)}</h2></div></div><div class="speech">${justReplied&&conversation.lastReply&&conversation.lastReply!==conversation.opening?`<p>${esc(conversation.lastReply)}</p>`:''}${esc(conversation.opening)}</div><div class="npc-options">${conversation.choices.map(c=>`<button class="secondary" data-npc-choice="${c.id}">${esc(c.label)} ${icon('chat')}</button>`).join('')}</div>${conversation.nextHint?`<p class="conversation-hint">${esc(conversation.nextHint)}</p>`:''}<button id="npc-back" class="text-button">${back?'Вернуться к разговору':'До встречи'}</button>`,'npc-dialog');
   bindClose();
+  playDialogue([outgoing,justReplied?findSpeech(id,conversation.lastReply):null,findSpeech(id,conversation.opening)]);
   document.querySelectorAll('[data-npc-choice]').forEach(button=>button.onclick=()=>{
-    if(act({type:'NPC_TALK',npcId:id,choiceId:button.dataset.npcChoice},true))showNpc(id,back,true);
+    const choice=conversation.choices.find(item=>item.id===button.dataset.npcChoice);
+    if(act({type:'NPC_TALK',npcId:id,choiceId:button.dataset.npcChoice},true))showNpc(id,back,true,findSpeech('anna',choice?.label));
   });
-  $('#npc-back').onclick=back||closeModal;
+  $('#npc-back').onclick=()=>back?back():closeModal();
 }
 function showResidents() {
   if(modalState?.type==='conflict')return;
@@ -550,7 +597,8 @@ function showInterview() {
   };
   renderInterview();
 }
-function renderInterview() {
+function renderInterview(voiceLines=null) {
+  if(!Array.isArray(voiceLines))voiceLines=null;
   if(modalState?.type==='npc')modalState={type:'interview',screen:'talk'};
   if (modalState?.type !== 'interview') return;
   const v = viewLife(state),
@@ -559,12 +607,13 @@ function renderInterview() {
   showModal(`${closeButton()}<span class="eyebrow">ПЕРВЫЙ АДРЕС · ЭЛЕКТРОННАЯ АНКЕТА</span><div class="interview-heading"><div class="tiny-people">${portrait('ilya','Илья')}${portrait('anton','Антон')}</div><span><b>${INTERVIEW.name}</b><small>${INTERVIEW.address}</small></span></div>${body}<div class="resident-greetings">${INTERVIEW.roster.map(p=>`<button data-greeting="${p.id}" class="text-button">Поговорить: ${p.name}</button>`).join('')}</div>`, 'interview');
   bindClose();
   document.querySelectorAll('[data-greeting]').forEach(b=>b.onclick=()=>showNpc(b.dataset.greeting,renderInterview));
+  playDialogue(voiceLines||[form?getSpeech('interview.instruction'):findSpeech('ilya',state.interview.lastReply)]);
   document.querySelectorAll('[data-question]').forEach(b => b.onclick = () => {
     act({
       type: 'ASK',
       questionId: b.dataset.question
     });
-    renderInterview();
+    renderInterview([getSpeech('interview.'+b.dataset.question+'.anna'),getSpeech('interview.'+b.dataset.question+'.reply')]);
   });
   if ($('#open-roster')) $('#open-roster').onclick = () => {
     modalState.screen = 'roster';
@@ -573,7 +622,7 @@ function renderInterview() {
   if (form) {
     document.querySelectorAll('[data-person]').forEach(b => b.onclick = () => {
       allocation[b.dataset.person] = (allocation[b.dataset.person] + 1) % 3;
-      renderInterview();
+      renderInterview([]);
     });
     $('#back-interview').onclick = () => {
       modalState.screen = 'talk';
@@ -593,6 +642,7 @@ function renderInterview() {
         closeModal();
         scene.celebrate('Сохранено');
         notify('Готово. Теперь передай результат Вере.');
+        sound.playLines([getSpeech('interview.accepted')]);
       } else $('#roster-error').textContent = state.notice;
     };
   }
@@ -600,21 +650,22 @@ function renderInterview() {
 function groupNames(group) {
   return INTERVIEW.roster.filter(p => allocation[p.id] === group).map(p => p.name).join(', ') || 'Пока пусто';
 }
-function showDate() {
+function showDate(voiceLines=null) {
   if (modalState?.type === 'conflict') return;
   modalState = {
     type: 'date'
   };
   showModal(`${closeButton()}<div class="date-scene">${portrait('max','Макс, 27 лет',true)}<div><span class="eyebrow">ВЕЧЕР БЕЗ СПЕШКИ</span><h2>Привет, Макс.</h2><div class="speech">${esc(state.date.status === 'met' ? state.date.lastReply : DATE_SCENE.opening)}</div></div></div><div class="date-options">${state.date.status === 'talking' ? DATE_SCENE.choices.map(c => `<button data-date="${c.id}">${esc(c.label)} ${icon('heart')}</button>`).join('') : '<button id="date-done" class="primary">Мне тоже было хорошо ♡</button>'}</div>`, 'date');
   bindClose();
+  playDialogue(voiceLines||(state.date.status==='talking'?[getSpeech('date.hello'),getSpeech('date.opening')]:[findSpeech('max',state.date.lastReply)]));
   document.querySelectorAll('[data-date]').forEach(b => b.onclick = () => {
     act({
       type: 'DATE_REPLY',
       choiceId: b.dataset.date
     });
-    showDate();
+    showDate([getSpeech('date.'+b.dataset.date+'.anna'),getSpeech('date.'+b.dataset.date+'.reply')]);
   });
-  if ($('#date-done')) $('#date-done').onclick = ()=>showNpc('max');
+  if ($('#date-done')) $('#date-done').onclick = ()=>showNpc('max',null,false,getSpeech('date.done'));
 }
 function showMap() {
   if (!state.flags.awake) {
@@ -663,6 +714,7 @@ function showEnding() {
   };
   const v = viewLife(state);
   showModal(`<span class="eyebrow">ПИЛОТ ПРОЙДЕН · ДЕНЬ 1</span><h1>Твой первый<br>день завершён.</h1><div class="day-outcomes"><div>${icon('star')}<span>${esc(v.outcome.work)}</span></div><div>${icon('home')}<span>${esc(v.outcome.home)}</span></div><div>${icon('heart')}<span>${esc(v.outcome.romance)}</span></div></div><div class="day-wallet">На свои планы осталось ${icon('coin')} <b>${state.coins}</b></div><p class="next-chapter">Сегодня ты познакомилась с работой, получила деньги за первую анкету и выбрала свой вечер. Спасибо за игру! Эту историю можно пройти ещё раз с другими решениями.</p><button id="end-home" class="primary">Посмотреть мой дом ${icon('home')}</button><button id="end-menu" class="secondary">На главный экран</button><button id="end-restart" class="text-button">Прожить день по-другому</button>`, 'ending');
+  playDialogue([getSpeech('pilot.ending')]);
   $('#end-home').onclick = closeModal;
   $('#end-restart').onclick = confirmRestart;
   $('#end-menu').onclick=showWelcome;
@@ -690,12 +742,20 @@ function confirmRestart() {
     showAlarm();
   };
 }
+function audioSettingsMarkup(){
+  const p=sound.getPreferences();
+  return `<fieldset class="audio-settings"><legend>Звуки твоего дня</legend><label class="setting-row"><span>Музыка и голоса</span><input id="audio-enabled" type="checkbox" ${p.enabled?'checked':''}></label>${[['music','Музыка'],['voices','Голоса'],['effects','Звуки действий']].map(([key,label])=>`<label class="audio-level"><span>${label}</span><input type="range" min="0" max="100" step="1" value="${Math.round(p[key]*100)}" data-audio-level="${key}" aria-label="Громкость: ${label}"><output>${Math.round(p[key]*100)}%</output></label>`).join('')}<p class="audio-status" data-voice-status></p><button id="voice-test" class="text-button">Послушать голос</button><small>Реплики озвучены заранее. Музыка становится тише, когда говорят персонажи.</small></fieldset>`;
+}
 function showSettings() {
   modalState = {
     type: 'settings'
   };
-  showModal(`${closeButton()}<h2>Передышка</h2><label class="setting-row"><span>Меньше декоративных движений</span><input id="motion" type="checkbox" ${preferences.reducedMotion ? 'checked' : ''}></label><button id="export" class="secondary">Скачать мою историю</button><label class="secondary file-label">Загрузить историю<input id="import" type="file" accept=".json,application/json"></label><button id="help" class="secondary">Как играть</button><button id="main-menu" class="secondary">Главное меню</button><button id="restart" class="text-button">Новое прохождение</button><small class="muted">История сохраняется на этом устройстве.</small>`, 'card');
+  showModal(`${closeButton()}<h2>Передышка</h2>${audioSettingsMarkup()}<label class="setting-row"><span>Меньше декоративных движений</span><input id="motion" type="checkbox" ${preferences.reducedMotion ? 'checked' : ''}></label><button id="export" class="secondary">Скачать мою историю</button><label class="secondary file-label">Загрузить историю<input id="import" type="file" accept=".json,application/json"></label><button id="help" class="secondary">Как играть</button><button id="main-menu" class="secondary">Главное меню</button><button id="restart" class="text-button">Новое прохождение</button><small class="muted">История сохраняется на этом устройстве.</small>`, 'card');
   bindClose();
+  $('#audio-enabled').onchange=e=>sound.updatePreferences({enabled:e.target.checked});
+  document.querySelectorAll('[data-audio-level]').forEach(input=>input.oninput=()=>{sound.updatePreferences({[input.dataset.audioLevel]:Number(input.value)/100});input.nextElementSibling.textContent=input.value+'%';});
+  $('#voice-test').onclick=()=>{sound.unlock();playDialogue([getSpeech('pilot.alarm')]);};
+  updateSoundStatus(sound.getStatus());
   $('#motion').onchange = e => {
     preferences.reducedMotion = e.target.checked;
     platform.setPreferences(preferences);
@@ -729,6 +789,9 @@ $('#bag').onclick = showBag;
 $('#profile').onclick = showProfile;
 $('#objective').onclick = objectiveAction;
 $('#settings').onclick = showSettings;
+$('#sound-toggle').onclick=()=>{sound.unlock();sound.updatePreferences({enabled:!sound.getPreferences().enabled});};
+document.addEventListener('pointerdown',()=>sound.unlock(),{capture:true});
+document.addEventListener('keydown',e=>{if(!e.repeat)sound.unlock();},{capture:true});
 $('#zoom-in').onclick = () => scene.zoomBy(1.2);
 $('#zoom-out').onclick = () => scene.zoomBy(1 / 1.2);
 $('#pause').onclick = () => {

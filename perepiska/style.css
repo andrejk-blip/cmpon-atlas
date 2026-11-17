@@ -2160,6 +2160,25 @@ button svg {
 .world-spot {transform:translate(-50%,5px);z-index:6}
 .world-spot>svg {width:30px;height:30px;padding:6px}
 .world-spot small {font-size:9px;padding:2px 5px}
+.sound-toggle {font-size:23px;line-height:1}
+.sound-toggle.muted {opacity:.55;text-decoration:line-through}
+.welcome-sound {display:flex;align-items:center;gap:9px;font-size:12px;margin:15px 0 10px}
+.welcome-sound input,.audio-settings input[type=checkbox] {accent-color:var(--rose);width:17px;height:17px}
+.dialogue-audio {display:flex;align-items:center;gap:8px;flex-wrap:wrap;border-top:1px solid #bda98b55;margin-top:16px;padding-top:10px;color:#846f5c}
+.dialogue-audio button {background:#eee3ce;border:1px solid #c5b391;border-radius:9px;padding:7px 10px;font-size:12px;min-height:33px}
+.dialogue-audio small {font-size:10px;flex:1;min-width:105px}
+.phone .dialogue-audio {margin:10px 0 0}
+.message-voice {background:transparent;color:inherit;opacity:.7;font-size:14px;padding:2px 5px;min-width:26px;float:right}
+.audio-settings {margin:18px 0;padding:12px 15px;border:1px solid #cbbb9d;border-radius:14px;background:#f3ead9}
+.audio-settings legend {font-size:13px;padding:0 8px;font-weight:bold}
+.audio-level {display:grid;grid-template-columns:105px 1fr 35px;align-items:center;gap:8px;margin:14px 0;font-size:12px}
+.audio-level input {min-width:0;width:100%;accent-color:var(--rose)}
+.audio-level output {text-align:right;font-size:10px}
+.audio-status {font-size:11px;line-height:1.5;margin:10px 0}
+.audio-settings>small {display:block;font-size:10px;line-height:1.4;color:#8a755f}
+.audio-settings .text-button {font-size:12px;margin:0 0 8px}
+.character-portrait.is-speaking {filter:drop-shadow(0 0 2px #b96f6966)}
+@media(max-width:600px){.audio-level{grid-template-columns:85px 1fr 30px}.dialogue-audio{gap:5px}.dialogue-audio button{font-size:11px;padding:6px 8px}.sound-toggle{font-size:19px}}
 .npc-heading {display:flex;align-items:center;gap:18px}
 .npc-heading>.character-portrait {width:92px;height:98px;flex-shrink:0;background:#ede5d5;border-radius:45% 45% 35% 35%;overflow:hidden}
 .npc-heading h2 {margin:6px 0 0}

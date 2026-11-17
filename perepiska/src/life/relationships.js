@@ -132,6 +132,7 @@ const NPCS = {
   },
 };
 
+export { NPCS as NPC_DIALOGUE };
 export const NPC_IDS = Object.freeze(Object.keys(NPCS));
 export function createSocial() {
   return Object.fromEntries(NPC_IDS.map(id => [id, []]));

@@ -1,0 +1,984 @@
+{
+  "version": 1,
+  "provider": "silero-v5-cis-base",
+  "license": "MIT",
+  "model": {
+    "url": "https://models.silero.ai/models/tts/ru/v5_cis_base.pt",
+    "sha256": "ba41b18f6a707ad93605a162998865e7c087153d2e010a26dd02229dab0e672a",
+    "bytes": 91680514
+  },
+  "licenseUrl": "https://github.com/snakers4/silero-models/blob/master/LICENSE_CIS",
+  "licenseScopeUrl": "https://github.com/snakers4/silero-models#v5-cis-base-models",
+  "runtime": "torch 2.15.0+cpu",
+  "sampleRate": 24000,
+  "channels": 1,
+  "bitrate": 64000,
+  "targetLufs": -19,
+  "truePeakLimitDb": -2,
+  "profiles": {
+    "anna": {
+      "voice": "ru_ekaterina",
+      "tempo": 1.025
+    },
+    "vera": {
+      "voice": "ru_oksana",
+      "tempo": 0.975
+    },
+    "kira": {
+      "voice": "ru_vika",
+      "tempo": 1.035
+    },
+    "max": {
+      "voice": "ru_dmitriy",
+      "tempo": 0.98
+    },
+    "resident-1": {
+      "voice": "ru_eduard",
+      "tempo": 0.95
+    },
+    "resident-2": {
+      "voice": "ru_bogdan",
+      "tempo": 1.0
+    },
+    "ilya": {
+      "voice": "ru_roman",
+      "tempo": 1.0
+    },
+    "anton": {
+      "voice": "ru_igor",
+      "tempo": 1.025
+    },
+    "dima": {
+      "voice": "ru_marat",
+      "tempo": 1.03
+    },
+    "narrator": {
+      "voice": "ru_zhadyra",
+      "tempo": 0.97
+    }
+  },
+  "catalogSha256": "ea1480f34db4dd2851077f872fdc030f7b181db82fcbd8e0a1282d2c09840dca",
+  "stressSha256": "cd08c7a2711e9ef2f44285a0a658623fc60eb1cbd51313c79b816e7f3492c6e1",
+  "lines": {
+    "chat.team.opening": {
+      "url": "assets/audio/voices/chat.team.opening.mp3",
+      "speakerId": "vera",
+      "voice": "ru_oksana",
+      "duration": 14.352,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "1548a09539663f306b3cbc8307689a90f7efbb12706e3e83f168cab28ed6ffc7",
+      "bytes": 115052
+    },
+    "chat.team.ready.anna": {
+      "url": "assets/audio/voices/chat.team.ready.anna.mp3",
+      "speakerId": "anna",
+      "voice": "ru_ekaterina",
+      "duration": 1.968,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "d2e46d1621520cb2ec7ca776d93f0b9fe92898d209553ff1081a04f8d45b1c2b",
+      "bytes": 15980
+    },
+    "chat.team.ready.reply": {
+      "url": "assets/audio/voices/chat.team.ready.reply.mp3",
+      "speakerId": "vera",
+      "voice": "ru_oksana",
+      "duration": 6.072,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "7c0214f843e37a39381606711770b8d4cffc17290c4e080babea2cf606cddba0",
+      "bytes": 48812
+    },
+    "chat.team.question.anna": {
+      "url": "assets/audio/voices/chat.team.question.anna.mp3",
+      "speakerId": "anna",
+      "voice": "ru_ekaterina",
+      "duration": 2.328,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "d564cd65b42887f7bb8a896e0f822174fb558fe6e4867184cac9bdcd70957f19",
+      "bytes": 18860
+    },
+    "chat.team.question.reply": {
+      "url": "assets/audio/voices/chat.team.question.reply.mp3",
+      "speakerId": "vera",
+      "voice": "ru_oksana",
+      "duration": 9.168,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "98a6a0a687947129904d90403a5a3fd6e460766a8c1cd4ab0b5d2fb6ef318038",
+      "bytes": 73580
+    },
+    "chat.friend.opening": {
+      "url": "assets/audio/voices/chat.friend.opening.mp3",
+      "speakerId": "kira",
+      "voice": "ru_vika",
+      "duration": 7.08,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "a295a4ac6f9734cfbdbcbf426d27c0619516aea0751e4f3c03986fb3e20702f6",
+      "bytes": 56876
+    },
+    "chat.friend.bright.anna": {
+      "url": "assets/audio/voices/chat.friend.bright.anna.mp3",
+      "speakerId": "anna",
+      "voice": "ru_ekaterina",
+      "duration": 2.88,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "d33c7f4ee047f761150fa3449aa463b78ee5683130ad18cc651ef216954b97f8",
+      "bytes": 23276
+    },
+    "chat.friend.bright.reply": {
+      "url": "assets/audio/voices/chat.friend.bright.reply.mp3",
+      "speakerId": "kira",
+      "voice": "ru_vika",
+      "duration": 6.552,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "8dd6ce35f093edb2cf8762df9bff09a842ab99400d314a739bb91b72557f949e",
+      "bytes": 52652
+    },
+    "chat.friend.calm.anna": {
+      "url": "assets/audio/voices/chat.friend.calm.anna.mp3",
+      "speakerId": "anna",
+      "voice": "ru_ekaterina",
+      "duration": 3.168,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "82f553e3a70e336694f5c7dcf507f6c20b78b04297ce5462410a1d8ad33f677d",
+      "bytes": 25580
+    },
+    "chat.friend.calm.reply": {
+      "url": "assets/audio/voices/chat.friend.calm.reply.mp3",
+      "speakerId": "kira",
+      "voice": "ru_vika",
+      "duration": 6.408,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "61a0eaa68ffa61132faf8eb316b9d01ff18fcdbe635fdd54450e555aadeea76e",
+      "bytes": 51500
+    },
+    "chat.max.opening": {
+      "url": "assets/audio/voices/chat.max.opening.mp3",
+      "speakerId": "max",
+      "voice": "ru_dmitriy",
+      "duration": 9.648,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "6b0dfcffa2c95210f411356de166c02dea5c00f53d45b047ccbd82fa32e7e142",
+      "bytes": 77420
+    },
+    "chat.max.accept.anna": {
+      "url": "assets/audio/voices/chat.max.accept.anna.mp3",
+      "speakerId": "anna",
+      "voice": "ru_ekaterina",
+      "duration": 2.16,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "2c9c97a242470daf33dcca0b2c7fabe3fd262228a5a411e17cd75c93d413a8e2",
+      "bytes": 17516
+    },
+    "chat.max.accept.reply": {
+      "url": "assets/audio/voices/chat.max.accept.reply.mp3",
+      "speakerId": "max",
+      "voice": "ru_dmitriy",
+      "duration": 6.48,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "d71346638dbab53c53f4c675a8c48b2722ab0f4e6873e73d1fa1362d22370a34",
+      "bytes": 52076
+    },
+    "chat.max.later.anna": {
+      "url": "assets/audio/voices/chat.max.later.anna.mp3",
+      "speakerId": "anna",
+      "voice": "ru_ekaterina",
+      "duration": 3.24,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "c2c77b07c477e77bf682a19af6799ab84b391d4187b17ef41f46a21c5828c1cc",
+      "bytes": 26156
+    },
+    "chat.max.later.reply": {
+      "url": "assets/audio/voices/chat.max.later.reply.mp3",
+      "speakerId": "max",
+      "voice": "ru_dmitriy",
+      "duration": 4.44,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "9faccb3f96aae65e0b614bb5040ba604fd8f4214fd87fc3baa6dc778a3837934",
+      "bytes": 35756
+    },
+    "chat.max.cancel.anna": {
+      "url": "assets/audio/voices/chat.max.cancel.anna.mp3",
+      "speakerId": "anna",
+      "voice": "ru_ekaterina",
+      "duration": 2.952,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "44da67ea6425c4618eb14e4f279f8397b63e7b9c61ceed1e60f7b5d5d896e48f",
+      "bytes": 23852
+    },
+    "chat.max.cancel.reply": {
+      "url": "assets/audio/voices/chat.max.cancel.reply.mp3",
+      "speakerId": "max",
+      "voice": "ru_dmitriy",
+      "duration": 3.912,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "2aa0f2d548b81fb1cbc1770536ecc73223e7c77f4b724eafbc663b1276b1b355",
+      "bytes": 31532
+    },
+    "chat.team.accepted": {
+      "url": "assets/audio/voices/chat.team.accepted.mp3",
+      "speakerId": "vera",
+      "voice": "ru_oksana",
+      "duration": 8.736,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "c9c99188ed7985cde69d3e35c15f7b493b95d42e741c2a371b5157c918853c62",
+      "bytes": 70124
+    },
+    "chat.max.after-date.warm": {
+      "url": "assets/audio/voices/chat.max.after-date.warm.mp3",
+      "speakerId": "max",
+      "voice": "ru_dmitriy",
+      "duration": 4.104,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "a3d541bed26b79a0379d37430e224d8845a2195d2e8763ab94acf64b894e9f29",
+      "bytes": 33068
+    },
+    "chat.max.after-date.honest": {
+      "url": "assets/audio/voices/chat.max.after-date.honest.mp3",
+      "speakerId": "max",
+      "voice": "ru_dmitriy",
+      "duration": 4.248,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "aa250c200f682dcc474db5187e9dd1b0d5e38af8b9871f17163182161e8e3f35",
+      "bytes": 34220
+    },
+    "npc.vera.mentorship.opening.before-work": {
+      "url": "assets/audio/voices/npc.vera.mentorship.opening.before-work.mp3",
+      "speakerId": "vera",
+      "voice": "ru_oksana",
+      "duration": 6.0,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "45d499fce5f617974e96e83ce227a888c355303e5cca836ff492c2e9e6dace29",
+      "bytes": 48236
+    },
+    "npc.vera.mentorship.opening.after-work": {
+      "url": "assets/audio/voices/npc.vera.mentorship.opening.after-work.mp3",
+      "speakerId": "vera",
+      "voice": "ru_oksana",
+      "duration": 5.112,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "fbed0a2c8b7150de93f9b29cd672248ada571ccb9aed74b6f64060bd1d1424e2",
+      "bytes": 41132
+    },
+    "npc.vera.mentorship.ask-help.anna": {
+      "url": "assets/audio/voices/npc.vera.mentorship.ask-help.anna.mp3",
+      "speakerId": "anna",
+      "voice": "ru_ekaterina",
+      "duration": 2.736,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "38fcb0d7e0d03e7b3127fc5073a188b14430ae44bf65f5b19bc6df1d15dafa49",
+      "bytes": 22124
+    },
+    "npc.vera.mentorship.ask-help.reply": {
+      "url": "assets/audio/voices/npc.vera.mentorship.ask-help.reply.mp3",
+      "speakerId": "vera",
+      "voice": "ru_oksana",
+      "duration": 7.464,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "147daae03355719e3bcce421608c97bbd3dfc6e0c1e404bf2a2be61b09ea43b1",
+      "bytes": 59948
+    },
+    "npc.vera.mentorship.own-pace.anna": {
+      "url": "assets/audio/voices/npc.vera.mentorship.own-pace.anna.mp3",
+      "speakerId": "anna",
+      "voice": "ru_ekaterina",
+      "duration": 2.472,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "57111ccc7392b894a44031583da880acfac98bf9d96ed32e78c0d6371bd55292",
+      "bytes": 20012
+    },
+    "npc.vera.mentorship.own-pace.reply": {
+      "url": "assets/audio/voices/npc.vera.mentorship.own-pace.reply.mp3",
+      "speakerId": "vera",
+      "voice": "ru_oksana",
+      "duration": 8.832,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "9c8d06cb9ddf3ce4c84c6d4ab65667883273045b41f6ebffc9d30ec87c619a67",
+      "bytes": 70892
+    },
+    "npc.vera.reflection.opening": {
+      "url": "assets/audio/voices/npc.vera.reflection.opening.mp3",
+      "speakerId": "vera",
+      "voice": "ru_oksana",
+      "duration": 6.816,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "986d497555494a52d4cf26121bdbf12d117cca16659170dc8659893a4db540ab",
+      "bytes": 54764
+    },
+    "npc.vera.reflection.remember-clarity.anna": {
+      "url": "assets/audio/voices/npc.vera.reflection.remember-clarity.anna.mp3",
+      "speakerId": "anna",
+      "voice": "ru_ekaterina",
+      "duration": 3.576,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "c6c769d667503c12a3981fd8fd4a569745dbf5bd5203cb40c458524480dbdd67",
+      "bytes": 28844
+    },
+    "npc.vera.reflection.remember-clarity.reply": {
+      "url": "assets/audio/voices/npc.vera.reflection.remember-clarity.reply.mp3",
+      "speakerId": "vera",
+      "voice": "ru_oksana",
+      "duration": 9.696,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "6462245bd1167acec153c7d845343e1bfd317b0cba2706ccbd09adf847591374",
+      "bytes": 77804
+    },
+    "npc.vera.reflection.ask-surveys.anna": {
+      "url": "assets/audio/voices/npc.vera.reflection.ask-surveys.anna.mp3",
+      "speakerId": "anna",
+      "voice": "ru_ekaterina",
+      "duration": 3.024,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "cd07df00aefffd8509ca1074d2997c6c462144bb4cc6fe55312a40947b11bee6",
+      "bytes": 24428
+    },
+    "npc.vera.reflection.ask-surveys.reply": {
+      "url": "assets/audio/voices/npc.vera.reflection.ask-surveys.reply.mp3",
+      "speakerId": "vera",
+      "voice": "ru_oksana",
+      "duration": 11.04,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "72246c9c9a1d5e3e596782fc6b96f7bfd6af374e1097461aea92b757a9eaee01",
+      "bytes": 88556
+    },
+    "npc.max.next-plan.opening": {
+      "url": "assets/audio/voices/npc.max.next-plan.opening.mp3",
+      "speakerId": "max",
+      "voice": "ru_dmitriy",
+      "duration": 6.624,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "cc2422005029b1c114e0e7f77b2a2ae88467f412b9b85d9396b68d64bedac3e2",
+      "bytes": 53228
+    },
+    "npc.max.next-plan.next-walk.anna": {
+      "url": "assets/audio/voices/npc.max.next-plan.next-walk.anna.mp3",
+      "speakerId": "anna",
+      "voice": "ru_ekaterina",
+      "duration": 2.76,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "2db18a16f25e058ea1643a25d249ce254f464fb4250e10cff89da939ae44da2a",
+      "bytes": 22316
+    },
+    "npc.max.next-plan.next-walk.reply": {
+      "url": "assets/audio/voices/npc.max.next-plan.next-walk.reply.mp3",
+      "speakerId": "max",
+      "voice": "ru_dmitriy",
+      "duration": 6.312,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "76f04d817579377e8f6a4d09478f3feb8f5b3d125079e402b4816da2082031c1",
+      "bytes": 50732
+    },
+    "npc.max.next-plan.home-coffee.anna": {
+      "url": "assets/audio/voices/npc.max.next-plan.home-coffee.anna.mp3",
+      "speakerId": "anna",
+      "voice": "ru_ekaterina",
+      "duration": 3.48,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "8884f540059693897a2f3fb2bfa8c15a4a5bba828fa1401c25718e9a2602ca47",
+      "bytes": 28076
+    },
+    "npc.max.next-plan.home-coffee.reply": {
+      "url": "assets/audio/voices/npc.max.next-plan.home-coffee.reply.mp3",
+      "speakerId": "max",
+      "voice": "ru_dmitriy",
+      "duration": 6.576,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "340fea2e9112f02fdc6fe3761514412a4180764b44e1fb803c14788032c19e3d",
+      "bytes": 52844
+    },
+    "npc.max.pace.opening": {
+      "url": "assets/audio/voices/npc.max.pace.opening.mp3",
+      "speakerId": "max",
+      "voice": "ru_dmitriy",
+      "duration": 6.888,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "d0ae7d867d18a154f05b1e76ae5be03fae0a4b81128e1aed02c040be167c4d13",
+      "bytes": 55340
+    },
+    "npc.max.pace.make-time.anna": {
+      "url": "assets/audio/voices/npc.max.pace.make-time.anna.mp3",
+      "speakerId": "anna",
+      "voice": "ru_ekaterina",
+      "duration": 3.096,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "3fc00317be4ab3f1740dd65fc38ae0c08de08caf7a06d330b708e3bd917ff1d5",
+      "bytes": 25004
+    },
+    "npc.max.pace.make-time.reply": {
+      "url": "assets/audio/voices/npc.max.pace.make-time.reply.mp3",
+      "speakerId": "max",
+      "voice": "ru_dmitriy",
+      "duration": 5.496,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "d350b191c3003a0359ac325f056d581446d96831c5319248d9b594836be276ed",
+      "bytes": 44204
+    },
+    "npc.max.pace.keep-easy.anna": {
+      "url": "assets/audio/voices/npc.max.pace.keep-easy.anna.mp3",
+      "speakerId": "anna",
+      "voice": "ru_ekaterina",
+      "duration": 3.168,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "5093f2c0896a63b97d1c303885a85d7ac5709a595f38cc6dbae7b23ea6d9134c",
+      "bytes": 25580
+    },
+    "npc.max.pace.keep-easy.reply": {
+      "url": "assets/audio/voices/npc.max.pace.keep-easy.reply.mp3",
+      "speakerId": "max",
+      "voice": "ru_dmitriy",
+      "duration": 4.776,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "4c923bbd2dbe664f51a9a1d2fac398fdb2192271d072b815daead898e83798e5",
+      "bytes": 38444
+    },
+    "npc.resident-1.courtyard-hello.opening": {
+      "url": "assets/audio/voices/npc.resident-1.courtyard-hello.opening.mp3",
+      "speakerId": "resident-1",
+      "voice": "ru_eduard",
+      "duration": 6.864,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "5ee77f3d39d1fe03ab95ab1e23e3601e0324d3fc307f0fcf00e8078c01c38975",
+      "bytes": 55148
+    },
+    "npc.resident-1.courtyard-hello.say-first-day.anna": {
+      "url": "assets/audio/voices/npc.resident-1.courtyard-hello.say-first-day.anna.mp3",
+      "speakerId": "anna",
+      "voice": "ru_ekaterina",
+      "duration": 3.192,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "0729baade41c07d3bf246a820098a36427b747e4e2bfaac9e2c74b915352bd0e",
+      "bytes": 25772
+    },
+    "npc.resident-1.courtyard-hello.say-first-day.reply": {
+      "url": "assets/audio/voices/npc.resident-1.courtyard-hello.say-first-day.reply.mp3",
+      "speakerId": "resident-1",
+      "voice": "ru_eduard",
+      "duration": 6.816,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "ec358bbfe05348902d5c69a893b87aa3ba866b6946f44f2a77a6f713392ea89b",
+      "bytes": 54764
+    },
+    "npc.resident-1.courtyard-hello.notice-courtyard.anna": {
+      "url": "assets/audio/voices/npc.resident-1.courtyard-hello.notice-courtyard.anna.mp3",
+      "speakerId": "anna",
+      "voice": "ru_ekaterina",
+      "duration": 3.216,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "25bb8f040f09541a43264a719a13ed9fa0bde89aeed45d13072058ecef773fd2",
+      "bytes": 25964
+    },
+    "npc.resident-1.courtyard-hello.notice-courtyard.reply": {
+      "url": "assets/audio/voices/npc.resident-1.courtyard-hello.notice-courtyard.reply.mp3",
+      "speakerId": "resident-1",
+      "voice": "ru_eduard",
+      "duration": 7.512,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "f963a5c896fd05b8d26ae23fa17c09e81f845ec144f4bfdc4019524c5f3db0ff",
+      "bytes": 60332
+    },
+    "npc.resident-2.neighbor-intro.opening": {
+      "url": "assets/audio/voices/npc.resident-2.neighbor-intro.opening.mp3",
+      "speakerId": "resident-2",
+      "voice": "ru_bogdan",
+      "duration": 4.848,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "ff1c944620fc070eb5c3ba3a6daa3b7e5ca79ecbcd8de1fa8b7afc1831906f3a",
+      "bytes": 39020
+    },
+    "npc.resident-2.neighbor-intro.new-neighbor.anna": {
+      "url": "assets/audio/voices/npc.resident-2.neighbor-intro.new-neighbor.anna.mp3",
+      "speakerId": "anna",
+      "voice": "ru_ekaterina",
+      "duration": 2.832,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "260d77ca40955a0a193975eb1a5f096711856e990b4e325dc0eb8753bb4e5d6c",
+      "bytes": 22892
+    },
+    "npc.resident-2.neighbor-intro.new-neighbor.reply": {
+      "url": "assets/audio/voices/npc.resident-2.neighbor-intro.new-neighbor.reply.mp3",
+      "speakerId": "resident-2",
+      "voice": "ru_bogdan",
+      "duration": 5.784,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "1566b1497defec6f65104acf041e15c0b38c6138a270c0962b4a8f48ccc8db7c",
+      "bytes": 46508
+    },
+    "npc.resident-2.neighbor-intro.on-the-job.anna": {
+      "url": "assets/audio/voices/npc.resident-2.neighbor-intro.on-the-job.anna.mp3",
+      "speakerId": "anna",
+      "voice": "ru_ekaterina",
+      "duration": 2.832,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "88f0dd5e1d8bdd6231b3cbe9557d2774531268ea8cc423f69ff479a023b11b06",
+      "bytes": 22892
+    },
+    "npc.resident-2.neighbor-intro.on-the-job.reply": {
+      "url": "assets/audio/voices/npc.resident-2.neighbor-intro.on-the-job.reply.mp3",
+      "speakerId": "resident-2",
+      "voice": "ru_bogdan",
+      "duration": 5.472,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "f78272c934d6e4286ec7b0d4ee849df55c7ade4b214d8231281de585182b6f22",
+      "bytes": 44012
+    },
+    "npc.resident-2.after-work.opening.neighbor": {
+      "url": "assets/audio/voices/npc.resident-2.after-work.opening.neighbor.mp3",
+      "speakerId": "resident-2",
+      "voice": "ru_bogdan",
+      "duration": 4.008,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "823755cb4230f7cecf1c3f5abac55d1ae0083f53ef2d75bb22579ae979e31d41",
+      "bytes": 32300
+    },
+    "npc.resident-2.after-work.opening.work": {
+      "url": "assets/audio/voices/npc.resident-2.after-work.opening.work.mp3",
+      "speakerId": "resident-2",
+      "voice": "ru_bogdan",
+      "duration": 3.384,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "408719d442f0ddaa6d4766c855ecf106d0546cfeabf8d364745041d174dfd28b",
+      "bytes": 27308
+    },
+    "npc.resident-2.after-work.share-day.anna": {
+      "url": "assets/audio/voices/npc.resident-2.after-work.share-day.anna.mp3",
+      "speakerId": "anna",
+      "voice": "ru_ekaterina",
+      "duration": 2.304,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "bbf6c41cb38889f738399605e23514abe4bfa7917c416ea63eea783d7e821850",
+      "bytes": 18668
+    },
+    "npc.resident-2.after-work.share-day.reply": {
+      "url": "assets/audio/voices/npc.resident-2.after-work.share-day.reply.mp3",
+      "speakerId": "resident-2",
+      "voice": "ru_bogdan",
+      "duration": 6.168,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "639b8ba471b8e8d3a18ce063cb8ce792d533c4389505fc39c0fa22452e12cd2d",
+      "bytes": 49580
+    },
+    "npc.resident-2.after-work.ask-neighbor-life.anna": {
+      "url": "assets/audio/voices/npc.resident-2.after-work.ask-neighbor-life.anna.mp3",
+      "speakerId": "anna",
+      "voice": "ru_ekaterina",
+      "duration": 2.712,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "fd9dbb5b0554a4955992cf4ec2292a02dc926f1f5d4534e07ea88e47314e032d",
+      "bytes": 21932
+    },
+    "npc.resident-2.after-work.ask-neighbor-life.reply": {
+      "url": "assets/audio/voices/npc.resident-2.after-work.ask-neighbor-life.reply.mp3",
+      "speakerId": "resident-2",
+      "voice": "ru_bogdan",
+      "duration": 7.032,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "6001814f4a2f5445251d5ca0f4087af772916a42024dd624680c57181b0795ae",
+      "bytes": 56492
+    },
+    "npc.kira.evening-reaction.opening": {
+      "url": "assets/audio/voices/npc.kira.evening-reaction.opening.mp3",
+      "speakerId": "kira",
+      "voice": "ru_vika",
+      "duration": 6.6,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "6807736af00d41bd73bbba09920e6a26030ecb17684d2103b0355f37d40f6e62",
+      "bytes": 53036
+    },
+    "npc.kira.evening-reaction.share-work.anna": {
+      "url": "assets/audio/voices/npc.kira.evening-reaction.share-work.anna.mp3",
+      "speakerId": "anna",
+      "voice": "ru_ekaterina",
+      "duration": 5.568,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "096af95d8fb1fbefa03dd2d34ec7a4582d2dff546ccc2593f7aeb64391c73e2e",
+      "bytes": 44780
+    },
+    "npc.kira.evening-reaction.share-work.reply": {
+      "url": "assets/audio/voices/npc.kira.evening-reaction.share-work.reply.mp3",
+      "speakerId": "kira",
+      "voice": "ru_vika",
+      "duration": 7.392,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "d909f825bf938d4921b609f15eaddfcb84ae9d67439b099a44cd0301ca4b722d",
+      "bytes": 59372
+    },
+    "npc.kira.evening-reaction.share-evening.anna": {
+      "url": "assets/audio/voices/npc.kira.evening-reaction.share-evening.anna.mp3",
+      "speakerId": "anna",
+      "voice": "ru_ekaterina",
+      "duration": 3.6,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "72f96adb0d7ad1d83a37bcf9a1f1d542df593620d2bb2ed6090ee87fa3a40356",
+      "bytes": 29036
+    },
+    "npc.kira.evening-reaction.share-evening.reply": {
+      "url": "assets/audio/voices/npc.kira.evening-reaction.share-evening.reply.mp3",
+      "speakerId": "kira",
+      "voice": "ru_vika",
+      "duration": 7.176,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "cebeefd54321ae09985dfbbc36b92f4b6876ace12d7549e49a8b778c3a7d2798",
+      "bytes": 57644
+    },
+    "npc.ilya.ilya-smalltalk.opening": {
+      "url": "assets/audio/voices/npc.ilya.ilya-smalltalk.opening.mp3",
+      "speakerId": "ilya",
+      "voice": "ru_roman",
+      "duration": 3.48,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "e19ffc5ffc3621711cf2e1c8d39aed9a7d5f8467df956f4d75df5fe67e39eee9",
+      "bytes": 28076
+    },
+    "npc.ilya.ilya-smalltalk.ilya-labels.anna": {
+      "url": "assets/audio/voices/npc.ilya.ilya-smalltalk.ilya-labels.anna.mp3",
+      "speakerId": "anna",
+      "voice": "ru_ekaterina",
+      "duration": 3.264,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "649f5a9c7d66e6692eac066ad1d3948f5cc5b84f8669316b5d560e637c26ae96",
+      "bytes": 26348
+    },
+    "npc.ilya.ilya-smalltalk.ilya-labels.reply": {
+      "url": "assets/audio/voices/npc.ilya.ilya-smalltalk.ilya-labels.reply.mp3",
+      "speakerId": "ilya",
+      "voice": "ru_roman",
+      "duration": 5.424,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "0d3dc50d5027d46739f9a63bd323e67fb630c920908a186c42205748ad5f877e",
+      "bytes": 43628
+    },
+    "npc.anton.anton-smalltalk.opening": {
+      "url": "assets/audio/voices/npc.anton.anton-smalltalk.opening.mp3",
+      "speakerId": "anton",
+      "voice": "ru_igor",
+      "duration": 4.872,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "6e4ed75d94fffec1c2cfa2757c5b1851863d462314e5d86ceca8a59581ccadb5",
+      "bytes": 39212
+    },
+    "npc.anton.anton-smalltalk.anton-stickers.anna": {
+      "url": "assets/audio/voices/npc.anton.anton-smalltalk.anton-stickers.anna.mp3",
+      "speakerId": "anna",
+      "voice": "ru_ekaterina",
+      "duration": 1.944,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "2f3511b2ea2ef983876d552326b6a77aaeade3284b1f8f4dfd972242b71b57c5",
+      "bytes": 15788
+    },
+    "npc.anton.anton-smalltalk.anton-stickers.reply": {
+      "url": "assets/audio/voices/npc.anton.anton-smalltalk.anton-stickers.reply.mp3",
+      "speakerId": "anton",
+      "voice": "ru_igor",
+      "duration": 7.608,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "19cffd71afdb75bed02397c6d4e0d9f1dbe03e5bf8a4aba42d9c65398e134cb1",
+      "bytes": 61100
+    },
+    "npc.dima.guest-goodbye.opening": {
+      "url": "assets/audio/voices/npc.dima.guest-goodbye.opening.mp3",
+      "speakerId": "dima",
+      "voice": "ru_marat",
+      "duration": 4.488,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "d3c743e8abbd8c7b9a23ac37ba183a1b010410aaa2631b8c1d653059bd745c67",
+      "bytes": 36140
+    },
+    "npc.dima.guest-goodbye.dima-goodbye.anna": {
+      "url": "assets/audio/voices/npc.dima.guest-goodbye.dima-goodbye.anna.mp3",
+      "speakerId": "anna",
+      "voice": "ru_ekaterina",
+      "duration": 1.464,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "b216d8ad0e589fc640e9466dcfcb5f323c3370eaf07fc7439d955a53471d36f9",
+      "bytes": 11948
+    },
+    "npc.dima.guest-goodbye.dima-goodbye.reply": {
+      "url": "assets/audio/voices/npc.dima.guest-goodbye.dima-goodbye.reply.mp3",
+      "speakerId": "dima",
+      "voice": "ru_marat",
+      "duration": 7.752,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "9f7c7b7b5ad0e8dde29cb34f450c31f8736cc9b5e29c44dfa1abce8d3ce45017",
+      "bytes": 62252
+    },
+    "interview.opening": {
+      "url": "assets/audio/voices/interview.opening.mp3",
+      "speakerId": "ilya",
+      "voice": "ru_roman",
+      "duration": 6.36,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "b77af800c61dc0109ac6545c318e582fcc9bf6d08efc4fd641261a3835be8a8a",
+      "bytes": 51116
+    },
+    "interview.who.anna": {
+      "url": "assets/audio/voices/interview.who.anna.mp3",
+      "speakerId": "anna",
+      "voice": "ru_ekaterina",
+      "duration": 2.04,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "d24fae97584c27056b06e8770dae79cecf81222a8abf1e3313fd831c3d9794a0",
+      "bytes": 16556
+    },
+    "interview.who.reply": {
+      "url": "assets/audio/voices/interview.who.reply.mp3",
+      "speakerId": "ilya",
+      "voice": "ru_roman",
+      "duration": 4.848,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "2b4b2b54236cb793dfa106eececa81e1b542f4bb9a746217983d1b0d2b96623b",
+      "bytes": 39020
+    },
+    "interview.budget.anna": {
+      "url": "assets/audio/voices/interview.budget.anna.mp3",
+      "speakerId": "anna",
+      "voice": "ru_ekaterina",
+      "duration": 1.8,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "a11cf89a1250b61602510295d4ffb08de08e6f708cb2575f93bc87632ca9f3f9",
+      "bytes": 14636
+    },
+    "interview.budget.reply": {
+      "url": "assets/audio/voices/interview.budget.reply.mp3",
+      "speakerId": "ilya",
+      "voice": "ru_roman",
+      "duration": 7.632,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "2eebb8a7acd6b1d4915da3d6eb742e02450f289316c965520f077704ca90a579",
+      "bytes": 61292
+    },
+    "mentor.meeting": {
+      "url": "assets/audio/voices/mentor.meeting.mp3",
+      "speakerId": "vera",
+      "voice": "ru_oksana",
+      "duration": 12.672,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "09ea6ccd2170e97944718dc4392f71f82e7c9bcceb003d4abe0f94ed90871d5f",
+      "bytes": 101612
+    },
+    "mentor.handoff": {
+      "url": "assets/audio/voices/mentor.handoff.mp3",
+      "speakerId": "vera",
+      "voice": "ru_oksana",
+      "duration": 14.88,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "a1203558f2287bcfe18aba22c9f8898543efd64b62e056e162815d57f2138e3a",
+      "bytes": 119276
+    },
+    "date.opening": {
+      "url": "assets/audio/voices/date.opening.mp3",
+      "speakerId": "max",
+      "voice": "ru_dmitriy",
+      "duration": 7.656,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "5c688b2e90957d093006bf5a105636e73baf04e7fe08c6d332eebc04d2facd2a",
+      "bytes": 61484
+    },
+    "date.warm.anna": {
+      "url": "assets/audio/voices/date.warm.anna.mp3",
+      "speakerId": "anna",
+      "voice": "ru_ekaterina",
+      "duration": 7.416,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "e42d94de1eea2565046f33ef036b2f104d5e9d7285815d9e4d2531b4e98ddb09",
+      "bytes": 59564
+    },
+    "date.warm.reply": {
+      "url": "assets/audio/voices/date.warm.reply.mp3",
+      "speakerId": "max",
+      "voice": "ru_dmitriy",
+      "duration": 6.192,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "d29465e9624e0b8ef180a560338469c1d95a7c4950528122aad014b96d45ad52",
+      "bytes": 49772
+    },
+    "date.honest.anna": {
+      "url": "assets/audio/voices/date.honest.anna.mp3",
+      "speakerId": "anna",
+      "voice": "ru_ekaterina",
+      "duration": 4.2,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "91504a36047034fd3d11ce295d6d56bbd2bfa01d65a5360a660ca5d784de98fa",
+      "bytes": 33836
+    },
+    "date.honest.reply": {
+      "url": "assets/audio/voices/date.honest.reply.mp3",
+      "speakerId": "max",
+      "voice": "ru_dmitriy",
+      "duration": 6.24,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "8c7cb7d6d0f013c18d64c26d85fd5dafc9c1064c8cfd8d1dc3bcc4786603af72",
+      "bytes": 50156
+    },
+    "date.hello": {
+      "url": "assets/audio/voices/date.hello.mp3",
+      "speakerId": "anna",
+      "voice": "ru_ekaterina",
+      "duration": 0.984,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "bfe143517009b6f641141d483aa16c2ba9d842b74cdd170a9173ace14416748c",
+      "bytes": 8108
+    },
+    "date.done": {
+      "url": "assets/audio/voices/date.done.mp3",
+      "speakerId": "anna",
+      "voice": "ru_ekaterina",
+      "duration": 1.584,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "58d69e835c06f3df999a0a15c53bc768da52d649bf985450160511ff71679ab3",
+      "bytes": 12908
+    },
+    "pilot.welcome": {
+      "url": "assets/audio/voices/pilot.welcome.mp3",
+      "speakerId": "narrator",
+      "voice": "ru_zhadyra",
+      "duration": 7.728,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "3489b95f63e0c99dfa39d799ac3cbb569b0612d7544c7daff8ef046f831df04a",
+      "bytes": 62060
+    },
+    "pilot.alarm": {
+      "url": "assets/audio/voices/pilot.alarm.mp3",
+      "speakerId": "narrator",
+      "voice": "ru_zhadyra",
+      "duration": 8.04,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "d8143efdf46467395798db95c0c75a3769a2e6191febe65d8fbc8e1c7c6c063c",
+      "bytes": 64556
+    },
+    "pilot.ending": {
+      "url": "assets/audio/voices/pilot.ending.mp3",
+      "speakerId": "narrator",
+      "voice": "ru_zhadyra",
+      "duration": 13.176,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "d34af4756cb55a429ba723b349d9a65f287ee52111fa7f8c96eb8c305a88062c",
+      "bytes": 105644
+    },
+    "interview.instruction": {
+      "url": "assets/audio/voices/interview.instruction.mp3",
+      "speakerId": "narrator",
+      "voice": "ru_zhadyra",
+      "duration": 5.328,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "b44087d3e171d2215bf4cb6705321141e9b647a3be20ecea1a12d04bfa032886",
+      "bytes": 42860
+    },
+    "interview.accepted": {
+      "url": "assets/audio/voices/interview.accepted.mp3",
+      "speakerId": "narrator",
+      "voice": "ru_zhadyra",
+      "duration": 9.072,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "2e9b7d5793ffb6c1f9c1413f3cdc4a1015e34322460940ddd66e7e3bee84da67",
+      "bytes": 72812
+    },
+    "pilot.bed.accepted": {
+      "url": "assets/audio/voices/pilot.bed.accepted.mp3",
+      "speakerId": "narrator",
+      "voice": "ru_zhadyra",
+      "duration": 9.312,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "5d55045940cff77140113351a014ba20c616b547a00a9503be9e34c891fd60b5",
+      "bytes": 74732
+    },
+    "pilot.bed.other": {
+      "url": "assets/audio/voices/pilot.bed.other.mp3",
+      "speakerId": "narrator",
+      "voice": "ru_zhadyra",
+      "duration": 5.208,
+      "provider": "silero-v5-cis-base",
+      "license": "MIT",
+      "sha256": "d90c361dd01f7ade5084aec8b6b98f894f1060dd5ec8b413fe83d38e42ba20de",
+      "bytes": 41900
+    }
+  }
+}
