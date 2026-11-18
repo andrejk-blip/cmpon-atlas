@@ -41,6 +41,19 @@ function readyToLeave(state) {
   return state.flags.awake && state.flags.packed && state.flags.briefed && Boolean(state.outfit);
 }
 
+// Shared by the phone catalogue and the command handler. Decorating remains
+// available after the story ends, but work and relationship events stay closed.
+function purchaseAvailability(state, item) {
+  let unavailableReason = '';
+  if (!item) unavailableReason = 'Этой вещи пока нет в магазине.';
+  else if (state.homeItems.includes(item.id)) unavailableReason = 'Уже дома';
+  else if (state.events.length >= MAX_EVENTS) unavailableReason = 'История дня заполнена';
+  else if (!state.flags.awake) unavailableReason = 'Сначала проснись';
+  else if (!['morning', 'evening', 'complete'].includes(state.phase)) unavailableReason = 'После смены';
+  else if (state.coins < item.price) unavailableReason = `Не хватает ${item.price - state.coins} монет`;
+  return {canBuy: unavailableReason === '', unavailableReason};
+}
+
 function chatChoices(state, id) {
   const definition = threadDefinition(id), thread = state.chats[id];
   if (!definition || !thread || !state.flags.awake || state.phase === 'complete') return [];
@@ -91,7 +104,7 @@ export function reduceLife(input, action) {
   };
   const at = (scene, spot) => state.scene === scene && state.currentSpot === spot;
   if (!a) return fail('Такого действия пока нет.');
-  if (state.phase === 'complete' && a.type !== 'READ_CHAT') return fail('Первый день уже завершён.');
+  if (state.phase === 'complete' && !['READ_CHAT', 'BUY'].includes(a.type)) return fail('Первый день уже завершён.');
   if (state.events.length >= MAX_EVENTS) return fail('Слишком много действий для этого эпизода.');
   if (!state.flags.awake && a.type !== 'WAKE') return fail('Сначала пора проснуться.');
 
@@ -166,14 +179,12 @@ export function reduceLife(input, action) {
     }
 
     case 'BUY': {
-      if (!['morning', 'evening'].includes(state.phase)) return fail('К домашним покупкам можно вернуться после смены.');
       const item = SHOP.find(item => item.id === a.itemId);
-      if (!item) return fail('Этой вещи пока нет в магазине.');
-      if (state.homeItems.includes(item.id)) return fail('Эта вещь уже есть дома.');
-      if (state.coins < item.price) return fail('На эту покупку пока не хватает монет.');
+      const availability = purchaseAvailability(state, item);
+      if (!availability.canBuy) return fail(availability.unavailableReason);
       state.coins -= item.price;
       state.homeItems.push(item.id);
-      advance(3);
+      if (state.phase !== 'complete') advance(3);
       return commit(`${item.name} теперь дома.`);
     }
 
@@ -290,13 +301,14 @@ export function reduceLife(input, action) {
 }
 
 export function viewLife(state) {
+  const shop = SHOP.map(item => ({...item, owned: state.homeItems.includes(item.id), affordable: state.coins >= item.price, ...purchaseAvailability(state, item)}));
   let objective;
   if (state.phase === 'morning') {
     objective = !state.flags.awake ? 'Проснуться в первый рабочий день' : !state.outfit ? 'Выбрать образ у шкафа' : !state.flags.briefed ? 'Ответить Вере в чате' : !state.flags.packed ? 'Взять планшет и удостоверение' : 'Выйти из дома — Вера ждёт во дворе';
   } else if (state.phase === 'shift') {
     objective = !state.flags.mentorMet ? 'Познакомиться с Верой' : state.interview.status === 'ready' ? 'Дойти до квартиры 12' : state.interview.status === 'talking' ? 'Разобраться, кто живёт и ведёт хозяйство вместе' : 'Вернуться к Вере с результатом';
   } else if (state.phase === 'evening') {
-    objective = state.scene === 'home' ? 'Обустроить свой уголок и закончить день' : state.date.status === 'accepted' ? 'Встретиться с Максом или выбрать вечер дома' : state.date.status === 'talking' ? 'Поговорить с Максом' : 'Вернуться домой';
+    objective = state.scene === 'home' ? shop.some(item => item.canBuy) ? 'Магазин для дома — в телефоне' : 'Отдохнуть и закончить день' : state.date.status === 'accepted' ? 'Встретиться с Максом или выбрать вечер дома' : state.date.status === 'talking' ? 'Поговорить с Максом' : 'Вернуться домой';
   } else objective = 'Первый день завершён';
   return {
     hero: HERO,
@@ -315,7 +327,7 @@ export function viewLife(state) {
       choices: chatChoices(state, definition.id),
       lastMessage: state.chats[definition.id].messages.at(-1),
     })),
-    shop: SHOP.map(item => ({...item, owned: state.homeItems.includes(item.id), affordable: state.coins >= item.price})),
+    shop,
     outfits: OUTFITS,
     interviewQuestions: INTERVIEW.questions.filter(question => !state.interview.clues.includes(question.id)),
     roster: INTERVIEW.roster,

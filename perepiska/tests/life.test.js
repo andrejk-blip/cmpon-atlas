@@ -214,7 +214,72 @@ test('shopping waits for personal time and does not mutate the active interview'
 });
 
 
-test('completed days allow reading final messages but keep all gameplay outcomes immutable', () => {
+test('the phone catalogue explains availability and agrees with purchases in every day phase', () => {
+  const awake = action(createLife(), 'WAKE');
+  const plantOwned = action(awake, 'BUY', {itemId: 'plant'});
+  const states = [createLife(), awake, conversation(), evening(), homeEnd(evening()), plantOwned];
+  for (const state of states) {
+    for (const item of viewLife(state).shop) {
+      const bought = action(state, 'BUY', {itemId: item.id});
+      assert.equal(bought.events.length === state.events.length + 1, item.canBuy, `${state.phase}/${item.id}`);
+      assert.equal(item.unavailableReason === '', item.canBuy);
+      assert.equal(item.affordable, state.coins >= item.price);
+    }
+  }
+  assert.equal(viewLife(createLife()).shop[0].unavailableReason, 'Сначала проснись');
+  assert.equal(viewLife(conversation()).shop[0].unavailableReason, 'После смены');
+  assert.equal(viewLife(plantOwned).shop.find(item => item.id === 'plant').unavailableReason, 'Уже дома');
+  assert.equal(viewLife(plantOwned).shop.find(item => item.id === 'lamp').unavailableReason, 'Не хватает 200 монет');
+});
+
+test('the evening home objective leads to the phone shop while a purchase is available', () => {
+  let home = action(arrive(evening(), 'entrance'), 'RETURN_HOME');
+  assert.equal(viewLife(home).objective, 'Магазин для дома — в телефоне');
+  home = action(home, 'BUY', {itemId: 'plant'});
+  assert.equal(viewLife(home).objective, 'Магазин для дома — в телефоне');
+  home = action(home, 'BUY', {itemId: 'lamp'});
+  assert.equal(viewLife(home).objective, 'Отдохнуть и закончить день');
+  const complete = action(arrive(home, 'bed'), 'FINISH');
+  assert.equal(viewLife(complete).objective, 'Первый день завершён');
+});
+
+test('a saved completed day can buy home items at 21:00 without reopening its story or paying twice', () => {
+  // This history uses only pre-existing v2 actions and matches the reported
+  // evening screen: the day is finished, no purchases yet, 900 coins remain.
+  const previousSave = JSON.stringify(homeEnd(evening()));
+  const completed = validateLife(previousSave);
+  assert.ok(completed);
+  assert.equal(completed.version, 2);
+  assert.equal(completed.phase, 'complete');
+  assert.equal(completed.time, 1260);
+  assert.equal(completed.coins, 900);
+  assert.equal(viewLife(completed).shop.find(item => item.id === 'plant').canBuy, true);
+
+  const planted = action(completed, 'BUY', {itemId: 'plant'});
+  assert.equal(planted.coins, 600);
+  assert.deepEqual(planted.homeItems, ['plant']);
+  const restored = validateLife(JSON.stringify(planted));
+  assert.ok(restored);
+  assert.deepEqual(restored.homeItems, ['plant']);
+  const furnished = action(restored, 'BUY', {itemId: 'lamp'});
+  assert.equal(furnished.coins, 100);
+  assert.deepEqual(furnished.homeItems, ['plant', 'lamp']);
+  for (const key of ['version', 'phase', 'scene', 'currentSpot', 'time', 'energy', 'xp', 'outfit', 'flags', 'interview', 'date', 'social', 'chats']) {
+    assert.deepEqual(furnished[key], completed[key], key);
+  }
+  assert.ok(validateLife(JSON.stringify(furnished)));
+  for (const event of [{type: 'BUY', itemId: 'plant'}, {type: 'HAND_IN'}, {type: 'FINISH'}]) {
+    const repeated = reduceLife(furnished, event);
+    assert.equal(repeated.events.length, furnished.events.length);
+    assert.equal(repeated.coins, 100);
+    assert.equal(repeated.time, 1260);
+    assert.deepEqual(repeated.homeItems, ['plant', 'lamp']);
+  }
+  assert.equal(validateLife({...furnished, coins: 400}), null);
+  assert.equal(validateLife({...furnished, events: [...furnished.events, {type: 'BUY', itemId: 'plant'}]}), null);
+});
+
+test('completed days allow reading final messages while work and relationship events stay locked', () => {
   let s = evening(localResult(conversation(morning({romance: 'accept'}))));
   s = action(arrive(s, 'bench'), 'DATE');
   s = action(s, 'DATE_REPLY', {choiceId: 'warm'});
@@ -231,7 +296,6 @@ test('completed days allow reading final messages but keep all gameplay outcomes
   }
   assert.ok(validateLife(JSON.stringify(readBoth)));
   for (const change of [
-    {type: 'BUY', itemId: 'plant'},
     {type: 'ARRIVE', spotId: 'kitchen'},
     {type: 'CHAT', channelId: 'friend', choiceId: 'bright'},
     {type: 'HAND_IN'},

@@ -16,7 +16,7 @@ export function getTutorialStep({state, modalState = null, moving = false, pause
   const closeOther = stage => step('return-to-day', stage, 'Вернёмся к сборам', 'Закрой это окно — подсказка покажет следующий шаг.', '[data-close]');
   const walk = stage => step('walking', stage, 'Аня уже идёт', 'Она дойдёт до выбранного места сама. Можно изменить маршрут новым нажатием.', null, {waiting: true});
   if (state.phase !== 'morning' && state.flags.mentorMet || ['evening', 'complete'].includes(state.phase)) {
-    return step('finished', 5, 'Ты уже умеешь главное', 'Нажимай на людей и места. «Сейчас» подскажет задачу, телефон хранит чаты, карту можно перетаскивать.', '#objective', {finished: true});
+    return step('finished', 5, 'Ты уже умеешь главное', 'Нажимай на людей и места. В телефоне — чаты и «Магазин» для квартиры. «Сейчас» подскажет задачу.', '#objective', {finished: true});
   }
   if (state.phase === 'morning') {
     if (!state.outfit) {
@@ -33,7 +33,7 @@ export function getTutorialStep({state, modalState = null, moving = false, pause
         return step('open-vera', 2, 'Открой чат Веры', 'Наставница расскажет, где вы встречаетесь и что взять с собой.', '[data-thread="team"]');
       }
       if (modal) return closeOther(2);
-      return step('phone', 2, 'Проверь телефон', 'Нажми «Телефон»: там рабочий чат, подруга и личные планы.', '#phone');
+      return step('phone', 2, 'Проверь телефон', 'Нажми «Телефон»: там чаты и вкладка «Магазин» с вещами для квартиры. Сейчас откроем сообщение Веры.', '#phone');
     }
     if (!state.flags.packed) {
       if (modal === 'pack') {

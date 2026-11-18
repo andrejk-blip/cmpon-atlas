@@ -475,7 +475,11 @@ button svg {
   top:12px;
   right:12px;
   color:#88705c;
-  z-index:2
+  z-index:4
+}
+/* Reserve a header for the close control even when tutorial content is prepended. */
+.modal:has(> .modal-close) {
+  padding-top:64px
 }
 .modal h1 {
   font-family:Caveat,cursive;
@@ -994,7 +998,8 @@ button svg {
   color:#b78b51
 }
 .shop-item>div:last-child {
-  flex:1
+  flex:1;
+  min-width:0
 }
 .shop-item b {
   display:block;
@@ -1018,7 +1023,17 @@ button svg {
   border-radius:8px;
   padding:7px 13px;
   font-size:11px;
-  min-width:78px
+  min-width:78px;
+  min-height:40px;
+  max-width:100%;
+  flex-wrap:wrap
+}
+.shop-item .shop-unavailable {
+  display:block;
+  margin:7px 0 0;
+  color:#785d48;
+  font-size:11px;
+  line-height:1.35
 }
 .shop-item button svg {
   width:15px;

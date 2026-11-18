@@ -13,7 +13,7 @@
 .modal.phone .tutorial-card--inline {margin:9px 12px 6px;padding:9px 11px;flex-shrink:0}
 .tutorial-card--inline strong {font-size:14px}
 .tutorial-card--inline p {font-size:12px!important}
-.tutorial-target {outline:3px solid #c37d41!important;outline-offset:4px;box-shadow:0 0 0 7px #fff3cfb8!important;position:relative}
+.tutorial-target {outline:3px solid #c37d41!important;outline-offset:4px;box-shadow:0 0 0 7px #fff3cfb8!important}
 @media (prefers-reduced-motion:no-preference) {
   .tutorial-target {animation:tutorial-glow 1.6s ease-in-out infinite}
 }

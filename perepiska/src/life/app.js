@@ -53,7 +53,7 @@ $('#app').innerHTML = `<main class="life-game"><div id="life-stage" aria-label="
 <div class="location-tag"><span id="location-name">Моя квартира</span><small id="location-detail">День 1 · Новая работа</small></div>
 <div class="camera-controls"><button id="zoom-in" aria-label="Приблизить">+</button><button id="zoom-out" aria-label="Отдалить">−</button><button id="zoom-fit" aria-label="Показать всю сцену" title="Весь вид">⛶</button><button id="pause" aria-label="Пауза">${icon('pause')}</button><button id="speed" aria-label="Изменить скорость">1×</button></div>
 <div id="quick-actions" class="quick-actions" aria-label="Места поблизости"></div>
-<footer class="life-footer"><button id="profile" class="hero-card" aria-label="Аня — мой персонаж"><span id="hero-portrait" class="hero-portrait">${portrait('anna-'+(state.outfit||'home'),'Аня')}</span><span><b>Аня, 25</b><small id="hero-role">Первый день</small></span></button><button id="objective" class="objective"><small>СЕЙЧАС</small><span></span>${icon('arrow')}</button><nav class="pocket"><button id="phone" aria-label="Телефон и чаты">${icon('phone')}<i id="unread">3</i><small>Телефон</small></button><button id="world-map" aria-label="Карта моей жизни">${icon('map')}<small>Карта</small></button><button id="bag" aria-label="Моя сумка">${icon('bag')}<small>Сумка</small></button></nav></footer>
+<footer class="life-footer"><button id="profile" class="hero-card" aria-label="Аня — мой персонаж"><span id="hero-portrait" class="hero-portrait">${portrait('anna-'+(state.outfit||'home'),'Аня')}</span><span><b>Аня, 25</b><small id="hero-role">Первый день</small></span></button><button id="objective" class="objective"><small>СЕЙЧАС</small><span></span>${icon('arrow')}</button><nav class="pocket"><button id="phone" aria-label="Телефон: чаты и магазин" title="Чаты и магазин для дома">${icon('phone')}<i id="unread">3</i><small>Телефон</small></button><button id="world-map" aria-label="Карта моей жизни">${icon('map')}<small>Карта</small></button><button id="bag" aria-label="Моя сумка">${icon('bag')}<small>Сумка</small></button></nav></footer>
 <div id="modal-root"></div></main>`;
 let scene = makeScene();
 const tutorial=createTutorial({preferences:preferences.tutorial,onPreferencesChange:value=>{preferences.tutorial=value;platform.setPreferences(preferences);}});
@@ -237,6 +237,13 @@ function refresh() {
   const available = spots();
   $('#quick-actions').innerHTML = available.map(s => `<button data-go="${s.id}" class="${s.done ? 'done' : ''} ${s.primary ? 'next' : ''}" aria-label="Быстрый переход: ${s.label}">${icon(s.done ? 'check' : s.icon)}<span>${s.short}</span></button>`).join('');
   $('#quick-actions').querySelectorAll('[data-go]').forEach(b => b.onclick = () => go(b.dataset.go));
+  if (state.scene === 'home' && ['evening', 'complete'].includes(state.phase)) {
+    const shopButton = document.createElement('button');
+    shopButton.id = 'home-shop';
+    shopButton.innerHTML = `${icon('phone')}<span>Магазин в телефоне</span>`;
+    shopButton.onclick = () => openPhone(null, 'shop');
+    $('#quick-actions').append(shopButton);
+  }
   syncCompanions(world,{mentor:['shift','evening'].includes(state.phase),max:state.phase==='evening'&&['accepted','talking','met'].includes(state.date.status)});
   scene.update(state, available);
   syncPortraits();
@@ -272,7 +279,10 @@ function objectiveAction() {
   }
   if (state.phase === 'morning') {
     if (!state.outfit) go('wardrobe');else if (!state.flags.briefed) openPhone('team');else if (!state.flags.packed) go('bag');else go('door');
-  } else if (state.phase === 'shift') go(!state.flags.mentorMet || state.interview.status === 'local' ? 'mentor' : 'respondent');else if (state.phase === 'evening') go(state.scene === 'home' ? 'bed' : ['accepted', 'talking'].includes(state.date.status) ? 'bench' : 'entrance');else showEnding();
+  } else if (state.phase === 'shift') go(!state.flags.mentorMet || state.interview.status === 'local' ? 'mentor' : 'respondent');else if (state.phase === 'evening') {
+    if (state.scene === 'home' && viewLife(state).shop.some(item => item.canBuy)) openPhone(null, 'shop');
+    else go(state.scene === 'home' ? 'bed' : ['accepted', 'talking'].includes(state.date.status) ? 'bench' : 'entrance');
+  } else showEnding();
 }
 function arrive(event) {
   if (!event.interaction) return;
@@ -331,7 +341,7 @@ function showWelcome() {
 function showHelp(back=closeModal) {
   const returnToWelcome=modalState?.type==='welcome'||modalState?.returnToWelcome;
   modalState={type:'help',returnToWelcome};
-  showModal(`${closeButton()}<span class="eyebrow">ВСЁ ПОД РУКОЙ</span><h2>Управляй своим днём</h2><ul class="help-list"><li>${icon('pin')} Нажми на предмет или человека — Аня подойдёт сама.</li><li>${icon('chat')} Нажми на жителя, чтобы познакомиться. Не каждый разговор станет большой историей.</li><li>${icon('phone')} Телефон хранит чаты и покупки для дома.</li><li>${icon('map')} Перетаскивай сцену для обзора. Кнопки + и − меняют масштаб, ⛶ возвращает весь вид.</li><li>${icon('pause')} Пробел — пауза, Esc — закрыть окно. Кнопка «Сейчас» подсказывает следующий шаг.</li></ul><p class="muted">История заканчивается вечером дома после принятия первой анкеты. Чтение не расходует игровое время.</p><button id="help-tour" class="primary">Показать прямо в игре</button><button id="help-back" class="secondary">Понятно ${icon('check')}</button>`,'help');
+  showModal(`${closeButton()}<span class="eyebrow">ВСЁ ПОД РУКОЙ</span><h2>Управляй своим днём</h2><ul class="help-list"><li>${icon('pin')} Нажми на предмет или человека — Аня подойдёт сама.</li><li>${icon('chat')} Нажми на жителя, чтобы познакомиться. Не каждый разговор станет большой историей.</li><li>${icon('phone')} Магазин с вещами для квартиры — в телефоне, вкладка «Магазин».</li><li>${icon('map')} Перетаскивай сцену для обзора. Кнопки + и − меняют масштаб, ⛶ возвращает весь вид.</li><li>${icon('pause')} Пробел — пауза, Esc — закрыть окно. Кнопка «Сейчас» подсказывает следующий шаг.</li></ul><p class="muted">История заканчивается вечером дома после принятия первой анкеты. Чтение не расходует игровое время.</p><button id="help-tour" class="primary">Показать прямо в игре</button><button id="help-back" class="secondary">Понятно ${icon('check')}</button>`,'help');
   bindClose();$('#help-back').onclick=back;$('#help-tour').onclick=startTutorial;
 }
 function showAlarm() {
@@ -529,11 +539,12 @@ function renderPhone(autoplay=true) {
   if (thread) {
     content = `<div class="phone-thread-head"><button id="thread-back" class="icon-button" aria-label="Назад к чатам">${icon('back')}</button>${chatAvatar(thread)}<div><b>${esc(thread.shortName)}</b><small>${thread.id === 'max' ? 'Знакомый · 27' : thread.id === 'friend' ? 'Подруга' : 'Наставница'}</small></div></div><div class="messages">${thread.messages.slice(-5).map((m,index) => `<div class="message ${m.speaker === HERO.name ? 'mine' : ''}">${esc(m.text)}<button class="message-voice" data-message-voice="${index}" aria-label="Прослушать сообщение ${index+1}">♫</button><time>${Math.floor(m.time / 60)}:${String(m.time % 60).padStart(2, '0')}</time></div>`).join('')}</div><div class="reply-options">${thread.choices.map(c => `<button data-reply="${c.id}">${esc(c.label)} ${icon('arrow')}</button>`).join('')}${!thread.choices.length ? (thread.id==='friend'&&state.interview.status==='accepted'?'<button id="kira-more">Рассказать Кире про свой день</button>':'<span class="caught-up">Пока всё. Жизнь — за экраном.</span>') : ''}</div>`;
   } else if (modalState.tab === 'shop') {
-    content = `<div class="phone-page-title"><small>ДЛЯ СВОЕГО УГОЛКА</small><h2>Маленькие радости</h2><p>Сегодня можно начать с одной вещи.</p></div><div class="shop-items">${v.shop.map(item => `<article class="shop-item"><div class="product-art ${item.id}">${icon(item.id)}</div><div><b>${esc(item.name)}</b><small>${esc(item.description)}</small><button data-buy="${item.id}" ${item.owned || !item.affordable || !['morning', 'evening'].includes(state.phase) ? 'disabled' : ''}>${item.owned ? 'Уже дома' : icon('coin') + item.price}</button></div></article>`).join('')}</div><div class="shop-balance">Осталось ${icon('coin')} <b>${state.coins}</b></div><p class="shop-note">Это игровые монеты. Купленное остаётся в квартире.</p>`;
+    const shopHint = state.phase === 'shift' ? 'Присмотрись к вещам. Покупки доступны после смены.' : 'Выбранная вещь сразу появится в квартире.';
+    content = `<div class="phone-page-title"><small>МАГАЗИН · ДЛЯ ДОМА</small><h2>Маленькие радости</h2><p>${shopHint}</p></div><div class="shop-items">${v.shop.map(item => `<article class="shop-item"><div class="product-art ${item.id}">${icon(item.id)}</div><div><b>${esc(item.name)}</b><small>${esc(item.description)}</small><button data-buy="${item.id}" aria-label="${esc(item.owned ? item.name + ' — уже дома' : 'Купить ' + item.name + ' за ' + item.price + ' монет')}" ${item.canBuy ? '' : 'disabled'} ${!item.canBuy && !item.owned ? `aria-describedby="shop-reason-${item.id}"` : ''}>${item.owned ? 'Уже дома' : 'Купить ' + icon('coin') + item.price}</button>${!item.canBuy && !item.owned ? `<small class="shop-unavailable" id="shop-reason-${item.id}">${esc(item.unavailableReason)}</small>` : ''}</div></article>`).join('')}</div><div class="shop-balance">Осталось ${icon('coin')} <b>${state.coins}</b></div><p class="shop-note">Это игровые монеты. Покупки доступны и после завершения дня.</p>`;
   } else {
-    content = `<div class="phone-page-title"><small>ТВОИ ЛЮДИ</small><h2>Переписки</h2></div><div class="chat-list">${v.availableChats.map(c => `<button data-thread="${c.id}">${chatAvatar(c)}<span><b>${esc(c.name)}</b><small>${esc(c.lastMessage.text)}</small></span>${c.unread ? '<i></i>' : ''}</button>`).join('')}</div><div class="phone-small-note">Три чата. И у каждого — своя история.</div>`;
+    content = `<div class="phone-page-title"><small>ТВОИ ЛЮДИ</small><h2>Переписки</h2></div><div class="chat-list">${v.availableChats.map(c => `<button data-thread="${c.id}">${chatAvatar(c)}<span><b>${esc(c.name)}</b><small>${esc(c.lastMessage.text)}</small></span>${c.unread ? '<i></i>' : ''}</button>`).join('')}</div><div class="phone-small-note">Растение и лампа для квартиры — во вкладке «Магазин» внизу.</div>`;
   }
-  showModal(`<div class="phone-top"><span>${v.clock}</span><span class="phone-notch"></span><button data-close class="icon-button" aria-label="Убрать телефон">${icon('close')}</button></div>${content}${!thread ? `<nav class="phone-tabs"><button id="chats-tab" class="${modalState.tab === 'chats' ? 'active' : ''}">${icon('chat')}Чаты</button><button id="shop-tab" class="${modalState.tab === 'shop' ? 'active' : ''}">${icon('plant')}Для дома</button></nav>` : ''}`, 'phone');
+  showModal(`<div class="phone-top"><span>${v.clock}</span><span class="phone-notch"></span><button data-close class="icon-button" aria-label="Убрать телефон">${icon('close')}</button></div>${content}${!thread ? `<nav class="phone-tabs"><button id="chats-tab" class="${modalState.tab === 'chats' ? 'active' : ''}">${icon('chat')}Чаты</button><button id="shop-tab" class="${modalState.tab === 'shop' ? 'active' : ''}">${icon('plant')}Магазин</button></nav>` : ''}`, 'phone');
   bindClose();
   if (thread) {
     const voiceFor=m=>findSpeech(m.speaker===HERO.name?'anna':({team:'vera',friend:'kira',max:'max'}[thread.id]),m.text);
